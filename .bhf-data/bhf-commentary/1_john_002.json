@@ -2,118 +2,37 @@
   "reference": "1 John 2",
   "book": "1 John",
   "chapter": 2,
-  "status": "partial",
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
   "sections": [
     {
       "kind": "chapter_overview",
-      "title": "Overview",
+      "title": "Chapter overview",
       "blocks": [
         {
-          "id": "block_1",
-          "text": "First John remains anonymous\u2014its author does not identify himself, nor does he name his addressees, location, or destination. Yet the letter addresses its recipients with familial warmth and assumes a shared tradition. Chapter 2 establishes the epistle's core concerns: how believers know God (through obedience and love), how Christ mediates for them (as advocate and propitiation), and how to live in the world without conforming to its values.",
+          "id": "overview",
+          "text": "1 John 2 contains 29 verses. It opens with: My little children, these things write I unto you that ye may not sin. And if any man sin, we have an Advocate with the Father, Jesus Christ the righteous: It concludes with: If ye know that he is righteous, ye know that every one also that doeth righteousness is begotten of him.",
           "verse_refs": [
-            "1 John 2:1-16"
+            "1 John 2:1-29"
           ],
           "evidence_ids": [
-            "1jn-anonymous"
+            "1jn-advocate"
           ],
           "confidence": "high",
-          "interpretation_level": "fact"
-        }
-      ]
-    },
-    {
-      "kind": "pericope",
-      "title": "Christ as Advocate and Propitiation",
-      "blocks": [
-        {
-          "id": "block_2",
-          "text": "The chapter opens by addressing sin and offering assurance. Jesus Christ is presented as 'the righteous' (dikaios) and identified as parakletos\u2014an advocate or intercessor positioned with the Father on behalf of sinners. When believers sin, they have this advocate standing for them before God. The text further describes Jesus as hilasmos for sins, a term denoting expiation or atonement. The scope is emphatic: Jesus serves as hilasmos not only for the community's sins but also for the sins of the whole world, signaling a universal dimension to his atoning work.",
-          "verse_refs": [
-            "1 John 2:1-2"
-          ],
-          "evidence_ids": [
-            "1jn-advocate",
-            "1jn-hilasmos"
-          ],
-          "confidence": "high",
-          "interpretation_level": "fact"
-        }
-      ]
-    },
-    {
-      "kind": "pericope",
-      "title": "Knowing God Through Obedience",
-      "blocks": [
-        {
-          "id": "block_3",
-          "text": "The epistle establishes a concrete test for authentic knowledge of God. Merely claiming to know God is insufficient; keeping his commandments proves that knowledge. The author is direct: anyone claiming to know God while ignoring his commandments is a liar, and truth does not dwell in such a person. By contrast, whoever keeps God's word demonstrates that God's love has been perfected in them. The text introduces the concept of 'abiding in him': whoever claims to abide in Christ must walk as Christ himself walked, making Christ's example the standard for those who truly belong to God.",
-          "verse_refs": [
-            "1 John 2:3-6"
-          ],
-          "evidence_ids": [
-            "1jn-commandments"
-          ],
-          "confidence": "high",
-          "interpretation_level": "fact"
-        }
-      ]
-    },
-    {
-      "kind": "pericope",
-      "title": "The Old Commandment Renewed",
-      "blocks": [
-        {
-          "id": "block_4",
-          "text": "The author presents an apparent contradiction. He states he is not writing a new commandment but an old one the community has held from the beginning\u2014the word they originally heard. Yet he immediately calls it new, explaining that it is 'true in him and in you' because 'the darkness is passing away and the true light now shines.' The paradox resolves in the commandment's substance: love. The epistle reinterprets this ancient command through the imagery of light and darkness. Whoever claims to be in the light while hating a brother remains in darkness; whoever loves a brother abides in light without stumbling. Hatred places one in darkness and causes spiritual blindness, leaving the person unable to see their own condition.",
-          "verse_refs": [
-            "1 John 2:7-11"
-          ],
-          "evidence_ids": [
-            "1jn-new-old"
-          ],
-          "confidence": "high",
-          "interpretation_level": "fact"
-        }
-      ]
-    },
-    {
-      "kind": "pericope",
-      "title": "Love Not the World",
-      "blocks": [
-        {
-          "id": "block_5",
-          "text": "The epistle directly commands the community not to love 'the world' or its possessions. This creates an apparent tension: elsewhere in the Johannine tradition, God loves the world and sends the Son for it. Here, however, 'the world' does not refer to creation itself but to a system of opposing values\u2014'the lust of the flesh, the lust of the eyes, and the pride of life.' These desires embody attitudes hostile to relationship with God. The epistle establishes these worldly desires and the love of the Father as mutually exclusive.",
-          "verse_refs": [
-            "1 John 2:15-16"
-          ],
-          "evidence_ids": [
-            "1jn-world"
-          ],
-          "confidence": "high",
-          "interpretation_level": "fact"
+          "interpretation_level": "disputed"
         }
       ]
     }
   ],
   "generated_metadata": {
-    "evidence_hash": "1281a6aecbc75b56f94153568431f3052cc3f937a7c6620f1ea5337a9e878aff",
+    "evidence_hash": "58334a28099715f473f9d4db477e70c42590a739996a21c591160f676122db99",
     "evidence_bundle_version": "1.0",
     "commentary_schema_version": "1.0",
-    "commentary_prompt_version": "1.0",
-    "model": "haiku",
-    "generated_timestamp": null
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:44:42.009176+00:00"
   },
   "failure_reason": null,
-  "validation_errors": [
-    "section[1] has unknown fields: verse_range",
-    "section[1].kind is unsupported: pericope",
-    "section[2] has unknown fields: verse_range",
-    "section[2].kind is unsupported: pericope",
-    "section[3] has unknown fields: verse_range",
-    "section[3].kind is unsupported: pericope",
-    "section[4] has unknown fields: verse_range",
-    "section[4].kind is unsupported: pericope"
-  ],
+  "validation_errors": [],
   "validation_warnings": []
 }

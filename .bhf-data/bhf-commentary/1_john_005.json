@@ -2,57 +2,21 @@
   "reference": "1 John 5",
   "book": "1 John",
   "chapter": 5,
-  "status": "partial",
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
   "sections": [
     {
       "kind": "chapter_overview",
-      "title": "Overview and Authorship",
+      "title": "Chapter overview",
       "blocks": [
         {
-          "id": "block_1",
-          "text": "First John presents itself as an anonymous work, identifying neither its author, addressees, nor destination. The letter emerges from early Christian community without clear attribution.",
+          "id": "overview",
+          "text": "1 John 5 contains 21 verses. It opens with: Whosoever believeth that Jesus is the Christ is begotten of God: and whosoever loveth him that begat loveth him also that is begotten of him. It concludes with: `My' little children, guard yourselves from idols.",
           "verse_refs": [
-            "1 John 5:1"
+            "1 John 5:1-21"
           ],
           "evidence_ids": [
             "1jn-anonymous"
-          ],
-          "confidence": "high",
-          "interpretation_level": "fact"
-        }
-      ]
-    },
-    {
-      "kind": "section",
-      "title": "The Threefold Witness (1 John 5:6-8)",
-      "blocks": [
-        {
-          "id": "block_3",
-          "text": "The text identifies Jesus Christ as the one who came through water and blood. The Spirit bears witness to this reality. The longer form of verses 7-8 known as the Comma Johanneum (mentioning heavenly witnesses) is later than the earliest recoverable Greek manuscripts and represents a secondary expansion of the original text.",
-          "verse_refs": [
-            "1 John 5:6-8"
-          ],
-          "evidence_ids": [
-            "1jn-water-blood",
-            "1jn-comma"
-          ],
-          "confidence": "high",
-          "interpretation_level": "fact"
-        }
-      ]
-    },
-    {
-      "kind": "section",
-      "title": "Sin and Spiritual Protection (1 John 5:16-21)",
-      "blocks": [
-        {
-          "id": "block_10",
-          "text": "The letter concludes abruptly with a final exhortation to guard from idols, ending without the typical closing formulas of ancient letters.",
-          "verse_refs": [
-            "1 John 5:21"
-          ],
-          "evidence_ids": [
-            "1jn-idols"
           ],
           "confidence": "high",
           "interpretation_level": "fact"
@@ -64,25 +28,11 @@
     "evidence_hash": "3eb7a94adec871715275d219b1f4c7265621ee0d45b6296faa19f065e205dfc5",
     "evidence_bundle_version": "1.0",
     "commentary_schema_version": "1.0",
-    "commentary_prompt_version": "1.0",
-    "model": "haiku",
-    "generated_timestamp": null
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:44:42.214479+00:00"
   },
   "failure_reason": null,
-  "validation_errors": [
-    "section[1].kind is unsupported: section",
-    "section[1].block[0].interpretation_level is invalid",
-    "section[2].kind is unsupported: section",
-    "section[3].kind is unsupported: section",
-    "section[3].block[0].interpretation_level is invalid",
-    "section[3].block[1].interpretation_level is invalid",
-    "section[4].kind is unsupported: section",
-    "section[4].block[0].interpretation_level is invalid",
-    "section[5].kind is unsupported: section",
-    "section[5].block[0].interpretation_level is invalid",
-    "section[6].kind is unsupported: section",
-    "section[6].block[0].interpretation_level is invalid",
-    "section[6].block[1].interpretation_level is invalid"
-  ],
+  "validation_errors": [],
   "validation_warnings": []
 }

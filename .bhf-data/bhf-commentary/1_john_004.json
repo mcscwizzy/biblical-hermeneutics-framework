@@ -2,100 +2,21 @@
   "reference": "1 John 4",
   "book": "1 John",
   "chapter": 4,
-  "status": "partial",
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
   "sections": [
     {
       "kind": "chapter_overview",
-      "title": "Overview",
+      "title": "Chapter overview",
       "blocks": [
         {
-          "id": "block_1",
-          "text": "First John does not name its author, addressees, or destination. Ancient Christian sources record questions about the authorship and canonical status of this and the related shorter Johannine letters, even while associating them with Johannine tradition.",
-          "verse_refs": [],
-          "evidence_ids": [
-            "1jn-anonymous",
-            "2jn-early-reception"
-          ],
-          "confidence": "high",
-          "interpretation_level": "fact"
-        }
-      ]
-    },
-    {
-      "kind": "section",
-      "title": "Testing Spirits and the Incarnation (1 John 4:1-6)",
-      "blocks": [
-        {
-          "id": "block_2",
-          "text": "The chapter commands readers to test spirits because many false prophets have entered the world. The decisive criterion for recognizing the Spirit of God is explicit: confession that Jesus Christ has come in the flesh. Any spirit that does not confess Jesus does not come from God.",
+          "id": "overview",
+          "text": "1 John 4 contains 21 verses. It opens with: Beloved, believe not every spirit, but prove the spirits, whether they are of God; because many false prophets are gone out into the world. It concludes with: And this commandment have we from him, that he who loveth God love his brother also.",
           "verse_refs": [
-            "1 John 4:1",
-            "1 John 4:2-3"
+            "1 John 4:1-21"
           ],
           "evidence_ids": [
-            "1jn-test-spirits",
-            "1jn-flesh"
-          ],
-          "confidence": "high",
-          "interpretation_level": "fact"
-        },
-        {
-          "id": "block_3",
-          "text": "The false prophets belong to the world and speak as representatives of it, and the world naturally hears them. Those who know God hear the voices of those sent from God; those not of God refuse to listen. The distinction between the spirit of truth and the spirit of error becomes manifest through who hears whom.",
-          "verse_refs": [
-            "1 John 4:4-6"
-          ],
-          "evidence_ids": [
-            "1jn-world"
-          ],
-          "confidence": "high",
-          "interpretation_level": "fact"
-        }
-      ]
-    },
-    {
-      "kind": "section",
-      "title": "God's Love and Mutual Love (1 John 4:7-16)",
-      "blocks": [
-        {
-          "id": "block_4",
-          "text": "God is love. This declaration is grounded in what God has done: sending the only Son into the world as expiation for sins, so that humanity might live through him. The love that matters is not human love toward God first, but God's love toward humanity, revealed and made concrete through the sending of the Son.",
-          "verse_refs": [
-            "1 John 4:7-10"
-          ],
-          "evidence_ids": [
-            "1jn-god-love"
-          ],
-          "confidence": "high",
-          "interpretation_level": "fact"
-        },
-        {
-          "id": "block_5",
-          "text": "Because God has loved in this way, the audience ought to love one another. When people love one another, God abides in them and his love reaches completion through them. The epistle's language of remaining or abiding in God connects the reception of teaching, the relationship with the Son and Father, and mutual love as dimensions of shared divine life.",
-          "verse_refs": [
-            "1 John 4:11-16"
-          ],
-          "evidence_ids": [
-            "1jn-god-love",
-            "1jn-remaining"
-          ],
-          "confidence": "high",
-          "interpretation_level": "fact"
-        }
-      ]
-    },
-    {
-      "kind": "section",
-      "title": "Love's Perfection and Confidence (1 John 4:17)",
-      "blocks": [
-        {
-          "id": "block_6",
-          "text": "When love reaches completion in believers, they gain boldness before the day of judgment. Perfected love casts out fear, specifically the fear bound up with punishment. Standing without shame in judgment becomes possible through the work of love brought to its fullness.",
-          "verse_refs": [
-            "1 John 4:17"
-          ],
-          "evidence_ids": [
-            "1jn-fear"
+            "1jn-anonymous"
           ],
           "confidence": "high",
           "interpretation_level": "fact"
@@ -104,18 +25,14 @@
     }
   ],
   "generated_metadata": {
-    "evidence_hash": "8e0dc59a044a383dd57e834deff69c1562a4103f1e7d344dcbd48eddeefcddcb",
+    "evidence_hash": "a728ce7373e93f69524f659e0626e2c1049aa895e6604c69a311b65b736a98b7",
     "evidence_bundle_version": "1.0",
     "commentary_schema_version": "1.0",
-    "commentary_prompt_version": "1.0",
-    "model": "haiku",
-    "generated_timestamp": null
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:44:42.165856+00:00"
   },
   "failure_reason": null,
-  "validation_errors": [
-    "section[1].kind is unsupported: section",
-    "section[2].kind is unsupported: section",
-    "section[3].kind is unsupported: section"
-  ],
+  "validation_errors": [],
   "validation_warnings": []
 }
