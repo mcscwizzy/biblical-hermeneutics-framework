@@ -6,30 +6,30 @@
   "sections": [
     {
       "kind": "chapter_overview",
-      "title": "Overview",
+      "title": "Chapter overview",
       "blocks": [
         {
-          "id": "block_1",
-          "text": "Exodus 4 records Moses' continued objections to his divine commission. As the chapter unfolds, God introduces Aaron as his assistant and mouthpiece. Aaron belongs to the Exodus and wilderness world of Israel's formation, where deliverance and covenant define the people of God. The pairing of miraculous signs with a human intermediary addresses Israel's need for both tangible proof and clear communication of the divine message.",
+          "id": "overview",
+          "text": "Exodus 4 gives Moses signs for Israel, including the rod, the diseased and restored hand, and water becoming blood. Moses objects to his speaking ability, and Aaron is appointed to speak for him. Moses returns toward Egypt, circumcision occurs on the journey, and Moses and Aaron gather the elders who believe the message.",
           "verse_refs": [
-            "Exodus 4:1-15"
+            "Exodus 4:1-31"
           ],
           "evidence_ids": [
-            "aaron:historical_context:0"
+            "exodus-ane-context"
           ],
           "confidence": "medium",
-          "interpretation_level": "fact"
+          "interpretation_level": "disputed"
         }
       ]
     }
   ],
   "generated_metadata": {
-    "evidence_hash": "263e8a68ae0415b2d592fbe20c96555cd781fb5b25ad73f88c8ba6d260378aef",
+    "evidence_hash": "d3688fc2678f4c4d82ccd75649672ead3788dba715d520fb411a453c6ccd7df2",
     "evidence_bundle_version": "1.0",
     "commentary_schema_version": "1.0",
-    "commentary_prompt_version": "1.0",
-    "model": "haiku",
-    "generated_timestamp": null
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T16:32:59.168191+00:00"
   },
   "failure_reason": null,
   "validation_errors": [],

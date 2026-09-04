@@ -2,43 +2,36 @@
   "reference": "Exodus 8",
   "book": "Exodus",
   "chapter": 8,
-  "status": "partial",
+  "status": "validated",
   "sections": [
     {
       "kind": "chapter_overview",
-      "title": "Divine Confrontation in the Exodus",
+      "title": "Chapter overview",
       "blocks": [
         {
-          "id": "block_1",
-          "text": "Exodus 8 presents the second plague within the exodus narrative, in which YHWH directly confronts Pharaoh through escalating disaster. This episode operates within the larger story where divine acts accomplish Israel's deliverance from imperial Egyptian power. The Hebraic scriptural worldview explicitly frames the plagues as judgment against Egypt's gods, with each divine intervention demonstrating YHWH's absolute authority over the forces that Egypt depended upon.",
+          "id": "overview",
+          "text": "Exodus 8 records the plagues of frogs, lice, and flies. Pharaoh repeatedly asks for relief and promises release, then hardens his heart when relief comes. Jehovah distinguishes the land of Goshen in the fly plague, but Pharaoh still refuses to let the people go.",
           "verse_refs": [
-            "Exodus 8:1-4",
-            "Exodus 8:8"
+            "Exodus 8:1-32"
           ],
           "evidence_ids": [
-            "the-exodus:ancient_near_east_context:0",
-            "plagues-of-egypt:hebraic_worldview:0"
+            "exodus-ane-context"
           ],
           "confidence": "medium",
-          "interpretation_level": "fact"
+          "interpretation_level": "disputed"
         }
       ]
     }
   ],
   "generated_metadata": {
-    "evidence_hash": "601f42fcd338eed03425c8eeb5a2d7dd5b553128625178369161b37078f68c00",
+    "evidence_hash": "d063b912abb99dd0369f1dab5ec48362dd0ce87b96b766d1f44ef4fa12db4f92",
     "evidence_bundle_version": "1.0",
     "commentary_schema_version": "1.0",
-    "commentary_prompt_version": "1.0",
-    "model": "haiku",
-    "generated_timestamp": null
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T16:32:59.548904+00:00"
   },
   "failure_reason": null,
-  "validation_errors": [
-    "section[1].kind is unsupported: narrative_structure",
-    "section[1].block[0].interpretation_level is invalid",
-    "section[2].kind is unsupported: cultural_context",
-    "section[2].block[0].interpretation_level is invalid"
-  ],
+  "validation_errors": [],
   "validation_warnings": []
 }

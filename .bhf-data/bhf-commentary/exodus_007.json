@@ -2,98 +2,36 @@
   "reference": "Exodus 7",
   "book": "Exodus",
   "chapter": 7,
-  "status": "partial",
+  "status": "validated",
   "sections": [
     {
       "kind": "chapter_overview",
-      "title": "Overview: Confrontation with Pharaoh",
+      "title": "Chapter overview",
       "blocks": [
         {
-          "id": "block_1",
-          "text": "Exodus 7 opens the direct confrontation between Israel's representatives and Pharaoh, following the narrative established in Exodus 5 where Pharaoh rejected the initial demand and refused to recognize the authority invoked by Moses and Aaron. This chapter stands within the broader Exodus wilderness narrative, where Israel moves from slavery under Pharaoh toward covenant assembly before the LORD at Sinai. The story confronts imperial Egypt as the LORD recasts deliverance as His victory over human power.",
+          "id": "overview",
+          "text": "Exodus 7 presents Moses and Aaron before Pharaoh and begins the signs and plagues. Aaron\u2019s rod becomes a serpent and consumes the magicians\u2019 rods, yet Pharaoh\u2019s heart is hardened. The Nile is turned to blood, killing fish and making the water undrinkable, but Pharaoh does not listen.",
           "verse_refs": [
-            "Exodus 7:1-14"
+            "Exodus 7:1-25"
           ],
           "evidence_ids": [
-            "pharaoh-authority-question",
-            "pharaoh-authority-question:passage-relevance",
-            "exodus-to-sinai-timeline:historical_context:0",
-            "the-exodus:ancient_near_east_context:0"
+            "exodus-ane-context"
           ],
           "confidence": "medium",
-          "interpretation_level": "fact"
-        }
-      ]
-    },
-    {
-      "kind": "exposition",
-      "title": "The Commission to Moses and Aaron (7:1-7)",
-      "blocks": [
-        {
-          "id": "block_2",
-          "text": "God appoints Moses as a figure of authority before Pharaoh, with Aaron functioning as his spokesman. The narrative establishes that despite Pharaoh's previous rejection, God will multiply signs and wonders in Egypt and ultimately lay His hand upon the land to bring Israel out by great judgments. The passage names Moses' age as eighty and Aaron's as eighty-three at this juncture, anchoring the narrative in human chronology before the divine drama unfolds.",
-          "verse_refs": [
-            "Exodus 7:1-7"
-          ],
-          "evidence_ids": [
-            "exodus-to-sinai-timeline:historical_context:0"
-          ],
-          "confidence": "medium",
-          "interpretation_level": "fact"
-        }
-      ]
-    },
-    {
-      "kind": "exposition",
-      "title": "The Purpose of Signs: Recognition of the LORD (7:3-5)",
-      "blocks": [
-        {
-          "id": "block_3",
-          "text": "God's multiplication of signs serves a specific purpose: that Egypt may know that He is the LORD. The narrative frames the conflict not as mere political pressure but as a judgment on Egypt's gods themselves, demonstrating the LORD's authority over the land and its powers. The signs are intentional acts of recognition, not background disasters; they are meant to establish who the LORD is within the consciousness of Egypt and Israel alike.",
-          "verse_refs": [
-            "Exodus 7:3-5"
-          ],
-          "evidence_ids": [
-            "plagues-of-egypt:hebraic_worldview:0"
-          ],
-          "confidence": "medium",
-          "interpretation_level": "fact"
-        }
-      ]
-    },
-    {
-      "kind": "exposition",
-      "title": "The First Sign: Aaron's Rod and Pharaoh's Magicians (7:8-13)",
-      "blocks": [
-        {
-          "id": "block_4",
-          "text": "When Pharaoh demands a wonder, God instructs Aaron to cast down his rod, which becomes a serpent. Pharaoh's magicians perform the same feat, yet Aaron's rod swallows theirs. Despite this display of superiority, Pharaoh's heart becomes hardened and he does not listen. The passage places this sign within a royal audience scene, showing the initial strategy of confrontation through marvels before the wider plagues affect the land, animals, and households of Egypt.",
-          "verse_refs": [
-            "Exodus 7:8-13"
-          ],
-          "evidence_ids": [
-            "plagues-of-egypt:historical_context:0"
-          ],
-          "confidence": "medium",
-          "interpretation_level": "fact"
+          "interpretation_level": "disputed"
         }
       ]
     }
   ],
   "generated_metadata": {
-    "evidence_hash": "8a6346feab41d39464792585d411864721e22f741e100c92b12857b5fd57fbfe",
+    "evidence_hash": "cee64732973b1e54981b8ff736f4ecd72e6190e1194e4a661258912d16cce10c",
     "evidence_bundle_version": "1.0",
     "commentary_schema_version": "1.0",
-    "commentary_prompt_version": "1.0",
-    "model": "haiku",
-    "generated_timestamp": null
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T16:32:59.478994+00:00"
   },
   "failure_reason": null,
-  "validation_errors": [
-    "root.status is unsupported: complete",
-    "section[1].kind is unsupported: exposition",
-    "section[2].kind is unsupported: exposition",
-    "section[3].kind is unsupported: exposition"
-  ],
+  "validation_errors": [],
   "validation_warnings": []
 }

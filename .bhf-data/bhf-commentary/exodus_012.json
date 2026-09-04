@@ -2,104 +2,36 @@
   "reference": "Exodus 12",
   "book": "Exodus",
   "chapter": 12,
-  "status": "partial",
+  "status": "validated",
   "sections": [
     {
       "kind": "chapter_overview",
-      "title": "Overview",
+      "title": "Chapter overview",
       "blocks": [
         {
-          "id": "block_1",
-          "text": "Exodus 12 records the institution of Passover, the pivotal moment when the LORD commands Israel to prepare a lamb for household consumption and mark their doorposts with blood. This narrative stands at the center of the exodus tradition, marking the deliverance from slavery and the formation of Israel as a redeemed people. The chapter frames the turning point from Egypt's oppression to liberation, establishing patterns of divine action and covenant remembrance that will shape Israel's identity.",
+          "id": "overview",
+          "text": "Exodus 12 establishes the Passover month, the lamb, the blood on the doorposts, and the meal eaten in readiness. The firstborn of Egypt die, but the houses marked with blood are passed over. Israel leaves Egypt, and the chapter gives Passover regulations concerning its observance and participation.",
           "verse_refs": [
-            "Exodus 12:1-14"
+            "Exodus 12:1-51"
           ],
           "evidence_ids": [
-            "passover:historical_context:0",
-            "exodus-literary-movement"
+            "exodus-ane-context"
           ],
           "confidence": "medium",
-          "interpretation_level": "fact"
-        }
-      ]
-    },
-    {
-      "kind": "theological_themes",
-      "title": "God's Judgment on Egypt's Gods",
-      "blocks": [
-        {
-          "id": "block_2",
-          "text": "Exodus 12:12 explicitly frames the plague of the firstborn as an act of judgment executed by the LORD against Egypt's gods. The text makes clear that Israel's deliverance involves direct confrontation with Egyptian religious power, not merely a natural disaster. This religious dimension is central to the passage's own interpretation of events, positioning the exodus as YHWH's victory over the divine claims of Egypt's pantheon.",
-          "verse_refs": [
-            "Exodus 12:12"
-          ],
-          "evidence_ids": [
-            "judgment-on-egypts-gods",
-            "judgment-on-egypts-gods:passage-relevance",
-            "plagues-of-egypt:hebraic_worldview:0"
-          ],
-          "confidence": "medium",
-          "interpretation_level": "fact"
-        }
-      ]
-    },
-    {
-      "kind": "theological_themes",
-      "title": "Passover as Covenant Sign and Memorial",
-      "blocks": [
-        {
-          "id": "block_3",
-          "text": "The blood on the doorposts functions as a covenant sign, marking identity and belonging to the LORD's redeemed people. Passover originates in this exodus deliverance and becomes Israel's annual memorial, renewing the pattern of God hearing suffering and calling his people into freedom. The meal and ritual mark covenant obligation and identity, establishing a practice that binds each generation to the story of redemption.",
-          "verse_refs": [
-            "Exodus 12:7",
-            "Exodus 12:13",
-            "Exodus 12:14"
-          ],
-          "evidence_ids": [
-            "what-is-a-covenant-sign:historical_context:0",
-            "what-is-the-significance-of-passover:historical_context:0",
-            "what-is-the-significance-of-passover:ancient_near_east_context:0"
-          ],
-          "confidence": "medium",
-          "interpretation_level": "fact"
-        }
-      ]
-    },
-    {
-      "kind": "historical_setting",
-      "title": "Egypt in Israel's Memory",
-      "blocks": [
-        {
-          "id": "block_4",
-          "text": "Egypt functions in the passage as both the place of Israel's suffering and the stage for God's redemptive power. In Israel's theological memory, Egypt represents the bondage from which the LORD delivered his people through direct action. This memory shapes Israel's identity as a redeemed covenant people, whose calendar, worship, and identity are grounded not in human security or imperial stability, but in God's deliverance and presence.",
-          "verse_refs": [
-            "Exodus 12:1",
-            "Exodus 12:12"
-          ],
-          "evidence_ids": [
-            "egypt:hebraic_worldview:0",
-            "exodus-to-sinai-timeline:hebraic_worldview:0",
-            "the-exodus:ancient_near_east_context:0"
-          ],
-          "confidence": "medium",
-          "interpretation_level": "fact"
+          "interpretation_level": "disputed"
         }
       ]
     }
   ],
   "generated_metadata": {
-    "evidence_hash": "dddc3d949e7419d34592b3c6a6dbab8cb564dd43de08e88dfe6db55331f81c81",
+    "evidence_hash": "dc04db3cc1ec406bc00a3d9469725dee81769d5347f33c2907db835c175473ad",
     "evidence_bundle_version": "1.0",
     "commentary_schema_version": "1.0",
-    "commentary_prompt_version": "1.0",
-    "model": "haiku",
-    "generated_timestamp": null
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T16:33:00.025385+00:00"
   },
   "failure_reason": null,
-  "validation_errors": [
-    "section[1].kind is unsupported: theological_themes",
-    "section[2].kind is unsupported: theological_themes",
-    "section[3].kind is unsupported: historical_setting"
-  ],
+  "validation_errors": [],
   "validation_warnings": []
 }

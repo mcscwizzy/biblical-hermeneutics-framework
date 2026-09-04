@@ -2,64 +2,36 @@
   "reference": "Exodus 13",
   "book": "Exodus",
   "chapter": 13,
-  "status": "partial",
+  "status": "validated",
   "sections": [
     {
       "kind": "chapter_overview",
-      "title": "Overview",
+      "title": "Chapter overview",
       "blocks": [
         {
-          "id": "block_1",
-          "text": "Exodus 13 consolidates Israel's identity as a redeemed people through two interlocking ordinances. The dedication of all firstborn\u2014human and animal\u2014to the LORD establishes God's perpetual claim on the nation's future generations (vv. 1-2, 11-13). The Feast of Unleavened Bread, observed annually in the month Abib, becomes the vehicle for intergenerational remembrance of the exodus (vv. 3-10). Together, these laws embed the deliverance from Egypt not as a historical memory but as the constitutive act of covenant nationhood, to be rehearsed, taught, and visibly performed in each generation.",
+          "id": "overview",
+          "text": "Exodus 13 consecrates every firstborn to Jehovah and explains the memorial of unleavened bread. Moses carries Joseph\u2019s bones, and Jehovah leads Israel by a pillar of cloud by day and fire by night rather than by the nearer road through Philistia. The chapter frames the departure as an act of divine guidance.",
           "verse_refs": [
-            "Exodus 13:1-14"
+            "Exodus 13:1-22"
           ],
           "evidence_ids": [
-            "the-exodus:historical_context:0",
-            "passover:historical_context:0"
+            "exodus-ane-context"
           ],
           "confidence": "medium",
-          "interpretation_level": "fact"
-        }
-      ]
-    },
-    {
-      "kind": "passage_exegesis",
-      "title": "Passover and Annual Remembrance",
-      "blocks": [
-        {
-          "id": "block_3",
-          "text": "Verses 3-10 prescribe the Feast of Unleavened Bread as perpetual observance, tied to Abib, the month of departure. The feast embeds the exodus story in the ritual calendar and, critically, mandates parental teaching: children must be told 'It is because of that which Jehovah did for me when I came forth out of Egypt.' This pedagogical requirement transforms the feast from ritual into a covenant meal that transmits the redemptive narrative across generations.",
-          "verse_refs": [
-            "Exodus 13:3-10"
-          ],
-          "evidence_ids": [
-            "passover:historical_context:0",
-            "passover:ancient_near_east_context:0"
-          ],
-          "confidence": "medium",
-          "interpretation_level": "fact"
+          "interpretation_level": "disputed"
         }
       ]
     }
   ],
   "generated_metadata": {
-    "evidence_hash": "49829b3efd191a5d02230392a229b0e5b7ff4abfd61c82e71d280374ddf974a0",
+    "evidence_hash": "ac887e55979ebd52c4adf83512bd0aaccaf5090e32011244a4019b19ca5a104e",
     "evidence_bundle_version": "1.0",
     "commentary_schema_version": "1.0",
-    "commentary_prompt_version": "1.0",
-    "model": "haiku",
-    "generated_timestamp": null
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T16:33:00.121990+00:00"
   },
   "failure_reason": null,
-  "validation_errors": [
-    "section[1].kind is unsupported: passage_exegesis",
-    "section[1].block[0].interpretation_level is invalid",
-    "section[2].kind is unsupported: passage_exegesis",
-    "section[3].kind is unsupported: passage_exegesis",
-    "section[3].block[0].interpretation_level is invalid",
-    "section[4].kind is unsupported: passage_exegesis",
-    "section[4].block[0].interpretation_level is invalid"
-  ],
+  "validation_errors": [],
   "validation_warnings": []
 }

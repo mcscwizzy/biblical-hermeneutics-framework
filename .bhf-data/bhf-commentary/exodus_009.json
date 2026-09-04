@@ -6,55 +6,30 @@
   "sections": [
     {
       "kind": "chapter_overview",
-      "title": "Overview",
+      "title": "Chapter overview",
       "blocks": [
         {
-          "id": "block_1",
-          "text": "Exodus 9 continues the account of direct confrontation between Moses and Pharaoh in Egypt. The narrative structure alternates between scenes of royal audience and escalating disasters affecting livestock, households, and the broader Egyptian land. This pattern establishes how the conflict unfolds through YHWH's repeated interventions in the course of Egyptian affairs.",
+          "id": "overview",
+          "text": "Exodus 9 records disease on Egyptian livestock, boils on people and beasts, and destructive hail. Jehovah distinguishes Israel\u2019s livestock and land, and the hail narrative notes that some Egyptians who feared the word brought servants and livestock inside. Pharaoh confesses sin during the hail but hardens his heart afterward.",
           "verse_refs": [
-            "Exodus 9:1-14"
+            "Exodus 9:1-35"
           ],
           "evidence_ids": [
-            "plagues-of-egypt:historical_context:0"
+            "exodus-ane-context"
           ],
           "confidence": "medium",
-          "interpretation_level": "fact"
-        },
-        {
-          "id": "block_2",
-          "text": "The account frames the conflict explicitly through YHWH's recognition and direct action. The narrative emphasizes YHWH's power to distinguish between Israel's livestock and Egypt's, and the account of the boil plague demonstrates that even Egypt's magicians cannot stand before the effects of YHWH's judgment, reinforcing that the conflict centers on recognition of divine power.",
-          "verse_refs": [
-            "Exodus 9:4-12"
-          ],
-          "evidence_ids": [
-            "plagues-of-egypt:hebraic_worldview:0"
-          ],
-          "confidence": "medium",
-          "interpretation_level": "fact"
-        },
-        {
-          "id": "block_3",
-          "text": "This chapter participates in the larger exodus narrative in which YHWH confronts imperial Egypt's power. The account becomes central to Israel's defining memory of divine redemption\u2014the foundational act that establishes covenant nationhood and demonstrates YHWH's victory over human authority and the powers that oppose Israel's liberation.",
-          "verse_refs": [
-            "Exodus 9"
-          ],
-          "evidence_ids": [
-            "the-exodus:ancient_near_east_context:0",
-            "the-exodus:historical_context:0"
-          ],
-          "confidence": "medium",
-          "interpretation_level": "fact"
+          "interpretation_level": "disputed"
         }
       ]
     }
   ],
   "generated_metadata": {
-    "evidence_hash": "9263472886808b8c6070089f2a21ee5b58c2b3a05c824a05ed5c4ade107051dc",
+    "evidence_hash": "86ab697f125022dcb18e3a324b1be8cd496f30bd4935e7a59967a0098b2f5aa5",
     "evidence_bundle_version": "1.0",
     "commentary_schema_version": "1.0",
-    "commentary_prompt_version": "1.0",
-    "model": "haiku",
-    "generated_timestamp": null
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T16:32:59.618463+00:00"
   },
   "failure_reason": null,
   "validation_errors": [],

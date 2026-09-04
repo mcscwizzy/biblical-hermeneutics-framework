@@ -2,39 +2,36 @@
   "reference": "Exodus 11",
   "book": "Exodus",
   "chapter": 11,
-  "status": "partial",
+  "status": "validated",
   "sections": [
     {
       "kind": "chapter_overview",
-      "title": "Overview",
+      "title": "Chapter overview",
       "blocks": [
         {
-          "id": "block_1",
-          "text": "Exodus 11 stands as the announcement of the final plague. The narrative unfolds within Egypt under an unnamed Pharaoh, with action alternating between royal audience scenes\u2014where God speaks to Moses and Moses reports to Pharaoh\u2014and catastrophic events affecting land, animals, and households. This chapter marks the climactic moment where divine compulsion will finally force Pharaoh to release Israel from Egyptian control.",
+          "id": "overview",
+          "text": "Exodus 11 announces one final plague on Egypt and a coming release. Moses says that at midnight every firstborn in Egypt will die, from Pharaoh\u2019s firstborn to the firstborn of the maidservant and animals, while Israel will be distinguished. Pharaoh will not listen until the signs are complete.",
           "verse_refs": [
             "Exodus 11:1-10"
           ],
           "evidence_ids": [
-            "plagues-of-egypt:historical_context:0"
+            "exodus-ane-context"
           ],
           "confidence": "medium",
-          "interpretation_level": "fact"
+          "interpretation_level": "disputed"
         }
       ]
     }
   ],
   "generated_metadata": {
-    "evidence_hash": "84af8cc3bed6e7a2451aad43e90aea2a39de0cd842d0e4e83af9338f51fe74c5",
+    "evidence_hash": "ade1fe5950e995f04741afca9e82a49a203a5b39bb200eca3350566901f2553a",
     "evidence_bundle_version": "1.0",
     "commentary_schema_version": "1.0",
-    "commentary_prompt_version": "1.0",
-    "model": "haiku",
-    "generated_timestamp": null
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T16:32:59.727702+00:00"
   },
   "failure_reason": null,
-  "validation_errors": [
-    "section[0].block[1].interpretation_level is invalid",
-    "section[0].block[2].interpretation_level is invalid"
-  ],
+  "validation_errors": [],
   "validation_warnings": []
 }

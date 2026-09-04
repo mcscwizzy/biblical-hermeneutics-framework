@@ -2,88 +2,36 @@
   "reference": "Exodus 6",
   "book": "Exodus",
   "chapter": 6,
-  "status": "partial",
+  "status": "validated",
   "sections": [
     {
       "kind": "chapter_overview",
-      "title": "Overview",
+      "title": "Chapter overview",
       "blocks": [
         {
-          "id": "block_1",
-          "text": "Exodus 6 marks a pivotal moment in the book's narrative structure. After the initial confrontation with Pharaoh has failed and intensified Israel's suffering, God addresses Moses with a formal covenant renewal. This chapter represents a key phase in Exodus's larger literary progression: the transition from oppression and deliverance to covenant establishment and renewal, which sets the stage for the subsequent plagues, the departure from Egypt, and ultimately the construction of the tabernacle and the arrival of divine glory.",
+          "id": "overview",
+          "text": "Exodus 6 records Jehovah\u2019s renewed promise to bring Israel out of Egypt, redeem them, and take them as a people. Moses reports this but Israel does not listen because of anguish and hard bondage. The chapter then gives a genealogy focused on Moses and Aaron and returns to their commission before Pharaoh.",
           "verse_refs": [
-            "Exodus 6"
+            "Exodus 6:1-30"
           ],
           "evidence_ids": [
-            "exodus-literary-movement"
-          ],
-          "confidence": "high",
-          "interpretation_level": "fact"
-        }
-      ]
-    },
-    {
-      "kind": "section",
-      "title": "God's Covenant Renewal (6:1-8)",
-      "blocks": [
-        {
-          "id": "block_2",
-          "text": "God opens with the assurance that Pharaoh will release Israel through divine force. He then addresses Moses formally: 'I am Yahweh.' God recalls his prior appearances to Abraham, Isaac, and Jacob as El Shaddai and invokes the covenant established with them\u2014the promise to give Canaan as the land of their sojournings. The structure of this covenant renewal\u2014divine self-identification, recollection of prior commitment, and land promise\u2014is best understood in light of ancient Near Eastern covenant traditions, which provide relevant background for interpreting such formal commitments.",
-          "verse_refs": [
-            "Exodus 6:1-4"
-          ],
-          "evidence_ids": [
-            "exodus-ane-context",
-            "exodus-literary-movement"
+            "exodus-ane-context"
           ],
           "confidence": "medium",
-          "interpretation_level": "fact"
-        },
-        {
-          "id": "block_3",
-          "text": "God proceeds from covenant memory to action. Having heard Israel's groaning and remembered his covenant, he announces a series of redemptive acts: 'I will bring you out from under the burdens,' 'I will rid you out of their bondage,' and 'I will redeem you with an outstretched arm and with great judgments.' The passage culminates in the land promise: 'I will bring you in unto the land...and I will give it you for a heritage.' Throughout, liberation from bondage and possession of the promised land are presented as unified fulfillment of the ancestral covenant.",
-          "verse_refs": [
-            "Exodus 6:5-8"
-          ],
-          "evidence_ids": [
-            "exodus-literary-movement"
-          ],
-          "confidence": "high",
-          "interpretation_level": "fact"
-        }
-      ]
-    },
-    {
-      "kind": "section",
-      "title": "Israel's Response and Moses's Commission (6:9-13)",
-      "blocks": [
-        {
-          "id": "block_4",
-          "text": "When Moses relays God's words to Israel, they refuse to listen, their resistance attributed to despair and the weight of their bondage. This realistic detail marks the distance between divine promise and immediate experience. God then commissions Moses directly to confront Pharaoh with the command to release Israel. When Moses expresses doubt about his own adequacy, God overrides his objection and formally charges both Moses and Aaron with executing the deliverance. This section bridges the covenant renewal with the confrontation phase that will follow, advancing Exodus's narrative movement from oppression through covenant toward liberation.",
-          "verse_refs": [
-            "Exodus 6:9-13"
-          ],
-          "evidence_ids": [
-            "exodus-literary-movement"
-          ],
-          "confidence": "high",
-          "interpretation_level": "fact"
+          "interpretation_level": "disputed"
         }
       ]
     }
   ],
   "generated_metadata": {
-    "evidence_hash": "e4c1058f4a28f1cc5bf8b5e62be4350a28bf8c588dc40041387b0f8d30922ff9",
+    "evidence_hash": "9cde18a75e3c439b1c64786196a0b2acdc68261ed3684927e5d683ffcb0af647",
     "evidence_bundle_version": "1.0",
     "commentary_schema_version": "1.0",
-    "commentary_prompt_version": "1.0",
-    "model": "haiku",
-    "generated_timestamp": null
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T16:32:59.300255+00:00"
   },
   "failure_reason": null,
-  "validation_errors": [
-    "section[1].kind is unsupported: section",
-    "section[2].kind is unsupported: section"
-  ],
+  "validation_errors": [],
   "validation_warnings": []
 }
