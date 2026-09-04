@@ -100,6 +100,16 @@ NEXT = {
 ('Exodus',38): 'Exodus 38 records the bronze altar, laver, court, pillars, sockets, hangings, and entrance. It gives an accounting of the metals used, as collected by Ithamar, and identifies the work associated with Bezalel and Oholiab.',
 ('Exodus',39): 'Exodus 39 records the making of the priestly garments and their components. The work is inspected and found to correspond to Jehovah’s commands through Moses. Moses blesses the workers after seeing that the tabernacle and its furnishings are complete.',
 ('Exodus',40): 'Exodus 40 records the erection and anointing of the tabernacle and its furnishings. Aaron and his sons are washed, clothed, and appointed. The cloud covers the tent and Jehovah’s glory fills it; Israel journeys when the cloud lifts and remains when it does not.',
+('Leviticus',1): 'Leviticus 1 gives instructions for a burnt offering from cattle, sheep, goats, or birds. The offerer presents the animal, lays a hand on its head, and the priests handle the blood and altar fire. The offering is wholly burned as an offering of a pleasing odor.',
+('Leviticus',2): 'Leviticus 2 gives instructions for a grain offering of fine flour, oil, and frankincense, including baked forms. A memorial portion is burned while the remainder belongs to Aaron and his sons. No leaven or honey is burned, and salt is required with every offering.',
+('Leviticus',3): 'Leviticus 3 describes peace offerings from herd, flock, or goats. Fat and blood are treated as belonging to Jehovah: the fat is burned on the altar and the blood is poured out. The chapter closes by forbidding Israel to eat fat or blood.',
+('Leviticus',4): 'Leviticus 4 addresses sin offerings for the anointed priest, the congregation, a ruler, and an ordinary person when unintentional sin becomes known. The ritual varies by status, but includes sacrifice, blood handling, removal of fat, and disposal of the remainder as prescribed.',
+('Leviticus',5): 'Leviticus 5 identifies cases requiring confession and a sin offering, including failure to testify, ritual uncleanness, and rash oaths. It provides offerings scaled to means, from a female lamb or goat to birds or flour, and adds regulations for trespass involving holy things or deception.',
+('Leviticus',6): 'Leviticus 6 continues laws for trespass, the burnt offering, grain offering, and sin offering. It instructs priests to keep the altar fire burning, eat designated portions in a holy place, and observe restrictions concerning holiness, vessels, and blood.',
+('Leviticus',7): 'Leviticus 7 completes regulations for the guilt and peace offerings and distinguishes thank offerings from vows and freewill offerings. It sets time limits for eating sacrificial flesh, prohibits eating fat and blood, and identifies the portions assigned to priests.',
+('Leviticus',8): 'Leviticus 8 records Moses consecrating Aaron and his sons. They are washed, clothed, anointed, and associated with sacrifices of sin offering, burnt offering, and consecration. Blood is placed on Aaron and his sons, and they remain at the tent of meeting for seven days.',
+('Leviticus',9): 'Leviticus 9 records the priests’ first offerings on the eighth day. Aaron presents offerings for himself and the people, Moses and Aaron enter the tent, and Jehovah’s glory appears. Fire comes out from before Jehovah and consumes the offering, and the people shout and fall on their faces.',
+('Leviticus',10): 'Leviticus 10 records Nadab and Abihu offering unauthorized fire and dying before Jehovah. Aaron and his remaining sons receive instructions about mourning, priestly sobriety, distinguishing holy from common, and teaching Israel. Moses also addresses the handling of the sin offering when its blood was not brought inside.',
 }
 
 def block(book, ch, evidence):
@@ -120,6 +130,7 @@ def run():
     builder.rescan_progress(check_evidence=False)
     retry_failed = '--retry-failed' in sys.argv
     rerun_batch = '--rerun-batch' in sys.argv
+    batch_limit = 10 if '--checkpoint-10' in sys.argv else 25
     selected = []
     for book, ch in builder.discover_canonical_chapters():
         c = load_commentary(STORE, book, ch)
@@ -128,7 +139,7 @@ def run():
             should_process = (book, ch) in TARGETS
         if should_process:
             selected.append((book, ch))
-            if len(selected) == 25: break
+            if len(selected) == batch_limit: break
     if any((book, ch) not in NEXT for book, ch in selected):
         raise RuntimeError(f'Unexpected selection: {selected}')
     stamper = CommentaryGenerator(config)
