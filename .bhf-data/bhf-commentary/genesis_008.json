@@ -2,35 +2,17 @@
   "reference": "Genesis 8",
   "book": "Genesis",
   "chapter": 8,
-  "status": "partial",
+  "status": "validated",
   "sections": [
     {
       "kind": "chapter_overview",
-      "title": "Overview",
+      "title": "Waters recede and Noah leaves the ark",
       "blocks": [
         {
-          "id": "block_1",
-          "text": "Genesis 8 continues the flood narrative by describing the receding of waters and the gradual restoration of habitable earth. The chapter emphasizes God's active role in stopping the waters, controlling natural forces through wind and divine command, and ultimately preserving Noah, his household, and the animals within the ark. This preservation is presented as an act of divine remembrance and covenant, showing that judgment gives way to restoration and renewed blessing.",
+          "id": "overview_1",
+          "text": "Genesis 8 moves from God remembering Noah to the assuaging and retreat of the waters. The ark rests on the mountains of Ararat, birds test whether the ground is habitable, Noah removes the covering when the ground is dry, and God commands the occupants to leave and multiply.",
           "verse_refs": [
-            "Genesis 8:1-3"
-          ],
-          "evidence_ids": [
-            "the-flood:hebraic_worldview:0"
-          ],
-          "confidence": "medium",
-          "interpretation_level": "fact"
-        }
-      ]
-    },
-    {
-      "kind": "context",
-      "title": "Literary and Historical Context",
-      "blocks": [
-        {
-          "id": "block_4",
-          "text": "Genesis 8 belongs to the primeval history of Genesis, narrating events of the distant past before historical records. The precise chronology and literary formation of this narrative are matters of scholarly debate. The text preserves theological and narrative traditions whose exact historical grounding and sources remain uncertain. The detailed timeline and structured progression in this chapter reflect sophisticated storytelling within a religious tradition that emphasizes divine agency in directing natural and human affairs.",
-          "verse_refs": [
-            "Genesis 8:1-16"
+            "Genesis 8:1-19"
           ],
           "evidence_ids": [
             "the-flood:historical_context:0"
@@ -39,23 +21,53 @@
           "interpretation_level": "fact"
         }
       ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Repeated waiting and measured movement",
+      "blocks": [
+        {
+          "id": "timing_1",
+          "text": "The chapter\u2019s time markers\u2014one hundred and fifty days, the seventh and tenth months, forty days, repeated seven-day waits, and the first and second months\u2014slow the account and make the retreat of the waters a measured process. The text presents observation through the raven, the dove, and the visible drying of the ground rather than an abrupt transition.",
+          "verse_refs": [
+            "Genesis 8:3-14"
+          ],
+          "evidence_ids": [
+            "the-flood:historical_context:0"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "interpretive_questions",
+      "title": "Memory, worship, and the earth\u2019s rhythms",
+      "blocks": [
+        {
+          "id": "worship_1",
+          "text": "After leaving the ark, Noah builds an altar and offers from the clean animals and birds. The divine response addresses both the continuing evil inclination of humanity and the continuing regularity of seedtime, harvest, cold, heat, summer, winter, day, and night; the passage joins judgment\u2019s aftermath to ongoing creaturely life.",
+          "verse_refs": [
+            "Genesis 8:20-22"
+          ],
+          "evidence_ids": [
+            "the-flood:hebraic_worldview:0"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        }
+      ]
     }
   ],
   "generated_metadata": {
     "evidence_hash": "34400e7f4613f1684f78e363a6964880e2f702c84d5a6c8f83ec1222738c1436",
     "evidence_bundle_version": "1.0",
     "commentary_schema_version": "1.0",
-    "commentary_prompt_version": "1.0",
-    "model": "haiku",
-    "generated_timestamp": null
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T14:24:11.284771+00:00"
   },
   "failure_reason": null,
-  "validation_errors": [
-    "section[1].kind is unsupported: narrative_progression",
-    "section[1].block[0].interpretation_level is invalid",
-    "section[2].kind is unsupported: narrative_progression",
-    "section[2].block[0].interpretation_level is invalid",
-    "section[3].kind is unsupported: context"
-  ],
+  "validation_errors": [],
   "validation_warnings": []
 }

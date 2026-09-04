@@ -2,25 +2,59 @@
   "reference": "Genesis 4",
   "book": "Genesis",
   "chapter": 4,
-  "status": "partial",
+  "status": "validated",
   "sections": [
     {
-      "kind": "character_study",
-      "title": "Cain and Abel: Negative and Positive Examples",
+      "kind": "chapter_overview",
+      "title": "Cain, Abel, and widening violence",
       "blocks": [
         {
-          "id": "block_1",
-          "text": "Genesis 4 introduces Cain and Abel as the first pair of siblings whose moral distinction becomes the chapter's organizing principle. Abel keeps flocks while Cain tills the ground, but their occupational difference gives way to a more fundamental contrast. When both present offerings to Jehovah, Abel's receives divine favor while Cain's does not. This rejection triggers Cain's escalating anger and culminates in his murder of Abel\u2014establishing him as the negative sibling exemplar whose deeds were evil, against his brother's righteousness.",
+          "id": "overview_1",
+          "text": "Genesis 4 contrasts Cain, a worker of the ground, with Abel, a keeper of sheep. After Cain kills Abel, the chapter follows judgment and protection for Cain, his settlement and descendants, Lamech\u2019s violent boast, and the birth of Seth followed by the beginning of calling on the name of Jehovah.",
           "verse_refs": [
-            "Genesis 4:2",
-            "Genesis 4:3-5",
-            "Genesis 4:8"
+            "Genesis 4:1-26"
           ],
           "evidence_ids": [
-            "1jn-cain"
+            "cain:historical_context:0"
           ],
-          "confidence": "high",
+          "confidence": "medium",
           "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "things_easy_to_miss",
+      "title": "The ground as witness",
+      "blocks": [
+        {
+          "id": "ground_1",
+          "text": "The ground is not merely Cain\u2019s occupation. It receives Abel\u2019s blood, no longer yields its strength to Cain, and becomes part of Cain\u2019s fugitive condition. The repeated ground language connects the murder to the created setting in which both brothers worked.",
+          "verse_refs": [
+            "Genesis 4:8-14"
+          ],
+          "evidence_ids": [
+            "cain:ancient_near_east_context:0"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "interpretive_questions",
+      "title": "Sin at the threshold",
+      "blocks": [
+        {
+          "id": "questions_1",
+          "text": "The warning that sin is crouching at the door and that Cain must rule over it comes before the murder. The text presents Cain\u2019s anger and action as morally significant without explaining why Abel\u2019s offering was regarded and Cain\u2019s was not; that unanswered detail should remain an interpretive question.",
+          "verse_refs": [
+            "Genesis 4:3-8"
+          ],
+          "evidence_ids": [
+            "cain:historical_context:0"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
         }
       ]
     }
@@ -29,15 +63,11 @@
     "evidence_hash": "ccf7f85d015c4439287b531917a7a8d8c00213662b4b383212282fc1362ae804",
     "evidence_bundle_version": "1.0",
     "commentary_schema_version": "1.0",
-    "commentary_prompt_version": "1.0",
-    "model": "haiku",
-    "generated_timestamp": null
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T14:24:10.965047+00:00"
   },
   "failure_reason": null,
-  "validation_errors": [
-    "section[0].kind is unsupported: character_study",
-    "section[1].kind is unsupported: cultural_context",
-    "section[1].block[0].interpretation_level is invalid"
-  ],
+  "validation_errors": [],
   "validation_warnings": []
 }

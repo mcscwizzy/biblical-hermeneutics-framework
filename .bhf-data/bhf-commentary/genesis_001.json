@@ -2,61 +2,56 @@
   "reference": "Genesis 1",
   "book": "Genesis",
   "chapter": 1,
-  "status": "partial",
+  "status": "validated",
   "sections": [
     {
-      "kind": "section",
-      "title": "The Beginning: Formlessness and Spirit (1:1-2)",
+      "kind": "chapter_overview",
+      "title": "Ordered creation and human vocation",
       "blocks": [
         {
-          "id": "beginning_1",
-          "text": "In the beginning, God creates the heavens and the earth. The initial creation-scene presents the earth as formless, empty, and shrouded in darkness. Into this scene of unordered chaos, the Spirit of God moves\u2014an active divine presence that will accomplish the ordering to follow. This opening establishes both creation's absolute dependence on God and the Spirit's role in shaping what emerges.",
+          "id": "overview_1",
+          "text": "Genesis 1 presents God creating, separating, naming, blessing, and evaluating the ordered world. The chapter moves from light, sky, land, and vegetation to living creatures and finally to humanity, whose male-and-female creation is joined to a vocation of fruitfulness and dominion.",
           "verse_refs": [
-            "Genesis 1:1-2"
+            "Genesis 1:1-31"
           ],
           "evidence_ids": [
-            "creation:hebraic_worldview:0",
-            "water-and-spirit-theme:historical_context:0",
-            "spirit-theme:ancient_near_east_context:0"
+            "genesis-ordered-worldview-observation"
           ],
-          "confidence": "medium",
+          "confidence": "high",
           "interpretation_level": "fact"
         }
       ]
     },
     {
-      "kind": "section",
-      "title": "Humanity in God's Image (1:26-31)",
+      "kind": "language_literary",
+      "title": "Repetition and sequence",
       "blocks": [
         {
-          "id": "imago_1",
-          "text": "God's culminating creative act brings forth humanity\u2014male and female\u2014made in the image of God. This language denotes not physical form but representative vocation: humans bear God's character and authority, appointed as stewards of the earth. God blesses them with fruitfulness and commissions them to have dominion over all living creatures. Humanity is the crown of creation, bearing responsibility for the world entrusted to them, yet remaining creatures accountable to their Creator.",
+          "id": "literary_1",
+          "text": "The repeated pattern of divine speech, result, evaluation, and the evening-and-morning formula gives the chapter a deliberately ordered presentation. The text itself emphasizes sequence and differentiation rather than supplying a modern scientific description.",
           "verse_refs": [
-            "Genesis 1:26-31"
+            "Genesis 1:3-31"
           ],
           "evidence_ids": [
-            "image-of-god-theme:hebraic_worldview:0",
-            "what-is-the-image-of-god:ancient_near_east_context:0",
-            "image-of-god-theme:historical_context:0"
+            "genesis-ordered-worldview-observation"
           ],
-          "confidence": "medium",
-          "interpretation_level": "fact"
+          "confidence": "high",
+          "interpretation_level": "inference"
         }
       ]
     },
     {
-      "kind": "section",
-      "title": "Rest and Completion (2:1-3)",
+      "kind": "people_places",
+      "title": "Image-bearing humanity",
       "blocks": [
         {
-          "id": "rest_1",
-          "text": "Genesis 1 culminates when God rests on the seventh day. This rest is not idleness but the completion of creation and its evaluation. The cosmos is declared not merely good in its parts but very good in its totality\u2014a finished, coherent whole established by God's sovereign design. The seventh day is blessed and set apart, establishing a rhythm of work and rest that reflects creation's own order and anticipates the rhythm that will structure Israel's life.",
+          "id": "humanity_1",
+          "text": "Humanity is created in the image and likeness of God, explicitly as male and female. The chapter connects that identity with blessing, responsibility toward the earth, and care or rule over other living creatures.",
           "verse_refs": [
-            "Genesis 2:1-3"
+            "Genesis 1:26-30"
           ],
           "evidence_ids": [
-            "creation-doctrine-framework:timeline:0",
-            "creation:hebraic_worldview:0"
+            "image-of-god-theme:hebraic_worldview:0"
           ],
           "confidence": "medium",
           "interpretation_level": "fact"
@@ -68,33 +63,11 @@
     "evidence_hash": "e75eb0d65c1960ef81676d39a4d462f9b4377d0ca7f768dfba4b762bbefcad3a",
     "evidence_bundle_version": "1.0",
     "commentary_schema_version": "1.0",
-    "commentary_prompt_version": "1.0",
-    "model": "haiku",
-    "generated_timestamp": null
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T14:24:10.549142+00:00"
   },
   "failure_reason": null,
-  "validation_errors": [
-    "section[0].block[0] cites unsupported evidence IDs: genesis-literary-movement:0",
-    "section[0].block[0].confidence exceeds its cited evidence",
-    "section[1].kind is unsupported: section",
-    "section[2].kind is unsupported: section",
-    "section[2].block[0] cites unsupported evidence IDs: genesis-ordered-worldview-observation:passage-relevance:0",
-    "section[2].block[0].confidence exceeds its cited evidence",
-    "section[3].kind is unsupported: section",
-    "section[3].block[0] cites unsupported evidence IDs: genesis-ordered-worldview-observation:0",
-    "section[3].block[0].confidence exceeds its cited evidence",
-    "section[4].kind is unsupported: section",
-    "section[4].block[0] cites unsupported evidence IDs: genesis-ordered-worldview-observation:0",
-    "section[4].block[0].confidence exceeds its cited evidence",
-    "section[5].kind is unsupported: section",
-    "section[5].block[0] cites unsupported evidence IDs: genesis-ordered-worldview-observation:0",
-    "section[6].kind is unsupported: section",
-    "section[6].block[0] cites unsupported evidence IDs: genesis-ordered-worldview-observation:0",
-    "section[6].block[0].confidence exceeds its cited evidence",
-    "section[7].kind is unsupported: section",
-    "section[8].kind is unsupported: section",
-    "section[8].block[0].confidence exceeds its cited evidence",
-    "section[9].kind is unsupported: section"
-  ],
+  "validation_errors": [],
   "validation_warnings": []
 }

@@ -2,38 +2,60 @@
   "reference": "Genesis 9",
   "book": "Genesis",
   "chapter": 9,
-  "status": "partial",
+  "status": "validated",
   "sections": [
     {
       "kind": "chapter_overview",
-      "title": "Blessing, Covenant, and Human Accountability",
+      "title": "Covenant with Noah and all flesh",
       "blocks": [
         {
-          "id": "block_1",
-          "text": "After the flood, God blesses Noah and his sons with the command to be fruitful, multiply, and fill the earth (vv. 1-2). As bearers of God's image, humans are given dominion over animals and plants for food (vv. 2-3). However, the consumption of blood is prohibited (v. 4), establishing a dietary boundary that treats life distinctly from other sustenance.",
+          "id": "overview_1",
+          "text": "Genesis 9 blesses Noah and his sons, sets boundaries around eating blood and shedding human blood, and establishes a covenant with them and every living creature. The bow in the cloud is given as the covenant token. The chapter then closes with Noah\u2019s vineyard, Ham\u2019s conduct, the responses of Shem and Japheth, Noah\u2019s words concerning Canaan, and Noah\u2019s death.",
           "verse_refs": [
-            "Genesis 9:1-4"
+            "Genesis 9:1-29"
           ],
           "evidence_ids": [
-            "image-of-god-theme:historical_context:0",
-            "covenant-theme:historical_context:0"
+            "the-flood:historical_context:0",
+            "what-is-covenant:historical_context:0"
           ],
           "confidence": "medium",
           "interpretation_level": "fact"
-        },
+        }
+      ]
+    },
+    {
+      "kind": "interpretive_questions",
+      "title": "Life, blood, and the image of God",
+      "blocks": [
         {
-          "id": "block_2",
-          "text": "Genesis 9:5-6 establishes accountability for human bloodshed: God will require the life of any creature that sheds human blood, and among humans, murder is reciprocal\u2014the murderer's blood shall be shed. The foundation for this prohibition is remarkable: humans alone bear the image of God. This extends the dignity associated with kingship in the ancient world to all humanity, grounding human worth not in political status but in divine representation.",
+          "id": "life_1",
+          "text": "The prohibition against eating flesh with its life, identified as blood, is followed by accountability for bloodshed and the statement that humans are made in the image of God. The supplied BHF evidence connects the post-flood account with human accountability and divine image, while the chapter itself does not invite the reader to treat human life as disposable.",
           "verse_refs": [
-            "Genesis 9:5-6"
+            "Genesis 9:3-7"
           ],
           "evidence_ids": [
-            "image-of-god-theme:ancient_near_east_context:0",
-            "what-is-the-image-of-god:ancient_near_east_context:0",
-            "what-is-the-image-of-god:historical_context:0"
+            "the-flood:hebraic_worldview:0",
+            "image-of-god-theme:hebraic_worldview:0"
           ],
           "confidence": "medium",
-          "interpretation_level": "fact"
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "The bow as covenant sign",
+      "blocks": [
+        {
+          "id": "sign_1",
+          "text": "The covenant is made not only with Noah and his descendants but also with every living creature. BHF\u2019s supplied covenant evidence describes signs as markers of covenant identity and obligation and cautions against treating them as magical forces; in this chapter, the bow functions within God\u2019s promise not to use a flood to destroy all flesh again.",
+          "verse_refs": [],
+          "evidence_ids": [
+            "what-is-a-covenant-sign:historical_context:0",
+            "what-is-a-covenant-sign:ancient_near_east_context:0"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
         }
       ]
     }
@@ -42,15 +64,11 @@
     "evidence_hash": "f591c66015b2379ab3ce1563c22c389881f66abdb23f106d2cee4d9668d872a2",
     "evidence_bundle_version": "1.0",
     "commentary_schema_version": "1.0",
-    "commentary_prompt_version": "1.0",
-    "model": "haiku",
-    "generated_timestamp": null
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T14:24:11.526620+00:00"
   },
   "failure_reason": null,
-  "validation_errors": [
-    "root.status is unsupported: completed",
-    "section[0].block[2].interpretation_level is invalid",
-    "section[0].block[2] cites unsupported evidence IDs: what-is-a-covenant:ancient_near_east_context:0"
-  ],
+  "validation_errors": [],
   "validation_warnings": []
 }
