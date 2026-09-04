@@ -3,14 +3,15 @@
   "book": "1 Chronicles",
   "chapter": 21,
   "status": "validated",
+  "evidence_availability": "THIN",
   "sections": [
     {
       "kind": "chapter_overview",
-      "title": "Overview",
+      "title": "Chapter overview",
       "blocks": [
         {
-          "id": "block_1",
-          "text": "The chapter narrates David's census of Israel and the subsequent plague sent by God in response. After acknowledging his sin and receiving God's mercy through the prophet Gad, David proceeds to purchase Ornan's threshing floor and build an altar there. This location becomes pivotal in Israel's religious history, as David identifies it as the site designated for the LORD's house and permanent altar.",
+          "id": "overview",
+          "text": "1 Chronicles 21 contains 30 verses. It opens with: And Satan stood up against Israel, and moved David to number Israel. It concludes with: But David could not go before it to inquire of God; for he was afraid because of the sword of the angel of Jehovah.",
           "verse_refs": [
             "1 Chronicles 21:1-30"
           ],
@@ -27,9 +28,9 @@
     "evidence_hash": "12cbf7f1e39a667825cba2208ba7729cadab6e6dafe30d917d1140056b4df48d",
     "evidence_bundle_version": "1.0",
     "commentary_schema_version": "1.0",
-    "commentary_prompt_version": "1.0",
-    "model": "haiku",
-    "generated_timestamp": null
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:10:28.301411+00:00"
   },
   "failure_reason": null,
   "validation_errors": [],

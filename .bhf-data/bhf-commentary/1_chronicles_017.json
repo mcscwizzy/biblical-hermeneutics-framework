@@ -3,22 +3,23 @@
   "book": "1 Chronicles",
   "chapter": 17,
   "status": "validated",
+  "evidence_availability": "THIN",
   "sections": [
     {
       "kind": "chapter_overview",
-      "title": "Overview",
+      "title": "Chapter overview",
       "blocks": [
         {
-          "id": "block_1",
-          "text": "This chapter records the pivotal Davidic covenant. David, dwelling in his cedar palace while the ark remains under curtains, proposes to Nathan that he should build a permanent temple. But God, through Nathan, redirects David's intention. Rather than David building for God, God promises to build for David: his descendants will construct the temple, and God will establish David's dynasty and throne forever. This covenant transforms the narrative from David's initiative into God's sovereign plan for both the kingdom and the temple.",
+          "id": "overview",
+          "text": "1 Chronicles 17 contains 27 verses. It opens with: And it came to pass, when David dwelt in his house, that David said to Nathan the prophet, Lo, I dwell in a house of cedar, but the ark of the covenant of Jehovah `dwelleth' under curtains. It concludes with: and now it hath pleased thee to bless the house of thy servant, that it may continue for ever before thee: for thou, O Jehovah, hast blessed, and it is blessed for ever.",
           "verse_refs": [
-            "1 Chronicles 17:1-13"
+            "1 Chronicles 17:1-27"
           ],
           "evidence_ids": [
             "first-chronicles-davidic-house"
           ],
           "confidence": "high",
-          "interpretation_level": "fact"
+          "interpretation_level": "disputed"
         }
       ]
     }
@@ -27,9 +28,9 @@
     "evidence_hash": "c507987fefa7418928c395c87ff8133d8a1b5ea3985435aa124f0b5f91c44e72",
     "evidence_bundle_version": "1.0",
     "commentary_schema_version": "1.0",
-    "commentary_prompt_version": "1.0",
-    "model": "haiku",
-    "generated_timestamp": null
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:10:28.262577+00:00"
   },
   "failure_reason": null,
   "validation_errors": [],

@@ -1,9 +1,9 @@
 {
-  "reference": "1 Chronicles 11",
+  "reference": "1 Chronicles 4",
   "book": "1 Chronicles",
-  "chapter": 11,
+  "chapter": 4,
   "status": "validated",
-  "evidence_availability": "THIN",
+  "evidence_availability": "DATA_GAP",
   "sections": [
     {
       "kind": "chapter_overview",
@@ -11,13 +11,11 @@
       "blocks": [
         {
           "id": "overview",
-          "text": "1 Chronicles 11 contains 47 verses. It opens with: Then all Israel gathered themselves to David unto Hebron, saying, Behold, we are thy bone and thy flesh. It concludes with: Eliel, and Obed, and Jaasiel the Mezobaite.",
+          "text": "1 Chronicles 4 contains 43 verses. It opens with: The sons of Judah: Perez, Hezron, and Carmi, and Hur, and Shobal. It concludes with: And they smote the remnant of the Amalekites that escaped, and have dwelt there unto this day.",
           "verse_refs": [
-            "1 Chronicles 11:1-47"
+            "1 Chronicles 4:1-43"
           ],
-          "evidence_ids": [
-            "first-chronicles-all-israel-david"
-          ],
+          "evidence_ids": [],
           "confidence": "high",
           "interpretation_level": "fact"
         }
@@ -25,12 +23,12 @@
     }
   ],
   "generated_metadata": {
-    "evidence_hash": "6dd2cc712be2299ae6b8831877757f9b34d3191f7d93594a0d1ba9b6faa34de9",
+    "evidence_hash": "e0850205002d3752bbc7a69dfa2fbb1148793f179b4c8c0094499dc4c5bbd6ac",
     "evidence_bundle_version": "1.0",
     "commentary_schema_version": "1.0",
     "commentary_prompt_version": "1.1",
     "model": "luna-codex-development",
-    "generated_timestamp": "2026-09-04T18:10:28.140428+00:00"
+    "generated_timestamp": "2026-09-04T18:10:28.023143+00:00"
   },
   "failure_reason": null,
   "validation_errors": [],

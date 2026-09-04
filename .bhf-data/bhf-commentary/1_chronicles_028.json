@@ -3,22 +3,23 @@
   "book": "1 Chronicles",
   "chapter": 28,
   "status": "validated",
+  "evidence_availability": "THIN",
   "sections": [
     {
       "kind": "chapter_overview",
-      "title": "Overview",
+      "title": "Chapter overview",
       "blocks": [
         {
-          "id": "block_1",
-          "text": "David convenes Israel's full leadership\u2014princes of the tribes, military captains, administrators, and officials\u2014in Jerusalem for a crucial national assembly. This gathering provides the setting for David's address regarding the temple project and succession. David's role, though he will not build the temple himself, has been extensive and foundational. He has systematically prepared materials and architectural plans for Solomon's temple construction, organized the essential personnel required for the work including priests, Levites, musicians, gatekeepers, and treasurers, and mobilized public support for the monumental project ahead.",
+          "id": "overview",
+          "text": "1 Chronicles 28 contains 21 verses. It opens with: And David assembled all the princes of Israel, the princes of the tribes, and the captains of the companies that served the king by course, and the captains of thousands, and the captains of hundreds, and the rulers over all the substance and possessions of the king and of his sons, with the officers, and the mighty men, even all the mighty men of valor, unto Jerusalem. It concludes with: And, behold, there are the courses of the priests and the Levites, for all the service of the house of God: and there shall be with thee in all manner of work every willing man that hath skill, for any manner of service: also the captains and all the people will be wholly at thy commandment.",
           "verse_refs": [
-            "1 Chronicles 28:1-2"
+            "1 Chronicles 28:1-21"
           ],
           "evidence_ids": [
             "first-chronicles-david-prepares"
           ],
           "confidence": "high",
-          "interpretation_level": "fact"
+          "interpretation_level": "disputed"
         }
       ]
     }
@@ -27,9 +28,9 @@
     "evidence_hash": "ece0d80a0825061728ac109782e8fedc03eb671462be917cf61983f323fde3cf",
     "evidence_bundle_version": "1.0",
     "commentary_schema_version": "1.0",
-    "commentary_prompt_version": "1.0",
-    "model": "haiku",
-    "generated_timestamp": null
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:10:28.390287+00:00"
   },
   "failure_reason": null,
   "validation_errors": [],

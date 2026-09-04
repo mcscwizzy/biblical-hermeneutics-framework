@@ -3,16 +3,17 @@
   "book": "1 Chronicles",
   "chapter": 15,
   "status": "validated",
+  "evidence_availability": "THIN",
   "sections": [
     {
       "kind": "chapter_overview",
-      "title": "Overview",
+      "title": "Chapter overview",
       "blocks": [
         {
-          "id": "block_1",
-          "text": "Following an earlier failed attempt to move the ark, David implements a carefully ordered correction. He assembles the priests and Levites to carry the ark precisely according to the prescribed ordinance, with the Levites appointed as God's chosen carriers. The ark is borne on their shoulders with the staves, exactly as Moses had commanded. By this proper procedure and the establishment of worship arrangements before the ark, David ensures that the transportation of the ark conforms to the requirements that had been violated in the initial procession.",
+          "id": "overview",
+          "text": "1 Chronicles 15 contains 29 verses. It opens with: And `David' made him houses in the city of David; and he prepared a place for the ark of God, and pitched for it a tent. It concludes with: And it came to pass, as the ark of the covenant of Jehovah came to the city of David, that Michal the daughter of Saul looked out at the window, and saw king David dancing and playing; and she despised him in her heart.",
           "verse_refs": [
-            "1 Chronicles 15:1-15"
+            "1 Chronicles 15:1-29"
           ],
           "evidence_ids": [
             "first-chronicles-ark-ordered"
@@ -27,9 +28,9 @@
     "evidence_hash": "aba179f14a6088305be71c7d1df973e8a549c5685a7cb8661096c8e1ceaa6c68",
     "evidence_bundle_version": "1.0",
     "commentary_schema_version": "1.0",
-    "commentary_prompt_version": "1.0",
-    "model": "haiku",
-    "generated_timestamp": null
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:10:28.215300+00:00"
   },
   "failure_reason": null,
   "validation_errors": [],

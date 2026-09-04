@@ -2,106 +2,24 @@
   "reference": "1 Chronicles 9",
   "book": "1 Chronicles",
   "chapter": 9,
-  "status": "partial",
+  "status": "validated",
+  "evidence_availability": "THIN",
   "sections": [
     {
       "kind": "chapter_overview",
-      "title": "Overview",
+      "title": "Chapter overview",
       "blocks": [
         {
-          "id": "block_1",
-          "text": "First Chronicles 9 presents genealogical registers of those who inhabited their possessions after the exile to Babylon. The chapter records residents of Jerusalem and surrounding settlements, organized by tribal affiliation and family houses. It documents priests and Levites who returned to service, connecting the post-exilic community to the preexilic structures that had characterized the earlier kingdom.",
+          "id": "overview",
+          "text": "1 Chronicles 9 contains 44 verses. It opens with: So all Israel were reckoned by genealogies; and, behold, they are written in the book of the kings of Israel: and Judah was carried away captive to Babylon for their transgression. It concludes with: And Azel had six sons, whose names are these: Azrikam, Bocheru, and Ishmael, and Sheariah, and Obadiah, and Hanan: these were the sons of Azel.",
           "verse_refs": [
-            "1 Chronicles 9:1",
-            "1 Chronicles 9:2"
+            "1 Chronicles 9:1-44"
           ],
           "evidence_ids": [
             "first-chronicles-genealogical-identity"
           ],
           "confidence": "high",
-          "interpretation_level": "fact"
-        }
-      ]
-    },
-    {
-      "kind": "restoration_settlement",
-      "title": "The Post-Captivity Settlement",
-      "blocks": [
-        {
-          "id": "block_2",
-          "text": "The chapter establishes its historical frame clearly: after Judah's captivity to Babylon due to transgression, the first inhabitants who dwelt in their possessions in their cities were Israel, the priests, the Levites, and the Nethinim. These genealogies thus document the reconstitution of the community and its leadership structures following the exile.",
-          "verse_refs": [
-            "1 Chronicles 9:1",
-            "1 Chronicles 9:2"
-          ],
-          "evidence_ids": [
-            "first-chronicles-genealogical-identity"
-          ],
-          "confidence": "high",
-          "interpretation_level": "fact"
-        }
-      ]
-    },
-    {
-      "kind": "community_composition",
-      "title": "Jerusalem and Regional Residents",
-      "blocks": [
-        {
-          "id": "block_3",
-          "text": "Among Jerusalem's inhabitants were representatives from multiple tribal traditions: Judah, Benjamin, Ephraim, and Manasseh. Prominent individuals such as Uthai (of Judah, through Perez), Sallu (of Benjamin, through Meshullam), and others are listed as heads of their fathers' houses, each with genealogical credentials and household counts. These entries document the organizational structure through which the restored community reestablished itself in the city.",
-          "verse_refs": [
-            "1 Chronicles 9:3",
-            "1 Chronicles 9:4",
-            "1 Chronicles 9:7",
-            "1 Chronicles 9:8",
-            "1 Chronicles 9:9"
-          ],
-          "evidence_ids": [
-            "first-chronicles-genealogical-identity"
-          ],
-          "confidence": "high",
-          "interpretation_level": "fact"
-        }
-      ]
-    },
-    {
-      "kind": "priestly_service",
-      "title": "Priestly Leadership and Service",
-      "blocks": [
-        {
-          "id": "block_4",
-          "text": "The chapter documents priestly genealogies, including Azariah, identified as ruler of the house of God and traced through Zadok and Ahitub, as well as families such as Jedaiah, Jehoiarib, Adaiah, and Maasai. These priests, numbering over 1,760 and described as very able men for the work of the service of the house of God, represent the reinstitution of priestly leadership and cultic function. Their genealogical documentation connects them to the preexilic priesthood.",
-          "verse_refs": [
-            "1 Chronicles 9:10",
-            "1 Chronicles 9:11",
-            "1 Chronicles 9:12",
-            "1 Chronicles 9:13"
-          ],
-          "evidence_ids": [
-            "first-chronicles-genealogical-identity"
-          ],
-          "confidence": "high",
-          "interpretation_level": "fact"
-        }
-      ]
-    },
-    {
-      "kind": "levitical_service",
-      "title": "Levitical Genealogies",
-      "blocks": [
-        {
-          "id": "block_5",
-          "text": "The chapter records Levites who returned to service, including Shemaiah of the sons of Merari, and others such as Mattaniah (descended from the line of Asaph), Obadiah (descended from Jeduthun), and Bakbakkar. These genealogies connect the restored Levites to established preexilic lineages and musical/liturgical traditions, indicating the restoration of Levitical functions within the post-exilic temple community.",
-          "verse_refs": [
-            "1 Chronicles 9:14",
-            "1 Chronicles 9:15",
-            "1 Chronicles 9:16"
-          ],
-          "evidence_ids": [
-            "first-chronicles-genealogical-identity"
-          ],
-          "confidence": "high",
-          "interpretation_level": "fact"
+          "interpretation_level": "disputed"
         }
       ]
     }
@@ -110,16 +28,11 @@
     "evidence_hash": "c007b11fb9b7e9c07a5684d46ef29f33c74acd87b8ffc050dd8368a98c71737e",
     "evidence_bundle_version": "1.0",
     "commentary_schema_version": "1.0",
-    "commentary_prompt_version": "1.0",
-    "model": "haiku",
-    "generated_timestamp": null
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:10:28.092917+00:00"
   },
   "failure_reason": null,
-  "validation_errors": [
-    "section[1].kind is unsupported: restoration_settlement",
-    "section[2].kind is unsupported: community_composition",
-    "section[3].kind is unsupported: priestly_service",
-    "section[4].kind is unsupported: levitical_service"
-  ],
+  "validation_errors": [],
   "validation_warnings": []
 }
