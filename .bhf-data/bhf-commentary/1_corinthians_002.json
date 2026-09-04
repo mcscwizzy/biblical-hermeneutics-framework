@@ -2,101 +2,37 @@
   "reference": "1 Corinthians 2",
   "book": "1 Corinthians",
   "chapter": 2,
-  "status": "partial",
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
   "sections": [
     {
-      "kind": "section",
-      "title": "Paul's Arrival: Weakness and Spirit Power (2:1-5)",
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
       "blocks": [
         {
-          "id": "block_2",
-          "text": "Paul came to Corinth deliberately rejecting rhetorical superiority, presenting God's testimony while experiencing weakness, fear, and trembling. His preaching relied on the Spirit's demonstration rather than persuasive human words, so that faith would anchor in God's power rather than human eloquence. This deliberate disavowal of rhetorical prestige established a different foundation for believing community.",
+          "id": "overview",
+          "text": "1 Corinthians 2 contains 16 verses. It opens with: And I, brethren, when I came unto you, came not with excellency of speech or of wisdom, proclaiming to you the testimony of God. It concludes with: For who hath known the mind of the Lord, that he should instruct him? But we have the mind of Christ.",
           "verse_refs": [
-            "1 Corinthians 2:1-5"
+            "1 Corinthians 2:1-16"
           ],
           "evidence_ids": [
-            "corinth-cross-proclamation",
-            "corinth-cross-proclamation:passage-relevance"
+            "1cor-cross"
           ],
-          "confidence": "medium",
-          "interpretation_level": "fact"
-        }
-      ]
-    },
-    {
-      "kind": "section",
-      "title": "Hidden Wisdom and Rulers' Blindness (2:6-9)",
-      "blocks": [
-        {
-          "id": "block_3",
-          "text": "Paul speaks of God's wisdom, prepared before the world's foundation for those who love God, yet concealed from the rulers of this age. Their ignorance of God's wisdom led directly to crucifying the Lord of glory. The hidden things of God exceed human sight, hearing, and conceptual grasp. This passage presents wisdom not as philosophical sophistication but as knowledge accessible only through divine unveiling.",
-          "verse_refs": [
-            "1 Corinthians 2:6-9"
-          ],
-          "evidence_ids": [
-            "corinthian-spirit-wisdom-discernment",
-            "cross-power-status-reversal"
-          ],
-          "confidence": "medium",
-          "interpretation_level": "fact"
-        }
-      ]
-    },
-    {
-      "kind": "section",
-      "title": "Spirit Revelation and Spiritual Discernment (2:10-15)",
-      "blocks": [
-        {
-          "id": "block_4",
-          "text": "God reveals hidden things through the Spirit to believers, for the Spirit comprehends God's depths. Just as a person's own spirit grasps what belongs to that person, so the Spirit of God knows God's mind. Believers receive the Spirit of God, not the world's spirit, enabling them to understand God's freely given gifts. The spiritual person discerns these realities while the natural person cannot receive them, finding them foolish because spiritual truths require spiritual judgment.",
-          "verse_refs": [
-            "1 Corinthians 2:10-15"
-          ],
-          "evidence_ids": [
-            "corinthian-spirit-wisdom-discernment",
-            "corinthian-spirit-wisdom-discernment:passage-relevance"
-          ],
-          "confidence": "medium",
-          "interpretation_level": "fact"
-        }
-      ]
-    },
-    {
-      "kind": "section",
-      "title": "The Cross as Power and Wisdom (2:1-9)",
-      "blocks": [
-        {
-          "id": "block_5",
-          "text": "The chapter moves toward a central paradox: Jesus Christ crucified, appearing weak and defeated, constitutes God's actual power and wisdom. This reversal locates authority not in transcending human vulnerability but in faith anchored in the crucified Lord. The Corinthian community itself, often composed of people without high social status, embodies this reality through dependence on God rather than on worldly prestige or rhetoric.",
-          "verse_refs": [
-            "1 Corinthians 2:1-9"
-          ],
-          "evidence_ids": [
-            "cross-power-status-reversal",
-            "cross-power-status-reversal:passage-relevance"
-          ],
-          "confidence": "medium",
-          "interpretation_level": "fact"
+          "confidence": "high",
+          "interpretation_level": "disputed"
         }
       ]
     }
   ],
   "generated_metadata": {
-    "evidence_hash": "c9edcf959d10d38eaeee11707d3c939abd7302c11600ab019555ee726109bad8",
+    "evidence_hash": "754491a9d86c890d628da7f7f7044e9744a2aa4b3eef7015d3715ecdba663e94",
     "evidence_bundle_version": "1.0",
     "commentary_schema_version": "1.0",
-    "commentary_prompt_version": "1.0",
-    "model": "haiku",
-    "generated_timestamp": null
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:41:01.980597+00:00"
   },
   "failure_reason": null,
-  "validation_errors": [
-    "root.status is unsupported: completed",
-    "section[0].block[0].interpretation_level is invalid",
-    "section[1].kind is unsupported: section",
-    "section[2].kind is unsupported: section",
-    "section[3].kind is unsupported: section",
-    "section[4].kind is unsupported: section"
-  ],
+  "validation_errors": [],
   "validation_warnings": []
 }

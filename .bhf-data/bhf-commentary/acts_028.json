@@ -2,44 +2,37 @@
   "reference": "Acts 28",
   "book": "Acts",
   "chapter": 28,
-  "status": "partial",
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
   "sections": [
     {
-      "kind": "narrative",
-      "title": "Custody and Lodging",
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
       "blocks": [
         {
-          "id": "block_5",
-          "text": "Acts 28 describes Paul's Roman situation as a distinctive arrangement. Rather than confinement in a prison cell, Paul lived in his own rented lodging under guard by a Roman soldier. This guarded residence permitted Paul to welcome visitors, to summon Jewish leaders for meetings, and to teach openly. His status as a prisoner appealing to Caesar thus did not mean isolation from the communities he sought to reach.",
+          "id": "overview",
+          "text": "Acts 28 contains 31 verses. It opens with: And when we were escaped, then we knew that the island was called Melita. It concludes with: preaching the kingdom of God, and teaching the things concerning the Lord Jesus Christ with all boldness, none forbidding him.",
           "verse_refs": [
-            "Acts 28:16"
+            "Acts 28:1-31"
           ],
           "evidence_ids": [
             "acts-28-custody-and-rented-lodging"
           ],
           "confidence": "medium",
-          "interpretation_level": "fact"
+          "interpretation_level": "disputed"
         }
       ]
     }
   ],
   "generated_metadata": {
-    "evidence_hash": "91a575ff5a90e415c4998ed2e089920ce7a2e1788cc90769e96c34ba08b29e19",
+    "evidence_hash": "1fc32316db2ab781b8d37b31ad070a8c5d2cf9f4fb88a2a3421ace418154d276",
     "evidence_bundle_version": "1.0",
     "commentary_schema_version": "1.0",
-    "commentary_prompt_version": "1.0",
-    "model": "haiku",
-    "generated_timestamp": null
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:40:54.878605+00:00"
   },
   "failure_reason": null,
-  "validation_errors": [
-    "section[0].kind is unsupported: narrative",
-    "section[0].block[0].confidence exceeds its cited evidence",
-    "section[0].block[1].confidence exceeds its cited evidence",
-    "section[1].kind is unsupported: narrative",
-    "section[1].block[0].confidence exceeds its cited evidence",
-    "section[1].block[1].confidence exceeds its cited evidence",
-    "section[2].kind is unsupported: narrative"
-  ],
+  "validation_errors": [],
   "validation_warnings": []
 }
