@@ -3,33 +3,34 @@
   "book": "Deuteronomy",
   "chapter": 25,
   "status": "validated",
+  "evidence_availability": "AVAILABLE",
   "sections": [
     {
       "kind": "chapter_overview",
-      "title": "Overview",
+      "title": "Chapter overview",
       "blocks": [
         {
-          "id": "block_1",
-          "text": "Deuteronomy 25 presents legal provisions addressing multiple matters: limits on corporal punishment, treatment of animals, family and land continuity, public shame rituals, and conflict resolution. The chapter's central family provision appears in verses 5-10, establishing a levirate marriage practice requiring a man to marry his deceased brother's widow if the brother left no son, so the first child would perpetuate the dead brother's name. These provisions concern family and land continuity. Related provisions appear in Leviticus 25 and Ruth 4, but must not be treated as descriptions of one identical legal mechanism\u2014each text reflects its own particular context and concerns.",
+          "id": "overview",
+          "text": "Deuteronomy 25 contains 19 verses. It opens with: If there be a controversy between men, and they come unto judgment, and `the judges' judge them; then they shall justify the righteous, and condemn the wicked; It concludes with: Therefore it shall be, when Jehovah thy God hath given thee rest from all thine enemies round about, in the land which Jehovah thy God giveth thee for an inheritance to possess it, that thou shalt blot out the remembrance of Amalek from under heaven; thou shalt not forget.",
           "verse_refs": [
-            "Deuteronomy 25:1-13"
+            "Deuteronomy 25:1-19"
           ],
           "evidence_ids": [
-            "kinship-legal-caution"
+            "1tim-elder-pay"
           ],
-          "confidence": "medium",
-          "interpretation_level": "fact"
+          "confidence": "high",
+          "interpretation_level": "disputed"
         }
       ]
     }
   ],
   "generated_metadata": {
-    "evidence_hash": "93908a9bfae39b92023ba1c0a75d10bc3764cc1ef1a89d970610f69977d37796",
+    "evidence_hash": "969fe98940c4f8dab562291ee1b4cdce9d01765b4be16a820e114e3369ba8606",
     "evidence_bundle_version": "1.0",
     "commentary_schema_version": "1.0",
-    "commentary_prompt_version": "1.0",
-    "model": "haiku",
-    "generated_timestamp": null
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:02:21.064375+00:00"
   },
   "failure_reason": null,
   "validation_errors": [],

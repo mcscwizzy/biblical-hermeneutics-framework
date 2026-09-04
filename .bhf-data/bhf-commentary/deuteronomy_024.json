@@ -2,70 +2,35 @@
   "reference": "Deuteronomy 24",
   "book": "Deuteronomy",
   "chapter": 24,
-  "status": "partial",
+  "status": "validated",
+  "evidence_availability": "DATA_GAP",
   "sections": [
     {
       "kind": "chapter_overview",
-      "title": "Overview: Laws for Covenant Community Life",
+      "title": "Chapter overview",
       "blocks": [
         {
-          "id": "block_1",
-          "text": "Deuteronomy 24 comprises case laws addressing household relations, creditor obligations, and community practices. These regulations form part of the covenant instruction in Deuteronomy 5-26, where Moses expounds the covenant obligations binding the generation poised to enter the promised land.",
+          "id": "overview",
+          "text": "Deuteronomy 24 contains 22 verses. It opens with: When a man taketh a wife, and marrieth her, then it shall be, if she find no favor in his eyes, because he hath found some unseemly thing in her, that he shall write her a bill of divorcement, and give it in her hand, and send her out of his house. It concludes with: And thou shalt remember that thou wast a bondman in the land of Egypt: therefore I command thee to do this thing.",
           "verse_refs": [
-            "Deuteronomy 24:1-13"
+            "Deuteronomy 24:1-22"
           ],
-          "evidence_ids": [
-            "deuteronomy:timeline:2"
-          ],
-          "confidence": "medium",
-          "interpretation_level": "fact"
-        },
-        {
-          "id": "block_2",
-          "text": "Deuteronomy's covenant framework joins exclusive allegiance to YHWH with justice and deliberate care for vulnerable community members. The Torah is presented as instruction shaping household economics, community relations, and worship. Even specific case laws participate in this covenantal vision of shared communal life.",
-          "verse_refs": [
-            "Deuteronomy 24"
-          ],
-          "evidence_ids": [
-            "deuteronomy:hebraic_worldview:0"
-          ],
-          "confidence": "medium",
-          "interpretation_level": "fact"
-        }
-      ]
-    },
-    {
-      "kind": "historical_setting",
-      "title": "Narrated Setting",
-      "blocks": [
-        {
-          "id": "block_3",
-          "text": "Deuteronomy's narrated setting is the plains of Moab east of the Jordan in the fortieth year of wilderness wandering. Moses addresses the successor generation to those who received the covenant at Horeb, speaking as though the covenant's past and present obligations belong to them as they prepare to cross into the land.",
-          "verse_refs": [
-            "Deuteronomy 24"
-          ],
-          "evidence_ids": [
-            "deuteronomy:historical_context:0",
-            "deuteronomy:historical_setting:0",
-            "deuteronomy:date_ranges:0"
-          ],
-          "confidence": "medium",
+          "evidence_ids": [],
+          "confidence": "high",
           "interpretation_level": "fact"
         }
       ]
     }
   ],
   "generated_metadata": {
-    "evidence_hash": "c5e1436f4f26831dae784aabe444c8bf27e7bf478c42468054e36c749ec70817",
+    "evidence_hash": "a77bba69bd2dbb8124b2afbeb6acb50493eae6147685678ec8c42d52ce48e4f4",
     "evidence_bundle_version": "1.0",
     "commentary_schema_version": "1.0",
-    "commentary_prompt_version": "1.0",
-    "model": "haiku",
-    "generated_timestamp": null
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:02:20.945056+00:00"
   },
   "failure_reason": null,
-  "validation_errors": [
-    "section[1].kind is unsupported: historical_setting"
-  ],
+  "validation_errors": [],
   "validation_warnings": []
 }

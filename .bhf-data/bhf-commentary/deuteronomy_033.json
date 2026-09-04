@@ -2,21 +2,21 @@
   "reference": "Deuteronomy 33",
   "book": "Deuteronomy",
   "chapter": 33,
-  "status": "partial",
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
   "sections": [
     {
-      "kind": "tribal_blessing",
-      "title": "The Blessing of Levi (Verses 8-11)",
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
       "blocks": [
         {
-          "id": "block_2",
-          "text": "Levi's blessing identifies the tribe with sacred mediation and religious instruction. Levi possesses the Thummim and Urim\u2014divination instruments associated with priestly judgment\u2014and is consecrated to teach Jacob's ordinances and Israel's law. The text emphasizes their covenant loyalty: they separated from family obligations to observe God's word and keep his covenant. Their responsibilities centered on two core functions: placing incense before God and offering burnt offerings on the altar. These were central to maintaining Israel's covenant relationship with God.",
+          "id": "overview",
+          "text": "Deuteronomy 33 contains 29 verses. It opens with: And this is the blessing, wherewith Moses the man of God blessed the children of Israel before his death. It concludes with: Happy art thou, O Israel: Who is like unto thee, a people saved by Jehovah, The shield of thy help, And the sword of thy excellency! And thine enemies shall submit themselves unto thee; And thou shalt tread upon their high places.",
           "verse_refs": [
-            "Deuteronomy 33:8-11"
+            "Deuteronomy 33:1-29"
           ],
           "evidence_ids": [
-            "priesthood:hebraic_worldview:0",
-            "priesthood:historical_context:0"
+            "priesthood:ancient_near_east_context:0"
           ],
           "confidence": "medium",
           "interpretation_level": "fact"
@@ -28,16 +28,11 @@
     "evidence_hash": "5f1275fb7bb3f853274940a59f357f456fcb51c27a87962ebd526f5aec4d9b2b",
     "evidence_bundle_version": "1.0",
     "commentary_schema_version": "1.0",
-    "commentary_prompt_version": "1.0",
-    "model": "haiku",
-    "generated_timestamp": null
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:02:21.909139+00:00"
   },
   "failure_reason": null,
-  "validation_errors": [
-    "section[0].block[0].interpretation_level is invalid",
-    "section[1].kind is unsupported: tribal_blessing",
-    "section[2].kind is unsupported: theological_context",
-    "section[2].block[0].interpretation_level is invalid"
-  ],
+  "validation_errors": [],
   "validation_warnings": []
 }

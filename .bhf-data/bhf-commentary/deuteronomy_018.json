@@ -2,59 +2,21 @@
   "reference": "Deuteronomy 18",
   "book": "Deuteronomy",
   "chapter": 18,
-  "status": "partial",
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
   "sections": [
     {
       "kind": "chapter_overview",
-      "title": "Overview and Setting",
+      "title": "Chapter overview",
       "blocks": [
         {
-          "id": "block_1",
-          "text": "Deuteronomy 18 belongs to Moses' covenant instruction, delivered on the plains of Moab to the generation about to cross into the promised land. The chapter addresses the leadership structures and spiritual authority of the covenant community. These regulations reflect Deuteronomy's central concern with covenant loyalty, community order, and exclusive allegiance to YHWH.",
-          "verse_refs": [
-            "Deuteronomy 18"
-          ],
-          "evidence_ids": [
-            "deuteronomy:timeline:2",
-            "deuteronomy:original_audience:0",
-            "deuteronomy:historical_context:0"
-          ],
-          "confidence": "medium",
-          "interpretation_level": "fact"
-        }
-      ]
-    },
-    {
-      "kind": "section",
-      "title": "Leadership and Covenant Community",
-      "blocks": [
-        {
-          "id": "block_2",
-          "text": "Deuteronomy 18 establishes the roles of priesthood and prophecy within the covenant community's spiritual order. The covenant framework emphasized throughout Deuteronomy stresses worship, justice, care for vulnerable people, and obedience to YHWH's instruction. The regulations for priesthood and prophetic authority form part of this instructional structure that shapes community leadership and the people's access to divine guidance.",
+          "id": "overview",
+          "text": "Deuteronomy 18 contains 22 verses. It opens with: The priests the Levites, `even' all the tribe of Levi, shall have no portion nor inheritance with Israel: they shall eat the offerings of Jehovah made by fire, and his inheritance. It concludes with: when a prophet speaketh in the name of Jehovah, if the thing follow not, nor come to pass, that is the thing which Jehovah hath not spoken: the prophet hath spoken it presumptuously, thou shalt not be afraid of him.",
           "verse_refs": [
             "Deuteronomy 18:1-22"
           ],
           "evidence_ids": [
-            "deuteronomy:hebraic_worldview:0"
-          ],
-          "confidence": "medium",
-          "interpretation_level": "fact"
-        }
-      ]
-    },
-    {
-      "kind": "section",
-      "title": "Prophetic Succession and Authority",
-      "blocks": [
-        {
-          "id": "block_3",
-          "text": "Deuteronomy 18:15 promises a prophet successor to Moses who will arise among Israel. In Israel's tradition, prophets function as messengers of YHWH who address the nation concerning covenant fidelity and responding to crises. The chapter establishes criteria for discerning true prophecy from false, though the complete framework is developed in the passage's continuation.",
-          "verse_refs": [
-            "Deuteronomy 18:15-22"
-          ],
-          "evidence_ids": [
-            "what-is-a-prophet:historical_context:0",
-            "how-should-i-read-prophecy:historical_context:0"
+            "how-should-i-read-prophecy:ancient_near_east_context:0"
           ],
           "confidence": "medium",
           "interpretation_level": "fact"
@@ -63,17 +25,14 @@
     }
   ],
   "generated_metadata": {
-    "evidence_hash": "31aba8aac25cafa87ac49b76ec5d02cdfdbd22b137e834d661f1c366fdf68f46",
+    "evidence_hash": "96b98e7985556c8bdbd5b77db8d05f42a6304622d9d8a92ef60eeb5763a597f4",
     "evidence_bundle_version": "1.0",
     "commentary_schema_version": "1.0",
-    "commentary_prompt_version": "1.0",
-    "model": "haiku",
-    "generated_timestamp": null
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:02:20.585141+00:00"
   },
   "failure_reason": null,
-  "validation_errors": [
-    "section[1].kind is unsupported: section",
-    "section[2].kind is unsupported: section"
-  ],
+  "validation_errors": [],
   "validation_warnings": []
 }
