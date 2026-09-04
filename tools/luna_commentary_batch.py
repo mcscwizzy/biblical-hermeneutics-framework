@@ -20,7 +20,7 @@ from bhf_agent.chapter_commentary.availability import classify_evidence_availabi
 from bhf_agent.config import AgentConfig
 
 STORE = Path('.bhf-data/bhf-commentary')
-TARGETS = (('Genesis', 41), ('Genesis', 42), ('Genesis', 43), ('Genesis', 44), ('Genesis', 45), ('Genesis', 46), ('Genesis', 47), ('Genesis', 48), ('Genesis', 49), ('Genesis', 50), ('Exodus', 1), ('Exodus', 2), ('Exodus', 3), ('Exodus', 4), ('Exodus', 5), ('Exodus', 6), ('Exodus', 7), ('Exodus', 8), ('Exodus', 9), ('Exodus', 10), ('Exodus', 11), ('Exodus', 12), ('Exodus', 13), ('Exodus', 14), ('Exodus', 15))
+TARGETS = (('Leviticus', 2), ('Leviticus', 3), ('Leviticus', 4), ('Leviticus', 5), ('Leviticus', 6), ('Leviticus', 7), ('Leviticus', 8), ('Leviticus', 9), ('Leviticus', 10), ('Leviticus', 11), ('Leviticus', 12), ('Leviticus', 13), ('Leviticus', 14), ('Leviticus', 15), ('Leviticus', 16), ('Leviticus', 17), ('Leviticus', 18), ('Leviticus', 19), ('Leviticus', 20), ('Leviticus', 21), ('Leviticus', 22), ('Leviticus', 23), ('Leviticus', 24), ('Leviticus', 25), ('Leviticus', 26))
 
 TEXT = {
 11: 'Genesis 11 first describes one people with one language building a city and tower in Shinar to make a name and avoid being scattered. Jehovah confounds their language and scatters them, and the place is called Babel. The chapter then traces Shem’s generations to Terah, Abram, Nahor, and Haran, noting Haran’s death in Ur, Sarai’s barrenness, and Terah’s journey toward Canaan that stops at Haran.',
@@ -166,7 +166,7 @@ def run():
         result = validate_chapter_commentary(raw, bundle, expected_evidence_hash=bundle.evidence_hash, expected_prompt_version=COMMENTARY_PROMPT_VERSION, expected_reference=reference, expected_book=book, expected_chapter=ch)
         status = CommentaryStatus.VALIDATED.value if result.valid else CommentaryStatus.PARTIAL.value if result.partial else CommentaryStatus.NEEDS_REVIEW.value
         if result.commentary:
-            c = ChapterCommentary(reference=reference, book=book, chapter=ch, status=status, sections=list(result.accepted_sections), generated_metadata=result.commentary.generated_metadata, failure_reason=None if result.valid else 'Some generated material was rejected', validation_errors=list(result.errors), validation_warnings=[])
+            c = ChapterCommentary(reference=reference, book=book, chapter=ch, status=status, evidence_availability=availability, sections=list(result.accepted_sections), generated_metadata=result.commentary.generated_metadata, failure_reason=None if result.valid else 'Some generated material was rejected', validation_errors=list(result.errors), validation_warnings=[])
         else:
             c = ChapterCommentary(reference=reference, book=book, chapter=ch, status=CommentaryStatus.FAILED.value, sections=[], generated_metadata=stamper._authoritative_metadata(request,bundle), failure_reason='Validator accepted no sections', validation_errors=list(result.errors), validation_warnings=[])
         path = save_commentary(c, STORE)
