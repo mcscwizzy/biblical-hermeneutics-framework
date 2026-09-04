@@ -1,0 +1,38 @@
+{
+  "reference": "Job 34",
+  "book": "Job",
+  "chapter": 34,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "overview",
+          "text": "Job 34 contains 37 verses. It opens with: Moreover Elihu answered and said, It concludes with: For he addeth rebellion unto his sin; He clappeth his hands among us, And multiplieth his words against God.",
+          "verse_refs": [
+            "Job 34:1-37"
+          ],
+          "evidence_ids": [
+            "job-elihu-intervention"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "9220f248031bc8810a05128e34fee541431c4facf3739c1ada6f4d4ab3ad29a2",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:16:23.277044+00:00"
+  },
+  "failure_reason": null,
+  "validation_errors": [],
+  "validation_warnings": []
+}

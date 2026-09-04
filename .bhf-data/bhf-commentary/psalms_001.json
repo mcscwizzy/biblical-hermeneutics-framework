@@ -1,0 +1,38 @@
+{
+  "reference": "Psalms 1",
+  "book": "Psalms",
+  "chapter": 1,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "overview",
+          "text": "Psalms 1 contains 6 verses. It opens with: Blessed is the man that walketh not in the counsel of the wicked, Nor standeth in the way of sinners, Nor sitteth in the seat of scoffers: It concludes with: For Jehovah knoweth the way of the righteous; But the way of the wicked shall perish.",
+          "verse_refs": [
+            "Psalms 1:1-6"
+          ],
+          "evidence_ids": [
+            "psalms-gateway-torah-king"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "04b69a810e6d5961412b75224b8391077f5bf78f6a9129b288130983e533d4ff",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:16:23.963043+00:00"
+  },
+  "failure_reason": null,
+  "validation_errors": [],
+  "validation_warnings": []
+}
