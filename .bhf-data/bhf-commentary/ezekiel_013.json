@@ -3,16 +3,17 @@
   "book": "Ezekiel",
   "chapter": 13,
   "status": "validated",
+  "evidence_availability": "AVAILABLE",
   "sections": [
     {
       "kind": "chapter_overview",
-      "title": "False Peace in Prophetic Critique",
+      "title": "Chapter overview",
       "blocks": [
         {
-          "id": "block_1",
-          "text": "Ezekiel 13 condemns false prophets for making claims without divine commission. A defining characteristic of their deception is their message of false peace: they tell the people 'Peace; and there is no peace' (verse 10). This language of false peace appears as a recurring element in prophetic critique of illegitimate religious leadership. Later biblical and post-biblical texts show interest in peace and security language in connection with warnings of sudden judgment, though scholars remain divided on whether such texts deliberately echo earlier prophetic denunciations of false peace or develop the theme independently from political rhetoric and ordinary complacency.",
+          "id": "overview",
+          "text": "Ezekiel 13 contains 23 verses. It opens with: And the word of Jehovah came unto me, saying, It concludes with: Therefore ye shall no more see false visions, nor divine divinations: and I will deliver my people out of your hand; and ye shall know that I am Jehovah.",
           "verse_refs": [
-            "Ezekiel 13:10"
+            "Ezekiel 13:1-23"
           ],
           "evidence_ids": [
             "peace-security-competing-backgrounds"
@@ -27,9 +28,9 @@
     "evidence_hash": "6f869cb6e66969bf1a79b9fcf48dfc812e21323a546a57f25c9de646f6b7f302",
     "evidence_bundle_version": "1.0",
     "commentary_schema_version": "1.0",
-    "commentary_prompt_version": "1.0",
-    "model": "haiku",
-    "generated_timestamp": null
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:29:04.137518+00:00"
   },
   "failure_reason": null,
   "validation_errors": [],

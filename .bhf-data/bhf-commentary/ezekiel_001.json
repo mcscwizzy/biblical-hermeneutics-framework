@@ -2,73 +2,37 @@
   "reference": "Ezekiel 1",
   "book": "Ezekiel",
   "chapter": 1,
-  "status": "partial",
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
   "sections": [
     {
       "kind": "chapter_overview",
-      "title": "Historical Setting and the Prophet's Call",
+      "title": "Chapter overview",
       "blocks": [
         {
-          "id": "block_1",
-          "text": "Ezekiel identifies himself as a priest, son of Buzi, who receives his inaugural vision among Jewish exiles settled by the Kebar canal in Babylonia. According to the superscription, this visionary experience occurs in the fifth year of King Jehoiachin's captivity. This dating connects to the first stage of Judah's subjugation by Babylon: in 597 BCE, Jehoiachin and a select group of royal, military, administrative, and skilled personnel were deported from Judah. Not all the population was removed, and Judean communities persisted in Babylonia. Into this exiled community, the word and hand of YHWH come upon the priest Ezekiel, marking the opening of his prophetic ministry.",
+          "id": "overview",
+          "text": "Ezekiel 1 contains 28 verses. It opens with: Now it came to pass in the thirtieth year, in the fourth `month', in the fifth `day' of the month, as I was among the captives by the river Chebar, that the heavens were opened, and I saw visions of God. It concludes with: As the appearance of the bow that is in the cloud in the day of rain, so was the appearance of the brightness round about. This was the appearance of the likeness of the glory of Jehovah. And when I saw it, I fell upon my face, and I heard a voice of one that spake.",
           "verse_refs": [
-            "Ezekiel 1:1-3"
+            "Ezekiel 1:1-28"
           ],
           "evidence_ids": [
-            "ezekiel-superscription-call",
-            "babylonian-exile:historical_context:0"
-          ],
-          "confidence": "medium",
-          "interpretation_level": "fact"
-        },
-        {
-          "id": "block_2",
-          "text": "Ezekiel's prophetic horizon extends from the 597 BCE deportation of Jehoiachin through the siege and destruction of Jerusalem to restoration oracles dated in the 570s BCE. His inaugural vision marks the beginning of a sustained witness to covenant judgment and divine presence beyond the land of Judah.",
-          "verse_refs": [
-            "Ezekiel 1:1"
-          ],
-          "evidence_ids": [
-            "ezekiel-historical-horizon"
+            "ezekiel-compositional-history"
           ],
           "confidence": "high",
-          "interpretation_level": "fact"
-        }
-      ]
-    },
-    {
-      "kind": "vision_description",
-      "title": "The Inaugural Vision",
-      "blocks": [
-        {
-          "id": "block_3",
-          "text": "The opening vision employs visual language of transformation and transcendence: a storm wind from the north, a great cloud with fire folding within itself, and brilliant radiance. From this theophanic imagery emerge four living creatures and wheels, an expanse, and a throne above it. Throughout the passage, the text uses repeated formulas of likeness and appearance to describe storm, creatures, wheels, throne, a human-like figure, and the radiance of the glory of YHWH. This visual scaffolding structures the prophet's encounter with divine presence in its full complexity.",
-          "verse_refs": [
-            "Ezekiel 1:4-13"
-          ],
-          "evidence_ids": [
-            "ezekiel-throne-vision"
-          ],
-          "confidence": "high",
-          "interpretation_level": "fact"
+          "interpretation_level": "disputed"
         }
       ]
     }
   ],
   "generated_metadata": {
-    "evidence_hash": "4d648c53eaed26f5e318616eb6b454c57803eaefc5b8cf9533e7bb90e6924696",
+    "evidence_hash": "98c10caaeac1ab30b6e78224da02c1208ea532c996b7ec616baa118480b6fc5e",
     "evidence_bundle_version": "1.0",
     "commentary_schema_version": "1.0",
-    "commentary_prompt_version": "1.0",
-    "model": "haiku",
-    "generated_timestamp": null
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:29:03.410223+00:00"
   },
   "failure_reason": null,
-  "validation_errors": [
-    "section[1].kind is unsupported: vision_description",
-    "section[2].kind is unsupported: theological_context",
-    "section[2].block[0].interpretation_level is invalid",
-    "section[3].kind is unsupported: textual_notes",
-    "section[3].block[0].interpretation_level is invalid"
-  ],
+  "validation_errors": [],
   "validation_warnings": []
 }

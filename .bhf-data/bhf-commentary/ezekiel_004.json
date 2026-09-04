@@ -2,21 +2,20 @@
   "reference": "Ezekiel 4",
   "book": "Ezekiel",
   "chapter": 4,
-  "status": "partial",
+  "status": "validated",
+  "evidence_availability": "DATA_GAP",
   "sections": [
     {
-      "kind": "textual_witnesses",
-      "title": "Textual Witnesses",
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
       "blocks": [
         {
-          "id": "block_1",
-          "text": "Ezekiel 4 is attested in multiple ancient textual sources: the Masoretic Text, the Old Greek translation, Papyrus 967, Qumran fragments, and the Masada scroll. These witnesses exhibit variations in wording and order, requiring passage-level textual analysis.",
+          "id": "overview",
+          "text": "Ezekiel 4 contains 17 verses. It opens with: Thou also, son of man, take thee a tile, and lay it before thee, and portray upon it a city, even Jerusalem: It concludes with: that they may want bread and water, and be dismayed one with another, and pine away in their iniquity.",
           "verse_refs": [
-            "Ezekiel 4"
+            "Ezekiel 4:1-17"
           ],
-          "evidence_ids": [
-            "ezekiel-textual-witnesses"
-          ],
+          "evidence_ids": [],
           "confidence": "high",
           "interpretation_level": "fact"
         }
@@ -24,16 +23,14 @@
     }
   ],
   "generated_metadata": {
-    "evidence_hash": "e7cd6c413caced311cc6756f423e79ec5332e24559e9628741e68f3b21a3eb03",
+    "evidence_hash": "ddce87102b4c55dca4acb32af859ce563fe315ba2257abf1b01c4a1546ace2ba",
     "evidence_bundle_version": "1.0",
     "commentary_schema_version": "1.0",
-    "commentary_prompt_version": "1.0",
-    "model": "haiku",
-    "generated_timestamp": null
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:29:03.623939+00:00"
   },
   "failure_reason": null,
-  "validation_errors": [
-    "section[0].kind is unsupported: textual_witnesses"
-  ],
+  "validation_errors": [],
   "validation_warnings": []
 }

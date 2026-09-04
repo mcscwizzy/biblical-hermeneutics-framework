@@ -3,34 +3,32 @@
   "book": "Ezekiel",
   "chapter": 14,
   "status": "validated",
+  "evidence_availability": "DATA_GAP",
   "sections": [
     {
       "kind": "chapter_overview",
-      "title": "Overview",
+      "title": "Chapter overview",
       "blocks": [
         {
-          "id": "block_1",
-          "text": "The supplied evidence for Ezekiel 14 addresses a single point: the chapter's reference to righteous exemplars. Job is cited here alongside Noah and Daniel (Danel) as models of righteousness known by the early sixth-century BCE audience. This reference establishes that a Job tradition\u2014depicting a righteous figure who endured catastrophic suffering while maintaining his integrity\u2014was already circulating in prophetic circles. However, the precise relationship between Ezekiel's knowledge of Job and the final shape of the Job book remains uncertain. The chapter's primary teaching content regarding idols, false prophets, and inquiry of the Lord is not covered by the supplied evidence bundle.",
+          "id": "overview",
+          "text": "Ezekiel 14 contains 23 verses. It opens with: Then came certain of the elders of Israel unto me, and sat before me. It concludes with: And they shall comfort you, when ye see their way and their doings; and ye shall know that I have not done without cause all that I have done in it, saith the Lord Jehovah.",
           "verse_refs": [
-            "Ezekiel 14"
+            "Ezekiel 14:1-23"
           ],
-          "evidence_ids": [
-            "job:second_temple_context:0",
-            "job:date_ranges:3"
-          ],
-          "confidence": "medium",
+          "evidence_ids": [],
+          "confidence": "high",
           "interpretation_level": "fact"
         }
       ]
     }
   ],
   "generated_metadata": {
-    "evidence_hash": "7c58967a1c8dfb7060b7502ad77fbf3cff57c999e8ef732fec1712301b70fbbc",
+    "evidence_hash": "fb109e7355446c8a23edfddca86d33acb0ff82c2406bb6b51e336b879f8023cc",
     "evidence_bundle_version": "1.0",
     "commentary_schema_version": "1.0",
-    "commentary_prompt_version": "1.0",
-    "model": "haiku",
-    "generated_timestamp": null
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:29:04.177454+00:00"
   },
   "failure_reason": null,
   "validation_errors": [],
