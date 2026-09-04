@@ -2,81 +2,21 @@
   "reference": "Deuteronomy 5",
   "book": "Deuteronomy",
   "chapter": 5,
-  "status": "partial",
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
   "sections": [
     {
-      "kind": "section",
-      "title": "The Covenant Made Present (vv. 1-5)",
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
       "blocks": [
         {
-          "id": "block_2",
-          "text": "Moses summons all Israel to hear 'the statutes and the ordinances' and to learn and observe them. He emphasizes that the covenant God made at Horeb was made with this present generation\u2014'with us, even us, who are all of us here alive this day.' This rhetorical strategy positions the current audience as the direct recipients and keepers of covenant obligation, not merely inheritors of ancestral law. God spoke face to face with the people from Mount Horeb, yet fear of the fire on the mountain led them to request Moses as mediator. Moses recalls his role standing between God and the people, communicating God's word to them. This account anchors Israel's law in a direct encounter between God and people, mediated through Moses, making the covenant relationship continuously present to each generation.",
+          "id": "overview",
+          "text": "Deuteronomy 5 contains 33 verses. It opens with: And Moses called unto all Israel, and said unto them, Hear, O Israel, the statutes and the ordinances which I speak in your ears this day, that ye may learn them, and observe to do them. It concludes with: Ye shall walk in all the way which Jehovah your God hath commanded you, that ye may live, and that it may be well with you, and that ye may prolong your days in the land which ye shall possess.",
           "verse_refs": [
-            "Deuteronomy 5:1-5"
+            "Deuteronomy 5:1-33"
           ],
           "evidence_ids": [
-            "deuteronomy:historical_context:0",
-            "deuteronomy:original_audience:0",
-            "deuteronomy:key_places:2",
-            "moses:historical_context:0"
-          ],
-          "confidence": "medium",
-          "interpretation_level": "fact"
-        }
-      ]
-    },
-    {
-      "kind": "section",
-      "title": "Exclusive Loyalty and Worship (vv. 6-10)",
-      "blocks": [
-        {
-          "id": "block_3",
-          "text": "The Ten Commandments open with divine self-identification: 'I am the LORD your God, who brought you out of the land of Egypt, out of the house of bondage.' This statement grounds the commandments not in abstract authority but in the lived experience of redemption. The first commandment demands exclusive allegiance\u2014'You shall have no other gods before me.' The second prohibits graven images and their worship. God is described as a 'jealous God,' visiting iniquity on generations that hate God while showing steadfast love to those who keep the commandments. This opening frames covenant loyalty as an inseparable response to redemption: Israel's God is the one who freed them, and exclusive loyalty to this God follows as both gratitude and obligation.",
-          "verse_refs": [
-            "Deuteronomy 5:6-10"
-          ],
-          "evidence_ids": [
-            "sinai-covenant:historical_context:0",
-            "deuteronomy:hebraic_worldview:0"
-          ],
-          "confidence": "medium",
-          "interpretation_level": "fact"
-        }
-      ]
-    },
-    {
-      "kind": "section",
-      "title": "The Divine Name (v. 11)",
-      "blocks": [
-        {
-          "id": "block_4",
-          "text": "The third commandment protects the integrity of God's name: 'You shall not take the name of the LORD your God in vain, for the LORD will not hold guiltless one who takes his name in vain.' The prohibition safeguards the holiness and power associated with God's revealed name. In Israel's covenant life, reverence for God's name is integral to worship, obedience, and the proper ordering of community life before God's presence.",
-          "verse_refs": [
-            "Deuteronomy 5:11"
-          ],
-          "evidence_ids": [
-            "deuteronomy:hebraic_worldview:0"
-          ],
-          "confidence": "medium",
-          "interpretation_level": "fact"
-        }
-      ]
-    },
-    {
-      "kind": "section",
-      "title": "The Sabbath (vv. 12-15)",
-      "blocks": [
-        {
-          "id": "block_5",
-          "text": "The fourth commandment mandates Sabbath rest as holy: all labor ceases for one day each week. The command covers the household comprehensively\u2014children, servants, animals, and resident aliens all share in the rest. The motivation is explicit memory: 'Remember that you were a servant in the land of Egypt, and the LORD your God brought you out.' The Sabbath connects creation rhythm with exodus redemption, signaling both God's established order and Israel's liberation from slavery. Unlike surrounding cultures that organized time solely around production and religious festivals, Israel's weekly Sabbath marked dependence on God and freedom from endless labor. By the biblical period, Sabbath observance had become central to covenant identity and a weekly witness to God's holiness and Israel's trust.",
-          "verse_refs": [
-            "Deuteronomy 5:12-15"
-          ],
-          "evidence_ids": [
-            "sabbath-theme:hebraic_worldview:0",
-            "what-is-the-significance-of-the-sabbath:historical_context:0",
-            "deuteronomy:hebraic_worldview:0",
-            "sabbath-theme:ancient_near_east_context:0"
+            "burning-bush:ancient_near_east_context:0"
           ],
           "confidence": "medium",
           "interpretation_level": "fact"
@@ -85,20 +25,14 @@
     }
   ],
   "generated_metadata": {
-    "evidence_hash": "d0fdf24a3cc5923912bb2031b6dd6b6709d84d79149e447b5a1ecc336e07fdb1",
+    "evidence_hash": "49d84cd3b5b5135d582277858f1be3080d60e3c9c30753afabf0bbca9f4b4f97",
     "evidence_bundle_version": "1.0",
     "commentary_schema_version": "1.0",
-    "commentary_prompt_version": "1.0",
-    "model": "haiku",
-    "generated_timestamp": null
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T17:59:55.439397+00:00"
   },
   "failure_reason": null,
-  "validation_errors": [
-    "section[0].block[0].interpretation_level is invalid",
-    "section[1].kind is unsupported: section",
-    "section[2].kind is unsupported: section",
-    "section[3].kind is unsupported: section",
-    "section[4].kind is unsupported: section"
-  ],
+  "validation_errors": [],
   "validation_warnings": []
 }

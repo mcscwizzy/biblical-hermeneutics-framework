@@ -2,21 +2,21 @@
   "reference": "Deuteronomy 10",
   "book": "Deuteronomy",
   "chapter": 10,
-  "status": "partial",
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
   "sections": [
     {
-      "kind": "expository",
-      "title": "Aaron and the Priesthood Succession",
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
       "blocks": [
         {
-          "id": "block_1",
-          "text": "Verse 6 records Aaron's death at Moserah during Israel's wilderness journey, marking a significant transition in religious leadership. Aaron belonged to a social world of kinship obligations and household structures essential to Israel's covenant community. More broadly, Aaron exemplified the Exodus and wilderness world where deliverance and covenant define the people of God. His son Eleazar's assumption of the priestly office demonstrates the continuity of institutional leadership within Israel's covenant structures during this formative period.",
+          "id": "overview",
+          "text": "Deuteronomy 10 contains 22 verses. It opens with: At that time Jehovah said unto me, Hew thee two tables of stone like unto the first, and come up unto me into the mount, and make thee an ark of wood. It concludes with: Thy fathers went down into Egypt with threescore and ten persons; and now Jehovah thy God hath made thee as the stars of heaven for multitude.",
           "verse_refs": [
-            "Deuteronomy 10:6-7"
+            "Deuteronomy 10:1-22"
           ],
           "evidence_ids": [
-            "aaron:ancient_near_east_context:0",
-            "aaron:historical_context:0"
+            "aaron:ancient_near_east_context:0"
           ],
           "confidence": "medium",
           "interpretation_level": "fact"
@@ -25,16 +25,14 @@
     }
   ],
   "generated_metadata": {
-    "evidence_hash": "cd9fb998eaccd8746d22eda607cdfe236f060468c9a39c651408361601cdeac4",
+    "evidence_hash": "25fcac7e690d43213ba9f4ac6c483259bdac5557225a5a75ee0b714ea36043b2",
     "evidence_bundle_version": "1.0",
     "commentary_schema_version": "1.0",
-    "commentary_prompt_version": "1.0",
-    "model": "haiku",
-    "generated_timestamp": null
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T17:59:56.087801+00:00"
   },
   "failure_reason": null,
-  "validation_errors": [
-    "section[0].kind is unsupported: expository"
-  ],
+  "validation_errors": [],
   "validation_warnings": []
 }

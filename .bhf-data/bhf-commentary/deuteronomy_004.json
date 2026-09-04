@@ -2,20 +2,21 @@
   "reference": "Deuteronomy 4",
   "book": "Deuteronomy",
   "chapter": 4,
-  "status": "partial",
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
   "sections": [
     {
-      "kind": "section",
-      "title": "Torah as Covenant Instruction (4:1-2, 5-8)",
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
       "blocks": [
         {
-          "id": "block_3",
-          "text": "Verses 5-8 present covenant obedience itself as Israel's wisdom in the eyes of the nations. The righteous statutes and the proximity of Israel's God to them in response to prayer are the marks that distinguish Israel as a great nation. This framing connects law-keeping to relational nearness with God rather than treating statutes as burdensome obligation alone.",
+          "id": "overview",
+          "text": "Deuteronomy 4 contains 49 verses. It opens with: And now, O Israel, hearken unto the statutes and unto the ordinances, which I teach you, to do them; that ye may live, and go in and possess the land which Jehovah, the God of your fathers, giveth you. It concludes with: and all the Arabah beyond the Jordan eastward, even unto the sea of the Arabah, under the slopes of Pisgah.",
           "verse_refs": [
-            "Deuteronomy 4:5-8"
+            "Deuteronomy 4:1-49"
           ],
           "evidence_ids": [
-            "torah:historical_context:0"
+            "mount-sinai:ancient_near_east_context:0"
           ],
           "confidence": "medium",
           "interpretation_level": "fact"
@@ -24,23 +25,14 @@
     }
   ],
   "generated_metadata": {
-    "evidence_hash": "1146b810f2ec666dc5a79301d71c4f9b430db000483b926f682a66a667c9bfae",
+    "evidence_hash": "7233a2d8ac0896a51616a56502f5cb125dda93e135595224d721c70199c5c638",
     "evidence_bundle_version": "1.0",
     "commentary_schema_version": "1.0",
-    "commentary_prompt_version": "1.0",
-    "model": "haiku",
-    "generated_timestamp": null
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T17:59:55.299892+00:00"
   },
   "failure_reason": null,
-  "validation_errors": [
-    "section[0].block[0].confidence exceeds its cited evidence",
-    "section[1].kind is unsupported: section",
-    "section[1].block[0].confidence exceeds its cited evidence",
-    "section[2].kind is unsupported: section",
-    "section[2].block[0].confidence exceeds its cited evidence",
-    "section[3].kind is unsupported: section",
-    "section[3].block[0].interpretation_level is invalid",
-    "section[3].block[0] must cite at least one evidence item"
-  ],
+  "validation_errors": [],
   "validation_warnings": []
 }

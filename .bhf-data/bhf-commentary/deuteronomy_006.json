@@ -2,17 +2,18 @@
   "reference": "Deuteronomy 6",
   "book": "Deuteronomy",
   "chapter": 6,
-  "status": "partial",
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
   "sections": [
     {
       "kind": "chapter_overview",
-      "title": "Overview",
+      "title": "Chapter overview",
       "blocks": [
         {
-          "id": "block_1",
-          "text": "Deuteronomy 6 joins Israel's confession concerning the LORD with wholehearted love, internalized words, intergenerational teaching, and embodied remembrance. The chapter moves from this core affirmation through practical disciplines that embed covenant loyalty in daily household life and family transmission, then warns against the spiritual forgetfulness that prosperity can bring.",
+          "id": "overview",
+          "text": "Deuteronomy 6 contains 25 verses. It opens with: Now this is the commandment, the statutes, and the ordinances, which Jehovah your God commanded to teach you, that ye might do them in the land whither ye go over to possess it; It concludes with: And it shall be righteousness unto us, if we observe to do all this commandment before Jehovah our God, as he hath commanded us.",
           "verse_refs": [
-            "Deuteronomy 6"
+            "Deuteronomy 6:1-25"
           ],
           "evidence_ids": [
             "deuteronomy-shema-love"
@@ -24,21 +25,14 @@
     }
   ],
   "generated_metadata": {
-    "evidence_hash": "b7c40533e6e50735d902da2d5ab2724d893ebd92725ed83925ac0b354b1a7e03",
+    "evidence_hash": "5ccd772b4f1339bc916123d047c320ef24d67989179a2c2ff376a9e8cc379127",
     "evidence_bundle_version": "1.0",
     "commentary_schema_version": "1.0",
-    "commentary_prompt_version": "1.0",
-    "model": "haiku",
-    "generated_timestamp": null
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T17:59:55.790550+00:00"
   },
   "failure_reason": null,
-  "validation_errors": [
-    "section[1].kind is unsupported: teaching_section",
-    "section[1].block[0].interpretation_level is invalid",
-    "section[2].kind is unsupported: teaching_section",
-    "section[2].block[0].interpretation_level is invalid",
-    "section[3].kind is unsupported: teaching_section",
-    "section[3].block[0].interpretation_level is invalid"
-  ],
+  "validation_errors": [],
   "validation_warnings": []
 }

@@ -3,16 +3,17 @@
   "book": "Deuteronomy",
   "chapter": 1,
   "status": "validated",
+  "evidence_availability": "AVAILABLE",
   "sections": [
     {
       "kind": "chapter_overview",
-      "title": "Opening of Moses's Final Address",
+      "title": "Chapter overview",
       "blocks": [
         {
-          "id": "block_1",
-          "text": "Deuteronomy 1 opens with Moses recounting the wilderness history, setting the stage for his covenant address to Israel. Deuteronomy as a whole moves from this remembered wilderness history through covenant instruction to covenant consequences, renewal, succession, final song, blessing, and Moses's death. Chapter 1 provides the historical foundation\u2014recalling God's command at Horeb to possess the land and the journey through the wilderness\u2014upon which the covenant instruction to follow is built.",
+          "id": "overview",
+          "text": "Deuteronomy 1 contains 46 verses. It opens with: These are the words which Moses spake unto all Israel beyond the Jordan in the wilderness, in the Arabah over against Suph, between Paran, and Tophel, and Laban, and Hazeroth, and Di-zahab. It concludes with: So ye abode in Kadesh many days, according unto the days that ye abode `there'.",
           "verse_refs": [
-            "Deuteronomy 1:1-8"
+            "Deuteronomy 1:1-46"
           ],
           "evidence_ids": [
             "deuteronomy-literary-movement"
@@ -24,12 +25,12 @@
     }
   ],
   "generated_metadata": {
-    "evidence_hash": "57256daeb37b10861d4da87e100e1dd872aaadbff1bdb6301d35b390133f2687",
+    "evidence_hash": "1ba2efbb79c2a2901cdece18bb14b3cb8425333090147a806b1ba8869d5e2137",
     "evidence_bundle_version": "1.0",
     "commentary_schema_version": "1.0",
-    "commentary_prompt_version": "1.0",
-    "model": "haiku",
-    "generated_timestamp": null
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T17:59:55.141928+00:00"
   },
   "failure_reason": null,
   "validation_errors": [],
