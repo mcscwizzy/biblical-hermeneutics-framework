@@ -16,6 +16,7 @@ from bhf_agent.chapter_commentary.generator import CommentaryGenerator
 from bhf_agent.chapter_commentary.models import COMMENTARY_PROMPT_VERSION, ChapterCommentary, CommentaryGenerationRequest, CommentaryStatus
 from bhf_agent.chapter_commentary.storage import load_commentary, save_commentary
 from bhf_agent.chapter_commentary.validation import validate_chapter_commentary
+from bhf_agent.chapter_commentary.availability import classify_evidence_availability
 from bhf_agent.config import AgentConfig
 
 STORE = Path('.bhf-data/bhf-commentary')
@@ -115,7 +116,10 @@ NEXT = {
 def block(book, ch, evidence):
     d = bible.resolve_chapter(book, ch)
     refs = [f'{book} {ch}:1-{len(d["verses"])}']
-    text = TEXT[ch] if book == 'Genesis' and ch in TEXT else NEXT[(book, ch)]
+    text = TEXT[ch] if book == 'Genesis' and ch in TEXT else NEXT.get((book, ch))
+    if text is None:
+        verses = d['verses']
+        text = f"{book} {ch} contains {len(verses)} verses. It opens with: {verses[0]['text']} It concludes with: {verses[-1]['text']}"
     return {'id': 'overview', 'text': text, 'verse_refs': refs, 'evidence_ids': [evidence], 'confidence': 'high', 'interpretation_level': 'fact'}
 
 def choose_evidence(book, items):
@@ -140,22 +144,25 @@ def run():
         if should_process:
             selected.append((book, ch))
             if len(selected) == batch_limit: break
-    if any((book, ch) not in NEXT for book, ch in selected):
-        raise RuntimeError(f'Unexpected selection: {selected}')
     stamper = CommentaryGenerator(config)
     for book, ch in selected:
         bundle = get_chapter_evidence_bundle(book, ch)
-        if not bundle or not bundle.evidence_items: raise RuntimeError(f'No evidence bundle for {book} {ch}')
+        if bundle is None: raise RuntimeError(f'Unable to build evidence bundle for {book} {ch}')
         reference = bible.verse_range_reference(book, ch)
         request = CommentaryGenerationRequest(book, ch, reference, bundle.evidence_hash, force_regenerate=True)
         metadata = stamper._authoritative_metadata(request, bundle).to_dict()
-        evidence = choose_evidence(book, bundle.evidence_items)
-        generated_block = block(book, ch, evidence)
-        cited = bundle.evidence_by_id[evidence]
-        generated_block['confidence'] = cited.confidence
-        if cited.relevance_metadata.get('dispute_status') not in (None, '', 'not_disputed'):
-            generated_block['interpretation_level'] = 'disputed'
-        raw = {'reference': reference, 'book': book, 'chapter': ch, 'status': 'pending', 'sections': [{'kind':'chapter_overview','title':'Chapter overview','blocks':[generated_block]}], 'generated_metadata': metadata}
+        availability = classify_evidence_availability(bundle).value
+        evidence = choose_evidence(book, bundle.evidence_items) if bundle.evidence_items else None
+        generated_block = block(book, ch, evidence) if evidence else block(book, ch, '')
+        if not evidence:
+            generated_block['evidence_ids'] = []
+            generated_block['confidence'] = 'high'
+        else:
+            cited = bundle.evidence_by_id[evidence]
+            generated_block['confidence'] = cited.confidence
+            if cited.relevance_metadata.get('dispute_status') not in (None, '', 'not_disputed'):
+                generated_block['interpretation_level'] = 'disputed'
+        raw = {'reference': reference, 'book': book, 'chapter': ch, 'status': 'pending', 'evidence_availability': availability, 'sections': [{'kind':'chapter_overview','title':'Chapter overview','blocks':[generated_block]}], 'generated_metadata': metadata}
         result = validate_chapter_commentary(raw, bundle, expected_evidence_hash=bundle.evidence_hash, expected_prompt_version=COMMENTARY_PROMPT_VERSION, expected_reference=reference, expected_book=book, expected_chapter=ch)
         status = CommentaryStatus.VALIDATED.value if result.valid else CommentaryStatus.PARTIAL.value if result.partial else CommentaryStatus.NEEDS_REVIEW.value
         if result.commentary:
