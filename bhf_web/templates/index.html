@@ -54,6 +54,7 @@
   <script src="{{ static_asset('/companion-sheet.js') }}?v=20260811c" defer></script>
   <script src="{{ static_asset('/resource-router.js') }}?v=20260820b" defer></script>
   <script src="{{ static_asset('/companion-discoveries.js') }}?v=20260901b" defer></script>
+  <script src="{{ static_asset('/bhf-commentary-card.js') }}?v=20260904a" defer></script>
   <script src="{{ static_asset('/study-companion.js') }}?v=20260901b" defer></script>
   <script src="{{ static_asset('/commentary.js') }}?v=20260809b" defer></script>
   <script src="{{ static_asset('/pwa.js') }}?v=20260806a" defer></script>
@@ -284,6 +285,20 @@
               <button type="button" class="secondary" data-companion-action="note">＋ Add Note</button>
               <button type="button" class="secondary" data-companion-action="save" data-save-state="not-saved" disabled aria-disabled="true" aria-busy="false" aria-label="Save Passage unavailable; select a verse or passage">☆ Save Passage</button>
             </div>
+
+            <section class="companion-section bhf-commentary-card" data-bhf-commentary-card aria-labelledby="bhf-commentary-title" hidden>
+              <div class="companion-section-heading companion-section-heading-inline">
+                <div><span aria-hidden="true">▧</span><h3 id="bhf-commentary-title">BHF Context</h3></div>
+                <span class="bhf-commentary-availability" data-bhf-commentary-availability></span>
+              </div>
+              <p class="bhf-commentary-reference" data-bhf-commentary-reference></p>
+              <p class="bhf-commentary-status" data-bhf-commentary-status role="status" aria-live="polite" aria-atomic="true"></p>
+              <div class="bhf-commentary-body" data-bhf-commentary-body></div>
+              <div class="bhf-commentary-meta" data-bhf-commentary-meta hidden>
+                <div class="bhf-commentary-verse-refs" data-bhf-commentary-verse-refs></div>
+                <span class="bhf-commentary-evidence-count" data-bhf-commentary-evidence-count></span>
+              </div>
+            </section>
 
             <section class="companion-section companion-discoveries companion-land" data-companion-land-section aria-labelledby="companion-land-title" hidden>
               <div class="companion-section-heading">

@@ -306,6 +306,7 @@
       "/api/canonical/search",
       "/api/canonical/objects/",
       "/api/study/companion-context",
+      "/api/bhf-commentary/",
       "/api/maps/",
       "/api/sources",
       "/api/commentary/",

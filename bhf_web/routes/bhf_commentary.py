@@ -2,13 +2,12 @@
 
 from __future__ import annotations
 
-import sqlite3
 from pathlib import Path
 
 from fastapi import FastAPI
 from fastapi.responses import JSONResponse
 
-from bhf_agent.chapter_commentary.storage import load_commentary
+from bhf_web.services.bhf_commentary import COMMENTARY_RELEASE, load_commentary_projection
 
 
 def register_bhf_commentary_routes(app: FastAPI, *, storage_dir: str | Path) -> None:
@@ -37,13 +36,14 @@ def register_bhf_commentary_routes(app: FastAPI, *, storage_dir: str | Path) -> 
     ) -> JSONResponse:
         """Get BHF commentary for a chapter."""
         try:
-            commentary = load_commentary(storage_path, book, chapter)
+            commentary = load_commentary_projection(storage_path, book, chapter)
 
             if commentary is None:
                 return JSONResponse(
                     {
                         "available": False,
                         "reason": "bhf_commentary_not_available",
+                        "release": COMMENTARY_RELEASE,
                         "book": book,
                         "chapter": chapter,
                     }
@@ -52,20 +52,16 @@ def register_bhf_commentary_routes(app: FastAPI, *, storage_dir: str | Path) -> 
             return JSONResponse(
                 {
                     "available": True,
-                    "book": commentary.book,
-                    "chapter": commentary.chapter,
-                    "reference": commentary.reference,
-                    "status": commentary.status,
-                    "commentary": commentary.to_dict(),
+                    **commentary,
                 }
             )
 
-        except Exception as exc:
+        except Exception:
             return JSONResponse(
                 {
                     "available": False,
                     "reason": "bhf_commentary_error",
-                    "detail": str(exc),
+                    "release": COMMENTARY_RELEASE,
                     "book": book,
                     "chapter": chapter,
                 }

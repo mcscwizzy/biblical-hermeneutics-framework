@@ -340,6 +340,82 @@ body.companion-sheet-full {
   min-height: 38px;
 }
 
+.bhf-commentary-card {
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+  background: var(--surface-raised, var(--surface));
+}
+
+.bhf-commentary-card[data-state="loading"] {
+  opacity: 0.82;
+}
+
+.bhf-commentary-reference {
+  margin: -8px 0 10px;
+  color: var(--muted-text);
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.bhf-commentary-status {
+  margin: 0 0 10px;
+  color: var(--muted-text);
+  font-size: 0.82rem;
+  line-height: 1.45;
+}
+
+.bhf-commentary-body {
+  white-space: pre-line;
+  line-height: 1.55;
+}
+
+.bhf-commentary-availability {
+  color: var(--accent-text);
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-align: right;
+}
+
+.bhf-commentary-card[data-availability="THIN"] .bhf-commentary-availability,
+.bhf-commentary-card[data-availability="DATA_GAP"] .bhf-commentary-availability {
+  color: var(--muted-text);
+}
+
+.bhf-commentary-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 12px;
+  margin-top: 14px;
+  color: var(--muted-text);
+  font-size: 0.76rem;
+}
+
+.bhf-commentary-verse-refs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.bhf-commentary-verse-ref {
+  min-height: 32px;
+  padding: 4px 8px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  color: var(--accent-text);
+  background: var(--surface);
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.bhf-commentary-verse-ref:hover,
+.bhf-commentary-verse-ref:focus-visible {
+  border-color: var(--accent);
+  outline: none;
+  box-shadow: 0 0 0 2px var(--accent-soft);
+}
+
 [data-companion-action="save"][data-saved="true"] {
   color: var(--success-text);
   border-color: color-mix(in srgb, var(--success-text) 35%, var(--border));
