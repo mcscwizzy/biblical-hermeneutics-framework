@@ -8,7 +8,7 @@ from typing import Any, Mapping
 
 
 COMMENTARY_SCHEMA_VERSION = "1.0"
-COMMENTARY_PROMPT_VERSION = "1.0"
+COMMENTARY_PROMPT_VERSION = "1.1"
 
 
 class CommentaryStatus(str, Enum):
@@ -38,6 +38,12 @@ class CommentarySectionKind(str, Enum):
 
 
 SUPPORTED_SECTION_KINDS = frozenset(kind.value for kind in CommentarySectionKind)
+VERSE_OPTIONAL_SECTION_KINDS = frozenset(
+    {
+        CommentarySectionKind.HISTORICAL_CONTEXT.value,
+        CommentarySectionKind.ARCHAEOLOGY_GEOGRAPHY.value,
+    }
+)
 
 
 class ConfidenceLevel(str, Enum):
@@ -165,9 +171,14 @@ class CommentaryProgress:
     stale: int = 0
     pending: int = 0
 
+    def __post_init__(self) -> None:
+        """Keep the derived counters consistent whenever a progress value is made."""
+        accounted = self.validated + self.partial + self.needs_review + self.failed + self.stale
+        object.__setattr__(self, "pending", max(0, self.total_chapters - accounted))
+
     @property
     def completed(self) -> int:
-        return self.validated + self.partial + self.needs_review + self.failed
+        return self.validated + self.partial + self.needs_review + self.failed + self.stale
 
     def to_dict(self) -> dict[str, Any]:
         return {

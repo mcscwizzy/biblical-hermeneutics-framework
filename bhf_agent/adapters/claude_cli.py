@@ -73,7 +73,21 @@ class ClaudeCliAdapter(ChatAdapter):
 
             if result.returncode != 0:
                 stderr = result.stderr.strip()
-                if "not authenticated" in stderr.lower() or "auth" in stderr.lower():
+                if not stderr and result.stdout.strip():
+                    try:
+                        error_payload = json.loads(result.stdout)
+                        stderr = str(
+                            error_payload.get("result")
+                            or error_payload.get("error")
+                            or ""
+                        ).strip()
+                    except json.JSONDecodeError:
+                        stderr = result.stdout.strip()
+                if (
+                    "not authenticated" in stderr.lower()
+                    or "not logged in" in stderr.lower()
+                    or "auth" in stderr.lower()
+                ):
                     raise RuntimeError(
                         f"Claude CLI authentication failed. "
                         f"Please authenticate via: claude auth"

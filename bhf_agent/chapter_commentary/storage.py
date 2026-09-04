@@ -3,6 +3,8 @@
 from __future__ import annotations
 
 import json
+import os
+import tempfile
 from pathlib import Path
 from typing import Any
 
@@ -30,7 +32,25 @@ def save_commentary(
     filename = get_commentary_filename(commentary.book, commentary.chapter)
     filepath = storage_path / filename
 
-    filepath.write_text(json.dumps(commentary.to_dict(), indent=2), encoding="utf-8")
+    payload = json.dumps(commentary.to_dict(), indent=2)
+    temporary_path: Path | None = None
+    try:
+        with tempfile.NamedTemporaryFile(
+            mode="w",
+            encoding="utf-8",
+            dir=storage_path,
+            prefix=f".{filepath.name}.",
+            suffix=".tmp",
+            delete=False,
+        ) as handle:
+            temporary_path = Path(handle.name)
+            handle.write(payload)
+            handle.flush()
+            os.fsync(handle.fileno())
+        os.replace(temporary_path, filepath)
+    finally:
+        if temporary_path is not None and temporary_path.exists():
+            temporary_path.unlink()
     return filepath
 
 

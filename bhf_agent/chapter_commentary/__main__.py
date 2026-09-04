@@ -88,6 +88,16 @@ def _build_parser() -> argparse.ArgumentParser:
         help="Regenerate only failed chapters",
     )
     build_parser.add_argument(
+        "--partial-only",
+        action="store_true",
+        help="Regenerate only partial chapters",
+    )
+    build_parser.add_argument(
+        "--needs-review-only",
+        action="store_true",
+        help="Regenerate only chapters needing review",
+    )
+    build_parser.add_argument(
         "--force",
         action="store_true",
         help="Force regeneration even if validated",
@@ -106,6 +116,10 @@ def _build_parser() -> argparse.ArgumentParser:
     subparsers.add_parser(
         "status",
         help="Show commentary generation progress",
+    ).add_argument(
+        "--rescan",
+        action="store_true",
+        help="Rebuild counts from commentary files and current metadata",
     )
 
     subparsers.add_parser(
@@ -129,6 +143,8 @@ def _handle_build(builder: CommentaryBuilder, args: argparse.Namespace) -> int:
             resume=args.resume,
             stale_only=args.stale_only,
             failed_only=args.failed_only,
+            partial_only=args.partial_only,
+            needs_review_only=args.needs_review_only,
             force=args.force,
             limit=args.limit,
         )
@@ -163,7 +179,7 @@ def _handle_build(builder: CommentaryBuilder, args: argparse.Namespace) -> int:
 
 def _handle_status(builder: CommentaryBuilder, args: argparse.Namespace) -> int:
     """Handle status command."""
-    progress = builder.get_progress()
+    progress = builder.get_progress(rescan=args.rescan)
 
     if progress is None:
         print("No commentary generation in progress")
@@ -201,12 +217,16 @@ def _print_progress(progress: dict) -> None:
         partial = progress.get("partial", 0)
         needs_review = progress.get("needs_review", 0)
         failed = progress.get("failed", 0)
+        stale = progress.get("stale", 0)
+        pending = progress.get("pending", 0)
     else:
         total = progress.total_chapters
         validated = progress.validated
         partial = progress.partial
         needs_review = progress.needs_review
         failed = progress.failed
+        stale = progress.stale
+        pending = progress.pending
 
     print()
     print("BHF Commentary Build Status")
@@ -216,6 +236,8 @@ def _print_progress(progress: dict) -> None:
     print(f"Partial:       {partial:4d}")
     print(f"Needs Review:  {needs_review:4d}")
     print(f"Failed:        {failed:4d}")
+    print(f"Stale:         {stale:4d}")
+    print(f"Pending:       {pending:4d}")
     print()
 
 

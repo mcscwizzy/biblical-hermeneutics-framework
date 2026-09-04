@@ -1,10 +1,12 @@
-"""Coordinate full-Bible BHF commentary generation with resumable progress."""
+"""Coordinate full-Bible commentary generation with resumable progress."""
 
 from __future__ import annotations
 
 import json
+import os
+import tempfile
 from pathlib import Path
-from typing import Any
+from typing import Any, Iterable
 
 from bhf_agent import bible
 from bhf_agent.config import AgentConfig
@@ -12,25 +14,21 @@ from bhf_agent.config import AgentConfig
 from .evidence_bundling import get_chapter_evidence_bundle
 from .generator import CommentaryGenerator
 from .models import (
+    COMMENTARY_PROMPT_VERSION,
+    COMMENTARY_SCHEMA_VERSION,
     ChapterCommentary,
     CommentaryGenerationRequest,
     CommentaryProgress,
     CommentaryStatus,
 )
-from .storage import (
-    delete_commentary,
-    get_commentary_dir,
-    list_commentaries,
-    load_commentary,
-    save_commentary,
-)
+from .storage import load_commentary, save_commentary
 
 
 PROGRESS_FILE = ".bhf-commentary-progress.json"
 
 
 class CommentaryBuilder:
-    """Build full-Bible commentary with progress tracking."""
+    """Build full-Bible commentary while treating chapter files as the source of truth."""
 
     def __init__(
         self,
@@ -39,59 +37,108 @@ class CommentaryBuilder:
     ):
         self.storage_dir = Path(storage_dir)
         if config is None:
-            # Try to load from .bhf/config.json
             config_path = Path(".bhf/config.json")
-            if config_path.exists():
-                config = AgentConfig.from_json_file(config_path)
-            else:
-                config = AgentConfig()
+            config = AgentConfig.from_json_file(config_path) if config_path.exists() else AgentConfig()
         self.config = config
         self.generator = CommentaryGenerator(config)
         self.progress_file = self.storage_dir / PROGRESS_FILE
 
     def discover_canonical_chapters(self) -> list[tuple[str, int]]:
         """Discover all canonical chapters from Bible data."""
-        chapters = []
+        chapters: list[tuple[str, int]] = []
         try:
-            books = bible.list_books()
-            for book in books:
+            for book in bible.list_books():
                 book_name = book.get("name")
-                num_chapters = book.get("chapters", 0)
-                for chapter_num in range(1, num_chapters + 1):
+                for chapter_num in range(1, book.get("chapters", 0) + 1):
                     chapters.append((book_name, chapter_num))
         except Exception:
-            pass
-
+            return []
         return sorted(chapters)
 
-    def get_progress(self) -> CommentaryProgress | None:
-        """Load current progress from disk."""
+    def get_progress(self, *, rescan: bool = False) -> CommentaryProgress | None:
+        """Load cached progress, or reconstruct it from chapter files when requested."""
+        if rescan:
+            return self.rescan_progress()
         if not self.progress_file.exists():
             return None
-
         try:
             data = json.loads(self.progress_file.read_text(encoding="utf-8"))
             return CommentaryProgress(
-                total_chapters=data.get("total_chapters", 0),
-                validated=data.get("validated", 0),
-                partial=data.get("partial", 0),
-                needs_review=data.get("needs_review", 0),
-                failed=data.get("failed", 0),
-                stale=data.get("stale", 0),
-                pending=data.get("pending", 0),
+                total_chapters=int(data.get("total_chapters", 0)),
+                validated=int(data.get("validated", 0)),
+                partial=int(data.get("partial", 0)),
+                needs_review=int(data.get("needs_review", 0)),
+                failed=int(data.get("failed", 0)),
+                stale=int(data.get("stale", 0)),
             )
         except (json.JSONDecodeError, TypeError, ValueError):
             return None
 
     def save_progress(self, progress: CommentaryProgress) -> None:
-        """Save progress to disk."""
-        self.progress_file.write_text(
-            json.dumps(progress.to_dict(), indent=2), encoding="utf-8"
-        )
+        """Save the progress cache atomically; its counters remain rebuildable."""
+        self.storage_dir.mkdir(parents=True, exist_ok=True)
+        payload = json.dumps(progress.to_dict(), indent=2)
+        temporary_path: Path | None = None
+        try:
+            with tempfile.NamedTemporaryFile(
+                mode="w", encoding="utf-8", dir=self.storage_dir,
+                prefix=f".{PROGRESS_FILE}.", suffix=".tmp", delete=False
+            ) as handle:
+                temporary_path = Path(handle.name)
+                handle.write(payload)
+                handle.flush()
+                os.fsync(handle.fileno())
+            os.replace(temporary_path, self.progress_file)
+        finally:
+            if temporary_path is not None and temporary_path.exists():
+                temporary_path.unlink()
 
     def initialize_progress(self, total_chapters: int) -> CommentaryProgress:
-        """Initialize progress tracking for full build."""
+        """Initialize an empty progress cache for a canonical set."""
         progress = CommentaryProgress(total_chapters=total_chapters)
+        self.save_progress(progress)
+        return progress
+
+    def rescan_progress(
+        self,
+        chapters: Iterable[tuple[str, int]] | None = None,
+        *,
+        check_evidence: bool = True,
+    ) -> CommentaryProgress:
+        """Rebuild counts from canonical chapter files, not historical counters.
+
+        Prompt/schema mismatches are always stale. Evidence hashes are checked when
+        requested; callers running a long build can disable that extra retrieval after
+        the initial scan and still retain deterministic file-based counts.
+        """
+        canonical = list(chapters or self.discover_canonical_chapters())
+        counts = {status.value: 0 for status in CommentaryStatus}
+        for book, chapter in canonical:
+            commentary = load_commentary(self.storage_dir, book, chapter)
+            if commentary is None:
+                counts[CommentaryStatus.PENDING.value] += 1
+                continue
+            bundle = None
+            if (
+                check_evidence
+                and commentary.generated_metadata
+                and commentary.generated_metadata.commentary_prompt_version == COMMENTARY_PROMPT_VERSION
+                and commentary.generated_metadata.commentary_schema_version == COMMENTARY_SCHEMA_VERSION
+            ):
+                bundle = get_chapter_evidence_bundle(book, chapter)
+            status = self._effective_status(commentary, book, chapter, bundle)
+            if status not in counts or status in {CommentaryStatus.PENDING.value, CommentaryStatus.GENERATING.value}:
+                status = CommentaryStatus.PENDING.value
+            counts[status] += 1
+
+        progress = CommentaryProgress(
+            total_chapters=len(canonical),
+            validated=counts[CommentaryStatus.VALIDATED.value],
+            partial=counts[CommentaryStatus.PARTIAL.value],
+            needs_review=counts[CommentaryStatus.NEEDS_REVIEW.value],
+            failed=counts[CommentaryStatus.FAILED.value],
+            stale=counts[CommentaryStatus.STALE.value],
+        )
         self.save_progress(progress)
         return progress
 
@@ -100,89 +147,80 @@ class CommentaryBuilder:
         resume: bool = True,
         stale_only: bool = False,
         failed_only: bool = False,
+        partial_only: bool = False,
+        needs_review_only: bool = False,
         force: bool = False,
         limit: int | None = None,
     ) -> CommentaryProgress:
-        """Build commentary for all canonical chapters."""
+        """Build selected canonical chapters without skipping non-validated output."""
         chapters = self.discover_canonical_chapters()
-        progress = self.get_progress()
+        selected_modes = [stale_only, failed_only, partial_only, needs_review_only]
+        if sum(selected_modes) > 1:
+            raise ValueError("generation status filters are mutually exclusive")
 
-        if progress is None or progress.total_chapters != len(chapters):
-            progress = self.initialize_progress(len(chapters))
-
+        progress = self.rescan_progress(chapters, check_evidence=True)
         processed = 0
         for idx, (book, chapter_num) in enumerate(chapters, start=1):
-            if limit and processed >= limit:
+            if limit is not None and processed >= limit:
                 break
-
-            reference = bible.verse_range_reference(book, chapter_num)
-
-            # Decide whether to (re)generate
             existing = load_commentary(self.storage_dir, book, chapter_num)
+            bundle = (
+                get_chapter_evidence_bundle(book, chapter_num)
+                if self._metadata_can_have_hash_drift(existing)
+                else None
+            )
+            effective_status = self._effective_status(existing, book, chapter_num, bundle)
 
-            if not force and existing is not None:
-                if stale_only and existing.status != CommentaryStatus.STALE.value:
-                    continue
-                if failed_only and existing.status != CommentaryStatus.FAILED.value:
-                    continue
-                if not stale_only and not failed_only and resume:
-                    if existing.status in (
-                        CommentaryStatus.VALIDATED.value,
-                        CommentaryStatus.PARTIAL.value,
-                    ):
-                        continue
+            if not force and not self._should_generate(
+                effective_status,
+                resume=resume,
+                stale_only=stale_only,
+                failed_only=failed_only,
+                partial_only=partial_only,
+                needs_review_only=needs_review_only,
+            ):
+                continue
 
-            # Generate or regenerate
-            result = self._generate_and_save(book, chapter_num, reference)
-
-            # Update progress immediately
-            if existing:
-                progress = self._decrement_old_status(progress, existing.status)
-
+            result = self._generate_and_save(book, chapter_num, bible.verse_range_reference(book, chapter_num), bundle=bundle)
             if result.commentary:
-                # Save commentary atomically
                 save_commentary(result.commentary, self.storage_dir)
-                # Update progress stat
-                progress = self._increment_new_status(progress, result.commentary.status)
-
-            # CRITICAL: Persist progress durably immediately after each chapter
+            progress = self.rescan_progress(chapters, check_evidence=False)
             self.save_progress(progress)
-
             processed += 1
             if idx % 50 == 0:
-                # Status update every 50 chapters
                 print(f"Progress: {idx}/{len(chapters)} chapters")
-
         return progress
 
     def build_book(self, book: str) -> CommentaryProgress:
-        """Build commentary for all chapters in a book."""
+        """Build all chapters in one book using normal current-output resume rules."""
         try:
-            chapter_data = bible.resolve_chapter(book, 1)
-            book_name = chapter_data["book"]
-        except bible.BibleError:
-            raise ValueError(f"Unknown book: {book}")
+            book_name = bible.resolve_chapter(book, 1)["book"]
+        except bible.BibleError as exc:
+            raise ValueError(f"Unknown book: {book}") from exc
+        chapters = [item for item in self.discover_canonical_chapters() if item[0] == book_name]
+        return self._build_selected(chapters)
 
-        chapters = self.discover_canonical_chapters()
-        book_chapters = [(b, c) for b, c in chapters if b == book_name]
-
-        progress = self.get_progress()
-        if progress is None:
-            progress = self.initialize_progress(len(chapters))
-
-        for book, chapter_num in book_chapters:
-            reference = bible.verse_range_reference(book, chapter_num)
-            result = self._generate_and_save(book, chapter_num, reference)
-
+    def _build_selected(self, chapters: list[tuple[str, int]]) -> CommentaryProgress:
+        """Build a subset while keeping progress relative to all canonical chapters."""
+        progress = self.rescan_progress(check_evidence=True)
+        for book, chapter_num in chapters:
+            existing = load_commentary(self.storage_dir, book, chapter_num)
+            bundle = (
+                get_chapter_evidence_bundle(book, chapter_num)
+                if self._metadata_can_have_hash_drift(existing)
+                else None
+            )
+            status = self._effective_status(existing, book, chapter_num, bundle)
+            if existing and status == CommentaryStatus.VALIDATED.value:
+                continue
+            result = self._generate_and_save(book, chapter_num, bible.verse_range_reference(book, chapter_num), bundle=bundle)
             if result.commentary:
-                progress = self._increment_new_status(progress, result.commentary.status)
                 save_commentary(result.commentary, self.storage_dir)
-
-        self.save_progress(progress)
+            progress = self.rescan_progress(check_evidence=False)
         return progress
 
     def build_chapter(self, book: str, chapter: int, force: bool = False) -> ChapterCommentary:
-        """Build commentary for a specific chapter."""
+        """Build one chapter; current validated output is the only default skip."""
         try:
             chapter_data = bible.resolve_chapter(book, chapter)
             book_name = chapter_data["book"]
@@ -191,142 +229,72 @@ class CommentaryBuilder:
             raise ValueError(f"Invalid chapter: {book} {chapter}") from exc
 
         existing = load_commentary(self.storage_dir, book_name, chapter)
-        if not force and existing and existing.status == CommentaryStatus.VALIDATED.value:
+        bundle = get_chapter_evidence_bundle(book_name, chapter)
+        if not force and existing and self._effective_status(existing, book_name, chapter, bundle) == CommentaryStatus.VALIDATED.value:
             return existing
 
-        result = self._generate_and_save(book_name, chapter, reference)
+        result = self._generate_and_save(book_name, chapter, reference, bundle=bundle)
+        if not result.commentary:
+            raise ValueError(f"Generation failed for {reference}: {result.error}")
+        save_commentary(result.commentary, self.storage_dir)
+        self.rescan_progress(check_evidence=False)
+        return result.commentary
 
-        if result.commentary:
-            save_commentary(result.commentary, self.storage_dir)
-
-            # Update progress
-            progress = self.get_progress()
-            chapters = self.discover_canonical_chapters()
-            if progress is None:
-                progress = self.initialize_progress(len(chapters))
-            if existing:
-                progress = self._decrement_old_status(progress, existing.status)
-            progress = self._increment_new_status(progress, result.commentary.status)
-            self.save_progress(progress)
-
-            return result.commentary
-
-        raise ValueError(f"Generation failed for {reference}: {result.error}")
-
-    def _generate_and_save(
-        self, book: str, chapter: int, reference: str
-    ) -> Any:
-        """Generate and save a single chapter."""
-        bundle = get_chapter_evidence_bundle(book, chapter)
-        if bundle is None:
-            return CommentaryGenerationRequest(
-                book=book,
-                chapter=chapter,
-                reference=reference,
-                evidence_hash="",
-            )
-
+    def _generate_and_save(self, book: str, chapter: int, reference: str, *, bundle=None) -> Any:
+        """Generate one chapter using an already loaded bundle when available."""
+        bundle = bundle or get_chapter_evidence_bundle(book, chapter)
         request = CommentaryGenerationRequest(
             book=book,
             chapter=chapter,
             reference=reference,
-            evidence_hash=bundle.evidence_hash,
+            evidence_hash=bundle.evidence_hash if bundle else "",
         )
-
         return self.generator.generate(request)
 
-    def _increment_new_status(
-        self, progress: CommentaryProgress, status: str
-    ) -> CommentaryProgress:
-        """Increment progress counter for new status."""
-        if status == CommentaryStatus.VALIDATED.value:
-            return CommentaryProgress(
-                total_chapters=progress.total_chapters,
-                validated=progress.validated + 1,
-                partial=progress.partial,
-                needs_review=progress.needs_review,
-                failed=progress.failed,
-                stale=progress.stale,
-                pending=progress.pending,
-            )
-        elif status == CommentaryStatus.PARTIAL.value:
-            return CommentaryProgress(
-                total_chapters=progress.total_chapters,
-                validated=progress.validated,
-                partial=progress.partial + 1,
-                needs_review=progress.needs_review,
-                failed=progress.failed,
-                stale=progress.stale,
-                pending=progress.pending,
-            )
-        elif status == CommentaryStatus.NEEDS_REVIEW.value:
-            return CommentaryProgress(
-                total_chapters=progress.total_chapters,
-                validated=progress.validated,
-                partial=progress.partial,
-                needs_review=progress.needs_review + 1,
-                failed=progress.failed,
-                stale=progress.stale,
-                pending=progress.pending,
-            )
-        elif status == CommentaryStatus.FAILED.value:
-            return CommentaryProgress(
-                total_chapters=progress.total_chapters,
-                validated=progress.validated,
-                partial=progress.partial,
-                needs_review=progress.needs_review,
-                failed=progress.failed + 1,
-                stale=progress.stale,
-                pending=progress.pending,
-            )
-        return progress
+    def _effective_status(self, commentary, book: str, chapter: int, bundle=None) -> str:
+        if commentary is None:
+            return CommentaryStatus.PENDING.value
+        metadata = commentary.generated_metadata
+        if (
+            metadata is None
+            or metadata.commentary_prompt_version != COMMENTARY_PROMPT_VERSION
+            or metadata.commentary_schema_version != COMMENTARY_SCHEMA_VERSION
+            or commentary.book != book
+            or commentary.chapter != chapter
+        ):
+            return CommentaryStatus.STALE.value
+        if bundle is not None and metadata.evidence_hash != bundle.evidence_hash:
+            return CommentaryStatus.STALE.value
+        return commentary.status
 
-    def _decrement_old_status(
-        self, progress: CommentaryProgress, status: str
-    ) -> CommentaryProgress:
-        """Decrement progress counter for old status."""
-        if status == CommentaryStatus.VALIDATED.value:
-            validated = max(0, progress.validated - 1)
-            return CommentaryProgress(
-                total_chapters=progress.total_chapters,
-                validated=validated,
-                partial=progress.partial,
-                needs_review=progress.needs_review,
-                failed=progress.failed,
-                stale=progress.stale,
-                pending=progress.pending,
-            )
-        elif status == CommentaryStatus.PARTIAL.value:
-            partial = max(0, progress.partial - 1)
-            return CommentaryProgress(
-                total_chapters=progress.total_chapters,
-                validated=progress.validated,
-                partial=partial,
-                needs_review=progress.needs_review,
-                failed=progress.failed,
-                stale=progress.stale,
-                pending=progress.pending,
-            )
-        elif status == CommentaryStatus.NEEDS_REVIEW.value:
-            needs_review = max(0, progress.needs_review - 1)
-            return CommentaryProgress(
-                total_chapters=progress.total_chapters,
-                validated=progress.validated,
-                partial=progress.partial,
-                needs_review=needs_review,
-                failed=progress.failed,
-                stale=progress.stale,
-                pending=progress.pending,
-            )
-        elif status == CommentaryStatus.FAILED.value:
-            failed = max(0, progress.failed - 1)
-            return CommentaryProgress(
-                total_chapters=progress.total_chapters,
-                validated=progress.validated,
-                partial=progress.partial,
-                needs_review=progress.needs_review,
-                failed=failed,
-                stale=progress.stale,
-                pending=progress.pending,
-            )
-        return progress
+    @staticmethod
+    def _metadata_can_have_hash_drift(commentary) -> bool:
+        metadata = commentary.generated_metadata if commentary else None
+        return bool(
+            metadata
+            and metadata.commentary_prompt_version == COMMENTARY_PROMPT_VERSION
+            and metadata.commentary_schema_version == COMMENTARY_SCHEMA_VERSION
+        )
+
+    @staticmethod
+    def _should_generate(
+        status: str,
+        *,
+        resume: bool,
+        stale_only: bool,
+        failed_only: bool,
+        partial_only: bool,
+        needs_review_only: bool,
+    ) -> bool:
+        selected = {
+            "stale_only": (stale_only, CommentaryStatus.STALE.value),
+            "failed_only": (failed_only, CommentaryStatus.FAILED.value),
+            "partial_only": (partial_only, CommentaryStatus.PARTIAL.value),
+            "needs_review_only": (needs_review_only, CommentaryStatus.NEEDS_REVIEW.value),
+        }
+        for enabled, wanted in selected.values():
+            if enabled:
+                return status == wanted
+        if not resume:
+            return True
+        return status != CommentaryStatus.VALIDATED.value

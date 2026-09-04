@@ -48,6 +48,7 @@ understand its evidence model, or develop and maintain it.
 - [Lexicon source policy](lexicon-sources.md).
 - [Translation management](translations.md).
 - [Tyndale Open Study Notes](tyndale-study-notes.md) — install and use the attributed commentary reader companion.
+- [BHF chapter commentary](chapter-commentary.md) — generation contract, validation guarantees, and resumable progress.
 - [Evaluation](evals.md).
 
 ## Contribute content
