@@ -49,9 +49,37 @@ TEXT = {
 40: 'Genesis 40 places Pharaoh’s chief butler and baker in the prison with Joseph. Each has a troubling dream, and Joseph asks them to tell it because interpretations belong to God. He interprets three branches and three baskets as three days, predicting restoration for the butler and execution for the baker. The events occur as stated, but the restored butler forgets Joseph.',
 }
 
-def block(ch, evidence):
-    d = bible.resolve_chapter('Genesis', ch)
-    refs = [f'Genesis {ch}:1-{len(d["verses"])}']
+NEXT = {
+('Genesis',41): 'Genesis 41 records Pharaoh’s dreams of cows and ears of grain, Joseph’s interpretation of seven years of abundance followed by seven years of famine, and Joseph’s elevation over Egypt. Joseph stores grain, marries Asenath, and names his sons Manasseh and Ephraim. When famine comes, Egypt and surrounding lands seek food from Joseph.',
+('Genesis',42): 'Genesis 42 sends Jacob’s sons to Egypt for grain. Joseph recognizes them but they do not recognize him; he tests their claim of honesty by keeping Simeon and requiring Benjamin’s presence. The brothers connect their distress with Joseph, return with grain, and discover the money in their sacks, while Jacob refuses to send Benjamin.',
+('Genesis',43): 'Genesis 43 follows the brothers’ return to Egypt with Benjamin after Judah guarantees his safety. Joseph orders a feast, and the brothers fear because of the money returned in their sacks. Benjamin receives a larger portion, but the meal remains a carefully arranged encounter between Joseph and his brothers.',
+('Genesis',44): 'Genesis 44 describes Joseph’s final test: his cup is placed in Benjamin’s sack, and the brothers are pursued and brought back. Judah offers himself in Benjamin’s place, explaining Jacob’s attachment to the youngest son and the danger his father would suffer if Benjamin did not return.',
+('Genesis',45): 'Genesis 45 records Joseph revealing himself to his brothers. He tells them not to be grieved that they sold him, because God sent him ahead to preserve life during the famine. Joseph sends them to bring Jacob and the household to Egypt, and Pharaoh confirms that they should settle there.',
+('Genesis',46): 'Genesis 46 records Jacob’s journey to Egypt after God tells him not to fear going down there. Jacob’s household is listed, Joseph meets him at Goshen, and the family prepares to answer Pharaoh that they are shepherds. The chapter emphasizes the migration of Israel’s household into Egypt.',
+('Genesis',47): 'Genesis 47 places Jacob’s family in Goshen and records Jacob blessing Pharaoh. Joseph administers Egypt during the famine by exchanging grain for money, livestock, land, and labor, while preserving seed for planting. Jacob asks Joseph to bury him with his fathers rather than in Egypt.',
+('Genesis',48): 'Genesis 48 records Jacob blessing Joseph’s sons, Ephraim and Manasseh. Jacob adopts them as his own, recalls Rachel’s death, and deliberately places his right hand on Ephraim despite Joseph’s attempt to correct him. Jacob blesses both boys and speaks of God’s continuing presence with the family.',
+('Genesis',49): 'Genesis 49 records Jacob’s words to his sons before his death. The sayings distinguish the tribes through images, judgments, promises, and future descriptions, with particular attention to Judah and Joseph. Jacob charges them to bury him in the cave bought by Abraham, then dies.',
+('Genesis',50): 'Genesis 50 records Jacob’s burial in Canaan, Joseph’s reassurance to his brothers after their father’s death, and Joseph’s final years. Joseph says that what the brothers meant for evil, God meant for good to preserve many people alive. Before dying, Joseph makes the children of Israel promise to carry up his bones.',
+('Exodus',1): 'Exodus 1 begins by naming Jacob’s sons and describing Israel’s multiplication in Egypt. A new king who did not know Joseph subjects them to forced labor, orders the Hebrew midwives to kill sons, and then commands all his people to cast Hebrew sons into the river. The midwives fear God and preserve the children.',
+('Exodus',2): 'Exodus 2 tells of Moses’ birth, concealment, rescue from the Nile by Pharaoh’s daughter, and upbringing. Moses kills an Egyptian who strikes a Hebrew and flees to Midian, where he helps Reuel’s daughters and marries Zipporah. Israel groans under bondage, and God hears and remembers his covenant.',
+('Exodus',3): 'Exodus 3 describes Moses at Horeb before the burning bush. God identifies himself as the God of Abraham, Isaac, and Jacob, hears Israel’s affliction, and commissions Moses to bring Israel out of Egypt. The divine name is disclosed, and Moses is told what Israel and Pharaoh are to be told.',
+('Exodus',4): 'Exodus 4 gives Moses signs for Israel, including the rod, the diseased and restored hand, and water becoming blood. Moses objects to his speaking ability, and Aaron is appointed to speak for him. Moses returns toward Egypt, circumcision occurs on the journey, and Moses and Aaron gather the elders who believe the message.',
+('Exodus',5): 'Exodus 5 records Moses and Aaron asking Pharaoh to let Israel go to hold a feast to Jehovah. Pharaoh refuses and increases the labor by withholding straw while demanding the same brick quota. Israel’s officers complain to Moses, and Moses brings the people’s worsening situation before Jehovah.',
+('Exodus',6): 'Exodus 6 records Jehovah’s renewed promise to bring Israel out of Egypt, redeem them, and take them as a people. Moses reports this but Israel does not listen because of anguish and hard bondage. The chapter then gives a genealogy focused on Moses and Aaron and returns to their commission before Pharaoh.',
+('Exodus',7): 'Exodus 7 presents Moses and Aaron before Pharaoh and begins the signs and plagues. Aaron’s rod becomes a serpent and consumes the magicians’ rods, yet Pharaoh’s heart is hardened. The Nile is turned to blood, killing fish and making the water undrinkable, but Pharaoh does not listen.',
+('Exodus',8): 'Exodus 8 records the plagues of frogs, lice, and flies. Pharaoh repeatedly asks for relief and promises release, then hardens his heart when relief comes. Jehovah distinguishes the land of Goshen in the fly plague, but Pharaoh still refuses to let the people go.',
+('Exodus',9): 'Exodus 9 records disease on Egyptian livestock, boils on people and beasts, and destructive hail. Jehovah distinguishes Israel’s livestock and land, and the hail narrative notes that some Egyptians who feared the word brought servants and livestock inside. Pharaoh confesses sin during the hail but hardens his heart afterward.',
+('Exodus',10): 'Exodus 10 records locusts and darkness. Pharaoh’s servants urge him to let Israel go, but negotiations repeatedly narrow and fail. Locusts consume what the hail left, darkness covers Egypt for three days while Israel has light, and Pharaoh again refuses and orders Moses away.',
+('Exodus',11): 'Exodus 11 announces one final plague on Egypt and a coming release. Moses says that at midnight every firstborn in Egypt will die, from Pharaoh’s firstborn to the firstborn of the maidservant and animals, while Israel will be distinguished. Pharaoh will not listen until the signs are complete.',
+('Exodus',12): 'Exodus 12 establishes the Passover month, the lamb, the blood on the doorposts, and the meal eaten in readiness. The firstborn of Egypt die, but the houses marked with blood are passed over. Israel leaves Egypt, and the chapter gives Passover regulations concerning its observance and participation.',
+('Exodus',13): 'Exodus 13 consecrates every firstborn to Jehovah and explains the memorial of unleavened bread. Moses carries Joseph’s bones, and Jehovah leads Israel by a pillar of cloud by day and fire by night rather than by the nearer road through Philistia. The chapter frames the departure as an act of divine guidance.',
+('Exodus',14): 'Exodus 14 narrates Israel’s escape through the sea. Pharaoh pursues, Israel fears, and Moses tells them to stand still and see Jehovah’s salvation. The sea divides, Israel passes on dry ground, Egypt follows, the waters return, and Israel sees Egypt defeated and believes Jehovah and Moses.',
+('Exodus',15): 'Exodus 15 contains Moses and Israel’s song after the sea crossing, celebrating Jehovah’s victory and guidance toward the holy habitation. Miriam leads the women with tambourines. The journey reaches Marah, where bitter water is made drinkable, and Jehovah gives a statute and test concerning obedience.',
+}
+
+def block(book, ch, evidence):
+    d = bible.resolve_chapter(book, ch)
+    refs = [f'{book} {ch}:1-{len(d["verses"])}']
     return {'id': 'overview', 'text': TEXT[ch], 'verse_refs': refs, 'evidence_ids': [evidence], 'confidence': 'high', 'interpretation_level': 'fact'}
 
 def run():
@@ -69,7 +97,7 @@ def run():
         if should_process:
             selected.append((book, ch))
             if len(selected) == 25: break
-    if any(book != 'Genesis' or ch not in TEXT for book, ch in selected):
+    if any((book, ch) not in NEXT for book, ch in selected):
         raise RuntimeError(f'Unexpected selection: {selected}')
     stamper = CommentaryGenerator(config)
     for book, ch in selected:
@@ -79,7 +107,7 @@ def run():
         request = CommentaryGenerationRequest(book, ch, reference, bundle.evidence_hash, force_regenerate=True)
         metadata = stamper._authoritative_metadata(request, bundle).to_dict()
         evidence = next((i.id for i in bundle.evidence_items if i.id == 'genesis-literary-movement'), bundle.evidence_items[0].id)
-        generated_block = block(ch, evidence)
+        generated_block = block(book, ch, evidence)
         cited = bundle.evidence_by_id[evidence]
         generated_block['confidence'] = cited.confidence
         if cited.relevance_metadata.get('dispute_status') not in (None, '', 'not_disputed'):
