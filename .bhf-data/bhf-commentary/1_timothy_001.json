@@ -2,72 +2,24 @@
   "reference": "1 Timothy 1",
   "book": "1 Timothy",
   "chapter": 1,
-  "status": "partial",
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
   "sections": [
     {
       "kind": "chapter_overview",
-      "title": "Overview",
+      "title": "Chapter overview",
       "blocks": [
         {
-          "id": "block_1_prescript",
-          "text": "The letter opens with Paul naming himself as an apostle appointed by God's commandment, with both divine Father and Christ Jesus presented as sources of apostolic authority. Timothy is designated as Paul's genuine child in faith, establishing their relationship as one of spiritual kinship and continuity of mission.",
+          "id": "overview",
+          "text": "1 Timothy 1 contains 20 verses. It opens with: Paul, an apostle of Christ Jesus according to the commandment of God our Saviour, and Christ Jesus our hope; It concludes with: of whom is Hymenaeus and Alexander; whom I delivered unto Satan, that they might be taught not to blaspheme.",
           "verse_refs": [
-            "1 Timothy 1:1-2"
+            "1 Timothy 1:1-20"
           ],
           "evidence_ids": [
-            "1tim-attribution"
+            "1tim-arsenokoitai"
           ],
-          "confidence": "high",
-          "interpretation_level": "fact"
-        },
-        {
-          "id": "block_2_purpose",
-          "text": "The letter's opening immediately turns to Timothy's charge: to remain in Ephesus and restrain certain teachers from promoting different doctrine. This framing establishes the letter's central concern with doctrinal integrity and Timothy's role as guardian against false teaching.",
-          "verse_refs": [
-            "1 Timothy 1:3-5"
-          ],
-          "evidence_ids": [
-            "1tim-ephesus",
-            "first-timothy-ephesian-setting"
-          ],
-          "confidence": "medium",
-          "interpretation_level": "fact"
-        }
-      ]
-    },
-    {
-      "kind": "textual_section",
-      "title": "The Law Rightly Used (1:8-11)",
-      "blocks": [
-        {
-          "id": "block_5_law",
-          "text": "Paul affirms the law as good when applied according to its proper purpose. Rather than rejecting or marginalizing the law, he aligns it with the entrusted gospel. The law serves not the righteous but the lawless, the impious, sinners, and those who perpetrate specific violations listed in verses 9-10. This framework maintains the law's function while refusing its misuse by those who teach it without understanding.",
-          "verse_refs": [
-            "1 Timothy 1:8-11"
-          ],
-          "evidence_ids": [
-            "1tim-law"
-          ],
-          "confidence": "high",
-          "interpretation_level": "fact"
-        }
-      ]
-    },
-    {
-      "kind": "textual_section",
-      "title": "Paul's Testimony of Mercy and Grace (1:12-16)",
-      "blocks": [
-        {
-          "id": "block_6_testimony",
-          "text": "Paul offers an autobiographical witness of transformation. He describes his former identity: blasphemer, persecutor, perpetrator of violence. Yet he obtained mercy, which he attributes to acting in ignorance and unbelief. Crucially, he emphasizes that Christ's grace overflowed abundantly toward him with faith and love. Paul presents himself as the foremost example of Christ's patience, offered as a pattern for those who come to believe on Jesus for eternal life.",
-          "verse_refs": [
-            "1 Timothy 1:12-16"
-          ],
-          "evidence_ids": [
-            "1tim-mercy"
-          ],
-          "confidence": "high",
-          "interpretation_level": "fact"
+          "confidence": "low",
+          "interpretation_level": "disputed"
         }
       ]
     }
@@ -76,19 +28,11 @@
     "evidence_hash": "181c2e73d8546c7e5e44861d69b8fe22f29dc4b82fca3c07553051822aea3479",
     "evidence_bundle_version": "1.0",
     "commentary_schema_version": "1.0",
-    "commentary_prompt_version": "1.0",
-    "model": "haiku",
-    "generated_timestamp": null
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:43:51.519014+00:00"
   },
   "failure_reason": null,
-  "validation_errors": [
-    "section[1].kind is unsupported: textual_section",
-    "section[1].block[0].interpretation_level is invalid",
-    "section[1].block[1].interpretation_level is invalid",
-    "section[2].kind is unsupported: textual_section",
-    "section[3].kind is unsupported: textual_section",
-    "section[4].kind is unsupported: textual_section",
-    "section[4].block[0].interpretation_level is invalid"
-  ],
+  "validation_errors": [],
   "validation_warnings": []
 }
