@@ -1,7 +1,7 @@
 {
-  "reference": "Amos 5",
-  "book": "Amos",
-  "chapter": 5,
+  "reference": "Jonah 2",
+  "book": "Jonah",
+  "chapter": 2,
   "status": "validated",
   "evidence_availability": "AVAILABLE",
   "sections": [
@@ -11,26 +11,26 @@
       "blocks": [
         {
           "id": "overview",
-          "text": "Amos 5 contains 27 verses. It opens with: Hear ye this word which I take up for a lamentation over you, O house of Israel. It concludes with: Therefore will I cause you to go into captivity beyond Damascus, saith Jehovah, whose name is the God of hosts.",
+          "text": "Jonah 2 contains 10 verses. It opens with: Then Jonah prayed unto Jehovah his God out of the fish's belly. It concludes with: And Jehovah spake unto the fish, and it vomited out Jonah upon the dry land.",
           "verse_refs": [
-            "Amos 5:1-27"
+            "Jonah 2:1-10"
           ],
           "evidence_ids": [
-            "amos-acts7-reuse"
+            "jonah-date-composition"
           ],
-          "confidence": "high",
+          "confidence": "medium",
           "interpretation_level": "disputed"
         }
       ]
     }
   ],
   "generated_metadata": {
-    "evidence_hash": "77177deecebfb6a6cd20a61c35474ebb61be612b589f8a67172bd17ea1af765f",
+    "evidence_hash": "00da2f28235842ac27621b38a7ba5b9c70845fa9934944396a3709e50dcb518a",
     "evidence_bundle_version": "1.0",
     "commentary_schema_version": "1.0",
     "commentary_prompt_version": "1.1",
     "model": "luna-codex-development",
-    "generated_timestamp": "2026-09-04T18:31:21.710445+00:00"
+    "generated_timestamp": "2026-09-04T18:31:22.152004+00:00"
   },
   "failure_reason": null,
   "validation_errors": [],

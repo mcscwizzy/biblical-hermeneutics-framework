@@ -2,93 +2,37 @@
   "reference": "Amos 9",
   "book": "Amos",
   "chapter": 9,
-  "status": "partial",
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
   "sections": [
     {
-      "kind": "vision_and_judgment",
-      "title": "The Fifth Vision: Judgment at the Altar",
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
       "blocks": [
         {
-          "id": "block_2",
-          "text": "The vision shows the Lord standing beside the altar, commanding the sanctuary's destruction. The capitals of the building are to be shattered, causing the thresholds to shake, with catastrophic collapse of the structure and those within it. While certain textual details present interpretive challenges, the core image is unambiguous: the sanctuary itself becomes a place of judgment rather than refuge.",
+          "id": "overview",
+          "text": "Amos 9 contains 15 verses. It opens with: I saw the Lord standing beside the altar: and he said, Smite the capitals, that the thresholds may shake; and break them in pieces on the head of all of them; and I will slay the last of them with the sword: there shall not one of them flee away, and there shall not one of them escape. It concludes with: And I will plant them upon their land, and they shall no more be plucked up out of their land which I have given them, saith Jehovah thy God.",
           "verse_refs": [
-            "Amos 9:1"
-          ],
-          "evidence_ids": [
-            "amos-altar-vision"
-          ],
-          "confidence": "high",
-          "interpretation_level": "fact"
-        },
-        {
-          "id": "block_3",
-          "text": "The vision then pursues the theme of inescapable judgment through an escalating series of locations. Whether people descend to Sheol, ascend to heaven, hide atop Mount Carmel, or plunge into the sea, God's hand seizes them. Even exile before enemies cannot prevent the sword from reaching them. This relentless cataloging emphasizes the absoluteness of divine judgment and the futility of resistance or hiding.",
-          "verse_refs": [
-            "Amos 9:2-4"
-          ],
-          "evidence_ids": [
-            "amos-altar-vision"
-          ],
-          "confidence": "high",
-          "interpretation_level": "fact"
-        }
-      ]
-    },
-    {
-      "kind": "restoration_oracle",
-      "title": "The Restoration Promise: David's Booth",
-      "blocks": [
-        {
-          "id": "block_5",
-          "text": "The early Christian community interpreted this restoration promise expansively. Acts 15:16-18 quotes a Greek form of Amos 9:11-12 in the context of including gentiles in God's people, associating the restored Davidic tent with the remnant of humanity and nations called by God's name. This reuse demonstrates how interpreters beyond the original context understood the restoration as extending beyond Israel to encompass gentile nations.",
-          "verse_refs": [
-            "Amos 9:11-12",
-            "Acts 15:16-18"
+            "Amos 9:1-15"
           ],
           "evidence_ids": [
             "amos-acts15-reuse"
           ],
           "confidence": "high",
-          "interpretation_level": "fact"
-        }
-      ]
-    },
-    {
-      "kind": "textual_evidence",
-      "title": "Textual Traditions and Composition",
-      "blocks": [
-        {
-          "id": "block_7",
-          "text": "The Masoretic and Old Greek textual traditions of Amos represent related but sometimes divergent forms. Early Hebrew manuscripts including 4Q78, 4Q82, 5QAmos, and MurXII preserve the textual history of the book in antiquity, attesting to how Amos circulated and was read in early Jewish communities.",
-          "verse_refs": [
-            "Amos 9"
-          ],
-          "evidence_ids": [
-            "amos-hebrew-greek-witnesses"
-          ],
-          "confidence": "high",
-          "interpretation_level": "fact"
+          "interpretation_level": "disputed"
         }
       ]
     }
   ],
   "generated_metadata": {
-    "evidence_hash": "2db00e0287030b5948a9b9f29af67853b7a73f6025f7964cafb395e4de7a6a00",
+    "evidence_hash": "54eaf500128c63b12fb5838cab3380efac3055ce0e7c9877c1dacee2b6cf959d",
     "evidence_bundle_version": "1.0",
     "commentary_schema_version": "1.0",
-    "commentary_prompt_version": "1.0",
-    "model": "haiku",
-    "generated_timestamp": null
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:31:21.918799+00:00"
   },
   "failure_reason": null,
-  "validation_errors": [
-    "section[0].block[0].interpretation_level is invalid",
-    "section[1].kind is unsupported: vision_and_judgment",
-    "section[2].kind is unsupported: restoration_oracle",
-    "section[2].block[0].interpretation_level is invalid",
-    "section[2].block[2].interpretation_level is invalid",
-    "section[3].kind is unsupported: textual_evidence",
-    "section[3].block[1].interpretation_level is invalid"
-  ],
+  "validation_errors": [],
   "validation_warnings": []
 }

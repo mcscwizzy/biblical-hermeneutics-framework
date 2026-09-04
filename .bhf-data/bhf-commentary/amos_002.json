@@ -2,79 +2,24 @@
   "reference": "Amos 2",
   "book": "Amos",
   "chapter": 2,
-  "status": "partial",
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
   "sections": [
     {
       "kind": "chapter_overview",
-      "title": "Overview: The Oracle Pattern Across Nations",
+      "title": "Chapter overview",
       "blocks": [
         {
-          "id": "block_1",
-          "text": "Amos 2 continues the extended oracle sequence from chapter 1, applying the stereotyped 'three transgressions, yea four' formula to Moab, Judah, and Israel in succession. This rhythmic pattern moves from pagan nations surrounding Israel toward Israel itself, culminating in the climactic oracle against Israel, which receives the most elaborate and condemnatory charges.",
+          "id": "overview",
+          "text": "Amos 2 contains 16 verses. It opens with: Thus saith Jehovah: For three transgressions of Moab, yea, for four, I will not turn away the punishment thereof; because he burned the bones of the king of Edom into lime: It concludes with: and he that is courageous among the mighty shall flee away naked in that day, saith Jehovah.",
           "verse_refs": [
-            "Amos 2:1",
-            "Amos 2:4",
-            "Amos 2:6"
-          ],
-          "evidence_ids": [
-            "amos-nations-sequence"
-          ],
-          "confidence": "high",
-          "interpretation_level": "fact"
-        }
-      ]
-    },
-    {
-      "kind": "section",
-      "title": "Moab: Desecration of the Dead (2:1-3)",
-      "blocks": [
-        {
-          "id": "block_2",
-          "text": "Moab's transgression is specific: burning the bones of Edom's king to lime. Unlike the military or commercial violations charged against surrounding nations, Moab violates ancient Near Eastern protocols regarding the respectful treatment of the dead. As judgment, fire will devour Moab's strongholds, its rulers will be eliminated, and the nation will perish in chaos and military defeat.",
-          "verse_refs": [
-            "Amos 2:1-3"
-          ],
-          "evidence_ids": [
-            "amos-nations-sequence"
-          ],
-          "confidence": "high",
-          "interpretation_level": "fact"
-        }
-      ]
-    },
-    {
-      "kind": "section",
-      "title": "Judah: Rejection of Divine Law (2:4-5)",
-      "blocks": [
-        {
-          "id": "block_3",
-          "text": "Judah's transgression is theological: they rejected the law of Jehovah and failed to keep His statutes, following lies as their fathers had done. The oracle does not catalogue military or commercial crimes but identifies breach of covenant as the fundamental offense. Like the nations before it, Judah faces fire that will devour Jerusalem's palaces, marking Judah and Israel as cousins in judgment.",
-          "verse_refs": [
-            "Amos 2:4-5"
-          ],
-          "evidence_ids": [
-            "amos-nations-sequence"
-          ],
-          "confidence": "high",
-          "interpretation_level": "fact"
-        }
-      ]
-    },
-    {
-      "kind": "section",
-      "title": "Israel: Economic Exploitation and Injustice (2:6-8)",
-      "blocks": [
-        {
-          "id": "block_4",
-          "text": "Israel's oracle stands apart in length and specificity, focusing on systematic economic crimes. The powerful sell the righteous for silver and the needy for a pair of shoes, trample the poor into dust, and turn aside the meek from justice. Pledged garments, the outer clothes of debtors seized as collateral, are spread beside altars, and fined wines are drunk in temples. The wealthy thus profane sacred spaces with instruments of their own exploitation, corrupting worship through the mechanisms of injustice.",
-          "verse_refs": [
-            "Amos 2:6-8"
+            "Amos 2:1-16"
           ],
           "evidence_ids": [
             "amos-economic-exploitation"
           ],
           "confidence": "high",
-          "interpretation_level": "fact"
+          "interpretation_level": "disputed"
         }
       ]
     }
@@ -83,15 +28,11 @@
     "evidence_hash": "1d74b627dc372d999cbb1e01ab713692f5b50d05515eb87568e9e532b5bb03d1",
     "evidence_bundle_version": "1.0",
     "commentary_schema_version": "1.0",
-    "commentary_prompt_version": "1.0",
-    "model": "haiku",
-    "generated_timestamp": null
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:31:21.413028+00:00"
   },
   "failure_reason": null,
-  "validation_errors": [
-    "section[1].kind is unsupported: section",
-    "section[2].kind is unsupported: section",
-    "section[3].kind is unsupported: section"
-  ],
+  "validation_errors": [],
   "validation_warnings": []
 }

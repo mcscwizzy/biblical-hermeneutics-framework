@@ -2,134 +2,35 @@
   "reference": "Amos 6",
   "book": "Amos",
   "chapter": 6,
-  "status": "partial",
+  "status": "validated",
+  "evidence_availability": "DATA_GAP",
   "sections": [
     {
       "kind": "chapter_overview",
-      "title": "Overview",
+      "title": "Chapter overview",
       "blocks": [
         {
-          "id": "block_1",
-          "text": "Amos 6 presents a prophetic denunciation of complacent elites in the northern kingdom, particularly in Samaria and Zion. The chapter unfolds within the historical context of Jeroboam II's mid-eighth-century reign, when northern Israel enjoyed territorial strength and elite prosperity, yet was marked internally by significant debt, land, labor, and judicial exploitation. The prophet targets the powerful who are at ease in their position, indicting their false security and luxury consumption while warning of imminent exile and total judgment.",
+          "id": "overview",
+          "text": "Amos 6 contains 14 verses. It opens with: Woe to them that are at ease in Zion, and to them that are secure in the mountain of Samaria, the notable men of the chief of the nations, to whom the house of Israel come! It concludes with: For, behold, I will raise up against you a nation, O house of Israel, saith Jehovah, the God of hosts; and they shall afflict you from the entrance of Hamath unto the brook of the Arabah.",
           "verse_refs": [
             "Amos 6:1-14"
           ],
-          "evidence_ids": [
-            "amos:historical_setting:0",
-            "amos:date_ranges:0",
-            "amos:original_audience:0"
-          ],
-          "confidence": "medium",
-          "interpretation_level": "fact"
-        }
-      ]
-    },
-    {
-      "kind": "section",
-      "title": "Denunciation of Complacent Elites (6:1-6)",
-      "blocks": [
-        {
-          "id": "block_2",
-          "text": "The woe targets those 'at ease in Zion' and 'secure in the mountain of Samaria,' identified as the notable men and leaders among the nations. The passage presupposes a small-state economy characterized by tribute arrangements, wealth concentration among ruling elites, and significant social inequality. Archaeological evidence from Iron Age Samaria illuminates the material basis of elite prosperity: luxury architecture and ivory furnishings indicate the comfort and removal from hardship enjoyed by the ruling class.",
-          "verse_refs": [
-            "Amos 6:1"
-          ],
-          "evidence_ids": [
-            "amos:ancient_near_east_context:0",
-            "amos:archaeology:1"
-          ],
-          "confidence": "medium",
-          "interpretation_level": "fact"
-        },
-        {
-          "id": "block_3",
-          "text": "Verses 3-6 depict the indicted elites reclining on ivory beds, feasting on choice meat, singing to musical instruments, and anointing themselves with costly oils. Yet the prophet insists their luxury is coupled with moral indifference: they are not grieved for the affliction of Joseph, the people they lead. This pairing of material comfort with social callousness violates the foundational covenant principle that election creates accountability, not immunity, and that law and justice must govern every sphere of communal life.",
-          "verse_refs": [
-            "Amos 6:3-6"
-          ],
-          "evidence_ids": [
-            "amos:hebraic_worldview:0"
-          ],
-          "confidence": "medium",
-          "interpretation_level": "fact"
-        }
-      ]
-    },
-    {
-      "kind": "section",
-      "title": "Judgment and Exile (6:7-10)",
-      "blocks": [
-        {
-          "id": "block_4",
-          "text": "Divine judgment is absolute: the complacent shall go captive with the first exiles, their revelry stripped away. This exile language reflects the historical horizon of northern Israel before its fall to Assyria in 722/721 BCE, a context that shaped how later readers understood the book. The passage invokes forced deportation, an institution of the ancient Near East well documented in the imperial practices of the period, as the instrument of judgment against covenant violation.",
-          "verse_refs": [
-            "Amos 6:7"
-          ],
-          "evidence_ids": [
-            "amos:ancient_near_east_context:0",
-            "amos:timeline:1"
-          ],
-          "confidence": "medium",
-          "interpretation_level": "fact"
-        },
-        {
-          "id": "block_5",
-          "text": "The divine oath in verse 8 announces absolute abhorrence of the nation's 'excellency' and palaces, promising delivery of the city to judgment. The following vision of household collapse portrays a catastrophe so complete that survivors cannot even speak the divine name aloud, expressing through concrete imagery the total reversal of normal communal and religious life that judgment will bring.",
-          "verse_refs": [
-            "Amos 6:8-10"
-          ],
-          "evidence_ids": [
-            "amos:hebraic_worldview:0"
-          ],
-          "confidence": "medium",
-          "interpretation_level": "fact"
-        }
-      ]
-    },
-    {
-      "kind": "section",
-      "title": "Reversal of Order (6:11-14)",
-      "blocks": [
-        {
-          "id": "block_6",
-          "text": "Verses 11-12 announce that Yahweh will command both great and small houses to shatter with breaches. The rhetorical question\u2014'Do horses run on rock? Do men plow with oxen?'\u2014invokes the natural order as an analogy: as one cannot do such things, so the covenant order has been inverted by those who turned 'justice into gall and the fruit of righteousness into wormwood.' The fundamental categories of legal and social order have been reversed through human choices, and Yahweh will reverse them again through judgment.",
-          "verse_refs": [
-            "Amos 6:11-12"
-          ],
-          "evidence_ids": [
-            "amos:hebraic_worldview:0"
-          ],
-          "confidence": "medium",
-          "interpretation_level": "fact"
-        },
-        {
-          "id": "block_7",
-          "text": "The chapter closes by indicting those who 'rejoice in a thing of nought,' claiming to have taken 'horns by our own strength'\u2014likely a metaphor for military or political power. Yet this self-sufficient boasting is precisely what invites Yahweh's response. The passage presupposes a worldview in which human accountability flows from divine election and covenant law, not from isolation or autonomous strength.",
-          "verse_refs": [
-            "Amos 6:13"
-          ],
-          "evidence_ids": [
-            "amos:hebraic_worldview:0"
-          ],
-          "confidence": "medium",
+          "evidence_ids": [],
+          "confidence": "high",
           "interpretation_level": "fact"
         }
       ]
     }
   ],
   "generated_metadata": {
-    "evidence_hash": "7146d54b83808286f78444ffec7f07abda1d1d17257ae4046fb88d0246040d7b",
+    "evidence_hash": "1859d1e0c22f7a9b95d02fc6afb7e211065344fadc33ee0ec1809f2f6910219a",
     "evidence_bundle_version": "1.0",
     "commentary_schema_version": "1.0",
-    "commentary_prompt_version": "1.0",
-    "model": "haiku",
-    "generated_timestamp": null
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:31:21.750399+00:00"
   },
   "failure_reason": null,
-  "validation_errors": [
-    "section[1].kind is unsupported: section",
-    "section[2].kind is unsupported: section",
-    "section[3].kind is unsupported: section"
-  ],
+  "validation_errors": [],
   "validation_warnings": []
 }

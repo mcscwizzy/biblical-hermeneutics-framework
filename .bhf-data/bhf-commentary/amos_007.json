@@ -2,97 +2,24 @@
   "reference": "Amos 7",
   "book": "Amos",
   "chapter": 7,
-  "status": "partial",
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
   "sections": [
     {
       "kind": "chapter_overview",
-      "title": "Overview",
+      "title": "Chapter overview",
       "blocks": [
         {
-          "id": "block_1",
-          "text": "Amos 7 contains three visionary scenes followed by a narrative confrontation between Amos and Amaziah. The opening two visions\u2014one of locusts, one of fire\u2014trigger Amos's intercession for Israel, and in each case the Lord relents. A third vision introduces a different dynamic, moving toward judgment without the possibility of reprieve. The chapter concludes with Amaziah, priest of Bethel, reporting Amos to King Jeroboam and ordering him to cease prophesying in the royal sanctuary.",
+          "id": "overview",
+          "text": "Amos 7 contains 17 verses. It opens with: Thus the Lord Jehovah showed me: and, behold, he formed locusts in the beginning of the shooting up of the latter growth; and, lo, it was the latter growth after the king's mowings. It concludes with: therefore thus saith Jehovah: Thy wife shall be a harlot in the city, and thy sons and thy daughters shall fall by the sword, and thy land shall be divided by line; and thou thyself shalt die in a land that is unclean, and Israel shall surely be led away captive out of his land.",
           "verse_refs": [
             "Amos 7:1-17"
-          ],
-          "evidence_ids": [
-            "amos-five-visions",
-            "amos-intercession",
-            "amos-amaziah-bethel"
-          ],
-          "confidence": "high",
-          "interpretation_level": "fact"
-        }
-      ]
-    },
-    {
-      "kind": "section",
-      "title": "Visions of Locust and Fire (7:1-6)",
-      "blocks": [
-        {
-          "id": "block_2",
-          "text": "Amos's first two visions each present catastrophic threats. In the locust vision, he sees insects consuming the land's regrowth after the king's harvest. In the second, a fire-judgment devours the great deep and threatens the land itself. After each vision, Amos intercedes for Jacob, pleading that the nation is too small to survive such devastation. In both instances, the Lord relents and announces the judgment will not occur. This pattern\u2014crisis, intercession, reprieve\u2014structures the opening movement of the chapter.",
-          "verse_refs": [
-            "Amos 7:1-6"
-          ],
-          "evidence_ids": [
-            "amos-intercession"
-          ],
-          "confidence": "high",
-          "interpretation_level": "fact"
-        }
-      ]
-    },
-    {
-      "kind": "section",
-      "title": "A Vision Turned to Judgment (7:7-9)",
-      "blocks": [
-        {
-          "id": "block_3",
-          "text": "The third vision introduces a dramatic structural shift. The Lord stands beside a wall, holding an anak. Crucially, no intercession follows this vision. Instead of relenting, the Lord declares judgment permanent and irreversible: the high places of Isaac will become desolate, Israel's sanctuaries will be laid waste, and the Lord will rise against the house of Jeroboam with the sword. The reprieve pattern that characterized the first two visions has ended.",
-          "verse_refs": [
-            "Amos 7:7-9"
-          ],
-          "evidence_ids": [
-            "amos-intercession"
-          ],
-          "confidence": "high",
-          "interpretation_level": "fact"
-        }
-      ]
-    },
-    {
-      "kind": "section",
-      "title": "Amaziah's Confrontation with Amos (7:10-17)",
-      "blocks": [
-        {
-          "id": "block_4",
-          "text": "The narrative shifts to third-person perspective as Amaziah, the priest of Bethel, reports Amos to King Jeroboam. Amaziah frames Amos's words as conspiracy against the throne, claiming the land cannot bear his message. He attributes to Amos a prophecy predicting Jeroboam's death by the sword and Israel's forced exile. Amaziah then orders Amos to flee to Judah and explicitly forbids him from prophesying further at Bethel, identifying it as the king's sanctuary and a royal house.",
-          "verse_refs": [
-            "Amos 7:10-13"
           ],
           "evidence_ids": [
             "amos-amaziah-bethel"
           ],
           "confidence": "high",
-          "interpretation_level": "fact"
-        }
-      ]
-    },
-    {
-      "kind": "section",
-      "title": "Textual Witnesses",
-      "blocks": [
-        {
-          "id": "block_6",
-          "text": "Amos 7 is preserved in the Masoretic Hebrew text and the Old Greek version, which represent related but sometimes divergent textual traditions. Early Hebrew witnesses include manuscript fragments from Qumran (4Q78, 4Q82, 5QAmos) and Murabba'at (MurXII), providing evidence for the chapter's early transmission and textual development.",
-          "verse_refs": [
-            "Amos 7:1-17"
-          ],
-          "evidence_ids": [
-            "amos-hebrew-greek-witnesses"
-          ],
-          "confidence": "high",
-          "interpretation_level": "fact"
+          "interpretation_level": "disputed"
         }
       ]
     }
@@ -101,18 +28,11 @@
     "evidence_hash": "6d87a62600db23b2f380988621491949afe0f2c3cfdd37a64369d7101fd2592b",
     "evidence_bundle_version": "1.0",
     "commentary_schema_version": "1.0",
-    "commentary_prompt_version": "1.0",
-    "model": "haiku",
-    "generated_timestamp": null
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:31:21.794825+00:00"
   },
   "failure_reason": null,
-  "validation_errors": [
-    "section[1].kind is unsupported: section",
-    "section[2].kind is unsupported: section",
-    "section[2].block[1].interpretation_level is invalid",
-    "section[3].kind is unsupported: section",
-    "section[3].block[1].confidence exceeds its cited evidence",
-    "section[4].kind is unsupported: section"
-  ],
+  "validation_errors": [],
   "validation_warnings": []
 }
