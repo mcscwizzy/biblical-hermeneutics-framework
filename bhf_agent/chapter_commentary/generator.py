@@ -27,6 +27,7 @@ from .prompts import (
     build_user_prompt,
 )
 from .validation import validate_chapter_commentary
+from .availability import classify_evidence_availability
 
 
 LOGGER = logging.getLogger(__name__)
@@ -78,6 +79,7 @@ class CommentaryGenerator:
                 request.chapter,
                 canonical_text,
                 bundle,
+                classify_evidence_availability(bundle).value,
             )
 
             response_text = self._call_model(user_prompt)
@@ -104,6 +106,7 @@ class CommentaryGenerator:
             commentary_dict["generated_metadata"] = self._authoritative_metadata(
                 request, bundle
             ).to_dict()
+            commentary_dict["evidence_availability"] = classify_evidence_availability(bundle).value
             commentary_dict["status"] = CommentaryStatus.PENDING.value
 
             validation_result = validate_chapter_commentary(
@@ -129,6 +132,7 @@ class CommentaryGenerator:
                     book=validation_result.commentary.book,
                     chapter=validation_result.commentary.chapter,
                     status=status,
+                    evidence_availability=validation_result.commentary.evidence_availability,
                     sections=validation_result.accepted_sections,
                     generated_metadata=validation_result.commentary.generated_metadata,
                     failure_reason=None if validation_result.valid else "Some generated material was rejected",
@@ -146,6 +150,7 @@ class CommentaryGenerator:
                     book=final_commentary.book,
                     chapter=final_commentary.chapter,
                     status=final_commentary.status,
+                    evidence_availability=classify_evidence_availability(bundle).value if bundle else None,
                     sections=[],
                     generated_metadata=final_commentary.generated_metadata,
                     failure_reason=final_commentary.failure_reason,

@@ -24,6 +24,7 @@ from .models import (
     CommentarySection,
     GeneratedMetadata,
 )
+from .availability import EvidenceAvailability, classify_evidence_availability
 from bhf_agent.presentation.models import EvidenceBundle
 
 
@@ -129,7 +130,7 @@ def validate_chapter_commentary(
 
     _check_unknown_fields(
         value,
-        {"reference", "book", "chapter", "status", "sections", "generated_metadata"},
+        {"reference", "book", "chapter", "status", "sections", "generated_metadata", "evidence_availability"},
         "root",
         errors,
     )
@@ -179,6 +180,12 @@ def validate_chapter_commentary(
         return CommentaryValidationResult(False, None, tuple(errors))
     generated_metadata = metadata_result[1]
 
+    expected_availability = classify_evidence_availability(bundle).value
+    availability = value.get("evidence_availability") or expected_availability
+    if value.get("evidence_availability") not in (None, expected_availability):
+        errors.append("evidence_availability is not application-derived")
+        return CommentaryValidationResult(False, None, tuple(errors))
+
     sections_raw = value.get("sections", [])
     if not isinstance(sections_raw, list):
         errors.append("root.sections must be a list")
@@ -194,6 +201,7 @@ def validate_chapter_commentary(
             bundle,
             expected_book=expected_book,
             expected_chapter=expected_chapter,
+            evidence_availability=availability,
         )
         section_results.append(section_result)
         if section_result.section is not None:
@@ -212,6 +220,7 @@ def validate_chapter_commentary(
             status=status if not all_errors else "partial",
             sections=sections,
             generated_metadata=generated_metadata,
+            evidence_availability=availability,
         )
         return CommentaryValidationResult(
             not all_errors,
@@ -289,6 +298,7 @@ def _validate_section(
     *,
     expected_book: str,
     expected_chapter: int,
+    evidence_availability: str,
 ) -> CommentarySectionValidationResult:
     """Validate a single section with block salvage."""
 
@@ -320,6 +330,10 @@ def _validate_section(
         )
         reason_codes.append(CommentaryRejectionCode.UNSUPPORTED_SECTION_KIND.value)
 
+    if evidence_availability == EvidenceAvailability.DATA_GAP.value and kind not in {"chapter_overview", "things_easy_to_miss"}:
+        errors.append(f"{CommentaryRejectionCode.UNANCHORED_CLAIM.value}: DATA_GAP permits canonical observation sections only")
+        reason_codes.append(CommentaryRejectionCode.UNANCHORED_CLAIM.value)
+
     if not title:
         errors.append(f"{CommentaryRejectionCode.MALFORMED_SECTION.value}: {label}.title is required")
         reason_codes.append(CommentaryRejectionCode.MALFORMED_SECTION.value)
@@ -348,6 +362,7 @@ def _validate_section(
             expected_book=expected_book,
             expected_chapter=expected_chapter,
             section_kind=kind,
+            evidence_availability=evidence_availability,
         )
         block_results.append(block_result)
         if block_result.block is not None:
@@ -383,6 +398,7 @@ def _validate_block(
     expected_book: str,
     expected_chapter: int,
     section_kind: str,
+    evidence_availability: str,
 ) -> CommentaryBlockValidationResult:
     """Validate a single block."""
 
@@ -450,7 +466,7 @@ def _validate_block(
         )
         reason_codes.append(CommentaryRejectionCode.INVALID_INTERPRETATION_LEVEL.value)
 
-    if not evidence_ids:
+    if not evidence_ids and evidence_availability != EvidenceAvailability.DATA_GAP.value:
         errors.append(
             f"{CommentaryRejectionCode.UNANCHORED_CLAIM.value}: "
             f"{label} must cite at least one evidence item"
@@ -464,6 +480,12 @@ def _validate_block(
         errors.append(
             f"{CommentaryRejectionCode.UNKNOWN_EVIDENCE_ID.value}: "
             f"{label} cites unsupported evidence IDs: {', '.join(unknown_evidence)}"
+        )
+        reason_codes.append(CommentaryRejectionCode.UNKNOWN_EVIDENCE_ID.value)
+
+    if evidence_availability == EvidenceAvailability.DATA_GAP.value and evidence_ids:
+        errors.append(
+            f"{CommentaryRejectionCode.UNKNOWN_EVIDENCE_ID.value}: DATA_GAP blocks cannot cite evidence"
         )
         reason_codes.append(CommentaryRejectionCode.UNKNOWN_EVIDENCE_ID.value)
 

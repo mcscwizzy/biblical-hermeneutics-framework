@@ -23,6 +23,12 @@ class CommentaryStatus(str, Enum):
     STALE = "stale"
 
 
+class EvidenceAvailability(str, Enum):
+    AVAILABLE = "AVAILABLE"
+    THIN = "THIN"
+    DATA_GAP = "DATA_GAP"
+
+
 class CommentarySectionKind(str, Enum):
     """Supported section kinds for chapter commentary."""
 
@@ -116,6 +122,7 @@ class ChapterCommentary:
     book: str
     chapter: int
     status: str
+    evidence_availability: str | None = None
     sections: list[CommentarySection] = field(default_factory=list)
     generated_metadata: GeneratedMetadata | None = None
     failure_reason: str | None = None
@@ -128,6 +135,7 @@ class ChapterCommentary:
             "book": self.book,
             "chapter": self.chapter,
             "status": self.status,
+            "evidence_availability": self.evidence_availability,
             "sections": [section.to_dict() for section in self.sections],
             "generated_metadata": (
                 self.generated_metadata.to_dict() if self.generated_metadata else None

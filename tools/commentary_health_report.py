@@ -10,6 +10,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from bhf_agent import bible
 from bhf_agent.chapter_commentary.builder import CommentaryBuilder
 from bhf_agent.chapter_commentary.evidence_bundling import get_chapter_evidence_bundle
+from bhf_agent.chapter_commentary.availability import classify_evidence_availability
 from bhf_agent.chapter_commentary.models import COMMENTARY_PROMPT_VERSION, COMMENTARY_SCHEMA_VERSION, CommentaryStatus
 from bhf_agent.chapter_commentary.storage import list_commentaries, load_commentary
 from bhf_agent.runtime_paths import RUNTIME_DATA_PATHS
@@ -31,11 +32,15 @@ def report(storage: str | Path, *, check_evidence: bool = False) -> dict:
     section_n=[]; block_n=[]; sizes=[]; evidence_n=[]; section_evidence=[]; block_evidence=[]
     total_refs=valid_refs=invalid_refs=out_scope=malformed=0; unknown=[]
     prompts=Counter(); chapter_rows=[]
+    availability=Counter()
     for (book,ch), c in files.items():
         current = bool(c.generated_metadata and c.generated_metadata.commentary_prompt_version == COMMENTARY_PROMPT_VERSION and c.generated_metadata.commentary_schema_version == COMMENTARY_SCHEMA_VERSION)
         status=c.status if current else 'stale'; counts[status]+=1
         if not current:
             continue
+        stored_availability = c.evidence_availability
+        if stored_availability:
+            availability[stored_availability] += 1
         if c.generated_metadata: prompts[c.generated_metadata.commentary_prompt_version]+=1
         sn=len(c.sections); bn=sum(len(s.blocks) for s in c.sections); section_n.append(sn); block_n.append(bn)
         text=' '.join(b.text for s in c.sections for b in s.blocks); sizes.append(len(text))
@@ -62,6 +67,10 @@ def report(storage: str | Path, *, check_evidence: bool = False) -> dict:
         if check_evidence:
             try:
                 bundle=get_chapter_evidence_bundle(book,ch)
+                if bundle:
+                    if stored_availability:
+                        availability[stored_availability] -= 1
+                    availability[classify_evidence_availability(bundle).value] += 1
                 unknown.extend(f'{book} {ch}: {eid}' for eid in cited if eid not in bundle.evidence_by_id)
                 for eid in cited:
                     item=bundle.evidence_by_id.get(eid)
@@ -78,7 +87,7 @@ def report(storage: str | Path, *, check_evidence: bool = False) -> dict:
       'shortest': sorted(chapter_rows,key=lambda x:x['length'])[:5],
       'longest': sorted(chapter_rows,key=lambda x:-x['length'])[:5],
     }
-    return {'timestamp':datetime.now(timezone.utc).isoformat(),'schema_version':VERSION,'prompt_version_distribution':dict(prompts),'corpus_counts':{'total_chapters':total,'generated':generated,'coverage_percentage':round(generated*100/total,2) if total else 0,**status_counts,'stale':stale,'pending':pending},'structure':{'sections':_values(section_n),'blocks':_values(block_n),'section_kind_distribution':dict(sections)},'evidence_statistics':{'items_per_chapter':_values(evidence_n),'items_per_section':_values(section_evidence),'items_per_block':_values(block_evidence),'category_distribution':dict(categories),'top_20':evidence_ids.most_common(20),'least_used':sorted(evidence_ids.items(),key=lambda x:(x[1],x[0]))[:20]},'citation_statistics':{'total':total_refs,'valid':valid_refs,'invalid':invalid_refs,'unknown_evidence_ids':unknown,'valid_percentage':round(valid_refs*100/total_refs,2) if total_refs else 100},'verse_statistics':{'total':total_refs,'valid':valid_refs,'invalid':invalid_refs,'out_of_chapter':out_scope,'malformed':malformed,'valid_percentage':round(valid_refs*100/total_refs,2) if total_refs else 100},'content_size':_values(sizes),'repetition':{'repeated_word_fingerprints':sorted(((w,n) for w,n in phrases.items() if n>1),key=lambda x:-x[1])[:20]},'outliers':outliers}
+    return {'timestamp':datetime.now(timezone.utc).isoformat(),'schema_version':VERSION,'prompt_version_distribution':dict(prompts),'evidence_availability_distribution':dict(availability),'corpus_counts':{'total_chapters':total,'generated':generated,'coverage_percentage':round(generated*100/total,2) if total else 0,**status_counts,'stale':stale,'pending':pending},'structure':{'sections':_values(section_n),'blocks':_values(block_n),'section_kind_distribution':dict(sections)},'evidence_statistics':{'items_per_chapter':_values(evidence_n),'items_per_section':_values(section_evidence),'items_per_block':_values(block_evidence),'category_distribution':dict(categories),'top_20':evidence_ids.most_common(20),'least_used':sorted(evidence_ids.items(),key=lambda x:(x[1],x[0]))[:20]},'citation_statistics':{'total':total_refs,'valid':valid_refs,'invalid':invalid_refs,'unknown_evidence_ids':unknown,'valid_percentage':round(valid_refs*100/total_refs,2) if total_refs else 100},'verse_statistics':{'total':total_refs,'valid':valid_refs,'invalid':invalid_refs,'out_of_chapter':out_scope,'malformed':malformed,'valid_percentage':round(valid_refs*100/total_refs,2) if total_refs else 100},'content_size':_values(sizes),'repetition':{'repeated_word_fingerprints':sorted(((w,n) for w,n in phrases.items() if n>1),key=lambda x:-x[1])[:20]},'outliers':outliers}
 
 def main():
     p=argparse.ArgumentParser(); p.add_argument('--storage-dir',default=str(RUNTIME_DATA_PATHS.bhf_commentary_storage_path)); p.add_argument('--json',dest='json_path'); p.add_argument('--check-evidence',action='store_true'); a=p.parse_args(); data=report(a.storage_dir, check_evidence=a.check_evidence)

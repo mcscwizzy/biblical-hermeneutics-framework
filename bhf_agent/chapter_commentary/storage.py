@@ -139,6 +139,7 @@ def _from_dict(data: dict[str, Any]) -> ChapterCommentary:
         book=data["book"],
         chapter=int(data["chapter"]),
         status=data["status"],
+        evidence_availability=data.get("evidence_availability"),
         sections=sections,
         generated_metadata=generated_metadata,
         failure_reason=data.get("failure_reason"),

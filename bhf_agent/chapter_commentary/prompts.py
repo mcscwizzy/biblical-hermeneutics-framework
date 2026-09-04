@@ -54,6 +54,9 @@ Avoid robotic language. Prefer natural explanation over repetitive evidence cita
 
 CHAPTER_COMMENTARY_USER_PROMPT_TEMPLATE = """TASK: Generate BHF chapter commentary for {reference}.
 
+EVIDENCE AVAILABILITY: {evidence_availability}
+{availability_instruction}
+
 CANONICAL TEXT:
 {canonical_text}
 
@@ -170,7 +173,7 @@ def generate_evidence_summary(bundle) -> str:
     return "\n".join(lines)
 
 
-def build_user_prompt(reference: str, book: str, chapter: int, canonical_text: str, bundle) -> str:
+def build_user_prompt(reference: str, book: str, chapter: int, canonical_text: str, bundle, evidence_availability: str | None = None) -> str:
     """Build the user prompt without truncating canonical chapter text."""
     return CHAPTER_COMMENTARY_USER_PROMPT_TEMPLATE.format(
         reference=reference,
@@ -178,6 +181,8 @@ def build_user_prompt(reference: str, book: str, chapter: int, canonical_text: s
         chapter=chapter,
         canonical_text=canonical_text,
         evidence_summary=generate_evidence_summary(bundle),
+        evidence_availability=evidence_availability or "AVAILABLE",
+        availability_instruction={"AVAILABLE": "Use supplied evidence normally.", "THIN": "Be concise and conservative; do not expand beyond supplied evidence.", "DATA_GAP": "Make only canonical-text observations. Do not make external contextual claims or cite evidence."}.get(evidence_availability or "AVAILABLE", "Use supplied evidence normally."),
         allowed_section_kinds=VALID_SECTION_KINDS_TEXT,
         commentary_schema_version=COMMENTARY_SCHEMA_VERSION,
         commentary_prompt_version=COMMENTARY_PROMPT_VERSION,
