@@ -1,0 +1,38 @@
+{
+  "reference": "John 3",
+  "book": "John",
+  "chapter": 3,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "overview",
+          "text": "John 3 contains 36 verses. It opens with: Now there was a man of the Pharisees, named Nicodemus, a ruler of the Jews: It concludes with: He that believeth on the Son hath eternal life; but he that obeyeth not the Son shall not see life, but the wrath of God abideth on him.",
+          "verse_refs": [
+            "John 3:1-36"
+          ],
+          "evidence_ids": [
+            "john-3-16-speaker"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "0730235fb5d160840752f5f736ef60a56e5de4b6948a2925e4b17de5941bdab0",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:39:17.721534+00:00"
+  },
+  "failure_reason": null,
+  "validation_errors": [],
+  "validation_warnings": []
+}
