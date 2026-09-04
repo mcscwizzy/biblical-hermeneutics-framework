@@ -1,4 +1,8 @@
 (function () {
+  // Commentary artifacts are immutable release content. Bump this value when
+  // the UI adopts a newer published corpus so an older IndexedDB entry cannot
+  // silently appear as current commentary while offline.
+  const COMMENTARY_RELEASE = "commentary-v1.0";
   const backendRouting = window.BHFBackendRouting || {};
 
   function resolveUrl(url) {
@@ -179,6 +183,9 @@
       return;
     }
     try {
+      if (isCommentaryPath(url) && !isCurrentCommentaryPayload(url, data)) {
+        return;
+      }
       if (method === "GET" && isCacheableOfflineGet(url) && typeof offlineDb.cacheApiResponse === "function") {
         await offlineDb.cacheApiResponse(url, data);
       } else if (method !== "GET" && typeof offlineDb.applyOnlineMutationResponse === "function") {
@@ -196,7 +203,8 @@
       return null;
     }
     try {
-      return await offlineDb.readApiResponse(url);
+      const payload = await offlineDb.readApiResponse(url);
+      return isCurrentCommentaryPayload(url, payload) ? payload : null;
     } catch (error) {
       if (options.propagateError) throw error;
       return null;
@@ -210,7 +218,8 @@
     }
     if (method === "GET" && isCacheableOfflineGet(url) && typeof offlineDb.readApiResponse === "function") {
       try {
-        return await offlineDb.readApiResponse(url);
+        const payload = await offlineDb.readApiResponse(url);
+        return isCurrentCommentaryPayload(url, payload) ? payload : null;
       } catch (_error) {
         return null;
       }
@@ -311,6 +320,15 @@
       "/api/sources",
       "/api/commentary/",
     ].some((prefix) => path === prefix || path.startsWith(prefix));
+  }
+
+  function isCommentaryPath(url) {
+    const path = new URL(String(url || "/"), window.location.origin).pathname;
+    return path.startsWith("/api/bhf-commentary/");
+  }
+
+  function isCurrentCommentaryPayload(url, payload) {
+    return !isCommentaryPath(url) || payload?.release === COMMENTARY_RELEASE;
   }
 
   function isDeviceOnlyPersonalPath(url) {
