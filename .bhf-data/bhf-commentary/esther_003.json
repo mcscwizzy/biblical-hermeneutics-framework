@@ -3,46 +3,23 @@
   "book": "Esther",
   "chapter": 3,
   "status": "validated",
+  "evidence_availability": "THIN",
   "sections": [
     {
       "kind": "chapter_overview",
-      "title": "Haman's Conspiracy Against the Jews",
+      "title": "Chapter overview",
       "blocks": [
         {
-          "id": "block_1",
-          "text": "When Mordecai refuses to bow before Haman, the newly promoted Persian official responds not with personal vengeance but with a plot of massive scale. Learning that Mordecai is Jewish, Haman resolves to destroy not merely one man but an entire ethnic and religious community throughout the Persian kingdom.",
+          "id": "overview",
+          "text": "Esther 3 contains 15 verses. It opens with: After these things did king Ahasuerus promote Haman the son of Hammedatha the Agagite, and advanced him, and set his seat above all the princes that were with him. It concludes with: The posts went forth in haste by the king's commandment, and the decree was given out in Shushan the palace. And the king and Haman sat down to drink; but the city of Shushan was perplexed.",
           "verse_refs": [
-            "Esther 3:1-6"
+            "Esther 3:1-15"
           ],
           "evidence_ids": [
             "esther-haman-destruction-edict"
           ],
           "confidence": "high",
-          "interpretation_level": "fact"
-        },
-        {
-          "id": "block_2",
-          "text": "Haman presents his case to King Ahasuerus by characterizing the Jewish people as a dispersed population whose diverse laws make them a liability to the empire's unity and the king's authority. He offers to finance their destruction from the royal treasury, securing the king's seal and authorization for his edict.",
-          "verse_refs": [
-            "Esther 3:8-11"
-          ],
-          "evidence_ids": [
-            "esther-haman-destruction-edict"
-          ],
-          "confidence": "high",
-          "interpretation_level": "fact"
-        },
-        {
-          "id": "block_3",
-          "text": "Haman casts the pur\u2014the lot\u2014to determine the date of execution. The lot falls on the thirteenth day of Adar, the twelfth month, establishing a distant but inevitable deadline for the genocide he has engineered against all Jews throughout Ahasuerus's realm.",
-          "verse_refs": [
-            "Esther 3:7"
-          ],
-          "evidence_ids": [
-            "esther-haman-destruction-edict"
-          ],
-          "confidence": "high",
-          "interpretation_level": "fact"
+          "interpretation_level": "disputed"
         }
       ]
     }
@@ -51,9 +28,9 @@
     "evidence_hash": "050d29eccc8a7e886216d4146ac3a0e6130429d170d4df8e017abd9394a92f75",
     "evidence_bundle_version": "1.0",
     "commentary_schema_version": "1.0",
-    "commentary_prompt_version": "1.0",
-    "model": "haiku",
-    "generated_timestamp": null
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:13:10.657572+00:00"
   },
   "failure_reason": null,
   "validation_errors": [],

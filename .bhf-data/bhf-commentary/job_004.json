@@ -1,9 +1,9 @@
 {
-  "reference": "Esther 7",
-  "book": "Esther",
-  "chapter": 7,
+  "reference": "Job 4",
+  "book": "Job",
+  "chapter": 4,
   "status": "validated",
-  "evidence_availability": "THIN",
+  "evidence_availability": "AVAILABLE",
   "sections": [
     {
       "kind": "chapter_overview",
@@ -11,12 +11,12 @@
       "blocks": [
         {
           "id": "overview",
-          "text": "Esther 7 contains 10 verses. It opens with: So the king and Haman came to banquet with Esther the queen. It concludes with: So they hanged Haman on the gallows that he had prepared for Mordecai. Then was the king's wrath pacified.",
+          "text": "Job 4 contains 21 verses. It opens with: Then answered Eliphaz the Temanite, and said, It concludes with: Is not their tent-cord plucked up within them? They die, and that without wisdom.",
           "verse_refs": [
-            "Esther 7:1-10"
+            "Job 4:1-21"
           ],
           "evidence_ids": [
-            "esther-honor-reversal"
+            "job-lament-dialogues"
           ],
           "confidence": "high",
           "interpretation_level": "disputed"
@@ -25,12 +25,12 @@
     }
   ],
   "generated_metadata": {
-    "evidence_hash": "e172536c168fe8622c8fd7c64d7b1bc153f265b0658ea3375ef7f42c00f739df",
+    "evidence_hash": "d7cc61241bc13e5389b0191f942cee1f3201815c980846115861a0ccd99118b6",
     "evidence_bundle_version": "1.0",
     "commentary_schema_version": "1.0",
     "commentary_prompt_version": "1.1",
     "model": "luna-codex-development",
-    "generated_timestamp": "2026-09-04T18:13:10.773141+00:00"
+    "generated_timestamp": "2026-09-04T18:13:11.168872+00:00"
   },
   "failure_reason": null,
   "validation_errors": [],

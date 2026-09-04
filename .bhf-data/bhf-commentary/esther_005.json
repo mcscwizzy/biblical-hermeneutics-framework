@@ -3,23 +3,23 @@
   "book": "Esther",
   "chapter": 5,
   "status": "validated",
+  "evidence_availability": "THIN",
   "sections": [
     {
       "kind": "chapter_overview",
-      "title": "Overview",
+      "title": "Chapter overview",
       "blocks": [
         {
-          "id": "block_1",
-          "text": "After organizing a three-day fast among the Jews of Susa and fasting with her young women, Esther executes the risky uninvited approach to the king described in this chapter. In Esther 5:1-2, she dresses in her royal apparel and stands in the inner court positioned before the king's throne. The king's immediate response\u2014extending the golden scepter to her\u2014signals favor and grants her access to his presence.",
+          "id": "overview",
+          "text": "Esther 5 contains 14 verses. It opens with: Now it came to pass on the third day, that Esther put on her royal apparel, and stood in the inner court of the king's house, over against the king's house: and the king sat upon his royal throne in the royal house, over against the entrance of the house. It concludes with: Then said Zeresh his wife and all his friends unto him, Let a gallows be made fifty cubits high, and in the morning speak thou unto the king that Mordecai may be hanged thereon: then go thou in merrily with the king unto the banquet. And the thing pleased Haman; and he caused the gallows to be made.",
           "verse_refs": [
-            "Esther 5:1",
-            "Esther 5:2"
+            "Esther 5:1-14"
           ],
           "evidence_ids": [
             "esther-fast-risk-appeal"
           ],
           "confidence": "high",
-          "interpretation_level": "fact"
+          "interpretation_level": "disputed"
         }
       ]
     }
@@ -28,9 +28,9 @@
     "evidence_hash": "2ffad933b041da0e6e4af30366f8cfb0a97e41a6b4d49463e9b2ee523cfe963b",
     "evidence_bundle_version": "1.0",
     "commentary_schema_version": "1.0",
-    "commentary_prompt_version": "1.0",
-    "model": "haiku",
-    "generated_timestamp": null
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:13:10.732915+00:00"
   },
   "failure_reason": null,
   "validation_errors": [],

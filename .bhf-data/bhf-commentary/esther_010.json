@@ -2,45 +2,35 @@
   "reference": "Esther 10",
   "book": "Esther",
   "chapter": 10,
-  "status": "partial",
+  "status": "validated",
+  "evidence_availability": "DATA_GAP",
   "sections": [
     {
       "kind": "chapter_overview",
-      "title": "Royal Archive and the Appeal to External Record",
+      "title": "Chapter overview",
       "blocks": [
         {
-          "id": "block_1",
-          "text": "Esther's conclusion directs readers outward to an external document: 'the book of the chronicles of the kings of Media and Persia.' This appeal to written records fits squarely within the Achaemenid administrative world the narrative depicts. The Persian imperial system was indeed organized around scribal authority, multilingual administration, sealed decrees, and systematized record-keeping. However, the text itself makes no independent claim that Mordecai's or Esther's deeds were actually recorded there; it asserts only that such a chronicle exists and invites readers to consult it. No recovered inscription or artifact independently verifies the characters, the decree, or the narrative's events.",
+          "id": "overview",
+          "text": "Esther 10 contains 3 verses. It opens with: And the king Ahasuerus laid a tribute upon the land, and upon the isles of the sea. It concludes with: For Mordecai the Jew was next unto king Ahasuerus, and great among the Jews, and accepted of the multitude of his brethren, seeking the good of his people, and speaking peace to all his seed.",
           "verse_refs": [
-            "Esther 10:2"
+            "Esther 10:1-3"
           ],
-          "evidence_ids": [
-            "esther:ancient_near_east_context:0",
-            "esther:historical_context:0",
-            "esther:archaeology:1",
-            "esther:archaeology:4"
-          ],
-          "confidence": "medium",
+          "evidence_ids": [],
+          "confidence": "high",
           "interpretation_level": "fact"
         }
       ]
     }
   ],
   "generated_metadata": {
-    "evidence_hash": "136cee354738cbb5747b2510c4fc4ac3de0364a51ee00445fb39d8197d8b998b",
+    "evidence_hash": "4ddae5d6f85c641f12d63a334afc99cdd54339d673b9eb675e9e6a3c469e9959",
     "evidence_bundle_version": "1.0",
     "commentary_schema_version": "1.0",
-    "commentary_prompt_version": "1.0",
-    "model": "haiku",
-    "generated_timestamp": null
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:13:10.838292+00:00"
   },
   "failure_reason": null,
-  "validation_errors": [
-    "section[1].kind is unsupported: character_study",
-    "section[1].block[0].interpretation_level is invalid",
-    "section[2].block[0].interpretation_level is invalid",
-    "section[3].kind is unsupported: textual_note",
-    "section[3].block[0].interpretation_level is invalid"
-  ],
+  "validation_errors": [],
   "validation_warnings": []
 }
