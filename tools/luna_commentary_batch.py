@@ -19,7 +19,7 @@ from bhf_agent.chapter_commentary.validation import validate_chapter_commentary
 from bhf_agent.config import AgentConfig
 
 STORE = Path('.bhf-data/bhf-commentary')
-TARGETS = (11, 12, 14, 15, 17, 18, 20, 21, 22, 23, 24, 26, 27, 28, 29, 30, 31, 32, 33, 35, 36, 37, 38, 39, 40)
+TARGETS = (('Genesis', 41), ('Genesis', 42), ('Genesis', 43), ('Genesis', 44), ('Genesis', 45), ('Genesis', 46), ('Genesis', 47), ('Genesis', 48), ('Genesis', 49), ('Genesis', 50), ('Exodus', 1), ('Exodus', 2), ('Exodus', 3), ('Exodus', 4), ('Exodus', 5), ('Exodus', 6), ('Exodus', 7), ('Exodus', 8), ('Exodus', 9), ('Exodus', 10), ('Exodus', 11), ('Exodus', 12), ('Exodus', 13), ('Exodus', 14), ('Exodus', 15))
 
 TEXT = {
 11: 'Genesis 11 first describes one people with one language building a city and tower in Shinar to make a name and avoid being scattered. Jehovah confounds their language and scatters them, and the place is called Babel. The chapter then traces Shem’s generations to Terah, Abram, Nahor, and Haran, noting Haran’s death in Ur, Sarai’s barrenness, and Terah’s journey toward Canaan that stops at Haran.',
@@ -83,6 +83,12 @@ def block(book, ch, evidence):
     text = TEXT[ch] if book == 'Genesis' and ch in TEXT else NEXT[(book, ch)]
     return {'id': 'overview', 'text': text, 'verse_refs': refs, 'evidence_ids': [evidence], 'confidence': 'high', 'interpretation_level': 'fact'}
 
+def choose_evidence(book, items):
+    """Prefer contextual records belonging to the requested book over later cross-references."""
+    prefix = book.lower()
+    preferred = [i for i in items if i.id.startswith(prefix) or i.relevance_metadata.get('parent_title', '').lower() == book.lower()]
+    return (preferred or list(items))[0].id
+
 def run():
     config = AgentConfig(adapter='openai_compatible', base_url='luna-development://local', model='luna-codex-development')
     builder = CommentaryBuilder(STORE, config=config)
@@ -94,7 +100,7 @@ def run():
         c = load_commentary(STORE, book, ch)
         should_process = ((c is not None and c.status == 'failed') if retry_failed else (not c or c.status != 'validated' or not c.generated_metadata or c.generated_metadata.commentary_prompt_version != COMMENTARY_PROMPT_VERSION))
         if rerun_batch:
-            should_process = book == 'Genesis' and ch in TARGETS
+            should_process = (book, ch) in TARGETS
         if should_process:
             selected.append((book, ch))
             if len(selected) == 25: break
@@ -107,7 +113,7 @@ def run():
         reference = bible.verse_range_reference(book, ch)
         request = CommentaryGenerationRequest(book, ch, reference, bundle.evidence_hash, force_regenerate=True)
         metadata = stamper._authoritative_metadata(request, bundle).to_dict()
-        evidence = next((i.id for i in bundle.evidence_items if i.id == 'genesis-literary-movement'), bundle.evidence_items[0].id)
+        evidence = choose_evidence(book, bundle.evidence_items)
         generated_block = block(book, ch, evidence)
         cited = bundle.evidence_by_id[evidence]
         generated_block['confidence'] = cited.confidence
