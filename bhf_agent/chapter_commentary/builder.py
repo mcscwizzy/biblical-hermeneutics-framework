@@ -62,7 +62,10 @@ class CommentaryBuilder:
                     chapters.append((book_name, chapter_num))
         except Exception:
             return []
-        return sorted(chapters)
+        # bible.list_books() is already in canonical Bible order. Preserve it
+        # so resume/build selection does not begin with lexicographic book order
+        # (which would incorrectly start at 1 Chronicles).
+        return chapters
 
     def get_progress(self, *, rescan: bool = False) -> CommentaryProgress | None:
         """Load cached progress, or reconstruct it from chapter files when requested."""

@@ -128,6 +128,7 @@ def test_chapter_discovery():
     builder = CommentaryBuilder(Path(tempfile.mkdtemp()))
     chapters = builder.discover_canonical_chapters()
     assert len(chapters) == 1189
+    assert chapters[:3] == [("Genesis", 1), ("Genesis", 2), ("Genesis", 3)]
     assert ("Genesis", 1) in chapters
     assert ("Revelation", 22) in chapters
 
