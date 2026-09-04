@@ -1,0 +1,38 @@
+{
+  "reference": "Matthew 3",
+  "book": "Matthew",
+  "chapter": 3,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "overview",
+          "text": "Matthew 3 contains 17 verses. It opens with: And in those days cometh John the Baptist, preaching in the wilderness of Judaea, saying, It concludes with: and lo, a voice out of the heavens, saying, This is my beloved Son, in whom I am well pleased.",
+          "verse_refs": [
+            "Matthew 3:1-17"
+          ],
+          "evidence_ids": [
+            "matthew-baptism-temptation"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "b64fc7c6c61eb8027e350b3a0721451432fc060e4ea217dc4388ffdf833a2b46",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:36:11.609656+00:00"
+  },
+  "failure_reason": null,
+  "validation_errors": [],
+  "validation_warnings": []
+}
