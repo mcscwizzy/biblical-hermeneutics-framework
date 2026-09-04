@@ -1,0 +1,38 @@
+{
+  "reference": "Luke 17",
+  "book": "Luke",
+  "chapter": 17,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "overview",
+          "text": "Luke 17 contains 37 verses. It opens with: And he said unto his disciples, It is impossible but that occasions of stumbling should come; but woe unto him, through whom they come! It concludes with: And they answering say unto him, Where, Lord? And he said unto them, Where the body `is', thither will the eagles also be gathered together.",
+          "verse_refs": [
+            "Luke 17:1-37"
+          ],
+          "evidence_ids": [
+            "luke-ten-healed"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "33d8476b71fb85e1460aebcaf775a1cd2d047f590e2acb97a9e6f19d57ff9b3a",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:38:34.072659+00:00"
+  },
+  "failure_reason": null,
+  "validation_errors": [],
+  "validation_warnings": []
+}

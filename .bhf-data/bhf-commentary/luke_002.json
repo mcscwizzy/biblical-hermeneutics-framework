@@ -1,0 +1,38 @@
+{
+  "reference": "Luke 2",
+  "book": "Luke",
+  "chapter": 2,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "overview",
+          "text": "Luke 2 contains 52 verses. It opens with: Now it came to pass in those days, there went out a decree from Caesar Augustus, that all the world should be enrolled. It concludes with: And Jesus advanced in wisdom and stature, and in favor with God and men.",
+          "verse_refs": [
+            "Luke 2:1-52"
+          ],
+          "evidence_ids": [
+            "luke-2-14"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "6226ed5fa4a5daae9acac343453468b4a4ee47a55092ca288906d475fe6ee53a",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:38:32.431368+00:00"
+  },
+  "failure_reason": null,
+  "validation_errors": [],
+  "validation_warnings": []
+}

@@ -1,0 +1,36 @@
+{
+  "reference": "Luke 5",
+  "book": "Luke",
+  "chapter": 5,
+  "status": "validated",
+  "evidence_availability": "DATA_GAP",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "overview",
+          "text": "Luke 5 contains 39 verses. It opens with: Now it came to pass, while the multitude pressed upon him and heard the word of God, that he was standing by the lake of Gennesaret; It concludes with: And no man having drunk old `wine' desireth new; for he saith, The old is good.",
+          "verse_refs": [
+            "Luke 5:1-39"
+          ],
+          "evidence_ids": [],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "f030198ab355e9e22a9a0b5a6fbf45642bf1a89b2c913c9316475fc81a16bc29",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:38:32.850221+00:00"
+  },
+  "failure_reason": null,
+  "validation_errors": [],
+  "validation_warnings": []
+}

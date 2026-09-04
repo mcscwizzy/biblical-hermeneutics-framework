@@ -1,0 +1,38 @@
+{
+  "reference": "Luke 4",
+  "book": "Luke",
+  "chapter": 4,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "overview",
+          "text": "Luke 4 contains 44 verses. It opens with: And Jesus, full of the Holy Spirit, returned from the Jordan, and was led in the Spirit in the wilderness It concludes with: And he was preaching in the synagogues of Galilee.",
+          "verse_refs": [
+            "Luke 4:1-44"
+          ],
+          "evidence_ids": [
+            "luke-nazareth"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "ff48ce651fd8bc2e1ee4edd6cb9abd55db93b382d61b3cf2933191166f1717dc",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:38:32.825706+00:00"
+  },
+  "failure_reason": null,
+  "validation_errors": [],
+  "validation_warnings": []
+}
