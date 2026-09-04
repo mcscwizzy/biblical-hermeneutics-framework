@@ -1,0 +1,38 @@
+{
+  "reference": "Mark 3",
+  "book": "Mark",
+  "chapter": 3,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "overview",
+          "text": "Mark 3 contains 35 verses. It opens with: And he entered again into the synagogue; and there was a man there who had his hand withered. It concludes with: For whosoever shall do the will of God, the same is my brother, and sister, and mother.",
+          "verse_refs": [
+            "Mark 3:1-35"
+          ],
+          "evidence_ids": [
+            "mark-anti-judaism-safeguard"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "ad8a9f305b39ab2a7d9487ed741316962f592da0716360f79061dd3e6ae19333",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:37:07.533184+00:00"
+  },
+  "failure_reason": null,
+  "validation_errors": [],
+  "validation_warnings": []
+}

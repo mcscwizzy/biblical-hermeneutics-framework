@@ -1,0 +1,38 @@
+{
+  "reference": "Matthew 24",
+  "book": "Matthew",
+  "chapter": 24,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "overview",
+          "text": "Matthew 24 contains 51 verses. It opens with: And Jesus went out from the temple, and was going on his way; and his disciples came to him to show him the buildings of the temple. It concludes with: and shall cut him asunder, and appoint his portion with the hypocrites: there shall be the weeping and the gnashing of teeth.",
+          "verse_refs": [
+            "Matthew 24:1-51"
+          ],
+          "evidence_ids": [
+            "matthew-application-boundaries"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "c0488d429c866250ec443d0dc1c6510c0e4e7476e982eed4772ed5e8f993c8ce",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:37:06.065511+00:00"
+  },
+  "failure_reason": null,
+  "validation_errors": [],
+  "validation_warnings": []
+}
