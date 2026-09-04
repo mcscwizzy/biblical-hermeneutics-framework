@@ -313,6 +313,20 @@
   background: #fbfcfd;
 }
 
+.reader-search-context-filter {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--muted-text);
+  font-size: 0.78rem;
+  white-space: nowrap;
+}
+
+.reader-search-context-filter select {
+  min-height: 34px;
+  max-width: 190px;
+}
+
 .reader-search-results[hidden] {
   display: none;
 }

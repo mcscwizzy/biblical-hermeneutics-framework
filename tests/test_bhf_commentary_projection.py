@@ -15,6 +15,7 @@ from bhf_web.services.bhf_commentary import (
     load_commentary_projection,
     project_commentary,
     project_commentary_evidence,
+    search_commentary,
 )
 
 
@@ -72,6 +73,27 @@ def test_projection_preserves_missing_legacy_availability():
 def test_projection_preserves_thin_and_data_gap_availability():
     assert project_commentary(commentary(availability="THIN"))["availability"] == "THIN"
     assert project_commentary(commentary(availability="DATA_GAP"))["availability"] == "DATA_GAP"
+
+
+def test_commentary_search_reads_projections_and_applies_availability_filters(tmp_path):
+    from bhf_agent.chapter_commentary.storage import save_commentary
+
+    save_commentary(commentary(), tmp_path)
+    save_commentary(
+        replace(
+            commentary(availability="DATA_GAP"),
+            reference="Leviticus 2",
+            book="Leviticus",
+            chapter=2,
+        ),
+        tmp_path,
+    )
+
+    available = search_commentary(tmp_path, query="Abram", availability="AVAILABLE")
+    assert available["count"] == 1
+    assert available["results"][0]["book"] == "Genesis"
+    assert search_commentary(tmp_path, availability="DATA_GAP")["results"][0]["book"] == "Leviticus"
+    assert search_commentary(tmp_path, book="Genesis", chapter=13)["count"] == 1
 
 
 def evidence_bundle():
@@ -211,3 +233,27 @@ def test_api_evidence_projects_only_stored_citations(tmp_path):
     assert response.json()["available"] is True
     assert response.json()["unavailable_ids"] == ["ckl-2"]
     assert [item["id"] for item in response.json()["evidence_items"]] == ["ckl-1"]
+
+
+def test_api_commentary_search_returns_read_only_results(tmp_path):
+    pytest.importorskip("fastapi")
+    httpx = pytest.importorskip("httpx")
+    from fastapi import FastAPI
+
+    from bhf_agent.chapter_commentary.storage import save_commentary
+    from bhf_web.routes.bhf_commentary import register_bhf_commentary_routes
+
+    save_commentary(commentary(), tmp_path)
+    app = FastAPI()
+    register_bhf_commentary_routes(app, storage_dir=tmp_path)
+
+    async def request():
+        transport = httpx.ASGITransport(app=app)
+        async with httpx.AsyncClient(transport=transport, base_url="http://test") as client:
+            return await client.get("/api/bhf-commentary/search?q=Abram&availability=AVAILABLE")
+
+    response = asyncio.run(request())
+    assert response.status_code == 200
+    assert response.json()["release"] == "commentary-v1.0"
+    assert response.json()["count"] == 1
+    assert response.json()["results"][0]["book"] == "Genesis"

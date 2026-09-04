@@ -13,6 +13,7 @@ from bhf_web.services.bhf_commentary import (
     COMMENTARY_RELEASE,
     load_commentary_projection,
     project_commentary_evidence,
+    search_commentary,
 )
 
 
@@ -39,6 +40,31 @@ def register_bhf_commentary_routes(
                 "status": "ok" if len(commentaries) > 0 else "no_commentaries",
             }
         )
+
+    @app.get("/api/bhf-commentary/search", response_class=JSONResponse)
+    async def bhf_commentary_search(
+        q: str = "",
+        availability: str | None = None,
+        book: str | None = None,
+        chapter: int | None = None,
+        verse: str | None = None,
+        limit: int = 25,
+    ) -> JSONResponse:
+        """Search immutable commentary projections using existing reader data."""
+        try:
+            return JSONResponse(
+                search_commentary(
+                    storage_path,
+                    query=q,
+                    availability=availability,
+                    book=book,
+                    chapter=chapter,
+                    verse=verse,
+                    limit=limit,
+                )
+            )
+        except ValueError as exc:
+            return JSONResponse({"error": str(exc)}, status_code=400)
 
     @app.get("/api/bhf-commentary/{book}/{chapter}", response_class=JSONResponse)
     async def bhf_commentary_chapter(

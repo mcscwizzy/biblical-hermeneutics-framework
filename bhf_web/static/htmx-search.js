@@ -20,6 +20,7 @@ async function submitBibleSearch(event) {
   const requestId = ++BHF_BIBLE_SEARCH_STATE.latestBibleSearchRequestId;
   updateBibleSearchSummary(`Searching ${translationLabel} for “${query}”`);
   setBibleSearchStatus(`Searching local ${translationLabel} text...`, "loading");
+  void loadCommentarySearch(query, requestId);
 
   try {
     const data = await requestJson(`/api/bible/search?${new URLSearchParams({ q: query, limit: "25", translation: translationId })}`, {}, `Could not search the ${translationLabel} text.`);
@@ -49,6 +50,87 @@ async function submitBibleSearch(event) {
     }
     setBibleSearchStatus(error.message || `Could not search the ${translationLabel} text.`, "error");
   }
+}
+
+async function loadCommentarySearch(query, requestId) {
+  const panel = document.querySelector("#commentary-search-results");
+  const body = document.querySelector("#commentary-search-results-body");
+  const summary = document.querySelector("#commentary-search-summary");
+  const status = document.querySelector("#commentary-search-status");
+  if (!panel || !body) return;
+  const filter = document.querySelector("[data-commentary-availability-filter]")?.value || "";
+  const parameters = new URLSearchParams({q: query, limit: "25"});
+  if (filter) parameters.set("availability", filter);
+  panel.hidden = false;
+  if (summary) summary.textContent = "Searching BHF Context…";
+  if (status) {
+    status.hidden = false;
+    status.textContent = "";
+    status.classList.remove("is-error", "is-empty");
+  }
+  try {
+    const data = await requestJson(`/api/bhf-commentary/search?${parameters}`, {}, "Could not search BHF Context.");
+    if (requestId !== BHF_BIBLE_SEARCH_STATE.latestBibleSearchRequestId) return;
+    const results = Array.isArray(data.results) ? data.results : [];
+    if (summary) summary.textContent = `${results.length} BHF Context result${results.length === 1 ? "" : "s"}`;
+    if (status) {
+      status.hidden = results.length > 0;
+      status.textContent = results.length ? "" : "No BHF Context matches were found.";
+      status.classList.toggle("is-empty", results.length === 0);
+    }
+    body.innerHTML = results.length
+      ? `<div class="search-results-list">${results.map(renderCommentarySearchResult).join("")}</div>`
+      : "";
+  } catch (error) {
+    if (requestId !== BHF_BIBLE_SEARCH_STATE.latestBibleSearchRequestId) return;
+    if (summary) summary.textContent = "BHF Context search unavailable";
+    if (status) {
+      status.hidden = false;
+      status.textContent = error.message || "Could not search BHF Context.";
+      status.classList.add("is-error");
+    }
+    body.innerHTML = "";
+  }
+}
+
+function renderCommentarySearchResult(result) {
+  const availability = String(result.availability || "").trim();
+  const availabilityLabel = availability === "AVAILABLE"
+    ? "Context available"
+    : availability === "THIN"
+      ? "Limited context"
+      : availability === "DATA_GAP"
+        ? "Context not currently available"
+        : "Context status not recorded";
+  const references = Array.isArray(result.verse_references) ? result.verse_references : [];
+  const sectionKinds = Array.isArray(result.section_kinds) ? result.section_kinds : [];
+  return `
+    <article class="search-result-card commentary-search-result">
+      <div class="search-result-header">
+        <div>
+          <h4>${escapeHtml(`${result.book || ""} ${result.chapter || ""}`.trim())}</h4>
+          <p class="search-result-meta">${escapeHtml(result.commentary || "")}</p>
+        </div>
+        <div class="search-result-badges">
+          <span class="search-badge source-ckl">${escapeHtml(availabilityLabel)}</span>
+          <span class="search-badge">${escapeHtml(`${Number(result.evidence_count || 0)} evidence item${Number(result.evidence_count || 0) === 1 ? "" : "s"}`)}</span>
+        </div>
+      </div>
+      ${references.length ? `<p class="search-result-meta">Verses: ${escapeHtml(references.join(", "))}</p>` : ""}
+      ${sectionKinds.length ? `<p class="search-result-meta">Sections: ${escapeHtml(sectionKinds.join(", "))}</p>` : ""}
+      <div class="search-result-actions">
+        <button type="button" class="secondary" data-commentary-search-action="open-chapter" data-book="${escapeHtml(result.book || "")}" data-chapter="${escapeHtml(String(result.chapter || ""))}">Open chapter</button>
+      </div>
+    </article>
+  `;
+}
+
+async function handleCommentarySearchResultAction(event) {
+  const button = event.target.closest("[data-commentary-search-action]");
+  if (!button) return;
+  const book = button.getAttribute("data-book") || "";
+  const chapter = Number(button.getAttribute("data-chapter") || "0");
+  if (book && chapter) await navigateToPassage(book, chapter);
 }
 
 async function runBibleSearchFallback(form, query, requestId) {
@@ -189,6 +271,18 @@ function clearBibleSearchResults() {
     status.hidden = true;
     status.textContent = "";
     status.classList.remove("is-empty", "is-error");
+  }
+  const commentaryPanel = document.querySelector("#commentary-search-results");
+  const commentaryBody = document.querySelector("#commentary-search-results-body");
+  const commentarySummary = document.querySelector("#commentary-search-summary");
+  const commentaryStatus = document.querySelector("#commentary-search-status");
+  if (commentaryPanel) commentaryPanel.hidden = true;
+  if (commentaryBody) commentaryBody.innerHTML = "";
+  if (commentarySummary) commentarySummary.textContent = "";
+  if (commentaryStatus) {
+    commentaryStatus.hidden = true;
+    commentaryStatus.textContent = "";
+    commentaryStatus.classList.remove("is-empty", "is-error");
   }
   syncBibleSearchClearState();
 }

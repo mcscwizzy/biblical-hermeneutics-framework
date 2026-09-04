@@ -157,6 +157,15 @@
               <button type="submit" data-testid="bible-search-button">Search</button>
               <button type="button" class="secondary" data-search-clear data-testid="bible-search-clear" hidden>Clear</button>
             </div>
+            <label class="reader-search-context-filter">
+              <span>Context</span>
+              <select name="commentary_availability" data-commentary-availability-filter aria-label="Filter BHF Context results">
+                <option value="">All BHF Context</option>
+                <option value="AVAILABLE">Context available</option>
+                <option value="THIN">Limited context</option>
+                <option value="DATA_GAP">Context not currently available</option>
+              </select>
+            </label>
             <input type="hidden" name="adapter" value="{{ form.adapter }}">
             <input type="hidden" name="model" value="{{ form.model }}">
             <input type="hidden" name="base_url" value="{{ form.base_url }}">
@@ -193,6 +202,17 @@
           </div>
           <div id="reader-search-status" class="reader-search-status" hidden></div>
           <div id="reader-search-results-body"></div>
+        </section>
+        <section id="commentary-search-results" class="reader-search-results commentary-search-results" hidden aria-live="polite">
+          <div class="reader-search-results-header">
+            <div>
+              <p class="reader-search-kicker">BHF Context</p>
+              <h3>Context results</h3>
+              <p id="commentary-search-summary" class="reader-search-summary"></p>
+            </div>
+          </div>
+          <div id="commentary-search-status" class="reader-search-status" hidden role="status"></div>
+          <div id="commentary-search-results-body"></div>
         </section>
 
         <article

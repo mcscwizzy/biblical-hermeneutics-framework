@@ -8,6 +8,7 @@ from typing import Any
 from bhf_agent.chapter_commentary.models import ChapterCommentary
 from bhf_agent.presentation.models import EvidenceBundle
 from bhf_agent.chapter_commentary.storage import load_commentary
+from bhf_agent.chapter_commentary.storage import list_commentaries
 
 
 COMMENTARY_RELEASE = "commentary-v1.0"
@@ -65,6 +66,55 @@ def load_commentary_projection(
     """Load one immutable corpus artifact and return its UI projection."""
     commentary = load_commentary(storage_dir, book, chapter)
     return project_commentary(commentary) if commentary is not None else None
+
+
+def search_commentary(
+    storage_dir: str | Path,
+    *,
+    query: str = "",
+    availability: str | None = None,
+    book: str | None = None,
+    chapter: int | None = None,
+    verse: str | None = None,
+    limit: int = 25,
+) -> dict[str, Any]:
+    """Search the immutable commentary projections without a second index."""
+    normalized_query = " ".join(str(query or "").casefold().split())
+    normalized_book = " ".join(str(book or "").casefold().split())
+    normalized_availability = str(availability or "").strip().upper()
+    if normalized_availability and normalized_availability not in {"AVAILABLE", "THIN", "DATA_GAP"}:
+        raise ValueError("availability must be AVAILABLE, THIN, or DATA_GAP")
+    normalized_verse = " ".join(str(verse or "").casefold().split())
+    results: list[dict[str, Any]] = []
+    for candidate_book, candidate_chapter in sorted(list_commentaries(storage_dir), key=lambda item: (item[0].casefold(), item[1])):
+        if normalized_book and candidate_book.casefold() != normalized_book:
+            continue
+        if chapter is not None and candidate_chapter != chapter:
+            continue
+        commentary = load_commentary(storage_dir, candidate_book, candidate_chapter)
+        if commentary is None:
+            continue
+        projection = project_commentary(commentary)
+        if normalized_availability and projection.get("availability") != normalized_availability:
+            continue
+        verse_references = [str(value) for value in projection["verse_references"]]
+        section_text = " ".join(
+            f"{section.kind} {section.title}" for section in commentary.sections
+        )
+        searchable = " ".join(
+            [projection["book"], str(projection["chapter"]), projection["commentary"], *verse_references, section_text]
+        ).casefold()
+        if normalized_query and normalized_query not in searchable:
+            continue
+        if normalized_verse and not any(normalized_verse in reference.casefold() for reference in verse_references):
+            continue
+        result = dict(projection)
+        result["commentary"] = projection["commentary"][:240]
+        result["section_kinds"] = _unique([section.kind for section in commentary.sections])
+        results.append(result)
+        if len(results) >= max(1, min(int(limit), 100)):
+            break
+    return {"release": COMMENTARY_RELEASE, "count": len(results), "results": results}
 
 
 def project_commentary_evidence(
