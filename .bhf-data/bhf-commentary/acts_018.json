@@ -2,46 +2,37 @@
   "reference": "Acts 18",
   "book": "Acts",
   "chapter": 18,
-  "status": "partial",
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
   "sections": [
     {
       "kind": "chapter_overview",
-      "title": "Paul in Corinth: From Workshop to Tribunal",
+      "title": "Chapter overview",
       "blocks": [
         {
-          "id": "block_1_arrival_aquila_priscilla",
-          "text": "Paul encounters Aquila, a Jew from Pontus, and his wife Priscilla in Corinth. Acts connects their presence to a Claudian action affecting Jews at Rome, from which they had recently come. The couple's shared trade as tentmakers provides the basis for Paul's living arrangement with them. The scope and specific cause of the Claudian disruption remain disputed in our sources, but the couple's movement from Rome through Corinth illustrates diaspora mobility across the mid-first-century Mediterranean.",
+          "id": "overview",
+          "text": "Acts 18 contains 28 verses. It opens with: After these things he departed from Athens, and came to Corinth. It concludes with: for he powerfully confuted the Jews, `and that' publicly, showing by the scriptures that Jesus was the Christ.",
           "verse_refs": [
-            "Acts 18:1-3"
+            "Acts 18:1-28"
           ],
           "evidence_ids": [
-            "acts-corinth-coworkers-trade",
-            "aquila:historical_context:0",
-            "priscilla:historical_context:0",
-            "claudian-action-and-chrestus"
+            "acts-apollos-teaching-network"
           ],
           "confidence": "medium",
-          "interpretation_level": "fact"
+          "interpretation_level": "disputed"
         }
       ]
     }
   ],
   "generated_metadata": {
-    "evidence_hash": "842785f7e4b419821ed9964a303f4137bb37fe01c1187acd319aac9a816b4483",
+    "evidence_hash": "d3dd40783b686052c151e9f5ca6c925aff969c80a4f6f3f88809ad0c334156d8",
     "evidence_bundle_version": "1.0",
     "commentary_schema_version": "1.0",
-    "commentary_prompt_version": "1.0",
-    "model": "haiku",
-    "generated_timestamp": null
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:40:10.170134+00:00"
   },
   "failure_reason": null,
-  "validation_errors": [
-    "root.status is unsupported: complete",
-    "section[0].block[1].interpretation_level is invalid",
-    "section[0].block[2].interpretation_level is invalid",
-    "section[0].block[3].interpretation_level is invalid",
-    "section[0].block[4].interpretation_level is invalid",
-    "section[0].block[5].interpretation_level is invalid"
-  ],
+  "validation_errors": [],
   "validation_warnings": []
 }

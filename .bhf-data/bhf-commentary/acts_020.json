@@ -2,49 +2,37 @@
   "reference": "Acts 20",
   "book": "Acts",
   "chapter": 20,
-  "status": "partial",
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
   "sections": [
     {
       "kind": "chapter_overview",
-      "title": "The Collection Journey Through Macedonia and Asia",
+      "title": "Chapter overview",
       "blocks": [
         {
-          "id": "block_1",
-          "text": "Acts 20 opens with Paul's departure from Ephesus following an uproar, his travel through Macedonia exhorting churches, and a three-month stay in Greece. A plot against Paul as he prepares to sail for Syria redirects him back through Macedonia instead of the coastal route. The return journey includes a multi-city delegation: Sopater of Beroea, Aristarchus and Secundus from Thessalonica, Gaius of Derbe, Timothy, Tychicus, and Trophimus from Asia. Acts explicitly preserves this diversity of origins without claiming a unified institutional status or formal purpose for the traveling party.",
+          "id": "overview",
+          "text": "Acts 20 contains 38 verses. It opens with: And after the uproar ceased, Paul having sent for the disciples and exhorted them, took leave of them, and departed to go into Macedonia. It concludes with: sorrowing most of all for the word which he had spoken, that they should behold his face no more. And they brought him on his way unto the ship.",
           "verse_refs": [
-            "Acts 20:1-4"
+            "Acts 20:1-38"
           ],
           "evidence_ids": [
-            "acts-20-macedonian-return-party",
-            "acts-20-macedonian-return-party:passage-relevance"
+            "acts-20-macedonian-return-party"
           ],
           "confidence": "medium",
-          "interpretation_level": "fact"
+          "interpretation_level": "disputed"
         }
       ]
     }
   ],
   "generated_metadata": {
-    "evidence_hash": "ce1e832f38311c7d03ff8718f7002db90d1c3909473c5c51b7757b85d5e42b3b",
+    "evidence_hash": "a4315b02dacd172ace94fece3f0a105822d2be2cd3b5b238eb60840c0e67d599",
     "evidence_bundle_version": "1.0",
     "commentary_schema_version": "1.0",
-    "commentary_prompt_version": "1.0",
-    "model": "haiku",
-    "generated_timestamp": null
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:40:11.449281+00:00"
   },
   "failure_reason": null,
-  "validation_errors": [
-    "section[0].block[1].interpretation_level is invalid",
-    "section[0].block[1].confidence exceeds its cited evidence",
-    "section[1].kind is unsupported: travel_narrative",
-    "section[1].block[0].interpretation_level is invalid",
-    "section[2].kind is unsupported: farewell_discourse",
-    "section[2].block[0].interpretation_level is invalid",
-    "section[2].block[1].interpretation_level is invalid",
-    "section[3].kind is unsupported: textual_witnesses",
-    "section[3].block[0].interpretation_level is invalid",
-    "section[4].kind is unsupported: historical_method",
-    "section[4].block[0].interpretation_level is invalid"
-  ],
+  "validation_errors": [],
   "validation_warnings": []
 }

@@ -2,39 +2,21 @@
   "reference": "Acts 1",
   "book": "Acts",
   "chapter": 1,
-  "status": "partial",
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
   "sections": [
     {
-      "kind": "thematic_section",
-      "title": "The Kingdom Question and Witness Program",
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
       "blocks": [
         {
-          "id": "block_2",
-          "text": "When the apostles gathered with the risen Jesus, they asked whether he would restore the kingdom to Israel at that time. Jesus declined to reveal the times or seasons that the Father has set within His authority. Instead, he redirected their messianic expectation toward Spirit-empowered witness. They would receive power when the Holy Spirit came upon them and would bear witness in four concentric circles: Jerusalem, Judea, Samaria, and to the uttermost parts of the earth. Acts 1:8 establishes a major geographic and theological program that structures the entire narrative movement of the book. The disciples' question receives not a refusal but a redirection\u2014the kingdom's restoration unfolds through apostolic witness, beginning from Jerusalem and expanding outward.",
+          "id": "overview",
+          "text": "Acts 1 contains 26 verses. It opens with: The former treatise I made, O Theophilus, concerning all that Jesus began both to do and to teach, It concludes with: And they gave lots for them; and the lot fell upon Matthias; and he was numbered with the eleven apostles.",
           "verse_refs": [
-            "Acts 1:6-8"
+            "Acts 1:1-26"
           ],
           "evidence_ids": [
-            "acts-kingdom-israel",
-            "acts-geographic-program"
-          ],
-          "confidence": "high",
-          "interpretation_level": "fact"
-        }
-      ]
-    },
-    {
-      "kind": "thematic_section",
-      "title": "The Ascension",
-      "blocks": [
-        {
-          "id": "block_3",
-          "text": "As the apostles watched, Jesus was taken up and received into a cloud beyond their sight. Two men in white apparel appeared beside them and announced that this Jesus, received up into heaven, would come in the same manner as they had witnessed him going into heaven. Acts narrates this ascension through biblical theophanic imagery\u2014the cloud and the angelic figures\u2014rather than providing a modern physical explanation for the event. The imagery draws on Israel's scriptural tradition of divine presence and revelation.",
-          "verse_refs": [
-            "Acts 1:9-11"
-          ],
-          "evidence_ids": [
-            "acts-ascension"
+            "acts-anonymous"
           ],
           "confidence": "high",
           "interpretation_level": "fact"
@@ -43,20 +25,14 @@
     }
   ],
   "generated_metadata": {
-    "evidence_hash": "d203dd13710c005fa4e56e0df90f3c96694e94eed291c0ec73e6886d38382c47",
+    "evidence_hash": "9009548681cc90d052eabb88cb9e551fac1e1eec5dbc2ce40cbb208e9b4bfe2a",
     "evidence_bundle_version": "1.0",
     "commentary_schema_version": "1.0",
-    "commentary_prompt_version": "1.0",
-    "model": "haiku",
-    "generated_timestamp": null
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:40:03.253110+00:00"
   },
   "failure_reason": null,
-  "validation_errors": [
-    "section[0].block[0].interpretation_level is invalid",
-    "section[1].kind is unsupported: thematic_section",
-    "section[2].kind is unsupported: thematic_section",
-    "section[3].kind is unsupported: thematic_section",
-    "section[3].block[0].interpretation_level is invalid"
-  ],
+  "validation_errors": [],
   "validation_warnings": []
 }

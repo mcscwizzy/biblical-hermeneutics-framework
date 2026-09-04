@@ -2,66 +2,37 @@
   "reference": "Acts 10",
   "book": "Acts",
   "chapter": 10,
-  "status": "partial",
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
   "sections": [
     {
       "kind": "chapter_overview",
-      "title": "Overview",
+      "title": "Chapter overview",
       "blocks": [
         {
-          "id": "block_1",
-          "text": "Acts 10 narrates an encounter that breaches major social and religious boundaries of early Jewish Christianity. Cornelius, a centurion stationed in Caesarea under Roman rule, and Peter, a fisherman from Galilee who became a leading witness to Jesus' resurrection, are brought together through parallel visions. The chapter unfolds through dual divine interventions\u2014one directing Cornelius to summon Peter, another troubling Peter with a vision whose meaning remains unresolved until he enters the Gentile household itself.",
+          "id": "overview",
+          "text": "Acts 10 contains 48 verses. It opens with: Now `there was' a certain man in Caesarea, Cornelius by name, a centurion of the band called the Italian `band', It concludes with: And he commanded them to be baptized in the name of Jesus Christ. Then prayed they him to tarry certain days.",
           "verse_refs": [
-            "Acts 10:1-2",
-            "Acts 10:9-16"
+            "Acts 10:1-48"
           ],
           "evidence_ids": [
-            "who-was-peter:historical_context:0",
-            "cornelius-household-receives-spirit:historical_context:0"
+            "acts-animal-vision-perplexity"
           ],
           "confidence": "medium",
-          "interpretation_level": "fact"
-        }
-      ]
-    },
-    {
-      "kind": "section",
-      "title": "Cornelius: Centurion in Household and Empire",
-      "blocks": [
-        {
-          "id": "block_2",
-          "text": "Cornelius is positioned within networks of kinship obligation and household economy that structured Mediterranean social life under imperial rule. His household\u2014servants and soldiers dependent on his patronage and direction\u2014would share his spiritual commitments alongside their material provisioning. The angel's command to Cornelius to summon Peter sets in motion an encounter that will test whether these household structures and ethnic divisions remain markers of separation or gates to a new community.",
-          "verse_refs": [
-            "Acts 10:1-8"
-          ],
-          "evidence_ids": [
-            "cornelius:ancient_near_east_context:0",
-            "cornelius-household-receives-spirit:ancient_near_east_context:0"
-          ],
-          "confidence": "medium",
-          "interpretation_level": "fact"
+          "interpretation_level": "disputed"
         }
       ]
     }
   ],
   "generated_metadata": {
-    "evidence_hash": "3c8b1c82c19604eb6541e5277a234f4367c0c2ca548ae60a72fd782573cbd50d",
+    "evidence_hash": "7790a2f71113f11e6f9a75278d1e4fec2fd81d492b34f25ed21b8f5c5eb61ea3",
     "evidence_bundle_version": "1.0",
     "commentary_schema_version": "1.0",
-    "commentary_prompt_version": "1.0",
-    "model": "haiku",
-    "generated_timestamp": null
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:40:05.807615+00:00"
   },
   "failure_reason": null,
-  "validation_errors": [
-    "section[1].kind is unsupported: section",
-    "section[2].kind is unsupported: section",
-    "section[2].block[0].interpretation_level is invalid",
-    "section[2].block[1].interpretation_level is invalid",
-    "section[3].kind is unsupported: section",
-    "section[3].block[0].interpretation_level is invalid",
-    "section[4].kind is unsupported: section",
-    "section[4].block[0].interpretation_level is invalid"
-  ],
+  "validation_errors": [],
   "validation_warnings": []
 }

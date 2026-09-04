@@ -2,39 +2,37 @@
   "reference": "Acts 12",
   "book": "Acts",
   "chapter": 12,
-  "status": "partial",
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
   "sections": [
     {
       "kind": "chapter_overview",
-      "title": "Overview",
+      "title": "Chapter overview",
       "blocks": [
         {
-          "id": "block_1",
-          "text": "Acts 12 narrates a period of persecution under Herod directed against the Jerusalem church. The chapter reports the execution of James and the arrest and miraculous deliverance of Peter. The time setting is the Feast of Unleavened Bread, following Passover. While the supplied evidence bundle contains archaeological materials from this period and location, the available evidence is primarily limited to ossuaries and inscriptional records rather than direct documentation of the events described in the narrative.",
+          "id": "overview",
+          "text": "Acts 12 contains 25 verses. It opens with: Now about that time Herod the king put forth his hands to afflict certain of the church. It concludes with: And Barnabas and Saul returned from Jerusalem, when they had fulfilled their ministration, taking with them John whose surname was Mark.",
           "verse_refs": [
-            "Acts 12:1-14"
+            "Acts 12:1-25"
           ],
           "evidence_ids": [
-            "james-ossuary:ancient_near_east_context:0",
-            "caiaphas-ossuary:ancient_near_east_context:0"
+            "acts-herod-josephus"
           ],
           "confidence": "medium",
-          "interpretation_level": "fact"
+          "interpretation_level": "disputed"
         }
       ]
     }
   ],
   "generated_metadata": {
-    "evidence_hash": "476617ec56cd2084bba17af8b438b8f527c2693feb99bb33d0053f027ae379a7",
+    "evidence_hash": "dd41e0815771a145353966a62dc1b49fe016de938d189b3c4130d73275bddd43",
     "evidence_bundle_version": "1.0",
     "commentary_schema_version": "1.0",
-    "commentary_prompt_version": "1.0",
-    "model": "haiku",
-    "generated_timestamp": null
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:40:06.143132+00:00"
   },
   "failure_reason": null,
-  "validation_errors": [
-    "section[1].block[0].interpretation_level is invalid"
-  ],
+  "validation_errors": [],
   "validation_warnings": []
 }

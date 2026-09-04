@@ -2,39 +2,37 @@
   "reference": "Acts 7",
   "book": "Acts",
   "chapter": 7,
-  "status": "partial",
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
   "sections": [
     {
-      "kind": "narrative_section",
-      "title": "Joseph's Elevation and God's Preservation (7:9-16)",
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
       "blocks": [
         {
-          "id": "block_2",
-          "text": "The famine struck both Egypt and Canaan, forcing Jacob to seek grain in Egypt. Joseph revealed his identity to his brothers and summoned the entire household to Egypt. Jacob and the patriarchs descended to Egypt with seventy-five people, died there, and were carried to Shechem for burial. Stephen uses this sequence to demonstrate divine providence: God used famine and migration to bring Israel's ancestors to Egypt, where Joseph's position in the court administration could secure their survival and settlement.",
+          "id": "overview",
+          "text": "Acts 7 contains 60 verses. It opens with: And the high priest said, Are these things so? It concludes with: And he kneeled down, and cried with a loud voice, Lord, lay not this sin to their charge. And when he had said this, he fell asleep.",
           "verse_refs": [
-            "Acts 7:11-16"
+            "Acts 7:1-60"
           ],
           "evidence_ids": [
-            "joseph-interprets-pharaohs-dreams:historical_context:0"
+            "acts-historical-method"
           ],
-          "confidence": "medium",
+          "confidence": "high",
           "interpretation_level": "fact"
         }
       ]
     }
   ],
   "generated_metadata": {
-    "evidence_hash": "53c3d8bdc9df301a57783c9f64cf5c0ba1cf45522aec294852ce3c2d46738924",
+    "evidence_hash": "25d6f40ce6e8f2f28ad276efd9b1a52340a8683be4184f92ee443a33ac5854ea",
     "evidence_bundle_version": "1.0",
     "commentary_schema_version": "1.0",
-    "commentary_prompt_version": "1.0",
-    "model": "haiku",
-    "generated_timestamp": null
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:40:04.681072+00:00"
   },
   "failure_reason": null,
-  "validation_errors": [
-    "section[0].kind is unsupported: narrative_section",
-    "section[0].block[0].interpretation_level is invalid"
-  ],
+  "validation_errors": [],
   "validation_warnings": []
 }

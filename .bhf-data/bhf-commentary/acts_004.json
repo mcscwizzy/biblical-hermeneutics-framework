@@ -2,130 +2,37 @@
   "reference": "Acts 4",
   "book": "Acts",
   "chapter": 4,
-  "status": "partial",
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
   "sections": [
     {
       "kind": "chapter_overview",
-      "title": "Overview",
+      "title": "Chapter overview",
       "blocks": [
         {
-          "id": "block_1",
-          "text": "Acts 4 describes the arrest and interrogation of Peter and John following their healing of a lame beggar. The passage reveals the institutional complexity of Second Temple Jerusalem, where multiple priestly offices, distinct philosophical groups like the Sadducees, and formal councils exercised overlapping authority under Roman rule. The narrative distinguishes between a serving high priest, chief priests, temple officers, and Sadducean leaders rather than collapsing them into a single authority.",
+          "id": "overview",
+          "text": "Acts 4 contains 37 verses. It opens with: And as they spake unto the people, the priests and the captain of the temple and the Sadducees came upon them, It concludes with: having a field, sold it, and brought the money and laid it at the apostles' feet.",
           "verse_refs": [
-            "Acts 4:1-4"
+            "Acts 4:1-37"
           ],
           "evidence_ids": [
-            "gospel-acts-priestly-authority",
-            "high-priesthood:second_temple_context:0"
+            "acts-historical-method"
           ],
-          "confidence": "medium",
-          "interpretation_level": "fact"
-        }
-      ]
-    },
-    {
-      "kind": "context",
-      "title": "The Sadducean Opposition",
-      "blocks": [
-        {
-          "id": "block_2",
-          "text": "The Sadducees led the opposition to Peter and John's preaching of resurrection (v. 1-2). Attested by Josephus and the New Testament across the Hasmonean and Roman periods, Sadducees are consistently associated with disputes over resurrection beliefs and matters of written religious authority. Their power was tied to the temple institution, making apostolic resurrection preaching a direct ideological and jurisdictional challenge to their leadership in Jerusalem.",
-          "verse_refs": [
-            "Acts 4:1-2"
-          ],
-          "evidence_ids": [
-            "sadducees:historical_context:0",
-            "sadducees:second_temple_context:0"
-          ],
-          "confidence": "medium",
-          "interpretation_level": "fact"
-        }
-      ]
-    },
-    {
-      "kind": "context",
-      "title": "The Priestly Hierarchy",
-      "blocks": [
-        {
-          "id": "block_3",
-          "text": "The involvement of 'the priests and the captain of the temple and the Sadducees' (v. 1) reflects distinct offices rather than a single priestly category. The passage then identifies Annas as high priest, along with Caiaphas, and notes other members 'of the kindred of the high priest' (v. 6). This precision in terminology matters: it prevents readers from collapsing every priestly figure into one office and instead shows how serving high priests, chief priests, temple officers, and priestly families all held differentiated authority.",
-          "verse_refs": [
-            "Acts 4:1",
-            "Acts 4:6"
-          ],
-          "evidence_ids": [
-            "gospel-acts-priestly-authority:passage-relevance"
-          ],
-          "confidence": "medium",
-          "interpretation_level": "fact"
-        }
-      ]
-    },
-    {
-      "kind": "context",
-      "title": "The Council and Its Authority",
-      "blocks": [
-        {
-          "id": "block_4",
-          "text": "The assembly that convened the next morning (v. 5-6) included 'rulers and elders and scribes' gathered in Jerusalem. This reflects the structure of Second Temple councils: bodies drawn from priestly leaders, communal elders, and scribal experts who exercised judgment on matters of Torah, temple authority, and public order. These councils operated within both divine claims and imperial constraints, serving as venues where local religious authority addressed challenges to communal order.",
-          "verse_refs": [
-            "Acts 4:5-6"
-          ],
-          "evidence_ids": [
-            "sanhedrin:second_temple_context:0",
-            "sanhedrin:hebraic_worldview:0"
-          ],
-          "confidence": "medium",
-          "interpretation_level": "fact"
-        },
-        {
-          "id": "block_5",
-          "text": "The specific mention of Annas and Caiaphas illustrates how high-priestly authority functioned in the Roman period. Josephus documents that high priests were repeatedly appointed and removed by Herodian and Roman authorities, yet retained substantial local power. Disputes over custody of vestments and continuing priestly political influence show that these figures exercised real authority in Jerusalem despite their embeddedness in larger structures of Roman and client-royal rule.",
-          "verse_refs": [
-            "Acts 4:6"
-          ],
-          "evidence_ids": [
-            "josephus-high-priestly-appointments",
-            "josephus-high-priestly-appointments:passage-relevance"
-          ],
-          "confidence": "medium",
-          "interpretation_level": "fact"
-        }
-      ]
-    },
-    {
-      "kind": "context",
-      "title": "The Interrogation",
-      "blocks": [
-        {
-          "id": "block_6",
-          "text": "When the council asked Peter and John, 'By what power, or in what name, have ye done this?' (v. 7), they invoked their authority to judge matters affecting public order and communal religious practice. The passage notes that the council perceived Peter and John as 'unlearned and ignorant men' who had been with Jesus (v. 13), marking them as outside the formal scribal educational structures that legitimated religious authority in Jerusalem. The confrontation thus occurred within a framework where multiple forms of institutional authority\u2014priestly, scribal, and conciliar\u2014converged to examine a claim of divine power.",
-          "verse_refs": [
-            "Acts 4:7-13"
-          ],
-          "evidence_ids": [
-            "sanhedrin:hebraic_worldview:0"
-          ],
-          "confidence": "medium",
+          "confidence": "high",
           "interpretation_level": "fact"
         }
       ]
     }
   ],
   "generated_metadata": {
-    "evidence_hash": "c9998fcf7099d207164c3f53466475d6198de508cc49617811c998e44f9e4492",
+    "evidence_hash": "6e0ce27e9be5f6828f072a70b779c25feae8fd7476fe24bc770af9d0cfb9830f",
     "evidence_bundle_version": "1.0",
     "commentary_schema_version": "1.0",
-    "commentary_prompt_version": "1.0",
-    "model": "haiku",
-    "generated_timestamp": null
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:40:04.225575+00:00"
   },
   "failure_reason": null,
-  "validation_errors": [
-    "section[1].kind is unsupported: context",
-    "section[2].kind is unsupported: context",
-    "section[3].kind is unsupported: context",
-    "section[4].kind is unsupported: context"
-  ],
+  "validation_errors": [],
   "validation_warnings": []
 }

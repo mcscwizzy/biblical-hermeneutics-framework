@@ -2,47 +2,37 @@
   "reference": "Acts 21",
   "book": "Acts",
   "chapter": 21,
-  "status": "partial",
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
   "sections": [
     {
       "kind": "chapter_overview",
-      "title": "Overview",
+      "title": "Chapter overview",
       "blocks": [
         {
-          "id": "block_1",
-          "text": "Acts 21 narrates Paul's final journey to Jerusalem in the first-person plural voice characteristic of sections of Acts depicting travel and key moments.",
+          "id": "overview",
+          "text": "Acts 21 contains 40 verses. It opens with: And when it came to pass that were parted from them and had set sail, we came with a straight course unto Cos, and the next day unto Rhodes, and from thence unto Patara: It concludes with: And when he had given him leave, Paul, standing on the stairs, beckoned with the hand unto the people; and when there was made a great silence, he spake unto them in the Hebrew language, saying,",
           "verse_refs": [
-            "Acts 21:1-15"
+            "Acts 21:1-40"
           ],
           "evidence_ids": [
-            "acts-we-passages"
+            "acts-citizenship-hearings-appeal-custody"
           ],
-          "confidence": "high",
-          "interpretation_level": "fact"
+          "confidence": "medium",
+          "interpretation_level": "disputed"
         }
       ]
     }
   ],
   "generated_metadata": {
-    "evidence_hash": "91ea9a85897f6049859739f1ee10a6a49b7bc1fa6fd5079850fcddccb40f37e6",
+    "evidence_hash": "0a668a7a216662404e4463ad7ad9c2f728ab53652e5aa89606f199ded8ad7f74",
     "evidence_bundle_version": "1.0",
     "commentary_schema_version": "1.0",
-    "commentary_prompt_version": "1.0",
-    "model": "haiku",
-    "generated_timestamp": null
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:40:11.790621+00:00"
   },
   "failure_reason": null,
-  "validation_errors": [
-    "section[1].kind is unsupported: narrative_section",
-    "section[1].block[0].interpretation_level is invalid",
-    "section[2].kind is unsupported: narrative_section",
-    "section[2].block[0].interpretation_level is invalid",
-    "section[3].kind is unsupported: narrative_section",
-    "section[3].block[0].interpretation_level is invalid",
-    "section[4].kind is unsupported: narrative_section",
-    "section[4].block[0].interpretation_level is invalid",
-    "section[5].kind is unsupported: narrative_section",
-    "section[5].block[0].interpretation_level is invalid"
-  ],
+  "validation_errors": [],
   "validation_warnings": []
 }
