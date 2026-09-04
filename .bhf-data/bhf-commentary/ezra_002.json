@@ -2,104 +2,37 @@
   "reference": "Ezra 2",
   "book": "Ezra",
   "chapter": 2,
-  "status": "partial",
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
   "sections": [
     {
       "kind": "chapter_overview",
-      "title": "Overview: The Returned Community List",
+      "title": "Chapter overview",
       "blocks": [
         {
-          "id": "block_overview_1",
-          "text": "Ezra 2 presents a genealogical roster of those who returned from Babylonian exile to Jerusalem and Judah. This list emerges within the Persian imperial system, which authorized and supported the return through written decree and administrative channels. The names and family groupings recorded here establish the identity and membership of the early Second Temple community as it took shape in the Persian province of Yehud during the reign of Darius I.",
+          "id": "overview",
+          "text": "Ezra 2 contains 70 verses. It opens with: Now these are the children of the province, that went up out of the captivity of those that had been carried away, whom Nebuchadnezzar the king of Babylon had carried away unto Babylon, and that returned unto Jerusalem and Judah, every one unto his city; It concludes with: So the priests, and the Levites, and some of the people, and the singers, and the porters, and the Nethinim, dwelt in their cities, and all Israel in their cities.",
           "verse_refs": [
-            "Ezra 2:1-2"
+            "Ezra 2:1-70"
           ],
           "evidence_ids": [
-            "return-from-exile:historical_context:0",
-            "ezra:second_temple_context:0",
-            "ezra:historical_setting:0"
+            "ezra-persian-return-and-temple-sequence"
           ],
-          "confidence": "medium",
-          "interpretation_level": "fact"
-        }
-      ]
-    },
-    {
-      "kind": "leaders",
-      "title": "Leadership of the Return",
-      "blocks": [
-        {
-          "id": "block_leaders_1",
-          "text": "Zerubbabel, Jeshua, and their associates named in verse 2 led the return cohort. These figures represent the leadership structure through which the early return was organized and the Second Temple community established. The return occurred within the administrative framework of the Achaemenid Persian empire, spanning from Cyrus's capture of Babylon in 539 BCE through the completion of the temple in the reign of Darius I, conventionally dated to 515 BCE.",
-          "verse_refs": [
-            "Ezra 2:2"
-          ],
-          "evidence_ids": [
-            "ezra:historical_context:0",
-            "ezra:second_temple_context:0",
-            "ezra:timeline:0",
-            "ezra:timeline:5"
-          ],
-          "confidence": "medium",
-          "interpretation_level": "fact"
-        }
-      ]
-    },
-    {
-      "kind": "genealogy_and_identity",
-      "title": "Genealogy as Marker of Community Identity",
-      "blocks": [
-        {
-          "id": "block_genealogy_1",
-          "text": "The chapter's primary content is genealogical lists organized by clan and family. Genealogy in ancient practice served to establish belonging, rights, and communal memory. For the returning community, these lists functioned as a record of who formed the covenant community in the restoration period. The hebraic worldview presented in Ezra frames the return as the LORD stirring rulers and people, preserving a remnant, and calling the restored community to covenant faithfulness. Genealogical continuity\u2014tracing ancestry back to pre-exile lineages\u2014reinforced the identity of these returnees as the legitimate continuation of Israel after exile.",
-          "verse_refs": [
-            "Ezra 2:3-29"
-          ],
-          "evidence_ids": [
-            "why-are-genealogies-included:ancient_near_east_context:0",
-            "why-are-genealogies-included:historical_context:0",
-            "ezra:hebraic_worldview:0",
-            "return-from-exile:second_temple_context:0"
-          ],
-          "confidence": "medium",
-          "interpretation_level": "fact"
-        }
-      ]
-    },
-    {
-      "kind": "historical_verification",
-      "title": "Historical Verification and Limits",
-      "blocks": [
-        {
-          "id": "block_verification_1",
-          "text": "While Ezra 2 presents these names and figures within a coherent narrative of return and restoration, the archaeological record does not independently verify every named returnee, total count, or the precise archival status of the list's sources. Material remains from Persian-period Yehud\u2014including seals, bullae, coins, and jar impressions\u2014illuminate administration and settlement patterns, but cannot authenticate every individual recorded in textual sources.",
-          "verse_refs": [
-            "Ezra 2"
-          ],
-          "evidence_ids": [
-            "ezra:archaeology:5",
-            "ezra:archaeology:1",
-            "ezra:archaeology:2"
-          ],
-          "confidence": "medium",
-          "interpretation_level": "fact"
+          "confidence": "high",
+          "interpretation_level": "disputed"
         }
       ]
     }
   ],
   "generated_metadata": {
-    "evidence_hash": "86c7f5685a2bc79f2c4e91c672abd6c1af20f22fcba92f01a7c99af9564e791e",
+    "evidence_hash": "d0f5927682deb7d8a4b3db2bd8faed541dd7530ed460eab0672b34cf910914fd",
     "evidence_bundle_version": "1.0",
     "commentary_schema_version": "1.0",
-    "commentary_prompt_version": "1.0",
-    "model": "haiku",
-    "generated_timestamp": null
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:12:08.757191+00:00"
   },
   "failure_reason": null,
-  "validation_errors": [
-    "section[1].kind is unsupported: leaders",
-    "section[2].kind is unsupported: genealogy_and_identity",
-    "section[3].kind is unsupported: historical_verification"
-  ],
+  "validation_errors": [],
   "validation_warnings": []
 }

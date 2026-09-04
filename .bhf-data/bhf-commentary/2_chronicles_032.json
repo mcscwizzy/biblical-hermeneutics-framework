@@ -2,23 +2,24 @@
   "reference": "2 Chronicles 32",
   "book": "2 Chronicles",
   "chapter": 32,
-  "status": "partial",
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
   "sections": [
     {
       "kind": "chapter_overview",
-      "title": "Overview",
+      "title": "Chapter overview",
       "blocks": [
         {
-          "id": "block_1",
-          "text": "Chapter 32 narrates Sennacherib's invasion of Judah and Hezekiah's response to this extraordinary test of faith. Following his religious reforms of the previous chapter, Hezekiah confronts a military crisis that unfolds in two phases: first, strategic preparation for siege conditions, and second, confrontation with Sennacherib's psychological and theological assault on the city's confidence. The narrative exemplifies a recurring pattern in Chronicles where Judah's leaders and people respond to existential threats by seeking God's deliverance.",
+          "id": "overview",
+          "text": "2 Chronicles 32 contains 33 verses. It opens with: After these things, and this faithfulness, Sennacherib king of Assyria came, and entered into Judah, and encamped against the fortified cities, and thought to win them for himself. It concludes with: And Hezekiah slept with his fathers, and they buried him in the ascent of the sepulchres of the sons of David: and all Judah and the inhabitants of Jerusalem did him honor at his death. And Manasseh his son reigned in his stead.",
           "verse_refs": [
-            "2 Chronicles 32:1-8"
+            "2 Chronicles 32:1-33"
           ],
           "evidence_ids": [
             "second-chronicles-seek-humble-pattern"
           ],
           "confidence": "high",
-          "interpretation_level": "fact"
+          "interpretation_level": "disputed"
         }
       ]
     }
@@ -27,16 +28,11 @@
     "evidence_hash": "2aa6cd8930a2c19042a41e9ca0a56dfb166324e7917c7fe5e8c4fa6330ba02a1",
     "evidence_bundle_version": "1.0",
     "commentary_schema_version": "1.0",
-    "commentary_prompt_version": "1.0",
-    "model": "haiku",
-    "generated_timestamp": null
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:12:08.131170+00:00"
   },
   "failure_reason": null,
-  "validation_errors": [
-    "section[1].kind is unsupported: section",
-    "section[1].block[0].interpretation_level is invalid",
-    "section[2].kind is unsupported: section",
-    "section[2].block[0].interpretation_level is invalid"
-  ],
+  "validation_errors": [],
   "validation_warnings": []
 }

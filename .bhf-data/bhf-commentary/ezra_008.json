@@ -2,35 +2,18 @@
   "reference": "Ezra 8",
   "book": "Ezra",
   "chapter": 8,
-  "status": "partial",
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
   "sections": [
     {
-      "kind": "exposition",
-      "title": "The Genealogical Roster (vv. 1-14)",
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
       "blocks": [
         {
-          "id": "block_2",
-          "text": "The chapter opens with a detailed genealogy of family heads and the number of males in each ancestral house participating in the expedition. Genealogy held particular importance for the returning community, serving to establish legitimate claims to land and religious office, identify leadership structure, and document scale. The families listed include major priestly lineages (descendants of Phinehas and Ithamar) and heirs of other prominent families. This genealogical record reflects the Second Temple community's concern with establishing clear ancestral connections and maintaining proper social and religious hierarchies.",
+          "id": "overview",
+          "text": "Ezra 8 contains 36 verses. It opens with: Now these are the heads of their fathers' `houses', and this is the genealogy of them that went up with me from Babylon, in the reign of Artaxerxes the king: It concludes with: And they delivered the king's commissions unto the king's satraps, and to the governors beyond the River: and they furthered the people and the house of God.",
           "verse_refs": [
-            "Ezra 8:1-14"
-          ],
-          "evidence_ids": [
-            "return-from-exile:second_temple_context:0"
-          ],
-          "confidence": "medium",
-          "interpretation_level": "fact"
-        }
-      ]
-    },
-    {
-      "kind": "exposition",
-      "title": "Assembly at Ahava and the Levite Question (vv. 15-17)",
-      "blocks": [
-        {
-          "id": "block_3",
-          "text": "Upon gathering at the river Ahava to prepare for the journey to Jerusalem, Ezra discovered a critical shortage: the expedition contained no sons of Levi. The absence of Levites jeopardized the cultic function of the returning community, as these temple servants were essential for proper worship and sacrifice. Rather than proceeding without them, Ezra mobilized messengers to contact Iddo at the place Casiphia, requesting that Levites be sent to join the expedition. This moment reveals both the deliberate structure of the return (organized by family and function) and the theological priority placed on establishing proper temple service in the rebuilt Jerusalem.",
-          "verse_refs": [
-            "Ezra 8:15-17"
+            "Ezra 8:1-36"
           ],
           "evidence_ids": [
             "ezra-ahava-journey"
@@ -45,18 +28,11 @@
     "evidence_hash": "965126246e24d4b8c0b6c55f41b79951cf88583827d7ad4c92580a4fee4ef50d",
     "evidence_bundle_version": "1.0",
     "commentary_schema_version": "1.0",
-    "commentary_prompt_version": "1.0",
-    "model": "haiku",
-    "generated_timestamp": null
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:12:09.351073+00:00"
   },
   "failure_reason": null,
-  "validation_errors": [
-    "root.status is unsupported: completed",
-    "section[0].block[0].interpretation_level is invalid",
-    "section[1].kind is unsupported: exposition",
-    "section[2].kind is unsupported: exposition",
-    "section[3].kind is unsupported: exposition",
-    "section[3].block[0].interpretation_level is invalid"
-  ],
+  "validation_errors": [],
   "validation_warnings": []
 }

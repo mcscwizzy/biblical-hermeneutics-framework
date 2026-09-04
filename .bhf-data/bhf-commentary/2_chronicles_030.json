@@ -2,42 +2,24 @@
   "reference": "2 Chronicles 30",
   "book": "2 Chronicles",
   "chapter": 30,
-  "status": "partial",
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
   "sections": [
     {
       "kind": "chapter_overview",
-      "title": "Overview: A Passover of Restoration and All-Israel Renewal",
+      "title": "Chapter overview",
       "blocks": [
         {
-          "id": "block_1",
-          "text": "This chapter records Hezekiah's initiative to restore centralized temple worship through a kingdom-wide Passover celebration. The king consults with his officials and the Jerusalem assembly to organize the festival, then dispatches messengers with letters throughout the land, extending the invitation not only to Judah but explicitly to the northern tribes of Ephraim and Manasseh. The resulting proclamation demonstrates the narrative's interest in reconstructing an all-Israel community centered on the Jerusalem temple, with renewal of covenant relationship at its heart.",
+          "id": "overview",
+          "text": "2 Chronicles 30 contains 27 verses. It opens with: And Hezekiah sent to all Israel and Judah, and wrote letters also to Ephraim and Manasseh, that they should come to the house of Jehovah at Jerusalem, to keep the passover unto Jehovah, the God of Israel. It concludes with: Then the priests the Levites arose and blessed the people: and their voice was heard, and their prayer came up to his holy habitation, even unto heaven.",
           "verse_refs": [
-            "2 Chronicles 30:1-5"
-          ],
-          "evidence_ids": [
-            "second-chronicles-hezekiah-passover",
-            "second-chronicles-judah-focus"
-          ],
-          "confidence": "high",
-          "interpretation_level": "fact"
-        }
-      ]
-    },
-    {
-      "kind": "expository",
-      "title": "The Timing and Proclamation",
-      "blocks": [
-        {
-          "id": "block_2",
-          "text": "Hezekiah's council determines to celebrate Passover in the second month rather than the first, because the priests have not had sufficient time to sanctify themselves and the people have not yet gathered to Jerusalem. The assembly approves this adjustment, and a public proclamation is dispatched reaching from Beer-sheba in the south to Dan in the north, calling the scattered people to Jerusalem for the observance. This geographic breadth underscores the attempt to summon Israel as a unified entity across territorial divisions.",
-          "verse_refs": [
-            "2 Chronicles 30:2-5"
+            "2 Chronicles 30:1-27"
           ],
           "evidence_ids": [
             "second-chronicles-hezekiah-passover"
           ],
           "confidence": "high",
-          "interpretation_level": "fact"
+          "interpretation_level": "disputed"
         }
       ]
     }
@@ -46,17 +28,11 @@
     "evidence_hash": "1294d0ba9b449d5c1b76ab01e865a0fd4bdb65d0e92f60f823b8e0f4b1190f21",
     "evidence_bundle_version": "1.0",
     "commentary_schema_version": "1.0",
-    "commentary_prompt_version": "1.0",
-    "model": "haiku",
-    "generated_timestamp": null
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:12:08.042498+00:00"
   },
   "failure_reason": null,
-  "validation_errors": [
-    "section[1].kind is unsupported: expository",
-    "section[2].kind is unsupported: expository",
-    "section[2].block[0].confidence exceeds its cited evidence",
-    "section[3].kind is unsupported: expository",
-    "section[3].block[0].interpretation_level is invalid"
-  ],
+  "validation_errors": [],
   "validation_warnings": []
 }

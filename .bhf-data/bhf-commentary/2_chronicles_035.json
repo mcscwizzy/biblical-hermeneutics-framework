@@ -3,45 +3,34 @@
   "book": "2 Chronicles",
   "chapter": 35,
   "status": "validated",
+  "evidence_availability": "AVAILABLE",
   "sections": [
     {
       "kind": "chapter_overview",
-      "title": "Josiah's Great Passover",
+      "title": "Chapter overview",
       "blocks": [
         {
-          "id": "block_1",
-          "text": "Josiah's major Passover celebration represented the culmination of his comprehensive temple reforms. Following the discovery of the law book during temple repairs, Huldah's prophetic word, and a national covenant renewal ceremony, Josiah organized this observance in Jerusalem on the fourteenth day of the first month. The king set the priests in their offices and charged them with their service responsibilities. The Levites, whom the passage identifies as teachers throughout Israel and dedicated to Yahweh, were instructed to cease transporting the ark\u2014it would now remain permanently in the temple Solomon had built\u2014and to focus fully on their cultic duties according to the organizational patterns established by King David.",
+          "id": "overview",
+          "text": "2 Chronicles 35 contains 27 verses. It opens with: And Josiah kept a passover unto Jehovah in Jerusalem: and they killed the passover on the fourteenth `day' of the first month. It concludes with: and his acts, first and last, behold, they are written in the book of the kings of Israel and Judah.",
           "verse_refs": [
-            "2 Chronicles 35:1-5"
+            "2 Chronicles 35:1-27"
           ],
           "evidence_ids": [
             "second-chronicles-josiah-reform"
           ],
           "confidence": "high",
-          "interpretation_level": "fact"
-        },
-        {
-          "id": "block_2",
-          "text": "The scale of royal and official contributions demonstrates the national mobilization for this festival. Josiah provided from his own treasury thirty thousand lambs and kids plus three thousand bullocks designated as Passover offerings for all who participated. His officials\u2014Hilkiah, Zechariah, and Jehiel, identified as rulers of the house of God\u2014contributed two thousand six hundred small cattle and three hundred oxen for the priests. The Levite chiefs, including Conaniah, Shemaiah, Nethanel, Hashabiah, Jeiel, and Jozabad, contributed five thousand small cattle and five hundred oxen for their own order. This structured gift-giving, flowing from the king through officials to the temple personnel, enabled broad participation in the festival.",
-          "verse_refs": [
-            "2 Chronicles 35:7-11"
-          ],
-          "evidence_ids": [
-            "second-chronicles-josiah-reform"
-          ],
-          "confidence": "high",
-          "interpretation_level": "fact"
+          "interpretation_level": "disputed"
         }
       ]
     }
   ],
   "generated_metadata": {
-    "evidence_hash": "3c2b10701c2013d17e9781b716abf62ac198b194d03dc7035f0155a29c886a85",
+    "evidence_hash": "3a8803236bb4edfb6f828be5812def7300f91e886db6ece08408675f62f4b032",
     "evidence_bundle_version": "1.0",
     "commentary_schema_version": "1.0",
-    "commentary_prompt_version": "1.0",
-    "model": "haiku",
-    "generated_timestamp": null
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:12:08.276273+00:00"
   },
   "failure_reason": null,
   "validation_errors": [],

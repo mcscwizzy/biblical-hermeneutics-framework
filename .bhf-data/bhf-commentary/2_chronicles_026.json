@@ -3,24 +3,23 @@
   "book": "2 Chronicles",
   "chapter": 26,
   "status": "validated",
+  "evidence_availability": "THIN",
   "sections": [
     {
       "kind": "chapter_overview",
-      "title": "Uzziah's Accession and the Seeking-and-Blessing Pattern",
+      "title": "Chapter overview",
       "blocks": [
         {
-          "id": "block_1",
-          "text": "Uzziah becomes king at sixteen following his father Amaziah's death, beginning a fifty-two-year reign over Judah. From the outset, the Chronicler establishes the ideological foundation for his rule: Uzziah \"set himself to seek God in the days of Zechariah, who had understanding in the vision of God.\" The pairing of a seeking king with a prophetic figure who possesses understanding of God's vision illustrates a crucial recurring pattern in Judah's political and theological history. The text then states explicitly: \"as long as he sought Jehovah, God made him to prosper.\" This direct causal relationship between seeking God and experiencing blessing encapsulates the theological framework through which the Chronicler interprets all of Judah's reigns. Seeking the LORD, receiving guidance from those with prophetic understanding, and experiencing divine blessing form an interconnected sequence that determines whether a king's reign succeeds.",
+          "id": "overview",
+          "text": "2 Chronicles 26 contains 23 verses. It opens with: And all the people of Judah took Uzziah, who was sixteen years old, and made him king in the room of his father Amaziah. It concludes with: So Uzziah slept with his fathers; and they buried him with his fathers in the field of burial which belonged to the kings; for they said, He is a leper: and Jotham his son reigned in his stead.",
           "verse_refs": [
-            "2 Chronicles 26:1",
-            "2 Chronicles 26:3",
-            "2 Chronicles 26:5"
+            "2 Chronicles 26:1-23"
           ],
           "evidence_ids": [
             "second-chronicles-seek-humble-pattern"
           ],
           "confidence": "high",
-          "interpretation_level": "fact"
+          "interpretation_level": "disputed"
         }
       ]
     }
@@ -29,9 +28,9 @@
     "evidence_hash": "38d12c454f4a7d84e643e923e776ff2747b392aad89d5c0489f85c6f552bd216",
     "evidence_bundle_version": "1.0",
     "commentary_schema_version": "1.0",
-    "commentary_prompt_version": "1.0",
-    "model": "haiku",
-    "generated_timestamp": null
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:12:07.883039+00:00"
   },
   "failure_reason": null,
   "validation_errors": [],

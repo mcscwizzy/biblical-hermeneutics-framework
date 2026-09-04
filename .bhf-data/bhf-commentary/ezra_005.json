@@ -2,44 +2,37 @@
   "reference": "Ezra 5",
   "book": "Ezra",
   "chapter": 5,
-  "status": "partial",
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
   "sections": [
     {
-      "kind": "narrative_scene",
-      "title": "Prophetic Encouragement and Work Resumption (5:1-2)",
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
       "blocks": [
         {
-          "id": "block_2",
-          "text": "Haggai and Zechariah emerge as God's spokesmen to the Jewish community of Judah and Jerusalem. Their prophecies energize Zerubbabel (governor) and Jeshua (high priest) to commence construction of the temple. Notably, the prophets remain actively involved in the building effort itself, suggesting their words carried both religious authority and sustained commitment to the project during this critical Persian-period restoration.",
+          "id": "overview",
+          "text": "Ezra 5 contains 17 verses. It opens with: Now the prophets, Haggai the prophet, and Zechariah the son of Iddo, prophesied unto the Jews that were in Judah and Jerusalem; in the name of the God of Israel `prophesied they' unto them. It concludes with: Now therefore, if it seem good to the king, let there be search made in the king's treasure-house, which is there at Babylon, whether it be so, that a decree was made of Cyrus the king to build this house of God at Jerusalem; and let the king send his pleasure to us concerning this matter.",
           "verse_refs": [
-            "Ezra 5:1-2"
+            "Ezra 5:1-17"
           ],
           "evidence_ids": [
-            "ezra-opposition-darius",
-            "haggai:historical_context:0"
+            "ezra-opposition-darius"
           ],
-          "confidence": "medium",
-          "interpretation_level": "fact"
+          "confidence": "high",
+          "interpretation_level": "disputed"
         }
       ]
     }
   ],
   "generated_metadata": {
-    "evidence_hash": "8cd531276b8bb2a8b970806192097c1f89374b2ebfba5042221e258d9cdcf810",
+    "evidence_hash": "dd097adf062122e0f044666d6ee1ab1664641fa0f165784b9ca4094a04b44604",
     "evidence_bundle_version": "1.0",
     "commentary_schema_version": "1.0",
-    "commentary_prompt_version": "1.0",
-    "model": "haiku",
-    "generated_timestamp": null
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:12:09.061771+00:00"
   },
   "failure_reason": null,
-  "validation_errors": [
-    "section[0].block[0].interpretation_level is invalid",
-    "section[1].kind is unsupported: narrative_scene",
-    "section[2].kind is unsupported: narrative_scene",
-    "section[2].block[0].interpretation_level is invalid",
-    "section[3].kind is unsupported: imperial_correspondence",
-    "section[3].block[0].interpretation_level is invalid"
-  ],
+  "validation_errors": [],
   "validation_warnings": []
 }
