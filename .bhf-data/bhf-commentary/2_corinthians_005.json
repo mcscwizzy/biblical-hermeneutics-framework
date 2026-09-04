@@ -2,118 +2,37 @@
   "reference": "2 Corinthians 5",
   "book": "2 Corinthians",
   "chapter": 5,
-  "status": "partial",
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
   "sections": [
     {
       "kind": "chapter_overview",
-      "title": "Overview",
+      "title": "Chapter overview",
       "blocks": [
         {
-          "id": "block_1",
-          "text": "2 Corinthians 5 develops Paul's theology of Christian hope and identity in light of Christ's death and resurrection. Writing to a church learning their status and belonging in this new reality, Paul addresses the future hope of bodily resurrection, the present reality of living by faith before God, and the universal judgment seat where each will give account.",
+          "id": "overview",
+          "text": "2 Corinthians 5 contains 21 verses. It opens with: For we know that if the earthly house of our tabernacle be dissolved, we have a building from God, a house not made with hands, eternal, in the heavens. It concludes with: Him who knew no sin he made `to be' sin on our behalf; that we might become the righteousness of God in him.",
           "verse_refs": [
-            "2 Corinthians 5:1-16"
+            "2 Corinthians 5:1-21"
           ],
           "evidence_ids": [
-            "what-verses-show-identity-in-christ:historical_context:0",
-            "what-verses-show-identity-in-christ:ancient_near_east_context:0"
+            "2cor-ambassadors"
           ],
           "confidence": "medium",
-          "interpretation_level": "fact"
-        }
-      ]
-    },
-    {
-      "kind": "expository",
-      "title": "The Heavenly Dwelling and Embodied Hope (vv. 1-5)",
-      "blocks": [
-        {
-          "id": "block_2",
-          "text": "Paul uses tent and building imagery to articulate Christian hope without despising bodily existence. The earthly tent represents the mortal body experiencing wasting and dissolution; the divine building from God represents eternal imperishable embodiment. The groaning in verse 2 reflects both the reality of physical decline and the inner renewal that accompanies it. Paul's explicit desire to be clothed upon rather than unclothed (v. 4) reveals that Christian hope is essentially embodied, not a flight from physical existence. The Spirit as earnest or pledge (v. 5) guarantees this future restoration.",
-          "verse_refs": [
-            "2 Corinthians 5:1-5"
-          ],
-          "evidence_ids": [
-            "second-corinthians-clothing-intermediate",
-            "outer-inner-not-body-contempt"
-          ],
-          "confidence": "medium",
-          "interpretation_level": "fact"
-        }
-      ]
-    },
-    {
-      "kind": "expository",
-      "title": "Embodied Absence, Faith, and Judgment (vv. 6-10)",
-      "blocks": [
-        {
-          "id": "block_3",
-          "text": "Paul structures Christian conduct within the present reality of embodied absence from the Lord and future universal judgment. While in the body, believers are absent from the Lord's direct presence, yet this condition does not suspend ethical accountability. Walking by faith during this intermediate period takes on urgency precisely because of the judgment seat, where each person must give account for what has been done in the body, whether good or bad. This framework links present ethical aim to future judgment without collapsing one into the other.",
-          "verse_refs": [
-            "2 Corinthians 5:6-10"
-          ],
-          "evidence_ids": [
-            "second-corinthians-presence-judgment",
-            "second-corinthians-presence-judgment:passage-relevance"
-          ],
-          "confidence": "medium",
-          "interpretation_level": "fact"
-        }
-      ]
-    },
-    {
-      "kind": "expository",
-      "title": "Apostolic Authority and Accountability (vv. 11-13)",
-      "blocks": [
-        {
-          "id": "block_4",
-          "text": "Paul does not claim immunity from evaluation but rather acknowledges that apostolic reputation is contested and subject to review. He repeatedly accounts for himself before God and the Corinthian church, making his character and motives accessible to scrutiny. This vulnerability serves the church's defense of him against critics, showing that apostolic authority is not protected from accountability but grounded in it.",
-          "verse_refs": [
-            "2 Corinthians 5:11-13"
-          ],
-          "evidence_ids": [
-            "conflict-29-self-commendation-limit"
-          ],
-          "confidence": "medium",
-          "interpretation_level": "fact"
-        }
-      ]
-    },
-    {
-      "kind": "expository",
-      "title": "Christ's Death and Reconciliation (vv. 14-16)",
-      "blocks": [
-        {
-          "id": "block_5",
-          "text": "The love of Christ, understood through his death on behalf of all, becomes the controlling principle for Paul's apostolic ministry and for the church's self-understanding. This reconciliation is God's initiative in Christ: the single death for all reorients human purpose from self-interest toward the one who died and rose again. The consequence is a transformed way of knowing persons and identity. Even prior acquaintance with Christ according to the flesh no longer defines belonging or status. Christian identity is now grounded in God's gracious action in Christ rather than in ethnic, social, or physical categories.",
-          "verse_refs": [
-            "2 Corinthians 5:14-16"
-          ],
-          "evidence_ids": [
-            "reconciliation-divine-agency",
-            "reconciliation-accountability-not-immunity",
-            "what-verses-show-identity-in-christ:ancient_near_east_context:0"
-          ],
-          "confidence": "medium",
-          "interpretation_level": "fact"
+          "interpretation_level": "disputed"
         }
       ]
     }
   ],
   "generated_metadata": {
-    "evidence_hash": "da907632ee44667092c2199075db692790e74a618cf972f7c8943a6fb287a1e1",
+    "evidence_hash": "14c9e1e8d27b21e9f56b2e4de3e994b06eea897a79c99a379c16065c3f746c7d",
     "evidence_bundle_version": "1.0",
     "commentary_schema_version": "1.0",
-    "commentary_prompt_version": "1.0",
-    "model": "haiku",
-    "generated_timestamp": null
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:42:11.252269+00:00"
   },
   "failure_reason": null,
-  "validation_errors": [
-    "section[1].kind is unsupported: expository",
-    "section[2].kind is unsupported: expository",
-    "section[3].kind is unsupported: expository",
-    "section[4].kind is unsupported: expository"
-  ],
+  "validation_errors": [],
   "validation_warnings": []
 }

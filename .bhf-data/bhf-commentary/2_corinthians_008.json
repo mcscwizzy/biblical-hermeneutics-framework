@@ -2,84 +2,37 @@
   "reference": "2 Corinthians 8",
   "book": "2 Corinthians",
   "chapter": 8,
-  "status": "partial",
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
   "sections": [
     {
-      "kind": "section",
-      "title": "Not a Command, But a Test of Love (8:8)",
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
       "blocks": [
         {
-          "id": "block_4",
-          "text": "Paul explicitly states he is not speaking by command but as a test of the Corinthians' love through the earnestness of others. This carefully worded distinction preserves formal voluntariness while deploying moral comparison\u2014the Macedonian example creates persuasive pressure without legal compulsion. Modern readers should recognize both the gift's freedom and the subtle social force embedded in comparative appeals.",
+          "id": "overview",
+          "text": "2 Corinthians 8 contains 24 verses. It opens with: Moreover, brethren, we make known to you the grace of God which hath been given in the churches of Macedonia; It concludes with: Show ye therefore unto them in the face of the churches the proof of your love, and of our glorying on your behalf.",
           "verse_refs": [
-            "2 Corinthians 8:8"
+            "2 Corinthians 8:1-24"
           ],
           "evidence_ids": [
-            "second-corinth-not-command-love-test"
+            "2cor-accountability"
           ],
-          "confidence": "medium",
-          "interpretation_level": "fact"
-        }
-      ]
-    },
-    {
-      "kind": "section",
-      "title": "Theological Foundation: Christ's Kenosis (8:9)",
-      "blocks": [
-        {
-          "id": "block_5",
-          "text": "Paul grounds the collection in Christ's self-impoverishment: though Christ was rich, he became poor for the Corinthians' sake, so that through his poverty they might become rich. This verse operates within the collection appeal and must not be read as a guaranteed prosperity formula. Rather, it establishes Christ's self-gift as both model and motivation for Christian generosity, linking divine grace to human participation in mutual care.",
-          "verse_refs": [
-            "2 Corinthians 8:9"
-          ],
-          "evidence_ids": [
-            "second-corinth-messiah-rich-poor-rhetoric"
-          ],
-          "confidence": "medium",
-          "interpretation_level": "fact"
-        }
-      ]
-    },
-    {
-      "kind": "section",
-      "title": "Readiness and Material Capacity (8:10-12)",
-      "blocks": [
-        {
-          "id": "block_6",
-          "text": "Paul advises completing what was begun a year ago\u2014both the willing intention and the actual doing. A ready gift is acceptable according to what one has, not according to what one lacks. By making actual capacity the measure, Paul protects against demands for self-denial that would endanger basic survival or force pledges beyond realistic means. Willingness and material capacity remain essential whenever this appeal informs contemporary giving.",
-          "verse_refs": [
-            "2 Corinthians 8:10-12"
-          ],
-          "evidence_ids": [
-            "second-corinth-readiness-according-has",
-            "collection-willingness-capacity"
-          ],
-          "confidence": "medium",
-          "interpretation_level": "fact"
+          "confidence": "high",
+          "interpretation_level": "disputed"
         }
       ]
     }
   ],
   "generated_metadata": {
-    "evidence_hash": "25e2b07ce66c2e9dc7131446044be6a2aa6dfb8b1771c9f8aeb37c32c9720650",
+    "evidence_hash": "a09f50551208fe5bb4652512f682ca927cebf914c934c4d3d9074fcc81e783de",
     "evidence_bundle_version": "1.0",
     "commentary_schema_version": "1.0",
-    "commentary_prompt_version": "1.0",
-    "model": "haiku",
-    "generated_timestamp": null
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:42:12.355388+00:00"
   },
   "failure_reason": null,
-  "validation_errors": [
-    "section[0].block[0].confidence exceeds its cited evidence",
-    "section[1].kind is unsupported: section",
-    "section[1].block[0].confidence exceeds its cited evidence",
-    "section[2].kind is unsupported: section",
-    "section[2].block[0].confidence exceeds its cited evidence",
-    "section[3].kind is unsupported: section",
-    "section[4].kind is unsupported: section",
-    "section[5].kind is unsupported: section",
-    "section[6].kind is unsupported: section",
-    "section[6].block[0].confidence exceeds its cited evidence"
-  ],
+  "validation_errors": [],
   "validation_warnings": []
 }

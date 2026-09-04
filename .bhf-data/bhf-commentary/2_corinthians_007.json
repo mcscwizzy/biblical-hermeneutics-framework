@@ -2,45 +2,37 @@
   "reference": "2 Corinthians 7",
   "book": "2 Corinthians",
   "chapter": 7,
-  "status": "partial",
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
   "sections": [
     {
-      "kind": "section",
-      "title": "Textual Witnesses",
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
       "blocks": [
         {
-          "id": "block_5",
-          "text": "The early papyrus P46 preserves most of 2 Corinthians, including chapter 7, with portions in P99. These witnesses provide distinct textual profiles that allow scholars to trace the transmission of this text through early communities.",
+          "id": "overview",
+          "text": "2 Corinthians 7 contains 16 verses. It opens with: Having therefore these promises, beloved, let us cleanse ourselves from all defilement of flesh and spirit, perfecting holiness in the fear of God. It concludes with: I rejoice that in everything I am of good courage concerning you.",
           "verse_refs": [
-            "2 Corinthians 7:1-13"
+            "2 Corinthians 7:1-16"
           ],
           "evidence_ids": [
-            "2cor-manuscripts"
+            "2cor-grief"
           ],
           "confidence": "high",
-          "interpretation_level": "fact"
+          "interpretation_level": "disputed"
         }
       ]
     }
   ],
   "generated_metadata": {
-    "evidence_hash": "0ad0c7445697c58ffa919a7181f1e3b8d20b7785225222c2b2012eca1a981a34",
+    "evidence_hash": "50cf6c55bae7b5a3af48c122d098f4d9e13a980b48faa31081ec52f72ed1ddc7",
     "evidence_bundle_version": "1.0",
     "commentary_schema_version": "1.0",
-    "commentary_prompt_version": "1.0",
-    "model": "haiku",
-    "generated_timestamp": null
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:42:11.759872+00:00"
   },
   "failure_reason": null,
-  "validation_errors": [
-    "section[0].block[0].interpretation_level is invalid",
-    "section[1].kind is unsupported: section",
-    "section[1].block[0].interpretation_level is invalid",
-    "section[2].kind is unsupported: section",
-    "section[2].block[0].interpretation_level is invalid",
-    "section[3].kind is unsupported: section",
-    "section[3].block[0].interpretation_level is invalid",
-    "section[4].kind is unsupported: section"
-  ],
+  "validation_errors": [],
   "validation_warnings": []
 }

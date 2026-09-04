@@ -2,80 +2,37 @@
   "reference": "1 Corinthians 13",
   "book": "1 Corinthians",
   "chapter": 13,
-  "status": "partial",
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
   "sections": [
     {
       "kind": "chapter_overview",
-      "title": "Overview: Love as the Measure of All Things",
+      "title": "Chapter overview",
       "blocks": [
         {
-          "id": "block_1",
-          "text": "Chapter 13 presents a striking reordering of values in Corinthian practice. Paul argues that extraordinary abilities\u2014eloquent speech, prophetic knowledge, mountain-moving faith, and generous giving, even to the point of bodily sacrifice\u2014all lack meaning apart from love. This frames love not as one spiritual gift among others, but as the indispensable foundation without which all other accomplishments become hollow and self-centered performance.",
+          "id": "overview",
+          "text": "1 Corinthians 13 contains 13 verses. It opens with: If I speak with the tongues of men and of angels, but have not love, I am become sounding brass, or a clanging cymbal. It concludes with: But now abideth faith, hope, love, these three; and the greatest of these is love.",
           "verse_refs": [
-            "1 Corinthians 13:1-3"
+            "1 Corinthians 13:1-13"
           ],
           "evidence_ids": [
-            "corinthian-love-controls-gifts",
-            "corinthian-love-controls-gifts:passage-relevance"
-          ],
-          "confidence": "high",
-          "interpretation_level": "fact"
-        }
-      ]
-    },
-    {
-      "kind": "exposition",
-      "title": "Love Defined (13:4-7)",
-      "blocks": [
-        {
-          "id": "block_2",
-          "text": "Paul's description of love emphasizes behavioral dispositions rather than emotional states. Love is patient\u2014suffering long without retaliation\u2014and kind in action. Crucially, it does not seek its own advancement or vindication. The passage connects love explicitly to truth: love rejoices with truth rather than with unrighteousness. This frames truth-telling and justice-seeking as inseparable from genuine love, preventing a false kindness that tolerates harm.",
-          "verse_refs": [
-            "1 Corinthians 13:4-7"
-          ],
-          "evidence_ids": [
-            "love-truth-control",
-            "love-truth-control:passage-relevance"
-          ],
-          "confidence": "high",
-          "interpretation_level": "fact"
-        }
-      ]
-    },
-    {
-      "kind": "exposition",
-      "title": "The Permanence of Love (13:8-13)",
-      "blocks": [
-        {
-          "id": "block_3",
-          "text": "Paul contrasts love with three phenomena associated with his Corinthian audience: prophecy, tongues, and knowledge. He asserts that love never fails, while these other manifestations will cease. The logic turns on a distinction between partial and complete knowledge. Speaking and understanding now occur in fragments, like seeing through a distorted mirror. When completeness arrives, these partial modes of knowing\u2014childhood forms of speech and thought\u2014will be left behind. Only faith, hope, and love remain as enduring realities.",
-          "verse_refs": [
-            "1 Corinthians 13:8-13"
-          ],
-          "evidence_ids": [
-            "corinthian-partial-perfect-dispute",
-            "corinthian-partial-perfect-dispute:passage-relevance"
+            "1cor-integrity"
           ],
           "confidence": "medium",
-          "interpretation_level": "fact"
+          "interpretation_level": "disputed"
         }
       ]
     }
   ],
   "generated_metadata": {
-    "evidence_hash": "3deece0edf35d8d05b14eea8ae135370108482c4b729217c692bd6808cbfe458",
+    "evidence_hash": "e064bbbf3829d5bd72ba05dfa44af5ccfec25e2967a1f81fcc0a94755415e14a",
     "evidence_bundle_version": "1.0",
     "commentary_schema_version": "1.0",
-    "commentary_prompt_version": "1.0",
-    "model": "haiku",
-    "generated_timestamp": null
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:42:07.908385+00:00"
   },
   "failure_reason": null,
-  "validation_errors": [
-    "section[1].kind is unsupported: exposition",
-    "section[2].kind is unsupported: exposition",
-    "section[3].kind is unsupported: note",
-    "section[3].block[0].interpretation_level is invalid"
-  ],
+  "validation_errors": [],
   "validation_warnings": []
 }

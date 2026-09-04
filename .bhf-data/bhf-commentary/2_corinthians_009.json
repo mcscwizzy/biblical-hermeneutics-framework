@@ -2,124 +2,37 @@
   "reference": "2 Corinthians 9",
   "book": "2 Corinthians",
   "chapter": 9,
-  "status": "partial",
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
   "sections": [
     {
       "kind": "chapter_overview",
-      "title": "Overview",
+      "title": "Chapter overview",
       "blocks": [
         {
-          "id": "block_overview_1",
-          "text": "Second Corinthians 9 addresses a collection among Corinthian believers to support saints in Jerusalem. Paul frames this material aid within layers of relationship: the Corinthians' own readiness, his prior boasting about them to Macedonian communities, the risk of shame if they are unprepared, and the ultimate purpose of thanksgiving to God. The collection operates in the Roman colonial context of Achaia, where Corinth served as capital, connected by sea routes and embedded in household and civic networks.",
+          "id": "overview",
+          "text": "2 Corinthians 9 contains 15 verses. It opens with: For as touching the ministering to the saints, it is superfluous for me to write to you: It concludes with: Thanks be to God for his unspeakable gift.",
           "verse_refs": [
-            "2 Corinthians 9:1-2",
-            "2 Corinthians 9:12-14"
+            "2 Corinthians 9:1-15"
           ],
           "evidence_ids": [
-            "collection-readiness-shame-pressure",
-            "macedonian-gifts-and-collection-rhetoric",
-            "roman-corinth-civic-household-and-association-life:historical_context:0"
+            "2cor-collection"
           ],
-          "confidence": "medium",
-          "interpretation_level": "fact"
-        }
-      ]
-    },
-    {
-      "kind": "section_passage",
-      "title": "Pressure, Honor, and Preparation (9:1-5)",
-      "blocks": [
-        {
-          "id": "block_pressure_1",
-          "text": "Paul's appeal carries honor pressure rooted in prior commitments. He recalls his own boasting to Macedonian communities about Corinthian readiness, and he anticipates that Macedonian delegates traveling with him might arrive to find the Corinthians unprepared. This risk of shame shapes Paul's strategy: he sends advance delegates to ensure the gift is ready beforehand. The goal is explicit\u2014the gift must appear as a blessing, not as covetousness or extraction.",
-          "verse_refs": [
-            "2 Corinthians 9:2-5"
-          ],
-          "evidence_ids": [
-            "second-corinth-readiness-boasting-pressure",
-            "second-corinth-blessing-not-extortion",
-            "collection-readiness-shame-pressure:passage-relevance"
-          ],
-          "confidence": "medium",
-          "interpretation_level": "fact"
-        }
-      ]
-    },
-    {
-      "kind": "section_passage",
-      "title": "Heart-Decided, Non-Compelled Giving (9:6-7)",
-      "blocks": [
-        {
-          "id": "block_heart_1",
-          "text": "Paul employs an agricultural maxim to frame the gift: sparse sowing yields sparse reaping, and generous sowing yields generous reaping. But he immediately qualifies this proportional logic with a personal principle: each individual is to give according to what has been decided in the heart, not under compulsion or emotional distress. The phrase 'God loves a cheerful giver' anchors the practice in divine preference for willing participation over coerced tribute. This principle explicitly rejects compulsory tithes, public pledge pressure, and retaliation for non-compliance.",
-          "verse_refs": [
-            "2 Corinthians 9:6-7"
-          ],
-          "evidence_ids": [
-            "second-corinth-sowing-reaping-metaphor",
-            "second-corinth-heart-not-compulsion",
-            "collection-cheerful-noncompulsion"
-          ],
-          "confidence": "medium",
-          "interpretation_level": "fact"
-        }
-      ]
-    },
-    {
-      "kind": "section_passage",
-      "title": "Divine Sufficiency and Multiplied Generosity (9:8-11)",
-      "blocks": [
-        {
-          "id": "block_sufficiency_1",
-          "text": "Paul shifts focus to divine provision: God is able to make all grace abound toward believers, so that they have sufficiency in everything and abound in every good work. He describes this provision in material terms\u2014seed for sowing and bread for food\u2014and promises multiplication. God supplies and multiplies seed and increases the fruits of righteousness. The imagery moves from agricultural sufficiency to economic enrichment oriented toward generosity. This vision reads divine provision not toward private accumulation but toward shared abundance and thanksgiving.",
-          "verse_refs": [
-            "2 Corinthians 9:8-11"
-          ],
-          "evidence_ids": [
-            "second-corinth-sufficiency-good-work",
-            "corinth-material-aid-thanksgiving",
-            "gift-grace-nontransaction"
-          ],
-          "confidence": "medium",
-          "interpretation_level": "fact"
-        }
-      ]
-    },
-    {
-      "kind": "section_passage",
-      "title": "Service, Thanksgiving, and Prayer (9:12-14)",
-      "blocks": [
-        {
-          "id": "block_service_1",
-          "text": "The collection accomplishes a dual effect. First, the service of this giving supplies what the saints lack. Second, it abounds through many thanksgivings to God. Recipients respond by glorifying God\u2014not the donors\u2014and by offering prayer and longing for the givers because of the shared divine grace at work. This relational outcome depends on the collection remaining non-extractive. The praise and prayer flow from genuine gratitude for material aid, not from coerced obligation or donor control. Material need and theological recognition belong together; prayer and thanks must accompany, not replace, concrete support.",
-          "verse_refs": [
-            "2 Corinthians 9:12-14"
-          ],
-          "evidence_ids": [
-            "second-corinth-service-supplies-thanksgiving",
-            "corinth-generosity-prayer-no-extraction",
-            "second-corinth-sharing-confession-prayer"
-          ],
-          "confidence": "medium",
-          "interpretation_level": "fact"
+          "confidence": "high",
+          "interpretation_level": "disputed"
         }
       ]
     }
   ],
   "generated_metadata": {
-    "evidence_hash": "0d8fd9cae05b26d0af0c3d6a42727ea1106a2bc34fa30d5e7784c63d6e9b1ac1",
+    "evidence_hash": "f8ea20383abd4d71abbe52c269bb0010cfb46cd97731e50d5fc3e944dae8501d",
     "evidence_bundle_version": "1.0",
     "commentary_schema_version": "1.0",
-    "commentary_prompt_version": "1.0",
-    "model": "haiku",
-    "generated_timestamp": null
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:42:12.843229+00:00"
   },
   "failure_reason": null,
-  "validation_errors": [
-    "section[1].kind is unsupported: section_passage",
-    "section[2].kind is unsupported: section_passage",
-    "section[3].kind is unsupported: section_passage",
-    "section[4].kind is unsupported: section_passage"
-  ],
+  "validation_errors": [],
   "validation_warnings": []
 }

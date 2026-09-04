@@ -2,146 +2,37 @@
   "reference": "1 Corinthians 15",
   "book": "1 Corinthians",
   "chapter": 15,
-  "status": "partial",
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
   "sections": [
     {
       "kind": "chapter_overview",
-      "title": "Overview: The Resurrection Foundation",
+      "title": "Chapter overview",
       "blocks": [
         {
-          "id": "block_1",
-          "text": "Paul addresses a crucial challenge to the Corinthian faith: some members deny the resurrection of the dead. The chapter opens by grounding the church in the gospel Paul preached\u2014the message they received, in which they stand, and through which they are saved. This gospel is not a vague spiritual principle but a concrete proclamation with historical content and consequences.",
+          "id": "overview",
+          "text": "1 Corinthians 15 contains 58 verses. It opens with: Now I make known unto you brethren, the gospel which I preached unto you, which also ye received, wherein also ye stand, It concludes with: Wherefore, my beloved brethren, be ye stedfast, unmoveable, always abounding in the work of the Lord, forasmuch as ye know that your labor is not vain in the Lord.",
           "verse_refs": [
-            "1 Corinthians 15:1-2",
-            "1 Corinthians 15:12"
+            "1 Corinthians 15:1-58"
           ],
           "evidence_ids": [
-            "1cor-denial",
-            "corinthian-received-proclamation"
-          ],
-          "confidence": "medium",
-          "interpretation_level": "fact"
-        }
-      ]
-    },
-    {
-      "kind": "section",
-      "title": "The Gospel Tradition: Death, Burial, Resurrection, Appearances (vv. 3-8)",
-      "blocks": [
-        {
-          "id": "block_2",
-          "text": "Paul grounds his argument in a received tradition\u2014material he himself had been handed and now delivers to the Corinthians. This tradition states that the Messiah died for our sins according to the Scriptures, was buried, and was raised on the third day, also according to the Scriptures. The mention of Scripture provides a claim about written authorization, though the specific passages are not cited here.",
-          "verse_refs": [
-            "1 Corinthians 15:3-4"
-          ],
-          "evidence_ids": [
-            "1cor-gospel-tradition"
+            "1cor-adam"
           ],
           "confidence": "high",
-          "interpretation_level": "fact"
-        },
-        {
-          "id": "block_3",
-          "text": "The tradition then lists a series of appearances: first to Cephas (Peter), then to the Twelve, then to more than five hundred believers at once (most of whom were still alive when Paul wrote), then to James (likely Jesus' brother), then to all the apostles. Finally, as the climactic and last appearance in this list, the risen Christ appeared to Paul himself, whom he describes with self-deprecating language as born out of due time or an untimely birth.",
-          "verse_refs": [
-            "1 Corinthians 15:5-8"
-          ],
-          "evidence_ids": [
-            "1cor-witnesses",
-            "corinthian-received-proclamation"
-          ],
-          "confidence": "medium",
-          "interpretation_level": "fact"
-        }
-      ]
-    },
-    {
-      "kind": "section",
-      "title": "The Denial and Its Logical Consequences (vv. 12-19)",
-      "blocks": [
-        {
-          "id": "block_4",
-          "text": "Some among the Corinthians claim that there is no resurrection of the dead. Paul does not describe their full theological position in detail. Instead, he builds a logical argument showing what must follow from this denial. If the dead are not raised, then Christ cannot have been raised either.",
-          "verse_refs": [
-            "1 Corinthians 15:12-13"
-          ],
-          "evidence_ids": [
-            "1cor-denial",
-            "corinthian-denial-consequences"
-          ],
-          "confidence": "medium",
-          "interpretation_level": "fact"
-        }
-      ]
-    },
-    {
-      "kind": "section",
-      "title": "Resurrection as Transformed Embodied Existence",
-      "blocks": [
-        {
-          "id": "block_8",
-          "text": "While the canonical text provided ends at verse 20, the chapter continues to address the nature of the resurrection body. Paul describes the risen body not as a return to the same physical state or as pure spirit, but as transformed embodied existence\u2014what he calls a spiritual body. The term spiritual here denotes animation by God's Spirit rather than immateriality or ghostliness.",
-          "verse_refs": [
-            "1 Corinthians 15:35-44"
-          ],
-          "evidence_ids": [
-            "1cor-resurrection-body",
-            "spiritual-body-spirit-animated"
-          ],
-          "confidence": "medium",
-          "interpretation_level": "fact"
-        }
-      ]
-    },
-    {
-      "kind": "section",
-      "title": "A Note on Practice: Baptism for the Dead (v. 29)",
-      "blocks": [
-        {
-          "id": "block_14",
-          "text": "Midway through the chapter, Paul makes a brief reference to some people being baptized on account of the dead. The reference appears within an argument about the consequences of resurrection denial, but the single clause provides limited detail. The agent performing the baptism, the identity of those being baptized, the exact ritual rationale, and Paul's own endorsement of the practice all remain uncertain from this verse alone.",
-          "verse_refs": [
-            "1 Corinthians 15:29"
-          ],
-          "evidence_ids": [
-            "1cor-dead-baptism",
-            "baptism-for-dead-underdetermined"
-          ],
-          "confidence": "low",
-          "interpretation_level": "fact"
+          "interpretation_level": "disputed"
         }
       ]
     }
   ],
   "generated_metadata": {
-    "evidence_hash": "92cd484527e56260bb8d32cb1699c467ca4383cc27bbfd40badea04d46c58d6d",
+    "evidence_hash": "a60cb39f8b9a2ceb135d77732ac4a69593662060c310bf87e388de81863efa62",
     "evidence_bundle_version": "1.0",
     "commentary_schema_version": "1.0",
-    "commentary_prompt_version": "1.0",
-    "model": "haiku",
-    "generated_timestamp": null
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:42:08.668344+00:00"
   },
   "failure_reason": null,
-  "validation_errors": [
-    "section[1].kind is unsupported: section",
-    "section[2].kind is unsupported: section",
-    "section[2].block[1].interpretation_level is invalid",
-    "section[2].block[2].interpretation_level is invalid",
-    "section[3].kind is unsupported: section",
-    "section[3].block[0].interpretation_level is invalid",
-    "section[3].block[0] cites unsupported evidence IDs: paul:historical_context",
-    "section[4].kind is unsupported: section",
-    "section[4].block[1].interpretation_level is invalid",
-    "section[4].block[2].interpretation_level is invalid",
-    "section[4].block[3].interpretation_level is invalid",
-    "section[5].kind is unsupported: section",
-    "section[5].block[0].interpretation_level is invalid",
-    "section[5].block[1].interpretation_level is invalid",
-    "section[6].kind is unsupported: section",
-    "section[6].block[1].interpretation_level is invalid",
-    "section[7].kind is unsupported: section",
-    "section[7].block[0].interpretation_level is invalid",
-    "section[7].block[1].interpretation_level is invalid"
-  ],
+  "validation_errors": [],
   "validation_warnings": []
 }

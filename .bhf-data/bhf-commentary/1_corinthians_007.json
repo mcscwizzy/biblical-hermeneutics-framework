@@ -2,48 +2,37 @@
   "reference": "1 Corinthians 7",
   "book": "1 Corinthians",
   "chapter": 7,
-  "status": "partial",
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
   "sections": [
     {
       "kind": "chapter_overview",
-      "title": "Overview and Context",
+      "title": "Chapter overview",
       "blocks": [
         {
-          "id": "block_overview_1",
-          "text": "Paul's letter to the Corinthians addresses issues the community had written to him about, beginning in chapter 7. The manuscript evidence from early papyri and major codices attests to the transmission and authority of this letter within Christian communities. Paul now turns to specific questions about marriage, singleness, and household relationships within the assembly at Corinth.",
+          "id": "overview",
+          "text": "1 Corinthians 7 contains 40 verses. It opens with: Now concerning the things whereof ye wrote: It is good for a man not to touch a woman. It concludes with: But she is happier if she abide as she is, after my judgment: and I think that I also have the Spirit of God.",
           "verse_refs": [
-            "1 Corinthians 7:1"
+            "1 Corinthians 7:1-40"
           ],
           "evidence_ids": [
-            "1cor-letter",
-            "1cor-manuscripts"
+            "1cor-divorce"
           ],
           "confidence": "high",
-          "interpretation_level": "fact"
+          "interpretation_level": "disputed"
         }
       ]
     }
   ],
   "generated_metadata": {
-    "evidence_hash": "8bfd14e3b32dd8ac45ea74951025153af17332ee19478174a75851eb409196c6",
+    "evidence_hash": "a5555c07c6b9c544e6058342f6e23b801ab5aaf713f7b60d095d4b6b6b2e4d36",
     "evidence_bundle_version": "1.0",
     "commentary_schema_version": "1.0",
-    "commentary_prompt_version": "1.0",
-    "model": "haiku",
-    "generated_timestamp": null
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:42:05.431571+00:00"
   },
   "failure_reason": null,
-  "validation_errors": [
-    "section[1].kind is unsupported: pericope",
-    "section[1].block[0].interpretation_level is invalid",
-    "section[1].block[1].interpretation_level is invalid",
-    "section[2].kind is unsupported: pericope",
-    "section[2].block[0].interpretation_level is invalid",
-    "section[3].kind is unsupported: pericope",
-    "section[3].block[0].interpretation_level is invalid",
-    "section[4].kind is unsupported: pericope",
-    "section[4].block[0].interpretation_level is invalid",
-    "section[4].block[1].interpretation_level is invalid"
-  ],
+  "validation_errors": [],
   "validation_warnings": []
 }

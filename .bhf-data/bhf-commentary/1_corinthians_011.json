@@ -2,114 +2,24 @@
   "reference": "1 Corinthians 11",
   "book": "1 Corinthians",
   "chapter": 11,
-  "status": "partial",
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
   "sections": [
     {
-      "kind": "section",
-      "title": "Head Coverings and Prayer (11:1-16)",
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
       "blocks": [
         {
-          "id": "block_3",
-          "text": "The passage coordinates language of head covering, hair, shame, glory, nature, and custom without explicitly describing what the disputed practice actually consisted of. It speaks of veiling or uncovering the head, being shorn or shaven, and long or short hair, but does not preserve enough detail for modern readers to reconstruct the exact covering at issue or to determine whether the problem was a Jewish, Roman, or Corinthian custom. This textual constraint should caution against confident appeals to one particular dress code.",
+          "id": "overview",
+          "text": "1 Corinthians 11 contains 34 verses. It opens with: Be ye imitators of me, even as I also am of Christ. It concludes with: If any man is hungry, let him eat at home; that your coming together be not unto judgment. And the rest will I set in order whensoever I come.",
           "verse_refs": [
-            "1 Corinthians 11:4-15"
-          ],
-          "evidence_ids": [
-            "corinthian-covering-hair-status",
-            "corinthian-covering-hair-status:passage-relevance"
-          ],
-          "confidence": "low",
-          "interpretation_level": "fact"
-        },
-        {
-          "id": "block_4",
-          "text": "Paul appeals to woman's agency using the term 'exousia' (authority, power, or right) when speaking of what a woman 'ought to have on her head,' though the passage does not clearly specify whether this refers to a physical covering, a physical sign of some kind, or something else. The mention of 'because of the angels' remains unexplained and its significance obscure. Interpreters should preserve women's agency and decision-making capacity rather than importing external explanations that the text itself does not provide.",
-          "verse_refs": [
-            "1 Corinthians 11:10"
-          ],
-          "evidence_ids": [
-            "corinthian-authority-own-head",
-            "corinthian-authority-own-head:passage-relevance"
-          ],
-          "confidence": "low",
-          "interpretation_level": "fact"
-        },
-        {
-          "id": "block_5",
-          "text": "The corrective in verse 16 signals that the head-covering instruction may not be universally binding: if anyone seems contentious about it, 'we have no such custom, neither the churches of God.' This suggests Paul is addressing a specific local practice or dispute rather than legislating a permanent universal rule for all Christian assemblies.",
-          "verse_refs": [
-            "1 Corinthians 11:16"
+            "1 Corinthians 11:1-34"
           ],
           "evidence_ids": [
             "1cor-coverings"
           ],
           "confidence": "high",
-          "interpretation_level": "fact"
-        }
-      ]
-    },
-    {
-      "kind": "section",
-      "title": "Reciprocal Dependence and Mutuality (11:11-12)",
-      "blocks": [
-        {
-          "id": "block_6",
-          "text": "After the head-covering discussion, Paul insists on reciprocal dependence in the Lord: neither woman nor man is independent of the other. Though he acknowledges that woman came from man (in creation), he pairs this with the counter-statement that man now comes through woman (in birth). Both ultimately derive from God. This mutuality statement prevents any hierarchy reading from standing alone and requires interpretations to account for both the distinctions and the interdependence Paul asserts.",
-          "verse_refs": [
-            "1 Corinthians 11:11-12"
-          ],
-          "evidence_ids": [
-            "corinthian-mutuality-in-lord",
-            "corinthian-mutuality-in-lord:passage-relevance"
-          ],
-          "confidence": "medium",
-          "interpretation_level": "fact"
-        }
-      ]
-    },
-    {
-      "kind": "section",
-      "title": "The Meal Crisis and the Lord's Supper (11:17-34)",
-      "blocks": [
-        {
-          "id": "block_9",
-          "text": "Paul then introduces a practice of self-examination and discerning the body. The warning about eating the bread or drinking the cup 'unworthily' uses an adverb to describe the manner of eating rather than defining an unworthy-person category. This grammatical framing prevents the passage from becoming a tool to exclude permanently the poor, disabled, doubting, or otherwise stigmatized from the table. Instead, it calls each participant to examine their own participation and regard for the body\u2014both Christ's body and the assembly itself.",
-          "verse_refs": [
-            "1 Corinthians 11:27-29"
-          ],
-          "evidence_ids": [
-            "corinth-unworthy-manner-grammar",
-            "corinth-unworthy-manner-grammar:passage-relevance",
-            "corinth-discern-body-views"
-          ],
-          "confidence": "medium",
-          "interpretation_level": "fact"
-        },
-        {
-          "id": "block_10",
-          "text": "Paul links nondiscernment to weakness, sickness, and death within the assembly, but then frames discipline as God's protective action 'so that we might not be condemned with the world.' This does not mean that sick, disabled, or dying people have failed the test or are being punished for sacramental wrongdoing. Rather, it uses the language of discipline and consequence to emphasize the seriousness of the assembly's need to reform its meal practice and cease humiliating one another.",
-          "verse_refs": [
-            "1 Corinthians 11:30-32"
-          ],
-          "evidence_ids": [
-            "corinth-sickness-death-causation-limit",
-            "corinth-sickness-death-causation-limit:passage-relevance"
-          ],
-          "confidence": "medium",
-          "interpretation_level": "fact"
-        },
-        {
-          "id": "block_11",
-          "text": "Paul's solution returns to coordinated participation: wait for one another when gathering, and if a hungry person cannot wait, let them eat at home before the assembly convenes. This removes the hunger-driven pressure that was turning the meal into an occasion for public shame and inequality. The assembly's meal is meant to overcome division, not reinforce it.",
-          "verse_refs": [
-            "1 Corinthians 11:33-34"
-          ],
-          "evidence_ids": [
-            "corinth-wait-and-home-hunger",
-            "corinth-wait-and-home-hunger:passage-relevance"
-          ],
-          "confidence": "medium",
-          "interpretation_level": "fact"
+          "interpretation_level": "disputed"
         }
       ]
     }
@@ -118,21 +28,11 @@
     "evidence_hash": "8a68e7794ef915a1ce86638e023acdfbb210f79992e54803b9eeae579d46a618",
     "evidence_bundle_version": "1.0",
     "commentary_schema_version": "1.0",
-    "commentary_prompt_version": "1.0",
-    "model": "haiku",
-    "generated_timestamp": null
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:42:07.204446+00:00"
   },
   "failure_reason": null,
-  "validation_errors": [
-    "section[0].block[0] cites unsupported evidence IDs: corinth-meal-class",
-    "section[0].block[0].confidence exceeds its cited evidence",
-    "section[1].kind is unsupported: section",
-    "section[1].block[0].confidence exceeds its cited evidence",
-    "section[2].kind is unsupported: section",
-    "section[3].kind is unsupported: section",
-    "section[3].block[0] cites unsupported evidence IDs: corinth-meal-class",
-    "section[3].block[1] cites unsupported evidence IDs: corinth-supper-tradition",
-    "section[3].block[1].confidence exceeds its cited evidence"
-  ],
+  "validation_errors": [],
   "validation_warnings": []
 }

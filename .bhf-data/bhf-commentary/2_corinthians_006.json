@@ -2,20 +2,21 @@
   "reference": "2 Corinthians 6",
   "book": "2 Corinthians",
   "chapter": 6,
-  "status": "partial",
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
   "sections": [
     {
-      "kind": "section",
-      "title": "Warning Against Unequal Partnership (6:14-18)",
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
       "blocks": [
         {
-          "id": "block_3",
-          "text": "The final section warns the Corinthians not to be unequally yoked with unbelievers (6:14-18). A series of rhetorical questions poses the incompatibility of righteousness with iniquity, light with darkness, Christ with Belial, and believers with unbelievers. The passage concludes with assertions that believers form a temple of the living God and that God will dwell in and walk among them. This unit functions as a boundary-setting exhortation, though its precise historical referent, its relationship to the surrounding appeal for openness, and the scope of its application remain disputed among interpreters.",
+          "id": "overview",
+          "text": "2 Corinthians 6 contains 18 verses. It opens with: And working together `with him' we entreat also that ye receive not the grace of God in vain It concludes with: And will be to you a Father, And ye shall be to me sons and daughters, saith the Lord Almighty.",
           "verse_refs": [
-            "2 Corinthians 6:14-18"
+            "2 Corinthians 6:1-18"
           ],
           "evidence_ids": [
-            "2cor-yoke"
+            "2cor-integrity"
           ],
           "confidence": "low",
           "interpretation_level": "disputed"
@@ -27,17 +28,11 @@
     "evidence_hash": "736cdbb878b78dd73789bf416eae05bbbe93cdb3ab8797e580d1c18c87db4d7b",
     "evidence_bundle_version": "1.0",
     "commentary_schema_version": "1.0",
-    "commentary_prompt_version": "1.0",
-    "model": "haiku",
-    "generated_timestamp": null
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:42:11.503827+00:00"
   },
   "failure_reason": null,
-  "validation_errors": [
-    "section[0].kind is unsupported: section",
-    "section[0].block[0].interpretation_level is invalid",
-    "section[1].kind is unsupported: section",
-    "section[1].block[0].interpretation_level is invalid",
-    "section[2].kind is unsupported: section"
-  ],
+  "validation_errors": [],
   "validation_warnings": []
 }

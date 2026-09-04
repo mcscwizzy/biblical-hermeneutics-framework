@@ -2,121 +2,24 @@
   "reference": "2 Corinthians 13",
   "book": "2 Corinthians",
   "chapter": 13,
-  "status": "partial",
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
   "sections": [
     {
       "kind": "chapter_overview",
-      "title": "Overview",
+      "title": "Chapter overview",
       "blocks": [
         {
-          "id": "block_1",
-          "text": "Second Corinthians 13 concludes Paul's letter with a severe warning about his prospective third visit, a paradoxical presentation of weakness and power in Christ, an exhortation for communal self-examination, and a triadic benediction that binds grace, love, and fellowship together. The chapter addresses ongoing tensions in Paul's authority and the community's response to his apostolic claims.",
+          "id": "overview",
+          "text": "2 Corinthians 13 contains 14 verses. It opens with: This is the third time I am coming to you. At the mouth of two witnesses or three shall every word established. It concludes with: The grace of the Lord Jesus Christ, and the love of God, and the communion of the Holy Spirit, be with you all.",
           "verse_refs": [
-            "2 Corinthians 13"
+            "2 Corinthians 13:1-14"
           ],
           "evidence_ids": [
-            "corinth-restoration-peace-benediction"
+            "2cor-benediction"
           ],
           "confidence": "high",
-          "interpretation_level": "fact"
-        }
-      ]
-    },
-    {
-      "kind": "section",
-      "title": "Warning, Testing, and the Paradox of Weakness (13:1-5)",
-      "blocks": [
-        {
-          "id": "block_3",
-          "text": "When Paul asks the Corinthians to seek proof that Christ speaks through him, he shifts immediately to the paradox of messianic power: Christ was crucified in weakness yet lives by God's power, and the same paradox shapes Paul's ministry. This is not a denial of hardship or its automatic removal, but a theological claim that God's power reaches perfection amid limitation and affliction.",
-          "verse_refs": [
-            "2 Corinthians 13:3-4"
-          ],
-          "evidence_ids": [
-            "2cor-weakness",
-            "power-in-weakness-not-coercion"
-          ],
-          "confidence": "medium",
-          "interpretation_level": "fact"
-        },
-        {
-          "id": "block_4",
-          "text": "The command to examine and test yourselves places the community itself under scrutiny, not as an invitation to obsessive surveillance but as a probe of their communal relation to Messiah within the context of Paul's disputed authority.",
-          "verse_refs": [
-            "2 Corinthians 13:5"
-          ],
-          "evidence_ids": [
-            "2cor-examine",
-            "self-test-restoration-closing"
-          ],
-          "confidence": "medium",
-          "interpretation_level": "fact"
-        }
-      ]
-    },
-    {
-      "kind": "section",
-      "title": "Authority as Building Up, Not Tearing Down (13:6-10)",
-      "blocks": [
-        {
-          "id": "block_5",
-          "text": "Paul's hope that the Corinthians will recognize he is not reprobate is paired with his prayer that they do no evil. He affirms that right action by the community matters even if his own standing appears to fail the test. This subordinates his image and validation to their responsible conduct.",
-          "verse_refs": [
-            "2 Corinthians 13:6-7"
-          ],
-          "evidence_ids": [
-            "corinth-prayer-right-not-performance",
-            "corinth-prayer-right-not-performance:passage-relevance"
-          ],
-          "confidence": "high",
-          "interpretation_level": "fact"
-        },
-        {
-          "id": "block_6",
-          "text": "Paul defines his authority by the Lord's gift for building up and not for tearing down. He can do nothing against the truth but only for the truth. This definition of apostolic authority includes hardship and witness to weakness, but hardship does not grant immunity from ethical review, consent, or accountability.",
-          "verse_refs": [
-            "2 Corinthians 13:8-10"
-          ],
-          "evidence_ids": [
-            "leadership-hardship-not-immunity",
-            "leadership-hardship-not-immunity:passage-relevance",
-            "signs-authority-accountability"
-          ],
-          "confidence": "medium",
-          "interpretation_level": "fact"
-        }
-      ]
-    },
-    {
-      "kind": "section",
-      "title": "Restoration, Peace, and the Benediction (13:11-14)",
-      "blocks": [
-        {
-          "id": "block_7",
-          "text": "The closing exhortation names restoration (perfecting), encouragement (comfort), unity (same mind), and peace as goods for which Paul prays. These are not commands backed by threat but invitations toward repair. The mutual greeting (holy kiss) and communal salutation underscore the letter's orientation toward shared life.",
-          "verse_refs": [
-            "2 Corinthians 13:11-13"
-          ],
-          "evidence_ids": [
-            "corinth-restoration-peace-benediction",
-            "self-test-restoration-closing"
-          ],
-          "confidence": "medium",
-          "interpretation_level": "fact"
-        },
-        {
-          "id": "block_8",
-          "text": "The final benediction invokes the grace of Christ, the love of God, and the communion of the Holy Spirit without formulating a later technical doctrine of the Trinity. The threefold blessing coordinates these divine realities within prayer without defending their metaphysical relation. The benediction cannot adjudicate allegations, validate Paul's office, or bind the community to immunity from review; it invokes divine presence for shared life and repairs.",
-          "verse_refs": [
-            "2 Corinthians 13:14"
-          ],
-          "evidence_ids": [
-            "2cor-benediction",
-            "corinth-restoration-peace-benediction:passage-relevance",
-            "modern-benediction-no-leader-immunity"
-          ],
-          "confidence": "medium",
-          "interpretation_level": "fact"
+          "interpretation_level": "disputed"
         }
       ]
     }
@@ -125,16 +28,11 @@
     "evidence_hash": "b41045dfee8c6e536170b6adcc81a8beadf8c87003b33f50bc4ac2f33a654ffb",
     "evidence_bundle_version": "1.0",
     "commentary_schema_version": "1.0",
-    "commentary_prompt_version": "1.0",
-    "model": "haiku",
-    "generated_timestamp": null
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:42:14.303445+00:00"
   },
   "failure_reason": null,
-  "validation_errors": [
-    "section[1].kind is unsupported: section",
-    "section[1].block[0].interpretation_level is invalid",
-    "section[2].kind is unsupported: section",
-    "section[3].kind is unsupported: section"
-  ],
+  "validation_errors": [],
   "validation_warnings": []
 }

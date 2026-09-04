@@ -2,211 +2,37 @@
   "reference": "2 Corinthians 1",
   "book": "2 Corinthians",
   "chapter": 1,
-  "status": "partial",
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
   "sections": [
     {
       "kind": "chapter_overview",
-      "title": "Composition and Setting",
+      "title": "Chapter overview",
       "blocks": [
         {
-          "id": "block_1",
-          "text": "Paul and Timothy write to the assembly of Christ-followers at Corinth and all the saints throughout Achaia. The letter probably originates from Ephesus in the mid-50s CE, after 1 Corinthians and as part of an ongoing pastoral relationship marked by changed travel plans and deepening conflict.",
+          "id": "overview",
+          "text": "2 Corinthians 1 contains 24 verses. It opens with: Paul, an apostle of Christ Jesus through the will of God, and Timothy our brother, unto the church of God which is at Corinth, with all the saints that are in the whole of Achaia: It concludes with: Not that we have lordship over your faith, but are helpers of your joy: for in faith ye stand fast.",
           "verse_refs": [
-            "2 Corinthians 1:1"
+            "2 Corinthians 1:1-24"
           ],
           "evidence_ids": [
-            "2cor-senders",
-            "2cor-date",
-            "1-corinthians:historical_setting:0",
-            "1-corinthians:key_places:1",
-            "1-corinthians:key_places:2",
-            "2cor-travel"
-          ],
-          "confidence": "medium",
-          "interpretation_level": "fact"
-        },
-        {
-          "id": "block_2",
-          "text": "Corinth was refounded by Julius Caesar in 44 BCE as a Roman colony, creating the institutional, economic, and social framework of the city by the first century. The assembly comprises multiple Christ-following gatherings across households, including people of varying status, wealth, occupation, and origin.",
-          "verse_refs": [
-            "2 Corinthians 1:1"
-          ],
-          "evidence_ids": [
-            "corinth:historical_context:0",
-            "1-corinthians:original_audience:0"
-          ],
-          "confidence": "medium",
-          "interpretation_level": "fact"
-        }
-      ]
-    },
-    {
-      "kind": "section",
-      "title": "Opening Blessing: The God of Comfort (1:2-3)",
-      "blocks": [
-        {
-          "id": "block_3",
-          "text": "Paul opens with the standard greeting of grace and peace from God the Father and the Lord Jesus Christ, then immediately turns to blessing God as 'the Father of mercies and God of all comfort.' This blessing frames the entire letter, establishing divine compassion as its foundation. The emphasis falls on the comfort that God provides in affliction, making it possible for those comforted to comfort others.",
-          "verse_refs": [
-            "2 Corinthians 1:2-3"
-          ],
-          "evidence_ids": [
-            "corinth-god-compassion-comfort",
-            "corinth-shared-comfort"
-          ],
-          "confidence": "medium",
-          "interpretation_level": "fact"
-        }
-      ]
-    },
-    {
-      "kind": "section",
-      "title": "The Logic of Comfort: Affliction and Solidarity (1:4-7)",
-      "blocks": [
-        {
-          "id": "block_4",
-          "text": "God comforts believers in their afflictions so that they may in turn comfort others. This is not spiritual abstraction: those who have received divine comfort are equipped to offer it to others facing difficulty. The comfort is relational and transferable, grounded in God's compassion rather than a claim that suffering itself is spiritually desirable.",
-          "verse_refs": [
-            "2 Corinthians 1:4"
-          ],
-          "evidence_ids": [
-            "corinth-god-compassion-comfort",
-            "corinth-god-compassion-comfort:passage-relevance",
-            "corinth-shared-comfort",
-            "corinth-shared-comfort:passage-relevance",
-            "affliction-comfort-circulation",
-            "affliction-comfort-circulation:passage-relevance"
-          ],
-          "confidence": "medium",
-          "interpretation_level": "fact"
-        },
-        {
-          "id": "block_5",
-          "text": "Paul connects the sufferings of Christ with the comfort that abounds through Christ. He frames affliction as serving the Corinthians' comfort and salvation, with the writers' own comfort working toward theirs through patient endurance of shared sufferings. This formulation keeps comfort and affliction related but distinct: the affliction is not redeemed by calling it good, but by locating it within shared endurance and mutual care.",
-          "verse_refs": [
-            "2 Corinthians 1:5-6"
-          ],
-          "evidence_ids": [
-            "affliction-comfort-circulation",
-            "categories-remain-distinct"
-          ],
-          "confidence": "medium",
-          "interpretation_level": "fact"
-        },
-        {
-          "id": "block_6",
-          "text": "Paul's hope for the Corinthians remains steadfast because they share both in the sufferings and in the comfort. Participation in shared affliction and shared support binds the community together without romanticizing the suffering itself.",
-          "verse_refs": [
-            "2 Corinthians 1:7"
-          ],
-          "evidence_ids": [
-            "corinth-prayer-thanksgiving-rescue",
-            "corinth-shared-comfort"
-          ],
-          "confidence": "medium",
-          "interpretation_level": "fact"
-        }
-      ]
-    },
-    {
-      "kind": "section",
-      "title": "Overwhelming Affliction in Asia and Divine Deliverance (1:8-11)",
-      "blocks": [
-        {
-          "id": "block_7",
-          "text": "Paul discloses a specific, severe affliction that came upon him and his companions while in Asia. The affliction weighed upon them 'exceedingly, beyond our power,' leading to such despair that they 'despaired even of life.' Internally, they 'had the sentence of death'\u2014an image of facing execution or final reckoning. Paul does not name the specific incident, leaving its nature unidentified.",
-          "verse_refs": [
-            "2 Corinthians 1:8-9"
-          ],
-          "evidence_ids": [
-            "corinth-despair-not-faithlessness",
-            "despair-death-sentence-honesty"
-          ],
-          "confidence": "medium",
-          "interpretation_level": "fact"
-        },
-        {
-          "id": "block_8",
-          "text": "This crisis served a theological purpose: it taught Paul and his companions not to trust in themselves but in God who raises the dead. Importantly, Paul's willingness to name despair and overwhelming pressure does not signal faithlessness or disqualification; it is an honest recognition of crisis that required urgent help and divine intervention. Categories like social weakness, bodily impairment, and overwhelm are distinct and should not be conflated.",
-          "verse_refs": [
-            "2 Corinthians 1:9"
-          ],
-          "evidence_ids": [
-            "despair-death-sentence-honesty:passage-relevance",
-            "categories-remain-distinct"
-          ],
-          "confidence": "medium",
-          "interpretation_level": "fact"
-        },
-        {
-          "id": "block_9",
-          "text": "Paul anchors his confidence in God's past deliverance and future hope. God 'delivered us out of so great a death, and will deliver.' The Corinthians themselves become part of this deliverance through their intercession on Paul's behalf, so that 'thanks may be given by many persons' for the 'gift bestowed upon us by means of many.' Prayer, thanksgiving, and communal solidarity are woven into the structure of rescue itself.",
-          "verse_refs": [
-            "2 Corinthians 1:10-11"
-          ],
-          "evidence_ids": [
-            "corinth-prayer-thanksgiving-rescue",
-            "corinth-prayer-thanksgiving-rescue:passage-relevance"
-          ],
-          "confidence": "medium",
-          "interpretation_level": "fact"
-        }
-      ]
-    },
-    {
-      "kind": "section",
-      "title": "Transparency and Shared Understanding (1:12-14)",
-      "blocks": [
-        {
-          "id": "block_10",
-          "text": "Paul writes to the Corinthians 'nothing but what ye read or even acknowledge,' appealing to their own reading and judgment. He does not demand blind acceptance but invites shared recognition. He reminds them that they 'did acknowledge us in part,' locating authority in the shared relationship rather than in apostolic immunity. The coworkers are not lording their faith or authority over the Corinthians but working alongside them for their joy.",
-          "verse_refs": [
-            "2 Corinthians 1:12-14"
-          ],
-          "evidence_ids": [
-            "corinth-not-lord-faith",
-            "corinth-not-lord-faith:passage-relevance"
+            "2cor-authorship"
           ],
           "confidence": "high",
-          "interpretation_level": "fact"
-        }
-      ]
-    },
-    {
-      "kind": "section",
-      "title": "Textual Transmission",
-      "blocks": [
-        {
-          "id": "block_11",
-          "text": "P46, a papyrus codex preserving most of 2 Corinthians and dating to the late second or early third century, represents early attestation of this letter. P99 preserves portions as well, and major codices from the fourth to sixth centuries provide further witnesses with some textual variation. Manuscript evidence documents transmission but does not yield exact details of the original writing circumstances.",
-          "verse_refs": [
-            "2 Corinthians 1"
-          ],
-          "evidence_ids": [
-            "2cor-manuscripts"
-          ],
-          "confidence": "high",
-          "interpretation_level": "fact"
+          "interpretation_level": "disputed"
         }
       ]
     }
   ],
   "generated_metadata": {
-    "evidence_hash": "37bf8175ef10dd89214ea4fe6a4d725a90ce9154645949152aa44ee2943e1eb7",
+    "evidence_hash": "88447003dc1bc296f598a72988f3032d035e0941f7c0846a89dd7b62d219ccf9",
     "evidence_bundle_version": "1.0",
     "commentary_schema_version": "1.0",
-    "commentary_prompt_version": "1.0",
-    "model": "haiku",
-    "generated_timestamp": null
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:42:09.778421+00:00"
   },
   "failure_reason": null,
-  "validation_errors": [
-    "root.status is unsupported: completed",
-    "section[1].kind is unsupported: section",
-    "section[2].kind is unsupported: section",
-    "section[3].kind is unsupported: section",
-    "section[4].kind is unsupported: section",
-    "section[5].kind is unsupported: section"
-  ],
+  "validation_errors": [],
   "validation_warnings": []
 }

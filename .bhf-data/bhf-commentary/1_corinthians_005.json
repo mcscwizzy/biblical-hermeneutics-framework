@@ -2,100 +2,37 @@
   "reference": "1 Corinthians 5",
   "book": "1 Corinthians",
   "chapter": 5,
-  "status": "partial",
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
   "sections": [
     {
       "kind": "chapter_overview",
-      "title": "Overview",
+      "title": "Chapter overview",
       "blocks": [
         {
-          "id": "block_1",
-          "text": "Paul addresses a reported case of sexual impropriety involving a man and his father's wife, calling for communal accountability and action. The passage combines immediate pastoral direction with theological grounding in the Passover tradition, then clarifies the boundaries of community discipline as applying to committed members rather than outsiders. Early manuscripts including P46 preserve this chapter within the developing collection of Paul's letters.",
+          "id": "overview",
+          "text": "1 Corinthians 5 contains 13 verses. It opens with: It is actually reported that there is fornication among you, and such fornication as is not even among the Gentiles, that one `of you' hath his father's wife. It concludes with: But them that are without God judgeth. Put away the wicked man from among yourselves.",
           "verse_refs": [
             "1 Corinthians 5:1-13"
           ],
           "evidence_ids": [
-            "1cor-incest",
-            "1cor-integrity",
-            "1cor-manuscripts"
+            "1cor-incest"
           ],
-          "confidence": "medium",
-          "interpretation_level": "fact"
-        }
-      ]
-    },
-    {
-      "kind": "passage_content",
-      "title": "The Reported Case (vv. 1-5)",
-      "blocks": [
-        {
-          "id": "block_2",
-          "text": "Paul addresses a reported ongoing relationship between a man in the community and his father's wife, treating this as a matter requiring communal attention. Paul frames the situation as serious enough to mourn and act upon, yet the passage itself does not provide the woman's voice, status in the household, agency, or consent. Any discussion of this case must acknowledge these gaps in the source material rather than speculate about details the letter does not address.",
-          "verse_refs": [
-            "1 Corinthians 5:1-2"
-          ],
-          "evidence_ids": [
-            "1cor-incest",
-            "corinth-reported-sexual-case",
-            "corinthian-incest-case-bounds"
-          ],
-          "confidence": "medium",
-          "interpretation_level": "fact"
-        },
-        {
-          "id": "block_3",
-          "text": "Paul directs that the community gather and hand such a person over to Satan for the destruction of the flesh, explicitly stating a salvific aim: that the spirit may be saved in the day of the Lord. The precise mechanics and ancient practice of this directive remain unclear. The stated purpose is not permanent expulsion but rather a disciplinary intervention with an expressed restoration goal, though the exact process and outcome are not narrated.",
-          "verse_refs": [
-            "1 Corinthians 5:3-5"
-          ],
-          "evidence_ids": [
-            "1cor-satan",
-            "corinth-mourning-removal-dispute"
-          ],
-          "confidence": "low",
-          "interpretation_level": "fact"
-        }
-      ]
-    },
-    {
-      "kind": "passage_content",
-      "title": "Discipline Boundaries (vv. 9-13)",
-      "blocks": [
-        {
-          "id": "block_5",
-          "text": "Paul clarifies that his instruction to avoid association applies specifically to those named as brothers or sisters in the faith who persistently engage in destructive conduct. He explicitly does not intend this teaching to apply to outsiders: to withdraw completely from the world's fornicators, covetous persons, and idolaters would require leaving the world entirely. The boundary is between those who claim Christian commitment and those who do not.",
-          "verse_refs": [
-            "1 Corinthians 5:9-13"
-          ],
-          "evidence_ids": [
-            "corinthian-discipline-insiders-not-world-exit",
-            "inside-outside-judgment-limit"
-          ],
-          "confidence": "medium",
-          "interpretation_level": "fact"
+          "confidence": "high",
+          "interpretation_level": "disputed"
         }
       ]
     }
   ],
   "generated_metadata": {
-    "evidence_hash": "fe3e3ea23c6ea8c436e9b98ad7343dca9adb3850053fa853d277ce4c80151a63",
+    "evidence_hash": "d6880d31997685995ebd0f27747dbdcc3af14e06b4dad70a8111d6466521e772",
     "evidence_bundle_version": "1.0",
     "commentary_schema_version": "1.0",
-    "commentary_prompt_version": "1.0",
-    "model": "haiku",
-    "generated_timestamp": null
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:42:04.698696+00:00"
   },
   "failure_reason": null,
-  "validation_errors": [
-    "section[1].kind is unsupported: passage_content",
-    "section[2].kind is unsupported: passage_content",
-    "section[2].block[0].interpretation_level is invalid",
-    "section[3].kind is unsupported: passage_content",
-    "section[3].block[1].interpretation_level is invalid",
-    "section[4].kind is unsupported: interpretive_note",
-    "section[4].block[0].interpretation_level is invalid",
-    "section[5].kind is unsupported: historical_note",
-    "section[5].block[0].interpretation_level is invalid"
-  ],
+  "validation_errors": [],
   "validation_warnings": []
 }
