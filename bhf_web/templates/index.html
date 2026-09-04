@@ -166,6 +166,19 @@
                 <option value="DATA_GAP">Context not currently available</option>
               </select>
             </label>
+            <label class="reader-search-context-filter">
+              <span>Evidence type</span>
+              <select name="commentary_category" data-commentary-category-filter aria-label="Filter BHF Context evidence category">
+                <option value="">All evidence types</option>
+                <option value="history">History</option>
+                <option value="culture">Culture</option>
+                <option value="archaeology">Archaeology</option>
+                <option value="geography">Geography</option>
+                <option value="language">Language</option>
+                <option value="chronology">Chronology</option>
+                <option value="social">Social</option>
+              </select>
+            </label>
             <input type="hidden" name="adapter" value="{{ form.adapter }}">
             <input type="hidden" name="model" value="{{ form.model }}">
             <input type="hidden" name="base_url" value="{{ form.base_url }}">

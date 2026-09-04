@@ -9,6 +9,7 @@ from bhf_agent.chapter_commentary.models import ChapterCommentary
 from bhf_agent.presentation.models import EvidenceBundle
 from bhf_agent.chapter_commentary.storage import load_commentary
 from bhf_agent.chapter_commentary.storage import list_commentaries
+from bhf_agent.chapter_commentary.evidence_bundling import get_chapter_evidence_bundle
 
 
 COMMENTARY_RELEASE = "commentary-v1.0"
@@ -76,6 +77,9 @@ def search_commentary(
     book: str | None = None,
     chapter: int | None = None,
     verse: str | None = None,
+    category: str | None = None,
+    entity: str | None = None,
+    period: str | None = None,
     limit: int = 25,
 ) -> dict[str, Any]:
     """Search the immutable commentary projections without a second index."""
@@ -85,6 +89,9 @@ def search_commentary(
     if normalized_availability and normalized_availability not in {"AVAILABLE", "THIN", "DATA_GAP"}:
         raise ValueError("availability must be AVAILABLE, THIN, or DATA_GAP")
     normalized_verse = " ".join(str(verse or "").casefold().split())
+    normalized_category = " ".join(str(category or "").casefold().split())
+    normalized_entity = " ".join(str(entity or "").casefold().split())
+    normalized_period = " ".join(str(period or "").casefold().split())
     results: list[dict[str, Any]] = []
     for candidate_book, candidate_chapter in sorted(list_commentaries(storage_dir), key=lambda item: (item[0].casefold(), item[1])):
         if normalized_book and candidate_book.casefold() != normalized_book:
@@ -108,9 +115,35 @@ def search_commentary(
             continue
         if normalized_verse and not any(normalized_verse in reference.casefold() for reference in verse_references):
             continue
+        cited_ids = {evidence_id for section in commentary.sections for block in section.blocks for evidence_id in block.evidence_ids}
+        evidence_categories: list[str] = []
+        entity_terms: list[str] = []
+        period_terms: list[str] = []
+        if normalized_category or normalized_entity or normalized_period:
+            bundle = get_chapter_evidence_bundle(candidate_book, candidate_chapter)
+            if bundle is None:
+                continue
+            cited_items = [bundle.evidence_by_id[evidence_id] for evidence_id in cited_ids if evidence_id in bundle.evidence_by_id]
+            evidence_categories = sorted({str(item.category).casefold() for item in cited_items if item.category})
+            for item in cited_items:
+                for entity_id in item.related_entity_ids:
+                    entity_ref = bundle.entities_by_id.get(entity_id)
+                    if entity_ref is not None:
+                        entity_terms.append(f"{entity_ref.title} {entity_ref.id}")
+                period_terms.extend(
+                    str(value) for key, value in item.relevance_metadata.items()
+                    if "time" in str(key).casefold() or "date" in str(key).casefold() or "period" in str(key).casefold()
+                )
+            if normalized_category and normalized_category not in evidence_categories:
+                continue
+            if normalized_entity and normalized_entity not in " ".join(entity_terms).casefold():
+                continue
+            if normalized_period and normalized_period not in " ".join(period_terms).casefold():
+                continue
         result = dict(projection)
         result["commentary"] = projection["commentary"][:240]
         result["section_kinds"] = _unique([section.kind for section in commentary.sections])
+        result["evidence_categories"] = evidence_categories
         results.append(result)
         if len(results) >= max(1, min(int(limit), 100)):
             break

@@ -59,8 +59,10 @@ async function loadCommentarySearch(query, requestId) {
   const status = document.querySelector("#commentary-search-status");
   if (!panel || !body) return;
   const filter = document.querySelector("[data-commentary-availability-filter]")?.value || "";
+  const category = document.querySelector("[data-commentary-category-filter]")?.value || "";
   const parameters = new URLSearchParams({q: query, limit: "25"});
   if (filter) parameters.set("availability", filter);
+  if (category) parameters.set("category", category);
   panel.hidden = false;
   if (summary) summary.textContent = "Searching BHF Context…";
   if (status) {
@@ -104,6 +106,7 @@ function renderCommentarySearchResult(result) {
         : "Context status not recorded";
   const references = Array.isArray(result.verse_references) ? result.verse_references : [];
   const sectionKinds = Array.isArray(result.section_kinds) ? result.section_kinds : [];
+  const evidenceCategories = Array.isArray(result.evidence_categories) ? result.evidence_categories : [];
   return `
     <article class="search-result-card commentary-search-result">
       <div class="search-result-header">
@@ -118,6 +121,7 @@ function renderCommentarySearchResult(result) {
       </div>
       ${references.length ? `<p class="search-result-meta">Verses: ${escapeHtml(references.join(", "))}</p>` : ""}
       ${sectionKinds.length ? `<p class="search-result-meta">Sections: ${escapeHtml(sectionKinds.join(", "))}</p>` : ""}
+      ${evidenceCategories.length ? `<p class="search-result-meta">Evidence: ${escapeHtml(evidenceCategories.join(", "))}</p>` : ""}
       <div class="search-result-actions">
         <button type="button" class="secondary" data-commentary-search-action="open-chapter" data-book="${escapeHtml(result.book || "")}" data-chapter="${escapeHtml(String(result.chapter || ""))}">Open chapter</button>
       </div>

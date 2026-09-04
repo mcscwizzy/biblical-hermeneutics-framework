@@ -96,6 +96,21 @@ def test_commentary_search_reads_projections_and_applies_availability_filters(tm
     assert search_commentary(tmp_path, book="Genesis", chapter=13)["count"] == 1
 
 
+def test_commentary_search_category_filter_uses_only_cited_bundle_items(tmp_path, monkeypatch):
+    from bhf_agent.chapter_commentary.storage import save_commentary
+    save_commentary(commentary(), tmp_path)
+    bundle = evidence_bundle()
+    monkeypatch.setattr(
+        "bhf_web.services.bhf_commentary.get_chapter_evidence_bundle",
+        lambda _book, _chapter: bundle,
+    )
+
+    result = search_commentary(tmp_path, category="culture")
+    assert result["count"] == 1
+    assert result["results"][0]["evidence_categories"] == ["culture"]
+    assert search_commentary(tmp_path, category="archaeology")["count"] == 0
+
+
 def evidence_bundle():
     return EvidenceBundle(
         passage_ref="Genesis 13",

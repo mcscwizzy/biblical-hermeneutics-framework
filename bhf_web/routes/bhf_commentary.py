@@ -48,6 +48,9 @@ def register_bhf_commentary_routes(
         book: str | None = None,
         chapter: int | None = None,
         verse: str | None = None,
+        category: str | None = None,
+        entity: str | None = None,
+        period: str | None = None,
         limit: int = 25,
     ) -> JSONResponse:
         """Search immutable commentary projections using existing reader data."""
@@ -60,6 +63,9 @@ def register_bhf_commentary_routes(
                     book=book,
                     chapter=chapter,
                     verse=verse,
+                    category=category,
+                    entity=entity,
+                    period=period,
                     limit=limit,
                 )
             )
