@@ -1,0 +1,38 @@
+{
+  "patch_version": "commentary-v1.0.1",
+  "base_release": "commentary-v1.0",
+  "base_tag_commit": "b40f8a7560e1a5db650a93a9e267f9b92faed85f",
+  "release_status": "candidate",
+  "affected_commentary_chapters": [
+    {
+      "reference": "1 Samuel 28",
+      "path": "1_samuel_028.json",
+      "reason": "Retrieval/index repair exposed one explicitly chapter-anchored interpretive note; the stored v1.0 artifact was DATA_GAP, the old count-based scan was AVAILABLE, and the weighted classifier correctly produces THIN."
+    }
+  ],
+  "correctness_only_findings": {
+    "availability_only_transitions": 74,
+    "interpretive_note_recoveries_without_prose_regeneration": 12,
+    "object_only_manual_review_cases": 20,
+    "true_data_gaps": 132
+  },
+  "classifier_version": "availability-v1.1",
+  "evidence_bundle_version": "1.0",
+  "commentary_schema_version": "1.0",
+  "commentary_prompt_version": "1.1",
+  "model_provenance": "luna-codex-development; no external AI/provider calls",
+  "validation": {
+    "candidate_count": 1,
+    "valid_candidates": 1,
+    "invalid_candidates": 0,
+    "full_bible_chapters_scanned": 1189,
+    "json_sqlite_disagreements": 0,
+    "likely_remaining_retrieval_bugs": 0,
+    "frozen_v1_0_modified": false
+  },
+  "integrity": {
+    "released_corpus_path": ".bhf-data/bhf-commentary",
+    "candidate_corpus_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.0.1",
+    "tag_or_publish_action_taken": false
+  }
+}
