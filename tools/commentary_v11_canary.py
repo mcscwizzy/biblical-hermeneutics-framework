@@ -150,16 +150,17 @@ def _role(item: Any) -> str:
 
 
 def _section_for_item(item: Any) -> str | None:
+    metadata = item.relevance_metadata or {}
     role = _role(item)
     category = str(item.category or "").casefold()
     if role in {SEMANTICALLY_MISANCHORED, WEAKLY_RELATED}:
         return None
+    if "presentation_role" in metadata:
+        preferred = metadata.get("presentation_role")
+        return preferred if preferred in SECTION_TITLES and preferred != "chapter_overview" else None
     if role in {LATER_RECEPTION, INTERTEXTUAL_REUSE, COMPARATIVE_CONTEXT}:
         return "dig_deeper"
-    if category in {"language"} or (
-        role == GENERIC_BACKGROUND
-        and (item.relevance_metadata or {}).get("parent_type") in {"word_study", "faq"}
-    ):
+    if category in {"language"}:
         return "language_literary"
     if category in {"archaeology", "geography"}:
         return "archaeology_geography" if role == DIRECT_CONTEXT else None
@@ -170,28 +171,42 @@ def eligible_for_section(item: Any, section_kind: str) -> bool:
     """Return whether an evidence item may ground a deterministic section."""
 
     if section_kind == "chapter_overview":
+        if "presentation_role" in (item.relevance_metadata or {}):
+            return bool((item.relevance_metadata or {}).get("presentation_role")) and _role(item) in {
+                DIRECT_CONTEXT,
+                BOOK_CONTEXT,
+                GENERIC_BACKGROUND,
+            }
         return _role(item) in {DIRECT_CONTEXT, BOOK_CONTEXT, GENERIC_BACKGROUND} and not (
             item.category in {"archaeology", "geography"}
             and _role(item) == GENERIC_BACKGROUND
         )
     if section_kind == "historical_context":
+        if "presentation_role" in (item.relevance_metadata or {}):
+            return (item.relevance_metadata or {}).get("presentation_role") == section_kind
         return _role(item) in {DIRECT_CONTEXT, BOOK_CONTEXT, GENERIC_BACKGROUND} and item.category not in {
-            "archaeology",
-            "geography",
-            "language",
+            "archaeology", "geography", "language",
         }
     if section_kind == "archaeology_geography":
+        if "presentation_role" in (item.relevance_metadata or {}):
+            return (item.relevance_metadata or {}).get("presentation_role") == section_kind
         return _role(item) == DIRECT_CONTEXT and item.category in {"archaeology", "geography"}
     if section_kind == "language_literary":
+        if "presentation_role" in (item.relevance_metadata or {}):
+            return (item.relevance_metadata or {}).get("presentation_role") == section_kind
         return _role(item) in {DIRECT_CONTEXT, BOOK_CONTEXT, GENERIC_BACKGROUND} and item.category in {
             "language",
             "culture",
         }
     if section_kind == "chronology":
+        if "presentation_role" in (item.relevance_metadata or {}):
+            return (item.relevance_metadata or {}).get("presentation_role") == section_kind
         return _role(item) in {DIRECT_CONTEXT, BOOK_CONTEXT} and item.category == "chronology"
     if section_kind == "interpretive_questions":
         return _role(item) not in {SEMANTICALLY_MISANCHORED, WEAKLY_RELATED}
     if section_kind == "dig_deeper":
+        if "presentation_role" in (item.relevance_metadata or {}):
+            return (item.relevance_metadata or {}).get("presentation_role") == section_kind
         return _role(item) in {
             INTERTEXTUAL_REUSE,
             LATER_RECEPTION,
@@ -212,13 +227,14 @@ def select_overview_item(bundle: Any) -> Any | None:
     if not candidates:
         return None
 
-    def key(item: Any) -> tuple[int, int, int, int, str]:
+    def key(item: Any) -> tuple[int, int, int, int, int, str]:
         role_rank = {DIRECT_CONTEXT: 5, BOOK_CONTEXT: 4, GENERIC_BACKGROUND: 2}.get(_role(item), 0)
         specificity = str((item.relevance_metadata or {}).get("anchor_specificity") or "unknown")
         specificity_rank = {"verse": 4, "chapter": 3, "multi_chapter": 2, "book": 1}.get(specificity, 0)
         category_rank = {"history": 4, "culture": 4, "social": 4, "politics": 4, "economics": 3, "language": 2, "chronology": 1}.get(item.category, 0)
         confidence_rank = {"high": 3, "medium": 2, "low": 1}.get(item.confidence, 0)
-        return (role_rank, specificity_rank, category_rank, confidence_rank, item.id)
+        overview_rank = int((item.relevance_metadata or {}).get("overview_priority") or 0)
+        return (overview_rank, role_rank, category_rank, specificity_rank, confidence_rank, item.id)
 
     return max(candidates, key=key)
 
@@ -303,12 +319,8 @@ def _candidate_payload(book: str, chapter: int, bundle: Any) -> dict[str, Any]:
                 grouped[kind].append(item)
         max_sections = 2 if availability == "THIN" else 4
         order = ["historical_context", "archaeology_geography", "language_literary", "chronology", "interpretive_questions", "dig_deeper"]
-        selected_kinds = [kind for kind in order if kind in grouped]
-        if "dig_deeper" in selected_kinds and len(selected_kinds) > max_sections:
-            selected_kinds = [kind for kind in selected_kinds if kind != "dig_deeper"] + ["dig_deeper"]
+        selected_kinds = _select_section_kinds(grouped, max_sections)
         for kind in selected_kinds:
-            if len(sections) - 1 >= max_sections:
-                break
             items = grouped[kind][:2]
             sections.append(
                 CommentarySection(
@@ -334,6 +346,26 @@ def _candidate_payload(book: str, chapter: int, bundle: Any) -> dict[str, Any]:
         "sections": [section.to_dict() for section in sections],
         "generated_metadata": metadata.to_dict(),
     }
+
+
+def _select_section_kinds(grouped: dict[str, list[Any]], max_sections: int) -> list[str]:
+    """Choose a bounded, deterministic section set while reserving reception space."""
+
+    order = [
+        "historical_context",
+        "archaeology_geography",
+        "language_literary",
+        "chronology",
+        "interpretive_questions",
+        "dig_deeper",
+    ]
+    available = [kind for kind in order if grouped.get(kind)]
+    if len(available) <= max_sections:
+        return available
+    if "dig_deeper" in available and max_sections > 0:
+        contextual = [kind for kind in available if kind != "dig_deeper"]
+        return contextual[: max_sections - 1] + ["dig_deeper"]
+    return available[:max_sections]
 
 
 def run(priority_report: Path, certification: Path, output_root: Path) -> dict[str, Any]:
@@ -402,7 +434,14 @@ def run(priority_report: Path, certification: Path, output_root: Path) -> dict[s
         "chapters": len(results),
         "valid": sum(result["valid"] for result in results),
         "invalid": sum(not result["valid"] for result in results),
-        "availability_distribution": dict(sorted(__import__("collections").Counter(result.get("availability") for result in results).items())),
+        "availability_distribution": dict(
+            sorted(
+                __import__("collections").Counter(
+                    result.get("availability") or "INVALID"
+                    for result in results
+                ).items()
+            )
+        ),
         "results": results,
     }
     (output_root / "commentary-canary-validation.json").write_text(json.dumps(summary, indent=2, ensure_ascii=True) + "\n", encoding="utf-8")
