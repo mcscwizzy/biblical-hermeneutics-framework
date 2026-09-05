@@ -1,0 +1,38 @@
+{
+  "reference": "Job 9",
+  "book": "Job",
+  "chapter": 9,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "overview",
+          "text": "Job 9 contains 35 verses. It opens with: Then Job answered and said, It concludes with: Then would I speak, and not fear him; For I am not so in myself.",
+          "verse_refs": [
+            "Job 9:1-35"
+          ],
+          "evidence_ids": [
+            "job-lament-dialogues"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "f07c85366aa43888a00a7062029dee0c5e6f5b30b649f69c42bb8b4c548a0f0f",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:14:27.882235+00:00"
+  },
+  "failure_reason": null,
+  "validation_errors": [],
+  "validation_warnings": []
+}

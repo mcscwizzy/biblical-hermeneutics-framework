@@ -1,0 +1,38 @@
+{
+  "reference": "1 Peter 2",
+  "book": "1 Peter",
+  "chapter": 2,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "overview",
+          "text": "1 Peter 2 contains 25 verses. It opens with: Putting away therefore all wickedness, and all guile, and hypocrisies, and envies, and all evil speakings, It concludes with: For ye were going astray like sheep; but are now returned unto the Shepherd and Bishop of your souls.",
+          "verse_refs": [
+            "1 Peter 2:1-25"
+          ],
+          "evidence_ids": [
+            "1pet-audience"
+          ],
+          "confidence": "low",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "93729e3fb3364d91e676d18f3c250df9fdcb5f661ebedfa10165b767fdc9ba37",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:44:41.380903+00:00"
+  },
+  "failure_reason": null,
+  "validation_errors": [],
+  "validation_warnings": []
+}

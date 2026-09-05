@@ -1,0 +1,38 @@
+{
+  "reference": "Job 2",
+  "book": "Job",
+  "chapter": 2,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "overview",
+          "text": "Job 2 contains 13 verses. It opens with: Again it came to pass on the day when the sons of God came to present themselves before Jehovah, that Satan came also among them to present himself before Jehovah. It concludes with: So they sat down with him upon the ground seven days and seven nights, and none spake a word unto him: for they saw that his grief was very great.",
+          "verse_refs": [
+            "Job 2:1-13"
+          ],
+          "evidence_ids": [
+            "job-heavenly-challenge-losses"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "d80d5ca0fed95babc3d6254bcbbf631b07b381fb2007f8cbff5917ac2643dfa5",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:13:11.030195+00:00"
+  },
+  "failure_reason": null,
+  "validation_errors": [],
+  "validation_warnings": []
+}

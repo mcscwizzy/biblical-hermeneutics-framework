@@ -1,0 +1,38 @@
+{
+  "reference": "Job 7",
+  "book": "Job",
+  "chapter": 7,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "overview",
+          "text": "Job 7 contains 21 verses. It opens with: Is there not a warfare to man upon earth? And are not his days like the days of a hireling? It concludes with: And why dost thou not pardon my transgression, and take away mine iniquity? For now shall I lie down in the dust; And thou wilt seek me diligently, but I shall not be.",
+          "verse_refs": [
+            "Job 7:1-21"
+          ],
+          "evidence_ids": [
+            "job-lament-dialogues"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "bbfd7044ee5910651e96e8ba1aa01eb99f89e1ca217bf920b20c6dfcc24861eb",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:14:27.744304+00:00"
+  },
+  "failure_reason": null,
+  "validation_errors": [],
+  "validation_warnings": []
+}

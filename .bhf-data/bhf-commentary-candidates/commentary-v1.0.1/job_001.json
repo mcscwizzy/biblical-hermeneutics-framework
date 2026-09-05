@@ -1,0 +1,38 @@
+{
+  "reference": "Job 1",
+  "book": "Job",
+  "chapter": 1,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "overview",
+          "text": "Job 1 contains 22 verses. It opens with: There was a man in the land of Uz, whose name was Job; and that man was perfect and upright, and one that feared God, and turned away from evil. It concludes with: In all this Job sinned not, nor charged God foolishly.",
+          "verse_refs": [
+            "Job 1:1-22"
+          ],
+          "evidence_ids": [
+            "job-heavenly-challenge-losses"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "a7144850e77aea72f13f7a52791aab4096d1cf0942208675b3116e55ab2e9678",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:13:10.948600+00:00"
+  },
+  "failure_reason": null,
+  "validation_errors": [],
+  "validation_warnings": []
+}

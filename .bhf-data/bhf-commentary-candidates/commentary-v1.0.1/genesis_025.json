@@ -1,0 +1,56 @@
+{
+  "reference": "Genesis 25",
+  "book": "Genesis",
+  "chapter": 25,
+  "status": "validated",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Abraham's death and Isaac's sons",
+      "blocks": [
+        {
+          "id": "overview",
+          "text": "Genesis 25 records Abraham's children by Keturah, his distinction between Isaac and the sons of his concubines, and his death at 175. Isaac and Ishmael bury him in the cave of Machpelah. The chapter then records Ishmael's twelve sons and their settlements before turning to Isaac and Rebekah, whose twins struggle in the womb. Esau is described as a hunter and Jacob as a quiet man in tents; their conflict over the birthright ends with Esau eating and departing after selling it to Jacob.",
+          "verse_refs": [
+            "Genesis 25:1-34"
+          ],
+          "evidence_ids": [
+            "genesis-literary-movement"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "people_places",
+      "title": "Names, kinship, and the birthright",
+      "blocks": [
+        {
+          "id": "kinship",
+          "text": "The chapter organizes several family lines by names, generations, settlements, and burial. It gives Isaac the central inheritance while describing gifts and eastward sending for the sons of the concubines. The birth narrative then names Esau and Jacob, and the final scene explains the name Edom through the red pottage and frames the birthright exchange through Esau's hunger and Jacob's demand for an oath. The supplied contextual evidence is broad literary context, so no additional historical reconstruction is asserted.",
+          "verse_refs": [
+            "Genesis 25:5-34"
+          ],
+          "evidence_ids": [
+            "genesis-literary-movement"
+          ],
+          "confidence": "high",
+          "interpretation_level": "inference"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "f797f16cd6568abb98f03d875acc704fefd12a6191518ebf61323cbc0a877069",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T15:57:12.789340+00:00"
+  },
+  "failure_reason": null,
+  "validation_errors": [],
+  "validation_warnings": [],
+  "evidence_availability": "AVAILABLE"
+}

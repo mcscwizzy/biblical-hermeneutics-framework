@@ -1,0 +1,38 @@
+{
+  "reference": "Matthew 23",
+  "book": "Matthew",
+  "chapter": 23,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "overview",
+          "text": "Matthew 23 contains 39 verses. It opens with: Then spake Jesus to the multitudes and to his disciples, It concludes with: For I say unto you, Ye shall not see me henceforth, till ye shall say, Blessed `is' he that cometh in the name of the Lord.",
+          "verse_refs": [
+            "Matthew 23:1-39"
+          ],
+          "evidence_ids": [
+            "matthew-anti-judaism"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "f2f66032392dc065039a583996dcf5722a06b2259beacc81224a8d1b28c67470",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:37:05.899811+00:00"
+  },
+  "failure_reason": null,
+  "validation_errors": [],
+  "validation_warnings": []
+}

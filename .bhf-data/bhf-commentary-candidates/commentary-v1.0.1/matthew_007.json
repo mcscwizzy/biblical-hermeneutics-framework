@@ -1,0 +1,38 @@
+{
+  "reference": "Matthew 7",
+  "book": "Matthew",
+  "chapter": 7,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "overview",
+          "text": "Matthew 7 contains 29 verses. It opens with: Judge not, that ye be not judged. It concludes with: for he taught them as `one' having authority, and not as their scribes.",
+          "verse_refs": [
+            "Matthew 7:1-29"
+          ],
+          "evidence_ids": [
+            "matthew-application-boundaries"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "b4fbceb9a5fa2a34e96ccd58367e9684d5c32dd04ee3921038eaa8e8bbadd546",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:36:12.191193+00:00"
+  },
+  "failure_reason": null,
+  "validation_errors": [],
+  "validation_warnings": []
+}

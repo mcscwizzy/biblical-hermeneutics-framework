@@ -1,0 +1,38 @@
+{
+  "reference": "Daniel 1",
+  "book": "Daniel",
+  "chapter": 1,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "overview",
+          "text": "Daniel 1 contains 21 verses. It opens with: In the third year of the reign of Jehoiakim king of Judah came Nebuchadnezzar king of Babylon unto Jerusalem, and besieged it. It concludes with: And Daniel continued even unto the first year of king Cyrus.",
+          "verse_refs": [
+            "Daniel 1:1-21"
+          ],
+          "evidence_ids": [
+            "daniel-compositional-horizons"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "d5b6ddeb252722f854099a8c6741f707143a7c317ede0146b157bdedf4465d24",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:30:33.433789+00:00"
+  },
+  "failure_reason": null,
+  "validation_errors": [],
+  "validation_warnings": []
+}

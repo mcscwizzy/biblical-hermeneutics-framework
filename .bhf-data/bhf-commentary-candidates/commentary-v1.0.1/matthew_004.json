@@ -1,0 +1,38 @@
+{
+  "reference": "Matthew 4",
+  "book": "Matthew",
+  "chapter": 4,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "overview",
+          "text": "Matthew 4 contains 25 verses. It opens with: Then was Jesus led up of the Spirit into the wilderness to be tempted of the devil. It concludes with: And there followed him great multitudes from Galilee and Decapolis and Jerusalem and Judaea and `from' beyond the Jordan.",
+          "verse_refs": [
+            "Matthew 4:1-25"
+          ],
+          "evidence_ids": [
+            "matthew-baptism-temptation"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "3d9ae95167249a1b57a3be565a9e45c9c30e3c0a5207d1ab192c3c7e85772348",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:36:11.813344+00:00"
+  },
+  "failure_reason": null,
+  "validation_errors": [],
+  "validation_warnings": []
+}

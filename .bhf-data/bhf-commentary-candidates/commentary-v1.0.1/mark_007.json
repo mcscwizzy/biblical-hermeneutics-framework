@@ -1,0 +1,38 @@
+{
+  "reference": "Mark 7",
+  "book": "Mark",
+  "chapter": 7,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "overview",
+          "text": "Mark 7 contains 37 verses. It opens with: And there are gathered together unto him the Pharisees, and certain of the scribes, who had come from Jerusalem, It concludes with: And they were beyond measure astonished, saying, He hath done all things well; he maketh even the deaf to hear, and the dumb to speak.",
+          "verse_refs": [
+            "Mark 7:1-37"
+          ],
+          "evidence_ids": [
+            "mark-7-19-syntax-dispute"
+          ],
+          "confidence": "low",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "f3fbee1965c8b5c2886064f68dbf6f1a4be1ebd8053494e62c055132bd92d300",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:37:08.103260+00:00"
+  },
+  "failure_reason": null,
+  "validation_errors": [],
+  "validation_warnings": []
+}

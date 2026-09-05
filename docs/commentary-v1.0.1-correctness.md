@@ -203,11 +203,25 @@ theological preference.
 
 ## Patch scope and integrity
 
-The only commentary prose candidate prepared in this patch is 1 Samuel 28.
-The 12 interpretive-note retrieval recoveries and the 74 availability-only
-transitions are recorded as correctness findings; they are not used to trigger
-automatic regeneration of 86 chapters. Any additional prose should be
-generated and reviewed individually in a later patch.
+The complete v1.0.1 candidate snapshot contains 1,189 chapter artifacts. Its
+correctness patch set contains 249 chapters:
+
+- 95 commentary regenerations, because the old blocks had no citations after
+  valid evidence became projectable. This includes 1 Samuel 28 and the 12
+  interpretive-note recoveries.
+- 63 status-only changes where existing citations and verse references remain
+  valid.
+- 91 legacy metadata corrections where availability was not recorded.
+
+The other 700 chapters with a larger fresh candidate bundle have grounded
+stored citations and unchanged derived status; their additional candidates are
+reported as audit-only evidence deltas and do not trigger prose rewrites. Of
+the 74 AVAILABLE-to-THIN transitions, 37 require the evidence-backed
+regeneration above and 37 are status-only. This keeps the patch correctness-
+focused rather than performing a stylistic rewrite of the corpus.
+
+The regenerated chapters use the local Luna development harness and current
+EvidenceBundles. No external provider call or new CKL source was used.
 
 The candidate is stored separately at:
 
@@ -216,7 +230,9 @@ The candidate is stored separately at:
 It uses the corrected two-item EvidenceBundle, has availability `THIN`, cites
 both valid evidence IDs, preserves the disputed interpretation, and passes
 chapter identity, verse scope, evidence ID, evidence hash, confidence, and
-availability validation.
+availability validation. The complete reconciliation and per-chapter delta
+are stored in `reconciliation-v1.0.1.json`; the fresh release health report is
+`commentary-health-report-v1.0.1.json`.
 
 The frozen v1.0 chapter artifacts were not modified. The proposed manifest is
 `.bhf-data/bhf-commentary-candidates/commentary-v1.0.1/manifest.json`.

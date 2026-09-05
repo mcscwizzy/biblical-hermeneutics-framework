@@ -1,0 +1,38 @@
+{
+  "reference": "Luke 7",
+  "book": "Luke",
+  "chapter": 7,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "overview",
+          "text": "Luke 7 contains 50 verses. It opens with: After he had ended all his sayings in the ears of the people, he entered into Capernaum. It concludes with: And he said unto the woman, Thy faith hath saved thee; go in peace.",
+          "verse_refs": [
+            "Luke 7:1-50"
+          ],
+          "evidence_ids": [
+            "luke-sinful-woman"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "6de430c09c702fcec5b0661fede2a3521f68bf18200fb570acbcd79a0a37edd0",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:38:33.147699+00:00"
+  },
+  "failure_reason": null,
+  "validation_errors": [],
+  "validation_warnings": []
+}

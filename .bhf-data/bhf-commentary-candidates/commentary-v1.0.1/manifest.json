@@ -1,38 +1,1335 @@
 {
-  "patch_version": "commentary-v1.0.1",
+  "release": "commentary-v1.0.1",
   "base_release": "commentary-v1.0",
+  "base_tag": "commentary-v1.0",
   "base_tag_commit": "b40f8a7560e1a5db650a93a9e267f9b92faed85f",
   "release_status": "candidate",
-  "affected_commentary_chapters": [
-    {
-      "reference": "1 Samuel 28",
-      "path": "1_samuel_028.json",
-      "reason": "Retrieval/index repair exposed one explicitly chapter-anchored interpretive note; the stored v1.0 artifact was DATA_GAP, the old count-based scan was AVAILABLE, and the weighted classifier correctly produces THIN."
-    }
+  "tag_created": false,
+  "corrected_retrieval_commits": [
+    "0a571b8879c7cd9f265705708230211227f11c18"
   ],
-  "correctness_only_findings": {
-    "availability_only_transitions": 74,
-    "interpretive_note_recoveries_without_prose_regeneration": 12,
-    "object_only_manual_review_cases": 20,
-    "true_data_gaps": 132
+  "classifier_commit": "e72298a00368c00443d098375655d4ec172f148f",
+  "candidate_preparation_commit": "99a11fac449c0526950d4f3c9ae662a988fdf8ab",
+  "classifier": {
+    "version": "availability-v1.1",
+    "default_score_threshold": 1.5,
+    "available_requires": "score >= 1.5 and at least two non-broad anchored items",
+    "states": [
+      "AVAILABLE",
+      "THIN",
+      "DATA_GAP"
+    ]
   },
-  "classifier_version": "availability-v1.1",
   "evidence_bundle_version": "1.0",
   "commentary_schema_version": "1.0",
   "commentary_prompt_version": "1.1",
-  "model_provenance": "luna-codex-development; no external AI/provider calls",
-  "validation": {
-    "candidate_count": 1,
-    "valid_candidates": 1,
-    "invalid_candidates": 0,
-    "full_bible_chapters_scanned": 1189,
+  "luna_provenance": "luna-codex-development; local development harness; no external provider calls",
+  "chapters_total": 1189,
+  "patch_set_count": 249,
+  "unchanged_count": 240,
+  "status_only_count": 63,
+  "legacy_metadata_only_count": 91,
+  "regenerated_count": 95,
+  "evidence_changed_audit_only_count": 700,
+  "changed_chapters": [
+    {
+      "reference": "Genesis 1",
+      "classification": "LEGACY_METADATA_ONLY",
+      "reason": "Fresh classifier status replaces unrecorded legacy availability metadata."
+    },
+    {
+      "reference": "Genesis 2",
+      "classification": "LEGACY_METADATA_ONLY",
+      "reason": "Fresh classifier status replaces unrecorded legacy availability metadata."
+    },
+    {
+      "reference": "Genesis 3",
+      "classification": "LEGACY_METADATA_ONLY",
+      "reason": "Fresh classifier status replaces unrecorded legacy availability metadata."
+    },
+    {
+      "reference": "Genesis 4",
+      "classification": "LEGACY_METADATA_ONLY",
+      "reason": "Fresh classifier status replaces unrecorded legacy availability metadata."
+    },
+    {
+      "reference": "Genesis 5",
+      "classification": "LEGACY_METADATA_ONLY",
+      "reason": "Fresh classifier status replaces unrecorded legacy availability metadata."
+    },
+    {
+      "reference": "Genesis 6",
+      "classification": "LEGACY_METADATA_ONLY",
+      "reason": "Fresh classifier status replaces unrecorded legacy availability metadata."
+    },
+    {
+      "reference": "Genesis 7",
+      "classification": "LEGACY_METADATA_ONLY",
+      "reason": "Fresh classifier status replaces unrecorded legacy availability metadata."
+    },
+    {
+      "reference": "Genesis 8",
+      "classification": "LEGACY_METADATA_ONLY",
+      "reason": "Fresh classifier status replaces unrecorded legacy availability metadata."
+    },
+    {
+      "reference": "Genesis 9",
+      "classification": "LEGACY_METADATA_ONLY",
+      "reason": "Fresh classifier status replaces unrecorded legacy availability metadata."
+    },
+    {
+      "reference": "Genesis 10",
+      "classification": "LEGACY_METADATA_ONLY",
+      "reason": "Fresh classifier status replaces unrecorded legacy availability metadata."
+    },
+    {
+      "reference": "Genesis 11",
+      "classification": "LEGACY_METADATA_ONLY",
+      "reason": "Fresh classifier status replaces unrecorded legacy availability metadata."
+    },
+    {
+      "reference": "Genesis 12",
+      "classification": "LEGACY_METADATA_ONLY",
+      "reason": "Fresh classifier status replaces unrecorded legacy availability metadata."
+    },
+    {
+      "reference": "Genesis 13",
+      "classification": "LEGACY_METADATA_ONLY",
+      "reason": "Fresh classifier status replaces unrecorded legacy availability metadata."
+    },
+    {
+      "reference": "Genesis 14",
+      "classification": "LEGACY_METADATA_ONLY",
+      "reason": "Fresh classifier status replaces unrecorded legacy availability metadata."
+    },
+    {
+      "reference": "Genesis 15",
+      "classification": "LEGACY_METADATA_ONLY",
+      "reason": "Fresh classifier status replaces unrecorded legacy availability metadata."
+    },
+    {
+      "reference": "Genesis 16",
+      "classification": "LEGACY_METADATA_ONLY",
+      "reason": "Fresh classifier status replaces unrecorded legacy availability metadata."
+    },
+    {
+      "reference": "Genesis 17",
+      "classification": "LEGACY_METADATA_ONLY",
+      "reason": "Fresh classifier status replaces unrecorded legacy availability metadata."
+    },
+    {
+      "reference": "Genesis 18",
+      "classification": "LEGACY_METADATA_ONLY",
+      "reason": "Fresh classifier status replaces unrecorded legacy availability metadata."
+    },
+    {
+      "reference": "Genesis 19",
+      "classification": "LEGACY_METADATA_ONLY",
+      "reason": "Fresh classifier status replaces unrecorded legacy availability metadata."
+    },
+    {
+      "reference": "Genesis 20",
+      "classification": "LEGACY_METADATA_ONLY",
+      "reason": "Fresh classifier status replaces unrecorded legacy availability metadata."
+    },
+    {
+      "reference": "Genesis 21",
+      "classification": "LEGACY_METADATA_ONLY",
+      "reason": "Fresh classifier status replaces unrecorded legacy availability metadata."
+    },
+    {
+      "reference": "Genesis 22",
+      "classification": "LEGACY_METADATA_ONLY",
+      "reason": "Fresh classifier status replaces unrecorded legacy availability metadata."
+    },
+    {
+      "reference": "Genesis 23",
+      "classification": "LEGACY_METADATA_ONLY",
+      "reason": "Fresh classifier status replaces unrecorded legacy availability metadata."
+    },
+    {
+      "reference": "Genesis 24",
+      "classification": "LEGACY_METADATA_ONLY",
+      "reason": "Fresh classifier status replaces unrecorded legacy availability metadata."
+    },
+    {
+      "reference": "Genesis 25",
+      "classification": "LEGACY_METADATA_ONLY",
+      "reason": "Fresh classifier status replaces unrecorded legacy availability metadata."
+    },
+    {
+      "reference": "Genesis 26",
+      "classification": "LEGACY_METADATA_ONLY",
+      "reason": "Fresh classifier status replaces unrecorded legacy availability metadata."
+    },
+    {
+      "reference": "Genesis 27",
+      "classification": "LEGACY_METADATA_ONLY",
+      "reason": "Fresh classifier status replaces unrecorded legacy availability metadata."
+    },
+    {
+      "reference": "Genesis 28",
+      "classification": "LEGACY_METADATA_ONLY",
+      "reason": "Fresh classifier status replaces unrecorded legacy availability metadata."
+    },
+    {
+      "reference": "Genesis 29",
+      "classification": "LEGACY_METADATA_ONLY",
+      "reason": "Fresh classifier status replaces unrecorded legacy availability metadata."
+    },
+    {
+      "reference": "Genesis 30",
+      "classification": "LEGACY_METADATA_ONLY",
+      "reason": "Fresh classifier status replaces unrecorded legacy availability metadata."
+    },
+    {
+      "reference": "Genesis 31",
+      "classification": "LEGACY_METADATA_ONLY",
+      "reason": "Fresh classifier status replaces unrecorded legacy availability metadata."
+    },
+    {
+      "reference": "Genesis 32",
+      "classification": "LEGACY_METADATA_ONLY",
+      "reason": "Fresh classifier status replaces unrecorded legacy availability metadata."
+    },
+    {
+      "reference": "Genesis 33",
+      "classification": "LEGACY_METADATA_ONLY",
+      "reason": "Fresh classifier status replaces unrecorded legacy availability metadata."
+    },
+    {
+      "reference": "Genesis 34",
+      "classification": "LEGACY_METADATA_ONLY",
+      "reason": "Fresh classifier status replaces unrecorded legacy availability metadata."
+    },
+    {
+      "reference": "Genesis 35",
+      "classification": "LEGACY_METADATA_ONLY",
+      "reason": "Fresh classifier status replaces unrecorded legacy availability metadata."
+    },
+    {
+      "reference": "Genesis 36",
+      "classification": "LEGACY_METADATA_ONLY",
+      "reason": "Fresh classifier status replaces unrecorded legacy availability metadata."
+    },
+    {
+      "reference": "Genesis 37",
+      "classification": "LEGACY_METADATA_ONLY",
+      "reason": "Fresh classifier status replaces unrecorded legacy availability metadata."
+    },
+    {
+      "reference": "Genesis 38",
+      "classification": "LEGACY_METADATA_ONLY",
+      "reason": "Fresh classifier status replaces unrecorded legacy availability metadata."
+    },
+    {
+      "reference": "Genesis 39",
+      "classification": "LEGACY_METADATA_ONLY",
+      "reason": "Fresh classifier status replaces unrecorded legacy availability metadata."
+    },
+    {
+      "reference": "Genesis 40",
+      "classification": "LEGACY_METADATA_ONLY",
+      "reason": "Fresh classifier status replaces unrecorded legacy availability metadata."
+    },
+    {
+      "reference": "Genesis 41",
+      "classification": "LEGACY_METADATA_ONLY",
+      "reason": "Fresh classifier status replaces unrecorded legacy availability metadata."
+    },
+    {
+      "reference": "Genesis 42",
+      "classification": "LEGACY_METADATA_ONLY",
+      "reason": "Fresh classifier status replaces unrecorded legacy availability metadata."
+    },
+    {
+      "reference": "Genesis 43",
+      "classification": "LEGACY_METADATA_ONLY",
+      "reason": "Fresh classifier status replaces unrecorded legacy availability metadata."
+    },
+    {
+      "reference": "Genesis 44",
+      "classification": "LEGACY_METADATA_ONLY",
+      "reason": "Fresh classifier status replaces unrecorded legacy availability metadata."
+    },
+    {
+      "reference": "Genesis 45",
+      "classification": "LEGACY_METADATA_ONLY",
+      "reason": "Fresh classifier status replaces unrecorded legacy availability metadata."
+    },
+    {
+      "reference": "Genesis 46",
+      "classification": "LEGACY_METADATA_ONLY",
+      "reason": "Fresh classifier status replaces unrecorded legacy availability metadata."
+    },
+    {
+      "reference": "Genesis 47",
+      "classification": "LEGACY_METADATA_ONLY",
+      "reason": "Fresh classifier status replaces unrecorded legacy availability metadata."
+    },
+    {
+      "reference": "Genesis 48",
+      "classification": "LEGACY_METADATA_ONLY",
+      "reason": "Fresh classifier status replaces unrecorded legacy availability metadata."
+    },
+    {
+      "reference": "Genesis 49",
+      "classification": "LEGACY_METADATA_ONLY",
+      "reason": "Fresh classifier status replaces unrecorded legacy availability metadata."
+    },
+    {
+      "reference": "Genesis 50",
+      "classification": "LEGACY_METADATA_ONLY",
+      "reason": "Fresh classifier status replaces unrecorded legacy availability metadata."
+    },
+    {
+      "reference": "Exodus 1",
+      "classification": "LEGACY_METADATA_ONLY",
+      "reason": "Fresh classifier status replaces unrecorded legacy availability metadata."
+    },
+    {
+      "reference": "Exodus 2",
+      "classification": "LEGACY_METADATA_ONLY",
+      "reason": "Fresh classifier status replaces unrecorded legacy availability metadata."
+    },
+    {
+      "reference": "Exodus 3",
+      "classification": "LEGACY_METADATA_ONLY",
+      "reason": "Fresh classifier status replaces unrecorded legacy availability metadata."
+    },
+    {
+      "reference": "Exodus 4",
+      "classification": "LEGACY_METADATA_ONLY",
+      "reason": "Fresh classifier status replaces unrecorded legacy availability metadata."
+    },
+    {
+      "reference": "Exodus 5",
+      "classification": "LEGACY_METADATA_ONLY",
+      "reason": "Fresh classifier status replaces unrecorded legacy availability metadata."
+    },
+    {
+      "reference": "Exodus 6",
+      "classification": "LEGACY_METADATA_ONLY",
+      "reason": "Fresh classifier status replaces unrecorded legacy availability metadata."
+    },
+    {
+      "reference": "Exodus 7",
+      "classification": "LEGACY_METADATA_ONLY",
+      "reason": "Fresh classifier status replaces unrecorded legacy availability metadata."
+    },
+    {
+      "reference": "Exodus 8",
+      "classification": "LEGACY_METADATA_ONLY",
+      "reason": "Fresh classifier status replaces unrecorded legacy availability metadata."
+    },
+    {
+      "reference": "Exodus 9",
+      "classification": "LEGACY_METADATA_ONLY",
+      "reason": "Fresh classifier status replaces unrecorded legacy availability metadata."
+    },
+    {
+      "reference": "Exodus 10",
+      "classification": "LEGACY_METADATA_ONLY",
+      "reason": "Fresh classifier status replaces unrecorded legacy availability metadata."
+    },
+    {
+      "reference": "Exodus 11",
+      "classification": "LEGACY_METADATA_ONLY",
+      "reason": "Fresh classifier status replaces unrecorded legacy availability metadata."
+    },
+    {
+      "reference": "Exodus 12",
+      "classification": "LEGACY_METADATA_ONLY",
+      "reason": "Fresh classifier status replaces unrecorded legacy availability metadata."
+    },
+    {
+      "reference": "Exodus 13",
+      "classification": "LEGACY_METADATA_ONLY",
+      "reason": "Fresh classifier status replaces unrecorded legacy availability metadata."
+    },
+    {
+      "reference": "Exodus 14",
+      "classification": "LEGACY_METADATA_ONLY",
+      "reason": "Fresh classifier status replaces unrecorded legacy availability metadata."
+    },
+    {
+      "reference": "Exodus 15",
+      "classification": "LEGACY_METADATA_ONLY",
+      "reason": "Fresh classifier status replaces unrecorded legacy availability metadata."
+    },
+    {
+      "reference": "Exodus 16",
+      "classification": "LEGACY_METADATA_ONLY",
+      "reason": "Fresh classifier status replaces unrecorded legacy availability metadata."
+    },
+    {
+      "reference": "Exodus 17",
+      "classification": "LEGACY_METADATA_ONLY",
+      "reason": "Fresh classifier status replaces unrecorded legacy availability metadata."
+    },
+    {
+      "reference": "Exodus 18",
+      "classification": "LEGACY_METADATA_ONLY",
+      "reason": "Fresh classifier status replaces unrecorded legacy availability metadata."
+    },
+    {
+      "reference": "Exodus 19",
+      "classification": "LEGACY_METADATA_ONLY",
+      "reason": "Fresh classifier status replaces unrecorded legacy availability metadata."
+    },
+    {
+      "reference": "Exodus 20",
+      "classification": "LEGACY_METADATA_ONLY",
+      "reason": "Fresh classifier status replaces unrecorded legacy availability metadata."
+    },
+    {
+      "reference": "Exodus 21",
+      "classification": "LEGACY_METADATA_ONLY",
+      "reason": "Fresh classifier status replaces unrecorded legacy availability metadata."
+    },
+    {
+      "reference": "Exodus 22",
+      "classification": "LEGACY_METADATA_ONLY",
+      "reason": "Fresh classifier status replaces unrecorded legacy availability metadata."
+    },
+    {
+      "reference": "Exodus 23",
+      "classification": "LEGACY_METADATA_ONLY",
+      "reason": "Fresh classifier status replaces unrecorded legacy availability metadata."
+    },
+    {
+      "reference": "Exodus 24",
+      "classification": "LEGACY_METADATA_ONLY",
+      "reason": "Fresh classifier status replaces unrecorded legacy availability metadata."
+    },
+    {
+      "reference": "Exodus 25",
+      "classification": "LEGACY_METADATA_ONLY",
+      "reason": "Fresh classifier status replaces unrecorded legacy availability metadata."
+    },
+    {
+      "reference": "Exodus 26",
+      "classification": "LEGACY_METADATA_ONLY",
+      "reason": "Fresh classifier status replaces unrecorded legacy availability metadata."
+    },
+    {
+      "reference": "Exodus 27",
+      "classification": "LEGACY_METADATA_ONLY",
+      "reason": "Fresh classifier status replaces unrecorded legacy availability metadata."
+    },
+    {
+      "reference": "Exodus 28",
+      "classification": "LEGACY_METADATA_ONLY",
+      "reason": "Fresh classifier status replaces unrecorded legacy availability metadata."
+    },
+    {
+      "reference": "Exodus 29",
+      "classification": "LEGACY_METADATA_ONLY",
+      "reason": "Fresh classifier status replaces unrecorded legacy availability metadata."
+    },
+    {
+      "reference": "Exodus 30",
+      "classification": "LEGACY_METADATA_ONLY",
+      "reason": "Fresh classifier status replaces unrecorded legacy availability metadata."
+    },
+    {
+      "reference": "Exodus 31",
+      "classification": "LEGACY_METADATA_ONLY",
+      "reason": "Fresh classifier status replaces unrecorded legacy availability metadata."
+    },
+    {
+      "reference": "Exodus 32",
+      "classification": "LEGACY_METADATA_ONLY",
+      "reason": "Fresh classifier status replaces unrecorded legacy availability metadata."
+    },
+    {
+      "reference": "Exodus 33",
+      "classification": "LEGACY_METADATA_ONLY",
+      "reason": "Fresh classifier status replaces unrecorded legacy availability metadata."
+    },
+    {
+      "reference": "Exodus 34",
+      "classification": "LEGACY_METADATA_ONLY",
+      "reason": "Fresh classifier status replaces unrecorded legacy availability metadata."
+    },
+    {
+      "reference": "Exodus 35",
+      "classification": "LEGACY_METADATA_ONLY",
+      "reason": "Fresh classifier status replaces unrecorded legacy availability metadata."
+    },
+    {
+      "reference": "Exodus 36",
+      "classification": "LEGACY_METADATA_ONLY",
+      "reason": "Fresh classifier status replaces unrecorded legacy availability metadata."
+    },
+    {
+      "reference": "Exodus 37",
+      "classification": "LEGACY_METADATA_ONLY",
+      "reason": "Fresh classifier status replaces unrecorded legacy availability metadata."
+    },
+    {
+      "reference": "Exodus 38",
+      "classification": "LEGACY_METADATA_ONLY",
+      "reason": "Fresh classifier status replaces unrecorded legacy availability metadata."
+    },
+    {
+      "reference": "Exodus 39",
+      "classification": "LEGACY_METADATA_ONLY",
+      "reason": "Fresh classifier status replaces unrecorded legacy availability metadata."
+    },
+    {
+      "reference": "Exodus 40",
+      "classification": "LEGACY_METADATA_ONLY",
+      "reason": "Fresh classifier status replaces unrecorded legacy availability metadata."
+    },
+    {
+      "reference": "Leviticus 1",
+      "classification": "LEGACY_METADATA_ONLY",
+      "reason": "Fresh classifier status replaces unrecorded legacy availability metadata."
+    },
+    {
+      "reference": "Leviticus 2",
+      "classification": "COMMENTARY_REGENERATION_REQUIRED",
+      "reason": "Fresh evidence made the old uncited canonical-only block unanchored; local Luna synthesis added valid evidence citations and conservative metadata."
+    },
+    {
+      "reference": "Leviticus 3",
+      "classification": "COMMENTARY_REGENERATION_REQUIRED",
+      "reason": "Fresh evidence made the old uncited canonical-only block unanchored; local Luna synthesis added valid evidence citations and conservative metadata."
+    },
+    {
+      "reference": "Leviticus 5",
+      "classification": "COMMENTARY_REGENERATION_REQUIRED",
+      "reason": "Fresh evidence made the old uncited canonical-only block unanchored; local Luna synthesis added valid evidence citations and conservative metadata."
+    },
+    {
+      "reference": "Leviticus 7",
+      "classification": "COMMENTARY_REGENERATION_REQUIRED",
+      "reason": "Fresh evidence made the old uncited canonical-only block unanchored; local Luna synthesis added valid evidence citations and conservative metadata."
+    },
+    {
+      "reference": "Leviticus 12",
+      "classification": "COMMENTARY_REGENERATION_REQUIRED",
+      "reason": "Fresh evidence made the old uncited canonical-only block unanchored; local Luna synthesis added valid evidence citations and conservative metadata."
+    },
+    {
+      "reference": "Leviticus 13",
+      "classification": "COMMENTARY_REGENERATION_REQUIRED",
+      "reason": "Fresh evidence made the old uncited canonical-only block unanchored; local Luna synthesis added valid evidence citations and conservative metadata."
+    },
+    {
+      "reference": "Leviticus 14",
+      "classification": "COMMENTARY_REGENERATION_REQUIRED",
+      "reason": "Fresh evidence made the old uncited canonical-only block unanchored; local Luna synthesis added valid evidence citations and conservative metadata."
+    },
+    {
+      "reference": "Leviticus 15",
+      "classification": "COMMENTARY_REGENERATION_REQUIRED",
+      "reason": "Fresh evidence made the old uncited canonical-only block unanchored; local Luna synthesis added valid evidence citations and conservative metadata."
+    },
+    {
+      "reference": "Leviticus 21",
+      "classification": "COMMENTARY_REGENERATION_REQUIRED",
+      "reason": "Fresh evidence made the old uncited canonical-only block unanchored; local Luna synthesis added valid evidence citations and conservative metadata."
+    },
+    {
+      "reference": "Leviticus 22",
+      "classification": "COMMENTARY_REGENERATION_REQUIRED",
+      "reason": "Fresh evidence made the old uncited canonical-only block unanchored; local Luna synthesis added valid evidence citations and conservative metadata."
+    },
+    {
+      "reference": "Leviticus 24",
+      "classification": "COMMENTARY_REGENERATION_REQUIRED",
+      "reason": "Fresh evidence made the old uncited canonical-only block unanchored; local Luna synthesis added valid evidence citations and conservative metadata."
+    },
+    {
+      "reference": "Leviticus 27",
+      "classification": "COMMENTARY_REGENERATION_REQUIRED",
+      "reason": "Fresh evidence made the old uncited canonical-only block unanchored; local Luna synthesis added valid evidence citations and conservative metadata."
+    },
+    {
+      "reference": "Numbers 2",
+      "classification": "STATUS_ONLY_CHANGE",
+      "reason": "Fresh classifier status replaces stale stored availability metadata; existing citations and verse references remain valid."
+    },
+    {
+      "reference": "Numbers 12",
+      "classification": "COMMENTARY_REGENERATION_REQUIRED",
+      "reason": "Fresh evidence made the old uncited canonical-only block unanchored; local Luna synthesis added valid evidence citations and conservative metadata."
+    },
+    {
+      "reference": "Numbers 15",
+      "classification": "COMMENTARY_REGENERATION_REQUIRED",
+      "reason": "Fresh evidence made the old uncited canonical-only block unanchored; local Luna synthesis added valid evidence citations and conservative metadata."
+    },
+    {
+      "reference": "Numbers 23",
+      "classification": "COMMENTARY_REGENERATION_REQUIRED",
+      "reason": "Fresh evidence made the old uncited canonical-only block unanchored; local Luna synthesis added valid evidence citations and conservative metadata."
+    },
+    {
+      "reference": "Numbers 24",
+      "classification": "COMMENTARY_REGENERATION_REQUIRED",
+      "reason": "Fresh evidence made the old uncited canonical-only block unanchored; local Luna synthesis added valid evidence citations and conservative metadata."
+    },
+    {
+      "reference": "Numbers 28",
+      "classification": "COMMENTARY_REGENERATION_REQUIRED",
+      "reason": "Fresh evidence made the old uncited canonical-only block unanchored; local Luna synthesis added valid evidence citations and conservative metadata."
+    },
+    {
+      "reference": "Numbers 29",
+      "classification": "COMMENTARY_REGENERATION_REQUIRED",
+      "reason": "Fresh evidence made the old uncited canonical-only block unanchored; local Luna synthesis added valid evidence citations and conservative metadata."
+    },
+    {
+      "reference": "Numbers 30",
+      "classification": "COMMENTARY_REGENERATION_REQUIRED",
+      "reason": "Fresh evidence made the old uncited canonical-only block unanchored; local Luna synthesis added valid evidence citations and conservative metadata."
+    },
+    {
+      "reference": "Numbers 31",
+      "classification": "COMMENTARY_REGENERATION_REQUIRED",
+      "reason": "Fresh evidence made the old uncited canonical-only block unanchored; local Luna synthesis added valid evidence citations and conservative metadata."
+    },
+    {
+      "reference": "Numbers 32",
+      "classification": "COMMENTARY_REGENERATION_REQUIRED",
+      "reason": "Fresh evidence made the old uncited canonical-only block unanchored; local Luna synthesis added valid evidence citations and conservative metadata."
+    },
+    {
+      "reference": "Numbers 34",
+      "classification": "COMMENTARY_REGENERATION_REQUIRED",
+      "reason": "Fresh evidence made the old uncited canonical-only block unanchored; local Luna synthesis added valid evidence citations and conservative metadata."
+    },
+    {
+      "reference": "Numbers 36",
+      "classification": "STATUS_ONLY_CHANGE",
+      "reason": "Fresh classifier status replaces stale stored availability metadata; existing citations and verse references remain valid."
+    },
+    {
+      "reference": "Deuteronomy 2",
+      "classification": "COMMENTARY_REGENERATION_REQUIRED",
+      "reason": "Fresh evidence made the old uncited canonical-only block unanchored; local Luna synthesis added valid evidence citations and conservative metadata."
+    },
+    {
+      "reference": "Deuteronomy 3",
+      "classification": "COMMENTARY_REGENERATION_REQUIRED",
+      "reason": "Fresh evidence made the old uncited canonical-only block unanchored; local Luna synthesis added valid evidence citations and conservative metadata."
+    },
+    {
+      "reference": "Deuteronomy 7",
+      "classification": "COMMENTARY_REGENERATION_REQUIRED",
+      "reason": "Fresh evidence made the old uncited canonical-only block unanchored; local Luna synthesis added valid evidence citations and conservative metadata."
+    },
+    {
+      "reference": "Deuteronomy 8",
+      "classification": "COMMENTARY_REGENERATION_REQUIRED",
+      "reason": "Fresh evidence made the old uncited canonical-only block unanchored; local Luna synthesis added valid evidence citations and conservative metadata."
+    },
+    {
+      "reference": "Deuteronomy 9",
+      "classification": "COMMENTARY_REGENERATION_REQUIRED",
+      "reason": "Fresh evidence made the old uncited canonical-only block unanchored; local Luna synthesis added valid evidence citations and conservative metadata."
+    },
+    {
+      "reference": "Deuteronomy 11",
+      "classification": "COMMENTARY_REGENERATION_REQUIRED",
+      "reason": "Fresh evidence made the old uncited canonical-only block unanchored; local Luna synthesis added valid evidence citations and conservative metadata."
+    },
+    {
+      "reference": "Deuteronomy 12",
+      "classification": "COMMENTARY_REGENERATION_REQUIRED",
+      "reason": "Fresh evidence made the old uncited canonical-only block unanchored; local Luna synthesis added valid evidence citations and conservative metadata."
+    },
+    {
+      "reference": "Deuteronomy 13",
+      "classification": "COMMENTARY_REGENERATION_REQUIRED",
+      "reason": "Fresh evidence made the old uncited canonical-only block unanchored; local Luna synthesis added valid evidence citations and conservative metadata."
+    },
+    {
+      "reference": "Deuteronomy 14",
+      "classification": "COMMENTARY_REGENERATION_REQUIRED",
+      "reason": "Fresh evidence made the old uncited canonical-only block unanchored; local Luna synthesis added valid evidence citations and conservative metadata."
+    },
+    {
+      "reference": "Deuteronomy 15",
+      "classification": "COMMENTARY_REGENERATION_REQUIRED",
+      "reason": "Fresh evidence made the old uncited canonical-only block unanchored; local Luna synthesis added valid evidence citations and conservative metadata."
+    },
+    {
+      "reference": "Deuteronomy 17",
+      "classification": "COMMENTARY_REGENERATION_REQUIRED",
+      "reason": "Fresh evidence made the old uncited canonical-only block unanchored; local Luna synthesis added valid evidence citations and conservative metadata."
+    },
+    {
+      "reference": "Deuteronomy 19",
+      "classification": "STATUS_ONLY_CHANGE",
+      "reason": "Fresh classifier status replaces stale stored availability metadata; existing citations and verse references remain valid."
+    },
+    {
+      "reference": "Deuteronomy 20",
+      "classification": "COMMENTARY_REGENERATION_REQUIRED",
+      "reason": "Fresh evidence made the old uncited canonical-only block unanchored; local Luna synthesis added valid evidence citations and conservative metadata."
+    },
+    {
+      "reference": "Deuteronomy 22",
+      "classification": "COMMENTARY_REGENERATION_REQUIRED",
+      "reason": "Fresh evidence made the old uncited canonical-only block unanchored; local Luna synthesis added valid evidence citations and conservative metadata."
+    },
+    {
+      "reference": "Deuteronomy 23",
+      "classification": "COMMENTARY_REGENERATION_REQUIRED",
+      "reason": "Fresh evidence made the old uncited canonical-only block unanchored; local Luna synthesis added valid evidence citations and conservative metadata."
+    },
+    {
+      "reference": "Deuteronomy 24",
+      "classification": "COMMENTARY_REGENERATION_REQUIRED",
+      "reason": "Fresh evidence made the old uncited canonical-only block unanchored; local Luna synthesis added valid evidence citations and conservative metadata."
+    },
+    {
+      "reference": "Deuteronomy 26",
+      "classification": "COMMENTARY_REGENERATION_REQUIRED",
+      "reason": "Fresh evidence made the old uncited canonical-only block unanchored; local Luna synthesis added valid evidence citations and conservative metadata."
+    },
+    {
+      "reference": "Deuteronomy 29",
+      "classification": "STATUS_ONLY_CHANGE",
+      "reason": "Fresh classifier status replaces stale stored availability metadata; existing citations and verse references remain valid."
+    },
+    {
+      "reference": "Joshua 7",
+      "classification": "COMMENTARY_REGENERATION_REQUIRED",
+      "reason": "Fresh evidence made the old uncited canonical-only block unanchored; local Luna synthesis added valid evidence citations and conservative metadata."
+    },
+    {
+      "reference": "Joshua 14",
+      "classification": "COMMENTARY_REGENERATION_REQUIRED",
+      "reason": "Fresh evidence made the old uncited canonical-only block unanchored; local Luna synthesis added valid evidence citations and conservative metadata."
+    },
+    {
+      "reference": "Joshua 15",
+      "classification": "COMMENTARY_REGENERATION_REQUIRED",
+      "reason": "Fresh evidence made the old uncited canonical-only block unanchored; local Luna synthesis added valid evidence citations and conservative metadata."
+    },
+    {
+      "reference": "Joshua 16",
+      "classification": "COMMENTARY_REGENERATION_REQUIRED",
+      "reason": "Fresh evidence made the old uncited canonical-only block unanchored; local Luna synthesis added valid evidence citations and conservative metadata."
+    },
+    {
+      "reference": "Joshua 17",
+      "classification": "COMMENTARY_REGENERATION_REQUIRED",
+      "reason": "Fresh evidence made the old uncited canonical-only block unanchored; local Luna synthesis added valid evidence citations and conservative metadata."
+    },
+    {
+      "reference": "Joshua 20",
+      "classification": "COMMENTARY_REGENERATION_REQUIRED",
+      "reason": "Fresh evidence made the old uncited canonical-only block unanchored; local Luna synthesis added valid evidence citations and conservative metadata."
+    },
+    {
+      "reference": "Joshua 22",
+      "classification": "COMMENTARY_REGENERATION_REQUIRED",
+      "reason": "Fresh evidence made the old uncited canonical-only block unanchored; local Luna synthesis added valid evidence citations and conservative metadata."
+    },
+    {
+      "reference": "Joshua 23",
+      "classification": "COMMENTARY_REGENERATION_REQUIRED",
+      "reason": "Fresh evidence made the old uncited canonical-only block unanchored; local Luna synthesis added valid evidence citations and conservative metadata."
+    },
+    {
+      "reference": "Judges 9",
+      "classification": "STATUS_ONLY_CHANGE",
+      "reason": "Fresh classifier status replaces stale stored availability metadata; existing citations and verse references remain valid."
+    },
+    {
+      "reference": "Judges 11",
+      "classification": "COMMENTARY_REGENERATION_REQUIRED",
+      "reason": "Fresh evidence made the old uncited canonical-only block unanchored; local Luna synthesis added valid evidence citations and conservative metadata."
+    },
+    {
+      "reference": "Judges 12",
+      "classification": "COMMENTARY_REGENERATION_REQUIRED",
+      "reason": "Fresh evidence made the old uncited canonical-only block unanchored; local Luna synthesis added valid evidence citations and conservative metadata."
+    },
+    {
+      "reference": "Judges 14",
+      "classification": "STATUS_ONLY_CHANGE",
+      "reason": "Fresh classifier status replaces stale stored availability metadata; existing citations and verse references remain valid."
+    },
+    {
+      "reference": "Judges 15",
+      "classification": "STATUS_ONLY_CHANGE",
+      "reason": "Fresh classifier status replaces stale stored availability metadata; existing citations and verse references remain valid."
+    },
+    {
+      "reference": "Judges 19",
+      "classification": "STATUS_ONLY_CHANGE",
+      "reason": "Fresh classifier status replaces stale stored availability metadata; existing citations and verse references remain valid."
+    },
+    {
+      "reference": "Judges 20",
+      "classification": "COMMENTARY_REGENERATION_REQUIRED",
+      "reason": "Fresh evidence made the old uncited canonical-only block unanchored; local Luna synthesis added valid evidence citations and conservative metadata."
+    },
+    {
+      "reference": "1 Samuel 5",
+      "classification": "COMMENTARY_REGENERATION_REQUIRED",
+      "reason": "Fresh evidence made the old uncited canonical-only block unanchored; local Luna synthesis added valid evidence citations and conservative metadata."
+    },
+    {
+      "reference": "1 Samuel 6",
+      "classification": "COMMENTARY_REGENERATION_REQUIRED",
+      "reason": "Fresh evidence made the old uncited canonical-only block unanchored; local Luna synthesis added valid evidence citations and conservative metadata."
+    },
+    {
+      "reference": "1 Samuel 7",
+      "classification": "COMMENTARY_REGENERATION_REQUIRED",
+      "reason": "Fresh evidence made the old uncited canonical-only block unanchored; local Luna synthesis added valid evidence citations and conservative metadata."
+    },
+    {
+      "reference": "1 Samuel 11",
+      "classification": "COMMENTARY_REGENERATION_REQUIRED",
+      "reason": "Fresh evidence made the old uncited canonical-only block unanchored; local Luna synthesis added valid evidence citations and conservative metadata."
+    },
+    {
+      "reference": "1 Samuel 14",
+      "classification": "COMMENTARY_REGENERATION_REQUIRED",
+      "reason": "Fresh evidence made the old uncited canonical-only block unanchored; local Luna synthesis added valid evidence citations and conservative metadata."
+    },
+    {
+      "reference": "1 Samuel 15",
+      "classification": "STATUS_ONLY_CHANGE",
+      "reason": "Fresh classifier status replaces stale stored availability metadata; existing citations and verse references remain valid."
+    },
+    {
+      "reference": "1 Samuel 18",
+      "classification": "COMMENTARY_REGENERATION_REQUIRED",
+      "reason": "Fresh evidence made the old uncited canonical-only block unanchored; local Luna synthesis added valid evidence citations and conservative metadata."
+    },
+    {
+      "reference": "1 Samuel 19",
+      "classification": "COMMENTARY_REGENERATION_REQUIRED",
+      "reason": "Fresh evidence made the old uncited canonical-only block unanchored; local Luna synthesis added valid evidence citations and conservative metadata."
+    },
+    {
+      "reference": "1 Samuel 20",
+      "classification": "COMMENTARY_REGENERATION_REQUIRED",
+      "reason": "Fresh evidence made the old uncited canonical-only block unanchored; local Luna synthesis added valid evidence citations and conservative metadata."
+    },
+    {
+      "reference": "1 Samuel 21",
+      "classification": "COMMENTARY_REGENERATION_REQUIRED",
+      "reason": "Fresh evidence made the old uncited canonical-only block unanchored; local Luna synthesis added valid evidence citations and conservative metadata."
+    },
+    {
+      "reference": "1 Samuel 22",
+      "classification": "COMMENTARY_REGENERATION_REQUIRED",
+      "reason": "Fresh evidence made the old uncited canonical-only block unanchored; local Luna synthesis added valid evidence citations and conservative metadata."
+    },
+    {
+      "reference": "1 Samuel 23",
+      "classification": "COMMENTARY_REGENERATION_REQUIRED",
+      "reason": "Fresh evidence made the old uncited canonical-only block unanchored; local Luna synthesis added valid evidence citations and conservative metadata."
+    },
+    {
+      "reference": "1 Samuel 25",
+      "classification": "COMMENTARY_REGENERATION_REQUIRED",
+      "reason": "Fresh evidence made the old uncited canonical-only block unanchored; local Luna synthesis added valid evidence citations and conservative metadata."
+    },
+    {
+      "reference": "1 Samuel 27",
+      "classification": "COMMENTARY_REGENERATION_REQUIRED",
+      "reason": "Fresh evidence made the old uncited canonical-only block unanchored; local Luna synthesis added valid evidence citations and conservative metadata."
+    },
+    {
+      "reference": "1 Samuel 28",
+      "classification": "COMMENTARY_REGENERATION_REQUIRED",
+      "reason": "Fresh evidence made the old uncited canonical-only block unanchored; local Luna synthesis added valid evidence citations and conservative metadata."
+    },
+    {
+      "reference": "1 Samuel 29",
+      "classification": "COMMENTARY_REGENERATION_REQUIRED",
+      "reason": "Fresh evidence made the old uncited canonical-only block unanchored; local Luna synthesis added valid evidence citations and conservative metadata."
+    },
+    {
+      "reference": "1 Samuel 30",
+      "classification": "COMMENTARY_REGENERATION_REQUIRED",
+      "reason": "Fresh evidence made the old uncited canonical-only block unanchored; local Luna synthesis added valid evidence citations and conservative metadata."
+    },
+    {
+      "reference": "2 Samuel 1",
+      "classification": "STATUS_ONLY_CHANGE",
+      "reason": "Fresh classifier status replaces stale stored availability metadata; existing citations and verse references remain valid."
+    },
+    {
+      "reference": "2 Samuel 3",
+      "classification": "COMMENTARY_REGENERATION_REQUIRED",
+      "reason": "Fresh evidence made the old uncited canonical-only block unanchored; local Luna synthesis added valid evidence citations and conservative metadata."
+    },
+    {
+      "reference": "2 Samuel 4",
+      "classification": "COMMENTARY_REGENERATION_REQUIRED",
+      "reason": "Fresh evidence made the old uncited canonical-only block unanchored; local Luna synthesis added valid evidence citations and conservative metadata."
+    },
+    {
+      "reference": "2 Samuel 9",
+      "classification": "COMMENTARY_REGENERATION_REQUIRED",
+      "reason": "Fresh evidence made the old uncited canonical-only block unanchored; local Luna synthesis added valid evidence citations and conservative metadata."
+    },
+    {
+      "reference": "2 Samuel 10",
+      "classification": "COMMENTARY_REGENERATION_REQUIRED",
+      "reason": "Fresh evidence made the old uncited canonical-only block unanchored; local Luna synthesis added valid evidence citations and conservative metadata."
+    },
+    {
+      "reference": "2 Samuel 11",
+      "classification": "STATUS_ONLY_CHANGE",
+      "reason": "Fresh classifier status replaces stale stored availability metadata; existing citations and verse references remain valid."
+    },
+    {
+      "reference": "2 Samuel 12",
+      "classification": "STATUS_ONLY_CHANGE",
+      "reason": "Fresh classifier status replaces stale stored availability metadata; existing citations and verse references remain valid."
+    },
+    {
+      "reference": "2 Samuel 13",
+      "classification": "COMMENTARY_REGENERATION_REQUIRED",
+      "reason": "Fresh evidence made the old uncited canonical-only block unanchored; local Luna synthesis added valid evidence citations and conservative metadata."
+    },
+    {
+      "reference": "2 Samuel 14",
+      "classification": "COMMENTARY_REGENERATION_REQUIRED",
+      "reason": "Fresh evidence made the old uncited canonical-only block unanchored; local Luna synthesis added valid evidence citations and conservative metadata."
+    },
+    {
+      "reference": "2 Samuel 16",
+      "classification": "COMMENTARY_REGENERATION_REQUIRED",
+      "reason": "Fresh evidence made the old uncited canonical-only block unanchored; local Luna synthesis added valid evidence citations and conservative metadata."
+    },
+    {
+      "reference": "2 Samuel 17",
+      "classification": "COMMENTARY_REGENERATION_REQUIRED",
+      "reason": "Fresh evidence made the old uncited canonical-only block unanchored; local Luna synthesis added valid evidence citations and conservative metadata."
+    },
+    {
+      "reference": "2 Samuel 19",
+      "classification": "COMMENTARY_REGENERATION_REQUIRED",
+      "reason": "Fresh evidence made the old uncited canonical-only block unanchored; local Luna synthesis added valid evidence citations and conservative metadata."
+    },
+    {
+      "reference": "2 Samuel 20",
+      "classification": "COMMENTARY_REGENERATION_REQUIRED",
+      "reason": "Fresh evidence made the old uncited canonical-only block unanchored; local Luna synthesis added valid evidence citations and conservative metadata."
+    },
+    {
+      "reference": "2 Samuel 21",
+      "classification": "COMMENTARY_REGENERATION_REQUIRED",
+      "reason": "Fresh evidence made the old uncited canonical-only block unanchored; local Luna synthesis added valid evidence citations and conservative metadata."
+    },
+    {
+      "reference": "2 Samuel 22",
+      "classification": "COMMENTARY_REGENERATION_REQUIRED",
+      "reason": "Fresh evidence made the old uncited canonical-only block unanchored; local Luna synthesis added valid evidence citations and conservative metadata."
+    },
+    {
+      "reference": "2 Samuel 23",
+      "classification": "COMMENTARY_REGENERATION_REQUIRED",
+      "reason": "Fresh evidence made the old uncited canonical-only block unanchored; local Luna synthesis added valid evidence citations and conservative metadata."
+    },
+    {
+      "reference": "2 Samuel 24",
+      "classification": "COMMENTARY_REGENERATION_REQUIRED",
+      "reason": "Fresh evidence made the old uncited canonical-only block unanchored; local Luna synthesis added valid evidence citations and conservative metadata."
+    },
+    {
+      "reference": "1 Kings 17",
+      "classification": "STATUS_ONLY_CHANGE",
+      "reason": "Fresh classifier status replaces stale stored availability metadata; existing citations and verse references remain valid."
+    },
+    {
+      "reference": "1 Kings 20",
+      "classification": "COMMENTARY_REGENERATION_REQUIRED",
+      "reason": "Fresh evidence made the old uncited canonical-only block unanchored; local Luna synthesis added valid evidence citations and conservative metadata."
+    },
+    {
+      "reference": "1 Kings 21",
+      "classification": "STATUS_ONLY_CHANGE",
+      "reason": "Fresh classifier status replaces stale stored availability metadata; existing citations and verse references remain valid."
+    },
+    {
+      "reference": "1 Kings 22",
+      "classification": "STATUS_ONLY_CHANGE",
+      "reason": "Fresh classifier status replaces stale stored availability metadata; existing citations and verse references remain valid."
+    },
+    {
+      "reference": "1 Chronicles 2",
+      "classification": "COMMENTARY_REGENERATION_REQUIRED",
+      "reason": "Fresh evidence made the old uncited canonical-only block unanchored; local Luna synthesis added valid evidence citations and conservative metadata."
+    },
+    {
+      "reference": "1 Chronicles 3",
+      "classification": "STATUS_ONLY_CHANGE",
+      "reason": "Fresh classifier status replaces stale stored availability metadata; existing citations and verse references remain valid."
+    },
+    {
+      "reference": "1 Chronicles 4",
+      "classification": "COMMENTARY_REGENERATION_REQUIRED",
+      "reason": "Fresh evidence made the old uncited canonical-only block unanchored; local Luna synthesis added valid evidence citations and conservative metadata."
+    },
+    {
+      "reference": "1 Chronicles 5",
+      "classification": "COMMENTARY_REGENERATION_REQUIRED",
+      "reason": "Fresh evidence made the old uncited canonical-only block unanchored; local Luna synthesis added valid evidence citations and conservative metadata."
+    },
+    {
+      "reference": "1 Chronicles 6",
+      "classification": "STATUS_ONLY_CHANGE",
+      "reason": "Fresh classifier status replaces stale stored availability metadata; existing citations and verse references remain valid."
+    },
+    {
+      "reference": "1 Chronicles 8",
+      "classification": "COMMENTARY_REGENERATION_REQUIRED",
+      "reason": "Fresh evidence made the old uncited canonical-only block unanchored; local Luna synthesis added valid evidence citations and conservative metadata."
+    },
+    {
+      "reference": "1 Chronicles 9",
+      "classification": "STATUS_ONLY_CHANGE",
+      "reason": "Fresh classifier status replaces stale stored availability metadata; existing citations and verse references remain valid."
+    },
+    {
+      "reference": "1 Chronicles 12",
+      "classification": "STATUS_ONLY_CHANGE",
+      "reason": "Fresh classifier status replaces stale stored availability metadata; existing citations and verse references remain valid."
+    },
+    {
+      "reference": "1 Chronicles 17",
+      "classification": "STATUS_ONLY_CHANGE",
+      "reason": "Fresh classifier status replaces stale stored availability metadata; existing citations and verse references remain valid."
+    },
+    {
+      "reference": "1 Chronicles 20",
+      "classification": "COMMENTARY_REGENERATION_REQUIRED",
+      "reason": "Fresh evidence made the old uncited canonical-only block unanchored; local Luna synthesis added valid evidence citations and conservative metadata."
+    },
+    {
+      "reference": "1 Chronicles 21",
+      "classification": "STATUS_ONLY_CHANGE",
+      "reason": "Fresh classifier status replaces stale stored availability metadata; existing citations and verse references remain valid."
+    },
+    {
+      "reference": "1 Chronicles 24",
+      "classification": "COMMENTARY_REGENERATION_REQUIRED",
+      "reason": "Fresh evidence made the old uncited canonical-only block unanchored; local Luna synthesis added valid evidence citations and conservative metadata."
+    },
+    {
+      "reference": "1 Chronicles 25",
+      "classification": "COMMENTARY_REGENERATION_REQUIRED",
+      "reason": "Fresh evidence made the old uncited canonical-only block unanchored; local Luna synthesis added valid evidence citations and conservative metadata."
+    },
+    {
+      "reference": "1 Chronicles 26",
+      "classification": "COMMENTARY_REGENERATION_REQUIRED",
+      "reason": "Fresh evidence made the old uncited canonical-only block unanchored; local Luna synthesis added valid evidence citations and conservative metadata."
+    },
+    {
+      "reference": "1 Chronicles 27",
+      "classification": "COMMENTARY_REGENERATION_REQUIRED",
+      "reason": "Fresh evidence made the old uncited canonical-only block unanchored; local Luna synthesis added valid evidence citations and conservative metadata."
+    },
+    {
+      "reference": "1 Chronicles 28",
+      "classification": "STATUS_ONLY_CHANGE",
+      "reason": "Fresh classifier status replaces stale stored availability metadata; existing citations and verse references remain valid."
+    },
+    {
+      "reference": "Ezra 9",
+      "classification": "STATUS_ONLY_CHANGE",
+      "reason": "Fresh classifier status replaces stale stored availability metadata; existing citations and verse references remain valid."
+    },
+    {
+      "reference": "Ezra 10",
+      "classification": "STATUS_ONLY_CHANGE",
+      "reason": "Fresh classifier status replaces stale stored availability metadata; existing citations and verse references remain valid."
+    },
+    {
+      "reference": "Nehemiah 3",
+      "classification": "STATUS_ONLY_CHANGE",
+      "reason": "Fresh classifier status replaces stale stored availability metadata; existing citations and verse references remain valid."
+    },
+    {
+      "reference": "Nehemiah 4",
+      "classification": "STATUS_ONLY_CHANGE",
+      "reason": "Fresh classifier status replaces stale stored availability metadata; existing citations and verse references remain valid."
+    },
+    {
+      "reference": "Nehemiah 7",
+      "classification": "COMMENTARY_REGENERATION_REQUIRED",
+      "reason": "Fresh evidence made the old uncited canonical-only block unanchored; local Luna synthesis added valid evidence citations and conservative metadata."
+    },
+    {
+      "reference": "Nehemiah 9",
+      "classification": "STATUS_ONLY_CHANGE",
+      "reason": "Fresh classifier status replaces stale stored availability metadata; existing citations and verse references remain valid."
+    },
+    {
+      "reference": "Nehemiah 10",
+      "classification": "STATUS_ONLY_CHANGE",
+      "reason": "Fresh classifier status replaces stale stored availability metadata; existing citations and verse references remain valid."
+    },
+    {
+      "reference": "Nehemiah 11",
+      "classification": "STATUS_ONLY_CHANGE",
+      "reason": "Fresh classifier status replaces stale stored availability metadata; existing citations and verse references remain valid."
+    },
+    {
+      "reference": "Nehemiah 12",
+      "classification": "STATUS_ONLY_CHANGE",
+      "reason": "Fresh classifier status replaces stale stored availability metadata; existing citations and verse references remain valid."
+    },
+    {
+      "reference": "Nehemiah 13",
+      "classification": "STATUS_ONLY_CHANGE",
+      "reason": "Fresh classifier status replaces stale stored availability metadata; existing citations and verse references remain valid."
+    },
+    {
+      "reference": "Esther 2",
+      "classification": "STATUS_ONLY_CHANGE",
+      "reason": "Fresh classifier status replaces stale stored availability metadata; existing citations and verse references remain valid."
+    },
+    {
+      "reference": "Esther 3",
+      "classification": "STATUS_ONLY_CHANGE",
+      "reason": "Fresh classifier status replaces stale stored availability metadata; existing citations and verse references remain valid."
+    },
+    {
+      "reference": "Esther 5",
+      "classification": "STATUS_ONLY_CHANGE",
+      "reason": "Fresh classifier status replaces stale stored availability metadata; existing citations and verse references remain valid."
+    },
+    {
+      "reference": "Esther 6",
+      "classification": "STATUS_ONLY_CHANGE",
+      "reason": "Fresh classifier status replaces stale stored availability metadata; existing citations and verse references remain valid."
+    },
+    {
+      "reference": "Esther 7",
+      "classification": "STATUS_ONLY_CHANGE",
+      "reason": "Fresh classifier status replaces stale stored availability metadata; existing citations and verse references remain valid."
+    },
+    {
+      "reference": "Esther 8",
+      "classification": "STATUS_ONLY_CHANGE",
+      "reason": "Fresh classifier status replaces stale stored availability metadata; existing citations and verse references remain valid."
+    },
+    {
+      "reference": "Esther 10",
+      "classification": "COMMENTARY_REGENERATION_REQUIRED",
+      "reason": "Fresh evidence made the old uncited canonical-only block unanchored; local Luna synthesis added valid evidence citations and conservative metadata."
+    },
+    {
+      "reference": "Psalms 18",
+      "classification": "COMMENTARY_REGENERATION_REQUIRED",
+      "reason": "Fresh evidence made the old uncited canonical-only block unanchored; local Luna synthesis added valid evidence citations and conservative metadata."
+    },
+    {
+      "reference": "Psalms 90",
+      "classification": "STATUS_ONLY_CHANGE",
+      "reason": "Fresh classifier status replaces stale stored availability metadata; existing citations and verse references remain valid."
+    },
+    {
+      "reference": "Proverbs 23",
+      "classification": "STATUS_ONLY_CHANGE",
+      "reason": "Fresh classifier status replaces stale stored availability metadata; existing citations and verse references remain valid."
+    },
+    {
+      "reference": "Isaiah 28",
+      "classification": "STATUS_ONLY_CHANGE",
+      "reason": "Fresh classifier status replaces stale stored availability metadata; existing citations and verse references remain valid."
+    },
+    {
+      "reference": "Isaiah 61",
+      "classification": "STATUS_ONLY_CHANGE",
+      "reason": "Fresh classifier status replaces stale stored availability metadata; existing citations and verse references remain valid."
+    },
+    {
+      "reference": "Jeremiah 2",
+      "classification": "STATUS_ONLY_CHANGE",
+      "reason": "Fresh classifier status replaces stale stored availability metadata; existing citations and verse references remain valid."
+    },
+    {
+      "reference": "Jeremiah 3",
+      "classification": "STATUS_ONLY_CHANGE",
+      "reason": "Fresh classifier status replaces stale stored availability metadata; existing citations and verse references remain valid."
+    },
+    {
+      "reference": "Jeremiah 5",
+      "classification": "STATUS_ONLY_CHANGE",
+      "reason": "Fresh classifier status replaces stale stored availability metadata; existing citations and verse references remain valid."
+    },
+    {
+      "reference": "Jeremiah 10",
+      "classification": "STATUS_ONLY_CHANGE",
+      "reason": "Fresh classifier status replaces stale stored availability metadata; existing citations and verse references remain valid."
+    },
+    {
+      "reference": "Jeremiah 13",
+      "classification": "STATUS_ONLY_CHANGE",
+      "reason": "Fresh classifier status replaces stale stored availability metadata; existing citations and verse references remain valid."
+    },
+    {
+      "reference": "Jeremiah 16",
+      "classification": "STATUS_ONLY_CHANGE",
+      "reason": "Fresh classifier status replaces stale stored availability metadata; existing citations and verse references remain valid."
+    },
+    {
+      "reference": "Jeremiah 19",
+      "classification": "STATUS_ONLY_CHANGE",
+      "reason": "Fresh classifier status replaces stale stored availability metadata; existing citations and verse references remain valid."
+    },
+    {
+      "reference": "Jeremiah 21",
+      "classification": "STATUS_ONLY_CHANGE",
+      "reason": "Fresh classifier status replaces stale stored availability metadata; existing citations and verse references remain valid."
+    },
+    {
+      "reference": "Jeremiah 24",
+      "classification": "STATUS_ONLY_CHANGE",
+      "reason": "Fresh classifier status replaces stale stored availability metadata; existing citations and verse references remain valid."
+    },
+    {
+      "reference": "Jeremiah 34",
+      "classification": "STATUS_ONLY_CHANGE",
+      "reason": "Fresh classifier status replaces stale stored availability metadata; existing citations and verse references remain valid."
+    },
+    {
+      "reference": "Jeremiah 35",
+      "classification": "STATUS_ONLY_CHANGE",
+      "reason": "Fresh classifier status replaces stale stored availability metadata; existing citations and verse references remain valid."
+    },
+    {
+      "reference": "Jeremiah 45",
+      "classification": "STATUS_ONLY_CHANGE",
+      "reason": "Fresh classifier status replaces stale stored availability metadata; existing citations and verse references remain valid."
+    },
+    {
+      "reference": "Ezekiel 13",
+      "classification": "STATUS_ONLY_CHANGE",
+      "reason": "Fresh classifier status replaces stale stored availability metadata; existing citations and verse references remain valid."
+    },
+    {
+      "reference": "Ezekiel 14",
+      "classification": "COMMENTARY_REGENERATION_REQUIRED",
+      "reason": "Fresh evidence made the old uncited canonical-only block unanchored; local Luna synthesis added valid evidence citations and conservative metadata."
+    },
+    {
+      "reference": "Hosea 3",
+      "classification": "STATUS_ONLY_CHANGE",
+      "reason": "Fresh classifier status replaces stale stored availability metadata; existing citations and verse references remain valid."
+    },
+    {
+      "reference": "Hosea 6",
+      "classification": "STATUS_ONLY_CHANGE",
+      "reason": "Fresh classifier status replaces stale stored availability metadata; existing citations and verse references remain valid."
+    },
+    {
+      "reference": "Hosea 9",
+      "classification": "STATUS_ONLY_CHANGE",
+      "reason": "Fresh classifier status replaces stale stored availability metadata; existing citations and verse references remain valid."
+    },
+    {
+      "reference": "Hosea 10",
+      "classification": "STATUS_ONLY_CHANGE",
+      "reason": "Fresh classifier status replaces stale stored availability metadata; existing citations and verse references remain valid."
+    },
+    {
+      "reference": "Amos 3",
+      "classification": "STATUS_ONLY_CHANGE",
+      "reason": "Fresh classifier status replaces stale stored availability metadata; existing citations and verse references remain valid."
+    },
+    {
+      "reference": "Amos 4",
+      "classification": "COMMENTARY_REGENERATION_REQUIRED",
+      "reason": "Fresh evidence made the old uncited canonical-only block unanchored; local Luna synthesis added valid evidence citations and conservative metadata."
+    },
+    {
+      "reference": "Amos 6",
+      "classification": "COMMENTARY_REGENERATION_REQUIRED",
+      "reason": "Fresh evidence made the old uncited canonical-only block unanchored; local Luna synthesis added valid evidence citations and conservative metadata."
+    },
+    {
+      "reference": "Matthew 11",
+      "classification": "STATUS_ONLY_CHANGE",
+      "reason": "Fresh classifier status replaces stale stored availability metadata; existing citations and verse references remain valid."
+    },
+    {
+      "reference": "Matthew 19",
+      "classification": "STATUS_ONLY_CHANGE",
+      "reason": "Fresh classifier status replaces stale stored availability metadata; existing citations and verse references remain valid."
+    },
+    {
+      "reference": "Luke 16",
+      "classification": "STATUS_ONLY_CHANGE",
+      "reason": "Fresh classifier status replaces stale stored availability metadata; existing citations and verse references remain valid."
+    },
+    {
+      "reference": "Revelation 3",
+      "classification": "STATUS_ONLY_CHANGE",
+      "reason": "Fresh classifier status replaces stale stored availability metadata; existing citations and verse references remain valid."
+    }
+  ],
+  "retrieval_recovered_chapters": [
+    "1 Chronicles 2",
+    "1 Chronicles 4",
+    "1 Chronicles 5",
+    "1 Chronicles 8",
+    "1 Chronicles 20",
+    "1 Chronicles 24",
+    "1 Chronicles 25",
+    "1 Chronicles 26",
+    "1 Chronicles 27",
+    "1 Kings 20",
+    "Numbers 12",
+    "Numbers 15"
+  ],
+  "availability_transitions": {
+    "AVAILABLE->AVAILABLE": 827,
+    "AVAILABLE->THIN": 74,
+    "DATA_GAP->DATA_GAP": 152,
+    "THIN->THIN": 136
+  },
+  "validation_summary": {
+    "health_report": "commentary-health-report-v1.0.1.json",
+    "validated": 1189,
+    "partial": 0,
+    "needs_review": 0,
+    "failed": 0,
+    "evidence_citations_valid": 1077,
+    "evidence_citations_total": 1077,
+    "verse_references_valid": 1208,
+    "verse_references_total": 1208,
     "json_sqlite_disagreements": 0,
-    "likely_remaining_retrieval_bugs": 0,
-    "frozen_v1_0_modified": false
+    "likely_remaining_retrieval_bugs": 0
+  },
+  "diff_summary": {
+    "changed_chapter_files": 636,
+    "unchanged_chapter_files": 553,
+    "status_field_changes": 249,
+    "evidence_hash_metadata_changes": 614,
+    "commentary_text_or_citation_changes": 95,
+    "unexpected_mass_rewrites": false
   },
   "integrity": {
-    "released_corpus_path": ".bhf-data/bhf-commentary",
-    "candidate_corpus_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.0.1",
-    "tag_or_publish_action_taken": false
+    "base_worktree_chapter_sha256": "11ecb9f8a4682684806bdc5ddd6b9f2980aa4c924385a05a9d85d9585157125c",
+    "candidate_chapter_sha256": "254b683879eb456a6062dfcff4820115d36bd895e658a73a4720f48571d5d822",
+    "base_chapter_artifacts": 1189,
+    "candidate_chapter_artifacts": 1189,
+    "frozen_release_modified": false,
+    "known_untracked_source_preserved": ".bhf-data/bhf-commentary/leviticus_001.json"
+  },
+  "paths": {
+    "corpus": ".bhf-data/bhf-commentary-candidates/commentary-v1.0.1",
+    "health_report": "commentary-health-report-v1.0.1.json",
+    "reconciliation": "reconciliation-v1.0.1.json"
   }
 }

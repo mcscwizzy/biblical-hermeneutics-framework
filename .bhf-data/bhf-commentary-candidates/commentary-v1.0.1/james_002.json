@@ -1,0 +1,38 @@
+{
+  "reference": "James 2",
+  "book": "James",
+  "chapter": 2,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "overview",
+          "text": "James 2 contains 26 verses. It opens with: My brethren, hold not the faith of our Lord Jesus Christ, `the Lord' of glory, with respect of persons. It concludes with: For as the body apart from the spirit is dead, even so faith apart from works is dead.",
+          "verse_refs": [
+            "James 2:1-26"
+          ],
+          "evidence_ids": [
+            "jas-abraham-rahab"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "03d7ae53dd2702eecb3347b59eea6ba4de384339e5759208ecdc11f7709d212f",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:44:40.753143+00:00"
+  },
+  "failure_reason": null,
+  "validation_errors": [],
+  "validation_warnings": []
+}

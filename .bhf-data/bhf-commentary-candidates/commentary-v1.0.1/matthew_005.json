@@ -1,0 +1,38 @@
+{
+  "reference": "Matthew 5",
+  "book": "Matthew",
+  "chapter": 5,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "overview",
+          "text": "Matthew 5 contains 48 verses. It opens with: And seeing the multitudes, he went up into the mountain: and when he had sat down, his disciples came unto him: It concludes with: Ye therefore shall be perfect, as your heavenly Father is perfect.",
+          "verse_refs": [
+            "Matthew 5:1-48"
+          ],
+          "evidence_ids": [
+            "matthew-antitheses"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "ab308f0e8bedf3d1889e5b61aa29d783f7b0da7b92ac35340b7d1371592056c9",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:36:11.969819+00:00"
+  },
+  "failure_reason": null,
+  "validation_errors": [],
+  "validation_warnings": []
+}

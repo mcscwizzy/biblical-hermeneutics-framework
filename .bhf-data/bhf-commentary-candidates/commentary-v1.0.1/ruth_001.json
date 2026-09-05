@@ -1,0 +1,38 @@
+{
+  "reference": "Ruth 1",
+  "book": "Ruth",
+  "chapter": 1,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "overview",
+          "text": "Ruth 1 contains 22 verses. It opens with: And it came to pass in the days when the judges judged, that there was a famine in the land. And a certain man of Bethlehem-judah went to sojourn in the country of Moab, he, and his wife, and his two sons. It concludes with: So Naomi returned, and Ruth the Moabitess, her daughter-in-law, with her, who returned out of the country of Moab: and they came to Bethlehem in the beginning of barley harvest.",
+          "verse_refs": [
+            "Ruth 1:1-22"
+          ],
+          "evidence_ids": [
+            "ruth-literary-movement"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "b32318e73481ba893246a50d9083c8bb30d59e72eae798e78669048ec9fd4415",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:04:15.241080+00:00"
+  },
+  "failure_reason": null,
+  "validation_errors": [],
+  "validation_warnings": []
+}

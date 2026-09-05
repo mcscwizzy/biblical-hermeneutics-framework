@@ -1,0 +1,38 @@
+{
+  "reference": "Job 6",
+  "book": "Job",
+  "chapter": 6,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "overview",
+          "text": "Job 6 contains 30 verses. It opens with: Then Job answered and said, It concludes with: Is there injustice on my tongue? Cannot my taste discern mischievous things?",
+          "verse_refs": [
+            "Job 6:1-30"
+          ],
+          "evidence_ids": [
+            "job-lament-dialogues"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "a615e20f9dc4899d7c8fed4a9d20f314891e25c6aee5b7a291f53ae7fa9e54d1",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:14:27.675092+00:00"
+  },
+  "failure_reason": null,
+  "validation_errors": [],
+  "validation_warnings": []
+}

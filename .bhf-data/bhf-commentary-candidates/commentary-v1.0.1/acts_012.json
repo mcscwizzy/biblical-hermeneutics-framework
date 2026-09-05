@@ -1,0 +1,38 @@
+{
+  "reference": "Acts 12",
+  "book": "Acts",
+  "chapter": 12,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "overview",
+          "text": "Acts 12 contains 25 verses. It opens with: Now about that time Herod the king put forth his hands to afflict certain of the church. It concludes with: And Barnabas and Saul returned from Jerusalem, when they had fulfilled their ministration, taking with them John whose surname was Mark.",
+          "verse_refs": [
+            "Acts 12:1-25"
+          ],
+          "evidence_ids": [
+            "acts-herod-josephus"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "dd41e0815771a145353966a62dc1b49fe016de938d189b3c4130d73275bddd43",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:40:06.143132+00:00"
+  },
+  "failure_reason": null,
+  "validation_errors": [],
+  "validation_warnings": []
+}

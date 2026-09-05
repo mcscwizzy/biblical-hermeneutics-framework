@@ -1,0 +1,38 @@
+{
+  "reference": "Psalms 90",
+  "book": "Psalms",
+  "chapter": 90,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "overview",
+          "text": "Psalms 90 contains 17 verses. It opens with: Lord, thou hast been our dwelling-place In all generations. It concludes with: And let the favor of the Lord our God be upon us; And establish thou the work of our hands upon us; Yea, the work of our hands establish thou it.",
+          "verse_refs": [
+            "Psalms 90:1-17"
+          ],
+          "evidence_ids": [
+            "psalms-superscription-collections"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "232a922a70c956872d8c21f422e6413d566c600462f2aaa80dedf1b06a27b660",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:19:26.706196+00:00"
+  },
+  "failure_reason": null,
+  "validation_errors": [],
+  "validation_warnings": []
+}

@@ -1,0 +1,38 @@
+{
+  "reference": "Job 33",
+  "book": "Job",
+  "chapter": 33,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "overview",
+          "text": "Job 33 contains 33 verses. It opens with: Howbeit, Job, I pray thee, hear my speech, And hearken to all my words. It concludes with: If not, hearken thou unto me: Hold thy peace, and I will teach thee wisdom.",
+          "verse_refs": [
+            "Job 33:1-33"
+          ],
+          "evidence_ids": [
+            "job-elihu-intervention"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "80fd785b33ad680dfffbdde13667eaa8e01a05d892673cb011c8846c10852fba",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:16:23.190535+00:00"
+  },
+  "failure_reason": null,
+  "validation_errors": [],
+  "validation_warnings": []
+}

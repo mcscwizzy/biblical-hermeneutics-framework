@@ -1,0 +1,73 @@
+{
+  "reference": "Genesis 10",
+  "book": "Genesis",
+  "chapter": 10,
+  "status": "validated",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "The families of the nations",
+      "blocks": [
+        {
+          "id": "overview_1",
+          "text": "Genesis 10 traces the families of Japheth, Ham, and Shem after the flood. It organizes the material by families, tongues, lands, and nations, includes named peoples and places, highlights Cush\u2019s son Nimrod and his kingdoms, and closes by repeating that these families were divided in the earth after the flood.",
+          "verse_refs": [
+            "Genesis 10:1-32"
+          ],
+          "evidence_ids": [
+            "why-are-genealogies-included:historical_context:0"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "people_places",
+      "title": "Names, lands, and limits of identification",
+      "blocks": [
+        {
+          "id": "names_1",
+          "text": "The chapter names regions and settlements including Shinar, Babel, Erech, Accad, Assyria, Nineveh, Canaan, Sidon, and many others. BHF\u2019s retrieval supplies a general genealogy-context claim about families preserving lineage and memory, but it does not support mapping every listed name to a certain modern location; the list should therefore be read as the chapter\u2019s own people-and-place framework.",
+          "verse_refs": [
+            "Genesis 10:5-32"
+          ],
+          "evidence_ids": [
+            "why-are-genealogies-included:ancient_near_east_context:0"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Nimrod and the city-building notice",
+      "blocks": [
+        {
+          "id": "nimrod_1",
+          "text": "Nimrod is introduced as a mighty one and hunter, and the beginning of his kingdom is associated with Babel, Erech, Accad, and Calneh before the notice turns toward Assyria and Nineveh. The supplied Babel evidence allows comparison with Mesopotamian monumental cities but specifically says that Genesis does not name a particular excavated ziggurat; no archaeological identification is asserted here.",
+          "verse_refs": [],
+          "evidence_ids": [
+            "babel:ancient_near_east_context:0",
+            "babel:historical_context:0"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "bb05ba5a7c5f03271e0288c9d2c0be4e00a8987376cdb09c75bb53f995062542",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T14:24:11.674100+00:00"
+  },
+  "failure_reason": null,
+  "validation_errors": [],
+  "validation_warnings": [],
+  "evidence_availability": "AVAILABLE"
+}

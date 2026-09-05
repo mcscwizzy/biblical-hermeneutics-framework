@@ -1,0 +1,38 @@
+{
+  "reference": "John 11",
+  "book": "John",
+  "chapter": 11,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "overview",
+          "text": "John 11 contains 57 verses. It opens with: Now a certain man was sick, Lazarus of Bethany, of the village of Mary and her sister Martha. It concludes with: Now the chief priests and the Pharisees had given commandment, that, if any man knew where he was, he should show it, that they might take him.",
+          "verse_refs": [
+            "John 11:1-57"
+          ],
+          "evidence_ids": [
+            "john-caiaphas"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "7c1dea89582aba829ebf1a8f68d1d2cb1a01bd85370bcb2258328c9d7f34e92a",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:39:18.684262+00:00"
+  },
+  "failure_reason": null,
+  "validation_errors": [],
+  "validation_warnings": []
+}

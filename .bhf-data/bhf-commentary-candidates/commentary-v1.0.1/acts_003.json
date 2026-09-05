@@ -1,0 +1,38 @@
+{
+  "reference": "Acts 3",
+  "book": "Acts",
+  "chapter": 3,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "overview",
+          "text": "Acts 3 contains 26 verses. It opens with: Now Peter and John were going up into the temple at the hour of prayer, `being' the ninth `hour'. It concludes with: Unto you first God, having raised up his Servant, sent him to bless you, in turning away every one of you from your iniquities.",
+          "verse_refs": [
+            "Acts 3:1-26"
+          ],
+          "evidence_ids": [
+            "acts-historical-method"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "e7e2c798e920198c2fba4929fdfa8bcc2a3174ba458b48746e2c0552eea876f8",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:40:04.025217+00:00"
+  },
+  "failure_reason": null,
+  "validation_errors": [],
+  "validation_warnings": []
+}

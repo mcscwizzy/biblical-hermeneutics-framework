@@ -1,0 +1,38 @@
+{
+  "reference": "John 12",
+  "book": "John",
+  "chapter": 12,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "overview",
+          "text": "John 12 contains 50 verses. It opens with: Jesus therefore six days before the passover came to Bethany, where Lazarus was, whom Jesus raised from the dead. It concludes with: And I know that his commandment is life eternal: the things therefore which I speak, even as the Father hath said unto me, so I speak.",
+          "verse_refs": [
+            "John 12:1-50"
+          ],
+          "evidence_ids": [
+            "john-aposynagogos"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "e15e8fe4f3441d5db4746841a8dcb7b44839119bbeb0261b9fde10d8e624d595",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:39:18.876865+00:00"
+  },
+  "failure_reason": null,
+  "validation_errors": [],
+  "validation_warnings": []
+}

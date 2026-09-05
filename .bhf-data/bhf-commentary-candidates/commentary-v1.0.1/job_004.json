@@ -1,0 +1,38 @@
+{
+  "reference": "Job 4",
+  "book": "Job",
+  "chapter": 4,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "overview",
+          "text": "Job 4 contains 21 verses. It opens with: Then answered Eliphaz the Temanite, and said, It concludes with: Is not their tent-cord plucked up within them? They die, and that without wisdom.",
+          "verse_refs": [
+            "Job 4:1-21"
+          ],
+          "evidence_ids": [
+            "job-lament-dialogues"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "38ee726c3825a294be64696a1681d65805db1a29dd1fe670dfb0d3186f02ff5e",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:13:11.168872+00:00"
+  },
+  "failure_reason": null,
+  "validation_errors": [],
+  "validation_warnings": []
+}

@@ -1,0 +1,38 @@
+{
+  "reference": "John 18",
+  "book": "John",
+  "chapter": 18,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "overview",
+          "text": "John 18 contains 40 verses. It opens with: When Jesus had spoken these words, he went forth with his disciples over the brook Kidron, where was a garden, into which he entered, himself and his disciples. It concludes with: They cried out therefore again, saying, Not this man, but Barabbas. Now Barabbas was a robber.)",
+          "verse_refs": [
+            "John 18:1-40"
+          ],
+          "evidence_ids": [
+            "john-ioudaioi"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "bffc54ca358b84b55a12013c6355ee4a946a7ace550ef9325febfdf1ddf20045",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:39:19.859419+00:00"
+  },
+  "failure_reason": null,
+  "validation_errors": [],
+  "validation_warnings": []
+}

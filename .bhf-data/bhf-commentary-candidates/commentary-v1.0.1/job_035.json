@@ -1,0 +1,38 @@
+{
+  "reference": "Job 35",
+  "book": "Job",
+  "chapter": 35,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "overview",
+          "text": "Job 35 contains 16 verses. It opens with: Moreover Elihu answered and said, It concludes with: Therefore doth Job open his mouth in vanity; He multiplieth words without knowledge.",
+          "verse_refs": [
+            "Job 35:1-16"
+          ],
+          "evidence_ids": [
+            "job-elihu-intervention"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "46dfd0d18142a28f1ee48dde66595581df016372cda89c7f92758f29b65f8a6f",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:16:23.346394+00:00"
+  },
+  "failure_reason": null,
+  "validation_errors": [],
+  "validation_warnings": []
+}

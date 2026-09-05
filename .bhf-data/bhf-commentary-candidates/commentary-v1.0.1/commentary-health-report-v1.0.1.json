@@ -1,0 +1,787 @@
+{
+  "timestamp": "2026-09-05T06:04:27.900903+00:00",
+  "schema_version": "1.0",
+  "prompt_version_distribution": {
+    "1.1": 1189
+  },
+  "evidence_availability_distribution": {
+    "AVAILABLE": 827,
+    "THIN": 210,
+    "DATA_GAP": 152
+  },
+  "corpus_counts": {
+    "total_chapters": 1189,
+    "generated": 1189,
+    "coverage_percentage": 100.0,
+    "pending": 0,
+    "generating": 0,
+    "validated": 1189,
+    "partial": 0,
+    "needs_review": 0,
+    "failed": 0,
+    "stale": 0
+  },
+  "structure": {
+    "sections": {
+      "average": 1.02,
+      "median": 1,
+      "minimum": 1,
+      "maximum": 3
+    },
+    "blocks": {
+      "average": 1.02,
+      "median": 1,
+      "minimum": 1,
+      "maximum": 3
+    },
+    "section_kind_distribution": {
+      "chapter_overview": 1189,
+      "language_literary": 2,
+      "people_places": 5,
+      "interpretive_questions": 9,
+      "things_easy_to_miss": 3,
+      "historical_context": 3
+    }
+  },
+  "evidence_statistics": {
+    "items_per_chapter": {
+      "average": 0.9,
+      "median": 1,
+      "minimum": 0,
+      "maximum": 6
+    },
+    "items_per_section": {
+      "average": 0.91,
+      "median": 1,
+      "minimum": 0,
+      "maximum": 6
+    },
+    "items_per_block": {
+      "average": 0.91,
+      "median": 1,
+      "minimum": 0,
+      "maximum": 6
+    },
+    "category_distribution": {
+      "culture": 699,
+      "history": 231,
+      "politics": 51,
+      "language": 11,
+      "economics": 10,
+      "archaeology": 10,
+      "social": 4,
+      "geography": 51
+    },
+    "top_20": [
+      [
+        "genesis-literary-movement",
+        43
+      ],
+      [
+        "exodus-ane-context",
+        40
+      ],
+      [
+        "jeremiah-long-composition",
+        30
+      ],
+      [
+        "psalms-exile-restoration-pilgrimage",
+        26
+      ],
+      [
+        "job-lament-dialogues",
+        25
+      ],
+      [
+        "isaiah-qumran-witnesses",
+        22
+      ],
+      [
+        "second-samuel-literary-movement",
+        13
+      ],
+      [
+        "deuteronomy:interpretive_note:1",
+        13
+      ],
+      [
+        "first-samuel-literary-movement",
+        12
+      ],
+      [
+        "isaiah-nations-empire",
+        11
+      ],
+      [
+        "judges-cycle:ancient_near_east_context:0",
+        10
+      ],
+      [
+        "rev-scriptural-reuse",
+        9
+      ],
+      [
+        "acts-historical-method",
+        8
+      ],
+      [
+        "jeremiah-catastrophe-trauma",
+        8
+      ],
+      [
+        "psalms-five-book-anthology",
+        8
+      ],
+      [
+        "song-ancient-love-poetry",
+        8
+      ],
+      [
+        "isaiah-assyria-trust",
+        7
+      ],
+      [
+        "numbers-inheritance-preparation",
+        7
+      ],
+      [
+        "isaiah-comfort-new-exodus",
+        6
+      ],
+      [
+        "jeremiah-historical-crisis",
+        6
+      ]
+    ],
+    "least_used": [
+      [
+        "1-chronicles:interpretive_note:1",
+        1
+      ],
+      [
+        "1-chronicles:interpretive_note:2",
+        1
+      ],
+      [
+        "1-kings:interpretive_note:5",
+        1
+      ],
+      [
+        "1-samuel:interpretive_note:0",
+        1
+      ],
+      [
+        "1-samuel:interpretive_note:3",
+        1
+      ],
+      [
+        "1cor-adam",
+        1
+      ],
+      [
+        "1cor-body",
+        1
+      ],
+      [
+        "1cor-chloe",
+        1
+      ],
+      [
+        "1cor-collection",
+        1
+      ],
+      [
+        "1cor-coverings",
+        1
+      ],
+      [
+        "1cor-cross",
+        1
+      ],
+      [
+        "1cor-divorce",
+        1
+      ],
+      [
+        "1cor-gifts",
+        1
+      ],
+      [
+        "1cor-idol-food",
+        1
+      ],
+      [
+        "1cor-incest",
+        1
+      ],
+      [
+        "1jn-advocate",
+        1
+      ],
+      [
+        "1pet-addressees",
+        1
+      ],
+      [
+        "1pet-adversary",
+        1
+      ],
+      [
+        "1pet-baptism",
+        1
+      ],
+      [
+        "1th-apantesis",
+        1
+      ]
+    ]
+  },
+  "citation_statistics": {
+    "total": 1208,
+    "valid": 1208,
+    "invalid": 0,
+    "unknown_evidence_ids": [],
+    "valid_percentage": 100.0
+  },
+  "verse_statistics": {
+    "total": 1208,
+    "valid": 1208,
+    "invalid": 0,
+    "out_of_chapter": 0,
+    "malformed": 0,
+    "valid_percentage": 100.0
+  },
+  "content_size": {
+    "average": 357.43,
+    "median": 329,
+    "minimum": 121,
+    "maximum": 1152
+  },
+  "repetition": {
+    "repeated_word_fingerprints": [
+      [
+        "with",
+        2649
+      ],
+      [
+        "contains",
+        1090
+      ],
+      [
+        "opens",
+        1089
+      ],
+      [
+        "verses",
+        1088
+      ],
+      [
+        "concludes",
+        1088
+      ],
+      [
+        "that",
+        1009
+      ],
+      [
+        "jehovah",
+        788
+      ],
+      [
+        "unto",
+        642
+      ],
+      [
+        "shall",
+        553
+      ],
+      [
+        "they",
+        429
+      ],
+      [
+        "them",
+        357
+      ],
+      [
+        "from",
+        322
+      ],
+      [
+        "israel",
+        311
+      ],
+      [
+        "thou",
+        300
+      ],
+      [
+        "will",
+        282
+      ],
+      [
+        "came",
+        257
+      ],
+      [
+        "this",
+        255
+      ],
+      [
+        "king",
+        231
+      ],
+      [
+        "when",
+        221
+      ],
+      [
+        "their",
+        218
+      ]
+    ]
+  },
+  "outliers": {
+    "lowest_evidence": [
+      {
+        "chapter": "1 Chronicles 14",
+        "status": "validated",
+        "sections": 1,
+        "blocks": 1,
+        "length": 286,
+        "evidence_count": 0
+      },
+      {
+        "chapter": "1 Chronicles 18",
+        "status": "validated",
+        "sections": 1,
+        "blocks": 1,
+        "length": 343,
+        "evidence_count": 0
+      },
+      {
+        "chapter": "1 Chronicles 19",
+        "status": "validated",
+        "sections": 1,
+        "blocks": 1,
+        "length": 380,
+        "evidence_count": 0
+      },
+      {
+        "chapter": "1 Kings 10",
+        "status": "validated",
+        "sections": 1,
+        "blocks": 1,
+        "length": 424,
+        "evidence_count": 0
+      },
+      {
+        "chapter": "1 Kings 13",
+        "status": "validated",
+        "sections": 1,
+        "blocks": 1,
+        "length": 331,
+        "evidence_count": 0
+      }
+    ],
+    "highest_evidence": [
+      {
+        "chapter": "Genesis 9",
+        "status": "validated",
+        "sections": 3,
+        "blocks": 3,
+        "length": 1077,
+        "evidence_count": 6
+      },
+      {
+        "chapter": "Genesis 10",
+        "status": "validated",
+        "sections": 3,
+        "blocks": 3,
+        "length": 1109,
+        "evidence_count": 4
+      },
+      {
+        "chapter": "Genesis 6",
+        "status": "validated",
+        "sections": 3,
+        "blocks": 3,
+        "length": 1137,
+        "evidence_count": 4
+      },
+      {
+        "chapter": "Genesis 5",
+        "status": "validated",
+        "sections": 2,
+        "blocks": 2,
+        "length": 633,
+        "evidence_count": 3
+      },
+      {
+        "chapter": "1 Chronicles 5",
+        "status": "validated",
+        "sections": 1,
+        "blocks": 1,
+        "length": 1152,
+        "evidence_count": 2
+      }
+    ],
+    "shortest": [
+      {
+        "chapter": "3 John 1",
+        "status": "validated",
+        "sections": 1,
+        "blocks": 1,
+        "length": 121,
+        "evidence_count": 1
+      },
+      {
+        "chapter": "Hebrews 13",
+        "status": "validated",
+        "sections": 1,
+        "blocks": 1,
+        "length": 128,
+        "evidence_count": 1
+      },
+      {
+        "chapter": "Job 42",
+        "status": "validated",
+        "sections": 1,
+        "blocks": 1,
+        "length": 138,
+        "evidence_count": 1
+      },
+      {
+        "chapter": "1 Chronicles 1",
+        "status": "validated",
+        "sections": 1,
+        "blocks": 1,
+        "length": 144,
+        "evidence_count": 1
+      },
+      {
+        "chapter": "Job 9",
+        "status": "validated",
+        "sections": 1,
+        "blocks": 1,
+        "length": 152,
+        "evidence_count": 1
+      }
+    ],
+    "longest": [
+      {
+        "chapter": "1 Chronicles 5",
+        "status": "validated",
+        "sections": 1,
+        "blocks": 1,
+        "length": 1152,
+        "evidence_count": 2
+      },
+      {
+        "chapter": "Genesis 6",
+        "status": "validated",
+        "sections": 3,
+        "blocks": 3,
+        "length": 1137,
+        "evidence_count": 4
+      },
+      {
+        "chapter": "Genesis 10",
+        "status": "validated",
+        "sections": 3,
+        "blocks": 3,
+        "length": 1109,
+        "evidence_count": 4
+      },
+      {
+        "chapter": "Genesis 9",
+        "status": "validated",
+        "sections": 3,
+        "blocks": 3,
+        "length": 1077,
+        "evidence_count": 6
+      },
+      {
+        "chapter": "Esther 10",
+        "status": "validated",
+        "sections": 1,
+        "blocks": 1,
+        "length": 1030,
+        "evidence_count": 2
+      }
+    ]
+  },
+  "release": "commentary-v1.0.1",
+  "base_release": "commentary-v1.0",
+  "changed_artifacts": 636,
+  "unchanged_artifacts": 553,
+  "status_only_patched": 63,
+  "legacy_metadata_corrected": 91,
+  "regenerated": 95,
+  "evidence_changed_audit_only": 700,
+  "patch_chapters": 249,
+  "patch_chapter_references": [
+    "Genesis 1",
+    "Genesis 2",
+    "Genesis 3",
+    "Genesis 4",
+    "Genesis 5",
+    "Genesis 6",
+    "Genesis 7",
+    "Genesis 8",
+    "Genesis 9",
+    "Genesis 10",
+    "Genesis 11",
+    "Genesis 12",
+    "Genesis 13",
+    "Genesis 14",
+    "Genesis 15",
+    "Genesis 16",
+    "Genesis 17",
+    "Genesis 18",
+    "Genesis 19",
+    "Genesis 20",
+    "Genesis 21",
+    "Genesis 22",
+    "Genesis 23",
+    "Genesis 24",
+    "Genesis 25",
+    "Genesis 26",
+    "Genesis 27",
+    "Genesis 28",
+    "Genesis 29",
+    "Genesis 30",
+    "Genesis 31",
+    "Genesis 32",
+    "Genesis 33",
+    "Genesis 34",
+    "Genesis 35",
+    "Genesis 36",
+    "Genesis 37",
+    "Genesis 38",
+    "Genesis 39",
+    "Genesis 40",
+    "Genesis 41",
+    "Genesis 42",
+    "Genesis 43",
+    "Genesis 44",
+    "Genesis 45",
+    "Genesis 46",
+    "Genesis 47",
+    "Genesis 48",
+    "Genesis 49",
+    "Genesis 50",
+    "Exodus 1",
+    "Exodus 2",
+    "Exodus 3",
+    "Exodus 4",
+    "Exodus 5",
+    "Exodus 6",
+    "Exodus 7",
+    "Exodus 8",
+    "Exodus 9",
+    "Exodus 10",
+    "Exodus 11",
+    "Exodus 12",
+    "Exodus 13",
+    "Exodus 14",
+    "Exodus 15",
+    "Exodus 16",
+    "Exodus 17",
+    "Exodus 18",
+    "Exodus 19",
+    "Exodus 20",
+    "Exodus 21",
+    "Exodus 22",
+    "Exodus 23",
+    "Exodus 24",
+    "Exodus 25",
+    "Exodus 26",
+    "Exodus 27",
+    "Exodus 28",
+    "Exodus 29",
+    "Exodus 30",
+    "Exodus 31",
+    "Exodus 32",
+    "Exodus 33",
+    "Exodus 34",
+    "Exodus 35",
+    "Exodus 36",
+    "Exodus 37",
+    "Exodus 38",
+    "Exodus 39",
+    "Exodus 40",
+    "Leviticus 1",
+    "Leviticus 2",
+    "Leviticus 3",
+    "Leviticus 5",
+    "Leviticus 7",
+    "Leviticus 12",
+    "Leviticus 13",
+    "Leviticus 14",
+    "Leviticus 15",
+    "Leviticus 21",
+    "Leviticus 22",
+    "Leviticus 24",
+    "Leviticus 27",
+    "Numbers 2",
+    "Numbers 12",
+    "Numbers 15",
+    "Numbers 23",
+    "Numbers 24",
+    "Numbers 28",
+    "Numbers 29",
+    "Numbers 30",
+    "Numbers 31",
+    "Numbers 32",
+    "Numbers 34",
+    "Numbers 36",
+    "Deuteronomy 2",
+    "Deuteronomy 3",
+    "Deuteronomy 7",
+    "Deuteronomy 8",
+    "Deuteronomy 9",
+    "Deuteronomy 11",
+    "Deuteronomy 12",
+    "Deuteronomy 13",
+    "Deuteronomy 14",
+    "Deuteronomy 15",
+    "Deuteronomy 17",
+    "Deuteronomy 19",
+    "Deuteronomy 20",
+    "Deuteronomy 22",
+    "Deuteronomy 23",
+    "Deuteronomy 24",
+    "Deuteronomy 26",
+    "Deuteronomy 29",
+    "Joshua 7",
+    "Joshua 14",
+    "Joshua 15",
+    "Joshua 16",
+    "Joshua 17",
+    "Joshua 20",
+    "Joshua 22",
+    "Joshua 23",
+    "Judges 9",
+    "Judges 11",
+    "Judges 12",
+    "Judges 14",
+    "Judges 15",
+    "Judges 19",
+    "Judges 20",
+    "1 Samuel 5",
+    "1 Samuel 6",
+    "1 Samuel 7",
+    "1 Samuel 11",
+    "1 Samuel 14",
+    "1 Samuel 15",
+    "1 Samuel 18",
+    "1 Samuel 19",
+    "1 Samuel 20",
+    "1 Samuel 21",
+    "1 Samuel 22",
+    "1 Samuel 23",
+    "1 Samuel 25",
+    "1 Samuel 27",
+    "1 Samuel 28",
+    "1 Samuel 29",
+    "1 Samuel 30",
+    "2 Samuel 1",
+    "2 Samuel 3",
+    "2 Samuel 4",
+    "2 Samuel 9",
+    "2 Samuel 10",
+    "2 Samuel 11",
+    "2 Samuel 12",
+    "2 Samuel 13",
+    "2 Samuel 14",
+    "2 Samuel 16",
+    "2 Samuel 17",
+    "2 Samuel 19",
+    "2 Samuel 20",
+    "2 Samuel 21",
+    "2 Samuel 22",
+    "2 Samuel 23",
+    "2 Samuel 24",
+    "1 Kings 17",
+    "1 Kings 20",
+    "1 Kings 21",
+    "1 Kings 22",
+    "1 Chronicles 2",
+    "1 Chronicles 3",
+    "1 Chronicles 4",
+    "1 Chronicles 5",
+    "1 Chronicles 6",
+    "1 Chronicles 8",
+    "1 Chronicles 9",
+    "1 Chronicles 12",
+    "1 Chronicles 17",
+    "1 Chronicles 20",
+    "1 Chronicles 21",
+    "1 Chronicles 24",
+    "1 Chronicles 25",
+    "1 Chronicles 26",
+    "1 Chronicles 27",
+    "1 Chronicles 28",
+    "Ezra 9",
+    "Ezra 10",
+    "Nehemiah 3",
+    "Nehemiah 4",
+    "Nehemiah 7",
+    "Nehemiah 9",
+    "Nehemiah 10",
+    "Nehemiah 11",
+    "Nehemiah 12",
+    "Nehemiah 13",
+    "Esther 2",
+    "Esther 3",
+    "Esther 5",
+    "Esther 6",
+    "Esther 7",
+    "Esther 8",
+    "Esther 10",
+    "Psalms 18",
+    "Psalms 90",
+    "Proverbs 23",
+    "Isaiah 28",
+    "Isaiah 61",
+    "Jeremiah 2",
+    "Jeremiah 3",
+    "Jeremiah 5",
+    "Jeremiah 10",
+    "Jeremiah 13",
+    "Jeremiah 16",
+    "Jeremiah 19",
+    "Jeremiah 21",
+    "Jeremiah 24",
+    "Jeremiah 34",
+    "Jeremiah 35",
+    "Jeremiah 45",
+    "Ezekiel 13",
+    "Ezekiel 14",
+    "Hosea 3",
+    "Hosea 6",
+    "Hosea 9",
+    "Hosea 10",
+    "Amos 3",
+    "Amos 4",
+    "Amos 6",
+    "Matthew 11",
+    "Matthew 19",
+    "Luke 16",
+    "Revelation 3"
+  ],
+  "evidence_citation_statistics": {
+    "total": 1077,
+    "valid": 1077,
+    "invalid": 0,
+    "unknown_evidence_ids": []
+  },
+  "integrity": {
+    "base_worktree_chapter_sha256": "11ecb9f8a4682684806bdc5ddd6b9f2980aa4c924385a05a9d85d9585157125c",
+    "candidate_chapter_sha256": "254b683879eb456a6062dfcff4820115d36bd895e658a73a4720f48571d5d822",
+    "base_chapter_artifacts": 1189,
+    "candidate_chapter_artifacts": 1189
+  }
+}
