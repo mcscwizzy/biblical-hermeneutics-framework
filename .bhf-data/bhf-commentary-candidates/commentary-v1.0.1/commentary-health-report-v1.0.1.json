@@ -779,9 +779,18 @@
     "unknown_evidence_ids": []
   },
   "integrity": {
-    "base_worktree_chapter_sha256": "11ecb9f8a4682684806bdc5ddd6b9f2980aa4c924385a05a9d85d9585157125c",
-    "candidate_chapter_sha256": "254b683879eb456a6062dfcff4820115d36bd895e658a73a4720f48571d5d822",
+    "algorithm": "SHA-256 over sorted chapter filename, NUL separator, and each chapter's SHA-256 digest",
+    "base_worktree_chapter_sha256": "35baca143b920801f49bf9019c09f16f2965803cf0132b2caba21aa6819b859b",
+    "candidate_chapter_sha256": "229bf40ea86ef1e206ddc93134a45b7d19330ace78b2b48f4616efb71dd26e06",
     "base_chapter_artifacts": 1189,
     "candidate_chapter_artifacts": 1189
+  },
+  "release_diff": {
+    "path": "release-diff-v1.0.1.json",
+    "changed_chapters": 636,
+    "unchanged_chapters": 553,
+    "unexpected_chapters": 0,
+    "generated_timestamp_changes": 0,
+    "release_metadata_changes": 0
   }
 }

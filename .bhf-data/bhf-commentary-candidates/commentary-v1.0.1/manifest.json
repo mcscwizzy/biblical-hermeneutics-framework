@@ -1316,12 +1316,17 @@
     "unchanged_chapter_files": 553,
     "status_field_changes": 249,
     "evidence_hash_metadata_changes": 614,
+    "evidence_hash_only_chapter_files": 387,
     "commentary_text_or_citation_changes": 95,
+    "generated_timestamp_changes": 0,
+    "release_metadata_changes": 0,
+    "unexpected_chapter_files": 0,
     "unexpected_mass_rewrites": false
   },
   "integrity": {
-    "base_worktree_chapter_sha256": "11ecb9f8a4682684806bdc5ddd6b9f2980aa4c924385a05a9d85d9585157125c",
-    "candidate_chapter_sha256": "254b683879eb456a6062dfcff4820115d36bd895e658a73a4720f48571d5d822",
+    "algorithm": "SHA-256 over sorted chapter filename, NUL separator, and each chapter's SHA-256 digest",
+    "base_worktree_chapter_sha256": "35baca143b920801f49bf9019c09f16f2965803cf0132b2caba21aa6819b859b",
+    "candidate_chapter_sha256": "229bf40ea86ef1e206ddc93134a45b7d19330ace78b2b48f4616efb71dd26e06",
     "base_chapter_artifacts": 1189,
     "candidate_chapter_artifacts": 1189,
     "frozen_release_modified": false,
@@ -1331,6 +1336,7 @@
     "corpus": ".bhf-data/bhf-commentary-candidates/commentary-v1.0.1",
     "health_report": "commentary-health-report-v1.0.1.json",
     "reconciliation": "reconciliation-v1.0.1.json",
-    "coverage_report": "ckl-coverage-report-v1.0.1.json"
+    "coverage_report": "ckl-coverage-report-v1.0.1.json",
+    "release_diff": "release-diff-v1.0.1.json"
   }
 }
