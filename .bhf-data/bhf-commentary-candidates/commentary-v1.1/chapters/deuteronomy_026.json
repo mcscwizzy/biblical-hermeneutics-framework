@@ -11,25 +11,7 @@
       "blocks": [
         {
           "id": "overview",
-          "text": "This chapter's locked contextual evidence includes 2 source-addressable item(s). The strongest eligible contextual observation is: Deuteronomy moves from remembered wilderness history through covenant instruction to covenant consequences, renewal, succession, song, blessing, and Moses's death.",
-          "verse_refs": [
-            "Deuteronomy 26:1-19"
-          ],
-          "evidence_ids": [
-            "deuteronomy-literary-movement"
-          ],
-          "confidence": "high",
-          "interpretation_level": "inference"
-        }
-      ]
-    },
-    {
-      "kind": "historical_context",
-      "title": "Historical and social context",
-      "blocks": [
-        {
-          "id": "evidence_1",
-          "text": "Locked CKL evidence: The repeated instruction is rhetorically adapted covenant exposition for a successor generation, not a simple verbatim duplication of earlier laws.",
+          "text": "This chapter's locked contextual evidence includes 2 source-addressable item(s). The strongest eligible contextual observation is: The repeated instruction is rhetorically adapted covenant exposition for a successor generation, not a simple verbatim duplication of earlier laws.",
           "verse_refs": [
             "Deuteronomy 26:1-19"
           ],
@@ -40,15 +22,33 @@
           "interpretation_level": "disputed"
         }
       ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "evidence_1",
+          "text": "Locked CKL evidence: Deuteronomy moves from remembered wilderness history through covenant instruction to covenant consequences, renewal, succession, song, blessing, and Moses's death.",
+          "verse_refs": [
+            "Deuteronomy 26:1-19"
+          ],
+          "evidence_ids": [
+            "deuteronomy-literary-movement"
+          ],
+          "confidence": "high",
+          "interpretation_level": "inference"
+        }
+      ]
     }
   ],
   "generated_metadata": {
-    "evidence_hash": "d7bdd6574f5b13b2f0cdefef9c914ca2d4c639e3f4e01bcaf8fc43950b724724",
+    "evidence_hash": "30a1e8f4f627879c4af21c960bb1820fc34d8bba4477b032496616b1e0a1b14d",
     "evidence_bundle_version": "1.1",
     "commentary_schema_version": "1.0",
     "commentary_prompt_version": "1.1",
     "model": "deterministic-v1.1-evidence-candidate",
-    "generated_timestamp": "2026-09-05T18:52:36.738410+00:00"
+    "generated_timestamp": "2026-09-05T19:05:56.742476+00:00"
   },
   "failure_reason": null,
   "validation_errors": [],

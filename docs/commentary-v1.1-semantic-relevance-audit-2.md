@@ -20,11 +20,11 @@ The audited generated records did not prove a source-language lexical occurrence
 
 ## Required controls
 
-- **Genesis 1**: AVAILABLE; 58 evidence items; overview `genesis-literary-movement`; sections `chapter_overview, historical_context, chronology, dig_deeper`.
+- **Genesis 1**: AVAILABLE; 58 evidence items; overview `genesis-ordered-worldview-observation:passage-relevance`; sections `chapter_overview, historical_context, language_literary, chronology, dig_deeper`.
 - **Luke 1**: AVAILABLE; 26 evidence items; overview `luke-prologue`; sections `chapter_overview, historical_context, language_literary, dig_deeper`.
 - **Leviticus 1**: AVAILABLE; 26 evidence items; overview `leviticus:interpretive_note:0`; sections `chapter_overview, historical_context, language_literary, chronology`.
 - **Zephaniah 1**: AVAILABLE; 17 evidence items; overview `zephaniah-superscription`; sections `chapter_overview, historical_context, language_literary`.
-- **1 Samuel 28**: THIN; 2 evidence items; overview `first-samuel-literary-movement`; sections ``.
+- **1 Samuel 28**: THIN; 2 evidence items; overview `1-samuel:interpretive_note:3`; sections ``.
 - **Numbers 3**: DATA_GAP; 0 evidence items; overview `None`; sections `chapter_overview`.
 
 Genesis 1 has no reachable `parakletos`, `katabole`, or `pneuma` word-study item, no Arad/Caesarea evidence, and retains Pauline reuse only in `dig_deeper`. Luke 1 routes `luke-acts-relation` to `language_literary`. Leviticus 1 routes sacrifice background to `historical_context`. Zephaniah 1 replaces textual witnesses with Josiah-era superscription context as overview. 1 Samuel 28 remains THIN with the apparition disputed. Numbers 3 remains an honest DATA_GAP with zero evidence.

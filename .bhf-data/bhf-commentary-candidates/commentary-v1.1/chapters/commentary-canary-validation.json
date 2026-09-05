@@ -1,6 +1,6 @@
 {
   "report_version": "commentary-v1.1-canary-v1",
-  "generated_at": "2026-09-05T18:52:38.410651+00:00",
+  "generated_at": "2026-09-05T19:05:58.458048+00:00",
   "model_boundary": {
     "provider": "none",
     "model": "deterministic-v1.1-evidence-candidate",
@@ -193,7 +193,7 @@
       "availability": "THIN",
       "section_kinds": [
         "chapter_overview",
-        "historical_context"
+        "language_literary"
       ],
       "evidence_ids": [
         "deuteronomy-literary-movement",
@@ -344,6 +344,7 @@
       "section_kinds": [
         "chapter_overview",
         "historical_context",
+        "language_literary",
         "chronology",
         "dig_deeper"
       ],
@@ -354,7 +355,8 @@
         "creation-doctrine-framework:hebraic_worldview:0",
         "creation-doctrine-framework:timeline:0",
         "creation-doctrine-framework:timeline:1",
-        "genesis-literary-movement"
+        "genesis-literary-movement",
+        "genesis-ordered-worldview-observation:passage-relevance"
       ],
       "path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1/chapters/genesis_001.json"
     }

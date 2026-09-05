@@ -305,6 +305,13 @@ def overview_priority(
         BOOK_CONTEXT: 50,
         GENERIC_BACKGROUND: 25,
     }.get(relationship, 0)
+    # First-audience, passage-specific evidence must outrank book movement or
+    # generic background when reader-usefulness signals are otherwise close.
+    score += {
+        DIRECT_CONTEXT: 15,
+        BOOK_CONTEXT: 0,
+        GENERIC_BACKGROUND: -5,
+    }.get(relationship, 0)
     score += {
         "history": 15,
         "culture": 15,

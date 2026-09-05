@@ -1,6 +1,6 @@
 {
   "report_version": "commentary-v1.1-semantic-relevance-audit-v1",
-  "generated_at": "2026-09-05T18:59:18.856494+00:00",
+  "generated_at": "2026-09-05T19:08:31.308303+00:00",
   "scope": {
     "canary_chapters_audited": 25,
     "full_canonical_cleanup_attempted": false,
@@ -361,7 +361,7 @@
         "psalms-five-book-anthology"
       ],
       "regeneration_eligible": true,
-      "evidence_hash": "0c6130b8199fe724dd3a3c6698d9196676be7df7b0a6515f64695c381f56b774"
+      "evidence_hash": "beb37e4abea9c5a4fd87188e4f888c14827666d6793384f527d5a3e6f23c208d"
     },
     {
       "reference": "Numbers 19",
@@ -410,13 +410,13 @@
       "reference": "Deuteronomy 26",
       "availability": "THIN",
       "evidence_count": 2,
-      "overview_evidence_id": "deuteronomy-literary-movement",
+      "overview_evidence_id": "deuteronomy:interpretive_note:1",
       "overview_anchors": [
-        "Deuteronomy 1-34"
+        "Deuteronomy 5-26"
       ],
       "section_kinds": [
         "chapter_overview",
-        "historical_context"
+        "language_literary"
       ],
       "semantic_relationships": {
         "BOOK_CONTEXT": 1,
@@ -427,7 +427,7 @@
         "deuteronomy:interpretive_note:1"
       ],
       "regeneration_eligible": true,
-      "evidence_hash": "d7bdd6574f5b13b2f0cdefef9c914ca2d4c639e3f4e01bcaf8fc43950b724724"
+      "evidence_hash": "30a1e8f4f627879c4af21c960bb1820fc34d8bba4477b032496616b1e0a1b14d"
     },
     {
       "reference": "Isaiah 28",
@@ -451,7 +451,7 @@
         "isaiah-qumran-witnesses"
       ],
       "regeneration_eligible": true,
-      "evidence_hash": "9a80b48fe52eab182ff31c040b8a265b4854e8bd280cb71603df06177007f484"
+      "evidence_hash": "68713989692be5cc5e23567d6f9438f0b50992a58b46c8c281803b57674fad5d"
     },
     {
       "reference": "Deuteronomy 21",
@@ -543,7 +543,7 @@
         "leviticus:interpretive_note:2"
       ],
       "regeneration_eligible": true,
-      "evidence_hash": "e35c7a23eba5b23d5767639176332957ebfe60898bab7f7449ea70aa6cf90882"
+      "evidence_hash": "0e6d16ca8ed5f0eef2828dbff0f3aec502e5bb7917a7d487531ef2e6c0449e34"
     },
     {
       "reference": "Psalms 1",
@@ -570,7 +570,7 @@
         "psalms-gateway-torah-king"
       ],
       "regeneration_eligible": true,
-      "evidence_hash": "61f2d9352dab1fd140274f75dfaa01fc848cd4aaa446fa4b70778deb0ff8bd23"
+      "evidence_hash": "b7759e4e8a9c0b1a00d786c112c0773732c8ccd1b73afef95ca7d28e75b40450"
     },
     {
       "reference": "Zephaniah 1",
@@ -605,7 +605,7 @@
         "zephaniah-textual-witnesses"
       ],
       "regeneration_eligible": true,
-      "evidence_hash": "535dcff028e9f0083b2248f0e3a917e7aba6e08dabab71b45ca89731c9cc69c7"
+      "evidence_hash": "3f951799f9fdc5998e32f2cfc8ecb5030581ad6b9b80adcbfbcfe29f5bde7d3b"
     },
     {
       "reference": "Luke 1",
@@ -642,19 +642,20 @@
         "malachi-new-testament"
       ],
       "regeneration_eligible": true,
-      "evidence_hash": "acfea2b9dc3f36bc4092b418a4361bb83d2fa12ed808e1b499f6e0212012f444"
+      "evidence_hash": "59723b25a14757f0fff9bb71b882411f62d0d0467e1f7fd7be720000e513415b"
     },
     {
       "reference": "Genesis 1",
       "availability": "AVAILABLE",
       "evidence_count": 58,
-      "overview_evidence_id": "genesis-literary-movement",
+      "overview_evidence_id": "genesis-ordered-worldview-observation:passage-relevance",
       "overview_anchors": [
-        "Genesis 1:1-50:26"
+        "Genesis 1:1-2:3"
       ],
       "section_kinds": [
         "chapter_overview",
         "historical_context",
+        "language_literary",
         "chronology",
         "dig_deeper"
       ],
@@ -682,7 +683,7 @@
         "zephaniah-creation-reversal"
       ],
       "regeneration_eligible": true,
-      "evidence_hash": "4ec7d26943602f541f99268ec8dc8fa0cb740eb00109d281b5e2f514cf1cfb59"
+      "evidence_hash": "64459dfd7bc93273f6761e3e0a7248836638b2427fa8d4ec87694cd1e2d7e659"
     }
   ],
   "controls": {
@@ -690,9 +691,9 @@
       "availability": "AVAILABLE",
       "evidence_count": 58,
       "before_evidence_count": 90,
-      "overview_evidence_id": "genesis-literary-movement",
+      "overview_evidence_id": "genesis-ordered-worldview-observation:passage-relevance",
       "overview_anchors": [
-        "Genesis 1:1-50:26"
+        "Genesis 1:1-2:3"
       ],
       "semantic_relationship_counts": {
         "BOOK_CONTEXT": 5,
@@ -907,9 +908,9 @@
       "availability": "THIN",
       "evidence_count": 2,
       "before_evidence_count": 2,
-      "overview_evidence_id": "first-samuel-literary-movement",
+      "overview_evidence_id": "1-samuel:interpretive_note:3",
       "overview_anchors": [
-        "1 Samuel 1-31"
+        "1 Samuel 28:3-25"
       ],
       "semantic_relationship_counts": {
         "BOOK_CONTEXT": 1,

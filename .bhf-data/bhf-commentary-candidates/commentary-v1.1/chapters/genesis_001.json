@@ -11,15 +11,15 @@
       "blocks": [
         {
           "id": "overview",
-          "text": "This chapter's locked contextual evidence includes 58 source-addressable item(s). The strongest eligible contextual observation is: Genesis moves from universal origins in chapters 1-11 to the ancestral family narratives in chapters 12-50 and ends with Jacob's household in Egypt.",
+          "text": "This chapter's locked contextual evidence includes 58 source-addressable item(s). The strongest eligible contextual observation is: The observation identifies the passage's own account of ordered creation before ancient comparative material is introduced.",
           "verse_refs": [
             "Genesis 1:1-31"
           ],
           "evidence_ids": [
-            "genesis-literary-movement"
+            "genesis-ordered-worldview-observation:passage-relevance"
           ],
           "confidence": "high",
-          "interpretation_level": "inference"
+          "interpretation_level": "fact"
         }
       ]
     },
@@ -49,6 +49,24 @@
             "creation-doctrine-framework:hebraic_worldview:0"
           ],
           "confidence": "medium",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "evidence_1",
+          "text": "Locked CKL evidence: Genesis moves from universal origins in chapters 1-11 to the ancestral family narratives in chapters 12-50 and ends with Jacob's household in Egypt.",
+          "verse_refs": [
+            "Genesis 1:1-31"
+          ],
+          "evidence_ids": [
+            "genesis-literary-movement"
+          ],
+          "confidence": "high",
           "interpretation_level": "inference"
         }
       ]
@@ -115,12 +133,12 @@
     }
   ],
   "generated_metadata": {
-    "evidence_hash": "4ec7d26943602f541f99268ec8dc8fa0cb740eb00109d281b5e2f514cf1cfb59",
+    "evidence_hash": "64459dfd7bc93273f6761e3e0a7248836638b2427fa8d4ec87694cd1e2d7e659",
     "evidence_bundle_version": "1.1",
     "commentary_schema_version": "1.0",
     "commentary_prompt_version": "1.1",
     "model": "deterministic-v1.1-evidence-candidate",
-    "generated_timestamp": "2026-09-05T18:52:38.397188+00:00"
+    "generated_timestamp": "2026-09-05T19:05:58.444077+00:00"
   },
   "failure_reason": null,
   "validation_errors": [],

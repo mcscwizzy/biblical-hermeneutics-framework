@@ -1,6 +1,6 @@
 {
   "report_version": "commentary-v1.1-semantic-relevance-audit-2",
-  "generated_at": "2026-09-05T18:59:07.518584+00:00",
+  "generated_at": "2026-09-05T19:08:34.391130+00:00",
   "scope": {
     "canary_chapters_audited": 25,
     "evidence_items_examined": 158,
@@ -471,7 +471,7 @@
       "presentation_role_counts": {
         "language_literary": 1
       },
-      "evidence_hash": "0c6130b8199fe724dd3a3c6698d9196676be7df7b0a6515f64695c381f56b774",
+      "evidence_hash": "beb37e4abea9c5a4fd87188e4f888c14827666d6793384f527d5a3e6f23c208d",
       "regeneration_eligible": true
     },
     {
@@ -521,13 +521,13 @@
       "reference": "Deuteronomy 26",
       "availability": "THIN",
       "evidence_count": 2,
-      "overview_evidence_id": "deuteronomy-literary-movement",
+      "overview_evidence_id": "deuteronomy:interpretive_note:1",
       "overview_anchors": [
-        "Deuteronomy 1-34"
+        "Deuteronomy 5-26"
       ],
       "section_kinds": [
         "chapter_overview",
-        "historical_context"
+        "language_literary"
       ],
       "semantic_relationship_counts": {
         "BOOK_CONTEXT": 1,
@@ -537,7 +537,7 @@
         "historical_context": 1,
         "language_literary": 1
       },
-      "evidence_hash": "d7bdd6574f5b13b2f0cdefef9c914ca2d4c639e3f4e01bcaf8fc43950b724724",
+      "evidence_hash": "30a1e8f4f627879c4af21c960bb1820fc34d8bba4477b032496616b1e0a1b14d",
       "regeneration_eligible": true
     },
     {
@@ -560,7 +560,7 @@
         "historical_context": 1,
         "language_literary": 1
       },
-      "evidence_hash": "9a80b48fe52eab182ff31c040b8a265b4854e8bd280cb71603df06177007f484",
+      "evidence_hash": "68713989692be5cc5e23567d6f9438f0b50992a58b46c8c281803b57674fad5d",
       "regeneration_eligible": true
     },
     {
@@ -655,7 +655,7 @@
         "historical_context": 17,
         "language_literary": 1
       },
-      "evidence_hash": "e35c7a23eba5b23d5767639176332957ebfe60898bab7f7449ea70aa6cf90882",
+      "evidence_hash": "0e6d16ca8ed5f0eef2828dbff0f3aec502e5bb7917a7d487531ef2e6c0449e34",
       "regeneration_eligible": true
     },
     {
@@ -683,7 +683,7 @@
         "historical_context": 6,
         "language_literary": 3
       },
-      "evidence_hash": "61f2d9352dab1fd140274f75dfaa01fc848cd4aaa446fa4b70778deb0ff8bd23",
+      "evidence_hash": "b7759e4e8a9c0b1a00d786c112c0773732c8ccd1b73afef95ca7d28e75b40450",
       "regeneration_eligible": true
     },
     {
@@ -707,7 +707,7 @@
         "historical_context": 13,
         "language_literary": 4
       },
-      "evidence_hash": "535dcff028e9f0083b2248f0e3a917e7aba6e08dabab71b45ca89731c9cc69c7",
+      "evidence_hash": "3f951799f9fdc5998e32f2cfc8ecb5030581ad6b9b80adcbfbcfe29f5bde7d3b",
       "regeneration_eligible": true
     },
     {
@@ -735,20 +735,21 @@
         "historical_context": 19,
         "language_literary": 3
       },
-      "evidence_hash": "acfea2b9dc3f36bc4092b418a4361bb83d2fa12ed808e1b499f6e0212012f444",
+      "evidence_hash": "59723b25a14757f0fff9bb71b882411f62d0d0467e1f7fd7be720000e513415b",
       "regeneration_eligible": true
     },
     {
       "reference": "Genesis 1",
       "availability": "AVAILABLE",
       "evidence_count": 58,
-      "overview_evidence_id": "genesis-literary-movement",
+      "overview_evidence_id": "genesis-ordered-worldview-observation:passage-relevance",
       "overview_anchors": [
-        "Genesis 1:1-50:26"
+        "Genesis 1:1-2:3"
       ],
       "section_kinds": [
         "chapter_overview",
         "historical_context",
+        "language_literary",
         "chronology",
         "dig_deeper"
       ],
@@ -767,7 +768,7 @@
         "language_literary": 1,
         "significance": 2
       },
-      "evidence_hash": "4ec7d26943602f541f99268ec8dc8fa0cb740eb00109d281b5e2f514cf1cfb59",
+      "evidence_hash": "64459dfd7bc93273f6761e3e0a7248836638b2427fa8d4ec87694cd1e2d7e659",
       "regeneration_eligible": true
     }
   ],
@@ -775,13 +776,14 @@
     "Genesis 1": {
       "availability": "AVAILABLE",
       "evidence_count": 58,
-      "overview_evidence_id": "genesis-literary-movement",
+      "overview_evidence_id": "genesis-ordered-worldview-observation:passage-relevance",
       "overview_anchors": [
-        "Genesis 1:1-50:26"
+        "Genesis 1:1-2:3"
       ],
       "section_kinds": [
         "chapter_overview",
         "historical_context",
+        "language_literary",
         "chronology",
         "dig_deeper"
       ],
@@ -838,7 +840,7 @@
           "category": "culture",
           "semantic_relationship": "GENERIC_BACKGROUND",
           "presentation_role": "historical_context",
-          "overview_priority": 45,
+          "overview_priority": 40,
           "passage_anchors": [
             "Genesis 1:1-31"
           ],
@@ -853,7 +855,7 @@
           "category": "culture",
           "semantic_relationship": "GENERIC_BACKGROUND",
           "presentation_role": "historical_context",
-          "overview_priority": 45,
+          "overview_priority": 40,
           "passage_anchors": [
             "Genesis 1:1-31"
           ],
@@ -868,7 +870,7 @@
           "category": "history",
           "semantic_relationship": "GENERIC_BACKGROUND",
           "presentation_role": "historical_context",
-          "overview_priority": 45,
+          "overview_priority": 40,
           "passage_anchors": [
             "Genesis 1:1-31"
           ],
@@ -883,7 +885,7 @@
           "category": "history",
           "semantic_relationship": "GENERIC_BACKGROUND",
           "presentation_role": "historical_context",
-          "overview_priority": 45,
+          "overview_priority": 40,
           "passage_anchors": [
             "Genesis 1:1-31"
           ],
@@ -898,7 +900,7 @@
           "category": "social",
           "semantic_relationship": "GENERIC_BACKGROUND",
           "presentation_role": "historical_context",
-          "overview_priority": 45,
+          "overview_priority": 40,
           "passage_anchors": [
             "Genesis 1:1-31"
           ],
@@ -913,7 +915,7 @@
           "category": "culture",
           "semantic_relationship": "GENERIC_BACKGROUND",
           "presentation_role": "historical_context",
-          "overview_priority": 45,
+          "overview_priority": 40,
           "passage_anchors": [
             "Genesis 1:1-31"
           ],
@@ -928,7 +930,7 @@
           "category": "chronology",
           "semantic_relationship": "GENERIC_BACKGROUND",
           "presentation_role": "chronology",
-          "overview_priority": 30,
+          "overview_priority": 25,
           "passage_anchors": [
             "Genesis 1:1-31"
           ],
@@ -943,7 +945,7 @@
           "category": "chronology",
           "semantic_relationship": "GENERIC_BACKGROUND",
           "presentation_role": "chronology",
-          "overview_priority": 30,
+          "overview_priority": 25,
           "passage_anchors": [
             "Genesis 1:1-31"
           ],
@@ -958,7 +960,7 @@
           "category": "chronology",
           "semantic_relationship": "GENERIC_BACKGROUND",
           "presentation_role": "chronology",
-          "overview_priority": 30,
+          "overview_priority": 25,
           "passage_anchors": [
             "Genesis 1:1-31"
           ],
@@ -973,7 +975,7 @@
           "category": "chronology",
           "semantic_relationship": "GENERIC_BACKGROUND",
           "presentation_role": "chronology",
-          "overview_priority": 30,
+          "overview_priority": 25,
           "passage_anchors": [
             "Genesis 1:1-31"
           ],
@@ -988,7 +990,7 @@
           "category": "chronology",
           "semantic_relationship": "GENERIC_BACKGROUND",
           "presentation_role": "chronology",
-          "overview_priority": 30,
+          "overview_priority": 25,
           "passage_anchors": [
             "Genesis 1:1-31"
           ],
@@ -1003,7 +1005,7 @@
           "category": "chronology",
           "semantic_relationship": "GENERIC_BACKGROUND",
           "presentation_role": "chronology",
-          "overview_priority": 30,
+          "overview_priority": 25,
           "passage_anchors": [
             "Genesis 1:1-31"
           ],
@@ -1018,7 +1020,7 @@
           "category": "culture",
           "semantic_relationship": "GENERIC_BACKGROUND",
           "presentation_role": "historical_context",
-          "overview_priority": 45,
+          "overview_priority": 40,
           "passage_anchors": [
             "Genesis 1:1-31"
           ],
@@ -1033,7 +1035,7 @@
           "category": "history",
           "semantic_relationship": "GENERIC_BACKGROUND",
           "presentation_role": "historical_context",
-          "overview_priority": 45,
+          "overview_priority": 40,
           "passage_anchors": [
             "Genesis 1:1-31"
           ],
@@ -1048,7 +1050,7 @@
           "category": "culture",
           "semantic_relationship": "GENERIC_BACKGROUND",
           "presentation_role": "historical_context",
-          "overview_priority": 45,
+          "overview_priority": 40,
           "passage_anchors": [
             "Genesis 1:1-31"
           ],
@@ -1063,7 +1065,7 @@
           "category": "history",
           "semantic_relationship": "GENERIC_BACKGROUND",
           "presentation_role": "historical_context",
-          "overview_priority": 45,
+          "overview_priority": 40,
           "passage_anchors": [
             "Genesis 1:1-31"
           ],
@@ -1078,7 +1080,7 @@
           "category": "culture",
           "semantic_relationship": "GENERIC_BACKGROUND",
           "presentation_role": "historical_context",
-          "overview_priority": 45,
+          "overview_priority": 40,
           "passage_anchors": [
             "Genesis 1:1-31"
           ],
@@ -1093,7 +1095,7 @@
           "category": "culture",
           "semantic_relationship": "GENERIC_BACKGROUND",
           "presentation_role": "historical_context",
-          "overview_priority": 45,
+          "overview_priority": 40,
           "passage_anchors": [
             "Genesis 1:1-31"
           ],
@@ -1108,7 +1110,7 @@
           "category": "history",
           "semantic_relationship": "GENERIC_BACKGROUND",
           "presentation_role": "historical_context",
-          "overview_priority": 45,
+          "overview_priority": 40,
           "passage_anchors": [
             "Genesis 1:1-31"
           ],
@@ -1183,7 +1185,7 @@
           "category": "culture",
           "semantic_relationship": "DIRECT_CONTEXT",
           "presentation_role": "historical_context",
-          "overview_priority": 80,
+          "overview_priority": 95,
           "passage_anchors": [
             "Genesis 1:1-2:3"
           ],
@@ -1198,7 +1200,7 @@
           "category": "culture",
           "semantic_relationship": "DIRECT_CONTEXT",
           "presentation_role": "significance",
-          "overview_priority": 80,
+          "overview_priority": 95,
           "passage_anchors": [
             "Genesis 1:1-2:3"
           ],
@@ -1258,7 +1260,7 @@
           "category": "culture",
           "semantic_relationship": "GENERIC_BACKGROUND",
           "presentation_role": "historical_context",
-          "overview_priority": 45,
+          "overview_priority": 40,
           "passage_anchors": [
             "Genesis 1:26-28"
           ],
@@ -1273,7 +1275,7 @@
           "category": "culture",
           "semantic_relationship": "GENERIC_BACKGROUND",
           "presentation_role": "historical_context",
-          "overview_priority": 45,
+          "overview_priority": 40,
           "passage_anchors": [
             "Genesis 1:26-28"
           ],
@@ -1288,7 +1290,7 @@
           "category": "history",
           "semantic_relationship": "GENERIC_BACKGROUND",
           "presentation_role": "historical_context",
-          "overview_priority": 45,
+          "overview_priority": 40,
           "passage_anchors": [
             "Genesis 1:26-28"
           ],
@@ -1303,7 +1305,7 @@
           "category": "culture",
           "semantic_relationship": "GENERIC_BACKGROUND",
           "presentation_role": "historical_context",
-          "overview_priority": 45,
+          "overview_priority": 40,
           "passage_anchors": [
             "Genesis 1:26-28"
           ],
@@ -1333,7 +1335,7 @@
           "category": "culture",
           "semantic_relationship": "GENERIC_BACKGROUND",
           "presentation_role": "historical_context",
-          "overview_priority": 45,
+          "overview_priority": 40,
           "passage_anchors": [
             "Genesis 1:1-5"
           ],
@@ -1348,7 +1350,7 @@
           "category": "history",
           "semantic_relationship": "GENERIC_BACKGROUND",
           "presentation_role": "historical_context",
-          "overview_priority": 45,
+          "overview_priority": 40,
           "passage_anchors": [
             "Genesis 1:1-5"
           ],
@@ -1378,7 +1380,7 @@
           "category": "culture",
           "semantic_relationship": "GENERIC_BACKGROUND",
           "presentation_role": "historical_context",
-          "overview_priority": 45,
+          "overview_priority": 40,
           "passage_anchors": [
             "Genesis 1:1-31"
           ],
@@ -1393,7 +1395,7 @@
           "category": "history",
           "semantic_relationship": "GENERIC_BACKGROUND",
           "presentation_role": "historical_context",
-          "overview_priority": 45,
+          "overview_priority": 40,
           "passage_anchors": [
             "Genesis 1:1-31"
           ],
@@ -1408,7 +1410,7 @@
           "category": "culture",
           "semantic_relationship": "GENERIC_BACKGROUND",
           "presentation_role": "historical_context",
-          "overview_priority": 45,
+          "overview_priority": 40,
           "passage_anchors": [
             "Genesis 1:1-2"
           ],
@@ -1423,7 +1425,7 @@
           "category": "history",
           "semantic_relationship": "GENERIC_BACKGROUND",
           "presentation_role": "historical_context",
-          "overview_priority": 45,
+          "overview_priority": 40,
           "passage_anchors": [
             "Genesis 1:1-2"
           ],
@@ -1438,7 +1440,7 @@
           "category": "culture",
           "semantic_relationship": "GENERIC_BACKGROUND",
           "presentation_role": "historical_context",
-          "overview_priority": 45,
+          "overview_priority": 40,
           "passage_anchors": [
             "Genesis 1:2"
           ],
@@ -1453,7 +1455,7 @@
           "category": "history",
           "semantic_relationship": "GENERIC_BACKGROUND",
           "presentation_role": "historical_context",
-          "overview_priority": 45,
+          "overview_priority": 40,
           "passage_anchors": [
             "Genesis 1:2"
           ],
@@ -1468,7 +1470,7 @@
           "category": "culture",
           "semantic_relationship": "GENERIC_BACKGROUND",
           "presentation_role": "historical_context",
-          "overview_priority": 45,
+          "overview_priority": 40,
           "passage_anchors": [
             "Genesis 1:1-2"
           ],
@@ -1483,7 +1485,7 @@
           "category": "history",
           "semantic_relationship": "GENERIC_BACKGROUND",
           "presentation_role": "historical_context",
-          "overview_priority": 45,
+          "overview_priority": 40,
           "passage_anchors": [
             "Genesis 1:1-2"
           ],
@@ -1498,7 +1500,7 @@
           "category": "culture",
           "semantic_relationship": "GENERIC_BACKGROUND",
           "presentation_role": "historical_context",
-          "overview_priority": 45,
+          "overview_priority": 40,
           "passage_anchors": [
             "Genesis 1:1-2"
           ],
@@ -1513,7 +1515,7 @@
           "category": "history",
           "semantic_relationship": "GENERIC_BACKGROUND",
           "presentation_role": "historical_context",
-          "overview_priority": 45,
+          "overview_priority": 40,
           "passage_anchors": [
             "Genesis 1:1-2"
           ],
@@ -1528,7 +1530,7 @@
           "category": "culture",
           "semantic_relationship": "GENERIC_BACKGROUND",
           "presentation_role": "historical_context",
-          "overview_priority": 45,
+          "overview_priority": 40,
           "passage_anchors": [
             "Genesis 1:1-2"
           ],
@@ -1543,7 +1545,7 @@
           "category": "history",
           "semantic_relationship": "GENERIC_BACKGROUND",
           "presentation_role": "historical_context",
-          "overview_priority": 45,
+          "overview_priority": 40,
           "passage_anchors": [
             "Genesis 1:1-2"
           ],
@@ -1558,7 +1560,7 @@
           "category": "culture",
           "semantic_relationship": "GENERIC_BACKGROUND",
           "presentation_role": "historical_context",
-          "overview_priority": 45,
+          "overview_priority": 40,
           "passage_anchors": [
             "Genesis 1:2"
           ],
@@ -1573,7 +1575,7 @@
           "category": "history",
           "semantic_relationship": "GENERIC_BACKGROUND",
           "presentation_role": "historical_context",
-          "overview_priority": 45,
+          "overview_priority": 40,
           "passage_anchors": [
             "Genesis 1:2"
           ],
@@ -1588,7 +1590,7 @@
           "category": "culture",
           "semantic_relationship": "GENERIC_BACKGROUND",
           "presentation_role": "historical_context",
-          "overview_priority": 45,
+          "overview_priority": 40,
           "passage_anchors": [
             "Genesis 1:26-28"
           ],
@@ -1603,7 +1605,7 @@
           "category": "history",
           "semantic_relationship": "GENERIC_BACKGROUND",
           "presentation_role": "historical_context",
-          "overview_priority": 45,
+          "overview_priority": 40,
           "passage_anchors": [
             "Genesis 1:26-28"
           ],
@@ -1618,7 +1620,7 @@
           "category": "culture",
           "semantic_relationship": "GENERIC_BACKGROUND",
           "presentation_role": "historical_context",
-          "overview_priority": 45,
+          "overview_priority": 40,
           "passage_anchors": [
             "Genesis 1:2"
           ],
@@ -1633,7 +1635,7 @@
           "category": "history",
           "semantic_relationship": "GENERIC_BACKGROUND",
           "presentation_role": "historical_context",
-          "overview_priority": 45,
+          "overview_priority": 40,
           "passage_anchors": [
             "Genesis 1:2"
           ],
@@ -1739,7 +1741,7 @@
           "category": "culture",
           "semantic_relationship": "GENERIC_BACKGROUND",
           "presentation_role": "historical_context",
-          "overview_priority": 45,
+          "overview_priority": 40,
           "passage_anchors": [
             "Luke 1:26-38"
           ],
@@ -1754,7 +1756,7 @@
           "category": "history",
           "semantic_relationship": "GENERIC_BACKGROUND",
           "presentation_role": "historical_context",
-          "overview_priority": 45,
+          "overview_priority": 40,
           "passage_anchors": [
             "Luke 1:26-38"
           ],
@@ -1769,7 +1771,7 @@
           "category": "culture",
           "semantic_relationship": "GENERIC_BACKGROUND",
           "presentation_role": "historical_context",
-          "overview_priority": 45,
+          "overview_priority": 40,
           "passage_anchors": [
             "Luke 1:26-38"
           ],
@@ -1784,7 +1786,7 @@
           "category": "history",
           "semantic_relationship": "GENERIC_BACKGROUND",
           "presentation_role": "historical_context",
-          "overview_priority": 45,
+          "overview_priority": 40,
           "passage_anchors": [
             "Luke 1:26-38"
           ],
@@ -1799,7 +1801,7 @@
           "category": "culture",
           "semantic_relationship": "GENERIC_BACKGROUND",
           "presentation_role": "historical_context",
-          "overview_priority": 45,
+          "overview_priority": 40,
           "passage_anchors": [
             "Luke 1:30-33"
           ],
@@ -1814,7 +1816,7 @@
           "category": "history",
           "semantic_relationship": "GENERIC_BACKGROUND",
           "presentation_role": "historical_context",
-          "overview_priority": 45,
+          "overview_priority": 40,
           "passage_anchors": [
             "Luke 1:30-33"
           ],
@@ -1829,7 +1831,7 @@
           "category": "geography",
           "semantic_relationship": "DIRECT_CONTEXT",
           "presentation_role": "language_literary",
-          "overview_priority": 48,
+          "overview_priority": 63,
           "passage_anchors": [
             "Luke 1:1-4"
           ],
@@ -1844,7 +1846,7 @@
           "category": "history",
           "semantic_relationship": "DIRECT_CONTEXT",
           "presentation_role": "historical_context",
-          "overview_priority": 88,
+          "overview_priority": 103,
           "passage_anchors": [
             "Luke 1:1-4"
           ],
@@ -1859,7 +1861,7 @@
           "category": "culture",
           "semantic_relationship": "DIRECT_CONTEXT",
           "presentation_role": "language_literary",
-          "overview_priority": 90,
+          "overview_priority": 105,
           "passage_anchors": [
             "Luke 1:5-80"
           ],
@@ -1874,7 +1876,7 @@
           "category": "history",
           "semantic_relationship": "DIRECT_CONTEXT",
           "presentation_role": "historical_context",
-          "overview_priority": 45,
+          "overview_priority": 60,
           "passage_anchors": [
             "Luke 1:46-55"
           ],
@@ -1889,7 +1891,7 @@
           "category": "history",
           "semantic_relationship": "DIRECT_CONTEXT",
           "presentation_role": "historical_context",
-          "overview_priority": 95,
+          "overview_priority": 110,
           "passage_anchors": [
             "Luke 1:1-4"
           ],
@@ -1904,7 +1906,7 @@
           "category": "culture",
           "semantic_relationship": "DIRECT_CONTEXT",
           "presentation_role": "historical_context",
-          "overview_priority": 95,
+          "overview_priority": 110,
           "passage_anchors": [
             "Luke 1:1-4"
           ],
@@ -1919,7 +1921,7 @@
           "category": "culture",
           "semantic_relationship": "DIRECT_CONTEXT",
           "presentation_role": "historical_context",
-          "overview_priority": 80,
+          "overview_priority": 95,
           "passage_anchors": [
             "Luke 1:5"
           ],
@@ -1934,7 +1936,7 @@
           "category": "culture",
           "semantic_relationship": "DIRECT_CONTEXT",
           "presentation_role": "language_literary",
-          "overview_priority": 40,
+          "overview_priority": 55,
           "passage_anchors": [
             "Luke 1:1-4"
           ],
@@ -1964,7 +1966,7 @@
           "category": "culture",
           "semantic_relationship": "GENERIC_BACKGROUND",
           "presentation_role": "historical_context",
-          "overview_priority": 45,
+          "overview_priority": 40,
           "passage_anchors": [
             "Luke 1:26-38"
           ],
@@ -1979,7 +1981,7 @@
           "category": "culture",
           "semantic_relationship": "GENERIC_BACKGROUND",
           "presentation_role": "historical_context",
-          "overview_priority": 45,
+          "overview_priority": 40,
           "passage_anchors": [
             "Luke 1:26-38"
           ],
@@ -1994,7 +1996,7 @@
           "category": "history",
           "semantic_relationship": "GENERIC_BACKGROUND",
           "presentation_role": "historical_context",
-          "overview_priority": 45,
+          "overview_priority": 40,
           "passage_anchors": [
             "Luke 1:26-38"
           ],
@@ -2009,7 +2011,7 @@
           "category": "culture",
           "semantic_relationship": "GENERIC_BACKGROUND",
           "presentation_role": "historical_context",
-          "overview_priority": 45,
+          "overview_priority": 40,
           "passage_anchors": [
             "Luke 1:26-38"
           ],
@@ -2024,7 +2026,7 @@
           "category": "culture",
           "semantic_relationship": "GENERIC_BACKGROUND",
           "presentation_role": "historical_context",
-          "overview_priority": 45,
+          "overview_priority": 40,
           "passage_anchors": [
             "Luke 1:35"
           ],
@@ -2039,7 +2041,7 @@
           "category": "history",
           "semantic_relationship": "GENERIC_BACKGROUND",
           "presentation_role": "historical_context",
-          "overview_priority": 45,
+          "overview_priority": 40,
           "passage_anchors": [
             "Luke 1:35"
           ],
@@ -2054,7 +2056,7 @@
           "category": "culture",
           "semantic_relationship": "GENERIC_BACKGROUND",
           "presentation_role": "historical_context",
-          "overview_priority": 45,
+          "overview_priority": 40,
           "passage_anchors": [
             "Luke 1:30-33"
           ],
@@ -2069,7 +2071,7 @@
           "category": "history",
           "semantic_relationship": "GENERIC_BACKGROUND",
           "presentation_role": "historical_context",
-          "overview_priority": 45,
+          "overview_priority": 40,
           "passage_anchors": [
             "Luke 1:30-33"
           ],
@@ -2114,7 +2116,7 @@
           "category": "history",
           "semantic_relationship": "DIRECT_CONTEXT",
           "presentation_role": "historical_context",
-          "overview_priority": 88,
+          "overview_priority": 103,
           "passage_anchors": [
             "Leviticus 1:1"
           ],
@@ -2144,7 +2146,7 @@
           "category": "culture",
           "semantic_relationship": "DIRECT_CONTEXT",
           "presentation_role": "historical_context",
-          "overview_priority": 95,
+          "overview_priority": 110,
           "passage_anchors": [
             "Leviticus 1:1"
           ],
@@ -2174,7 +2176,7 @@
           "category": "culture",
           "semantic_relationship": "GENERIC_BACKGROUND",
           "presentation_role": "historical_context",
-          "overview_priority": 60,
+          "overview_priority": 55,
           "passage_anchors": [
             "Leviticus 1:1-17"
           ],
@@ -2189,7 +2191,7 @@
           "category": "culture",
           "semantic_relationship": "GENERIC_BACKGROUND",
           "presentation_role": "historical_context",
-          "overview_priority": 60,
+          "overview_priority": 55,
           "passage_anchors": [
             "Leviticus 1:1-17"
           ],
@@ -2204,7 +2206,7 @@
           "category": "history",
           "semantic_relationship": "GENERIC_BACKGROUND",
           "presentation_role": "historical_context",
-          "overview_priority": 60,
+          "overview_priority": 55,
           "passage_anchors": [
             "Leviticus 1:1-17"
           ],
@@ -2219,7 +2221,7 @@
           "category": "culture",
           "semantic_relationship": "GENERIC_BACKGROUND",
           "presentation_role": "historical_context",
-          "overview_priority": 60,
+          "overview_priority": 55,
           "passage_anchors": [
             "Leviticus 1:1-17"
           ],
@@ -2234,7 +2236,7 @@
           "category": "culture",
           "semantic_relationship": "GENERIC_BACKGROUND",
           "presentation_role": "historical_context",
-          "overview_priority": 45,
+          "overview_priority": 40,
           "passage_anchors": [
             "Leviticus 1:1-9"
           ],
@@ -2249,7 +2251,7 @@
           "category": "history",
           "semantic_relationship": "GENERIC_BACKGROUND",
           "presentation_role": "historical_context",
-          "overview_priority": 45,
+          "overview_priority": 40,
           "passage_anchors": [
             "Leviticus 1:1-9"
           ],
@@ -2264,7 +2266,7 @@
           "category": "culture",
           "semantic_relationship": "GENERIC_BACKGROUND",
           "presentation_role": "historical_context",
-          "overview_priority": 45,
+          "overview_priority": 40,
           "passage_anchors": [
             "Leviticus 1:1-9"
           ],
@@ -2279,7 +2281,7 @@
           "category": "archaeology",
           "semantic_relationship": "GENERIC_BACKGROUND",
           "presentation_role": null,
-          "overview_priority": 33,
+          "overview_priority": 28,
           "passage_anchors": [
             "Leviticus 1:1-9"
           ],
@@ -2294,7 +2296,7 @@
           "category": "archaeology",
           "semantic_relationship": "GENERIC_BACKGROUND",
           "presentation_role": null,
-          "overview_priority": 33,
+          "overview_priority": 28,
           "passage_anchors": [
             "Leviticus 1:1-9"
           ],
@@ -2309,7 +2311,7 @@
           "category": "chronology",
           "semantic_relationship": "GENERIC_BACKGROUND",
           "presentation_role": "chronology",
-          "overview_priority": 30,
+          "overview_priority": 25,
           "passage_anchors": [
             "Leviticus 1:1-9"
           ],
@@ -2324,7 +2326,7 @@
           "category": "chronology",
           "semantic_relationship": "GENERIC_BACKGROUND",
           "presentation_role": "chronology",
-          "overview_priority": 30,
+          "overview_priority": 25,
           "passage_anchors": [
             "Leviticus 1:1-9"
           ],
@@ -2339,7 +2341,7 @@
           "category": "culture",
           "semantic_relationship": "GENERIC_BACKGROUND",
           "presentation_role": "historical_context",
-          "overview_priority": 45,
+          "overview_priority": 40,
           "passage_anchors": [
             "Leviticus 1:1-9"
           ],
@@ -2354,7 +2356,7 @@
           "category": "history",
           "semantic_relationship": "GENERIC_BACKGROUND",
           "presentation_role": "historical_context",
-          "overview_priority": 45,
+          "overview_priority": 40,
           "passage_anchors": [
             "Leviticus 1:1-9"
           ],
@@ -2369,7 +2371,7 @@
           "category": "history",
           "semantic_relationship": "GENERIC_BACKGROUND",
           "presentation_role": "historical_context",
-          "overview_priority": 45,
+          "overview_priority": 40,
           "passage_anchors": [
             "Leviticus 1:1-9"
           ],
@@ -2384,7 +2386,7 @@
           "category": "social",
           "semantic_relationship": "GENERIC_BACKGROUND",
           "presentation_role": "historical_context",
-          "overview_priority": 45,
+          "overview_priority": 40,
           "passage_anchors": [
             "Leviticus 1:1-9"
           ],
@@ -2399,7 +2401,7 @@
           "category": "culture",
           "semantic_relationship": "GENERIC_BACKGROUND",
           "presentation_role": "historical_context",
-          "overview_priority": 45,
+          "overview_priority": 40,
           "passage_anchors": [
             "Leviticus 1:1-9"
           ],
@@ -2414,7 +2416,7 @@
           "category": "chronology",
           "semantic_relationship": "GENERIC_BACKGROUND",
           "presentation_role": "chronology",
-          "overview_priority": 30,
+          "overview_priority": 25,
           "passage_anchors": [
             "Leviticus 1:1-9"
           ],
@@ -2429,7 +2431,7 @@
           "category": "chronology",
           "semantic_relationship": "GENERIC_BACKGROUND",
           "presentation_role": "chronology",
-          "overview_priority": 30,
+          "overview_priority": 25,
           "passage_anchors": [
             "Leviticus 1:1-9"
           ],
@@ -2444,7 +2446,7 @@
           "category": "chronology",
           "semantic_relationship": "GENERIC_BACKGROUND",
           "presentation_role": "chronology",
-          "overview_priority": 30,
+          "overview_priority": 25,
           "passage_anchors": [
             "Leviticus 1:1-9"
           ],
@@ -2459,7 +2461,7 @@
           "category": "chronology",
           "semantic_relationship": "GENERIC_BACKGROUND",
           "presentation_role": "chronology",
-          "overview_priority": 30,
+          "overview_priority": 25,
           "passage_anchors": [
             "Leviticus 1:1-9"
           ],
@@ -2474,7 +2476,7 @@
           "category": "culture",
           "semantic_relationship": "GENERIC_BACKGROUND",
           "presentation_role": "historical_context",
-          "overview_priority": 60,
+          "overview_priority": 55,
           "passage_anchors": [
             "Leviticus 1:1-17"
           ],
@@ -2489,7 +2491,7 @@
           "category": "history",
           "semantic_relationship": "GENERIC_BACKGROUND",
           "presentation_role": "historical_context",
-          "overview_priority": 60,
+          "overview_priority": 55,
           "passage_anchors": [
             "Leviticus 1:1-17"
           ],
@@ -2523,7 +2525,7 @@
           "category": "culture",
           "semantic_relationship": "GENERIC_BACKGROUND",
           "presentation_role": "historical_context",
-          "overview_priority": 45,
+          "overview_priority": 40,
           "passage_anchors": [
             "Zephaniah 1:14-18"
           ],
@@ -2538,7 +2540,7 @@
           "category": "history",
           "semantic_relationship": "GENERIC_BACKGROUND",
           "presentation_role": "historical_context",
-          "overview_priority": 45,
+          "overview_priority": 40,
           "passage_anchors": [
             "Zephaniah 1:14-18"
           ],
@@ -2553,7 +2555,7 @@
           "category": "culture",
           "semantic_relationship": "GENERIC_BACKGROUND",
           "presentation_role": "historical_context",
-          "overview_priority": 45,
+          "overview_priority": 40,
           "passage_anchors": [
             "Zephaniah 1:14-18"
           ],
@@ -2568,7 +2570,7 @@
           "category": "history",
           "semantic_relationship": "GENERIC_BACKGROUND",
           "presentation_role": "historical_context",
-          "overview_priority": 45,
+          "overview_priority": 40,
           "passage_anchors": [
             "Zephaniah 1:14-18"
           ],
@@ -2583,7 +2585,7 @@
           "category": "culture",
           "semantic_relationship": "DIRECT_CONTEXT",
           "presentation_role": "language_literary",
-          "overview_priority": 75,
+          "overview_priority": 90,
           "passage_anchors": [
             "Zephaniah 1:1"
           ],
@@ -2598,7 +2600,7 @@
           "category": "culture",
           "semantic_relationship": "DIRECT_CONTEXT",
           "presentation_role": "language_literary",
-          "overview_priority": 90,
+          "overview_priority": 105,
           "passage_anchors": [
             "Zephaniah 1:2-3"
           ],
@@ -2613,7 +2615,7 @@
           "category": "history",
           "semantic_relationship": "DIRECT_CONTEXT",
           "presentation_role": "historical_context",
-          "overview_priority": 95,
+          "overview_priority": 110,
           "passage_anchors": [
             "Zephaniah 1:4-6"
           ],
@@ -2628,7 +2630,7 @@
           "category": "culture",
           "semantic_relationship": "DIRECT_CONTEXT",
           "presentation_role": "historical_context",
-          "overview_priority": 95,
+          "overview_priority": 110,
           "passage_anchors": [
             "Zephaniah 1:1"
           ],
@@ -2643,7 +2645,7 @@
           "category": "economics",
           "semantic_relationship": "DIRECT_CONTEXT",
           "presentation_role": "historical_context",
-          "overview_priority": 90,
+          "overview_priority": 105,
           "passage_anchors": [
             "Zephaniah 1:14-18"
           ],
@@ -2658,7 +2660,7 @@
           "category": "culture",
           "semantic_relationship": "DIRECT_CONTEXT",
           "presentation_role": "historical_context",
-          "overview_priority": 68,
+          "overview_priority": 83,
           "passage_anchors": [
             "Zephaniah 1:2-18"
           ],
@@ -2673,7 +2675,7 @@
           "category": "culture",
           "semantic_relationship": "DIRECT_CONTEXT",
           "presentation_role": "historical_context",
-          "overview_priority": 95,
+          "overview_priority": 110,
           "passage_anchors": [
             "Zephaniah 1:1"
           ],
@@ -2688,7 +2690,7 @@
           "category": "economics",
           "semantic_relationship": "DIRECT_CONTEXT",
           "presentation_role": "historical_context",
-          "overview_priority": 90,
+          "overview_priority": 105,
           "passage_anchors": [
             "Zephaniah 1:10-11"
           ],
@@ -2703,7 +2705,7 @@
           "category": "culture",
           "semantic_relationship": "DIRECT_CONTEXT",
           "presentation_role": "historical_context",
-          "overview_priority": 60,
+          "overview_priority": 75,
           "passage_anchors": [
             "Zephaniah 1:12-13"
           ],
@@ -2718,7 +2720,7 @@
           "category": "culture",
           "semantic_relationship": "DIRECT_CONTEXT",
           "presentation_role": "language_literary",
-          "overview_priority": 90,
+          "overview_priority": 105,
           "passage_anchors": [
             "Zephaniah 1:7-9"
           ],
@@ -2733,7 +2735,7 @@
           "category": "economics",
           "semantic_relationship": "DIRECT_CONTEXT",
           "presentation_role": "language_literary",
-          "overview_priority": 85,
+          "overview_priority": 100,
           "passage_anchors": [
             "Zephaniah 1:12-13"
           ],
@@ -2748,7 +2750,7 @@
           "category": "history",
           "semantic_relationship": "DIRECT_CONTEXT",
           "presentation_role": "historical_context",
-          "overview_priority": 95,
+          "overview_priority": 110,
           "passage_anchors": [
             "Zephaniah 1:1"
           ],
@@ -2763,7 +2765,7 @@
           "category": "history",
           "semantic_relationship": "DIRECT_CONTEXT",
           "presentation_role": "historical_context",
-          "overview_priority": 60,
+          "overview_priority": 75,
           "passage_anchors": [
             "Zephaniah 1:1"
           ],
@@ -2791,9 +2793,9 @@
     "1 Samuel 28": {
       "availability": "THIN",
       "evidence_count": 2,
-      "overview_evidence_id": "first-samuel-literary-movement",
+      "overview_evidence_id": "1-samuel:interpretive_note:3",
       "overview_anchors": [
-        "1 Samuel 1-31"
+        "1 Samuel 28:3-25"
       ],
       "section_kinds": [],
       "evidence_items": [
@@ -2804,7 +2806,7 @@
           "category": "culture",
           "semantic_relationship": "DIRECT_CONTEXT",
           "presentation_role": "historical_context",
-          "overview_priority": 72,
+          "overview_priority": 87,
           "passage_anchors": [
             "1 Samuel 28:3-25"
           ],
@@ -2976,7 +2978,7 @@
       "category": "culture",
       "semantic_relationship": "DIRECT_CONTEXT",
       "presentation_role": "language_literary",
-      "overview_priority": 75,
+      "overview_priority": 90,
       "passage_anchors": [
         "Psalms 106:48"
       ],
@@ -3051,7 +3053,7 @@
       "category": "culture",
       "semantic_relationship": "DIRECT_CONTEXT",
       "presentation_role": "historical_context",
-      "overview_priority": 72,
+      "overview_priority": 87,
       "passage_anchors": [
         "Deuteronomy 5-26"
       ],
@@ -3066,7 +3068,7 @@
       "category": "culture",
       "semantic_relationship": "DIRECT_CONTEXT",
       "presentation_role": "language_literary",
-      "overview_priority": 75,
+      "overview_priority": 90,
       "passage_anchors": [
         "Isaiah 28:1"
       ],
@@ -3186,7 +3188,7 @@
       "category": "history",
       "semantic_relationship": "DIRECT_CONTEXT",
       "presentation_role": "historical_context",
-      "overview_priority": 88,
+      "overview_priority": 103,
       "passage_anchors": [
         "Leviticus 1:1"
       ],
@@ -3216,7 +3218,7 @@
       "category": "culture",
       "semantic_relationship": "DIRECT_CONTEXT",
       "presentation_role": "historical_context",
-      "overview_priority": 95,
+      "overview_priority": 110,
       "passage_anchors": [
         "Leviticus 1:1"
       ],
@@ -3246,7 +3248,7 @@
       "category": "culture",
       "semantic_relationship": "GENERIC_BACKGROUND",
       "presentation_role": "historical_context",
-      "overview_priority": 60,
+      "overview_priority": 55,
       "passage_anchors": [
         "Leviticus 1:1-17"
       ],
@@ -3261,7 +3263,7 @@
       "category": "culture",
       "semantic_relationship": "GENERIC_BACKGROUND",
       "presentation_role": "historical_context",
-      "overview_priority": 60,
+      "overview_priority": 55,
       "passage_anchors": [
         "Leviticus 1:1-17"
       ],
@@ -3276,7 +3278,7 @@
       "category": "history",
       "semantic_relationship": "GENERIC_BACKGROUND",
       "presentation_role": "historical_context",
-      "overview_priority": 60,
+      "overview_priority": 55,
       "passage_anchors": [
         "Leviticus 1:1-17"
       ],
@@ -3291,7 +3293,7 @@
       "category": "culture",
       "semantic_relationship": "GENERIC_BACKGROUND",
       "presentation_role": "historical_context",
-      "overview_priority": 60,
+      "overview_priority": 55,
       "passage_anchors": [
         "Leviticus 1:1-17"
       ],
@@ -3306,7 +3308,7 @@
       "category": "culture",
       "semantic_relationship": "GENERIC_BACKGROUND",
       "presentation_role": "historical_context",
-      "overview_priority": 45,
+      "overview_priority": 40,
       "passage_anchors": [
         "Leviticus 1:1-9"
       ],
@@ -3321,7 +3323,7 @@
       "category": "history",
       "semantic_relationship": "GENERIC_BACKGROUND",
       "presentation_role": "historical_context",
-      "overview_priority": 45,
+      "overview_priority": 40,
       "passage_anchors": [
         "Leviticus 1:1-9"
       ],
@@ -3336,7 +3338,7 @@
       "category": "culture",
       "semantic_relationship": "GENERIC_BACKGROUND",
       "presentation_role": "historical_context",
-      "overview_priority": 45,
+      "overview_priority": 40,
       "passage_anchors": [
         "Leviticus 1:1-9"
       ],
@@ -3351,7 +3353,7 @@
       "category": "archaeology",
       "semantic_relationship": "GENERIC_BACKGROUND",
       "presentation_role": null,
-      "overview_priority": 33,
+      "overview_priority": 28,
       "passage_anchors": [
         "Leviticus 1:1-9"
       ],
@@ -3366,7 +3368,7 @@
       "category": "archaeology",
       "semantic_relationship": "GENERIC_BACKGROUND",
       "presentation_role": null,
-      "overview_priority": 33,
+      "overview_priority": 28,
       "passage_anchors": [
         "Leviticus 1:1-9"
       ],
@@ -3381,7 +3383,7 @@
       "category": "chronology",
       "semantic_relationship": "GENERIC_BACKGROUND",
       "presentation_role": "chronology",
-      "overview_priority": 30,
+      "overview_priority": 25,
       "passage_anchors": [
         "Leviticus 1:1-9"
       ],
@@ -3396,7 +3398,7 @@
       "category": "chronology",
       "semantic_relationship": "GENERIC_BACKGROUND",
       "presentation_role": "chronology",
-      "overview_priority": 30,
+      "overview_priority": 25,
       "passage_anchors": [
         "Leviticus 1:1-9"
       ],
@@ -3411,7 +3413,7 @@
       "category": "culture",
       "semantic_relationship": "GENERIC_BACKGROUND",
       "presentation_role": "historical_context",
-      "overview_priority": 45,
+      "overview_priority": 40,
       "passage_anchors": [
         "Leviticus 1:1-9"
       ],
@@ -3426,7 +3428,7 @@
       "category": "history",
       "semantic_relationship": "GENERIC_BACKGROUND",
       "presentation_role": "historical_context",
-      "overview_priority": 45,
+      "overview_priority": 40,
       "passage_anchors": [
         "Leviticus 1:1-9"
       ],
@@ -3441,7 +3443,7 @@
       "category": "history",
       "semantic_relationship": "GENERIC_BACKGROUND",
       "presentation_role": "historical_context",
-      "overview_priority": 45,
+      "overview_priority": 40,
       "passage_anchors": [
         "Leviticus 1:1-9"
       ],
@@ -3456,7 +3458,7 @@
       "category": "social",
       "semantic_relationship": "GENERIC_BACKGROUND",
       "presentation_role": "historical_context",
-      "overview_priority": 45,
+      "overview_priority": 40,
       "passage_anchors": [
         "Leviticus 1:1-9"
       ],
@@ -3471,7 +3473,7 @@
       "category": "culture",
       "semantic_relationship": "GENERIC_BACKGROUND",
       "presentation_role": "historical_context",
-      "overview_priority": 45,
+      "overview_priority": 40,
       "passage_anchors": [
         "Leviticus 1:1-9"
       ],
@@ -3486,7 +3488,7 @@
       "category": "chronology",
       "semantic_relationship": "GENERIC_BACKGROUND",
       "presentation_role": "chronology",
-      "overview_priority": 30,
+      "overview_priority": 25,
       "passage_anchors": [
         "Leviticus 1:1-9"
       ],
@@ -3501,7 +3503,7 @@
       "category": "chronology",
       "semantic_relationship": "GENERIC_BACKGROUND",
       "presentation_role": "chronology",
-      "overview_priority": 30,
+      "overview_priority": 25,
       "passage_anchors": [
         "Leviticus 1:1-9"
       ],
@@ -3516,7 +3518,7 @@
       "category": "chronology",
       "semantic_relationship": "GENERIC_BACKGROUND",
       "presentation_role": "chronology",
-      "overview_priority": 30,
+      "overview_priority": 25,
       "passage_anchors": [
         "Leviticus 1:1-9"
       ],
@@ -3531,7 +3533,7 @@
       "category": "chronology",
       "semantic_relationship": "GENERIC_BACKGROUND",
       "presentation_role": "chronology",
-      "overview_priority": 30,
+      "overview_priority": 25,
       "passage_anchors": [
         "Leviticus 1:1-9"
       ],
@@ -3546,7 +3548,7 @@
       "category": "culture",
       "semantic_relationship": "GENERIC_BACKGROUND",
       "presentation_role": "historical_context",
-      "overview_priority": 60,
+      "overview_priority": 55,
       "passage_anchors": [
         "Leviticus 1:1-17"
       ],
@@ -3561,7 +3563,7 @@
       "category": "history",
       "semantic_relationship": "GENERIC_BACKGROUND",
       "presentation_role": "historical_context",
-      "overview_priority": 60,
+      "overview_priority": 55,
       "passage_anchors": [
         "Leviticus 1:1-17"
       ],
@@ -3651,7 +3653,7 @@
       "category": "culture",
       "semantic_relationship": "DIRECT_CONTEXT",
       "presentation_role": "language_literary",
-      "overview_priority": 75,
+      "overview_priority": 90,
       "passage_anchors": [
         "Psalms 1:1-3"
       ],
@@ -3666,7 +3668,7 @@
       "category": "history",
       "semantic_relationship": "DIRECT_CONTEXT",
       "presentation_role": "language_literary",
-      "overview_priority": 75,
+      "overview_priority": 90,
       "passage_anchors": [
         "Psalms 1:1-3"
       ],
@@ -3681,7 +3683,7 @@
       "category": "culture",
       "semantic_relationship": "GENERIC_BACKGROUND",
       "presentation_role": "historical_context",
-      "overview_priority": 45,
+      "overview_priority": 40,
       "passage_anchors": [
         "Psalms 1:1-3"
       ],
@@ -3696,7 +3698,7 @@
       "category": "history",
       "semantic_relationship": "GENERIC_BACKGROUND",
       "presentation_role": "historical_context",
-      "overview_priority": 45,
+      "overview_priority": 40,
       "passage_anchors": [
         "Psalms 1:1-3"
       ],
@@ -3711,7 +3713,7 @@
       "category": "culture",
       "semantic_relationship": "GENERIC_BACKGROUND",
       "presentation_role": "historical_context",
-      "overview_priority": 45,
+      "overview_priority": 40,
       "passage_anchors": [
         "Psalms 1:1-6"
       ],
@@ -3726,7 +3728,7 @@
       "category": "history",
       "semantic_relationship": "GENERIC_BACKGROUND",
       "presentation_role": "historical_context",
-      "overview_priority": 45,
+      "overview_priority": 40,
       "passage_anchors": [
         "Psalms 1:1-6"
       ],
@@ -3741,7 +3743,7 @@
       "category": "culture",
       "semantic_relationship": "GENERIC_BACKGROUND",
       "presentation_role": "historical_context",
-      "overview_priority": 45,
+      "overview_priority": 40,
       "passage_anchors": [
         "Psalms 1:1-6"
       ],
@@ -3756,7 +3758,7 @@
       "category": "history",
       "semantic_relationship": "GENERIC_BACKGROUND",
       "presentation_role": "historical_context",
-      "overview_priority": 45,
+      "overview_priority": 40,
       "passage_anchors": [
         "Psalms 1:1-6"
       ],
@@ -3771,7 +3773,7 @@
       "category": "culture",
       "semantic_relationship": "GENERIC_BACKGROUND",
       "presentation_role": "historical_context",
-      "overview_priority": 45,
+      "overview_priority": 40,
       "passage_anchors": [
         "Zephaniah 1:14-18"
       ],
@@ -3786,7 +3788,7 @@
       "category": "history",
       "semantic_relationship": "GENERIC_BACKGROUND",
       "presentation_role": "historical_context",
-      "overview_priority": 45,
+      "overview_priority": 40,
       "passage_anchors": [
         "Zephaniah 1:14-18"
       ],
@@ -3801,7 +3803,7 @@
       "category": "culture",
       "semantic_relationship": "GENERIC_BACKGROUND",
       "presentation_role": "historical_context",
-      "overview_priority": 45,
+      "overview_priority": 40,
       "passage_anchors": [
         "Zephaniah 1:14-18"
       ],
@@ -3816,7 +3818,7 @@
       "category": "history",
       "semantic_relationship": "GENERIC_BACKGROUND",
       "presentation_role": "historical_context",
-      "overview_priority": 45,
+      "overview_priority": 40,
       "passage_anchors": [
         "Zephaniah 1:14-18"
       ],
@@ -3831,7 +3833,7 @@
       "category": "culture",
       "semantic_relationship": "DIRECT_CONTEXT",
       "presentation_role": "language_literary",
-      "overview_priority": 75,
+      "overview_priority": 90,
       "passage_anchors": [
         "Zephaniah 1:1"
       ],
@@ -3846,7 +3848,7 @@
       "category": "culture",
       "semantic_relationship": "DIRECT_CONTEXT",
       "presentation_role": "language_literary",
-      "overview_priority": 90,
+      "overview_priority": 105,
       "passage_anchors": [
         "Zephaniah 1:2-3"
       ],
@@ -3861,7 +3863,7 @@
       "category": "history",
       "semantic_relationship": "DIRECT_CONTEXT",
       "presentation_role": "historical_context",
-      "overview_priority": 95,
+      "overview_priority": 110,
       "passage_anchors": [
         "Zephaniah 1:4-6"
       ],
@@ -3876,7 +3878,7 @@
       "category": "culture",
       "semantic_relationship": "DIRECT_CONTEXT",
       "presentation_role": "historical_context",
-      "overview_priority": 95,
+      "overview_priority": 110,
       "passage_anchors": [
         "Zephaniah 1:1"
       ],
@@ -3891,7 +3893,7 @@
       "category": "economics",
       "semantic_relationship": "DIRECT_CONTEXT",
       "presentation_role": "historical_context",
-      "overview_priority": 90,
+      "overview_priority": 105,
       "passage_anchors": [
         "Zephaniah 1:14-18"
       ],
@@ -3906,7 +3908,7 @@
       "category": "culture",
       "semantic_relationship": "DIRECT_CONTEXT",
       "presentation_role": "historical_context",
-      "overview_priority": 68,
+      "overview_priority": 83,
       "passage_anchors": [
         "Zephaniah 1:2-18"
       ],
@@ -3921,7 +3923,7 @@
       "category": "culture",
       "semantic_relationship": "DIRECT_CONTEXT",
       "presentation_role": "historical_context",
-      "overview_priority": 95,
+      "overview_priority": 110,
       "passage_anchors": [
         "Zephaniah 1:1"
       ],
@@ -3936,7 +3938,7 @@
       "category": "economics",
       "semantic_relationship": "DIRECT_CONTEXT",
       "presentation_role": "historical_context",
-      "overview_priority": 90,
+      "overview_priority": 105,
       "passage_anchors": [
         "Zephaniah 1:10-11"
       ],
@@ -3951,7 +3953,7 @@
       "category": "culture",
       "semantic_relationship": "DIRECT_CONTEXT",
       "presentation_role": "historical_context",
-      "overview_priority": 60,
+      "overview_priority": 75,
       "passage_anchors": [
         "Zephaniah 1:12-13"
       ],
@@ -3966,7 +3968,7 @@
       "category": "culture",
       "semantic_relationship": "DIRECT_CONTEXT",
       "presentation_role": "language_literary",
-      "overview_priority": 90,
+      "overview_priority": 105,
       "passage_anchors": [
         "Zephaniah 1:7-9"
       ],
@@ -3981,7 +3983,7 @@
       "category": "economics",
       "semantic_relationship": "DIRECT_CONTEXT",
       "presentation_role": "language_literary",
-      "overview_priority": 85,
+      "overview_priority": 100,
       "passage_anchors": [
         "Zephaniah 1:12-13"
       ],
@@ -3996,7 +3998,7 @@
       "category": "history",
       "semantic_relationship": "DIRECT_CONTEXT",
       "presentation_role": "historical_context",
-      "overview_priority": 95,
+      "overview_priority": 110,
       "passage_anchors": [
         "Zephaniah 1:1"
       ],
@@ -4011,7 +4013,7 @@
       "category": "history",
       "semantic_relationship": "DIRECT_CONTEXT",
       "presentation_role": "historical_context",
-      "overview_priority": 60,
+      "overview_priority": 75,
       "passage_anchors": [
         "Zephaniah 1:1"
       ],
@@ -4071,7 +4073,7 @@
       "category": "culture",
       "semantic_relationship": "GENERIC_BACKGROUND",
       "presentation_role": "historical_context",
-      "overview_priority": 45,
+      "overview_priority": 40,
       "passage_anchors": [
         "Luke 1:26-38"
       ],
@@ -4086,7 +4088,7 @@
       "category": "history",
       "semantic_relationship": "GENERIC_BACKGROUND",
       "presentation_role": "historical_context",
-      "overview_priority": 45,
+      "overview_priority": 40,
       "passage_anchors": [
         "Luke 1:26-38"
       ],
@@ -4101,7 +4103,7 @@
       "category": "culture",
       "semantic_relationship": "GENERIC_BACKGROUND",
       "presentation_role": "historical_context",
-      "overview_priority": 45,
+      "overview_priority": 40,
       "passage_anchors": [
         "Luke 1:26-38"
       ],
@@ -4116,7 +4118,7 @@
       "category": "history",
       "semantic_relationship": "GENERIC_BACKGROUND",
       "presentation_role": "historical_context",
-      "overview_priority": 45,
+      "overview_priority": 40,
       "passage_anchors": [
         "Luke 1:26-38"
       ],
@@ -4131,7 +4133,7 @@
       "category": "culture",
       "semantic_relationship": "GENERIC_BACKGROUND",
       "presentation_role": "historical_context",
-      "overview_priority": 45,
+      "overview_priority": 40,
       "passage_anchors": [
         "Luke 1:30-33"
       ],
@@ -4146,7 +4148,7 @@
       "category": "history",
       "semantic_relationship": "GENERIC_BACKGROUND",
       "presentation_role": "historical_context",
-      "overview_priority": 45,
+      "overview_priority": 40,
       "passage_anchors": [
         "Luke 1:30-33"
       ],
@@ -4161,7 +4163,7 @@
       "category": "geography",
       "semantic_relationship": "DIRECT_CONTEXT",
       "presentation_role": "language_literary",
-      "overview_priority": 48,
+      "overview_priority": 63,
       "passage_anchors": [
         "Luke 1:1-4"
       ],
@@ -4176,7 +4178,7 @@
       "category": "history",
       "semantic_relationship": "DIRECT_CONTEXT",
       "presentation_role": "historical_context",
-      "overview_priority": 88,
+      "overview_priority": 103,
       "passage_anchors": [
         "Luke 1:1-4"
       ],
@@ -4191,7 +4193,7 @@
       "category": "culture",
       "semantic_relationship": "DIRECT_CONTEXT",
       "presentation_role": "language_literary",
-      "overview_priority": 90,
+      "overview_priority": 105,
       "passage_anchors": [
         "Luke 1:5-80"
       ],
@@ -4206,7 +4208,7 @@
       "category": "history",
       "semantic_relationship": "DIRECT_CONTEXT",
       "presentation_role": "historical_context",
-      "overview_priority": 45,
+      "overview_priority": 60,
       "passage_anchors": [
         "Luke 1:46-55"
       ],
@@ -4221,7 +4223,7 @@
       "category": "history",
       "semantic_relationship": "DIRECT_CONTEXT",
       "presentation_role": "historical_context",
-      "overview_priority": 95,
+      "overview_priority": 110,
       "passage_anchors": [
         "Luke 1:1-4"
       ],
@@ -4236,7 +4238,7 @@
       "category": "culture",
       "semantic_relationship": "DIRECT_CONTEXT",
       "presentation_role": "historical_context",
-      "overview_priority": 95,
+      "overview_priority": 110,
       "passage_anchors": [
         "Luke 1:1-4"
       ],
@@ -4251,7 +4253,7 @@
       "category": "culture",
       "semantic_relationship": "DIRECT_CONTEXT",
       "presentation_role": "historical_context",
-      "overview_priority": 80,
+      "overview_priority": 95,
       "passage_anchors": [
         "Luke 1:5"
       ],
@@ -4266,7 +4268,7 @@
       "category": "culture",
       "semantic_relationship": "DIRECT_CONTEXT",
       "presentation_role": "language_literary",
-      "overview_priority": 40,
+      "overview_priority": 55,
       "passage_anchors": [
         "Luke 1:1-4"
       ],
@@ -4296,7 +4298,7 @@
       "category": "culture",
       "semantic_relationship": "GENERIC_BACKGROUND",
       "presentation_role": "historical_context",
-      "overview_priority": 45,
+      "overview_priority": 40,
       "passage_anchors": [
         "Luke 1:26-38"
       ],
@@ -4311,7 +4313,7 @@
       "category": "culture",
       "semantic_relationship": "GENERIC_BACKGROUND",
       "presentation_role": "historical_context",
-      "overview_priority": 45,
+      "overview_priority": 40,
       "passage_anchors": [
         "Luke 1:26-38"
       ],
@@ -4326,7 +4328,7 @@
       "category": "history",
       "semantic_relationship": "GENERIC_BACKGROUND",
       "presentation_role": "historical_context",
-      "overview_priority": 45,
+      "overview_priority": 40,
       "passage_anchors": [
         "Luke 1:26-38"
       ],
@@ -4341,7 +4343,7 @@
       "category": "culture",
       "semantic_relationship": "GENERIC_BACKGROUND",
       "presentation_role": "historical_context",
-      "overview_priority": 45,
+      "overview_priority": 40,
       "passage_anchors": [
         "Luke 1:26-38"
       ],
@@ -4356,7 +4358,7 @@
       "category": "culture",
       "semantic_relationship": "GENERIC_BACKGROUND",
       "presentation_role": "historical_context",
-      "overview_priority": 45,
+      "overview_priority": 40,
       "passage_anchors": [
         "Luke 1:35"
       ],
@@ -4371,7 +4373,7 @@
       "category": "history",
       "semantic_relationship": "GENERIC_BACKGROUND",
       "presentation_role": "historical_context",
-      "overview_priority": 45,
+      "overview_priority": 40,
       "passage_anchors": [
         "Luke 1:35"
       ],
@@ -4386,7 +4388,7 @@
       "category": "culture",
       "semantic_relationship": "GENERIC_BACKGROUND",
       "presentation_role": "historical_context",
-      "overview_priority": 45,
+      "overview_priority": 40,
       "passage_anchors": [
         "Luke 1:30-33"
       ],
@@ -4401,7 +4403,7 @@
       "category": "history",
       "semantic_relationship": "GENERIC_BACKGROUND",
       "presentation_role": "historical_context",
-      "overview_priority": 45,
+      "overview_priority": 40,
       "passage_anchors": [
         "Luke 1:30-33"
       ],
@@ -4461,7 +4463,7 @@
       "category": "culture",
       "semantic_relationship": "GENERIC_BACKGROUND",
       "presentation_role": "historical_context",
-      "overview_priority": 45,
+      "overview_priority": 40,
       "passage_anchors": [
         "Genesis 1:1-31"
       ],
@@ -4476,7 +4478,7 @@
       "category": "culture",
       "semantic_relationship": "GENERIC_BACKGROUND",
       "presentation_role": "historical_context",
-      "overview_priority": 45,
+      "overview_priority": 40,
       "passage_anchors": [
         "Genesis 1:1-31"
       ],
@@ -4491,7 +4493,7 @@
       "category": "history",
       "semantic_relationship": "GENERIC_BACKGROUND",
       "presentation_role": "historical_context",
-      "overview_priority": 45,
+      "overview_priority": 40,
       "passage_anchors": [
         "Genesis 1:1-31"
       ],
@@ -4506,7 +4508,7 @@
       "category": "history",
       "semantic_relationship": "GENERIC_BACKGROUND",
       "presentation_role": "historical_context",
-      "overview_priority": 45,
+      "overview_priority": 40,
       "passage_anchors": [
         "Genesis 1:1-31"
       ],
@@ -4521,7 +4523,7 @@
       "category": "social",
       "semantic_relationship": "GENERIC_BACKGROUND",
       "presentation_role": "historical_context",
-      "overview_priority": 45,
+      "overview_priority": 40,
       "passage_anchors": [
         "Genesis 1:1-31"
       ],
@@ -4536,7 +4538,7 @@
       "category": "culture",
       "semantic_relationship": "GENERIC_BACKGROUND",
       "presentation_role": "historical_context",
-      "overview_priority": 45,
+      "overview_priority": 40,
       "passage_anchors": [
         "Genesis 1:1-31"
       ],
@@ -4551,7 +4553,7 @@
       "category": "chronology",
       "semantic_relationship": "GENERIC_BACKGROUND",
       "presentation_role": "chronology",
-      "overview_priority": 30,
+      "overview_priority": 25,
       "passage_anchors": [
         "Genesis 1:1-31"
       ],
@@ -4566,7 +4568,7 @@
       "category": "chronology",
       "semantic_relationship": "GENERIC_BACKGROUND",
       "presentation_role": "chronology",
-      "overview_priority": 30,
+      "overview_priority": 25,
       "passage_anchors": [
         "Genesis 1:1-31"
       ],
@@ -4581,7 +4583,7 @@
       "category": "chronology",
       "semantic_relationship": "GENERIC_BACKGROUND",
       "presentation_role": "chronology",
-      "overview_priority": 30,
+      "overview_priority": 25,
       "passage_anchors": [
         "Genesis 1:1-31"
       ],
@@ -4596,7 +4598,7 @@
       "category": "chronology",
       "semantic_relationship": "GENERIC_BACKGROUND",
       "presentation_role": "chronology",
-      "overview_priority": 30,
+      "overview_priority": 25,
       "passage_anchors": [
         "Genesis 1:1-31"
       ],
@@ -4611,7 +4613,7 @@
       "category": "chronology",
       "semantic_relationship": "GENERIC_BACKGROUND",
       "presentation_role": "chronology",
-      "overview_priority": 30,
+      "overview_priority": 25,
       "passage_anchors": [
         "Genesis 1:1-31"
       ],
@@ -4626,7 +4628,7 @@
       "category": "chronology",
       "semantic_relationship": "GENERIC_BACKGROUND",
       "presentation_role": "chronology",
-      "overview_priority": 30,
+      "overview_priority": 25,
       "passage_anchors": [
         "Genesis 1:1-31"
       ],
@@ -4641,7 +4643,7 @@
       "category": "culture",
       "semantic_relationship": "GENERIC_BACKGROUND",
       "presentation_role": "historical_context",
-      "overview_priority": 45,
+      "overview_priority": 40,
       "passage_anchors": [
         "Genesis 1:1-31"
       ],
@@ -4656,7 +4658,7 @@
       "category": "history",
       "semantic_relationship": "GENERIC_BACKGROUND",
       "presentation_role": "historical_context",
-      "overview_priority": 45,
+      "overview_priority": 40,
       "passage_anchors": [
         "Genesis 1:1-31"
       ],
@@ -4671,7 +4673,7 @@
       "category": "culture",
       "semantic_relationship": "GENERIC_BACKGROUND",
       "presentation_role": "historical_context",
-      "overview_priority": 45,
+      "overview_priority": 40,
       "passage_anchors": [
         "Genesis 1:1-31"
       ],
@@ -4686,7 +4688,7 @@
       "category": "history",
       "semantic_relationship": "GENERIC_BACKGROUND",
       "presentation_role": "historical_context",
-      "overview_priority": 45,
+      "overview_priority": 40,
       "passage_anchors": [
         "Genesis 1:1-31"
       ],
@@ -4701,7 +4703,7 @@
       "category": "culture",
       "semantic_relationship": "GENERIC_BACKGROUND",
       "presentation_role": "historical_context",
-      "overview_priority": 45,
+      "overview_priority": 40,
       "passage_anchors": [
         "Genesis 1:1-31"
       ],
@@ -4716,7 +4718,7 @@
       "category": "culture",
       "semantic_relationship": "GENERIC_BACKGROUND",
       "presentation_role": "historical_context",
-      "overview_priority": 45,
+      "overview_priority": 40,
       "passage_anchors": [
         "Genesis 1:1-31"
       ],
@@ -4731,7 +4733,7 @@
       "category": "history",
       "semantic_relationship": "GENERIC_BACKGROUND",
       "presentation_role": "historical_context",
-      "overview_priority": 45,
+      "overview_priority": 40,
       "passage_anchors": [
         "Genesis 1:1-31"
       ],
@@ -4806,7 +4808,7 @@
       "category": "culture",
       "semantic_relationship": "DIRECT_CONTEXT",
       "presentation_role": "historical_context",
-      "overview_priority": 80,
+      "overview_priority": 95,
       "passage_anchors": [
         "Genesis 1:1-2:3"
       ],
@@ -4821,7 +4823,7 @@
       "category": "culture",
       "semantic_relationship": "DIRECT_CONTEXT",
       "presentation_role": "significance",
-      "overview_priority": 80,
+      "overview_priority": 95,
       "passage_anchors": [
         "Genesis 1:1-2:3"
       ],
@@ -4881,7 +4883,7 @@
       "category": "culture",
       "semantic_relationship": "GENERIC_BACKGROUND",
       "presentation_role": "historical_context",
-      "overview_priority": 45,
+      "overview_priority": 40,
       "passage_anchors": [
         "Genesis 1:26-28"
       ],
@@ -4896,7 +4898,7 @@
       "category": "culture",
       "semantic_relationship": "GENERIC_BACKGROUND",
       "presentation_role": "historical_context",
-      "overview_priority": 45,
+      "overview_priority": 40,
       "passage_anchors": [
         "Genesis 1:26-28"
       ],
@@ -4911,7 +4913,7 @@
       "category": "history",
       "semantic_relationship": "GENERIC_BACKGROUND",
       "presentation_role": "historical_context",
-      "overview_priority": 45,
+      "overview_priority": 40,
       "passage_anchors": [
         "Genesis 1:26-28"
       ],
@@ -4926,7 +4928,7 @@
       "category": "culture",
       "semantic_relationship": "GENERIC_BACKGROUND",
       "presentation_role": "historical_context",
-      "overview_priority": 45,
+      "overview_priority": 40,
       "passage_anchors": [
         "Genesis 1:26-28"
       ],
@@ -4956,7 +4958,7 @@
       "category": "culture",
       "semantic_relationship": "GENERIC_BACKGROUND",
       "presentation_role": "historical_context",
-      "overview_priority": 45,
+      "overview_priority": 40,
       "passage_anchors": [
         "Genesis 1:1-5"
       ],
@@ -4971,7 +4973,7 @@
       "category": "history",
       "semantic_relationship": "GENERIC_BACKGROUND",
       "presentation_role": "historical_context",
-      "overview_priority": 45,
+      "overview_priority": 40,
       "passage_anchors": [
         "Genesis 1:1-5"
       ],
@@ -5001,7 +5003,7 @@
       "category": "culture",
       "semantic_relationship": "GENERIC_BACKGROUND",
       "presentation_role": "historical_context",
-      "overview_priority": 45,
+      "overview_priority": 40,
       "passage_anchors": [
         "Genesis 1:1-31"
       ],
@@ -5016,7 +5018,7 @@
       "category": "history",
       "semantic_relationship": "GENERIC_BACKGROUND",
       "presentation_role": "historical_context",
-      "overview_priority": 45,
+      "overview_priority": 40,
       "passage_anchors": [
         "Genesis 1:1-31"
       ],
@@ -5031,7 +5033,7 @@
       "category": "culture",
       "semantic_relationship": "GENERIC_BACKGROUND",
       "presentation_role": "historical_context",
-      "overview_priority": 45,
+      "overview_priority": 40,
       "passage_anchors": [
         "Genesis 1:1-2"
       ],
@@ -5046,7 +5048,7 @@
       "category": "history",
       "semantic_relationship": "GENERIC_BACKGROUND",
       "presentation_role": "historical_context",
-      "overview_priority": 45,
+      "overview_priority": 40,
       "passage_anchors": [
         "Genesis 1:1-2"
       ],
@@ -5061,7 +5063,7 @@
       "category": "culture",
       "semantic_relationship": "GENERIC_BACKGROUND",
       "presentation_role": "historical_context",
-      "overview_priority": 45,
+      "overview_priority": 40,
       "passage_anchors": [
         "Genesis 1:2"
       ],
@@ -5076,7 +5078,7 @@
       "category": "history",
       "semantic_relationship": "GENERIC_BACKGROUND",
       "presentation_role": "historical_context",
-      "overview_priority": 45,
+      "overview_priority": 40,
       "passage_anchors": [
         "Genesis 1:2"
       ],
@@ -5091,7 +5093,7 @@
       "category": "culture",
       "semantic_relationship": "GENERIC_BACKGROUND",
       "presentation_role": "historical_context",
-      "overview_priority": 45,
+      "overview_priority": 40,
       "passage_anchors": [
         "Genesis 1:1-2"
       ],
@@ -5106,7 +5108,7 @@
       "category": "history",
       "semantic_relationship": "GENERIC_BACKGROUND",
       "presentation_role": "historical_context",
-      "overview_priority": 45,
+      "overview_priority": 40,
       "passage_anchors": [
         "Genesis 1:1-2"
       ],
@@ -5121,7 +5123,7 @@
       "category": "culture",
       "semantic_relationship": "GENERIC_BACKGROUND",
       "presentation_role": "historical_context",
-      "overview_priority": 45,
+      "overview_priority": 40,
       "passage_anchors": [
         "Genesis 1:1-2"
       ],
@@ -5136,7 +5138,7 @@
       "category": "history",
       "semantic_relationship": "GENERIC_BACKGROUND",
       "presentation_role": "historical_context",
-      "overview_priority": 45,
+      "overview_priority": 40,
       "passage_anchors": [
         "Genesis 1:1-2"
       ],
@@ -5151,7 +5153,7 @@
       "category": "culture",
       "semantic_relationship": "GENERIC_BACKGROUND",
       "presentation_role": "historical_context",
-      "overview_priority": 45,
+      "overview_priority": 40,
       "passage_anchors": [
         "Genesis 1:1-2"
       ],
@@ -5166,7 +5168,7 @@
       "category": "history",
       "semantic_relationship": "GENERIC_BACKGROUND",
       "presentation_role": "historical_context",
-      "overview_priority": 45,
+      "overview_priority": 40,
       "passage_anchors": [
         "Genesis 1:1-2"
       ],
@@ -5181,7 +5183,7 @@
       "category": "culture",
       "semantic_relationship": "GENERIC_BACKGROUND",
       "presentation_role": "historical_context",
-      "overview_priority": 45,
+      "overview_priority": 40,
       "passage_anchors": [
         "Genesis 1:2"
       ],
@@ -5196,7 +5198,7 @@
       "category": "history",
       "semantic_relationship": "GENERIC_BACKGROUND",
       "presentation_role": "historical_context",
-      "overview_priority": 45,
+      "overview_priority": 40,
       "passage_anchors": [
         "Genesis 1:2"
       ],
@@ -5211,7 +5213,7 @@
       "category": "culture",
       "semantic_relationship": "GENERIC_BACKGROUND",
       "presentation_role": "historical_context",
-      "overview_priority": 45,
+      "overview_priority": 40,
       "passage_anchors": [
         "Genesis 1:26-28"
       ],
@@ -5226,7 +5228,7 @@
       "category": "history",
       "semantic_relationship": "GENERIC_BACKGROUND",
       "presentation_role": "historical_context",
-      "overview_priority": 45,
+      "overview_priority": 40,
       "passage_anchors": [
         "Genesis 1:26-28"
       ],
@@ -5241,7 +5243,7 @@
       "category": "culture",
       "semantic_relationship": "GENERIC_BACKGROUND",
       "presentation_role": "historical_context",
-      "overview_priority": 45,
+      "overview_priority": 40,
       "passage_anchors": [
         "Genesis 1:2"
       ],
@@ -5256,7 +5258,7 @@
       "category": "history",
       "semantic_relationship": "GENERIC_BACKGROUND",
       "presentation_role": "historical_context",
-      "overview_priority": 45,
+      "overview_priority": 40,
       "passage_anchors": [
         "Genesis 1:2"
       ],
