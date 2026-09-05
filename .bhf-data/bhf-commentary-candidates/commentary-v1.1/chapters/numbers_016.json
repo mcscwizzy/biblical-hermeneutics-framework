@@ -11,25 +11,7 @@
       "blocks": [
         {
           "id": "overview",
-          "text": "This chapter's locked contextual evidence is limited to 2 source-addressable item(s) across culture, geography. The first anchored observation is: The firm foundation's seal combines divine knowledge of God's own with a summons to turn from wickedness.",
-          "verse_refs": [
-            "Numbers 16:1-50"
-          ],
-          "evidence_ids": [
-            "2tim-foundation"
-          ],
-          "confidence": "high",
-          "interpretation_level": "disputed"
-        }
-      ]
-    },
-    {
-      "kind": "archaeology_geography",
-      "title": "Archaeology and geography",
-      "blocks": [
-        {
-          "id": "evidence_1",
-          "text": "Locked CKL evidence: Proposed maps of the wilderness route should label uncertain site identifications rather than presenting a single itinerary reconstruction as established.",
+          "text": "This chapter's locked contextual evidence includes 2 source-addressable item(s). The strongest eligible contextual observation is: Proposed maps of the wilderness route should label uncertain site identifications rather than presenting a single itinerary reconstruction as established.",
           "verse_refs": [
             "Numbers 16:1-50"
           ],
@@ -40,15 +22,34 @@
           "interpretation_level": "disputed"
         }
       ]
+    },
+    {
+      "kind": "dig_deeper",
+      "title": "Dig deeper",
+      "blocks": [
+        {
+          "id": "evidence_1",
+          "text": "Locked CKL evidence: The firm foundation's seal combines divine knowledge of God's own with a summons to turn from wickedness.",
+          "verse_refs": [
+            "Numbers 16:5",
+            "Numbers 16:26"
+          ],
+          "evidence_ids": [
+            "2tim-foundation"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
     }
   ],
   "generated_metadata": {
-    "evidence_hash": "98c1db70a3aa0e77d32ec02b324e5b00247b19b0cd0707a3ce8e1785ebf61c0d",
-    "evidence_bundle_version": "1.0",
+    "evidence_hash": "428dd96bed08733c854e05f8faa96985a3425091ecd5d3d233f171f35aec98d6",
+    "evidence_bundle_version": "1.1",
     "commentary_schema_version": "1.0",
     "commentary_prompt_version": "1.1",
     "model": "deterministic-v1.1-evidence-candidate",
-    "generated_timestamp": "2026-09-05T16:46:43.586791+00:00"
+    "generated_timestamp": "2026-09-05T17:46:55.739473+00:00"
   },
   "failure_reason": null,
   "validation_errors": [],

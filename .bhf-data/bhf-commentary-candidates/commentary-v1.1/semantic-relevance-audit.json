@@ -1,0 +1,4789 @@
+{
+  "report_version": "commentary-v1.1-semantic-relevance-audit-v1",
+  "generated_at": "2026-09-05T17:46:58.602066+00:00",
+  "scope": {
+    "canary_chapters_audited": 25,
+    "full_canonical_cleanup_attempted": false,
+    "production_release_modified": false,
+    "provider_calls": 0
+  },
+  "summary": {
+    "evidence_items_examined": 172,
+    "direct_context_items": 28,
+    "book_context_items": 20,
+    "later_intertextual_items": 13,
+    "comparative_items": 2,
+    "generic_background_items": 109,
+    "weakly_related_items": 0,
+    "semantically_misanchored_items": 0,
+    "confirmed_misanchored_ckl_records": 10
+  },
+  "ckl_changes": {
+    "anchors_removed": [
+      {
+        "record_id": "arad-ostraca",
+        "old_anchor": "Genesis 1:1-2",
+        "new_anchor": null,
+        "reason": "The archaeology record is not materially or historically specific to the primeval Genesis 1 context; the anchor was a generic theological/context tag.",
+        "source_support": "The record's own site-specific title, summary, and archaeology source metadata support a later historical/material context, not Genesis 1 first-audience context.",
+        "semantic_relationship": "SEMANTICALLY_MISANCHORED",
+        "affected_chapters": [
+          "Genesis 1"
+        ]
+      },
+      {
+        "record_id": "caesarea-maritima-excavations",
+        "old_anchor": "Genesis 1:1-2",
+        "new_anchor": null,
+        "reason": "The archaeology record is not materially or historically specific to the primeval Genesis 1 context; the anchor was a generic theological/context tag.",
+        "source_support": "The record's own site-specific title, summary, and archaeology source metadata support a later historical/material context, not Genesis 1 first-audience context.",
+        "semantic_relationship": "SEMANTICALLY_MISANCHORED",
+        "affected_chapters": [
+          "Genesis 1"
+        ]
+      },
+      {
+        "record_id": "ein-gedi-scroll",
+        "old_anchor": "Genesis 1:1-2",
+        "new_anchor": null,
+        "reason": "The archaeology record is not materially or historically specific to the primeval Genesis 1 context; the anchor was a generic theological/context tag.",
+        "source_support": "The record's own site-specific title, summary, and archaeology source metadata support a later historical/material context, not Genesis 1 first-audience context.",
+        "semantic_relationship": "SEMANTICALLY_MISANCHORED",
+        "affected_chapters": [
+          "Genesis 1"
+        ]
+      },
+      {
+        "record_id": "herodium-excavations",
+        "old_anchor": "Genesis 1:1-2",
+        "new_anchor": null,
+        "reason": "The archaeology record is not materially or historically specific to the primeval Genesis 1 context; the anchor was a generic theological/context tag.",
+        "source_support": "The record's own site-specific title, summary, and archaeology source metadata support a later historical/material context, not Genesis 1 first-audience context.",
+        "semantic_relationship": "SEMANTICALLY_MISANCHORED",
+        "affected_chapters": [
+          "Genesis 1"
+        ]
+      },
+      {
+        "record_id": "kurkh-monolith",
+        "old_anchor": "Genesis 1:1-2",
+        "new_anchor": null,
+        "reason": "The archaeology record is not materially or historically specific to the primeval Genesis 1 context; the anchor was a generic theological/context tag.",
+        "source_support": "The record's own site-specific title, summary, and archaeology source metadata support a later historical/material context, not Genesis 1 first-audience context.",
+        "semantic_relationship": "SEMANTICALLY_MISANCHORED",
+        "affected_chapters": [
+          "Genesis 1"
+        ]
+      },
+      {
+        "record_id": "masada-excavations",
+        "old_anchor": "Genesis 1:1-2",
+        "new_anchor": null,
+        "reason": "The archaeology record is not materially or historically specific to the primeval Genesis 1 context; the anchor was a generic theological/context tag.",
+        "source_support": "The record's own site-specific title, summary, and archaeology source metadata support a later historical/material context, not Genesis 1 first-audience context.",
+        "semantic_relationship": "SEMANTICALLY_MISANCHORED",
+        "affected_chapters": [
+          "Genesis 1"
+        ]
+      },
+      {
+        "record_id": "pool-of-bethesda-excavation",
+        "old_anchor": "Genesis 1:1-2",
+        "new_anchor": null,
+        "reason": "The archaeology record is not materially or historically specific to the primeval Genesis 1 context; the anchor was a generic theological/context tag.",
+        "source_support": "The record's own site-specific title, summary, and archaeology source metadata support a later historical/material context, not Genesis 1 first-audience context.",
+        "semantic_relationship": "SEMANTICALLY_MISANCHORED",
+        "affected_chapters": [
+          "Genesis 1"
+        ]
+      },
+      {
+        "record_id": "samaria-ostraca",
+        "old_anchor": "Genesis 1:1-2",
+        "new_anchor": null,
+        "reason": "The archaeology record is not materially or historically specific to the primeval Genesis 1 context; the anchor was a generic theological/context tag.",
+        "source_support": "The record's own site-specific title, summary, and archaeology source metadata support a later historical/material context, not Genesis 1 first-audience context.",
+        "semantic_relationship": "SEMANTICALLY_MISANCHORED",
+        "affected_chapters": [
+          "Genesis 1"
+        ]
+      },
+      {
+        "record_id": "samaria-palace",
+        "old_anchor": "Genesis 1:1-2",
+        "new_anchor": null,
+        "reason": "The archaeology record is not materially or historically specific to the primeval Genesis 1 context; the anchor was a generic theological/context tag.",
+        "source_support": "The record's own site-specific title, summary, and archaeology source metadata support a later historical/material context, not Genesis 1 first-audience context.",
+        "semantic_relationship": "SEMANTICALLY_MISANCHORED",
+        "affected_chapters": [
+          "Genesis 1"
+        ]
+      },
+      {
+        "record_id": "shiloh-excavations",
+        "old_anchor": "Genesis 1:1-2",
+        "new_anchor": null,
+        "reason": "The archaeology record is not materially or historically specific to the primeval Genesis 1 context; the anchor was a generic theological/context tag.",
+        "source_support": "The record's own site-specific title, summary, and archaeology source metadata support a later historical/material context, not Genesis 1 first-audience context.",
+        "semantic_relationship": "SEMANTICALLY_MISANCHORED",
+        "affected_chapters": [
+          "Genesis 1"
+        ]
+      }
+    ],
+    "anchors_narrowed": [],
+    "anchors_retyped_or_reclassified": [
+      {
+        "evidence_id": "2-corinthians:interpretive_note:21",
+        "old_relationship": "direct Scripture overlap",
+        "new_relationship": "LATER_RECEPTION",
+        "reason": "2 Corinthians is later New Testament reception of Genesis 1:3, not first-audience Genesis historical context.",
+        "affected_chapter": "Genesis 1"
+      }
+    ],
+    "records_examined": 58,
+    "records_unchanged": 48
+  },
+  "chapters": [
+    {
+      "reference": "Numbers 5",
+      "availability": "DATA_GAP",
+      "evidence_count": 0,
+      "overview_evidence_id": null,
+      "overview_anchors": [],
+      "section_kinds": [
+        "chapter_overview"
+      ],
+      "semantic_relationships": {},
+      "precise_anchor_count": 0,
+      "disputed_evidence_ids": [],
+      "regeneration_eligible": false,
+      "evidence_hash": "2720c4b52cc73d70ce96e516d35adc28eeeb48812e63fcad086b1c4b17e80fb3"
+    },
+    {
+      "reference": "Luke 8",
+      "availability": "DATA_GAP",
+      "evidence_count": 0,
+      "overview_evidence_id": null,
+      "overview_anchors": [],
+      "section_kinds": [
+        "chapter_overview"
+      ],
+      "semantic_relationships": {},
+      "precise_anchor_count": 0,
+      "disputed_evidence_ids": [],
+      "regeneration_eligible": false,
+      "evidence_hash": "3b9858f578976547f07f740193603c2ca4279fbc5497b214b71fb8a78d526a70"
+    },
+    {
+      "reference": "Numbers 8",
+      "availability": "DATA_GAP",
+      "evidence_count": 0,
+      "overview_evidence_id": null,
+      "overview_anchors": [],
+      "section_kinds": [
+        "chapter_overview"
+      ],
+      "semantic_relationships": {},
+      "precise_anchor_count": 0,
+      "disputed_evidence_ids": [],
+      "regeneration_eligible": false,
+      "evidence_hash": "5b451b0152bf31b54add94ff8ed1bc187a6648bb2ed9f0ddea3cf8a3d61df0d6"
+    },
+    {
+      "reference": "Numbers 7",
+      "availability": "DATA_GAP",
+      "evidence_count": 0,
+      "overview_evidence_id": null,
+      "overview_anchors": [],
+      "section_kinds": [
+        "chapter_overview"
+      ],
+      "semantic_relationships": {},
+      "precise_anchor_count": 0,
+      "disputed_evidence_ids": [],
+      "regeneration_eligible": false,
+      "evidence_hash": "e1b55fb5a952981f92f00f4551b1125d31961830ff048ba2ca338b69883bfb24"
+    },
+    {
+      "reference": "Numbers 3",
+      "availability": "DATA_GAP",
+      "evidence_count": 0,
+      "overview_evidence_id": null,
+      "overview_anchors": [],
+      "section_kinds": [
+        "chapter_overview"
+      ],
+      "semantic_relationships": {},
+      "precise_anchor_count": 0,
+      "disputed_evidence_ids": [],
+      "regeneration_eligible": false,
+      "evidence_hash": "69ac8c0aa8934f6bbded07634dcd931e724d9ef46a16488f10866ebc1f54b7c0"
+    },
+    {
+      "reference": "1 Kings 7",
+      "availability": "DATA_GAP",
+      "evidence_count": 0,
+      "overview_evidence_id": null,
+      "overview_anchors": [],
+      "section_kinds": [
+        "chapter_overview"
+      ],
+      "semantic_relationships": {},
+      "precise_anchor_count": 0,
+      "disputed_evidence_ids": [],
+      "regeneration_eligible": false,
+      "evidence_hash": "69178384b68ba476ba8488d7651b3cde84fc688f3810bfcbbcaab7906279b3dc"
+    },
+    {
+      "reference": "Luke 5",
+      "availability": "DATA_GAP",
+      "evidence_count": 0,
+      "overview_evidence_id": null,
+      "overview_anchors": [],
+      "section_kinds": [
+        "chapter_overview"
+      ],
+      "semantic_relationships": {},
+      "precise_anchor_count": 0,
+      "disputed_evidence_ids": [],
+      "regeneration_eligible": false,
+      "evidence_hash": "226a5a3687e635d9249bdbbf8266b1fa64cda63fd9ede88093d793f490c306fb"
+    },
+    {
+      "reference": "Ezekiel 7",
+      "availability": "DATA_GAP",
+      "evidence_count": 0,
+      "overview_evidence_id": null,
+      "overview_anchors": [],
+      "section_kinds": [
+        "chapter_overview"
+      ],
+      "semantic_relationships": {},
+      "precise_anchor_count": 0,
+      "disputed_evidence_ids": [],
+      "regeneration_eligible": false,
+      "evidence_hash": "9cefce119c7429d665fbf41c77bc5477b2cf0432415c6fabcb3134b42c6113ea"
+    },
+    {
+      "reference": "2 Chronicles 8",
+      "availability": "DATA_GAP",
+      "evidence_count": 0,
+      "overview_evidence_id": null,
+      "overview_anchors": [],
+      "section_kinds": [
+        "chapter_overview"
+      ],
+      "semantic_relationships": {},
+      "precise_anchor_count": 0,
+      "disputed_evidence_ids": [],
+      "regeneration_eligible": false,
+      "evidence_hash": "4d6ec9a8b5ca9fbc1c2955f0a3c211643d6f701759373b11625a93ca8d704b1b"
+    },
+    {
+      "reference": "Luke 13",
+      "availability": "DATA_GAP",
+      "evidence_count": 0,
+      "overview_evidence_id": null,
+      "overview_anchors": [],
+      "section_kinds": [
+        "chapter_overview"
+      ],
+      "semantic_relationships": {},
+      "precise_anchor_count": 0,
+      "disputed_evidence_ids": [],
+      "regeneration_eligible": false,
+      "evidence_hash": "31af384209dad88c2e2373a5fb8b0e6ffaa5533e9517305f9faa5b1699b5723b"
+    },
+    {
+      "reference": "Numbers 16",
+      "availability": "THIN",
+      "evidence_count": 2,
+      "overview_evidence_id": "numbers:interpretive_note:2",
+      "overview_anchors": [
+        "Numbers 10-21"
+      ],
+      "section_kinds": [
+        "chapter_overview",
+        "dig_deeper"
+      ],
+      "semantic_relationships": {
+        "BOOK_CONTEXT": 1,
+        "LATER_RECEPTION": 1
+      },
+      "precise_anchor_count": 3,
+      "disputed_evidence_ids": [
+        "2tim-foundation",
+        "numbers:interpretive_note:2"
+      ],
+      "regeneration_eligible": true,
+      "evidence_hash": "428dd96bed08733c854e05f8faa96985a3425091ecd5d3d233f171f35aec98d6"
+    },
+    {
+      "reference": "Jeremiah 2",
+      "availability": "THIN",
+      "evidence_count": 2,
+      "overview_evidence_id": "jeremiah-long-composition",
+      "overview_anchors": [
+        "Jeremiah 1:1-52:34"
+      ],
+      "section_kinds": [
+        "chapter_overview",
+        "historical_context"
+      ],
+      "semantic_relationships": {
+        "BOOK_CONTEXT": 2
+      },
+      "precise_anchor_count": 1,
+      "disputed_evidence_ids": [
+        "jeremiah-long-composition",
+        "jeremiah-practical-mt-outline"
+      ],
+      "regeneration_eligible": true,
+      "evidence_hash": "850efd7df4bcf6116570d67f0a0bc5ef350f3e0d54d78e3d836e7de48c8fe0c9"
+    },
+    {
+      "reference": "Psalms 106",
+      "availability": "THIN",
+      "evidence_count": 1,
+      "overview_evidence_id": "psalms-five-book-anthology",
+      "overview_anchors": [
+        "Psalms 106:48"
+      ],
+      "section_kinds": [
+        "chapter_overview"
+      ],
+      "semantic_relationships": {
+        "DIRECT_CONTEXT": 1
+      },
+      "precise_anchor_count": 1,
+      "disputed_evidence_ids": [
+        "psalms-five-book-anthology"
+      ],
+      "regeneration_eligible": true,
+      "evidence_hash": "cb5bd51000c2d97918e7eff57df25721969e214f9132682373480f921acf8932"
+    },
+    {
+      "reference": "Numbers 19",
+      "availability": "THIN",
+      "evidence_count": 2,
+      "overview_evidence_id": "numbers:interpretive_note:2",
+      "overview_anchors": [
+        "Numbers 10-21"
+      ],
+      "section_kinds": [
+        "chapter_overview",
+        "dig_deeper"
+      ],
+      "semantic_relationships": {
+        "BOOK_CONTEXT": 1,
+        "INTERTEXTUAL_REUSE": 1
+      },
+      "precise_anchor_count": 2,
+      "disputed_evidence_ids": [
+        "haggai-torah-inquiry",
+        "numbers:interpretive_note:2"
+      ],
+      "regeneration_eligible": true,
+      "evidence_hash": "0ec94cfa69461ecc85d98569e364aa08e6c31a8229553a6de98db3a7385c8914"
+    },
+    {
+      "reference": "Numbers 31",
+      "availability": "THIN",
+      "evidence_count": 1,
+      "overview_evidence_id": "numbers-inheritance-preparation",
+      "overview_anchors": [
+        "Numbers 26-36"
+      ],
+      "section_kinds": [
+        "chapter_overview"
+      ],
+      "semantic_relationships": {
+        "BOOK_CONTEXT": 1
+      },
+      "precise_anchor_count": 1,
+      "disputed_evidence_ids": [],
+      "regeneration_eligible": true,
+      "evidence_hash": "691cefe70588fdd3ce513e9c11dadf4cd1c56c4d68d5f259a6e098da9639ecbb"
+    },
+    {
+      "reference": "Deuteronomy 26",
+      "availability": "THIN",
+      "evidence_count": 2,
+      "overview_evidence_id": "deuteronomy:interpretive_note:1",
+      "overview_anchors": [
+        "Deuteronomy 5-26"
+      ],
+      "section_kinds": [
+        "chapter_overview",
+        "historical_context"
+      ],
+      "semantic_relationships": {
+        "BOOK_CONTEXT": 1,
+        "DIRECT_CONTEXT": 1
+      },
+      "precise_anchor_count": 2,
+      "disputed_evidence_ids": [
+        "deuteronomy:interpretive_note:1"
+      ],
+      "regeneration_eligible": true,
+      "evidence_hash": "c5d1ba9e0bc1fb42bed080bec0ef5d0bb0a6c0491cf145945eed73e1e4478f7b"
+    },
+    {
+      "reference": "Isaiah 28",
+      "availability": "THIN",
+      "evidence_count": 2,
+      "overview_evidence_id": "isaiah-practical-outline",
+      "overview_anchors": [
+        "Isaiah 28:1"
+      ],
+      "section_kinds": [
+        "chapter_overview",
+        "historical_context"
+      ],
+      "semantic_relationships": {
+        "BOOK_CONTEXT": 1,
+        "DIRECT_CONTEXT": 1
+      },
+      "precise_anchor_count": 2,
+      "disputed_evidence_ids": [
+        "isaiah-practical-outline",
+        "isaiah-qumran-witnesses"
+      ],
+      "regeneration_eligible": true,
+      "evidence_hash": "4eac2b99464946f046bfc9077ab55929be6826eada8f7e9154ea10c1f2f0dffe"
+    },
+    {
+      "reference": "Deuteronomy 21",
+      "availability": "THIN",
+      "evidence_count": 3,
+      "overview_evidence_id": "deuteronomy:interpretive_note:1",
+      "overview_anchors": [
+        "Deuteronomy 5-26"
+      ],
+      "section_kinds": [
+        "chapter_overview",
+        "historical_context",
+        "dig_deeper"
+      ],
+      "semantic_relationships": {
+        "BOOK_CONTEXT": 2,
+        "LATER_RECEPTION": 1
+      },
+      "precise_anchor_count": 3,
+      "disputed_evidence_ids": [
+        "deuteronomy:interpretive_note:1",
+        "gal-curse-law"
+      ],
+      "regeneration_eligible": true,
+      "evidence_hash": "f8f2f3da280164b449f3f27b9dee0afc17dca48e9249d3517e9c54d52cbf3846"
+    },
+    {
+      "reference": "Judges 20",
+      "availability": "THIN",
+      "evidence_count": 2,
+      "overview_evidence_id": "judges:interpretive_note:4",
+      "overview_anchors": [
+        "Judges 19-21"
+      ],
+      "section_kinds": [
+        "chapter_overview",
+        "historical_context"
+      ],
+      "semantic_relationships": {
+        "BOOK_CONTEXT": 2
+      },
+      "precise_anchor_count": 2,
+      "disputed_evidence_ids": [
+        "judges:interpretive_note:4"
+      ],
+      "regeneration_eligible": true,
+      "evidence_hash": "32d99c8a7cf5fead91ed5d8b244ba857695fc03966115e0f343689b0652254d4"
+    },
+    {
+      "reference": "Leviticus 22",
+      "availability": "THIN",
+      "evidence_count": 1,
+      "overview_evidence_id": "leviticus-literary-movement",
+      "overview_anchors": [
+        "Leviticus 1-27"
+      ],
+      "section_kinds": [
+        "chapter_overview"
+      ],
+      "semantic_relationships": {
+        "BOOK_CONTEXT": 1
+      },
+      "precise_anchor_count": 1,
+      "disputed_evidence_ids": [],
+      "regeneration_eligible": true,
+      "evidence_hash": "f6f69959e9026a8df5af9b73f258863b316e37b48ba0c79f0f8b86bd0d937ffc"
+    },
+    {
+      "reference": "Leviticus 1",
+      "availability": "AVAILABLE",
+      "evidence_count": 26,
+      "overview_evidence_id": "leviticus:interpretive_note:0",
+      "overview_anchors": [
+        "Leviticus 1:1"
+      ],
+      "section_kinds": [
+        "chapter_overview",
+        "historical_context",
+        "language_literary"
+      ],
+      "semantic_relationships": {
+        "BOOK_CONTEXT": 2,
+        "DIRECT_CONTEXT": 2,
+        "GENERIC_BACKGROUND": 22
+      },
+      "precise_anchor_count": 5,
+      "disputed_evidence_ids": [
+        "leviticus:interpretive_note:2"
+      ],
+      "regeneration_eligible": true,
+      "evidence_hash": "4b6b7c065f168ec01b4217b5e541f47ca46b4a565a62b73f515585dab9541bfd"
+    },
+    {
+      "reference": "Psalms 1",
+      "availability": "AVAILABLE",
+      "evidence_count": 15,
+      "overview_evidence_id": "psalms-gateway-torah-king",
+      "overview_anchors": [
+        "Psalms 1:1-2:12"
+      ],
+      "section_kinds": [
+        "chapter_overview",
+        "language_literary"
+      ],
+      "semantic_relationships": {
+        "BOOK_CONTEXT": 1,
+        "GENERIC_BACKGROUND": 14
+      },
+      "precise_anchor_count": 3,
+      "disputed_evidence_ids": [
+        "psalms-gateway-torah-king"
+      ],
+      "regeneration_eligible": true,
+      "evidence_hash": "a2aa124115e8dc998bca5a9a3cb83a7f80657c7021e901739d011659b5489e5a"
+    },
+    {
+      "reference": "Zephaniah 1",
+      "availability": "AVAILABLE",
+      "evidence_count": 17,
+      "overview_evidence_id": "zephaniah-textual-witnesses",
+      "overview_anchors": [
+        "Zephaniah 1:1"
+      ],
+      "section_kinds": [
+        "chapter_overview",
+        "historical_context",
+        "language_literary"
+      ],
+      "semantic_relationships": {
+        "DIRECT_CONTEXT": 13,
+        "GENERIC_BACKGROUND": 4
+      },
+      "precise_anchor_count": 8,
+      "disputed_evidence_ids": [
+        "zephaniah-composition",
+        "zephaniah-creation-reversal",
+        "zephaniah-cult",
+        "zephaniah-date",
+        "zephaniah-day",
+        "zephaniah-genealogy",
+        "zephaniah-jerusalem-topography",
+        "zephaniah-pesher",
+        "zephaniah-sacrifice",
+        "zephaniah-search",
+        "zephaniah-superscription",
+        "zephaniah-textual-witnesses"
+      ],
+      "regeneration_eligible": true,
+      "evidence_hash": "e3ae352a1e7fa5f5b4fb3c0ced22f88c74ead94b0308c933df0a100446b99177"
+    },
+    {
+      "reference": "Luke 1",
+      "availability": "AVAILABLE",
+      "evidence_count": 26,
+      "overview_evidence_id": "luke-sources",
+      "overview_anchors": [
+        "Luke 1:1-4"
+      ],
+      "section_kinds": [
+        "chapter_overview",
+        "historical_context",
+        "archaeology_geography",
+        "language_literary",
+        "dig_deeper"
+      ],
+      "semantic_relationships": {
+        "DIRECT_CONTEXT": 8,
+        "GENERIC_BACKGROUND": 14,
+        "INTERTEXTUAL_REUSE": 3,
+        "LATER_RECEPTION": 1
+      },
+      "precise_anchor_count": 9,
+      "disputed_evidence_ids": [
+        "acts-common-authorship",
+        "acts-sequel",
+        "acts-theophilus",
+        "luke-acts-relation",
+        "luke-infancy",
+        "luke-magnificat",
+        "luke-prologue",
+        "luke-provenance",
+        "luke-quirinius",
+        "luke-sources",
+        "malachi-new-testament"
+      ],
+      "regeneration_eligible": true,
+      "evidence_hash": "68ba80c8ecb7b05d7f7e3b62c2b6182a1480f054530e26daad80dcf92e58d02a"
+    },
+    {
+      "reference": "Genesis 1",
+      "availability": "AVAILABLE",
+      "evidence_count": 70,
+      "overview_evidence_id": "genesis-ordered-worldview-observation:passage-relevance",
+      "overview_anchors": [
+        "Genesis 1:1-2:3"
+      ],
+      "section_kinds": [
+        "chapter_overview",
+        "historical_context",
+        "language_literary",
+        "dig_deeper"
+      ],
+      "semantic_relationships": {
+        "BOOK_CONTEXT": 5,
+        "COMPARATIVE_CONTEXT": 2,
+        "DIRECT_CONTEXT": 2,
+        "GENERIC_BACKGROUND": 55,
+        "INTERTEXTUAL_REUSE": 2,
+        "LATER_RECEPTION": 4
+      },
+      "precise_anchor_count": 11,
+      "disputed_evidence_ids": [
+        "2-corinthians:interpretive_note:21",
+        "col-image",
+        "col-new-humanity",
+        "enuma-elish-cosmic-ordering-comparison",
+        "enuma-elish-cosmic-ordering-comparison:passage-relevance",
+        "genesis-ane-comparative-context",
+        "genesis:interpretive_note:0",
+        "genesis:interpretive_note:1",
+        "genesis:interpretive_note:2",
+        "john-logos",
+        "mesopotamian-creation-and-flood-comparisons:interpretive_note:0",
+        "zephaniah-creation-reversal"
+      ],
+      "regeneration_eligible": true,
+      "evidence_hash": "9c137c94898baa2ebdad73d528f336be7b00ac35d33c11177c4cf66cc29f9bd2"
+    }
+  ],
+  "controls": {
+    "Genesis 1": {
+      "availability": "AVAILABLE",
+      "evidence_count": 70,
+      "before_evidence_count": 90,
+      "overview_evidence_id": "genesis-ordered-worldview-observation:passage-relevance",
+      "overview_anchors": [
+        "Genesis 1:1-2:3"
+      ],
+      "semantic_relationship_counts": {
+        "BOOK_CONTEXT": 5,
+        "COMPARATIVE_CONTEXT": 2,
+        "DIRECT_CONTEXT": 2,
+        "GENERIC_BACKGROUND": 55,
+        "INTERTEXTUAL_REUSE": 2,
+        "LATER_RECEPTION": 4
+      },
+      "precise_anchors": [
+        "Genesis 1:1-11:26",
+        "Genesis 1:1-2",
+        "Genesis 1:1-2:3",
+        "Genesis 1:1-31",
+        "Genesis 1:1-5",
+        "Genesis 1:1-50:26",
+        "Genesis 1:2",
+        "Genesis 1:20-28",
+        "Genesis 1:26-27",
+        "Genesis 1:26-28",
+        "Genesis 1:3"
+      ],
+      "disputed_evidence_ids": [
+        "2-corinthians:interpretive_note:21",
+        "col-image",
+        "col-new-humanity",
+        "enuma-elish-cosmic-ordering-comparison",
+        "enuma-elish-cosmic-ordering-comparison:passage-relevance",
+        "genesis-ane-comparative-context",
+        "genesis:interpretive_note:0",
+        "genesis:interpretive_note:1",
+        "genesis:interpretive_note:2",
+        "john-logos",
+        "mesopotamian-creation-and-flood-comparisons:interpretive_note:0",
+        "zephaniah-creation-reversal"
+      ],
+      "regeneration_eligible": true,
+      "detailed_findings": {
+        "2-corinthians:interpretive_note:21": {
+          "anchor": "Genesis 1:3",
+          "anchor_correct": true,
+          "decision": "retain",
+          "semantic_relationship": "LATER_RECEPTION",
+          "allowed_sections": [
+            "dig_deeper",
+            "interpretive_questions"
+          ],
+          "excluded_sections": [
+            "chapter_overview",
+            "historical_context",
+            "archaeology_geography"
+          ]
+        },
+        "archaeology_records": {
+          "decision": "remove_confirmed_bad_genesis_anchor",
+          "record_ids": [
+            "arad-ostraca",
+            "caesarea-maritima-excavations",
+            "ein-gedi-scroll",
+            "herodium-excavations",
+            "kurkh-monolith",
+            "masada-excavations",
+            "pool-of-bethesda-excavation",
+            "samaria-ostraca",
+            "samaria-palace",
+            "shiloh-excavations"
+          ],
+          "remaining_evidence_ids": []
+        },
+        "cross_testament_and_canonical_reuse": {
+          "decision": "retain_as_reception_or_intertextual_reuse",
+          "examples": [
+            "col-image",
+            "col-new-humanity",
+            "john-logos",
+            "zephaniah-creation-reversal"
+          ],
+          "overview_eligible": false
+        },
+        "generic_archaeology": {
+          "decision": "not_first_audience_context",
+          "excluded_from": [
+            "chapter_overview",
+            "historical_context",
+            "archaeology_geography"
+          ]
+        }
+      }
+    },
+    "Leviticus 1": {
+      "availability": "AVAILABLE",
+      "evidence_count": 26,
+      "before_evidence_count": 26,
+      "overview_evidence_id": "leviticus:interpretive_note:0",
+      "overview_anchors": [
+        "Leviticus 1:1"
+      ],
+      "semantic_relationship_counts": {
+        "BOOK_CONTEXT": 2,
+        "DIRECT_CONTEXT": 2,
+        "GENERIC_BACKGROUND": 22
+      },
+      "precise_anchors": [
+        "Leviticus 1-27",
+        "Leviticus 1-7",
+        "Leviticus 1:1",
+        "Leviticus 1:1-17",
+        "Leviticus 1:1-9"
+      ],
+      "disputed_evidence_ids": [
+        "leviticus:interpretive_note:2"
+      ],
+      "regeneration_eligible": true
+    },
+    "Psalms 1": {
+      "availability": "AVAILABLE",
+      "evidence_count": 15,
+      "before_evidence_count": 15,
+      "overview_evidence_id": "psalms-gateway-torah-king",
+      "overview_anchors": [
+        "Psalms 1:1-2:12"
+      ],
+      "semantic_relationship_counts": {
+        "BOOK_CONTEXT": 1,
+        "GENERIC_BACKGROUND": 14
+      },
+      "precise_anchors": [
+        "Psalms 1:1-2:12",
+        "Psalms 1:1-3",
+        "Psalms 1:1-6"
+      ],
+      "disputed_evidence_ids": [
+        "psalms-gateway-torah-king"
+      ],
+      "regeneration_eligible": true
+    },
+    "Zephaniah 1": {
+      "availability": "AVAILABLE",
+      "evidence_count": 17,
+      "before_evidence_count": 17,
+      "overview_evidence_id": "zephaniah-textual-witnesses",
+      "overview_anchors": [
+        "Zephaniah 1:1"
+      ],
+      "semantic_relationship_counts": {
+        "DIRECT_CONTEXT": 13,
+        "GENERIC_BACKGROUND": 4
+      },
+      "precise_anchors": [
+        "Zephaniah 1:1",
+        "Zephaniah 1:10-11",
+        "Zephaniah 1:12-13",
+        "Zephaniah 1:14-18",
+        "Zephaniah 1:2-18",
+        "Zephaniah 1:2-3",
+        "Zephaniah 1:4-6",
+        "Zephaniah 1:7-9"
+      ],
+      "disputed_evidence_ids": [
+        "zephaniah-composition",
+        "zephaniah-creation-reversal",
+        "zephaniah-cult",
+        "zephaniah-date",
+        "zephaniah-day",
+        "zephaniah-genealogy",
+        "zephaniah-jerusalem-topography",
+        "zephaniah-pesher",
+        "zephaniah-sacrifice",
+        "zephaniah-search",
+        "zephaniah-superscription",
+        "zephaniah-textual-witnesses"
+      ],
+      "regeneration_eligible": true
+    },
+    "Deuteronomy 21": {
+      "availability": "THIN",
+      "evidence_count": 3,
+      "before_evidence_count": 3,
+      "overview_evidence_id": "deuteronomy:interpretive_note:1",
+      "overview_anchors": [
+        "Deuteronomy 5-26"
+      ],
+      "semantic_relationship_counts": {
+        "BOOK_CONTEXT": 2,
+        "LATER_RECEPTION": 1
+      },
+      "precise_anchors": [
+        "Deuteronomy 1-34",
+        "Deuteronomy 21:23",
+        "Deuteronomy 5-26"
+      ],
+      "disputed_evidence_ids": [
+        "deuteronomy:interpretive_note:1",
+        "gal-curse-law"
+      ],
+      "regeneration_eligible": true
+    },
+    "Numbers 3": {
+      "availability": "DATA_GAP",
+      "evidence_count": 0,
+      "before_evidence_count": 0,
+      "overview_evidence_id": null,
+      "overview_anchors": [],
+      "semantic_relationship_counts": {},
+      "precise_anchors": [],
+      "disputed_evidence_ids": [],
+      "regeneration_eligible": false
+    },
+    "1 Samuel 28": {
+      "availability": "THIN",
+      "evidence_count": 2,
+      "before_evidence_count": 2,
+      "overview_evidence_id": "1-samuel:interpretive_note:3",
+      "overview_anchors": [
+        "1 Samuel 28:3-25"
+      ],
+      "semantic_relationship_counts": {
+        "BOOK_CONTEXT": 1,
+        "DIRECT_CONTEXT": 1
+      },
+      "precise_anchors": [
+        "1 Samuel 1-31",
+        "1 Samuel 28:3-25"
+      ],
+      "disputed_evidence_ids": [
+        "1-samuel:interpretive_note:3"
+      ],
+      "regeneration_eligible": true
+    }
+  },
+  "json_sqlite_agreement": {
+    "chapters": 25,
+    "result_id_disagreements": 0,
+    "bundle_hash_disagreements": 0
+  },
+  "leakage_audit": {
+    "chapters_with_leakage": 0,
+    "leaked_evidence_ids": []
+  },
+  "regeneration_eligibility": {
+    "before_low_information_audit": 936,
+    "after_low_information_audit": 935,
+    "changed_chapters": [
+      {
+        "reference": "Psalms 24",
+        "before": true,
+        "after": false,
+        "reason": "No semantically relevant section-eligible evidence remained after role filtering."
+      }
+    ]
+  },
+  "evidence_items": [
+    {
+      "evidence_id": "2tim-foundation",
+      "parent_object_id": "2-timothy",
+      "parent_type": "book",
+      "category": "culture",
+      "claim": "The firm foundation's seal combines divine knowledge of God's own with a summons to turn from wickedness.",
+      "passage_anchors": [
+        "Numbers 16:5",
+        "Numbers 16:26"
+      ],
+      "source_ids": [
+        "2tim-greek",
+        "nets-lxx"
+      ],
+      "confidence": "high",
+      "assertion_type": "",
+      "dispute_status": "minor_scholarly_disagreement",
+      "semantic_relationship": "LATER_RECEPTION",
+      "source_kind": "ckl_claim"
+    },
+    {
+      "evidence_id": "numbers:interpretive_note:2",
+      "parent_object_id": "numbers",
+      "parent_type": "book",
+      "category": "geography",
+      "claim": "Proposed maps of the wilderness route should label uncertain site identifications rather than presenting a single itinerary reconstruction as established.",
+      "passage_anchors": [
+        "Numbers 10-21"
+      ],
+      "source_ids": [
+        "milgrom-numbers",
+        "ashley-numbers",
+        "zondervan-illustrated-pentateuch-backgrounds"
+      ],
+      "confidence": "low",
+      "assertion_type": "inference",
+      "dispute_status": "archaeological_uncertainty",
+      "semantic_relationship": "BOOK_CONTEXT",
+      "source_kind": "ckl_interpretive_note"
+    },
+    {
+      "evidence_id": "jeremiah-long-composition",
+      "parent_object_id": "jeremiah",
+      "parent_type": "book",
+      "category": "culture",
+      "claim": "The received book combines poetry, prose sermons, narratives, letters, headings, repeated accounts, restoration collections, nation oracles, and an appendix produced through a long compositional and textual history.",
+      "passage_anchors": [
+        "Jeremiah 1:1-52:34"
+      ],
+      "source_ids": [
+        "jeremiah-masoretic",
+        "oxford-handbook-jeremiah",
+        "biddle-jeremiah-content",
+        "stulman-jeremiah"
+      ],
+      "confidence": "high",
+      "assertion_type": "",
+      "dispute_status": "major_scholarly_disagreement",
+      "semantic_relationship": "BOOK_CONTEXT",
+      "source_kind": "ckl_claim"
+    },
+    {
+      "evidence_id": "jeremiah-practical-mt-outline",
+      "parent_object_id": "jeremiah",
+      "parent_type": "book",
+      "category": "culture",
+      "claim": "Chapters 1; 2-25; 26-29; 30-33; 34-45; 46-51; and 52 provide a practical outline of Masoretic Jeremiah without settling its composition.",
+      "passage_anchors": [
+        "Jeremiah 1:1-52:34"
+      ],
+      "source_ids": [
+        "jeremiah-masoretic",
+        "biddle-jeremiah-content",
+        "stulman-jeremiah"
+      ],
+      "confidence": "medium",
+      "assertion_type": "",
+      "dispute_status": "major_scholarly_disagreement",
+      "semantic_relationship": "BOOK_CONTEXT",
+      "source_kind": "ckl_claim"
+    },
+    {
+      "evidence_id": "psalms-five-book-anthology",
+      "parent_object_id": "psalms",
+      "parent_type": "book",
+      "category": "culture",
+      "claim": "The Masoretic Psalter contains 150 psalms arranged in five books, with doxological boundaries after Psalms 41, 72, 89, and 106 and a final crescendo of praise in Psalms 146-150.",
+      "passage_anchors": [
+        "Psalms 106:48"
+      ],
+      "source_ids": [
+        "psalms-masoretic",
+        "declaisse-walford-jacobson-tanner",
+        "oxford-psalter-metanarrative"
+      ],
+      "confidence": "high",
+      "assertion_type": "",
+      "dispute_status": "minor_scholarly_disagreement",
+      "semantic_relationship": "DIRECT_CONTEXT",
+      "source_kind": "ckl_claim"
+    },
+    {
+      "evidence_id": "haggai-torah-inquiry",
+      "parent_object_id": "haggai",
+      "parent_type": "book",
+      "category": "history",
+      "claim": "Haggai asks priests for Torah rulings: holiness is not transferred through a second contact, while corpse impurity is transferred by contact.",
+      "passage_anchors": [
+        "Numbers 19:11-22"
+      ],
+      "source_ids": [
+        "haggai-masoretic",
+        "haggai-comparanda",
+        "barker-haggai",
+        "foster-theology"
+      ],
+      "confidence": "high",
+      "assertion_type": "",
+      "dispute_status": "minor_scholarly_disagreement",
+      "semantic_relationship": "INTERTEXTUAL_REUSE",
+      "source_kind": "ckl_claim"
+    },
+    {
+      "evidence_id": "numbers:interpretive_note:2",
+      "parent_object_id": "numbers",
+      "parent_type": "book",
+      "category": "geography",
+      "claim": "Proposed maps of the wilderness route should label uncertain site identifications rather than presenting a single itinerary reconstruction as established.",
+      "passage_anchors": [
+        "Numbers 10-21"
+      ],
+      "source_ids": [
+        "milgrom-numbers",
+        "ashley-numbers",
+        "zondervan-illustrated-pentateuch-backgrounds"
+      ],
+      "confidence": "low",
+      "assertion_type": "inference",
+      "dispute_status": "archaeological_uncertainty",
+      "semantic_relationship": "BOOK_CONTEXT",
+      "source_kind": "ckl_interpretive_note"
+    },
+    {
+      "evidence_id": "numbers-inheritance-preparation",
+      "parent_object_id": "numbers",
+      "parent_type": "book",
+      "category": "culture",
+      "claim": "The final third of Numbers prepares the new generation for land inheritance through a second census, inheritance rulings, Joshua's commission, land boundaries, towns, and tribal safeguards.",
+      "passage_anchors": [
+        "Numbers 26-36"
+      ],
+      "source_ids": [
+        "numbers-1-36",
+        "milgrom-numbers",
+        "ashley-numbers"
+      ],
+      "confidence": "high",
+      "assertion_type": "",
+      "dispute_status": "not_disputed",
+      "semantic_relationship": "BOOK_CONTEXT",
+      "source_kind": "ckl_claim"
+    },
+    {
+      "evidence_id": "deuteronomy-literary-movement",
+      "parent_object_id": "deuteronomy",
+      "parent_type": "book",
+      "category": "culture",
+      "claim": "Deuteronomy moves from remembered wilderness history through covenant instruction to covenant consequences, renewal, succession, song, blessing, and Moses's death.",
+      "passage_anchors": [
+        "Deuteronomy 1-34"
+      ],
+      "source_ids": [
+        "deuteronomy-1-34",
+        "tigay-deuteronomy",
+        "cairns-deuteronomy"
+      ],
+      "confidence": "high",
+      "assertion_type": "",
+      "dispute_status": "not_disputed",
+      "semantic_relationship": "BOOK_CONTEXT",
+      "source_kind": "ckl_claim"
+    },
+    {
+      "evidence_id": "deuteronomy:interpretive_note:1",
+      "parent_object_id": "deuteronomy",
+      "parent_type": "book",
+      "category": "culture",
+      "claim": "The repeated instruction is rhetorically adapted covenant exposition for a successor generation, not a simple verbatim duplication of earlier laws.",
+      "passage_anchors": [
+        "Deuteronomy 5-26"
+      ],
+      "source_ids": [
+        "deuteronomy-1-34",
+        "tigay-deuteronomy",
+        "cairns-deuteronomy"
+      ],
+      "confidence": "high",
+      "assertion_type": "inference",
+      "dispute_status": "minor_scholarly_disagreement",
+      "semantic_relationship": "DIRECT_CONTEXT",
+      "source_kind": "ckl_interpretive_note"
+    },
+    {
+      "evidence_id": "isaiah-practical-outline",
+      "parent_object_id": "isaiah",
+      "parent_type": "book",
+      "category": "culture",
+      "claim": "The divisions 1-12, 13-27, 28-35, 36-39, 40-55, and 56-66 provide a practical reading map, not a proof of six authors or one uncontested macrostructure.",
+      "passage_anchors": [
+        "Isaiah 28:1"
+      ],
+      "source_ids": [
+        "isaiah-masoretic",
+        "oxford-handbook-isaiah",
+        "williamson-book-called-isaiah",
+        "cambridge-isaiah"
+      ],
+      "confidence": "medium",
+      "assertion_type": "",
+      "dispute_status": "major_scholarly_disagreement",
+      "semantic_relationship": "DIRECT_CONTEXT",
+      "source_kind": "ckl_claim"
+    },
+    {
+      "evidence_id": "isaiah-qumran-witnesses",
+      "parent_object_id": "isaiah",
+      "parent_type": "book",
+      "category": "history",
+      "claim": "The Great Isaiah Scroll is an almost complete sixty-six-chapter witness broadly aligned with the Masoretic tradition but containing thousands of orthographic and substantive differences; other Qumran Isaiah manuscripts and pesharim show active transmission and interpretation.",
+      "passage_anchors": [
+        "Isaiah 1:1-66:24"
+      ],
+      "source_ids": [
+        "israel-museum-great-isaiah",
+        "brooke-qumran-isaiah",
+        "hogenhaven-qumran-isaiah",
+        "oxford-handbook-isaiah"
+      ],
+      "confidence": "high",
+      "assertion_type": "",
+      "dispute_status": "textual_variant",
+      "semantic_relationship": "BOOK_CONTEXT",
+      "source_kind": "ckl_claim"
+    },
+    {
+      "evidence_id": "deuteronomy-literary-movement",
+      "parent_object_id": "deuteronomy",
+      "parent_type": "book",
+      "category": "culture",
+      "claim": "Deuteronomy moves from remembered wilderness history through covenant instruction to covenant consequences, renewal, succession, song, blessing, and Moses's death.",
+      "passage_anchors": [
+        "Deuteronomy 1-34"
+      ],
+      "source_ids": [
+        "deuteronomy-1-34",
+        "tigay-deuteronomy",
+        "cairns-deuteronomy"
+      ],
+      "confidence": "high",
+      "assertion_type": "",
+      "dispute_status": "not_disputed",
+      "semantic_relationship": "BOOK_CONTEXT",
+      "source_kind": "ckl_claim"
+    },
+    {
+      "evidence_id": "deuteronomy:interpretive_note:1",
+      "parent_object_id": "deuteronomy",
+      "parent_type": "book",
+      "category": "culture",
+      "claim": "The repeated instruction is rhetorically adapted covenant exposition for a successor generation, not a simple verbatim duplication of earlier laws.",
+      "passage_anchors": [
+        "Deuteronomy 5-26"
+      ],
+      "source_ids": [
+        "deuteronomy-1-34",
+        "tigay-deuteronomy",
+        "cairns-deuteronomy"
+      ],
+      "confidence": "high",
+      "assertion_type": "inference",
+      "dispute_status": "minor_scholarly_disagreement",
+      "semantic_relationship": "BOOK_CONTEXT",
+      "source_kind": "ckl_interpretive_note"
+    },
+    {
+      "evidence_id": "gal-curse-law",
+      "parent_object_id": "galatians",
+      "parent_type": "book",
+      "category": "culture",
+      "claim": "Galatians juxtaposes Deuteronomic curse texts, Torah performance, and the Messiah's crucifixion; it does not say that Torah, Jews, or Jewish practice are themselves cursed.",
+      "passage_anchors": [
+        "Deuteronomy 21:23"
+      ],
+      "source_ids": [
+        "gal-greek",
+        "nets-lxx",
+        "thiessen-gentile-problem"
+      ],
+      "confidence": "high",
+      "assertion_type": "",
+      "dispute_status": "major_scholarly_disagreement",
+      "semantic_relationship": "LATER_RECEPTION",
+      "source_kind": "ckl_claim"
+    },
+    {
+      "evidence_id": "judges-literary-movement",
+      "parent_object_id": "judges",
+      "parent_type": "book",
+      "category": "culture",
+      "claim": "Judges moves from incomplete possession and covenant indictment through recurring deliverance narratives to internal idolatry, atrocity, and civil war.",
+      "passage_anchors": [
+        "Judges 1-21"
+      ],
+      "source_ids": [
+        "judges-1-21",
+        "webb-judges",
+        "butler-judges"
+      ],
+      "confidence": "high",
+      "assertion_type": "",
+      "dispute_status": "not_disputed",
+      "semantic_relationship": "BOOK_CONTEXT",
+      "source_kind": "ckl_claim"
+    },
+    {
+      "evidence_id": "judges:interpretive_note:4",
+      "parent_object_id": "judges",
+      "parent_type": "book",
+      "category": "culture",
+      "claim": "The book's escalating warfare, sexual violence, collective punishment, and forced wife-taking are narrated as evidence of social collapse, not supplied as moral templates for imitation.",
+      "passage_anchors": [
+        "Judges 19-21"
+      ],
+      "source_ids": [
+        "judges-1-21",
+        "webb-judges",
+        "butler-judges"
+      ],
+      "confidence": "high",
+      "assertion_type": "inference",
+      "dispute_status": "denominational_disagreement",
+      "semantic_relationship": "BOOK_CONTEXT",
+      "source_kind": "ckl_interpretive_note"
+    },
+    {
+      "evidence_id": "leviticus-literary-movement",
+      "parent_object_id": "leviticus",
+      "parent_type": "book",
+      "category": "culture",
+      "claim": "Leviticus moves from sacrifice and priestly inauguration through purity and the Day of Atonement into instructions for holy communal life, sacred time, land, covenant consequences, and vows.",
+      "passage_anchors": [
+        "Leviticus 1-27"
+      ],
+      "source_ids": [
+        "leviticus-1-27",
+        "levine-leviticus",
+        "wenham-leviticus"
+      ],
+      "confidence": "high",
+      "assertion_type": "",
+      "dispute_status": "not_disputed",
+      "semantic_relationship": "BOOK_CONTEXT",
+      "source_kind": "ckl_claim"
+    },
+    {
+      "evidence_id": "leviticus-called-from-tent",
+      "parent_object_id": "leviticus",
+      "parent_type": "book",
+      "category": "history",
+      "claim": "Leviticus opens with the LORD calling Moses from the tent of meeting, directly continuing the tabernacle conclusion of Exodus.",
+      "passage_anchors": [
+        "Leviticus 1:1"
+      ],
+      "source_ids": [
+        "leviticus-1-27"
+      ],
+      "confidence": "high",
+      "assertion_type": "",
+      "dispute_status": "not_disputed",
+      "semantic_relationship": "DIRECT_CONTEXT",
+      "source_kind": "ckl_claim"
+    },
+    {
+      "evidence_id": "leviticus-literary-movement",
+      "parent_object_id": "leviticus",
+      "parent_type": "book",
+      "category": "culture",
+      "claim": "Leviticus moves from sacrifice and priestly inauguration through purity and the Day of Atonement into instructions for holy communal life, sacred time, land, covenant consequences, and vows.",
+      "passage_anchors": [
+        "Leviticus 1-27"
+      ],
+      "source_ids": [
+        "leviticus-1-27",
+        "levine-leviticus",
+        "wenham-leviticus"
+      ],
+      "confidence": "high",
+      "assertion_type": "",
+      "dispute_status": "not_disputed",
+      "semantic_relationship": "BOOK_CONTEXT",
+      "source_kind": "ckl_claim"
+    },
+    {
+      "evidence_id": "leviticus:interpretive_note:0",
+      "parent_object_id": "leviticus",
+      "parent_type": "book",
+      "category": "culture",
+      "claim": "Leviticus is narrated at Sinai between the completion of the tabernacle and the departure described in Numbers; Egypt and Moab are not its principal narrative settings.",
+      "passage_anchors": [
+        "Leviticus 1:1"
+      ],
+      "source_ids": [
+        "leviticus-1-27",
+        "levine-leviticus",
+        "wenham-leviticus"
+      ],
+      "confidence": "high",
+      "assertion_type": "inference",
+      "dispute_status": "not_disputed",
+      "semantic_relationship": "DIRECT_CONTEXT",
+      "source_kind": "ckl_interpretive_note"
+    },
+    {
+      "evidence_id": "leviticus:interpretive_note:2",
+      "parent_object_id": "leviticus",
+      "parent_type": "book",
+      "category": "geography",
+      "claim": "Ancient Near Eastern ritual comparisons illuminate vocabulary and practice but do not establish that Israelite rites carried the same theology or were directly borrowed.",
+      "passage_anchors": [
+        "Leviticus 1-7"
+      ],
+      "source_ids": [
+        "wenham-leviticus",
+        "zondervan-illustrated-pentateuch-backgrounds"
+      ],
+      "confidence": "medium",
+      "assertion_type": "inference",
+      "dispute_status": "major_scholarly_disagreement",
+      "semantic_relationship": "BOOK_CONTEXT",
+      "source_kind": "ckl_interpretive_note"
+    },
+    {
+      "evidence_id": "sacrifice-theme:ancient_near_east_context:0",
+      "parent_object_id": "sacrifice-theme",
+      "parent_type": "theme",
+      "category": "culture",
+      "claim": "Sacrifice was widespread in the ancient world, but Scripture ties it to holiness, covenant access, and God\u2019s redemptive purpose rather than mere appeasement.",
+      "passage_anchors": [
+        "Leviticus 1:1-17"
+      ],
+      "source_ids": [
+        "genesis-22",
+        "exodus-12",
+        "leviticus-1-7",
+        "leviticus-16",
+        "isaiah-53",
+        "john-1",
+        "hebrews-9-10",
+        "sacrifice-theme-historical-orientation"
+      ],
+      "confidence": "medium",
+      "assertion_type": "",
+      "dispute_status": "",
+      "semantic_relationship": "GENERIC_BACKGROUND",
+      "source_kind": "ckl_legacy_field"
+    },
+    {
+      "evidence_id": "sacrifice-theme:hebraic_worldview:0",
+      "parent_object_id": "sacrifice-theme",
+      "parent_type": "theme",
+      "category": "culture",
+      "claim": "Sacrifice joins holiness, atonement, fellowship, and thanksgiving.",
+      "passage_anchors": [
+        "Leviticus 1:1-17"
+      ],
+      "source_ids": [
+        "genesis-22",
+        "exodus-12",
+        "leviticus-1-7",
+        "leviticus-16",
+        "isaiah-53",
+        "john-1",
+        "hebrews-9-10",
+        "sacrifice-theme-historical-orientation"
+      ],
+      "confidence": "medium",
+      "assertion_type": "",
+      "dispute_status": "",
+      "semantic_relationship": "GENERIC_BACKGROUND",
+      "source_kind": "ckl_legacy_field"
+    },
+    {
+      "evidence_id": "sacrifice-theme:historical_context:0",
+      "parent_object_id": "sacrifice-theme",
+      "parent_type": "theme",
+      "category": "history",
+      "claim": "Sacrifice runs from early Genesis through Levitical worship and remains central in later prophetic and New Testament reflection.",
+      "passage_anchors": [
+        "Leviticus 1:1-17"
+      ],
+      "source_ids": [
+        "genesis-22",
+        "exodus-12",
+        "leviticus-1-7",
+        "leviticus-16",
+        "isaiah-53",
+        "john-1",
+        "hebrews-9-10",
+        "sacrifice-theme-historical-orientation"
+      ],
+      "confidence": "medium",
+      "assertion_type": "",
+      "dispute_status": "",
+      "semantic_relationship": "GENERIC_BACKGROUND",
+      "source_kind": "ckl_legacy_field"
+    },
+    {
+      "evidence_id": "sacrifice-theme:second_temple_context:0",
+      "parent_object_id": "sacrifice-theme",
+      "parent_type": "theme",
+      "category": "culture",
+      "claim": "Temple sacrifice remained a living institution in the Second Temple period and frames the New Testament's sacrificial language.",
+      "passage_anchors": [
+        "Leviticus 1:1-17"
+      ],
+      "source_ids": [
+        "genesis-22",
+        "exodus-12",
+        "leviticus-1-7",
+        "leviticus-16",
+        "isaiah-53",
+        "john-1",
+        "hebrews-9-10",
+        "sacrifice-theme-historical-orientation"
+      ],
+      "confidence": "medium",
+      "assertion_type": "",
+      "dispute_status": "",
+      "semantic_relationship": "GENERIC_BACKGROUND",
+      "source_kind": "ckl_legacy_field"
+    },
+    {
+      "evidence_id": "sacrificial-system:ancient_near_east_context:0",
+      "parent_object_id": "sacrificial-system",
+      "parent_type": "institution",
+      "category": "culture",
+      "claim": "Sacrificial rituals were common in the ancient world, but Israel's system is distinct because it is bound to covenant holiness, substitution, purification, and the one true God.",
+      "passage_anchors": [
+        "Leviticus 1:1-9"
+      ],
+      "source_ids": [
+        "leviticus-1-7",
+        "leviticus-16-17",
+        "psalm-40",
+        "psalm-51",
+        "hebrews-9-10",
+        "1-john-1"
+      ],
+      "confidence": "medium",
+      "assertion_type": "",
+      "dispute_status": "",
+      "semantic_relationship": "GENERIC_BACKGROUND",
+      "source_kind": "ckl_legacy_field"
+    },
+    {
+      "evidence_id": "sacrificial-system:historical_context:0",
+      "parent_object_id": "sacrificial-system",
+      "parent_type": "institution",
+      "category": "history",
+      "claim": "The sacrificial system is rooted in the wilderness tabernacle and continues through the temple periods as the central grammar of covenant approach to God.",
+      "passage_anchors": [
+        "Leviticus 1:1-9"
+      ],
+      "source_ids": [
+        "leviticus-1-7",
+        "leviticus-16-17",
+        "psalm-40",
+        "psalm-51",
+        "hebrews-9-10",
+        "1-john-1"
+      ],
+      "confidence": "medium",
+      "assertion_type": "",
+      "dispute_status": "",
+      "semantic_relationship": "GENERIC_BACKGROUND",
+      "source_kind": "ckl_legacy_field"
+    },
+    {
+      "evidence_id": "tabernacle:ancient_near_east_context:0",
+      "parent_object_id": "tabernacle",
+      "parent_type": "institution",
+      "category": "culture",
+      "claim": "Old Babylonian Mari texts, Ramesside Egyptian campaign reliefs and bark processions, and the Timna Site 200 shrine sequence attest large tents, royal campaign tents, tented cult space, and mobile shrines. They show that mobile elite and sacred space was culturally intelligible, but none is identical with or proves the biblical tabernacle.",
+      "passage_anchors": [
+        "Leviticus 1:1-9"
+      ],
+      "source_ids": [
+        "tabernacle-pentateuch-text",
+        "hebrews-8-10",
+        "meyers-exodus-tabernacle",
+        "hundley-sacred-space",
+        "homan-tents",
+        "fleming-mari",
+        "rothenberg-timna"
+      ],
+      "confidence": "medium",
+      "assertion_type": "",
+      "dispute_status": "",
+      "semantic_relationship": "GENERIC_BACKGROUND",
+      "source_kind": "ckl_legacy_field"
+    },
+    {
+      "evidence_id": "tabernacle:archaeology:0",
+      "parent_object_id": "tabernacle",
+      "parent_type": "institution",
+      "category": "archaeology",
+      "claim": "No excavated structure is securely identifiable as the wilderness tabernacle",
+      "passage_anchors": [
+        "Leviticus 1:1-9"
+      ],
+      "source_ids": [
+        "tabernacle-pentateuch-text",
+        "hebrews-8-10",
+        "meyers-exodus-tabernacle",
+        "hundley-sacred-space",
+        "homan-tents",
+        "fleming-mari",
+        "rothenberg-timna"
+      ],
+      "confidence": "medium",
+      "assertion_type": "",
+      "dispute_status": "",
+      "semantic_relationship": "GENERIC_BACKGROUND",
+      "source_kind": "ckl_legacy_field"
+    },
+    {
+      "evidence_id": "tabernacle:archaeology:1",
+      "parent_object_id": "tabernacle",
+      "parent_type": "institution",
+      "category": "archaeology",
+      "claim": "Timna Site 200 is a disputed tented-shrine comparison, not the tabernacle",
+      "passage_anchors": [
+        "Leviticus 1:1-9"
+      ],
+      "source_ids": [
+        "tabernacle-pentateuch-text",
+        "hebrews-8-10",
+        "meyers-exodus-tabernacle",
+        "hundley-sacred-space",
+        "homan-tents",
+        "fleming-mari",
+        "rothenberg-timna"
+      ],
+      "confidence": "medium",
+      "assertion_type": "",
+      "dispute_status": "",
+      "semantic_relationship": "GENERIC_BACKGROUND",
+      "source_kind": "ckl_legacy_field"
+    },
+    {
+      "evidence_id": "tabernacle:date_ranges:0",
+      "parent_object_id": "tabernacle",
+      "parent_type": "institution",
+      "category": "chronology",
+      "claim": "Narrative setting at Sinai and in the wilderness; historical date disputed",
+      "passage_anchors": [
+        "Leviticus 1:1-9"
+      ],
+      "source_ids": [
+        "tabernacle-pentateuch-text",
+        "hebrews-8-10",
+        "meyers-exodus-tabernacle",
+        "hundley-sacred-space",
+        "homan-tents",
+        "fleming-mari",
+        "rothenberg-timna"
+      ],
+      "confidence": "medium",
+      "assertion_type": "",
+      "dispute_status": "",
+      "semantic_relationship": "GENERIC_BACKGROUND",
+      "source_kind": "ckl_legacy_field"
+    },
+    {
+      "evidence_id": "tabernacle:date_ranges:1",
+      "parent_object_id": "tabernacle",
+      "parent_type": "institution",
+      "category": "chronology",
+      "claim": "Priestly sanctuary description and compositional development; dates disputed",
+      "passage_anchors": [
+        "Leviticus 1:1-9"
+      ],
+      "source_ids": [
+        "tabernacle-pentateuch-text",
+        "hebrews-8-10",
+        "meyers-exodus-tabernacle",
+        "hundley-sacred-space",
+        "homan-tents",
+        "fleming-mari",
+        "rothenberg-timna"
+      ],
+      "confidence": "medium",
+      "assertion_type": "",
+      "dispute_status": "",
+      "semantic_relationship": "GENERIC_BACKGROUND",
+      "source_kind": "ckl_legacy_field"
+    },
+    {
+      "evidence_id": "tabernacle:hebraic_worldview:0",
+      "parent_object_id": "tabernacle",
+      "parent_type": "institution",
+      "category": "culture",
+      "claim": "The dwelling joins divine nearness with differentiated holiness: court, holy place, inner sanctuary, furnishings, priestly preparation, and restricted entry express ordered approach rather than divine containment or unrestricted access.",
+      "passage_anchors": [
+        "Leviticus 1:1-9"
+      ],
+      "source_ids": [
+        "tabernacle-pentateuch-text",
+        "hebrews-8-10",
+        "meyers-exodus-tabernacle",
+        "hundley-sacred-space",
+        "homan-tents",
+        "fleming-mari",
+        "rothenberg-timna"
+      ],
+      "confidence": "medium",
+      "assertion_type": "",
+      "dispute_status": "",
+      "semantic_relationship": "GENERIC_BACKGROUND",
+      "source_kind": "ckl_legacy_field"
+    },
+    {
+      "evidence_id": "tabernacle:historical_context:0",
+      "parent_object_id": "tabernacle",
+      "parent_type": "institution",
+      "category": "history",
+      "claim": "The Pentateuch locates the dwelling in the Sinai and wilderness period, but the structure's historical form and the date and development of its priestly descriptions remain debated. The text, comparative evidence, and later reception must therefore be distinguished.",
+      "passage_anchors": [
+        "Leviticus 1:1-9"
+      ],
+      "source_ids": [
+        "tabernacle-pentateuch-text",
+        "hebrews-8-10",
+        "meyers-exodus-tabernacle",
+        "hundley-sacred-space",
+        "homan-tents",
+        "fleming-mari",
+        "rothenberg-timna"
+      ],
+      "confidence": "medium",
+      "assertion_type": "",
+      "dispute_status": "",
+      "semantic_relationship": "GENERIC_BACKGROUND",
+      "source_kind": "ckl_legacy_field"
+    },
+    {
+      "evidence_id": "tabernacle:historical_setting:0",
+      "parent_object_id": "tabernacle",
+      "parent_type": "institution",
+      "category": "history",
+      "claim": "Sinai encampment followed by wilderness travel in the narrative; literary and historical reconstruction remain distinct.",
+      "passage_anchors": [
+        "Leviticus 1:1-9"
+      ],
+      "source_ids": [
+        "tabernacle-pentateuch-text",
+        "hebrews-8-10",
+        "meyers-exodus-tabernacle",
+        "hundley-sacred-space",
+        "homan-tents",
+        "fleming-mari",
+        "rothenberg-timna"
+      ],
+      "confidence": "medium",
+      "assertion_type": "",
+      "dispute_status": "",
+      "semantic_relationship": "GENERIC_BACKGROUND",
+      "source_kind": "ckl_legacy_field"
+    },
+    {
+      "evidence_id": "tabernacle:original_audience:0",
+      "parent_object_id": "tabernacle",
+      "parent_type": "institution",
+      "category": "social",
+      "claim": "The received Pentateuch addresses Israel through a sanctuary narrative that orders collective worship and memory; proposals about earlier priestly audiences and compositional stages vary.",
+      "passage_anchors": [
+        "Leviticus 1:1-9"
+      ],
+      "source_ids": [
+        "tabernacle-pentateuch-text",
+        "hebrews-8-10",
+        "meyers-exodus-tabernacle",
+        "hundley-sacred-space",
+        "homan-tents",
+        "fleming-mari",
+        "rothenberg-timna"
+      ],
+      "confidence": "medium",
+      "assertion_type": "",
+      "dispute_status": "",
+      "semantic_relationship": "GENERIC_BACKGROUND",
+      "source_kind": "ckl_legacy_field"
+    },
+    {
+      "evidence_id": "tabernacle:second_temple_context:0",
+      "parent_object_id": "tabernacle",
+      "parent_type": "institution",
+      "category": "culture",
+      "claim": "Second Temple Jewish texts and Hebrews reread tabernacle patterns in developed sanctuary, priesthood, and heavenly-pattern discussions; those later interpretations should not be projected back as the only meaning of Exodus.",
+      "passage_anchors": [
+        "Leviticus 1:1-9"
+      ],
+      "source_ids": [
+        "tabernacle-pentateuch-text",
+        "hebrews-8-10",
+        "meyers-exodus-tabernacle",
+        "hundley-sacred-space",
+        "homan-tents",
+        "fleming-mari",
+        "rothenberg-timna"
+      ],
+      "confidence": "medium",
+      "assertion_type": "",
+      "dispute_status": "",
+      "semantic_relationship": "GENERIC_BACKGROUND",
+      "source_kind": "ckl_legacy_field"
+    },
+    {
+      "evidence_id": "tabernacle:timeline:0",
+      "parent_object_id": "tabernacle",
+      "parent_type": "institution",
+      "category": "chronology",
+      "claim": "Sinai instructions and construction in Exodus's narrative",
+      "passage_anchors": [
+        "Leviticus 1:1-9"
+      ],
+      "source_ids": [
+        "tabernacle-pentateuch-text",
+        "hebrews-8-10",
+        "meyers-exodus-tabernacle",
+        "hundley-sacred-space",
+        "homan-tents",
+        "fleming-mari",
+        "rothenberg-timna"
+      ],
+      "confidence": "medium",
+      "assertion_type": "",
+      "dispute_status": "",
+      "semantic_relationship": "GENERIC_BACKGROUND",
+      "source_kind": "ckl_legacy_field"
+    },
+    {
+      "evidence_id": "tabernacle:timeline:1",
+      "parent_object_id": "tabernacle",
+      "parent_type": "institution",
+      "category": "chronology",
+      "claim": "Wilderness camp and transport in Numbers",
+      "passage_anchors": [
+        "Leviticus 1:1-9"
+      ],
+      "source_ids": [
+        "tabernacle-pentateuch-text",
+        "hebrews-8-10",
+        "meyers-exodus-tabernacle",
+        "hundley-sacred-space",
+        "homan-tents",
+        "fleming-mari",
+        "rothenberg-timna"
+      ],
+      "confidence": "medium",
+      "assertion_type": "",
+      "dispute_status": "",
+      "semantic_relationship": "GENERIC_BACKGROUND",
+      "source_kind": "ckl_legacy_field"
+    },
+    {
+      "evidence_id": "tabernacle:timeline:2",
+      "parent_object_id": "tabernacle",
+      "parent_type": "institution",
+      "category": "chronology",
+      "claim": "Tabernacle and ark traditions before the Jerusalem temple",
+      "passage_anchors": [
+        "Leviticus 1:1-9"
+      ],
+      "source_ids": [
+        "tabernacle-pentateuch-text",
+        "hebrews-8-10",
+        "meyers-exodus-tabernacle",
+        "hundley-sacred-space",
+        "homan-tents",
+        "fleming-mari",
+        "rothenberg-timna"
+      ],
+      "confidence": "medium",
+      "assertion_type": "",
+      "dispute_status": "",
+      "semantic_relationship": "GENERIC_BACKGROUND",
+      "source_kind": "ckl_legacy_field"
+    },
+    {
+      "evidence_id": "tabernacle:timeline:3",
+      "parent_object_id": "tabernacle",
+      "parent_type": "institution",
+      "category": "chronology",
+      "claim": "Temple reuse and later Jewish and Christian interpretation",
+      "passage_anchors": [
+        "Leviticus 1:1-9"
+      ],
+      "source_ids": [
+        "tabernacle-pentateuch-text",
+        "hebrews-8-10",
+        "meyers-exodus-tabernacle",
+        "hundley-sacred-space",
+        "homan-tents",
+        "fleming-mari",
+        "rothenberg-timna"
+      ],
+      "confidence": "medium",
+      "assertion_type": "",
+      "dispute_status": "",
+      "semantic_relationship": "GENERIC_BACKGROUND",
+      "source_kind": "ckl_legacy_field"
+    },
+    {
+      "evidence_id": "what-is-sacrifice-in-the-bible:ancient_near_east_context:0",
+      "parent_object_id": "what-is-sacrifice-in-the-bible",
+      "parent_type": "faq",
+      "category": "culture",
+      "claim": "Sacrifices were common across the ancient world, but Israel's system is distinct because the LORD defines the offering, its meaning, and its goal.",
+      "passage_anchors": [
+        "Leviticus 1:1-17"
+      ],
+      "source_ids": [
+        "genesis-8",
+        "genesis-22",
+        "exodus-24",
+        "leviticus-1",
+        "leviticus-16",
+        "psalm-40",
+        "isaiah-53",
+        "hebrews-9-10"
+      ],
+      "confidence": "medium",
+      "assertion_type": "",
+      "dispute_status": "",
+      "semantic_relationship": "GENERIC_BACKGROUND",
+      "source_kind": "ckl_legacy_field"
+    },
+    {
+      "evidence_id": "what-is-sacrifice-in-the-bible:historical_context:0",
+      "parent_object_id": "what-is-sacrifice-in-the-bible",
+      "parent_type": "faq",
+      "category": "history",
+      "claim": "From the patriarchs to the temple, sacrifice organizes worship around sin, gratitude, and restored access to God.",
+      "passage_anchors": [
+        "Leviticus 1:1-17"
+      ],
+      "source_ids": [
+        "genesis-8",
+        "genesis-22",
+        "exodus-24",
+        "leviticus-1",
+        "leviticus-16",
+        "psalm-40",
+        "isaiah-53",
+        "hebrews-9-10"
+      ],
+      "confidence": "medium",
+      "assertion_type": "",
+      "dispute_status": "",
+      "semantic_relationship": "GENERIC_BACKGROUND",
+      "source_kind": "ckl_legacy_field"
+    },
+    {
+      "evidence_id": "makarios:ancient_near_east_context:0",
+      "parent_object_id": "makarios",
+      "parent_type": "word_study",
+      "category": "culture",
+      "claim": "Ancient background for makarios includes Hebrew and Greek usage, translation practice, synagogue reading, and covenant speech; the entry ties that world to Psalm 1:1-3, Psalm 32:1-2, wisdom-theme, and psalms without letting comparison replace the biblical witness.",
+      "passage_anchors": [
+        "Psalms 1:1-3"
+      ],
+      "source_ids": [
+        "psalm-1",
+        "psalm-32",
+        "matthew-5",
+        "luke-6"
+      ],
+      "confidence": "medium",
+      "assertion_type": "",
+      "dispute_status": "",
+      "semantic_relationship": "GENERIC_BACKGROUND",
+      "source_kind": "ckl_legacy_field"
+    },
+    {
+      "evidence_id": "makarios:historical_context:0",
+      "parent_object_id": "makarios",
+      "parent_type": "word_study",
+      "category": "history",
+      "claim": "In Hebrew and Greek usage, makarios carries a range of meaning, so context determines how the term functions in a given passage.",
+      "passage_anchors": [
+        "Psalms 1:1-3"
+      ],
+      "source_ids": [
+        "psalm-1",
+        "psalm-32",
+        "matthew-5",
+        "luke-6"
+      ],
+      "confidence": "medium",
+      "assertion_type": "",
+      "dispute_status": "",
+      "semantic_relationship": "GENERIC_BACKGROUND",
+      "source_kind": "ckl_legacy_field"
+    },
+    {
+      "evidence_id": "nomos:ancient_near_east_context:0",
+      "parent_object_id": "nomos",
+      "parent_type": "word_study",
+      "category": "culture",
+      "claim": "Ancient background for nomos includes Hebrew and Greek usage, translation practice, synagogue reading, and covenant speech; the entry ties that world to Exodus 20:1-17, Deuteronomy 6:4-9, torah, and law-and-gospel without letting comparison replace the biblical witness.",
+      "passage_anchors": [
+        "Psalms 1:1-3"
+      ],
+      "source_ids": [
+        "exodus-20",
+        "deuteronomy-6",
+        "psalm-1",
+        "romans-7",
+        "galatians-3"
+      ],
+      "confidence": "medium",
+      "assertion_type": "",
+      "dispute_status": "",
+      "semantic_relationship": "GENERIC_BACKGROUND",
+      "source_kind": "ckl_legacy_field"
+    },
+    {
+      "evidence_id": "nomos:historical_context:0",
+      "parent_object_id": "nomos",
+      "parent_type": "word_study",
+      "category": "history",
+      "claim": "In Hebrew and Greek usage, nomos carries a range of meaning, so context determines how the term functions in a given passage.",
+      "passage_anchors": [
+        "Psalms 1:1-3"
+      ],
+      "source_ids": [
+        "exodus-20",
+        "deuteronomy-6",
+        "psalm-1",
+        "romans-7",
+        "galatians-3"
+      ],
+      "confidence": "medium",
+      "assertion_type": "",
+      "dispute_status": "",
+      "semantic_relationship": "GENERIC_BACKGROUND",
+      "source_kind": "ckl_legacy_field"
+    },
+    {
+      "evidence_id": "psalms-gateway-torah-king",
+      "parent_object_id": "psalms",
+      "parent_type": "book",
+      "category": "politics",
+      "claim": "Psalms 1 and 2 form an untitled gateway that places Torah-shaped flourishing, the way of the wicked, rebellious nations, YHWH's kingship, and the anointed king before the collection.",
+      "passage_anchors": [
+        "Psalms 1:1-2:12"
+      ],
+      "source_ids": [
+        "psalms-masoretic",
+        "declaisse-walford-jacobson-tanner",
+        "goldingay-psalms"
+      ],
+      "confidence": "high",
+      "assertion_type": "",
+      "dispute_status": "minor_scholarly_disagreement",
+      "semantic_relationship": "BOOK_CONTEXT",
+      "source_kind": "ckl_claim"
+    },
+    {
+      "evidence_id": "shema:ancient_near_east_context:0",
+      "parent_object_id": "shema",
+      "parent_type": "word_study",
+      "category": "culture",
+      "claim": "Ancient background for shema includes Hebrew and Greek usage, translation practice, synagogue reading, and covenant speech; the entry ties that world to Exodus 20:1-17, Deuteronomy 6:4-9, nomos, and torah without letting comparison replace the biblical witness.",
+      "passage_anchors": [
+        "Psalms 1:1-3"
+      ],
+      "source_ids": [
+        "exodus-20",
+        "deuteronomy-6",
+        "psalm-1",
+        "romans-7",
+        "galatians-3"
+      ],
+      "confidence": "medium",
+      "assertion_type": "",
+      "dispute_status": "",
+      "semantic_relationship": "GENERIC_BACKGROUND",
+      "source_kind": "ckl_legacy_field"
+    },
+    {
+      "evidence_id": "shema:historical_context:0",
+      "parent_object_id": "shema",
+      "parent_type": "word_study",
+      "category": "history",
+      "claim": "In Hebrew and Greek usage, shema carries a range of meaning, so context determines how the term functions in a given passage.",
+      "passage_anchors": [
+        "Psalms 1:1-3"
+      ],
+      "source_ids": [
+        "exodus-20",
+        "deuteronomy-6",
+        "psalm-1",
+        "romans-7",
+        "galatians-3"
+      ],
+      "confidence": "medium",
+      "assertion_type": "",
+      "dispute_status": "",
+      "semantic_relationship": "GENERIC_BACKGROUND",
+      "source_kind": "ckl_legacy_field"
+    },
+    {
+      "evidence_id": "torah:ancient_near_east_context:0",
+      "parent_object_id": "torah",
+      "parent_type": "word_study",
+      "category": "culture",
+      "claim": "Ancient treaty and legal traditions provide background, but torah is distinct because it is the instruction of the covenant LORD.",
+      "passage_anchors": [
+        "Psalms 1:1-3"
+      ],
+      "source_ids": [
+        "deuteronomy-4",
+        "deuteronomy-6",
+        "psalm-1",
+        "psalm-19",
+        "matthew-5",
+        "romans-7",
+        "galatians-3"
+      ],
+      "confidence": "medium",
+      "assertion_type": "",
+      "dispute_status": "",
+      "semantic_relationship": "GENERIC_BACKGROUND",
+      "source_kind": "ckl_legacy_field"
+    },
+    {
+      "evidence_id": "torah:historical_context:0",
+      "parent_object_id": "torah",
+      "parent_type": "word_study",
+      "category": "history",
+      "claim": "In Israel's story, torah names the covenant instruction given through Moses and the way the redeemed people are to live before God.",
+      "passage_anchors": [
+        "Psalms 1:1-3"
+      ],
+      "source_ids": [
+        "deuteronomy-4",
+        "deuteronomy-6",
+        "psalm-1",
+        "psalm-19",
+        "matthew-5",
+        "romans-7",
+        "galatians-3"
+      ],
+      "confidence": "medium",
+      "assertion_type": "",
+      "dispute_status": "",
+      "semantic_relationship": "GENERIC_BACKGROUND",
+      "source_kind": "ckl_legacy_field"
+    },
+    {
+      "evidence_id": "what-does-torah-mean:ancient_near_east_context:0",
+      "parent_object_id": "what-does-torah-mean",
+      "parent_type": "faq",
+      "category": "culture",
+      "claim": "Ancient legal and treaty traditions provide background, but torah is distinct because it is the instruction of the covenant LORD rather than a generic code.",
+      "passage_anchors": [
+        "Psalms 1:1-3"
+      ],
+      "source_ids": [
+        "deuteronomy-4",
+        "deuteronomy-6",
+        "psalm-1",
+        "psalm-19",
+        "matthew-5",
+        "romans-7",
+        "galatians-3"
+      ],
+      "confidence": "medium",
+      "assertion_type": "",
+      "dispute_status": "",
+      "semantic_relationship": "GENERIC_BACKGROUND",
+      "source_kind": "ckl_legacy_field"
+    },
+    {
+      "evidence_id": "what-does-torah-mean:historical_context:0",
+      "parent_object_id": "what-does-torah-mean",
+      "parent_type": "faq",
+      "category": "history",
+      "claim": "In Israel's story, torah names the covenant instruction given through Moses and the way the redeemed people are to live before God.",
+      "passage_anchors": [
+        "Psalms 1:1-3"
+      ],
+      "source_ids": [
+        "deuteronomy-4",
+        "deuteronomy-6",
+        "psalm-1",
+        "psalm-19",
+        "matthew-5",
+        "romans-7",
+        "galatians-3"
+      ],
+      "confidence": "medium",
+      "assertion_type": "",
+      "dispute_status": "",
+      "semantic_relationship": "GENERIC_BACKGROUND",
+      "source_kind": "ckl_legacy_field"
+    },
+    {
+      "evidence_id": "what-is-a-psalm:ancient_near_east_context:0",
+      "parent_object_id": "what-is-a-psalm",
+      "parent_type": "faq",
+      "category": "culture",
+      "claim": "Poetic prayer was common in the ancient world, but the Psalms uniquely bind emotion to covenant faith.",
+      "passage_anchors": [
+        "Psalms 1:1-6"
+      ],
+      "source_ids": [
+        "psalm-1",
+        "psalm-22",
+        "psalm-23",
+        "psalm-110",
+        "psalm-118",
+        "luke-24",
+        "acts-2",
+        "hebrews-1"
+      ],
+      "confidence": "medium",
+      "assertion_type": "",
+      "dispute_status": "",
+      "semantic_relationship": "GENERIC_BACKGROUND",
+      "source_kind": "ckl_legacy_field"
+    },
+    {
+      "evidence_id": "what-is-a-psalm:historical_context:0",
+      "parent_object_id": "what-is-a-psalm",
+      "parent_type": "faq",
+      "category": "history",
+      "claim": "Psalms arise in Israel's worship life and are sung in both public and private devotion.",
+      "passage_anchors": [
+        "Psalms 1:1-6"
+      ],
+      "source_ids": [
+        "psalm-1",
+        "psalm-22",
+        "psalm-23",
+        "psalm-110",
+        "psalm-118",
+        "luke-24",
+        "acts-2",
+        "hebrews-1"
+      ],
+      "confidence": "medium",
+      "assertion_type": "",
+      "dispute_status": "",
+      "semantic_relationship": "GENERIC_BACKGROUND",
+      "source_kind": "ckl_legacy_field"
+    },
+    {
+      "evidence_id": "what-is-biblical-wisdom:ancient_near_east_context:0",
+      "parent_object_id": "what-is-biblical-wisdom",
+      "parent_type": "faq",
+      "category": "culture",
+      "claim": "Israel shares wisdom forms with neighboring cultures, but anchors wisdom in covenant loyalty and the fear of the LORD.",
+      "passage_anchors": [
+        "Psalms 1:1-6"
+      ],
+      "source_ids": [
+        "proverbs-1",
+        "proverbs-3",
+        "job-28",
+        "psalm-1",
+        "ecclesiastes-12",
+        "matthew-7",
+        "1-corinthians-1",
+        "james-3"
+      ],
+      "confidence": "medium",
+      "assertion_type": "",
+      "dispute_status": "",
+      "semantic_relationship": "GENERIC_BACKGROUND",
+      "source_kind": "ckl_legacy_field"
+    },
+    {
+      "evidence_id": "what-is-biblical-wisdom:historical_context:0",
+      "parent_object_id": "what-is-biblical-wisdom",
+      "parent_type": "faq",
+      "category": "history",
+      "claim": "Wisdom literature grew from family instruction, court life, and worship, then became a major way Scripture teaches faithful living.",
+      "passage_anchors": [
+        "Psalms 1:1-6"
+      ],
+      "source_ids": [
+        "proverbs-1",
+        "proverbs-3",
+        "job-28",
+        "psalm-1",
+        "ecclesiastes-12",
+        "matthew-7",
+        "1-corinthians-1",
+        "james-3"
+      ],
+      "confidence": "medium",
+      "assertion_type": "",
+      "dispute_status": "",
+      "semantic_relationship": "GENERIC_BACKGROUND",
+      "source_kind": "ckl_legacy_field"
+    },
+    {
+      "evidence_id": "day-of-the-lord-prophecy:ancient_near_east_context:0",
+      "parent_object_id": "day-of-the-lord-prophecy",
+      "parent_type": "prophecy",
+      "category": "culture",
+      "claim": "Day of the Lord Prophecy is set within prophetic speech shaped by Israelite covenant lawsuit, royal courts, temple worship, Assyrian and Babylonian pressure, Persian restoration, and poetic oracle forms.",
+      "passage_anchors": [
+        "Zephaniah 1:14-18"
+      ],
+      "source_ids": [
+        "joel-2",
+        "amos-5",
+        "zephaniah-1",
+        "1-thessalonians-5",
+        "2-peter-3",
+        "day-of-the-lord-prophecy-historical-orientation"
+      ],
+      "confidence": "medium",
+      "assertion_type": "",
+      "dispute_status": "",
+      "semantic_relationship": "GENERIC_BACKGROUND",
+      "source_kind": "ckl_legacy_field"
+    },
+    {
+      "evidence_id": "day-of-the-lord-prophecy:historical_context:0",
+      "parent_object_id": "day-of-the-lord-prophecy",
+      "parent_type": "prophecy",
+      "category": "history",
+      "claim": "These warnings address covenant breach and imperial pressure, then project judgment and deliverance into the future.",
+      "passage_anchors": [
+        "Zephaniah 1:14-18"
+      ],
+      "source_ids": [
+        "joel-2",
+        "amos-5",
+        "zephaniah-1",
+        "1-thessalonians-5",
+        "2-peter-3",
+        "day-of-the-lord-prophecy-historical-orientation"
+      ],
+      "confidence": "medium",
+      "assertion_type": "",
+      "dispute_status": "",
+      "semantic_relationship": "GENERIC_BACKGROUND",
+      "source_kind": "ckl_legacy_field"
+    },
+    {
+      "evidence_id": "what-is-the-day-of-the-lord:ancient_near_east_context:0",
+      "parent_object_id": "what-is-the-day-of-the-lord",
+      "parent_type": "faq",
+      "category": "culture",
+      "claim": "Royal 'day of the king' imagery helps explain the metaphor, but here the LORD himself acts as judge and deliverer.",
+      "passage_anchors": [
+        "Zephaniah 1:14-18"
+      ],
+      "source_ids": [
+        "amos-5",
+        "joel-2",
+        "zephaniah-1",
+        "isaiah-13",
+        "malachi-4",
+        "1-thessalonians-5",
+        "2-peter-3",
+        "revelation-6",
+        "what-is-the-day-of-the-lord-historical-orientation"
+      ],
+      "confidence": "medium",
+      "assertion_type": "",
+      "dispute_status": "",
+      "semantic_relationship": "GENERIC_BACKGROUND",
+      "source_kind": "ckl_legacy_field"
+    },
+    {
+      "evidence_id": "what-is-the-day-of-the-lord:historical_context:0",
+      "parent_object_id": "what-is-the-day-of-the-lord",
+      "parent_type": "faq",
+      "category": "history",
+      "claim": "The prophets use this phrase amid national crisis to warn of covenant judgment and promise future vindication.",
+      "passage_anchors": [
+        "Zephaniah 1:14-18"
+      ],
+      "source_ids": [
+        "amos-5",
+        "joel-2",
+        "zephaniah-1",
+        "isaiah-13",
+        "malachi-4",
+        "1-thessalonians-5",
+        "2-peter-3",
+        "revelation-6",
+        "what-is-the-day-of-the-lord-historical-orientation"
+      ],
+      "confidence": "medium",
+      "assertion_type": "",
+      "dispute_status": "",
+      "semantic_relationship": "GENERIC_BACKGROUND",
+      "source_kind": "ckl_legacy_field"
+    },
+    {
+      "evidence_id": "zephaniah-composition",
+      "parent_object_id": "zephaniah",
+      "parent_type": "book",
+      "category": "culture",
+      "claim": "Scholars disagree about literary unity, the nation-oracle sequence, the relation of chapter 3 to chapters 1-2, later restoration material, and shaping within the Twelve.",
+      "passage_anchors": [
+        "Zephaniah 1:1"
+      ],
+      "source_ids": [
+        "quine-zephaniah",
+        "berlin-zephaniah",
+        "oxford-twelve"
+      ],
+      "confidence": "high",
+      "assertion_type": "",
+      "dispute_status": "major_scholarly_disagreement",
+      "semantic_relationship": "DIRECT_CONTEXT",
+      "source_kind": "ckl_claim"
+    },
+    {
+      "evidence_id": "zephaniah-creation-reversal",
+      "parent_object_id": "zephaniah",
+      "parent_type": "book",
+      "category": "culture",
+      "claim": "Zephaniah 1:2-3 sweeps through humans, animals, birds, and fish in a creation-scale judgment commonly read as creation reversal with flood resonances.",
+      "passage_anchors": [
+        "Zephaniah 1:2-3"
+      ],
+      "source_ids": [
+        "zephaniah-masoretic",
+        "zephaniah-canonical-comparanda",
+        "quine-zephaniah",
+        "oxford-metaphor"
+      ],
+      "confidence": "high",
+      "assertion_type": "",
+      "dispute_status": "minor_scholarly_disagreement",
+      "semantic_relationship": "DIRECT_CONTEXT",
+      "source_kind": "ckl_claim"
+    },
+    {
+      "evidence_id": "zephaniah-cult",
+      "parent_object_id": "zephaniah",
+      "parent_type": "book",
+      "category": "history",
+      "claim": "Zephaniah 1:4-6 accuses Judah and Jerusalem of Baal practice, rooftop worship of the heavenly host, divided oath-taking, turning back, and failure to seek YHWH.",
+      "passage_anchors": [
+        "Zephaniah 1:4-6"
+      ],
+      "source_ids": [
+        "zephaniah-masoretic",
+        "berlin-zephaniah",
+        "timmer-theology"
+      ],
+      "confidence": "high",
+      "assertion_type": "",
+      "dispute_status": "lexical_uncertainty",
+      "semantic_relationship": "DIRECT_CONTEXT",
+      "source_kind": "ckl_claim"
+    },
+    {
+      "evidence_id": "zephaniah-date",
+      "parent_object_id": "zephaniah",
+      "parent_type": "book",
+      "category": "culture",
+      "claim": "Josiah's reign is the explicit frame and pre-612 BCE is a common horizon for the Nineveh oracle, but the book's exact date and relation to Josiah's reform remain disputed.",
+      "passage_anchors": [
+        "Zephaniah 1:1"
+      ],
+      "source_ids": [
+        "quine-zephaniah",
+        "berlin-zephaniah",
+        "bm-nineveh-chronicle"
+      ],
+      "confidence": "medium",
+      "assertion_type": "",
+      "dispute_status": "chronological_uncertainty",
+      "semantic_relationship": "DIRECT_CONTEXT",
+      "source_kind": "ckl_claim"
+    },
+    {
+      "evidence_id": "zephaniah-day",
+      "parent_object_id": "zephaniah",
+      "parent_type": "book",
+      "category": "economics",
+      "claim": "Zephaniah 1:14-18 describes the near great Day of YHWH through battle cry, wrath, darkness, distress, trumpet, ruined defenses, blood, dust, and wealth unable to deliver.",
+      "passage_anchors": [
+        "Zephaniah 1:14-18"
+      ],
+      "source_ids": [
+        "zephaniah-masoretic",
+        "zephaniah-canonical-comparanda",
+        "quine-zephaniah",
+        "timmer-theology"
+      ],
+      "confidence": "high",
+      "assertion_type": "",
+      "dispute_status": "major_scholarly_disagreement",
+      "semantic_relationship": "DIRECT_CONTEXT",
+      "source_kind": "ckl_claim"
+    },
+    {
+      "evidence_id": "zephaniah-ethical-reception",
+      "parent_object_id": "zephaniah",
+      "parent_type": "book",
+      "category": "culture",
+      "claim": "Responsible modern reception confronts divine violence, racialized genealogy, anti-African and anti-Arab mapping, disability stigma, poverty romanticization, trauma exploitation, ecological loss, nationalism, colonialism, and partisan enemy-making.",
+      "passage_anchors": [
+        "Zephaniah 1:2-18"
+      ],
+      "source_ids": [
+        "gafney-zephaniah",
+        "oxford-postcolonial",
+        "oxford-trauma",
+        "timmer-theology"
+      ],
+      "confidence": "high",
+      "assertion_type": "",
+      "dispute_status": "not_disputed",
+      "semantic_relationship": "DIRECT_CONTEXT",
+      "source_kind": "ckl_claim"
+    },
+    {
+      "evidence_id": "zephaniah-genealogy",
+      "parent_object_id": "zephaniah",
+      "parent_type": "book",
+      "category": "culture",
+      "claim": "The unusually long genealogy does not securely prove either African ancestry through Cushi or royal descent through King Hezekiah.",
+      "passage_anchors": [
+        "Zephaniah 1:1"
+      ],
+      "source_ids": [
+        "quine-zephaniah",
+        "berlin-zephaniah",
+        "gafney-zephaniah"
+      ],
+      "confidence": "low",
+      "assertion_type": "",
+      "dispute_status": "major_scholarly_disagreement",
+      "semantic_relationship": "DIRECT_CONTEXT",
+      "source_kind": "ckl_claim"
+    },
+    {
+      "evidence_id": "zephaniah-jerusalem-topography",
+      "parent_object_id": "zephaniah",
+      "parent_type": "book",
+      "category": "economics",
+      "claim": "The Fish Gate, Second Quarter, hills, and Maktesh locate cries and economic collapse within Jerusalem, though exact archaeological identifications are not secure.",
+      "passage_anchors": [
+        "Zephaniah 1:10-11"
+      ],
+      "source_ids": [
+        "zephaniah-masoretic",
+        "berlin-zephaniah",
+        "quine-zephaniah"
+      ],
+      "confidence": "medium",
+      "assertion_type": "",
+      "dispute_status": "archaeological_uncertainty",
+      "semantic_relationship": "DIRECT_CONTEXT",
+      "source_kind": "ckl_claim"
+    },
+    {
+      "evidence_id": "zephaniah-pesher",
+      "parent_object_id": "zephaniah",
+      "parent_type": "book",
+      "category": "culture",
+      "claim": "1Q15 and 4Q170 preserve fragmentary pesharim on Zephaniah that contextualize prophetic lines for later communities rather than supplying Zephaniah's original historical referents.",
+      "passage_anchors": [
+        "Zephaniah 1:12-13"
+      ],
+      "source_ids": [
+        "iaa-1q15",
+        "iaa-4q170",
+        "cambridge-qumran"
+      ],
+      "confidence": "high",
+      "assertion_type": "",
+      "dispute_status": "historical_uncertainty",
+      "semantic_relationship": "DIRECT_CONTEXT",
+      "source_kind": "ckl_claim"
+    },
+    {
+      "evidence_id": "zephaniah-sacrifice",
+      "parent_object_id": "zephaniah",
+      "parent_type": "book",
+      "category": "culture",
+      "claim": "Zephaniah 1:7-9 commands silence and depicts YHWH preparing a sacrifice and consecrating guests before targeting officials, royal sons, foreign dress, threshold behavior, violence, and fraud.",
+      "passage_anchors": [
+        "Zephaniah 1:7-9"
+      ],
+      "source_ids": [
+        "zephaniah-masoretic",
+        "berlin-zephaniah",
+        "quine-zephaniah"
+      ],
+      "confidence": "high",
+      "assertion_type": "",
+      "dispute_status": "major_scholarly_disagreement",
+      "semantic_relationship": "DIRECT_CONTEXT",
+      "source_kind": "ckl_claim"
+    },
+    {
+      "evidence_id": "zephaniah-search",
+      "parent_object_id": "zephaniah",
+      "parent_type": "book",
+      "category": "economics",
+      "claim": "Zephaniah 1:12-13 portrays YHWH searching Jerusalem with lamps and exposes complacent residents who deny effective divine action; houses, vineyards, and wealth are reversed.",
+      "passage_anchors": [
+        "Zephaniah 1:12-13"
+      ],
+      "source_ids": [
+        "zephaniah-masoretic",
+        "berlin-zephaniah",
+        "timmer-theology"
+      ],
+      "confidence": "high",
+      "assertion_type": "",
+      "dispute_status": "lexical_uncertainty",
+      "semantic_relationship": "DIRECT_CONTEXT",
+      "source_kind": "ckl_claim"
+    },
+    {
+      "evidence_id": "zephaniah-superscription",
+      "parent_object_id": "zephaniah",
+      "parent_type": "book",
+      "category": "history",
+      "claim": "Zephaniah 1:1 dates the word to Josiah's reign and identifies Zephaniah through Cushi, Gedaliah, Amariah, and Hezekiah.",
+      "passage_anchors": [
+        "Zephaniah 1:1"
+      ],
+      "source_ids": [
+        "zephaniah-masoretic",
+        "quine-zephaniah",
+        "berlin-zephaniah"
+      ],
+      "confidence": "high",
+      "assertion_type": "",
+      "dispute_status": "historical_uncertainty",
+      "semantic_relationship": "DIRECT_CONTEXT",
+      "source_kind": "ckl_claim"
+    },
+    {
+      "evidence_id": "zephaniah-textual-witnesses",
+      "parent_object_id": "zephaniah",
+      "parent_type": "book",
+      "category": "history",
+      "claim": "Masoretic Zephaniah, Old Greek Sophonias, Judean Desert biblical manuscripts, pesharim, and other versions attest transmission and textual plurality in several difficult passages.",
+      "passage_anchors": [
+        "Zephaniah 1:1"
+      ],
+      "source_ids": [
+        "sbl-bhs-zephaniah",
+        "catss-zephaniah",
+        "nets-twelve",
+        "iaa-4q77",
+        "iaa-4q78",
+        "iaa-1q15",
+        "iaa-4q170"
+      ],
+      "confidence": "high",
+      "assertion_type": "",
+      "dispute_status": "textual_variant",
+      "semantic_relationship": "DIRECT_CONTEXT",
+      "source_kind": "ckl_claim"
+    },
+    {
+      "evidence_id": "acts-common-authorship",
+      "parent_object_id": "acts",
+      "parent_type": "book",
+      "category": "culture",
+      "claim": "Common authorship of Luke and Acts remains the majority scholarly judgment, though the exact composition and publication relationship is debated.",
+      "passage_anchors": [
+        "Luke 1:1-4"
+      ],
+      "source_ids": [
+        "parsons-pervo-unity",
+        "cambridge-unity"
+      ],
+      "confidence": "medium",
+      "assertion_type": "",
+      "dispute_status": "major_scholarly_disagreement",
+      "semantic_relationship": "INTERTEXTUAL_REUSE",
+      "source_kind": "ckl_claim"
+    },
+    {
+      "evidence_id": "acts-sequel",
+      "parent_object_id": "acts",
+      "parent_type": "book",
+      "category": "culture",
+      "claim": "Acts 1 explicitly resumes a former account addressed to Theophilus and is most naturally read as a sequel to Luke.",
+      "passage_anchors": [
+        "Luke 1:1-4"
+      ],
+      "source_ids": [
+        "acts-greek",
+        "harvey-acts"
+      ],
+      "confidence": "high",
+      "assertion_type": "",
+      "dispute_status": "minor_scholarly_disagreement",
+      "semantic_relationship": "INTERTEXTUAL_REUSE",
+      "source_kind": "ckl_claim"
+    },
+    {
+      "evidence_id": "acts-theophilus",
+      "parent_object_id": "acts",
+      "parent_type": "book",
+      "category": "culture",
+      "claim": "Theophilus is named as addressee, but whether he was a patron, official, convert, representative reader, or literary dedicatee is unknown.",
+      "passage_anchors": [
+        "Luke 1:3"
+      ],
+      "source_ids": [
+        "acts-greek",
+        "harvey-acts"
+      ],
+      "confidence": "high",
+      "assertion_type": "",
+      "dispute_status": "historical_uncertainty",
+      "semantic_relationship": "INTERTEXTUAL_REUSE",
+      "source_kind": "ckl_claim"
+    },
+    {
+      "evidence_id": "annunciation-to-mary:ancient_near_east_context:0",
+      "parent_object_id": "annunciation-to-mary",
+      "parent_type": "event",
+      "category": "culture",
+      "claim": "Birth announcements are known literary forms, while Luke frames this announcement through Israel's royal and prophetic hopes.",
+      "passage_anchors": [
+        "Luke 1:26-38"
+      ],
+      "source_ids": [
+        "luke-1-26-38",
+        "2-samuel-7-12-16",
+        "isaiah-7-14",
+        "matthew-1-18-25",
+        "annunciation-to-mary-historical-orientation"
+      ],
+      "confidence": "medium",
+      "assertion_type": "",
+      "dispute_status": "",
+      "semantic_relationship": "GENERIC_BACKGROUND",
+      "source_kind": "ckl_legacy_field"
+    },
+    {
+      "evidence_id": "annunciation-to-mary:historical_context:0",
+      "parent_object_id": "annunciation-to-mary",
+      "parent_type": "event",
+      "category": "history",
+      "claim": "The event belongs to first-century Jewish life under Roman rule, in the setting of Nazareth and Davidic expectation.",
+      "passage_anchors": [
+        "Luke 1:26-38"
+      ],
+      "source_ids": [
+        "luke-1-26-38",
+        "2-samuel-7-12-16",
+        "isaiah-7-14",
+        "matthew-1-18-25",
+        "annunciation-to-mary-historical-orientation"
+      ],
+      "confidence": "medium",
+      "assertion_type": "",
+      "dispute_status": "",
+      "semantic_relationship": "GENERIC_BACKGROUND",
+      "source_kind": "ckl_legacy_field"
+    },
+    {
+      "evidence_id": "birth-of-jesus:ancient_near_east_context:0",
+      "parent_object_id": "birth-of-jesus",
+      "parent_type": "event",
+      "category": "culture",
+      "claim": "The setting is Greco-Roman and Second Temple Jewish rather than ancient Near Eastern, but the event fulfills the older promise story of Israel.",
+      "passage_anchors": [
+        "Luke 1:26-38"
+      ],
+      "source_ids": [
+        "matthew-1-2",
+        "luke-1-2",
+        "galatians-4",
+        "philippians-2",
+        "micah-5",
+        "isaiah-7",
+        "isaiah-9",
+        "birth-of-jesus-historical-orientation"
+      ],
+      "confidence": "medium",
+      "assertion_type": "",
+      "dispute_status": "",
+      "semantic_relationship": "GENERIC_BACKGROUND",
+      "source_kind": "ckl_legacy_field"
+    },
+    {
+      "evidence_id": "birth-of-jesus:historical_context:0",
+      "parent_object_id": "birth-of-jesus",
+      "parent_type": "event",
+      "category": "history",
+      "claim": "The nativity occurs in the first century amid Roman taxation, Herodian politics, and Jewish messianic expectation.",
+      "passage_anchors": [
+        "Luke 1:26-38"
+      ],
+      "source_ids": [
+        "matthew-1-2",
+        "luke-1-2",
+        "galatians-4",
+        "philippians-2",
+        "micah-5",
+        "isaiah-7",
+        "isaiah-9",
+        "birth-of-jesus-historical-orientation"
+      ],
+      "confidence": "medium",
+      "assertion_type": "",
+      "dispute_status": "",
+      "semantic_relationship": "GENERIC_BACKGROUND",
+      "source_kind": "ckl_legacy_field"
+    },
+    {
+      "evidence_id": "davidic-covenant:ancient_near_east_context:0",
+      "parent_object_id": "davidic-covenant",
+      "parent_type": "event",
+      "category": "culture",
+      "claim": "Royal covenants and dynastic promises were common in the ancient world, but this one is grounded in divine grace rather than royal achievement.",
+      "passage_anchors": [
+        "Luke 1:30-33"
+      ],
+      "source_ids": [
+        "2-samuel-7",
+        "psalm-2",
+        "psalm-89",
+        "isaiah-9",
+        "jeremiah-23",
+        "luke-1",
+        "acts-2",
+        "revelation-5"
+      ],
+      "confidence": "medium",
+      "assertion_type": "",
+      "dispute_status": "",
+      "semantic_relationship": "GENERIC_BACKGROUND",
+      "source_kind": "ckl_legacy_field"
+    },
+    {
+      "evidence_id": "davidic-covenant:historical_context:0",
+      "parent_object_id": "davidic-covenant",
+      "parent_type": "event",
+      "category": "history",
+      "claim": "2 Samuel 7 frames a covenant promise to David after Jerusalem becomes the royal center.",
+      "passage_anchors": [
+        "Luke 1:30-33"
+      ],
+      "source_ids": [
+        "2-samuel-7",
+        "psalm-2",
+        "psalm-89",
+        "isaiah-9",
+        "jeremiah-23",
+        "luke-1",
+        "acts-2",
+        "revelation-5"
+      ],
+      "confidence": "medium",
+      "assertion_type": "",
+      "dispute_status": "",
+      "semantic_relationship": "GENERIC_BACKGROUND",
+      "source_kind": "ckl_legacy_field"
+    },
+    {
+      "evidence_id": "luke-acts-relation",
+      "parent_object_id": "luke",
+      "parent_type": "book",
+      "category": "geography",
+      "claim": "Luke and Acts share Theophilus, retrospective resumptions, language, characters, geography, and themes, strongly supporting common authorship or coordinated production while leaving literary unity and publication history open to refinement.",
+      "passage_anchors": [
+        "Luke 1:1-4"
+      ],
+      "source_ids": [
+        "marguerat-unity",
+        "walters-unity",
+        "secondary-prefaces"
+      ],
+      "confidence": "high",
+      "assertion_type": "",
+      "dispute_status": "minor_scholarly_disagreement",
+      "semantic_relationship": "DIRECT_CONTEXT",
+      "source_kind": "ckl_claim"
+    },
+    {
+      "evidence_id": "luke-anonymous",
+      "parent_object_id": "luke",
+      "parent_type": "book",
+      "category": "history",
+      "claim": "The continuous Greek Gospel is internally anonymous; Luke 1:1-4 uses a first-person preface but supplies no authorial name, profession, or Pauline relationship.",
+      "passage_anchors": [
+        "Luke 1:1-4"
+      ],
+      "source_ids": [
+        "luke-greek",
+        "walters-unity"
+      ],
+      "confidence": "high",
+      "assertion_type": "",
+      "dispute_status": "not_disputed",
+      "semantic_relationship": "DIRECT_CONTEXT",
+      "source_kind": "ckl_claim"
+    },
+    {
+      "evidence_id": "luke-infancy",
+      "parent_object_id": "luke",
+      "parent_type": "book",
+      "category": "culture",
+      "claim": "Luke 1-2 pairs John and Jesus through annunciations, births, songs, Spirit-filled speech, temple scenes, and growth notices, using Septuagintal diction and Israel-scripture patterns.",
+      "passage_anchors": [
+        "Luke 1:5-80"
+      ],
+      "source_ids": [
+        "luke-greek",
+        "green-theology"
+      ],
+      "confidence": "high",
+      "assertion_type": "",
+      "dispute_status": "minor_scholarly_disagreement",
+      "semantic_relationship": "DIRECT_CONTEXT",
+      "source_kind": "ckl_claim"
+    },
+    {
+      "evidence_id": "luke-magnificat",
+      "parent_object_id": "luke",
+      "parent_type": "book",
+      "category": "history",
+      "claim": "The dominant Greek manuscript tradition attributes the Magnificat to Mary, while some early reception associates it with Elizabeth; speaker, transmission, and composition questions should remain distinct.",
+      "passage_anchors": [
+        "Luke 1:46-55"
+      ],
+      "source_ids": [
+        "luke-greek",
+        "ntvmr-luke"
+      ],
+      "confidence": "medium",
+      "assertion_type": "",
+      "dispute_status": "textual_variant",
+      "semantic_relationship": "DIRECT_CONTEXT",
+      "source_kind": "ckl_claim"
+    },
+    {
+      "evidence_id": "luke-prologue",
+      "parent_object_id": "luke",
+      "parent_type": "book",
+      "category": "history",
+      "claim": "Luke 1:1-4 claims predecessors, traditions traced to eyewitnesses and word-servants, investigation, ordered writing, and assurance for Theophilus; it does not claim that the author personally witnessed Jesus' ministry.",
+      "passage_anchors": [
+        "Luke 1:1-4"
+      ],
+      "source_ids": [
+        "luke-greek",
+        "alexander-preface"
+      ],
+      "confidence": "high",
+      "assertion_type": "",
+      "dispute_status": "minor_scholarly_disagreement",
+      "semantic_relationship": "DIRECT_CONTEXT",
+      "source_kind": "ckl_claim"
+    },
+    {
+      "evidence_id": "luke-provenance",
+      "parent_object_id": "luke",
+      "parent_type": "book",
+      "category": "culture",
+      "claim": "Theophilus is named, but proposed places, Jewish-Gentile audience profiles, social settings, and community crises remain reconstructions rather than facts stated by the Gospel.",
+      "passage_anchors": [
+        "Luke 1:1-4"
+      ],
+      "source_ids": [
+        "cambridge-luke-introduction",
+        "esler-community"
+      ],
+      "confidence": "low",
+      "assertion_type": "",
+      "dispute_status": "historical_uncertainty",
+      "semantic_relationship": "DIRECT_CONTEXT",
+      "source_kind": "ckl_claim"
+    },
+    {
+      "evidence_id": "luke-quirinius",
+      "parent_object_id": "luke",
+      "parent_type": "book",
+      "category": "culture",
+      "claim": "Luke links Jesus' birth with Herod's era and a registration associated with Quirinius, creating a serious chronological problem because Quirinius' documented Syrian governorship and census belong to 6 CE; proposed resolutions remain disputed.",
+      "passage_anchors": [
+        "Luke 1:5"
+      ],
+      "source_ids": [
+        "huebner-census",
+        "thorley-census",
+        "josephus-antiquities"
+      ],
+      "confidence": "high",
+      "assertion_type": "",
+      "dispute_status": "chronological_uncertainty",
+      "semantic_relationship": "DIRECT_CONTEXT",
+      "source_kind": "ckl_claim"
+    },
+    {
+      "evidence_id": "luke-sources",
+      "parent_object_id": "luke",
+      "parent_type": "book",
+      "category": "culture",
+      "claim": "Luke's extensive order and wording agreements with Mark support Markan use in the majority Synoptic model; other shared and distinctive material may derive from oral, written, compositional, and publication processes that cannot be reconstructed with certainty.",
+      "passage_anchors": [
+        "Luke 1:1-4"
+      ],
+      "source_ids": [
+        "methods-luke",
+        "oxford-synoptic-problem"
+      ],
+      "confidence": "high",
+      "assertion_type": "",
+      "dispute_status": "major_scholarly_disagreement",
+      "semantic_relationship": "DIRECT_CONTEXT",
+      "source_kind": "ckl_claim"
+    },
+    {
+      "evidence_id": "malachi-new-testament",
+      "parent_object_id": "malachi",
+      "parent_type": "book",
+      "category": "culture",
+      "claim": "Matthew, Mark, and Luke receive messenger and Elijah language in relation to John the Baptist, while Romans quotes Jacob-Esau language.",
+      "passage_anchors": [
+        "Luke 1:16-17"
+      ],
+      "source_ids": [
+        "sblgnt",
+        "schart-malachi",
+        "early-christian-prophets"
+      ],
+      "confidence": "high",
+      "assertion_type": "",
+      "dispute_status": "denominational_disagreement",
+      "semantic_relationship": "LATER_RECEPTION",
+      "source_kind": "ckl_claim"
+    },
+    {
+      "evidence_id": "nazareth:ancient_near_east_context:0",
+      "parent_object_id": "nazareth",
+      "parent_type": "place",
+      "category": "culture",
+      "claim": "Ancient background for Nazareth includes roads, borders, markets, sanctuaries, water sources, and imperial administration; the entry ties that world to Matthew 28:16-20, Mark 16:19-20, jesus, and acts without letting comparison replace the biblical witness.",
+      "passage_anchors": [
+        "Luke 1:26-38"
+      ],
+      "source_ids": [
+        "matthew",
+        "mark",
+        "luke",
+        "john",
+        "acts",
+        "nazareth-historical-orientation"
+      ],
+      "confidence": "medium",
+      "assertion_type": "",
+      "dispute_status": "",
+      "semantic_relationship": "GENERIC_BACKGROUND",
+      "source_kind": "ckl_legacy_field"
+    },
+    {
+      "evidence_id": "nazareth:hebraic_worldview:0",
+      "parent_object_id": "nazareth",
+      "parent_type": "place",
+      "category": "culture",
+      "claim": "Kinship, hometown knowledge, synagogue assembly, and honor shape how the Gospel narratives portray recognition and rejection.",
+      "passage_anchors": [
+        "Luke 1:26-38"
+      ],
+      "source_ids": [
+        "matthew",
+        "mark",
+        "luke",
+        "john",
+        "acts",
+        "nazareth-historical-orientation"
+      ],
+      "confidence": "medium",
+      "assertion_type": "",
+      "dispute_status": "",
+      "semantic_relationship": "GENERIC_BACKGROUND",
+      "source_kind": "ckl_legacy_field"
+    },
+    {
+      "evidence_id": "nazareth:historical_context:0",
+      "parent_object_id": "nazareth",
+      "parent_type": "place",
+      "category": "history",
+      "claim": "Early Roman remains at Nazareth include a dwelling and subterranean storage installations. They establish a modest inhabited settlement, not the identity of a particular family home.",
+      "passage_anchors": [
+        "Luke 1:26-38"
+      ],
+      "source_ids": [
+        "matthew",
+        "mark",
+        "luke",
+        "john",
+        "acts",
+        "nazareth-historical-orientation"
+      ],
+      "confidence": "medium",
+      "assertion_type": "",
+      "dispute_status": "",
+      "semantic_relationship": "GENERIC_BACKGROUND",
+      "source_kind": "ckl_legacy_field"
+    },
+    {
+      "evidence_id": "nazareth:second_temple_context:0",
+      "parent_object_id": "nazareth",
+      "parent_type": "place",
+      "category": "culture",
+      "claim": "Nazareth was a Jewish Galilean settlement under Herodian rule rather than direct Judean prefectural administration during most of Jesus's ministry.",
+      "passage_anchors": [
+        "Luke 1:26-38"
+      ],
+      "source_ids": [
+        "matthew",
+        "mark",
+        "luke",
+        "john",
+        "acts",
+        "nazareth-historical-orientation"
+      ],
+      "confidence": "medium",
+      "assertion_type": "",
+      "dispute_status": "",
+      "semantic_relationship": "GENERIC_BACKGROUND",
+      "source_kind": "ckl_legacy_field"
+    },
+    {
+      "evidence_id": "spirit-theme:ancient_near_east_context:0",
+      "parent_object_id": "spirit-theme",
+      "parent_type": "theme",
+      "category": "culture",
+      "claim": "The Bible\u2019s Spirit language is distinct because it binds divine presence to holiness, creation, covenant renewal, and mission rather than to impersonal force.",
+      "passage_anchors": [
+        "Luke 1:35"
+      ],
+      "source_ids": [
+        "genesis-1",
+        "ezekiel-36-37",
+        "joel-2",
+        "john-14-16",
+        "acts-2",
+        "romans-8",
+        "galatians-5",
+        "spirit-theme-historical-orientation"
+      ],
+      "confidence": "medium",
+      "assertion_type": "",
+      "dispute_status": "",
+      "semantic_relationship": "GENERIC_BACKGROUND",
+      "source_kind": "ckl_legacy_field"
+    },
+    {
+      "evidence_id": "spirit-theme:historical_context:0",
+      "parent_object_id": "spirit-theme",
+      "parent_type": "theme",
+      "category": "history",
+      "claim": "Spirit language appears from creation through prophecy, Jesus\u2019 ministry, Pentecost, and the life of the church.",
+      "passage_anchors": [
+        "Luke 1:35"
+      ],
+      "source_ids": [
+        "genesis-1",
+        "ezekiel-36-37",
+        "joel-2",
+        "john-14-16",
+        "acts-2",
+        "romans-8",
+        "galatians-5",
+        "spirit-theme-historical-orientation"
+      ],
+      "confidence": "medium",
+      "assertion_type": "",
+      "dispute_status": "",
+      "semantic_relationship": "GENERIC_BACKGROUND",
+      "source_kind": "ckl_legacy_field"
+    },
+    {
+      "evidence_id": "who-was-david:ancient_near_east_context:0",
+      "parent_object_id": "who-was-david",
+      "parent_type": "faq",
+      "category": "culture",
+      "claim": "Kingship in the ancient world often tied ruler and deity closely together, but David is judged and upheld by the LORD.",
+      "passage_anchors": [
+        "Luke 1:30-33"
+      ],
+      "source_ids": [
+        "1-samuel-16",
+        "1-samuel-17",
+        "2-samuel-7",
+        "psalm-2",
+        "psalm-110",
+        "luke-1",
+        "acts-2",
+        "revelation-5"
+      ],
+      "confidence": "medium",
+      "assertion_type": "",
+      "dispute_status": "",
+      "semantic_relationship": "GENERIC_BACKGROUND",
+      "source_kind": "ckl_legacy_field"
+    },
+    {
+      "evidence_id": "who-was-david:historical_context:0",
+      "parent_object_id": "who-was-david",
+      "parent_type": "faq",
+      "category": "history",
+      "claim": "David unites the tribes, establishes Jerusalem, and receives the promise of an enduring house.",
+      "passage_anchors": [
+        "Luke 1:30-33"
+      ],
+      "source_ids": [
+        "1-samuel-16",
+        "1-samuel-17",
+        "2-samuel-7",
+        "psalm-2",
+        "psalm-110",
+        "luke-1",
+        "acts-2",
+        "revelation-5"
+      ],
+      "confidence": "medium",
+      "assertion_type": "",
+      "dispute_status": "",
+      "semantic_relationship": "GENERIC_BACKGROUND",
+      "source_kind": "ckl_legacy_field"
+    },
+    {
+      "evidence_id": "2-corinthians:interpretive_note:21",
+      "parent_object_id": "2-corinthians",
+      "parent_type": "book",
+      "category": "culture",
+      "claim": "God shining light in hearts revoices creation and prophetic light language; it is theological metaphor, not a scientific account of cognition or vision.",
+      "passage_anchors": [
+        "Genesis 1:3"
+      ],
+      "source_ids": [
+        "2cor-greek",
+        "nets-lxx"
+      ],
+      "confidence": "high",
+      "assertion_type": "inference",
+      "dispute_status": "minor_scholarly_disagreement",
+      "semantic_relationship": "LATER_RECEPTION",
+      "source_kind": "ckl_interpretive_note"
+    },
+    {
+      "evidence_id": "col-image",
+      "parent_object_id": "colossians",
+      "parent_type": "book",
+      "category": "culture",
+      "claim": "Messiah is called the image of the invisible God.",
+      "passage_anchors": [
+        "Genesis 1:26-27"
+      ],
+      "source_ids": [
+        "col-greek",
+        "nets-lxx",
+        "moo-colossians"
+      ],
+      "confidence": "high",
+      "assertion_type": "",
+      "dispute_status": "denominational_disagreement",
+      "semantic_relationship": "LATER_RECEPTION",
+      "source_kind": "ckl_claim"
+    },
+    {
+      "evidence_id": "col-new-humanity",
+      "parent_object_id": "colossians",
+      "parent_type": "book",
+      "category": "culture",
+      "claim": "The new humanity is being renewed in knowledge according to the creator's image across named ethnic, ritual, cultural, and legal distinctions.",
+      "passage_anchors": [
+        "Genesis 1:26-27"
+      ],
+      "source_ids": [
+        "col-greek",
+        "nets-lxx",
+        "sumney-colossians"
+      ],
+      "confidence": "high",
+      "assertion_type": "",
+      "dispute_status": "denominational_disagreement",
+      "semantic_relationship": "LATER_RECEPTION",
+      "source_kind": "ckl_claim"
+    },
+    {
+      "evidence_id": "creation-doctrine-framework:ancient_near_east_context:0",
+      "parent_object_id": "creation-doctrine-framework",
+      "parent_type": "doctrine",
+      "category": "culture",
+      "claim": "Creation texts stand alongside Mesopotamian origin traditions such as Enuma Elish and Atrahasis, while Scripture presents creation as ordered by the one covenant Lord.",
+      "passage_anchors": [
+        "Genesis 1:1-31"
+      ],
+      "source_ids": [
+        "genesis-1-2",
+        "psalm-104",
+        "john-1",
+        "colossians-1",
+        "revelation-21",
+        "creation-doctrine-framework-historical-orientation"
+      ],
+      "confidence": "medium",
+      "assertion_type": "",
+      "dispute_status": "",
+      "semantic_relationship": "GENERIC_BACKGROUND",
+      "source_kind": "ckl_legacy_field"
+    },
+    {
+      "evidence_id": "creation-doctrine-framework:hebraic_worldview:0",
+      "parent_object_id": "creation-doctrine-framework",
+      "parent_type": "doctrine",
+      "category": "culture",
+      "claim": "Creation is good, ordered, and accountable to God; humanity receives creaturely dignity and responsibility rather than autonomous self-definition.",
+      "passage_anchors": [
+        "Genesis 1:1-31"
+      ],
+      "source_ids": [
+        "genesis-1-2",
+        "psalm-104",
+        "john-1",
+        "colossians-1",
+        "revelation-21",
+        "creation-doctrine-framework-historical-orientation"
+      ],
+      "confidence": "medium",
+      "assertion_type": "",
+      "dispute_status": "",
+      "semantic_relationship": "GENERIC_BACKGROUND",
+      "source_kind": "ckl_legacy_field"
+    },
+    {
+      "evidence_id": "creation-doctrine-framework:historical_context:0",
+      "parent_object_id": "creation-doctrine-framework",
+      "parent_type": "doctrine",
+      "category": "history",
+      "claim": "Creation doctrine draws from Israel's confession of the LORD as Creator amid ancient origin accounts and from later biblical texts that extend creation language to redemption and new creation.",
+      "passage_anchors": [
+        "Genesis 1:1-31"
+      ],
+      "source_ids": [
+        "genesis-1-2",
+        "psalm-104",
+        "john-1",
+        "colossians-1",
+        "revelation-21",
+        "creation-doctrine-framework-historical-orientation"
+      ],
+      "confidence": "medium",
+      "assertion_type": "",
+      "dispute_status": "",
+      "semantic_relationship": "GENERIC_BACKGROUND",
+      "source_kind": "ckl_legacy_field"
+    },
+    {
+      "evidence_id": "creation-doctrine-framework:historical_setting:0",
+      "parent_object_id": "creation-doctrine-framework",
+      "parent_type": "doctrine",
+      "category": "history",
+      "claim": "Canonical teaching from Genesis through Revelation",
+      "passage_anchors": [
+        "Genesis 1:1-31"
+      ],
+      "source_ids": [
+        "genesis-1-2",
+        "psalm-104",
+        "john-1",
+        "colossians-1",
+        "revelation-21",
+        "creation-doctrine-framework-historical-orientation"
+      ],
+      "confidence": "medium",
+      "assertion_type": "",
+      "dispute_status": "",
+      "semantic_relationship": "GENERIC_BACKGROUND",
+      "source_kind": "ckl_legacy_field"
+    },
+    {
+      "evidence_id": "creation-doctrine-framework:original_audience:0",
+      "parent_object_id": "creation-doctrine-framework",
+      "parent_type": "doctrine",
+      "category": "social",
+      "claim": "Readers learning Scripture's account of God, world, and human vocation",
+      "passage_anchors": [
+        "Genesis 1:1-31"
+      ],
+      "source_ids": [
+        "genesis-1-2",
+        "psalm-104",
+        "john-1",
+        "colossians-1",
+        "revelation-21",
+        "creation-doctrine-framework-historical-orientation"
+      ],
+      "confidence": "medium",
+      "assertion_type": "",
+      "dispute_status": "",
+      "semantic_relationship": "GENERIC_BACKGROUND",
+      "source_kind": "ckl_legacy_field"
+    },
+    {
+      "evidence_id": "creation-doctrine-framework:second_temple_context:0",
+      "parent_object_id": "creation-doctrine-framework",
+      "parent_type": "doctrine",
+      "category": "culture",
+      "claim": "Second Temple Jewish literature and early Christian texts often connect creation, wisdom, resurrection hope, and God's power to make all things new.",
+      "passage_anchors": [
+        "Genesis 1:1-31"
+      ],
+      "source_ids": [
+        "genesis-1-2",
+        "psalm-104",
+        "john-1",
+        "colossians-1",
+        "revelation-21",
+        "creation-doctrine-framework-historical-orientation"
+      ],
+      "confidence": "medium",
+      "assertion_type": "",
+      "dispute_status": "",
+      "semantic_relationship": "GENERIC_BACKGROUND",
+      "source_kind": "ckl_legacy_field"
+    },
+    {
+      "evidence_id": "creation-doctrine-framework:timeline:0",
+      "parent_object_id": "creation-doctrine-framework",
+      "parent_type": "doctrine",
+      "category": "chronology",
+      "claim": "Creation declared good",
+      "passage_anchors": [
+        "Genesis 1:1-31"
+      ],
+      "source_ids": [
+        "genesis-1-2",
+        "psalm-104",
+        "john-1",
+        "colossians-1",
+        "revelation-21",
+        "creation-doctrine-framework-historical-orientation"
+      ],
+      "confidence": "medium",
+      "assertion_type": "",
+      "dispute_status": "",
+      "semantic_relationship": "GENERIC_BACKGROUND",
+      "source_kind": "ckl_legacy_field"
+    },
+    {
+      "evidence_id": "creation-doctrine-framework:timeline:1",
+      "parent_object_id": "creation-doctrine-framework",
+      "parent_type": "doctrine",
+      "category": "chronology",
+      "claim": "Human vocation given",
+      "passage_anchors": [
+        "Genesis 1:1-31"
+      ],
+      "source_ids": [
+        "genesis-1-2",
+        "psalm-104",
+        "john-1",
+        "colossians-1",
+        "revelation-21",
+        "creation-doctrine-framework-historical-orientation"
+      ],
+      "confidence": "medium",
+      "assertion_type": "",
+      "dispute_status": "",
+      "semantic_relationship": "GENERIC_BACKGROUND",
+      "source_kind": "ckl_legacy_field"
+    },
+    {
+      "evidence_id": "creation-doctrine-framework:timeline:2",
+      "parent_object_id": "creation-doctrine-framework",
+      "parent_type": "doctrine",
+      "category": "chronology",
+      "claim": "Fall disorders creation",
+      "passage_anchors": [
+        "Genesis 1:1-31"
+      ],
+      "source_ids": [
+        "genesis-1-2",
+        "psalm-104",
+        "john-1",
+        "colossians-1",
+        "revelation-21",
+        "creation-doctrine-framework-historical-orientation"
+      ],
+      "confidence": "medium",
+      "assertion_type": "",
+      "dispute_status": "",
+      "semantic_relationship": "GENERIC_BACKGROUND",
+      "source_kind": "ckl_legacy_field"
+    },
+    {
+      "evidence_id": "creation-doctrine-framework:timeline:3",
+      "parent_object_id": "creation-doctrine-framework",
+      "parent_type": "doctrine",
+      "category": "chronology",
+      "claim": "Wisdom and worship confess the Creator",
+      "passage_anchors": [
+        "Genesis 1:1-31"
+      ],
+      "source_ids": [
+        "genesis-1-2",
+        "psalm-104",
+        "john-1",
+        "colossians-1",
+        "revelation-21",
+        "creation-doctrine-framework-historical-orientation"
+      ],
+      "confidence": "medium",
+      "assertion_type": "",
+      "dispute_status": "",
+      "semantic_relationship": "GENERIC_BACKGROUND",
+      "source_kind": "ckl_legacy_field"
+    },
+    {
+      "evidence_id": "creation-doctrine-framework:timeline:4",
+      "parent_object_id": "creation-doctrine-framework",
+      "parent_type": "doctrine",
+      "category": "chronology",
+      "claim": "Christ revealed as agent and heir of creation",
+      "passage_anchors": [
+        "Genesis 1:1-31"
+      ],
+      "source_ids": [
+        "genesis-1-2",
+        "psalm-104",
+        "john-1",
+        "colossians-1",
+        "revelation-21",
+        "creation-doctrine-framework-historical-orientation"
+      ],
+      "confidence": "medium",
+      "assertion_type": "",
+      "dispute_status": "",
+      "semantic_relationship": "GENERIC_BACKGROUND",
+      "source_kind": "ckl_legacy_field"
+    },
+    {
+      "evidence_id": "creation-doctrine-framework:timeline:5",
+      "parent_object_id": "creation-doctrine-framework",
+      "parent_type": "doctrine",
+      "category": "chronology",
+      "claim": "New creation promised",
+      "passage_anchors": [
+        "Genesis 1:1-31"
+      ],
+      "source_ids": [
+        "genesis-1-2",
+        "psalm-104",
+        "john-1",
+        "colossians-1",
+        "revelation-21",
+        "creation-doctrine-framework-historical-orientation"
+      ],
+      "confidence": "medium",
+      "assertion_type": "",
+      "dispute_status": "",
+      "semantic_relationship": "GENERIC_BACKGROUND",
+      "source_kind": "ckl_legacy_field"
+    },
+    {
+      "evidence_id": "creation-doctrine:ancient_near_east_context:0",
+      "parent_object_id": "creation-doctrine",
+      "parent_type": "theology",
+      "category": "culture",
+      "claim": "Ancient background for Creation Doctrine includes covenant life, temple worship, royal ideology, wisdom teaching, and early church confession; the entry ties that world to Genesis 1:1-31, Genesis 2:1-25, creation-theme, and genesis without letting comparison replace the biblical witness.",
+      "passage_anchors": [
+        "Genesis 1:1-31"
+      ],
+      "source_ids": [
+        "genesis-1-2",
+        "psalm-8",
+        "john-1",
+        "romans-8",
+        "revelation-21"
+      ],
+      "confidence": "medium",
+      "assertion_type": "",
+      "dispute_status": "",
+      "semantic_relationship": "GENERIC_BACKGROUND",
+      "source_kind": "ckl_legacy_field"
+    },
+    {
+      "evidence_id": "creation-doctrine:historical_context:0",
+      "parent_object_id": "creation-doctrine",
+      "parent_type": "theology",
+      "category": "history",
+      "claim": "Creation Doctrine is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness.",
+      "passage_anchors": [
+        "Genesis 1:1-31"
+      ],
+      "source_ids": [
+        "genesis-1-2",
+        "psalm-8",
+        "john-1",
+        "romans-8",
+        "revelation-21"
+      ],
+      "confidence": "medium",
+      "assertion_type": "",
+      "dispute_status": "",
+      "semantic_relationship": "GENERIC_BACKGROUND",
+      "source_kind": "ckl_legacy_field"
+    },
+    {
+      "evidence_id": "creation-theme:ancient_near_east_context:0",
+      "parent_object_id": "creation-theme",
+      "parent_type": "theme",
+      "category": "culture",
+      "claim": "The motif speaks against chaos-centered or polytheistic origin stories and keeps the creator God singular and sovereign.",
+      "passage_anchors": [
+        "Genesis 1:1-31"
+      ],
+      "source_ids": [
+        "genesis-1-2",
+        "psalm-8",
+        "psalm-104",
+        "john-1",
+        "romans-8",
+        "revelation-21"
+      ],
+      "confidence": "medium",
+      "assertion_type": "",
+      "dispute_status": "",
+      "semantic_relationship": "GENERIC_BACKGROUND",
+      "source_kind": "ckl_legacy_field"
+    },
+    {
+      "evidence_id": "creation-theme:historical_context:0",
+      "parent_object_id": "creation-theme",
+      "parent_type": "theme",
+      "category": "history",
+      "claim": "Creation and new creation frame the Bible from Genesis to Revelation and give coherence to human vocation, fall, redemption, and hope.",
+      "passage_anchors": [
+        "Genesis 1:1-31"
+      ],
+      "source_ids": [
+        "genesis-1-2",
+        "psalm-8",
+        "psalm-104",
+        "john-1",
+        "romans-8",
+        "revelation-21"
+      ],
+      "confidence": "medium",
+      "assertion_type": "",
+      "dispute_status": "",
+      "semantic_relationship": "GENERIC_BACKGROUND",
+      "source_kind": "ckl_legacy_field"
+    },
+    {
+      "evidence_id": "creation:ancient_near_east_context:0",
+      "parent_object_id": "creation",
+      "parent_type": "event",
+      "category": "culture",
+      "claim": "Genesis 1 can be compared with ancient Mesopotamian accounts of cosmic waters, ordering, celestial bodies, divine rule, and human vocation. The comparisons reveal shared discourse and marked differences without proving a single route of dependence.",
+      "passage_anchors": [
+        "Genesis 1:1-31"
+      ],
+      "source_ids": [
+        "genesis-1-2",
+        "psalm-8",
+        "psalm-104",
+        "john-1",
+        "colossians-1",
+        "revelation-21",
+        "sarna-genesis-creation"
+      ],
+      "confidence": "medium",
+      "assertion_type": "",
+      "dispute_status": "",
+      "semantic_relationship": "GENERIC_BACKGROUND",
+      "source_kind": "ckl_legacy_field"
+    },
+    {
+      "evidence_id": "creation:hebraic_worldview:0",
+      "parent_object_id": "creation",
+      "parent_type": "event",
+      "category": "culture",
+      "claim": "Genesis 1 depicts one God ordering the world by speech, blessing living creatures, assigning humans an image-bearing vocation, and resting on the seventh day. These observations describe the passage before later theological synthesis.",
+      "passage_anchors": [
+        "Genesis 1:1-31"
+      ],
+      "source_ids": [
+        "genesis-1-2",
+        "psalm-8",
+        "psalm-104",
+        "john-1",
+        "colossians-1",
+        "revelation-21",
+        "sarna-genesis-creation"
+      ],
+      "confidence": "medium",
+      "assertion_type": "",
+      "dispute_status": "",
+      "semantic_relationship": "GENERIC_BACKGROUND",
+      "source_kind": "ckl_legacy_field"
+    },
+    {
+      "evidence_id": "creation:historical_context:0",
+      "parent_object_id": "creation",
+      "parent_type": "event",
+      "category": "history",
+      "claim": "Genesis presents creation as the foundational act that begins biblical history and establishes God\u2019s sovereignty over all things.",
+      "passage_anchors": [
+        "Genesis 1:1-31"
+      ],
+      "source_ids": [
+        "genesis-1-2",
+        "psalm-8",
+        "psalm-104",
+        "john-1",
+        "colossians-1",
+        "revelation-21",
+        "sarna-genesis-creation"
+      ],
+      "confidence": "medium",
+      "assertion_type": "",
+      "dispute_status": "",
+      "semantic_relationship": "GENERIC_BACKGROUND",
+      "source_kind": "ckl_legacy_field"
+    },
+    {
+      "evidence_id": "enuma-elish-cosmic-ordering-comparison",
+      "parent_object_id": "mesopotamian-creation-and-flood-comparisons",
+      "parent_type": "cultural_background",
+      "category": "history",
+      "claim": "The Babylonian epic narrates divine succession and combat followed by Marduk's organization of the cosmos and cultic supremacy.",
+      "passage_anchors": [
+        "Genesis 1:1-2:3"
+      ],
+      "source_ids": [
+        "lambert-babylonian-creation-2013",
+        "sarna-genesis-comparison"
+      ],
+      "confidence": "medium",
+      "assertion_type": "primary-evidence",
+      "dispute_status": "major_scholarly_disagreement",
+      "semantic_relationship": "COMPARATIVE_CONTEXT",
+      "source_kind": "ckl_evidence_item"
+    },
+    {
+      "evidence_id": "enuma-elish-cosmic-ordering-comparison:passage-relevance",
+      "parent_object_id": "mesopotamian-creation-and-flood-comparisons",
+      "parent_type": "cultural_background",
+      "category": "history",
+      "claim": "The epic supplies a specific Mesopotamian comparison for waters, ordering, celestial organization, and divine rule in Genesis 1 without making the two accounts equivalent.",
+      "passage_anchors": [
+        "Genesis 1:1-2:3"
+      ],
+      "source_ids": [
+        "lambert-babylonian-creation-2013",
+        "sarna-genesis-comparison"
+      ],
+      "confidence": "medium",
+      "assertion_type": "primary-evidence",
+      "dispute_status": "major_scholarly_disagreement",
+      "semantic_relationship": "COMPARATIVE_CONTEXT",
+      "source_kind": "ckl_evidence_item"
+    },
+    {
+      "evidence_id": "genesis-ane-comparative-context",
+      "parent_object_id": "genesis",
+      "parent_type": "book",
+      "category": "geography",
+      "claim": "Genesis 1-11 belongs to an ancient Near Eastern literary environment in which creation, flood, genealogy, and city-building traditions were also discussed.",
+      "passage_anchors": [
+        "Genesis 1:1-11:26"
+      ],
+      "source_ids": [
+        "sarna-genesis",
+        "zondervan-illustrated-pentateuch-backgrounds"
+      ],
+      "confidence": "high",
+      "assertion_type": "",
+      "dispute_status": "minor_scholarly_disagreement",
+      "semantic_relationship": "BOOK_CONTEXT",
+      "source_kind": "ckl_claim"
+    },
+    {
+      "evidence_id": "genesis-literary-movement",
+      "parent_object_id": "genesis",
+      "parent_type": "book",
+      "category": "culture",
+      "claim": "Genesis moves from universal origins in chapters 1-11 to the ancestral family narratives in chapters 12-50 and ends with Jacob's household in Egypt.",
+      "passage_anchors": [
+        "Genesis 1:1-50:26"
+      ],
+      "source_ids": [
+        "sarna-genesis",
+        "hamilton-genesis-1-17",
+        "hamilton-genesis-18-50"
+      ],
+      "confidence": "high",
+      "assertion_type": "",
+      "dispute_status": "not_disputed",
+      "semantic_relationship": "BOOK_CONTEXT",
+      "source_kind": "ckl_claim"
+    },
+    {
+      "evidence_id": "genesis-ordered-worldview-observation",
+      "parent_object_id": "mesopotamian-creation-and-flood-comparisons",
+      "parent_type": "cultural_background",
+      "category": "culture",
+      "claim": "Genesis 1 repeatedly depicts God speaking, separating, naming, appointing, blessing, evaluating, and resting as the created order is established.",
+      "passage_anchors": [
+        "Genesis 1:1-2:3"
+      ],
+      "source_ids": [
+        "genesis-1-11-text",
+        "sarna-genesis-comparison"
+      ],
+      "confidence": "high",
+      "assertion_type": "primary-evidence",
+      "dispute_status": "not_disputed",
+      "semantic_relationship": "DIRECT_CONTEXT",
+      "source_kind": "ckl_evidence_item"
+    },
+    {
+      "evidence_id": "genesis-ordered-worldview-observation:passage-relevance",
+      "parent_object_id": "mesopotamian-creation-and-flood-comparisons",
+      "parent_type": "cultural_background",
+      "category": "culture",
+      "claim": "The observation identifies the passage's own account of ordered creation before ancient comparative material is introduced.",
+      "passage_anchors": [
+        "Genesis 1:1-2:3"
+      ],
+      "source_ids": [
+        "genesis-1-11-text",
+        "sarna-genesis-comparison"
+      ],
+      "confidence": "high",
+      "assertion_type": "primary-evidence",
+      "dispute_status": "not_disputed",
+      "semantic_relationship": "DIRECT_CONTEXT",
+      "source_kind": "ckl_evidence_item"
+    },
+    {
+      "evidence_id": "genesis:interpretive_note:0",
+      "parent_object_id": "genesis",
+      "parent_type": "book",
+      "category": "culture",
+      "claim": "Present Mosaic attribution and compositional models as distinct positions; Genesis does not narrate the history of its own literary formation.",
+      "passage_anchors": [
+        "Genesis 1:1-50:26"
+      ],
+      "source_ids": [
+        "sarna-genesis",
+        "hamilton-genesis-1-17"
+      ],
+      "confidence": "low",
+      "assertion_type": "inference",
+      "dispute_status": "major_scholarly_disagreement",
+      "semantic_relationship": "BOOK_CONTEXT",
+      "source_kind": "ckl_interpretive_note"
+    },
+    {
+      "evidence_id": "genesis:interpretive_note:1",
+      "parent_object_id": "genesis",
+      "parent_type": "book",
+      "category": "culture",
+      "claim": "Read Genesis 1-11 as ancient theological and literary discourse before imposing modern scientific genres or dismissing its claims as merely decorative myth.",
+      "passage_anchors": [
+        "Genesis 1:1-11:26"
+      ],
+      "source_ids": [
+        "sarna-genesis",
+        "hamilton-genesis-1-17",
+        "zondervan-illustrated-pentateuch-backgrounds"
+      ],
+      "confidence": "medium",
+      "assertion_type": "inference",
+      "dispute_status": "major_scholarly_disagreement",
+      "semantic_relationship": "BOOK_CONTEXT",
+      "source_kind": "ckl_interpretive_note"
+    },
+    {
+      "evidence_id": "genesis:interpretive_note:2",
+      "parent_object_id": "genesis",
+      "parent_type": "book",
+      "category": "geography",
+      "claim": "Ancient Near Eastern parallels can clarify shared motifs and cultural questions, but parallels alone do not prove direct copying or settle the interpretation of Genesis.",
+      "passage_anchors": [
+        "Genesis 1:1-11:26"
+      ],
+      "source_ids": [
+        "sarna-genesis",
+        "zondervan-illustrated-pentateuch-backgrounds"
+      ],
+      "confidence": "high",
+      "assertion_type": "inference",
+      "dispute_status": "minor_scholarly_disagreement",
+      "semantic_relationship": "BOOK_CONTEXT",
+      "source_kind": "ckl_interpretive_note"
+    },
+    {
+      "evidence_id": "image-of-god-theme:ancient_near_east_context:0",
+      "parent_object_id": "image-of-god-theme",
+      "parent_type": "theme",
+      "category": "culture",
+      "claim": "Royal imagery was common in the ancient world, but Genesis extends representative dignity to humanity as a whole rather than only to kings.",
+      "passage_anchors": [
+        "Genesis 1:26-28"
+      ],
+      "source_ids": [
+        "genesis-1-26-28",
+        "genesis-5-1-3",
+        "genesis-9-1-7",
+        "psalm-8-1-9",
+        "1-corinthians-11-7",
+        "james-3-9",
+        "colossians-1-15-20",
+        "colossians-3-9-10",
+        "romans-8-28-30",
+        "ephesians-4-22-24",
+        "image-of-god-theme-historical-orientation"
+      ],
+      "confidence": "medium",
+      "assertion_type": "",
+      "dispute_status": "",
+      "semantic_relationship": "GENERIC_BACKGROUND",
+      "source_kind": "ckl_legacy_field"
+    },
+    {
+      "evidence_id": "image-of-god-theme:hebraic_worldview:0",
+      "parent_object_id": "image-of-god-theme",
+      "parent_type": "theme",
+      "category": "culture",
+      "claim": "Human vocation, relational responsibility, dignity, stewardship, and moral accountability.",
+      "passage_anchors": [
+        "Genesis 1:26-28"
+      ],
+      "source_ids": [
+        "genesis-1-26-28",
+        "genesis-5-1-3",
+        "genesis-9-1-7",
+        "psalm-8-1-9",
+        "1-corinthians-11-7",
+        "james-3-9",
+        "colossians-1-15-20",
+        "colossians-3-9-10",
+        "romans-8-28-30",
+        "ephesians-4-22-24",
+        "image-of-god-theme-historical-orientation"
+      ],
+      "confidence": "medium",
+      "assertion_type": "",
+      "dispute_status": "",
+      "semantic_relationship": "GENERIC_BACKGROUND",
+      "source_kind": "ckl_legacy_field"
+    },
+    {
+      "evidence_id": "image-of-god-theme:historical_context:0",
+      "parent_object_id": "image-of-god-theme",
+      "parent_type": "theme",
+      "category": "history",
+      "claim": "Genesis places the image of God at creation and carries the language into the post-fall human story, where vocation remains but is marred.",
+      "passage_anchors": [
+        "Genesis 1:26-28"
+      ],
+      "source_ids": [
+        "genesis-1-26-28",
+        "genesis-5-1-3",
+        "genesis-9-1-7",
+        "psalm-8-1-9",
+        "1-corinthians-11-7",
+        "james-3-9",
+        "colossians-1-15-20",
+        "colossians-3-9-10",
+        "romans-8-28-30",
+        "ephesians-4-22-24",
+        "image-of-god-theme-historical-orientation"
+      ],
+      "confidence": "medium",
+      "assertion_type": "",
+      "dispute_status": "",
+      "semantic_relationship": "GENERIC_BACKGROUND",
+      "source_kind": "ckl_legacy_field"
+    },
+    {
+      "evidence_id": "image-of-god-theme:second_temple_context:0",
+      "parent_object_id": "image-of-god-theme",
+      "parent_type": "theme",
+      "category": "culture",
+      "claim": "Second Temple Jewish reflection connected the image of God with wisdom, holiness, and the hope of restored humanity.",
+      "passage_anchors": [
+        "Genesis 1:26-28"
+      ],
+      "source_ids": [
+        "genesis-1-26-28",
+        "genesis-5-1-3",
+        "genesis-9-1-7",
+        "psalm-8-1-9",
+        "1-corinthians-11-7",
+        "james-3-9",
+        "colossians-1-15-20",
+        "colossians-3-9-10",
+        "romans-8-28-30",
+        "ephesians-4-22-24",
+        "image-of-god-theme-historical-orientation"
+      ],
+      "confidence": "medium",
+      "assertion_type": "",
+      "dispute_status": "",
+      "semantic_relationship": "GENERIC_BACKGROUND",
+      "source_kind": "ckl_legacy_field"
+    },
+    {
+      "evidence_id": "john-logos",
+      "parent_object_id": "john",
+      "parent_type": "book",
+      "category": "culture",
+      "claim": "John 1 depicts the Logos with God in the beginning, active in creation and life, becoming flesh and dwelling among humans; Jewish Scripture, wisdom, divine-word traditions, and Greek discourse all inform interpretation.",
+      "passage_anchors": [
+        "Genesis 1:1-5"
+      ],
+      "source_ids": [
+        "john-greek",
+        "boyarin-logos",
+        "oxford-johannine"
+      ],
+      "confidence": "high",
+      "assertion_type": "",
+      "dispute_status": "major_scholarly_disagreement",
+      "semantic_relationship": "LATER_RECEPTION",
+      "source_kind": "ckl_claim"
+    },
+    {
+      "evidence_id": "katabole:ancient_near_east_context:0",
+      "parent_object_id": "katabole",
+      "parent_type": "word_study",
+      "category": "culture",
+      "claim": "Ancient background for katabole includes Hebrew and Greek usage, translation practice, synagogue reading, and covenant speech; the entry ties that world to Genesis 1:1-31, Psalm 8:1-9, creation-theme, and genesis without letting comparison replace the biblical witness.",
+      "passage_anchors": [
+        "Genesis 1:1-31"
+      ],
+      "source_ids": [
+        "genesis-1-2",
+        "psalm-8",
+        "romans-8",
+        "revelation-21"
+      ],
+      "confidence": "medium",
+      "assertion_type": "",
+      "dispute_status": "",
+      "semantic_relationship": "GENERIC_BACKGROUND",
+      "source_kind": "ckl_legacy_field"
+    },
+    {
+      "evidence_id": "katabole:historical_context:0",
+      "parent_object_id": "katabole",
+      "parent_type": "word_study",
+      "category": "history",
+      "claim": "In Hebrew and Greek usage, katabole carries a range of meaning, so context determines how the term functions in a given passage.",
+      "passage_anchors": [
+        "Genesis 1:1-31"
+      ],
+      "source_ids": [
+        "genesis-1-2",
+        "psalm-8",
+        "romans-8",
+        "revelation-21"
+      ],
+      "confidence": "medium",
+      "assertion_type": "",
+      "dispute_status": "",
+      "semantic_relationship": "GENERIC_BACKGROUND",
+      "source_kind": "ckl_legacy_field"
+    },
+    {
+      "evidence_id": "light-and-darkness-theme:ancient_near_east_context:0",
+      "parent_object_id": "light-and-darkness-theme",
+      "parent_type": "theme",
+      "category": "culture",
+      "claim": "Ancient background for Light and Darkness Theme includes covenant practice, worship, kingship, wisdom instruction, and prophetic critique; the entry ties that world to Genesis 1:1-5, Psalm 27:1, phos, and skotia without letting comparison replace the biblical witness.",
+      "passage_anchors": [
+        "Genesis 1:1-5"
+      ],
+      "source_ids": [
+        "genesis-1",
+        "psalm-27",
+        "john-1",
+        "ephesians-5",
+        "1-john-1"
+      ],
+      "confidence": "medium",
+      "assertion_type": "",
+      "dispute_status": "",
+      "semantic_relationship": "GENERIC_BACKGROUND",
+      "source_kind": "ckl_legacy_field"
+    },
+    {
+      "evidence_id": "light-and-darkness-theme:historical_context:0",
+      "parent_object_id": "light-and-darkness-theme",
+      "parent_type": "theme",
+      "category": "history",
+      "claim": "Light and Darkness Theme is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness.",
+      "passage_anchors": [
+        "Genesis 1:1-5"
+      ],
+      "source_ids": [
+        "genesis-1",
+        "psalm-27",
+        "john-1",
+        "ephesians-5",
+        "1-john-1"
+      ],
+      "confidence": "medium",
+      "assertion_type": "",
+      "dispute_status": "",
+      "semantic_relationship": "GENERIC_BACKGROUND",
+      "source_kind": "ckl_legacy_field"
+    },
+    {
+      "evidence_id": "mesopotamian-creation-and-flood-comparisons:interpretive_note:0",
+      "parent_object_id": "mesopotamian-creation-and-flood-comparisons",
+      "parent_type": "cultural_background",
+      "category": "culture",
+      "claim": "Shared motifs support comparison but do not establish a single line of direct borrowing.",
+      "passage_anchors": [
+        "Genesis 1:1-2:3"
+      ],
+      "source_ids": [
+        "sarna-genesis-comparison",
+        "lambert-babylonian-creation-2013",
+        "george-gilgamesh-2003"
+      ],
+      "confidence": "high",
+      "assertion_type": "inference",
+      "dispute_status": "major_scholarly_disagreement",
+      "semantic_relationship": "INTERTEXTUAL_REUSE",
+      "source_kind": "ckl_interpretive_note"
+    },
+    {
+      "evidence_id": "new-creation-theme:ancient_near_east_context:0",
+      "parent_object_id": "new-creation-theme",
+      "parent_type": "theme",
+      "category": "culture",
+      "claim": "Ancient background for New Creation Theme includes covenant practice, worship, kingship, wisdom instruction, and prophetic critique; the entry ties that world to Genesis 1:1-31, Genesis 2:1-25, creation-theme, and creation-doctrine without letting comparison replace the biblical witness.",
+      "passage_anchors": [
+        "Genesis 1:1-31"
+      ],
+      "source_ids": [
+        "genesis-1-2",
+        "psalm-8",
+        "john-1",
+        "romans-8",
+        "revelation-21"
+      ],
+      "confidence": "medium",
+      "assertion_type": "",
+      "dispute_status": "",
+      "semantic_relationship": "GENERIC_BACKGROUND",
+      "source_kind": "ckl_legacy_field"
+    },
+    {
+      "evidence_id": "new-creation-theme:historical_context:0",
+      "parent_object_id": "new-creation-theme",
+      "parent_type": "theme",
+      "category": "history",
+      "claim": "New Creation Theme is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness.",
+      "passage_anchors": [
+        "Genesis 1:1-31"
+      ],
+      "source_ids": [
+        "genesis-1-2",
+        "psalm-8",
+        "john-1",
+        "romans-8",
+        "revelation-21"
+      ],
+      "confidence": "medium",
+      "assertion_type": "",
+      "dispute_status": "",
+      "semantic_relationship": "GENERIC_BACKGROUND",
+      "source_kind": "ckl_legacy_field"
+    },
+    {
+      "evidence_id": "parakletos:ancient_near_east_context:0",
+      "parent_object_id": "parakletos",
+      "parent_type": "word_study",
+      "category": "culture",
+      "claim": "Ancient background for parakletos includes Hebrew and Greek usage, translation practice, synagogue reading, and covenant speech; the entry ties that world to Genesis 1:1-2, Ezekiel 36:24-28, pneuma, and spirit-theme without letting comparison replace the biblical witness.",
+      "passage_anchors": [
+        "Genesis 1:1-2"
+      ],
+      "source_ids": [
+        "genesis-1",
+        "ezekiel-36",
+        "john-14-16",
+        "acts-2",
+        "romans-8",
+        "parakletos-historical-orientation"
+      ],
+      "confidence": "medium",
+      "assertion_type": "",
+      "dispute_status": "",
+      "semantic_relationship": "GENERIC_BACKGROUND",
+      "source_kind": "ckl_legacy_field"
+    },
+    {
+      "evidence_id": "parakletos:historical_context:0",
+      "parent_object_id": "parakletos",
+      "parent_type": "word_study",
+      "category": "history",
+      "claim": "In Hebrew and Greek usage, parakletos carries a range of meaning, so context determines how the term functions in a given passage.",
+      "passage_anchors": [
+        "Genesis 1:1-2"
+      ],
+      "source_ids": [
+        "genesis-1",
+        "ezekiel-36",
+        "john-14-16",
+        "acts-2",
+        "romans-8",
+        "parakletos-historical-orientation"
+      ],
+      "confidence": "medium",
+      "assertion_type": "",
+      "dispute_status": "",
+      "semantic_relationship": "GENERIC_BACKGROUND",
+      "source_kind": "ckl_legacy_field"
+    },
+    {
+      "evidence_id": "phos:ancient_near_east_context:0",
+      "parent_object_id": "phos",
+      "parent_type": "word_study",
+      "category": "culture",
+      "claim": "Ancient background for phos includes Hebrew and Greek usage, translation practice, synagogue reading, and covenant speech; the entry ties that world to Genesis 1:1-5, Psalm 27:1, skotia, and light-and-darkness-theme without letting comparison replace the biblical witness.",
+      "passage_anchors": [
+        "Genesis 1:1-5"
+      ],
+      "source_ids": [
+        "genesis-1",
+        "psalm-27",
+        "john-1",
+        "ephesians-5",
+        "1-john-1"
+      ],
+      "confidence": "medium",
+      "assertion_type": "",
+      "dispute_status": "",
+      "semantic_relationship": "GENERIC_BACKGROUND",
+      "source_kind": "ckl_legacy_field"
+    },
+    {
+      "evidence_id": "phos:historical_context:0",
+      "parent_object_id": "phos",
+      "parent_type": "word_study",
+      "category": "history",
+      "claim": "In Hebrew and Greek usage, phos carries a range of meaning, so context determines how the term functions in a given passage.",
+      "passage_anchors": [
+        "Genesis 1:1-5"
+      ],
+      "source_ids": [
+        "genesis-1",
+        "psalm-27",
+        "john-1",
+        "ephesians-5",
+        "1-john-1"
+      ],
+      "confidence": "medium",
+      "assertion_type": "",
+      "dispute_status": "",
+      "semantic_relationship": "GENERIC_BACKGROUND",
+      "source_kind": "ckl_legacy_field"
+    },
+    {
+      "evidence_id": "pneuma:ancient_near_east_context:0",
+      "parent_object_id": "pneuma",
+      "parent_type": "word_study",
+      "category": "culture",
+      "claim": "Ancient background for pneuma includes Hebrew and Greek usage, translation practice, synagogue reading, and covenant speech; the entry ties that world to Genesis 1:1-2, Ezekiel 36:24-28, parakletos, and spirit-theme without letting comparison replace the biblical witness.",
+      "passage_anchors": [
+        "Genesis 1:1-2"
+      ],
+      "source_ids": [
+        "genesis-1",
+        "ezekiel-36",
+        "john-14-16",
+        "acts-2",
+        "romans-8",
+        "pneuma-historical-orientation"
+      ],
+      "confidence": "medium",
+      "assertion_type": "",
+      "dispute_status": "",
+      "semantic_relationship": "GENERIC_BACKGROUND",
+      "source_kind": "ckl_legacy_field"
+    },
+    {
+      "evidence_id": "pneuma:historical_context:0",
+      "parent_object_id": "pneuma",
+      "parent_type": "word_study",
+      "category": "history",
+      "claim": "In Hebrew and Greek usage, pneuma carries a range of meaning, so context determines how the term functions in a given passage.",
+      "passage_anchors": [
+        "Genesis 1:1-2"
+      ],
+      "source_ids": [
+        "genesis-1",
+        "ezekiel-36",
+        "john-14-16",
+        "acts-2",
+        "romans-8",
+        "pneuma-historical-orientation"
+      ],
+      "confidence": "medium",
+      "assertion_type": "",
+      "dispute_status": "",
+      "semantic_relationship": "GENERIC_BACKGROUND",
+      "source_kind": "ckl_legacy_field"
+    },
+    {
+      "evidence_id": "pneumatology:ancient_near_east_context:0",
+      "parent_object_id": "pneumatology",
+      "parent_type": "theology",
+      "category": "culture",
+      "claim": "Ancient background for Pneumatology includes covenant life, temple worship, royal ideology, wisdom teaching, and early church confession; the entry ties that world to Genesis 1:1-2, Ezekiel 36:24-28, spirit-theme, and acts without letting comparison replace the biblical witness.",
+      "passage_anchors": [
+        "Genesis 1:1-2"
+      ],
+      "source_ids": [
+        "genesis-1",
+        "ezekiel-36-37",
+        "joel-2",
+        "john-14-16",
+        "acts-2",
+        "romans-8",
+        "pneumatology-historical-orientation"
+      ],
+      "confidence": "medium",
+      "assertion_type": "",
+      "dispute_status": "",
+      "semantic_relationship": "GENERIC_BACKGROUND",
+      "source_kind": "ckl_legacy_field"
+    },
+    {
+      "evidence_id": "pneumatology:historical_context:0",
+      "parent_object_id": "pneumatology",
+      "parent_type": "theology",
+      "category": "history",
+      "claim": "Pneumatology is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness.",
+      "passage_anchors": [
+        "Genesis 1:1-2"
+      ],
+      "source_ids": [
+        "genesis-1",
+        "ezekiel-36-37",
+        "joel-2",
+        "john-14-16",
+        "acts-2",
+        "romans-8",
+        "pneumatology-historical-orientation"
+      ],
+      "confidence": "medium",
+      "assertion_type": "",
+      "dispute_status": "",
+      "semantic_relationship": "GENERIC_BACKGROUND",
+      "source_kind": "ckl_legacy_field"
+    },
+    {
+      "evidence_id": "sarx:ancient_near_east_context:0",
+      "parent_object_id": "sarx",
+      "parent_type": "word_study",
+      "category": "culture",
+      "claim": "Ancient background for sarx includes Hebrew and Greek usage, translation practice, synagogue reading, and covenant speech; the entry ties that world to Genesis 1:26-28, Psalm 8:1-9, image-of-god-theme, and creation-theme without letting comparison replace the biblical witness.",
+      "passage_anchors": [
+        "Genesis 1:26-28"
+      ],
+      "source_ids": [
+        "genesis-1",
+        "psalm-8",
+        "romans-5",
+        "romans-7",
+        "galatians-5"
+      ],
+      "confidence": "medium",
+      "assertion_type": "",
+      "dispute_status": "",
+      "semantic_relationship": "GENERIC_BACKGROUND",
+      "source_kind": "ckl_legacy_field"
+    },
+    {
+      "evidence_id": "sarx:historical_context:0",
+      "parent_object_id": "sarx",
+      "parent_type": "word_study",
+      "category": "history",
+      "claim": "In Hebrew and Greek usage, sarx carries a range of meaning, so context determines how the term functions in a given passage.",
+      "passage_anchors": [
+        "Genesis 1:26-28"
+      ],
+      "source_ids": [
+        "genesis-1",
+        "psalm-8",
+        "romans-5",
+        "romans-7",
+        "galatians-5"
+      ],
+      "confidence": "medium",
+      "assertion_type": "",
+      "dispute_status": "",
+      "semantic_relationship": "GENERIC_BACKGROUND",
+      "source_kind": "ckl_legacy_field"
+    },
+    {
+      "evidence_id": "skotia:ancient_near_east_context:0",
+      "parent_object_id": "skotia",
+      "parent_type": "word_study",
+      "category": "culture",
+      "claim": "Ancient background for skotia includes Hebrew and Greek usage, translation practice, synagogue reading, and covenant speech; the entry ties that world to Genesis 1:1-5, Psalm 27:1, phos, and light-and-darkness-theme without letting comparison replace the biblical witness.",
+      "passage_anchors": [
+        "Genesis 1:1-5"
+      ],
+      "source_ids": [
+        "genesis-1",
+        "psalm-27",
+        "john-1",
+        "ephesians-5",
+        "1-john-1"
+      ],
+      "confidence": "medium",
+      "assertion_type": "",
+      "dispute_status": "",
+      "semantic_relationship": "GENERIC_BACKGROUND",
+      "source_kind": "ckl_legacy_field"
+    },
+    {
+      "evidence_id": "skotia:historical_context:0",
+      "parent_object_id": "skotia",
+      "parent_type": "word_study",
+      "category": "history",
+      "claim": "In Hebrew and Greek usage, skotia carries a range of meaning, so context determines how the term functions in a given passage.",
+      "passage_anchors": [
+        "Genesis 1:1-5"
+      ],
+      "source_ids": [
+        "genesis-1",
+        "psalm-27",
+        "john-1",
+        "ephesians-5",
+        "1-john-1"
+      ],
+      "confidence": "medium",
+      "assertion_type": "",
+      "dispute_status": "",
+      "semantic_relationship": "GENERIC_BACKGROUND",
+      "source_kind": "ckl_legacy_field"
+    },
+    {
+      "evidence_id": "spirit-theme:ancient_near_east_context:0",
+      "parent_object_id": "spirit-theme",
+      "parent_type": "theme",
+      "category": "culture",
+      "claim": "The Bible\u2019s Spirit language is distinct because it binds divine presence to holiness, creation, covenant renewal, and mission rather than to impersonal force.",
+      "passage_anchors": [
+        "Genesis 1:2"
+      ],
+      "source_ids": [
+        "genesis-1",
+        "ezekiel-36-37",
+        "joel-2",
+        "john-14-16",
+        "acts-2",
+        "romans-8",
+        "galatians-5",
+        "spirit-theme-historical-orientation"
+      ],
+      "confidence": "medium",
+      "assertion_type": "",
+      "dispute_status": "",
+      "semantic_relationship": "GENERIC_BACKGROUND",
+      "source_kind": "ckl_legacy_field"
+    },
+    {
+      "evidence_id": "spirit-theme:historical_context:0",
+      "parent_object_id": "spirit-theme",
+      "parent_type": "theme",
+      "category": "history",
+      "claim": "Spirit language appears from creation through prophecy, Jesus\u2019 ministry, Pentecost, and the life of the church.",
+      "passage_anchors": [
+        "Genesis 1:2"
+      ],
+      "source_ids": [
+        "genesis-1",
+        "ezekiel-36-37",
+        "joel-2",
+        "john-14-16",
+        "acts-2",
+        "romans-8",
+        "galatians-5",
+        "spirit-theme-historical-orientation"
+      ],
+      "confidence": "medium",
+      "assertion_type": "",
+      "dispute_status": "",
+      "semantic_relationship": "GENERIC_BACKGROUND",
+      "source_kind": "ckl_legacy_field"
+    },
+    {
+      "evidence_id": "spiritual-gifts:ancient_near_east_context:0",
+      "parent_object_id": "spiritual-gifts",
+      "parent_type": "theology",
+      "category": "culture",
+      "claim": "Ancient background for Spiritual Gifts includes covenant life, temple worship, royal ideology, wisdom teaching, and early church confession; the entry ties that world to Genesis 1:1-2, Ezekiel 36:24-28, spirit-theme, and pneumatology without letting comparison replace the biblical witness.",
+      "passage_anchors": [
+        "Genesis 1:1-2"
+      ],
+      "source_ids": [
+        "genesis-1",
+        "ezekiel-36-37",
+        "joel-2",
+        "john-14-16",
+        "acts-2",
+        "romans-8",
+        "spiritual-gifts-historical-orientation"
+      ],
+      "confidence": "medium",
+      "assertion_type": "",
+      "dispute_status": "",
+      "semantic_relationship": "GENERIC_BACKGROUND",
+      "source_kind": "ckl_legacy_field"
+    },
+    {
+      "evidence_id": "spiritual-gifts:historical_context:0",
+      "parent_object_id": "spiritual-gifts",
+      "parent_type": "theology",
+      "category": "history",
+      "claim": "Spiritual Gifts is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness.",
+      "passage_anchors": [
+        "Genesis 1:1-2"
+      ],
+      "source_ids": [
+        "genesis-1",
+        "ezekiel-36-37",
+        "joel-2",
+        "john-14-16",
+        "acts-2",
+        "romans-8",
+        "spiritual-gifts-historical-orientation"
+      ],
+      "confidence": "medium",
+      "assertion_type": "",
+      "dispute_status": "",
+      "semantic_relationship": "GENERIC_BACKGROUND",
+      "source_kind": "ckl_legacy_field"
+    },
+    {
+      "evidence_id": "water-and-spirit-theme:ancient_near_east_context:0",
+      "parent_object_id": "water-and-spirit-theme",
+      "parent_type": "theme",
+      "category": "culture",
+      "claim": "Ancient background for Water and Spirit Theme includes covenant practice, worship, kingship, wisdom instruction, and prophetic critique; the entry ties that world to Genesis 1:1-2, Ezekiel 36:24-28, spirit-theme, and pneumatology without letting comparison replace the biblical witness.",
+      "passage_anchors": [
+        "Genesis 1:1-2"
+      ],
+      "source_ids": [
+        "genesis-1",
+        "ezekiel-36-37",
+        "joel-2",
+        "john-14-16",
+        "acts-2",
+        "romans-8",
+        "water-and-spirit-theme-historical-orientation"
+      ],
+      "confidence": "medium",
+      "assertion_type": "",
+      "dispute_status": "",
+      "semantic_relationship": "GENERIC_BACKGROUND",
+      "source_kind": "ckl_legacy_field"
+    },
+    {
+      "evidence_id": "water-and-spirit-theme:historical_context:0",
+      "parent_object_id": "water-and-spirit-theme",
+      "parent_type": "theme",
+      "category": "history",
+      "claim": "Water and Spirit Theme is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness.",
+      "passage_anchors": [
+        "Genesis 1:1-2"
+      ],
+      "source_ids": [
+        "genesis-1",
+        "ezekiel-36-37",
+        "joel-2",
+        "john-14-16",
+        "acts-2",
+        "romans-8",
+        "water-and-spirit-theme-historical-orientation"
+      ],
+      "confidence": "medium",
+      "assertion_type": "",
+      "dispute_status": "",
+      "semantic_relationship": "GENERIC_BACKGROUND",
+      "source_kind": "ckl_legacy_field"
+    },
+    {
+      "evidence_id": "what-does-ruach-mean:ancient_near_east_context:0",
+      "parent_object_id": "what-does-ruach-mean",
+      "parent_type": "faq",
+      "category": "culture",
+      "claim": "Wind and breath were familiar life-images in the ancient world, and Scripture uses them to speak of God's invisible action.",
+      "passage_anchors": [
+        "Genesis 1:1-2"
+      ],
+      "source_ids": [
+        "genesis-1",
+        "genesis-2",
+        "ezekiel-37",
+        "joel-2",
+        "john-3",
+        "john-20",
+        "acts-2",
+        "what-does-ruach-mean-historical-orientation"
+      ],
+      "confidence": "medium",
+      "assertion_type": "",
+      "dispute_status": "",
+      "semantic_relationship": "GENERIC_BACKGROUND",
+      "source_kind": "ckl_legacy_field"
+    },
+    {
+      "evidence_id": "what-does-ruach-mean:historical_context:0",
+      "parent_object_id": "what-does-ruach-mean",
+      "parent_type": "faq",
+      "category": "history",
+      "claim": "The word is used for physical wind and breath before it is used for divine and human life.",
+      "passage_anchors": [
+        "Genesis 1:1-2"
+      ],
+      "source_ids": [
+        "genesis-1",
+        "genesis-2",
+        "ezekiel-37",
+        "joel-2",
+        "john-3",
+        "john-20",
+        "acts-2",
+        "what-does-ruach-mean-historical-orientation"
+      ],
+      "confidence": "medium",
+      "assertion_type": "",
+      "dispute_status": "",
+      "semantic_relationship": "GENERIC_BACKGROUND",
+      "source_kind": "ckl_legacy_field"
+    },
+    {
+      "evidence_id": "what-is-the-holy-spirit:ancient_near_east_context:0",
+      "parent_object_id": "what-is-the-holy-spirit",
+      "parent_type": "faq",
+      "category": "culture",
+      "claim": "Biblical Spirit language is not impersonal force language; it expresses God\u2019s living presence among his people.",
+      "passage_anchors": [
+        "Genesis 1:2"
+      ],
+      "source_ids": [
+        "genesis-1",
+        "ezekiel-36-37",
+        "joel-2",
+        "john-14-16",
+        "acts-2",
+        "romans-8",
+        "galatians-5",
+        "what-is-the-holy-spirit-historical-orientation"
+      ],
+      "confidence": "medium",
+      "assertion_type": "",
+      "dispute_status": "",
+      "semantic_relationship": "GENERIC_BACKGROUND",
+      "source_kind": "ckl_legacy_field"
+    },
+    {
+      "evidence_id": "what-is-the-holy-spirit:historical_context:0",
+      "parent_object_id": "what-is-the-holy-spirit",
+      "parent_type": "faq",
+      "category": "history",
+      "claim": "Spirit language stretches from creation and the prophets into the ministry of Jesus and the birth of the church.",
+      "passage_anchors": [
+        "Genesis 1:2"
+      ],
+      "source_ids": [
+        "genesis-1",
+        "ezekiel-36-37",
+        "joel-2",
+        "john-14-16",
+        "acts-2",
+        "romans-8",
+        "galatians-5",
+        "what-is-the-holy-spirit-historical-orientation"
+      ],
+      "confidence": "medium",
+      "assertion_type": "",
+      "dispute_status": "",
+      "semantic_relationship": "GENERIC_BACKGROUND",
+      "source_kind": "ckl_legacy_field"
+    },
+    {
+      "evidence_id": "what-is-the-image-of-god:ancient_near_east_context:0",
+      "parent_object_id": "what-is-the-image-of-god",
+      "parent_type": "faq",
+      "category": "culture",
+      "claim": "Ancient kings were sometimes called images of gods, but Genesis extends that royal dignity to all people.",
+      "passage_anchors": [
+        "Genesis 1:26-28"
+      ],
+      "source_ids": [
+        "genesis-1",
+        "genesis-5",
+        "genesis-9",
+        "psalm-8",
+        "james-3",
+        "1-corinthians-11",
+        "colossians-3",
+        "romans-8"
+      ],
+      "confidence": "medium",
+      "assertion_type": "",
+      "dispute_status": "",
+      "semantic_relationship": "GENERIC_BACKGROUND",
+      "source_kind": "ckl_legacy_field"
+    },
+    {
+      "evidence_id": "what-is-the-image-of-god:historical_context:0",
+      "parent_object_id": "what-is-the-image-of-god",
+      "parent_type": "faq",
+      "category": "history",
+      "claim": "Genesis presents humans as royal representatives, while later Scripture shows the image marred by sin and renewed in Christ.",
+      "passage_anchors": [
+        "Genesis 1:26-28"
+      ],
+      "source_ids": [
+        "genesis-1",
+        "genesis-5",
+        "genesis-9",
+        "psalm-8",
+        "james-3",
+        "1-corinthians-11",
+        "colossians-3",
+        "romans-8"
+      ],
+      "confidence": "medium",
+      "assertion_type": "",
+      "dispute_status": "",
+      "semantic_relationship": "GENERIC_BACKGROUND",
+      "source_kind": "ckl_legacy_field"
+    },
+    {
+      "evidence_id": "what-is-the-significance-of-the-holy-spirit:ancient_near_east_context:0",
+      "parent_object_id": "what-is-the-significance-of-the-holy-spirit",
+      "parent_type": "faq",
+      "category": "culture",
+      "claim": "Biblical Spirit language is not impersonal force language; it expresses God's living presence among his people.",
+      "passage_anchors": [
+        "Genesis 1:2"
+      ],
+      "source_ids": [
+        "genesis-1",
+        "ezekiel-36-37",
+        "joel-2",
+        "john-14-16",
+        "acts-2",
+        "romans-8",
+        "galatians-5",
+        "1-corinthians-12-14",
+        "what-is-the-significance-of-the-holy-spirit-historical-orientation"
+      ],
+      "confidence": "medium",
+      "assertion_type": "",
+      "dispute_status": "",
+      "semantic_relationship": "GENERIC_BACKGROUND",
+      "source_kind": "ckl_legacy_field"
+    },
+    {
+      "evidence_id": "what-is-the-significance-of-the-holy-spirit:historical_context:0",
+      "parent_object_id": "what-is-the-significance-of-the-holy-spirit",
+      "parent_type": "faq",
+      "category": "history",
+      "claim": "Spirit language stretches from creation and the prophets into the ministry of Jesus and the birth of the church.",
+      "passage_anchors": [
+        "Genesis 1:2"
+      ],
+      "source_ids": [
+        "genesis-1",
+        "ezekiel-36-37",
+        "joel-2",
+        "john-14-16",
+        "acts-2",
+        "romans-8",
+        "galatians-5",
+        "1-corinthians-12-14",
+        "what-is-the-significance-of-the-holy-spirit-historical-orientation"
+      ],
+      "confidence": "medium",
+      "assertion_type": "",
+      "dispute_status": "",
+      "semantic_relationship": "GENERIC_BACKGROUND",
+      "source_kind": "ckl_legacy_field"
+    },
+    {
+      "evidence_id": "zephaniah-creation-reversal",
+      "parent_object_id": "zephaniah",
+      "parent_type": "book",
+      "category": "culture",
+      "claim": "Zephaniah 1:2-3 sweeps through humans, animals, birds, and fish in a creation-scale judgment commonly read as creation reversal with flood resonances.",
+      "passage_anchors": [
+        "Genesis 1:20-28"
+      ],
+      "source_ids": [
+        "zephaniah-masoretic",
+        "zephaniah-canonical-comparanda",
+        "quine-zephaniah",
+        "oxford-metaphor"
+      ],
+      "confidence": "high",
+      "assertion_type": "",
+      "dispute_status": "minor_scholarly_disagreement",
+      "semantic_relationship": "INTERTEXTUAL_REUSE",
+      "source_kind": "ckl_claim"
+    }
+  ]
+}

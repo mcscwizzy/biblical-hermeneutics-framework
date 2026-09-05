@@ -11,30 +11,12 @@
       "blocks": [
         {
           "id": "overview",
-          "text": "This chapter's locked contextual evidence is limited to 26 source-addressable item(s) across culture, geography, history. The first anchored observation is: Common authorship of Luke and Acts remains the majority scholarly judgment, though the exact composition and publication relationship is debated.",
+          "text": "This chapter's locked contextual evidence includes 26 source-addressable item(s). The strongest eligible contextual observation is: Luke's extensive order and wording agreements with Mark support Markan use in the majority Synoptic model; other shared and distinctive material may derive from oral, written, compositional, and publication processes that cannot be reconstructed with certainty.",
           "verse_refs": [
-            "Luke 1:1-80"
+            "Luke 1:1-4"
           ],
           "evidence_ids": [
-            "acts-common-authorship"
-          ],
-          "confidence": "medium",
-          "interpretation_level": "disputed"
-        }
-      ]
-    },
-    {
-      "kind": "archaeology_geography",
-      "title": "Archaeology and geography",
-      "blocks": [
-        {
-          "id": "evidence_1",
-          "text": "Locked CKL evidence: Luke and Acts share Theophilus, retrospective resumptions, language, characters, geography, and themes, strongly supporting common authorship or coordinated production while leaving literary unity and publication history open to refinement.",
-          "verse_refs": [
-            "Luke 1:1-80"
-          ],
-          "evidence_ids": [
-            "luke-acts-relation"
+            "luke-sources"
           ],
           "confidence": "high",
           "interpretation_level": "disputed"
@@ -47,24 +29,90 @@
       "blocks": [
         {
           "id": "evidence_1",
-          "text": "Locked CKL evidence: Acts 1 explicitly resumes a former account addressed to Theophilus and is most naturally read as a sequel to Luke.",
+          "text": "Locked CKL evidence: Birth announcements are known literary forms, while Luke frames this announcement through Israel's royal and prophetic hopes.",
           "verse_refs": [
-            "Luke 1:1-80"
+            "Luke 1:26-38"
           ],
           "evidence_ids": [
-            "acts-sequel"
+            "annunciation-to-mary:ancient_near_east_context:0"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        },
+        {
+          "id": "evidence_2",
+          "text": "Locked CKL evidence: The event belongs to first-century Jewish life under Roman rule, in the setting of Nazareth and Davidic expectation.",
+          "verse_refs": [
+            "Luke 1:26-38"
+          ],
+          "evidence_ids": [
+            "annunciation-to-mary:historical_context:0"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "archaeology_geography",
+      "title": "Archaeology and geography",
+      "blocks": [
+        {
+          "id": "evidence_1",
+          "text": "Locked CKL evidence: Luke and Acts share Theophilus, retrospective resumptions, language, characters, geography, and themes, strongly supporting common authorship or coordinated production while leaving literary unity and publication history open to refinement.",
+          "verse_refs": [
+            "Luke 1:1-4"
+          ],
+          "evidence_ids": [
+            "luke-acts-relation"
           ],
           "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "evidence_1",
+          "text": "Locked CKL evidence: Kingship in the ancient world often tied ruler and deity closely together, but David is judged and upheld by the LORD.",
+          "verse_refs": [
+            "Luke 1:30-33"
+          ],
+          "evidence_ids": [
+            "who-was-david:ancient_near_east_context:0"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "dig_deeper",
+      "title": "Dig deeper",
+      "blocks": [
+        {
+          "id": "evidence_1",
+          "text": "Locked CKL evidence: Common authorship of Luke and Acts remains the majority scholarly judgment, though the exact composition and publication relationship is debated.",
+          "verse_refs": [
+            "Luke 1:1-4"
+          ],
+          "evidence_ids": [
+            "acts-common-authorship"
+          ],
+          "confidence": "medium",
           "interpretation_level": "disputed"
         },
         {
           "id": "evidence_2",
-          "text": "Locked CKL evidence: Theophilus is named as addressee, but whether he was a patron, official, convert, representative reader, or literary dedicatee is unknown.",
+          "text": "Locked CKL evidence: Acts 1 explicitly resumes a former account addressed to Theophilus and is most naturally read as a sequel to Luke.",
           "verse_refs": [
-            "Luke 1:1-80"
+            "Luke 1:1-4"
           ],
           "evidence_ids": [
-            "acts-theophilus"
+            "acts-sequel"
           ],
           "confidence": "high",
           "interpretation_level": "disputed"
@@ -73,12 +121,12 @@
     }
   ],
   "generated_metadata": {
-    "evidence_hash": "79c52b20caedb384b2acee126fde3597672e1c00cf24d5b392d6e86a4e00d166",
-    "evidence_bundle_version": "1.0",
+    "evidence_hash": "68ba80c8ecb7b05d7f7e3b62c2b6182a1480f054530e26daad80dcf92e58d02a",
+    "evidence_bundle_version": "1.1",
     "commentary_schema_version": "1.0",
     "commentary_prompt_version": "1.1",
     "model": "deterministic-v1.1-evidence-candidate",
-    "generated_timestamp": "2026-09-05T16:46:44.999665+00:00"
+    "generated_timestamp": "2026-09-05T17:46:57.161963+00:00"
   },
   "failure_reason": null,
   "validation_errors": [],

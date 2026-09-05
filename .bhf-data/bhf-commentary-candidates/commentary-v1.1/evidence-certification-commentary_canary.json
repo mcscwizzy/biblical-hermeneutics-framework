@@ -1,6 +1,6 @@
 {
-  "report_version": "commentary-v1.1-expansion-v1",
-  "generated_at": "2026-09-05T16:46:33.800082+00:00",
+  "report_version": "commentary-v1.1-expansion-v2-semantic",
+  "generated_at": "2026-09-05T17:46:49.378027+00:00",
   "batch": "commentary_canary",
   "workflow": [
     "select",
@@ -31,7 +31,7 @@
       "evidence_item_count": 0,
       "evidence_categories": [],
       "availability": "DATA_GAP",
-      "evidence_hash": "7d5da81999ccdd20a63cb4fd75536ea306dd9f69efa2899f99a854e21d98b8f7",
+      "evidence_hash": "2720c4b52cc73d70ce96e516d35adc28eeeb48812e63fcad086b1c4b17e80fb3",
       "source_gaps": [
         "no source-addressable evidence survived strict Scripture-anchor validation"
       ],
@@ -59,7 +59,7 @@
       "evidence_item_count": 0,
       "evidence_categories": [],
       "availability": "DATA_GAP",
-      "evidence_hash": "2ff888619e243d286a67eec8951d98f0574c61090eb6b6913a9ef504bbac6750",
+      "evidence_hash": "3b9858f578976547f07f740193603c2ca4279fbc5497b214b71fb8a78d526a70",
       "source_gaps": [
         "no source-addressable evidence survived strict Scripture-anchor validation"
       ],
@@ -87,7 +87,7 @@
       "evidence_item_count": 0,
       "evidence_categories": [],
       "availability": "DATA_GAP",
-      "evidence_hash": "f4d9cae7722c8ca6e1078c2ac523a047f31f28cd26cec11800a6d0e26ef1b83a",
+      "evidence_hash": "5b451b0152bf31b54add94ff8ed1bc187a6648bb2ed9f0ddea3cf8a3d61df0d6",
       "source_gaps": [
         "no source-addressable evidence survived strict Scripture-anchor validation"
       ],
@@ -115,7 +115,7 @@
       "evidence_item_count": 0,
       "evidence_categories": [],
       "availability": "DATA_GAP",
-      "evidence_hash": "088910c1358103cebf1312b5f2627b35b2b0b0190863520fba8e5883551e3eeb",
+      "evidence_hash": "e1b55fb5a952981f92f00f4551b1125d31961830ff048ba2ca338b69883bfb24",
       "source_gaps": [
         "no source-addressable evidence survived strict Scripture-anchor validation"
       ],
@@ -143,7 +143,7 @@
       "evidence_item_count": 0,
       "evidence_categories": [],
       "availability": "DATA_GAP",
-      "evidence_hash": "fc092d8e04cbcf2fa8359b3f51f2e3272f7aaf848ed0c746a5773e2fead09fa1",
+      "evidence_hash": "69ac8c0aa8934f6bbded07634dcd931e724d9ef46a16488f10866ebc1f54b7c0",
       "source_gaps": [
         "no source-addressable evidence survived strict Scripture-anchor validation"
       ],
@@ -171,7 +171,7 @@
       "evidence_item_count": 0,
       "evidence_categories": [],
       "availability": "DATA_GAP",
-      "evidence_hash": "69569bf701dc7c5597c4c76bd23461e3ab7dfd76ba1e9f72ef5bb486188ad69f",
+      "evidence_hash": "69178384b68ba476ba8488d7651b3cde84fc688f3810bfcbbcaab7906279b3dc",
       "source_gaps": [
         "no source-addressable evidence survived strict Scripture-anchor validation"
       ],
@@ -199,7 +199,7 @@
       "evidence_item_count": 0,
       "evidence_categories": [],
       "availability": "DATA_GAP",
-      "evidence_hash": "f030198ab355e9e22a9a0b5a6fbf45642bf1a89b2c913c9316475fc81a16bc29",
+      "evidence_hash": "226a5a3687e635d9249bdbbf8266b1fa64cda63fd9ede88093d793f490c306fb",
       "source_gaps": [
         "no source-addressable evidence survived strict Scripture-anchor validation"
       ],
@@ -227,7 +227,7 @@
       "evidence_item_count": 0,
       "evidence_categories": [],
       "availability": "DATA_GAP",
-      "evidence_hash": "4ab2be019ab7058d0e209bdd486fb0d0d5aa7ef23c6f1b63f7ba79a7dc541e0d",
+      "evidence_hash": "9cefce119c7429d665fbf41c77bc5477b2cf0432415c6fabcb3134b42c6113ea",
       "source_gaps": [
         "no source-addressable evidence survived strict Scripture-anchor validation"
       ],
@@ -255,7 +255,7 @@
       "evidence_item_count": 0,
       "evidence_categories": [],
       "availability": "DATA_GAP",
-      "evidence_hash": "5581bcab2a078a6fb3823fc37e16ed7c8614eb60ffc528d3b13d4d56146bdcb5",
+      "evidence_hash": "4d6ec9a8b5ca9fbc1c2955f0a3c211643d6f701759373b11625a93ca8d704b1b",
       "source_gaps": [
         "no source-addressable evidence survived strict Scripture-anchor validation"
       ],
@@ -283,7 +283,7 @@
       "evidence_item_count": 0,
       "evidence_categories": [],
       "availability": "DATA_GAP",
-      "evidence_hash": "dc435d01ff78d40e3f0798edb3a805dc0d16706eed3dae92135171c28591c7e9",
+      "evidence_hash": "31af384209dad88c2e2373a5fb8b0e6ffaa5533e9517305f9faa5b1699b5723b",
       "source_gaps": [
         "no source-addressable evidence survived strict Scripture-anchor validation"
       ],
@@ -364,7 +364,8 @@
             "Numbers 16:5",
             "Numbers 16:26"
           ],
-          "confidence": "high"
+          "confidence": "high",
+          "semantic_relationship": "LATER_RECEPTION"
         },
         {
           "evidence_id": "numbers:interpretive_note:2",
@@ -378,7 +379,8 @@
           "passage_anchors": [
             "Numbers 10-21"
           ],
-          "confidence": "low"
+          "confidence": "low",
+          "semantic_relationship": "BOOK_CONTEXT"
         }
       ],
       "evidence_item_count": 2,
@@ -387,7 +389,7 @@
         "geography"
       ],
       "availability": "THIN",
-      "evidence_hash": "98c1db70a3aa0e77d32ec02b324e5b00247b19b0cd0707a3ce8e1785ebf61c0d",
+      "evidence_hash": "428dd96bed08733c854e05f8faa96985a3425091ecd5d3d233f171f35aec98d6",
       "source_gaps": [],
       "leakage_evidence_ids": [],
       "json_sqlite": {
@@ -448,7 +450,8 @@
           "passage_anchors": [
             "Jeremiah 1:1-52:34"
           ],
-          "confidence": "high"
+          "confidence": "high",
+          "semantic_relationship": "BOOK_CONTEXT"
         },
         {
           "evidence_id": "jeremiah-practical-mt-outline",
@@ -462,7 +465,8 @@
           "passage_anchors": [
             "Jeremiah 1:1-52:34"
           ],
-          "confidence": "medium"
+          "confidence": "medium",
+          "semantic_relationship": "BOOK_CONTEXT"
         }
       ],
       "evidence_item_count": 2,
@@ -470,7 +474,7 @@
         "culture"
       ],
       "availability": "THIN",
-      "evidence_hash": "1c8ffae3914cd7caadc1379da3ab45eb28856e9ea4f021eddccb84cf829ce02b",
+      "evidence_hash": "850efd7df4bcf6116570d67f0a0bc5ef350f3e0d54d78e3d836e7de48c8fe0c9",
       "source_gaps": [],
       "leakage_evidence_ids": [],
       "json_sqlite": {
@@ -526,7 +530,8 @@
           "passage_anchors": [
             "Psalms 106:48"
           ],
-          "confidence": "high"
+          "confidence": "high",
+          "semantic_relationship": "DIRECT_CONTEXT"
         }
       ],
       "evidence_item_count": 1,
@@ -534,7 +539,7 @@
         "culture"
       ],
       "availability": "THIN",
-      "evidence_hash": "88ab888d5be5ff58a36b504bed994b9f7ab9abbb0319ad53415d594f27918d1d",
+      "evidence_hash": "cb5bd51000c2d97918e7eff57df25721969e214f9132682373480f921acf8932",
       "source_gaps": [],
       "leakage_evidence_ids": [],
       "json_sqlite": {
@@ -605,7 +610,8 @@
           "passage_anchors": [
             "Numbers 19:11-22"
           ],
-          "confidence": "high"
+          "confidence": "high",
+          "semantic_relationship": "INTERTEXTUAL_REUSE"
         },
         {
           "evidence_id": "numbers:interpretive_note:2",
@@ -619,7 +625,8 @@
           "passage_anchors": [
             "Numbers 10-21"
           ],
-          "confidence": "low"
+          "confidence": "low",
+          "semantic_relationship": "BOOK_CONTEXT"
         }
       ],
       "evidence_item_count": 2,
@@ -628,7 +635,7 @@
         "history"
       ],
       "availability": "THIN",
-      "evidence_hash": "2cb122f0979c8b2bc0e07c7d70f647604420c45b5f405f6c304990ff0e192f68",
+      "evidence_hash": "0ec94cfa69461ecc85d98569e364aa08e6c31a8229553a6de98db3a7385c8914",
       "source_gaps": [],
       "leakage_evidence_ids": [],
       "json_sqlite": {
@@ -688,7 +695,8 @@
           "passage_anchors": [
             "Numbers 26-36"
           ],
-          "confidence": "high"
+          "confidence": "high",
+          "semantic_relationship": "BOOK_CONTEXT"
         }
       ],
       "evidence_item_count": 1,
@@ -696,7 +704,7 @@
         "culture"
       ],
       "availability": "THIN",
-      "evidence_hash": "24ea007fe04fbce4af6c9b7f16767a4f0b692c17914c583a6639cf0d580c0c21",
+      "evidence_hash": "691cefe70588fdd3ce513e9c11dadf4cd1c56c4d68d5f259a6e098da9639ecbb",
       "source_gaps": [],
       "leakage_evidence_ids": [],
       "json_sqlite": {
@@ -754,7 +762,8 @@
           "passage_anchors": [
             "Deuteronomy 1-34"
           ],
-          "confidence": "high"
+          "confidence": "high",
+          "semantic_relationship": "BOOK_CONTEXT"
         },
         {
           "evidence_id": "deuteronomy:interpretive_note:1",
@@ -768,7 +777,8 @@
           "passage_anchors": [
             "Deuteronomy 5-26"
           ],
-          "confidence": "high"
+          "confidence": "high",
+          "semantic_relationship": "DIRECT_CONTEXT"
         }
       ],
       "evidence_item_count": 2,
@@ -776,7 +786,7 @@
         "culture"
       ],
       "availability": "THIN",
-      "evidence_hash": "703d4b25abaa8b1dabd5303d7563ef40fb255bb7c2b39da151829151f347bab6",
+      "evidence_hash": "c5d1ba9e0bc1fb42bed080bec0ef5d0bb0a6c0491cf145945eed73e1e4478f7b",
       "source_gaps": [],
       "leakage_evidence_ids": [],
       "json_sqlite": {
@@ -847,7 +857,8 @@
           "passage_anchors": [
             "Isaiah 28:1"
           ],
-          "confidence": "medium"
+          "confidence": "medium",
+          "semantic_relationship": "DIRECT_CONTEXT"
         },
         {
           "evidence_id": "isaiah-qumran-witnesses",
@@ -862,7 +873,8 @@
           "passage_anchors": [
             "Isaiah 1:1-66:24"
           ],
-          "confidence": "high"
+          "confidence": "high",
+          "semantic_relationship": "BOOK_CONTEXT"
         }
       ],
       "evidence_item_count": 2,
@@ -871,7 +883,7 @@
         "history"
       ],
       "availability": "THIN",
-      "evidence_hash": "418475bf4fd1c6190ca8d9439b08c343ca53a705a5ffb92c836706c1f77a00d3",
+      "evidence_hash": "4eac2b99464946f046bfc9077ab55929be6826eada8f7e9154ea10c1f2f0dffe",
       "source_gaps": [],
       "leakage_evidence_ids": [],
       "json_sqlite": {
@@ -944,7 +956,8 @@
           "passage_anchors": [
             "Deuteronomy 1-34"
           ],
-          "confidence": "high"
+          "confidence": "high",
+          "semantic_relationship": "BOOK_CONTEXT"
         },
         {
           "evidence_id": "deuteronomy:interpretive_note:1",
@@ -958,7 +971,8 @@
           "passage_anchors": [
             "Deuteronomy 5-26"
           ],
-          "confidence": "high"
+          "confidence": "high",
+          "semantic_relationship": "BOOK_CONTEXT"
         },
         {
           "evidence_id": "gal-curse-law",
@@ -972,7 +986,8 @@
           "passage_anchors": [
             "Deuteronomy 21:23"
           ],
-          "confidence": "high"
+          "confidence": "high",
+          "semantic_relationship": "LATER_RECEPTION"
         }
       ],
       "evidence_item_count": 3,
@@ -980,7 +995,7 @@
         "culture"
       ],
       "availability": "THIN",
-      "evidence_hash": "e239d25616d60806d10651bf27f6b9d4414f46dcb9315de991c7b9ad1bd1cfe7",
+      "evidence_hash": "f8f2f3da280164b449f3f27b9dee0afc17dca48e9249d3517e9c54d52cbf3846",
       "source_gaps": [],
       "leakage_evidence_ids": [],
       "json_sqlite": {
@@ -1040,7 +1055,8 @@
           "passage_anchors": [
             "Judges 1-21"
           ],
-          "confidence": "high"
+          "confidence": "high",
+          "semantic_relationship": "BOOK_CONTEXT"
         },
         {
           "evidence_id": "judges:interpretive_note:4",
@@ -1054,7 +1070,8 @@
           "passage_anchors": [
             "Judges 19-21"
           ],
-          "confidence": "high"
+          "confidence": "high",
+          "semantic_relationship": "BOOK_CONTEXT"
         }
       ],
       "evidence_item_count": 2,
@@ -1062,7 +1079,7 @@
         "culture"
       ],
       "availability": "THIN",
-      "evidence_hash": "af6ef888d44b46651613c0ff83dc6d2a8a7fa79a300b0713a9e5a1c8953b637a",
+      "evidence_hash": "32d99c8a7cf5fead91ed5d8b244ba857695fc03966115e0f343689b0652254d4",
       "source_gaps": [],
       "leakage_evidence_ids": [],
       "json_sqlite": {
@@ -1132,7 +1149,8 @@
           "passage_anchors": [
             "Leviticus 1-27"
           ],
-          "confidence": "high"
+          "confidence": "high",
+          "semantic_relationship": "BOOK_CONTEXT"
         }
       ],
       "evidence_item_count": 1,
@@ -1140,7 +1158,7 @@
         "culture"
       ],
       "availability": "THIN",
-      "evidence_hash": "e566a7e19e3fd11d786ab79a4f46b33b8700e6dcc09ac47b95c71c4de7227d8c",
+      "evidence_hash": "f6f69959e9026a8df5af9b73f258863b316e37b48ba0c79f0f8b86bd0d937ffc",
       "source_gaps": [],
       "leakage_evidence_ids": [],
       "json_sqlite": {
@@ -1243,7 +1261,8 @@
           "passage_anchors": [
             "Leviticus 1:1"
           ],
-          "confidence": "high"
+          "confidence": "high",
+          "semantic_relationship": "DIRECT_CONTEXT"
         },
         {
           "evidence_id": "leviticus-literary-movement",
@@ -1257,7 +1276,8 @@
           "passage_anchors": [
             "Leviticus 1-27"
           ],
-          "confidence": "high"
+          "confidence": "high",
+          "semantic_relationship": "BOOK_CONTEXT"
         },
         {
           "evidence_id": "leviticus:interpretive_note:0",
@@ -1271,7 +1291,8 @@
           "passage_anchors": [
             "Leviticus 1:1"
           ],
-          "confidence": "high"
+          "confidence": "high",
+          "semantic_relationship": "DIRECT_CONTEXT"
         },
         {
           "evidence_id": "leviticus:interpretive_note:2",
@@ -1284,7 +1305,8 @@
           "passage_anchors": [
             "Leviticus 1-7"
           ],
-          "confidence": "medium"
+          "confidence": "medium",
+          "semantic_relationship": "BOOK_CONTEXT"
         },
         {
           "evidence_id": "sacrifice-theme:ancient_near_east_context:0",
@@ -1303,7 +1325,8 @@
           "passage_anchors": [
             "Leviticus 1:1-17"
           ],
-          "confidence": "medium"
+          "confidence": "medium",
+          "semantic_relationship": "GENERIC_BACKGROUND"
         },
         {
           "evidence_id": "sacrifice-theme:hebraic_worldview:0",
@@ -1322,7 +1345,8 @@
           "passage_anchors": [
             "Leviticus 1:1-17"
           ],
-          "confidence": "medium"
+          "confidence": "medium",
+          "semantic_relationship": "GENERIC_BACKGROUND"
         },
         {
           "evidence_id": "sacrifice-theme:historical_context:0",
@@ -1341,7 +1365,8 @@
           "passage_anchors": [
             "Leviticus 1:1-17"
           ],
-          "confidence": "medium"
+          "confidence": "medium",
+          "semantic_relationship": "GENERIC_BACKGROUND"
         },
         {
           "evidence_id": "sacrifice-theme:second_temple_context:0",
@@ -1360,7 +1385,8 @@
           "passage_anchors": [
             "Leviticus 1:1-17"
           ],
-          "confidence": "medium"
+          "confidence": "medium",
+          "semantic_relationship": "GENERIC_BACKGROUND"
         },
         {
           "evidence_id": "sacrificial-system:ancient_near_east_context:0",
@@ -1377,7 +1403,8 @@
           "passage_anchors": [
             "Leviticus 1:1-9"
           ],
-          "confidence": "medium"
+          "confidence": "medium",
+          "semantic_relationship": "GENERIC_BACKGROUND"
         },
         {
           "evidence_id": "sacrificial-system:historical_context:0",
@@ -1394,7 +1421,8 @@
           "passage_anchors": [
             "Leviticus 1:1-9"
           ],
-          "confidence": "medium"
+          "confidence": "medium",
+          "semantic_relationship": "GENERIC_BACKGROUND"
         },
         {
           "evidence_id": "tabernacle:ancient_near_east_context:0",
@@ -1412,7 +1440,8 @@
           "passage_anchors": [
             "Leviticus 1:1-9"
           ],
-          "confidence": "medium"
+          "confidence": "medium",
+          "semantic_relationship": "GENERIC_BACKGROUND"
         },
         {
           "evidence_id": "tabernacle:archaeology:0",
@@ -1430,7 +1459,8 @@
           "passage_anchors": [
             "Leviticus 1:1-9"
           ],
-          "confidence": "medium"
+          "confidence": "medium",
+          "semantic_relationship": "GENERIC_BACKGROUND"
         },
         {
           "evidence_id": "tabernacle:archaeology:1",
@@ -1448,7 +1478,8 @@
           "passage_anchors": [
             "Leviticus 1:1-9"
           ],
-          "confidence": "medium"
+          "confidence": "medium",
+          "semantic_relationship": "GENERIC_BACKGROUND"
         },
         {
           "evidence_id": "tabernacle:date_ranges:0",
@@ -1466,7 +1497,8 @@
           "passage_anchors": [
             "Leviticus 1:1-9"
           ],
-          "confidence": "medium"
+          "confidence": "medium",
+          "semantic_relationship": "GENERIC_BACKGROUND"
         },
         {
           "evidence_id": "tabernacle:date_ranges:1",
@@ -1484,7 +1516,8 @@
           "passage_anchors": [
             "Leviticus 1:1-9"
           ],
-          "confidence": "medium"
+          "confidence": "medium",
+          "semantic_relationship": "GENERIC_BACKGROUND"
         },
         {
           "evidence_id": "tabernacle:hebraic_worldview:0",
@@ -1502,7 +1535,8 @@
           "passage_anchors": [
             "Leviticus 1:1-9"
           ],
-          "confidence": "medium"
+          "confidence": "medium",
+          "semantic_relationship": "GENERIC_BACKGROUND"
         },
         {
           "evidence_id": "tabernacle:historical_context:0",
@@ -1520,7 +1554,8 @@
           "passage_anchors": [
             "Leviticus 1:1-9"
           ],
-          "confidence": "medium"
+          "confidence": "medium",
+          "semantic_relationship": "GENERIC_BACKGROUND"
         },
         {
           "evidence_id": "tabernacle:historical_setting:0",
@@ -1538,7 +1573,8 @@
           "passage_anchors": [
             "Leviticus 1:1-9"
           ],
-          "confidence": "medium"
+          "confidence": "medium",
+          "semantic_relationship": "GENERIC_BACKGROUND"
         },
         {
           "evidence_id": "tabernacle:original_audience:0",
@@ -1556,7 +1592,8 @@
           "passage_anchors": [
             "Leviticus 1:1-9"
           ],
-          "confidence": "medium"
+          "confidence": "medium",
+          "semantic_relationship": "GENERIC_BACKGROUND"
         },
         {
           "evidence_id": "tabernacle:second_temple_context:0",
@@ -1574,7 +1611,8 @@
           "passage_anchors": [
             "Leviticus 1:1-9"
           ],
-          "confidence": "medium"
+          "confidence": "medium",
+          "semantic_relationship": "GENERIC_BACKGROUND"
         },
         {
           "evidence_id": "tabernacle:timeline:0",
@@ -1592,7 +1630,8 @@
           "passage_anchors": [
             "Leviticus 1:1-9"
           ],
-          "confidence": "medium"
+          "confidence": "medium",
+          "semantic_relationship": "GENERIC_BACKGROUND"
         },
         {
           "evidence_id": "tabernacle:timeline:1",
@@ -1610,7 +1649,8 @@
           "passage_anchors": [
             "Leviticus 1:1-9"
           ],
-          "confidence": "medium"
+          "confidence": "medium",
+          "semantic_relationship": "GENERIC_BACKGROUND"
         },
         {
           "evidence_id": "tabernacle:timeline:2",
@@ -1628,7 +1668,8 @@
           "passage_anchors": [
             "Leviticus 1:1-9"
           ],
-          "confidence": "medium"
+          "confidence": "medium",
+          "semantic_relationship": "GENERIC_BACKGROUND"
         },
         {
           "evidence_id": "tabernacle:timeline:3",
@@ -1646,7 +1687,8 @@
           "passage_anchors": [
             "Leviticus 1:1-9"
           ],
-          "confidence": "medium"
+          "confidence": "medium",
+          "semantic_relationship": "GENERIC_BACKGROUND"
         },
         {
           "evidence_id": "what-is-sacrifice-in-the-bible:ancient_near_east_context:0",
@@ -1665,7 +1707,8 @@
           "passage_anchors": [
             "Leviticus 1:1-17"
           ],
-          "confidence": "medium"
+          "confidence": "medium",
+          "semantic_relationship": "GENERIC_BACKGROUND"
         },
         {
           "evidence_id": "what-is-sacrifice-in-the-bible:historical_context:0",
@@ -1684,7 +1727,8 @@
           "passage_anchors": [
             "Leviticus 1:1-17"
           ],
-          "confidence": "medium"
+          "confidence": "medium",
+          "semantic_relationship": "GENERIC_BACKGROUND"
         }
       ],
       "evidence_item_count": 26,
@@ -1697,7 +1741,7 @@
         "social"
       ],
       "availability": "AVAILABLE",
-      "evidence_hash": "5453ef653ae3c3bcfc647d361923f5b3ef1a382614a513206319f012590650f4",
+      "evidence_hash": "4b6b7c065f168ec01b4217b5e541f47ca46b4a565a62b73f515585dab9541bfd",
       "source_gaps": [],
       "leakage_evidence_ids": [],
       "json_sqlite": {
@@ -1839,7 +1883,8 @@
           "passage_anchors": [
             "Psalms 1:1-3"
           ],
-          "confidence": "medium"
+          "confidence": "medium",
+          "semantic_relationship": "GENERIC_BACKGROUND"
         },
         {
           "evidence_id": "makarios:historical_context:0",
@@ -1854,7 +1899,8 @@
           "passage_anchors": [
             "Psalms 1:1-3"
           ],
-          "confidence": "medium"
+          "confidence": "medium",
+          "semantic_relationship": "GENERIC_BACKGROUND"
         },
         {
           "evidence_id": "nomos:ancient_near_east_context:0",
@@ -1870,7 +1916,8 @@
           "passage_anchors": [
             "Psalms 1:1-3"
           ],
-          "confidence": "medium"
+          "confidence": "medium",
+          "semantic_relationship": "GENERIC_BACKGROUND"
         },
         {
           "evidence_id": "nomos:historical_context:0",
@@ -1886,7 +1933,8 @@
           "passage_anchors": [
             "Psalms 1:1-3"
           ],
-          "confidence": "medium"
+          "confidence": "medium",
+          "semantic_relationship": "GENERIC_BACKGROUND"
         },
         {
           "evidence_id": "psalms-gateway-torah-king",
@@ -1900,7 +1948,8 @@
           "passage_anchors": [
             "Psalms 1:1-2:12"
           ],
-          "confidence": "high"
+          "confidence": "high",
+          "semantic_relationship": "BOOK_CONTEXT"
         },
         {
           "evidence_id": "shema:ancient_near_east_context:0",
@@ -1916,7 +1965,8 @@
           "passage_anchors": [
             "Psalms 1:1-3"
           ],
-          "confidence": "medium"
+          "confidence": "medium",
+          "semantic_relationship": "GENERIC_BACKGROUND"
         },
         {
           "evidence_id": "shema:historical_context:0",
@@ -1932,7 +1982,8 @@
           "passage_anchors": [
             "Psalms 1:1-3"
           ],
-          "confidence": "medium"
+          "confidence": "medium",
+          "semantic_relationship": "GENERIC_BACKGROUND"
         },
         {
           "evidence_id": "torah:ancient_near_east_context:0",
@@ -1950,7 +2001,8 @@
           "passage_anchors": [
             "Psalms 1:1-3"
           ],
-          "confidence": "medium"
+          "confidence": "medium",
+          "semantic_relationship": "GENERIC_BACKGROUND"
         },
         {
           "evidence_id": "torah:historical_context:0",
@@ -1968,7 +2020,8 @@
           "passage_anchors": [
             "Psalms 1:1-3"
           ],
-          "confidence": "medium"
+          "confidence": "medium",
+          "semantic_relationship": "GENERIC_BACKGROUND"
         },
         {
           "evidence_id": "what-does-torah-mean:ancient_near_east_context:0",
@@ -1986,7 +2039,8 @@
           "passage_anchors": [
             "Psalms 1:1-3"
           ],
-          "confidence": "medium"
+          "confidence": "medium",
+          "semantic_relationship": "GENERIC_BACKGROUND"
         },
         {
           "evidence_id": "what-does-torah-mean:historical_context:0",
@@ -2004,7 +2058,8 @@
           "passage_anchors": [
             "Psalms 1:1-3"
           ],
-          "confidence": "medium"
+          "confidence": "medium",
+          "semantic_relationship": "GENERIC_BACKGROUND"
         },
         {
           "evidence_id": "what-is-a-psalm:ancient_near_east_context:0",
@@ -2023,7 +2078,8 @@
           "passage_anchors": [
             "Psalms 1:1-6"
           ],
-          "confidence": "medium"
+          "confidence": "medium",
+          "semantic_relationship": "GENERIC_BACKGROUND"
         },
         {
           "evidence_id": "what-is-a-psalm:historical_context:0",
@@ -2042,7 +2098,8 @@
           "passage_anchors": [
             "Psalms 1:1-6"
           ],
-          "confidence": "medium"
+          "confidence": "medium",
+          "semantic_relationship": "GENERIC_BACKGROUND"
         },
         {
           "evidence_id": "what-is-biblical-wisdom:ancient_near_east_context:0",
@@ -2061,7 +2118,8 @@
           "passage_anchors": [
             "Psalms 1:1-6"
           ],
-          "confidence": "medium"
+          "confidence": "medium",
+          "semantic_relationship": "GENERIC_BACKGROUND"
         },
         {
           "evidence_id": "what-is-biblical-wisdom:historical_context:0",
@@ -2080,7 +2138,8 @@
           "passage_anchors": [
             "Psalms 1:1-6"
           ],
-          "confidence": "medium"
+          "confidence": "medium",
+          "semantic_relationship": "GENERIC_BACKGROUND"
         }
       ],
       "evidence_item_count": 15,
@@ -2090,7 +2149,7 @@
         "politics"
       ],
       "availability": "AVAILABLE",
-      "evidence_hash": "26188b31ea748067f35ebcd4893892566192de9ad00b99283ee83f943e88bf10",
+      "evidence_hash": "a2aa124115e8dc998bca5a9a3cb83a7f80657c7021e901739d011659b5489e5a",
       "source_gaps": [],
       "leakage_evidence_ids": [],
       "json_sqlite": {
@@ -2185,7 +2244,8 @@
           "passage_anchors": [
             "Zephaniah 1:14-18"
           ],
-          "confidence": "medium"
+          "confidence": "medium",
+          "semantic_relationship": "GENERIC_BACKGROUND"
         },
         {
           "evidence_id": "day-of-the-lord-prophecy:historical_context:0",
@@ -2202,7 +2262,8 @@
           "passage_anchors": [
             "Zephaniah 1:14-18"
           ],
-          "confidence": "medium"
+          "confidence": "medium",
+          "semantic_relationship": "GENERIC_BACKGROUND"
         },
         {
           "evidence_id": "what-is-the-day-of-the-lord:ancient_near_east_context:0",
@@ -2222,7 +2283,8 @@
           "passage_anchors": [
             "Zephaniah 1:14-18"
           ],
-          "confidence": "medium"
+          "confidence": "medium",
+          "semantic_relationship": "GENERIC_BACKGROUND"
         },
         {
           "evidence_id": "what-is-the-day-of-the-lord:historical_context:0",
@@ -2242,7 +2304,8 @@
           "passage_anchors": [
             "Zephaniah 1:14-18"
           ],
-          "confidence": "medium"
+          "confidence": "medium",
+          "semantic_relationship": "GENERIC_BACKGROUND"
         },
         {
           "evidence_id": "zephaniah-composition",
@@ -2256,7 +2319,8 @@
           "passage_anchors": [
             "Zephaniah 1:1"
           ],
-          "confidence": "high"
+          "confidence": "high",
+          "semantic_relationship": "DIRECT_CONTEXT"
         },
         {
           "evidence_id": "zephaniah-creation-reversal",
@@ -2271,7 +2335,8 @@
           "passage_anchors": [
             "Zephaniah 1:2-3"
           ],
-          "confidence": "high"
+          "confidence": "high",
+          "semantic_relationship": "DIRECT_CONTEXT"
         },
         {
           "evidence_id": "zephaniah-cult",
@@ -2285,7 +2350,8 @@
           "passage_anchors": [
             "Zephaniah 1:4-6"
           ],
-          "confidence": "high"
+          "confidence": "high",
+          "semantic_relationship": "DIRECT_CONTEXT"
         },
         {
           "evidence_id": "zephaniah-date",
@@ -2299,7 +2365,8 @@
           "passage_anchors": [
             "Zephaniah 1:1"
           ],
-          "confidence": "medium"
+          "confidence": "medium",
+          "semantic_relationship": "DIRECT_CONTEXT"
         },
         {
           "evidence_id": "zephaniah-day",
@@ -2314,7 +2381,8 @@
           "passage_anchors": [
             "Zephaniah 1:14-18"
           ],
-          "confidence": "high"
+          "confidence": "high",
+          "semantic_relationship": "DIRECT_CONTEXT"
         },
         {
           "evidence_id": "zephaniah-ethical-reception",
@@ -2329,7 +2397,8 @@
           "passage_anchors": [
             "Zephaniah 1:2-18"
           ],
-          "confidence": "high"
+          "confidence": "high",
+          "semantic_relationship": "DIRECT_CONTEXT"
         },
         {
           "evidence_id": "zephaniah-genealogy",
@@ -2343,7 +2412,8 @@
           "passage_anchors": [
             "Zephaniah 1:1"
           ],
-          "confidence": "low"
+          "confidence": "low",
+          "semantic_relationship": "DIRECT_CONTEXT"
         },
         {
           "evidence_id": "zephaniah-jerusalem-topography",
@@ -2357,7 +2427,8 @@
           "passage_anchors": [
             "Zephaniah 1:10-11"
           ],
-          "confidence": "medium"
+          "confidence": "medium",
+          "semantic_relationship": "DIRECT_CONTEXT"
         },
         {
           "evidence_id": "zephaniah-pesher",
@@ -2371,7 +2442,8 @@
           "passage_anchors": [
             "Zephaniah 1:12-13"
           ],
-          "confidence": "high"
+          "confidence": "high",
+          "semantic_relationship": "DIRECT_CONTEXT"
         },
         {
           "evidence_id": "zephaniah-sacrifice",
@@ -2385,7 +2457,8 @@
           "passage_anchors": [
             "Zephaniah 1:7-9"
           ],
-          "confidence": "high"
+          "confidence": "high",
+          "semantic_relationship": "DIRECT_CONTEXT"
         },
         {
           "evidence_id": "zephaniah-search",
@@ -2399,7 +2472,8 @@
           "passage_anchors": [
             "Zephaniah 1:12-13"
           ],
-          "confidence": "high"
+          "confidence": "high",
+          "semantic_relationship": "DIRECT_CONTEXT"
         },
         {
           "evidence_id": "zephaniah-superscription",
@@ -2413,7 +2487,8 @@
           "passage_anchors": [
             "Zephaniah 1:1"
           ],
-          "confidence": "high"
+          "confidence": "high",
+          "semantic_relationship": "DIRECT_CONTEXT"
         },
         {
           "evidence_id": "zephaniah-textual-witnesses",
@@ -2431,7 +2506,8 @@
           "passage_anchors": [
             "Zephaniah 1:1"
           ],
-          "confidence": "high"
+          "confidence": "high",
+          "semantic_relationship": "DIRECT_CONTEXT"
         }
       ],
       "evidence_item_count": 17,
@@ -2441,7 +2517,7 @@
         "history"
       ],
       "availability": "AVAILABLE",
-      "evidence_hash": "914fcaf10e74f2128fe640693ac1414f3d5569f0c7a879ed51fed24b7ced125d",
+      "evidence_hash": "e3ae352a1e7fa5f5b4fb3c0ced22f88c74ead94b0308c933df0a100446b99177",
       "source_gaps": [],
       "leakage_evidence_ids": [],
       "json_sqlite": {
@@ -2590,7 +2666,8 @@
           "passage_anchors": [
             "Luke 1:1-4"
           ],
-          "confidence": "medium"
+          "confidence": "medium",
+          "semantic_relationship": "INTERTEXTUAL_REUSE"
         },
         {
           "evidence_id": "acts-sequel",
@@ -2603,7 +2680,8 @@
           "passage_anchors": [
             "Luke 1:1-4"
           ],
-          "confidence": "high"
+          "confidence": "high",
+          "semantic_relationship": "INTERTEXTUAL_REUSE"
         },
         {
           "evidence_id": "acts-theophilus",
@@ -2616,7 +2694,8 @@
           "passage_anchors": [
             "Luke 1:3"
           ],
-          "confidence": "high"
+          "confidence": "high",
+          "semantic_relationship": "INTERTEXTUAL_REUSE"
         },
         {
           "evidence_id": "annunciation-to-mary:ancient_near_east_context:0",
@@ -2632,7 +2711,8 @@
           "passage_anchors": [
             "Luke 1:26-38"
           ],
-          "confidence": "medium"
+          "confidence": "medium",
+          "semantic_relationship": "GENERIC_BACKGROUND"
         },
         {
           "evidence_id": "annunciation-to-mary:historical_context:0",
@@ -2648,7 +2728,8 @@
           "passage_anchors": [
             "Luke 1:26-38"
           ],
-          "confidence": "medium"
+          "confidence": "medium",
+          "semantic_relationship": "GENERIC_BACKGROUND"
         },
         {
           "evidence_id": "birth-of-jesus:ancient_near_east_context:0",
@@ -2667,7 +2748,8 @@
           "passage_anchors": [
             "Luke 1:26-38"
           ],
-          "confidence": "medium"
+          "confidence": "medium",
+          "semantic_relationship": "GENERIC_BACKGROUND"
         },
         {
           "evidence_id": "birth-of-jesus:historical_context:0",
@@ -2686,7 +2768,8 @@
           "passage_anchors": [
             "Luke 1:26-38"
           ],
-          "confidence": "medium"
+          "confidence": "medium",
+          "semantic_relationship": "GENERIC_BACKGROUND"
         },
         {
           "evidence_id": "davidic-covenant:ancient_near_east_context:0",
@@ -2705,7 +2788,8 @@
           "passage_anchors": [
             "Luke 1:30-33"
           ],
-          "confidence": "medium"
+          "confidence": "medium",
+          "semantic_relationship": "GENERIC_BACKGROUND"
         },
         {
           "evidence_id": "davidic-covenant:historical_context:0",
@@ -2724,7 +2808,8 @@
           "passage_anchors": [
             "Luke 1:30-33"
           ],
-          "confidence": "medium"
+          "confidence": "medium",
+          "semantic_relationship": "GENERIC_BACKGROUND"
         },
         {
           "evidence_id": "luke-acts-relation",
@@ -2738,7 +2823,8 @@
           "passage_anchors": [
             "Luke 1:1-4"
           ],
-          "confidence": "high"
+          "confidence": "high",
+          "semantic_relationship": "DIRECT_CONTEXT"
         },
         {
           "evidence_id": "luke-anonymous",
@@ -2751,7 +2837,8 @@
           "passage_anchors": [
             "Luke 1:1-4"
           ],
-          "confidence": "high"
+          "confidence": "high",
+          "semantic_relationship": "DIRECT_CONTEXT"
         },
         {
           "evidence_id": "luke-infancy",
@@ -2764,7 +2851,8 @@
           "passage_anchors": [
             "Luke 1:5-80"
           ],
-          "confidence": "high"
+          "confidence": "high",
+          "semantic_relationship": "DIRECT_CONTEXT"
         },
         {
           "evidence_id": "luke-magnificat",
@@ -2777,7 +2865,8 @@
           "passage_anchors": [
             "Luke 1:46-55"
           ],
-          "confidence": "medium"
+          "confidence": "medium",
+          "semantic_relationship": "DIRECT_CONTEXT"
         },
         {
           "evidence_id": "luke-prologue",
@@ -2790,7 +2879,8 @@
           "passage_anchors": [
             "Luke 1:1-4"
           ],
-          "confidence": "high"
+          "confidence": "high",
+          "semantic_relationship": "DIRECT_CONTEXT"
         },
         {
           "evidence_id": "luke-provenance",
@@ -2803,7 +2893,8 @@
           "passage_anchors": [
             "Luke 1:1-4"
           ],
-          "confidence": "low"
+          "confidence": "low",
+          "semantic_relationship": "DIRECT_CONTEXT"
         },
         {
           "evidence_id": "luke-quirinius",
@@ -2817,7 +2908,8 @@
           "passage_anchors": [
             "Luke 1:5"
           ],
-          "confidence": "high"
+          "confidence": "high",
+          "semantic_relationship": "DIRECT_CONTEXT"
         },
         {
           "evidence_id": "luke-sources",
@@ -2830,7 +2922,8 @@
           "passage_anchors": [
             "Luke 1:1-4"
           ],
-          "confidence": "high"
+          "confidence": "high",
+          "semantic_relationship": "DIRECT_CONTEXT"
         },
         {
           "evidence_id": "malachi-new-testament",
@@ -2844,7 +2937,8 @@
           "passage_anchors": [
             "Luke 1:16-17"
           ],
-          "confidence": "high"
+          "confidence": "high",
+          "semantic_relationship": "LATER_RECEPTION"
         },
         {
           "evidence_id": "nazareth:ancient_near_east_context:0",
@@ -2861,7 +2955,8 @@
           "passage_anchors": [
             "Luke 1:26-38"
           ],
-          "confidence": "medium"
+          "confidence": "medium",
+          "semantic_relationship": "GENERIC_BACKGROUND"
         },
         {
           "evidence_id": "nazareth:hebraic_worldview:0",
@@ -2878,7 +2973,8 @@
           "passage_anchors": [
             "Luke 1:26-38"
           ],
-          "confidence": "medium"
+          "confidence": "medium",
+          "semantic_relationship": "GENERIC_BACKGROUND"
         },
         {
           "evidence_id": "nazareth:historical_context:0",
@@ -2895,7 +2991,8 @@
           "passage_anchors": [
             "Luke 1:26-38"
           ],
-          "confidence": "medium"
+          "confidence": "medium",
+          "semantic_relationship": "GENERIC_BACKGROUND"
         },
         {
           "evidence_id": "nazareth:second_temple_context:0",
@@ -2912,7 +3009,8 @@
           "passage_anchors": [
             "Luke 1:26-38"
           ],
-          "confidence": "medium"
+          "confidence": "medium",
+          "semantic_relationship": "GENERIC_BACKGROUND"
         },
         {
           "evidence_id": "spirit-theme:ancient_near_east_context:0",
@@ -2931,7 +3029,8 @@
           "passage_anchors": [
             "Luke 1:35"
           ],
-          "confidence": "medium"
+          "confidence": "medium",
+          "semantic_relationship": "GENERIC_BACKGROUND"
         },
         {
           "evidence_id": "spirit-theme:historical_context:0",
@@ -2950,7 +3049,8 @@
           "passage_anchors": [
             "Luke 1:35"
           ],
-          "confidence": "medium"
+          "confidence": "medium",
+          "semantic_relationship": "GENERIC_BACKGROUND"
         },
         {
           "evidence_id": "who-was-david:ancient_near_east_context:0",
@@ -2969,7 +3069,8 @@
           "passage_anchors": [
             "Luke 1:30-33"
           ],
-          "confidence": "medium"
+          "confidence": "medium",
+          "semantic_relationship": "GENERIC_BACKGROUND"
         },
         {
           "evidence_id": "who-was-david:historical_context:0",
@@ -2988,7 +3089,8 @@
           "passage_anchors": [
             "Luke 1:30-33"
           ],
-          "confidence": "medium"
+          "confidence": "medium",
+          "semantic_relationship": "GENERIC_BACKGROUND"
         }
       ],
       "evidence_item_count": 26,
@@ -2998,7 +3100,7 @@
         "history"
       ],
       "availability": "AVAILABLE",
-      "evidence_hash": "79c52b20caedb384b2acee126fde3597672e1c00cf24d5b392d6e86a4e00d166",
+      "evidence_hash": "68ba80c8ecb7b05d7f7e3b62c2b6182a1480f054530e26daad80dcf92e58d02a",
       "source_gaps": [],
       "leakage_evidence_ids": [],
       "json_sqlite": {
@@ -3035,33 +3137,23 @@
       "chapter": 1,
       "retrieval_result_ids": [
         "2-corinthians",
-        "arad-ostraca",
-        "caesarea-maritima-excavations",
         "colossians",
         "creation",
         "creation-doctrine",
         "creation-doctrine-framework",
         "creation-theme",
-        "ein-gedi-scroll",
         "genesis",
-        "herodium-excavations",
         "image-of-god-theme",
         "john",
         "katabole",
-        "kurkh-monolith",
         "light-and-darkness-theme",
-        "masada-excavations",
         "mesopotamian-creation-and-flood-comparisons",
         "new-creation-theme",
         "parakletos",
         "phos",
         "pneuma",
         "pneumatology",
-        "pool-of-bethesda-excavation",
-        "samaria-ostraca",
-        "samaria-palace",
         "sarx",
-        "shiloh-excavations",
         "skotia",
         "spirit-theme",
         "spiritual-gifts",
@@ -3283,86 +3375,6 @@
             "related_record_count": 5
           },
           {
-            "id": "arad-ostraca",
-            "type": "archaeology",
-            "title": "Arad Ostraca",
-            "anchor_layers": [
-              "object.scripture_references"
-            ],
-            "source_metadata_count": 4,
-            "related_record_count": 4
-          },
-          {
-            "id": "caesarea-maritima-excavations",
-            "type": "archaeology",
-            "title": "Caesarea Maritima Excavations",
-            "anchor_layers": [
-              "object.scripture_references"
-            ],
-            "source_metadata_count": 4,
-            "related_record_count": 3
-          },
-          {
-            "id": "herodium-excavations",
-            "type": "archaeology",
-            "title": "Herodium Excavations",
-            "anchor_layers": [
-              "object.scripture_references"
-            ],
-            "source_metadata_count": 4,
-            "related_record_count": 3
-          },
-          {
-            "id": "masada-excavations",
-            "type": "archaeology",
-            "title": "Masada Excavations",
-            "anchor_layers": [
-              "object.scripture_references"
-            ],
-            "source_metadata_count": 4,
-            "related_record_count": 3
-          },
-          {
-            "id": "pool-of-bethesda-excavation",
-            "type": "archaeology",
-            "title": "Pool of Bethesda Excavation",
-            "anchor_layers": [
-              "object.scripture_references"
-            ],
-            "source_metadata_count": 4,
-            "related_record_count": 3
-          },
-          {
-            "id": "samaria-ostraca",
-            "type": "archaeology",
-            "title": "Samaria Ostraca",
-            "anchor_layers": [
-              "object.scripture_references"
-            ],
-            "source_metadata_count": 4,
-            "related_record_count": 4
-          },
-          {
-            "id": "samaria-palace",
-            "type": "archaeology",
-            "title": "Samaria Palace",
-            "anchor_layers": [
-              "object.scripture_references"
-            ],
-            "source_metadata_count": 4,
-            "related_record_count": 4
-          },
-          {
-            "id": "shiloh-excavations",
-            "type": "archaeology",
-            "title": "Shiloh Excavations",
-            "anchor_layers": [
-              "object.scripture_references"
-            ],
-            "source_metadata_count": 4,
-            "related_record_count": 3
-          },
-          {
             "id": "what-does-ruach-mean",
             "type": "faq",
             "title": "What does ruach mean?",
@@ -3424,26 +3436,6 @@
             "related_record_count": 5
           },
           {
-            "id": "ein-gedi-scroll",
-            "type": "archaeology",
-            "title": "Ein Gedi Scroll",
-            "anchor_layers": [
-              "object.scripture_references"
-            ],
-            "source_metadata_count": 4,
-            "related_record_count": 3
-          },
-          {
-            "id": "kurkh-monolith",
-            "type": "archaeology",
-            "title": "Kurkh Monolith",
-            "anchor_layers": [
-              "object.scripture_references"
-            ],
-            "source_metadata_count": 4,
-            "related_record_count": 3
-          },
-          {
             "id": "colossians",
             "type": "book",
             "title": "Colossians",
@@ -3459,10 +3451,10 @@
           "claims": 208,
           "evidence_items": 3,
           "interpretive_notes": 96,
-          "object.scripture_references": 272
+          "object.scripture_references": 242
         },
-        "source_metadata_records_examined": 304,
-        "related_record_links_examined": 243
+        "source_metadata_records_examined": 264,
+        "related_record_links_examined": 210
       },
       "existing_evidence_reused": [
         {
@@ -3476,67 +3468,8 @@
           "passage_anchors": [
             "Genesis 1:3"
           ],
-          "confidence": "high"
-        },
-        {
-          "evidence_id": "arad-ostraca:ancient_near_east_context:0",
-          "category": "culture",
-          "claim": "Arad Ostraca belongs to the material culture of Levantine, Mesopotamian, Egyptian, Persian, Greek, or Roman settings, where inscriptions, architecture, pottery, and administrative remains help contextualize the biblical world.",
-          "source_ids": [
-            "lachish-siege-and-destruction-horizon",
-            "genesis-1-1-2",
-            "psalm-19-1-6",
-            "archaeological-survey-and-historical-background"
-          ],
-          "passage_anchors": [
-            "Genesis 1:1-2"
-          ],
-          "confidence": "medium"
-        },
-        {
-          "evidence_id": "arad-ostraca:historical_context:0",
-          "category": "history",
-          "claim": "Arad Ostraca helps anchor the biblical world in physical evidence and archaeological context.",
-          "source_ids": [
-            "lachish-siege-and-destruction-horizon",
-            "genesis-1-1-2",
-            "psalm-19-1-6",
-            "archaeological-survey-and-historical-background"
-          ],
-          "passage_anchors": [
-            "Genesis 1:1-2"
-          ],
-          "confidence": "medium"
-        },
-        {
-          "evidence_id": "caesarea-maritima-excavations:ancient_near_east_context:0",
-          "category": "culture",
-          "claim": "Ancient background for Caesarea Maritima Excavations includes inscriptions, material culture, excavation layers, and imperial administration; the entry ties that world to Genesis 1:1-2, Psalm 19:1-6, pilate-stone, and matthew without letting comparison replace the biblical witness.",
-          "source_ids": [
-            "caesarea-harbor-and-administrative-city",
-            "genesis-1-1-2",
-            "psalm-19-1-6",
-            "excavation-report-and-stratigraphic-study"
-          ],
-          "passage_anchors": [
-            "Genesis 1:1-2"
-          ],
-          "confidence": "medium"
-        },
-        {
-          "evidence_id": "caesarea-maritima-excavations:historical_context:0",
-          "category": "history",
-          "claim": "Caesarea Maritima Excavations helps anchor the biblical world in physical evidence and archaeological context.",
-          "source_ids": [
-            "caesarea-harbor-and-administrative-city",
-            "genesis-1-1-2",
-            "psalm-19-1-6",
-            "excavation-report-and-stratigraphic-study"
-          ],
-          "passage_anchors": [
-            "Genesis 1:1-2"
-          ],
-          "confidence": "medium"
+          "confidence": "high",
+          "semantic_relationship": "LATER_RECEPTION"
         },
         {
           "evidence_id": "col-image",
@@ -3550,7 +3483,8 @@
           "passage_anchors": [
             "Genesis 1:26-27"
           ],
-          "confidence": "high"
+          "confidence": "high",
+          "semantic_relationship": "LATER_RECEPTION"
         },
         {
           "evidence_id": "col-new-humanity",
@@ -3564,7 +3498,8 @@
           "passage_anchors": [
             "Genesis 1:26-27"
           ],
-          "confidence": "high"
+          "confidence": "high",
+          "semantic_relationship": "LATER_RECEPTION"
         },
         {
           "evidence_id": "creation-doctrine-framework:ancient_near_east_context:0",
@@ -3581,7 +3516,8 @@
           "passage_anchors": [
             "Genesis 1:1-31"
           ],
-          "confidence": "medium"
+          "confidence": "medium",
+          "semantic_relationship": "GENERIC_BACKGROUND"
         },
         {
           "evidence_id": "creation-doctrine-framework:hebraic_worldview:0",
@@ -3598,7 +3534,8 @@
           "passage_anchors": [
             "Genesis 1:1-31"
           ],
-          "confidence": "medium"
+          "confidence": "medium",
+          "semantic_relationship": "GENERIC_BACKGROUND"
         },
         {
           "evidence_id": "creation-doctrine-framework:historical_context:0",
@@ -3615,7 +3552,8 @@
           "passage_anchors": [
             "Genesis 1:1-31"
           ],
-          "confidence": "medium"
+          "confidence": "medium",
+          "semantic_relationship": "GENERIC_BACKGROUND"
         },
         {
           "evidence_id": "creation-doctrine-framework:historical_setting:0",
@@ -3632,7 +3570,8 @@
           "passage_anchors": [
             "Genesis 1:1-31"
           ],
-          "confidence": "medium"
+          "confidence": "medium",
+          "semantic_relationship": "GENERIC_BACKGROUND"
         },
         {
           "evidence_id": "creation-doctrine-framework:original_audience:0",
@@ -3649,7 +3588,8 @@
           "passage_anchors": [
             "Genesis 1:1-31"
           ],
-          "confidence": "medium"
+          "confidence": "medium",
+          "semantic_relationship": "GENERIC_BACKGROUND"
         },
         {
           "evidence_id": "creation-doctrine-framework:second_temple_context:0",
@@ -3666,7 +3606,8 @@
           "passage_anchors": [
             "Genesis 1:1-31"
           ],
-          "confidence": "medium"
+          "confidence": "medium",
+          "semantic_relationship": "GENERIC_BACKGROUND"
         },
         {
           "evidence_id": "creation-doctrine-framework:timeline:0",
@@ -3683,7 +3624,8 @@
           "passage_anchors": [
             "Genesis 1:1-31"
           ],
-          "confidence": "medium"
+          "confidence": "medium",
+          "semantic_relationship": "GENERIC_BACKGROUND"
         },
         {
           "evidence_id": "creation-doctrine-framework:timeline:1",
@@ -3700,7 +3642,8 @@
           "passage_anchors": [
             "Genesis 1:1-31"
           ],
-          "confidence": "medium"
+          "confidence": "medium",
+          "semantic_relationship": "GENERIC_BACKGROUND"
         },
         {
           "evidence_id": "creation-doctrine-framework:timeline:2",
@@ -3717,7 +3660,8 @@
           "passage_anchors": [
             "Genesis 1:1-31"
           ],
-          "confidence": "medium"
+          "confidence": "medium",
+          "semantic_relationship": "GENERIC_BACKGROUND"
         },
         {
           "evidence_id": "creation-doctrine-framework:timeline:3",
@@ -3734,7 +3678,8 @@
           "passage_anchors": [
             "Genesis 1:1-31"
           ],
-          "confidence": "medium"
+          "confidence": "medium",
+          "semantic_relationship": "GENERIC_BACKGROUND"
         },
         {
           "evidence_id": "creation-doctrine-framework:timeline:4",
@@ -3751,7 +3696,8 @@
           "passage_anchors": [
             "Genesis 1:1-31"
           ],
-          "confidence": "medium"
+          "confidence": "medium",
+          "semantic_relationship": "GENERIC_BACKGROUND"
         },
         {
           "evidence_id": "creation-doctrine-framework:timeline:5",
@@ -3768,7 +3714,8 @@
           "passage_anchors": [
             "Genesis 1:1-31"
           ],
-          "confidence": "medium"
+          "confidence": "medium",
+          "semantic_relationship": "GENERIC_BACKGROUND"
         },
         {
           "evidence_id": "creation-doctrine:ancient_near_east_context:0",
@@ -3784,7 +3731,8 @@
           "passage_anchors": [
             "Genesis 1:1-31"
           ],
-          "confidence": "medium"
+          "confidence": "medium",
+          "semantic_relationship": "GENERIC_BACKGROUND"
         },
         {
           "evidence_id": "creation-doctrine:historical_context:0",
@@ -3800,7 +3748,8 @@
           "passage_anchors": [
             "Genesis 1:1-31"
           ],
-          "confidence": "medium"
+          "confidence": "medium",
+          "semantic_relationship": "GENERIC_BACKGROUND"
         },
         {
           "evidence_id": "creation-theme:ancient_near_east_context:0",
@@ -3817,7 +3766,8 @@
           "passage_anchors": [
             "Genesis 1:1-31"
           ],
-          "confidence": "medium"
+          "confidence": "medium",
+          "semantic_relationship": "GENERIC_BACKGROUND"
         },
         {
           "evidence_id": "creation-theme:historical_context:0",
@@ -3834,7 +3784,8 @@
           "passage_anchors": [
             "Genesis 1:1-31"
           ],
-          "confidence": "medium"
+          "confidence": "medium",
+          "semantic_relationship": "GENERIC_BACKGROUND"
         },
         {
           "evidence_id": "creation:ancient_near_east_context:0",
@@ -3852,7 +3803,8 @@
           "passage_anchors": [
             "Genesis 1:1-31"
           ],
-          "confidence": "medium"
+          "confidence": "medium",
+          "semantic_relationship": "GENERIC_BACKGROUND"
         },
         {
           "evidence_id": "creation:hebraic_worldview:0",
@@ -3870,7 +3822,8 @@
           "passage_anchors": [
             "Genesis 1:1-31"
           ],
-          "confidence": "medium"
+          "confidence": "medium",
+          "semantic_relationship": "GENERIC_BACKGROUND"
         },
         {
           "evidence_id": "creation:historical_context:0",
@@ -3888,37 +3841,8 @@
           "passage_anchors": [
             "Genesis 1:1-31"
           ],
-          "confidence": "medium"
-        },
-        {
-          "evidence_id": "ein-gedi-scroll:ancient_near_east_context:0",
-          "category": "culture",
-          "claim": "Ein Gedi Scroll belongs to the material culture of Levantine, Mesopotamian, Egyptian, Persian, Greek, or Roman settings, where inscriptions, architecture, pottery, and administrative remains help contextualize the biblical world.",
-          "source_ids": [
-            "ein-gedi-scroll-archaeological-literature",
-            "genesis-1-1-2",
-            "psalm-19-1-6",
-            "manuscript-study-and-textual-criticism"
-          ],
-          "passage_anchors": [
-            "Genesis 1:1-2"
-          ],
-          "confidence": "medium"
-        },
-        {
-          "evidence_id": "ein-gedi-scroll:historical_context:0",
-          "category": "history",
-          "claim": "Ein Gedi Scroll provides a concrete setting for reading the biblical narrative, even when the exact interpretive link remains debated.",
-          "source_ids": [
-            "ein-gedi-scroll-archaeological-literature",
-            "genesis-1-1-2",
-            "psalm-19-1-6",
-            "manuscript-study-and-textual-criticism"
-          ],
-          "passage_anchors": [
-            "Genesis 1:1-2"
-          ],
-          "confidence": "medium"
+          "confidence": "medium",
+          "semantic_relationship": "GENERIC_BACKGROUND"
         },
         {
           "evidence_id": "enuma-elish-cosmic-ordering-comparison",
@@ -3931,7 +3855,8 @@
           "passage_anchors": [
             "Genesis 1:1-2:3"
           ],
-          "confidence": "medium"
+          "confidence": "medium",
+          "semantic_relationship": "COMPARATIVE_CONTEXT"
         },
         {
           "evidence_id": "enuma-elish-cosmic-ordering-comparison:passage-relevance",
@@ -3944,7 +3869,8 @@
           "passage_anchors": [
             "Genesis 1:1-2:3"
           ],
-          "confidence": "medium"
+          "confidence": "medium",
+          "semantic_relationship": "COMPARATIVE_CONTEXT"
         },
         {
           "evidence_id": "genesis-ane-comparative-context",
@@ -3957,7 +3883,8 @@
           "passage_anchors": [
             "Genesis 1:1-11:26"
           ],
-          "confidence": "high"
+          "confidence": "high",
+          "semantic_relationship": "BOOK_CONTEXT"
         },
         {
           "evidence_id": "genesis-literary-movement",
@@ -3971,7 +3898,8 @@
           "passage_anchors": [
             "Genesis 1:1-50:26"
           ],
-          "confidence": "high"
+          "confidence": "high",
+          "semantic_relationship": "BOOK_CONTEXT"
         },
         {
           "evidence_id": "genesis-ordered-worldview-observation",
@@ -3984,7 +3912,8 @@
           "passage_anchors": [
             "Genesis 1:1-2:3"
           ],
-          "confidence": "high"
+          "confidence": "high",
+          "semantic_relationship": "DIRECT_CONTEXT"
         },
         {
           "evidence_id": "genesis-ordered-worldview-observation:passage-relevance",
@@ -3997,7 +3926,8 @@
           "passage_anchors": [
             "Genesis 1:1-2:3"
           ],
-          "confidence": "high"
+          "confidence": "high",
+          "semantic_relationship": "DIRECT_CONTEXT"
         },
         {
           "evidence_id": "genesis:interpretive_note:0",
@@ -4010,7 +3940,8 @@
           "passage_anchors": [
             "Genesis 1:1-50:26"
           ],
-          "confidence": "low"
+          "confidence": "low",
+          "semantic_relationship": "BOOK_CONTEXT"
         },
         {
           "evidence_id": "genesis:interpretive_note:1",
@@ -4024,7 +3955,8 @@
           "passage_anchors": [
             "Genesis 1:1-11:26"
           ],
-          "confidence": "medium"
+          "confidence": "medium",
+          "semantic_relationship": "BOOK_CONTEXT"
         },
         {
           "evidence_id": "genesis:interpretive_note:2",
@@ -4037,37 +3969,8 @@
           "passage_anchors": [
             "Genesis 1:1-11:26"
           ],
-          "confidence": "high"
-        },
-        {
-          "evidence_id": "herodium-excavations:ancient_near_east_context:0",
-          "category": "culture",
-          "claim": "Ancient background for Herodium Excavations includes inscriptions, material culture, excavation layers, and imperial administration; the entry ties that world to Genesis 1:1-2, Psalm 19:1-6, jerusalem, and joshua without letting comparison replace the biblical witness.",
-          "source_ids": [
-            "city-of-david-and-southern-ridge-excavations",
-            "genesis-1-1-2",
-            "psalm-19-1-6",
-            "excavation-report-and-stratigraphic-study"
-          ],
-          "passage_anchors": [
-            "Genesis 1:1-2"
-          ],
-          "confidence": "medium"
-        },
-        {
-          "evidence_id": "herodium-excavations:historical_context:0",
-          "category": "history",
-          "claim": "Herodium Excavations helps anchor the biblical world in physical evidence and archaeological context.",
-          "source_ids": [
-            "city-of-david-and-southern-ridge-excavations",
-            "genesis-1-1-2",
-            "psalm-19-1-6",
-            "excavation-report-and-stratigraphic-study"
-          ],
-          "passage_anchors": [
-            "Genesis 1:1-2"
-          ],
-          "confidence": "medium"
+          "confidence": "high",
+          "semantic_relationship": "BOOK_CONTEXT"
         },
         {
           "evidence_id": "image-of-god-theme:ancient_near_east_context:0",
@@ -4089,7 +3992,8 @@
           "passage_anchors": [
             "Genesis 1:26-28"
           ],
-          "confidence": "medium"
+          "confidence": "medium",
+          "semantic_relationship": "GENERIC_BACKGROUND"
         },
         {
           "evidence_id": "image-of-god-theme:hebraic_worldview:0",
@@ -4111,7 +4015,8 @@
           "passage_anchors": [
             "Genesis 1:26-28"
           ],
-          "confidence": "medium"
+          "confidence": "medium",
+          "semantic_relationship": "GENERIC_BACKGROUND"
         },
         {
           "evidence_id": "image-of-god-theme:historical_context:0",
@@ -4133,7 +4038,8 @@
           "passage_anchors": [
             "Genesis 1:26-28"
           ],
-          "confidence": "medium"
+          "confidence": "medium",
+          "semantic_relationship": "GENERIC_BACKGROUND"
         },
         {
           "evidence_id": "image-of-god-theme:second_temple_context:0",
@@ -4155,7 +4061,8 @@
           "passage_anchors": [
             "Genesis 1:26-28"
           ],
-          "confidence": "medium"
+          "confidence": "medium",
+          "semantic_relationship": "GENERIC_BACKGROUND"
         },
         {
           "evidence_id": "john-logos",
@@ -4169,7 +4076,8 @@
           "passage_anchors": [
             "Genesis 1:1-5"
           ],
-          "confidence": "high"
+          "confidence": "high",
+          "semantic_relationship": "LATER_RECEPTION"
         },
         {
           "evidence_id": "katabole:ancient_near_east_context:0",
@@ -4184,7 +4092,8 @@
           "passage_anchors": [
             "Genesis 1:1-31"
           ],
-          "confidence": "medium"
+          "confidence": "medium",
+          "semantic_relationship": "GENERIC_BACKGROUND"
         },
         {
           "evidence_id": "katabole:historical_context:0",
@@ -4199,37 +4108,8 @@
           "passage_anchors": [
             "Genesis 1:1-31"
           ],
-          "confidence": "medium"
-        },
-        {
-          "evidence_id": "kurkh-monolith:ancient_near_east_context:0",
-          "category": "culture",
-          "claim": "Kurkh Monolith belongs to the material culture of Levantine, Mesopotamian, Egyptian, Persian, Greek, or Roman settings, where inscriptions, architecture, pottery, and administrative remains help contextualize the biblical world.",
-          "source_ids": [
-            "kurkh-monolith-archaeological-literature",
-            "genesis-1-1-2",
-            "psalm-19-1-6",
-            "imperial-inscription-and-historical-comparison"
-          ],
-          "passage_anchors": [
-            "Genesis 1:1-2"
-          ],
-          "confidence": "medium"
-        },
-        {
-          "evidence_id": "kurkh-monolith:historical_context:0",
-          "category": "history",
-          "claim": "Kurkh Monolith provides a concrete setting for reading the biblical narrative, even when the exact interpretive link remains debated.",
-          "source_ids": [
-            "kurkh-monolith-archaeological-literature",
-            "genesis-1-1-2",
-            "psalm-19-1-6",
-            "imperial-inscription-and-historical-comparison"
-          ],
-          "passage_anchors": [
-            "Genesis 1:1-2"
-          ],
-          "confidence": "medium"
+          "confidence": "medium",
+          "semantic_relationship": "GENERIC_BACKGROUND"
         },
         {
           "evidence_id": "light-and-darkness-theme:ancient_near_east_context:0",
@@ -4245,7 +4125,8 @@
           "passage_anchors": [
             "Genesis 1:1-5"
           ],
-          "confidence": "medium"
+          "confidence": "medium",
+          "semantic_relationship": "GENERIC_BACKGROUND"
         },
         {
           "evidence_id": "light-and-darkness-theme:historical_context:0",
@@ -4261,37 +4142,8 @@
           "passage_anchors": [
             "Genesis 1:1-5"
           ],
-          "confidence": "medium"
-        },
-        {
-          "evidence_id": "masada-excavations:ancient_near_east_context:0",
-          "category": "culture",
-          "claim": "Ancient background for Masada Excavations includes inscriptions, material culture, excavation layers, and imperial administration; the entry ties that world to Genesis 1:1-2, Psalm 19:1-6, jerusalem, and joshua without letting comparison replace the biblical witness.",
-          "source_ids": [
-            "city-of-david-and-southern-ridge-excavations",
-            "genesis-1-1-2",
-            "psalm-19-1-6",
-            "excavation-report-and-stratigraphic-study"
-          ],
-          "passage_anchors": [
-            "Genesis 1:1-2"
-          ],
-          "confidence": "medium"
-        },
-        {
-          "evidence_id": "masada-excavations:historical_context:0",
-          "category": "history",
-          "claim": "Masada Excavations helps anchor the biblical world in physical evidence and archaeological context.",
-          "source_ids": [
-            "city-of-david-and-southern-ridge-excavations",
-            "genesis-1-1-2",
-            "psalm-19-1-6",
-            "excavation-report-and-stratigraphic-study"
-          ],
-          "passage_anchors": [
-            "Genesis 1:1-2"
-          ],
-          "confidence": "medium"
+          "confidence": "medium",
+          "semantic_relationship": "GENERIC_BACKGROUND"
         },
         {
           "evidence_id": "mesopotamian-creation-and-flood-comparisons:interpretive_note:0",
@@ -4305,7 +4157,8 @@
           "passage_anchors": [
             "Genesis 1:1-2:3"
           ],
-          "confidence": "high"
+          "confidence": "high",
+          "semantic_relationship": "INTERTEXTUAL_REUSE"
         },
         {
           "evidence_id": "new-creation-theme:ancient_near_east_context:0",
@@ -4321,7 +4174,8 @@
           "passage_anchors": [
             "Genesis 1:1-31"
           ],
-          "confidence": "medium"
+          "confidence": "medium",
+          "semantic_relationship": "GENERIC_BACKGROUND"
         },
         {
           "evidence_id": "new-creation-theme:historical_context:0",
@@ -4337,7 +4191,8 @@
           "passage_anchors": [
             "Genesis 1:1-31"
           ],
-          "confidence": "medium"
+          "confidence": "medium",
+          "semantic_relationship": "GENERIC_BACKGROUND"
         },
         {
           "evidence_id": "parakletos:ancient_near_east_context:0",
@@ -4354,7 +4209,8 @@
           "passage_anchors": [
             "Genesis 1:1-2"
           ],
-          "confidence": "medium"
+          "confidence": "medium",
+          "semantic_relationship": "GENERIC_BACKGROUND"
         },
         {
           "evidence_id": "parakletos:historical_context:0",
@@ -4371,7 +4227,8 @@
           "passage_anchors": [
             "Genesis 1:1-2"
           ],
-          "confidence": "medium"
+          "confidence": "medium",
+          "semantic_relationship": "GENERIC_BACKGROUND"
         },
         {
           "evidence_id": "phos:ancient_near_east_context:0",
@@ -4387,7 +4244,8 @@
           "passage_anchors": [
             "Genesis 1:1-5"
           ],
-          "confidence": "medium"
+          "confidence": "medium",
+          "semantic_relationship": "GENERIC_BACKGROUND"
         },
         {
           "evidence_id": "phos:historical_context:0",
@@ -4403,7 +4261,8 @@
           "passage_anchors": [
             "Genesis 1:1-5"
           ],
-          "confidence": "medium"
+          "confidence": "medium",
+          "semantic_relationship": "GENERIC_BACKGROUND"
         },
         {
           "evidence_id": "pneuma:ancient_near_east_context:0",
@@ -4420,7 +4279,8 @@
           "passage_anchors": [
             "Genesis 1:1-2"
           ],
-          "confidence": "medium"
+          "confidence": "medium",
+          "semantic_relationship": "GENERIC_BACKGROUND"
         },
         {
           "evidence_id": "pneuma:historical_context:0",
@@ -4437,7 +4297,8 @@
           "passage_anchors": [
             "Genesis 1:1-2"
           ],
-          "confidence": "medium"
+          "confidence": "medium",
+          "semantic_relationship": "GENERIC_BACKGROUND"
         },
         {
           "evidence_id": "pneumatology:ancient_near_east_context:0",
@@ -4455,7 +4316,8 @@
           "passage_anchors": [
             "Genesis 1:1-2"
           ],
-          "confidence": "medium"
+          "confidence": "medium",
+          "semantic_relationship": "GENERIC_BACKGROUND"
         },
         {
           "evidence_id": "pneumatology:historical_context:0",
@@ -4473,97 +4335,8 @@
           "passage_anchors": [
             "Genesis 1:1-2"
           ],
-          "confidence": "medium"
-        },
-        {
-          "evidence_id": "pool-of-bethesda-excavation:ancient_near_east_context:0",
-          "category": "culture",
-          "claim": "Ancient background for Pool of Bethesda Excavation includes inscriptions, material culture, excavation layers, and imperial administration; the entry ties that world to Genesis 1:1-2, Psalm 19:1-6, jerusalem, and joshua without letting comparison replace the biblical witness.",
-          "source_ids": [
-            "city-of-david-and-southern-ridge-excavations",
-            "genesis-1-1-2",
-            "psalm-19-1-6",
-            "excavation-report-and-stratigraphic-study"
-          ],
-          "passage_anchors": [
-            "Genesis 1:1-2"
-          ],
-          "confidence": "medium"
-        },
-        {
-          "evidence_id": "pool-of-bethesda-excavation:historical_context:0",
-          "category": "history",
-          "claim": "Pool of Bethesda Excavation helps anchor the biblical world in physical evidence and archaeological context.",
-          "source_ids": [
-            "city-of-david-and-southern-ridge-excavations",
-            "genesis-1-1-2",
-            "psalm-19-1-6",
-            "excavation-report-and-stratigraphic-study"
-          ],
-          "passage_anchors": [
-            "Genesis 1:1-2"
-          ],
-          "confidence": "medium"
-        },
-        {
-          "evidence_id": "samaria-ostraca:ancient_near_east_context:0",
-          "category": "culture",
-          "claim": "Ancient background for Samaria Ostraca includes inscriptions, material culture, excavation layers, and imperial administration; the entry ties that world to Genesis 1:1-2, Psalm 19:1-6, lachish-city-gate, and jerusalem without letting comparison replace the biblical witness.",
-          "source_ids": [
-            "lachish-siege-and-destruction-horizon",
-            "genesis-1-1-2",
-            "psalm-19-1-6",
-            "archaeological-survey-and-historical-background"
-          ],
-          "passage_anchors": [
-            "Genesis 1:1-2"
-          ],
-          "confidence": "medium"
-        },
-        {
-          "evidence_id": "samaria-ostraca:historical_context:0",
-          "category": "history",
-          "claim": "Samaria Ostraca helps anchor the biblical world in physical evidence and archaeological context.",
-          "source_ids": [
-            "lachish-siege-and-destruction-horizon",
-            "genesis-1-1-2",
-            "psalm-19-1-6",
-            "archaeological-survey-and-historical-background"
-          ],
-          "passage_anchors": [
-            "Genesis 1:1-2"
-          ],
-          "confidence": "medium"
-        },
-        {
-          "evidence_id": "samaria-palace:ancient_near_east_context:0",
-          "category": "culture",
-          "claim": "Ancient background for Samaria Palace includes inscriptions, material culture, excavation layers, and imperial administration; the entry ties that world to Genesis 1:1-2, Psalm 19:1-6, nineveh, and jerusalem without letting comparison replace the biblical witness.",
-          "source_ids": [
-            "nineveh-palace-and-library-excavations",
-            "genesis-1-1-2",
-            "psalm-19-1-6",
-            "archaeological-survey-and-historical-background"
-          ],
-          "passage_anchors": [
-            "Genesis 1:1-2"
-          ],
-          "confidence": "medium"
-        },
-        {
-          "evidence_id": "samaria-palace:historical_context:0",
-          "category": "history",
-          "claim": "Samaria Palace helps anchor the biblical world in physical evidence and archaeological context.",
-          "source_ids": [
-            "nineveh-palace-and-library-excavations",
-            "genesis-1-1-2",
-            "psalm-19-1-6",
-            "archaeological-survey-and-historical-background"
-          ],
-          "passage_anchors": [
-            "Genesis 1:1-2"
-          ],
-          "confidence": "medium"
+          "confidence": "medium",
+          "semantic_relationship": "GENERIC_BACKGROUND"
         },
         {
           "evidence_id": "sarx:ancient_near_east_context:0",
@@ -4579,7 +4352,8 @@
           "passage_anchors": [
             "Genesis 1:26-28"
           ],
-          "confidence": "medium"
+          "confidence": "medium",
+          "semantic_relationship": "GENERIC_BACKGROUND"
         },
         {
           "evidence_id": "sarx:historical_context:0",
@@ -4595,37 +4369,8 @@
           "passage_anchors": [
             "Genesis 1:26-28"
           ],
-          "confidence": "medium"
-        },
-        {
-          "evidence_id": "shiloh-excavations:ancient_near_east_context:0",
-          "category": "culture",
-          "claim": "Ancient background for Shiloh Excavations includes inscriptions, material culture, excavation layers, and imperial administration; the entry ties that world to Genesis 1:1-2, Psalm 19:1-6, jerusalem, and joshua without letting comparison replace the biblical witness.",
-          "source_ids": [
-            "city-of-david-and-southern-ridge-excavations",
-            "genesis-1-1-2",
-            "psalm-19-1-6",
-            "excavation-report-and-stratigraphic-study"
-          ],
-          "passage_anchors": [
-            "Genesis 1:1-2"
-          ],
-          "confidence": "medium"
-        },
-        {
-          "evidence_id": "shiloh-excavations:historical_context:0",
-          "category": "history",
-          "claim": "Shiloh Excavations helps anchor the biblical world in physical evidence and archaeological context.",
-          "source_ids": [
-            "city-of-david-and-southern-ridge-excavations",
-            "genesis-1-1-2",
-            "psalm-19-1-6",
-            "excavation-report-and-stratigraphic-study"
-          ],
-          "passage_anchors": [
-            "Genesis 1:1-2"
-          ],
-          "confidence": "medium"
+          "confidence": "medium",
+          "semantic_relationship": "GENERIC_BACKGROUND"
         },
         {
           "evidence_id": "skotia:ancient_near_east_context:0",
@@ -4641,7 +4386,8 @@
           "passage_anchors": [
             "Genesis 1:1-5"
           ],
-          "confidence": "medium"
+          "confidence": "medium",
+          "semantic_relationship": "GENERIC_BACKGROUND"
         },
         {
           "evidence_id": "skotia:historical_context:0",
@@ -4657,7 +4403,8 @@
           "passage_anchors": [
             "Genesis 1:1-5"
           ],
-          "confidence": "medium"
+          "confidence": "medium",
+          "semantic_relationship": "GENERIC_BACKGROUND"
         },
         {
           "evidence_id": "spirit-theme:ancient_near_east_context:0",
@@ -4676,7 +4423,8 @@
           "passage_anchors": [
             "Genesis 1:2"
           ],
-          "confidence": "medium"
+          "confidence": "medium",
+          "semantic_relationship": "GENERIC_BACKGROUND"
         },
         {
           "evidence_id": "spirit-theme:historical_context:0",
@@ -4695,7 +4443,8 @@
           "passage_anchors": [
             "Genesis 1:2"
           ],
-          "confidence": "medium"
+          "confidence": "medium",
+          "semantic_relationship": "GENERIC_BACKGROUND"
         },
         {
           "evidence_id": "spiritual-gifts:ancient_near_east_context:0",
@@ -4713,7 +4462,8 @@
           "passage_anchors": [
             "Genesis 1:1-2"
           ],
-          "confidence": "medium"
+          "confidence": "medium",
+          "semantic_relationship": "GENERIC_BACKGROUND"
         },
         {
           "evidence_id": "spiritual-gifts:historical_context:0",
@@ -4731,7 +4481,8 @@
           "passage_anchors": [
             "Genesis 1:1-2"
           ],
-          "confidence": "medium"
+          "confidence": "medium",
+          "semantic_relationship": "GENERIC_BACKGROUND"
         },
         {
           "evidence_id": "water-and-spirit-theme:ancient_near_east_context:0",
@@ -4749,7 +4500,8 @@
           "passage_anchors": [
             "Genesis 1:1-2"
           ],
-          "confidence": "medium"
+          "confidence": "medium",
+          "semantic_relationship": "GENERIC_BACKGROUND"
         },
         {
           "evidence_id": "water-and-spirit-theme:historical_context:0",
@@ -4767,7 +4519,8 @@
           "passage_anchors": [
             "Genesis 1:1-2"
           ],
-          "confidence": "medium"
+          "confidence": "medium",
+          "semantic_relationship": "GENERIC_BACKGROUND"
         },
         {
           "evidence_id": "what-does-ruach-mean:ancient_near_east_context:0",
@@ -4786,7 +4539,8 @@
           "passage_anchors": [
             "Genesis 1:1-2"
           ],
-          "confidence": "medium"
+          "confidence": "medium",
+          "semantic_relationship": "GENERIC_BACKGROUND"
         },
         {
           "evidence_id": "what-does-ruach-mean:historical_context:0",
@@ -4805,7 +4559,8 @@
           "passage_anchors": [
             "Genesis 1:1-2"
           ],
-          "confidence": "medium"
+          "confidence": "medium",
+          "semantic_relationship": "GENERIC_BACKGROUND"
         },
         {
           "evidence_id": "what-is-the-holy-spirit:ancient_near_east_context:0",
@@ -4824,7 +4579,8 @@
           "passage_anchors": [
             "Genesis 1:2"
           ],
-          "confidence": "medium"
+          "confidence": "medium",
+          "semantic_relationship": "GENERIC_BACKGROUND"
         },
         {
           "evidence_id": "what-is-the-holy-spirit:historical_context:0",
@@ -4843,7 +4599,8 @@
           "passage_anchors": [
             "Genesis 1:2"
           ],
-          "confidence": "medium"
+          "confidence": "medium",
+          "semantic_relationship": "GENERIC_BACKGROUND"
         },
         {
           "evidence_id": "what-is-the-image-of-god:ancient_near_east_context:0",
@@ -4862,7 +4619,8 @@
           "passage_anchors": [
             "Genesis 1:26-28"
           ],
-          "confidence": "medium"
+          "confidence": "medium",
+          "semantic_relationship": "GENERIC_BACKGROUND"
         },
         {
           "evidence_id": "what-is-the-image-of-god:historical_context:0",
@@ -4881,7 +4639,8 @@
           "passage_anchors": [
             "Genesis 1:26-28"
           ],
-          "confidence": "medium"
+          "confidence": "medium",
+          "semantic_relationship": "GENERIC_BACKGROUND"
         },
         {
           "evidence_id": "what-is-the-significance-of-the-holy-spirit:ancient_near_east_context:0",
@@ -4901,7 +4660,8 @@
           "passage_anchors": [
             "Genesis 1:2"
           ],
-          "confidence": "medium"
+          "confidence": "medium",
+          "semantic_relationship": "GENERIC_BACKGROUND"
         },
         {
           "evidence_id": "what-is-the-significance-of-the-holy-spirit:historical_context:0",
@@ -4921,7 +4681,8 @@
           "passage_anchors": [
             "Genesis 1:2"
           ],
-          "confidence": "medium"
+          "confidence": "medium",
+          "semantic_relationship": "GENERIC_BACKGROUND"
         },
         {
           "evidence_id": "zephaniah-creation-reversal",
@@ -4936,10 +4697,11 @@
           "passage_anchors": [
             "Genesis 1:20-28"
           ],
-          "confidence": "high"
+          "confidence": "high",
+          "semantic_relationship": "INTERTEXTUAL_REUSE"
         }
       ],
-      "evidence_item_count": 90,
+      "evidence_item_count": 70,
       "evidence_categories": [
         "chronology",
         "culture",
@@ -4948,7 +4710,7 @@
         "social"
       ],
       "availability": "AVAILABLE",
-      "evidence_hash": "2ecf36ecf182d350bbe3cb1c594c3084a81e7869d9c8d929ac9eadeec2987146",
+      "evidence_hash": "9c137c94898baa2ebdad73d528f336be7b00ac35d33c11177c4cf66cc29f9bd2",
       "source_gaps": [],
       "leakage_evidence_ids": [],
       "json_sqlite": {
@@ -4956,33 +4718,23 @@
         "bundle_hash_agree": true,
         "first_ids": [
           "2-corinthians",
-          "arad-ostraca",
-          "caesarea-maritima-excavations",
           "colossians",
           "creation",
           "creation-doctrine",
           "creation-doctrine-framework",
           "creation-theme",
-          "ein-gedi-scroll",
           "genesis",
-          "herodium-excavations",
           "image-of-god-theme",
           "john",
           "katabole",
-          "kurkh-monolith",
           "light-and-darkness-theme",
-          "masada-excavations",
           "mesopotamian-creation-and-flood-comparisons",
           "new-creation-theme",
           "parakletos",
           "phos",
           "pneuma",
           "pneumatology",
-          "pool-of-bethesda-excavation",
-          "samaria-ostraca",
-          "samaria-palace",
           "sarx",
-          "shiloh-excavations",
           "skotia",
           "spirit-theme",
           "spiritual-gifts",
@@ -4995,33 +4747,23 @@
         ],
         "second_ids": [
           "2-corinthians",
-          "arad-ostraca",
-          "caesarea-maritima-excavations",
           "colossians",
           "creation",
           "creation-doctrine",
           "creation-doctrine-framework",
           "creation-theme",
-          "ein-gedi-scroll",
           "genesis",
-          "herodium-excavations",
           "image-of-god-theme",
           "john",
           "katabole",
-          "kurkh-monolith",
           "light-and-darkness-theme",
-          "masada-excavations",
           "mesopotamian-creation-and-flood-comparisons",
           "new-creation-theme",
           "parakletos",
           "phos",
           "pneuma",
           "pneumatology",
-          "pool-of-bethesda-excavation",
-          "samaria-ostraca",
-          "samaria-palace",
           "sarx",
-          "shiloh-excavations",
           "skotia",
           "spirit-theme",
           "spiritual-gifts",
@@ -5046,31 +4788,31 @@
     "leaked_evidence_ids": []
   },
   "locked_evidence_bundle_hashes": {
-    "Numbers 5": "7d5da81999ccdd20a63cb4fd75536ea306dd9f69efa2899f99a854e21d98b8f7",
-    "Luke 8": "2ff888619e243d286a67eec8951d98f0574c61090eb6b6913a9ef504bbac6750",
-    "Numbers 8": "f4d9cae7722c8ca6e1078c2ac523a047f31f28cd26cec11800a6d0e26ef1b83a",
-    "Numbers 7": "088910c1358103cebf1312b5f2627b35b2b0b0190863520fba8e5883551e3eeb",
-    "Numbers 3": "fc092d8e04cbcf2fa8359b3f51f2e3272f7aaf848ed0c746a5773e2fead09fa1",
-    "1 Kings 7": "69569bf701dc7c5597c4c76bd23461e3ab7dfd76ba1e9f72ef5bb486188ad69f",
-    "Luke 5": "f030198ab355e9e22a9a0b5a6fbf45642bf1a89b2c913c9316475fc81a16bc29",
-    "Ezekiel 7": "4ab2be019ab7058d0e209bdd486fb0d0d5aa7ef23c6f1b63f7ba79a7dc541e0d",
-    "2 Chronicles 8": "5581bcab2a078a6fb3823fc37e16ed7c8614eb60ffc528d3b13d4d56146bdcb5",
-    "Luke 13": "dc435d01ff78d40e3f0798edb3a805dc0d16706eed3dae92135171c28591c7e9",
-    "Numbers 16": "98c1db70a3aa0e77d32ec02b324e5b00247b19b0cd0707a3ce8e1785ebf61c0d",
-    "Jeremiah 2": "1c8ffae3914cd7caadc1379da3ab45eb28856e9ea4f021eddccb84cf829ce02b",
-    "Psalms 106": "88ab888d5be5ff58a36b504bed994b9f7ab9abbb0319ad53415d594f27918d1d",
-    "Numbers 19": "2cb122f0979c8b2bc0e07c7d70f647604420c45b5f405f6c304990ff0e192f68",
-    "Numbers 31": "24ea007fe04fbce4af6c9b7f16767a4f0b692c17914c583a6639cf0d580c0c21",
-    "Deuteronomy 26": "703d4b25abaa8b1dabd5303d7563ef40fb255bb7c2b39da151829151f347bab6",
-    "Isaiah 28": "418475bf4fd1c6190ca8d9439b08c343ca53a705a5ffb92c836706c1f77a00d3",
-    "Deuteronomy 21": "e239d25616d60806d10651bf27f6b9d4414f46dcb9315de991c7b9ad1bd1cfe7",
-    "Judges 20": "af6ef888d44b46651613c0ff83dc6d2a8a7fa79a300b0713a9e5a1c8953b637a",
-    "Leviticus 22": "e566a7e19e3fd11d786ab79a4f46b33b8700e6dcc09ac47b95c71c4de7227d8c",
-    "Leviticus 1": "5453ef653ae3c3bcfc647d361923f5b3ef1a382614a513206319f012590650f4",
-    "Psalms 1": "26188b31ea748067f35ebcd4893892566192de9ad00b99283ee83f943e88bf10",
-    "Zephaniah 1": "914fcaf10e74f2128fe640693ac1414f3d5569f0c7a879ed51fed24b7ced125d",
-    "Luke 1": "79c52b20caedb384b2acee126fde3597672e1c00cf24d5b392d6e86a4e00d166",
-    "Genesis 1": "2ecf36ecf182d350bbe3cb1c594c3084a81e7869d9c8d929ac9eadeec2987146"
+    "Numbers 5": "2720c4b52cc73d70ce96e516d35adc28eeeb48812e63fcad086b1c4b17e80fb3",
+    "Luke 8": "3b9858f578976547f07f740193603c2ca4279fbc5497b214b71fb8a78d526a70",
+    "Numbers 8": "5b451b0152bf31b54add94ff8ed1bc187a6648bb2ed9f0ddea3cf8a3d61df0d6",
+    "Numbers 7": "e1b55fb5a952981f92f00f4551b1125d31961830ff048ba2ca338b69883bfb24",
+    "Numbers 3": "69ac8c0aa8934f6bbded07634dcd931e724d9ef46a16488f10866ebc1f54b7c0",
+    "1 Kings 7": "69178384b68ba476ba8488d7651b3cde84fc688f3810bfcbbcaab7906279b3dc",
+    "Luke 5": "226a5a3687e635d9249bdbbf8266b1fa64cda63fd9ede88093d793f490c306fb",
+    "Ezekiel 7": "9cefce119c7429d665fbf41c77bc5477b2cf0432415c6fabcb3134b42c6113ea",
+    "2 Chronicles 8": "4d6ec9a8b5ca9fbc1c2955f0a3c211643d6f701759373b11625a93ca8d704b1b",
+    "Luke 13": "31af384209dad88c2e2373a5fb8b0e6ffaa5533e9517305f9faa5b1699b5723b",
+    "Numbers 16": "428dd96bed08733c854e05f8faa96985a3425091ecd5d3d233f171f35aec98d6",
+    "Jeremiah 2": "850efd7df4bcf6116570d67f0a0bc5ef350f3e0d54d78e3d836e7de48c8fe0c9",
+    "Psalms 106": "cb5bd51000c2d97918e7eff57df25721969e214f9132682373480f921acf8932",
+    "Numbers 19": "0ec94cfa69461ecc85d98569e364aa08e6c31a8229553a6de98db3a7385c8914",
+    "Numbers 31": "691cefe70588fdd3ce513e9c11dadf4cd1c56c4d68d5f259a6e098da9639ecbb",
+    "Deuteronomy 26": "c5d1ba9e0bc1fb42bed080bec0ef5d0bb0a6c0491cf145945eed73e1e4478f7b",
+    "Isaiah 28": "4eac2b99464946f046bfc9077ab55929be6826eada8f7e9154ea10c1f2f0dffe",
+    "Deuteronomy 21": "f8f2f3da280164b449f3f27b9dee0afc17dca48e9249d3517e9c54d52cbf3846",
+    "Judges 20": "32d99c8a7cf5fead91ed5d8b244ba857695fc03966115e0f343689b0652254d4",
+    "Leviticus 22": "f6f69959e9026a8df5af9b73f258863b316e37b48ba0c79f0f8b86bd0d937ffc",
+    "Leviticus 1": "4b6b7c065f168ec01b4217b5e541f47ca46b4a565a62b73f515585dab9541bfd",
+    "Psalms 1": "a2aa124115e8dc998bca5a9a3cb83a7f80657c7021e901739d011659b5489e5a",
+    "Zephaniah 1": "e3ae352a1e7fa5f5b4fb3c0ced22f88c74ead94b0308c933df0a100446b99177",
+    "Luke 1": "68ba80c8ecb7b05d7f7e3b62c2b6182a1480f054530e26daad80dcf92e58d02a",
+    "Genesis 1": "9c137c94898baa2ebdad73d528f336be7b00ac35d33c11177c4cf66cc29f9bd2"
   },
   "errors": []
 }

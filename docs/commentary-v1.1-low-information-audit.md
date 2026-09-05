@@ -5,8 +5,8 @@ This internal quality classification is separate from `DATA_GAP`, `THIN`, and `A
 - Source: `commentary-v1.0.1`
 - Validated artifacts audited: 1189
 - `LOW_INFORMATION_COMMENTARY`: 1088
-- Evidence supports regeneration: 936
-- Evidence insufficient: 152
+- Evidence supports regeneration: 935
+- Evidence insufficient: 153
 
 ## Counts by availability
 
@@ -84,7 +84,7 @@ Evidence-supported chapters are listed in `low-information-commentary.json` unde
 | Philemon | 1 | 1 | 0 | 0 | 1 | 0 |
 | Philippians | 4 | 4 | 0 | 0 | 4 | 0 |
 | Proverbs | 31 | 10 | 9 | 12 | 19 | 12 |
-| Psalms | 150 | 38 | 32 | 80 | 70 | 80 |
+| Psalms | 150 | 38 | 32 | 80 | 69 | 81 |
 | Revelation | 22 | 21 | 1 | 0 | 22 | 0 |
 | Romans | 16 | 16 | 0 | 0 | 16 | 0 |
 | Ruth | 4 | 4 | 0 | 0 | 4 | 0 |

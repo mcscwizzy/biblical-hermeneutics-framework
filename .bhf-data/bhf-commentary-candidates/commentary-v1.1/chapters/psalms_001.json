@@ -11,56 +11,56 @@
       "blocks": [
         {
           "id": "overview",
-          "text": "This chapter's locked contextual evidence is limited to 15 source-addressable item(s) across culture, history, politics. The first anchored observation is: Ancient background for makarios includes Hebrew and Greek usage, translation practice, synagogue reading, and covenant speech; the entry ties that world to Psalm 1:1-3, Psalm 32:1-2, wisdom-theme, and psalms without letting comparison replace the biblical witness.",
+          "text": "This chapter's locked contextual evidence includes 15 source-addressable item(s). The strongest eligible contextual observation is: Psalms 1 and 2 form an untitled gateway that places Torah-shaped flourishing, the way of the wicked, rebellious nations, YHWH's kingship, and the anointed king before the collection.",
           "verse_refs": [
             "Psalms 1:1-6"
+          ],
+          "evidence_ids": [
+            "psalms-gateway-torah-king"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "evidence_1",
+          "text": "Locked CKL evidence: Ancient background for makarios includes Hebrew and Greek usage, translation practice, synagogue reading, and covenant speech; the entry ties that world to Psalm 1:1-3, Psalm 32:1-2, wisdom-theme, and psalms without letting comparison replace the biblical witness.",
+          "verse_refs": [
+            "Psalms 1:1-3"
           ],
           "evidence_ids": [
             "makarios:ancient_near_east_context:0"
           ],
           "confidence": "medium",
-          "interpretation_level": "fact"
-        }
-      ]
-    },
-    {
-      "kind": "historical_context",
-      "title": "Historical and social context",
-      "blocks": [
-        {
-          "id": "evidence_1",
-          "text": "Locked CKL evidence: In Hebrew and Greek usage, makarios carries a range of meaning, so context determines how the term functions in a given passage.",
-          "verse_refs": [
-            "Psalms 1:1-6"
-          ],
-          "evidence_ids": [
-            "makarios:historical_context:0"
-          ],
-          "confidence": "medium",
-          "interpretation_level": "fact"
+          "interpretation_level": "inference"
         },
         {
           "id": "evidence_2",
           "text": "Locked CKL evidence: Ancient background for nomos includes Hebrew and Greek usage, translation practice, synagogue reading, and covenant speech; the entry ties that world to Exodus 20:1-17, Deuteronomy 6:4-9, torah, and law-and-gospel without letting comparison replace the biblical witness.",
           "verse_refs": [
-            "Psalms 1:1-6"
+            "Psalms 1:1-3"
           ],
           "evidence_ids": [
             "nomos:ancient_near_east_context:0"
           ],
           "confidence": "medium",
-          "interpretation_level": "fact"
+          "interpretation_level": "inference"
         }
       ]
     }
   ],
   "generated_metadata": {
-    "evidence_hash": "26188b31ea748067f35ebcd4893892566192de9ad00b99283ee83f943e88bf10",
-    "evidence_bundle_version": "1.0",
+    "evidence_hash": "a2aa124115e8dc998bca5a9a3cb83a7f80657c7021e901739d011659b5489e5a",
+    "evidence_bundle_version": "1.1",
     "commentary_schema_version": "1.0",
     "commentary_prompt_version": "1.1",
     "model": "deterministic-v1.1-evidence-candidate",
-    "generated_timestamp": "2026-09-05T16:46:44.560201+00:00"
+    "generated_timestamp": "2026-09-05T17:46:56.722255+00:00"
   },
   "failure_reason": null,
   "validation_errors": [],

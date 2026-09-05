@@ -11,25 +11,7 @@
       "blocks": [
         {
           "id": "overview",
-          "text": "This chapter's locked contextual evidence is limited to 2 source-addressable item(s) across geography, history. The first anchored observation is: Haggai asks priests for Torah rulings: holiness is not transferred through a second contact, while corpse impurity is transferred by contact.",
-          "verse_refs": [
-            "Numbers 19:1-22"
-          ],
-          "evidence_ids": [
-            "haggai-torah-inquiry"
-          ],
-          "confidence": "high",
-          "interpretation_level": "disputed"
-        }
-      ]
-    },
-    {
-      "kind": "archaeology_geography",
-      "title": "Archaeology and geography",
-      "blocks": [
-        {
-          "id": "evidence_1",
-          "text": "Locked CKL evidence: Proposed maps of the wilderness route should label uncertain site identifications rather than presenting a single itinerary reconstruction as established.",
+          "text": "This chapter's locked contextual evidence includes 2 source-addressable item(s). The strongest eligible contextual observation is: Proposed maps of the wilderness route should label uncertain site identifications rather than presenting a single itinerary reconstruction as established.",
           "verse_refs": [
             "Numbers 19:1-22"
           ],
@@ -40,15 +22,33 @@
           "interpretation_level": "disputed"
         }
       ]
+    },
+    {
+      "kind": "dig_deeper",
+      "title": "Dig deeper",
+      "blocks": [
+        {
+          "id": "evidence_1",
+          "text": "Locked CKL evidence: Haggai asks priests for Torah rulings: holiness is not transferred through a second contact, while corpse impurity is transferred by contact.",
+          "verse_refs": [
+            "Numbers 19:11-22"
+          ],
+          "evidence_ids": [
+            "haggai-torah-inquiry"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
     }
   ],
   "generated_metadata": {
-    "evidence_hash": "2cb122f0979c8b2bc0e07c7d70f647604420c45b5f405f6c304990ff0e192f68",
-    "evidence_bundle_version": "1.0",
+    "evidence_hash": "0ec94cfa69461ecc85d98569e364aa08e6c31a8229553a6de98db3a7385c8914",
+    "evidence_bundle_version": "1.1",
     "commentary_schema_version": "1.0",
     "commentary_prompt_version": "1.1",
     "model": "deterministic-v1.1-evidence-candidate",
-    "generated_timestamp": "2026-09-05T16:46:43.810527+00:00"
+    "generated_timestamp": "2026-09-05T17:46:55.972395+00:00"
   },
   "failure_reason": null,
   "validation_errors": [],

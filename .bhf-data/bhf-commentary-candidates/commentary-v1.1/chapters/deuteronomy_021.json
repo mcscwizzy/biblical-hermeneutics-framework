@@ -11,15 +11,15 @@
       "blocks": [
         {
           "id": "overview",
-          "text": "This chapter's locked contextual evidence is limited to 3 source-addressable item(s) across culture. The first anchored observation is: Deuteronomy moves from remembered wilderness history through covenant instruction to covenant consequences, renewal, succession, song, blessing, and Moses's death.",
+          "text": "This chapter's locked contextual evidence includes 3 source-addressable item(s). The strongest eligible contextual observation is: The repeated instruction is rhetorically adapted covenant exposition for a successor generation, not a simple verbatim duplication of earlier laws.",
           "verse_refs": [
             "Deuteronomy 21:1-23"
           ],
           "evidence_ids": [
-            "deuteronomy-literary-movement"
+            "deuteronomy:interpretive_note:1"
           ],
           "confidence": "high",
-          "interpretation_level": "fact"
+          "interpretation_level": "disputed"
         }
       ]
     },
@@ -29,21 +29,27 @@
       "blocks": [
         {
           "id": "evidence_1",
-          "text": "Locked CKL evidence: The repeated instruction is rhetorically adapted covenant exposition for a successor generation, not a simple verbatim duplication of earlier laws.",
+          "text": "Locked CKL evidence: Deuteronomy moves from remembered wilderness history through covenant instruction to covenant consequences, renewal, succession, song, blessing, and Moses's death.",
           "verse_refs": [
             "Deuteronomy 21:1-23"
           ],
           "evidence_ids": [
-            "deuteronomy:interpretive_note:1"
+            "deuteronomy-literary-movement"
           ],
           "confidence": "high",
-          "interpretation_level": "disputed"
-        },
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "dig_deeper",
+      "title": "Dig deeper",
+      "blocks": [
         {
-          "id": "evidence_2",
+          "id": "evidence_1",
           "text": "Locked CKL evidence: Galatians juxtaposes Deuteronomic curse texts, Torah performance, and the Messiah's crucifixion; it does not say that Torah, Jews, or Jewish practice are themselves cursed.",
           "verse_refs": [
-            "Deuteronomy 21:1-23"
+            "Deuteronomy 21:23"
           ],
           "evidence_ids": [
             "gal-curse-law"
@@ -55,12 +61,12 @@
     }
   ],
   "generated_metadata": {
-    "evidence_hash": "e239d25616d60806d10651bf27f6b9d4414f46dcb9315de991c7b9ad1bd1cfe7",
-    "evidence_bundle_version": "1.0",
+    "evidence_hash": "f8f2f3da280164b449f3f27b9dee0afc17dca48e9249d3517e9c54d52cbf3846",
+    "evidence_bundle_version": "1.1",
     "commentary_schema_version": "1.0",
     "commentary_prompt_version": "1.1",
     "model": "deterministic-v1.1-evidence-candidate",
-    "generated_timestamp": "2026-09-05T16:46:44.186389+00:00"
+    "generated_timestamp": "2026-09-05T17:46:56.348999+00:00"
   },
   "failure_reason": null,
   "validation_errors": [],

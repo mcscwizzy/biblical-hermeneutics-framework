@@ -11,74 +11,14 @@
       "blocks": [
         {
           "id": "overview",
-          "text": "This chapter's locked contextual evidence is limited to 90 source-addressable item(s) across chronology, culture, geography, history, social. The first anchored observation is: God shining light in hearts revoices creation and prophetic light language; it is theological metaphor, not a scientific account of cognition or vision.",
+          "text": "This chapter's locked contextual evidence includes 70 source-addressable item(s). The strongest eligible contextual observation is: The observation identifies the passage's own account of ordered creation before ancient comparative material is introduced.",
           "verse_refs": [
             "Genesis 1:1-31"
           ],
           "evidence_ids": [
-            "2-corinthians:interpretive_note:21"
+            "genesis-ordered-worldview-observation:passage-relevance"
           ],
           "confidence": "high",
-          "interpretation_level": "disputed"
-        }
-      ]
-    },
-    {
-      "kind": "archaeology_geography",
-      "title": "Archaeology and geography",
-      "blocks": [
-        {
-          "id": "evidence_1",
-          "text": "Locked CKL evidence: Genesis 1-11 belongs to an ancient Near Eastern literary environment in which creation, flood, genealogy, and city-building traditions were also discussed.",
-          "verse_refs": [
-            "Genesis 1:1-31"
-          ],
-          "evidence_ids": [
-            "genesis-ane-comparative-context"
-          ],
-          "confidence": "high",
-          "interpretation_level": "disputed"
-        },
-        {
-          "id": "evidence_2",
-          "text": "Locked CKL evidence: Ancient Near Eastern parallels can clarify shared motifs and cultural questions, but parallels alone do not prove direct copying or settle the interpretation of Genesis.",
-          "verse_refs": [
-            "Genesis 1:1-31"
-          ],
-          "evidence_ids": [
-            "genesis:interpretive_note:2"
-          ],
-          "confidence": "high",
-          "interpretation_level": "disputed"
-        }
-      ]
-    },
-    {
-      "kind": "chronology",
-      "title": "Chronology",
-      "blocks": [
-        {
-          "id": "evidence_1",
-          "text": "Locked CKL evidence: Creation declared good",
-          "verse_refs": [
-            "Genesis 1:1-31"
-          ],
-          "evidence_ids": [
-            "creation-doctrine-framework:timeline:0"
-          ],
-          "confidence": "medium",
-          "interpretation_level": "fact"
-        },
-        {
-          "id": "evidence_2",
-          "text": "Locked CKL evidence: Human vocation given",
-          "verse_refs": [
-            "Genesis 1:1-31"
-          ],
-          "evidence_ids": [
-            "creation-doctrine-framework:timeline:1"
-          ],
-          "confidence": "medium",
           "interpretation_level": "fact"
         }
       ]
@@ -89,38 +29,98 @@
       "blocks": [
         {
           "id": "evidence_1",
-          "text": "Locked CKL evidence: Arad Ostraca belongs to the material culture of Levantine, Mesopotamian, Egyptian, Persian, Greek, or Roman settings, where inscriptions, architecture, pottery, and administrative remains help contextualize the biblical world.",
+          "text": "Locked CKL evidence: Creation texts stand alongside Mesopotamian origin traditions such as Enuma Elish and Atrahasis, while Scripture presents creation as ordered by the one covenant Lord.",
           "verse_refs": [
             "Genesis 1:1-31"
           ],
           "evidence_ids": [
-            "arad-ostraca:ancient_near_east_context:0"
+            "creation-doctrine-framework:ancient_near_east_context:0"
           ],
           "confidence": "medium",
-          "interpretation_level": "fact"
+          "interpretation_level": "inference"
         },
         {
           "id": "evidence_2",
-          "text": "Locked CKL evidence: Arad Ostraca helps anchor the biblical world in physical evidence and archaeological context.",
+          "text": "Locked CKL evidence: Creation is good, ordered, and accountable to God; humanity receives creaturely dignity and responsibility rather than autonomous self-definition.",
           "verse_refs": [
             "Genesis 1:1-31"
           ],
           "evidence_ids": [
-            "arad-ostraca:historical_context:0"
+            "creation-doctrine-framework:hebraic_worldview:0"
           ],
           "confidence": "medium",
-          "interpretation_level": "fact"
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "evidence_1",
+          "text": "Locked CKL evidence: Ancient background for katabole includes Hebrew and Greek usage, translation practice, synagogue reading, and covenant speech; the entry ties that world to Genesis 1:1-31, Psalm 8:1-9, creation-theme, and genesis without letting comparison replace the biblical witness.",
+          "verse_refs": [
+            "Genesis 1:1-31"
+          ],
+          "evidence_ids": [
+            "katabole:ancient_near_east_context:0"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        },
+        {
+          "id": "evidence_2",
+          "text": "Locked CKL evidence: Ancient background for parakletos includes Hebrew and Greek usage, translation practice, synagogue reading, and covenant speech; the entry ties that world to Genesis 1:1-2, Ezekiel 36:24-28, pneuma, and spirit-theme without letting comparison replace the biblical witness.",
+          "verse_refs": [
+            "Genesis 1:1-2"
+          ],
+          "evidence_ids": [
+            "parakletos:ancient_near_east_context:0"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "dig_deeper",
+      "title": "Dig deeper",
+      "blocks": [
+        {
+          "id": "evidence_1",
+          "text": "Locked CKL evidence: God shining light in hearts revoices creation and prophetic light language; it is theological metaphor, not a scientific account of cognition or vision.",
+          "verse_refs": [
+            "Genesis 1:3"
+          ],
+          "evidence_ids": [
+            "2-corinthians:interpretive_note:21"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        },
+        {
+          "id": "evidence_2",
+          "text": "Locked CKL evidence: Messiah is called the image of the invisible God.",
+          "verse_refs": [
+            "Genesis 1:26-27"
+          ],
+          "evidence_ids": [
+            "col-image"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
         }
       ]
     }
   ],
   "generated_metadata": {
-    "evidence_hash": "2ecf36ecf182d350bbe3cb1c594c3084a81e7869d9c8d929ac9eadeec2987146",
-    "evidence_bundle_version": "1.0",
+    "evidence_hash": "9c137c94898baa2ebdad73d528f336be7b00ac35d33c11177c4cf66cc29f9bd2",
+    "evidence_bundle_version": "1.1",
     "commentary_schema_version": "1.0",
     "commentary_prompt_version": "1.1",
     "model": "deterministic-v1.1-evidence-candidate",
-    "generated_timestamp": "2026-09-05T16:46:45.687420+00:00"
+    "generated_timestamp": "2026-09-05T17:46:57.779945+00:00"
   },
   "failure_reason": null,
   "validation_errors": [],
