@@ -1,0 +1,68 @@
+{
+  "reference": "Zephaniah 1",
+  "book": "Zephaniah",
+  "chapter": 1,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "overview",
+          "text": "This chapter's locked contextual evidence is limited to 17 source-addressable item(s) across culture, economics, history. The first anchored observation is: Day of the Lord Prophecy is set within prophetic speech shaped by Israelite covenant lawsuit, royal courts, temple worship, Assyrian and Babylonian pressure, Persian restoration, and poetic oracle forms.",
+          "verse_refs": [
+            "Zephaniah 1:1-18"
+          ],
+          "evidence_ids": [
+            "day-of-the-lord-prophecy:ancient_near_east_context:0"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and social context",
+      "blocks": [
+        {
+          "id": "evidence_1",
+          "text": "Locked CKL evidence: These warnings address covenant breach and imperial pressure, then project judgment and deliverance into the future.",
+          "verse_refs": [
+            "Zephaniah 1:1-18"
+          ],
+          "evidence_ids": [
+            "day-of-the-lord-prophecy:historical_context:0"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        },
+        {
+          "id": "evidence_2",
+          "text": "Locked CKL evidence: Royal 'day of the king' imagery helps explain the metaphor, but here the LORD himself acts as judge and deliverer.",
+          "verse_refs": [
+            "Zephaniah 1:1-18"
+          ],
+          "evidence_ids": [
+            "what-is-the-day-of-the-lord:ancient_near_east_context:0"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "914fcaf10e74f2128fe640693ac1414f3d5569f0c7a879ed51fed24b7ced125d",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "deterministic-v1.1-evidence-candidate",
+    "generated_timestamp": "2026-09-05T16:46:44.683593+00:00"
+  },
+  "failure_reason": null,
+  "validation_errors": [],
+  "validation_warnings": []
+}

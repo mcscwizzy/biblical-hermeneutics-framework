@@ -46,9 +46,22 @@ deterministic commentary validator.
   `archaeology_geography`, and `chronology`.
 - DATA_GAP candidates contain transparent gap wording only. Contextual sections
   for THIN and AVAILABLE candidates are built only from locked evidence claims.
+- Low-information controls intentionally included: Leviticus 1, Psalms 1,
+  Zephaniah 1, Luke 1, and Genesis 1. Zephaniah 1 replaces its released
+  verse-count/opening/closing boilerplate with locked EvidenceBundle synthesis.
 - Candidate metadata records the provider-independent boundary and future
   inputs: canonical chapter text, locked EvidenceBundle, allowed section kinds,
   and grounding constraints.
+
+## Low-information corpus audit
+
+The separate corpus-wide audit classified 1,088 validated v1.0.1 artifacts as
+`LOW_INFORMATION_COMMENTARY`: 732 AVAILABLE, 204 THIN, and 152 DATA_GAP.
+Evidence supports grounded regeneration for 936; 152 have insufficient
+source-addressable contextual evidence and remain conservative. Full counts by
+book, chapter-level decisions, markers, bundle hashes, and the Zephaniah 1
+control are in `low-information-commentary.json` and
+`docs/commentary-v1.1-low-information-audit.md`.
 
 ## Required follow-up
 

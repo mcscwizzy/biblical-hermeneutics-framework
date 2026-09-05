@@ -1,6 +1,6 @@
 {
   "report_version": "commentary-v1.1-expansion-v1",
-  "generated_at": "2026-09-05T16:04:22.939550+00:00",
+  "generated_at": "2026-09-05T16:43:44.803396+00:00",
   "scope": "current CKL inventory and 1,189 canonical chapters",
   "release_boundary": {
     "production_release": "commentary-v1.0.1",
@@ -32811,7 +32811,8 @@
             "what-is-sacrifice-in-the-bible"
           ]
         },
-        "known_example": false
+        "known_example": false,
+        "low_information_control": true
       },
       {
         "book": "Psalms",
@@ -32868,15 +32869,16 @@
             "what-is-biblical-wisdom"
           ]
         },
-        "known_example": false
+        "known_example": false,
+        "low_information_control": true
       },
       {
-        "book": "Ezekiel",
+        "book": "Zephaniah",
         "chapter": 1,
-        "reference": "Ezekiel 1",
+        "reference": "Zephaniah 1",
         "status": "AVAILABLE",
-        "genre": "prophecy",
-        "priority_score": 60.0,
+        "genre": "narrative",
+        "priority_score": 50.0,
         "contextual_factors": [
           {
             "factor": "priesthood",
@@ -32886,10 +32888,18 @@
             ]
           },
           {
+            "factor": "sacrifice_ritual",
+            "weight": 8.0,
+            "matched_terms": [
+              "blood",
+              "sacrifice"
+            ]
+          },
+          {
             "factor": "warfare",
             "weight": 6.0,
             "matched_terms": [
-              "war"
+              "battle"
             ]
           },
           {
@@ -32897,24 +32907,14 @@
             "weight": 6.0,
             "matched_terms": [
               "king",
-              "throne"
-            ]
-          },
-          {
-            "factor": "prophetic_symbol",
-            "weight": 7.0,
-            "matched_terms": [
-              "eagle",
-              "vision",
-              "wheel"
+              "reign"
             ]
           },
           {
             "factor": "temple_tabernacle",
             "weight": 8.0,
             "matched_terms": [
-              "ark",
-              "glory"
+              "ark"
             ]
           },
           {
@@ -32928,40 +32928,32 @@
             "factor": "geography",
             "weight": 4.0,
             "matched_terms": [
-              "river"
-            ]
-          },
-          {
-            "factor": "supernatural_disputed",
-            "weight": 7.0,
-            "matched_terms": [
-              "spirit"
+              "gate",
+              "sea"
             ]
           }
         ],
         "p1_reason": null,
-        "valid_anchored_evidence": 5,
-        "raw_ckl_candidates": 51,
-        "rejected_candidates": 46,
+        "valid_anchored_evidence": 3,
+        "raw_ckl_candidates": 6,
+        "rejected_candidates": 3,
         "object_type_audit": {
-          "reference": "Ezekiel 1",
-          "candidate_count": 5,
+          "reference": "Zephaniah 1",
+          "candidate_count": 3,
           "candidate_types": {
-            "book": 2,
-            "cultural_background": 1,
-            "event": 1,
-            "faq": 1
+            "book": 1,
+            "faq": 1,
+            "prophecy": 1
           },
           "object_only_structural": false,
           "candidate_ids": [
-            "babylonian-conquest-deportation-and-judean-diaspora",
-            "babylonian-exile",
-            "ezekiel",
-            "revelation",
-            "why-is-exile-important"
+            "day-of-the-lord-prophecy",
+            "what-is-the-day-of-the-lord",
+            "zephaniah"
           ]
         },
-        "known_example": false
+        "known_example": false,
+        "low_information_control": true
       },
       {
         "book": "Luke",
@@ -33087,7 +33079,8 @@
             "who-was-david"
           ]
         },
-        "known_example": false
+        "known_example": false,
+        "low_information_control": true
       },
       {
         "book": "Genesis",
@@ -33199,10 +33192,18 @@
             "zephaniah"
           ]
         },
-        "known_example": false
+        "known_example": false,
+        "low_information_control": true
       }
     ]
   },
+  "low_information_canary_controls": [
+    "Leviticus 1",
+    "Psalms 1",
+    "Zephaniah 1",
+    "Luke 1",
+    "Genesis 1"
+  ],
   "genre_guidance": {
     "narrative": {
       "evidence": [

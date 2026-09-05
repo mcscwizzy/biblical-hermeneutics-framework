@@ -12,7 +12,7 @@ Prioritization signals are deterministic text/search factors only; they are not 
 
 DATA_GAP batch (10): Numbers 5, Luke 8, Numbers 8, Numbers 7, Numbers 3, 1 Kings 7, Luke 5, Ezekiel 7, 2 Chronicles 8, Luke 13
 THIN batch (20): Numbers 16, Jeremiah 2, Psalms 106, Numbers 19, Numbers 31, Deuteronomy 26, Isaiah 28, Deuteronomy 21, Judges 20, Leviticus 22, Leviticus 21, 1 Chronicles 29, 2 Chronicles 26, Ezekiel 8, 2 Chronicles 29, Isaiah 62, Jeremiah 19, 1 Chronicles 16, Leviticus 7, Deuteronomy 15
-25-chapter canary (25): Numbers 5, Luke 8, Numbers 8, Numbers 7, Numbers 3, 1 Kings 7, Luke 5, Ezekiel 7, 2 Chronicles 8, Luke 13, Numbers 16, Jeremiah 2, Psalms 106, Numbers 19, Numbers 31, Deuteronomy 26, Isaiah 28, Deuteronomy 21, Judges 20, Leviticus 22, Leviticus 1, Psalms 1, Ezekiel 1, Luke 1, Genesis 1
+25-chapter canary (25): Numbers 5, Luke 8, Numbers 8, Numbers 7, Numbers 3, 1 Kings 7, Luke 5, Ezekiel 7, 2 Chronicles 8, Luke 13, Numbers 16, Jeremiah 2, Psalms 106, Numbers 19, Numbers 31, Deuteronomy 26, Isaiah 28, Deuteronomy 21, Judges 20, Leviticus 22, Leviticus 1, Psalms 1, Zephaniah 1, Luke 1, Genesis 1
 
 ## High-confusion pass
 
@@ -35,3 +35,5 @@ Each batch must be audited against existing CKL first, then Scripture anchors ar
 
 - Machine-readable prioritization: `.bhf-data/bhf-commentary-candidates/commentary-v1.1/data-gap-priority.json`
 - Certified batch reports are written beside it as `evidence-certification-<batch>.json`.
+- Low-information audit: `.bhf-data/bhf-commentary-candidates/commentary-v1.1/low-information-commentary.json`
+- Low-information human report: `docs/commentary-v1.1-low-information-audit.md`

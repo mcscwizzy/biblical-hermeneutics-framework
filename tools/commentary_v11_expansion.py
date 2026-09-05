@@ -165,9 +165,16 @@ def _sort(rows: Iterable[dict[str, Any]]) -> list[dict[str, Any]]:
 
 
 def _available_canary_rows(all_rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
-    wanted = [("Leviticus", 1), ("Psalms", 1), ("Ezekiel", 1), ("Luke", 1), ("Genesis", 1)]
+    # These controls are intentionally known low-information v1.0.1 artifacts.
+    # Zephaniah 1 is required because its released text is the canonical
+    # "contains/open/concludes" example.
+    wanted = [("Leviticus", 1), ("Psalms", 1), ("Zephaniah", 1), ("Luke", 1), ("Genesis", 1)]
     by_ref = {(r["book"], r["chapter"]): r for r in all_rows}
-    selected = [by_ref[item] for item in wanted if item in by_ref and by_ref[item]["status"] == "AVAILABLE"]
+    selected = [
+        {**by_ref[item], "low_information_control": True}
+        for item in wanted
+        if item in by_ref and by_ref[item]["status"] == "AVAILABLE"
+    ]
     if len(selected) < 5:
         selected.extend(r for r in all_rows if r["status"] == "AVAILABLE" and r not in selected)
     return selected[:5]
@@ -217,6 +224,11 @@ def build_priority_report(coverage: dict[str, Any]) -> dict[str, Any]:
             "thin_initial": thin_batch,
             "commentary_canary": canary,
         },
+        "low_information_canary_controls": [
+            f"{row['book']} {row['chapter']}"
+            for row in canary
+            if row.get("low_information_control")
+        ],
         "genre_guidance": GENRE_GUIDANCE,
         "method": {
             "deterministic": True,

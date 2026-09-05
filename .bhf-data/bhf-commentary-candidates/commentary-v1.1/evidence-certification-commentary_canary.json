@@ -1,6 +1,6 @@
 {
   "report_version": "commentary-v1.1-expansion-v1",
-  "generated_at": "2026-09-05T16:23:34.677120+00:00",
+  "generated_at": "2026-09-05T16:46:33.800082+00:00",
   "batch": "commentary_canary",
   "workflow": [
     "select",
@@ -2120,301 +2120,342 @@
       "all_retrieved_records_had_anchor_entries": true
     },
     {
-      "reference": "Ezekiel 1",
-      "book": "Ezekiel",
+      "reference": "Zephaniah 1",
+      "book": "Zephaniah",
       "chapter": 1,
       "retrieval_result_ids": [
-        "babylonian-conquest-deportation-and-judean-diaspora",
-        "babylonian-exile",
-        "ezekiel",
-        "revelation",
-        "why-is-exile-important"
+        "day-of-the-lord-prophecy",
+        "what-is-the-day-of-the-lord",
+        "zephaniah"
       ],
       "existing_ckl_audit": {
         "records_examined": [
           {
-            "id": "revelation",
+            "id": "zephaniah",
             "type": "book",
-            "title": "Revelation",
+            "title": "Zephaniah",
             "anchor_layers": [
               "claims",
               "object.scripture_references"
             ],
-            "source_metadata_count": 28,
-            "related_record_count": 15
-          },
-          {
-            "id": "babylonian-conquest-deportation-and-judean-diaspora",
-            "type": "cultural_background",
-            "title": "Babylonian Conquest, Deportation, and Judean Diaspora",
-            "anchor_layers": [
-              "claims",
-              "evidence_items",
-              "object.scripture_references"
-            ],
-            "source_metadata_count": 9,
-            "related_record_count": 8
-          },
-          {
-            "id": "babylonian-exile",
-            "type": "event",
-            "title": "Babylonian Exile",
-            "anchor_layers": [
-              "object.scripture_references"
-            ],
-            "source_metadata_count": 3,
+            "source_metadata_count": 24,
             "related_record_count": 9
           },
           {
-            "id": "ezekiel",
-            "type": "book",
-            "title": "Ezekiel",
-            "anchor_layers": [
-              "claims",
-              "object.scripture_references"
-            ],
-            "source_metadata_count": 29,
-            "related_record_count": 19
-          },
-          {
-            "id": "why-is-exile-important",
-            "type": "faq",
-            "title": "Why is Exile Important?",
+            "id": "day-of-the-lord-prophecy",
+            "type": "prophecy",
+            "title": "Day of the Lord Prophecy",
             "anchor_layers": [
               "object.scripture_references"
             ],
             "source_metadata_count": 6,
+            "related_record_count": 5
+          },
+          {
+            "id": "what-is-the-day-of-the-lord",
+            "type": "faq",
+            "title": "What is the Day of the Lord?",
+            "anchor_layers": [
+              "object.scripture_references"
+            ],
+            "source_metadata_count": 9,
             "related_record_count": 8
           }
         ],
         "anchor_layer_counts": {
-          "claims": 97,
-          "evidence_items": 11,
-          "object.scripture_references": 87
+          "claims": 41,
+          "object.scripture_references": 33
         },
-        "source_metadata_records_examined": 75,
-        "related_record_links_examined": 59
+        "source_metadata_records_examined": 39,
+        "related_record_links_examined": 22
       },
       "existing_evidence_reused": [
         {
-          "evidence_id": "al-yahudu-judean-community-archive",
+          "evidence_id": "day-of-the-lord-prophecy:ancient_near_east_context:0",
+          "category": "culture",
+          "claim": "Day of the Lord Prophecy is set within prophetic speech shaped by Israelite covenant lawsuit, royal courts, temple worship, Assyrian and Babylonian pressure, Persian restoration, and poetic oracle forms.",
+          "source_ids": [
+            "joel-2",
+            "amos-5",
+            "zephaniah-1",
+            "1-thessalonians-5",
+            "2-peter-3",
+            "day-of-the-lord-prophecy-historical-orientation"
+          ],
+          "passage_anchors": [
+            "Zephaniah 1:14-18"
+          ],
+          "confidence": "medium"
+        },
+        {
+          "evidence_id": "day-of-the-lord-prophecy:historical_context:0",
           "category": "history",
-          "claim": "Dated cuneiform legal and administrative documents from Al-Yahudu and nearby settlements record Judean names, households, land, debts, taxes, and service within Babylonian and Persian institutions.",
+          "claim": "These warnings address covenant breach and imperial pressure, then project judgment and deliverance into the future.",
           "source_ids": [
-            "pearce-wunsch-cusas28",
-            "alstola-judeans-babylonia",
-            "pearce-judeans-babylonia-2024",
-            "kings-jeremiah-exile-text"
+            "joel-2",
+            "amos-5",
+            "zephaniah-1",
+            "1-thessalonians-5",
+            "2-peter-3",
+            "day-of-the-lord-prophecy-historical-orientation"
           ],
           "passage_anchors": [
-            "Ezekiel 1:1-3"
+            "Zephaniah 1:14-18"
           ],
           "confidence": "medium"
         },
         {
-          "evidence_id": "al-yahudu-judean-community-archive:passage-relevance",
+          "evidence_id": "what-is-the-day-of-the-lord:ancient_near_east_context:0",
+          "category": "culture",
+          "claim": "Royal 'day of the king' imagery helps explain the metaphor, but here the LORD himself acts as judge and deliverer.",
+          "source_ids": [
+            "amos-5",
+            "joel-2",
+            "zephaniah-1",
+            "isaiah-13",
+            "malachi-4",
+            "1-thessalonians-5",
+            "2-peter-3",
+            "revelation-6",
+            "what-is-the-day-of-the-lord-historical-orientation"
+          ],
+          "passage_anchors": [
+            "Zephaniah 1:14-18"
+          ],
+          "confidence": "medium"
+        },
+        {
+          "evidence_id": "what-is-the-day-of-the-lord:historical_context:0",
           "category": "history",
-          "claim": "The archive gives concrete near-contemporary context for the settled community addressed in Jeremiah 29 and shows that Judean life in Babylonia continued after return movements began.",
+          "claim": "The prophets use this phrase amid national crisis to warn of covenant judgment and promise future vindication.",
           "source_ids": [
-            "pearce-wunsch-cusas28",
-            "alstola-judeans-babylonia",
-            "pearce-judeans-babylonia-2024",
-            "kings-jeremiah-exile-text"
+            "amos-5",
+            "joel-2",
+            "zephaniah-1",
+            "isaiah-13",
+            "malachi-4",
+            "1-thessalonians-5",
+            "2-peter-3",
+            "revelation-6",
+            "what-is-the-day-of-the-lord-historical-orientation"
           ],
           "passage_anchors": [
-            "Ezekiel 1:1-3"
+            "Zephaniah 1:14-18"
           ],
           "confidence": "medium"
         },
         {
-          "evidence_id": "babylonian-exile:ancient_near_east_context:0",
+          "evidence_id": "zephaniah-composition",
           "category": "culture",
-          "claim": "Neo-Babylonian policy combined vassal kingship, tribute, punitive siege, elite removal, destruction after revolt, and resettlement within imperial agricultural and service systems. Chronicles, ration lists, and private documents illuminate different levels of this system.",
+          "claim": "Scholars disagree about literary unity, the nation-oracle sequence, the relation of chapter 3 to chapters 1-2, later restoration material, and shaping within the Twelve.",
           "source_ids": [
-            "kings-jeremiah-babylonian-exile",
-            "albertz-israel-exile",
-            "alstola-judeans-babylonia"
+            "quine-zephaniah",
+            "berlin-zephaniah",
+            "oxford-twelve"
           ],
           "passage_anchors": [
-            "Ezekiel 1:1-3"
-          ],
-          "confidence": "medium"
-        },
-        {
-          "evidence_id": "babylonian-exile:hebraic_worldview:0",
-          "category": "culture",
-          "claim": "Biblical writers interpret exile through covenant judgment, lament, repentance, divine presence outside the land, responsibility, and promised restoration. Those theological claims belong to the biblical witnesses rather than the Babylonian records.",
-          "source_ids": [
-            "kings-jeremiah-babylonian-exile",
-            "albertz-israel-exile",
-            "alstola-judeans-babylonia"
-          ],
-          "passage_anchors": [
-            "Ezekiel 1:1-3"
-          ],
-          "confidence": "medium"
-        },
-        {
-          "evidence_id": "babylonian-exile:historical_context:0",
-          "category": "history",
-          "claim": "Babylon reduced Judah in stages: Jehoiachin and selected royal, military, administrative, and skilled groups were removed in 597 BCE; Zedekiah's revolt led to Jerusalem's destruction and further deportation in 587/586 BCE. Not everyone was removed, and Judean communities persisted in Babylonia after Persian-period returns began.",
-          "source_ids": [
-            "kings-jeremiah-babylonian-exile",
-            "albertz-israel-exile",
-            "alstola-judeans-babylonia"
-          ],
-          "passage_anchors": [
-            "Ezekiel 1:1-3"
-          ],
-          "confidence": "medium"
-        },
-        {
-          "evidence_id": "babylonian-exile:second_temple_context:0",
-          "category": "culture",
-          "claim": "Return did not end the Babylonian diaspora. The Al-Yahudu corpus continues into Persian rule, showing that the early Second Temple community in Yehud developed alongside Judean communities that remained abroad.",
-          "source_ids": [
-            "kings-jeremiah-babylonian-exile",
-            "albertz-israel-exile",
-            "alstola-judeans-babylonia"
-          ],
-          "passage_anchors": [
-            "Ezekiel 1:1-3"
-          ],
-          "confidence": "medium"
-        },
-        {
-          "evidence_id": "ezekiel-compositional-history",
-          "category": "culture",
-          "claim": "The received book presents a sustained Ezekielian first-person persona while also showing collection, coordination, repetition, and textual development compatible with scribal shaping.",
-          "source_ids": [
-            "ezekiel-masoretic",
-            "oxford-handbook-ezekiel",
-            "mackie-text-critical",
-            "wilson-written-text"
-          ],
-          "passage_anchors": [
-            "Ezekiel 1:1-28"
+            "Zephaniah 1:1"
           ],
           "confidence": "high"
         },
         {
-          "evidence_id": "ezekiel-historical-horizon",
+          "evidence_id": "zephaniah-creation-reversal",
           "category": "culture",
-          "claim": "Ezekiel's narrated horizon runs from the 597 deportation through Jerusalem's siege and destruction to dated restoration and nation oracles in the 570s BCE.",
+          "claim": "Zephaniah 1:2-3 sweeps through humans, animals, birds, and fish in a creation-scale judgment commonly read as creation reversal with flood resonances.",
           "source_ids": [
-            "ezekiel-masoretic",
-            "sweeney-ezekiel-history",
-            "oxford-bibliography-ezekiel",
-            "met-judean-diaspora"
+            "zephaniah-masoretic",
+            "zephaniah-canonical-comparanda",
+            "quine-zephaniah",
+            "oxford-metaphor"
           ],
           "passage_anchors": [
-            "Ezekiel 1:1-3"
+            "Zephaniah 1:2-3"
           ],
           "confidence": "high"
         },
         {
-          "evidence_id": "ezekiel-practical-outline",
-          "category": "culture",
-          "claim": "Chapters 1-3, 4-24, 25-32, 33-39, and 40-48 provide a practical reading outline without settling chronology or composition.",
-          "source_ids": [
-            "ezekiel-masoretic",
-            "block-ezekiel-1-24",
-            "block-ezekiel-25-48",
-            "oxford-handbook-ezekiel"
-          ],
-          "passage_anchors": [
-            "Ezekiel 1:1-28"
-          ],
-          "confidence": "medium"
-        },
-        {
-          "evidence_id": "ezekiel-superscription-call",
+          "evidence_id": "zephaniah-cult",
           "category": "history",
-          "claim": "Ezekiel 1:1-3 names Ezekiel son of Buzi as a priest, locates him among exiles by the Kebar canal, and dates the word and hand of YHWH to Jehoiachin's fifth year.",
+          "claim": "Zephaniah 1:4-6 accuses Judah and Jerusalem of Baal practice, rooftop worship of the heavenly host, divided oath-taking, turning back, and failure to seek YHWH.",
           "source_ids": [
-            "ezekiel-masoretic",
-            "greenberg-ezekiel-1-20",
-            "sweeney-ezekiel-history"
+            "zephaniah-masoretic",
+            "berlin-zephaniah",
+            "timmer-theology"
           ],
           "passage_anchors": [
-            "Ezekiel 1:1-3"
+            "Zephaniah 1:4-6"
           ],
           "confidence": "high"
         },
         {
-          "evidence_id": "ezekiel-throne-vision",
-          "category": "history",
-          "claim": "The inaugural vision uses repeated likeness and appearance language for storm, living creatures, wheels, expanse, throne, human-like figure, radiance, and the glory of YHWH.",
+          "evidence_id": "zephaniah-date",
+          "category": "culture",
+          "claim": "Josiah's reign is the explicit frame and pre-612 BCE is a common horizon for the Nineveh oracle, but the book's exact date and relation to Josiah's reform remain disputed.",
           "source_ids": [
-            "ezekiel-masoretic",
-            "greenberg-ezekiel-1-20",
-            "bodi-mesopotamian-context"
+            "quine-zephaniah",
+            "berlin-zephaniah",
+            "bm-nineveh-chronicle"
           ],
           "passage_anchors": [
-            "Ezekiel 1:4-28"
+            "Zephaniah 1:1"
+          ],
+          "confidence": "medium"
+        },
+        {
+          "evidence_id": "zephaniah-day",
+          "category": "economics",
+          "claim": "Zephaniah 1:14-18 describes the near great Day of YHWH through battle cry, wrath, darkness, distress, trumpet, ruined defenses, blood, dust, and wealth unable to deliver.",
+          "source_ids": [
+            "zephaniah-masoretic",
+            "zephaniah-canonical-comparanda",
+            "quine-zephaniah",
+            "timmer-theology"
+          ],
+          "passage_anchors": [
+            "Zephaniah 1:14-18"
           ],
           "confidence": "high"
         },
         {
-          "evidence_id": "why-is-exile-important:ancient_near_east_context:0",
+          "evidence_id": "zephaniah-ethical-reception",
           "category": "culture",
-          "claim": "Exile was a common imperial strategy, but Scripture interprets it through covenant accountability rather than politics alone.",
+          "claim": "Responsible modern reception confronts divine violence, racialized genealogy, anti-African and anti-Arab mapping, disability stigma, poverty romanticization, trauma exploitation, ecological loss, nationalism, colonialism, and partisan enemy-making.",
           "source_ids": [
-            "2-kings-25",
-            "jeremiah-25",
-            "psalm-137",
-            "daniel-1",
-            "ezekiel-1",
-            "luke-21"
+            "gafney-zephaniah",
+            "oxford-postcolonial",
+            "oxford-trauma",
+            "timmer-theology"
           ],
           "passage_anchors": [
-            "Ezekiel 1:1-3"
+            "Zephaniah 1:2-18"
+          ],
+          "confidence": "high"
+        },
+        {
+          "evidence_id": "zephaniah-genealogy",
+          "category": "culture",
+          "claim": "The unusually long genealogy does not securely prove either African ancestry through Cushi or royal descent through King Hezekiah.",
+          "source_ids": [
+            "quine-zephaniah",
+            "berlin-zephaniah",
+            "gafney-zephaniah"
+          ],
+          "passage_anchors": [
+            "Zephaniah 1:1"
+          ],
+          "confidence": "low"
+        },
+        {
+          "evidence_id": "zephaniah-jerusalem-topography",
+          "category": "economics",
+          "claim": "The Fish Gate, Second Quarter, hills, and Maktesh locate cries and economic collapse within Jerusalem, though exact archaeological identifications are not secure.",
+          "source_ids": [
+            "zephaniah-masoretic",
+            "berlin-zephaniah",
+            "quine-zephaniah"
+          ],
+          "passage_anchors": [
+            "Zephaniah 1:10-11"
           ],
           "confidence": "medium"
         },
         {
-          "evidence_id": "why-is-exile-important:historical_context:0",
-          "category": "history",
-          "claim": "The Babylonian conquest removed Judah's king, temple, and land, forcing the people to rethink covenant failure and future hope.",
+          "evidence_id": "zephaniah-pesher",
+          "category": "culture",
+          "claim": "1Q15 and 4Q170 preserve fragmentary pesharim on Zephaniah that contextualize prophetic lines for later communities rather than supplying Zephaniah's original historical referents.",
           "source_ids": [
-            "2-kings-25",
-            "jeremiah-25",
-            "psalm-137",
-            "daniel-1",
-            "ezekiel-1",
-            "luke-21"
+            "iaa-1q15",
+            "iaa-4q170",
+            "cambridge-qumran"
           ],
           "passage_anchors": [
-            "Ezekiel 1:1-3"
+            "Zephaniah 1:12-13"
           ],
-          "confidence": "medium"
+          "confidence": "high"
+        },
+        {
+          "evidence_id": "zephaniah-sacrifice",
+          "category": "culture",
+          "claim": "Zephaniah 1:7-9 commands silence and depicts YHWH preparing a sacrifice and consecrating guests before targeting officials, royal sons, foreign dress, threshold behavior, violence, and fraud.",
+          "source_ids": [
+            "zephaniah-masoretic",
+            "berlin-zephaniah",
+            "quine-zephaniah"
+          ],
+          "passage_anchors": [
+            "Zephaniah 1:7-9"
+          ],
+          "confidence": "high"
+        },
+        {
+          "evidence_id": "zephaniah-search",
+          "category": "economics",
+          "claim": "Zephaniah 1:12-13 portrays YHWH searching Jerusalem with lamps and exposes complacent residents who deny effective divine action; houses, vineyards, and wealth are reversed.",
+          "source_ids": [
+            "zephaniah-masoretic",
+            "berlin-zephaniah",
+            "timmer-theology"
+          ],
+          "passage_anchors": [
+            "Zephaniah 1:12-13"
+          ],
+          "confidence": "high"
+        },
+        {
+          "evidence_id": "zephaniah-superscription",
+          "category": "history",
+          "claim": "Zephaniah 1:1 dates the word to Josiah's reign and identifies Zephaniah through Cushi, Gedaliah, Amariah, and Hezekiah.",
+          "source_ids": [
+            "zephaniah-masoretic",
+            "quine-zephaniah",
+            "berlin-zephaniah"
+          ],
+          "passage_anchors": [
+            "Zephaniah 1:1"
+          ],
+          "confidence": "high"
+        },
+        {
+          "evidence_id": "zephaniah-textual-witnesses",
+          "category": "history",
+          "claim": "Masoretic Zephaniah, Old Greek Sophonias, Judean Desert biblical manuscripts, pesharim, and other versions attest transmission and textual plurality in several difficult passages.",
+          "source_ids": [
+            "sbl-bhs-zephaniah",
+            "catss-zephaniah",
+            "nets-twelve",
+            "iaa-4q77",
+            "iaa-4q78",
+            "iaa-1q15",
+            "iaa-4q170"
+          ],
+          "passage_anchors": [
+            "Zephaniah 1:1"
+          ],
+          "confidence": "high"
         }
       ],
-      "evidence_item_count": 13,
+      "evidence_item_count": 17,
       "evidence_categories": [
         "culture",
+        "economics",
         "history"
       ],
       "availability": "AVAILABLE",
-      "evidence_hash": "4750a612d92398f9db5efbfe20e120736efbb61ddfad29e30f722aaa0126d48a",
+      "evidence_hash": "914fcaf10e74f2128fe640693ac1414f3d5569f0c7a879ed51fed24b7ced125d",
       "source_gaps": [],
       "leakage_evidence_ids": [],
       "json_sqlite": {
         "result_ids_agree": true,
         "bundle_hash_agree": true,
         "first_ids": [
-          "babylonian-conquest-deportation-and-judean-diaspora",
-          "babylonian-exile",
-          "ezekiel",
-          "revelation",
-          "why-is-exile-important"
+          "day-of-the-lord-prophecy",
+          "what-is-the-day-of-the-lord",
+          "zephaniah"
         ],
         "second_ids": [
-          "babylonian-conquest-deportation-and-judean-diaspora",
-          "babylonian-exile",
-          "ezekiel",
-          "revelation",
-          "why-is-exile-important"
+          "day-of-the-lord-prophecy",
+          "what-is-the-day-of-the-lord",
+          "zephaniah"
         ]
       },
       "all_retrieved_records_had_anchor_entries": true
@@ -5027,7 +5068,7 @@
     "Leviticus 22": "e566a7e19e3fd11d786ab79a4f46b33b8700e6dcc09ac47b95c71c4de7227d8c",
     "Leviticus 1": "5453ef653ae3c3bcfc647d361923f5b3ef1a382614a513206319f012590650f4",
     "Psalms 1": "26188b31ea748067f35ebcd4893892566192de9ad00b99283ee83f943e88bf10",
-    "Ezekiel 1": "4750a612d92398f9db5efbfe20e120736efbb61ddfad29e30f722aaa0126d48a",
+    "Zephaniah 1": "914fcaf10e74f2128fe640693ac1414f3d5569f0c7a879ed51fed24b7ced125d",
     "Luke 1": "79c52b20caedb384b2acee126fde3597672e1c00cf24d5b392d6e86a4e00d166",
     "Genesis 1": "2ecf36ecf182d350bbe3cb1c594c3084a81e7869d9c8d929ac9eadeec2987146"
   },
