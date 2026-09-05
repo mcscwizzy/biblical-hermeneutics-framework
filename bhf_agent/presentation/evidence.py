@@ -29,6 +29,7 @@ from .models import EVIDENCE_BUNDLE_VERSION, EntityRef, EvidenceBundle, Evidence
 from .references import anchor_specificity, reference_distance, references_overlap
 from .relevance import (
     SEMANTICALLY_MISANCHORED,
+    with_presentation_metadata,
     with_semantic_relationship,
 )
 
@@ -505,6 +506,7 @@ def _append_object_evidence(
                     matched_parent,
                     data=data,
                     field_name=field_name,
+                    category=category,
                     retrieval_score=retrieval_score,
                 )
                 if legacy_metadata.get("semantic_relationship") == SEMANTICALLY_MISANCHORED:
@@ -556,11 +558,23 @@ def _relevance_metadata(
     metadata["claim_type"] = _text(item.get("claim_type"))
     metadata["note_type"] = _text(item.get("note_type"))
     metadata["field"] = _text(item.get("field"))
-    return with_semantic_relationship(
+    metadata = with_semantic_relationship(
         passage_ref,
         metadata,
         anchors=anchors,
     )
+    claim = _text(
+        item.get("claim")
+        or item.get("claim_text")
+        or item.get("description")
+        or item.get("primary_observation")
+        or item.get("note")
+    )
+    category = _category(
+        item.get("evidence_type") or item.get("claim_type") or item.get("note_type"),
+        claim,
+    )
+    return with_presentation_metadata(metadata, category=category, claim=claim)
 
 
 def _legacy_relevance_metadata(
@@ -569,6 +583,7 @@ def _legacy_relevance_metadata(
     *,
     data: Mapping[str, Any],
     field_name: str,
+    category: str,
     retrieval_score: float,
 ) -> dict[str, Any]:
     metadata = _relevance_metadata(
@@ -578,6 +593,11 @@ def _legacy_relevance_metadata(
         data=data,
         item={"field": field_name},
         retrieval_score=retrieval_score,
+    )
+    metadata = with_presentation_metadata(
+        metadata,
+        category=category,
+        claim="",
     )
     if _text(data.get("type")).casefold() == "book":
         metadata["passage_relationship"] = "background"

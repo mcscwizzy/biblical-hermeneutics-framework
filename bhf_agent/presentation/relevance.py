@@ -39,6 +39,26 @@ SEMANTIC_RELATIONSHIPS = frozenset(
     }
 )
 
+PRESENTATION_SECTIONS = frozenset(
+    {
+        "historical_context",
+        "archaeology_geography",
+        "language_literary",
+        "chronology",
+        "interpretive_questions",
+        "dig_deeper",
+    }
+)
+
+# These are the word-study relationships actually reachable from the v1.1
+# canary.  A Greek translation term is not treated as the Hebrew source word
+# merely because a lexicon record was tagged to the same passage.
+WORD_STUDY_PASSAGE_RELATIONSHIPS = {
+    ("torah", "Psalms"): DIRECT_CONTEXT,
+    ("makarios", "Psalms"): COMPARATIVE_CONTEXT,
+    ("nomos", "Psalms"): COMPARATIVE_CONTEXT,
+}
+
 # These are the confirmed v1.1 canary defects.  Keeping the guard in the
 # projection layer prevents an unrebuilt SQLite database or an ad-hoc fixture
 # from reintroducing the same bad chapter evidence.
@@ -110,6 +130,13 @@ def classify_semantic_relationship(
     requested = requested_book(passage_ref)
     source_book = _source_book(metadata)
 
+    if parent_type == "word_study":
+        word_relationship = WORD_STUDY_PASSAGE_RELATIONSHIPS.get(
+            (parent_id, requested)
+        )
+        if word_relationship:
+            return word_relationship
+
     if parent_id in KNOWN_SEMANTICALLY_MISANCHORED and parent_type == "archaeology":
         target = requested_book(passage_ref)
         if target == "Genesis" and any(
@@ -156,6 +183,178 @@ def classify_semantic_relationship(
         if relationship in {"background", "contextual", "supporting"}:
             return GENERIC_BACKGROUND
     return WEAKLY_RELATED
+
+
+def presentation_role(
+    metadata: Mapping[str, Any],
+    *,
+    category: str,
+    claim: str = "",
+) -> str | None:
+    """Return the deterministic section role for an evidence item.
+
+    CKL category is an index facet, not a presentation instruction.  This
+    layer gives authored claim type and semantic relationship precedence over
+    legacy category labels, especially for word studies and literary claims
+    that happen to be indexed as geography.
+    """
+
+    parent_type = str(metadata.get("parent_type") or "").casefold()
+    source_kind = str(metadata.get("source_kind") or "").casefold()
+    relationship = str(metadata.get("semantic_relationship") or "")
+    claim_type = str(metadata.get("claim_type") or "").casefold().replace("-", "_")
+    note_type = str(metadata.get("note_type") or "").casefold().replace("-", "_")
+    category = str(category or "").casefold()
+    text = " ".join(
+        str(value or "")
+        for value in (
+            metadata.get("parent_object_id"),
+            metadata.get("parent_title"),
+            claim,
+        )
+    ).casefold()
+
+    if relationship in {LATER_RECEPTION, INTERTEXTUAL_REUSE, COMPARATIVE_CONTEXT}:
+        return "dig_deeper"
+    if relationship in {SEMANTICALLY_MISANCHORED, WEAKLY_RELATED}:
+        return None
+
+    if parent_type == "word_study":
+        # Only the explicitly audited direct lexical mapping may ground the
+        # language section.  Generic generated word-study prose is retained
+        # in the locked bundle but is not first-audience language context.
+        return "language_literary" if relationship == DIRECT_CONTEXT else None
+
+    if claim_type in {
+        "lexical",
+        "literary",
+        "composition",
+        "authorship",
+        "rhetorical",
+        "textual_form",
+        "textual",
+    }:
+        return "language_literary"
+    if claim_type in {"historical_cultural", "historical", "social", "political"}:
+        return "historical_context"
+    if note_type in {"ancient_near_east_context", "second_temple_context", "historical_context"}:
+        return "historical_context"
+
+    literary_terms = {
+        "authorship",
+        "coordinated production",
+        "composition",
+        "literary relationship",
+        "literary unity",
+        "narrative continuation",
+        "publication history",
+        "theophilus",
+        "common authorship",
+        "sequel",
+        "prologue",
+        "source",
+    }
+    if category in {"geography", "archaeology"} and any(
+        term in text for term in literary_terms
+    ):
+        return "language_literary"
+
+    if category in {"archaeology", "geography"}:
+        return (
+            "archaeology_geography"
+            if relationship in {DIRECT_CONTEXT, BOOK_CONTEXT}
+            else None
+        )
+    if category == "chronology":
+        return "chronology"
+    if category in {"culture", "history", "politics", "social", "economics"}:
+        return "historical_context"
+    if category == "language":
+        return "language_literary"
+    if parent_type == "faq" and relationship in {
+        DIRECT_CONTEXT,
+        BOOK_CONTEXT,
+        GENERIC_BACKGROUND,
+    }:
+        return "historical_context"
+    return "historical_context"
+
+
+def overview_priority(
+    metadata: Mapping[str, Any],
+    *,
+    category: str,
+    claim: str = "",
+) -> int:
+    """Score first-reader usefulness without using evidence IDs as a signal."""
+
+    relationship = str(metadata.get("semantic_relationship") or "")
+    parent_type = str(metadata.get("parent_type") or "").casefold()
+    source_kind = str(metadata.get("source_kind") or "").casefold()
+    category = str(category or "").casefold()
+    text = " ".join(
+        str(value or "")
+        for value in (
+            metadata.get("parent_object_id"),
+            metadata.get("parent_title"),
+            claim,
+        )
+    ).casefold()
+    score = {
+        DIRECT_CONTEXT: 60,
+        BOOK_CONTEXT: 50,
+        GENERIC_BACKGROUND: 25,
+    }.get(relationship, 0)
+    score += {
+        "history": 15,
+        "culture": 15,
+        "social": 15,
+        "politics": 15,
+        "economics": 10,
+        "archaeology": 8,
+        "geography": 8,
+        "language": 6,
+        "chronology": 5,
+    }.get(category, 0)
+    if parent_type == "book" and source_kind in {"ckl_claim", "ckl_evidence_item"}:
+        score += 8
+    if presentation_role(metadata, category=category, claim=claim) == "historical_context":
+        score += 5
+
+    reader_context_terms = {
+        "setting", "historical", "josiah", "judah", "jerusalem", "assyrian",
+        "roman", "jewish", "social", "official", "royal", "cult", "idolatry",
+        "sacrifice", "day of y", "judgment", "practice", "institution", "temple",
+        "theophilus", "narrative", "creation-scale",
+    }
+    demotion_terms = {
+        "textual witness", "textual witnesses", "manuscript", "transmission", "pesharim", "textual plurality",
+        "authorship", "composition", "source-critical", "source criticism", "provenance",
+        "lexical side", "translation history", "reception history", "reception", "modern reception",
+    }
+    score += 15 if any(term in text for term in reader_context_terms) else 0
+    score -= 35 if any(term in text for term in demotion_terms) else 0
+    if relationship in {LATER_RECEPTION, INTERTEXTUAL_REUSE, COMPARATIVE_CONTEXT}:
+        score -= 80
+    if str(metadata.get("dispute_status") or "").casefold() not in {"", "not_disputed", "unknown", "none"}:
+        score -= 8
+    return max(0, score)
+
+
+def with_presentation_metadata(
+    metadata: Mapping[str, Any],
+    *,
+    category: str,
+    claim: str = "",
+) -> dict[str, Any]:
+    result = dict(metadata)
+    result["presentation_role"] = presentation_role(
+        result, category=category, claim=claim
+    )
+    result["overview_priority"] = overview_priority(
+        result, category=category, claim=claim
+    )
+    return result
 
 
 def with_semantic_relationship(
