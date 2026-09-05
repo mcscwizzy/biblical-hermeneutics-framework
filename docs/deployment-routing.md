@@ -84,9 +84,18 @@ filesystem for durable server data.
 Writable server defaults resolve beneath `/tmp/bhf-data` on Vercel, including
 the study database, presentation cache, translations registry, and reader
 settings. A cold instance reconstructs the built-in study schema and seed data
-on first use. `BHF_DATA_DIR` and the individual `BHF_*_PATH` overrides remain
-available, but Vercel local files are still transient and are not cloud
-persistence.
+on first use. The immutable BHF Commentary v1.0 corpus is the exception: it is
+read directly from the packaged repository artifact at
+`.bhf-data/bhf-commentary/`, rather than copied into `/tmp`. An explicit
+`BHF_COMMENTARY_STORAGE_PATH` still overrides that packaged path. `BHF_DATA_DIR`
+and the individual writable `BHF_*_PATH` overrides remain available, but
+Vercel local files are still transient and are not cloud persistence.
+
+The same runtime-path split also keeps the existing translations and study/map
+data flows on writable runtime paths under `/tmp` in Vercel. Legacy explicit
+paths such as `BHF_CKL_DATABASE_PATH=.bhf/ckl.sqlite` remain operator overrides;
+they should point to a packaged read-only artifact or a writable runtime path
+as appropriate.
 Deterministic Did You Know / Walk the Land / Why It Matters content renders
 first. When the reader enables AI passage summaries, the browser then makes one
 bounded synchronous presentation request. Provider timeout, invalid model

@@ -51,3 +51,28 @@ def test_vercel_health_endpoint_returns_expected_payload():
     )
 
     assert result.returncode == 0, result.stderr
+
+
+def test_vercel_commentary_routes_read_packaged_corpus():
+    result = _vercel_python(
+        "import asyncio\n"
+        "import httpx\n"
+        "from bhf_web.app import app\n"
+        "async def check_commentary():\n"
+        "    transport = httpx.ASGITransport(app=app)\n"
+        "    async with httpx.AsyncClient(\n"
+        "        transport=transport, base_url='http://test'\n"
+        "    ) as client:\n"
+        "        diagnostics = await client.get('/api/bhf-commentary/diagnostics')\n"
+        "        chapter = await client.get('/api/bhf-commentary/1%20Corinthians/1')\n"
+        "    assert diagnostics.status_code == 200\n"
+        "    assert diagnostics.json()['available'] is True\n"
+        "    assert diagnostics.json()['total_files'] >= 1189\n"
+        "    assert chapter.status_code == 200\n"
+        "    assert chapter.json()['available'] is True\n"
+        "    assert chapter.json()['book'] == '1 Corinthians'\n"
+        "    assert chapter.json()['chapter'] == 1\n"
+        "asyncio.run(check_commentary())"
+    )
+
+    assert result.returncode == 0, result.stderr

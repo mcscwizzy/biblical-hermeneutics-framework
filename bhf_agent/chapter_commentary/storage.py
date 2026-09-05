@@ -60,7 +60,7 @@ def load_commentary(
     chapter: int,
 ) -> ChapterCommentary | None:
     """Load commentary from JSON file."""
-    storage_path = get_commentary_dir(storage_dir)
+    storage_path = Path(storage_dir)
     filename = get_commentary_filename(book, chapter)
     filepath = storage_path / filename
 
@@ -80,7 +80,7 @@ def delete_commentary(
     chapter: int,
 ) -> bool:
     """Delete a commentary file."""
-    storage_path = get_commentary_dir(storage_dir)
+    storage_path = Path(storage_dir)
     filename = get_commentary_filename(book, chapter)
     filepath = storage_path / filename
 
@@ -92,7 +92,7 @@ def delete_commentary(
 
 def list_commentaries(storage_dir: str | Path) -> list[tuple[str, int]]:
     """List all stored commentaries as (book, chapter) tuples."""
-    storage_path = get_commentary_dir(storage_dir)
+    storage_path = Path(storage_dir)
     result = []
 
     for filepath in sorted(storage_path.glob("*.json")):
