@@ -43,7 +43,6 @@ from tools.commentary_v11_canary import _chapter_overlap_refs, _interpretation_l
 
 
 DEFAULT_BATCH_ROOT = ROOT / ".bhf-data" / "bhf-commentary-candidates" / "commentary-v1.1-scale" / "batch-001"
-MODEL_ID = "terra-codex-commentary-v1.1-batch-001-medium"
 REPORT_VERSION = "commentary-v1.1-terra-scaled-batch-v1"
 TITLES = {
     "chapter_overview": "Chapter overview",
@@ -68,6 +67,25 @@ QUALITY_FLAGS = (
 )
 CANARY_ROOT = ROOT / ".bhf-data" / "bhf-commentary-candidates" / "commentary-v1.1-terra"
 SUPPLEMENTAL_ROOT = CANARY_ROOT / "supplemental-integrity-controls"
+BATCH_001_TERRA_ROOT = (
+    ROOT / ".bhf-data" / "bhf-commentary-candidates" / "commentary-v1.1-scale" / "batch-001" / "terra" / "chapters"
+)
+
+
+def _model_id(batch_id: str) -> str:
+    return f"terra-codex-commentary-v1.1-{batch_id}-medium"
+
+
+def _next_batch_status(batch_id: str) -> str:
+    try:
+        number = int(batch_id.rsplit("-", 1)[1])
+    except (IndexError, ValueError):
+        return "READY_FOR_NEXT_BATCH"
+    return f"READY_FOR_BATCH_{number + 1:03d}"
+
+
+def _batch_label(batch_id: str) -> str:
+    return batch_id.replace("-", " ").title()
 
 
 def _now() -> str:
@@ -101,6 +119,13 @@ def _artifact_fingerprints() -> dict[str, str]:
     }
 
 
+def _batch_001_terra_fingerprints() -> dict[str, str]:
+    return {
+        str(path.relative_to(ROOT)): hashlib.sha256(path.read_bytes()).hexdigest()
+        for path in sorted(BATCH_001_TERRA_ROOT.glob("*.json"))
+    }
+
+
 def _fingerprint_digest(value: dict[str, str]) -> str:
     return hashlib.sha256(json.dumps(value, sort_keys=True, separators=(",", ":")).encode()).hexdigest()
 
@@ -111,7 +136,7 @@ def _load(batch_root: Path) -> tuple[dict[str, Any], dict[str, Any], dict[str, A
     terra_input = json.loads((batch_root / "terra-input-manifest.json").read_text(encoding="utf-8"))
     quarantine = json.loads((batch_root / "quarantine-report.json").read_text(encoding="utf-8"))
     if manifest.get("status") != "LOCKED" or certification.get("status") != "LOCKED":
-        raise RuntimeError("Terra generation requires a LOCKED Batch 001 manifest and certification")
+        raise RuntimeError("Terra generation requires a LOCKED batch manifest and certification")
     if terra_input.get("status") != "READY_FOR_TERRA" or terra_input.get("prose_included"):
         raise RuntimeError("Terra input manifest is not a prose-free READY_FOR_TERRA manifest")
     return manifest, certification, terra_input, quarantine
@@ -151,19 +176,46 @@ def revalidate_locks(
             continue
         reconstruction = entry["evidence_reconstruction"]["arguments"]
         book, chapter = reconstruction["book"], int(reconstruction["chapter"])
+        expected_book = str(entry.get("book") or cert.get("book") or book)
+        expected_chapter = int(entry.get("chapter") or cert.get("chapter") or chapter)
         bundle = get_chapter_evidence_bundle(book, chapter, evidence_bundle_version=EVIDENCE_BUNDLE_CANDIDATE_VERSION)
         actual_ids = sorted(item.id for item in bundle.evidence_items) if bundle else []
         expected_ids = sorted(cert["evidence_ids"])
         actual_availability = classify_evidence_availability(bundle).value if bundle else None
         metadata_errors = _metadata_errors(bundle, set(entry["allowed_section_roles"])) if bundle else ["bundle unavailable"]
+        locked_path = ROOT / cert["evidence_bundle_path"]
+        locked_items = {}
+        if locked_path.exists():
+            locked_items = {
+                str(item["id"]): {
+                    key: (item.get("relevance_metadata") or {}).get(key)
+                    for key in ("semantic_relationship", "presentation_role", "overview_priority")
+                }
+                for item in json.loads(locked_path.read_text(encoding="utf-8")).get("evidence_items", [])
+            }
+        actual_items = {
+            item.id: {
+                key: (item.relevance_metadata or {}).get(key)
+                for key in ("semantic_relationship", "presentation_role", "overview_priority")
+            }
+            for item in (bundle.evidence_items if bundle else [])
+        }
+        overview = _overview_item(bundle) if bundle else None
         checks = {
             "reference_matches": bool(bundle and bundle.passage_ref == reference),
+            "book_matches": book == expected_book,
+            "chapter_matches": chapter == expected_chapter,
             "bundle_version_matches": bool(bundle and bundle.version == "1.1"),
             "hash_version_matches": bool(bundle and bundle.evidence_hash_version == "2"),
             "hash_matches": bool(bundle and bundle.evidence_hash == cert["locked_evidence_hash"] == entry["locked_evidence_bundle_hash"]),
             "evidence_ids_match": actual_ids == expected_ids,
             "availability_matches": actual_availability == cert["availability"] == entry["availability"],
             "semantic_presentation_valid": not metadata_errors,
+            "semantic_presentation_matches_lock": actual_items == locked_items,
+            "overview_priority_coherent": bool(
+                (overview and overview.id in actual_items)
+                or (bundle and bundle.evidence_items)
+            ),
         }
         record = {
             "reference": reference,
@@ -175,6 +227,8 @@ def revalidate_locks(
             "expected_availability": cert["availability"],
             "actual_availability": actual_availability,
             "metadata_errors": metadata_errors,
+            "locked_metadata": locked_items,
+            "actual_metadata": actual_items,
             "status": "LOCKED" if all(checks.values()) else "STALE_LOCK",
         }
         records.append(record)
@@ -215,6 +269,8 @@ def _reader_safe(item: Any) -> bool:
         "weaponized", "abuse survivor", "anti-judaism", "supersessionism",
         "deicide", "collective jewish guilt", "modern political", "ancient background for",
         "helps anchor the biblical world", " is read across the canon", "cannot authorize",
+        "application cannot", "applications must reject", "leadership and discipline applications",
+        "does not command leaders", "not a command to abandon",
     )
     return not any(phrase in text for phrase in excluded)
 
@@ -290,8 +346,10 @@ def _pick_by_role(bundle: Any, role: str, used: set[str], limit: int) -> list[An
     if role == "archaeology_geography":
         matching = [
             item for item in matching
-            if not re.search(r"\b(?:manuscript|textual|witness(?:es)?)\b", _clean_claim(item), re.I)
+            if not _is_textual_witness_material(item)
         ]
+    if role == "historical_context":
+        matching = [item for item in matching if not _is_textual_witness_material(item)]
     safe = [item for item in matching if _reader_safe(item)]
     for item in sorted(safe, key=_item_rank, reverse=True):
         selected.append(item)
@@ -301,7 +359,7 @@ def _pick_by_role(bundle: Any, role: str, used: set[str], limit: int) -> list[An
     return selected
 
 
-def payload_for(entry: dict[str, Any], bundle: Any, *, ordinal: int) -> dict[str, Any]:
+def payload_for(entry: dict[str, Any], bundle: Any, *, ordinal: int, model_id: str) -> dict[str, Any]:
     """Compose concise prose from locked claims and their routed roles only."""
 
     reconstruction = entry["evidence_reconstruction"]["arguments"]
@@ -353,7 +411,7 @@ def payload_for(entry: dict[str, Any], bundle: Any, *, ordinal: int) -> dict[str
             "evidence_bundle_version": bundle.version,
             "commentary_schema_version": COMMENTARY_SCHEMA_VERSION,
             "commentary_prompt_version": COMMENTARY_PROMPT_VERSION,
-            "model": MODEL_ID,
+            "model": model_id,
             "generated_timestamp": _now(),
         },
     }
@@ -364,7 +422,7 @@ def prose_audit(candidate: dict[str, Any], bundle: Any) -> list[str]:
     flags: list[str] = []
     if re.search(r"\bcontains \d+ verses\b|\bit opens with\b|\bit concludes with\b|\bthe chapter begins\b|\bthe chapter ends\b", text, re.I):
         flags.append("LOW_INFORMATION")
-    if re.search(r"\b(?:EvidenceBundle|CKL|source-addressable|semantic relationship|presentation role|preflight|retrieval|provider|model)\b", text, re.I):
+    if re.search(r"\b(?:EvidenceBundle|CKL|source-addressable|semantic relationship|presentation role|preflight|retrieval|provider|model)\b|application cannot|applications? must reject|does not command leaders|not a command to abandon", text, re.I):
         flags.append("READER_UNFRIENDLY")
     words = _word_count(candidate)
     sections = len(candidate["sections"])
@@ -401,17 +459,20 @@ def _validation_row(candidate: dict[str, Any], bundle: Any) -> dict[str, Any]:
     return {"reference": candidate["reference"], "valid": validation.valid, "errors": list(validation.errors)}
 
 
-def _review_sample(candidates: list[dict[str, Any]], bundles: dict[str, Any], genres: dict[str, str]) -> list[str]:
+def _review_sample(candidates: list[dict[str, Any]], bundles: dict[str, Any], genres: dict[str, str], *, target: int = 30) -> list[str]:
     chosen: list[str] = []
     def add(reference: str | None) -> None:
-        if reference and reference not in chosen and len(chosen) < 18:
+        if reference and reference not in chosen and len(chosen) < target:
             chosen.append(reference)
 
-    for availability in ("AVAILABLE", "THIN"):
-        for genre in sorted(set(genres.values())):
-            add(next((candidate["reference"] for candidate in candidates if candidate["evidence_availability"] == availability and genres[candidate["reference"]] == genre), None))
+    for genre in sorted(set(genres.values())):
+        available = [candidate["reference"] for candidate in candidates if candidate["evidence_availability"] == "AVAILABLE" and genres[candidate["reference"]] == genre]
+        for reference in available[:2]:
+            add(reference)
+        add(next((candidate["reference"] for candidate in candidates if candidate["evidence_availability"] == "THIN" and genres[candidate["reference"]] == genre), None))
     counts = {candidate["reference"]: len(bundles[candidate["reference"]].evidence_items) for candidate in candidates}
-    add(max(counts, key=counts.get))
+    for reference, _ in sorted(counts.items(), key=lambda pair: (-pair[1], pair[0]))[:3]:
+        add(reference)
     add(min(counts, key=counts.get))
     for candidate in candidates:
         bundle = bundles[candidate["reference"]]
@@ -420,8 +481,14 @@ def _review_sample(candidates: list[dict[str, Any]], bundles: dict[str, Any], ge
     for candidate in candidates:
         if any(section["kind"] == "dig_deeper" for section in candidate["sections"]):
             add(candidate["reference"])
+    for candidate in candidates:
+        if any(_is_textual_witness_material(item) for item in bundles[candidate["reference"]].evidence_items):
+            add(candidate["reference"])
     for role in ("archaeology_geography", "language_literary"):
         add(next((candidate["reference"] for candidate in candidates if any(section["kind"] == role for section in candidate["sections"])), None))
+    add(next((candidate["reference"] for candidate in candidates if any((item.relevance_metadata or {}).get("semantic_relationship") == BOOK_CONTEXT for item in bundles[candidate["reference"]].evidence_items)), None))
+    for candidate in candidates:
+        add(candidate["reference"])
     return chosen
 
 
@@ -431,13 +498,24 @@ def _review_rows(sample: Iterable[str], candidates: dict[str, dict[str, Any]], b
         candidate, bundle = candidates[reference], bundles[reference]
         flags = prose_audit(candidate, bundle)
         disputed = any(_is_disputed(item) for item in bundle.evidence_items)
+        later_reception_is_secondary = all(
+            section["kind"] == "dig_deeper"
+            for section in candidate["sections"]
+            if any(
+                (bundles[reference].evidence_by_id[eid].relevance_metadata or {}).get("semantic_relationship")
+                in {LATER_RECEPTION, INTERTEXTUAL_REUSE, COMPARATIVE_CONTEXT}
+                for block in section["blocks"]
+                for eid in block["evidence_ids"]
+            )
+        )
         rows.append({
             "reference": reference,
             "overview_useful": bool(candidate["sections"] and candidate["sections"][0]["kind"] == "chapter_overview"),
             "explains_not_dumps": "EVIDENCE_DUMP" not in flags,
             "length_fits_availability": "OVEREXPANDED" not in flags,
             "sections_useful": len(candidate["sections"]) <= (4 if candidate["evidence_availability"] == "AVAILABLE" else 2),
-            "first_audience_and_later_reception_separated": all(section["kind"] in {"chapter_overview", "dig_deeper"} or not any((bundles[reference].evidence_by_id[eid].relevance_metadata or {}).get("semantic_relationship") in {LATER_RECEPTION, INTERTEXTUAL_REUSE, COMPARATIVE_CONTEXT} for block in section["blocks"] for eid in block["evidence_ids"]) for section in candidate["sections"]),
+            "first_audience_prioritized": candidate["sections"][0]["kind"] == "chapter_overview",
+            "later_reception_secondary": later_reception_is_secondary,
             "uncertainty_preserved": not disputed or "UNCERTAINTY_LOST" not in flags,
             "verse_anchors_precise": all(block["verse_refs"] for section in candidate["sections"] for block in section["blocks"]),
             "unsupported_contextual_knowledge": "UNSUPPORTED_SYNTHESIS" in flags,
@@ -465,6 +543,12 @@ def _statistics(candidates: list[dict[str, Any]], bundles: dict[str, Any]) -> di
     all_citations = [eid for candidate in candidates for section in candidate["sections"] for block in section["blocks"] for eid in block["evidence_ids"]]
     available_ids = {item.id for bundle in bundles.values() for item in bundle.evidence_items}
     section_frequency = Counter(section["kind"] for candidate in candidates for section in candidate["sections"])
+    interpretation_levels = Counter(
+        block["interpretation_level"]
+        for candidate in candidates
+        for section in candidate["sections"]
+        for block in section["blocks"]
+    )
     return {
         "by_availability": by_availability,
         "total_generated_words": sum(_word_count(candidate) for candidate in candidates),
@@ -474,7 +558,37 @@ def _statistics(candidates: list[dict[str, Any]], bundles: dict[str, Any]) -> di
         "available_evidence_used_percent": round(100 * len(set(all_citations)) / len(available_ids), 2) if available_ids else 0,
         "dig_deeper_frequency": sum(any(section["kind"] == "dig_deeper" for section in candidate["sections"]) for candidate in candidates),
         "section_kind_frequency": dict(sorted(section_frequency.items())),
+        "interpretation_level_distribution": dict(sorted(interpretation_levels.items())),
     }
+
+
+def _evidence_rich_review(candidates: list[dict[str, Any]], bundles: dict[str, Any]) -> list[dict[str, Any]]:
+    """Check the ten richest AVAILABLE bundles for selective, useful treatment."""
+
+    available = [candidate for candidate in candidates if candidate["evidence_availability"] == "AVAILABLE"]
+    selected = sorted(available, key=lambda candidate: (-len(bundles[candidate["reference"]].evidence_items), candidate["reference"]))[:10]
+    rows = []
+    for candidate in selected:
+        bundle = bundles[candidate["reference"]]
+        cited = {
+            evidence_id
+            for section in candidate["sections"]
+            for block in section["blocks"]
+            for evidence_id in block["evidence_ids"]
+        }
+        overview = _overview_item(bundle)
+        rows.append({
+            "reference": candidate["reference"],
+            "evidence_count": len(bundle.evidence_items),
+            "word_count": _word_count(candidate),
+            "section_count": len(candidate["sections"]),
+            "overview_useful": bool(overview and candidate["sections"][0]["blocks"][0]["evidence_ids"] == [overview.id]),
+            "strongest_context_represented": bool(overview and overview.id in cited),
+            "not_artificially_sparse": _word_count(candidate) >= 80 and len(candidate["sections"]) >= 2,
+            "evidence_selection_is_selective": len(cited) < len(bundle.evidence_items),
+            "section_choices_reflect_chapter_needs": not prose_audit(candidate, bundle),
+        })
+    return rows
 
 
 def _possible_evidence_reviews(bundles: dict[str, Any]) -> list[dict[str, str]]:
@@ -483,31 +597,62 @@ def _possible_evidence_reviews(bundles: dict[str, Any]) -> list[dict[str, str]]:
     reviews: list[dict[str, str]] = []
     for reference, bundle in bundles.items():
         for item in bundle.evidence_items:
-            if _section_for_item(item) != "archaeology_geography":
+            if _section_for_item(item) != "historical_context" or not _is_textual_witness_material(item):
                 continue
-            if re.search(r"\b(?:manuscript|textual|witness(?:es)?)\b", _clean_claim(item), re.I):
-                reviews.append({
-                    "reference": reference,
-                    "evidence_id": item.id,
-                    "status": "POSSIBLE_EVIDENCE_REVIEW",
-                    "reason": "A textual-variant claim is routed as archaeology/geography; it was omitted from prose and left unchanged for Luna review.",
-                })
+            reviews.append({
+                "reference": reference,
+                "evidence_id": item.id,
+                "status": "POSSIBLE_EVIDENCE_REVIEW",
+                "reason": "A textual-witness or manuscript claim is routed as first-audience historical/material context; it was omitted from prose and left unchanged for Luna review.",
+            })
     return reviews
 
 
-def _markdown(summary: dict[str, Any], quality: dict[str, Any], review_rows: list[dict[str, Any]]) -> str:
+def _is_textual_evidence(item: Any) -> bool:
+    metadata = item.relevance_metadata or {}
+    authored_types = {
+        str(metadata.get(key) or "").casefold().replace("-", "_").replace(" ", "_")
+        for key in ("claim_type", "note_type", "evidence_type", "dispute_status")
+    }
+    textual_types = {
+        "textual", "textual_variant", "textual_form", "textual_criticism", "text_critical",
+        "textual_transmission", "manuscript", "manuscript_reading", "source_critical", "source_criticism",
+    }
+    return bool(authored_types & textual_types)
+
+
+def _is_textual_witness_material(item: Any) -> bool:
+    """Keep textual-witness inventories out of first-audience context sections."""
+
+    return _is_textual_evidence(item) or bool(re.search(
+        r"\b(?:manuscript(?:s)?|papyr(?:us|i)|codex|codices|versional|"
+        r"textual\s+(?:variant|variants|profile|profiles|witness(?:es)?|transmission|criticism|review)|"
+        r"(?:shorter|longer)\s+text|different\s+witnesses)\b",
+        _clean_claim(item),
+        re.IGNORECASE,
+    ))
+
+
+def _markdown(
+    summary: dict[str, Any], quality: dict[str, Any], review_rows: list[dict[str, Any]], evidence_rich_rows: list[dict[str, Any]]
+) -> str:
+    batch_id = summary["batch_id"]
+    batch_label = _batch_label(batch_id)
+    total = summary["generation"]["chapters_generated"]
+    prior = "Batch 001" if batch_id == "batch-002" else "the prior batch"
     lines = [
-        "# BHF Commentary v1.1 Scaled Batch 001 Terra",
+        f"# BHF Commentary v1.1 Scaled {batch_label} Terra",
         "",
-        "Terra generated candidate-only reader-facing prose from the preflight-locked Batch 001 EvidenceBundles. No CKL or production release artifact was changed.",
+        f"Terra generated candidate-only reader-facing prose from the preflight-locked {batch_label} EvidenceBundles. No CKL or production release artifact was changed.",
         "",
         "## Result",
         "",
-        f"- Lock revalidation: {summary['lock_revalidation']['locks_revalidated']}/50; stale locks: {len(summary['lock_revalidation']['stale_locks'])}.",
+        f"- Lock revalidation: {summary['lock_revalidation']['locks_revalidated']}/{total}; stale locks: {len(summary['lock_revalidation']['stale_locks'])}.",
         f"- Generated and validated: {summary['validation']['valid']}/{summary['validation']['chapters']}.",
         f"- Availability: {summary['availability_distribution']}.",
         f"- Quality flags: {quality['flag_counts']}.",
         f"- Canary artifacts unchanged: {summary['canary_artifacts']['unchanged']} (26 artifacts).",
+        f"- {prior} Terra artifacts unchanged: {summary['batch_001_terra_artifacts']['unchanged']} (50 artifacts).",
         f"- Possible evidence-review records: {len(quality['possible_evidence_review'])}.",
         "",
         "## Statistics",
@@ -516,19 +661,22 @@ def _markdown(summary: dict[str, Any], quality: dict[str, Any], review_rows: lis
         f"- AVAILABLE: {summary['statistics']['by_availability']['AVAILABLE']['chapter_count']} chapters; mean / median words: {summary['statistics']['by_availability']['AVAILABLE']['mean_word_count']} / {summary['statistics']['by_availability']['AVAILABLE']['median_word_count']}; mean sections: {summary['statistics']['by_availability']['AVAILABLE']['mean_section_count']}.",
         f"- THIN: {summary['statistics']['by_availability']['THIN']['chapter_count']} chapters; mean / median words: {summary['statistics']['by_availability']['THIN']['mean_word_count']} / {summary['statistics']['by_availability']['THIN']['median_word_count']}; mean sections: {summary['statistics']['by_availability']['THIN']['mean_section_count']}.",
         f"- Evidence IDs used: {summary['statistics']['available_evidence_used_percent']}% of available locked items. Citation volume was not used as a quality target.",
-        f"- Dig Deeper frequency: {summary['statistics']['dig_deeper_frequency']}/50.",
+        f"- Dig Deeper frequency: {summary['statistics']['dig_deeper_frequency']}/{total}.",
         f"- Section kinds: {summary['statistics']['section_kind_frequency']}.",
+        f"- Interpretation levels: {summary['statistics']['interpretation_level_distribution']}.",
         "",
         "## Canary comparison",
         "",
-        "The canary reference averages are approximately 306 words / 4.6 sections for AVAILABLE and 101 words / 1.7 sections for THIN. Batch 001 remains below the warning thresholds (AVAILABLE 700+ words; THIN padded to AVAILABLE length), with section choices driven by each manifest allow-list rather than a uniform template.",
-        "Batch 001 is intentionally more restrained than the canary, especially for THIN chapters. That is appropriate for the locked evidence volume; before Batch 002, continue checking that evidence-rich AVAILABLE chapters receive enough chapter-specific synthesis rather than mechanically adding sections.",
+        "Batch 001 averaged 196.9 words / 2.9 sections for AVAILABLE and 76.2 words / 1.3 sections for THIN. This batch is compared against those restraint baselines rather than treated as a quota; section choices remain driven by each manifest allow-list rather than a uniform template.",
         "",
         "## Review sample",
         "",
     ]
     for row in review_rows:
-        lines.append(f"- **{row['reference']}** — overview useful: {row['overview_useful']}; explains rather than dumps: {row['explains_not_dumps']}; length fits: {row['length_fits_availability']}; later material separated: {row['first_audience_and_later_reception_separated']}; uncertainty preserved: {row['uncertainty_preserved']}; precise anchors: {row['verse_anchors_precise']}; readable: {row['ordinary_reader_readable']}; acceptable: {row['acceptable_for_final_v11']}.")
+        lines.append(f"- **{row['reference']}** — overview useful: {row['overview_useful']}; explains rather than dumps: {row['explains_not_dumps']}; length fits: {row['length_fits_availability']}; sections useful: {row['sections_useful']}; first-audience prioritized: {row['first_audience_prioritized']}; later material secondary: {row['later_reception_secondary']}; uncertainty preserved: {row['uncertainty_preserved']}; precise anchors: {row['verse_anchors_precise']}; unsupported knowledge: {row['unsupported_contextual_knowledge']}; readable: {row['ordinary_reader_readable']}; acceptable: {row['acceptable_for_final_v11']}.")
+    lines += ["", "## Evidence-rich AVAILABLE review", ""]
+    for row in evidence_rich_rows:
+        lines.append(f"- **{row['reference']}** ({row['evidence_count']} evidence items) — useful overview: {row['overview_useful']}; strongest context represented: {row['strongest_context_represented']}; not artificially sparse: {row['not_artificially_sparse']}; selection remains selective: {row['evidence_selection_is_selective']}; section choices pass audit: {row['section_choices_reflect_chapter_needs']}.")
     lines += [
         "",
         "## Possible evidence concern",
@@ -543,7 +691,7 @@ def _markdown(summary: dict[str, Any], quality: dict[str, Any], review_rows: lis
         "",
         "## Scale recommendation",
         "",
-        "All 50 locks revalidated, all candidates validated, and the automatic prose audit found no quality blockers. Batch 002 may target 100 chapters using Luna High preflight followed by Terra Medium prose. Continue monitoring the restrained treatment of THIN chapters and the limited use of Dig Deeper. Any listed possible evidence-review record remains a Luna follow-up, not a Terra evidence change.",
+        "All locks revalidated, all candidates validated, and the automatic prose audit found no quality blockers. Batch 003 may target 150 chapters using Luna High preflight followed by Terra Medium prose; increase to 200 only if the next preflight quarantine rate and prose-quality controls remain comfortably stable. Any listed possible evidence-review record remains a Luna follow-up, not a Terra evidence change.",
         "",
     ]
     return "\n".join(lines)
@@ -553,7 +701,11 @@ def run(batch_root: Path = DEFAULT_BATCH_ROOT, output: Path | None = None, repor
     batch_root = batch_root.resolve()
     output = (output or batch_root / "terra").resolve()
     manifest, certification, terra_input, quarantine = _load(batch_root)
+    batch_id = str(manifest["batch_id"])
+    model_id = _model_id(batch_id)
+    expected_count = len(terra_input["chapters"])
     before = _artifact_fingerprints()
+    batch_001_before = _batch_001_terra_fingerprints()
     lock_report, bundles = revalidate_locks(terra_input, certification)
     _write(output / "terra-lock-revalidation.json", lock_report)
     if lock_report["status"] != "PASS":
@@ -561,13 +713,13 @@ def run(batch_root: Path = DEFAULT_BATCH_ROOT, output: Path | None = None, repor
 
     input_refs = [entry["reference"] for entry in terra_input["chapters"]]
     quarantined = {row["reference"] for row in quarantine["chapters"]}
-    if set(input_refs) & quarantined or len(input_refs) != 50 or len(set(input_refs)) != 50:
-        raise RuntimeError("Terra input manifest includes a quarantined, duplicate, or non-50 chapter set")
+    if set(input_refs) & quarantined or len(input_refs) != expected_count or len(set(input_refs)) != expected_count:
+        raise RuntimeError("Terra input manifest includes a quarantined, duplicate, or incomplete chapter set")
     candidates: list[dict[str, Any]] = []
     validation_rows: list[dict[str, Any]] = []
     chapter_dir = output / "chapters"
     for ordinal, entry in enumerate(terra_input["chapters"], start=1):
-        candidate = payload_for(entry, bundles[entry["reference"]], ordinal=ordinal)
+        candidate = payload_for(entry, bundles[entry["reference"]], ordinal=ordinal, model_id=model_id)
         validation = _validation_row(candidate, bundles[entry["reference"]])
         validation_rows.append(validation)
         if not validation["valid"]:
@@ -575,6 +727,7 @@ def run(batch_root: Path = DEFAULT_BATCH_ROOT, output: Path | None = None, repor
         _write(chapter_dir / entry["candidate_output_filename"], candidate)
         candidates.append(candidate)
     after = _artifact_fingerprints()
+    batch_001_after = _batch_001_terra_fingerprints()
     genres = {row["reference"]: row["genre"] for row in manifest["final_chapters"]}
     audit_rows = []
     flag_counts = Counter()
@@ -592,13 +745,14 @@ def run(batch_root: Path = DEFAULT_BATCH_ROOT, output: Path | None = None, repor
         "prose_review_required": [],
         "rows": audit_rows,
     }
-    sample = _review_sample(candidates, bundles, genres)
+    sample = _review_sample(candidates, bundles, genres, target=30 if expected_count >= 100 else 18)
     review_rows = _review_rows(sample, {candidate["reference"]: candidate for candidate in candidates}, bundles)
     statistics = _statistics(candidates, bundles)
+    evidence_rich_rows = _evidence_rich_review(candidates, bundles)
     validation_report = {
         "report_version": REPORT_VERSION,
         "generated_at": _now(),
-        "model": MODEL_ID,
+        "model": model_id,
         "chapters": len(candidates), "valid": sum(row["valid"] for row in validation_rows),
         "invalid": sum(not row["valid"] for row in validation_rows), "results": validation_rows,
         "invalid_evidence_citations": 0, "invalid_verse_references": 0,
@@ -606,8 +760,8 @@ def run(batch_root: Path = DEFAULT_BATCH_ROOT, output: Path | None = None, repor
     }
     summary = {
         "report_version": REPORT_VERSION,
-        "generated_at": _now(), "model": MODEL_ID, "batch_id": manifest["batch_id"],
-        "status": "READY_FOR_BATCH_002" if not any(quality["flag_counts"].values()) and validation_report["invalid"] == 0 and before == after else "NEEDS_REFINEMENT",
+        "generated_at": _now(), "model": model_id, "batch_id": batch_id,
+        "status": _next_batch_status(batch_id) if not any(quality["flag_counts"].values()) and validation_report["invalid"] == 0 and before == after and batch_001_before == batch_001_after else "NEEDS_REFINEMENT",
         "lock_revalidation": lock_report,
         "generation": {"chapters_generated": len(candidates), "prose_generated": True, "provider_calls": 0},
         "validation": validation_report,
@@ -615,17 +769,21 @@ def run(batch_root: Path = DEFAULT_BATCH_ROOT, output: Path | None = None, repor
         "statistics": statistics,
         "quality": quality,
         "review_sample": {"references": sample, "results": review_rows},
+        "evidence_rich_available_review": {"results": evidence_rich_rows},
         "canary_artifacts": {"before": before, "after": after, "unchanged": before == after, "artifact_count": len(after), "fingerprint": _fingerprint_digest(after)},
+        "batch_001_terra_artifacts": {"before": batch_001_before, "after": batch_001_after, "unchanged": batch_001_before == batch_001_after, "artifact_count": len(batch_001_after), "fingerprint": _fingerprint_digest(batch_001_after)},
         "quarantined_chapters_not_generated": not bool(set(input_refs) & quarantined),
         "quarantined_references": sorted(quarantined),
-        "batch_002_recommendation": "100 chapters" if not any(quality["flag_counts"].values()) and validation_report["invalid"] == 0 and before == after else "Refine Terra prose before Batch 002",
+        "batch_003_recommendation": "150 chapters" if not any(quality["flag_counts"].values()) and validation_report["invalid"] == 0 and before == after and batch_001_before == batch_001_after else "Refine Terra prose before Batch 003",
     }
-    generation_report = {"report_version": REPORT_VERSION, "generated_at": _now(), "model": MODEL_ID, "chapters": [{"reference": candidate["reference"], "path": _display_path(chapter_dir / f"{candidate['book'].casefold().replace(' ', '_')}_{candidate['chapter']:03d}.json"), "evidence_hash": candidate["generated_metadata"]["evidence_hash"], "availability": candidate["evidence_availability"]} for candidate in candidates]}
+    generation_report = {"report_version": REPORT_VERSION, "generated_at": _now(), "model": model_id, "chapters": [{"reference": candidate["reference"], "path": _display_path(chapter_dir / f"{candidate['book'].casefold().replace(' ', '_')}_{candidate['chapter']:03d}.json"), "evidence_hash": candidate["generated_metadata"]["evidence_hash"], "availability": candidate["evidence_availability"]} for candidate in candidates]}
     _write(output / "terra-generation-report.json", generation_report)
     _write(output / "terra-validation-report.json", validation_report)
     _write(output / "terra-quality-audit.json", quality)
     _write(output / "terra-batch-summary.json", summary)
-    (report_destination or ROOT / "docs" / "commentary-v1.1-scaled-batch-001-terra.md").write_text(_markdown(summary, quality, review_rows), encoding="utf-8")
+    (report_destination or ROOT / "docs" / f"commentary-v1.1-scaled-{batch_id}-terra.md").write_text(
+        _markdown(summary, quality, review_rows, evidence_rich_rows), encoding="utf-8"
+    )
     return summary
 
 
@@ -637,7 +795,7 @@ def main(argv: list[str] | None = None) -> int:
     args = parser.parse_args(argv)
     result = run(args.batch_root, args.output, args.report)
     print(json.dumps({"status": result["status"], "locks_revalidated": result["lock_revalidation"]["locks_revalidated"], "chapters_generated": result.get("generation", {}).get("chapters_generated", 0)}, indent=2))
-    return 0 if result["status"] == "READY_FOR_BATCH_002" else 1
+    return 0 if result["status"].startswith("READY_FOR_BATCH_") else 1
 
 
 if __name__ == "__main__":
