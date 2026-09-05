@@ -1,0 +1,38 @@
+{
+  "reference": "John 17",
+  "book": "John",
+  "chapter": 17,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "overview",
+          "text": "John 17 contains 26 verses. It opens with: These things spake Jesus; and lifting up his eyes to heaven, he said, Father, the hour is come; glorify thy Son, that the son may glorify thee: It concludes with: and I made known unto them thy name, and will make it known; that the love wherewith thou lovedst me may be in them, and I in them.",
+          "verse_refs": [
+            "John 17:1-26"
+          ],
+          "evidence_ids": [
+            "john-17-unity"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "3d30fd41f492472f2e2af70d10d49c294493fd4f79eb772a0fe8874102c21a4a",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:39:19.699308+00:00"
+  },
+  "failure_reason": null,
+  "validation_errors": [],
+  "validation_warnings": []
+}

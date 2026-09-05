@@ -1,0 +1,38 @@
+{
+  "reference": "1 Timothy 5",
+  "book": "1 Timothy",
+  "chapter": 5,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "overview",
+          "text": "1 Timothy 5 contains 25 verses. It opens with: Rebuke not an elder, but exhort him as a father; the younger men as brethren: It concludes with: In like manner also there are good works that are evident; and such as are otherwise cannot be hid.",
+          "verse_refs": [
+            "1 Timothy 5:1-25"
+          ],
+          "evidence_ids": [
+            "1tim-elder-accountability"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "561ab712c4291f6ef939c39117a4f9074916048bb88ac1e3bfe49c9381a0574b",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:43:51.766945+00:00"
+  },
+  "failure_reason": null,
+  "validation_errors": [],
+  "validation_warnings": []
+}

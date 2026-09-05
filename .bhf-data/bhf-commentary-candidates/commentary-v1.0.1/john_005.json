@@ -1,0 +1,38 @@
+{
+  "reference": "John 5",
+  "book": "John",
+  "chapter": 5,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "overview",
+          "text": "John 5 contains 47 verses. It opens with: After these things there was a feast of the Jews; and Jesus went up to Jerusalem. It concludes with: But if ye believe not his writings, how shall ye believe my words?",
+          "verse_refs": [
+            "John 5:1-47"
+          ],
+          "evidence_ids": [
+            "john-5-variant"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "edf929ebdae0c29c21da35f414884f61802af0c96b6aee359399711798d2cff0",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:39:17.930569+00:00"
+  },
+  "failure_reason": null,
+  "validation_errors": [],
+  "validation_warnings": []
+}

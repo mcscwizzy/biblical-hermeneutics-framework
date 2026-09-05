@@ -1,0 +1,38 @@
+{
+  "reference": "Mark 4",
+  "book": "Mark",
+  "chapter": 4,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "overview",
+          "text": "Mark 4 contains 41 verses. It opens with: And again he began to teach by the sea side. And there is gathered unto him a very great multitude, so that he entered into a boat, and sat in the sea; and all the multitude were by the sea on the land. It concludes with: And they feared exceedingly, and said one to another, Who then is this, that even the wind and the sea obey him?",
+          "verse_refs": [
+            "Mark 4:1-41"
+          ],
+          "evidence_ids": [
+            "galilee-boat-comparison"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "cbec87ef06ab32144ffe749f754b38c3c994705217760d00d81d588cc7118d86",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:37:07.655297+00:00"
+  },
+  "failure_reason": null,
+  "validation_errors": [],
+  "validation_warnings": []
+}

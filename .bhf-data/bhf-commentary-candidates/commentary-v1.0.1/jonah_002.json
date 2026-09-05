@@ -1,0 +1,38 @@
+{
+  "reference": "Jonah 2",
+  "book": "Jonah",
+  "chapter": 2,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "overview",
+          "text": "Jonah 2 contains 10 verses. It opens with: Then Jonah prayed unto Jehovah his God out of the fish's belly. It concludes with: And Jehovah spake unto the fish, and it vomited out Jonah upon the dry land.",
+          "verse_refs": [
+            "Jonah 2:1-10"
+          ],
+          "evidence_ids": [
+            "jonah-date-composition"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "4f3fb97fa5d30b5b567523a0f7463367f64bb54147f2974df458e52a2f85276f",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:31:22.152004+00:00"
+  },
+  "failure_reason": null,
+  "validation_errors": [],
+  "validation_warnings": []
+}

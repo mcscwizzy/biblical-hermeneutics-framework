@@ -1,0 +1,38 @@
+{
+  "reference": "Mark 2",
+  "book": "Mark",
+  "chapter": 2,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "overview",
+          "text": "Mark 2 contains 28 verses. It opens with: And when he entered again into Capernaum after some days, it was noised that he was in the house. It concludes with: so that the Son of man is lord even of the sabbath.",
+          "verse_refs": [
+            "Mark 2:1-28"
+          ],
+          "evidence_ids": [
+            "mark-disability"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "a3bee75d2d17aa9c73e252fdee1bb6b6f54fe3ed0954165c6e641f1732778608",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:37:07.436625+00:00"
+  },
+  "failure_reason": null,
+  "validation_errors": [],
+  "validation_warnings": []
+}

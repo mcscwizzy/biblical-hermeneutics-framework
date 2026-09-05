@@ -66,6 +66,19 @@ class RuntimeDataPathTests(unittest.TestCase):
             Path(".bhf-data/public-answer-cache.json"),
         )
 
+    def test_patch_release_uses_separate_packaged_snapshot(self):
+        paths = resolve_runtime_data_paths({"BHF_COMMENTARY_RELEASE": "commentary-v1.0.1"})
+
+        self.assertEqual(
+            paths.bhf_commentary_storage_path,
+            Path(".bhf-data/bhf-commentary-candidates/commentary-v1.0.1"),
+        )
+
+    def test_invalid_release_identifier_falls_back_to_frozen_release(self):
+        paths = resolve_runtime_data_paths({"BHF_COMMENTARY_RELEASE": "../mutable"})
+
+        self.assertEqual(paths.bhf_commentary_storage_path, Path(".bhf-data/bhf-commentary"))
+
     def test_vercel_defaults_to_tmp_runtime_data(self):
         paths = resolve_runtime_data_paths({"VERCEL": "1"})
 

@@ -1,0 +1,38 @@
+{
+  "reference": "John 14",
+  "book": "John",
+  "chapter": 14,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "overview",
+          "text": "John 14 contains 31 verses. It opens with: Let not your heart be troubled: believe in God, believe also in me. It concludes with: but that the world may know that I love the Father, and as the Father gave me commandment, even so I do. Arise, let us go hence.",
+          "verse_refs": [
+            "John 14:1-31"
+          ],
+          "evidence_ids": [
+            "john-14-6"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "f0d34594cbef1375c976d6cde83328eab03f92be69b4b066f6c732245bd699ea",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:39:19.354979+00:00"
+  },
+  "failure_reason": null,
+  "validation_errors": [],
+  "validation_warnings": []
+}

@@ -1,0 +1,38 @@
+{
+  "reference": "Esther 1",
+  "book": "Esther",
+  "chapter": 1,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "overview",
+          "text": "Esther 1 contains 22 verses. It opens with: Now it came to pass in the days of Ahasuerus (this is Ahasuerus who reigned from India even unto Ethiopia, over a hundred and seven and twenty provinces), It concludes with: for he sent letters into all the king's provinces, into every province according to the writing thereof, and to every people after their language, that every man should bear rule in his own house, and should speak according to the language of his people.",
+          "verse_refs": [
+            "Esther 1:1-22"
+          ],
+          "evidence_ids": [
+            "esther-vashti-deposed"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "06a01349f8a3d1c6e26710bd5b6e9eb5060afa6d34080e9710d3aa015b109fa3",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:13:10.616419+00:00"
+  },
+  "failure_reason": null,
+  "validation_errors": [],
+  "validation_warnings": []
+}

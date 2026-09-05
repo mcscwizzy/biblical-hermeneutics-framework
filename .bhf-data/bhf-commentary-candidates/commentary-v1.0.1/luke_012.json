@@ -1,0 +1,38 @@
+{
+  "reference": "Luke 12",
+  "book": "Luke",
+  "chapter": 12,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "overview",
+          "text": "Luke 12 contains 59 verses. It opens with: In the mean time, when the many thousands of the multitude were gathered together, insomuch that they trod one upon another, he began to say unto his disciples first of all, Beware ye of the leaven of the Pharisees, which is hypocrisy. It concludes with: I say unto thee, Thou shalt by no means come out thence, till thou have paid the very last mite.",
+          "verse_refs": [
+            "Luke 12:1-59"
+          ],
+          "evidence_ids": [
+            "luke-rich-fool"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "6c11a83cbc6c89d0b3f417ac2576773d5f92fb7a5dacd13d6c9851aaf813a609",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:38:33.689014+00:00"
+  },
+  "failure_reason": null,
+  "validation_errors": [],
+  "validation_warnings": []
+}

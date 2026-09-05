@@ -1,0 +1,39 @@
+{
+  "reference": "Numbers 23",
+  "book": "Numbers",
+  "chapter": 23,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "overview",
+          "text": "Numbers 23 contains 30 verses. It opens with: And Balaam said unto Balak, Build me here seven altars, and prepare me here seven bullocks and seven rams. It concludes with: And Balak did as Balaam had said, and offered up a bullock and a ram on every altar. Supplied contextual evidence for this passage adds: In Numbers 22-24, Balak summons Balaam to curse Israel, but Balaam repeatedly delivers blessings under divine constraint. The Deir Alla inscription attests a later nonbiblical tradition about Balaam son of Beor, but it does not independently verify the speeches or events narrated in Numbers 22-24.",
+          "verse_refs": [
+            "Numbers 23:1-30"
+          ],
+          "evidence_ids": [
+            "numbers-balaam-blessing",
+            "numbers-deir-alla-limits"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "86d08c5bb3ec90a0bb17caf076914776320741d76d403872423c15c8a5f6b14d",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T17:59:06.403593+00:00"
+  },
+  "failure_reason": null,
+  "validation_errors": [],
+  "validation_warnings": []
+}

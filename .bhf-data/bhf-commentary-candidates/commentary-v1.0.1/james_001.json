@@ -1,0 +1,38 @@
+{
+  "reference": "James 1",
+  "book": "James",
+  "chapter": 1,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "overview",
+          "text": "James 1 contains 27 verses. It opens with: James, a servant of God and of the Lord Jesus Christ, to the twelve tribes which are of the Dispersion, greeting. It concludes with: Pure religion and undefiled before our God and Father is this, to visit the fatherless and widows in their affliction, `and' to keep oneself unspotted from the world.",
+          "verse_refs": [
+            "James 1:1-27"
+          ],
+          "evidence_ids": [
+            "jas-address"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "2b883cb36516107a1aed0f2153674dc68b984479e17c424c57a37732228fe4fd",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:44:40.663366+00:00"
+  },
+  "failure_reason": null,
+  "validation_errors": [],
+  "validation_warnings": []
+}

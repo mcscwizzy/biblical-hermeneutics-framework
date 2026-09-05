@@ -1,0 +1,38 @@
+{
+  "reference": "Job 10",
+  "book": "Job",
+  "chapter": 10,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "overview",
+          "text": "Job 10 contains 22 verses. It opens with: My soul is weary of my life; I will give free course to my complaint; I will speak in the bitterness of my soul. It concludes with: The land dark as midnight, `The land' of the shadow of death, without any order, And where the light is as midnight.",
+          "verse_refs": [
+            "Job 10:1-22"
+          ],
+          "evidence_ids": [
+            "job-lament-dialogues"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "b4ccb3f421e57e09ef21d8efe07826dc10e1660b6617378189ae7335d21f5250",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:14:27.951296+00:00"
+  },
+  "failure_reason": null,
+  "validation_errors": [],
+  "validation_warnings": []
+}

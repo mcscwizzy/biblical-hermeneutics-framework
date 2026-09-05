@@ -1,0 +1,38 @@
+{
+  "reference": "1 John 5",
+  "book": "1 John",
+  "chapter": 5,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "overview",
+          "text": "1 John 5 contains 21 verses. It opens with: Whosoever believeth that Jesus is the Christ is begotten of God: and whosoever loveth him that begat loveth him also that is begotten of him. It concludes with: `My' little children, guard yourselves from idols.",
+          "verse_refs": [
+            "1 John 5:1-21"
+          ],
+          "evidence_ids": [
+            "1jn-anonymous"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "29a7d9429fe9251e927b8cbc3b229011238ba58c1683af127e549894de30c007",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:44:42.214479+00:00"
+  },
+  "failure_reason": null,
+  "validation_errors": [],
+  "validation_warnings": []
+}

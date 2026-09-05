@@ -5,6 +5,8 @@ from __future__ import annotations
 from pathlib import Path
 from typing import Any, Callable
 
+from .bhf_commentary import COMMENTARY_RELEASE
+
 
 def _health_report(storage_dir: str | Path) -> dict[str, Any]:
     from tools.commentary_health_report import report
@@ -29,7 +31,7 @@ def build_commentary_coverage_snapshot(
     health = health_report(storage_dir)
     coverage = ckl_report(scope)
     return {
-        "release": "commentary-v1.0",
+        "release": COMMENTARY_RELEASE,
         "scope": coverage.get("scope", scope or "entire Bible"),
         "commentary": {
             "corpus_counts": health.get("corpus_counts", {}),

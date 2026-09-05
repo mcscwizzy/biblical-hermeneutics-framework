@@ -105,6 +105,14 @@ def test_compound_references_are_independent_spans() -> None:
     ]
 
 
+def test_chapter_ranges_are_not_parsed_as_chapter_verse_spans() -> None:
+    lookup = build_book_alias_lookup(())
+    spans = parse_scripture_references("1 Samuel 1-31", book_alias_lookup=lookup)
+    assert [(span.book, span.start_chapter, span.start_verse, span.end_chapter, span.end_verse) for span in spans] == [
+        ("1 Samuel", 1, None, 31, None)
+    ]
+
+
 def test_malformed_compound_reference_is_not_silently_accepted() -> None:
     lookup = build_book_alias_lookup(())
     assert parse_scripture_references("Genesis 12:3; not-a-reference", book_alias_lookup=lookup) == []
@@ -146,6 +154,59 @@ def test_unanchored_semantic_result_is_excluded_from_commentary_bundle(tmp_path)
     result = SimpleNamespace(object=library.objects_by_id["unanchored-semantic"], score=0.99)
     bundle = build_evidence_bundle("Genesis 13", canonical_results=[result])
     assert bundle.evidence_items == []
+
+
+def test_explicitly_anchored_interpretive_note_reaches_bundle(tmp_path) -> None:
+    library = _fixture_library(tmp_path)
+    obj = make_object(
+        "samuel-note-parent",
+        "book",
+        "1 Samuel",
+        ["samuel note parent"],
+        scripture_references=[_ref("1 Samuel 28")],
+        sources=[
+            {
+                "id": "commentary-source",
+                "title": "Commentary source",
+                "author": "Author",
+                "publisher": "Publisher",
+                "year": 2020,
+                "locator": "chapter",
+                "url": "https://example.test/source",
+                "source_type": "reference-work",
+                "supports": ["interpretive_notes"],
+                "notes": "Fixture source.",
+            }
+        ],
+        interpretive_notes=[
+            {
+                "note": "The narrator calls the figure Samuel, while interpretations of the appearance remain disputed.",
+                "note_type": "interpretive-caution",
+                "certainty": "disputed",
+                "dispute_status": "denominational_disagreement",
+                "sources": ["commentary-source"],
+                "scripture_references": ["1 Samuel 28:3-25"],
+                "rationale": "The designation is textual; the ontology is disputed.",
+            }
+        ],
+    )
+    result = SimpleNamespace(object=library.objects_by_id["unanchored-semantic"], score=0.1)
+    # The fixture object is intentionally added as a direct result so this
+    # test isolates bundle projection from object retrieval.
+    from framework.canonical_library.schema import CanonicalObject
+
+    parent = CanonicalObject.from_mapping(obj)
+    bundle = build_evidence_bundle(
+        "1 Samuel 28",
+        canonical_results=[SimpleNamespace(object=parent, score=0.9), result],
+    )
+    assert [item.id for item in bundle.evidence_items] == [
+        "samuel-note-parent:interpretive_note:0"
+    ]
+    item = bundle.evidence_items[0]
+    assert item.passage_anchors == ["1 Samuel 28:3-25"]
+    assert item.confidence == "low"
+    assert item.relevance_metadata["dispute_status"] == "denominational_disagreement"
 
 
 def test_structured_claim_without_its_own_anchor_does_not_inherit_parent_cross_reference(tmp_path) -> None:
@@ -225,6 +286,107 @@ def test_existing_genesis_one_to_ten_anchor_remains_retrievable(default_library)
     assert results
     assert all(result.match_type == "scripture" for result in results)
     assert all(result.object.id != "galatians-abraham-promise-seed" for result in results)
+
+
+def test_real_first_samuel_28_note_is_scoped_to_its_chapter(default_library) -> None:
+    for reference in ("1 Samuel 27", "1 Samuel 28", "1 Samuel 29"):
+        results = default_library.retrieve_by_scripture_reference(reference, limit=100)
+        bundle = build_evidence_bundle(reference, canonical_results=results)
+        note_ids = {
+            item.id
+            for item in bundle.evidence_items
+            if item.relevance_metadata.get("source_kind") == "ckl_interpretive_note"
+        }
+        if reference == "1 Samuel 28":
+            assert note_ids == {"1-samuel:interpretive_note:3"}
+            assert bundle.evidence_items[0].passage_anchors == ["1 Samuel 28:3-25"]
+        else:
+            assert note_ids == set()
+
+
+def test_interpretive_note_only_anchor_is_indexed_in_json_and_sqlite(tmp_path) -> None:
+    objects = [
+        make_object(
+            "note-only",
+            "cultural_background",
+            "Note-only anchor",
+            ["note only"],
+            sources=[
+                {
+                    "id": "note-source",
+                    "title": "Note source",
+                    "author": "Author",
+                    "publisher": "Publisher",
+                    "year": 2020,
+                    "locator": "chapter",
+                    "url": "https://example.test/note-source",
+                    "source_type": "reference-work",
+                    "supports": ["interpretive_notes"],
+                    "notes": "Fixture source.",
+                }
+            ],
+            interpretive_notes=[
+                {
+                    "note": "A note whose only passage anchor is Genesis 16.",
+                    "note_type": "interpretive-caution",
+                    "certainty": "probable",
+                    "dispute_status": "historical_uncertainty",
+                    "sources": ["note-source"],
+                    "scripture_references": ["Genesis 16"],
+                    "rationale": "Fixture.",
+                }
+            ],
+        )
+    ]
+    root = tmp_path / "ckl"
+    write_library(root, objects)
+    json_library = CanonicalLibrary(root=root).load()
+    database = tmp_path / "ckl.sqlite"
+    build_database(root, database)
+    sqlite_library = SQLiteCanonicalLibrary.from_path(database, root=root)
+    try:
+        assert [result.object.id for result in json_library.retrieve_by_scripture_reference("Genesis 16", limit=10)] == ["note-only"]
+        assert [result.object.id for result in sqlite_library.retrieve_by_scripture_reference("Genesis 16", limit=10)] == ["note-only"]
+    finally:
+        sqlite_library.close()
+
+
+def test_json_and_sqlite_scripture_indexes_agree_for_adjacent_chapters(tmp_path) -> None:
+    objects = [
+        make_object(
+            "samuel-book",
+            "book",
+            "1 Samuel",
+            ["samuel book"],
+            scripture_references=[_ref("1 Samuel 1-31")],
+        ),
+        make_object(
+            "samuel-27-context",
+            "cultural_background",
+            "1 Samuel 27 context",
+            ["samuel 27 context"],
+            scripture_references=[_ref("1 Samuel 27")],
+        ),
+    ]
+    root = tmp_path / "ckl"
+    write_library(root, objects)
+    json_library = CanonicalLibrary(root=root).load()
+    database = tmp_path / "ckl.sqlite"
+    build_database(root, database)
+    sqlite_library = SQLiteCanonicalLibrary.from_path(database, root=root)
+    try:
+        for reference in ("1 Samuel 27", "1 Samuel 28", "1 Samuel 29"):
+            json_ids = [
+                result.object.id
+                for result in json_library.retrieve_by_scripture_reference(reference, limit=20)
+            ]
+            sqlite_ids = [
+                result.object.id
+                for result in sqlite_library.retrieve_by_scripture_reference(reference, limit=20)
+            ]
+            assert sqlite_ids == json_ids
+    finally:
+        sqlite_library.close()
 
 
 def test_real_genesis_contamination_cases_are_not_admitted(default_library) -> None:

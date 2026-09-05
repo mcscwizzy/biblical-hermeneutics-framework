@@ -1,0 +1,38 @@
+{
+  "reference": "Mark 1",
+  "book": "Mark",
+  "chapter": 1,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "overview",
+          "text": "Mark 1 contains 45 verses. It opens with: The beginning of the gospel of Jesus Christ, the Son of God. It concludes with: But he went out, and began to publish it much, and to spread abroad the matter, insomuch that Jesus could no more openly enter into a city, but was without in desert places: and they came to him from every quarter.",
+          "verse_refs": [
+            "Mark 1:1-45"
+          ],
+          "evidence_ids": [
+            "mark-anonymous-greek"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "48537082dfe9368e4c8615e2d1645d81636e858501e2b8186eb114d25c650177",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:37:07.260244+00:00"
+  },
+  "failure_reason": null,
+  "validation_errors": [],
+  "validation_warnings": []
+}

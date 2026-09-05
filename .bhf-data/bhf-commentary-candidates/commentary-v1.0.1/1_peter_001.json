@@ -1,0 +1,38 @@
+{
+  "reference": "1 Peter 1",
+  "book": "1 Peter",
+  "chapter": 1,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "overview",
+          "text": "1 Peter 1 contains 25 verses. It opens with: Peter, an apostle of Jesus Christ, to the elect who are sojourners of the Dispersion in Pontus, Galatia, Cappadocia, Asia, and Bithynia, It concludes with: But the word of the Lord abideth for ever. And this is the word of good tidings which was preached unto you.",
+          "verse_refs": [
+            "1 Peter 1:1-25"
+          ],
+          "evidence_ids": [
+            "1pet-addressees"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "7f0cfb15f369da9e49e436bb334aecb5f5e73d67fcb307aa0eccb0572f0caa3d",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:44:41.150290+00:00"
+  },
+  "failure_reason": null,
+  "validation_errors": [],
+  "validation_warnings": []
+}

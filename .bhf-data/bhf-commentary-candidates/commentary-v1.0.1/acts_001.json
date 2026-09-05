@@ -1,0 +1,38 @@
+{
+  "reference": "Acts 1",
+  "book": "Acts",
+  "chapter": 1,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "overview",
+          "text": "Acts 1 contains 26 verses. It opens with: The former treatise I made, O Theophilus, concerning all that Jesus began both to do and to teach, It concludes with: And they gave lots for them; and the lot fell upon Matthias; and he was numbered with the eleven apostles.",
+          "verse_refs": [
+            "Acts 1:1-26"
+          ],
+          "evidence_ids": [
+            "acts-anonymous"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "9009548681cc90d052eabb88cb9e551fac1e1eec5dbc2ce40cbb208e9b4bfe2a",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:40:03.253110+00:00"
+  },
+  "failure_reason": null,
+  "validation_errors": [],
+  "validation_warnings": []
+}

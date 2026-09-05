@@ -1,0 +1,38 @@
+{
+  "reference": "John 1",
+  "book": "John",
+  "chapter": 1,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "overview",
+          "text": "John 1 contains 51 verses. It opens with: In the beginning was the Word, and the Word was with God, and the Word was God. It concludes with: And he saith unto him, Verily, verily, I say unto you, Ye shall see the heaven opened, and the angels of God ascending and descending upon the Son of man.",
+          "verse_refs": [
+            "John 1:1-51"
+          ],
+          "evidence_ids": [
+            "john-1-1"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "3976073a62d03c63e2694512eec2d26606ece75afd5bde5044a5d7da6727b010",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:39:17.235315+00:00"
+  },
+  "failure_reason": null,
+  "validation_errors": [],
+  "validation_warnings": []
+}

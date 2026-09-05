@@ -7,6 +7,8 @@ import os
 from typing import Any, Mapping
 from urllib.parse import urlsplit
 
+from bhf_agent.runtime_paths import configured_commentary_release
+
 from .ai_config import browser_ai_config
 
 DEFAULT_PROVIDER_LABELS: dict[str, str] = {
@@ -76,6 +78,7 @@ def load_runtime_config() -> dict[str, Any]:
         "backgroundColor": "#f6f7f8",
         "enableServiceWorker": mode != "capacitor",
         "offlinePath": "/offline",
+        "commentaryRelease": configured_commentary_release(),
         "ai": browser_ai_config(),
         # OAuth client IDs and redirect URLs are public configuration. Secrets
         # are never injected into the browser; OneDrive uses PKCE.

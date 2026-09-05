@@ -1,0 +1,38 @@
+{
+  "reference": "Job 3",
+  "book": "Job",
+  "chapter": 3,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "overview",
+          "text": "Job 3 contains 26 verses. It opens with: After this opened Job his mouth, and cursed his day. It concludes with: I am not at ease, neither am I quiet, neither have I rest; But trouble cometh.",
+          "verse_refs": [
+            "Job 3:1-26"
+          ],
+          "evidence_ids": [
+            "job-lament-dialogues"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "895b2c6bd503555fc61d6ca22c8e3a70003e3f24f7520374c2d2927854f6bd8c",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:13:11.099994+00:00"
+  },
+  "failure_reason": null,
+  "validation_errors": [],
+  "validation_warnings": []
+}

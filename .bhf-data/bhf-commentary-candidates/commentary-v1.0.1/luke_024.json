@@ -1,0 +1,38 @@
+{
+  "reference": "Luke 24",
+  "book": "Luke",
+  "chapter": 24,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "overview",
+          "text": "Luke 24 contains 53 verses. It opens with: But on the first day of the week, at early dawn, they came unto the tomb, bringing the spices which they had prepared. It concludes with: and were continually in the temple, blessing God.",
+          "verse_refs": [
+            "Luke 24:1-53"
+          ],
+          "evidence_ids": [
+            "luke-ascension"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "52733a3ba6280d07917ce1e6fdb8ba14f39847aa6e81f46e558438499883cd07",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:39:16.845773+00:00"
+  },
+  "failure_reason": null,
+  "validation_errors": [],
+  "validation_warnings": []
+}

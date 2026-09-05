@@ -1,0 +1,38 @@
+{
+  "reference": "John 7",
+  "book": "John",
+  "chapter": 7,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "overview",
+          "text": "John 7 contains 53 verses. It opens with: And after these things Jesus walked in Galilee: for he would not walk in Judaea, because the Jews sought to kill him. It concludes with: And they went every man unto his own house:",
+          "verse_refs": [
+            "John 7:1-53"
+          ],
+          "evidence_ids": [
+            "john-ioudaioi"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "62cf4217ee1eff982dfb2d13bc876b9c809809c6d5f090f4ae6bcd7611b0fdcb",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:39:18.201566+00:00"
+  },
+  "failure_reason": null,
+  "validation_errors": [],
+  "validation_warnings": []
+}

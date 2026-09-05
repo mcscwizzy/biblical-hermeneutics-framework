@@ -121,6 +121,27 @@ def parse_scripture_reference(
         return None
 
     numbers = [int(token) for token in tokens]
+    # ``normalize_alias`` intentionally turns punctuation into whitespace, so
+    # retain the raw spelling long enough to distinguish ``Genesis 1-3``
+    # (chapter range) from ``Genesis 1:3`` (chapter/verse). Without this guard,
+    # chapter-only ranges become a misleading chapter-plus-verse span.
+    raw_remainder = value.strip()
+    raw_words = list(re.finditer(r"[A-Za-z0-9]+", raw_remainder))
+    book_word_count = len(book_alias.split())
+    raw_numbers = (
+        raw_remainder[raw_words[book_word_count - 1].end() :].strip()
+        if len(raw_words) > book_word_count
+        else ""
+    )
+    if (
+        len(numbers) == 2
+        and re.fullmatch(r"\d+\s*[-–]\s*\d+", raw_numbers)
+    ):
+        return ScriptureReferenceSpan(
+            book=canonical_book,
+            start_chapter=numbers[0],
+            end_chapter=numbers[1],
+        )
     if len(numbers) == 1:
         return ScriptureReferenceSpan(book=canonical_book, start_chapter=numbers[0])
     if len(numbers) == 2:

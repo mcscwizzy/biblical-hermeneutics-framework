@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 from pathlib import Path
+from bhf_agent.runtime_paths import configured_commentary_release
 from typing import Any
 
 from bhf_agent.chapter_commentary.models import ChapterCommentary
@@ -12,7 +13,7 @@ from bhf_agent.chapter_commentary.storage import list_commentaries
 from bhf_agent.chapter_commentary.evidence_bundling import get_chapter_evidence_bundle
 
 
-COMMENTARY_RELEASE = "commentary-v1.0"
+COMMENTARY_RELEASE = configured_commentary_release()
 
 
 def _unique(values: list[str]) -> list[str]:

@@ -1,0 +1,38 @@
+{
+  "reference": "Titus 1",
+  "book": "Titus",
+  "chapter": 1,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "overview",
+          "text": "Titus 1 contains 16 verses. It opens with: Paul, a servant of God, and an apostle of Jesus Christ, according to the faith of God's elect, and the knowledge of the truth which is according to godliness, It concludes with: They profess that they know God; but by their works they deny him, being abominable, and disobedient, and unto every good work reprobate.",
+          "verse_refs": [
+            "Titus 1:1-16"
+          ],
+          "evidence_ids": [
+            "tit-application"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "52ec38bb112da88fbece8953faf8fe989a3d99264b1e760180d385db682e1ef1",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:43:52.260868+00:00"
+  },
+  "failure_reason": null,
+  "validation_errors": [],
+  "validation_warnings": []
+}

@@ -1,0 +1,38 @@
+{
+  "reference": "Matthew 22",
+  "book": "Matthew",
+  "chapter": 22,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "overview",
+          "text": "Matthew 22 contains 46 verses. It opens with: And Jesus answered and spake again in parables unto them, saying, It concludes with: And no one was able to answer him a word, neither durst any man from that day forth ask him any more questions.",
+          "verse_refs": [
+            "Matthew 22:1-46"
+          ],
+          "evidence_ids": [
+            "matthew-application-boundaries"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "6814f7fbe1cbf53e7649d578b5b187e04294625539d1644d472d86ba275ef1d9",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:37:05.761345+00:00"
+  },
+  "failure_reason": null,
+  "validation_errors": [],
+  "validation_warnings": []
+}

@@ -1,0 +1,38 @@
+{
+  "reference": "Luke 23",
+  "book": "Luke",
+  "chapter": 23,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "overview",
+          "text": "Luke 23 contains 56 verses. It opens with: And the whole company of them rose up, and brought him before Pilate. It concludes with: And they returned, and prepared spices and ointments. And on the sabbath they rested according to the commandment.",
+          "verse_refs": [
+            "Luke 23:1-56"
+          ],
+          "evidence_ids": [
+            "luke-criminal"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "73ef57d7ee758255f10f7fe15da2a18daec97014253dacc55cb8f1058506c731",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:39:16.308042+00:00"
+  },
+  "failure_reason": null,
+  "validation_errors": [],
+  "validation_warnings": []
+}

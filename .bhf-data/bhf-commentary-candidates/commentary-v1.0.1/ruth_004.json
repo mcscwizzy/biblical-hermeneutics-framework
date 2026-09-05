@@ -1,0 +1,38 @@
+{
+  "reference": "Ruth 4",
+  "book": "Ruth",
+  "chapter": 4,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "overview",
+          "text": "Ruth 4 contains 22 verses. It opens with: Now Boaz went up to the gate, and sat him down there: and, behold, the near kinsman of whom Boaz spake came by; unto whom he said, Ho, such a one! turn aside, sit down here. And he turned aside, and sat down. It concludes with: and Obed begat Jesse, and Jesse begat David.",
+          "verse_refs": [
+            "Ruth 4:1-22"
+          ],
+          "evidence_ids": [
+            "ruth-obed-david-genealogy"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "7221d077ac2f0a33adc5bdf605783a0d80ba9f299064dc84af5c36e4cdf611db",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:04:15.372840+00:00"
+  },
+  "failure_reason": null,
+  "validation_errors": [],
+  "validation_warnings": []
+}

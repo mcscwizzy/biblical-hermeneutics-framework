@@ -1,0 +1,38 @@
+{
+  "reference": "John 15",
+  "book": "John",
+  "chapter": 15,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "overview",
+          "text": "John 15 contains 27 verses. It opens with: I am the true vine, and my Father is the husbandman. It concludes with: and ye also bear witness, because ye have been with me from the beginning.",
+          "verse_refs": [
+            "John 15:1-27"
+          ],
+          "evidence_ids": [
+            "john-i-am"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "bd5fee14adb4df42b73fa7ad7ef0b4591a78764bd228dbe22accad42268198e9",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:39:19.475861+00:00"
+  },
+  "failure_reason": null,
+  "validation_errors": [],
+  "validation_warnings": []
+}

@@ -387,6 +387,32 @@ def _insert_scripture_references(
                     reference.notes,
                 ),
             )
+    for note in obj.interpretive_notes:
+        for reference_text in note.scripture_references:
+            for parsed in parse_scripture_references(
+                reference_text,
+                book_alias_lookup=book_alias_lookup,
+            ):
+                sql.execute(
+                    """
+                    INSERT INTO canonical_scripture_references (
+                        object_id, reference_text, book, start_chapter, start_verse,
+                        end_chapter, end_verse, relationship, notes
+                    )
+                    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
+                    """,
+                    (
+                        obj.id,
+                        format_scripture_reference(parsed),
+                        parsed.book,
+                        parsed.start_chapter,
+                        parsed.start_verse,
+                        parsed.end_chapter,
+                        parsed.end_verse,
+                        "interpretive-note",
+                        note.rationale,
+                    ),
+                )
 
 
 def _insert_claims_and_sources(

@@ -1,0 +1,38 @@
+{
+  "reference": "Matthew 1",
+  "book": "Matthew",
+  "chapter": 1,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "overview",
+          "text": "Matthew 1 contains 25 verses. It opens with: The book of the generation of Jesus Christ, the son of David, the son of Abraham. It concludes with: and knew her not till she had brought forth a son: and he called his name JESUS.",
+          "verse_refs": [
+            "Matthew 1:1-25"
+          ],
+          "evidence_ids": [
+            "matthew-genealogy"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "fa542223b586d321d927861f6f9008c3fb87f2ac123d53c3cdcaba469a8da01f",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:36:11.243003+00:00"
+  },
+  "failure_reason": null,
+  "validation_errors": [],
+  "validation_warnings": []
+}

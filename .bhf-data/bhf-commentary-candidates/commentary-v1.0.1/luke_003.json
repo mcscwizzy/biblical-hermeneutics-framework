@@ -1,0 +1,38 @@
+{
+  "reference": "Luke 3",
+  "book": "Luke",
+  "chapter": 3,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "overview",
+          "text": "Luke 3 contains 38 verses. It opens with: Now in the fifteenth year of the reign of Tiberius Caesar, Pontius Pilate being governor of Judaea, and Herod being tetrarch of Galilee, and his brother Philip tetrarch of the region of Ituraea and Trachonitis, and Lysanias tetrarch of Abilene, It concludes with: the `son' of Enos, the `son' of Seth, the `son' of Adam, the `son' of God.",
+          "verse_refs": [
+            "Luke 3:1-38"
+          ],
+          "evidence_ids": [
+            "luke-baptism-variant"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "22314f9cca08458b6bbc4b8d2bcee154c0fb9cd1b40a2c1aa63065905c9b7a6a",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:38:32.526270+00:00"
+  },
+  "failure_reason": null,
+  "validation_errors": [],
+  "validation_warnings": []
+}

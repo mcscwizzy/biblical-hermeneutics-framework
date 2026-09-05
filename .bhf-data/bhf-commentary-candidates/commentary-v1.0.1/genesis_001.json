@@ -1,0 +1,74 @@
+{
+  "reference": "Genesis 1",
+  "book": "Genesis",
+  "chapter": 1,
+  "status": "validated",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Ordered creation and human vocation",
+      "blocks": [
+        {
+          "id": "overview_1",
+          "text": "Genesis 1 presents God creating, separating, naming, blessing, and evaluating the ordered world. The chapter moves from light, sky, land, and vegetation to living creatures and finally to humanity, whose male-and-female creation is joined to a vocation of fruitfulness and dominion.",
+          "verse_refs": [
+            "Genesis 1:1-31"
+          ],
+          "evidence_ids": [
+            "genesis-ordered-worldview-observation"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Repetition and sequence",
+      "blocks": [
+        {
+          "id": "literary_1",
+          "text": "The repeated pattern of divine speech, result, evaluation, and the evening-and-morning formula gives the chapter a deliberately ordered presentation. The text itself emphasizes sequence and differentiation rather than supplying a modern scientific description.",
+          "verse_refs": [
+            "Genesis 1:3-31"
+          ],
+          "evidence_ids": [
+            "genesis-ordered-worldview-observation"
+          ],
+          "confidence": "high",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "people_places",
+      "title": "Image-bearing humanity",
+      "blocks": [
+        {
+          "id": "humanity_1",
+          "text": "Humanity is created in the image and likeness of God, explicitly as male and female. The chapter connects that identity with blessing, responsibility toward the earth, and care or rule over other living creatures.",
+          "verse_refs": [
+            "Genesis 1:26-30"
+          ],
+          "evidence_ids": [
+            "image-of-god-theme:hebraic_worldview:0"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "55ffa22d43cc7d53a2285aa9735a76680c3362300752600bfb62d46beaeccd82",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T14:24:10.549142+00:00"
+  },
+  "failure_reason": null,
+  "validation_errors": [],
+  "validation_warnings": [],
+  "evidence_availability": "AVAILABLE"
+}

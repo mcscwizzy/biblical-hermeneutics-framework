@@ -358,6 +358,7 @@ class RuntimeConfigTests(unittest.TestCase):
         self.assertTrue(runtime["asyncJobs"])
         self.assertEqual(runtime["presentationTransport"], "job")
         self.assertTrue(runtime["presentationJobs"])
+        self.assertEqual(runtime["commentaryRelease"], "commentary-v1.0")
 
     def test_same_origin_pwa_does_not_require_an_api_url(self):
         env = {"BHF_RUNTIME_MODE": "pwa", "BHF_BACKEND_MODE": "same-origin"}
@@ -478,6 +479,7 @@ class RuntimeConfigTests(unittest.TestCase):
             "BHF_RUNTIME_MODE": "capacitor",
             "BHF_API_BASE_URL": "https://example.com/bhf",
             "BHF_PROVIDER_LABELS_JSON": '{"local":"On-device","openai":"Cloud"}',
+            "BHF_COMMENTARY_RELEASE": "commentary-v1.0.1",
         }
 
         with patch.dict(os.environ, env, clear=True):
@@ -490,6 +492,7 @@ class RuntimeConfigTests(unittest.TestCase):
         self.assertEqual(runtime["providerLabels"]["openai"], "Cloud")
         self.assertEqual(runtime["providerLabels"]["ollama"], "Ollama")
         self.assertEqual(runtime["providerLabels"]["apple-native-placeholder"], "Apple Native Placeholder")
+        self.assertEqual(runtime["commentaryRelease"], "commentary-v1.0.1")
 
     def test_cors_origins_are_explicit_and_comma_separated(self):
         origins = load_cors_origins(
