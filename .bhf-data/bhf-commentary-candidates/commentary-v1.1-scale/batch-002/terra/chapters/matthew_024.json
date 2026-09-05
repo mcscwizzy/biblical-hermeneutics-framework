@@ -1,0 +1,83 @@
+{
+  "reference": "Matthew 24",
+  "book": "Matthew",
+  "chapter": 24,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_2",
+          "text": "Read the chapter with this setting in view: Matthew cannot legitimately be used to excuse abuse, stigmatize disability or mental illness, enforce misogyny or anti-LGBTQ harm, blame poverty, set apocalyptic dates, or map ancient judgments onto modern peoples. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken.",
+          "evidence_ids": [
+            "matthew-application-boundaries"
+          ],
+          "verse_refs": [
+            "Matthew 24:36"
+          ],
+          "confidence": "high",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_3",
+          "text": "For its historical and cultural setting, note that Matthew 24-25 combines temple destruction, tribulation, Son of Man coming, uncertainty of timing, readiness, stewardship, and judgment. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. Interpretations differ on some details.",
+          "evidence_ids": [
+            "matthew-eschatology"
+          ],
+          "verse_refs": [
+            "Matthew 24:1-51"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        },
+        {
+          "id": "historical_context_4",
+          "text": "For its historical and cultural setting, note that Many scholars date Matthew approximately 70-100 CE, often after Jerusalem's temple destruction, but no exact year is textually stated. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "matthew-date"
+          ],
+          "verse_refs": [
+            "Matthew 24:1-2"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "dig_deeper",
+      "title": "Dig deeper",
+      "blocks": [
+        {
+          "id": "dig_deeper_3",
+          "text": "For a later or comparative connection, note that The desolating abomination has an Antiochene temple-desecration horizon and later Jewish and Christian reuses; each reuse must be identified rather than collapsed. This remains a secondary connection rather than the chapter's first-audience context. It can be traced further without replacing the chapter's own setting. Interpretations differ on some details.",
+          "evidence_ids": [
+            "daniel:interpretive_note:19"
+          ],
+          "verse_refs": [
+            "Matthew 24:15-28"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "1f081e6c6ddd3441a4bd86e5899f4a2dbb9882e713511de12ed513eef401db65",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-002-medium",
+    "generated_timestamp": "2026-09-05T22:51:03Z"
+  }
+}

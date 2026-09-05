@@ -1,0 +1,65 @@
+{
+  "reference": "Luke 17",
+  "book": "Luke",
+  "chapter": 17,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_72",
+          "text": "Read the chapter with this setting in view: The phrase gathers Israel\u2019s royal psalms, prophetic hope, and Jesus\u2019 proclamation into one story of divine reign. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken.",
+          "evidence_ids": [
+            "what-is-the-kingdom-of-god:historical_context:0"
+          ],
+          "verse_refs": [
+            "Luke 17:20-21"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_73",
+          "text": "For its historical and cultural setting, note that Kingship language was familiar across the ancient world, but Scripture insists that the LORD\u2019s rule is the true and final kingdom. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "what-is-the-kingdom-of-god:ancient_near_east_context:0"
+          ],
+          "verse_refs": [
+            "Luke 17:20-21"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        },
+        {
+          "id": "historical_context_74",
+          "text": "For its historical and cultural setting, note that Messianic expectation, foreign rule, and hopes of restoration sharpen the kingdom theme. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "kingdom-theme:second_temple_context:0"
+          ],
+          "verse_refs": [
+            "Luke 17:20-21"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "381b6244aa4ca8b5b0eeece23140d9c075536ff7807dab7087151a8783f8aa70",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-002-medium",
+    "generated_timestamp": "2026-09-05T22:51:03Z"
+  }
+}

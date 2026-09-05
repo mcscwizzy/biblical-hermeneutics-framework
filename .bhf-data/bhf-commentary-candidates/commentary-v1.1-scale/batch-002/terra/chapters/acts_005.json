@@ -1,0 +1,101 @@
+{
+  "reference": "Acts 5",
+  "book": "Acts",
+  "chapter": 5,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_3",
+          "text": "Read the chapter with this setting in view: Acts presents voluntary selling and distribution as community ideals in particular summaries, not an explicit universal legal code abolishing all possession. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken. Interpretations differ on some details.",
+          "evidence_ids": [
+            "acts-property"
+          ],
+          "verse_refs": [
+            "Acts 5:1-4"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_4",
+          "text": "For its historical and cultural setting, note that Historical evaluation of Acts must compare particular claims with independent evidence rather than assign blanket reliability or unreliability. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "acts-historical-method"
+          ],
+          "verse_refs": [
+            "Acts 5:1-42"
+          ],
+          "confidence": "high",
+          "interpretation_level": "inference"
+        },
+        {
+          "id": "historical_context_5",
+          "text": "For its historical and cultural setting, note that The Gospels and Acts use council language for Jerusalem hearings involving high priests, chief priests, elders, scribes, and rulers; source-specific composition and jurisdiction must be preserved. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "sanhedrin:second_temple_context:0"
+          ],
+          "verse_refs": [
+            "Acts 5:21-42"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_4",
+          "text": "A literary feature to notice is that Codex Bezae and related versional witnesses preserve a substantially distinctive text of Acts often called Western, whose individual readings require case-by-case judgment. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "acts-western-text"
+          ],
+          "verse_refs": [
+            "Acts 5:1-42"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "dig_deeper",
+      "title": "Dig deeper",
+      "blocks": [
+        {
+          "id": "dig_deeper_4",
+          "text": "For a later or comparative connection, note that Josephus reports that Quirinius assessed Judean property after Archelaus's removal and that Judas opposed the assessment as enslavement. This remains a secondary connection rather than the chapter's first-audience context. It can be traced further without replacing the chapter's own setting. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "josephus-census-tax-resistance"
+          ],
+          "verse_refs": [
+            "Acts 5:33-39"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "f4e73954c68609c58b4cb79064da2efa1806db2a6416fc905a96df994a3a1ba1",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-002-medium",
+    "generated_timestamp": "2026-09-05T22:51:03Z"
+  }
+}

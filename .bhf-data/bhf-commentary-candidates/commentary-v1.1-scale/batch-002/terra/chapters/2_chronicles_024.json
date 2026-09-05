@@ -1,0 +1,65 @@
+{
+  "reference": "2 Chronicles 24",
+  "book": "2 Chronicles",
+  "chapter": 24,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_60",
+          "text": "Read the chapter with this setting in view: Matthew 17's didrachma collectors presuppose a temple-associated payment; after 70 CE Rome redirected a Jewish tax to Jupiter Capitolinus, a later development not to be imported into Jesus's ministry. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken.",
+          "evidence_ids": [
+            "temple-tax:second_temple_context:0"
+          ],
+          "verse_refs": [
+            "2 Chronicles 24:4-14"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_61",
+          "text": "For its historical and cultural setting, note that Exodus 30's half-shekel levy became a key scriptural precedent for later temple revenue. By the first century, collection practices were embedded in diaspora and Judean temple support and could create practical and political questions. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "temple-tax:historical_context:0"
+          ],
+          "verse_refs": [
+            "2 Chronicles 24:4-14"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        },
+        {
+          "id": "historical_context_62",
+          "text": "For its historical and cultural setting, note that The payment expresses corporate responsibility for sanctuary worship while remaining distinguishable from gifts, vows, and imperial taxation. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "temple-tax:hebraic_worldview:0"
+          ],
+          "verse_refs": [
+            "2 Chronicles 24:4-14"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "d42ee18eb3070dc9665a14075ddc3a068728e009e539e46197982f272ad9d41b",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-002-medium",
+    "generated_timestamp": "2026-09-05T22:51:03Z"
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "reference": "Luke 12",
+  "book": "Luke",
+  "chapter": 12,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_70",
+          "text": "Read the chapter with this setting in view: The rich fool exposes hoarding, imagined self-sufficiency, mortality, and failure to be rich toward God; it does not condemn prudent provision or promise wealth to generous donors. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken.",
+          "evidence_ids": [
+            "luke-rich-fool"
+          ],
+          "verse_refs": [
+            "Luke 12:13-21"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_71",
+          "text": "For its historical and cultural setting, note that Luke distinguishes speaking against the Son of Man from blasphemy against the Holy Spirit but does not define the saying as an intrusive thought or diagnose anxious people as unforgiven. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "luke-spirit-blasphemy"
+          ],
+          "verse_refs": [
+            "Luke 12:8-12"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "dig_deeper",
+      "title": "Dig deeper",
+      "blocks": [
+        {
+          "id": "dig_deeper_71",
+          "text": "For a later or comparative connection, note that Matthew, Luke, and John reuse or echo Micah in Bethlehem, shepherd, household-conflict, and Davidic expectation contexts. This remains a secondary connection rather than the chapter's first-audience context. It can be traced further without replacing the chapter's own setting. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "micah-new-testament-reception"
+          ],
+          "verse_refs": [
+            "Luke 12:53"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "56d91fdbe5331bd08ed64105c5ac236d09ecee894da434858b6a52a48b28e502",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-002-medium",
+    "generated_timestamp": "2026-09-05T22:51:03Z"
+  }
+}

@@ -1,0 +1,101 @@
+{
+  "reference": "2 Kings 17",
+  "book": "2 Kings",
+  "chapter": 17,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_99",
+          "text": "Read the chapter with this setting in view: Second Kings moves from Elijah and Elisha through royal coups and Assyrian conquest to Judah's reforms, Babylonian destruction, and Jehoiachin's life in exile. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken.",
+          "evidence_ids": [
+            "second-kings-literary-movement"
+          ],
+          "verse_refs": [
+            "2 Kings 17:1-41"
+          ],
+          "confidence": "high",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_100",
+          "text": "For its historical and cultural setting, note that Assyria captures Samaria and deports Israelites, and the narrator interprets the fall as the outcome of sustained covenant disloyalty and rejection of prophetic warnings. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "second-kings-samaria-falls"
+          ],
+          "verse_refs": [
+            "2 Kings 17:1-23"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        },
+        {
+          "id": "historical_context_101",
+          "text": "For its historical and cultural setting, note that Second Kings distributes Israel's territorial loss, Samaria's siege, deportation, and incoming resettlement across several notices rather than presenting them as one action. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "kings-staged-assyrian-reduction"
+          ],
+          "verse_refs": [
+            "2 Kings 17:1-41"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "chronology",
+      "title": "Chronology",
+      "blocks": [
+        {
+          "id": "chronology_100",
+          "text": "For the chapter's sequence and setting, note that Sargon II reports settling conquered Arabian groups in Samaria, while Assyrian correspondence attests Samaria as a province and archaeological-textual work identifies additional incoming communities. This gives the reader a frame for the passage without deciding every larger reconstruction. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "samaria-provincial-counter-resettlement"
+          ],
+          "verse_refs": [
+            "2 Kings 17:24-41"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "dig_deeper",
+      "title": "Dig deeper",
+      "blocks": [
+        {
+          "id": "dig_deeper_100",
+          "text": "For a later or comparative connection, note that Samaria's fall in 722/721 BCE and Sennacherib's 701 BCE campaign in Judah are central historical horizons for reading the reigns named in Micah's superscription. This remains a secondary connection rather than the chapter's first-audience context. It can be traced further without replacing the chapter's own setting. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "micah-assyrian-horizon"
+          ],
+          "verse_refs": [
+            "2 Kings 17:1-6"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "abaf8dda01b7ca1e930ab9c2100a0c02aeac64a67ff007bd84b97746521a280a",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-002-medium",
+    "generated_timestamp": "2026-09-05T22:51:03Z"
+  }
+}

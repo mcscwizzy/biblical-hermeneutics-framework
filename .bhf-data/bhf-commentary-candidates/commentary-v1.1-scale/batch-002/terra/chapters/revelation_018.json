@@ -1,0 +1,65 @@
+{
+  "reference": "Revelation 18",
+  "book": "Revelation",
+  "chapter": 18,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_32",
+          "text": "Read the chapter with this setting in view: Roman imperial power, civic religion, and economy are major historical contexts, but Revelation does not name a single emperor as the complete key. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "rev-imperial-context"
+          ],
+          "verse_refs": [
+            "Revelation 18:1-24"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_33",
+          "text": "For its historical and cultural setting, note that Babylon probably signifies Rome in the first-century horizon while extending biblical Babylon imagery into a critique of imperial city-power. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. Interpretations differ on some details.",
+          "evidence_ids": [
+            "rev-babylon-rome"
+          ],
+          "verse_refs": [
+            "Revelation 18:1-24"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        },
+        {
+          "id": "historical_context_34",
+          "text": "For its historical and cultural setting, note that Babylon's lament exposes an economy of luxury that commodifies even human lives. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "rev-economy"
+          ],
+          "verse_refs": [
+            "Revelation 18:9-19"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "aa85ea3e8a2f0e178a80ff084ef2d88bfea9d9e68487226f4246d3befb09df4f",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-002-medium",
+    "generated_timestamp": "2026-09-05T22:51:03Z"
+  }
+}

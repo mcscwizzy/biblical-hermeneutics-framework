@@ -1,0 +1,83 @@
+{
+  "reference": "Mark 8",
+  "book": "Mark",
+  "chapter": 8,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_79",
+          "text": "Read the chapter with this setting in view: The plot turns near Mark 8:22-10:52 from partial sight and confession toward three passion predictions and the journey to Jerusalem. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken.",
+          "evidence_ids": [
+            "mark-structure"
+          ],
+          "verse_refs": [
+            "Mark 8:22-38"
+          ],
+          "confidence": "high",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_80",
+          "text": "For its historical and cultural setting, note that Mark portrays Jesus through Messiah, Son of God, Son of Man, teacher, healer, exorcist, servant, suffering figure, vindicated figure, and kingly categories without reducing them to one later doctrinal formula. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "mark-christology"
+          ],
+          "verse_refs": [
+            "Mark 8:29"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        },
+        {
+          "id": "historical_context_81",
+          "text": "For its historical and cultural setting, note that Mark's healing stories portray embodied need and restored participation, yet cure-centered reception can stigmatize disabled people and must not equate bodily difference with sin, weak faith, or spiritual failure. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. Interpretations differ on some details.",
+          "evidence_ids": [
+            "mark-disability"
+          ],
+          "verse_refs": [
+            "Mark 8:22-26"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_80",
+          "text": "A literary feature to notice is that Commands to silence spirits, healed people, and disciples form a repeated pattern commonly called the messianic secret, but its narrative, historical, and theological explanations remain disputed. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "mark-secrecy"
+          ],
+          "verse_refs": [
+            "Mark 8:30"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "d82a6b04997530aed9613a1740fb75367e4f6a8df02dd78ab2389b1cd71e05ae",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-002-medium",
+    "generated_timestamp": "2026-09-05T22:51:03Z"
+  }
+}

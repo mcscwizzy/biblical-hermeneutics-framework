@@ -1,0 +1,101 @@
+{
+  "reference": "2 Kings 19",
+  "book": "2 Kings",
+  "chapter": 19,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_89",
+          "text": "Read the chapter with this setting in view: During Sennacherib's invasion, Hezekiah prays and Isaiah announces deliverance; Jerusalem is not captured and the Assyrian army withdraws. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "second-kings-jerusalem-delivered"
+          ],
+          "verse_refs": [
+            "2 Kings 19:1-37"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_90",
+          "text": "For its historical and cultural setting, note that Sennacherib's prism independently names Hezekiah and tribute after the 701 BCE campaign but does not claim Jerusalem's capture; comparison with Kings establishes historical overlap while leaving differences in perspective, sequence, and theological interpretation. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. Interpretations differ on some details.",
+          "evidence_ids": [
+            "2-kings:interpretive_note:4"
+          ],
+          "verse_refs": [
+            "2 Kings 19:1-37"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        },
+        {
+          "id": "historical_context_91",
+          "text": "For its historical and cultural setting, note that A major Assyrian source for imperial campaigns and propaganda. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "taylor-prism:historical_context:0"
+          ],
+          "verse_refs": [
+            "2 Kings 19:1-37"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "archaeology_geography",
+      "title": "Archaeology and geography",
+      "blocks": [
+        {
+          "id": "archaeology_geography_90",
+          "text": "For its geographical or material setting, note that A six-sided baked-clay prism inscribed in Akkadian with Sennacherib's royal annals, including his campaign against fortified Judahite cities and his treatment of Hezekiah. It can illuminate the passage, while its limits should be kept in view. Interpretations differ on some details.",
+          "evidence_ids": [
+            "taylor-prism-annals"
+          ],
+          "verse_refs": [
+            "2 Kings 19:1-37"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "dig_deeper",
+      "title": "Dig deeper",
+      "blocks": [
+        {
+          "id": "dig_deeper_90",
+          "text": "For a later or comparative connection, note that The annals' failure to claim Jerusalem's capture is historically significant, but silence alone does not prove the biblical narrative's account of how the city survived. This remains a secondary connection rather than the chapter's first-audience context. It can be traced further without replacing the chapter's own setting. Interpretations differ on some details.",
+          "evidence_ids": [
+            "assyrian-tribute-and-royal-representation:interpretive_note:3"
+          ],
+          "verse_refs": [
+            "2 Kings 19:1-37"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "d9c486ecf5095e069ee2c0f78880a316395a8aac6c104b508db62dafa4e69ed9",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-002-medium",
+    "generated_timestamp": "2026-09-05T22:51:03Z"
+  }
+}
