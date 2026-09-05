@@ -6,6 +6,8 @@ from types import SimpleNamespace
 from bhf_agent.presentation.evidence_hash import calculate_evidence_hash
 from bhf_agent.presentation.models import EvidenceBundle, EvidenceItem
 from bhf_agent.presentation.references import _BOOK_ALIASES
+from bhf_agent.presentation.relevance import presentation_role
+from bhf_agent.chapter_commentary.evidence_bundling import get_chapter_evidence_bundle
 from tools.commentary_v11_scaled_preflight import (
     EVIDENCE_BUNDLE_VERSION,
     EVIDENCE_HASH_VERSION,
@@ -14,6 +16,8 @@ from tools.commentary_v11_scaled_preflight import (
     scan_anomalies,
     select_final_chapters,
     select_mixed_candidate_pool,
+    _previous_batch_references,
+    _presentation_audit,
 )
 
 
@@ -276,3 +280,93 @@ def test_numbers_data_gap_is_not_final_terra_input():
 def test_allowed_final_availability_is_restricted_to_available_and_thin():
     evaluated = [{"reference": "gap", "status": "PASS", "availability": "DATA_GAP"}]
     assert select_final_chapters(evaluated, 1) == []
+
+
+def test_textual_variant_does_not_route_to_archaeology_geography():
+    metadata = {
+        "parent_type": "book",
+        "source_kind": "ckl_claim",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "claim_type": "biblical_text",
+        "dispute_status": "textual_variant",
+        "parent_object_id": "luke",
+    }
+    assert presentation_role(
+        metadata,
+        category="geography",
+        claim="The reading is present in major manuscript witnesses but absent in important Western witnesses.",
+    ) == "language_literary"
+
+
+def test_textual_criticism_routes_to_language_literary():
+    metadata = {
+        "parent_type": "event",
+        "source_kind": "ckl_claim",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "claim_type": "textual_criticism",
+    }
+    assert presentation_role(metadata, category="archaeology", claim="Textual transmission preserves two readings.") == "language_literary"
+
+
+def test_interpretive_textual_uncertainty_routes_to_questions():
+    metadata = {
+        "parent_type": "event",
+        "source_kind": "ckl_interpretive_note",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "note_type": "interpretive_question",
+        "dispute_status": "textual_variant",
+    }
+    assert presentation_role(metadata, category="geography", claim="The manuscript reading remains uncertain.") == "interpretive_questions"
+
+
+def test_real_archaeology_and_geography_keep_their_roles():
+    archaeology = {
+        "parent_type": "archaeology",
+        "source_kind": "ckl_evidence_item",
+        "semantic_relationship": "DIRECT_CONTEXT",
+    }
+    geography = {
+        "parent_type": "place",
+        "source_kind": "ckl_evidence_item",
+        "semantic_relationship": "DIRECT_CONTEXT",
+    }
+    assert presentation_role(archaeology, category="archaeology", claim="Excavation documents a first-century inscription.") == "archaeology_geography"
+    assert presentation_role(geography, category="geography", claim="The route runs from the named city to the valley.") == "archaeology_geography"
+
+
+def test_literary_claim_with_place_name_does_not_become_geography():
+    metadata = {
+        "parent_type": "book",
+        "source_kind": "ckl_claim",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "claim_type": "literary",
+    }
+    assert presentation_role(metadata, category="geography", claim="The literary movement links Jerusalem and Galilee.") == "language_literary"
+
+
+def test_luke_22_regression_routes_meal_variant_to_language_literary():
+    bundle = get_chapter_evidence_bundle("Luke", 22)
+    item = next(item for item in bundle.evidence_items if item.id == "luke-meal-variant")
+    assert item.relevance_metadata["presentation_role"] == "language_literary"
+
+
+def test_batch_002_excludes_batch_001_final_and_quarantined_references():
+    excluded = _previous_batch_references("batch-002")
+    assert "Luke 22" in excluded
+    assert "Deuteronomy 32" in excluded
+    assert "Job 1" in excluded
+    assert "Leviticus 19" in excluded
+
+
+def test_old_luke_22_role_is_a_textual_routing_blocker():
+    item = _item(
+        "luke-meal-variant",
+        category="geography",
+        claim="A textual variant is preserved in major manuscript witnesses.",
+        parent_type="book",
+        parent_id="luke",
+        role="archaeology_geography",
+    )
+    audit = _presentation_audit(_bundle(item))
+    assert audit["status"] == "FAIL"
+    assert any("expected-role:language_literary" in error for error in audit["errors"])

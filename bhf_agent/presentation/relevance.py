@@ -50,6 +50,21 @@ PRESENTATION_SECTIONS = frozenset(
     }
 )
 
+TEXTUAL_CLAIM_SIGNALS = frozenset(
+    {
+        "textual",
+        "textual_variant",
+        "textual_form",
+        "textual_criticism",
+        "text_critical",
+        "textual_transmission",
+        "manuscript",
+        "manuscript_reading",
+        "source_critical",
+        "source_criticism",
+    }
+)
+
 # These are the word-study relationships actually reachable from the v1.1
 # canary.  A Greek translation term is not treated as the Hebrew source word
 # merely because a lexicon record was tagged to the same passage.
@@ -214,6 +229,32 @@ def presentation_role(
         )
     ).casefold()
 
+    # Textual criticism is a presentation concern in its own right.  It must
+    # outrank legacy geography/archaeology facets, which are retrieval/index
+    # categories rather than instructions for a commentary section.  The
+    # metadata signals are preferred; the narrow claim-text fallback protects
+    # older structured claims that have only a biblical_text claim type.
+    normalized_fields = {
+        value.strip().replace("-", "_").replace(" ", "_")
+        for value in (
+            claim_type,
+            note_type,
+            str(metadata.get("evidence_type") or "").casefold(),
+            str(metadata.get("dispute_status") or "").casefold(),
+        )
+        if value.strip()
+    }
+    textual_signal = bool(normalized_fields & TEXTUAL_CLAIM_SIGNALS)
+    textual_signal = textual_signal or bool(
+        re.search(
+            r"\b(?:textual\s+variant|textual\s+criticism|textual\s+transmission|"
+            r"manuscript(?:\s+reading)?|shorter[- ]text|longer[- ]text|"
+            r"textual\s+witness(?:es)?|textual\s+omission)\b",
+            text,
+            re.IGNORECASE,
+        )
+    )
+
     if relationship in {LATER_RECEPTION, INTERTEXTUAL_REUSE, COMPARATIVE_CONTEXT}:
         return "dig_deeper"
     if relationship in {SEMANTICALLY_MISANCHORED, WEAKLY_RELATED}:
@@ -224,6 +265,20 @@ def presentation_role(
         # language section.  Generic generated word-study prose is retained
         # in the locked bundle but is not first-audience language context.
         return "language_literary" if relationship == DIRECT_CONTEXT else None
+
+    # Legacy geography/archaeology facets are the defect class this rule must
+    # correct. Explicit textual claim/note types also opt into the rule across
+    # categories; a generic biblical_text claim remains conservative unless it
+    # is carrying the legacy material facet that caused the routing problem.
+    explicit_textual_type = claim_type in TEXTUAL_CLAIM_SIGNALS or note_type in TEXTUAL_CLAIM_SIGNALS
+    if textual_signal and (category in {"archaeology", "geography"} or explicit_textual_type):
+        if claim_type in {"interpretive_textual", "textual_uncertainty"} or note_type in {
+            "interpretive_question",
+            "interpretive_questions",
+            "interpretive_caution",
+        }:
+            return "interpretive_questions"
+        return "language_literary"
 
     if claim_type in {
         "lexical",
