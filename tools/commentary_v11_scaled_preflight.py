@@ -48,7 +48,7 @@ from bhf_agent.presentation.relevance import (
     SEMANTICALLY_MISANCHORED,
     presentation_role,
 )
-from tools.commentary_v11_canary import select_overview_item
+from tools.commentary_v11_canary import _section_for_item, select_overview_item
 from tools.commentary_v11_expansion import _book_genre, _signal_score
 from tools.commentary_v11_low_information import audit as recalculate_low_information
 from framework.canonical_library import CKLRepositoryConfig
@@ -569,6 +569,12 @@ def _chapter_record(
         overview_id=overview.id if overview else None,
     )
     role_counts = Counter(str((item.relevance_metadata or {}).get("presentation_role") or "UNASSIGNED") for item in bundle.evidence_items)
+    section_roles = Counter(
+        section
+        for item in bundle.evidence_items
+        for section in [_section_for_item(item)]
+        if section
+    )
     semantic_counts = Counter(str((item.relevance_metadata or {}).get("semantic_relationship") or "UNASSIGNED") for item in bundle.evidence_items)
     direct = semantic_counts[DIRECT_CONTEXT]
     book_context = semantic_counts[BOOK_CONTEXT]
@@ -596,7 +602,7 @@ def _chapter_record(
         "disputed_count": _disputed_count(bundle),
         "semantic_relationship_counts": dict(sorted(semantic_counts.items())),
         "presentation_role_counts": dict(sorted(role_counts.items())),
-        "presentation_section_roles": sorted(role_counts),
+        "presentation_section_roles": sorted(section_roles),
         "overview_candidate": overview.id if overview else None,
         "overview_candidate_disputed": bool(overview and _disputed_count(type("B", (), {"evidence_items": [overview]})()) > 0),
         "evidence_hash": calculate_evidence_hash(bundle),
