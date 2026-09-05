@@ -1,0 +1,36 @@
+{
+  "reference": "Luke 13",
+  "book": "Luke",
+  "chapter": 13,
+  "status": "validated",
+  "evidence_availability": "DATA_GAP",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "overview",
+          "text": "BHF does not currently have source-addressable contextual evidence for Luke 13. This v1.1 candidate preserves the gap rather than supplying historically plausible but unsupported context.",
+          "verse_refs": [
+            "Luke 13:1-35"
+          ],
+          "evidence_ids": [],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "dc435d01ff78d40e3f0798edb3a805dc0d16706eed3dae92135171c28591c7e9",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "deterministic-v1.1-evidence-candidate",
+    "generated_timestamp": "2026-09-05T16:23:39.408003+00:00"
+  },
+  "failure_reason": null,
+  "validation_errors": [],
+  "validation_warnings": []
+}

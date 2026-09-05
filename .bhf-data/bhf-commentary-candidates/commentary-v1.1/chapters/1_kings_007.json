@@ -1,0 +1,36 @@
+{
+  "reference": "1 Kings 7",
+  "book": "1 Kings",
+  "chapter": 7,
+  "status": "validated",
+  "evidence_availability": "DATA_GAP",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "overview",
+          "text": "BHF does not currently have source-addressable contextual evidence for 1 Kings 7. This v1.1 candidate preserves the gap rather than supplying historically plausible but unsupported context.",
+          "verse_refs": [
+            "1 Kings 7:1-51"
+          ],
+          "evidence_ids": [],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "69569bf701dc7c5597c4c76bd23461e3ab7dfd76ba1e9f72ef5bb486188ad69f",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "deterministic-v1.1-evidence-candidate",
+    "generated_timestamp": "2026-09-05T16:23:39.373334+00:00"
+  },
+  "failure_reason": null,
+  "validation_errors": [],
+  "validation_warnings": []
+}

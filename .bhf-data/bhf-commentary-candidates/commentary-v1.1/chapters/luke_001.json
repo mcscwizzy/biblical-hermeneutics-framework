@@ -1,0 +1,86 @@
+{
+  "reference": "Luke 1",
+  "book": "Luke",
+  "chapter": 1,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "overview",
+          "text": "This chapter's locked contextual evidence is limited to 26 source-addressable item(s) across culture, geography, history. The first anchored observation is: Common authorship of Luke and Acts remains the majority scholarly judgment, though the exact composition and publication relationship is debated.",
+          "verse_refs": [
+            "Luke 1:1-80"
+          ],
+          "evidence_ids": [
+            "acts-common-authorship"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "archaeology_geography",
+      "title": "Archaeology and geography",
+      "blocks": [
+        {
+          "id": "evidence_1",
+          "text": "Locked CKL evidence: Luke and Acts share Theophilus, retrospective resumptions, language, characters, geography, and themes, strongly supporting common authorship or coordinated production while leaving literary unity and publication history open to refinement.",
+          "verse_refs": [
+            "Luke 1:1-80"
+          ],
+          "evidence_ids": [
+            "luke-acts-relation"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and social context",
+      "blocks": [
+        {
+          "id": "evidence_1",
+          "text": "Locked CKL evidence: Acts 1 explicitly resumes a former account addressed to Theophilus and is most naturally read as a sequel to Luke.",
+          "verse_refs": [
+            "Luke 1:1-80"
+          ],
+          "evidence_ids": [
+            "acts-sequel"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        },
+        {
+          "id": "evidence_2",
+          "text": "Locked CKL evidence: Theophilus is named as addressee, but whether he was a patron, official, convert, representative reader, or literary dedicatee is unknown.",
+          "verse_refs": [
+            "Luke 1:1-80"
+          ],
+          "evidence_ids": [
+            "acts-theophilus"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "79c52b20caedb384b2acee126fde3597672e1c00cf24d5b392d6e86a4e00d166",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "deterministic-v1.1-evidence-candidate",
+    "generated_timestamp": "2026-09-05T16:23:41.039337+00:00"
+  },
+  "failure_reason": null,
+  "validation_errors": [],
+  "validation_warnings": []
+}

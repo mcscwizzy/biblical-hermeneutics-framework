@@ -1,0 +1,349 @@
+{
+  "report_version": "commentary-v1.1-canary-v1",
+  "generated_at": "2026-09-05T16:23:41.758931+00:00",
+  "model_boundary": {
+    "provider": "none",
+    "model": "deterministic-v1.1-evidence-candidate",
+    "future_prompt_inputs": [
+      "canonical chapter text",
+      "locked EvidenceBundle",
+      "allowed section kinds",
+      "grounding constraints"
+    ]
+  },
+  "candidate_root": "/home/johnwalker/Documents/github/biblical-hermeneutics-framework/.bhf-data/bhf-commentary-candidates/commentary-v1.1/chapters",
+  "chapters": 25,
+  "valid": 25,
+  "invalid": 0,
+  "availability_distribution": {
+    "AVAILABLE": 5,
+    "DATA_GAP": 10,
+    "THIN": 10
+  },
+  "results": [
+    {
+      "reference": "Numbers 5",
+      "valid": true,
+      "availability": "DATA_GAP",
+      "section_kinds": [
+        "chapter_overview"
+      ],
+      "evidence_ids": [],
+      "path": "/home/johnwalker/Documents/github/biblical-hermeneutics-framework/.bhf-data/bhf-commentary-candidates/commentary-v1.1/chapters/numbers_005.json"
+    },
+    {
+      "reference": "Luke 8",
+      "valid": true,
+      "availability": "DATA_GAP",
+      "section_kinds": [
+        "chapter_overview"
+      ],
+      "evidence_ids": [],
+      "path": "/home/johnwalker/Documents/github/biblical-hermeneutics-framework/.bhf-data/bhf-commentary-candidates/commentary-v1.1/chapters/luke_008.json"
+    },
+    {
+      "reference": "Numbers 8",
+      "valid": true,
+      "availability": "DATA_GAP",
+      "section_kinds": [
+        "chapter_overview"
+      ],
+      "evidence_ids": [],
+      "path": "/home/johnwalker/Documents/github/biblical-hermeneutics-framework/.bhf-data/bhf-commentary-candidates/commentary-v1.1/chapters/numbers_008.json"
+    },
+    {
+      "reference": "Numbers 7",
+      "valid": true,
+      "availability": "DATA_GAP",
+      "section_kinds": [
+        "chapter_overview"
+      ],
+      "evidence_ids": [],
+      "path": "/home/johnwalker/Documents/github/biblical-hermeneutics-framework/.bhf-data/bhf-commentary-candidates/commentary-v1.1/chapters/numbers_007.json"
+    },
+    {
+      "reference": "Numbers 3",
+      "valid": true,
+      "availability": "DATA_GAP",
+      "section_kinds": [
+        "chapter_overview"
+      ],
+      "evidence_ids": [],
+      "path": "/home/johnwalker/Documents/github/biblical-hermeneutics-framework/.bhf-data/bhf-commentary-candidates/commentary-v1.1/chapters/numbers_003.json"
+    },
+    {
+      "reference": "1 Kings 7",
+      "valid": true,
+      "availability": "DATA_GAP",
+      "section_kinds": [
+        "chapter_overview"
+      ],
+      "evidence_ids": [],
+      "path": "/home/johnwalker/Documents/github/biblical-hermeneutics-framework/.bhf-data/bhf-commentary-candidates/commentary-v1.1/chapters/1_kings_007.json"
+    },
+    {
+      "reference": "Luke 5",
+      "valid": true,
+      "availability": "DATA_GAP",
+      "section_kinds": [
+        "chapter_overview"
+      ],
+      "evidence_ids": [],
+      "path": "/home/johnwalker/Documents/github/biblical-hermeneutics-framework/.bhf-data/bhf-commentary-candidates/commentary-v1.1/chapters/luke_005.json"
+    },
+    {
+      "reference": "Ezekiel 7",
+      "valid": true,
+      "availability": "DATA_GAP",
+      "section_kinds": [
+        "chapter_overview"
+      ],
+      "evidence_ids": [],
+      "path": "/home/johnwalker/Documents/github/biblical-hermeneutics-framework/.bhf-data/bhf-commentary-candidates/commentary-v1.1/chapters/ezekiel_007.json"
+    },
+    {
+      "reference": "2 Chronicles 8",
+      "valid": true,
+      "availability": "DATA_GAP",
+      "section_kinds": [
+        "chapter_overview"
+      ],
+      "evidence_ids": [],
+      "path": "/home/johnwalker/Documents/github/biblical-hermeneutics-framework/.bhf-data/bhf-commentary-candidates/commentary-v1.1/chapters/2_chronicles_008.json"
+    },
+    {
+      "reference": "Luke 13",
+      "valid": true,
+      "availability": "DATA_GAP",
+      "section_kinds": [
+        "chapter_overview"
+      ],
+      "evidence_ids": [],
+      "path": "/home/johnwalker/Documents/github/biblical-hermeneutics-framework/.bhf-data/bhf-commentary-candidates/commentary-v1.1/chapters/luke_013.json"
+    },
+    {
+      "reference": "Numbers 16",
+      "valid": true,
+      "availability": "THIN",
+      "section_kinds": [
+        "chapter_overview",
+        "archaeology_geography"
+      ],
+      "evidence_ids": [
+        "2tim-foundation",
+        "numbers:interpretive_note:2"
+      ],
+      "path": "/home/johnwalker/Documents/github/biblical-hermeneutics-framework/.bhf-data/bhf-commentary-candidates/commentary-v1.1/chapters/numbers_016.json"
+    },
+    {
+      "reference": "Jeremiah 2",
+      "valid": true,
+      "availability": "THIN",
+      "section_kinds": [
+        "chapter_overview",
+        "historical_context"
+      ],
+      "evidence_ids": [
+        "jeremiah-long-composition",
+        "jeremiah-practical-mt-outline"
+      ],
+      "path": "/home/johnwalker/Documents/github/biblical-hermeneutics-framework/.bhf-data/bhf-commentary-candidates/commentary-v1.1/chapters/jeremiah_002.json"
+    },
+    {
+      "reference": "Psalms 106",
+      "valid": true,
+      "availability": "THIN",
+      "section_kinds": [
+        "chapter_overview"
+      ],
+      "evidence_ids": [
+        "psalms-five-book-anthology"
+      ],
+      "path": "/home/johnwalker/Documents/github/biblical-hermeneutics-framework/.bhf-data/bhf-commentary-candidates/commentary-v1.1/chapters/psalms_106.json"
+    },
+    {
+      "reference": "Numbers 19",
+      "valid": true,
+      "availability": "THIN",
+      "section_kinds": [
+        "chapter_overview",
+        "archaeology_geography"
+      ],
+      "evidence_ids": [
+        "haggai-torah-inquiry",
+        "numbers:interpretive_note:2"
+      ],
+      "path": "/home/johnwalker/Documents/github/biblical-hermeneutics-framework/.bhf-data/bhf-commentary-candidates/commentary-v1.1/chapters/numbers_019.json"
+    },
+    {
+      "reference": "Numbers 31",
+      "valid": true,
+      "availability": "THIN",
+      "section_kinds": [
+        "chapter_overview"
+      ],
+      "evidence_ids": [
+        "numbers-inheritance-preparation"
+      ],
+      "path": "/home/johnwalker/Documents/github/biblical-hermeneutics-framework/.bhf-data/bhf-commentary-candidates/commentary-v1.1/chapters/numbers_031.json"
+    },
+    {
+      "reference": "Deuteronomy 26",
+      "valid": true,
+      "availability": "THIN",
+      "section_kinds": [
+        "chapter_overview",
+        "historical_context"
+      ],
+      "evidence_ids": [
+        "deuteronomy-literary-movement",
+        "deuteronomy:interpretive_note:1"
+      ],
+      "path": "/home/johnwalker/Documents/github/biblical-hermeneutics-framework/.bhf-data/bhf-commentary-candidates/commentary-v1.1/chapters/deuteronomy_026.json"
+    },
+    {
+      "reference": "Isaiah 28",
+      "valid": true,
+      "availability": "THIN",
+      "section_kinds": [
+        "chapter_overview",
+        "historical_context"
+      ],
+      "evidence_ids": [
+        "isaiah-practical-outline",
+        "isaiah-qumran-witnesses"
+      ],
+      "path": "/home/johnwalker/Documents/github/biblical-hermeneutics-framework/.bhf-data/bhf-commentary-candidates/commentary-v1.1/chapters/isaiah_028.json"
+    },
+    {
+      "reference": "Deuteronomy 21",
+      "valid": true,
+      "availability": "THIN",
+      "section_kinds": [
+        "chapter_overview",
+        "historical_context"
+      ],
+      "evidence_ids": [
+        "deuteronomy-literary-movement",
+        "deuteronomy:interpretive_note:1",
+        "gal-curse-law"
+      ],
+      "path": "/home/johnwalker/Documents/github/biblical-hermeneutics-framework/.bhf-data/bhf-commentary-candidates/commentary-v1.1/chapters/deuteronomy_021.json"
+    },
+    {
+      "reference": "Judges 20",
+      "valid": true,
+      "availability": "THIN",
+      "section_kinds": [
+        "chapter_overview",
+        "historical_context"
+      ],
+      "evidence_ids": [
+        "judges-literary-movement",
+        "judges:interpretive_note:4"
+      ],
+      "path": "/home/johnwalker/Documents/github/biblical-hermeneutics-framework/.bhf-data/bhf-commentary-candidates/commentary-v1.1/chapters/judges_020.json"
+    },
+    {
+      "reference": "Leviticus 22",
+      "valid": true,
+      "availability": "THIN",
+      "section_kinds": [
+        "chapter_overview"
+      ],
+      "evidence_ids": [
+        "leviticus-literary-movement"
+      ],
+      "path": "/home/johnwalker/Documents/github/biblical-hermeneutics-framework/.bhf-data/bhf-commentary-candidates/commentary-v1.1/chapters/leviticus_022.json"
+    },
+    {
+      "reference": "Leviticus 1",
+      "valid": true,
+      "availability": "AVAILABLE",
+      "section_kinds": [
+        "chapter_overview",
+        "archaeology_geography",
+        "chronology",
+        "historical_context"
+      ],
+      "evidence_ids": [
+        "leviticus-called-from-tent",
+        "leviticus-literary-movement",
+        "leviticus:interpretive_note:0",
+        "leviticus:interpretive_note:2",
+        "tabernacle:archaeology:0",
+        "tabernacle:date_ranges:0",
+        "tabernacle:date_ranges:1"
+      ],
+      "path": "/home/johnwalker/Documents/github/biblical-hermeneutics-framework/.bhf-data/bhf-commentary-candidates/commentary-v1.1/chapters/leviticus_001.json"
+    },
+    {
+      "reference": "Psalms 1",
+      "valid": true,
+      "availability": "AVAILABLE",
+      "section_kinds": [
+        "chapter_overview",
+        "historical_context"
+      ],
+      "evidence_ids": [
+        "makarios:ancient_near_east_context:0",
+        "makarios:historical_context:0",
+        "nomos:ancient_near_east_context:0"
+      ],
+      "path": "/home/johnwalker/Documents/github/biblical-hermeneutics-framework/.bhf-data/bhf-commentary-candidates/commentary-v1.1/chapters/psalms_001.json"
+    },
+    {
+      "reference": "Ezekiel 1",
+      "valid": true,
+      "availability": "AVAILABLE",
+      "section_kinds": [
+        "chapter_overview",
+        "historical_context"
+      ],
+      "evidence_ids": [
+        "al-yahudu-judean-community-archive",
+        "al-yahudu-judean-community-archive:passage-relevance",
+        "babylonian-exile:ancient_near_east_context:0"
+      ],
+      "path": "/home/johnwalker/Documents/github/biblical-hermeneutics-framework/.bhf-data/bhf-commentary-candidates/commentary-v1.1/chapters/ezekiel_001.json"
+    },
+    {
+      "reference": "Luke 1",
+      "valid": true,
+      "availability": "AVAILABLE",
+      "section_kinds": [
+        "chapter_overview",
+        "archaeology_geography",
+        "historical_context"
+      ],
+      "evidence_ids": [
+        "acts-common-authorship",
+        "acts-sequel",
+        "acts-theophilus",
+        "luke-acts-relation"
+      ],
+      "path": "/home/johnwalker/Documents/github/biblical-hermeneutics-framework/.bhf-data/bhf-commentary-candidates/commentary-v1.1/chapters/luke_001.json"
+    },
+    {
+      "reference": "Genesis 1",
+      "valid": true,
+      "availability": "AVAILABLE",
+      "section_kinds": [
+        "chapter_overview",
+        "archaeology_geography",
+        "chronology",
+        "historical_context"
+      ],
+      "evidence_ids": [
+        "2-corinthians:interpretive_note:21",
+        "arad-ostraca:ancient_near_east_context:0",
+        "arad-ostraca:historical_context:0",
+        "creation-doctrine-framework:timeline:0",
+        "creation-doctrine-framework:timeline:1",
+        "genesis-ane-comparative-context",
+        "genesis:interpretive_note:2"
+      ],
+      "path": "/home/johnwalker/Documents/github/biblical-hermeneutics-framework/.bhf-data/bhf-commentary-candidates/commentary-v1.1/chapters/genesis_001.json"
+    }
+  ]
+}

@@ -1,0 +1,128 @@
+{
+  "reference": "Genesis 1",
+  "book": "Genesis",
+  "chapter": 1,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "overview",
+          "text": "This chapter's locked contextual evidence is limited to 90 source-addressable item(s) across chronology, culture, geography, history, social. The first anchored observation is: God shining light in hearts revoices creation and prophetic light language; it is theological metaphor, not a scientific account of cognition or vision.",
+          "verse_refs": [
+            "Genesis 1:1-31"
+          ],
+          "evidence_ids": [
+            "2-corinthians:interpretive_note:21"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "archaeology_geography",
+      "title": "Archaeology and geography",
+      "blocks": [
+        {
+          "id": "evidence_1",
+          "text": "Locked CKL evidence: Genesis 1-11 belongs to an ancient Near Eastern literary environment in which creation, flood, genealogy, and city-building traditions were also discussed.",
+          "verse_refs": [
+            "Genesis 1:1-31"
+          ],
+          "evidence_ids": [
+            "genesis-ane-comparative-context"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        },
+        {
+          "id": "evidence_2",
+          "text": "Locked CKL evidence: Ancient Near Eastern parallels can clarify shared motifs and cultural questions, but parallels alone do not prove direct copying or settle the interpretation of Genesis.",
+          "verse_refs": [
+            "Genesis 1:1-31"
+          ],
+          "evidence_ids": [
+            "genesis:interpretive_note:2"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "chronology",
+      "title": "Chronology",
+      "blocks": [
+        {
+          "id": "evidence_1",
+          "text": "Locked CKL evidence: Creation declared good",
+          "verse_refs": [
+            "Genesis 1:1-31"
+          ],
+          "evidence_ids": [
+            "creation-doctrine-framework:timeline:0"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        },
+        {
+          "id": "evidence_2",
+          "text": "Locked CKL evidence: Human vocation given",
+          "verse_refs": [
+            "Genesis 1:1-31"
+          ],
+          "evidence_ids": [
+            "creation-doctrine-framework:timeline:1"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and social context",
+      "blocks": [
+        {
+          "id": "evidence_1",
+          "text": "Locked CKL evidence: Arad Ostraca belongs to the material culture of Levantine, Mesopotamian, Egyptian, Persian, Greek, or Roman settings, where inscriptions, architecture, pottery, and administrative remains help contextualize the biblical world.",
+          "verse_refs": [
+            "Genesis 1:1-31"
+          ],
+          "evidence_ids": [
+            "arad-ostraca:ancient_near_east_context:0"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        },
+        {
+          "id": "evidence_2",
+          "text": "Locked CKL evidence: Arad Ostraca helps anchor the biblical world in physical evidence and archaeological context.",
+          "verse_refs": [
+            "Genesis 1:1-31"
+          ],
+          "evidence_ids": [
+            "arad-ostraca:historical_context:0"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "2ecf36ecf182d350bbe3cb1c594c3084a81e7869d9c8d929ac9eadeec2987146",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "deterministic-v1.1-evidence-candidate",
+    "generated_timestamp": "2026-09-05T16:23:41.740116+00:00"
+  },
+  "failure_reason": null,
+  "validation_errors": [],
+  "validation_warnings": []
+}

@@ -1,0 +1,68 @@
+{
+  "reference": "Ezekiel 1",
+  "book": "Ezekiel",
+  "chapter": 1,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "overview",
+          "text": "This chapter's locked contextual evidence is limited to 13 source-addressable item(s) across culture, history. The first anchored observation is: Dated cuneiform legal and administrative documents from Al-Yahudu and nearby settlements record Judean names, households, land, debts, taxes, and service within Babylonian and Persian institutions.",
+          "verse_refs": [
+            "Ezekiel 1:1-28"
+          ],
+          "evidence_ids": [
+            "al-yahudu-judean-community-archive"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and social context",
+      "blocks": [
+        {
+          "id": "evidence_1",
+          "text": "Locked CKL evidence: The archive gives concrete near-contemporary context for the settled community addressed in Jeremiah 29 and shows that Judean life in Babylonia continued after return movements began.",
+          "verse_refs": [
+            "Ezekiel 1:1-28"
+          ],
+          "evidence_ids": [
+            "al-yahudu-judean-community-archive:passage-relevance"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        },
+        {
+          "id": "evidence_2",
+          "text": "Locked CKL evidence: Neo-Babylonian policy combined vassal kingship, tribute, punitive siege, elite removal, destruction after revolt, and resettlement within imperial agricultural and service systems. Chronicles, ration lists, and private documents illuminate different levels of this system.",
+          "verse_refs": [
+            "Ezekiel 1:1-28"
+          ],
+          "evidence_ids": [
+            "babylonian-exile:ancient_near_east_context:0"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "4750a612d92398f9db5efbfe20e120736efbb61ddfad29e30f722aaa0126d48a",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "deterministic-v1.1-evidence-candidate",
+    "generated_timestamp": "2026-09-05T16:23:40.723866+00:00"
+  },
+  "failure_reason": null,
+  "validation_errors": [],
+  "validation_warnings": []
+}
