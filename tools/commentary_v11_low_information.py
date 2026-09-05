@@ -24,13 +24,15 @@ if str(Path(__file__).resolve().parents[1]) not in sys.path:
 from bhf_agent.chapter_commentary.availability import classify_evidence_availability
 from bhf_agent.chapter_commentary.evidence_bundling import get_chapter_evidence_bundle
 from bhf_agent.chapter_commentary.storage import load_commentary, list_commentaries
+from bhf_agent.presentation.models import EVIDENCE_BUNDLE_CANDIDATE_VERSION
+from bhf_agent.presentation.relevance import is_semantically_relevant
 
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_SOURCE = REPO_ROOT / ".bhf-data" / "bhf-commentary-candidates" / "commentary-v1.0.1"
 DEFAULT_OUTPUT = REPO_ROOT / ".bhf-data" / "bhf-commentary-candidates" / "commentary-v1.1" / "low-information-commentary.json"
 DEFAULT_MARKDOWN = REPO_ROOT / "docs" / "commentary-v1.1-low-information-audit.md"
-AUDIT_VERSION = "low-information-commentary-v1"
+AUDIT_VERSION = "low-information-commentary-v2-semantic"
 REQUIRED_CONTROL = ("Zephaniah", 1)
 
 MARKERS: tuple[tuple[str, re.Pattern[str]], ...] = (
@@ -88,7 +90,11 @@ def detect_low_information(commentary: Any) -> dict[str, Any]:
 
 
 def _bundle_assessment(commentary: Any, detection: dict[str, Any]) -> dict[str, Any]:
-    bundle = get_chapter_evidence_bundle(commentary.book, commentary.chapter)
+    bundle = get_chapter_evidence_bundle(
+        commentary.book,
+        commentary.chapter,
+        evidence_bundle_version=EVIDENCE_BUNDLE_CANDIDATE_VERSION,
+    )
     if bundle is None:
         return {
             "evidence_bundle_available": False,
@@ -103,7 +109,7 @@ def _bundle_assessment(commentary: Any, detection: dict[str, Any]) -> dict[str, 
         }
     useful = [
         item for item in bundle.evidence_items
-        if item.claim.strip() and item.source_ids and item.passage_anchors
+        if is_semantically_relevant(item)
     ]
     cited_ids = set(detection.get("cited_evidence_ids", []))
     bundle_ids = {item.id for item in bundle.evidence_items}

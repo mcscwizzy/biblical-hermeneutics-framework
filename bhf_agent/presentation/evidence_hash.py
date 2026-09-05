@@ -10,7 +10,12 @@ from .models import EvidenceBundle
 
 
 def calculate_evidence_hash(bundle: EvidenceBundle) -> str:
-    """Hash grounding inputs while excluding UI-only and unrelated metadata."""
+    """Hash grounding inputs while excluding volatile ranking metadata.
+
+    v1.1 bundles include deterministic semantic relationship metadata in each
+    evidence item.  That metadata is intentionally retained in the payload;
+    changing evidence role changes grounding identity.
+    """
 
     source_ids = {
         source_id for item in bundle.evidence_items for source_id in item.source_ids
@@ -68,6 +73,8 @@ def calculate_evidence_hash(bundle: EvidenceBundle) -> str:
             ],
         },
     }
+    if bundle.evidence_hash_version == "2":
+        payload["evidence_hash_version"] = "2"
     encoded = json.dumps(
         payload,
         sort_keys=True,

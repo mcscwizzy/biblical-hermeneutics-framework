@@ -33,6 +33,19 @@ from bhf_agent.chapter_commentary.models import (
 )
 from bhf_agent.chapter_commentary.storage import save_commentary
 from bhf_agent.chapter_commentary.validation import validate_chapter_commentary
+from bhf_agent.presentation.relevance import (
+    BOOK_CONTEXT,
+    COMPARATIVE_CONTEXT,
+    DIRECT_CONTEXT,
+    GENERIC_BACKGROUND,
+    INTERTEXTUAL_REUSE,
+    LATER_RECEPTION,
+    SEMANTICALLY_MISANCHORED,
+    WEAKLY_RELATED,
+)
+from bhf_agent.presentation.models import EVIDENCE_BUNDLE_CANDIDATE_VERSION
+from bhf_agent.presentation.references import _BOOK_ALIASES
+from framework.canonical_library.scripture import parse_scripture_references
 
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
@@ -56,6 +69,8 @@ SECTION_TITLES = {
     "archaeology_geography": "Archaeology and geography",
     "language_literary": "Language and literary context",
     "chronology": "Chronology",
+    "interpretive_questions": "Interpretive questions",
+    "dig_deeper": "Dig deeper",
 }
 
 
@@ -68,19 +83,144 @@ def _verse_reference(book: str, chapter: int) -> str:
     return f"{book} {chapter}:1-{len(chapter_data['verses'])}"
 
 
-def _block_for_item(item: Any, reference: str, index: int) -> CommentaryBlock:
-    dispute = str(item.relevance_metadata.get("dispute_status") or "").casefold()
-    interpretation = "disputed" if dispute not in {"", "not_disputed"} else "fact"
+def _interpretation_level(item: Any) -> str:
+    metadata = item.relevance_metadata or {}
+    dispute = str(metadata.get("dispute_status") or "").casefold()
+    if dispute not in {"", "not_disputed", "unknown", "none"}:
+        return "disputed"
+    assertion = str(metadata.get("assertion_type") or "").casefold().replace("_", "-")
+    if assertion in {
+        "fact",
+        "factual",
+        "explicit",
+        "explicit-fact",
+        "historical-fact",
+        "textual-observation",
+        "primary-evidence",
+    } or str(metadata.get("certainty") or "").casefold() == "textually_explicit":
+        return "fact"
+    return "inference"
+
+
+def _chapter_overlap_refs(item: Any, book: str | None, chapter: int | None) -> list[str]:
+    if not book or chapter is None:
+        return list(item.passage_anchors)
+    try:
+        verse_count = len(bible.resolve_chapter(book, chapter)["verses"])
+    except bible.BibleError:
+        return list(item.passage_anchors)
+    refs: list[str] = []
+    for anchor in item.passage_anchors:
+        spans = parse_scripture_references(anchor, book_alias_lookup=_BOOK_ALIASES)
+        for span in spans:
+            if span.book != book or span.start_chapter is None:
+                continue
+            end_chapter = span.end_chapter or span.start_chapter
+            if not (span.start_chapter <= chapter <= end_chapter):
+                continue
+            same_chapter = span.start_chapter == chapter and end_chapter == chapter
+            start_verse = span.start_verse if same_chapter and span.start_verse else 1
+            if same_chapter and span.start_verse is not None:
+                end_verse = span.end_verse or span.start_verse
+            else:
+                end_verse = span.end_verse if end_chapter == chapter and span.end_verse else verse_count
+            ref = f"{book} {chapter}:{start_verse}"
+            if end_verse != start_verse:
+                ref += f"-{end_verse}"
+            if ref not in refs:
+                refs.append(ref)
+    return refs or list(item.passage_anchors)
+
+
+def _block_for_item(item: Any, index: int, book: str | None = None, chapter: int | None = None) -> CommentaryBlock:
     confidence = item.confidence if item.confidence in {"low", "medium", "high"} else "medium"
     text = f"Locked CKL evidence: {item.claim}"
     return CommentaryBlock(
         id=f"evidence_{index + 1}",
         text=text,
-        verse_refs=[reference],
+        verse_refs=_chapter_overlap_refs(item, book, chapter),
         evidence_ids=[item.id],
         confidence=confidence,
-        interpretation_level=interpretation,
+        interpretation_level=_interpretation_level(item),
     )
+
+
+def _role(item: Any) -> str:
+    return str((item.relevance_metadata or {}).get("semantic_relationship") or WEAKLY_RELATED)
+
+
+def _section_for_item(item: Any) -> str | None:
+    role = _role(item)
+    category = str(item.category or "").casefold()
+    if role in {SEMANTICALLY_MISANCHORED, WEAKLY_RELATED}:
+        return None
+    if role in {LATER_RECEPTION, INTERTEXTUAL_REUSE, COMPARATIVE_CONTEXT}:
+        return "dig_deeper"
+    if category in {"language"} or (
+        role == GENERIC_BACKGROUND
+        and (item.relevance_metadata or {}).get("parent_type") in {"word_study", "faq"}
+    ):
+        return "language_literary"
+    if category in {"archaeology", "geography"}:
+        return "archaeology_geography" if role == DIRECT_CONTEXT else None
+    return SECTION_BY_CATEGORY.get(category, "historical_context")
+
+
+def eligible_for_section(item: Any, section_kind: str) -> bool:
+    """Return whether an evidence item may ground a deterministic section."""
+
+    if section_kind == "chapter_overview":
+        return _role(item) in {DIRECT_CONTEXT, BOOK_CONTEXT, GENERIC_BACKGROUND} and not (
+            item.category in {"archaeology", "geography"}
+            and _role(item) == GENERIC_BACKGROUND
+        )
+    if section_kind == "historical_context":
+        return _role(item) in {DIRECT_CONTEXT, BOOK_CONTEXT, GENERIC_BACKGROUND} and item.category not in {
+            "archaeology",
+            "geography",
+            "language",
+        }
+    if section_kind == "archaeology_geography":
+        return _role(item) == DIRECT_CONTEXT and item.category in {"archaeology", "geography"}
+    if section_kind == "language_literary":
+        return _role(item) in {DIRECT_CONTEXT, BOOK_CONTEXT, GENERIC_BACKGROUND} and item.category in {
+            "language",
+            "culture",
+        }
+    if section_kind == "chronology":
+        return _role(item) in {DIRECT_CONTEXT, BOOK_CONTEXT} and item.category == "chronology"
+    if section_kind == "interpretive_questions":
+        return _role(item) not in {SEMANTICALLY_MISANCHORED, WEAKLY_RELATED}
+    if section_kind == "dig_deeper":
+        return _role(item) in {
+            INTERTEXTUAL_REUSE,
+            LATER_RECEPTION,
+            COMPARATIVE_CONTEXT,
+            GENERIC_BACKGROUND,
+        }
+    return False
+
+
+def select_overview_item(bundle: Any) -> Any | None:
+    """Choose the strongest semantically appropriate overview item."""
+
+    candidates = [
+        item
+        for item in bundle.evidence_items
+        if eligible_for_section(item, "chapter_overview")
+    ]
+    if not candidates:
+        return None
+
+    def key(item: Any) -> tuple[int, int, int, int, str]:
+        role_rank = {DIRECT_CONTEXT: 5, BOOK_CONTEXT: 4, GENERIC_BACKGROUND: 2}.get(_role(item), 0)
+        specificity = str((item.relevance_metadata or {}).get("anchor_specificity") or "unknown")
+        specificity_rank = {"verse": 4, "chapter": 3, "multi_chapter": 2, "book": 1}.get(specificity, 0)
+        category_rank = {"history": 4, "culture": 4, "social": 4, "politics": 4, "economics": 3, "language": 2, "chronology": 1}.get(item.category, 0)
+        confidence_rank = {"high": 3, "medium": 2, "low": 1}.get(item.confidence, 0)
+        return (role_rank, specificity_rank, category_rank, confidence_rank, item.id)
+
+    return max(candidates, key=key)
 
 
 def _candidate_payload(book: str, chapter: int, bundle: Any) -> dict[str, Any]:
@@ -112,34 +252,61 @@ def _candidate_payload(book: str, chapter: int, bundle: Any) -> dict[str, Any]:
             )
         )
     else:
-        overview_item = bundle.evidence_items[0]
-        sections.append(
-            CommentarySection(
-                kind="chapter_overview",
-                title=SECTION_TITLES["chapter_overview"],
-                blocks=[
-                    CommentaryBlock(
-                        id="overview",
-                        text=(
-                            f"This chapter's locked contextual evidence is limited to {len(bundle.evidence_items)} "
-                            f"source-addressable item(s) across {', '.join(sorted({item.category for item in bundle.evidence_items}))}. "
-                            f"The first anchored observation is: {overview_item.claim}"
-                        ),
-                        verse_refs=[verse_reference],
-                        evidence_ids=[overview_item.id],
-                        confidence=overview_item.confidence if overview_item.confidence in {"low", "medium", "high"} else "medium",
-                        interpretation_level="disputed" if overview_item.relevance_metadata.get("dispute_status") not in {None, "", "not_disputed"} else "fact",
-                    )
-                ],
+        overview_item = select_overview_item(bundle)
+        if overview_item is None:
+            sections.append(
+                CommentarySection(
+                    kind="chapter_overview",
+                    title=SECTION_TITLES["chapter_overview"],
+                    blocks=[
+                        CommentaryBlock(
+                            id="overview",
+                            text=(
+                                f"BHF has anchored material for {reference}, but no item is eligible to ground a first-audience chapter overview. "
+                                "This v1.1 candidate preserves the semantic limitation."
+                            ),
+                            verse_refs=[verse_reference],
+                            evidence_ids=[],
+                            confidence="high",
+                            interpretation_level="inference",
+                        )
+                    ],
+                )
             )
-        )
+            overview_item = None
+        else:
+            sections.append(
+                CommentarySection(
+                    kind="chapter_overview",
+                    title=SECTION_TITLES["chapter_overview"],
+                    blocks=[
+                        CommentaryBlock(
+                            id="overview",
+                            text=(
+                                f"This chapter's locked contextual evidence includes {len(bundle.evidence_items)} "
+                                f"source-addressable item(s). The strongest eligible contextual observation is: {overview_item.claim}"
+                            ),
+                            verse_refs=_chapter_overlap_refs(overview_item, book, chapter),
+                            evidence_ids=[overview_item.id],
+                            confidence=overview_item.confidence if overview_item.confidence in {"low", "medium", "high"} else "medium",
+                            interpretation_level=_interpretation_level(overview_item),
+                        )
+                    ],
+                )
+            )
         grouped: dict[str, list[Any]] = defaultdict(list)
         for item in bundle.evidence_items:
-            kind = SECTION_BY_CATEGORY.get(item.category, "historical_context")
-            if item.id != overview_item.id:
+            if overview_item is not None and item.id == overview_item.id:
+                continue
+            kind = _section_for_item(item)
+            if kind is not None and eligible_for_section(item, kind):
                 grouped[kind].append(item)
         max_sections = 2 if availability == "THIN" else 4
-        for kind in sorted(grouped):
+        order = ["historical_context", "archaeology_geography", "language_literary", "chronology", "interpretive_questions", "dig_deeper"]
+        selected_kinds = [kind for kind in order if kind in grouped]
+        if "dig_deeper" in selected_kinds and len(selected_kinds) > max_sections:
+            selected_kinds = [kind for kind in selected_kinds if kind != "dig_deeper"] + ["dig_deeper"]
+        for kind in selected_kinds:
             if len(sections) - 1 >= max_sections:
                 break
             items = grouped[kind][:2]
@@ -147,7 +314,7 @@ def _candidate_payload(book: str, chapter: int, bundle: Any) -> dict[str, Any]:
                 CommentarySection(
                     kind=kind,
                     title=SECTION_TITLES[kind],
-                    blocks=[_block_for_item(item, verse_reference, index) for index, item in enumerate(items)],
+                    blocks=[_block_for_item(item, index, book, chapter) for index, item in enumerate(items)],
                 )
             )
     metadata = GeneratedMetadata(
@@ -180,7 +347,11 @@ def run(priority_report: Path, certification: Path, output_root: Path) -> dict[s
     results = []
     for row in rows:
         book, chapter = row["book"], int(row["chapter"])
-        bundle = get_chapter_evidence_bundle(book, chapter)
+        bundle = get_chapter_evidence_bundle(
+            book,
+            chapter,
+            evidence_bundle_version=EVIDENCE_BUNDLE_CANDIDATE_VERSION,
+        )
         if bundle is None:
             raise RuntimeError(f"unable to rebuild locked EvidenceBundle for {book} {chapter}")
         reference = _reference(book, chapter)

@@ -26,6 +26,7 @@ from bhf_agent.ckl import load_canonical_library
 from bhf_agent.chapter_commentary.availability import classify_evidence_availability
 from bhf_agent.chapter_commentary.evidence_bundling import get_chapter_evidence_bundle
 from bhf_agent.presentation import build_evidence_bundle
+from bhf_agent.presentation.models import EVIDENCE_BUNDLE_CANDIDATE_VERSION
 from framework.canonical_library import CKLRepositoryConfig
 from framework.canonical_library.database_builder import build_database, verify_database
 from framework.canonical_library.scripture import (
@@ -39,7 +40,7 @@ from tools.diagnose_scripture_retrieval import _raw_candidate_ids, _reference_en
 REPO_ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_OUTPUT = REPO_ROOT / ".bhf-data" / "bhf-commentary-candidates" / "commentary-v1.1"
 DEFAULT_REPORT = REPO_ROOT / ".bhf-data" / "bhf-commentary-candidates" / "commentary-v1.1" / "data-gap-priority.json"
-REPORT_VERSION = "commentary-v1.1-expansion-v1"
+REPORT_VERSION = "commentary-v1.1-expansion-v2-semantic"
 
 P1_CHAPTERS = {
     ("Numbers", 3), ("Numbers", 5), ("Numbers", 7), ("Numbers", 8),
@@ -243,7 +244,11 @@ def build_priority_report(coverage: dict[str, Any]) -> dict[str, Any]:
 def _audit_chapter(library: Any, book: str, chapter: int, *, compare_library: Any | None = None) -> dict[str, Any]:
     reference = bible.verse_range_reference(book, chapter)
     query_results = list(library.retrieve_by_scripture_reference(reference, limit=100, include_placeholders=False))
-    bundle = build_evidence_bundle(reference, canonical_results=query_results)
+    bundle = build_evidence_bundle(
+        reference,
+        canonical_results=query_results,
+        bundle_version=EVIDENCE_BUNDLE_CANDIDATE_VERSION,
+    )
     entries: list[dict[str, Any]] = []
     examined_records: list[dict[str, Any]] = []
     for result in query_results:
@@ -264,7 +269,11 @@ def _audit_chapter(library: Any, book: str, chapter: int, *, compare_library: An
     json_sqlite = None
     if compare_library is not None:
         other_results = list(compare_library.retrieve_by_scripture_reference(reference, limit=100, include_placeholders=False))
-        other_bundle = build_evidence_bundle(reference, canonical_results=other_results)
+        other_bundle = build_evidence_bundle(
+            reference,
+            canonical_results=other_results,
+            bundle_version=EVIDENCE_BUNDLE_CANDIDATE_VERSION,
+        )
         json_sqlite = {
             "result_ids_agree": ids == sorted(result.object.id for result in other_results),
             "bundle_hash_agree": bundle.evidence_hash == other_bundle.evidence_hash,
@@ -299,6 +308,7 @@ def _audit_chapter(library: Any, book: str, chapter: int, *, compare_library: An
                 "source_ids": item.source_ids,
                 "passage_anchors": item.passage_anchors,
                 "confidence": item.confidence,
+                "semantic_relationship": item.relevance_metadata.get("semantic_relationship"),
             }
             for item in bundle.evidence_items
         ],

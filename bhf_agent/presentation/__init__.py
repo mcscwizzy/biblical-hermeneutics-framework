@@ -41,6 +41,7 @@ from .evaluation_suite import (
 from .fallback import deterministic_presentation
 from .models import (
     EVIDENCE_BUNDLE_VERSION,
+    EVIDENCE_BUNDLE_CANDIDATE_VERSION,
     PRESENTATION_SCHEMA_VERSION,
     DigDeeperAction,
     EntityRef,
@@ -73,6 +74,7 @@ __all__ = [
     "AdapterPresentationProvider",
     "DigDeeperAction",
     "EVIDENCE_BUNDLE_VERSION",
+    "EVIDENCE_BUNDLE_CANDIDATE_VERSION",
     "EntityRef",
     "EvidenceBundle",
     "EvidenceItem",
