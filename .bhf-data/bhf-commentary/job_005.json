@@ -1,0 +1,38 @@
+{
+  "reference": "Job 5",
+  "book": "Job",
+  "chapter": 5,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "overview",
+          "text": "Job 5 contains 27 verses. It opens with: Call now; is there any that will answer thee? And to which of the holy ones wilt thou turn? It concludes with: Lo this, we have searched it, so it is; Hear it, and know thou it for thy good.",
+          "verse_refs": [
+            "Job 5:1-27"
+          ],
+          "evidence_ids": [
+            "job-lament-dialogues"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "726d42aef0c124caf1b9ed1af1f8dfe5a94bc7661c80eebf657da4aabf81255a",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:13:11.237709+00:00"
+  },
+  "failure_reason": null,
+  "validation_errors": [],
+  "validation_warnings": []
+}

@@ -1,0 +1,38 @@
+{
+  "reference": "1 Timothy 1",
+  "book": "1 Timothy",
+  "chapter": 1,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "overview",
+          "text": "1 Timothy 1 contains 20 verses. It opens with: Paul, an apostle of Christ Jesus according to the commandment of God our Saviour, and Christ Jesus our hope; It concludes with: of whom is Hymenaeus and Alexander; whom I delivered unto Satan, that they might be taught not to blaspheme.",
+          "verse_refs": [
+            "1 Timothy 1:1-20"
+          ],
+          "evidence_ids": [
+            "1tim-arsenokoitai"
+          ],
+          "confidence": "low",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "181c2e73d8546c7e5e44861d69b8fe22f29dc4b82fca3c07553051822aea3479",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:43:51.519014+00:00"
+  },
+  "failure_reason": null,
+  "validation_errors": [],
+  "validation_warnings": []
+}

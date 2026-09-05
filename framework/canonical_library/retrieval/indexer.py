@@ -15,7 +15,8 @@ from ..normalization import normalize_alias, normalize_id, normalize_text
 from ..scripture import (
     ScriptureReferenceSpan,
     build_book_alias_lookup,
-    parse_scripture_reference,
+    format_scripture_reference,
+    parse_scripture_references,
 )
 from ..schema import CanonicalObject, CanonicalValidationError, interpretive_note_texts
 from ..schema.validator import validate_base_object
@@ -286,22 +287,31 @@ def _index_object(
     for reference in getattr(obj, "scripture_references", []) or []:
         reference_text = str(getattr(reference, "reference", reference) or "").strip()
         if reference_text:
-            script_refs.append(reference_text)
-            parsed = parse_scripture_reference(reference_text, book_alias_lookup=book_alias_lookup)
-            if parsed is not None:
+            for parsed in parse_scripture_references(reference_text, book_alias_lookup=book_alias_lookup):
+                script_refs.append(format_scripture_reference(parsed))
                 scripture_spans.append(parsed)
 
     evidence_temporal_relations_by_book: dict[str, list[str]] = {}
     for item in getattr(obj, "evidence_items", []) or []:
         for reference in item.scripture_references:
-            parsed = parse_scripture_reference(reference.reference, book_alias_lookup=book_alias_lookup)
-            if parsed is None:
-                continue
-            script_refs.append(reference.reference)
-            scripture_spans.append(parsed)
-            relations = evidence_temporal_relations_by_book.setdefault(parsed.book, [])
-            if reference.temporal_relation not in relations:
-                relations.append(reference.temporal_relation)
+            for parsed in parse_scripture_references(
+                reference.reference,
+                book_alias_lookup=book_alias_lookup,
+            ):
+                script_refs.append(format_scripture_reference(parsed))
+                scripture_spans.append(parsed)
+                relations = evidence_temporal_relations_by_book.setdefault(parsed.book, [])
+                if reference.temporal_relation not in relations:
+                    relations.append(reference.temporal_relation)
+
+    for claim in getattr(obj, "claims", []) or []:
+        for reference in claim.scripture_references:
+            for parsed in parse_scripture_references(
+                reference,
+                book_alias_lookup=book_alias_lookup,
+            ):
+                script_refs.append(format_scripture_reference(parsed))
+                scripture_spans.append(parsed)
 
     related_edges = [_normalize_related_edge(item) for item in getattr(obj, "related_objects", []) or []]
     legacy_related_ids = (

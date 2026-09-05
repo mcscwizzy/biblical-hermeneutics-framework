@@ -1,0 +1,38 @@
+{
+  "reference": "James 5",
+  "book": "James",
+  "chapter": 5,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "overview",
+          "text": "James 5 contains 20 verses. It opens with: Come now, ye rich, weep and howl for your miseries that are coming upon you. It concludes with: let him know, that he who converteth a sinner from the error of his way shall save a soul from death, and shall cover a multitude of sins.",
+          "verse_refs": [
+            "James 5:1-20"
+          ],
+          "evidence_ids": [
+            "jas-anointing"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "0627d6ca060662487e5a2079b55b1aa83a1fd2de2f62a2dcd38cb0019606f7c4",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:44:40.989231+00:00"
+  },
+  "failure_reason": null,
+  "validation_errors": [],
+  "validation_warnings": []
+}

@@ -1,0 +1,33 @@
+{
+  "release_name": "BHF Commentary v1.0",
+  "generation_date": "2026-09-04",
+  "corpus_commit_sha": "b40f8a7560e1a5db650a93a9e267f9b92faed85f",
+  "branch": "feat/commentary",
+  "commentary_schema_version": "1.0",
+  "commentary_prompt_version": "1.1",
+  "model_provenance": {
+    "model": "luna-codex-development",
+    "mode": "Luna-only development synthesis",
+    "external_provider_used": false
+  },
+  "total_chapters": 1189,
+  "validation_totals": {
+    "validated": 1189,
+    "partial": 0,
+    "needs_review": 0,
+    "failed": 0,
+    "pending": 0,
+    "stale": 0
+  },
+  "evidence_availability": {
+    "AVAILABLE": 709,
+    "THIN": 142,
+    "DATA_GAP": 247
+  },
+  "evidence_bundle_version": "1.0",
+  "health_report": {
+    "path": ".bhf-data/bhf-commentary/commentary-health-report-v1.0.json",
+    "sha256": "6ee3b34aa1c446cab26cf00005f20823e775697d42dcd4811ace628a6c1d59c1"
+  },
+  "known_untracked_artifact": ".bhf-data/bhf-commentary/leviticus_001.json"
+}

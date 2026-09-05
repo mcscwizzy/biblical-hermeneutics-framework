@@ -620,6 +620,45 @@ class CompanionContextService:
             raise RuntimeError("canonical Scripture index is unavailable")
         return list(lookup(reference, limit=100, include_placeholders=False))
 
+    def build_evidence_bundle_for_passage(
+        self,
+        *,
+        book: str,
+        chapter: int,
+        verse_start: int | None = None,
+        verse_end: int | None = None,
+    ) -> EvidenceBundle:
+        """Build the same strict local evidence bundle used by Companion.
+
+        This is a read-only projection boundary for commentary citations. It
+        reuses the established canonical, map, and archaeology resolvers and
+        does not perform semantic or fallback retrieval.
+        """
+        canonical_book = normalize_book_name(str(book))
+        chapter_number = _positive_int(chapter, "chapter")
+        start = _optional_positive_int(verse_start, "verse_start")
+        end = _optional_positive_int(verse_end, "verse_end") or start
+        if start is not None and end is not None and end < start:
+            raise ValueError("verse_end must be greater than or equal to verse_start")
+        range_start, range_end = (start or 1), (end or 9999)
+        reference = _format_reference(canonical_book, chapter_number, start, end)
+        geography = self._map_context(canonical_book, chapter_number, range_start, range_end)
+        archaeology = list_archaeology_passage_summaries(
+            canonical_book,
+            chapter_number,
+            range_start,
+            range_end,
+            path=self.study_db_path,
+            limit=8,
+            prepare_schema=False,
+        )
+        return build_evidence_bundle(
+            reference,
+            canonical_results=self._canonical_results(reference),
+            geography=geography,
+            archaeology=archaeology,
+        )
+
 
 def _resource(state: str, count: int, *, error: str | None = None) -> dict[str, Any]:
     value: dict[str, Any] = {

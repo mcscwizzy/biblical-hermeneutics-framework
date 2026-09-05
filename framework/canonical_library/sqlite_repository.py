@@ -529,12 +529,19 @@ class SQLiteCanonicalRepository:
                    end_chapter, end_verse, 'evidence' AS link_kind
             FROM canonical_evidence_scripture_references
             WHERE book = ?
+            UNION ALL
+            SELECT object_id, reference_text, book, start_chapter, start_verse,
+                   end_chapter, end_verse, 'claim' AS link_kind
+            FROM canonical_claim_scripture_references
+            WHERE book = ?
             ORDER BY object_id, reference_text
             """,
-            (query.book, query.book),
+            (query.book, query.book, query.book),
         ).fetchall()
         matches_by_id: dict[str, list[ScriptureReferenceSpan]] = {}
+        scoring_matches_by_id: dict[str, set[ScriptureReferenceSpan]] = {}
         evidence_linked_ids: set[str] = set()
+        claim_linked_ids: set[str] = set()
         for row in rows:
             candidate = ScriptureReferenceSpan(
                 book=str(row["book"]),
@@ -547,8 +554,12 @@ class SQLiteCanonicalRepository:
                 object_matches = matches_by_id.setdefault(str(row["object_id"]), [])
                 if candidate not in object_matches:
                     object_matches.append(candidate)
+                if str(row["link_kind"]) != "claim":
+                    scoring_matches_by_id.setdefault(str(row["object_id"]), set()).add(candidate)
                 if str(row["link_kind"]) == "evidence":
                     evidence_linked_ids.add(str(row["object_id"]))
+                if str(row["link_kind"]) == "claim":
+                    claim_linked_ids.add(str(row["object_id"]))
         results: list[RetrievalResult] = []
         for object_id in sorted(matches_by_id):
             obj = self.get_by_id(object_id)
@@ -559,14 +570,18 @@ class SQLiteCanonicalRepository:
                     object=obj,
                     score=scripture_match_score(
                         query,
-                        match_count=len(matches_by_id[object_id]),
+                        match_count=max(len(scoring_matches_by_id.get(object_id, set())), 1),
                         importance=obj.importance,
                     ),
                     match_type="scripture",
                     matched_terms=scripture_query_terms(query),
                     matched_fields=(
-                        ["scripture_references", "evidence_items"]
+                        ["scripture_references", "evidence_items", "claims"]
+                        if object_id in evidence_linked_ids and object_id in claim_linked_ids
+                        else ["scripture_references", "evidence_items"]
                         if object_id in evidence_linked_ids
+                        else ["scripture_references", "claims"]
+                        if object_id in claim_linked_ids
                         else ["scripture_references"]
                     ),
                     matched_alias=query.book,
@@ -606,8 +621,10 @@ class SQLiteCanonicalRepository:
                 SELECT object_id FROM canonical_scripture_references WHERE book = ?
                 UNION
                 SELECT object_id FROM canonical_evidence_scripture_references WHERE book = ?
+                UNION
+                SELECT object_id FROM canonical_claim_scripture_references WHERE book = ?
                 """,
-                (scripture_query.book, scripture_query.book),
+                (scripture_query.book, scripture_query.book, scripture_query.book),
             ).fetchall()
             candidate_ids.update(str(row["object_id"]) for row in rows)
         normalized_query = normalize_alias(query)

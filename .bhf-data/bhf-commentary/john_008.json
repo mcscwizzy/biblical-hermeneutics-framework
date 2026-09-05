@@ -1,0 +1,38 @@
+{
+  "reference": "John 8",
+  "book": "John",
+  "chapter": 8,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "overview",
+          "text": "John 8 contains 59 verses. It opens with: but Jesus went unto the mount of Olives. It concludes with: They took up stones therefore to cast at him: but Jesus hid himself, and went out of the temple.",
+          "verse_refs": [
+            "John 8:1-59"
+          ],
+          "evidence_ids": [
+            "john-i-am"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "cb3bb0ce002692b7be476ee8d521e652561c33d862307dbd4f7d19c3b26e3546",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:39:18.287968+00:00"
+  },
+  "failure_reason": null,
+  "validation_errors": [],
+  "validation_warnings": []
+}

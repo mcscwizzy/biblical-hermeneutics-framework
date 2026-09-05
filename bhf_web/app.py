@@ -54,6 +54,7 @@ from .forms import (
 )
 from . import settings
 from .routes.ask import register_ask_routes
+from .routes.bhf_commentary import register_bhf_commentary_routes
 from .routes.canonical import register_canonical_routes
 from .routes.canonical import register_canonical_editor_routes
 from .routes.curation import register_curation_routes
@@ -61,6 +62,7 @@ from .routes.debug import register_debug_routes
 from .routes.maps import register_map_routes
 from .routes.archaeology import register_archaeology_routes
 from .routes.commentary import register_commentary_routes
+from .routes.commentary_coverage import register_commentary_coverage_routes
 from .routes.study import register_study_routes
 from .jobs import (
     AskJob,
@@ -78,6 +80,7 @@ PACKAGE_DIR = Path(__file__).resolve().parent
 templates = Jinja2Templates(directory=str(PACKAGE_DIR / "templates"))
 STUDY_DB_PATH = settings.STUDY_DB_PATH
 COMMENTARY_DB_PATH = settings.COMMENTARY_DB_PATH
+BHF_COMMENTARY_STORAGE_PATH = settings.BHF_COMMENTARY_STORAGE_PATH
 LOGGER = logging.getLogger(__name__)
 
 
@@ -575,6 +578,21 @@ def create_app() -> FastAPI:
     register_map_routes(web_app, study_db_path=str(STUDY_DB_PATH))
     register_archaeology_routes(web_app, templates=templates)
     register_commentary_routes(web_app, database_path=str(COMMENTARY_DB_PATH))
+    register_commentary_coverage_routes(
+        web_app,
+        storage_dir=str(BHF_COMMENTARY_STORAGE_PATH),
+        templates=templates,
+    )
+    companion_context_service = CompanionContextService(
+        study_db_path=STUDY_DB_PATH,
+        commentary_db_path=COMMENTARY_DB_PATH,
+        presentation_engine=presentation_runtime.engine,
+    )
+    register_bhf_commentary_routes(
+        web_app,
+        storage_dir=str(BHF_COMMENTARY_STORAGE_PATH),
+        companion_context_service=companion_context_service,
+    )
     register_study_routes(
         web_app,
         study_db_path=str(STUDY_DB_PATH),
@@ -582,11 +600,7 @@ def create_app() -> FastAPI:
         job_store=job_store,
         context_presenter=present_reader_context,
         commentary_db_path=str(COMMENTARY_DB_PATH),
-        companion_context_service=CompanionContextService(
-            study_db_path=STUDY_DB_PATH,
-            commentary_db_path=COMMENTARY_DB_PATH,
-            presentation_engine=presentation_runtime.engine,
-        ),
+        companion_context_service=companion_context_service,
         presentation_transport=str(runtime_config["presentationTransport"]),
     )
     register_debug_routes(web_app)

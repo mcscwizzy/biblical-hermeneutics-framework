@@ -1,0 +1,38 @@
+{
+  "reference": "Daniel 5",
+  "book": "Daniel",
+  "chapter": 5,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "overview",
+          "text": "Daniel 5 contains 31 verses. It opens with: Belshazzar the king made a great feast to a thousand of his lords, and drank wine before the thousand. It concludes with: And Darius the Mede received the kingdom, being about threescore and two years old.",
+          "verse_refs": [
+            "Daniel 5:1-31"
+          ],
+          "evidence_ids": [
+            "daniel-belshazzar"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "91736042c8471d82a6d8e998e32d799c0f9d81b1bdcaab66d77712d5d85cd47b",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:30:33.677464+00:00"
+  },
+  "failure_reason": null,
+  "validation_errors": [],
+  "validation_warnings": []
+}

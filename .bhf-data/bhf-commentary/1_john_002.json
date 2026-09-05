@@ -1,0 +1,38 @@
+{
+  "reference": "1 John 2",
+  "book": "1 John",
+  "chapter": 2,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "overview",
+          "text": "1 John 2 contains 29 verses. It opens with: My little children, these things write I unto you that ye may not sin. And if any man sin, we have an Advocate with the Father, Jesus Christ the righteous: It concludes with: If ye know that he is righteous, ye know that every one also that doeth righteousness is begotten of him.",
+          "verse_refs": [
+            "1 John 2:1-29"
+          ],
+          "evidence_ids": [
+            "1jn-advocate"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "58334a28099715f473f9d4db477e70c42590a739996a21c591160f676122db99",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:44:42.009176+00:00"
+  },
+  "failure_reason": null,
+  "validation_errors": [],
+  "validation_warnings": []
+}

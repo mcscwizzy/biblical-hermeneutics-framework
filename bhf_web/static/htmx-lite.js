@@ -1080,6 +1080,9 @@ async function initializeReader() {
   const searchResultsBody = document.querySelector(
     "#reader-search-results-body",
   );
+  const commentarySearchResultsBody = document.querySelector(
+    "#commentary-search-results-body",
+  );
   if (searchForm) {
     searchForm.addEventListener("submit", submitBibleSearch);
     const queryInput = searchForm.querySelector("[name='query']");
@@ -1094,6 +1097,9 @@ async function initializeReader() {
   }
   if (searchResultsBody) {
     searchResultsBody.addEventListener("click", handleBibleSearchResultAction);
+  }
+  if (commentarySearchResultsBody) {
+    commentarySearchResultsBody.addEventListener("click", handleCommentarySearchResultAction);
   }
   const addNoteButton = document.querySelector("[data-add-note]");
   if (addNoteButton) {

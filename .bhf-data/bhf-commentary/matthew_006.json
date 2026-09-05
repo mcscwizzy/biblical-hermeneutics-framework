@@ -1,0 +1,38 @@
+{
+  "reference": "Matthew 6",
+  "book": "Matthew",
+  "chapter": 6,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "overview",
+          "text": "Matthew 6 contains 34 verses. It opens with: Take heed that ye do not your righteousness before men, to be seen of them: else ye have no reward with your Father who is in heaven. It concludes with: Be not therefore anxious for the morrow: for the morrow will be anxious for itself. Sufficient unto the day is the evil thereof.",
+          "verse_refs": [
+            "Matthew 6:1-34"
+          ],
+          "evidence_ids": [
+            "matthew-jewish-context"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "871af826ae79e6d64a4e9e5c540fd735e5b72f81cad10f2db73a5db605dd36d2",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:36:12.087067+00:00"
+  },
+  "failure_reason": null,
+  "validation_errors": [],
+  "validation_warnings": []
+}

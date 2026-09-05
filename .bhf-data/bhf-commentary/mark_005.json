@@ -1,0 +1,38 @@
+{
+  "reference": "Mark 5",
+  "book": "Mark",
+  "chapter": 5,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "overview",
+          "text": "Mark 5 contains 43 verses. It opens with: And they came to the other side of the sea, into the country of the Gerasenes. It concludes with: And he charged them much that no man should know this: and he commanded that `something' should be given her to eat.",
+          "verse_refs": [
+            "Mark 5:1-43"
+          ],
+          "evidence_ids": [
+            "mark-aramaic"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "4444d747b63285c6a1ce1f7fce8ec3193471e9f2b93faf5246df2d32c0d1baa1",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:37:07.759550+00:00"
+  },
+  "failure_reason": null,
+  "validation_errors": [],
+  "validation_warnings": []
+}

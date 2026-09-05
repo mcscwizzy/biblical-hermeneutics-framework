@@ -1,0 +1,38 @@
+{
+  "reference": "John 20",
+  "book": "John",
+  "chapter": 20,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "overview",
+          "text": "John 20 contains 31 verses. It opens with: Now on the first `day' of the week cometh Mary Magdalene early, while it was yet dark, unto the tomb, and seeth the stone taken away from the tomb. It concludes with: but these are written, that ye may believe that Jesus is the Christ, the Son of God; and that believing ye may have life in his name.",
+          "verse_refs": [
+            "John 20:1-31"
+          ],
+          "evidence_ids": [
+            "john-20-23"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "fbc2cc6b0f4e9a9d63c38876e14b62cbad9735293eb1ffccae304542bc32e373",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:40:02.845792+00:00"
+  },
+  "failure_reason": null,
+  "validation_errors": [],
+  "validation_warnings": []
+}

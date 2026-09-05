@@ -1,0 +1,38 @@
+{
+  "reference": "Acts 15",
+  "book": "Acts",
+  "chapter": 15,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "overview",
+          "text": "Acts 15 contains 41 verses. It opens with: And certain men came down from Judaea and taught the brethren, `saying', Except ye be circumcised after the custom of Moses, ye cannot be saved. It concludes with: And he went through Syria and Cilicia, confirming the churches.",
+          "verse_refs": [
+            "Acts 15:1-41"
+          ],
+          "evidence_ids": [
+            "acts-15-gentile-question"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "8bf08fdea41598de23d24920f0328c6a99159b63d0afb0b6c8f2d4fb888633a5",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:40:07.766869+00:00"
+  },
+  "failure_reason": null,
+  "validation_errors": [],
+  "validation_warnings": []
+}

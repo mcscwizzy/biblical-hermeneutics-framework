@@ -1,4 +1,4 @@
-const CACHE_VERSION = "v43";
+const CACHE_VERSION = "v44";
 const SHELL_CACHE = `bhf-shell-${CACHE_VERSION}`;
 const STATIC_CACHE = `bhf-static-${CACHE_VERSION}`;
 const API_CACHE = `bhf-api-${CACHE_VERSION}`;
@@ -36,6 +36,7 @@ const STATIC_ASSETS = [
   "/static/companion-sheet.js",
   "/static/resource-router.js",
   "/static/companion-discoveries.js",
+  "/static/bhf-commentary-card.js",
   "/static/study-companion.js",
   "/static/htmx-status.js",
   "/static/htmx-study-panels.js",
@@ -269,6 +270,7 @@ function isCacheableApiRequest(url) {
     "/api/canonical/search",
     "/api/canonical/entities-for-passage",
     "/api/study/companion-context",
+    "/api/bhf-commentary/",
     "/api/canonical/objects/",
     "/api/maps/",
     "/api/map-studies",

@@ -1,0 +1,38 @@
+{
+  "reference": "Mark 12",
+  "book": "Mark",
+  "chapter": 12,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "overview",
+          "text": "Mark 12 contains 44 verses. It opens with: And he began to speak unto them in parables. A man planted a vineyard, and set a hedge about it, and digged a pit for the winepress, and built a tower, and let it out to husbandmen, and went into another country. It concludes with: for they all did cast in of their superfluity; but she of her want did cast in all that she had, `even' all her living.",
+          "verse_refs": [
+            "Mark 12:1-44"
+          ],
+          "evidence_ids": [
+            "mark-economic-world"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "faae9ddf086343ec3260b2e8e6adbdafd2f82b08fdebe05e4ed9cee4f90f2662",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:38:31.203533+00:00"
+  },
+  "failure_reason": null,
+  "validation_errors": [],
+  "validation_warnings": []
+}

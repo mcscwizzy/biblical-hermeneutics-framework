@@ -1,0 +1,38 @@
+{
+  "reference": "Acts 26",
+  "book": "Acts",
+  "chapter": 26,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "overview",
+          "text": "Acts 26 contains 32 verses. It opens with: And Agrippa said unto Paul, Thou art permitted to speak for thyself. Then Paul stretched forth his hand, and made his defence: It concludes with: And Agrippa said unto Festus, This man might have been set at liberty, if he had not appealed unto Caesar.",
+          "verse_refs": [
+            "Acts 26:1-32"
+          ],
+          "evidence_ids": [
+            "acts-damascus-blindness-recovery"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "d20978b1ef1a3f26fda38160cf4f56943ce409b95e84039ea8a1444fe0f9c526",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:40:54.358282+00:00"
+  },
+  "failure_reason": null,
+  "validation_errors": [],
+  "validation_warnings": []
+}

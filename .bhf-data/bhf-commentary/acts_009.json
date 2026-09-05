@@ -1,0 +1,38 @@
+{
+  "reference": "Acts 9",
+  "book": "Acts",
+  "chapter": 9,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "overview",
+          "text": "Acts 9 contains 43 verses. It opens with: But Saul, yet breathing threatening and slaughter against the disciples of the Lord, went unto the high priest, It concludes with: And it came to pass, that he abode many days in Joppa with one Simon a tanner.",
+          "verse_refs": [
+            "Acts 9:1-43"
+          ],
+          "evidence_ids": [
+            "acts-damascus-blindness-recovery"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "20e4c95d0f83f9503045339a26dc7127fa632e763e87bd9a4cecd9e8919349c0",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:40:05.541814+00:00"
+  },
+  "failure_reason": null,
+  "validation_errors": [],
+  "validation_warnings": []
+}

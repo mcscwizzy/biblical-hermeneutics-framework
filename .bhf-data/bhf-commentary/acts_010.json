@@ -1,0 +1,38 @@
+{
+  "reference": "Acts 10",
+  "book": "Acts",
+  "chapter": 10,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "overview",
+          "text": "Acts 10 contains 48 verses. It opens with: Now `there was' a certain man in Caesarea, Cornelius by name, a centurion of the band called the Italian `band', It concludes with: And he commanded them to be baptized in the name of Jesus Christ. Then prayed they him to tarry certain days.",
+          "verse_refs": [
+            "Acts 10:1-48"
+          ],
+          "evidence_ids": [
+            "acts-animal-vision-perplexity"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "7790a2f71113f11e6f9a75278d1e4fec2fd81d492b34f25ed21b8f5c5eb61ea3",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:40:05.807615+00:00"
+  },
+  "failure_reason": null,
+  "validation_errors": [],
+  "validation_warnings": []
+}

@@ -5,7 +5,8 @@ from __future__ import annotations
 from typing import Any, Mapping, Sequence
 
 from .models import mapping
-from .references import anchor_specificity, references_overlap
+from .references import _BOOK_ALIASES, anchor_specificity, references_overlap
+from framework.canonical_library.scripture import format_scripture_reference, parse_scripture_references
 
 
 def scripture_anchors(value: Any) -> list[str]:
@@ -20,10 +21,14 @@ def scripture_anchors(value: Any) -> list[str]:
     for raw in raw_values:
         if isinstance(raw, Mapping):
             raw = raw.get("reference")
-        anchor = " ".join(str(raw or "").split())
-        if anchor and anchor not in seen:
-            anchors.append(anchor)
-            seen.add(anchor)
+        for parsed in parse_scripture_references(
+            str(raw or ""),
+            book_alias_lookup=_BOOK_ALIASES,
+        ):
+            anchor = format_scripture_reference(parsed)
+            if anchor not in seen:
+                anchors.append(anchor)
+                seen.add(anchor)
     return anchors
 
 

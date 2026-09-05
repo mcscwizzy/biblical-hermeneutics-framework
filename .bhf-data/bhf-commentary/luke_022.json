@@ -1,0 +1,38 @@
+{
+  "reference": "Luke 22",
+  "book": "Luke",
+  "chapter": 22,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "overview",
+          "text": "Luke 22 contains 71 verses. It opens with: Now the feast of unleavened bread drew nigh, which is called the Passover. It concludes with: And they said, What further need have we of witness? for we ourselves have heard from his own mouth.",
+          "verse_refs": [
+            "Luke 22:1-71"
+          ],
+          "evidence_ids": [
+            "luke-agony-variant"
+          ],
+          "confidence": "low",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "81dd9a2b1d8c5bd3040282fbee0ac842df4511adaad2368e3b1aa68e22024ef6",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:39:16.187692+00:00"
+  },
+  "failure_reason": null,
+  "validation_errors": [],
+  "validation_warnings": []
+}

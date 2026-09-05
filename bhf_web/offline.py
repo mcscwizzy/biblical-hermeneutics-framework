@@ -85,6 +85,7 @@ def build_offline_manifest() -> dict[str, Any]:
                     "/api/translations/{translation_id}/offline-data",
                     "/api/bible/books",
                     "/api/commentary/",
+                    "/api/bhf-commentary/",
                 ],
                 "assets": [
                     "/static/style.css",
@@ -105,6 +106,7 @@ def build_offline_manifest() -> dict[str, Any]:
                     "/static/companion-sheet.js",
                     "/static/resource-router.js",
                     "/static/companion-discoveries.js",
+                    "/static/bhf-commentary-card.js",
                     "/static/study-companion.js",
                     "/static/pwa.js",
                     "/static/icons/icon-192.png",

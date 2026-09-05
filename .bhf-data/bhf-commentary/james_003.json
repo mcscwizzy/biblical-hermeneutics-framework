@@ -1,0 +1,38 @@
+{
+  "reference": "James 3",
+  "book": "James",
+  "chapter": 3,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "overview",
+          "text": "James 3 contains 18 verses. It opens with: Be not many `of you' teachers, my brethren, knowing that we shall receive heavier judgment. It concludes with: And the fruit of righteousness is sown in peace for them that make peace.",
+          "verse_refs": [
+            "James 3:1-18"
+          ],
+          "evidence_ids": [
+            "jas-genre"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "b7143e8abdbc4581b746730bacb395bda71d1fdabc6055f1cc908db4555b9c46",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:44:40.846132+00:00"
+  },
+  "failure_reason": null,
+  "validation_errors": [],
+  "validation_warnings": []
+}

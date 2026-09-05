@@ -1,0 +1,38 @@
+{
+  "reference": "Luke 20",
+  "book": "Luke",
+  "chapter": 20,
+  "status": "validated",
+  "evidence_availability": "THIN",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "overview",
+          "text": "Luke 20 contains 47 verses. It opens with: And it came to pass, on one of the days, as he was teaching the people in the temple, and preaching the gospel, there came upon him the chief priests and the scribes with the elders; It concludes with: who devour widows' houses, and for a pretence make long prayers: these shall receive greater condemnation.",
+          "verse_refs": [
+            "Luke 20:1-47"
+          ],
+          "evidence_ids": [
+            "luke-widow"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "dfc598823583eaf3866e0840cf5fdd1ccb5f855bab7a7c9d1fb053539db82bf9",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:39:15.739115+00:00"
+  },
+  "failure_reason": null,
+  "validation_errors": [],
+  "validation_warnings": []
+}

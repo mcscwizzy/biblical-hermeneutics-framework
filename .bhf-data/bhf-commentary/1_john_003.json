@@ -1,0 +1,38 @@
+{
+  "reference": "1 John 3",
+  "book": "1 John",
+  "chapter": 3,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "overview",
+          "text": "1 John 3 contains 24 verses. It opens with: Behold what manner of love the Father hath bestowed upon us, that we should be called children of God; and `such' we are. For this cause the world knoweth us not, because it knew him not. It concludes with: And he that keepeth his commandments abideth in him, and he in him. And hereby we know that he abideth in us, by the Spirit which he gave us.",
+          "verse_refs": [
+            "1 John 3:1-24"
+          ],
+          "evidence_ids": [
+            "1jn-anonymous"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "34c766b78b6e66d291ea22a557a410eb132c27b6c2f3f330d5fd229ff4feb00b",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:44:42.093259+00:00"
+  },
+  "failure_reason": null,
+  "validation_errors": [],
+  "validation_warnings": []
+}

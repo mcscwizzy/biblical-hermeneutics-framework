@@ -1,0 +1,38 @@
+{
+  "reference": "Job 42",
+  "book": "Job",
+  "chapter": 42,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "overview",
+          "text": "Job 42 contains 17 verses. It opens with: Then Job answered Jehovah, and said, It concludes with: So Job died, being old and full of days.",
+          "verse_refs": [
+            "Job 42:1-17"
+          ],
+          "evidence_ids": [
+            "job-friends-rebuked-intercession"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "5de714cb68bc8bc0f51198a30d22fa76e21776d7efdf9add5597dad3bca140f2",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:16:23.841923+00:00"
+  },
+  "failure_reason": null,
+  "validation_errors": [],
+  "validation_warnings": []
+}

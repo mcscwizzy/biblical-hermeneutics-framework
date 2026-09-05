@@ -1,0 +1,38 @@
+{
+  "reference": "John 16",
+  "book": "John",
+  "chapter": 16,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "overview",
+          "text": "John 16 contains 33 verses. It opens with: These things have I spoken unto you, that ye should not be caused to stumble. It concludes with: These things have I spoken unto you, that in me ye may have peace. In the world ye have tribulation: but be of good cheer; I have overcome the world.",
+          "verse_refs": [
+            "John 16:1-33"
+          ],
+          "evidence_ids": [
+            "john-aposynagogos"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "a6242969e57297ad2611dfccd3a399a7c5a32834a450eb586a7e169d85668b32",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:39:19.606218+00:00"
+  },
+  "failure_reason": null,
+  "validation_errors": [],
+  "validation_warnings": []
+}

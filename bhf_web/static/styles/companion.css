@@ -340,6 +340,208 @@ body.companion-sheet-full {
   min-height: 38px;
 }
 
+.bhf-commentary-card {
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+  border-radius: 14px;
+  padding: 16px;
+  background: var(--surface-raised, var(--surface));
+}
+
+.bhf-commentary-card[data-state="loading"] {
+  opacity: 0.82;
+}
+
+.bhf-commentary-reference {
+  margin: -8px 0 10px;
+  color: var(--muted-text);
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.bhf-commentary-status {
+  margin: 0 0 10px;
+  color: var(--muted-text);
+  font-size: 0.82rem;
+  line-height: 1.45;
+}
+
+.bhf-commentary-body {
+  white-space: pre-line;
+  line-height: 1.55;
+}
+
+.bhf-commentary-availability {
+  display: inline-flex;
+  max-width: 100%;
+  padding: 4px 8px;
+  border: 1px solid color-mix(in srgb, var(--accent) 25%, var(--border));
+  border-radius: 999px;
+  color: var(--accent-text);
+  background: var(--accent-soft);
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-align: right;
+}
+
+.bhf-commentary-card[data-availability="THIN"] .bhf-commentary-availability,
+.bhf-commentary-card[data-availability="DATA_GAP"] .bhf-commentary-availability,
+.bhf-commentary-card:not([data-availability]) .bhf-commentary-availability {
+  color: var(--muted-text);
+  border-color: var(--border);
+  background: var(--surface-muted);
+}
+
+.bhf-commentary-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 12px;
+  margin-top: 14px;
+  color: var(--muted-text);
+  font-size: 0.76rem;
+}
+
+.bhf-commentary-verse-refs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.bhf-commentary-verse-ref {
+  min-height: 32px;
+  padding: 4px 8px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  color: var(--accent-text);
+  background: var(--surface);
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.bhf-commentary-verse-ref:hover,
+.bhf-commentary-verse-ref:focus-visible {
+  border-color: var(--accent);
+  outline: none;
+  box-shadow: 0 0 0 2px var(--accent-soft);
+}
+
+.bhf-commentary-evidence-explorer {
+  margin-top: 14px;
+}
+
+.bhf-commentary-evidence-toggle {
+  min-height: 36px;
+  width: 100%;
+  text-align: left;
+  font-weight: 750;
+}
+
+.bhf-commentary-evidence-panel {
+  margin-top: 10px;
+  padding: 12px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--surface);
+}
+
+.bhf-commentary-evidence-status {
+  margin: 0 0 10px;
+  color: var(--muted-text);
+  font-size: 0.78rem;
+  line-height: 1.45;
+}
+
+.bhf-commentary-evidence-item + .bhf-commentary-evidence-item {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+}
+
+.bhf-commentary-evidence-heading {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 10px;
+  align-items: baseline;
+}
+
+.bhf-commentary-evidence-category,
+.bhf-commentary-evidence-confidence {
+  color: var(--muted-text);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.bhf-commentary-evidence-claim {
+  margin: 6px 0;
+  line-height: 1.5;
+}
+
+.bhf-commentary-evidence-dispute,
+.bhf-commentary-evidence-anchor,
+.bhf-commentary-evidence-unavailable {
+  margin: 6px 0 0;
+  color: var(--muted-text);
+  font-size: 0.78rem;
+  line-height: 1.45;
+}
+
+.bhf-commentary-evidence-dispute {
+  font-weight: 700;
+}
+
+.bhf-commentary-evidence-details {
+  margin-top: 8px;
+  font-size: 0.76rem;
+}
+
+.bhf-commentary-evidence-details summary {
+  color: var(--accent-text);
+  cursor: pointer;
+  font-weight: 750;
+}
+
+.bhf-commentary-evidence-details p {
+  margin: 8px 0 0;
+  white-space: pre-line;
+  color: var(--muted-text);
+  line-height: 1.45;
+}
+
+.bhf-commentary-evidence-actions,
+.bhf-commentary-study-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 10px;
+}
+
+.bhf-commentary-evidence-actions button,
+.bhf-commentary-study-actions button {
+  min-height: 34px;
+  padding: 5px 9px;
+  font-size: 0.76rem;
+}
+
+@media (max-width: 520px) {
+  .bhf-commentary-card {
+    padding: 14px;
+  }
+
+  .bhf-commentary-card .companion-section-heading-inline {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 7px;
+  }
+
+  .bhf-commentary-availability {
+    text-align: left;
+  }
+}
+
 [data-companion-action="save"][data-saved="true"] {
   color: var(--success-text);
   border-color: color-mix(in srgb, var(--success-text) 35%, var(--border));

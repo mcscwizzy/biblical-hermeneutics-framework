@@ -298,6 +298,9 @@ def _append_object_evidence(
     parent_confidence = _confidence(data.get("confidence"))
     linked_claims: set[str] = set()
     added = 0
+    has_structured_evidence = bool(
+        _sequence(data.get("evidence_items")) or _sequence(data.get("claims"))
+    )
 
     for raw in _sequence(data.get("evidence_items")):
         item = mapping(raw)
@@ -305,11 +308,13 @@ def _append_object_evidence(
         if not item_id:
             continue
         declared_anchors = _evidence_anchors(item)
-        anchors = declared_anchors or parent_anchors
-        matched = (
-            passage_matching_scripture_anchors(passage_ref, item)
-            if declared_anchors
-            else [anchor for anchor in anchors if references_overlap(passage_ref, anchor)]
+        # Once a record has structured claims/items, every admitted claim must
+        # carry its own passage anchor. Inheriting a mixed parent anchor list
+        # would turn an unrelated book-level claim into chapter evidence.
+        matched = passage_matching_scripture_anchors(passage_ref, item) if declared_anchors else (
+            [] if has_structured_evidence else [
+                anchor for anchor in parent_anchors if references_overlap(passage_ref, anchor)
+            ]
         )
         if not matched:
             continue
@@ -386,11 +391,10 @@ def _append_object_evidence(
         if not claim_id or claim_id in linked_claims:
             continue
         declared_anchors = _strings(claim.get("scripture_references"))
-        anchors = declared_anchors or parent_anchors
-        matched = (
-            passage_matching_scripture_anchors(passage_ref, claim)
-            if declared_anchors
-            else [anchor for anchor in anchors if references_overlap(passage_ref, anchor)]
+        matched = passage_matching_scripture_anchors(passage_ref, claim) if declared_anchors else (
+            [] if has_structured_evidence else [
+                anchor for anchor in parent_anchors if references_overlap(passage_ref, anchor)
+            ]
         )
         if not matched:
             continue
@@ -420,7 +424,11 @@ def _append_object_evidence(
     # Older CKL records do not all have claim-level evidence yet. Preserve a
     # narrow, source-addressable bridge without turning the entire object into
     # commentary prose.
-    if added == 0:
+    # Structured records may carry broad parent anchors for relationships such
+    # as comparative/background. Their legacy parent prose is not claim-level
+    # evidence for the requested passage. Only legacy-only records may use the
+    # compatibility bridge below.
+    if added == 0 and not has_structured_evidence:
         matched_parent = [anchor for anchor in parent_anchors if references_overlap(passage_ref, anchor)]
         if not matched_parent:
             return

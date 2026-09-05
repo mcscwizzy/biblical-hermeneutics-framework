@@ -1,0 +1,38 @@
+{
+  "reference": "Luke 11",
+  "book": "Luke",
+  "chapter": 11,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "overview",
+          "text": "Luke 11 contains 54 verses. It opens with: And it came to pass, as he was praying in a certain place, that when he ceased, one of his disciples said unto him, Lord, teach us to pray, even as John also taught his disciples. It concludes with: laying wait for him, to catch something out of his mouth.",
+          "verse_refs": [
+            "Luke 11:1-54"
+          ],
+          "evidence_ids": [
+            "luke-prayer"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "1d5f3c5cd007df6c1aa204fbb5ed461f1fc47b19d46d93c8d035bbb59f8c0f9c",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:38:33.567946+00:00"
+  },
+  "failure_reason": null,
+  "validation_errors": [],
+  "validation_warnings": []
+}

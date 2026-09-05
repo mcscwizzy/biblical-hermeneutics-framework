@@ -1,0 +1,36 @@
+{
+  "reference": "Luke 9",
+  "book": "Luke",
+  "chapter": 9,
+  "status": "validated",
+  "evidence_availability": "DATA_GAP",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "overview",
+          "text": "Luke 9 contains 62 verses. It opens with: And he called the twelve together, and gave them power and authority over all demons, and to cure diseases. It concludes with: But Jesus said unto him, No man, having put his hand to the plow, and looking back, is fit for the kingdom of God.",
+          "verse_refs": [
+            "Luke 9:1-62"
+          ],
+          "evidence_ids": [],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "a8fd76ae231bcecbc3dead8ef0dea8ede9b1732d84f4cc0304999e72213e017c",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:38:33.249600+00:00"
+  },
+  "failure_reason": null,
+  "validation_errors": [],
+  "validation_warnings": []
+}

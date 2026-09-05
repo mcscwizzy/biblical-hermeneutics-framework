@@ -1,0 +1,38 @@
+{
+  "reference": "Job 20",
+  "book": "Job",
+  "chapter": 20,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "overview",
+          "text": "Job 20 contains 29 verses. It opens with: Then answered Zophar the Naamathite, and said, It concludes with: This is the portion of a wicked man from God, And the heritage appointed unto him by God.",
+          "verse_refs": [
+            "Job 20:1-29"
+          ],
+          "evidence_ids": [
+            "job-lament-dialogues"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "79ed3ed8c34cbda7adef9a4f4ca465bcc76a5feadb63f92522cfc74b461b093a",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:14:28.681531+00:00"
+  },
+  "failure_reason": null,
+  "validation_errors": [],
+  "validation_warnings": []
+}

@@ -1,0 +1,38 @@
+{
+  "reference": "1 Kings 1",
+  "book": "1 Kings",
+  "chapter": 1,
+  "status": "validated",
+  "evidence_availability": "THIN",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "overview",
+          "text": "1 Kings 1 contains 53 verses. It opens with: Now king David was old and stricken in years; and they covered him with clothes, but he gat no heat. It concludes with: So king Solomon sent, and they brought him down from the altar. And he came and did obeisance to king Solomon; and Solomon said unto him, Go to thy house.",
+          "verse_refs": [
+            "1 Kings 1:1-53"
+          ],
+          "evidence_ids": [
+            "first-kings-literary-movement"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "68d2b83892a45e1ba5b7e7e168732c75daa7ebb049234dd14d8a0dc3147e5c6f",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:08:39.661212+00:00"
+  },
+  "failure_reason": null,
+  "validation_errors": [],
+  "validation_warnings": []
+}

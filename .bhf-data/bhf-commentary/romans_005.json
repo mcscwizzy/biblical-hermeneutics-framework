@@ -1,0 +1,38 @@
+{
+  "reference": "Romans 5",
+  "book": "Romans",
+  "chapter": 5,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "overview",
+          "text": "Romans 5 contains 21 verses. It opens with: Being therefore justified by faith, we have peace with God through our Lord Jesus Christ; It concludes with: that, as sin reigned in death, even so might grace reign through righteousness unto eternal life through Jesus Christ our Lord.",
+          "verse_refs": [
+            "Romans 5:1-21"
+          ],
+          "evidence_ids": [
+            "romans-adam"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "9ce2c4027823e631b238bd21e647ac43ff9ba317fb7d1574f5568904c2402b77",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:40:56.480152+00:00"
+  },
+  "failure_reason": null,
+  "validation_errors": [],
+  "validation_warnings": []
+}

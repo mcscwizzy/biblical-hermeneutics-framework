@@ -1,0 +1,506 @@
+{
+  "timestamp": "2026-09-04T18:56:21.327836+00:00",
+  "schema_version": "1.0",
+  "prompt_version_distribution": {
+    "1.1": 1189
+  },
+  "evidence_availability_distribution": {
+    "AVAILABLE": 709,
+    "DATA_GAP": 247,
+    "THIN": 142
+  },
+  "corpus_counts": {
+    "total_chapters": 1189,
+    "generated": 1189,
+    "coverage_percentage": 100.0,
+    "pending": 0,
+    "generating": 0,
+    "validated": 1189,
+    "partial": 0,
+    "needs_review": 0,
+    "failed": 0,
+    "stale": 0
+  },
+  "structure": {
+    "sections": {
+      "average": 1.02,
+      "median": 1,
+      "minimum": 1,
+      "maximum": 3
+    },
+    "blocks": {
+      "average": 1.02,
+      "median": 1,
+      "minimum": 1,
+      "maximum": 3
+    },
+    "section_kind_distribution": {
+      "chapter_overview": 1189,
+      "language_literary": 2,
+      "people_places": 5,
+      "interpretive_questions": 9,
+      "things_easy_to_miss": 3,
+      "historical_context": 3
+    }
+  },
+  "evidence_statistics": {
+    "items_per_chapter": {
+      "average": 0.81,
+      "median": 1,
+      "minimum": 0,
+      "maximum": 6
+    },
+    "items_per_section": {
+      "average": 0.82,
+      "median": 1,
+      "minimum": 0,
+      "maximum": 6
+    },
+    "items_per_block": {
+      "average": 0.82,
+      "median": 1,
+      "minimum": 0,
+      "maximum": 6
+    },
+    "category_distribution": {},
+    "top_20": [
+      [
+        "genesis-literary-movement",
+        43
+      ],
+      [
+        "exodus-ane-context",
+        40
+      ],
+      [
+        "jeremiah-long-composition",
+        30
+      ],
+      [
+        "psalms-exile-restoration-pilgrimage",
+        26
+      ],
+      [
+        "job-lament-dialogues",
+        25
+      ],
+      [
+        "isaiah-qumran-witnesses",
+        22
+      ],
+      [
+        "isaiah-nations-empire",
+        11
+      ],
+      [
+        "judges-cycle:ancient_near_east_context:0",
+        10
+      ],
+      [
+        "rev-scriptural-reuse",
+        9
+      ],
+      [
+        "acts-historical-method",
+        8
+      ],
+      [
+        "jeremiah-catastrophe-trauma",
+        8
+      ],
+      [
+        "psalms-five-book-anthology",
+        8
+      ],
+      [
+        "song-ancient-love-poetry",
+        8
+      ],
+      [
+        "isaiah-assyria-trust",
+        7
+      ],
+      [
+        "isaiah-comfort-new-exodus",
+        6
+      ],
+      [
+        "jeremiah-historical-crisis",
+        6
+      ],
+      [
+        "job-elihu-intervention",
+        6
+      ],
+      [
+        "ezekiel-glory-departure-return",
+        5
+      ],
+      [
+        "the-flood:historical_context:0",
+        5
+      ],
+      [
+        "jeremiah-confessions",
+        5
+      ]
+    ],
+    "least_used": [
+      [
+        "1cor-adam",
+        1
+      ],
+      [
+        "1cor-body",
+        1
+      ],
+      [
+        "1cor-chloe",
+        1
+      ],
+      [
+        "1cor-collection",
+        1
+      ],
+      [
+        "1cor-coverings",
+        1
+      ],
+      [
+        "1cor-cross",
+        1
+      ],
+      [
+        "1cor-divorce",
+        1
+      ],
+      [
+        "1cor-gifts",
+        1
+      ],
+      [
+        "1cor-idol-food",
+        1
+      ],
+      [
+        "1cor-incest",
+        1
+      ],
+      [
+        "1jn-advocate",
+        1
+      ],
+      [
+        "1pet-addressees",
+        1
+      ],
+      [
+        "1pet-adversary",
+        1
+      ],
+      [
+        "1pet-baptism",
+        1
+      ],
+      [
+        "1th-apantesis",
+        1
+      ],
+      [
+        "1th-armor",
+        1
+      ],
+      [
+        "1th-audience",
+        1
+      ],
+      [
+        "1th-date",
+        1
+      ],
+      [
+        "1th-integrity",
+        1
+      ],
+      [
+        "1tim-authentein",
+        1
+      ]
+    ]
+  },
+  "citation_statistics": {
+    "total": 1208,
+    "valid": 1208,
+    "invalid": 0,
+    "unknown_evidence_ids": [],
+    "valid_percentage": 100.0
+  },
+  "verse_statistics": {
+    "total": 1208,
+    "valid": 1208,
+    "invalid": 0,
+    "out_of_chapter": 0,
+    "malformed": 0,
+    "valid_percentage": 100.0
+  },
+  "content_size": {
+    "average": 337.73,
+    "median": 322,
+    "minimum": 121,
+    "maximum": 1137
+  },
+  "repetition": {
+    "repeated_word_fingerprints": [
+      [
+        "with",
+        2649
+      ],
+      [
+        "contains",
+        1090
+      ],
+      [
+        "opens",
+        1090
+      ],
+      [
+        "verses",
+        1089
+      ],
+      [
+        "concludes",
+        1089
+      ],
+      [
+        "that",
+        1003
+      ],
+      [
+        "jehovah",
+        788
+      ],
+      [
+        "unto",
+        643
+      ],
+      [
+        "shall",
+        553
+      ],
+      [
+        "they",
+        430
+      ],
+      [
+        "them",
+        356
+      ],
+      [
+        "israel",
+        309
+      ],
+      [
+        "thou",
+        303
+      ],
+      [
+        "from",
+        282
+      ],
+      [
+        "will",
+        282
+      ],
+      [
+        "came",
+        258
+      ],
+      [
+        "king",
+        230
+      ],
+      [
+        "when",
+        221
+      ],
+      [
+        "their",
+        218
+      ],
+      [
+        "thee",
+        213
+      ]
+    ]
+  },
+  "outliers": {
+    "lowest_evidence": [
+      {
+        "chapter": "1 Chronicles 14",
+        "status": "validated",
+        "sections": 1,
+        "blocks": 1,
+        "length": 286,
+        "evidence_count": 0
+      },
+      {
+        "chapter": "1 Chronicles 18",
+        "status": "validated",
+        "sections": 1,
+        "blocks": 1,
+        "length": 343,
+        "evidence_count": 0
+      },
+      {
+        "chapter": "1 Chronicles 19",
+        "status": "validated",
+        "sections": 1,
+        "blocks": 1,
+        "length": 380,
+        "evidence_count": 0
+      },
+      {
+        "chapter": "1 Chronicles 2",
+        "status": "validated",
+        "sections": 1,
+        "blocks": 1,
+        "length": 332,
+        "evidence_count": 0
+      },
+      {
+        "chapter": "1 Chronicles 20",
+        "status": "validated",
+        "sections": 1,
+        "blocks": 1,
+        "length": 462,
+        "evidence_count": 0
+      }
+    ],
+    "highest_evidence": [
+      {
+        "chapter": "Genesis 9",
+        "status": "validated",
+        "sections": 3,
+        "blocks": 3,
+        "length": 1077,
+        "evidence_count": 6
+      },
+      {
+        "chapter": "Genesis 10",
+        "status": "validated",
+        "sections": 3,
+        "blocks": 3,
+        "length": 1109,
+        "evidence_count": 4
+      },
+      {
+        "chapter": "Genesis 6",
+        "status": "validated",
+        "sections": 3,
+        "blocks": 3,
+        "length": 1137,
+        "evidence_count": 4
+      },
+      {
+        "chapter": "Genesis 5",
+        "status": "validated",
+        "sections": 2,
+        "blocks": 2,
+        "length": 633,
+        "evidence_count": 3
+      },
+      {
+        "chapter": "Genesis 1",
+        "status": "validated",
+        "sections": 3,
+        "blocks": 3,
+        "length": 757,
+        "evidence_count": 2
+      }
+    ],
+    "shortest": [
+      {
+        "chapter": "3 John 1",
+        "status": "validated",
+        "sections": 1,
+        "blocks": 1,
+        "length": 121,
+        "evidence_count": 1
+      },
+      {
+        "chapter": "Hebrews 13",
+        "status": "validated",
+        "sections": 1,
+        "blocks": 1,
+        "length": 128,
+        "evidence_count": 1
+      },
+      {
+        "chapter": "Job 42",
+        "status": "validated",
+        "sections": 1,
+        "blocks": 1,
+        "length": 138,
+        "evidence_count": 1
+      },
+      {
+        "chapter": "1 Chronicles 1",
+        "status": "validated",
+        "sections": 1,
+        "blocks": 1,
+        "length": 144,
+        "evidence_count": 1
+      },
+      {
+        "chapter": "Job 9",
+        "status": "validated",
+        "sections": 1,
+        "blocks": 1,
+        "length": 152,
+        "evidence_count": 1
+      }
+    ],
+    "longest": [
+      {
+        "chapter": "Genesis 6",
+        "status": "validated",
+        "sections": 3,
+        "blocks": 3,
+        "length": 1137,
+        "evidence_count": 4
+      },
+      {
+        "chapter": "Genesis 10",
+        "status": "validated",
+        "sections": 3,
+        "blocks": 3,
+        "length": 1109,
+        "evidence_count": 4
+      },
+      {
+        "chapter": "Genesis 9",
+        "status": "validated",
+        "sections": 3,
+        "blocks": 3,
+        "length": 1077,
+        "evidence_count": 6
+      },
+      {
+        "chapter": "Genesis 25",
+        "status": "validated",
+        "sections": 2,
+        "blocks": 2,
+        "length": 1014,
+        "evidence_count": 1
+      },
+      {
+        "chapter": "Genesis 19",
+        "status": "validated",
+        "sections": 2,
+        "blocks": 2,
+        "length": 979,
+        "evidence_count": 1
+      }
+    ]
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "reference": "Luke 1",
+  "book": "Luke",
+  "chapter": 1,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "overview",
+          "text": "Luke 1 contains 80 verses. It opens with: Forasmuch as many have taken in hand to draw up a narrative concerning those matters which have been fulfilled among us, It concludes with: And the child grew, and waxed strong in spirit, and was in the deserts till the day of his showing unto Israel.",
+          "verse_refs": [
+            "Luke 1:1-80"
+          ],
+          "evidence_ids": [
+            "luke-acts-relation"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "0db6d188aca7e4f12a7aef92020a5f07d3a9b107d0befaf03649ab721eb60b93",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:38:32.269344+00:00"
+  },
+  "failure_reason": null,
+  "validation_errors": [],
+  "validation_warnings": []
+}

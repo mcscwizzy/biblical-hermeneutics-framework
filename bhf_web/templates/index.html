@@ -54,6 +54,7 @@
   <script src="{{ static_asset('/companion-sheet.js') }}?v=20260811c" defer></script>
   <script src="{{ static_asset('/resource-router.js') }}?v=20260820b" defer></script>
   <script src="{{ static_asset('/companion-discoveries.js') }}?v=20260901b" defer></script>
+  <script src="{{ static_asset('/bhf-commentary-card.js') }}?v=20260904a" defer></script>
   <script src="{{ static_asset('/study-companion.js') }}?v=20260901b" defer></script>
   <script src="{{ static_asset('/commentary.js') }}?v=20260809b" defer></script>
   <script src="{{ static_asset('/pwa.js') }}?v=20260806a" defer></script>
@@ -156,6 +157,36 @@
               <button type="submit" data-testid="bible-search-button">Search</button>
               <button type="button" class="secondary" data-search-clear data-testid="bible-search-clear" hidden>Clear</button>
             </div>
+            <label class="reader-search-context-filter">
+              <span>Context</span>
+              <select name="commentary_availability" data-commentary-availability-filter aria-label="Filter BHF Context results">
+                <option value="">All BHF Context</option>
+                <option value="AVAILABLE">Context available</option>
+                <option value="THIN">Limited context</option>
+                <option value="DATA_GAP">Context not currently available</option>
+              </select>
+            </label>
+            <label class="reader-search-context-filter">
+              <span>Evidence type</span>
+              <select name="commentary_category" data-commentary-category-filter aria-label="Filter BHF Context evidence category">
+                <option value="">All evidence types</option>
+                <option value="history">History</option>
+                <option value="culture">Culture</option>
+                <option value="archaeology">Archaeology</option>
+                <option value="geography">Geography</option>
+                <option value="language">Language</option>
+                <option value="chronology">Chronology</option>
+                <option value="social">Social</option>
+              </select>
+            </label>
+            <label class="reader-search-context-filter">
+              <span>People or places</span>
+              <input type="search" name="commentary_entity" data-commentary-entity-filter placeholder="e.g. Abram" aria-label="Filter BHF Context by person or place">
+            </label>
+            <label class="reader-search-context-filter">
+              <span>Period</span>
+              <input type="search" name="commentary_period" data-commentary-period-filter placeholder="e.g. exile" aria-label="Filter BHF Context by period">
+            </label>
             <input type="hidden" name="adapter" value="{{ form.adapter }}">
             <input type="hidden" name="model" value="{{ form.model }}">
             <input type="hidden" name="base_url" value="{{ form.base_url }}">
@@ -192,6 +223,17 @@
           </div>
           <div id="reader-search-status" class="reader-search-status" hidden></div>
           <div id="reader-search-results-body"></div>
+        </section>
+        <section id="commentary-search-results" class="reader-search-results commentary-search-results" hidden aria-live="polite">
+          <div class="reader-search-results-header">
+            <div>
+              <p class="reader-search-kicker">BHF Context</p>
+              <h3>Context results</h3>
+              <p id="commentary-search-summary" class="reader-search-summary"></p>
+            </div>
+          </div>
+          <div id="commentary-search-status" class="reader-search-status" hidden role="status"></div>
+          <div id="commentary-search-results-body"></div>
         </section>
 
         <article
@@ -284,6 +326,34 @@
               <button type="button" class="secondary" data-companion-action="note">＋ Add Note</button>
               <button type="button" class="secondary" data-companion-action="save" data-save-state="not-saved" disabled aria-disabled="true" aria-busy="false" aria-label="Save Passage unavailable; select a verse or passage">☆ Save Passage</button>
             </div>
+
+            <section class="companion-section bhf-commentary-card" data-bhf-commentary-card aria-labelledby="bhf-commentary-title" hidden>
+              <div class="companion-section-heading companion-section-heading-inline">
+                <div><span aria-hidden="true">▧</span><h3 id="bhf-commentary-title">BHF Context</h3></div>
+                <span class="bhf-commentary-availability" data-bhf-commentary-availability></span>
+              </div>
+              <p class="bhf-commentary-reference" data-bhf-commentary-reference></p>
+              <p class="bhf-commentary-status" data-bhf-commentary-status role="status" aria-live="polite" aria-atomic="true"></p>
+              <div class="bhf-commentary-body" data-bhf-commentary-body></div>
+              <div class="bhf-commentary-meta" data-bhf-commentary-meta hidden>
+                <div class="bhf-commentary-verse-refs" data-bhf-commentary-verse-refs></div>
+                <span class="bhf-commentary-evidence-count" data-bhf-commentary-evidence-count></span>
+              </div>
+              <div class="bhf-commentary-evidence-explorer" data-bhf-commentary-evidence-explorer>
+                <button type="button" class="secondary bhf-commentary-evidence-toggle" data-bhf-commentary-evidence-toggle aria-expanded="false" hidden>
+                  Explore evidence
+                </button>
+                <div class="bhf-commentary-evidence-panel" data-bhf-commentary-evidence-panel hidden>
+                  <p class="bhf-commentary-evidence-status" data-bhf-commentary-evidence-status role="status" aria-live="polite"></p>
+                  <div class="bhf-commentary-evidence-list" data-bhf-commentary-evidence-list></div>
+                </div>
+              </div>
+              <div class="bhf-commentary-study-actions" aria-label="Study actions">
+                <button type="button" class="secondary" data-bhf-commentary-personal-action="note">Add note</button>
+                <button type="button" class="secondary" data-bhf-commentary-personal-action="highlight">Highlight</button>
+                <button type="button" class="secondary" data-bhf-commentary-personal-action="compare_translations">Compare translations</button>
+              </div>
+            </section>
 
             <section class="companion-section companion-discoveries companion-land" data-companion-land-section aria-labelledby="companion-land-title" hidden>
               <div class="companion-section-heading">

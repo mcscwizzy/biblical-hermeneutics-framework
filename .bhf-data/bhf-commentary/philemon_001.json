@@ -1,0 +1,38 @@
+{
+  "reference": "Philemon 1",
+  "book": "Philemon",
+  "chapter": 1,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "overview",
+          "text": "Philemon 1 contains 25 verses. It opens with: Paul, a prisoner of Christ Jesus, and Timothy our brother, to Philemon our beloved and fellow-worker, It concludes with: The grace of our Lord Jesus Christ be with your spirit. Amen.",
+          "verse_refs": [
+            "Philemon 1:1-25"
+          ],
+          "evidence_ids": [
+            "phm-address"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "aa1080bb6b8a02eb54ba297ac8ba021eee81bac1a4fd800cfeb10159bf74031c",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:43:52.486033+00:00"
+  },
+  "failure_reason": null,
+  "validation_errors": [],
+  "validation_warnings": []
+}

@@ -1,0 +1,38 @@
+{
+  "reference": "3 John 1",
+  "book": "3 John",
+  "chapter": 1,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "overview",
+          "text": "3 John 1 contains 15 verses. It opens with: The elder unto Gaius the beloved, whom I love in truth. It concludes with: []",
+          "verse_refs": [
+            "3 John 1:1-15"
+          ],
+          "evidence_ids": [
+            "3jn-coworkers"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "7b2a4e9418bdc5b66d6236977469c2c847346a62e12a1586182c61196ea15fcf",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:44:42.440562+00:00"
+  },
+  "failure_reason": null,
+  "validation_errors": [],
+  "validation_warnings": []
+}

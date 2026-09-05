@@ -1,0 +1,38 @@
+{
+  "reference": "Romans 1",
+  "book": "Romans",
+  "chapter": 1,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "overview",
+          "text": "Romans 1 contains 32 verses. It opens with: Paul, a servant of Jesus Christ, called `to be' an apostle, separated unto the gospel of God, It concludes with: who, knowing the ordinance of God, that they that practise such things are worthy of death, not only do the same, but also consent with them that practise them.",
+          "verse_refs": [
+            "Romans 1:1-32"
+          ],
+          "evidence_ids": [
+            "romans-audiences"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "c75dd69e75895b35d25168b9e7bc9a8cac724647a111fdcccfbb377e26c8b912",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:40:55.501587+00:00"
+  },
+  "failure_reason": null,
+  "validation_errors": [],
+  "validation_warnings": []
+}

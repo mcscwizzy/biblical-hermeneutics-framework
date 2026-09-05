@@ -1,0 +1,38 @@
+{
+  "reference": "John 2",
+  "book": "John",
+  "chapter": 2,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "overview",
+          "text": "John 2 contains 25 verses. It opens with: And the third day there was a marriage in Cana of Galilee; and the mother of Jesus was there: It concludes with: and because he needed not that any one should bear witness concerning man; for he himself knew what was in man.",
+          "verse_refs": [
+            "John 2:1-25"
+          ],
+          "evidence_ids": [
+            "john-cana"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "5709e6cfbfe025113d23714b01b2417013e9c8a16c3b9b7afeacf4207711e4d7",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:39:17.571875+00:00"
+  },
+  "failure_reason": null,
+  "validation_errors": [],
+  "validation_warnings": []
+}

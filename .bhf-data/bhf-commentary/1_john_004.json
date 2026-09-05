@@ -1,0 +1,38 @@
+{
+  "reference": "1 John 4",
+  "book": "1 John",
+  "chapter": 4,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "overview",
+          "text": "1 John 4 contains 21 verses. It opens with: Beloved, believe not every spirit, but prove the spirits, whether they are of God; because many false prophets are gone out into the world. It concludes with: And this commandment have we from him, that he who loveth God love his brother also.",
+          "verse_refs": [
+            "1 John 4:1-21"
+          ],
+          "evidence_ids": [
+            "1jn-anonymous"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "a728ce7373e93f69524f659e0626e2c1049aa895e6604c69a311b65b736a98b7",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:44:42.165856+00:00"
+  },
+  "failure_reason": null,
+  "validation_errors": [],
+  "validation_warnings": []
+}

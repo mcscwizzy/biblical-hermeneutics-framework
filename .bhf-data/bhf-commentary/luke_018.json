@@ -1,0 +1,38 @@
+{
+  "reference": "Luke 18",
+  "book": "Luke",
+  "chapter": 18,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "overview",
+          "text": "Luke 18 contains 43 verses. It opens with: And he spake a parable unto them to the end that they ought always to pray, and not to faint; It concludes with: And immediately he received his sight, and followed him, glorifying God: and all the people, when they saw it, gave praise unto God.",
+          "verse_refs": [
+            "Luke 18:1-43"
+          ],
+          "evidence_ids": [
+            "luke-pharisee-tax"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "afd8c544b6ea7c8b2b353c1a819764af129235823f9c39c41f80f994af950cf0",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:38:34.150099+00:00"
+  },
+  "failure_reason": null,
+  "validation_errors": [],
+  "validation_warnings": []
+}

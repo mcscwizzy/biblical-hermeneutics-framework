@@ -1,0 +1,38 @@
+{
+  "reference": "Esther 2",
+  "book": "Esther",
+  "chapter": 2,
+  "status": "validated",
+  "evidence_availability": "THIN",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "overview",
+          "text": "Esther 2 contains 23 verses. It opens with: After these things, when the wrath of king Ahasuerus was pacified, he remembered Vashti, and what she had done, and what was decreed against her. It concludes with: And when inquisition was made of the matter, and it was found to be so, they were both hanged on a tree: and it was written in the book of the chronicles before the king.",
+          "verse_refs": [
+            "Esther 2:1-23"
+          ],
+          "evidence_ids": [
+            "esther-queen-hidden-identity"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "625725c29dff30d7391730a98d1766a5b91bfb0e4cf0da9755dd3f0bc3f9a7cd",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:13:10.637047+00:00"
+  },
+  "failure_reason": null,
+  "validation_errors": [],
+  "validation_warnings": []
+}

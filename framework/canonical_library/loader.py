@@ -21,6 +21,7 @@ from .scripture import (
     build_book_alias_lookup,
     parse_scripture_query,
     parse_scripture_reference,
+    parse_scripture_references,
     scripture_match_score,
     scripture_query_terms,
     scripture_reference_overlaps,
@@ -84,6 +85,7 @@ class CanonicalLibrary:
         self._alias_index: dict[str, tuple[str, str]] = {}
         self._book_alias_lookup: dict[str, str] = {}
         self._scripture_references_by_object: dict[str, list[ScriptureReferenceSpan]] = {}
+        self._scripture_scoring_references_by_object: dict[str, list[ScriptureReferenceSpan]] = {}
         self._scripture_book_index: dict[str, set[str]] = {}
 
     @classmethod
@@ -144,6 +146,7 @@ class CanonicalLibrary:
         self._alias_index = {}
         self._book_alias_lookup = {}
         self._scripture_references_by_object = {}
+        self._scripture_scoring_references_by_object = {}
         self._scripture_book_index = {}
         self._inventory_fingerprint_cache = None
 
@@ -166,26 +169,43 @@ class CanonicalLibrary:
         )
         for obj in objects:
             parsed_references: list[ScriptureReferenceSpan] = []
+            scoring_references: list[ScriptureReferenceSpan] = []
             for reference in obj.scripture_references:
-                parsed = parse_scripture_reference(
+                parsed_values = parse_scripture_references(
                     reference.reference,
                     book_alias_lookup=self._book_alias_lookup,
                 )
-                if parsed is None:
-                    continue
-                parsed_references.append(parsed)
-                self._scripture_book_index.setdefault(parsed.book, set()).add(obj.id)
+                for parsed in parsed_values:
+                    if parsed in parsed_references:
+                        continue
+                    parsed_references.append(parsed)
+                    scoring_references.append(parsed)
+                    self._scripture_book_index.setdefault(parsed.book, set()).add(obj.id)
             for evidence in obj.evidence_items:
                 for reference in evidence.scripture_references:
-                    parsed = parse_scripture_reference(
+                    parsed_values = parse_scripture_references(
                         reference.reference,
                         book_alias_lookup=self._book_alias_lookup,
                     )
-                    if parsed is None or parsed in parsed_references:
-                        continue
-                    parsed_references.append(parsed)
-                    self._scripture_book_index.setdefault(parsed.book, set()).add(obj.id)
+                    for parsed in parsed_values:
+                        if parsed in parsed_references:
+                            continue
+                        parsed_references.append(parsed)
+                        scoring_references.append(parsed)
+                        self._scripture_book_index.setdefault(parsed.book, set()).add(obj.id)
+            for claim in obj.claims:
+                for reference in claim.scripture_references:
+                    parsed_values = parse_scripture_references(
+                        reference,
+                        book_alias_lookup=self._book_alias_lookup,
+                    )
+                    for parsed in parsed_values:
+                        if parsed in parsed_references:
+                            continue
+                        parsed_references.append(parsed)
+                        self._scripture_book_index.setdefault(parsed.book, set()).add(obj.id)
             self._scripture_references_by_object[obj.id] = parsed_references
+            self._scripture_scoring_references_by_object[obj.id] = scoring_references
 
         try:
             validate_library(objects, manifest=manifest, source_paths=source_paths)
@@ -579,7 +599,17 @@ class CanonicalLibrary:
 
             score = scripture_match_score(
                 query,
-                match_count=len(matching_references),
+                # Claims are now indexed so claim-only anchors are findable,
+                # but adding them must not change legacy object/evidence
+                # ranking for existing callers.
+                match_count=max(
+                    len([
+                        candidate
+                        for candidate in self._scripture_scoring_references_by_object.get(object_id, [])
+                        if scripture_reference_overlaps(query, candidate)
+                    ]),
+                    1,
+                ),
                 importance=obj.importance,
             )
             results.append(

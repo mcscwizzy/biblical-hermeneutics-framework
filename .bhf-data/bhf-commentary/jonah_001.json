@@ -1,0 +1,38 @@
+{
+  "reference": "Jonah 1",
+  "book": "Jonah",
+  "chapter": 1,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "overview",
+          "text": "Jonah 1 contains 17 verses. It opens with: Now the word of Jehovah came unto Jonah the son of Amittai, saying, It concludes with: And Jehovah prepared a great fish to swallow up Jonah; and Jonah was in the belly of the fish three days and three nights.",
+          "verse_refs": [
+            "Jonah 1:1-17"
+          ],
+          "evidence_ids": [
+            "jonah-date-composition"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "b58468a8d1468b172fef3f1bfcc09336cacd00492f173a6dee20bf27dd0b5c93",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:31:22.105776+00:00"
+  },
+  "failure_reason": null,
+  "validation_errors": [],
+  "validation_warnings": []
+}

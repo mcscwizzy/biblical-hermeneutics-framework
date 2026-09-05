@@ -1,0 +1,38 @@
+{
+  "reference": "John 21",
+  "book": "John",
+  "chapter": 21,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "overview",
+          "text": "John 21 contains 25 verses. It opens with: After these things Jesus manifested himself again to the disciples at the sea of Tiberias; and he manifested `himself' on this wise. It concludes with: And there are also many other things which Jesus did, the which if they should be written every one, I suppose that even the world itself would not contain the books that should be written.",
+          "verse_refs": [
+            "John 21:1-25"
+          ],
+          "evidence_ids": [
+            "john-21-epilogue"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "d7f5f5b03f29bf28cc8f1f704a9fceab68cb5dc9ffd3dcf955e28448a107b6d4",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:40:02.955723+00:00"
+  },
+  "failure_reason": null,
+  "validation_errors": [],
+  "validation_warnings": []
+}

@@ -1,0 +1,38 @@
+{
+  "reference": "John 6",
+  "book": "John",
+  "chapter": 6,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "overview",
+          "text": "John 6 contains 71 verses. It opens with: After these things Jesus went away to the other side of the sea of Galilee, which is `the sea' of Tiberias. It concludes with: Now he spake of Judas `the son' of Simon Iscariot, for he it was that should betray him, `being' one of the twelve.",
+          "verse_refs": [
+            "John 6:1-71"
+          ],
+          "evidence_ids": [
+            "john-bread"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "ae375c3f35b3524eff771ed7e48aba5a655f008569a92d0a5444767f2bb000c6",
+    "evidence_bundle_version": "1.0",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "luna-codex-development",
+    "generated_timestamp": "2026-09-04T18:39:18.071387+00:00"
+  },
+  "failure_reason": null,
+  "validation_errors": [],
+  "validation_warnings": []
+}
