@@ -1,0 +1,53 @@
+{
+  "reference": "Leviticus 14",
+  "book": "Leviticus",
+  "chapter": 14,
+  "status": "validated",
+  "evidence_availability": "THIN",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_46",
+          "text": "Read the chapter with this setting in view: Leviticus moves from sacrifice and priestly inauguration through purity and the Day of Atonement into instructions for holy communal life, sacred time, land, covenant consequences, and vows. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken.",
+          "evidence_ids": [
+            "leviticus-literary-movement"
+          ],
+          "verse_refs": [
+            "Leviticus 14:1-57"
+          ],
+          "confidence": "high",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_47",
+          "text": "For its historical and cultural setting, note that Ritual impurity should not be treated as a simple synonym for personal moral guilt; Leviticus distinguishes bodily states, ritual status, prohibited acts, and culpable offenses. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "leviticus:interpretive_note:1"
+          ],
+          "verse_refs": [
+            "Leviticus 14:1-57"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "18ea933e43802186fc1a49dd91517abd401875034faefc6c6fdc9c703046d5c9",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-001-medium",
+    "generated_timestamp": "2026-09-05T21:35:03Z"
+  }
+}

@@ -1,0 +1,101 @@
+{
+  "reference": "Psalms 89",
+  "book": "Psalms",
+  "chapter": 89,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_42",
+          "text": "Read the chapter with this setting in view: The received superscriptions associate psalms with David, Asaph, the sons of Korah, Solomon, Moses, Heman, and Ethan and also preserve genre, performance, tune, instrument, and narrated-setting labels. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken. Interpretations differ on some details.",
+          "evidence_ids": [
+            "psalms-superscription-collections"
+          ],
+          "verse_refs": [
+            "Psalms 89:1"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_43",
+          "text": "For its historical and cultural setting, note that Judah survives after the split monarchy, then falls to Babylon and enters exile with its temple and king removed. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "what-is-the-kingdom-of-judah:historical_context:0"
+          ],
+          "verse_refs": [
+            "Psalms 89:1-8"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        },
+        {
+          "id": "historical_context_44",
+          "text": "For its historical and cultural setting, note that Like other small kingdoms, Judah lives under imperial pressure, but Scripture frames its history around covenant fidelity and Davidic promise. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "what-is-the-kingdom-of-judah:ancient_near_east_context:0"
+          ],
+          "verse_refs": [
+            "Psalms 89:1-8"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_43",
+          "text": "A literary feature to notice is that The Masoretic Psalter contains 150 psalms arranged in five books, with doxological boundaries after Psalms 41, 72, 89, and 106 and a final crescendo of praise in Psalms 146-150. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "psalms-five-book-anthology"
+          ],
+          "verse_refs": [
+            "Psalms 89:52"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "dig_deeper",
+      "title": "Dig deeper",
+      "blocks": [
+        {
+          "id": "dig_deeper_43",
+          "text": "For a later or comparative connection, note that Late Bronze Age Ugaritic literary texts place El and other divine figures in council, deliberation, messenger, and kingship scenes. This remains a secondary connection rather than the chapter's first-audience context. It can be traced further without replacing the chapter's own setting. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "ugaritic-council-comparison"
+          ],
+          "verse_refs": [
+            "Psalms 89:5-8"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "dd6d8a20ea9d18fcdbf976f9d2d4d24c4923aeadd3580115c7921a888f79f865",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-001-medium",
+    "generated_timestamp": "2026-09-05T21:35:03Z"
+  }
+}

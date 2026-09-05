@@ -1,0 +1,102 @@
+{
+  "reference": "Revelation 1",
+  "book": "Revelation",
+  "chapter": 1,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_38",
+          "text": "Read the chapter with this setting in view: The letter explicitly addresses seven assemblies in Roman Asia by city. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken.",
+          "evidence_ids": [
+            "rev-seven-assemblies"
+          ],
+          "verse_refs": [
+            "Revelation 1:4",
+            "Revelation 1:11"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_39",
+          "text": "For its historical and cultural setting, note that The opening identifies the work as a revelation of Jesus Christ and calls its words prophecy. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "rev-title-genre"
+          ],
+          "verse_refs": [
+            "Revelation 1:1-3"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        },
+        {
+          "id": "historical_context_40",
+          "text": "For its historical and cultural setting, note that John reports being on Patmos because of God's word and Jesus's testimony, without stating a legal sentence. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "rev-patmos"
+          ],
+          "verse_refs": [
+            "Revelation 1:9"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_39",
+          "text": "A literary feature to notice is that Revelation combines apocalypse, prophecy, and circular letter. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image. Interpretations differ on some details.",
+          "evidence_ids": [
+            "rev-mixed-genre"
+          ],
+          "verse_refs": [
+            "Revelation 1:1-4"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "dig_deeper",
+      "title": "Dig deeper",
+      "blocks": [
+        {
+          "id": "dig_deeper_39",
+          "text": "For a later or comparative connection, note that The Synoptic Gospels and Revelation reuse Danielic abomination, distress, humanlike-figure, beast, horn, time, saint, book, and judgment imagery in new literary settings. This remains a secondary connection rather than the chapter's first-audience context. It can be traced further without replacing the chapter's own setting. Interpretations differ on some details.",
+          "evidence_ids": [
+            "daniel-new-testament-reuse"
+          ],
+          "verse_refs": [
+            "Revelation 1:1-20"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "dbccb2d775f13823b172cbfeefd4efd3208a863a9ed63ab5613b50fd94af9bf5",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-001-medium",
+    "generated_timestamp": "2026-09-05T21:35:03Z"
+  }
+}

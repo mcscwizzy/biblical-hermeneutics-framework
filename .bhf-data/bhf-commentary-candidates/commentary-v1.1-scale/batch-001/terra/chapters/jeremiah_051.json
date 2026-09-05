@@ -1,0 +1,53 @@
+{
+  "reference": "Jeremiah 51",
+  "book": "Jeremiah",
+  "chapter": 51,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_30",
+          "text": "Read the chapter with this setting in view: Masoretic Jeremiah and Old Greek Ieremias represent markedly different ancient editions: the Alexandrian form is roughly one-seventh shorter and places the nation oracles earlier and in a different order. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken. Interpretations differ on some details.",
+          "evidence_ids": [
+            "jeremiah-two-editions"
+          ],
+          "verse_refs": [
+            "Jeremiah 51:1-64"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_31",
+          "text": "A literary feature to notice is that The received book combines poetry, prose sermons, narratives, letters, headings, repeated accounts, restoration collections, nation oracles, and an appendix produced through a long compositional and textual history. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "jeremiah-long-composition"
+          ],
+          "verse_refs": [
+            "Jeremiah 51:1-64"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "ac385ffbeb300507b1f93c288c697931cc083e48b2c01fe9f3a905dc9c08f10d",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-001-medium",
+    "generated_timestamp": "2026-09-05T21:35:03Z"
+  }
+}
