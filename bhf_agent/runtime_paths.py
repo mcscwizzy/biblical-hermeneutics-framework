@@ -3,9 +3,14 @@
 from __future__ import annotations
 
 import os
+import re
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Mapping
+
+
+DEFAULT_COMMENTARY_RELEASE = "commentary-v1.0"
+_COMMENTARY_RELEASE_RE = re.compile(r"^[A-Za-z0-9][A-Za-z0-9._-]*$")
 
 
 @dataclass(frozen=True)
@@ -32,10 +37,20 @@ def default_runtime_data_dir(environ: Mapping[str, str]) -> Path:
     return Path(".bhf-data")
 
 
-def packaged_commentary_storage_path() -> Path:
+def configured_commentary_release(environ: Mapping[str, str] | None = None) -> str:
+    """Return the validated immutable commentary release identifier."""
+
+    values = os.environ if environ is None else environ
+    release = str(values.get("BHF_COMMENTARY_RELEASE") or DEFAULT_COMMENTARY_RELEASE).strip()
+    return release if _COMMENTARY_RELEASE_RE.fullmatch(release) else DEFAULT_COMMENTARY_RELEASE
+
+
+def packaged_commentary_storage_path(release: str = DEFAULT_COMMENTARY_RELEASE) -> Path:
     """Return the immutable commentary corpus bundled with the application."""
 
     project_root = Path(__file__).resolve().parents[1]
+    if release != DEFAULT_COMMENTARY_RELEASE:
+        return project_root / ".bhf-data" / "bhf-commentary-candidates" / release
     return project_root / ".bhf-data" / "bhf-commentary"
 
 
@@ -49,8 +64,11 @@ def default_commentary_storage_path(environ: Mapping[str, str]) -> Path:
     checkout compatibility.
     """
 
+    release = configured_commentary_release(environ)
     if environ.get("VERCEL"):
-        return packaged_commentary_storage_path()
+        return packaged_commentary_storage_path(release)
+    if release != DEFAULT_COMMENTARY_RELEASE:
+        return Path(".bhf-data") / "bhf-commentary-candidates" / release
     return Path(".bhf-data") / "bhf-commentary"
 
 
@@ -98,6 +116,8 @@ RUNTIME_DATA_PATHS = resolve_runtime_data_paths()
 __all__ = [
     "RUNTIME_DATA_PATHS",
     "RuntimeDataPaths",
+    "DEFAULT_COMMENTARY_RELEASE",
+    "configured_commentary_release",
     "default_commentary_storage_path",
     "default_runtime_data_dir",
     "packaged_commentary_storage_path",

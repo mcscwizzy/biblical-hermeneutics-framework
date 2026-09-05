@@ -4,12 +4,12 @@ const fs = require("node:fs");
 const vm = require("node:vm");
 
 
-function loadApi({cachedPayload, fetchResponse, fetchError} = {}) {
+function loadApi({cachedPayload, fetchResponse, fetchError, commentaryRelease} = {}) {
   const cached = [];
   const window = {
     location: {origin: "http://test"},
     BHFBackendRouting: {resolveUrl: (url) => url},
-    BHFRuntimeConfig: {},
+    BHFRuntimeConfig: commentaryRelease ? {commentaryRelease} : {},
     BHFOfflineDB: {
       readApiResponse: async () => cachedPayload,
       cacheApiResponse: async (_url, payload) => cached.push(payload),
@@ -53,4 +53,17 @@ test("offline commentary does not fall back to an older release", async () => {
     api.requestJson("/api/bhf-commentary/Genesis/1"),
     /offline/,
   );
+});
+
+
+test("commentary cache keys the current configured patch release", async () => {
+  const {api, cached} = loadApi({
+    commentaryRelease: "commentary-v1.0.1",
+    cachedPayload: {release: "commentary-v1.0", commentary: "old"},
+    fetchResponse: {release: "commentary-v1.0.1", commentary: "patch"},
+  });
+
+  const result = await api.requestJson("/api/bhf-commentary/1%20Samuel/28");
+  assert.equal(result.commentary, "patch");
+  assert.equal(cached[0].release, "commentary-v1.0.1");
 });

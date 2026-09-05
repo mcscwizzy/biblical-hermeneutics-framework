@@ -2,7 +2,9 @@
   // Commentary artifacts are immutable release content. Bump this value when
   // the UI adopts a newer published corpus so an older IndexedDB entry cannot
   // silently appear as current commentary while offline.
-  const COMMENTARY_RELEASE = "commentary-v1.0";
+  const COMMENTARY_RELEASE = String(
+    window.BHFRuntimeConfig?.commentaryRelease || "commentary-v1.0"
+  );
   const backendRouting = window.BHFBackendRouting || {};
 
   function resolveUrl(url) {
