@@ -1,7 +1,10 @@
 import unittest
 from pathlib import Path
 
-from bhf_web.settings import resolve_runtime_data_paths
+from bhf_web.settings import (
+    packaged_commentary_storage_path,
+    resolve_runtime_data_paths,
+)
 
 
 class RuntimeDataPathTests(unittest.TestCase):
@@ -47,6 +50,11 @@ class RuntimeDataPathTests(unittest.TestCase):
             paths.commentary_db_path,
             Path(".bhf-data/commentary.sqlite"),
         )
+        self.assertEqual(
+            paths.bhf_commentary_storage_path,
+            Path(".bhf-data/bhf-commentary"),
+        )
+        self.assertTrue(paths.bhf_commentary_storage_path.is_dir())
         self.assertEqual(paths.translations_path, Path(".bhf-data/translations"))
         self.assertEqual(
             paths.reader_settings_path,
@@ -68,6 +76,15 @@ class RuntimeDataPathTests(unittest.TestCase):
             paths.commentary_db_path,
             Path("/tmp/bhf-data/commentary.sqlite"),
         )
+        self.assertEqual(
+            paths.bhf_commentary_storage_path,
+            packaged_commentary_storage_path(),
+        )
+        self.assertNotEqual(
+            paths.bhf_commentary_storage_path,
+            Path("/tmp/bhf-data/bhf-commentary"),
+        )
+        self.assertTrue(paths.bhf_commentary_storage_path.is_dir())
         self.assertEqual(paths.translations_path, Path("/tmp/bhf-data/translations"))
         self.assertEqual(
             paths.reader_settings_path,
@@ -107,6 +124,16 @@ class RuntimeDataPathTests(unittest.TestCase):
         self.assertEqual(paths.study_db_path, Path("/custom/study.db"))
         self.assertEqual(paths.job_db_path, Path("/custom/jobs.db"))
         self.assertEqual(paths.commentary_db_path, Path("/custom/commentary.db"))
+
+    def test_explicit_commentary_path_overrides_packaged_vercel_default(self):
+        paths = resolve_runtime_data_paths(
+            {
+                "VERCEL": "1",
+                "BHF_COMMENTARY_STORAGE_PATH": "/custom/commentary",
+            }
+        )
+
+        self.assertEqual(paths.bhf_commentary_storage_path, Path("/custom/commentary"))
 
     def test_individual_writable_path_overrides_beat_vercel_defaults(self):
         paths = resolve_runtime_data_paths(

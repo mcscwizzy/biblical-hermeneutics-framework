@@ -5,6 +5,7 @@ from unittest.mock import patch
 
 import pytest
 
+from bhf_agent.runtime_paths import packaged_commentary_storage_path
 from bhf_agent.chapter_commentary.models import (
     ChapterCommentary,
     CommentaryBlock,
@@ -161,6 +162,31 @@ def test_evidence_projection_includes_only_cited_items_and_reports_unknown_ids()
 
 def test_missing_artifact_returns_none(tmp_path):
     assert load_commentary_projection(tmp_path, "Genesis", 13) is None
+
+
+def test_reading_commentary_does_not_create_a_missing_storage_directory(tmp_path):
+    from bhf_agent.chapter_commentary.storage import list_commentaries
+
+    storage_dir = tmp_path / "packaged-commentary"
+    assert list_commentaries(storage_dir) == []
+    assert not storage_dir.exists()
+
+
+def test_packaged_corpus_loads_known_availability_and_legacy_metadata():
+    storage_dir = packaged_commentary_storage_path()
+
+    corinthians = load_commentary_projection(storage_dir, "1 Corinthians", 1)
+    assert corinthians is not None
+    assert corinthians["availability"] == "AVAILABLE"
+    assert corinthians["commentary"]
+
+    leviticus = load_commentary_projection(storage_dir, "Leviticus", 2)
+    assert leviticus is not None
+    assert leviticus["availability"] == "DATA_GAP"
+
+    genesis = load_commentary_projection(storage_dir, "Genesis", 13)
+    assert genesis is not None
+    assert genesis["availability"] is None
 
 
 def test_api_projection_returns_minimal_payload_when_fastapi_is_available(tmp_path):

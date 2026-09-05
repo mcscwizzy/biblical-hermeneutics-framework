@@ -1,4 +1,4 @@
-"""Deployment-aware paths for writable BHF runtime state."""
+"""Deployment-aware paths for BHF runtime state and packaged data."""
 
 from __future__ import annotations
 
@@ -10,7 +10,7 @@ from typing import Mapping
 
 @dataclass(frozen=True)
 class RuntimeDataPaths:
-    """Resolved writable paths shared by the agent and web runtime."""
+    """Resolved runtime paths shared by the agent and web runtime."""
 
     data_dir: Path
     study_db_path: Path
@@ -32,6 +32,28 @@ def default_runtime_data_dir(environ: Mapping[str, str]) -> Path:
     return Path(".bhf-data")
 
 
+def packaged_commentary_storage_path() -> Path:
+    """Return the immutable commentary corpus bundled with the application."""
+
+    project_root = Path(__file__).resolve().parents[1]
+    return project_root / ".bhf-data" / "bhf-commentary"
+
+
+def default_commentary_storage_path(environ: Mapping[str, str]) -> Path:
+    """Resolve commentary separately from writable runtime data.
+
+    Vercel's ``/tmp`` directory is appropriate for mutable runtime state but
+    does not contain the released commentary corpus. The corpus is packaged
+    with the application and must be read from the resolved project root.
+    Local development retains the existing relative path for NAS and source
+    checkout compatibility.
+    """
+
+    if environ.get("VERCEL"):
+        return packaged_commentary_storage_path()
+    return Path(".bhf-data") / "bhf-commentary"
+
+
 def resolve_runtime_data_paths(
     environ: Mapping[str, str] | None = None,
 ) -> RuntimeDataPaths:
@@ -50,7 +72,7 @@ def resolve_runtime_data_paths(
         ),
         bhf_commentary_storage_path=Path(
             values.get("BHF_COMMENTARY_STORAGE_PATH")
-            or data_dir / "bhf-commentary"
+            or default_commentary_storage_path(values)
         ),
         translations_path=Path(
             values.get("BHF_TRANSLATIONS_PATH") or data_dir / "translations"
@@ -76,6 +98,8 @@ RUNTIME_DATA_PATHS = resolve_runtime_data_paths()
 __all__ = [
     "RUNTIME_DATA_PATHS",
     "RuntimeDataPaths",
+    "default_commentary_storage_path",
     "default_runtime_data_dir",
+    "packaged_commentary_storage_path",
     "resolve_runtime_data_paths",
 ]
