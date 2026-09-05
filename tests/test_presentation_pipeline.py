@@ -87,6 +87,20 @@ def test_evidence_ids_and_hash_are_stable():
     assert first.evidence_hash == second.evidence_hash
 
 
+def test_evidence_hash_ignores_backend_specific_retrieval_score():
+    fixture = FIXTURES[0]
+    first = build_evidence_bundle(
+        fixture["reference"],
+        canonical_results=[SimpleNamespace(object=value, score=0.91) for value in fixture["objects"]],
+    )
+    second = build_evidence_bundle(
+        fixture["reference"],
+        canonical_results=[SimpleNamespace(object=value, score=0.97) for value in fixture["objects"]],
+    )
+
+    assert first.evidence_hash == second.evidence_hash
+
+
 def test_unrelated_retrieval_does_not_change_evidence_hash():
     fixture = FIXTURES[0]
     unrelated = {

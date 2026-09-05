@@ -1,0 +1,1091 @@
+{
+  "report_version": "commentary-v1.1-expansion-v1",
+  "generated_at": "2026-09-05T16:15:06.446464+00:00",
+  "batch": "thin_initial",
+  "workflow": [
+    "select",
+    "audit_existing_ckl",
+    "validate_anchors",
+    "rebuild_json_indexes",
+    "verify_sqlite_indexes",
+    "compare_json_sqlite",
+    "build_evidence_bundles",
+    "classify_availability",
+    "leakage_audit",
+    "lock"
+  ],
+  "status": "LOCKED",
+  "chapters": [
+    {
+      "reference": "Numbers 16",
+      "book": "Numbers",
+      "chapter": 16,
+      "retrieval_result_ids": [
+        "2-timothy",
+        "jude",
+        "numbers"
+      ],
+      "existing_evidence_reused": [
+        {
+          "evidence_id": "2tim-foundation",
+          "category": "culture",
+          "claim": "The firm foundation's seal combines divine knowledge of God's own with a summons to turn from wickedness.",
+          "source_ids": [
+            "2tim-greek",
+            "nets-lxx"
+          ],
+          "passage_anchors": [
+            "Numbers 16:5",
+            "Numbers 16:26"
+          ],
+          "confidence": "high"
+        },
+        {
+          "evidence_id": "numbers:interpretive_note:2",
+          "category": "geography",
+          "claim": "Proposed maps of the wilderness route should label uncertain site identifications rather than presenting a single itinerary reconstruction as established.",
+          "source_ids": [
+            "milgrom-numbers",
+            "ashley-numbers",
+            "zondervan-illustrated-pentateuch-backgrounds"
+          ],
+          "passage_anchors": [
+            "Numbers 10-21"
+          ],
+          "confidence": "low"
+        }
+      ],
+      "evidence_item_count": 2,
+      "evidence_categories": [
+        "culture",
+        "geography"
+      ],
+      "availability": "THIN",
+      "evidence_hash": "98c1db70a3aa0e77d32ec02b324e5b00247b19b0cd0707a3ce8e1785ebf61c0d",
+      "source_gaps": [],
+      "leakage_evidence_ids": [],
+      "json_sqlite": {
+        "result_ids_agree": true,
+        "bundle_hash_agree": true,
+        "first_ids": [
+          "2-timothy",
+          "jude",
+          "numbers"
+        ],
+        "second_ids": [
+          "2-timothy",
+          "jude",
+          "numbers"
+        ]
+      },
+      "all_retrieved_records_had_anchor_entries": true
+    },
+    {
+      "reference": "Jeremiah 2",
+      "book": "Jeremiah",
+      "chapter": 2,
+      "retrieval_result_ids": [
+        "jeremiah"
+      ],
+      "existing_evidence_reused": [
+        {
+          "evidence_id": "jeremiah-long-composition",
+          "category": "culture",
+          "claim": "The received book combines poetry, prose sermons, narratives, letters, headings, repeated accounts, restoration collections, nation oracles, and an appendix produced through a long compositional and textual history.",
+          "source_ids": [
+            "jeremiah-masoretic",
+            "oxford-handbook-jeremiah",
+            "biddle-jeremiah-content",
+            "stulman-jeremiah"
+          ],
+          "passage_anchors": [
+            "Jeremiah 1:1-52:34"
+          ],
+          "confidence": "high"
+        },
+        {
+          "evidence_id": "jeremiah-practical-mt-outline",
+          "category": "culture",
+          "claim": "Chapters 1; 2-25; 26-29; 30-33; 34-45; 46-51; and 52 provide a practical outline of Masoretic Jeremiah without settling its composition.",
+          "source_ids": [
+            "jeremiah-masoretic",
+            "biddle-jeremiah-content",
+            "stulman-jeremiah"
+          ],
+          "passage_anchors": [
+            "Jeremiah 1:1-52:34"
+          ],
+          "confidence": "medium"
+        }
+      ],
+      "evidence_item_count": 2,
+      "evidence_categories": [
+        "culture"
+      ],
+      "availability": "THIN",
+      "evidence_hash": "1c8ffae3914cd7caadc1379da3ab45eb28856e9ea4f021eddccb84cf829ce02b",
+      "source_gaps": [],
+      "leakage_evidence_ids": [],
+      "json_sqlite": {
+        "result_ids_agree": true,
+        "bundle_hash_agree": true,
+        "first_ids": [
+          "jeremiah"
+        ],
+        "second_ids": [
+          "jeremiah"
+        ]
+      },
+      "all_retrieved_records_had_anchor_entries": true
+    },
+    {
+      "reference": "Psalms 106",
+      "book": "Psalms",
+      "chapter": 106,
+      "retrieval_result_ids": [
+        "psalms"
+      ],
+      "existing_evidence_reused": [
+        {
+          "evidence_id": "psalms-five-book-anthology",
+          "category": "culture",
+          "claim": "The Masoretic Psalter contains 150 psalms arranged in five books, with doxological boundaries after Psalms 41, 72, 89, and 106 and a final crescendo of praise in Psalms 146-150.",
+          "source_ids": [
+            "psalms-masoretic",
+            "declaisse-walford-jacobson-tanner",
+            "oxford-psalter-metanarrative"
+          ],
+          "passage_anchors": [
+            "Psalms 106:48"
+          ],
+          "confidence": "high"
+        }
+      ],
+      "evidence_item_count": 1,
+      "evidence_categories": [
+        "culture"
+      ],
+      "availability": "THIN",
+      "evidence_hash": "88ab888d5be5ff58a36b504bed994b9f7ab9abbb0319ad53415d594f27918d1d",
+      "source_gaps": [],
+      "leakage_evidence_ids": [],
+      "json_sqlite": {
+        "result_ids_agree": true,
+        "bundle_hash_agree": true,
+        "first_ids": [
+          "psalms"
+        ],
+        "second_ids": [
+          "psalms"
+        ]
+      },
+      "all_retrieved_records_had_anchor_entries": true
+    },
+    {
+      "reference": "Numbers 19",
+      "book": "Numbers",
+      "chapter": 19,
+      "retrieval_result_ids": [
+        "haggai",
+        "numbers"
+      ],
+      "existing_evidence_reused": [
+        {
+          "evidence_id": "haggai-torah-inquiry",
+          "category": "history",
+          "claim": "Haggai asks priests for Torah rulings: holiness is not transferred through a second contact, while corpse impurity is transferred by contact.",
+          "source_ids": [
+            "haggai-masoretic",
+            "haggai-comparanda",
+            "barker-haggai",
+            "foster-theology"
+          ],
+          "passage_anchors": [
+            "Numbers 19:11-22"
+          ],
+          "confidence": "high"
+        },
+        {
+          "evidence_id": "numbers:interpretive_note:2",
+          "category": "geography",
+          "claim": "Proposed maps of the wilderness route should label uncertain site identifications rather than presenting a single itinerary reconstruction as established.",
+          "source_ids": [
+            "milgrom-numbers",
+            "ashley-numbers",
+            "zondervan-illustrated-pentateuch-backgrounds"
+          ],
+          "passage_anchors": [
+            "Numbers 10-21"
+          ],
+          "confidence": "low"
+        }
+      ],
+      "evidence_item_count": 2,
+      "evidence_categories": [
+        "geography",
+        "history"
+      ],
+      "availability": "THIN",
+      "evidence_hash": "2cb122f0979c8b2bc0e07c7d70f647604420c45b5f405f6c304990ff0e192f68",
+      "source_gaps": [],
+      "leakage_evidence_ids": [],
+      "json_sqlite": {
+        "result_ids_agree": true,
+        "bundle_hash_agree": true,
+        "first_ids": [
+          "haggai",
+          "numbers"
+        ],
+        "second_ids": [
+          "haggai",
+          "numbers"
+        ]
+      },
+      "all_retrieved_records_had_anchor_entries": true
+    },
+    {
+      "reference": "Numbers 31",
+      "book": "Numbers",
+      "chapter": 31,
+      "retrieval_result_ids": [
+        "numbers"
+      ],
+      "existing_evidence_reused": [
+        {
+          "evidence_id": "numbers-inheritance-preparation",
+          "category": "culture",
+          "claim": "The final third of Numbers prepares the new generation for land inheritance through a second census, inheritance rulings, Joshua's commission, land boundaries, towns, and tribal safeguards.",
+          "source_ids": [
+            "numbers-1-36",
+            "milgrom-numbers",
+            "ashley-numbers"
+          ],
+          "passage_anchors": [
+            "Numbers 26-36"
+          ],
+          "confidence": "high"
+        }
+      ],
+      "evidence_item_count": 1,
+      "evidence_categories": [
+        "culture"
+      ],
+      "availability": "THIN",
+      "evidence_hash": "24ea007fe04fbce4af6c9b7f16767a4f0b692c17914c583a6639cf0d580c0c21",
+      "source_gaps": [],
+      "leakage_evidence_ids": [],
+      "json_sqlite": {
+        "result_ids_agree": true,
+        "bundle_hash_agree": true,
+        "first_ids": [
+          "numbers"
+        ],
+        "second_ids": [
+          "numbers"
+        ]
+      },
+      "all_retrieved_records_had_anchor_entries": true
+    },
+    {
+      "reference": "Deuteronomy 26",
+      "book": "Deuteronomy",
+      "chapter": 26,
+      "retrieval_result_ids": [
+        "deuteronomy"
+      ],
+      "existing_evidence_reused": [
+        {
+          "evidence_id": "deuteronomy-literary-movement",
+          "category": "culture",
+          "claim": "Deuteronomy moves from remembered wilderness history through covenant instruction to covenant consequences, renewal, succession, song, blessing, and Moses's death.",
+          "source_ids": [
+            "deuteronomy-1-34",
+            "tigay-deuteronomy",
+            "cairns-deuteronomy"
+          ],
+          "passage_anchors": [
+            "Deuteronomy 1-34"
+          ],
+          "confidence": "high"
+        },
+        {
+          "evidence_id": "deuteronomy:interpretive_note:1",
+          "category": "culture",
+          "claim": "The repeated instruction is rhetorically adapted covenant exposition for a successor generation, not a simple verbatim duplication of earlier laws.",
+          "source_ids": [
+            "deuteronomy-1-34",
+            "tigay-deuteronomy",
+            "cairns-deuteronomy"
+          ],
+          "passage_anchors": [
+            "Deuteronomy 5-26"
+          ],
+          "confidence": "high"
+        }
+      ],
+      "evidence_item_count": 2,
+      "evidence_categories": [
+        "culture"
+      ],
+      "availability": "THIN",
+      "evidence_hash": "703d4b25abaa8b1dabd5303d7563ef40fb255bb7c2b39da151829151f347bab6",
+      "source_gaps": [],
+      "leakage_evidence_ids": [],
+      "json_sqlite": {
+        "result_ids_agree": true,
+        "bundle_hash_agree": true,
+        "first_ids": [
+          "deuteronomy"
+        ],
+        "second_ids": [
+          "deuteronomy"
+        ]
+      },
+      "all_retrieved_records_had_anchor_entries": true
+    },
+    {
+      "reference": "Isaiah 28",
+      "book": "Isaiah",
+      "chapter": 28,
+      "retrieval_result_ids": [
+        "1-peter",
+        "isaiah"
+      ],
+      "existing_evidence_reused": [
+        {
+          "evidence_id": "isaiah-practical-outline",
+          "category": "culture",
+          "claim": "The divisions 1-12, 13-27, 28-35, 36-39, 40-55, and 56-66 provide a practical reading map, not a proof of six authors or one uncontested macrostructure.",
+          "source_ids": [
+            "isaiah-masoretic",
+            "oxford-handbook-isaiah",
+            "williamson-book-called-isaiah",
+            "cambridge-isaiah"
+          ],
+          "passage_anchors": [
+            "Isaiah 28:1"
+          ],
+          "confidence": "medium"
+        },
+        {
+          "evidence_id": "isaiah-qumran-witnesses",
+          "category": "history",
+          "claim": "The Great Isaiah Scroll is an almost complete sixty-six-chapter witness broadly aligned with the Masoretic tradition but containing thousands of orthographic and substantive differences; other Qumran Isaiah manuscripts and pesharim show active transmission and interpretation.",
+          "source_ids": [
+            "israel-museum-great-isaiah",
+            "brooke-qumran-isaiah",
+            "hogenhaven-qumran-isaiah",
+            "oxford-handbook-isaiah"
+          ],
+          "passage_anchors": [
+            "Isaiah 1:1-66:24"
+          ],
+          "confidence": "high"
+        }
+      ],
+      "evidence_item_count": 2,
+      "evidence_categories": [
+        "culture",
+        "history"
+      ],
+      "availability": "THIN",
+      "evidence_hash": "418475bf4fd1c6190ca8d9439b08c343ca53a705a5ffb92c836706c1f77a00d3",
+      "source_gaps": [],
+      "leakage_evidence_ids": [],
+      "json_sqlite": {
+        "result_ids_agree": true,
+        "bundle_hash_agree": true,
+        "first_ids": [
+          "1-peter",
+          "isaiah"
+        ],
+        "second_ids": [
+          "1-peter",
+          "isaiah"
+        ]
+      },
+      "all_retrieved_records_had_anchor_entries": true
+    },
+    {
+      "reference": "Deuteronomy 21",
+      "book": "Deuteronomy",
+      "chapter": 21,
+      "retrieval_result_ids": [
+        "deuteronomy",
+        "galatians"
+      ],
+      "existing_evidence_reused": [
+        {
+          "evidence_id": "deuteronomy-literary-movement",
+          "category": "culture",
+          "claim": "Deuteronomy moves from remembered wilderness history through covenant instruction to covenant consequences, renewal, succession, song, blessing, and Moses's death.",
+          "source_ids": [
+            "deuteronomy-1-34",
+            "tigay-deuteronomy",
+            "cairns-deuteronomy"
+          ],
+          "passage_anchors": [
+            "Deuteronomy 1-34"
+          ],
+          "confidence": "high"
+        },
+        {
+          "evidence_id": "deuteronomy:interpretive_note:1",
+          "category": "culture",
+          "claim": "The repeated instruction is rhetorically adapted covenant exposition for a successor generation, not a simple verbatim duplication of earlier laws.",
+          "source_ids": [
+            "deuteronomy-1-34",
+            "tigay-deuteronomy",
+            "cairns-deuteronomy"
+          ],
+          "passage_anchors": [
+            "Deuteronomy 5-26"
+          ],
+          "confidence": "high"
+        },
+        {
+          "evidence_id": "gal-curse-law",
+          "category": "culture",
+          "claim": "Galatians juxtaposes Deuteronomic curse texts, Torah performance, and the Messiah's crucifixion; it does not say that Torah, Jews, or Jewish practice are themselves cursed.",
+          "source_ids": [
+            "gal-greek",
+            "nets-lxx",
+            "thiessen-gentile-problem"
+          ],
+          "passage_anchors": [
+            "Deuteronomy 21:23"
+          ],
+          "confidence": "high"
+        }
+      ],
+      "evidence_item_count": 3,
+      "evidence_categories": [
+        "culture"
+      ],
+      "availability": "THIN",
+      "evidence_hash": "e239d25616d60806d10651bf27f6b9d4414f46dcb9315de991c7b9ad1bd1cfe7",
+      "source_gaps": [],
+      "leakage_evidence_ids": [],
+      "json_sqlite": {
+        "result_ids_agree": true,
+        "bundle_hash_agree": true,
+        "first_ids": [
+          "deuteronomy",
+          "galatians"
+        ],
+        "second_ids": [
+          "deuteronomy",
+          "galatians"
+        ]
+      },
+      "all_retrieved_records_had_anchor_entries": true
+    },
+    {
+      "reference": "Judges 20",
+      "book": "Judges",
+      "chapter": 20,
+      "retrieval_result_ids": [
+        "judges"
+      ],
+      "existing_evidence_reused": [
+        {
+          "evidence_id": "judges-literary-movement",
+          "category": "culture",
+          "claim": "Judges moves from incomplete possession and covenant indictment through recurring deliverance narratives to internal idolatry, atrocity, and civil war.",
+          "source_ids": [
+            "judges-1-21",
+            "webb-judges",
+            "butler-judges"
+          ],
+          "passage_anchors": [
+            "Judges 1-21"
+          ],
+          "confidence": "high"
+        },
+        {
+          "evidence_id": "judges:interpretive_note:4",
+          "category": "culture",
+          "claim": "The book's escalating warfare, sexual violence, collective punishment, and forced wife-taking are narrated as evidence of social collapse, not supplied as moral templates for imitation.",
+          "source_ids": [
+            "judges-1-21",
+            "webb-judges",
+            "butler-judges"
+          ],
+          "passage_anchors": [
+            "Judges 19-21"
+          ],
+          "confidence": "high"
+        }
+      ],
+      "evidence_item_count": 2,
+      "evidence_categories": [
+        "culture"
+      ],
+      "availability": "THIN",
+      "evidence_hash": "af6ef888d44b46651613c0ff83dc6d2a8a7fa79a300b0713a9e5a1c8953b637a",
+      "source_gaps": [],
+      "leakage_evidence_ids": [],
+      "json_sqlite": {
+        "result_ids_agree": true,
+        "bundle_hash_agree": true,
+        "first_ids": [
+          "judges"
+        ],
+        "second_ids": [
+          "judges"
+        ]
+      },
+      "all_retrieved_records_had_anchor_entries": true
+    },
+    {
+      "reference": "Leviticus 22",
+      "book": "Leviticus",
+      "chapter": 22,
+      "retrieval_result_ids": [
+        "leviticus",
+        "malachi"
+      ],
+      "existing_evidence_reused": [
+        {
+          "evidence_id": "leviticus-literary-movement",
+          "category": "culture",
+          "claim": "Leviticus moves from sacrifice and priestly inauguration through purity and the Day of Atonement into instructions for holy communal life, sacred time, land, covenant consequences, and vows.",
+          "source_ids": [
+            "leviticus-1-27",
+            "levine-leviticus",
+            "wenham-leviticus"
+          ],
+          "passage_anchors": [
+            "Leviticus 1-27"
+          ],
+          "confidence": "high"
+        }
+      ],
+      "evidence_item_count": 1,
+      "evidence_categories": [
+        "culture"
+      ],
+      "availability": "THIN",
+      "evidence_hash": "e566a7e19e3fd11d786ab79a4f46b33b8700e6dcc09ac47b95c71c4de7227d8c",
+      "source_gaps": [],
+      "leakage_evidence_ids": [],
+      "json_sqlite": {
+        "result_ids_agree": true,
+        "bundle_hash_agree": true,
+        "first_ids": [
+          "leviticus",
+          "malachi"
+        ],
+        "second_ids": [
+          "leviticus",
+          "malachi"
+        ]
+      },
+      "all_retrieved_records_had_anchor_entries": true
+    },
+    {
+      "reference": "Leviticus 21",
+      "book": "Leviticus",
+      "chapter": 21,
+      "retrieval_result_ids": [
+        "leviticus"
+      ],
+      "existing_evidence_reused": [
+        {
+          "evidence_id": "leviticus-literary-movement",
+          "category": "culture",
+          "claim": "Leviticus moves from sacrifice and priestly inauguration through purity and the Day of Atonement into instructions for holy communal life, sacred time, land, covenant consequences, and vows.",
+          "source_ids": [
+            "leviticus-1-27",
+            "levine-leviticus",
+            "wenham-leviticus"
+          ],
+          "passage_anchors": [
+            "Leviticus 1-27"
+          ],
+          "confidence": "high"
+        }
+      ],
+      "evidence_item_count": 1,
+      "evidence_categories": [
+        "culture"
+      ],
+      "availability": "THIN",
+      "evidence_hash": "9f418dee130724700f5b58a9d2925b699f5fe3005ee1a4d98d0716198201fbf6",
+      "source_gaps": [],
+      "leakage_evidence_ids": [],
+      "json_sqlite": {
+        "result_ids_agree": true,
+        "bundle_hash_agree": true,
+        "first_ids": [
+          "leviticus"
+        ],
+        "second_ids": [
+          "leviticus"
+        ]
+      },
+      "all_retrieved_records_had_anchor_entries": true
+    },
+    {
+      "reference": "1 Chronicles 29",
+      "book": "1 Chronicles",
+      "chapter": 29,
+      "retrieval_result_ids": [
+        "1-chronicles"
+      ],
+      "existing_evidence_reused": [
+        {
+          "evidence_id": "first-chronicles-david-prepares",
+          "category": "history",
+          "claim": "David prepares materials, plans, leaders, priests, Levites, musicians, gatekeepers, treasurers, and public support for Solomon's temple work.",
+          "source_ids": [
+            "1-chronicles-1-29",
+            "knoppers-first-chronicles-10-29",
+            "devries-first-second-chronicles"
+          ],
+          "passage_anchors": [
+            "1 Chronicles 29:1-22"
+          ],
+          "confidence": "high"
+        }
+      ],
+      "evidence_item_count": 1,
+      "evidence_categories": [
+        "history"
+      ],
+      "availability": "THIN",
+      "evidence_hash": "da811ce562d6f403b0eb0e8e2283021afa715ba3b76b841fd002356752f964d5",
+      "source_gaps": [],
+      "leakage_evidence_ids": [],
+      "json_sqlite": {
+        "result_ids_agree": true,
+        "bundle_hash_agree": true,
+        "first_ids": [
+          "1-chronicles"
+        ],
+        "second_ids": [
+          "1-chronicles"
+        ]
+      },
+      "all_retrieved_records_had_anchor_entries": true
+    },
+    {
+      "reference": "2 Chronicles 26",
+      "book": "2 Chronicles",
+      "chapter": 26,
+      "retrieval_result_ids": [
+        "2-chronicles"
+      ],
+      "existing_evidence_reused": [
+        {
+          "evidence_id": "second-chronicles-seek-humble-pattern",
+          "category": "culture",
+          "claim": "Seeking the LORD, humbling oneself, praying, turning, receiving prophetic instruction, and abandoning the LORD form a recurring theological and narrative pattern across Judah's reigns.",
+          "source_ids": [
+            "2-chronicles-1-36",
+            "klein-second-chronicles",
+            "selman-second-chronicles"
+          ],
+          "passage_anchors": [
+            "2 Chronicles 26:3-21"
+          ],
+          "confidence": "high"
+        }
+      ],
+      "evidence_item_count": 1,
+      "evidence_categories": [
+        "culture"
+      ],
+      "availability": "THIN",
+      "evidence_hash": "6ab9c8df00726395561ac439ee8ac369203183cba419ab5c8e49d043571d275c",
+      "source_gaps": [],
+      "leakage_evidence_ids": [],
+      "json_sqlite": {
+        "result_ids_agree": true,
+        "bundle_hash_agree": true,
+        "first_ids": [
+          "2-chronicles"
+        ],
+        "second_ids": [
+          "2-chronicles"
+        ]
+      },
+      "all_retrieved_records_had_anchor_entries": true
+    },
+    {
+      "reference": "Ezekiel 8",
+      "book": "Ezekiel",
+      "chapter": 8,
+      "retrieval_result_ids": [
+        "ezekiel"
+      ],
+      "existing_evidence_reused": [
+        {
+          "evidence_id": "ezekiel-glory-departure-return",
+          "category": "culture",
+          "claim": "Ezekiel narrates YHWH's glory moving from the defiled Jerusalem temple and city in chapters 8-11 and returning to the visionary sanctuary in chapter 43.",
+          "source_ids": [
+            "ezekiel-masoretic",
+            "greenberg-ezekiel-1-20",
+            "block-ezekiel-25-48"
+          ],
+          "passage_anchors": [
+            "Ezekiel 8:1-18"
+          ],
+          "confidence": "high"
+        }
+      ],
+      "evidence_item_count": 1,
+      "evidence_categories": [
+        "culture"
+      ],
+      "availability": "THIN",
+      "evidence_hash": "84bbe687fcb542c6597cff346d8a9358e5b13176110c9ed55868fe0d6ad96162",
+      "source_gaps": [],
+      "leakage_evidence_ids": [],
+      "json_sqlite": {
+        "result_ids_agree": true,
+        "bundle_hash_agree": true,
+        "first_ids": [
+          "ezekiel"
+        ],
+        "second_ids": [
+          "ezekiel"
+        ]
+      },
+      "all_retrieved_records_had_anchor_entries": true
+    },
+    {
+      "reference": "2 Chronicles 29",
+      "book": "2 Chronicles",
+      "chapter": 29,
+      "retrieval_result_ids": [
+        "2-chronicles"
+      ],
+      "existing_evidence_reused": [
+        {
+          "evidence_id": "second-chronicles-hezekiah-passover",
+          "category": "history",
+          "claim": "Hezekiah restores temple worship and invites both Judah and northern Israel to a delayed Passover in Jerusalem, where prayer, healing, joy, and Levitical service underscore a renewed all-Israel horizon.",
+          "source_ids": [
+            "2-chronicles-1-36",
+            "klein-second-chronicles"
+          ],
+          "passage_anchors": [
+            "2 Chronicles 29:1-36"
+          ],
+          "confidence": "high"
+        }
+      ],
+      "evidence_item_count": 1,
+      "evidence_categories": [
+        "history"
+      ],
+      "availability": "THIN",
+      "evidence_hash": "03930c408da4552f18219b765c3a64eb9c57c49e0699a7b4f2c19474b692c586",
+      "source_gaps": [],
+      "leakage_evidence_ids": [],
+      "json_sqlite": {
+        "result_ids_agree": true,
+        "bundle_hash_agree": true,
+        "first_ids": [
+          "2-chronicles"
+        ],
+        "second_ids": [
+          "2-chronicles"
+        ]
+      },
+      "all_retrieved_records_had_anchor_entries": true
+    },
+    {
+      "reference": "Isaiah 62",
+      "book": "Isaiah",
+      "chapter": 62,
+      "retrieval_result_ids": [
+        "isaiah"
+      ],
+      "existing_evidence_reused": [
+        {
+          "evidence_id": "isaiah-qumran-witnesses",
+          "category": "history",
+          "claim": "The Great Isaiah Scroll is an almost complete sixty-six-chapter witness broadly aligned with the Masoretic tradition but containing thousands of orthographic and substantive differences; other Qumran Isaiah manuscripts and pesharim show active transmission and interpretation.",
+          "source_ids": [
+            "israel-museum-great-isaiah",
+            "brooke-qumran-isaiah",
+            "hogenhaven-qumran-isaiah",
+            "oxford-handbook-isaiah"
+          ],
+          "passage_anchors": [
+            "Isaiah 1:1-66:24"
+          ],
+          "confidence": "high"
+        }
+      ],
+      "evidence_item_count": 1,
+      "evidence_categories": [
+        "history"
+      ],
+      "availability": "THIN",
+      "evidence_hash": "2c39c1e31e281704578193234b8e52b060a13cf5824b435f7778c8658be02484",
+      "source_gaps": [],
+      "leakage_evidence_ids": [],
+      "json_sqlite": {
+        "result_ids_agree": true,
+        "bundle_hash_agree": true,
+        "first_ids": [
+          "isaiah"
+        ],
+        "second_ids": [
+          "isaiah"
+        ]
+      },
+      "all_retrieved_records_had_anchor_entries": true
+    },
+    {
+      "reference": "Jeremiah 19",
+      "book": "Jeremiah",
+      "chapter": 19,
+      "retrieval_result_ids": [
+        "jeremiah"
+      ],
+      "existing_evidence_reused": [
+        {
+          "evidence_id": "jeremiah-long-composition",
+          "category": "culture",
+          "claim": "The received book combines poetry, prose sermons, narratives, letters, headings, repeated accounts, restoration collections, nation oracles, and an appendix produced through a long compositional and textual history.",
+          "source_ids": [
+            "jeremiah-masoretic",
+            "oxford-handbook-jeremiah",
+            "biddle-jeremiah-content",
+            "stulman-jeremiah"
+          ],
+          "passage_anchors": [
+            "Jeremiah 1:1-52:34"
+          ],
+          "confidence": "high"
+        },
+        {
+          "evidence_id": "jeremiah-practical-mt-outline",
+          "category": "culture",
+          "claim": "Chapters 1; 2-25; 26-29; 30-33; 34-45; 46-51; and 52 provide a practical outline of Masoretic Jeremiah without settling its composition.",
+          "source_ids": [
+            "jeremiah-masoretic",
+            "biddle-jeremiah-content",
+            "stulman-jeremiah"
+          ],
+          "passage_anchors": [
+            "Jeremiah 1:1-52:34"
+          ],
+          "confidence": "medium"
+        }
+      ],
+      "evidence_item_count": 2,
+      "evidence_categories": [
+        "culture"
+      ],
+      "availability": "THIN",
+      "evidence_hash": "a648c9ed8c7374c61e9de8b8b1338158aee26257569213291da6648c89562ce4",
+      "source_gaps": [],
+      "leakage_evidence_ids": [],
+      "json_sqlite": {
+        "result_ids_agree": true,
+        "bundle_hash_agree": true,
+        "first_ids": [
+          "jeremiah"
+        ],
+        "second_ids": [
+          "jeremiah"
+        ]
+      },
+      "all_retrieved_records_had_anchor_entries": true
+    },
+    {
+      "reference": "1 Chronicles 16",
+      "book": "1 Chronicles",
+      "chapter": 16,
+      "retrieval_result_ids": [
+        "1-chronicles"
+      ],
+      "existing_evidence_reused": [
+        {
+          "evidence_id": "first-chronicles-ark-ordered",
+          "category": "history",
+          "claim": "After the failed first procession, David assigns priests and Levites to carry the ark according to prescribed order and establishes continuing worship before it.",
+          "source_ids": [
+            "1-chronicles-1-29",
+            "knoppers-first-chronicles-10-29"
+          ],
+          "passage_anchors": [
+            "1 Chronicles 16:1-43"
+          ],
+          "confidence": "high"
+        }
+      ],
+      "evidence_item_count": 1,
+      "evidence_categories": [
+        "history"
+      ],
+      "availability": "THIN",
+      "evidence_hash": "3667c3c5cd02c7173b6a0c2a74352ba92d2756c33c586ff6107703f378a3398b",
+      "source_gaps": [],
+      "leakage_evidence_ids": [],
+      "json_sqlite": {
+        "result_ids_agree": true,
+        "bundle_hash_agree": true,
+        "first_ids": [
+          "1-chronicles"
+        ],
+        "second_ids": [
+          "1-chronicles"
+        ]
+      },
+      "all_retrieved_records_had_anchor_entries": true
+    },
+    {
+      "reference": "Leviticus 7",
+      "book": "Leviticus",
+      "chapter": 7,
+      "retrieval_result_ids": [
+        "leviticus"
+      ],
+      "existing_evidence_reused": [
+        {
+          "evidence_id": "leviticus-literary-movement",
+          "category": "culture",
+          "claim": "Leviticus moves from sacrifice and priestly inauguration through purity and the Day of Atonement into instructions for holy communal life, sacred time, land, covenant consequences, and vows.",
+          "source_ids": [
+            "leviticus-1-27",
+            "levine-leviticus",
+            "wenham-leviticus"
+          ],
+          "passage_anchors": [
+            "Leviticus 1-27"
+          ],
+          "confidence": "high"
+        },
+        {
+          "evidence_id": "leviticus:interpretive_note:2",
+          "category": "geography",
+          "claim": "Ancient Near Eastern ritual comparisons illuminate vocabulary and practice but do not establish that Israelite rites carried the same theology or were directly borrowed.",
+          "source_ids": [
+            "wenham-leviticus",
+            "zondervan-illustrated-pentateuch-backgrounds"
+          ],
+          "passage_anchors": [
+            "Leviticus 1-7"
+          ],
+          "confidence": "medium"
+        }
+      ],
+      "evidence_item_count": 2,
+      "evidence_categories": [
+        "culture",
+        "geography"
+      ],
+      "availability": "THIN",
+      "evidence_hash": "94c9f32b7f697059954616948d2c781c121da9e51f52dc7d7e554598c3f4f2be",
+      "source_gaps": [],
+      "leakage_evidence_ids": [],
+      "json_sqlite": {
+        "result_ids_agree": true,
+        "bundle_hash_agree": true,
+        "first_ids": [
+          "leviticus"
+        ],
+        "second_ids": [
+          "leviticus"
+        ]
+      },
+      "all_retrieved_records_had_anchor_entries": true
+    },
+    {
+      "reference": "Deuteronomy 15",
+      "book": "Deuteronomy",
+      "chapter": 15,
+      "retrieval_result_ids": [
+        "deuteronomy"
+      ],
+      "existing_evidence_reused": [
+        {
+          "evidence_id": "deuteronomy-literary-movement",
+          "category": "culture",
+          "claim": "Deuteronomy moves from remembered wilderness history through covenant instruction to covenant consequences, renewal, succession, song, blessing, and Moses's death.",
+          "source_ids": [
+            "deuteronomy-1-34",
+            "tigay-deuteronomy",
+            "cairns-deuteronomy"
+          ],
+          "passage_anchors": [
+            "Deuteronomy 1-34"
+          ],
+          "confidence": "high"
+        },
+        {
+          "evidence_id": "deuteronomy:interpretive_note:1",
+          "category": "culture",
+          "claim": "The repeated instruction is rhetorically adapted covenant exposition for a successor generation, not a simple verbatim duplication of earlier laws.",
+          "source_ids": [
+            "deuteronomy-1-34",
+            "tigay-deuteronomy",
+            "cairns-deuteronomy"
+          ],
+          "passage_anchors": [
+            "Deuteronomy 5-26"
+          ],
+          "confidence": "high"
+        }
+      ],
+      "evidence_item_count": 2,
+      "evidence_categories": [
+        "culture"
+      ],
+      "availability": "THIN",
+      "evidence_hash": "1a86803c764507f1c7a3f5a4d9b75bcc294f9893537e8ac007d17f6c64813691",
+      "source_gaps": [],
+      "leakage_evidence_ids": [],
+      "json_sqlite": {
+        "result_ids_agree": true,
+        "bundle_hash_agree": true,
+        "first_ids": [
+          "deuteronomy"
+        ],
+        "second_ids": [
+          "deuteronomy"
+        ]
+      },
+      "all_retrieved_records_had_anchor_entries": true
+    }
+  ],
+  "json_sqlite_agreement": {
+    "chapters": 20,
+    "result_id_disagreements": 0,
+    "bundle_hash_disagreements": 0
+  },
+  "retrieval_leakage_audit": {
+    "chapters_with_leakage": 0,
+    "leaked_evidence_ids": []
+  },
+  "locked_evidence_bundle_hashes": {
+    "Numbers 16": "98c1db70a3aa0e77d32ec02b324e5b00247b19b0cd0707a3ce8e1785ebf61c0d",
+    "Jeremiah 2": "1c8ffae3914cd7caadc1379da3ab45eb28856e9ea4f021eddccb84cf829ce02b",
+    "Psalms 106": "88ab888d5be5ff58a36b504bed994b9f7ab9abbb0319ad53415d594f27918d1d",
+    "Numbers 19": "2cb122f0979c8b2bc0e07c7d70f647604420c45b5f405f6c304990ff0e192f68",
+    "Numbers 31": "24ea007fe04fbce4af6c9b7f16767a4f0b692c17914c583a6639cf0d580c0c21",
+    "Deuteronomy 26": "703d4b25abaa8b1dabd5303d7563ef40fb255bb7c2b39da151829151f347bab6",
+    "Isaiah 28": "418475bf4fd1c6190ca8d9439b08c343ca53a705a5ffb92c836706c1f77a00d3",
+    "Deuteronomy 21": "e239d25616d60806d10651bf27f6b9d4414f46dcb9315de991c7b9ad1bd1cfe7",
+    "Judges 20": "af6ef888d44b46651613c0ff83dc6d2a8a7fa79a300b0713a9e5a1c8953b637a",
+    "Leviticus 22": "e566a7e19e3fd11d786ab79a4f46b33b8700e6dcc09ac47b95c71c4de7227d8c",
+    "Leviticus 21": "9f418dee130724700f5b58a9d2925b699f5fe3005ee1a4d98d0716198201fbf6",
+    "1 Chronicles 29": "da811ce562d6f403b0eb0e8e2283021afa715ba3b76b841fd002356752f964d5",
+    "2 Chronicles 26": "6ab9c8df00726395561ac439ee8ac369203183cba419ab5c8e49d043571d275c",
+    "Ezekiel 8": "84bbe687fcb542c6597cff346d8a9358e5b13176110c9ed55868fe0d6ad96162",
+    "2 Chronicles 29": "03930c408da4552f18219b765c3a64eb9c57c49e0699a7b4f2c19474b692c586",
+    "Isaiah 62": "2c39c1e31e281704578193234b8e52b060a13cf5824b435f7778c8658be02484",
+    "Jeremiah 19": "a648c9ed8c7374c61e9de8b8b1338158aee26257569213291da6648c89562ce4",
+    "1 Chronicles 16": "3667c3c5cd02c7173b6a0c2a74352ba92d2756c33c586ff6107703f378a3398b",
+    "Leviticus 7": "94c9f32b7f697059954616948d2c781c121da9e51f52dc7d7e554598c3f4f2be",
+    "Deuteronomy 15": "1a86803c764507f1c7a3f5a4d9b75bcc294f9893537e8ac007d17f6c64813691"
+  },
+  "errors": []
+}

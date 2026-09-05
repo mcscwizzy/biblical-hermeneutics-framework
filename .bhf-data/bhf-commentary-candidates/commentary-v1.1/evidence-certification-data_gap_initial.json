@@ -1,0 +1,262 @@
+{
+  "report_version": "commentary-v1.1-expansion-v1",
+  "generated_at": "2026-09-05T16:06:47.438791+00:00",
+  "batch": "data_gap_initial",
+  "workflow": [
+    "select",
+    "audit_existing_ckl",
+    "validate_anchors",
+    "rebuild_json_indexes",
+    "verify_sqlite_indexes",
+    "compare_json_sqlite",
+    "build_evidence_bundles",
+    "classify_availability",
+    "leakage_audit",
+    "lock"
+  ],
+  "status": "LOCKED",
+  "chapters": [
+    {
+      "reference": "Numbers 5",
+      "book": "Numbers",
+      "chapter": 5,
+      "retrieval_result_ids": [],
+      "existing_evidence_reused": [],
+      "evidence_item_count": 0,
+      "evidence_categories": [],
+      "availability": "DATA_GAP",
+      "evidence_hash": "7d5da81999ccdd20a63cb4fd75536ea306dd9f69efa2899f99a854e21d98b8f7",
+      "source_gaps": [
+        "no source-addressable evidence survived strict Scripture-anchor validation"
+      ],
+      "leakage_evidence_ids": [],
+      "json_sqlite": {
+        "result_ids_agree": true,
+        "bundle_hash_agree": true,
+        "first_ids": [],
+        "second_ids": []
+      },
+      "all_retrieved_records_had_anchor_entries": false
+    },
+    {
+      "reference": "Luke 8",
+      "book": "Luke",
+      "chapter": 8,
+      "retrieval_result_ids": [],
+      "existing_evidence_reused": [],
+      "evidence_item_count": 0,
+      "evidence_categories": [],
+      "availability": "DATA_GAP",
+      "evidence_hash": "2ff888619e243d286a67eec8951d98f0574c61090eb6b6913a9ef504bbac6750",
+      "source_gaps": [
+        "no source-addressable evidence survived strict Scripture-anchor validation"
+      ],
+      "leakage_evidence_ids": [],
+      "json_sqlite": {
+        "result_ids_agree": true,
+        "bundle_hash_agree": true,
+        "first_ids": [],
+        "second_ids": []
+      },
+      "all_retrieved_records_had_anchor_entries": false
+    },
+    {
+      "reference": "Numbers 8",
+      "book": "Numbers",
+      "chapter": 8,
+      "retrieval_result_ids": [],
+      "existing_evidence_reused": [],
+      "evidence_item_count": 0,
+      "evidence_categories": [],
+      "availability": "DATA_GAP",
+      "evidence_hash": "f4d9cae7722c8ca6e1078c2ac523a047f31f28cd26cec11800a6d0e26ef1b83a",
+      "source_gaps": [
+        "no source-addressable evidence survived strict Scripture-anchor validation"
+      ],
+      "leakage_evidence_ids": [],
+      "json_sqlite": {
+        "result_ids_agree": true,
+        "bundle_hash_agree": true,
+        "first_ids": [],
+        "second_ids": []
+      },
+      "all_retrieved_records_had_anchor_entries": false
+    },
+    {
+      "reference": "Numbers 7",
+      "book": "Numbers",
+      "chapter": 7,
+      "retrieval_result_ids": [],
+      "existing_evidence_reused": [],
+      "evidence_item_count": 0,
+      "evidence_categories": [],
+      "availability": "DATA_GAP",
+      "evidence_hash": "088910c1358103cebf1312b5f2627b35b2b0b0190863520fba8e5883551e3eeb",
+      "source_gaps": [
+        "no source-addressable evidence survived strict Scripture-anchor validation"
+      ],
+      "leakage_evidence_ids": [],
+      "json_sqlite": {
+        "result_ids_agree": true,
+        "bundle_hash_agree": true,
+        "first_ids": [],
+        "second_ids": []
+      },
+      "all_retrieved_records_had_anchor_entries": false
+    },
+    {
+      "reference": "Numbers 3",
+      "book": "Numbers",
+      "chapter": 3,
+      "retrieval_result_ids": [],
+      "existing_evidence_reused": [],
+      "evidence_item_count": 0,
+      "evidence_categories": [],
+      "availability": "DATA_GAP",
+      "evidence_hash": "fc092d8e04cbcf2fa8359b3f51f2e3272f7aaf848ed0c746a5773e2fead09fa1",
+      "source_gaps": [
+        "no source-addressable evidence survived strict Scripture-anchor validation"
+      ],
+      "leakage_evidence_ids": [],
+      "json_sqlite": {
+        "result_ids_agree": true,
+        "bundle_hash_agree": true,
+        "first_ids": [],
+        "second_ids": []
+      },
+      "all_retrieved_records_had_anchor_entries": false
+    },
+    {
+      "reference": "1 Kings 7",
+      "book": "1 Kings",
+      "chapter": 7,
+      "retrieval_result_ids": [],
+      "existing_evidence_reused": [],
+      "evidence_item_count": 0,
+      "evidence_categories": [],
+      "availability": "DATA_GAP",
+      "evidence_hash": "69569bf701dc7c5597c4c76bd23461e3ab7dfd76ba1e9f72ef5bb486188ad69f",
+      "source_gaps": [
+        "no source-addressable evidence survived strict Scripture-anchor validation"
+      ],
+      "leakage_evidence_ids": [],
+      "json_sqlite": {
+        "result_ids_agree": true,
+        "bundle_hash_agree": true,
+        "first_ids": [],
+        "second_ids": []
+      },
+      "all_retrieved_records_had_anchor_entries": false
+    },
+    {
+      "reference": "Luke 5",
+      "book": "Luke",
+      "chapter": 5,
+      "retrieval_result_ids": [],
+      "existing_evidence_reused": [],
+      "evidence_item_count": 0,
+      "evidence_categories": [],
+      "availability": "DATA_GAP",
+      "evidence_hash": "f030198ab355e9e22a9a0b5a6fbf45642bf1a89b2c913c9316475fc81a16bc29",
+      "source_gaps": [
+        "no source-addressable evidence survived strict Scripture-anchor validation"
+      ],
+      "leakage_evidence_ids": [],
+      "json_sqlite": {
+        "result_ids_agree": true,
+        "bundle_hash_agree": true,
+        "first_ids": [],
+        "second_ids": []
+      },
+      "all_retrieved_records_had_anchor_entries": false
+    },
+    {
+      "reference": "Ezekiel 7",
+      "book": "Ezekiel",
+      "chapter": 7,
+      "retrieval_result_ids": [],
+      "existing_evidence_reused": [],
+      "evidence_item_count": 0,
+      "evidence_categories": [],
+      "availability": "DATA_GAP",
+      "evidence_hash": "4ab2be019ab7058d0e209bdd486fb0d0d5aa7ef23c6f1b63f7ba79a7dc541e0d",
+      "source_gaps": [
+        "no source-addressable evidence survived strict Scripture-anchor validation"
+      ],
+      "leakage_evidence_ids": [],
+      "json_sqlite": {
+        "result_ids_agree": true,
+        "bundle_hash_agree": true,
+        "first_ids": [],
+        "second_ids": []
+      },
+      "all_retrieved_records_had_anchor_entries": false
+    },
+    {
+      "reference": "2 Chronicles 8",
+      "book": "2 Chronicles",
+      "chapter": 8,
+      "retrieval_result_ids": [],
+      "existing_evidence_reused": [],
+      "evidence_item_count": 0,
+      "evidence_categories": [],
+      "availability": "DATA_GAP",
+      "evidence_hash": "5581bcab2a078a6fb3823fc37e16ed7c8614eb60ffc528d3b13d4d56146bdcb5",
+      "source_gaps": [
+        "no source-addressable evidence survived strict Scripture-anchor validation"
+      ],
+      "leakage_evidence_ids": [],
+      "json_sqlite": {
+        "result_ids_agree": true,
+        "bundle_hash_agree": true,
+        "first_ids": [],
+        "second_ids": []
+      },
+      "all_retrieved_records_had_anchor_entries": false
+    },
+    {
+      "reference": "Luke 13",
+      "book": "Luke",
+      "chapter": 13,
+      "retrieval_result_ids": [],
+      "existing_evidence_reused": [],
+      "evidence_item_count": 0,
+      "evidence_categories": [],
+      "availability": "DATA_GAP",
+      "evidence_hash": "dc435d01ff78d40e3f0798edb3a805dc0d16706eed3dae92135171c28591c7e9",
+      "source_gaps": [
+        "no source-addressable evidence survived strict Scripture-anchor validation"
+      ],
+      "leakage_evidence_ids": [],
+      "json_sqlite": {
+        "result_ids_agree": true,
+        "bundle_hash_agree": true,
+        "first_ids": [],
+        "second_ids": []
+      },
+      "all_retrieved_records_had_anchor_entries": false
+    }
+  ],
+  "json_sqlite_agreement": {
+    "chapters": 10,
+    "result_id_disagreements": 0,
+    "bundle_hash_disagreements": 0
+  },
+  "retrieval_leakage_audit": {
+    "chapters_with_leakage": 0,
+    "leaked_evidence_ids": []
+  },
+  "locked_evidence_bundle_hashes": {
+    "Numbers 5": "7d5da81999ccdd20a63cb4fd75536ea306dd9f69efa2899f99a854e21d98b8f7",
+    "Luke 8": "2ff888619e243d286a67eec8951d98f0574c61090eb6b6913a9ef504bbac6750",
+    "Numbers 8": "f4d9cae7722c8ca6e1078c2ac523a047f31f28cd26cec11800a6d0e26ef1b83a",
+    "Numbers 7": "088910c1358103cebf1312b5f2627b35b2b0b0190863520fba8e5883551e3eeb",
+    "Numbers 3": "fc092d8e04cbcf2fa8359b3f51f2e3272f7aaf848ed0c746a5773e2fead09fa1",
+    "1 Kings 7": "69569bf701dc7c5597c4c76bd23461e3ab7dfd76ba1e9f72ef5bb486188ad69f",
+    "Luke 5": "f030198ab355e9e22a9a0b5a6fbf45642bf1a89b2c913c9316475fc81a16bc29",
+    "Ezekiel 7": "4ab2be019ab7058d0e209bdd486fb0d0d5aa7ef23c6f1b63f7ba79a7dc541e0d",
+    "2 Chronicles 8": "5581bcab2a078a6fb3823fc37e16ed7c8614eb60ffc528d3b13d4d56146bdcb5",
+    "Luke 13": "dc435d01ff78d40e3f0798edb3a805dc0d16706eed3dae92135171c28591c7e9"
+  },
+  "errors": []
+}
