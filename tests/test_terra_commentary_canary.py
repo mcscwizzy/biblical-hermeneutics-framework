@@ -6,7 +6,7 @@ from tools.terra_commentary_canary import PROSE, run
 
 
 def test_terra_canary_uses_only_locked_chapters_and_validates(tmp_path):
-    result = run(tmp_path)
+    result = run(tmp_path, report_destination=tmp_path / "terra-canary-report.md")
 
     validation = result["validation"]
     review = result["review"]

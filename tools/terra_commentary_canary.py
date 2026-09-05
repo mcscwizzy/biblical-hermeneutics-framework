@@ -414,7 +414,7 @@ def markdown_report(review_report: dict[str, Any], candidates: list[dict[str, An
     destination.write_text("\n".join(lines), encoding="utf-8")
 
 
-def run(output: Path, structural_root: Path = STRUCTURAL_ROOT) -> dict[str, Any]:
+def run(output: Path, structural_root: Path = STRUCTURAL_ROOT, report_destination: Path | None = None) -> dict[str, Any]:
     locked = json.loads((structural_root / "evidence-certification-commentary_canary.json").read_text())
     priority = json.loads((structural_root / "data-gap-priority.json").read_text())
     if locked.get("status") != "LOCKED":
@@ -444,7 +444,11 @@ def run(output: Path, structural_root: Path = STRUCTURAL_ROOT) -> dict[str, Any]
         "availability_distribution": dict(sorted(Counter(c["evidence_availability"] for c in candidates).items())), "results": validations}
     (output / "terra-canary-validation.json").write_text(json.dumps(validation_report, indent=2) + "\n")
     review_report = review(candidates, validations, output)
-    markdown_report(review_report, candidates, ROOT / "docs" / "commentary-v1.1-terra-canary-report.md")
+    markdown_report(
+        review_report,
+        candidates,
+        report_destination or ROOT / "docs" / "commentary-v1.1-terra-canary-report.md",
+    )
     return {"validation": validation_report, "review": review_report}
 
 

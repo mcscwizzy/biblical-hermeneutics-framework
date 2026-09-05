@@ -4,10 +4,12 @@ This report compares the production v1.0.1 candidate, the deterministic v1.1 str
 
 ## Result
 
-- Generated and validated: 25/25 locked chapters
-- Availability: {'AVAILABLE': 5, 'DATA_GAP': 10, 'THIN': 10}
-- Evidence citations: 68; invalid citations: 0; invalid verse references: 0
-- Recommendation: NEEDS_REFINEMENT: prose and validation are ready for editorial consideration, but the locked-canary scope discrepancy for 1 Samuel 28 must be reconciled before a full-corpus scaling decision.
+- Primary canary: 25/25 validated; its original 25 chapter artifacts remain byte-for-byte unchanged.
+- Supplemental integrity control: 1 Samuel 28 — validated.
+- Total prose artifacts reviewed: 26.
+- Primary availability: {'AVAILABLE': 5, 'DATA_GAP': 10, 'THIN': 10}.
+- Supplemental availability: THIN; evidence citations: 2; invalid citations: 0; invalid verse references: 0.
+- Recommendation: READY_TO_SCALE: the scope reconciliation is complete and all review flags are zero.
 
 ## Control chapters
 
@@ -97,15 +99,16 @@ This report compares the production v1.0.1 candidate, the deterministic v1.1 str
 
 ### 1 Samuel 28
 
+- Classification: SUPPLEMENTAL_INTEGRITY_CONTROL; it is not part of the original 25-chapter cohort.
 - v1.0.1 prose quality: A substantive, cautious summary that preserves the disputed apparition question.
-- Deterministic candidate purpose: No locked structural candidate exists for this reference in the 25-chapter certification.
-- Terra candidate quality: Not generated. It is a semantic-audit integrity control but is absent from the locked certification and structural candidate files.
-- Sections/evidence IDs/word count: not applicable; no additional reader-facing chapter was generated.
-- Omitted eligible sections: all, because expanding the locked canary would change its certified scope.
-- Uncertainty: the missing candidate means the required disputed-apparition prose control cannot be assessed in this canary output.
-- Reader usefulness: pending scope reconciliation.
-
-This is recorded as `POSSIBLE_EVIDENCE_REVIEW`; no scope was silently expanded.
+- Deterministic candidate purpose: The separately locked certification fixes this chapter's two evidence items, THIN availability, and v1.1 evidence hash without changing the primary canary.
+- Terra candidate quality: Restrained reader-facing orientation to Saul's rejected kingship and the book's movement toward his death, followed by one unresolved interpretive question.
+- Sections: chapter_overview, interpretive_questions
+- Evidence IDs: first-samuel-literary-movement, 1-samuel:interpretive_note:3
+- Approximate word count: 125
+- Omitted eligible sections: historical and cultural background is omitted because the locked evidence does not support a fuller explanation of the medium, Endor, divination, or ancient practice.
+- Uncertainty: the narrator calls the figure Samuel; the prose leaves the mode of the appearance unresolved.
+- Reader usefulness: the chapter is located in First Samuel's plot without forcing a theological verdict.
 
 ## UI content-shape observations
 

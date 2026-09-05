@@ -1,8 +1,8 @@
 {
-  "report_version": "commentary-v1.1-terra-canary-review-v1",
-  "generated_at": "2026-09-05T19:36:40.107157+00:00",
+  "report_version": "commentary-v1.1-terra-canary-review-v2",
+  "generated_at": "2026-09-05T20:23:25.904958+00:00",
   "model": "terra-codex-commentary-v1.1-canary",
-  "chapters_reviewed": 25,
+  "chapters_reviewed": 26,
   "validation": [
     {
       "reference": "Numbers 5",
@@ -135,7 +135,7 @@
     "DATA_GAP": 10,
     "THIN": 10
   },
-  "total_evidence_citations": 68,
+  "total_evidence_citations": 70,
   "invalid_evidence_citations": 0,
   "invalid_verse_references": 0,
   "quality_flags": {
@@ -297,6 +297,13 @@
       "flags": [],
       "word_count": 306,
       "section_count": 5
+    },
+    {
+      "reference": "1 Samuel 28",
+      "flags": [],
+      "word_count": 125,
+      "section_count": 2,
+      "scope": "SUPPLEMENTAL_INTEGRITY_CONTROL"
     }
   ],
   "special_review": {
@@ -385,19 +392,24 @@
       "worth_scaling_format": true
     },
     "1 Samuel 28": {
-      "generated": false,
-      "status": "POSSIBLE_EVIDENCE_REVIEW",
-      "reason": "The semantic audit identifies this as a THIN integrity control, but it is absent from the locked 25-chapter certification and structural candidate files. No additional reader-facing chapter was generated.",
-      "useful_commentary": null,
-      "grounded": null,
-      "ordinary_reader_clear": null,
-      "too_long": null,
-      "too_short": null,
-      "section_choices_sensible": null,
-      "theology_imposed": null,
-      "outside_knowledge_introduced": null,
-      "disputed_claims_preserved": null,
-      "worth_scaling_format": null
+      "classification": "SUPPLEMENTAL_INTEGRITY_CONTROL",
+      "generated": true,
+      "status": "VALIDATED",
+      "useful_commentary": true,
+      "grounded": true,
+      "ordinary_reader_clear": true,
+      "too_long": false,
+      "too_short": false,
+      "section_choices_sensible": true,
+      "theology_imposed": false,
+      "outside_knowledge_introduced": false,
+      "disputed_claims_preserved": true,
+      "worth_scaling_format": true,
+      "word_count": 125,
+      "sections": [
+        "chapter_overview",
+        "interpretive_questions"
+      ]
     }
   },
   "word_and_section_statistics": {
@@ -417,28 +429,197 @@
       "average_section_count": 1.7
     }
   },
-  "possible_evidence_review": [
-    {
-      "generated": false,
-      "status": "POSSIBLE_EVIDENCE_REVIEW",
-      "reason": "The semantic audit identifies this as a THIN integrity control, but it is absent from the locked 25-chapter certification and structural candidate files. No additional reader-facing chapter was generated.",
-      "useful_commentary": null,
-      "grounded": null,
-      "ordinary_reader_clear": null,
-      "too_long": null,
-      "too_short": null,
-      "section_choices_sensible": null,
-      "theology_imposed": null,
-      "outside_knowledge_introduced": null,
-      "disputed_claims_preserved": null,
-      "worth_scaling_format": null
-    }
-  ],
+  "possible_evidence_review": [],
   "ui_content_shape_observations": [
     "Overview is consistently the natural first, always-visible section.",
     "AVAILABLE chapters use three to five compact sections; THIN chapters generally use one or two.",
     "Dig deeper is naturally secondary and fits an accordion or collapsed treatment.",
     "DATA_GAP content is short enough to display plainly without empty section chrome."
   ],
-  "recommendation": "NEEDS_REFINEMENT: prose and validation are ready for editorial consideration, but the locked-canary scope discrepancy for 1 Samuel 28 must be reconciled before a full-corpus scaling decision."
+  "recommendation": "READY_TO_SCALE: all 25 primary candidates and the locked supplemental 1 Samuel 28 integrity control validate with zero prose-audit flags.",
+  "primary_canary": {
+    "chapters_reviewed": 25,
+    "validated": 25,
+    "invalid": 0,
+    "availability_distribution": {
+      "AVAILABLE": 5,
+      "DATA_GAP": 10,
+      "THIN": 10
+    },
+    "validation": [
+      {
+        "reference": "Numbers 5",
+        "valid": true,
+        "errors": []
+      },
+      {
+        "reference": "Luke 8",
+        "valid": true,
+        "errors": []
+      },
+      {
+        "reference": "Numbers 8",
+        "valid": true,
+        "errors": []
+      },
+      {
+        "reference": "Numbers 7",
+        "valid": true,
+        "errors": []
+      },
+      {
+        "reference": "Numbers 3",
+        "valid": true,
+        "errors": []
+      },
+      {
+        "reference": "1 Kings 7",
+        "valid": true,
+        "errors": []
+      },
+      {
+        "reference": "Luke 5",
+        "valid": true,
+        "errors": []
+      },
+      {
+        "reference": "Ezekiel 7",
+        "valid": true,
+        "errors": []
+      },
+      {
+        "reference": "2 Chronicles 8",
+        "valid": true,
+        "errors": []
+      },
+      {
+        "reference": "Luke 13",
+        "valid": true,
+        "errors": []
+      },
+      {
+        "reference": "Numbers 16",
+        "valid": true,
+        "errors": []
+      },
+      {
+        "reference": "Jeremiah 2",
+        "valid": true,
+        "errors": []
+      },
+      {
+        "reference": "Psalms 106",
+        "valid": true,
+        "errors": []
+      },
+      {
+        "reference": "Numbers 19",
+        "valid": true,
+        "errors": []
+      },
+      {
+        "reference": "Numbers 31",
+        "valid": true,
+        "errors": []
+      },
+      {
+        "reference": "Deuteronomy 26",
+        "valid": true,
+        "errors": []
+      },
+      {
+        "reference": "Isaiah 28",
+        "valid": true,
+        "errors": []
+      },
+      {
+        "reference": "Deuteronomy 21",
+        "valid": true,
+        "errors": []
+      },
+      {
+        "reference": "Judges 20",
+        "valid": true,
+        "errors": []
+      },
+      {
+        "reference": "Leviticus 22",
+        "valid": true,
+        "errors": []
+      },
+      {
+        "reference": "Leviticus 1",
+        "valid": true,
+        "errors": []
+      },
+      {
+        "reference": "Psalms 1",
+        "valid": true,
+        "errors": []
+      },
+      {
+        "reference": "Zephaniah 1",
+        "valid": true,
+        "errors": []
+      },
+      {
+        "reference": "Luke 1",
+        "valid": true,
+        "errors": []
+      },
+      {
+        "reference": "Genesis 1",
+        "valid": true,
+        "errors": []
+      }
+    ],
+    "unchanged": true,
+    "byte_for_byte_unchanged": true,
+    "chapter_artifact_fingerprint_sha256": "293540d3014122fc36aa638d8ed66bb3728251270043284904d09e71aa4fa1ef"
+  },
+  "supplemental_integrity_controls": {
+    "chapters_reviewed": 1,
+    "validated": 1,
+    "invalid": 0,
+    "results": [
+      {
+        "reference": "1 Samuel 28",
+        "word_count": 125,
+        "section_count": 2,
+        "sections_generated": [
+          "chapter_overview",
+          "interpretive_questions"
+        ],
+        "evidence_ids_used": [
+          "first-samuel-literary-movement",
+          "1-samuel:interpretive_note:3"
+        ],
+        "evidence_citations": 2,
+        "invalid_evidence_citations": 0,
+        "invalid_verse_references": 0,
+        "validation_errors": [],
+        "flags": [],
+        "apparition_uncertainty": {
+          "preserved": true,
+          "interpretation_level": "disputed",
+          "confidence": "low",
+          "result": "The narrator's naming of Samuel is retained while the mode of the appearance remains unresolved."
+        },
+        "evidence_lock": {
+          "certification_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1/evidence-certification-supplemental-controls.json",
+          "evidence_bundle_version": "1.1",
+          "evidence_hash_version": "2",
+          "evidence_hash": "ff5ec3f146c9caca69bd528149a6d6c121944c84535f24eff876db328f705d4f",
+          "lock_status": "LOCKED"
+        }
+      }
+    ]
+  },
+  "total_prose_artifacts_reviewed": 26,
+  "primary_total_evidence_citations": 68,
+  "combined_reviewed_artifact_availability_distribution": {
+    "AVAILABLE": 5,
+    "DATA_GAP": 10,
+    "THIN": 11
+  }
 }
