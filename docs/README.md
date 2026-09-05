@@ -49,6 +49,7 @@ understand its evidence model, or develop and maintain it.
 - [Translation management](translations.md).
 - [Tyndale Open Study Notes](tyndale-study-notes.md) — install and use the attributed commentary reader companion.
 - [BHF chapter commentary](chapter-commentary.md) — generation contract, validation guarantees, and resumable progress.
+- [BHF Commentary UI](commentary-ui.md) — read-only reader integration, evidence exploration, availability states, search, and offline behavior.
 - [Evaluation](evals.md).
 
 ## Contribute content
