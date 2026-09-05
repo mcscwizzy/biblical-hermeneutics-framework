@@ -11,12 +11,12 @@
       "blocks": [
         {
           "id": "overview",
-          "text": "This chapter's locked contextual evidence includes 26 source-addressable item(s). The strongest eligible contextual observation is: Luke's extensive order and wording agreements with Mark support Markan use in the majority Synoptic model; other shared and distinctive material may derive from oral, written, compositional, and publication processes that cannot be reconstructed with certainty.",
+          "text": "This chapter's locked contextual evidence includes 26 source-addressable item(s). The strongest eligible contextual observation is: Luke 1:1-4 claims predecessors, traditions traced to eyewitnesses and word-servants, investigation, ordered writing, and assurance for Theophilus; it does not claim that the author personally witnessed Jesus' ministry.",
           "verse_refs": [
             "Luke 1:1-4"
           ],
           "evidence_ids": [
-            "luke-sources"
+            "luke-prologue"
           ],
           "confidence": "high",
           "interpretation_level": "disputed"
@@ -54,8 +54,8 @@
       ]
     },
     {
-      "kind": "archaeology_geography",
-      "title": "Archaeology and geography",
+      "kind": "language_literary",
+      "title": "Language and literary context",
       "blocks": [
         {
           "id": "evidence_1",
@@ -68,24 +68,18 @@
           ],
           "confidence": "high",
           "interpretation_level": "disputed"
-        }
-      ]
-    },
-    {
-      "kind": "language_literary",
-      "title": "Language and literary context",
-      "blocks": [
+        },
         {
-          "id": "evidence_1",
-          "text": "Locked CKL evidence: Kingship in the ancient world often tied ruler and deity closely together, but David is judged and upheld by the LORD.",
+          "id": "evidence_2",
+          "text": "Locked CKL evidence: Luke 1-2 pairs John and Jesus through annunciations, births, songs, Spirit-filled speech, temple scenes, and growth notices, using Septuagintal diction and Israel-scripture patterns.",
           "verse_refs": [
-            "Luke 1:30-33"
+            "Luke 1:5-80"
           ],
           "evidence_ids": [
-            "who-was-david:ancient_near_east_context:0"
+            "luke-infancy"
           ],
-          "confidence": "medium",
-          "interpretation_level": "inference"
+          "confidence": "high",
+          "interpretation_level": "disputed"
         }
       ]
     },
@@ -121,12 +115,12 @@
     }
   ],
   "generated_metadata": {
-    "evidence_hash": "68ba80c8ecb7b05d7f7e3b62c2b6182a1480f054530e26daad80dcf92e58d02a",
+    "evidence_hash": "acfea2b9dc3f36bc4092b418a4361bb83d2fa12ed808e1b499f6e0212012f444",
     "evidence_bundle_version": "1.1",
     "commentary_schema_version": "1.0",
     "commentary_prompt_version": "1.1",
     "model": "deterministic-v1.1-evidence-candidate",
-    "generated_timestamp": "2026-09-05T17:46:57.161963+00:00"
+    "generated_timestamp": "2026-09-05T18:52:37.856081+00:00"
   },
   "failure_reason": null,
   "validation_errors": [],

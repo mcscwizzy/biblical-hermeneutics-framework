@@ -11,12 +11,12 @@
       "blocks": [
         {
           "id": "overview",
-          "text": "This chapter's locked contextual evidence includes 17 source-addressable item(s). The strongest eligible contextual observation is: Masoretic Zephaniah, Old Greek Sophonias, Judean Desert biblical manuscripts, pesharim, and other versions attest transmission and textual plurality in several difficult passages.",
+          "text": "This chapter's locked contextual evidence includes 17 source-addressable item(s). The strongest eligible contextual observation is: Zephaniah 1:1 dates the word to Josiah's reign and identifies Zephaniah through Cushi, Gedaliah, Amariah, and Hezekiah.",
           "verse_refs": [
             "Zephaniah 1:1"
           ],
           "evidence_ids": [
-            "zephaniah-textual-witnesses"
+            "zephaniah-superscription"
           ],
           "confidence": "high",
           "interpretation_level": "disputed"
@@ -59,26 +59,38 @@
       "blocks": [
         {
           "id": "evidence_1",
-          "text": "Locked CKL evidence: Royal 'day of the king' imagery helps explain the metaphor, but here the LORD himself acts as judge and deliverer.",
+          "text": "Locked CKL evidence: Scholars disagree about literary unity, the nation-oracle sequence, the relation of chapter 3 to chapters 1-2, later restoration material, and shaping within the Twelve.",
           "verse_refs": [
-            "Zephaniah 1:14-18"
+            "Zephaniah 1:1"
           ],
           "evidence_ids": [
-            "what-is-the-day-of-the-lord:ancient_near_east_context:0"
+            "zephaniah-composition"
           ],
-          "confidence": "medium",
-          "interpretation_level": "inference"
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        },
+        {
+          "id": "evidence_2",
+          "text": "Locked CKL evidence: Zephaniah 1:2-3 sweeps through humans, animals, birds, and fish in a creation-scale judgment commonly read as creation reversal with flood resonances.",
+          "verse_refs": [
+            "Zephaniah 1:2-3"
+          ],
+          "evidence_ids": [
+            "zephaniah-creation-reversal"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
         }
       ]
     }
   ],
   "generated_metadata": {
-    "evidence_hash": "e3ae352a1e7fa5f5b4fb3c0ced22f88c74ead94b0308c933df0a100446b99177",
+    "evidence_hash": "535dcff028e9f0083b2248f0e3a917e7aba6e08dabab71b45ca89731c9cc69c7",
     "evidence_bundle_version": "1.1",
     "commentary_schema_version": "1.0",
     "commentary_prompt_version": "1.1",
     "model": "deterministic-v1.1-evidence-candidate",
-    "generated_timestamp": "2026-09-05T17:46:56.828659+00:00"
+    "generated_timestamp": "2026-09-05T18:52:37.527543+00:00"
   },
   "failure_reason": null,
   "validation_errors": [],

@@ -11,7 +11,55 @@
       "blocks": [
         {
           "id": "overview",
-          "text": "This chapter's locked contextual evidence includes 15 source-addressable item(s). The strongest eligible contextual observation is: Psalms 1 and 2 form an untitled gateway that places Torah-shaped flourishing, the way of the wicked, rebellious nations, YHWH's kingship, and the anointed king before the collection.",
+          "text": "This chapter's locked contextual evidence includes 13 source-addressable item(s). The strongest eligible contextual observation is: In Israel's story, torah names the covenant instruction given through Moses and the way the redeemed people are to live before God.",
+          "verse_refs": [
+            "Psalms 1:1-3"
+          ],
+          "evidence_ids": [
+            "torah:historical_context:0"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and social context",
+      "blocks": [
+        {
+          "id": "evidence_1",
+          "text": "Locked CKL evidence: Ancient legal and treaty traditions provide background, but torah is distinct because it is the instruction of the covenant LORD rather than a generic code.",
+          "verse_refs": [
+            "Psalms 1:1-3"
+          ],
+          "evidence_ids": [
+            "what-does-torah-mean:ancient_near_east_context:0"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        },
+        {
+          "id": "evidence_2",
+          "text": "Locked CKL evidence: In Israel's story, torah names the covenant instruction given through Moses and the way the redeemed people are to live before God.",
+          "verse_refs": [
+            "Psalms 1:1-3"
+          ],
+          "evidence_ids": [
+            "what-does-torah-mean:historical_context:0"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "evidence_1",
+          "text": "Locked CKL evidence: Psalms 1 and 2 form an untitled gateway that places Torah-shaped flourishing, the way of the wicked, rebellious nations, YHWH's kingship, and the anointed king before the collection.",
           "verse_refs": [
             "Psalms 1:1-6"
           ],
@@ -20,12 +68,24 @@
           ],
           "confidence": "high",
           "interpretation_level": "disputed"
+        },
+        {
+          "id": "evidence_2",
+          "text": "Locked CKL evidence: Ancient treaty and legal traditions provide background, but torah is distinct because it is the instruction of the covenant LORD.",
+          "verse_refs": [
+            "Psalms 1:1-3"
+          ],
+          "evidence_ids": [
+            "torah:ancient_near_east_context:0"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
         }
       ]
     },
     {
-      "kind": "language_literary",
-      "title": "Language and literary context",
+      "kind": "dig_deeper",
+      "title": "Dig deeper",
       "blocks": [
         {
           "id": "evidence_1",
@@ -41,12 +101,12 @@
         },
         {
           "id": "evidence_2",
-          "text": "Locked CKL evidence: Ancient background for nomos includes Hebrew and Greek usage, translation practice, synagogue reading, and covenant speech; the entry ties that world to Exodus 20:1-17, Deuteronomy 6:4-9, torah, and law-and-gospel without letting comparison replace the biblical witness.",
+          "text": "Locked CKL evidence: In Hebrew and Greek usage, makarios carries a range of meaning, so context determines how the term functions in a given passage.",
           "verse_refs": [
             "Psalms 1:1-3"
           ],
           "evidence_ids": [
-            "nomos:ancient_near_east_context:0"
+            "makarios:historical_context:0"
           ],
           "confidence": "medium",
           "interpretation_level": "inference"
@@ -55,12 +115,12 @@
     }
   ],
   "generated_metadata": {
-    "evidence_hash": "a2aa124115e8dc998bca5a9a3cb83a7f80657c7021e901739d011659b5489e5a",
+    "evidence_hash": "61f2d9352dab1fd140274f75dfaa01fc848cd4aaa446fa4b70778deb0ff8bd23",
     "evidence_bundle_version": "1.1",
     "commentary_schema_version": "1.0",
     "commentary_prompt_version": "1.1",
     "model": "deterministic-v1.1-evidence-candidate",
-    "generated_timestamp": "2026-09-05T17:46:56.722255+00:00"
+    "generated_timestamp": "2026-09-05T18:52:37.421714+00:00"
   },
   "failure_reason": null,
   "validation_errors": [],

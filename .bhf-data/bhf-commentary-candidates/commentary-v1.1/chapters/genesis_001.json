@@ -11,15 +11,15 @@
       "blocks": [
         {
           "id": "overview",
-          "text": "This chapter's locked contextual evidence includes 70 source-addressable item(s). The strongest eligible contextual observation is: The observation identifies the passage's own account of ordered creation before ancient comparative material is introduced.",
+          "text": "This chapter's locked contextual evidence includes 58 source-addressable item(s). The strongest eligible contextual observation is: Genesis moves from universal origins in chapters 1-11 to the ancestral family narratives in chapters 12-50 and ends with Jacob's household in Egypt.",
           "verse_refs": [
             "Genesis 1:1-31"
           ],
           "evidence_ids": [
-            "genesis-ordered-worldview-observation:passage-relevance"
+            "genesis-literary-movement"
           ],
           "confidence": "high",
-          "interpretation_level": "fact"
+          "interpretation_level": "inference"
         }
       ]
     },
@@ -54,29 +54,29 @@
       ]
     },
     {
-      "kind": "language_literary",
-      "title": "Language and literary context",
+      "kind": "chronology",
+      "title": "Chronology",
       "blocks": [
         {
           "id": "evidence_1",
-          "text": "Locked CKL evidence: Ancient background for katabole includes Hebrew and Greek usage, translation practice, synagogue reading, and covenant speech; the entry ties that world to Genesis 1:1-31, Psalm 8:1-9, creation-theme, and genesis without letting comparison replace the biblical witness.",
+          "text": "Locked CKL evidence: Creation declared good",
           "verse_refs": [
             "Genesis 1:1-31"
           ],
           "evidence_ids": [
-            "katabole:ancient_near_east_context:0"
+            "creation-doctrine-framework:timeline:0"
           ],
           "confidence": "medium",
           "interpretation_level": "inference"
         },
         {
           "id": "evidence_2",
-          "text": "Locked CKL evidence: Ancient background for parakletos includes Hebrew and Greek usage, translation practice, synagogue reading, and covenant speech; the entry ties that world to Genesis 1:1-2, Ezekiel 36:24-28, pneuma, and spirit-theme without letting comparison replace the biblical witness.",
+          "text": "Locked CKL evidence: Human vocation given",
           "verse_refs": [
-            "Genesis 1:1-2"
+            "Genesis 1:1-31"
           ],
           "evidence_ids": [
-            "parakletos:ancient_near_east_context:0"
+            "creation-doctrine-framework:timeline:1"
           ],
           "confidence": "medium",
           "interpretation_level": "inference"
@@ -115,12 +115,12 @@
     }
   ],
   "generated_metadata": {
-    "evidence_hash": "9c137c94898baa2ebdad73d528f336be7b00ac35d33c11177c4cf66cc29f9bd2",
+    "evidence_hash": "4ec7d26943602f541f99268ec8dc8fa0cb740eb00109d281b5e2f514cf1cfb59",
     "evidence_bundle_version": "1.1",
     "commentary_schema_version": "1.0",
     "commentary_prompt_version": "1.1",
     "model": "deterministic-v1.1-evidence-candidate",
-    "generated_timestamp": "2026-09-05T17:46:57.779945+00:00"
+    "generated_timestamp": "2026-09-05T18:52:38.397188+00:00"
   },
   "failure_reason": null,
   "validation_errors": [],

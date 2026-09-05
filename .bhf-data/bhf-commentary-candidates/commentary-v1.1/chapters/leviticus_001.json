@@ -41,6 +41,24 @@
         },
         {
           "id": "evidence_2",
+          "text": "Locked CKL evidence: Ancient Near Eastern ritual comparisons illuminate vocabulary and practice but do not establish that Israelite rites carried the same theology or were directly borrowed.",
+          "verse_refs": [
+            "Leviticus 1:1-17"
+          ],
+          "evidence_ids": [
+            "leviticus:interpretive_note:2"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "evidence_1",
           "text": "Locked CKL evidence: Leviticus moves from sacrifice and priestly inauguration through purity and the Day of Atonement into instructions for holy communal life, sacred time, land, covenant consequences, and vows.",
           "verse_refs": [
             "Leviticus 1:1-17"
@@ -54,17 +72,29 @@
       ]
     },
     {
-      "kind": "language_literary",
-      "title": "Language and literary context",
+      "kind": "chronology",
+      "title": "Chronology",
       "blocks": [
         {
           "id": "evidence_1",
-          "text": "Locked CKL evidence: Sacrifices were common across the ancient world, but Israel's system is distinct because the LORD defines the offering, its meaning, and its goal.",
+          "text": "Locked CKL evidence: Narrative setting at Sinai and in the wilderness; historical date disputed",
           "verse_refs": [
-            "Leviticus 1:1-17"
+            "Leviticus 1:1-9"
           ],
           "evidence_ids": [
-            "what-is-sacrifice-in-the-bible:ancient_near_east_context:0"
+            "tabernacle:date_ranges:0"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        },
+        {
+          "id": "evidence_2",
+          "text": "Locked CKL evidence: Priestly sanctuary description and compositional development; dates disputed",
+          "verse_refs": [
+            "Leviticus 1:1-9"
+          ],
+          "evidence_ids": [
+            "tabernacle:date_ranges:1"
           ],
           "confidence": "medium",
           "interpretation_level": "inference"
@@ -73,12 +103,12 @@
     }
   ],
   "generated_metadata": {
-    "evidence_hash": "4b6b7c065f168ec01b4217b5e541f47ca46b4a565a62b73f515585dab9541bfd",
+    "evidence_hash": "e35c7a23eba5b23d5767639176332957ebfe60898bab7f7449ea70aa6cf90882",
     "evidence_bundle_version": "1.1",
     "commentary_schema_version": "1.0",
     "commentary_prompt_version": "1.1",
     "model": "deterministic-v1.1-evidence-candidate",
-    "generated_timestamp": "2026-09-05T17:46:56.599781+00:00"
+    "generated_timestamp": "2026-09-05T18:52:37.307168+00:00"
   },
   "failure_reason": null,
   "validation_errors": [],

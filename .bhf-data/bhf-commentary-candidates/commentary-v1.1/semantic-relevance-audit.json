@@ -1,6 +1,6 @@
 {
   "report_version": "commentary-v1.1-semantic-relevance-audit-v1",
-  "generated_at": "2026-09-05T17:46:58.602066+00:00",
+  "generated_at": "2026-09-05T18:59:18.856494+00:00",
   "scope": {
     "canary_chapters_audited": 25,
     "full_canonical_cleanup_attempted": false,
@@ -8,12 +8,12 @@
     "provider_calls": 0
   },
   "summary": {
-    "evidence_items_examined": 172,
-    "direct_context_items": 28,
+    "evidence_items_examined": 158,
+    "direct_context_items": 30,
     "book_context_items": 20,
     "later_intertextual_items": 13,
-    "comparative_items": 2,
-    "generic_background_items": 109,
+    "comparative_items": 6,
+    "generic_background_items": 89,
     "weakly_related_items": 0,
     "semantically_misanchored_items": 0,
     "confirmed_misanchored_ckl_records": 10
@@ -141,8 +141,8 @@
         "affected_chapter": "Genesis 1"
       }
     ],
-    "records_examined": 58,
-    "records_unchanged": 48
+    "records_examined": 51,
+    "records_unchanged": 41
   },
   "chapters": [
     {
@@ -317,7 +317,7 @@
         "numbers:interpretive_note:2"
       ],
       "regeneration_eligible": true,
-      "evidence_hash": "428dd96bed08733c854e05f8faa96985a3425091ecd5d3d233f171f35aec98d6"
+      "evidence_hash": "57b85db0ee976d66f4c903fe2b3efa26c2a8abeafc2d443e6f235f0c1d1d02ad"
     },
     {
       "reference": "Jeremiah 2",
@@ -329,7 +329,7 @@
       ],
       "section_kinds": [
         "chapter_overview",
-        "historical_context"
+        "language_literary"
       ],
       "semantic_relationships": {
         "BOOK_CONTEXT": 2
@@ -340,7 +340,7 @@
         "jeremiah-practical-mt-outline"
       ],
       "regeneration_eligible": true,
-      "evidence_hash": "850efd7df4bcf6116570d67f0a0bc5ef350f3e0d54d78e3d836e7de48c8fe0c9"
+      "evidence_hash": "d4e12cfd1b9012b1d58a3dab63eb0a566cd690a6e0ba7e216111fd4697151fca"
     },
     {
       "reference": "Psalms 106",
@@ -361,7 +361,7 @@
         "psalms-five-book-anthology"
       ],
       "regeneration_eligible": true,
-      "evidence_hash": "cb5bd51000c2d97918e7eff57df25721969e214f9132682373480f921acf8932"
+      "evidence_hash": "0c6130b8199fe724dd3a3c6698d9196676be7df7b0a6515f64695c381f56b774"
     },
     {
       "reference": "Numbers 19",
@@ -385,7 +385,7 @@
         "numbers:interpretive_note:2"
       ],
       "regeneration_eligible": true,
-      "evidence_hash": "0ec94cfa69461ecc85d98569e364aa08e6c31a8229553a6de98db3a7385c8914"
+      "evidence_hash": "1a9e4236c1f53c12a1f355fb1deec04727b8510ade98088db81ca30674207c8c"
     },
     {
       "reference": "Numbers 31",
@@ -404,15 +404,15 @@
       "precise_anchor_count": 1,
       "disputed_evidence_ids": [],
       "regeneration_eligible": true,
-      "evidence_hash": "691cefe70588fdd3ce513e9c11dadf4cd1c56c4d68d5f259a6e098da9639ecbb"
+      "evidence_hash": "59468299327973306a947426d947640ac205e17c966d8ca42c735dcd53129d29"
     },
     {
       "reference": "Deuteronomy 26",
       "availability": "THIN",
       "evidence_count": 2,
-      "overview_evidence_id": "deuteronomy:interpretive_note:1",
+      "overview_evidence_id": "deuteronomy-literary-movement",
       "overview_anchors": [
-        "Deuteronomy 5-26"
+        "Deuteronomy 1-34"
       ],
       "section_kinds": [
         "chapter_overview",
@@ -427,7 +427,7 @@
         "deuteronomy:interpretive_note:1"
       ],
       "regeneration_eligible": true,
-      "evidence_hash": "c5d1ba9e0bc1fb42bed080bec0ef5d0bb0a6c0491cf145945eed73e1e4478f7b"
+      "evidence_hash": "d7bdd6574f5b13b2f0cdefef9c914ca2d4c639e3f4e01bcaf8fc43950b724724"
     },
     {
       "reference": "Isaiah 28",
@@ -451,15 +451,15 @@
         "isaiah-qumran-witnesses"
       ],
       "regeneration_eligible": true,
-      "evidence_hash": "4eac2b99464946f046bfc9077ab55929be6826eada8f7e9154ea10c1f2f0dffe"
+      "evidence_hash": "9a80b48fe52eab182ff31c040b8a265b4854e8bd280cb71603df06177007f484"
     },
     {
       "reference": "Deuteronomy 21",
       "availability": "THIN",
       "evidence_count": 3,
-      "overview_evidence_id": "deuteronomy:interpretive_note:1",
+      "overview_evidence_id": "deuteronomy-literary-movement",
       "overview_anchors": [
-        "Deuteronomy 5-26"
+        "Deuteronomy 1-34"
       ],
       "section_kinds": [
         "chapter_overview",
@@ -476,15 +476,15 @@
         "gal-curse-law"
       ],
       "regeneration_eligible": true,
-      "evidence_hash": "f8f2f3da280164b449f3f27b9dee0afc17dca48e9249d3517e9c54d52cbf3846"
+      "evidence_hash": "ccde95853a1b7d4bff7a923799a96f66ff43688d591c2a4dfea75415d9b648be"
     },
     {
       "reference": "Judges 20",
       "availability": "THIN",
       "evidence_count": 2,
-      "overview_evidence_id": "judges:interpretive_note:4",
+      "overview_evidence_id": "judges-literary-movement",
       "overview_anchors": [
-        "Judges 19-21"
+        "Judges 1-21"
       ],
       "section_kinds": [
         "chapter_overview",
@@ -498,7 +498,7 @@
         "judges:interpretive_note:4"
       ],
       "regeneration_eligible": true,
-      "evidence_hash": "32d99c8a7cf5fead91ed5d8b244ba857695fc03966115e0f343689b0652254d4"
+      "evidence_hash": "4c08a81b1887b8f47df359449c9aea275f2cd7de7593145c4af2288235315c8b"
     },
     {
       "reference": "Leviticus 22",
@@ -517,7 +517,7 @@
       "precise_anchor_count": 1,
       "disputed_evidence_ids": [],
       "regeneration_eligible": true,
-      "evidence_hash": "f6f69959e9026a8df5af9b73f258863b316e37b48ba0c79f0f8b86bd0d937ffc"
+      "evidence_hash": "62c1df719c01895cd95a620f9b817b590667330849210953e74b41598635b39b"
     },
     {
       "reference": "Leviticus 1",
@@ -530,7 +530,8 @@
       "section_kinds": [
         "chapter_overview",
         "historical_context",
-        "language_literary"
+        "language_literary",
+        "chronology"
       ],
       "semantic_relationships": {
         "BOOK_CONTEXT": 2,
@@ -542,36 +543,40 @@
         "leviticus:interpretive_note:2"
       ],
       "regeneration_eligible": true,
-      "evidence_hash": "4b6b7c065f168ec01b4217b5e541f47ca46b4a565a62b73f515585dab9541bfd"
+      "evidence_hash": "e35c7a23eba5b23d5767639176332957ebfe60898bab7f7449ea70aa6cf90882"
     },
     {
       "reference": "Psalms 1",
       "availability": "AVAILABLE",
-      "evidence_count": 15,
-      "overview_evidence_id": "psalms-gateway-torah-king",
+      "evidence_count": 13,
+      "overview_evidence_id": "torah:historical_context:0",
       "overview_anchors": [
-        "Psalms 1:1-2:12"
+        "Psalms 1:1-3"
       ],
       "section_kinds": [
         "chapter_overview",
-        "language_literary"
+        "historical_context",
+        "language_literary",
+        "dig_deeper"
       ],
       "semantic_relationships": {
         "BOOK_CONTEXT": 1,
-        "GENERIC_BACKGROUND": 14
+        "COMPARATIVE_CONTEXT": 4,
+        "DIRECT_CONTEXT": 2,
+        "GENERIC_BACKGROUND": 6
       },
       "precise_anchor_count": 3,
       "disputed_evidence_ids": [
         "psalms-gateway-torah-king"
       ],
       "regeneration_eligible": true,
-      "evidence_hash": "a2aa124115e8dc998bca5a9a3cb83a7f80657c7021e901739d011659b5489e5a"
+      "evidence_hash": "61f2d9352dab1fd140274f75dfaa01fc848cd4aaa446fa4b70778deb0ff8bd23"
     },
     {
       "reference": "Zephaniah 1",
       "availability": "AVAILABLE",
       "evidence_count": 17,
-      "overview_evidence_id": "zephaniah-textual-witnesses",
+      "overview_evidence_id": "zephaniah-superscription",
       "overview_anchors": [
         "Zephaniah 1:1"
       ],
@@ -600,20 +605,19 @@
         "zephaniah-textual-witnesses"
       ],
       "regeneration_eligible": true,
-      "evidence_hash": "e3ae352a1e7fa5f5b4fb3c0ced22f88c74ead94b0308c933df0a100446b99177"
+      "evidence_hash": "535dcff028e9f0083b2248f0e3a917e7aba6e08dabab71b45ca89731c9cc69c7"
     },
     {
       "reference": "Luke 1",
       "availability": "AVAILABLE",
       "evidence_count": 26,
-      "overview_evidence_id": "luke-sources",
+      "overview_evidence_id": "luke-prologue",
       "overview_anchors": [
         "Luke 1:1-4"
       ],
       "section_kinds": [
         "chapter_overview",
         "historical_context",
-        "archaeology_geography",
         "language_literary",
         "dig_deeper"
       ],
@@ -638,27 +642,27 @@
         "malachi-new-testament"
       ],
       "regeneration_eligible": true,
-      "evidence_hash": "68ba80c8ecb7b05d7f7e3b62c2b6182a1480f054530e26daad80dcf92e58d02a"
+      "evidence_hash": "acfea2b9dc3f36bc4092b418a4361bb83d2fa12ed808e1b499f6e0212012f444"
     },
     {
       "reference": "Genesis 1",
       "availability": "AVAILABLE",
-      "evidence_count": 70,
-      "overview_evidence_id": "genesis-ordered-worldview-observation:passage-relevance",
+      "evidence_count": 58,
+      "overview_evidence_id": "genesis-literary-movement",
       "overview_anchors": [
-        "Genesis 1:1-2:3"
+        "Genesis 1:1-50:26"
       ],
       "section_kinds": [
         "chapter_overview",
         "historical_context",
-        "language_literary",
+        "chronology",
         "dig_deeper"
       ],
       "semantic_relationships": {
         "BOOK_CONTEXT": 5,
         "COMPARATIVE_CONTEXT": 2,
         "DIRECT_CONTEXT": 2,
-        "GENERIC_BACKGROUND": 55,
+        "GENERIC_BACKGROUND": 43,
         "INTERTEXTUAL_REUSE": 2,
         "LATER_RECEPTION": 4
       },
@@ -678,23 +682,23 @@
         "zephaniah-creation-reversal"
       ],
       "regeneration_eligible": true,
-      "evidence_hash": "9c137c94898baa2ebdad73d528f336be7b00ac35d33c11177c4cf66cc29f9bd2"
+      "evidence_hash": "4ec7d26943602f541f99268ec8dc8fa0cb740eb00109d281b5e2f514cf1cfb59"
     }
   ],
   "controls": {
     "Genesis 1": {
       "availability": "AVAILABLE",
-      "evidence_count": 70,
+      "evidence_count": 58,
       "before_evidence_count": 90,
-      "overview_evidence_id": "genesis-ordered-worldview-observation:passage-relevance",
+      "overview_evidence_id": "genesis-literary-movement",
       "overview_anchors": [
-        "Genesis 1:1-2:3"
+        "Genesis 1:1-50:26"
       ],
       "semantic_relationship_counts": {
         "BOOK_CONTEXT": 5,
         "COMPARATIVE_CONTEXT": 2,
         "DIRECT_CONTEXT": 2,
-        "GENERIC_BACKGROUND": 55,
+        "GENERIC_BACKGROUND": 43,
         "INTERTEXTUAL_REUSE": 2,
         "LATER_RECEPTION": 4
       },
@@ -805,15 +809,17 @@
     },
     "Psalms 1": {
       "availability": "AVAILABLE",
-      "evidence_count": 15,
+      "evidence_count": 13,
       "before_evidence_count": 15,
-      "overview_evidence_id": "psalms-gateway-torah-king",
+      "overview_evidence_id": "torah:historical_context:0",
       "overview_anchors": [
-        "Psalms 1:1-2:12"
+        "Psalms 1:1-3"
       ],
       "semantic_relationship_counts": {
         "BOOK_CONTEXT": 1,
-        "GENERIC_BACKGROUND": 14
+        "COMPARATIVE_CONTEXT": 4,
+        "DIRECT_CONTEXT": 2,
+        "GENERIC_BACKGROUND": 6
       },
       "precise_anchors": [
         "Psalms 1:1-2:12",
@@ -829,7 +835,7 @@
       "availability": "AVAILABLE",
       "evidence_count": 17,
       "before_evidence_count": 17,
-      "overview_evidence_id": "zephaniah-textual-witnesses",
+      "overview_evidence_id": "zephaniah-superscription",
       "overview_anchors": [
         "Zephaniah 1:1"
       ],
@@ -867,9 +873,9 @@
       "availability": "THIN",
       "evidence_count": 3,
       "before_evidence_count": 3,
-      "overview_evidence_id": "deuteronomy:interpretive_note:1",
+      "overview_evidence_id": "deuteronomy-literary-movement",
       "overview_anchors": [
-        "Deuteronomy 5-26"
+        "Deuteronomy 1-34"
       ],
       "semantic_relationship_counts": {
         "BOOK_CONTEXT": 2,
@@ -901,9 +907,9 @@
       "availability": "THIN",
       "evidence_count": 2,
       "before_evidence_count": 2,
-      "overview_evidence_id": "1-samuel:interpretive_note:3",
+      "overview_evidence_id": "first-samuel-literary-movement",
       "overview_anchors": [
-        "1 Samuel 28:3-25"
+        "1 Samuel 1-31"
       ],
       "semantic_relationship_counts": {
         "BOOK_CONTEXT": 1,
@@ -1932,7 +1938,7 @@
       "confidence": "medium",
       "assertion_type": "",
       "dispute_status": "",
-      "semantic_relationship": "GENERIC_BACKGROUND",
+      "semantic_relationship": "COMPARATIVE_CONTEXT",
       "source_kind": "ckl_legacy_field"
     },
     {
@@ -1953,7 +1959,7 @@
       "confidence": "medium",
       "assertion_type": "",
       "dispute_status": "",
-      "semantic_relationship": "GENERIC_BACKGROUND",
+      "semantic_relationship": "COMPARATIVE_CONTEXT",
       "source_kind": "ckl_legacy_field"
     },
     {
@@ -1975,7 +1981,7 @@
       "confidence": "medium",
       "assertion_type": "",
       "dispute_status": "",
-      "semantic_relationship": "GENERIC_BACKGROUND",
+      "semantic_relationship": "COMPARATIVE_CONTEXT",
       "source_kind": "ckl_legacy_field"
     },
     {
@@ -1997,7 +2003,7 @@
       "confidence": "medium",
       "assertion_type": "",
       "dispute_status": "",
-      "semantic_relationship": "GENERIC_BACKGROUND",
+      "semantic_relationship": "COMPARATIVE_CONTEXT",
       "source_kind": "ckl_legacy_field"
     },
     {
@@ -2021,50 +2027,6 @@
       "source_kind": "ckl_claim"
     },
     {
-      "evidence_id": "shema:ancient_near_east_context:0",
-      "parent_object_id": "shema",
-      "parent_type": "word_study",
-      "category": "culture",
-      "claim": "Ancient background for shema includes Hebrew and Greek usage, translation practice, synagogue reading, and covenant speech; the entry ties that world to Exodus 20:1-17, Deuteronomy 6:4-9, nomos, and torah without letting comparison replace the biblical witness.",
-      "passage_anchors": [
-        "Psalms 1:1-3"
-      ],
-      "source_ids": [
-        "exodus-20",
-        "deuteronomy-6",
-        "psalm-1",
-        "romans-7",
-        "galatians-3"
-      ],
-      "confidence": "medium",
-      "assertion_type": "",
-      "dispute_status": "",
-      "semantic_relationship": "GENERIC_BACKGROUND",
-      "source_kind": "ckl_legacy_field"
-    },
-    {
-      "evidence_id": "shema:historical_context:0",
-      "parent_object_id": "shema",
-      "parent_type": "word_study",
-      "category": "history",
-      "claim": "In Hebrew and Greek usage, shema carries a range of meaning, so context determines how the term functions in a given passage.",
-      "passage_anchors": [
-        "Psalms 1:1-3"
-      ],
-      "source_ids": [
-        "exodus-20",
-        "deuteronomy-6",
-        "psalm-1",
-        "romans-7",
-        "galatians-3"
-      ],
-      "confidence": "medium",
-      "assertion_type": "",
-      "dispute_status": "",
-      "semantic_relationship": "GENERIC_BACKGROUND",
-      "source_kind": "ckl_legacy_field"
-    },
-    {
       "evidence_id": "torah:ancient_near_east_context:0",
       "parent_object_id": "torah",
       "parent_type": "word_study",
@@ -2085,7 +2047,7 @@
       "confidence": "medium",
       "assertion_type": "",
       "dispute_status": "",
-      "semantic_relationship": "GENERIC_BACKGROUND",
+      "semantic_relationship": "DIRECT_CONTEXT",
       "source_kind": "ckl_legacy_field"
     },
     {
@@ -2109,7 +2071,7 @@
       "confidence": "medium",
       "assertion_type": "",
       "dispute_status": "",
-      "semantic_relationship": "GENERIC_BACKGROUND",
+      "semantic_relationship": "DIRECT_CONTEXT",
       "source_kind": "ckl_legacy_field"
     },
     {
@@ -3995,48 +3957,6 @@
       "source_kind": "ckl_claim"
     },
     {
-      "evidence_id": "katabole:ancient_near_east_context:0",
-      "parent_object_id": "katabole",
-      "parent_type": "word_study",
-      "category": "culture",
-      "claim": "Ancient background for katabole includes Hebrew and Greek usage, translation practice, synagogue reading, and covenant speech; the entry ties that world to Genesis 1:1-31, Psalm 8:1-9, creation-theme, and genesis without letting comparison replace the biblical witness.",
-      "passage_anchors": [
-        "Genesis 1:1-31"
-      ],
-      "source_ids": [
-        "genesis-1-2",
-        "psalm-8",
-        "romans-8",
-        "revelation-21"
-      ],
-      "confidence": "medium",
-      "assertion_type": "",
-      "dispute_status": "",
-      "semantic_relationship": "GENERIC_BACKGROUND",
-      "source_kind": "ckl_legacy_field"
-    },
-    {
-      "evidence_id": "katabole:historical_context:0",
-      "parent_object_id": "katabole",
-      "parent_type": "word_study",
-      "category": "history",
-      "claim": "In Hebrew and Greek usage, katabole carries a range of meaning, so context determines how the term functions in a given passage.",
-      "passage_anchors": [
-        "Genesis 1:1-31"
-      ],
-      "source_ids": [
-        "genesis-1-2",
-        "psalm-8",
-        "romans-8",
-        "revelation-21"
-      ],
-      "confidence": "medium",
-      "assertion_type": "",
-      "dispute_status": "",
-      "semantic_relationship": "GENERIC_BACKGROUND",
-      "source_kind": "ckl_legacy_field"
-    },
-    {
       "evidence_id": "light-and-darkness-theme:ancient_near_east_context:0",
       "parent_object_id": "light-and-darkness-theme",
       "parent_type": "theme",
@@ -4145,142 +4065,6 @@
       "source_kind": "ckl_legacy_field"
     },
     {
-      "evidence_id": "parakletos:ancient_near_east_context:0",
-      "parent_object_id": "parakletos",
-      "parent_type": "word_study",
-      "category": "culture",
-      "claim": "Ancient background for parakletos includes Hebrew and Greek usage, translation practice, synagogue reading, and covenant speech; the entry ties that world to Genesis 1:1-2, Ezekiel 36:24-28, pneuma, and spirit-theme without letting comparison replace the biblical witness.",
-      "passage_anchors": [
-        "Genesis 1:1-2"
-      ],
-      "source_ids": [
-        "genesis-1",
-        "ezekiel-36",
-        "john-14-16",
-        "acts-2",
-        "romans-8",
-        "parakletos-historical-orientation"
-      ],
-      "confidence": "medium",
-      "assertion_type": "",
-      "dispute_status": "",
-      "semantic_relationship": "GENERIC_BACKGROUND",
-      "source_kind": "ckl_legacy_field"
-    },
-    {
-      "evidence_id": "parakletos:historical_context:0",
-      "parent_object_id": "parakletos",
-      "parent_type": "word_study",
-      "category": "history",
-      "claim": "In Hebrew and Greek usage, parakletos carries a range of meaning, so context determines how the term functions in a given passage.",
-      "passage_anchors": [
-        "Genesis 1:1-2"
-      ],
-      "source_ids": [
-        "genesis-1",
-        "ezekiel-36",
-        "john-14-16",
-        "acts-2",
-        "romans-8",
-        "parakletos-historical-orientation"
-      ],
-      "confidence": "medium",
-      "assertion_type": "",
-      "dispute_status": "",
-      "semantic_relationship": "GENERIC_BACKGROUND",
-      "source_kind": "ckl_legacy_field"
-    },
-    {
-      "evidence_id": "phos:ancient_near_east_context:0",
-      "parent_object_id": "phos",
-      "parent_type": "word_study",
-      "category": "culture",
-      "claim": "Ancient background for phos includes Hebrew and Greek usage, translation practice, synagogue reading, and covenant speech; the entry ties that world to Genesis 1:1-5, Psalm 27:1, skotia, and light-and-darkness-theme without letting comparison replace the biblical witness.",
-      "passage_anchors": [
-        "Genesis 1:1-5"
-      ],
-      "source_ids": [
-        "genesis-1",
-        "psalm-27",
-        "john-1",
-        "ephesians-5",
-        "1-john-1"
-      ],
-      "confidence": "medium",
-      "assertion_type": "",
-      "dispute_status": "",
-      "semantic_relationship": "GENERIC_BACKGROUND",
-      "source_kind": "ckl_legacy_field"
-    },
-    {
-      "evidence_id": "phos:historical_context:0",
-      "parent_object_id": "phos",
-      "parent_type": "word_study",
-      "category": "history",
-      "claim": "In Hebrew and Greek usage, phos carries a range of meaning, so context determines how the term functions in a given passage.",
-      "passage_anchors": [
-        "Genesis 1:1-5"
-      ],
-      "source_ids": [
-        "genesis-1",
-        "psalm-27",
-        "john-1",
-        "ephesians-5",
-        "1-john-1"
-      ],
-      "confidence": "medium",
-      "assertion_type": "",
-      "dispute_status": "",
-      "semantic_relationship": "GENERIC_BACKGROUND",
-      "source_kind": "ckl_legacy_field"
-    },
-    {
-      "evidence_id": "pneuma:ancient_near_east_context:0",
-      "parent_object_id": "pneuma",
-      "parent_type": "word_study",
-      "category": "culture",
-      "claim": "Ancient background for pneuma includes Hebrew and Greek usage, translation practice, synagogue reading, and covenant speech; the entry ties that world to Genesis 1:1-2, Ezekiel 36:24-28, parakletos, and spirit-theme without letting comparison replace the biblical witness.",
-      "passage_anchors": [
-        "Genesis 1:1-2"
-      ],
-      "source_ids": [
-        "genesis-1",
-        "ezekiel-36",
-        "john-14-16",
-        "acts-2",
-        "romans-8",
-        "pneuma-historical-orientation"
-      ],
-      "confidence": "medium",
-      "assertion_type": "",
-      "dispute_status": "",
-      "semantic_relationship": "GENERIC_BACKGROUND",
-      "source_kind": "ckl_legacy_field"
-    },
-    {
-      "evidence_id": "pneuma:historical_context:0",
-      "parent_object_id": "pneuma",
-      "parent_type": "word_study",
-      "category": "history",
-      "claim": "In Hebrew and Greek usage, pneuma carries a range of meaning, so context determines how the term functions in a given passage.",
-      "passage_anchors": [
-        "Genesis 1:1-2"
-      ],
-      "source_ids": [
-        "genesis-1",
-        "ezekiel-36",
-        "john-14-16",
-        "acts-2",
-        "romans-8",
-        "pneuma-historical-orientation"
-      ],
-      "confidence": "medium",
-      "assertion_type": "",
-      "dispute_status": "",
-      "semantic_relationship": "GENERIC_BACKGROUND",
-      "source_kind": "ckl_legacy_field"
-    },
-    {
       "evidence_id": "pneumatology:ancient_near_east_context:0",
       "parent_object_id": "pneumatology",
       "parent_type": "theology",
@@ -4321,94 +4105,6 @@
         "acts-2",
         "romans-8",
         "pneumatology-historical-orientation"
-      ],
-      "confidence": "medium",
-      "assertion_type": "",
-      "dispute_status": "",
-      "semantic_relationship": "GENERIC_BACKGROUND",
-      "source_kind": "ckl_legacy_field"
-    },
-    {
-      "evidence_id": "sarx:ancient_near_east_context:0",
-      "parent_object_id": "sarx",
-      "parent_type": "word_study",
-      "category": "culture",
-      "claim": "Ancient background for sarx includes Hebrew and Greek usage, translation practice, synagogue reading, and covenant speech; the entry ties that world to Genesis 1:26-28, Psalm 8:1-9, image-of-god-theme, and creation-theme without letting comparison replace the biblical witness.",
-      "passage_anchors": [
-        "Genesis 1:26-28"
-      ],
-      "source_ids": [
-        "genesis-1",
-        "psalm-8",
-        "romans-5",
-        "romans-7",
-        "galatians-5"
-      ],
-      "confidence": "medium",
-      "assertion_type": "",
-      "dispute_status": "",
-      "semantic_relationship": "GENERIC_BACKGROUND",
-      "source_kind": "ckl_legacy_field"
-    },
-    {
-      "evidence_id": "sarx:historical_context:0",
-      "parent_object_id": "sarx",
-      "parent_type": "word_study",
-      "category": "history",
-      "claim": "In Hebrew and Greek usage, sarx carries a range of meaning, so context determines how the term functions in a given passage.",
-      "passage_anchors": [
-        "Genesis 1:26-28"
-      ],
-      "source_ids": [
-        "genesis-1",
-        "psalm-8",
-        "romans-5",
-        "romans-7",
-        "galatians-5"
-      ],
-      "confidence": "medium",
-      "assertion_type": "",
-      "dispute_status": "",
-      "semantic_relationship": "GENERIC_BACKGROUND",
-      "source_kind": "ckl_legacy_field"
-    },
-    {
-      "evidence_id": "skotia:ancient_near_east_context:0",
-      "parent_object_id": "skotia",
-      "parent_type": "word_study",
-      "category": "culture",
-      "claim": "Ancient background for skotia includes Hebrew and Greek usage, translation practice, synagogue reading, and covenant speech; the entry ties that world to Genesis 1:1-5, Psalm 27:1, phos, and light-and-darkness-theme without letting comparison replace the biblical witness.",
-      "passage_anchors": [
-        "Genesis 1:1-5"
-      ],
-      "source_ids": [
-        "genesis-1",
-        "psalm-27",
-        "john-1",
-        "ephesians-5",
-        "1-john-1"
-      ],
-      "confidence": "medium",
-      "assertion_type": "",
-      "dispute_status": "",
-      "semantic_relationship": "GENERIC_BACKGROUND",
-      "source_kind": "ckl_legacy_field"
-    },
-    {
-      "evidence_id": "skotia:historical_context:0",
-      "parent_object_id": "skotia",
-      "parent_type": "word_study",
-      "category": "history",
-      "claim": "In Hebrew and Greek usage, skotia carries a range of meaning, so context determines how the term functions in a given passage.",
-      "passage_anchors": [
-        "Genesis 1:1-5"
-      ],
-      "source_ids": [
-        "genesis-1",
-        "psalm-27",
-        "john-1",
-        "ephesians-5",
-        "1-john-1"
       ],
       "confidence": "medium",
       "assertion_type": "",
