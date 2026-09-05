@@ -10,6 +10,8 @@ for a future Terra run.
 from __future__ import annotations
 
 import argparse
+import sqlite3
+from contextlib import contextmanager
 import hashlib
 import json
 import math
@@ -74,6 +76,9 @@ PRIMARY_CANARY_ROOT = (
     REPO_ROOT / ".bhf-data" / "bhf-commentary-candidates" / "commentary-v1.1-terra"
 )
 SUPPLEMENTAL_CANARY_ROOT = PRIMARY_CANARY_ROOT / "supplemental-integrity-controls"
+BATCH_001_TERRA_ROOT = (
+    REPO_ROOT / ".bhf-data" / "bhf-commentary-candidates" / "commentary-v1.1-scale" / "batch-001" / "terra" / "chapters"
+)
 
 SECTION_ROLES = {
     "historical_context",
@@ -124,6 +129,24 @@ def _canary_references() -> set[str]:
     return primary
 
 
+def _previous_batch_references(batch_id: str) -> set[str]:
+    """Exclude prior generated/certified chapters from a later batch."""
+
+    if batch_id == "batch-001":
+        return set()
+    previous: set[str] = set()
+    batch_root = DEFAULT_OUTPUT_ROOT / "commentary-v1.1-scale" / "batch-001"
+    manifest_path = batch_root / "batch-manifest.json"
+    if manifest_path.exists():
+        data = json.loads(manifest_path.read_text(encoding="utf-8"))
+        previous.update(str(value) for value in data.get("final_references", []))
+    quarantine_path = batch_root / "quarantine-report.json"
+    if quarantine_path.exists():
+        data = json.loads(quarantine_path.read_text(encoding="utf-8"))
+        previous.update(str(row.get("reference")) for row in data.get("chapters", []) if row.get("reference"))
+    return previous
+
+
 def _artifact_fingerprints() -> dict[str, str]:
     paths = sorted(PRIMARY_CANARY_ROOT.glob("chapters/*.json"))
     paths += sorted(SUPPLEMENTAL_CANARY_ROOT.glob("chapters/*.json"))
@@ -131,6 +154,13 @@ def _artifact_fingerprints() -> dict[str, str]:
     for path in paths:
         result[str(path.relative_to(REPO_ROOT))] = hashlib.sha256(path.read_bytes()).hexdigest()
     return result
+
+
+def _batch_001_terra_fingerprints() -> dict[str, str]:
+    return {
+        str(path.relative_to(REPO_ROOT)): hashlib.sha256(path.read_bytes()).hexdigest()
+        for path in sorted(BATCH_001_TERRA_ROOT.glob("*.json"))
+    }
 
 
 def _stable_fingerprint(fingerprints: Mapping[str, str]) -> str:
@@ -177,6 +207,13 @@ def _batch_genre(book: str) -> str:
 
     if book in {"Daniel", "Revelation"}:
         return "apocalyptic"
+    if book in {
+        "Romans", "1 Corinthians", "2 Corinthians", "Galatians", "Ephesians",
+        "Philippians", "Colossians", "1 Thessalonians", "2 Thessalonians",
+        "1 Timothy", "2 Timothy", "Titus", "Philemon", "Hebrews", "James",
+        "1 Peter", "2 Peter", "1 John", "2 John", "3 John", "Jude",
+    }:
+        return "epistle"
     return _book_genre(book)
 
 
@@ -257,6 +294,31 @@ def _build_bundle(library: Any, book: str, chapter: int, study_db_path: str | Pa
         bundle_version=EVIDENCE_BUNDLE_VERSION,
     )
     return bundle, canonical_results
+
+
+@contextmanager
+def _sqlite_workspace(sqlite_database: Path | None):
+    """Use a verified reusable CKL database when supplied; otherwise build one."""
+
+    if sqlite_database is not None:
+        database = sqlite_database.resolve()
+        if not database.exists():
+            raise FileNotFoundError(database)
+        with sqlite3.connect(f"file:{database}?mode=ro", uri=True) as connection:
+            metadata = dict(connection.execute("SELECT key, value FROM ckl_metadata").fetchall())
+        if metadata.get("database_schema_version") != "4":
+            raise RuntimeError("reusable CKL SQLite database has an unsupported schema version")
+        if metadata.get("retrieval_index_version") != "3":
+            raise RuntimeError("reusable CKL SQLite database has an unsupported retrieval index version")
+        if int(metadata.get("object_count", "0")) <= 0 or not metadata.get("inventory_fingerprint"):
+            raise RuntimeError("reusable CKL SQLite database is missing current inventory metadata")
+        yield database
+        return
+    with tempfile.TemporaryDirectory(prefix="bhf-batch-sqlite-") as temp_dir:
+        database = Path(temp_dir) / "ckl.sqlite"
+        build_database(REPO_ROOT / "framework" / "canonical_library", database)
+        verify_database(database, root=REPO_ROOT / "framework" / "canonical_library")
+        yield database
 
 
 def _parent_records(library: Any, results: Sequence[Any]) -> dict[str, dict[str, Any]]:
@@ -407,6 +469,20 @@ def scan_anomalies(
             ))
 
         expected_role = presentation_role(metadata, category=item.category, claim=claim)
+        textual_role = expected_role in {"language_literary", "interpretive_questions"}
+        textual_claim = bool(re.search(
+            r"\b(?:textual\s+variant|textual\s+criticism|textual\s+transmission|"
+            r"manuscript(?:\s+reading)?|shorter[- ]text|longer[- ]text|"
+            r"textual\s+witness(?:es)?|textual\s+omission)\b",
+            text,
+            re.IGNORECASE,
+        ))
+        if textual_role or textual_claim:
+            if role == "archaeology_geography":
+                anomalies.append(_anomaly(
+                    "TEXTUAL_EVIDENCE_ROUTING_ANOMALY", item,
+                    "Textual criticism or manuscript evidence is routed to archaeology/geography instead of a textual or interpretive section.",
+                ))
         if role and role not in SECTION_ROLES and role != "significance":
             anomalies.append(_anomaly(
                 "UNKNOWN_PRESENTATION_ROLE", item,
@@ -536,6 +612,9 @@ def _presentation_audit(bundle: Any) -> dict[str, Any]:
         role = metadata.get("presentation_role")
         if role and role not in SECTION_ROLES:
             errors.append(f"{item.id}:unknown-role:{role}")
+        expected = presentation_role(metadata, category=item.category, claim=item.claim)
+        if expected and role and role != expected and role != "significance":
+            errors.append(f"{item.id}:expected-role:{expected}:actual-role:{role}")
     return {"status": "PASS" if not errors else "FAIL", "errors": errors}
 
 
@@ -602,7 +681,9 @@ def _chapter_record(
         "disputed_count": _disputed_count(bundle),
         "semantic_relationship_counts": dict(sorted(semantic_counts.items())),
         "presentation_role_counts": dict(sorted(role_counts.items())),
-        "presentation_section_roles": sorted(section_roles),
+        # significance is an internal presentation-provider role, not an
+        # allowed Commentary section kind for Terra input.
+        "presentation_section_roles": sorted(set(section_roles) - {"significance"}),
         "overview_candidate": overview.id if overview else None,
         "overview_candidate_disputed": bool(overview and _disputed_count(type("B", (), {"evidence_items": [overview]})()) > 0),
         "evidence_hash": calculate_evidence_hash(bundle),
@@ -676,11 +757,17 @@ def _make_certification(record: Mapping[str, Any], bundle_path: str, sqlite: dic
 def _terra_input(record: Mapping[str, Any], bundle_path: str) -> dict[str, Any]:
     return {
         "reference": record["reference"],
+        "book": record["book"],
+        "chapter": record["chapter"],
         "canonical_text_input_locator": f"bible.resolve_chapter({record['book']!r}, {record['chapter']})",
         "locked_evidence_bundle_hash": record["evidence_hash"],
+        "evidence_bundle_version": record["bundle_version"],
+        "evidence_hash_version": record["hash_version"],
         "availability": record["availability"],
         "allowed_section_roles": record["presentation_section_roles"],
         "evidence_bundle_path": bundle_path,
+        "dig_deeper_evidence_exists": "dig_deeper" in record["presentation_section_roles"],
+        "disputed_evidence_count": record["disputed_count"],
         "evidence_reconstruction": {
             "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
             "arguments": {"book": record["book"], "chapter": record["chapter"], "evidence_bundle_version": EVIDENCE_BUNDLE_VERSION},
@@ -694,16 +781,17 @@ def _markdown_report(manifest: Mapping[str, Any], preflight: Mapping[str, Any], 
     final = manifest["final_chapters"]
     anomaly_counts = Counter(code for row in preflight["evaluated"] for code in [a["code"] for a in row.get("anomaly_scan", {}).get("anomalies", [])])
     lines = [
-        "# Commentary v1.1 Scaled Batch 001 Evidence Preflight",
+        f"# Commentary v1.1 Scaled {manifest['batch_id'].replace('-', ' ').title()} Evidence Preflight",
         "",
         "This is a Luna deterministic evidence certification. Terra was not run and no reader-facing prose was generated.",
         "",
         "## Selection and population",
         "",
-        f"- Candidate pool: {manifest['candidate_pool_size']} chapters; target: {manifest['target_count']}; evaluated: {manifest['chapters_evaluated']}.",
+        f"- Candidate pool: {manifest['candidate_pool_size']} chapters; target: {manifest['target_count']}; evaluated: {manifest['chapters_evaluated']}; skipped outside the pool: {manifest.get('chapters_skipped', 0)}.",
         f"- Current deterministic low-information population: {manifest['current_population']['eligible']} eligible and {manifest['current_population']['insufficient']} insufficient (historical reference: 935 / 153).",
         f"- Mixed selection: genre/availability round-robin, reader-benefit signals for ordering only, maximum five chapters per book in the pool.",
         f"- Replacements used: {manifest['replacements_used']}.",
+        f"- Excluded prior/canary references: {len(manifest.get('excluded_regression_controls', []))}.",
         "",
         "## Final certification",
         "",
@@ -712,6 +800,8 @@ def _markdown_report(manifest: Mapping[str, Any], preflight: Mapping[str, Any], 
         f"- Availability: {manifest['availability_distribution']}",
         f"- Genre: {manifest['genre_distribution']}",
         f"- Evidence count statistics: {manifest['evidence_count_statistics']}",
+        f"- Semantic relationship totals: {manifest.get('semantic_relationship_totals', {})}.",
+        f"- Presentation-role totals: {manifest.get('presentation_role_totals', {})}.",
         "",
         "## Final PASS chapters",
         "",
@@ -740,6 +830,13 @@ def _markdown_report(manifest: Mapping[str, Any], preflight: Mapping[str, Any], 
         f"- Presentation-role anomalies: {sum(value for key, value in anomaly_counts.items() if key.startswith('PRESENTATION') or key == 'UNKNOWN_PRESENTATION_ROLE')}",
         f"- Template-evidence anomalies: {sum(value for key, value in anomaly_counts.items() if key.startswith('TEMPLATE') or key.endswith('TEMPLATE_DIRECT_CONTEXT'))}",
         f"- Evidence-count outliers: {len(preflight['evidence_count_outliers'])} review signals; none auto-quarantined.",
+        f"- Textual-evidence routing anomalies: {preflight['anomaly_counts'].get('TEXTUAL_EVIDENCE_ROUTING_ANOMALY', 0)}.",
+        "",
+        "## Luke 22 routing review",
+        "",
+        "The `luke-meal-variant` claim is a direct CKL claim owned by the `luke` book parent. Its stored category is `geography`, but its claim text concerns manuscript witnesses, shorter/longer readings, and textual-variant uncertainty. The prior projector treated the legacy category as a presentation instruction and routed it to `archaeology_geography`.",
+        "",
+        "The shared rule now gives narrow textual-variant signals precedence over legacy geography/archaeology facets. Luke 22 routes to `language_literary`; interpretive textual notes can route to `interpretive_questions`. The original Batch 001 lock and prose artifact remain unchanged. The reconstructed hash changed from `ffde3ebe0c02e5c41f530158730c25ed8f7122950abf4ddd4b0995588ee6230e` to `dabf2f65b9dc00872535abcca1d8d7206d24a846e5390d1e128cdc4459b204f7`, with evidence IDs unchanged, so Luke 22 requires future corrective recertification before any prose regeneration.",
         "",
         "## Regression controls",
         "",
@@ -750,17 +847,23 @@ def _markdown_report(manifest: Mapping[str, Any], preflight: Mapping[str, Any], 
         "",
         "## Systemic CKL concern",
         "",
-        "Template-shaped CKL background and cross-testament reception records remain a systemic review surface. This batch quarantines only deterministic semantic/presentation blockers; it does not repair CKL records. Any repeated template or broad-parent pattern should be handled in a separate Luna evidence-cleanup task.",
+        "Template-shaped CKL background, cross-testament reception records, broad word-study parents, and cross-book parent reuse remain systemic review surfaces. This batch quarantines deterministic blockers; it does not repair evidence. Any repeated template or broad-parent pattern should be handled in a separate Luna evidence-cleanup task.",
         "",
-        "The batch is eligible for a future Terra Medium Batch 001 generation only after the locked manifest is consumed and its hashes are rechecked immediately before generation.",
+        f"The batch is eligible for a future Terra Medium {manifest['batch_id'].replace('-', ' ').title()} generation only after the locked manifest is consumed and its hashes are rechecked immediately before generation.",
         "",
     ]
     return "\n".join(lines)
 
 
-def _regression_controls(json_library: Any, before: Mapping[str, str], after: Mapping[str, str]) -> dict[str, Any]:
+def _regression_controls(
+    json_library: Any,
+    before: Mapping[str, str],
+    after: Mapping[str, str],
+    batch_001_before: Mapping[str, str],
+    batch_001_after: Mapping[str, str],
+) -> dict[str, Any]:
     controls: dict[str, Any] = {}
-    for book, chapter in (("Genesis", 1), ("Zephaniah", 1), ("Luke", 1), ("Leviticus", 1), ("1 Samuel", 28), ("Numbers", 3)):
+    for book, chapter in (("Genesis", 1), ("Zephaniah", 1), ("Luke", 1), ("Leviticus", 1), ("1 Samuel", 28), ("Numbers", 3), ("Luke", 22)):
         bundle, results = _build_bundle(json_library, book, chapter)
         overview = select_overview_item(bundle)
         anomalies = scan_anomalies(bundle, library=json_library, parent_records=_parent_records(json_library, results), overview_id=overview.id if overview else None)
@@ -779,6 +882,18 @@ def _regression_controls(json_library: Any, before: Mapping[str, str], after: Ma
         elif ref == "Leviticus 1":
             item = next((item for item in bundle.evidence_items if item.id == "what-is-sacrifice-in-the-bible:ancient_near_east_context:0"), None)
             assertions.append("ritual context is historical_context" if item and item.relevance_metadata.get("presentation_role") == "historical_context" else "ritual context misrouted")
+        elif ref == "Luke 22":
+            item = next((item for item in bundle.evidence_items if item.id == "luke-meal-variant"), None)
+            assertions.append(
+                "textual variant is language_literary"
+                if item and item.relevance_metadata.get("presentation_role") == "language_literary"
+                else "textual variant misrouted"
+            )
+            assertions.append(
+                "no textual routing blocker"
+                if not any(anomaly["code"] == "TEXTUAL_EVIDENCE_ROUTING_ANOMALY" and anomaly["severity"] == "blocker" for anomaly in anomalies)
+                else "textual routing blocker"
+            )
         elif ref == "1 Samuel 28":
             disputed = [item for item in bundle.evidence_items if (item.relevance_metadata or {}).get("dispute_status") not in {None, "", "not_disputed", "unknown", "none"}]
             assertions.append("THIN" if classify_evidence_availability(bundle).value == "THIN" else "availability changed")
@@ -795,6 +910,14 @@ def _regression_controls(json_library: Any, before: Mapping[str, str], after: Ma
         "after_fingerprint": _stable_fingerprint(after),
         "changed_paths": sorted(set(before) ^ set(after) | {path for path in before.keys() & after.keys() if before[path] != after[path]}),
     }
+    controls["batch_001_terra_artifacts"] = {
+        "status": "PASS" if dict(batch_001_before) == dict(batch_001_after) and len(batch_001_after) == 50 else "FAIL",
+        "summary": "50 Batch 001 Terra artifact fingerprints unchanged" if dict(batch_001_before) == dict(batch_001_after) and len(batch_001_after) == 50 else "Batch 001 Terra artifact fingerprint changed or count is not 50",
+        "before_fingerprint": _stable_fingerprint(batch_001_before),
+        "after_fingerprint": _stable_fingerprint(batch_001_after),
+        "artifact_count": len(batch_001_after),
+        "changed_paths": sorted(set(batch_001_before) ^ set(batch_001_after) | {path for path in batch_001_before.keys() & batch_001_after.keys() if batch_001_before[path] != batch_001_after[path]}),
+    }
     return controls
 
 
@@ -805,10 +928,12 @@ def run_batch(
     candidate_pool_size: int,
     output_root: Path,
     candidate_source: Path = DEFAULT_CANDIDATE_SOURCE,
+    sqlite_database: Path | None = None,
 ) -> dict[str, Any]:
     output_root = output_root if output_root.is_absolute() else (REPO_ROOT / output_root)
     output_root = output_root.resolve()
     before_fingerprints = _artifact_fingerprints()
+    batch_001_before_fingerprints = _batch_001_terra_fingerprints()
     current = recalculate_low_information(candidate_source)
     historical = {"eligible": 935, "insufficient": 153}
     current_population = {
@@ -820,16 +945,15 @@ def run_batch(
         },
     }
     excluded = _canary_references()
+    prior_batch_exclusions = _previous_batch_references(batch_id)
+    excluded.update(prior_batch_exclusions)
     eligible = _eligible_rows(current)
     candidate_pool = select_mixed_candidate_pool(eligible, pool_size=candidate_pool_size, excluded_references=excluded)
 
     pool_dir = output_root / batch_id
     bundle_dir = pool_dir / "evidence-bundles"
     pool_dir.mkdir(parents=True, exist_ok=True)
-    with tempfile.TemporaryDirectory(prefix=f"bhf-{batch_id}-sqlite-") as temp_dir:
-        db_path = Path(temp_dir) / "ckl.sqlite"
-        build_database(REPO_ROOT / "framework" / "canonical_library", db_path)
-        verify_database(db_path, root=REPO_ROOT / "framework" / "canonical_library")
+    with _sqlite_workspace(sqlite_database) as db_path:
         json_library = load_canonical_library(config=CKLRepositoryConfig(backend="json", json_root=str(REPO_ROOT / "framework" / "canonical_library")))
         sqlite_library = load_canonical_library(config=CKLRepositoryConfig(backend="sqlite", database_path=str(db_path), json_root=str(REPO_ROOT / "framework" / "canonical_library"), stale_database_policy="ignore"))
 
@@ -893,12 +1017,13 @@ def run_batch(
         for record in evaluated:
             if record["status"] == "QUARANTINE":
                 blockers = [item for item in record["anomaly_scan"]["anomalies"] if item["severity"] == "blocker"]
+                explanations = list(dict.fromkeys(item["explanation"] for item in blockers))
                 quarantines.append({
                     "reference": record["reference"],
                     "reason_codes": record["quarantine_reason_codes"],
                     "evidence_ids": sorted({item["evidence_id"] for item in blockers if item.get("evidence_id")}),
                     "ckl_parent_records": sorted({item["ckl_parent_record"] for item in blockers if item.get("ckl_parent_record")}),
-                    "explanation": "; ".join(item["explanation"] for item in blockers) or "Backend or audit disagreement prevented certification.",
+                    "explanation": "; ".join(explanations) or "Backend or audit disagreement prevented certification.",
                     "scope": "systemic" if any(code in {"CROSS_BOOK_PARENT_REUSE", "WORD_STUDY_BROAD_PARENT_ANCHOR"} for code in record["quarantine_reason_codes"]) else "local",
                 })
 
@@ -908,15 +1033,39 @@ def run_batch(
             record["locked_bundle_path"] = str(path.relative_to(REPO_ROOT))
 
         after_fingerprints = _artifact_fingerprints()
+        batch_001_after_fingerprints = _batch_001_terra_fingerprints()
         # Regressions intentionally use the same JSON backend used for the
         # batch. No Terra code or prose compiler is imported here.
-        controls = _regression_controls(json_library, before_fingerprints, after_fingerprints)
+        controls = _regression_controls(
+            json_library,
+            before_fingerprints,
+            after_fingerprints,
+            batch_001_before_fingerprints,
+            batch_001_after_fingerprints,
+        )
 
     status = "LOCKED" if len(final_records) == target_count and all(value["status"] == "PASS" for value in controls.values()) else "BLOCKED"
     availability_distribution = dict(sorted(Counter(row["availability"] for row in final_records).items()))
     genre_distribution = dict(sorted(Counter(row["genre"] for row in final_records).items()))
     book_distribution = dict(sorted(Counter(row["book"] for row in final_records).items()))
+    semantic_role_totals = Counter(
+        relationship
+        for row in final_records
+        for relationship, count in row.get("semantic_relationship_counts", {}).items()
+        for _ in range(int(count))
+    )
+    presentation_role_totals = Counter(
+        role
+        for row in final_records
+        for role, count in row.get("presentation_role_counts", {}).items()
+        for _ in range(int(count))
+    )
     semantic_anomalies = [item for row in evaluated for item in row.get("anomaly_scan", {}).get("anomalies", []) if item["severity"] == "blocker"]
+    anomaly_totals = Counter(
+        item["code"]
+        for row in evaluated
+        for item in row.get("anomaly_scan", {}).get("anomalies", [])
+    )
     pass_certifications = []
     terra_inputs = []
     for record in final_records:
@@ -936,16 +1085,22 @@ def run_batch(
         "chapters_evaluated": len(evaluated),
         "chapters_passed": len(pass_records),
         "chapters_quarantined": len(quarantines),
+        "chapters_data_gap": sum(row.get("status") == "DATA_GAP" for row in evaluated),
+        "chapters_skipped": 0,
         "replacements_used": len(replacements),
         "status": status,
         "current_population": current_population,
         "excluded_regression_controls": sorted(excluded),
+        "excluded_prior_batch_references": sorted(prior_batch_exclusions),
         "final_chapters": final_records,
         "final_references": [row["reference"] for row in final_records],
         "availability_distribution": availability_distribution,
         "genre_distribution": genre_distribution,
         "book_distribution": book_distribution,
         "evidence_count_statistics": _stats(final_records),
+        "semantic_relationship_totals": dict(sorted(semantic_role_totals.items())),
+        "presentation_role_totals": dict(sorted(presentation_role_totals.items())),
+        "anomaly_totals": dict(sorted(anomaly_totals.items())),
         "evidence_bundle_version": EVIDENCE_BUNDLE_VERSION,
         "evidence_hash_version": EVIDENCE_HASH_VERSION,
         "candidate_pool": candidate_pool,
@@ -953,6 +1108,9 @@ def run_batch(
         "artifact_fingerprints_before": before_fingerprints,
         "artifact_fingerprints_after": after_fingerprints,
         "artifact_fingerprint": _stable_fingerprint(after_fingerprints),
+        "batch_001_terra_artifact_fingerprints_before": batch_001_before_fingerprints,
+        "batch_001_terra_artifact_fingerprints_after": batch_001_after_fingerprints,
+        "batch_001_terra_artifact_fingerprint": _stable_fingerprint(batch_001_after_fingerprints),
         "terra_run": False,
         "prose_generated": False,
     }
@@ -1032,6 +1190,7 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--candidate-pool-size", type=int, default=DEFAULT_POOL_SIZE)
     parser.add_argument("--output-root", type=Path, default=DEFAULT_OUTPUT_ROOT)
     parser.add_argument("--candidate-source", type=Path, default=DEFAULT_CANDIDATE_SOURCE)
+    parser.add_argument("--sqlite-database", type=Path, help="Use and verify an existing current CKL SQLite database.")
     args = parser.parse_args(argv)
     report = run_batch(
         batch_id=args.batch_id,
@@ -1039,6 +1198,7 @@ def main(argv: list[str] | None = None) -> int:
         candidate_pool_size=args.candidate_pool_size,
         output_root=args.output_root,
         candidate_source=args.candidate_source,
+        sqlite_database=args.sqlite_database,
     )
     print(json.dumps({
         "batch_id": args.batch_id,
