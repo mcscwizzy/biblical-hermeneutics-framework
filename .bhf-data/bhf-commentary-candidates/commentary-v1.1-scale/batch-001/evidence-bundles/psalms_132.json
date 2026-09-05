@@ -1,0 +1,150 @@
+{
+  "passage_ref": "Psalms 132",
+  "entities": {
+    "people": [],
+    "places": [],
+    "groups": [],
+    "events": [],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "psalms-exile-restoration-pilgrimage",
+      "claim": "Communal psalms preserve sanctuary destruction and Babylonian exile, while Book V also gathers return thanksgiving, festival praise, Torah meditation, and Songs of Ascents oriented toward worship.",
+      "category": "culture",
+      "source_ids": [
+        "psalms-masoretic",
+        "declaisse-walford-jacobson-tanner",
+        "hossfeld-zenger-psalms"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Psalms 120:1-134:3"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "psalms",
+        "parent_title": "Psalms",
+        "parent_type": "book",
+        "object_importance": 95,
+        "retrieval_score": 0.915,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 1200,
+        "certainty": "strong_consensus",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 65
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "The Book of Psalms",
+        "author": "Nancy L. deClaiss\u00e9-Walford, Rolf A. Jacobson, and Beth LaNeel Tanner",
+        "publisher": "Wm. B. Eerdmans Publishing Co.",
+        "year": 2014,
+        "locator": "New International Commentary on the Old Testament",
+        "url": "https://www.eerdmans.com/9780802824936/the-book-of-psalms/",
+        "source_type": "reference-work",
+        "supports": [
+          "canonical-context",
+          "literary-context",
+          "genre",
+          "structure",
+          "later-christian-reception",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "One-volume commentary emphasizing translation, poetry, theology, textual criticism, Dead Sea Scrolls, and canonical shaping.",
+        "id": "declaisse-walford-jacobson-tanner",
+        "canonical_object_ids": [
+          "psalms"
+        ]
+      },
+      {
+        "title": "Psalms 2 and Psalms 3",
+        "author": "Frank-Lothar Hossfeld and Erich Zenger",
+        "publisher": "Fortress Press",
+        "year": 2011,
+        "locator": "Hermeneia commentaries on Psalms 51-100 and 101-150",
+        "url": "https://ms.fortresspress.com/downloads/HermeneiaBrochure_2018.pdf",
+        "source_type": "reference-work",
+        "supports": [
+          "literary-context",
+          "structure",
+          "canonical-context",
+          "historical-context",
+          "interpretive-disputes",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "Historical-critical and final-form analysis with attention to neighboring psalms, ethics, theology, and reception.",
+        "id": "hossfeld-zenger-psalms",
+        "canonical_object_ids": [
+          "psalms"
+        ]
+      },
+      {
+        "title": "Masoretic Psalter",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Psalms 1-150 in the Masoretic textual tradition",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "literary-context",
+          "structure",
+          "key-people",
+          "key-places",
+          "key-events",
+          "scripture-references",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "Primary Hebrew canonical text and base for common modern Protestant numbering.",
+        "id": "psalms-masoretic",
+        "canonical_object_ids": [
+          "psalms"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "psalms",
+        "type": "book",
+        "title": "Psalms",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.915
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "06f0094a80896c25abe1fc242d06f855e7ed0362ae2b399d0e05298303a3e92a",
+  "evidence_hash_version": "2"
+}

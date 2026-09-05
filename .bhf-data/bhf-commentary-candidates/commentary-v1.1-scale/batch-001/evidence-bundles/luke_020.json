@@ -1,0 +1,136 @@
+{
+  "passage_ref": "Luke 20",
+  "entities": {
+    "people": [],
+    "places": [],
+    "groups": [],
+    "events": [],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "luke-widow",
+      "claim": "Luke places the widow's temple gift immediately after condemning scribes who consume widows' houses and before temple judgment; praise, lament, and institutional exposure remain debated, so the story cannot coerce poor people to surrender necessities.",
+      "category": "culture",
+      "source_ids": [
+        "luke-greek",
+        "methods-luke",
+        "esler-poor-rich"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Luke 20:45-47"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "luke",
+        "parent_title": "Luke",
+        "parent_type": "book",
+        "object_importance": 95,
+        "retrieval_score": 0.915,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 44,
+        "certainty": "probable",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "pastoral_application",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 110
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "The Poor and the Rich",
+        "author": "Philip Francis Esler",
+        "publisher": "Cambridge University Press",
+        "year": 1987,
+        "locator": "Community and Gospel in Luke-Acts, chapter 7",
+        "url": "https://www.cambridge.org/core/books/community-and-gospel-in-lukeacts/poor-and-the-rich/AC0ECD7AA1B60E1A2C3657DF097E1A64",
+        "source_type": "academic-book",
+        "supports": [
+          "major-themes",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Economic language and community context.",
+        "id": "esler-poor-rich",
+        "canonical_object_ids": [
+          "luke"
+        ]
+      },
+      {
+        "title": "The Gospel according to Luke, Greek text",
+        "author": "",
+        "publisher": "Society of Biblical Literature",
+        "year": 2010,
+        "locator": "Luke 1-24 in SBLGNT",
+        "url": "https://www.sbl-site.org/resources/digital-texts/sbl-greek-new-testament/",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "structure",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Open critical Greek text.",
+        "id": "luke-greek",
+        "canonical_object_ids": [
+          "luke"
+        ]
+      },
+      {
+        "title": "Methods for Luke",
+        "author": "Joel B. Green, editor",
+        "publisher": "Cambridge University Press",
+        "year": 2010,
+        "locator": "Historical, feminist, narrative, and Latino criticism",
+        "url": "https://www.cambridge.org/core/books/methods-for-luke/1882398637137D5FAE506383EFEE76BC",
+        "source_type": "academic-book",
+        "supports": [
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Multi-method interpretation using Luke 16 and 20-21.",
+        "id": "methods-luke",
+        "canonical_object_ids": [
+          "luke"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "luke",
+        "type": "book",
+        "title": "Luke",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.915
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "a1ef012a9fbf588e183f3eb53ffa7e0088d41a727897f87bb459d7b13ff20555",
+  "evidence_hash_version": "2"
+}

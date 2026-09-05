@@ -1,0 +1,327 @@
+{
+  "passage_ref": "2 Chronicles 35",
+  "entities": {
+    "people": [],
+    "places": [],
+    "groups": [],
+    "events": [],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "2-kings:interpretive_note:5",
+      "claim": "Kings reports Josiah's death at Megiddo without Chronicles' speech explaining his decision; reconstructions should preserve the distinct wording and aims of both accounts rather than importing one into the other unnoticed.",
+      "category": "culture",
+      "source_ids": [
+        "2-kings-1-25",
+        "cogan-tadmor-second-kings"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "2 Chronicles 35:20-27"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "2-kings",
+        "parent_title": "2 Kings",
+        "parent_type": "book",
+        "object_importance": 96,
+        "retrieval_score": 0.916,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 19,
+        "certainty": "textually_explicit",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "canonical-connection",
+        "field": "",
+        "semantic_relationship": "INTERTEXTUAL_REUSE",
+        "presentation_role": "dig_deeper",
+        "overview_priority": 0
+      }
+    },
+    {
+      "id": "lam-jeremiah-reception",
+      "claim": "Jeremiah attribution is an ancient reception tradition strengthened by Greek paratext and canonical proximity, not an explicit Hebrew claim.",
+      "category": "culture",
+      "source_ids": [
+        "nets-lam",
+        "eusebius-jerome",
+        "salters"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "2 Chronicles 35:25"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "lamentations",
+        "parent_title": "Lamentations",
+        "parent_type": "book",
+        "object_importance": 88,
+        "retrieval_score": 0.908,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 24,
+        "certainty": "strong_consensus",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "reception_history",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "INTERTEXTUAL_REUSE",
+        "presentation_role": "dig_deeper",
+        "overview_priority": 0
+      }
+    },
+    {
+      "id": "second-chronicles-josiah-reform",
+      "claim": "Josiah's repair of the temple leads to discovery and public reading of the law book, Huldah's oracle, covenant renewal, removal of abominations, and a major Passover before his death at Megiddo.",
+      "category": "history",
+      "source_ids": [
+        "2-chronicles-1-36",
+        "klein-second-chronicles"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "2 Chronicles 35:1-27"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "2-chronicles",
+        "parent_title": "2 Chronicles",
+        "parent_type": "book",
+        "object_importance": 86,
+        "retrieval_score": 0.906,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "textually_explicit",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 110
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "2 Chronicles 1-36",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "2 Chronicles 1:1-36:23",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "structure",
+          "key-people",
+          "key-places",
+          "key-events",
+          "scripture-references",
+          "interpretive-notes",
+          "second-chronicles-solomon-temple",
+          "second-chronicles-fire-warning",
+          "second-chronicles-judah-focus",
+          "second-chronicles-seek-humble-pattern",
+          "second-chronicles-jehoshaphat-prayer",
+          "second-chronicles-hezekiah-passover",
+          "second-chronicles-manasseh-humbles",
+          "second-chronicles-josiah-reform",
+          "second-chronicles-exile-cyrus"
+        ],
+        "notes": "Primary biblical text.",
+        "id": "2-chronicles-1-36",
+        "canonical_object_ids": [
+          "2-chronicles"
+        ]
+      },
+      {
+        "title": "2 Kings 1-25",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "2 Kings 1:1-25:30",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "structure",
+          "key-people",
+          "key-places",
+          "key-events",
+          "scripture-references",
+          "interpretive-notes",
+          "second-kings-literary-movement",
+          "second-kings-elisha-succeeds",
+          "second-kings-naaman-healed",
+          "second-kings-samaria-falls",
+          "second-kings-jerusalem-delivered",
+          "second-kings-josiah-reform",
+          "second-kings-jerusalem-falls",
+          "second-kings-jehoiachin-released"
+        ],
+        "notes": "Primary biblical text.",
+        "id": "2-kings-1-25",
+        "canonical_object_ids": [
+          "2-kings"
+        ]
+      },
+      {
+        "title": "II Kings",
+        "author": "Mordechai Cogan and Hayim Tadmor",
+        "publisher": "Yale University Press",
+        "year": 1988,
+        "locator": "Anchor Yale Bible introduction, translation, notes, and commentary",
+        "url": "https://yalebooks.yale.edu/book/9780300140743/ii-kings/",
+        "source_type": "reference-work",
+        "supports": [
+          "authorship-positions",
+          "date-ranges",
+          "historical-context",
+          "literary-context",
+          "hebrew-words",
+          "interpretive-notes",
+          "second-kings-literary-movement",
+          "second-kings-elisha-succeeds",
+          "second-kings-naaman-healed",
+          "second-kings-samaria-falls",
+          "second-kings-jerusalem-delivered",
+          "second-kings-josiah-reform",
+          "second-kings-jerusalem-falls",
+          "second-kings-jehoiachin-released"
+        ],
+        "notes": "Technical commentary emphasizing Hebrew text, regnal chronology, political history, and extra-biblical documentation.",
+        "id": "cogan-tadmor-second-kings",
+        "canonical_object_ids": [
+          "2-kings"
+        ]
+      },
+      {
+        "title": "Ancient Greek and Latin Lamentations Paratext",
+        "author": "",
+        "publisher": "New Advent",
+        "year": null,
+        "locator": "Lamentations 1 Greek and Latin superscription",
+        "url": "https://www.newadvent.org/bible/lam001.htm",
+        "source_type": "ancient-primary-source",
+        "supports": [],
+        "notes": "Greek and Latin paratext associating the lament with Jeremiah; broader liturgical reception requires separate review.",
+        "id": "eusebius-jerome",
+        "canonical_object_ids": [
+          "lamentations"
+        ]
+      },
+      {
+        "title": "2 Chronicles",
+        "author": "Ralph W. Klein",
+        "publisher": "Fortress Press",
+        "year": 2012,
+        "locator": "Hermeneia introduction, translation, notes, and commentary",
+        "url": "https://ms.fortresspress.com/downloads/9780800661014Intro.pdf",
+        "source_type": "reference-work",
+        "supports": [
+          "authorship-positions",
+          "date-ranges",
+          "historical-context",
+          "literary-context",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "Technical critical commentary on text, historiography, theology, sources, historical setting, and reception.",
+        "id": "klein-second-chronicles",
+        "canonical_object_ids": [
+          "2-chronicles"
+        ]
+      },
+      {
+        "title": "A New English Translation of the Septuagint: Lamentations",
+        "author": "Albert Pietersma",
+        "publisher": "International Organization for Septuagint and Cognate Studies",
+        "year": 2009,
+        "locator": "Lamentations",
+        "url": "https://ccat.sas.upenn.edu/nets/edition/35-lam-nets.pdf",
+        "source_type": "reference-work",
+        "supports": [],
+        "notes": "Old Greek translation and introduction.",
+        "id": "nets-lam",
+        "canonical_object_ids": [
+          "lamentations"
+        ]
+      },
+      {
+        "title": "A Critical and Exegetical Commentary on Lamentations",
+        "author": "R. B. Salters",
+        "publisher": "T&T Clark",
+        "year": 2010,
+        "locator": "International Critical Commentary",
+        "url": "https://www.bloomsbury.com/us/critical-and-exegetical-commentary-on-lamentations-9780567576514/",
+        "source_type": "academic-book",
+        "supports": [],
+        "notes": "Philological and text-critical commentary.",
+        "id": "salters",
+        "canonical_object_ids": [
+          "lamentations"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "2-chronicles",
+        "type": "book",
+        "title": "2 Chronicles",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.906
+      },
+      {
+        "id": "2-kings",
+        "type": "book",
+        "title": "2 Kings",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.916
+      },
+      {
+        "id": "lamentations",
+        "type": "book",
+        "title": "Lamentations",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.908
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "1a03c8262aa79a45d9bc47d313277b58cf2af3d20bb845cc4e60c726ca5fbf5b",
+  "evidence_hash_version": "2"
+}

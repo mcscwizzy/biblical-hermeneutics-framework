@@ -1,0 +1,4610 @@
+{
+  "passage_ref": "Joel 2",
+  "entities": {
+    "people": [],
+    "places": [],
+    "groups": [],
+    "events": [
+      {
+        "id": "pentecost",
+        "title": "Pentecost",
+        "type": "event",
+        "aliases": [
+          "what happened in pentecost",
+          "tell me about pentecost",
+          "why is pentecost important"
+        ],
+        "metadata": {
+          "summary": "The Holy Spirit is poured out on the gathered disciples in Jerusalem, launching the public mission of the church.",
+          "importance": 100,
+          "retrieval_score": 0.92,
+          "ancient_names": [],
+          "modern_identification": "",
+          "region": "",
+          "terrain": "",
+          "elevation": null,
+          "archaeology": [],
+          "related_passages": [
+            "Acts 2:1-13",
+            "Acts 2:14-41",
+            "Acts 2:42-47",
+            "Joel 2:28-32",
+            "John 14:15-27",
+            "John 20:19-23",
+            "1 Corinthians 12:1-13"
+          ]
+        }
+      }
+    ],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "acts-joel",
+      "claim": "Peter's Pentecost speech quotes the Greek Joel text with interpretive adaptations, including in the last days.",
+      "category": "culture",
+      "source_ids": [
+        "acts-greek",
+        "nets-lxx",
+        "lxx-reader"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Joel 2:28-32"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "acts",
+        "parent_title": "Acts",
+        "parent_type": "book",
+        "object_importance": 96,
+        "retrieval_score": 0.916,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 27,
+        "certainty": "strong_consensus",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "LATER_RECEPTION",
+        "presentation_role": "dig_deeper",
+        "overview_priority": 0
+      }
+    },
+    {
+      "id": "day-of-the-lord-prophecy:ancient_near_east_context:0",
+      "claim": "Day of the Lord Prophecy is set within prophetic speech shaped by Israelite covenant lawsuit, royal courts, temple worship, Assyrian and Babylonian pressure, Persian restoration, and poetic oracle forms.",
+      "category": "culture",
+      "source_ids": [
+        "joel-2",
+        "amos-5",
+        "zephaniah-1",
+        "1-thessalonians-5",
+        "2-peter-3",
+        "day-of-the-lord-prophecy-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Joel 2:1-11"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "day-of-the-lord-prophecy",
+        "parent_title": "Day of the Lord Prophecy",
+        "parent_type": "prophecy",
+        "object_importance": 95,
+        "retrieval_score": 0.915,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "day-of-the-lord-prophecy:historical_context:0",
+      "claim": "These warnings address covenant breach and imperial pressure, then project judgment and deliverance into the future.",
+      "category": "history",
+      "source_ids": [
+        "joel-2",
+        "amos-5",
+        "zephaniah-1",
+        "1-thessalonians-5",
+        "2-peter-3",
+        "day-of-the-lord-prophecy-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Joel 2:1-11"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "day-of-the-lord-prophecy",
+        "parent_title": "Day of the Lord Prophecy",
+        "parent_type": "prophecy",
+        "object_importance": 95,
+        "retrieval_score": 0.915,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "hope-theme:ancient_near_east_context:0",
+      "claim": "Ancient background for Hope Theme includes covenant practice, worship, kingship, wisdom instruction, and prophetic critique; the entry ties that world to Deuteronomy 30:1-10, Isaiah 40:1-11, exile-theme, and why-is-exile-important without letting comparison replace the biblical witness.",
+      "category": "culture",
+      "source_ids": [
+        "deuteronomy-30",
+        "isaiah-40",
+        "ezekiel-36",
+        "joel-2",
+        "revelation-21",
+        "hope-theme-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Joel 2:28-32"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "hope-theme",
+        "parent_title": "Hope Theme",
+        "parent_type": "theme",
+        "object_importance": 92,
+        "retrieval_score": 0.912,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 27,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "hope-theme:historical_context:0",
+      "claim": "Hope Theme is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness.",
+      "category": "history",
+      "source_ids": [
+        "deuteronomy-30",
+        "isaiah-40",
+        "ezekiel-36",
+        "joel-2",
+        "revelation-21",
+        "hope-theme-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Joel 2:28-32"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "hope-theme",
+        "parent_title": "Hope Theme",
+        "parent_type": "theme",
+        "object_importance": 92,
+        "retrieval_score": 0.912,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 27,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "joel-army-metaphor",
+      "claim": "Joel 2's force may extend locust imagery, depict human invasion, present YHWH's army, or fuse these possibilities in a theophanic day-of-YHWH vision.",
+      "category": "culture",
+      "source_ids": [
+        "joel-masoretic",
+        "kipfer-joel-bibliography",
+        "nogalski-joel-obadiah-jonah"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Joel 2:1-11"
+      ],
+      "confidence": "low",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "joel",
+        "parent_title": "Joel",
+        "parent_type": "book",
+        "object_importance": 86,
+        "retrieval_score": 0.966,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "disputed",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 90
+      }
+    },
+    {
+      "id": "joel-cosmic-deliverance",
+      "claim": "The spirit oracle joins blood, fire, smoke, darkened sun, bloodlike moon, the day of YHWH, calling on YHWH, and survivors in Zion and Jerusalem.",
+      "category": "culture",
+      "source_ids": [
+        "joel-masoretic",
+        "nets-twelve-joel",
+        "crenshaw-joel"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Joel 2:28-32"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "joel",
+        "parent_title": "Joel",
+        "parent_type": "book",
+        "object_importance": 86,
+        "retrieval_score": 0.966,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 27,
+        "certainty": "textually_explicit",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 105
+      }
+    },
+    {
+      "id": "joel-day-yhwh-alarm",
+      "claim": "Joel 2:1-11 sounds an alarm in Zion and depicts the day of YHWH through darkness, fire, an ordered advancing force, cosmic disturbance, and YHWH's voice.",
+      "category": "culture",
+      "source_ids": [
+        "joel-masoretic",
+        "crenshaw-joel",
+        "kipfer-joel-bibliography"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Joel 2:1-11"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "joel",
+        "parent_title": "Joel",
+        "parent_type": "book",
+        "object_importance": 86,
+        "retrieval_score": 0.966,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "textually_explicit",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 105
+      }
+    },
+    {
+      "id": "joel-divine-response",
+      "claim": "Joel 2:18-27 reports YHWH's jealousy and pity, promises food and rain, removes a northern threat, restores years of consumption, ends shame, and renews recognition of divine presence.",
+      "category": "culture",
+      "source_ids": [
+        "joel-masoretic",
+        "nogalski-joel-obadiah-jonah",
+        "new-form-criticism-joel"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Joel 2:18-27"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "joel",
+        "parent_title": "Joel",
+        "parent_type": "book",
+        "object_importance": 86,
+        "retrieval_score": 0.966,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 17,
+        "certainty": "textually_explicit",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_theology",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "joel-ecological-restoration",
+      "claim": "Joel addresses soil and animals alongside people and describes restoration through pasture, trees, grain, wine, oil, rain, satisfaction, praise, and restored presence.",
+      "category": "culture",
+      "source_ids": [
+        "joel-masoretic",
+        "hagedorn-joel",
+        "new-form-criticism-joel"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Joel 2:18-27"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "joel",
+        "parent_title": "Joel",
+        "parent_type": "book",
+        "object_importance": 86,
+        "retrieval_score": 0.966,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 17,
+        "certainty": "textually_explicit",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_theology",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "joel-lament-fast",
+      "claim": "Joel 1:13-14 and 2:15-17 give priests responsibility to proclaim a fast, gather the whole community, lament, and intercede when offerings and food systems collapse.",
+      "category": "culture",
+      "source_ids": [
+        "joel-masoretic",
+        "ogden-joel-malachi",
+        "boda-priests-cults-twelve"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Joel 2:12-17"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "joel",
+        "parent_title": "Joel",
+        "parent_type": "book",
+        "object_importance": 86,
+        "retrieval_score": 0.966,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 11,
+        "certainty": "textually_explicit",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_theology",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "joel-locust-terms",
+      "claim": "The four Hebrew locust terms in Joel 1:4 and 2:25 describe total successive consumption, but evidence is insufficient to identify them securely as four species or four life stages.",
+      "category": "language",
+      "source_ids": [
+        "joel-masoretic",
+        "crenshaw-joel",
+        "nogalski-joel-obadiah-jonah",
+        "fao-locust-faq"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Joel 2:18-27"
+      ],
+      "confidence": "low",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "joel",
+        "parent_title": "Joel",
+        "parent_type": "book",
+        "object_importance": 86,
+        "retrieval_score": 0.966,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 17,
+        "certainty": "disputed",
+        "dispute_status": "lexical_uncertainty",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "lexical",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 81
+      }
+    },
+    {
+      "id": "joel-priestly-plea",
+      "claim": "The priests' plea between vestibule and altar appeals for the people, the heritage, and YHWH's reputation among the nations rather than blaming named classes of disaster victims.",
+      "category": "history",
+      "source_ids": [
+        "joel-masoretic",
+        "boda-priests-cults-twelve",
+        "ogden-joel-malachi"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Joel 2:12-17"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "joel",
+        "parent_title": "Joel",
+        "parent_type": "book",
+        "object_importance": 86,
+        "retrieval_score": 0.966,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 11,
+        "certainty": "textually_explicit",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "joel-return-divine-character",
+      "claim": "Joel 2:12-14 calls for wholehearted return and inwardly real lament while grounding possible mercy in YHWH's gracious, compassionate, patient, steadfastly loving, and relenting character.",
+      "category": "culture",
+      "source_ids": [
+        "joel-masoretic",
+        "joel-prophetic-intertexts",
+        "assis-joel-review"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Joel 2:12-17"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "joel",
+        "parent_title": "Joel",
+        "parent_type": "book",
+        "object_importance": 86,
+        "retrieval_score": 0.966,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 11,
+        "certainty": "textually_explicit",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_theology",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "joel-spirit-all-flesh",
+      "claim": "Joel promises YHWH's spirit on all flesh and specifies sons, daughters, elders, youths, male slaves, and female slaves as prophetic, dreaming, and visionary participants.",
+      "category": "culture",
+      "source_ids": [
+        "joel-masoretic",
+        "nets-twelve-joel",
+        "nogalski-joel-obadiah-jonah"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Joel 2:28-32"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "joel",
+        "parent_title": "Joel",
+        "parent_type": "book",
+        "object_importance": 86,
+        "retrieval_score": 0.966,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 27,
+        "certainty": "textually_explicit",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_theology",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "joel-text-versification",
+      "claim": "Masoretic Joel is commonly divided into four chapters, while Old Greek Ioel and many English Bibles use three; the spirit oracle is Joel 3:1-5 MT but Joel 2:28-32 in common English numbering.",
+      "category": "history",
+      "source_ids": [
+        "joel-masoretic",
+        "nets-twelve-joel",
+        "catss-joel",
+        "kipfer-joel-bibliography"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Joel 2:28-32"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "joel",
+        "parent_title": "Joel",
+        "parent_type": "book",
+        "object_importance": 86,
+        "retrieval_score": 0.966,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 27,
+        "certainty": "strong_consensus",
+        "dispute_status": "textual_variant",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "joel-twelve-intertexts",
+      "claim": "Joel densely reuses prophetic language and contributes links across the Twelve, though quotation, shared tradition, direction of dependence, and editorial intention remain passage-specific questions.",
+      "category": "culture",
+      "source_ids": [
+        "joel-prophetic-intertexts",
+        "hagedorn-joel",
+        "nogalski-joel-obadiah-jonah"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Joel 2:12-17"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "joel",
+        "parent_title": "Joel",
+        "parent_type": "book",
+        "object_importance": 86,
+        "retrieval_score": 0.966,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 11,
+        "certainty": "strong_consensus",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 90
+      }
+    },
+    {
+      "id": "joel:interpretive_note:10",
+      "claim": "The call to return does not disclose a specific hidden sin and should not become a tool for clergy to manufacture guilt or claim private knowledge of why catastrophe occurred.",
+      "category": "culture",
+      "source_ids": [
+        "joel-masoretic",
+        "boda-priests-cults-twelve"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Joel 2:12-17"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "joel",
+        "parent_title": "Joel",
+        "parent_type": "book",
+        "object_importance": 86,
+        "retrieval_score": 0.966,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 11,
+        "certainty": "strong_consensus",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "interpretive-caution",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    },
+    {
+      "id": "joel:interpretive_note:11",
+      "claim": "Rending the heart rather than garments contrasts inwardly real return with empty display; it does not condemn embodied grief, clothing rituals, or lament.",
+      "category": "culture",
+      "source_ids": [
+        "joel-masoretic",
+        "ogden-joel-malachi"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Joel 2:12-17"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "joel",
+        "parent_title": "Joel",
+        "parent_type": "book",
+        "object_importance": 86,
+        "retrieval_score": 0.966,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 11,
+        "certainty": "strong_consensus",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "theological-interpretation",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    },
+    {
+      "id": "joel:interpretive_note:12",
+      "claim": "Joel's communal fast cannot authorize coercive fasting, denial of food or medicine, shaming of disabled or ill people, or leadership that evades accountability.",
+      "category": "culture",
+      "source_ids": [
+        "joel-masoretic",
+        "boda-priests-cults-twelve"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Joel 2:12-17"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "joel",
+        "parent_title": "Joel",
+        "parent_type": "book",
+        "object_importance": 86,
+        "retrieval_score": 0.966,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 11,
+        "certainty": "strong_consensus",
+        "dispute_status": "not_disputed",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "interpretive-caution",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "joel:interpretive_note:13",
+      "claim": "Priests are summoned to lament and intercede; the passage must not shield clergy abuse or turn institutional leaders into unchallengeable interpreters of crisis.",
+      "category": "culture",
+      "source_ids": [
+        "joel-masoretic",
+        "boda-priests-cults-twelve"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Joel 2:15-17"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "joel",
+        "parent_title": "Joel",
+        "parent_type": "book",
+        "object_importance": 86,
+        "retrieval_score": 0.966,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 14,
+        "certainty": "textually_explicit",
+        "dispute_status": "not_disputed",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "interpretive-caution",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 110
+      }
+    },
+    {
+      "id": "joel:interpretive_note:14",
+      "claim": "The possibility that YHWH may relent is expressed as hope, not as a ritual technique that guarantees prosperity or controls God.",
+      "category": "culture",
+      "source_ids": [
+        "joel-masoretic",
+        "joel-prophetic-intertexts",
+        "assis-joel-review"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Joel 2:12-17"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "joel",
+        "parent_title": "Joel",
+        "parent_type": "book",
+        "object_importance": 86,
+        "retrieval_score": 0.966,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 11,
+        "certainty": "textually_explicit",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "theological-interpretation",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    },
+    {
+      "id": "joel:interpretive_note:15",
+      "claim": "Joel 2:18 may narrate a divine response, announce a future response, or mark a liturgical-compositional hinge; translations should not conceal the dispute.",
+      "category": "culture",
+      "source_ids": [
+        "joel-masoretic",
+        "crenshaw-joel",
+        "nogalski-joel-obadiah-jonah"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Joel 2:18-27"
+      ],
+      "confidence": "low",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "joel",
+        "parent_title": "Joel",
+        "parent_type": "book",
+        "object_importance": 86,
+        "retrieval_score": 0.966,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 17,
+        "certainty": "disputed",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "textual-observation",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 52
+      }
+    },
+    {
+      "id": "joel:interpretive_note:16",
+      "claim": "The northern one in Joel 2:20 is not securely identifiable as one historical army, ruler, or eschatological figure.",
+      "category": "culture",
+      "source_ids": [
+        "joel-masoretic",
+        "crenshaw-joel",
+        "allen-joel-obadiah-jonah-micah"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Joel 2:18-27"
+      ],
+      "confidence": "low",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "joel",
+        "parent_title": "Joel",
+        "parent_type": "book",
+        "object_importance": 86,
+        "retrieval_score": 0.966,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 17,
+        "certainty": "insufficient_evidence",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "historical-context",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 102
+      }
+    },
+    {
+      "id": "joel:interpretive_note:17",
+      "claim": "Restoration of lost years is communal agricultural repair in context and must not be marketed as a guaranteed timetable for individual wealth, health, fertility, or recovery.",
+      "category": "economics",
+      "source_ids": [
+        "joel-masoretic",
+        "new-form-criticism-joel"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Joel 2:18-27"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "joel",
+        "parent_title": "Joel",
+        "parent_type": "book",
+        "object_importance": 86,
+        "retrieval_score": 0.966,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 17,
+        "certainty": "textually_explicit",
+        "dispute_status": "not_disputed",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "interpretive-caution",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 105
+      }
+    },
+    {
+      "id": "joel:interpretive_note:18",
+      "claim": "The phrase 'all flesh' is specified through socially expansive groups, but its geographic scope and relation to Israel, nations, humanity, and later communities remain interpreted differently.",
+      "category": "culture",
+      "source_ids": [
+        "joel-masoretic",
+        "nets-twelve-joel",
+        "nogalski-joel-obadiah-jonah"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Joel 2:28-32"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "joel",
+        "parent_title": "Joel",
+        "parent_type": "book",
+        "object_importance": 86,
+        "retrieval_score": 0.966,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 27,
+        "certainty": "textually_explicit",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "theological-interpretation",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 102
+      }
+    },
+    {
+      "id": "joel:interpretive_note:19",
+      "claim": "Joel's inclusion of daughters, elders, youths, male slaves, and female slaves resists spiritual-gift gatekeeping based on gender, age, status, disability stereotypes, or social power.",
+      "category": "culture",
+      "source_ids": [
+        "joel-masoretic",
+        "nets-twelve-joel"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Joel 2:28-32"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "joel",
+        "parent_title": "Joel",
+        "parent_type": "book",
+        "object_importance": 86,
+        "retrieval_score": 0.966,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 27,
+        "certainty": "textually_explicit",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "interpretive-caution",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 102
+      }
+    },
+    {
+      "id": "joel:interpretive_note:2",
+      "claim": "Joel's four locust nouns communicate comprehensive consumption, but species, life-stage, and synonym theories all exceed what can be demonstrated.",
+      "category": "culture",
+      "source_ids": [
+        "joel-masoretic",
+        "crenshaw-joel",
+        "fao-locust-faq"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Joel 2:18-27"
+      ],
+      "confidence": "low",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "joel",
+        "parent_title": "Joel",
+        "parent_type": "book",
+        "object_importance": 86,
+        "retrieval_score": 0.966,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 17,
+        "certainty": "disputed",
+        "dispute_status": "lexical_uncertainty",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "textual-observation",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    },
+    {
+      "id": "joel:interpretive_note:20",
+      "claim": "Dreams, visions, and prophecy in Joel do not validate every modern claim of revelation; communities still require truthfulness, discernment, accountability, and protection from manipulation.",
+      "category": "culture",
+      "source_ids": [
+        "joel-masoretic",
+        "joel-nt-reuse"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Joel 2:28-32"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "joel",
+        "parent_title": "Joel",
+        "parent_type": "book",
+        "object_importance": 86,
+        "retrieval_score": 0.966,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 27,
+        "certainty": "plausible",
+        "dispute_status": "denominational_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "interpretive-caution",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    },
+    {
+      "id": "joel:interpretive_note:21",
+      "claim": "Cosmic signs can function as prophetic-apocalyptic imagery and should not be converted into confident astronomical dates for the end.",
+      "category": "culture",
+      "source_ids": [
+        "joel-masoretic",
+        "crenshaw-joel",
+        "oxford-revelation-reception"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Joel 2:28-32"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "joel",
+        "parent_title": "Joel",
+        "parent_type": "book",
+        "object_importance": 86,
+        "retrieval_score": 0.966,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 27,
+        "certainty": "strong_consensus",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "interpretive-caution",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    },
+    {
+      "id": "joel:interpretive_note:26",
+      "claim": "Masoretic four-chapter and common English three-chapter numbering must be stated at every affected locator so that Joel 3 and 4 are not confused.",
+      "category": "culture",
+      "source_ids": [
+        "joel-masoretic",
+        "nets-twelve-joel",
+        "kipfer-joel-bibliography"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Joel 2:28-32"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "joel",
+        "parent_title": "Joel",
+        "parent_type": "book",
+        "object_importance": 86,
+        "retrieval_score": 0.966,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 27,
+        "certainty": "strong_consensus",
+        "dispute_status": "textual_variant",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "textual-observation",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    },
+    {
+      "id": "joel:interpretive_note:27",
+      "claim": "Old Greek Ioel is an ancient translation and textual witness, not merely a Christian edition of Joel.",
+      "category": "culture",
+      "source_ids": [
+        "nets-twelve-joel",
+        "catss-joel"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Joel 2:28-32"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "joel",
+        "parent_title": "Joel",
+        "parent_type": "book",
+        "object_importance": 86,
+        "retrieval_score": 0.966,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 27,
+        "certainty": "strong_consensus",
+        "dispute_status": "textual_variant",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "textual-observation",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 52
+      }
+    },
+    {
+      "id": "joel:interpretive_note:4",
+      "claim": "Whether Joel 2's advancing force continues the locust imagery, depicts a human army, or fuses both within day-of-YHWH theophany remains disputed.",
+      "category": "culture",
+      "source_ids": [
+        "joel-masoretic",
+        "kipfer-joel-bibliography",
+        "nogalski-joel-obadiah-jonah"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Joel 2:1-11"
+      ],
+      "confidence": "low",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "joel",
+        "parent_title": "Joel",
+        "parent_type": "book",
+        "object_importance": 86,
+        "retrieval_score": 0.966,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "disputed",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "literary-observation",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    },
+    {
+      "id": "joel:interpretive_note:5",
+      "claim": "Past disaster, present alarm, liturgical appeal, divine response, and future horizon should not be forced into one unqualified chronology.",
+      "category": "culture",
+      "source_ids": [
+        "kipfer-joel-bibliography",
+        "crenshaw-joel"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Joel 2:1-27"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "joel",
+        "parent_title": "Joel",
+        "parent_type": "book",
+        "object_importance": 86,
+        "retrieval_score": 0.966,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "literary-observation",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    },
+    {
+      "id": "joel:interpretive_note:7",
+      "claim": "Joel must not be used to claim that a disaster identifies particular victims as uniquely guilty; the book names no catalog of individual offenses behind the locust and drought crisis.",
+      "category": "culture",
+      "source_ids": [
+        "joel-masoretic",
+        "assis-joel-review"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Joel 2:12-17"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "joel",
+        "parent_title": "Joel",
+        "parent_type": "book",
+        "object_importance": 86,
+        "retrieval_score": 0.966,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 11,
+        "certainty": "textually_explicit",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "interpretive-caution",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    },
+    {
+      "id": "joel:interpretive_note:8",
+      "claim": "Ecological and climate applications should begin with Joel's land, crops, watercourses, and animals while avoiding claims that any modern disaster has a revealed one-to-one divine cause.",
+      "category": "culture",
+      "source_ids": [
+        "joel-masoretic",
+        "hagedorn-joel",
+        "fao-locust-faq"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Joel 2:18-27"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "joel",
+        "parent_title": "Joel",
+        "parent_type": "book",
+        "object_importance": 86,
+        "retrieval_score": 0.966,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 17,
+        "certainty": "plausible",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "interpretive-caution",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    },
+    {
+      "id": "land-theme:ancient_near_east_context:0",
+      "claim": "Ancient background for Land Theme includes covenant practice, worship, kingship, wisdom instruction, and prophetic critique; the entry ties that world to Deuteronomy 30:1-10, Isaiah 40:1-11, exile-theme, and why-is-exile-important without letting comparison replace the biblical witness.",
+      "category": "culture",
+      "source_ids": [
+        "deuteronomy-30",
+        "isaiah-40",
+        "ezekiel-36",
+        "joel-2",
+        "revelation-21",
+        "land-theme-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Joel 2:28-32"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "land-theme",
+        "parent_title": "Land Theme",
+        "parent_type": "theme",
+        "object_importance": 92,
+        "retrieval_score": 0.912,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 27,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "land-theme:historical_context:0",
+      "claim": "Land Theme is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness.",
+      "category": "history",
+      "source_ids": [
+        "deuteronomy-30",
+        "isaiah-40",
+        "ezekiel-36",
+        "joel-2",
+        "revelation-21",
+        "land-theme-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Joel 2:28-32"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "land-theme",
+        "parent_title": "Land Theme",
+        "parent_type": "theme",
+        "object_importance": 92,
+        "retrieval_score": 0.912,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 27,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "messianic-hope:ancient_near_east_context:0",
+      "claim": "Ancient background for Messianic Hope includes covenant life, temple worship, royal ideology, wisdom teaching, and early church confession; the entry ties that world to Deuteronomy 30:1-10, Isaiah 40:1-11, exile-theme, and why-is-exile-important without letting comparison replace the biblical witness.",
+      "category": "culture",
+      "source_ids": [
+        "deuteronomy-30",
+        "isaiah-40",
+        "ezekiel-36",
+        "joel-2",
+        "revelation-21",
+        "messianic-hope-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Joel 2:28-32"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "messianic-hope",
+        "parent_title": "Messianic Hope",
+        "parent_type": "theology",
+        "object_importance": 92,
+        "retrieval_score": 0.912,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 27,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "messianic-hope:historical_context:0",
+      "claim": "Messianic Hope is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness.",
+      "category": "history",
+      "source_ids": [
+        "deuteronomy-30",
+        "isaiah-40",
+        "ezekiel-36",
+        "joel-2",
+        "revelation-21",
+        "messianic-hope-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Joel 2:28-32"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "messianic-hope",
+        "parent_title": "Messianic Hope",
+        "parent_type": "theology",
+        "object_importance": 92,
+        "retrieval_score": 0.912,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 27,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "new-exodus-theme:ancient_near_east_context:0",
+      "claim": "Ancient background for New Exodus Theme includes covenant practice, worship, kingship, wisdom instruction, and prophetic critique; the entry ties that world to Deuteronomy 30:1-10, Isaiah 40:1-11, exile-theme, and why-is-exile-important without letting comparison replace the biblical witness.",
+      "category": "culture",
+      "source_ids": [
+        "deuteronomy-30",
+        "isaiah-40",
+        "ezekiel-36",
+        "joel-2",
+        "revelation-21",
+        "new-exodus-theme-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Joel 2:28-32"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "new-exodus-theme",
+        "parent_title": "New Exodus Theme",
+        "parent_type": "theme",
+        "object_importance": 92,
+        "retrieval_score": 0.912,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 27,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "new-exodus-theme:historical_context:0",
+      "claim": "New Exodus Theme is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness.",
+      "category": "history",
+      "source_ids": [
+        "deuteronomy-30",
+        "isaiah-40",
+        "ezekiel-36",
+        "joel-2",
+        "revelation-21",
+        "new-exodus-theme-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Joel 2:28-32"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "new-exodus-theme",
+        "parent_title": "New Exodus Theme",
+        "parent_type": "theme",
+        "object_importance": 92,
+        "retrieval_score": 0.912,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 27,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "new-jerusalem-theme:ancient_near_east_context:0",
+      "claim": "Ancient background for New Jerusalem Theme includes covenant practice, worship, kingship, wisdom instruction, and prophetic critique; the entry ties that world to Deuteronomy 30:1-10, Isaiah 40:1-11, exile-theme, and why-is-exile-important without letting comparison replace the biblical witness.",
+      "category": "culture",
+      "source_ids": [
+        "deuteronomy-30",
+        "isaiah-40",
+        "ezekiel-36",
+        "joel-2",
+        "revelation-21",
+        "new-jerusalem-theme-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Joel 2:28-32"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "new-jerusalem-theme",
+        "parent_title": "New Jerusalem Theme",
+        "parent_type": "theme",
+        "object_importance": 92,
+        "retrieval_score": 0.912,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 27,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55
+      }
+    },
+    {
+      "id": "new-jerusalem-theme:historical_context:0",
+      "claim": "New Jerusalem Theme is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness.",
+      "category": "history",
+      "source_ids": [
+        "deuteronomy-30",
+        "isaiah-40",
+        "ezekiel-36",
+        "joel-2",
+        "revelation-21",
+        "new-jerusalem-theme-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Joel 2:28-32"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "new-jerusalem-theme",
+        "parent_title": "New Jerusalem Theme",
+        "parent_type": "theme",
+        "object_importance": 92,
+        "retrieval_score": 0.912,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 27,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55
+      }
+    },
+    {
+      "id": "pentecost:ancient_near_east_context:0",
+      "claim": "Festival gatherings and harvest celebrations are familiar in the ancient world, but Pentecost becomes the sign of a new covenant people filled with the Spirit.",
+      "category": "culture",
+      "source_ids": [
+        "acts-2",
+        "joel-2",
+        "john-14",
+        "john-20",
+        "1-corinthians-12",
+        "pentecost-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "pentecost"
+      ],
+      "passage_anchors": [
+        "Joel 2:28-32"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "pentecost",
+        "parent_title": "Pentecost",
+        "parent_type": "event",
+        "object_importance": 100,
+        "retrieval_score": 0.92,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 27,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "pentecost:historical_context:0",
+      "claim": "Acts 2 places Pentecost in Jerusalem during a major pilgrimage feast when Jews from many nations are present.",
+      "category": "history",
+      "source_ids": [
+        "acts-2",
+        "joel-2",
+        "john-14",
+        "john-20",
+        "1-corinthians-12",
+        "pentecost-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "pentecost"
+      ],
+      "passage_anchors": [
+        "Joel 2:28-32"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "pentecost",
+        "parent_title": "Pentecost",
+        "parent_type": "event",
+        "object_importance": 100,
+        "retrieval_score": 0.92,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 27,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "pneumatology:ancient_near_east_context:0",
+      "claim": "Ancient background for Pneumatology includes covenant life, temple worship, royal ideology, wisdom teaching, and early church confession; the entry ties that world to Genesis 1:1-2, Ezekiel 36:24-28, spirit-theme, and acts without letting comparison replace the biblical witness.",
+      "category": "culture",
+      "source_ids": [
+        "genesis-1",
+        "ezekiel-36-37",
+        "joel-2",
+        "john-14-16",
+        "acts-2",
+        "romans-8",
+        "pneumatology-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Joel 2:28-32"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "pneumatology",
+        "parent_title": "Pneumatology",
+        "parent_type": "theology",
+        "object_importance": 95,
+        "retrieval_score": 0.915,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 27,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "pneumatology:historical_context:0",
+      "claim": "Pneumatology is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness.",
+      "category": "history",
+      "source_ids": [
+        "genesis-1",
+        "ezekiel-36-37",
+        "joel-2",
+        "john-14-16",
+        "acts-2",
+        "romans-8",
+        "pneumatology-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Joel 2:28-32"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "pneumatology",
+        "parent_title": "Pneumatology",
+        "parent_type": "theology",
+        "object_importance": 95,
+        "retrieval_score": 0.915,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 27,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "providence:ancient_near_east_context:0",
+      "claim": "Ancient background for Providence includes covenant life, temple worship, royal ideology, wisdom teaching, and early church confession; the entry ties that world to Deuteronomy 30:1-10, Isaiah 40:1-11, exile-theme, and why-is-exile-important without letting comparison replace the biblical witness.",
+      "category": "culture",
+      "source_ids": [
+        "deuteronomy-30",
+        "isaiah-40",
+        "ezekiel-36",
+        "joel-2",
+        "revelation-21",
+        "providence-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Joel 2:28-32"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "providence",
+        "parent_title": "Providence",
+        "parent_type": "theology",
+        "object_importance": 92,
+        "retrieval_score": 0.912,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 27,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "providence:historical_context:0",
+      "claim": "Providence is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness.",
+      "category": "history",
+      "source_ids": [
+        "deuteronomy-30",
+        "isaiah-40",
+        "ezekiel-36",
+        "joel-2",
+        "revelation-21",
+        "providence-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Joel 2:28-32"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "providence",
+        "parent_title": "Providence",
+        "parent_type": "theology",
+        "object_importance": 92,
+        "retrieval_score": 0.912,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 27,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "redemption-theme:ancient_near_east_context:0",
+      "claim": "Ancient background for Redemption Theme includes covenant practice, worship, kingship, wisdom instruction, and prophetic critique; the entry ties that world to Deuteronomy 30:1-10, Isaiah 40:1-11, exile-theme, and why-is-exile-important without letting comparison replace the biblical witness.",
+      "category": "culture",
+      "source_ids": [
+        "deuteronomy-30",
+        "isaiah-40",
+        "ezekiel-36",
+        "joel-2",
+        "revelation-21",
+        "redemption-theme-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Joel 2:28-32"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "redemption-theme",
+        "parent_title": "Redemption Theme",
+        "parent_type": "theme",
+        "object_importance": 92,
+        "retrieval_score": 0.912,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 27,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "redemption-theme:historical_context:0",
+      "claim": "Redemption Theme is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness.",
+      "category": "history",
+      "source_ids": [
+        "deuteronomy-30",
+        "isaiah-40",
+        "ezekiel-36",
+        "joel-2",
+        "revelation-21",
+        "redemption-theme-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Joel 2:28-32"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "redemption-theme",
+        "parent_title": "Redemption Theme",
+        "parent_type": "theme",
+        "object_importance": 92,
+        "retrieval_score": 0.912,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 27,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "remnant-theme:ancient_near_east_context:0",
+      "claim": "Ancient background for Remnant Theme includes covenant practice, worship, kingship, wisdom instruction, and prophetic critique; the entry ties that world to Deuteronomy 30:1-10, Isaiah 40:1-11, exile-theme, and why-is-exile-important without letting comparison replace the biblical witness.",
+      "category": "culture",
+      "source_ids": [
+        "deuteronomy-30",
+        "isaiah-40",
+        "ezekiel-36",
+        "joel-2",
+        "revelation-21",
+        "remnant-theme-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Joel 2:28-32"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "remnant-theme",
+        "parent_title": "Remnant Theme",
+        "parent_type": "theme",
+        "object_importance": 92,
+        "retrieval_score": 0.912,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 27,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "remnant-theme:historical_context:0",
+      "claim": "Remnant Theme is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness.",
+      "category": "history",
+      "source_ids": [
+        "deuteronomy-30",
+        "isaiah-40",
+        "ezekiel-36",
+        "joel-2",
+        "revelation-21",
+        "remnant-theme-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Joel 2:28-32"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "remnant-theme",
+        "parent_title": "Remnant Theme",
+        "parent_type": "theme",
+        "object_importance": 92,
+        "retrieval_score": 0.912,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 27,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "remnant:ancient_near_east_context:0",
+      "claim": "Ancient background for Remnant includes covenant life, temple worship, royal ideology, wisdom teaching, and early church confession; the entry ties that world to Deuteronomy 30:1-10, Isaiah 40:1-11, exile-theme, and why-is-exile-important without letting comparison replace the biblical witness.",
+      "category": "culture",
+      "source_ids": [
+        "deuteronomy-30",
+        "isaiah-40",
+        "ezekiel-36",
+        "joel-2",
+        "revelation-21",
+        "remnant-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Joel 2:28-32"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "remnant",
+        "parent_title": "Remnant",
+        "parent_type": "theology",
+        "object_importance": 92,
+        "retrieval_score": 0.912,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 27,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "remnant:historical_context:0",
+      "claim": "Remnant is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness.",
+      "category": "history",
+      "source_ids": [
+        "deuteronomy-30",
+        "isaiah-40",
+        "ezekiel-36",
+        "joel-2",
+        "revelation-21",
+        "remnant-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Joel 2:28-32"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "remnant",
+        "parent_title": "Remnant",
+        "parent_type": "theology",
+        "object_importance": 92,
+        "retrieval_score": 0.912,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 27,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "repentance:ancient_near_east_context:0",
+      "claim": "Ancient background for Repentance includes covenant life, temple worship, royal ideology, wisdom teaching, and early church confession; the entry ties that world to Deuteronomy 30:1-10, Isaiah 40:1-11, exile-theme, and why-is-exile-important without letting comparison replace the biblical witness.",
+      "category": "culture",
+      "source_ids": [
+        "deuteronomy-30",
+        "isaiah-40",
+        "ezekiel-36",
+        "joel-2",
+        "revelation-21",
+        "repentance-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Joel 2:28-32"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "repentance",
+        "parent_title": "Repentance",
+        "parent_type": "theology",
+        "object_importance": 92,
+        "retrieval_score": 0.912,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 27,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "repentance:historical_context:0",
+      "claim": "Repentance is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness.",
+      "category": "history",
+      "source_ids": [
+        "deuteronomy-30",
+        "isaiah-40",
+        "ezekiel-36",
+        "joel-2",
+        "revelation-21",
+        "repentance-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Joel 2:28-32"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "repentance",
+        "parent_title": "Repentance",
+        "parent_type": "theology",
+        "object_importance": 92,
+        "retrieval_score": 0.912,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 27,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "restoration-theme:ancient_near_east_context:0",
+      "claim": "Ancient background for Restoration Theme includes covenant practice, worship, kingship, wisdom instruction, and prophetic critique; the entry ties that world to Deuteronomy 30:1-10, Isaiah 40:1-11, exile-theme, and why-is-exile-important without letting comparison replace the biblical witness.",
+      "category": "culture",
+      "source_ids": [
+        "deuteronomy-30",
+        "isaiah-40",
+        "ezekiel-36",
+        "joel-2",
+        "revelation-21",
+        "restoration-theme-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Joel 2:28-32"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "restoration-theme",
+        "parent_title": "Restoration Theme",
+        "parent_type": "theme",
+        "object_importance": 92,
+        "retrieval_score": 0.912,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 27,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "restoration-theme:historical_context:0",
+      "claim": "Restoration Theme is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness.",
+      "category": "history",
+      "source_ids": [
+        "deuteronomy-30",
+        "isaiah-40",
+        "ezekiel-36",
+        "joel-2",
+        "revelation-21",
+        "restoration-theme-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Joel 2:28-32"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "restoration-theme",
+        "parent_title": "Restoration Theme",
+        "parent_type": "theme",
+        "object_importance": 92,
+        "retrieval_score": 0.912,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 27,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "seed-theme:ancient_near_east_context:0",
+      "claim": "Ancient background for Seed Theme includes covenant practice, worship, kingship, wisdom instruction, and prophetic critique; the entry ties that world to Deuteronomy 30:1-10, Isaiah 40:1-11, exile-theme, and why-is-exile-important without letting comparison replace the biblical witness.",
+      "category": "culture",
+      "source_ids": [
+        "deuteronomy-30",
+        "isaiah-40",
+        "ezekiel-36",
+        "joel-2",
+        "revelation-21",
+        "seed-theme-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Joel 2:28-32"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "seed-theme",
+        "parent_title": "Seed Theme",
+        "parent_type": "theme",
+        "object_importance": 92,
+        "retrieval_score": 0.912,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 27,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "seed-theme:historical_context:0",
+      "claim": "Seed Theme is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness.",
+      "category": "history",
+      "source_ids": [
+        "deuteronomy-30",
+        "isaiah-40",
+        "ezekiel-36",
+        "joel-2",
+        "revelation-21",
+        "seed-theme-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Joel 2:28-32"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "seed-theme",
+        "parent_title": "Seed Theme",
+        "parent_type": "theme",
+        "object_importance": 92,
+        "retrieval_score": 0.912,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 27,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "shepherd-theme:ancient_near_east_context:0",
+      "claim": "Ancient background for Shepherd Theme includes covenant practice, worship, kingship, wisdom instruction, and prophetic critique; the entry ties that world to Deuteronomy 30:1-10, Isaiah 40:1-11, exile-theme, and why-is-exile-important without letting comparison replace the biblical witness.",
+      "category": "culture",
+      "source_ids": [
+        "deuteronomy-30",
+        "isaiah-40",
+        "ezekiel-36",
+        "joel-2",
+        "revelation-21",
+        "shepherd-theme-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Joel 2:28-32"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "shepherd-theme",
+        "parent_title": "Shepherd Theme",
+        "parent_type": "theme",
+        "object_importance": 92,
+        "retrieval_score": 0.912,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 27,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "shepherd-theme:historical_context:0",
+      "claim": "Shepherd Theme is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness.",
+      "category": "history",
+      "source_ids": [
+        "deuteronomy-30",
+        "isaiah-40",
+        "ezekiel-36",
+        "joel-2",
+        "revelation-21",
+        "shepherd-theme-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Joel 2:28-32"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "shepherd-theme",
+        "parent_title": "Shepherd Theme",
+        "parent_type": "theme",
+        "object_importance": 92,
+        "retrieval_score": 0.912,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 27,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "spirit-theme:ancient_near_east_context:0",
+      "claim": "The Bible\u2019s Spirit language is distinct because it binds divine presence to holiness, creation, covenant renewal, and mission rather than to impersonal force.",
+      "category": "culture",
+      "source_ids": [
+        "genesis-1",
+        "ezekiel-36-37",
+        "joel-2",
+        "john-14-16",
+        "acts-2",
+        "romans-8",
+        "galatians-5",
+        "spirit-theme-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Joel 2:28-32"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "spirit-theme",
+        "parent_title": "Spirit Theme",
+        "parent_type": "theme",
+        "object_importance": 96,
+        "retrieval_score": 0.916,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 27,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "spirit-theme:historical_context:0",
+      "claim": "Spirit language appears from creation through prophecy, Jesus\u2019 ministry, Pentecost, and the life of the church.",
+      "category": "history",
+      "source_ids": [
+        "genesis-1",
+        "ezekiel-36-37",
+        "joel-2",
+        "john-14-16",
+        "acts-2",
+        "romans-8",
+        "galatians-5",
+        "spirit-theme-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Joel 2:28-32"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "spirit-theme",
+        "parent_title": "Spirit Theme",
+        "parent_type": "theme",
+        "object_importance": 96,
+        "retrieval_score": 0.916,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 27,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "spiritual-gifts:ancient_near_east_context:0",
+      "claim": "Ancient background for Spiritual Gifts includes covenant life, temple worship, royal ideology, wisdom teaching, and early church confession; the entry ties that world to Genesis 1:1-2, Ezekiel 36:24-28, spirit-theme, and pneumatology without letting comparison replace the biblical witness.",
+      "category": "culture",
+      "source_ids": [
+        "genesis-1",
+        "ezekiel-36-37",
+        "joel-2",
+        "john-14-16",
+        "acts-2",
+        "romans-8",
+        "spiritual-gifts-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Joel 2:28-32"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "spiritual-gifts",
+        "parent_title": "Spiritual Gifts",
+        "parent_type": "theology",
+        "object_importance": 95,
+        "retrieval_score": 0.915,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 27,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "spiritual-gifts:historical_context:0",
+      "claim": "Spiritual Gifts is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness.",
+      "category": "history",
+      "source_ids": [
+        "genesis-1",
+        "ezekiel-36-37",
+        "joel-2",
+        "john-14-16",
+        "acts-2",
+        "romans-8",
+        "spiritual-gifts-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Joel 2:28-32"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "spiritual-gifts",
+        "parent_title": "Spiritual Gifts",
+        "parent_type": "theology",
+        "object_importance": 95,
+        "retrieval_score": 0.915,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 27,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "water-and-spirit-theme:ancient_near_east_context:0",
+      "claim": "Ancient background for Water and Spirit Theme includes covenant practice, worship, kingship, wisdom instruction, and prophetic critique; the entry ties that world to Genesis 1:1-2, Ezekiel 36:24-28, spirit-theme, and pneumatology without letting comparison replace the biblical witness.",
+      "category": "culture",
+      "source_ids": [
+        "genesis-1",
+        "ezekiel-36-37",
+        "joel-2",
+        "john-14-16",
+        "acts-2",
+        "romans-8",
+        "water-and-spirit-theme-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Joel 2:28-32"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "water-and-spirit-theme",
+        "parent_title": "Water and Spirit Theme",
+        "parent_type": "theme",
+        "object_importance": 95,
+        "retrieval_score": 0.915,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 27,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "water-and-spirit-theme:historical_context:0",
+      "claim": "Water and Spirit Theme is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness.",
+      "category": "history",
+      "source_ids": [
+        "genesis-1",
+        "ezekiel-36-37",
+        "joel-2",
+        "john-14-16",
+        "acts-2",
+        "romans-8",
+        "water-and-spirit-theme-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Joel 2:28-32"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "water-and-spirit-theme",
+        "parent_title": "Water and Spirit Theme",
+        "parent_type": "theme",
+        "object_importance": 95,
+        "retrieval_score": 0.915,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 27,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "what-does-ruach-mean:ancient_near_east_context:0",
+      "claim": "Wind and breath were familiar life-images in the ancient world, and Scripture uses them to speak of God's invisible action.",
+      "category": "culture",
+      "source_ids": [
+        "genesis-1",
+        "genesis-2",
+        "ezekiel-37",
+        "joel-2",
+        "john-3",
+        "john-20",
+        "acts-2",
+        "what-does-ruach-mean-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Joel 2:28-32"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "what-does-ruach-mean",
+        "parent_title": "What does ruach mean?",
+        "parent_type": "faq",
+        "object_importance": 89,
+        "retrieval_score": 0.909,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 27,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "what-does-ruach-mean:historical_context:0",
+      "claim": "The word is used for physical wind and breath before it is used for divine and human life.",
+      "category": "history",
+      "source_ids": [
+        "genesis-1",
+        "genesis-2",
+        "ezekiel-37",
+        "joel-2",
+        "john-3",
+        "john-20",
+        "acts-2",
+        "what-does-ruach-mean-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Joel 2:28-32"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "what-does-ruach-mean",
+        "parent_title": "What does ruach mean?",
+        "parent_type": "faq",
+        "object_importance": 89,
+        "retrieval_score": 0.909,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 27,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "what-is-the-day-of-the-lord:ancient_near_east_context:0",
+      "claim": "Royal 'day of the king' imagery helps explain the metaphor, but here the LORD himself acts as judge and deliverer.",
+      "category": "culture",
+      "source_ids": [
+        "amos-5",
+        "joel-2",
+        "zephaniah-1",
+        "isaiah-13",
+        "malachi-4",
+        "1-thessalonians-5",
+        "2-peter-3",
+        "revelation-6",
+        "what-is-the-day-of-the-lord-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Joel 2:1-11"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "what-is-the-day-of-the-lord",
+        "parent_title": "What is the Day of the Lord?",
+        "parent_type": "faq",
+        "object_importance": 90,
+        "retrieval_score": 0.91,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "what-is-the-day-of-the-lord:historical_context:0",
+      "claim": "The prophets use this phrase amid national crisis to warn of covenant judgment and promise future vindication.",
+      "category": "history",
+      "source_ids": [
+        "amos-5",
+        "joel-2",
+        "zephaniah-1",
+        "isaiah-13",
+        "malachi-4",
+        "1-thessalonians-5",
+        "2-peter-3",
+        "revelation-6",
+        "what-is-the-day-of-the-lord-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Joel 2:1-11"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "what-is-the-day-of-the-lord",
+        "parent_title": "What is the Day of the Lord?",
+        "parent_type": "faq",
+        "object_importance": 90,
+        "retrieval_score": 0.91,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "what-is-the-holy-spirit:ancient_near_east_context:0",
+      "claim": "Biblical Spirit language is not impersonal force language; it expresses God\u2019s living presence among his people.",
+      "category": "culture",
+      "source_ids": [
+        "genesis-1",
+        "ezekiel-36-37",
+        "joel-2",
+        "john-14-16",
+        "acts-2",
+        "romans-8",
+        "galatians-5",
+        "what-is-the-holy-spirit-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Joel 2:28-32"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "what-is-the-holy-spirit",
+        "parent_title": "What is the Holy Spirit?",
+        "parent_type": "faq",
+        "object_importance": 91,
+        "retrieval_score": 0.911,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 27,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "what-is-the-holy-spirit:historical_context:0",
+      "claim": "Spirit language stretches from creation and the prophets into the ministry of Jesus and the birth of the church.",
+      "category": "history",
+      "source_ids": [
+        "genesis-1",
+        "ezekiel-36-37",
+        "joel-2",
+        "john-14-16",
+        "acts-2",
+        "romans-8",
+        "galatians-5",
+        "what-is-the-holy-spirit-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Joel 2:28-32"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "what-is-the-holy-spirit",
+        "parent_title": "What is the Holy Spirit?",
+        "parent_type": "faq",
+        "object_importance": 91,
+        "retrieval_score": 0.911,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 27,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "what-is-the-significance-of-the-holy-spirit:ancient_near_east_context:0",
+      "claim": "Biblical Spirit language is not impersonal force language; it expresses God's living presence among his people.",
+      "category": "culture",
+      "source_ids": [
+        "genesis-1",
+        "ezekiel-36-37",
+        "joel-2",
+        "john-14-16",
+        "acts-2",
+        "romans-8",
+        "galatians-5",
+        "1-corinthians-12-14",
+        "what-is-the-significance-of-the-holy-spirit-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Joel 2:28-32"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "what-is-the-significance-of-the-holy-spirit",
+        "parent_title": "What is the significance of the Holy Spirit?",
+        "parent_type": "faq",
+        "object_importance": 94,
+        "retrieval_score": 0.914,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 27,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "what-is-the-significance-of-the-holy-spirit:historical_context:0",
+      "claim": "Spirit language stretches from creation and the prophets into the ministry of Jesus and the birth of the church.",
+      "category": "history",
+      "source_ids": [
+        "genesis-1",
+        "ezekiel-36-37",
+        "joel-2",
+        "john-14-16",
+        "acts-2",
+        "romans-8",
+        "galatians-5",
+        "1-corinthians-12-14",
+        "what-is-the-significance-of-the-holy-spirit-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Joel 2:28-32"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "what-is-the-significance-of-the-holy-spirit",
+        "parent_title": "What is the significance of the Holy Spirit?",
+        "parent_type": "faq",
+        "object_importance": 94,
+        "retrieval_score": 0.914,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 27,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "1 Corinthians 12",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "1-corinthians-12",
+        "canonical_object_ids": [
+          "pentecost"
+        ]
+      },
+      {
+        "title": "1 Corinthians 12-14",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "1-corinthians-12-14",
+        "canonical_object_ids": [
+          "what-is-the-significance-of-the-holy-spirit"
+        ]
+      },
+      {
+        "title": "1 Thessalonians 5",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "1-thessalonians-5",
+        "canonical_object_ids": [
+          "day-of-the-lord-prophecy",
+          "what-is-the-day-of-the-lord"
+        ]
+      },
+      {
+        "title": "2 Peter 3",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "2-peter-3",
+        "canonical_object_ids": [
+          "day-of-the-lord-prophecy",
+          "what-is-the-day-of-the-lord"
+        ]
+      },
+      {
+        "title": "Acts 2",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "acts-2",
+        "canonical_object_ids": [
+          "pentecost",
+          "pneumatology",
+          "spirit-theme",
+          "spiritual-gifts",
+          "water-and-spirit-theme",
+          "what-does-ruach-mean",
+          "what-is-the-holy-spirit",
+          "what-is-the-significance-of-the-holy-spirit"
+        ]
+      },
+      {
+        "title": "The Greek New Testament: Acts",
+        "author": "Michael W. Holmes, ed.",
+        "publisher": "Society of Biblical Literature",
+        "year": 2010,
+        "locator": "Acts 1-28",
+        "url": "https://www.sblgnt.com/download/",
+        "source_type": "scripture",
+        "supports": [
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Open critical Greek text used for direct textual and lexical controls.",
+        "id": "acts-greek",
+        "canonical_object_ids": [
+          "acts"
+        ]
+      },
+      {
+        "title": "The Books of Joel, Obadiah, Jonah, and Micah",
+        "author": "Leslie C. Allen",
+        "publisher": "Eerdmans",
+        "year": 2024,
+        "locator": "Eerdmans Classic Biblical Commentaries",
+        "url": "https://www.eerdmans.com/9780802883964/the-books-of-joel-obadiah-jonah-and-micah/",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "literary-context",
+          "interpretive-disputes",
+          "joel-valley-imagery"
+        ],
+        "notes": "Reissued critical commentary with introductions on canonicity and textual criticism.",
+        "id": "allen-joel-obadiah-jonah-micah",
+        "canonical_object_ids": [
+          "joel"
+        ]
+      },
+      {
+        "title": "Amos 5",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "amos-5",
+        "canonical_object_ids": [
+          "day-of-the-lord-prophecy",
+          "what-is-the-day-of-the-lord"
+        ]
+      },
+      {
+        "title": "Review of The Book of Joel: A Prophet between Calamity and Hope",
+        "author": "Richard Coggins",
+        "publisher": "Oxford University Press",
+        "year": 2013,
+        "locator": "Journal of Theological Studies 64.2: 615-617",
+        "url": "https://academic.oup.com/jts/article-abstract/64/2/615/1715963",
+        "source_type": "journal-article",
+        "supports": [
+          "historical-context",
+          "interpretive-disputes",
+          "joel-return-divine-character",
+          "joel-final-refuge"
+        ],
+        "notes": "Review documenting Elie Assis's concrete historical reading and sixth- to fifth-century setting.",
+        "id": "assis-joel-review",
+        "canonical_object_ids": [
+          "joel"
+        ]
+      },
+      {
+        "title": "Priests and Cults in the Book of the Twelve",
+        "author": "Lena-Sofia Tiemeyer, editor",
+        "publisher": "Society of Biblical Literature",
+        "year": 2016,
+        "locator": "Joel, the Cult, and the Book of the Twelve",
+        "url": "https://www.sbl-site.org/wp-content/uploads/2024/12/9780884141532_OA.pdf",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "genre",
+          "joel-lament-fast",
+          "joel-priestly-plea"
+        ],
+        "notes": "Open-access scholarly collection on priests and cultic settings in the Twelve.",
+        "id": "boda-priests-cults-twelve",
+        "canonical_object_ids": [
+          "joel"
+        ]
+      },
+      {
+        "title": "Joel Greek Variants File",
+        "author": "CATSS Project",
+        "publisher": "University of Pennsylvania",
+        "year": 2005,
+        "locator": "Minor Prophets: Joel",
+        "url": "https://ccat.sas.upenn.edu/gopher/text/religion/biblical/lxxvar/active/Joel.html",
+        "source_type": "reference-work",
+        "supports": [
+          "primary-sources",
+          "greek-words",
+          "joel-text-versification",
+          "joel-qumran-witness"
+        ],
+        "notes": "A provisional digital variants resource whose own warning requires verification against critical editions.",
+        "id": "catss-joel",
+        "canonical_object_ids": [
+          "joel"
+        ]
+      },
+      {
+        "title": "Joel: A New Translation with Introduction and Commentary",
+        "author": "James L. Crenshaw",
+        "publisher": "Yale University Press",
+        "year": 1995,
+        "locator": "Anchor Yale Bible 24C",
+        "url": "https://yalebooks.yale.edu/book/9780300140767/joel/",
+        "source_type": "academic-book",
+        "supports": [
+          "authorship-positions",
+          "date-ranges",
+          "literary-context",
+          "hebrew-words",
+          "joel-superscription-identity",
+          "joel-locust-terms",
+          "joel-day-yhwh-alarm",
+          "joel-cosmic-deliverance",
+          "joel-valley-imagery",
+          "joel-acts-romans-reuse"
+        ],
+        "notes": "Detailed philological, literary, historical, and theological commentary.",
+        "id": "crenshaw-joel",
+        "canonical_object_ids": [
+          "joel"
+        ]
+      },
+      {
+        "title": "Canonical historical orientation for Day of the Lord Prophecy",
+        "author": "",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "id": "day-of-the-lord-prophecy-historical-orientation",
+        "canonical_object_ids": [
+          "day-of-the-lord-prophecy"
+        ]
+      },
+      {
+        "title": "Deuteronomy 30",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "deuteronomy-30",
+        "canonical_object_ids": [
+          "hope-theme",
+          "land-theme",
+          "messianic-hope",
+          "new-exodus-theme",
+          "new-jerusalem-theme",
+          "providence",
+          "redemption-theme",
+          "remnant",
+          "remnant-theme",
+          "repentance",
+          "restoration-theme",
+          "seed-theme",
+          "shepherd-theme"
+        ]
+      },
+      {
+        "title": "Ezekiel 36",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "ezekiel-36",
+        "canonical_object_ids": [
+          "hope-theme",
+          "land-theme",
+          "messianic-hope",
+          "new-exodus-theme",
+          "new-jerusalem-theme",
+          "providence",
+          "redemption-theme",
+          "remnant",
+          "remnant-theme",
+          "repentance",
+          "restoration-theme",
+          "seed-theme",
+          "shepherd-theme"
+        ]
+      },
+      {
+        "title": "Ezekiel 36-37",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "ezekiel-36-37",
+        "canonical_object_ids": [
+          "pneumatology",
+          "spirit-theme",
+          "spiritual-gifts",
+          "water-and-spirit-theme",
+          "what-is-the-holy-spirit",
+          "what-is-the-significance-of-the-holy-spirit"
+        ]
+      },
+      {
+        "title": "Ezekiel 37",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "ezekiel-37",
+        "canonical_object_ids": [
+          "what-does-ruach-mean"
+        ]
+      },
+      {
+        "title": "Desert Locust Q&A",
+        "author": "",
+        "publisher": "Food and Agriculture Organization of the United Nations",
+        "year": null,
+        "locator": "Biology, swarms, crop consumption, and life cycle",
+        "url": "https://www.fao.org/locusts/faqs/en/",
+        "source_type": "reference-work",
+        "supports": [
+          "ancient-near-east-context",
+          "archaeology",
+          "joel-agrarian-catastrophe",
+          "joel-locust-terms"
+        ],
+        "notes": "Modern scientific analogy for locust behavior and agricultural impact, not evidence identifying Joel's species or event.",
+        "id": "fao-locust-faq",
+        "canonical_object_ids": [
+          "joel"
+        ]
+      },
+      {
+        "title": "Galatians 5",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "galatians-5",
+        "canonical_object_ids": [
+          "spirit-theme",
+          "what-is-the-holy-spirit",
+          "what-is-the-significance-of-the-holy-spirit"
+        ]
+      },
+      {
+        "title": "Genesis 1",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "genesis-1",
+        "canonical_object_ids": [
+          "pneumatology",
+          "spirit-theme",
+          "spiritual-gifts",
+          "water-and-spirit-theme",
+          "what-does-ruach-mean",
+          "what-is-the-holy-spirit",
+          "what-is-the-significance-of-the-holy-spirit"
+        ]
+      },
+      {
+        "title": "Genesis 2",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "genesis-2",
+        "canonical_object_ids": [
+          "what-does-ruach-mean"
+        ]
+      },
+      {
+        "title": "Joel",
+        "author": "Anselm C. Hagedorn",
+        "publisher": "Oxford University Press",
+        "year": 2021,
+        "locator": "The Oxford Handbook of the Minor Prophets, chapter 30",
+        "url": "https://academic.oup.com/edited-volume/38566/chapter/334373192",
+        "source_type": "reference-work",
+        "supports": [
+          "summary",
+          "historical-context",
+          "ancient-near-east-context",
+          "major-themes",
+          "joel-agrarian-catastrophe",
+          "joel-ecological-restoration",
+          "joel-nations-judgment",
+          "joel-final-refuge",
+          "joel-date-composition",
+          "joel-twelve-intertexts"
+        ],
+        "notes": "Overview emphasizing agrarian disaster, drought, ecology, nations, literary reuse, and late-date arguments.",
+        "id": "hagedorn-joel",
+        "canonical_object_ids": [
+          "joel"
+        ]
+      },
+      {
+        "title": "Canonical historical orientation for Hope Theme",
+        "author": "",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "id": "hope-theme-historical-orientation",
+        "canonical_object_ids": [
+          "hope-theme"
+        ]
+      },
+      {
+        "title": "Isaiah 13",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "isaiah-13",
+        "canonical_object_ids": [
+          "what-is-the-day-of-the-lord"
+        ]
+      },
+      {
+        "title": "Isaiah 40",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "isaiah-40",
+        "canonical_object_ids": [
+          "hope-theme",
+          "land-theme",
+          "messianic-hope",
+          "new-exodus-theme",
+          "new-jerusalem-theme",
+          "providence",
+          "redemption-theme",
+          "remnant",
+          "remnant-theme",
+          "repentance",
+          "restoration-theme",
+          "seed-theme",
+          "shepherd-theme"
+        ]
+      },
+      {
+        "title": "Joel 2",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "joel-2",
+        "canonical_object_ids": [
+          "day-of-the-lord-prophecy",
+          "hope-theme",
+          "land-theme",
+          "messianic-hope",
+          "new-exodus-theme",
+          "new-jerusalem-theme",
+          "pentecost",
+          "pneumatology",
+          "providence",
+          "redemption-theme",
+          "remnant",
+          "remnant-theme",
+          "repentance",
+          "restoration-theme",
+          "seed-theme",
+          "shepherd-theme",
+          "spirit-theme",
+          "spiritual-gifts",
+          "water-and-spirit-theme",
+          "what-does-ruach-mean",
+          "what-is-the-day-of-the-lord",
+          "what-is-the-holy-spirit",
+          "what-is-the-significance-of-the-holy-spirit"
+        ]
+      },
+      {
+        "title": "Joel in the Masoretic Text",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Joel 1-4 MT",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "structure",
+          "scripture-references",
+          "literary-context",
+          "major-themes",
+          "joel-superscription-identity",
+          "joel-agrarian-catastrophe",
+          "joel-locust-terms",
+          "joel-intergenerational-memory",
+          "joel-lament-fast",
+          "joel-day-yhwh-alarm",
+          "joel-army-metaphor",
+          "joel-return-divine-character",
+          "joel-priestly-plea",
+          "joel-divine-response",
+          "joel-ecological-restoration",
+          "joel-spirit-all-flesh",
+          "joel-cosmic-deliverance",
+          "joel-nations-judgment",
+          "joel-valley-imagery",
+          "joel-final-refuge",
+          "joel-text-versification"
+        ],
+        "notes": "Primary Hebrew textual tradition, commonly divided into four chapters.",
+        "id": "joel-masoretic",
+        "canonical_object_ids": [
+          "joel"
+        ]
+      },
+      {
+        "title": "New Testament reuse of Joel",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Acts 2:16-21; Romans 10:13; Revelation 6:12-17; 9; 14:14-20; 19",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "new-testament-connections",
+          "joel-acts-romans-reuse",
+          "joel-revelation-reuse"
+        ],
+        "notes": "Primary Christian reception texts requiring contextual comparison.",
+        "id": "joel-nt-reuse",
+        "canonical_object_ids": [
+          "joel"
+        ]
+      },
+      {
+        "title": "Prophetic texts relevant to Joel",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Exodus 10; 34:6-7; Isaiah 13; Amos 1:2; 5:18-20; 9:13; Obadiah 15-21; Jonah 3-4; Zephaniah 1; Malachi 4",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "intertextuality",
+          "cross-references",
+          "joel-return-divine-character",
+          "joel-twelve-intertexts"
+        ],
+        "notes": "Primary textual comparanda; verbal overlap does not by itself establish direction of dependence.",
+        "id": "joel-prophetic-intertexts",
+        "canonical_object_ids": [
+          "joel"
+        ]
+      },
+      {
+        "title": "John 14",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "john-14",
+        "canonical_object_ids": [
+          "pentecost"
+        ]
+      },
+      {
+        "title": "John 14-16",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "john-14-16",
+        "canonical_object_ids": [
+          "pneumatology",
+          "spirit-theme",
+          "spiritual-gifts",
+          "water-and-spirit-theme",
+          "what-is-the-holy-spirit",
+          "what-is-the-significance-of-the-holy-spirit"
+        ]
+      },
+      {
+        "title": "John 20",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "john-20",
+        "canonical_object_ids": [
+          "pentecost",
+          "what-does-ruach-mean"
+        ]
+      },
+      {
+        "title": "John 3",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "john-3",
+        "canonical_object_ids": [
+          "what-does-ruach-mean"
+        ]
+      },
+      {
+        "title": "Book of Joel",
+        "author": "Sara Kipfer",
+        "publisher": "Oxford University Press",
+        "year": 2022,
+        "locator": "Oxford Bibliographies in Biblical Studies",
+        "url": "https://academic.oup.com/reference/62341/reference-article-abstract/554113808?login=false",
+        "source_type": "reference-work",
+        "supports": [
+          "summary",
+          "historical-context",
+          "authorship-positions",
+          "date-ranges",
+          "genre",
+          "interpretive-disputes",
+          "joel-superscription-identity",
+          "joel-day-yhwh-alarm",
+          "joel-army-metaphor",
+          "joel-date-composition",
+          "joel-text-versification"
+        ],
+        "notes": "Current bibliographic overview of disaster interpretation, date, composition, genre, versification, and reception.",
+        "id": "kipfer-joel-bibliography",
+        "canonical_object_ids": [
+          "joel"
+        ]
+      },
+      {
+        "title": "Canonical historical orientation for Land Theme",
+        "author": "",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "id": "land-theme-historical-orientation",
+        "canonical_object_ids": [
+          "land-theme"
+        ]
+      },
+      {
+        "title": "A Reader's Edition of the Septuagint",
+        "author": "Gregory R. Lanier and William A. Ross, eds.",
+        "publisher": "Hendrickson",
+        "year": 2018,
+        "locator": "Joel, Psalms, Isaiah, Amos",
+        "url": "https://www.hendricksonrose.com/readers-edition-of-the-septuagint/hardcover/9781683071976/pd/071976",
+        "source_type": "reference-work",
+        "supports": [
+          "claims",
+          "interpretive-notes",
+          "intertextuality"
+        ],
+        "notes": "Greek-text orientation for scriptural intertexts.",
+        "id": "lxx-reader",
+        "canonical_object_ids": [
+          "acts"
+        ]
+      },
+      {
+        "title": "Malachi 4",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "malachi-4",
+        "canonical_object_ids": [
+          "what-is-the-day-of-the-lord"
+        ]
+      },
+      {
+        "title": "Canonical historical orientation for Messianic Hope",
+        "author": "",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "id": "messianic-hope-historical-orientation",
+        "canonical_object_ids": [
+          "messianic-hope"
+        ]
+      },
+      {
+        "title": "A New English Translation of the Septuagint",
+        "author": "Albert Pietersma and Benjamin G. Wright, eds.",
+        "publisher": "Oxford University Press",
+        "year": 2007,
+        "locator": "Joel, Psalms, Isaiah, Amos",
+        "url": "https://ccat.sas.upenn.edu/nets/edition/",
+        "source_type": "reference-work",
+        "supports": [
+          "claims",
+          "interpretive-notes",
+          "intertextuality"
+        ],
+        "notes": "Translation of the Greek Jewish Scriptures for comparison with Acts' quotations.",
+        "id": "nets-lxx",
+        "canonical_object_ids": [
+          "acts"
+        ]
+      },
+      {
+        "title": "A New English Translation of the Septuagint: The Twelve Prophets",
+        "author": "George E. Howard",
+        "publisher": "International Organization for Septuagint and Cognate Studies",
+        "year": 2009,
+        "locator": "Ioel, pages 800-802",
+        "url": "https://ccat.sas.upenn.edu/nets/edition/32-twelve-nets.pdf",
+        "source_type": "reference-work",
+        "supports": [
+          "greek-words",
+          "primary-sources",
+          "joel-spirit-all-flesh",
+          "joel-cosmic-deliverance",
+          "joel-text-versification",
+          "joel-acts-romans-reuse",
+          "joel-revelation-reuse"
+        ],
+        "notes": "Translation of Old Greek Ioel with introduction to the Greek Twelve.",
+        "id": "nets-twelve-joel",
+        "canonical_object_ids": [
+          "joel"
+        ]
+      },
+      {
+        "title": "Canonical historical orientation for New Exodus Theme",
+        "author": "",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "id": "new-exodus-theme-historical-orientation",
+        "canonical_object_ids": [
+          "new-exodus-theme"
+        ]
+      },
+      {
+        "title": "New Form Criticism and the Book of the Twelve",
+        "author": "Mark J. Boda, Michael H. Floyd, and Colin M. Toffelmire, editors",
+        "publisher": "Society of Biblical Literature",
+        "year": 2015,
+        "locator": "The Book of Joel, Joel 2:18-32",
+        "url": "https://www.sbl-site.org/assets/pdfs/pubs/9781628370614_OA.pdf",
+        "source_type": "academic-book",
+        "supports": [
+          "genre",
+          "structure",
+          "joel-divine-response",
+          "joel-ecological-restoration"
+        ],
+        "notes": "Open-access form-critical study of the Twelve including Joel's divine-response unit.",
+        "id": "new-form-criticism-joel",
+        "canonical_object_ids": [
+          "joel"
+        ]
+      },
+      {
+        "title": "Canonical historical orientation for New Jerusalem Theme",
+        "author": "",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "id": "new-jerusalem-theme-historical-orientation",
+        "canonical_object_ids": [
+          "new-jerusalem-theme"
+        ]
+      },
+      {
+        "title": "The Books of Joel, Obadiah, and Jonah",
+        "author": "James D. Nogalski",
+        "publisher": "Eerdmans",
+        "year": 2023,
+        "locator": "New International Commentary on the Old Testament",
+        "url": "https://www.eerdmans.com/9781467465700/the-books-of-joel-obadiah-and-jonah/",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "authorship-positions",
+          "date-ranges",
+          "structure",
+          "interpretive-disputes",
+          "joel-locust-terms",
+          "joel-army-metaphor",
+          "joel-divine-response",
+          "joel-spirit-all-flesh",
+          "joel-nations-judgment",
+          "joel-date-composition",
+          "joel-twelve-intertexts",
+          "joel-qumran-witness"
+        ],
+        "notes": "Recent commentary treating text, historical setting, literary form, themes, and the Twelve.",
+        "id": "nogalski-joel-obadiah-jonah",
+        "canonical_object_ids": [
+          "joel"
+        ]
+      },
+      {
+        "title": "Joel and Malachi: A Promise of Hope",
+        "author": "Graham S. Ogden",
+        "publisher": "Eerdmans",
+        "year": 1987,
+        "locator": "International Theological Commentary",
+        "url": "https://www.eerdmans.com/9780802800930/joel-and-malachi/",
+        "source_type": "academic-book",
+        "supports": [
+          "genre",
+          "literary-context",
+          "joel-intergenerational-memory",
+          "joel-lament-fast",
+          "joel-priestly-plea"
+        ],
+        "notes": "Commentary reading Joel with sustained attention to its lament setting.",
+        "id": "ogden-joel-malachi",
+        "canonical_object_ids": [
+          "joel"
+        ]
+      },
+      {
+        "title": "The Book of Revelation: The Apocalypse of Jesus Christ",
+        "author": "Christopher Rowland",
+        "publisher": "Oxford University Press",
+        "year": 2016,
+        "locator": "Oxford Research Encyclopedia of Religion",
+        "url": "https://academic.oup.com/edited-volume/62249/chapter-abstract/551384829",
+        "source_type": "reference-work",
+        "supports": [
+          "later-christian-reception",
+          "new-testament-connections",
+          "joel-revelation-reuse"
+        ],
+        "notes": "Overview of Revelation's prophetic-apocalyptic character and reception.",
+        "id": "oxford-revelation-reception",
+        "canonical_object_ids": [
+          "joel"
+        ]
+      },
+      {
+        "title": "Canonical historical orientation for Pentecost",
+        "author": "",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "id": "pentecost-historical-orientation",
+        "canonical_object_ids": [
+          "pentecost"
+        ]
+      },
+      {
+        "title": "Canonical historical orientation for Pneumatology",
+        "author": "",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "id": "pneumatology-historical-orientation",
+        "canonical_object_ids": [
+          "pneumatology"
+        ]
+      },
+      {
+        "title": "Canonical historical orientation for Providence",
+        "author": "",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "id": "providence-historical-orientation",
+        "canonical_object_ids": [
+          "providence"
+        ]
+      },
+      {
+        "title": "Canonical historical orientation for Redemption Theme",
+        "author": "",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "id": "redemption-theme-historical-orientation",
+        "canonical_object_ids": [
+          "redemption-theme"
+        ]
+      },
+      {
+        "title": "Canonical historical orientation for Remnant",
+        "author": "",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "id": "remnant-historical-orientation",
+        "canonical_object_ids": [
+          "remnant"
+        ]
+      },
+      {
+        "title": "Canonical historical orientation for Remnant Theme",
+        "author": "",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "id": "remnant-theme-historical-orientation",
+        "canonical_object_ids": [
+          "remnant-theme"
+        ]
+      },
+      {
+        "title": "Canonical historical orientation for Repentance",
+        "author": "",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "id": "repentance-historical-orientation",
+        "canonical_object_ids": [
+          "repentance"
+        ]
+      },
+      {
+        "title": "Canonical historical orientation for Restoration Theme",
+        "author": "",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "id": "restoration-theme-historical-orientation",
+        "canonical_object_ids": [
+          "restoration-theme"
+        ]
+      },
+      {
+        "title": "Revelation 21",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "revelation-21",
+        "canonical_object_ids": [
+          "hope-theme",
+          "land-theme",
+          "messianic-hope",
+          "new-exodus-theme",
+          "new-jerusalem-theme",
+          "providence",
+          "redemption-theme",
+          "remnant",
+          "remnant-theme",
+          "repentance",
+          "restoration-theme",
+          "seed-theme",
+          "shepherd-theme"
+        ]
+      },
+      {
+        "title": "Revelation 6",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "revelation-6",
+        "canonical_object_ids": [
+          "what-is-the-day-of-the-lord"
+        ]
+      },
+      {
+        "title": "Romans 8",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "romans-8",
+        "canonical_object_ids": [
+          "pneumatology",
+          "spirit-theme",
+          "spiritual-gifts",
+          "water-and-spirit-theme",
+          "what-is-the-holy-spirit",
+          "what-is-the-significance-of-the-holy-spirit"
+        ]
+      },
+      {
+        "title": "Canonical historical orientation for Seed Theme",
+        "author": "",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "id": "seed-theme-historical-orientation",
+        "canonical_object_ids": [
+          "seed-theme"
+        ]
+      },
+      {
+        "title": "Canonical historical orientation for Shepherd Theme",
+        "author": "",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "id": "shepherd-theme-historical-orientation",
+        "canonical_object_ids": [
+          "shepherd-theme"
+        ]
+      },
+      {
+        "title": "Canonical historical orientation for Spirit Theme",
+        "author": "",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "id": "spirit-theme-historical-orientation",
+        "canonical_object_ids": [
+          "spirit-theme"
+        ]
+      },
+      {
+        "title": "Canonical historical orientation for Spiritual Gifts",
+        "author": "",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "id": "spiritual-gifts-historical-orientation",
+        "canonical_object_ids": [
+          "spiritual-gifts"
+        ]
+      },
+      {
+        "title": "Canonical historical orientation for Water and Spirit Theme",
+        "author": "",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "id": "water-and-spirit-theme-historical-orientation",
+        "canonical_object_ids": [
+          "water-and-spirit-theme"
+        ]
+      },
+      {
+        "title": "Canonical historical orientation for What does ruach mean?",
+        "author": "",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "id": "what-does-ruach-mean-historical-orientation",
+        "canonical_object_ids": [
+          "what-does-ruach-mean"
+        ]
+      },
+      {
+        "title": "Canonical historical orientation for What is the Day of the Lord?",
+        "author": "",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "id": "what-is-the-day-of-the-lord-historical-orientation",
+        "canonical_object_ids": [
+          "what-is-the-day-of-the-lord"
+        ]
+      },
+      {
+        "title": "Canonical historical orientation for What is the Holy Spirit?",
+        "author": "",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "id": "what-is-the-holy-spirit-historical-orientation",
+        "canonical_object_ids": [
+          "what-is-the-holy-spirit"
+        ]
+      },
+      {
+        "title": "Canonical historical orientation for What is the significance of the Holy Spirit?",
+        "author": "",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "id": "what-is-the-significance-of-the-holy-spirit-historical-orientation",
+        "canonical_object_ids": [
+          "what-is-the-significance-of-the-holy-spirit"
+        ]
+      },
+      {
+        "title": "Zephaniah 1",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "zephaniah-1",
+        "canonical_object_ids": [
+          "day-of-the-lord-prophecy",
+          "what-is-the-day-of-the-lord"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "acts",
+        "type": "book",
+        "title": "Acts",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.916
+      },
+      {
+        "id": "day-of-the-lord-prophecy",
+        "type": "prophecy",
+        "title": "Day of the Lord Prophecy",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.915
+      },
+      {
+        "id": "hope-theme",
+        "type": "theme",
+        "title": "Hope Theme",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.912
+      },
+      {
+        "id": "joel",
+        "type": "book",
+        "title": "Joel",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.966
+      },
+      {
+        "id": "land-theme",
+        "type": "theme",
+        "title": "Land Theme",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.912
+      },
+      {
+        "id": "messianic-hope",
+        "type": "theology",
+        "title": "Messianic Hope",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.912
+      },
+      {
+        "id": "new-exodus-theme",
+        "type": "theme",
+        "title": "New Exodus Theme",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.912
+      },
+      {
+        "id": "new-jerusalem-theme",
+        "type": "theme",
+        "title": "New Jerusalem Theme",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.912
+      },
+      {
+        "id": "pentecost",
+        "type": "event",
+        "title": "Pentecost",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.92
+      },
+      {
+        "id": "pneumatology",
+        "type": "theology",
+        "title": "Pneumatology",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.915
+      },
+      {
+        "id": "providence",
+        "type": "theology",
+        "title": "Providence",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.912
+      },
+      {
+        "id": "redemption-theme",
+        "type": "theme",
+        "title": "Redemption Theme",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.912
+      },
+      {
+        "id": "remnant",
+        "type": "theology",
+        "title": "Remnant",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.912
+      },
+      {
+        "id": "remnant-theme",
+        "type": "theme",
+        "title": "Remnant Theme",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.912
+      },
+      {
+        "id": "repentance",
+        "type": "theology",
+        "title": "Repentance",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.912
+      },
+      {
+        "id": "restoration-theme",
+        "type": "theme",
+        "title": "Restoration Theme",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.912
+      },
+      {
+        "id": "seed-theme",
+        "type": "theme",
+        "title": "Seed Theme",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.912
+      },
+      {
+        "id": "shepherd-theme",
+        "type": "theme",
+        "title": "Shepherd Theme",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.912
+      },
+      {
+        "id": "spirit-theme",
+        "type": "theme",
+        "title": "Spirit Theme",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.916
+      },
+      {
+        "id": "spiritual-gifts",
+        "type": "theology",
+        "title": "Spiritual Gifts",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.915
+      },
+      {
+        "id": "water-and-spirit-theme",
+        "type": "theme",
+        "title": "Water and Spirit Theme",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.915
+      },
+      {
+        "id": "what-does-ruach-mean",
+        "type": "faq",
+        "title": "What does ruach mean?",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.909
+      },
+      {
+        "id": "what-is-the-day-of-the-lord",
+        "type": "faq",
+        "title": "What is the Day of the Lord?",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.91
+      },
+      {
+        "id": "what-is-the-holy-spirit",
+        "type": "faq",
+        "title": "What is the Holy Spirit?",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.911
+      },
+      {
+        "id": "what-is-the-significance-of-the-holy-spirit",
+        "type": "faq",
+        "title": "What is the significance of the Holy Spirit?",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.914
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "1c09d71f5c2d5a42cb7315b2a0128766eb58bef1e84b2380f8a557723b6b702e",
+  "evidence_hash_version": "2"
+}

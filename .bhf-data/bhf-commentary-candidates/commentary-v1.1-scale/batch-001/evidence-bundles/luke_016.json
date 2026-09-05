@@ -1,0 +1,172 @@
+{
+  "passage_ref": "Luke 16",
+  "entities": {
+    "people": [],
+    "places": [],
+    "groups": [],
+    "events": [],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "luke-manager",
+      "claim": "The unjust manager is praised for shrewd action, not declared morally exemplary in every respect; the difficult sequence links crisis, wealth, faithfulness, and divided allegiance without endorsing fraud.",
+      "category": "economics",
+      "source_ids": [
+        "luke-greek",
+        "green-theology"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Luke 16:1-13"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "luke",
+        "parent_title": "Luke",
+        "parent_type": "book",
+        "object_importance": 95,
+        "retrieval_score": 0.915,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "probable",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 100
+      }
+    },
+    {
+      "id": "luke-rich-lazarus",
+      "claim": "The rich man and Lazarus uses reversal, postmortem imagery, Moses and the Prophets, and failed warning to confront wealth and refusal to listen; it should not be treated as a complete cartography of the afterlife.",
+      "category": "economics",
+      "source_ids": [
+        "luke-greek",
+        "esler-poor-rich"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Luke 16:19-31"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "luke",
+        "parent_title": "Luke",
+        "parent_type": "book",
+        "object_importance": 95,
+        "retrieval_score": 0.915,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 18,
+        "certainty": "probable",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 85
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "The Poor and the Rich",
+        "author": "Philip Francis Esler",
+        "publisher": "Cambridge University Press",
+        "year": 1987,
+        "locator": "Community and Gospel in Luke-Acts, chapter 7",
+        "url": "https://www.cambridge.org/core/books/community-and-gospel-in-lukeacts/poor-and-the-rich/AC0ECD7AA1B60E1A2C3657DF097E1A64",
+        "source_type": "academic-book",
+        "supports": [
+          "major-themes",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Economic language and community context.",
+        "id": "esler-poor-rich",
+        "canonical_object_ids": [
+          "luke"
+        ]
+      },
+      {
+        "title": "The Theology of the Gospel of Luke",
+        "author": "Joel B. Green",
+        "publisher": "Cambridge University Press",
+        "year": 1995,
+        "locator": "New Testament Theology",
+        "url": "https://www.cambridge.org/core/books/theology-of-the-gospel-of-luke/64F2896964BA4BF847E8F5433E87CA03",
+        "source_type": "academic-book",
+        "supports": [
+          "major-themes",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Book-level theological study.",
+        "id": "green-theology",
+        "canonical_object_ids": [
+          "luke"
+        ]
+      },
+      {
+        "title": "The Gospel according to Luke, Greek text",
+        "author": "",
+        "publisher": "Society of Biblical Literature",
+        "year": 2010,
+        "locator": "Luke 1-24 in SBLGNT",
+        "url": "https://www.sbl-site.org/resources/digital-texts/sbl-greek-new-testament/",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "structure",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Open critical Greek text.",
+        "id": "luke-greek",
+        "canonical_object_ids": [
+          "luke"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "luke",
+        "type": "book",
+        "title": "Luke",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.915
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "09468ccd946d37233af5206dcb76c4172246618e8eaf886342c422a088beeb9f",
+  "evidence_hash_version": "2"
+}

@@ -1,0 +1,606 @@
+{
+  "passage_ref": "Luke 11",
+  "entities": {
+    "people": [],
+    "places": [],
+    "groups": [],
+    "events": [],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "jonah-sign-reception",
+      "claim": "Matthew connects Jonah's three days and nights with the Son of Man and also invokes Nineveh's response, whereas Luke emphasizes Jonah as a sign and Nineveh's response to his proclamation.",
+      "category": "culture",
+      "source_ids": [
+        "jonah-new-testament",
+        "lovelace-jonah",
+        "shepherd-early-christianity"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Luke 11:29-32"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "jonah",
+        "parent_title": "Jonah",
+        "parent_type": "book",
+        "object_importance": 90,
+        "retrieval_score": 0.91,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 28,
+        "certainty": "textually_explicit",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "reception_history",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "LATER_RECEPTION",
+        "presentation_role": "dig_deeper",
+        "overview_priority": 0
+      }
+    },
+    {
+      "id": "jonah:interpretive_note:35",
+      "claim": "Christian use of the sign of Jonah must not erase Jewish interpretation, replace Israel, or reduce Jonah to a prediction whose only value lies in later christological reception.",
+      "category": "culture",
+      "source_ids": [
+        "jonah-new-testament",
+        "simon-jonah",
+        "shepherd-early-christianity",
+        "fuchs-jewish-life"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Luke 11:29-32"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "jonah",
+        "parent_title": "Jonah",
+        "parent_type": "book",
+        "object_importance": 90,
+        "retrieval_score": 0.91,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 28,
+        "certainty": "strong_consensus",
+        "dispute_status": "not_disputed",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "interpretive-caution",
+        "field": "",
+        "semantic_relationship": "LATER_RECEPTION",
+        "presentation_role": "dig_deeper",
+        "overview_priority": 0
+      }
+    },
+    {
+      "id": "jonah:interpretive_note:36",
+      "claim": "Matthew and Luke develop distinct sign-of-Jonah formulations: Matthew explicitly adds the fish and three-day comparison, while Luke foregrounds Jonah and his proclamation as sign.",
+      "category": "culture",
+      "source_ids": [
+        "jonah-new-testament",
+        "shepherd-early-christianity",
+        "lovelace-jonah"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Luke 11:29-32"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "jonah",
+        "parent_title": "Jonah",
+        "parent_type": "book",
+        "object_importance": 90,
+        "retrieval_score": 0.91,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 28,
+        "certainty": "textually_explicit",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "later-reception",
+        "field": "",
+        "semantic_relationship": "LATER_RECEPTION",
+        "presentation_role": "dig_deeper",
+        "overview_priority": 0
+      }
+    },
+    {
+      "id": "luke-prayer",
+      "claim": "Luke's Lord's Prayer is shorter than Matthew's in the earliest recoverable text, while manuscripts show harmonizing expansions; its petitions concern God's name, kingdom, daily provision, forgiveness, and testing.",
+      "category": "economics",
+      "source_ids": [
+        "luke-greek",
+        "ntvmr-luke",
+        "bezae-luke"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Luke 11:1-4"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "luke",
+        "parent_title": "Luke",
+        "parent_type": "book",
+        "object_importance": 95,
+        "retrieval_score": 0.915,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "textual_variant",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 55
+      }
+    },
+    {
+      "id": "prayer-theme:ancient_near_east_context:0",
+      "claim": "Ancient background for Prayer Theme includes covenant practice, worship, kingship, wisdom instruction, and prophetic critique; the entry ties that world to Psalm 4:1-8, Matthew 6:5-13, theology-of-prayer, and psalms without letting comparison replace the biblical witness.",
+      "category": "culture",
+      "source_ids": [
+        "psalm-4",
+        "matthew-6",
+        "luke-11",
+        "philippians-4",
+        "james-5"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Luke 11:1-13"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "prayer-theme",
+        "parent_title": "Prayer Theme",
+        "parent_type": "theme",
+        "object_importance": 90,
+        "retrieval_score": 0.91,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "prayer-theme:historical_context:0",
+      "claim": "Prayer Theme is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness.",
+      "category": "history",
+      "source_ids": [
+        "psalm-4",
+        "matthew-6",
+        "luke-11",
+        "philippians-4",
+        "james-5"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Luke 11:1-13"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "prayer-theme",
+        "parent_title": "Prayer Theme",
+        "parent_type": "theme",
+        "object_importance": 90,
+        "retrieval_score": 0.91,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "theology-of-prayer:ancient_near_east_context:0",
+      "claim": "Ancient background for Theology of Prayer includes covenant life, temple worship, royal ideology, wisdom teaching, and early church confession; the entry ties that world to Psalm 4:1-8, Matthew 6:5-13, prayer-theme, and psalms without letting comparison replace the biblical witness.",
+      "category": "culture",
+      "source_ids": [
+        "psalm-4",
+        "matthew-6",
+        "luke-11",
+        "philippians-4",
+        "james-5"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Luke 11:1-13"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "theology-of-prayer",
+        "parent_title": "Theology of Prayer",
+        "parent_type": "theology",
+        "object_importance": 90,
+        "retrieval_score": 0.91,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "theology-of-prayer:historical_context:0",
+      "claim": "Theology of Prayer is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness.",
+      "category": "history",
+      "source_ids": [
+        "psalm-4",
+        "matthew-6",
+        "luke-11",
+        "philippians-4",
+        "james-5"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Luke 11:1-13"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "theology-of-prayer",
+        "parent_title": "Theology of Prayer",
+        "parent_type": "theology",
+        "object_importance": 90,
+        "retrieval_score": 0.91,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "Codex Bezae Cantabrigiensis",
+        "author": "",
+        "publisher": "Cambridge University Library",
+        "year": null,
+        "locator": "Greek-Latin Luke",
+        "url": "https://cudl.lib.cam.ac.uk/view/MS-NN-00002-00041/1",
+        "source_type": "ancient-primary-source",
+        "supports": [
+          "archaeology",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Fifth-century bilingual Gospel-Acts manuscript.",
+        "id": "bezae-luke",
+        "canonical_object_ids": [
+          "luke"
+        ]
+      },
+      {
+        "title": "The Minor Prophets in Jewish Life Today",
+        "author": "Stephen Lewis Fuchs",
+        "publisher": "Oxford University Press",
+        "year": 2021,
+        "locator": "The Oxford Handbook of the Minor Prophets, chapter 26",
+        "url": "https://academic.oup.com/edited-volume/38566/chapter-abstract/334372906",
+        "source_type": "reference-work",
+        "supports": [
+          "second-temple-context",
+          "jonah-yom-kippur-reception"
+        ],
+        "notes": "Jewish reception source used to keep living Jewish interpretation distinct from Christian appropriation.",
+        "id": "fuchs-jewish-life",
+        "canonical_object_ids": [
+          "jonah"
+        ]
+      },
+      {
+        "title": "James 5",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "james-5",
+        "canonical_object_ids": [
+          "prayer-theme",
+          "theology-of-prayer"
+        ]
+      },
+      {
+        "title": "New Testament sign-of-Jonah passages",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Matthew 12:38-41; 16:1-4; Luke 11:29-32",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "later-christian-reception",
+          "new-testament-connections",
+          "jonah-sign-reception"
+        ],
+        "notes": "Primary Christian reception witnesses whose distinct Gospel contexts must be preserved.",
+        "id": "jonah-new-testament",
+        "canonical_object_ids": [
+          "jonah"
+        ]
+      },
+      {
+        "title": "Jonah",
+        "author": "Vanessa Lovelace",
+        "publisher": "Oxford University Press",
+        "year": 2021,
+        "locator": "The Oxford Handbook of the Minor Prophets, chapter 33, pages 449-460",
+        "url": "https://academic.oup.com/edited-volume/38566/chapter-abstract/334373381",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context",
+          "literary-context",
+          "interpretive-disputes",
+          "jonah-date-composition",
+          "jonah-genre"
+        ],
+        "notes": "Scholarly overview of narrative complexity, contested issues, themes, and multireligious reception.",
+        "id": "lovelace-jonah",
+        "canonical_object_ids": [
+          "jonah"
+        ]
+      },
+      {
+        "title": "Luke 11",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "luke-11",
+        "canonical_object_ids": [
+          "prayer-theme",
+          "theology-of-prayer"
+        ]
+      },
+      {
+        "title": "The Gospel according to Luke, Greek text",
+        "author": "",
+        "publisher": "Society of Biblical Literature",
+        "year": 2010,
+        "locator": "Luke 1-24 in SBLGNT",
+        "url": "https://www.sbl-site.org/resources/digital-texts/sbl-greek-new-testament/",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "structure",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Open critical Greek text.",
+        "id": "luke-greek",
+        "canonical_object_ids": [
+          "luke"
+        ]
+      },
+      {
+        "title": "Matthew 6",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "matthew-6",
+        "canonical_object_ids": [
+          "prayer-theme",
+          "theology-of-prayer"
+        ]
+      },
+      {
+        "title": "New Testament Virtual Manuscript Room",
+        "author": "",
+        "publisher": "Institute for New Testament Textual Research",
+        "year": null,
+        "locator": "Luke manuscript workspace and variant evidence",
+        "url": "https://ntvmr.uni-muenster.de/manuscript-workspace",
+        "source_type": "reference-work",
+        "supports": [
+          "archaeology",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Official manuscript catalog, images where licensed, and textual tools.",
+        "id": "ntvmr-luke",
+        "canonical_object_ids": [
+          "luke"
+        ]
+      },
+      {
+        "title": "Philippians 4",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "philippians-4",
+        "canonical_object_ids": [
+          "prayer-theme",
+          "theology-of-prayer"
+        ]
+      },
+      {
+        "title": "Psalm 4",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [],
+        "notes": "",
+        "id": "psalm-4",
+        "canonical_object_ids": [
+          "prayer-theme",
+          "theology-of-prayer"
+        ]
+      },
+      {
+        "title": "The Minor Prophets in Early Christianity",
+        "author": "Michael B. Shepherd",
+        "publisher": "Oxford University Press",
+        "year": 2021,
+        "locator": "The Oxford Handbook of the Minor Prophets, chapter 18, pages 243-251",
+        "url": "https://academic.oup.com/edited-volume/38566/chapter/334372365",
+        "source_type": "reference-work",
+        "supports": [
+          "later-christian-reception",
+          "jonah-sign-reception"
+        ],
+        "notes": "Bounded overview of New Testament and early Christian reception of the Twelve.",
+        "id": "shepherd-early-christianity",
+        "canonical_object_ids": [
+          "jonah"
+        ]
+      },
+      {
+        "title": "The JPS Bible Commentary: Jonah",
+        "author": "Uriel Simon",
+        "publisher": "Jewish Publication Society",
+        "year": 1999,
+        "locator": "JPS Bible Commentary",
+        "url": "https://www.nebraskapress.unl.edu/jps/9780827606722/the-jps-bible-commentary-jonah",
+        "source_type": "academic-book",
+        "supports": [
+          "literary-context",
+          "hebrew-words",
+          "later-christian-reception",
+          "jonah-double-structure",
+          "jonah-yom-kippur-reception"
+        ],
+        "notes": "Jewish line-by-line literary and exegetical commentary with Hebrew text and JPS translation.",
+        "id": "simon-jonah",
+        "canonical_object_ids": [
+          "jonah"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "jonah",
+        "type": "book",
+        "title": "Jonah",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.91
+      },
+      {
+        "id": "luke",
+        "type": "book",
+        "title": "Luke",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.915
+      },
+      {
+        "id": "prayer-theme",
+        "type": "theme",
+        "title": "Prayer Theme",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.91
+      },
+      {
+        "id": "theology-of-prayer",
+        "type": "theology",
+        "title": "Theology of Prayer",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.91
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "0abed47b51e8a0610ff6751c9aea7bd1d2cee1db202d79c11886569acefb36a3",
+  "evidence_hash_version": "2"
+}
