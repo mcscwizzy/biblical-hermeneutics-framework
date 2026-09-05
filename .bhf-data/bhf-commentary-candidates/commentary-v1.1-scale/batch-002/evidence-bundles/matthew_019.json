@@ -1,0 +1,202 @@
+{
+  "passage_ref": "Matthew 19",
+  "entities": {
+    "people": [],
+    "places": [],
+    "groups": [],
+    "events": [],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "matthew-discourses",
+      "claim": "Five repeated discourse-ending formulas organize large teaching collections without proving one universally accepted symbolic outline.",
+      "category": "culture",
+      "source_ids": [
+        "matthew-greek",
+        "davies-allison-matthew",
+        "france-matthew"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Matthew 19:1"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "matthew",
+        "parent_title": "Matthew",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "probable",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 90
+      }
+    },
+    {
+      "id": "matthew-divorce-eunuchs",
+      "claim": "Matthew 19 preserves disputed divorce exception language and a threefold eunuch saying within teaching on marriage, children, and discipleship.",
+      "category": "history",
+      "source_ids": [
+        "matthew-greek",
+        "davies-allison-matthew",
+        "matthew-feminist-methods"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Matthew 19:1-15"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "matthew",
+        "parent_title": "Matthew",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "textually_explicit",
+        "dispute_status": "denominational_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "Matthew, Volume 1: 1-7",
+        "author": "Davies, W. D., and Dale C. Allison Jr.",
+        "publisher": "T&T Clark / Bloomsbury",
+        "year": 1988,
+        "locator": "International Critical Commentary; representative publisher page for three-volume work",
+        "url": "https://www.bloomsbury.com/us/matthew-9780567094810/",
+        "source_type": "academic-book",
+        "supports": [
+          "authorship-positions",
+          "date-ranges",
+          "literary-context",
+          "interpretive-disputes",
+          "matthew-genealogy",
+          "matthew-torah",
+          "matthew-eschatology"
+        ],
+        "notes": "Major historical-critical commentary; all volume-specific locators require reviewer verification.",
+        "id": "davies-allison-matthew",
+        "canonical_object_ids": [
+          "matthew"
+        ]
+      },
+      {
+        "title": "The Gospel of Matthew",
+        "author": "France, R. T.",
+        "publisher": "Eerdmans",
+        "year": 2007,
+        "locator": "New International Commentary on the New Testament",
+        "url": "https://www.eerdmans.com/9780802825018/the-gospel-of-matthew/",
+        "source_type": "academic-book",
+        "supports": [
+          "summary",
+          "literary-context",
+          "interpretive-disputes",
+          "matthew-discourses",
+          "matthew-passion-responsibility",
+          "matthew-resurrection"
+        ],
+        "notes": "Major exegetical commentary focused on Matthew's final form in historical and cultural context.",
+        "id": "france-matthew",
+        "canonical_object_ids": [
+          "matthew"
+        ]
+      },
+      {
+        "title": "Feminist Criticism and the Gospel of Matthew",
+        "author": "Wainwright, Elaine M.",
+        "publisher": "Cambridge University Press",
+        "year": 2009,
+        "locator": "Methods for Matthew, pages 83-117",
+        "url": "https://www.cambridge.org/core/books/methods-for-matthew/feminist-criticism-and-the-gospel-of-matthew/1AE9A1B8CFF3F8975BCD55889906772A",
+        "source_type": "academic-book",
+        "supports": [
+          "later-christian-reception",
+          "matthew-application-boundaries",
+          "matthew-women-witnesses"
+        ],
+        "notes": "Methodological account of feminist Matthean interpretation.",
+        "id": "matthew-feminist-methods",
+        "canonical_object_ids": [
+          "matthew"
+        ]
+      },
+      {
+        "title": "The Greek New Testament: SBL Edition, Matthew",
+        "author": "Holmes, Michael W., editor",
+        "publisher": "Society of Biblical Literature",
+        "year": 2010,
+        "locator": "Matthew 1-28",
+        "url": "https://www.sbl-site.org/resources/digital-texts/sbl-greek-new-testament/",
+        "source_type": "scripture",
+        "supports": [
+          "scripture-references",
+          "greek-words",
+          "matthew-greek-narrative",
+          "matthew-discourses",
+          "matthew-passion-responsibility",
+          "matthew-resurrection"
+        ],
+        "notes": "Critical Greek reading edition; differences among published editions are documented separately from a manuscript apparatus.",
+        "id": "matthew-greek",
+        "canonical_object_ids": [
+          "matthew"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "matthew",
+        "type": "book",
+        "title": "Matthew",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.917
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "01ccf4f032d02c6e26f3ca12342b52b6582b147eec5506eeb90d848a73770b85",
+  "evidence_hash_version": "2"
+}

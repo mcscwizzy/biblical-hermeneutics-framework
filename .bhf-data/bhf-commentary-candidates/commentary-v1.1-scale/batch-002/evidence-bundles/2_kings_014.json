@@ -1,0 +1,339 @@
+{
+  "passage_ref": "2 Kings 14",
+  "entities": {
+    "people": [],
+    "places": [],
+    "groups": [],
+    "events": [],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "amos-rulers-date",
+      "claim": "The overlap of Uzziah and Jeroboam II locates the superscription's setting in the mid-eighth century BCE, though it does not date every unit or the final form.",
+      "category": "culture",
+      "source_ids": [
+        "amos-masoretic",
+        "oxford-amos-bibliography",
+        "carroll-amos"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "2 Kings 14:23-29"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "amos",
+        "parent_title": "Amos",
+        "parent_type": "book",
+        "object_importance": 84,
+        "retrieval_score": 0.904,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 22,
+        "certainty": "strong_consensus",
+        "dispute_status": "chronological_uncertainty",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "historical_cultural",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "INTERTEXTUAL_REUSE",
+        "presentation_role": "dig_deeper",
+        "overview_priority": 0
+      }
+    },
+    {
+      "id": "jonah-identity-2-kings",
+      "claim": "Jonah 1:1 names Jonah son of Amittai, matching the patronymic of the prophetic figure in 2 Kings 14:25, but this link does not establish that the eighth-century figure authored the later third-person narrative.",
+      "category": "history",
+      "source_ids": [
+        "jonah-masoretic",
+        "jonah-canonical-comparanda",
+        "lovelace-jonah",
+        "graybill-kaltner-mckenzie-jonah"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "2 Kings 14:25"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "jonah",
+        "parent_title": "Jonah",
+        "parent_type": "book",
+        "object_importance": 90,
+        "retrieval_score": 0.91,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 24,
+        "certainty": "textually_explicit",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "INTERTEXTUAL_REUSE",
+        "presentation_role": "dig_deeper",
+        "overview_priority": 0
+      }
+    },
+    {
+      "id": "jonah:interpretive_note:0",
+      "claim": "Jonah son of Amittai in 2 Kings 14:25 supplies a historical namesake and patronymic, but neither book states that he authored the four-chapter narrative.",
+      "category": "culture",
+      "source_ids": [
+        "jonah-masoretic",
+        "jonah-canonical-comparanda",
+        "lovelace-jonah"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "2 Kings 14:25"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "jonah",
+        "parent_title": "Jonah",
+        "parent_type": "book",
+        "object_importance": 90,
+        "retrieval_score": 0.91,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 24,
+        "certainty": "textually_explicit",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "historical-context",
+        "field": "",
+        "semantic_relationship": "INTERTEXTUAL_REUSE",
+        "presentation_role": "dig_deeper",
+        "overview_priority": 0
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "Amos in the Masoretic Text",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Amos 1-9 MT",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "structure",
+          "scripture-references",
+          "literary-context",
+          "major-themes",
+          "amos-superscription-identity",
+          "amos-rulers-date",
+          "amos-earthquake",
+          "amos-nations-sequence",
+          "amos-election-accountability",
+          "amos-economic-exploitation",
+          "amos-worship-justice",
+          "amos-day-yhwh",
+          "amos-five-visions",
+          "amos-intercession",
+          "amos-amaziah-bethel",
+          "amos-occupation",
+          "amos-anak-vision",
+          "amos-summer-fruit",
+          "amos-famine-hearing",
+          "amos-altar-vision",
+          "amos-david-booth",
+          "amos-restoration-ending",
+          "amos-composition-final-form"
+        ],
+        "notes": "Primary Hebrew textual tradition.",
+        "id": "amos-masoretic",
+        "canonical_object_ids": [
+          "amos"
+        ]
+      },
+      {
+        "title": "The Book of Amos",
+        "author": "M. Daniel Carroll R.",
+        "publisher": "Eerdmans",
+        "year": 2020,
+        "locator": "New International Commentary on the Old Testament",
+        "url": "https://www.eerdmans.com/9780802825384/the-book-of-amos/",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "literary-context",
+          "historical-setting",
+          "amos-rulers-date",
+          "amos-earthquake",
+          "amos-nations-sequence",
+          "amos-election-accountability",
+          "amos-economic-exploitation",
+          "amos-worship-justice",
+          "amos-intercession",
+          "amos-summer-fruit",
+          "amos-famine-hearing",
+          "amos-composition-final-form"
+        ],
+        "notes": "Detailed Hebrew commentary with historical, literary, theological, and ethical attention.",
+        "id": "carroll-amos",
+        "canonical_object_ids": [
+          "amos"
+        ]
+      },
+      {
+        "title": "Jonah: A New Translation with Introduction and Commentary",
+        "author": "Rhiannon Graybill; John Kaltner; Steven L. McKenzie",
+        "publisher": "Yale University Press",
+        "year": 2023,
+        "locator": "Anchor Yale Bible Commentaries",
+        "url": "https://yalebooks.yale.edu/book/9780300206678/jonah/",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "literary-context",
+          "interpretive-disputes",
+          "jonah-prayer",
+          "jonah-nineveh-size",
+          "jonah-prayer-composition"
+        ],
+        "notes": "Current critical commentary addressing composition, Jonah 2, Nineveh, reception, animal studies, postcolonial, psychological, spatial, and trauma approaches.",
+        "id": "graybill-kaltner-mckenzie-jonah",
+        "canonical_object_ids": [
+          "jonah"
+        ]
+      },
+      {
+        "title": "Canonical Hebrew Bible comparanda for Jonah",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "2 Kings 14:23-27; Exodus 34:6-7; Jeremiah 18:7-10; Joel 2:12-14; Nahum; Psalms",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "canonical-context",
+          "intertextuality",
+          "jonah-identity-2-kings",
+          "jonah-divine-relenting"
+        ],
+        "notes": "Primary canonical comparanda; parallels are classified rather than treated automatically as direct quotations.",
+        "id": "jonah-canonical-comparanda",
+        "canonical_object_ids": [
+          "jonah"
+        ]
+      },
+      {
+        "title": "Masoretic Text of Jonah",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Jonah 1:1-4:11, with MT chapter numbering",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "structure",
+          "scripture-references",
+          "jonah-great-fish",
+          "jonah-nineveh-response",
+          "jonah-right-left-ending"
+        ],
+        "notes": "Primary Hebrew witness; translations and verse numbering must be checked against a critical edition.",
+        "id": "jonah-masoretic",
+        "canonical_object_ids": [
+          "jonah"
+        ]
+      },
+      {
+        "title": "Jonah",
+        "author": "Vanessa Lovelace",
+        "publisher": "Oxford University Press",
+        "year": 2021,
+        "locator": "The Oxford Handbook of the Minor Prophets, chapter 33, pages 449-460",
+        "url": "https://academic.oup.com/edited-volume/38566/chapter-abstract/334373381",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context",
+          "literary-context",
+          "interpretive-disputes",
+          "jonah-date-composition",
+          "jonah-genre"
+        ],
+        "notes": "Scholarly overview of narrative complexity, contested issues, themes, and multireligious reception.",
+        "id": "lovelace-jonah",
+        "canonical_object_ids": [
+          "jonah"
+        ]
+      },
+      {
+        "title": "Amos",
+        "author": "Walter Houston",
+        "publisher": "Oxford University Press",
+        "year": 2025,
+        "locator": "Oxford Bibliographies in Biblical Studies",
+        "url": "https://academic.oup.com/reference/62341/reference-article-abstract/554094758",
+        "source_type": "reference-work",
+        "supports": [
+          "date-ranges",
+          "authorship-positions",
+          "canonical-placement",
+          "amos-superscription-identity",
+          "amos-rulers-date",
+          "amos-occupation",
+          "amos-composition-final-form"
+        ],
+        "notes": "Research bibliography and overview of major Amos questions.",
+        "id": "oxford-amos-bibliography",
+        "canonical_object_ids": [
+          "amos"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "amos",
+        "type": "book",
+        "title": "Amos",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.904
+      },
+      {
+        "id": "jonah",
+        "type": "book",
+        "title": "Jonah",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.91
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "7419ec649d2616f0fea926c11ba87141a271ce5becd90879401740d25133fdb5",
+  "evidence_hash_version": "2"
+}

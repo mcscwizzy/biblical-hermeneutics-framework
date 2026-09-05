@@ -1,0 +1,159 @@
+{
+  "passage_ref": "Hosea 5",
+  "entities": {
+    "people": [],
+    "places": [],
+    "groups": [],
+    "events": [],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "hosea-assyrian-crisis",
+      "claim": "Hosea's references to Assyria, Egypt, tribute, treaties, war alarms, kings, and palace intrigue align with the northern kingdom's later eighth-century imperial crisis.",
+      "category": "politics",
+      "source_ids": [
+        "hosea-masoretic",
+        "hasegawa-hosea-history",
+        "aster-assyria-hosea",
+        "oracc-sargon-samaria"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Hosea 5:1-15"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "hosea",
+        "parent_title": "Hosea",
+        "parent_type": "book",
+        "object_importance": 91,
+        "retrieval_score": 0.911,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "chronological_uncertainty",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "historical_cultural",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "Assyria and Its Image in Hosea",
+        "author": "Shawn Zelig Aster",
+        "publisher": "Oxford University Press",
+        "year": 2024,
+        "locator": "Oxford Handbook of Hosea, chapter 3",
+        "url": "https://academic.oup.com/edited-volume/56211/chapter/443857261",
+        "source_type": "reference-work",
+        "supports": [
+          "ancient-near-east-context",
+          "hosea-assyrian-crisis",
+          "interpretive-notes"
+        ],
+        "notes": "Study of Assyrian context and its rhetorical image in Hosea.",
+        "id": "aster-assyria-hosea",
+        "canonical_object_ids": [
+          "hosea"
+        ]
+      },
+      {
+        "title": "The Book of Hosea and the History of Eighth-Century BCE Israel",
+        "author": "Shuichi Hasegawa",
+        "publisher": "Oxford University Press",
+        "year": 2024,
+        "locator": "Oxford Handbook of Hosea, chapter 2",
+        "url": "https://academic.oup.com/edited-volume/56211/chapter-abstract/443857087",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context",
+          "timeline",
+          "hosea-superscription-setting",
+          "hosea-assyrian-crisis"
+        ],
+        "notes": "Historical synthesis that also cautions against precise event matching.",
+        "id": "hasegawa-hosea-history",
+        "canonical_object_ids": [
+          "hosea"
+        ]
+      },
+      {
+        "title": "Hosea in the Masoretic Text",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Hosea 1-14",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "scripture-references",
+          "claims",
+          "interpretive-notes",
+          "literary-context"
+        ],
+        "notes": "Primary Hebrew textual tradition; difficult passages require comparison with other witnesses.",
+        "id": "hosea-masoretic",
+        "canonical_object_ids": [
+          "hosea"
+        ]
+      },
+      {
+        "title": "Royal Inscriptions of Sargon II mentioning Samaria",
+        "author": "Royal Inscriptions of the Neo-Assyrian Period project",
+        "publisher": "ORACC, University of Pennsylvania",
+        "year": null,
+        "locator": "RINAP 2, Sargon II corpus",
+        "url": "https://oracc.museum.upenn.edu/rinap/rinap2/Q006639",
+        "source_type": "ancient-primary-source",
+        "supports": [
+          "historical-context",
+          "ancient-near-east-context",
+          "archaeology",
+          "hosea-assyrian-crisis"
+        ],
+        "notes": "Edition and metadata for Sargon II inscriptions associated with Samaria; imperial genre requires source criticism.",
+        "id": "oracc-sargon-samaria",
+        "canonical_object_ids": [
+          "hosea"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "hosea",
+        "type": "book",
+        "title": "Hosea",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.911
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "c7427399f4418a91cc0567be5a8437c676d8118e49554a9bcc716691720672db",
+  "evidence_hash_version": "2"
+}

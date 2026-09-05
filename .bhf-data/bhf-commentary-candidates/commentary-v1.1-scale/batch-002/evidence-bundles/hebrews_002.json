@@ -1,0 +1,529 @@
+{
+  "passage_ref": "Hebrews 2",
+  "entities": {
+    "people": [],
+    "places": [],
+    "groups": [],
+    "events": [],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "heb-angels",
+      "claim": "A catena of scriptural quotations distinguishes the Son from angels and leads into a warning to attend to what was heard.",
+      "category": "culture",
+      "source_ids": [
+        "heb-greek",
+        "nets-lxx",
+        "stuckenbruck"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Hebrews 1:5-2:4"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "hebrews",
+        "parent_title": "Hebrews",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 100,
+        "certainty": "textually_explicit",
+        "dispute_status": "not_disputed",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 98
+      }
+    },
+    {
+      "id": "heb-p46",
+      "claim": "Papyrus 46 is an early substantial witness to Hebrews, though it has lacunae and its paleographic date remains approximate.",
+      "category": "archaeology",
+      "source_ids": [
+        "p46",
+        "ntvmr"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Hebrews 1:1-13:25"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "hebrews",
+        "parent_title": "Hebrews",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 100,
+        "certainty": "strong_consensus",
+        "dispute_status": "archaeological_uncertainty",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "archaeology",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "archaeology_geography",
+        "overview_priority": 58
+      }
+    },
+    {
+      "id": "heb-sinaiticus",
+      "claim": "Codex Sinaiticus preserves Hebrews in its New Testament sequence after 2 Thessalonians.",
+      "category": "archaeology",
+      "source_ids": [
+        "sinaiticus",
+        "ntvmr"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Hebrews 1:1-13:25"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "hebrews",
+        "parent_title": "Hebrews",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 100,
+        "certainty": "strong_consensus",
+        "dispute_status": "archaeological_uncertainty",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "archaeology",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "archaeology_geography",
+        "overview_priority": 58
+      }
+    },
+    {
+      "id": "heb-solidarity",
+      "claim": "Jesus shares flesh and blood, suffers testing, calls the sanctified siblings, and is described as merciful and faithful high priest.",
+      "category": "culture",
+      "source_ids": [
+        "heb-greek",
+        "moffitt"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Hebrews 2:10-18"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "hebrews",
+        "parent_title": "Hebrews",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 9,
+        "certainty": "textually_explicit",
+        "dispute_status": "not_disputed",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_theology",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 103
+      }
+    },
+    {
+      "id": "hebrews:interpretive_note:39",
+      "claim": "Application must reject antisemitism, supersessionism, misogyny, anti-LGBTQ coercion, forced conversion, colonial mission, nationalism, religious violence, prosperity extraction, and ecological neglect.",
+      "category": "culture",
+      "source_ids": [
+        "levine-jant",
+        "mitzi-smith",
+        "carter"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Hebrews 1:1-13:25"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "hebrews",
+        "parent_title": "Hebrews",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 100,
+        "certainty": "strong_consensus",
+        "dispute_status": "denominational_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "later-reception",
+        "field": "",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 62
+      }
+    },
+    {
+      "id": "hebrews:interpretive_note:5",
+      "claim": "Angels: the comparison exalts the Son through a scriptural catena and does not license contempt for Jewish angel traditions or speculative hierarchies.",
+      "category": "culture",
+      "source_ids": [
+        "heb-greek",
+        "nets-lxx",
+        "stuckenbruck"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Hebrews 2:1-9"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "hebrews",
+        "parent_title": "Hebrews",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "textually_explicit",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "second-temple-context",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 102
+      }
+    },
+    {
+      "id": "hebrews:interpretive_note:6",
+      "claim": "Oikoumen\u0113 in 2:5 can denote the inhabited world or coming order; a single English gloss does not settle its eschatological scope.",
+      "category": "culture",
+      "source_ids": [
+        "heb-greek",
+        "bdag",
+        "attridge"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Hebrews 2:5"
+      ],
+      "confidence": "low",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "hebrews",
+        "parent_title": "Hebrews",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 4,
+        "certainty": "disputed",
+        "dispute_status": "lexical_uncertainty",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "textual-observation",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    },
+    {
+      "id": "hebrews:interpretive_note:7",
+      "claim": "Jesus' solidarity with flesh and blood and those tested grounds compassionate help; it must not glorify trauma, abuse, or prevent seeking safety.",
+      "category": "culture",
+      "source_ids": [
+        "heb-greek",
+        "desilva"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Hebrews 2:10-18"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "hebrews",
+        "parent_title": "Hebrews",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 9,
+        "certainty": "textually_explicit",
+        "dispute_status": "denominational_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "interpretive-caution",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "The Epistle to the Hebrews",
+        "author": "Harold W. Attridge",
+        "publisher": "Fortress Press",
+        "year": 1989,
+        "locator": "Hermeneia",
+        "url": "https://www.worldcat.org/title/13455343",
+        "source_type": "academic-book",
+        "supports": [],
+        "notes": "",
+        "id": "attridge",
+        "canonical_object_ids": [
+          "hebrews"
+        ]
+      },
+      {
+        "title": "A Greek-English Lexicon of the New Testament and Other Early Christian Literature",
+        "author": "Walter Bauer, Frederick W. Danker, William F. Arndt, and F. Wilbur Gingrich",
+        "publisher": "University of Chicago Press",
+        "year": 2000,
+        "locator": "Relevant Greek lemmas",
+        "url": "https://press.uchicago.edu/ucp/books/book/chicago/G/bo3622249.html",
+        "source_type": "lexicon",
+        "supports": [],
+        "notes": "",
+        "id": "bdag",
+        "canonical_object_ids": [
+          "hebrews"
+        ]
+      },
+      {
+        "title": "The Roman Empire and the New Testament",
+        "author": "Warren Carter",
+        "publisher": "Abingdon Press",
+        "year": 2006,
+        "locator": "Imperial and social setting",
+        "url": "https://www.worldcat.org/title/62341494",
+        "source_type": "academic-book",
+        "supports": [],
+        "notes": "",
+        "id": "carter",
+        "canonical_object_ids": [
+          "hebrews"
+        ]
+      },
+      {
+        "title": "Perseverance in Gratitude",
+        "author": "David A. deSilva",
+        "publisher": "Eerdmans",
+        "year": 2000,
+        "locator": "Socio-rhetorical commentary",
+        "url": "https://www.eerdmans.com/9780802841888/perseverance-in-gratitude/",
+        "source_type": "academic-book",
+        "supports": [],
+        "notes": "",
+        "id": "desilva",
+        "canonical_object_ids": [
+          "hebrews"
+        ]
+      },
+      {
+        "title": "SBL Greek New Testament: Hebrews",
+        "author": "Michael W. Holmes, editor",
+        "publisher": "Society of Biblical Literature and Logos Bible Software",
+        "year": 2010,
+        "locator": "Hebrews 1:1-13:25",
+        "url": "https://www.sblgnt.com/",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "heb-greek",
+        "canonical_object_ids": [
+          "hebrews"
+        ]
+      },
+      {
+        "title": "The Jewish Annotated New Testament",
+        "author": "Amy-Jill Levine and Marc Zvi Brettler, editors",
+        "publisher": "Oxford University Press",
+        "year": 2017,
+        "locator": "Hebrews notes and essays",
+        "url": "https://global.oup.com/academic/product/the-jewish-annotated-new-testament-9780190461850",
+        "source_type": "reference-work",
+        "supports": [],
+        "notes": "",
+        "id": "levine-jant",
+        "canonical_object_ids": [
+          "hebrews"
+        ]
+      },
+      {
+        "title": "Toward Decentering the New Testament",
+        "author": "Mitzi J. Smith",
+        "publisher": "Cascade Books",
+        "year": 2018,
+        "locator": "Womanist and postcolonial hermeneutics",
+        "url": "https://wipfandstock.com/9781532604652/toward-decentering-the-new-testament/",
+        "source_type": "academic-book",
+        "supports": [],
+        "notes": "",
+        "id": "mitzi-smith",
+        "canonical_object_ids": [
+          "hebrews"
+        ]
+      },
+      {
+        "title": "Atonement and the Logic of Resurrection in the Epistle to the Hebrews",
+        "author": "David M. Moffitt",
+        "publisher": "Brill",
+        "year": 2011,
+        "locator": "NovTSup 141",
+        "url": "https://brill.com/display/title/19787",
+        "source_type": "academic-book",
+        "supports": [],
+        "notes": "",
+        "id": "moffitt",
+        "canonical_object_ids": [
+          "hebrews"
+        ]
+      },
+      {
+        "title": "A New English Translation of the Septuagint",
+        "author": "Albert Pietersma and Benjamin G. Wright, editors",
+        "publisher": "Oxford University Press",
+        "year": 2007,
+        "locator": "Psalms, Genesis, Exodus, Jeremiah and Habakkuk comparanda",
+        "url": "https://ccat.sas.upenn.edu/nets/edition/",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "nets-lxx",
+        "canonical_object_ids": [
+          "hebrews"
+        ]
+      },
+      {
+        "title": "New Testament Virtual Manuscript Room",
+        "author": "Institut f\u00fcr Neutestamentliche Textforschung",
+        "publisher": "University of M\u00fcnster",
+        "year": null,
+        "locator": "Hebrews manuscript witnesses",
+        "url": "https://ntvmr.uni-muenster.de/",
+        "source_type": "reference-work",
+        "supports": [],
+        "notes": "",
+        "id": "ntvmr",
+        "canonical_object_ids": [
+          "hebrews"
+        ]
+      },
+      {
+        "title": "Papyrus 46",
+        "author": "Center for the Study of New Testament Manuscripts",
+        "publisher": "CSNTM",
+        "year": null,
+        "locator": "Hebrews 1:1-13:25 with lacunae",
+        "url": "https://manuscripts.csntm.org/manuscript/View/GA_P46",
+        "source_type": "ancient-primary-source",
+        "supports": [],
+        "notes": "",
+        "id": "p46",
+        "canonical_object_ids": [
+          "hebrews"
+        ]
+      },
+      {
+        "title": "Codex Sinaiticus: Hebrews",
+        "author": "Codex Sinaiticus Project",
+        "publisher": "British Library and partners",
+        "year": null,
+        "locator": "Add MS 43725, ff. 288v-293v",
+        "url": "https://www.codexsinaiticus.org/en/manuscript.aspx",
+        "source_type": "ancient-primary-source",
+        "supports": [],
+        "notes": "",
+        "id": "sinaiticus",
+        "canonical_object_ids": [
+          "hebrews"
+        ]
+      },
+      {
+        "title": "Angel Veneration and Christology",
+        "author": "Loren T. Stuckenbruck",
+        "publisher": "Mohr Siebeck",
+        "year": 1995,
+        "locator": "Jewish angelology and Revelation; comparative control",
+        "url": "https://www.mohrsiebeck.com/en/book/angel-veneration-and-christology-9783161463037/",
+        "source_type": "academic-book",
+        "supports": [],
+        "notes": "",
+        "id": "stuckenbruck",
+        "canonical_object_ids": [
+          "hebrews"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "hebrews",
+        "type": "book",
+        "title": "Hebrews",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.917
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "04966088193aac18eb76ebd1e792aced430eb557ac5749ab0cde5312c6d5dc1b",
+  "evidence_hash_version": "2"
+}

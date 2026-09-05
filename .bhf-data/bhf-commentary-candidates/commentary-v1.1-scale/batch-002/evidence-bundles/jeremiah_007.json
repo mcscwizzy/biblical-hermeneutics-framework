@@ -1,0 +1,604 @@
+{
+  "passage_ref": "Jeremiah 7",
+  "entities": {
+    "people": [],
+    "places": [
+      {
+        "id": "shiloh",
+        "title": "Shiloh",
+        "type": "place",
+        "aliases": [
+          "biblical Shiloh",
+          "Shiloh sanctuary",
+          "Khirbet Seilun"
+        ],
+        "metadata": {
+          "summary": "Shiloh is a central-highland site portrayed in Joshua, Judges, and 1 Samuel as an assembly, allotment, sanctuary, festival, and priestly center; Psalms and Jeremiah later remember its abandonment as a warning.",
+          "importance": 80,
+          "retrieval_score": 0.9,
+          "ancient_names": [],
+          "modern_identification": "",
+          "region": "",
+          "terrain": "",
+          "elevation": null,
+          "archaeology": [],
+          "related_passages": [
+            "Joshua 18:1-10",
+            "Judges 18:30-31",
+            "Judges 21:19-23",
+            "1 Samuel 1:1-28",
+            "Jeremiah 7:12-14"
+          ]
+        }
+      }
+    ],
+    "groups": [],
+    "events": [],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "jeremiah-long-composition",
+      "claim": "The received book combines poetry, prose sermons, narratives, letters, headings, repeated accounts, restoration collections, nation oracles, and an appendix produced through a long compositional and textual history.",
+      "category": "culture",
+      "source_ids": [
+        "jeremiah-masoretic",
+        "oxford-handbook-jeremiah",
+        "biddle-jeremiah-content",
+        "stulman-jeremiah"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Jeremiah 1:1-52:34"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "jeremiah",
+        "parent_title": "Jeremiah",
+        "parent_type": "book",
+        "object_importance": 96,
+        "retrieval_score": 0.916,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 600,
+        "certainty": "strong_consensus",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 45
+      }
+    },
+    {
+      "id": "jeremiah-practical-mt-outline",
+      "claim": "Chapters 1; 2-25; 26-29; 30-33; 34-45; 46-51; and 52 provide a practical outline of Masoretic Jeremiah without settling its composition.",
+      "category": "culture",
+      "source_ids": [
+        "jeremiah-masoretic",
+        "biddle-jeremiah-content",
+        "stulman-jeremiah"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Jeremiah 1:1-52:34"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "jeremiah",
+        "parent_title": "Jeremiah",
+        "parent_type": "book",
+        "object_importance": 96,
+        "retrieval_score": 0.916,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 600,
+        "certainty": "probable",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 30
+      }
+    },
+    {
+      "id": "jeremiah-temple-justice",
+      "claim": "Jeremiah 7 rejects reliance on the temple as a guarantee of safety while demanding justice for vulnerable persons and condemning violence, theft, idolatry, and Topheth.",
+      "category": "history",
+      "source_ids": [
+        "jeremiah-masoretic",
+        "lundbom-jeremiah-1-20",
+        "brueggemann-jeremiah"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Jeremiah 7:1-34"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "jeremiah",
+        "parent_title": "Jeremiah",
+        "parent_type": "book",
+        "object_importance": 96,
+        "retrieval_score": 0.916,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "textually_explicit",
+        "dispute_status": "not_disputed",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 118
+      }
+    },
+    {
+      "id": "mark-temple-action",
+      "claim": "The fig-tree intercalation and temple action interpret Jerusalem leadership and the temple's fruit, prayer, nations, commerce, and judgment, but do not authorize contempt for Judaism or sacred places.",
+      "category": "culture",
+      "source_ids": [
+        "mark-greek",
+        "marcus-mark-8-16",
+        "jewish-annotated-nt"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Jeremiah 7:11"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "mark",
+        "parent_title": "Mark",
+        "parent_type": "book",
+        "object_importance": 95,
+        "retrieval_score": 0.915,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 10,
+        "certainty": "strong_consensus",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "LATER_RECEPTION",
+        "presentation_role": "dig_deeper",
+        "overview_priority": 0
+      }
+    },
+    {
+      "id": "shiloh:ancient_near_east_context:0",
+      "claim": "The site lies within the central highland road network. Judges 21's route description relative to Bethel, Lebonah, and the main road presents Shiloh as a recognizable regional gathering place rather than an unspecified sacred symbol.",
+      "category": "culture",
+      "source_ids": [
+        "shiloh-biblical-texts",
+        "finkelstein-shiloh-1985",
+        "webb-shiloh-2012"
+      ],
+      "related_entity_ids": [
+        "shiloh"
+      ],
+      "passage_anchors": [
+        "Jeremiah 7:12-14"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "shiloh",
+        "parent_title": "Shiloh",
+        "parent_type": "place",
+        "object_importance": 80,
+        "retrieval_score": 0.9,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 11,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "shiloh:hebraic_worldview:0",
+      "claim": "Shiloh joins sacred presence, sacrifice, priestly responsibility, festival, and tribal assembly. Its later canonical use also insists that a revered sanctuary does not guarantee protection when covenant conduct is corrupt.",
+      "category": "culture",
+      "source_ids": [
+        "shiloh-biblical-texts",
+        "finkelstein-shiloh-1985",
+        "webb-shiloh-2012"
+      ],
+      "related_entity_ids": [
+        "shiloh"
+      ],
+      "passage_anchors": [
+        "Jeremiah 7:12-14"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "shiloh",
+        "parent_title": "Shiloh",
+        "parent_type": "place",
+        "object_importance": 80,
+        "retrieval_score": 0.9,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 11,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "hebraic_worldview",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "shiloh:historical_context:0",
+      "claim": "Shiloh is commonly identified with Khirbet Seilun north of Bethel. Excavation documents a long occupation sequence including Iron I remains, but no excavated feature securely proves the location of the tent of meeting or an event narrated in Judges or Samuel.",
+      "category": "history",
+      "source_ids": [
+        "shiloh-biblical-texts",
+        "finkelstein-shiloh-1985",
+        "webb-shiloh-2012"
+      ],
+      "related_entity_ids": [
+        "shiloh"
+      ],
+      "passage_anchors": [
+        "Jeremiah 7:12-14"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "shiloh",
+        "parent_title": "Shiloh",
+        "parent_type": "place",
+        "object_importance": 80,
+        "retrieval_score": 0.9,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 11,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "Jeremiah: Content and Structure",
+        "author": "Mark E. Biddle",
+        "publisher": "Oxford University Press",
+        "year": 2021,
+        "locator": "Oxford Handbook of Jeremiah, chapter 13, pages 235-251",
+        "url": "https://academic.oup.com/edited-volume/37089/chapter-abstract/323191290",
+        "source_type": "academic-book",
+        "supports": [
+          "literary-context",
+          "genre",
+          "structure",
+          "authorship-positions",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "Study of poetry, prose, headings, collections, and the two versions.",
+        "id": "biddle-jeremiah-content",
+        "canonical_object_ids": [
+          "jeremiah"
+        ]
+      },
+      {
+        "title": "A Commentary on Jeremiah: Exile and Homecoming",
+        "author": "Walter Brueggemann",
+        "publisher": "Eerdmans",
+        "year": 1998,
+        "locator": "Introduction and commentary",
+        "url": "https://www.eerdmans.com/9780802802804/a-commentary-on-jeremiah/",
+        "source_type": "academic-book",
+        "supports": [
+          "major-themes",
+          "covenantal-significance",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "Theological commentary emphasizing exile, homecoming, justice, and pathos.",
+        "id": "brueggemann-jeremiah",
+        "canonical_object_ids": [
+          "jeremiah"
+        ]
+      },
+      {
+        "title": "Excavations at Shiloh 1981-1984: Preliminary Report",
+        "author": "Israel Finkelstein, Shlomo Bunimovitz, and Zvi Lederman",
+        "publisher": "Tel Aviv",
+        "year": 1985,
+        "locator": "Tel Aviv 12.2, pp. 123-180; DOI 10.1179/tav.1985.1985.2.123",
+        "url": "https://cris.haifa.ac.il/en/publications/excavations-at-shiloh-1981-1984-preliminary-report/",
+        "source_type": "excavation-report",
+        "supports": [
+          "historical-context",
+          "archaeology"
+        ],
+        "notes": "Used for occupation context and excavation limits.",
+        "id": "finkelstein-shiloh-1985",
+        "canonical_object_ids": [
+          "shiloh"
+        ]
+      },
+      {
+        "title": "Masoretic Jeremiah",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Jeremiah 1-52 in the Masoretic textual tradition",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "historical-context",
+          "literary-context",
+          "structure",
+          "major-themes",
+          "key-people",
+          "key-places",
+          "key-events",
+          "hebrew-words",
+          "scripture-references",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "Primary received Hebrew canonical text.",
+        "id": "jeremiah-masoretic",
+        "canonical_object_ids": [
+          "jeremiah"
+        ]
+      },
+      {
+        "title": "The Jewish Annotated New Testament",
+        "author": "Amy-Jill Levine and Marc Zvi Brettler, editors",
+        "publisher": "Oxford University Press",
+        "year": 2017,
+        "locator": "Second edition, Mark and essays",
+        "url": "https://global.oup.com/academic/product/the-jewish-annotated-new-testament-9780190461850",
+        "source_type": "academic-book",
+        "supports": [
+          "hebraic-worldview",
+          "second-temple-context",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Jewish historical and interpretive context for New Testament texts.",
+        "id": "jewish-annotated-nt",
+        "canonical_object_ids": [
+          "mark"
+        ]
+      },
+      {
+        "title": "Jeremiah 1-20",
+        "author": "Jack R. Lundbom",
+        "publisher": "Yale University Press",
+        "year": 1999,
+        "locator": "Anchor Yale Bible 21A",
+        "url": "https://yalebooks.yale.edu/book/9780300139631/jeremiah-1-20/",
+        "source_type": "academic-book",
+        "supports": [
+          "literary-context",
+          "historical-context",
+          "authorship-positions",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "Detailed commentary on Jeremiah 1-20.",
+        "id": "lundbom-jeremiah-1-20",
+        "canonical_object_ids": [
+          "jeremiah"
+        ]
+      },
+      {
+        "title": "Mark 8-16",
+        "author": "Joel Marcus",
+        "publisher": "Yale University Press",
+        "year": 2009,
+        "locator": "Anchor Yale Bible",
+        "url": "https://yalebooks.yale.edu/book/9780300141160/mark-8-16/",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "literary-context",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Critical commentary on Mark 8-16 and its enigmatic ending.",
+        "id": "marcus-mark-8-16",
+        "canonical_object_ids": [
+          "mark"
+        ]
+      },
+      {
+        "title": "The Gospel according to Mark, Greek text",
+        "author": "",
+        "publisher": "Society of Biblical Literature",
+        "year": 2010,
+        "locator": "Mark 1-16 in SBLGNT",
+        "url": "https://www.sbl-site.org/resources/digital-texts/sbl-greek-new-testament/",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "structure",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Critical Greek text and apparatus resources.",
+        "id": "mark-greek",
+        "canonical_object_ids": [
+          "mark"
+        ]
+      },
+      {
+        "title": "The Oxford Handbook of Jeremiah",
+        "author": "Louis Stulman and Edward Silver, editors",
+        "publisher": "Oxford University Press",
+        "year": 2021,
+        "locator": "Whole volume",
+        "url": "https://academic.oup.com/edited-volume/37089",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context",
+          "literary-context",
+          "authorship-positions",
+          "second-temple-context",
+          "interpretive-disputes",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "Multi-author scholarly reference work spanning history, text, themes, reception, and ethics.",
+        "id": "oxford-handbook-jeremiah",
+        "canonical_object_ids": [
+          "jeremiah"
+        ]
+      },
+      {
+        "title": "Biblical Shiloh Passages",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Joshua 18:1-10; Judges 18:30-31; 21:19-23; 1 Samuel 1:1-4:22; Jeremiah 7:12-14",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "canonical-context",
+          "covenantal-significance"
+        ],
+        "notes": "Primary biblical texts for Shiloh's changing canonical roles.",
+        "id": "shiloh-biblical-texts",
+        "canonical_object_ids": [
+          "shiloh"
+        ]
+      },
+      {
+        "title": "Abingdon Old Testament Commentaries: Jeremiah",
+        "author": "Louis Stulman",
+        "publisher": "Abingdon Press",
+        "year": 2005,
+        "locator": "Introduction and commentary",
+        "url": "https://www.abingdonpress.com/product/9780687057962/",
+        "source_type": "academic-book",
+        "supports": [
+          "summary",
+          "literary-context",
+          "structure",
+          "major-themes",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "Final-form and prose-sensitive critical commentary.",
+        "id": "stulman-jeremiah",
+        "canonical_object_ids": [
+          "jeremiah"
+        ]
+      },
+      {
+        "title": "The Book of Judges",
+        "author": "Barry G. Webb",
+        "publisher": "Eerdmans",
+        "year": 2012,
+        "locator": "NICOT commentary on Judges 18:30-31 and 21:19-23",
+        "url": "https://www.eerdmans.com/9780802826282/the-book-of-judges/",
+        "source_type": "academic-book",
+        "supports": [
+          "literary-context",
+          "canonical-context"
+        ],
+        "notes": "Literary and historical commentary on Shiloh in Judges.",
+        "id": "webb-shiloh-2012",
+        "canonical_object_ids": [
+          "shiloh"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "jeremiah",
+        "type": "book",
+        "title": "Jeremiah",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.916
+      },
+      {
+        "id": "mark",
+        "type": "book",
+        "title": "Mark",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.915
+      },
+      {
+        "id": "shiloh",
+        "type": "place",
+        "title": "Shiloh",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.9
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "17b07e1f020a264c68120c7a66f74a0a0bc474eec2d6b97950b2576104f027a6",
+  "evidence_hash_version": "2"
+}

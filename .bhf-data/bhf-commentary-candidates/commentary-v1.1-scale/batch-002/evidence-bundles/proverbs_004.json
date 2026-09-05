@@ -1,0 +1,172 @@
+{
+  "passage_ref": "Proverbs 4",
+  "entities": {
+    "people": [],
+    "places": [],
+    "groups": [],
+    "events": [],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "proverbs-rival-women-paths",
+      "claim": "Proverbs 1-9 personifies Wisdom and Folly as women whose public calls, houses, meals, and paths embody rival forms of desire and lead respectively toward life and death.",
+      "category": "culture",
+      "source_ids": [
+        "proverbs-masoretic",
+        "fox-proverbs-one-nine",
+        "weeks-instruction-imagery",
+        "stewart-poetic-ethics"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Proverbs 4:5-9"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "proverbs",
+        "parent_title": "Proverbs",
+        "parent_type": "book",
+        "object_importance": 88,
+        "retrieval_score": 0.908,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 4,
+        "certainty": "strong_consensus",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 90
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "Proverbs 1-9",
+        "author": "Michael V. Fox",
+        "publisher": "Yale University Press",
+        "year": 2000,
+        "locator": "Anchor Yale Bible Commentary",
+        "url": "https://yalebooks.yale.edu/book/9780300139594/proverbs-1-9/",
+        "source_type": "reference-work",
+        "supports": [
+          "authorship-positions",
+          "historical-context",
+          "ancient-near-east-context",
+          "literary-context",
+          "hebrew-words",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "Translation and commentary with ancient Near Eastern survey, thematic essays on personified Wisdom, and textual notes.",
+        "id": "fox-proverbs-one-nine",
+        "canonical_object_ids": [
+          "proverbs"
+        ]
+      },
+      {
+        "title": "Masoretic Proverbs",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Proverbs 1-31 in the Masoretic textual tradition",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "historical-context",
+          "literary-context",
+          "structure",
+          "key-people",
+          "key-places",
+          "key-events",
+          "scripture-references",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "Primary Hebrew canonical text.",
+        "id": "proverbs-masoretic",
+        "canonical_object_ids": [
+          "proverbs"
+        ]
+      },
+      {
+        "title": "Poetic Ethics in Proverbs",
+        "author": "Anne W. Stewart",
+        "publisher": "Cambridge University Press",
+        "year": 2015,
+        "locator": "Wisdom Literature and the Shaping of the Moral Self",
+        "url": "https://www.cambridge.org/core/books/poetic-ethics-in-proverbs/FE8E38BAC87C85476599B746D75FCBAE",
+        "source_type": "academic-book",
+        "supports": [
+          "hebraic-worldview",
+          "literary-context",
+          "genre",
+          "major-themes",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "Study of poetic form, desire, perception, pedagogy, and complex moral character formation.",
+        "id": "stewart-poetic-ethics",
+        "canonical_object_ids": [
+          "proverbs"
+        ]
+      },
+      {
+        "title": "Instruction and Imagery in Proverbs 1-9",
+        "author": "Stuart Weeks",
+        "publisher": "Oxford University Press",
+        "year": 2007,
+        "locator": "Comparative study of instruction, paths, Wisdom, and the foreign woman",
+        "url": "https://academic.oup.com/book/11971",
+        "source_type": "academic-book",
+        "supports": [
+          "ancient-near-east-context",
+          "literary-context",
+          "major-themes",
+          "interpretive-disputes",
+          "interpretive-notes"
+        ],
+        "notes": "Literary and comparative analysis of Proverbs 1-9 as instruction and of its gendered imagery.",
+        "id": "weeks-instruction-imagery",
+        "canonical_object_ids": [
+          "proverbs"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "proverbs",
+        "type": "book",
+        "title": "Proverbs",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.908
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "9d1fbf15d54b0941501c29dd57bba102a42da1e2f7901a57444d35f6f9d9c4a3",
+  "evidence_hash_version": "2"
+}

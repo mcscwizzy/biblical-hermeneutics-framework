@@ -1,0 +1,206 @@
+{
+  "passage_ref": "1 Kings 11",
+  "entities": {
+    "people": [],
+    "places": [],
+    "groups": [],
+    "events": [],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "1-kings:interpretive_note:2",
+      "claim": "First Kings presents the division through both divine judgment on Solomon and human political choices by Rehoboam, Jeroboam, and their counselors; these levels should not be reduced to a single cause.",
+      "category": "politics",
+      "source_ids": [
+        "1-kings-1-22",
+        "cogan-first-kings"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Kings 11:9-13"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "1-kings",
+        "parent_title": "1 Kings",
+        "parent_type": "book",
+        "object_importance": 95,
+        "retrieval_score": 0.915,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 8,
+        "certainty": "textually_explicit",
+        "dispute_status": "not_disputed",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "literary-observation",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 110
+      }
+    },
+    {
+      "id": "first-kings-kingdom-division",
+      "claim": "The kingdom divides when Rehoboam refuses experienced counsel and answers the northern tribes harshly, within the earlier announced judgment on Solomon's disloyalty.",
+      "category": "history",
+      "source_ids": [
+        "1-kings-1-22",
+        "cogan-first-kings"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Kings 11:9-13"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "1-kings",
+        "parent_title": "1 Kings",
+        "parent_type": "book",
+        "object_importance": 95,
+        "retrieval_score": 0.915,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 8,
+        "certainty": "textually_explicit",
+        "dispute_status": "not_disputed",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 118
+      }
+    },
+    {
+      "id": "first-kings-literary-movement",
+      "claim": "First Kings moves from contested succession through Solomon's wisdom, temple, and failure to divided kingdoms and prophetic confrontation under Ahab.",
+      "category": "culture",
+      "source_ids": [
+        "1-kings-1-22",
+        "cogan-first-kings"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Kings 11:1-43"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "1-kings",
+        "parent_title": "1 Kings",
+        "parent_type": "book",
+        "object_importance": 95,
+        "retrieval_score": 0.915,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "not_disputed",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 113
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "1 Kings 1-22",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "1 Kings 1:1-22:53",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "structure",
+          "key-people",
+          "key-places",
+          "key-events",
+          "scripture-references",
+          "interpretive-notes",
+          "first-kings-literary-movement",
+          "first-kings-solomon-discernment",
+          "first-kings-temple-prayer-warning",
+          "first-kings-kingdom-division",
+          "first-kings-carmel-confession",
+          "first-kings-naboth-condemnation"
+        ],
+        "notes": "Primary biblical text.",
+        "id": "1-kings-1-22",
+        "canonical_object_ids": [
+          "1-kings"
+        ]
+      },
+      {
+        "title": "I Kings",
+        "author": "Mordechai Cogan",
+        "publisher": "Yale University Press",
+        "year": 2001,
+        "locator": "Anchor Yale Bible introduction, translation, notes, and commentary",
+        "url": "https://yalebooks.yale.edu/9780300140538/i-kings/",
+        "source_type": "reference-work",
+        "supports": [
+          "authorship-positions",
+          "date-ranges",
+          "historical-context",
+          "literary-context",
+          "hebrew-words",
+          "interpretive-notes",
+          "first-kings-literary-movement",
+          "first-kings-solomon-discernment",
+          "first-kings-temple-prayer-warning",
+          "first-kings-kingdom-division",
+          "first-kings-naboth-condemnation"
+        ],
+        "notes": "Technical commentary emphasizing Hebrew text, literary composition, regnal and political history, and external evidence.",
+        "id": "cogan-first-kings",
+        "canonical_object_ids": [
+          "1-kings"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "1-kings",
+        "type": "book",
+        "title": "1 Kings",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.915
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "f296735c6037ed27e858d7f2d51c95ae8ed0af5cd211a3f7aef82514fb1d4e4e",
+  "evidence_hash_version": "2"
+}

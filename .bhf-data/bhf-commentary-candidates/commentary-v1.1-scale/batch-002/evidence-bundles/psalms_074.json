@@ -1,0 +1,470 @@
+{
+  "passage_ref": "Psalms 74",
+  "entities": {
+    "people": [],
+    "places": [],
+    "groups": [],
+    "events": [],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "job:interpretive_note:8",
+      "claim": "Behemoth and Leviathan draw on observable animal traits as well as ancient mythopoetic and cosmic imagery. Hippopotamus and crocodile comparisons are common, but the figures exceed simple field-guide description and cannot be identified confidently as dinosaurs, extinct reptiles, modern states, or the devil solely from Job 40-41.",
+      "category": "culture",
+      "source_ids": [
+        "job-masoretic-1-42",
+        "pope-job-anchor",
+        "zondervan-wisdom-backgrounds",
+        "walton-job-nivac"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Psalms 74:13-14"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "job",
+        "parent_title": "Job",
+        "parent_type": "book",
+        "object_importance": 92,
+        "retrieval_score": 0.912,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 12,
+        "certainty": "plausible",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "ancient-near-east-context",
+        "field": "",
+        "semantic_relationship": "INTERTEXTUAL_REUSE",
+        "presentation_role": "dig_deeper",
+        "overview_priority": 0
+      }
+    },
+    {
+      "id": "psalms-exile-restoration-pilgrimage",
+      "claim": "Communal psalms preserve sanctuary destruction and Babylonian exile, while Book V also gathers return thanksgiving, festival praise, Torah meditation, and Songs of Ascents oriented toward worship.",
+      "category": "culture",
+      "source_ids": [
+        "psalms-masoretic",
+        "declaisse-walford-jacobson-tanner",
+        "hossfeld-zenger-psalms"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Psalms 74:1-23"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "psalms",
+        "parent_title": "Psalms",
+        "parent_type": "book",
+        "object_importance": 95,
+        "retrieval_score": 0.915,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 90
+      }
+    },
+    {
+      "id": "what-is-the-synagogue:ancient_near_east_context:0",
+      "claim": "Local assembly spaces were common across the ancient world, but the synagogue is defined by Scripture, prayer, and instruction.",
+      "category": "culture",
+      "source_ids": [
+        "deuteronomy-6",
+        "psalm-74",
+        "luke-4",
+        "acts-13",
+        "acts-17",
+        "james-2"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Psalms 74:8-9"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "what-is-the-synagogue",
+        "parent_title": "What is the Synagogue?",
+        "parent_type": "faq",
+        "object_importance": 88,
+        "retrieval_score": 0.908,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 7,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "what-is-the-synagogue:historical_context:0",
+      "claim": "Synagogues become especially important after exile and in the diaspora when Torah-centered life must continue away from the temple.",
+      "category": "history",
+      "source_ids": [
+        "deuteronomy-6",
+        "psalm-74",
+        "luke-4",
+        "acts-13",
+        "acts-17",
+        "james-2"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Psalms 74:8-9"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "what-is-the-synagogue",
+        "parent_title": "What is the Synagogue?",
+        "parent_type": "faq",
+        "object_importance": 88,
+        "retrieval_score": 0.908,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 7,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "Acts 13",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "acts-13",
+        "canonical_object_ids": [
+          "what-is-the-synagogue"
+        ]
+      },
+      {
+        "title": "Acts 17",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "acts-17",
+        "canonical_object_ids": [
+          "what-is-the-synagogue"
+        ]
+      },
+      {
+        "title": "The Book of Psalms",
+        "author": "Nancy L. deClaiss\u00e9-Walford, Rolf A. Jacobson, and Beth LaNeel Tanner",
+        "publisher": "Wm. B. Eerdmans Publishing Co.",
+        "year": 2014,
+        "locator": "New International Commentary on the Old Testament",
+        "url": "https://www.eerdmans.com/9780802824936/the-book-of-psalms/",
+        "source_type": "reference-work",
+        "supports": [
+          "canonical-context",
+          "literary-context",
+          "genre",
+          "structure",
+          "later-christian-reception",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "One-volume commentary emphasizing translation, poetry, theology, textual criticism, Dead Sea Scrolls, and canonical shaping.",
+        "id": "declaisse-walford-jacobson-tanner",
+        "canonical_object_ids": [
+          "psalms"
+        ]
+      },
+      {
+        "title": "Deuteronomy 6",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "deuteronomy-6",
+        "canonical_object_ids": [
+          "what-is-the-synagogue"
+        ]
+      },
+      {
+        "title": "Psalms 2 and Psalms 3",
+        "author": "Frank-Lothar Hossfeld and Erich Zenger",
+        "publisher": "Fortress Press",
+        "year": 2011,
+        "locator": "Hermeneia commentaries on Psalms 51-100 and 101-150",
+        "url": "https://ms.fortresspress.com/downloads/HermeneiaBrochure_2018.pdf",
+        "source_type": "reference-work",
+        "supports": [
+          "literary-context",
+          "structure",
+          "canonical-context",
+          "historical-context",
+          "interpretive-disputes",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "Historical-critical and final-form analysis with attention to neighboring psalms, ethics, theology, and reception.",
+        "id": "hossfeld-zenger-psalms",
+        "canonical_object_ids": [
+          "psalms"
+        ]
+      },
+      {
+        "title": "James 2",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "james-2",
+        "canonical_object_ids": [
+          "what-is-the-synagogue"
+        ]
+      },
+      {
+        "title": "Job 1-42",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Job 1:1-42:17 in the Masoretic textual tradition",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "structure",
+          "key-people",
+          "key-places",
+          "key-events",
+          "scripture-references",
+          "interpretive-notes",
+          "job-righteous-before-testing",
+          "job-heavenly-challenge-losses",
+          "job-lament-dialogues",
+          "job-wisdom-oath",
+          "job-elihu-intervention",
+          "job-whirlwind-creation",
+          "job-friends-rebuked-intercession",
+          "job-restoration-new-family"
+        ],
+        "notes": "Primary Hebrew canonical text.",
+        "id": "job-masoretic-1-42",
+        "canonical_object_ids": [
+          "job"
+        ]
+      },
+      {
+        "title": "Luke 4",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "luke-4",
+        "canonical_object_ids": [
+          "what-is-the-synagogue"
+        ]
+      },
+      {
+        "title": "Job",
+        "author": "Marvin H. Pope",
+        "publisher": "Yale University Press",
+        "year": 1965,
+        "locator": "Anchor Yale Bible Commentary, third edition",
+        "url": "https://yalebooks.yale.edu/9780300140750/job/",
+        "source_type": "reference-work",
+        "supports": [
+          "hebrew-words",
+          "ancient-near-east-context",
+          "second-temple-context",
+          "primary-sources",
+          "interpretive-notes"
+        ],
+        "notes": "Philological and comparative commentary incorporating ancient Near Eastern evidence and early Job textual witnesses.",
+        "id": "pope-job-anchor",
+        "canonical_object_ids": [
+          "job"
+        ]
+      },
+      {
+        "title": "Psalm 74",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [],
+        "notes": "",
+        "id": "psalm-74",
+        "canonical_object_ids": [
+          "what-is-the-synagogue"
+        ]
+      },
+      {
+        "title": "Masoretic Psalter",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Psalms 1-150 in the Masoretic textual tradition",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "literary-context",
+          "structure",
+          "key-people",
+          "key-places",
+          "key-events",
+          "scripture-references",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "Primary Hebrew canonical text and base for common modern Protestant numbering.",
+        "id": "psalms-masoretic",
+        "canonical_object_ids": [
+          "psalms"
+        ]
+      },
+      {
+        "title": "Job",
+        "author": "John H. Walton",
+        "publisher": "Zondervan Academic",
+        "year": 2012,
+        "locator": "NIV Application Commentary",
+        "url": "https://zondervanacademic.com/products/job",
+        "source_type": "reference-work",
+        "supports": [
+          "ancient-near-east-context",
+          "historical-context",
+          "later-christian-reception",
+          "common-questions",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "Ancient-context, theological, and application-oriented commentary with attention to suffering, divine policy, and responsible contemporary use.",
+        "id": "walton-job-nivac",
+        "canonical_object_ids": [
+          "job"
+        ]
+      },
+      {
+        "title": "The Minor Prophets, Job, Psalms, Proverbs, Ecclesiastes, Song of Songs",
+        "author": "John H. Walton, general editor; Richard E. Averbeck and other contributors",
+        "publisher": "Zondervan Academic",
+        "year": 2009,
+        "locator": "Zondervan Illustrated Bible Backgrounds Commentary, Psalms sections",
+        "url": "https://zondervanacademic.com/products/the-minor-prophets-job-psalms-proverbs-ecclesiastes-song-of-songs",
+        "source_type": "reference-work",
+        "supports": [
+          "ancient-near-east-context",
+          "historical-context",
+          "maps",
+          "archaeology",
+          "interpretive-notes"
+        ],
+        "notes": "Comparative literary, iconographic, cultural, geographic, and ancient Near Eastern background.",
+        "id": "zondervan-wisdom-backgrounds",
+        "canonical_object_ids": [
+          "job",
+          "psalms"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "job",
+        "type": "book",
+        "title": "Job",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.912
+      },
+      {
+        "id": "psalms",
+        "type": "book",
+        "title": "Psalms",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.915
+      },
+      {
+        "id": "what-is-the-synagogue",
+        "type": "faq",
+        "title": "What is the Synagogue?",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.908
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "36f0a97c4239e3a41229ff92be0374540cdbedb9b7b99bee151466dd17c53ba4",
+  "evidence_hash_version": "2"
+}

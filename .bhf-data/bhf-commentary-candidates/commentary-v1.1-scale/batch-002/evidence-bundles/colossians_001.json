@@ -1,0 +1,2493 @@
+{
+  "passage_ref": "Colossians 1",
+  "entities": {
+    "people": [
+      {
+        "id": "jesus",
+        "title": "Jesus",
+        "type": "person",
+        "aliases": [
+          "who is jesus",
+          "tell me about jesus",
+          "why is jesus important"
+        ],
+        "metadata": {
+          "summary": "The incarnate Son, Messiah, and Lord whose life, death, resurrection, and reign fulfill Israel's story.",
+          "importance": 100,
+          "retrieval_score": 0.92,
+          "ancient_names": [],
+          "modern_identification": "",
+          "region": "",
+          "terrain": "",
+          "elevation": null,
+          "archaeology": [],
+          "related_passages": [
+            "Matthew 1:18-25",
+            "Mark 1:1-15",
+            "Luke 4:16-21",
+            "John 1:1-18",
+            "Philippians 2:5-11",
+            "Colossians 1:15-20",
+            "Hebrews 1:1-4",
+            "1 Corinthians 15:1-28"
+          ]
+        }
+      }
+    ],
+    "places": [],
+    "groups": [],
+    "events": [
+      {
+        "id": "creation",
+        "title": "Creation",
+        "type": "event",
+        "aliases": [
+          "what happened in creation",
+          "tell me about creation",
+          "why is creation important"
+        ],
+        "metadata": {
+          "summary": "The divine ordering of the heavens and the earth and the blessing of life in the seven-day pattern of Genesis 1.",
+          "importance": 100,
+          "retrieval_score": 0.92,
+          "ancient_names": [],
+          "modern_identification": "",
+          "region": "",
+          "terrain": "",
+          "elevation": null,
+          "archaeology": [],
+          "related_passages": [
+            "Genesis 1:1-31",
+            "Genesis 2:1-25",
+            "Psalms 8:1-9",
+            "Psalms 104:1-35",
+            "John 1:1-5",
+            "Colossians 1:15-17",
+            "Hebrews 11:3",
+            "Revelation 21:1-5"
+          ]
+        }
+      }
+    ],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "col-afflictions",
+      "claim": "The Pauline voice interprets present suffering as ministry for Messiah's body and speaks of filling what is lacking in Messiah's afflictions.",
+      "category": "history",
+      "source_ids": [
+        "col-greek",
+        "sumney-colossians"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Colossians 1:24-25"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "colossians",
+        "parent_title": "Colossians",
+        "parent_type": "book",
+        "object_importance": 79,
+        "retrieval_score": 0.959,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 23,
+        "certainty": "textually_explicit",
+        "dispute_status": "denominational_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "col-creation",
+      "claim": "All things, including visible and invisible authorities, are said to be created in, through, and for Messiah and to cohere in him.",
+      "category": "history",
+      "source_ids": [
+        "col-greek",
+        "moo-colossians"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Colossians 1:16-17"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "colossians",
+        "parent_title": "Colossians",
+        "parent_type": "book",
+        "object_importance": 79,
+        "retrieval_score": 0.959,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 15,
+        "certainty": "textually_explicit",
+        "dispute_status": "not_disputed",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 103
+      }
+    },
+    {
+      "id": "col-epaphras",
+      "claim": "Epaphras taught the recipients the gospel, reported their love, labored in prayer for them, and cared for neighboring communities.",
+      "category": "history",
+      "source_ids": [
+        "col-greek",
+        "barclay-colossians"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Colossians 1:7-8"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "colossians",
+        "parent_title": "Colossians",
+        "parent_type": "book",
+        "object_importance": 79,
+        "retrieval_score": 0.959,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 6,
+        "certainty": "textually_explicit",
+        "dispute_status": "not_disputed",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 103
+      }
+    },
+    {
+      "id": "col-firstborn",
+      "claim": "Firstborn of all creation carries disputed temporal, status, and inheritance implications and must be interpreted with the surrounding creation clauses.",
+      "category": "language",
+      "source_ids": [
+        "col-greek",
+        "nets-lxx",
+        "bdag"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Colossians 1:15-17"
+      ],
+      "confidence": "low",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "colossians",
+        "parent_title": "Colossians",
+        "parent_type": "book",
+        "object_importance": 79,
+        "retrieval_score": 0.959,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 14,
+        "certainty": "disputed",
+        "dispute_status": "lexical_uncertainty",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "lexical",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 81
+      }
+    },
+    {
+      "id": "col-fullness",
+      "claim": "The text says all fullness was pleased to dwell in Messiah and that fullness of deity dwells bodily in him.",
+      "category": "culture",
+      "source_ids": [
+        "col-greek",
+        "foster-colossians"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Colossians 1:19"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "colossians",
+        "parent_title": "Colossians",
+        "parent_type": "book",
+        "object_importance": 79,
+        "retrieval_score": 0.959,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 18,
+        "certainty": "textually_explicit",
+        "dispute_status": "denominational_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_theology",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "col-image",
+      "claim": "Messiah is called the image of the invisible God.",
+      "category": "culture",
+      "source_ids": [
+        "col-greek",
+        "nets-lxx",
+        "moo-colossians"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Colossians 1:15"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "colossians",
+        "parent_title": "Colossians",
+        "parent_type": "book",
+        "object_importance": 79,
+        "retrieval_score": 0.959,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 14,
+        "certainty": "textually_explicit",
+        "dispute_status": "denominational_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_theology",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "col-mystery",
+      "claim": "The formerly hidden mystery is disclosed among gentiles as Messiah among or in them, the hope of glory, toward mature proclamation.",
+      "category": "culture",
+      "source_ids": [
+        "col-greek",
+        "dunn-colossians"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Colossians 1:25-29"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "colossians",
+        "parent_title": "Colossians",
+        "parent_type": "book",
+        "object_importance": 79,
+        "retrieval_score": 0.959,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 24,
+        "certainty": "textually_explicit",
+        "dispute_status": "lexical_uncertainty",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_theology",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "col-poem",
+      "claim": "Colossians 1:15-20 has elevated form and may incorporate poetic or traditional material, but its prehistory is not demonstrable.",
+      "category": "culture",
+      "source_ids": [
+        "dunn-colossians",
+        "sumney-colossians"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Colossians 1:15-20"
+      ],
+      "confidence": "low",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "colossians",
+        "parent_title": "Colossians",
+        "parent_type": "book",
+        "object_importance": 79,
+        "retrieval_score": 0.959,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 14,
+        "certainty": "disputed",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 90
+      }
+    },
+    {
+      "id": "col-reconciliation",
+      "claim": "The letter connects peace and reconciliation of all things with the blood of Messiah's cross and the recipients' continued grounded hope.",
+      "category": "culture",
+      "source_ids": [
+        "col-greek",
+        "foster-colossians"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Colossians 1:20-23"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "colossians",
+        "parent_title": "Colossians",
+        "parent_type": "book",
+        "object_importance": 79,
+        "retrieval_score": 0.959,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 19,
+        "certainty": "textually_explicit",
+        "dispute_status": "denominational_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_theology",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "col-senders",
+      "claim": "Paul and Timothy are named as senders, while the dominant singular voice claims apostolic ministry and a closing Pauline autograph.",
+      "category": "history",
+      "source_ids": [
+        "col-greek",
+        "foster-colossians"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Colossians 1:1",
+        "Colossians 1:23-25"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "colossians",
+        "parent_title": "Colossians",
+        "parent_type": "book",
+        "object_importance": 79,
+        "retrieval_score": 0.959,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "textually_explicit",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "creation-doctrine-framework:ancient_near_east_context:0",
+      "claim": "Creation texts stand alongside Mesopotamian origin traditions such as Enuma Elish and Atrahasis, while Scripture presents creation as ordered by the one covenant Lord.",
+      "category": "culture",
+      "source_ids": [
+        "genesis-1-2",
+        "psalm-104",
+        "john-1",
+        "colossians-1",
+        "revelation-21",
+        "creation-doctrine-framework-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Colossians 1:15-20"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "creation-doctrine-framework",
+        "parent_title": "Creation Doctrine Framework",
+        "parent_type": "doctrine",
+        "object_importance": 92,
+        "retrieval_score": 0.912,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 14,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "creation-doctrine-framework:hebraic_worldview:0",
+      "claim": "Creation is good, ordered, and accountable to God; humanity receives creaturely dignity and responsibility rather than autonomous self-definition.",
+      "category": "culture",
+      "source_ids": [
+        "genesis-1-2",
+        "psalm-104",
+        "john-1",
+        "colossians-1",
+        "revelation-21",
+        "creation-doctrine-framework-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Colossians 1:15-20"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "creation-doctrine-framework",
+        "parent_title": "Creation Doctrine Framework",
+        "parent_type": "doctrine",
+        "object_importance": 92,
+        "retrieval_score": 0.912,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 14,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "hebraic_worldview",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "creation-doctrine-framework:historical_context:0",
+      "claim": "Creation doctrine draws from Israel's confession of the LORD as Creator amid ancient origin accounts and from later biblical texts that extend creation language to redemption and new creation.",
+      "category": "history",
+      "source_ids": [
+        "genesis-1-2",
+        "psalm-104",
+        "john-1",
+        "colossians-1",
+        "revelation-21",
+        "creation-doctrine-framework-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Colossians 1:15-20"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "creation-doctrine-framework",
+        "parent_title": "Creation Doctrine Framework",
+        "parent_type": "doctrine",
+        "object_importance": 92,
+        "retrieval_score": 0.912,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 14,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "creation-doctrine-framework:historical_setting:0",
+      "claim": "Canonical teaching from Genesis through Revelation",
+      "category": "history",
+      "source_ids": [
+        "genesis-1-2",
+        "psalm-104",
+        "john-1",
+        "colossians-1",
+        "revelation-21",
+        "creation-doctrine-framework-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Colossians 1:15-20"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "creation-doctrine-framework",
+        "parent_title": "Creation Doctrine Framework",
+        "parent_type": "doctrine",
+        "object_importance": 92,
+        "retrieval_score": 0.912,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 14,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_setting",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "creation-doctrine-framework:original_audience:0",
+      "claim": "Readers learning Scripture's account of God, world, and human vocation",
+      "category": "social",
+      "source_ids": [
+        "genesis-1-2",
+        "psalm-104",
+        "john-1",
+        "colossians-1",
+        "revelation-21",
+        "creation-doctrine-framework-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Colossians 1:15-20"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "creation-doctrine-framework",
+        "parent_title": "Creation Doctrine Framework",
+        "parent_type": "doctrine",
+        "object_importance": 92,
+        "retrieval_score": 0.912,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 14,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "original_audience",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "creation-doctrine-framework:second_temple_context:0",
+      "claim": "Second Temple Jewish literature and early Christian texts often connect creation, wisdom, resurrection hope, and God's power to make all things new.",
+      "category": "culture",
+      "source_ids": [
+        "genesis-1-2",
+        "psalm-104",
+        "john-1",
+        "colossians-1",
+        "revelation-21",
+        "creation-doctrine-framework-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Colossians 1:15-20"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "creation-doctrine-framework",
+        "parent_title": "Creation Doctrine Framework",
+        "parent_type": "doctrine",
+        "object_importance": 92,
+        "retrieval_score": 0.912,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 14,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "second_temple_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "creation-doctrine-framework:timeline:0",
+      "claim": "Creation declared good",
+      "category": "chronology",
+      "source_ids": [
+        "genesis-1-2",
+        "psalm-104",
+        "john-1",
+        "colossians-1",
+        "revelation-21",
+        "creation-doctrine-framework-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Colossians 1:15-20"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "creation-doctrine-framework",
+        "parent_title": "Creation Doctrine Framework",
+        "parent_type": "doctrine",
+        "object_importance": 92,
+        "retrieval_score": 0.912,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 14,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "timeline",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "chronology",
+        "overview_priority": 25
+      }
+    },
+    {
+      "id": "creation-doctrine-framework:timeline:1",
+      "claim": "Human vocation given",
+      "category": "chronology",
+      "source_ids": [
+        "genesis-1-2",
+        "psalm-104",
+        "john-1",
+        "colossians-1",
+        "revelation-21",
+        "creation-doctrine-framework-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Colossians 1:15-20"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "creation-doctrine-framework",
+        "parent_title": "Creation Doctrine Framework",
+        "parent_type": "doctrine",
+        "object_importance": 92,
+        "retrieval_score": 0.912,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 14,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "timeline",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "chronology",
+        "overview_priority": 25
+      }
+    },
+    {
+      "id": "creation-doctrine-framework:timeline:2",
+      "claim": "Fall disorders creation",
+      "category": "chronology",
+      "source_ids": [
+        "genesis-1-2",
+        "psalm-104",
+        "john-1",
+        "colossians-1",
+        "revelation-21",
+        "creation-doctrine-framework-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Colossians 1:15-20"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "creation-doctrine-framework",
+        "parent_title": "Creation Doctrine Framework",
+        "parent_type": "doctrine",
+        "object_importance": 92,
+        "retrieval_score": 0.912,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 14,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "timeline",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "chronology",
+        "overview_priority": 25
+      }
+    },
+    {
+      "id": "creation-doctrine-framework:timeline:3",
+      "claim": "Wisdom and worship confess the Creator",
+      "category": "chronology",
+      "source_ids": [
+        "genesis-1-2",
+        "psalm-104",
+        "john-1",
+        "colossians-1",
+        "revelation-21",
+        "creation-doctrine-framework-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Colossians 1:15-20"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "creation-doctrine-framework",
+        "parent_title": "Creation Doctrine Framework",
+        "parent_type": "doctrine",
+        "object_importance": 92,
+        "retrieval_score": 0.912,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 14,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "timeline",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "chronology",
+        "overview_priority": 25
+      }
+    },
+    {
+      "id": "creation-doctrine-framework:timeline:4",
+      "claim": "Christ revealed as agent and heir of creation",
+      "category": "chronology",
+      "source_ids": [
+        "genesis-1-2",
+        "psalm-104",
+        "john-1",
+        "colossians-1",
+        "revelation-21",
+        "creation-doctrine-framework-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Colossians 1:15-20"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "creation-doctrine-framework",
+        "parent_title": "Creation Doctrine Framework",
+        "parent_type": "doctrine",
+        "object_importance": 92,
+        "retrieval_score": 0.912,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 14,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "timeline",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "chronology",
+        "overview_priority": 25
+      }
+    },
+    {
+      "id": "creation-doctrine-framework:timeline:5",
+      "claim": "New creation promised",
+      "category": "chronology",
+      "source_ids": [
+        "genesis-1-2",
+        "psalm-104",
+        "john-1",
+        "colossians-1",
+        "revelation-21",
+        "creation-doctrine-framework-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Colossians 1:15-20"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "creation-doctrine-framework",
+        "parent_title": "Creation Doctrine Framework",
+        "parent_type": "doctrine",
+        "object_importance": 92,
+        "retrieval_score": 0.912,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 14,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "timeline",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "chronology",
+        "overview_priority": 25
+      }
+    },
+    {
+      "id": "creation-theme:ancient_near_east_context:0",
+      "claim": "The motif speaks against chaos-centered or polytheistic origin stories and keeps the creator God singular and sovereign.",
+      "category": "culture",
+      "source_ids": [
+        "genesis-1-2",
+        "psalm-8",
+        "psalm-104",
+        "john-1",
+        "romans-8",
+        "revelation-21"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Colossians 1:15-17"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "creation-theme",
+        "parent_title": "Creation Theme",
+        "parent_type": "theme",
+        "object_importance": 96,
+        "retrieval_score": 0.916,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 14,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "creation-theme:historical_context:0",
+      "claim": "Creation and new creation frame the Bible from Genesis to Revelation and give coherence to human vocation, fall, redemption, and hope.",
+      "category": "history",
+      "source_ids": [
+        "genesis-1-2",
+        "psalm-8",
+        "psalm-104",
+        "john-1",
+        "romans-8",
+        "revelation-21"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Colossians 1:15-17"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "creation-theme",
+        "parent_title": "Creation Theme",
+        "parent_type": "theme",
+        "object_importance": 96,
+        "retrieval_score": 0.916,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 14,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "creation:ancient_near_east_context:0",
+      "claim": "Genesis 1 can be compared with ancient Mesopotamian accounts of cosmic waters, ordering, celestial bodies, divine rule, and human vocation. The comparisons reveal shared discourse and marked differences without proving a single route of dependence.",
+      "category": "culture",
+      "source_ids": [
+        "genesis-1-2",
+        "psalm-8",
+        "psalm-104",
+        "john-1",
+        "colossians-1",
+        "revelation-21",
+        "sarna-genesis-creation"
+      ],
+      "related_entity_ids": [
+        "creation"
+      ],
+      "passage_anchors": [
+        "Colossians 1:15-17"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "creation",
+        "parent_title": "Creation",
+        "parent_type": "event",
+        "object_importance": 100,
+        "retrieval_score": 0.92,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 14,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "creation:hebraic_worldview:0",
+      "claim": "Genesis 1 depicts one God ordering the world by speech, blessing living creatures, assigning humans an image-bearing vocation, and resting on the seventh day. These observations describe the passage before later theological synthesis.",
+      "category": "culture",
+      "source_ids": [
+        "genesis-1-2",
+        "psalm-8",
+        "psalm-104",
+        "john-1",
+        "colossians-1",
+        "revelation-21",
+        "sarna-genesis-creation"
+      ],
+      "related_entity_ids": [
+        "creation"
+      ],
+      "passage_anchors": [
+        "Colossians 1:15-17"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "creation",
+        "parent_title": "Creation",
+        "parent_type": "event",
+        "object_importance": 100,
+        "retrieval_score": 0.92,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 14,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "hebraic_worldview",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "creation:historical_context:0",
+      "claim": "Genesis presents creation as the foundational act that begins biblical history and establishes God\u2019s sovereignty over all things.",
+      "category": "history",
+      "source_ids": [
+        "genesis-1-2",
+        "psalm-8",
+        "psalm-104",
+        "john-1",
+        "colossians-1",
+        "revelation-21",
+        "sarna-genesis-creation"
+      ],
+      "related_entity_ids": [
+        "creation"
+      ],
+      "passage_anchors": [
+        "Colossians 1:15-17"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "creation",
+        "parent_title": "Creation",
+        "parent_type": "event",
+        "object_importance": 100,
+        "retrieval_score": 0.92,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 14,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "eph-colossians",
+      "claim": "Ephesians and Colossians share extensive language and structure; direction and mechanism of dependence remain debated.",
+      "category": "culture",
+      "source_ids": [
+        "best-ephesians",
+        "lincoln-ephesians"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Colossians 1:15-20"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "ephesians",
+        "parent_title": "Ephesians",
+        "parent_type": "book",
+        "object_importance": 84,
+        "retrieval_score": 0.904,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 14,
+        "certainty": "strong_consensus",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "INTERTEXTUAL_REUSE",
+        "presentation_role": "dig_deeper",
+        "overview_priority": 0
+      }
+    },
+    {
+      "id": "image-of-god-theme:ancient_near_east_context:0",
+      "claim": "Royal imagery was common in the ancient world, but Genesis extends representative dignity to humanity as a whole rather than only to kings.",
+      "category": "culture",
+      "source_ids": [
+        "genesis-1-26-28",
+        "genesis-5-1-3",
+        "genesis-9-1-7",
+        "psalm-8-1-9",
+        "1-corinthians-11-7",
+        "james-3-9",
+        "colossians-1-15-20",
+        "colossians-3-9-10",
+        "romans-8-28-30",
+        "ephesians-4-22-24",
+        "image-of-god-theme-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Colossians 1:15-20"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "image-of-god-theme",
+        "parent_title": "Image of God Theme",
+        "parent_type": "theme",
+        "object_importance": 96,
+        "retrieval_score": 0.916,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 14,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "image-of-god-theme:hebraic_worldview:0",
+      "claim": "Human vocation, relational responsibility, dignity, stewardship, and moral accountability.",
+      "category": "culture",
+      "source_ids": [
+        "genesis-1-26-28",
+        "genesis-5-1-3",
+        "genesis-9-1-7",
+        "psalm-8-1-9",
+        "1-corinthians-11-7",
+        "james-3-9",
+        "colossians-1-15-20",
+        "colossians-3-9-10",
+        "romans-8-28-30",
+        "ephesians-4-22-24",
+        "image-of-god-theme-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Colossians 1:15-20"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "image-of-god-theme",
+        "parent_title": "Image of God Theme",
+        "parent_type": "theme",
+        "object_importance": 96,
+        "retrieval_score": 0.916,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 14,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "hebraic_worldview",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "image-of-god-theme:historical_context:0",
+      "claim": "Genesis places the image of God at creation and carries the language into the post-fall human story, where vocation remains but is marred.",
+      "category": "history",
+      "source_ids": [
+        "genesis-1-26-28",
+        "genesis-5-1-3",
+        "genesis-9-1-7",
+        "psalm-8-1-9",
+        "1-corinthians-11-7",
+        "james-3-9",
+        "colossians-1-15-20",
+        "colossians-3-9-10",
+        "romans-8-28-30",
+        "ephesians-4-22-24",
+        "image-of-god-theme-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Colossians 1:15-20"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "image-of-god-theme",
+        "parent_title": "Image of God Theme",
+        "parent_type": "theme",
+        "object_importance": 96,
+        "retrieval_score": 0.916,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 14,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "image-of-god-theme:second_temple_context:0",
+      "claim": "Second Temple Jewish reflection connected the image of God with wisdom, holiness, and the hope of restored humanity.",
+      "category": "culture",
+      "source_ids": [
+        "genesis-1-26-28",
+        "genesis-5-1-3",
+        "genesis-9-1-7",
+        "psalm-8-1-9",
+        "1-corinthians-11-7",
+        "james-3-9",
+        "colossians-1-15-20",
+        "colossians-3-9-10",
+        "romans-8-28-30",
+        "ephesians-4-22-24",
+        "image-of-god-theme-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Colossians 1:15-20"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "image-of-god-theme",
+        "parent_title": "Image of God Theme",
+        "parent_type": "theme",
+        "object_importance": 96,
+        "retrieval_score": 0.916,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 14,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "second_temple_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "jesus:ancient_near_east_context:0",
+      "claim": "Jesus' ministry unfolds in Second Temple Jewish Galilee and Judea under Roman rule, with synagogue teaching, temple festivals, purity debates, and patronage networks forming the social world.",
+      "category": "culture",
+      "source_ids": [
+        "matthew-1-28",
+        "mark-1-16",
+        "luke-1-24",
+        "john-1-21",
+        "acts-2",
+        "philippians-2",
+        "colossians-1",
+        "hebrews-1",
+        "1-corinthians-15",
+        "jesus-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "jesus"
+      ],
+      "passage_anchors": [
+        "Colossians 1:15-20"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "jesus",
+        "parent_title": "Jesus",
+        "parent_type": "person",
+        "object_importance": 100,
+        "retrieval_score": 0.92,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 14,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "jesus:hebraic_worldview:0",
+      "claim": "Jesus' teaching and actions assume Israel's Scripture-shaped world of covenant, temple, Torah, wisdom, prophetic hope, and the kingdom of God.",
+      "category": "culture",
+      "source_ids": [
+        "matthew-1-28",
+        "mark-1-16",
+        "luke-1-24",
+        "john-1-21",
+        "acts-2",
+        "philippians-2",
+        "colossians-1",
+        "hebrews-1",
+        "1-corinthians-15",
+        "jesus-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "jesus"
+      ],
+      "passage_anchors": [
+        "Colossians 1:15-20"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "jesus",
+        "parent_title": "Jesus",
+        "parent_type": "person",
+        "object_importance": 100,
+        "retrieval_score": 0.92,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 14,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "hebraic_worldview",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "jesus:historical_context:0",
+      "claim": "Jesus lived in first-century Galilee and Judea under Roman rule within the world of Second Temple Judaism.",
+      "category": "history",
+      "source_ids": [
+        "matthew-1-28",
+        "mark-1-16",
+        "luke-1-24",
+        "john-1-21",
+        "acts-2",
+        "philippians-2",
+        "colossians-1",
+        "hebrews-1",
+        "1-corinthians-15",
+        "jesus-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "jesus"
+      ],
+      "passage_anchors": [
+        "Colossians 1:15-20"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "jesus",
+        "parent_title": "Jesus",
+        "parent_type": "person",
+        "object_importance": 100,
+        "retrieval_score": 0.92,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 14,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "jesus:key_places:0",
+      "claim": "bethlehem-1",
+      "category": "geography",
+      "source_ids": [
+        "matthew-1-28",
+        "mark-1-16",
+        "luke-1-24",
+        "john-1-21",
+        "acts-2",
+        "philippians-2",
+        "colossians-1",
+        "hebrews-1",
+        "1-corinthians-15",
+        "jesus-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "jesus"
+      ],
+      "passage_anchors": [
+        "Colossians 1:15-20"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "jesus",
+        "parent_title": "Jesus",
+        "parent_type": "person",
+        "object_importance": 100,
+        "retrieval_score": 0.92,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 14,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "key_places",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": null,
+        "overview_priority": 28
+      }
+    },
+    {
+      "id": "jesus:key_places:1",
+      "claim": "nazareth",
+      "category": "geography",
+      "source_ids": [
+        "matthew-1-28",
+        "mark-1-16",
+        "luke-1-24",
+        "john-1-21",
+        "acts-2",
+        "philippians-2",
+        "colossians-1",
+        "hebrews-1",
+        "1-corinthians-15",
+        "jesus-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "jesus"
+      ],
+      "passage_anchors": [
+        "Colossians 1:15-20"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "jesus",
+        "parent_title": "Jesus",
+        "parent_type": "person",
+        "object_importance": 100,
+        "retrieval_score": 0.92,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 14,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "key_places",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": null,
+        "overview_priority": 28
+      }
+    },
+    {
+      "id": "jesus:key_places:2",
+      "claim": "galilee-1",
+      "category": "geography",
+      "source_ids": [
+        "matthew-1-28",
+        "mark-1-16",
+        "luke-1-24",
+        "john-1-21",
+        "acts-2",
+        "philippians-2",
+        "colossians-1",
+        "hebrews-1",
+        "1-corinthians-15",
+        "jesus-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "jesus"
+      ],
+      "passage_anchors": [
+        "Colossians 1:15-20"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "jesus",
+        "parent_title": "Jesus",
+        "parent_type": "person",
+        "object_importance": 100,
+        "retrieval_score": 0.92,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 14,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "key_places",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": null,
+        "overview_priority": 28
+      }
+    },
+    {
+      "id": "jesus:key_places:3",
+      "claim": "jerusalem",
+      "category": "geography",
+      "source_ids": [
+        "matthew-1-28",
+        "mark-1-16",
+        "luke-1-24",
+        "john-1-21",
+        "acts-2",
+        "philippians-2",
+        "colossians-1",
+        "hebrews-1",
+        "1-corinthians-15",
+        "jesus-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "jesus"
+      ],
+      "passage_anchors": [
+        "Colossians 1:15-20"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "jesus",
+        "parent_title": "Jesus",
+        "parent_type": "person",
+        "object_importance": 100,
+        "retrieval_score": 0.92,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 14,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "key_places",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": null,
+        "overview_priority": 28
+      }
+    },
+    {
+      "id": "jesus:key_places:4",
+      "claim": "judea-1",
+      "category": "geography",
+      "source_ids": [
+        "matthew-1-28",
+        "mark-1-16",
+        "luke-1-24",
+        "john-1-21",
+        "acts-2",
+        "philippians-2",
+        "colossians-1",
+        "hebrews-1",
+        "1-corinthians-15",
+        "jesus-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "jesus"
+      ],
+      "passage_anchors": [
+        "Colossians 1:15-20"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "jesus",
+        "parent_title": "Jesus",
+        "parent_type": "person",
+        "object_importance": 100,
+        "retrieval_score": 0.92,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 14,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "key_places",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": null,
+        "overview_priority": 28
+      }
+    },
+    {
+      "id": "jesus:second_temple_context:0",
+      "claim": "Jesus ministers amid Second Temple Jewish expectation, Roman rule, synagogue life, purity debates, messianic hope, and disputes over Israel's restoration.",
+      "category": "culture",
+      "source_ids": [
+        "matthew-1-28",
+        "mark-1-16",
+        "luke-1-24",
+        "john-1-21",
+        "acts-2",
+        "philippians-2",
+        "colossians-1",
+        "hebrews-1",
+        "1-corinthians-15",
+        "jesus-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "jesus"
+      ],
+      "passage_anchors": [
+        "Colossians 1:15-20"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "jesus",
+        "parent_title": "Jesus",
+        "parent_type": "person",
+        "object_importance": 100,
+        "retrieval_score": 0.92,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 14,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "second_temple_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "1 Corinthians 11:7",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "image and worship order",
+        "id": "1-corinthians-11-7",
+        "canonical_object_ids": [
+          "image-of-god-theme"
+        ]
+      },
+      {
+        "title": "1 Corinthians 15",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "1-corinthians-15",
+        "canonical_object_ids": [
+          "jesus"
+        ]
+      },
+      {
+        "title": "Acts 2",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "acts-2",
+        "canonical_object_ids": [
+          "jesus"
+        ]
+      },
+      {
+        "title": "Colossians and Philemon",
+        "author": "John M. G. Barclay",
+        "publisher": "Sheffield Academic Press",
+        "year": 1997,
+        "locator": "Introduction and commentary",
+        "url": "https://books.google.com/books?id=jc7YAAAAMAAJ",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "key-people",
+          "interpretive-notes"
+        ],
+        "notes": "Critical issues guide.",
+        "id": "barclay-colossians",
+        "canonical_object_ids": [
+          "colossians"
+        ]
+      },
+      {
+        "title": "A Greek-English Lexicon of the New Testament and Other Early Christian Literature",
+        "author": "Walter Bauer, Frederick W. Danker, William F. Arndt, and F. Wilbur Gingrich",
+        "publisher": "University of Chicago Press",
+        "year": 2000,
+        "locator": "eik\u014dn, pr\u014dtotokos, pl\u0113r\u014dma, stoicheion, cheirographon, apekdyomai, thr\u0113skeia",
+        "url": "https://press.uchicago.edu/ucp/books/book/chicago/G/bo3624521.html",
+        "source_type": "lexicon",
+        "supports": [
+          "greek-words",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "Lexical control; glosses do not settle context.",
+        "id": "bdag",
+        "canonical_object_ids": [
+          "colossians",
+          "ephesians"
+        ]
+      },
+      {
+        "title": "A Critical and Exegetical Commentary on Ephesians",
+        "author": "Ernest Best",
+        "publisher": "T&T Clark",
+        "year": 1998,
+        "locator": "Introduction and commentary",
+        "url": "https://www.bloomsbury.com/us/critical-and-exegetical-commentary-on-ephesians-9780567085658/",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "literary-context",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Evidence requires claim-level and locator-level review.",
+        "id": "best-ephesians",
+        "canonical_object_ids": [
+          "ephesians"
+        ]
+      },
+      {
+        "title": "SBL Greek New Testament: Colossians",
+        "author": "Michael W. Holmes, ed.",
+        "publisher": "Society of Biblical Literature and Logos Bible Software",
+        "year": 2010,
+        "locator": "Colossians",
+        "url": "https://www.sblgnt.com/",
+        "source_type": "scripture",
+        "supports": [
+          "scripture-references",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Primary Greek textual control.",
+        "id": "col-greek",
+        "canonical_object_ids": [
+          "colossians"
+        ]
+      },
+      {
+        "title": "Colossians 1",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "colossians-1",
+        "canonical_object_ids": [
+          "creation",
+          "creation-doctrine-framework",
+          "jesus"
+        ]
+      },
+      {
+        "title": "Colossians 1:15-20",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "Christ as the image",
+        "id": "colossians-1-15-20",
+        "canonical_object_ids": [
+          "image-of-god-theme"
+        ]
+      },
+      {
+        "title": "Colossians 3:9-10",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "renewed humanity",
+        "id": "colossians-3-9-10",
+        "canonical_object_ids": [
+          "image-of-god-theme"
+        ]
+      },
+      {
+        "title": "Canonical historical orientation for Creation Doctrine Framework",
+        "author": "",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "Foundational doctrine introduced in Genesis and developed across the canon",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "id": "creation-doctrine-framework-historical-orientation",
+        "canonical_object_ids": [
+          "creation-doctrine-framework"
+        ]
+      },
+      {
+        "title": "The Epistles to the Colossians and to Philemon",
+        "author": "James D. G. Dunn",
+        "publisher": "Eerdmans",
+        "year": 1996,
+        "locator": "Introduction and commentary",
+        "url": "https://www.eerdmans.com/9780802824417/the-epistles-to-the-colossians-and-to-philemon/",
+        "source_type": "academic-book",
+        "supports": [
+          "authorship-positions",
+          "historical-context",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "Critical Greek-text commentary.",
+        "id": "dunn-colossians",
+        "canonical_object_ids": [
+          "colossians"
+        ]
+      },
+      {
+        "title": "Ephesians 4:22-24",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "new self and true righteousness",
+        "id": "ephesians-4-22-24",
+        "canonical_object_ids": [
+          "image-of-god-theme"
+        ]
+      },
+      {
+        "title": "Colossians",
+        "author": "Paul Foster",
+        "publisher": "Bloomsbury T&T Clark",
+        "year": 2016,
+        "locator": "Introduction and commentary",
+        "url": "https://www.bloomsbury.com/uk/colossians-9780567667809/",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "literary-context",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "Critical commentary and reception control.",
+        "id": "foster-colossians",
+        "canonical_object_ids": [
+          "colossians"
+        ]
+      },
+      {
+        "title": "Genesis 1-2",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Genesis 1:1-2:25",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "literary-context",
+          "hebraic-worldview"
+        ],
+        "notes": "Primary biblical creation texts; no modern translation is reproduced.",
+        "id": "genesis-1-2",
+        "canonical_object_ids": [
+          "creation",
+          "creation-doctrine-framework",
+          "creation-theme"
+        ]
+      },
+      {
+        "title": "Genesis 1:26-28",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "creation and vocation",
+        "id": "genesis-1-26-28",
+        "canonical_object_ids": [
+          "image-of-god-theme"
+        ]
+      },
+      {
+        "title": "Genesis 5:1-3",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "the image after the fall",
+        "id": "genesis-5-1-3",
+        "canonical_object_ids": [
+          "image-of-god-theme"
+        ]
+      },
+      {
+        "title": "Genesis 9:1-7",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "image and human life",
+        "id": "genesis-9-1-7",
+        "canonical_object_ids": [
+          "image-of-god-theme"
+        ]
+      },
+      {
+        "title": "Hebrews 1",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "hebrews-1",
+        "canonical_object_ids": [
+          "jesus"
+        ]
+      },
+      {
+        "title": "Canonical historical orientation for Image of God Theme",
+        "author": "",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "id": "image-of-god-theme-historical-orientation",
+        "canonical_object_ids": [
+          "image-of-god-theme"
+        ]
+      },
+      {
+        "title": "James 3:9",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "image and speech ethics",
+        "id": "james-3-9",
+        "canonical_object_ids": [
+          "image-of-god-theme"
+        ]
+      },
+      {
+        "title": "Canonical historical orientation for Jesus",
+        "author": "",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "id": "jesus-historical-orientation",
+        "canonical_object_ids": [
+          "jesus"
+        ]
+      },
+      {
+        "title": "John 1",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "john-1",
+        "canonical_object_ids": [
+          "creation",
+          "creation-doctrine-framework",
+          "creation-theme"
+        ]
+      },
+      {
+        "title": "John 1-21",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "john-1-21",
+        "canonical_object_ids": [
+          "jesus"
+        ]
+      },
+      {
+        "title": "Ephesians",
+        "author": "Andrew T. Lincoln",
+        "publisher": "Zondervan Academic",
+        "year": 1990,
+        "locator": "Introduction and commentary",
+        "url": "https://zondervanacademic.com/products/ephesians-1",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "literary-context",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Evidence requires claim-level and locator-level review.",
+        "id": "lincoln-ephesians",
+        "canonical_object_ids": [
+          "ephesians"
+        ]
+      },
+      {
+        "title": "Luke 1-24",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "luke-1-24",
+        "canonical_object_ids": [
+          "jesus"
+        ]
+      },
+      {
+        "title": "Mark 1-16",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "mark-1-16",
+        "canonical_object_ids": [
+          "jesus"
+        ]
+      },
+      {
+        "title": "Matthew 1-28",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "matthew-1-28",
+        "canonical_object_ids": [
+          "jesus"
+        ]
+      },
+      {
+        "title": "The Letters to the Colossians and to Philemon",
+        "author": "Douglas J. Moo",
+        "publisher": "Eerdmans",
+        "year": 2008,
+        "locator": "Introduction and commentary",
+        "url": "https://www.eerdmans.com/9780802837271/the-letters-to-the-colossians-and-to-philemon/",
+        "source_type": "academic-book",
+        "supports": [
+          "authorship-positions",
+          "literary-context",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "Exegetical commentary defending Pauline authorship.",
+        "id": "moo-colossians",
+        "canonical_object_ids": [
+          "colossians"
+        ]
+      },
+      {
+        "title": "A New English Translation of the Septuagint",
+        "author": "Albert Pietersma and Benjamin G. Wright, eds.",
+        "publisher": "Oxford University Press",
+        "year": 2007,
+        "locator": "Genesis, Psalms, Proverbs, Hosea, Chronicles, Ezekiel",
+        "url": "https://ccat.sas.upenn.edu/nets/edition/",
+        "source_type": "ancient-primary-source",
+        "supports": [
+          "intertextuality",
+          "hebrew-words"
+        ],
+        "notes": "Septuagint comparison control.",
+        "id": "nets-lxx",
+        "canonical_object_ids": [
+          "colossians",
+          "ephesians"
+        ]
+      },
+      {
+        "title": "Philippians 2",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "philippians-2",
+        "canonical_object_ids": [
+          "jesus"
+        ]
+      },
+      {
+        "title": "Psalm 104",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "psalm-104",
+        "canonical_object_ids": [
+          "creation",
+          "creation-doctrine-framework",
+          "creation-theme"
+        ]
+      },
+      {
+        "title": "Psalm 8",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "psalm-8",
+        "canonical_object_ids": [
+          "creation",
+          "creation-theme"
+        ]
+      },
+      {
+        "title": "Psalm 8:1-9",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "human dignity and rule",
+        "id": "psalm-8-1-9",
+        "canonical_object_ids": [
+          "image-of-god-theme"
+        ]
+      },
+      {
+        "title": "Revelation 21",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "revelation-21",
+        "canonical_object_ids": [
+          "creation",
+          "creation-doctrine-framework",
+          "creation-theme"
+        ]
+      },
+      {
+        "title": "Romans 8",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "romans-8",
+        "canonical_object_ids": [
+          "creation-theme"
+        ]
+      },
+      {
+        "title": "Romans 8:28-30",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "conformed to the Son",
+        "id": "romans-8-28-30",
+        "canonical_object_ids": [
+          "image-of-god-theme"
+        ]
+      },
+      {
+        "title": "The JPS Torah Commentary: Genesis",
+        "author": "Nahum M. Sarna",
+        "publisher": "Jewish Publication Society",
+        "year": 1989,
+        "locator": "Introduction and commentary on Genesis 1-2",
+        "url": "https://jps.org/books/jps-torah-commentary-genesis/",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context",
+          "ancient-near-east-context",
+          "literary-context"
+        ],
+        "notes": "Academic Jewish commentary used for literary and ancient comparative context.",
+        "id": "sarna-genesis-creation",
+        "canonical_object_ids": [
+          "creation"
+        ]
+      },
+      {
+        "title": "Colossians: A Commentary",
+        "author": "Jerry L. Sumney",
+        "publisher": "Westminster John Knox Press",
+        "year": 2008,
+        "locator": "Introduction and commentary",
+        "url": "https://www.wjkbooks.com/Products/0664221421/colossians.aspx",
+        "source_type": "academic-book",
+        "supports": [
+          "authorship-positions",
+          "historical-context",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "Commentary emphasizing rhetoric, opponents, empire, and ethics.",
+        "id": "sumney-colossians",
+        "canonical_object_ids": [
+          "colossians"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "colossians",
+        "type": "book",
+        "title": "Colossians",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.959
+      },
+      {
+        "id": "creation",
+        "type": "event",
+        "title": "Creation",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.92
+      },
+      {
+        "id": "creation-doctrine-framework",
+        "type": "doctrine",
+        "title": "Creation Doctrine Framework",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.912
+      },
+      {
+        "id": "creation-theme",
+        "type": "theme",
+        "title": "Creation Theme",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.916
+      },
+      {
+        "id": "ephesians",
+        "type": "book",
+        "title": "Ephesians",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.904
+      },
+      {
+        "id": "image-of-god-theme",
+        "type": "theme",
+        "title": "Image of God Theme",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.916
+      },
+      {
+        "id": "jesus",
+        "type": "person",
+        "title": "Jesus",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.92
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "68c46ec6864828df62115c592fff37be5a7e956559f54699b980b15920146c32",
+  "evidence_hash_version": "2"
+}

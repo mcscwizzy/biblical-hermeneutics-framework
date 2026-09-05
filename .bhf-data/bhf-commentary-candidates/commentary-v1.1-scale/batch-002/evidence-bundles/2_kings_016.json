@@ -1,0 +1,236 @@
+{
+  "passage_ref": "2 Kings 16",
+  "entities": {
+    "people": [],
+    "places": [],
+    "groups": [],
+    "events": [],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "assyrian-tribute-and-royal-representation:interpretive_note:0",
+      "claim": "Tribute could result from defeat, strategic submission, purchased support, or restored vassalage; the payment itself does not reveal one ruler's complete motives.",
+      "category": "culture",
+      "source_ids": [
+        "kings-assyrian-tribute-text",
+        "cogan-tadmor-2-kings-tribute",
+        "cogan-raging-torrent-tribute"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "2 Kings 16:5-9"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "assyrian-tribute-and-royal-representation",
+        "parent_title": "Assyrian Tribute and Royal Representation",
+        "parent_type": "cultural_background",
+        "object_importance": 96,
+        "retrieval_score": 0.916,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 4,
+        "certainty": "strong_consensus",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "historical-context",
+        "field": "",
+        "semantic_relationship": "INTERTEXTUAL_REUSE",
+        "presentation_role": "dig_deeper",
+        "overview_priority": 0
+      }
+    },
+    {
+      "id": "kings-tribute-vassalage-sequence",
+      "claim": "Second Kings reports Menahem purchasing Assyrian support, Ahaz appealing for rescue with temple and palace wealth, Hoshea paying and then withholding tribute, and Hezekiah paying after revolt and invasion.",
+      "category": "economics",
+      "source_ids": [
+        "kings-assyrian-tribute-text",
+        "cogan-tadmor-2-kings-tribute",
+        "cogan-raging-torrent-tribute",
+        "oracc-assyrian-royal-inscriptions"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "2 Kings 16:5-9"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "assyrian-tribute-and-royal-representation",
+        "parent_title": "Assyrian Tribute and Royal Representation",
+        "parent_type": "cultural_background",
+        "object_importance": 96,
+        "retrieval_score": 0.916,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 4,
+        "certainty": "textually_explicit",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.75,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 97
+      }
+    },
+    {
+      "id": "kings-tribute-vassalage-sequence:passage-relevance",
+      "claim": "This direct textual sequence prevents a generic model of tribute from flattening the different literary and political functions of each payment.",
+      "category": "economics",
+      "source_ids": [
+        "kings-assyrian-tribute-text",
+        "cogan-tadmor-2-kings-tribute",
+        "cogan-raging-torrent-tribute",
+        "oracc-assyrian-royal-inscriptions"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "2 Kings 16:5-9"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "assyrian-tribute-and-royal-representation",
+        "parent_title": "Assyrian Tribute and Royal Representation",
+        "parent_type": "cultural_background",
+        "object_importance": 96,
+        "retrieval_score": 0.916,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 4,
+        "certainty": "textually_explicit",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.75,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 97,
+        "supports_evidence_ids": [
+          "kings-tribute-vassalage-sequence"
+        ]
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "The Raging Torrent: Historical Inscriptions from Assyria and Babylonia Relating to Ancient Israel",
+        "author": "Mordechai Cogan",
+        "publisher": "Carta Jerusalem",
+        "year": 2015,
+        "locator": "Second updated edition, Shalmaneser III, Tiglath-pileser III, and Sennacherib sections",
+        "url": "https://store.carta-jerusalem.com/history/722-the-raging-torrent-second-updated-expanded-edition-9789652208682.html",
+        "source_type": "academic-book",
+        "supports": [
+          "kings-tribute-vassalage-sequence",
+          "black-obelisk-jehu-tribute",
+          "sennacherib-hezekiah-tribute"
+        ],
+        "notes": "Modern translations and commentary for cuneiform sources related to Israel and Judah.",
+        "id": "cogan-raging-torrent-tribute",
+        "canonical_object_ids": [
+          "assyrian-tribute-and-royal-representation"
+        ]
+      },
+      {
+        "title": "II Kings",
+        "author": "Mordechai Cogan and Hayim Tadmor",
+        "publisher": "Doubleday / Yale University Press",
+        "year": 1988,
+        "locator": "Commentary on 2 Kings 15:17-22; 16:5-9; 17:1-6; 18:13-19:37",
+        "url": "https://yalebooks.yale.edu/book/9780300140743/ii-kings/",
+        "source_type": "academic-book",
+        "supports": [
+          "kings-tribute-vassalage-sequence",
+          "black-obelisk-jehu-tribute",
+          "sennacherib-hezekiah-tribute"
+        ],
+        "notes": "Historical-critical commentary relating biblical regnal narratives to Assyrian sources.",
+        "id": "cogan-tadmor-2-kings-tribute",
+        "canonical_object_ids": [
+          "assyrian-tribute-and-royal-representation"
+        ]
+      },
+      {
+        "title": "Second Kings 9-10; 15:17-22; 16:5-9; 17:1-6; 18:13-19:37 and Isaiah 36-37",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "2 Kings 9:1-10:36; 15:17-22; 16:5-9; 17:1-6; 18:13-19:37; Isaiah 36:1-37:38",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "kings-tribute-vassalage-sequence",
+          "black-obelisk-jehu-tribute",
+          "sennacherib-hezekiah-tribute",
+          "lachish-royal-victory-display"
+        ],
+        "notes": "Primary biblical texts used as direct controls and comparisons; no modern translation is reproduced.",
+        "id": "kings-assyrian-tribute-text",
+        "canonical_object_ids": [
+          "assyrian-tribute-and-royal-representation"
+        ]
+      },
+      {
+        "title": "Royal Inscriptions",
+        "author": "Nimrud: Materialities of Assyrian Knowledge Production project",
+        "publisher": "ORACC / University of Pennsylvania",
+        "year": 2019,
+        "locator": "Tradition and innovation at the Assyrian court",
+        "url": "https://oracc.museum.upenn.edu/nimrud/ancientkalhu/thewritings/royalinscriptions/index.html",
+        "source_type": "reference-work",
+        "supports": [
+          "kings-tribute-vassalage-sequence",
+          "black-obelisk-jehu-tribute",
+          "sennacherib-hezekiah-tribute",
+          "lachish-royal-victory-display"
+        ],
+        "notes": "Scholarly overview of Neo-Assyrian royal inscriptions as official records and ideological media.",
+        "id": "oracc-assyrian-royal-inscriptions",
+        "canonical_object_ids": [
+          "assyrian-tribute-and-royal-representation"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "assyrian-tribute-and-royal-representation",
+        "type": "cultural_background",
+        "title": "Assyrian Tribute and Royal Representation",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.916
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "06553974394cca0cc9c66ac1b6345bb8d10f1f4f1a0d64f765317387cbf20a56",
+  "evidence_hash_version": "2"
+}

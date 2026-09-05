@@ -1,0 +1,785 @@
+{
+  "passage_ref": "Hebrews 13",
+  "entities": {
+    "people": [],
+    "places": [],
+    "groups": [],
+    "events": [],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "heb-anonymous",
+      "claim": "The work does not name its author in its opening or closing.",
+      "category": "culture",
+      "source_ids": [
+        "heb-greek",
+        "attridge"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Hebrews 13:22-25"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "hebrews",
+        "parent_title": "Hebrews",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 21,
+        "certainty": "strong_consensus",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 90
+      }
+    },
+    {
+      "id": "heb-closing",
+      "claim": "The closing requests prayer, mentions the God of peace and great shepherd, identifies Timothy as released, greets leaders and saints, and names people from Italy.",
+      "category": "culture",
+      "source_ids": [
+        "heb-greek",
+        "koester"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Hebrews 13:18-25"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "hebrews",
+        "parent_title": "Hebrews",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 17,
+        "certainty": "textually_explicit",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "historical_cultural",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "heb-ethics",
+      "claim": "The closing exhortations address sibling love, hospitality, prisoners, marriage, money, contentment, leaders, mutual care, praise, doing good, and sharing.",
+      "category": "culture",
+      "source_ids": [
+        "heb-greek",
+        "desilva"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Hebrews 13:1-17"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "hebrews",
+        "parent_title": "Hebrews",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "textually_explicit",
+        "dispute_status": "not_disputed",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "pastoral_application",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 103
+      }
+    },
+    {
+      "id": "heb-genre",
+      "claim": "The author calls the work a word of exhortation and closes with personal notices and greetings.",
+      "category": "culture",
+      "source_ids": [
+        "heb-greek",
+        "aune",
+        "guthrie"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Hebrews 13:22-25"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "hebrews",
+        "parent_title": "Hebrews",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 21,
+        "certainty": "textually_explicit",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 90
+      }
+    },
+    {
+      "id": "heb-p46",
+      "claim": "Papyrus 46 is an early substantial witness to Hebrews, though it has lacunae and its paleographic date remains approximate.",
+      "category": "archaeology",
+      "source_ids": [
+        "p46",
+        "ntvmr"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Hebrews 1:1-13:25"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "hebrews",
+        "parent_title": "Hebrews",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 1200,
+        "certainty": "strong_consensus",
+        "dispute_status": "archaeological_uncertainty",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "archaeology",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "archaeology_geography",
+        "overview_priority": 83
+      }
+    },
+    {
+      "id": "heb-sinaiticus",
+      "claim": "Codex Sinaiticus preserves Hebrews in its New Testament sequence after 2 Thessalonians.",
+      "category": "archaeology",
+      "source_ids": [
+        "sinaiticus",
+        "ntvmr"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Hebrews 1:1-13:25"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "hebrews",
+        "parent_title": "Hebrews",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 1200,
+        "certainty": "strong_consensus",
+        "dispute_status": "archaeological_uncertainty",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "archaeology",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "archaeology_geography",
+        "overview_priority": 83
+      }
+    },
+    {
+      "id": "hebrews:interpretive_note:0",
+      "claim": "Authorship: Hebrews is internally anonymous; Pauline, Barnabas, Apollos, Priscilla, Luke, and other proposals belong to reception or reconstruction, not explicit wording.",
+      "category": "culture",
+      "source_ids": [
+        "heb-greek",
+        "attridge",
+        "koester"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Hebrews 13:22-25"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "hebrews",
+        "parent_title": "Hebrews",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 21,
+        "certainty": "strong_consensus",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "historical-context",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 52
+      }
+    },
+    {
+      "id": "hebrews:interpretive_note:1",
+      "claim": "Date and destination: proposals before or after 70 CE and destinations including Rome or Jerusalem remain disputed; present-tense cultic language does not date the temple.",
+      "category": "culture",
+      "source_ids": [
+        "attridge",
+        "koester",
+        "johnson"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Hebrews 13:24"
+      ],
+      "confidence": "low",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "hebrews",
+        "parent_title": "Hebrews",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 23,
+        "certainty": "disputed",
+        "dispute_status": "chronological_uncertainty",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "historical-context",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 102
+      }
+    },
+    {
+      "id": "hebrews:interpretive_note:2",
+      "claim": "Genre: a sustained word of exhortation with an epistolary ending may be called sermon, homily, rhetorical discourse, or letter-sermon; no label dissolves the mixed form.",
+      "category": "culture",
+      "source_ids": [
+        "heb-greek",
+        "aune",
+        "guthrie"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Hebrews 13:22-25"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "hebrews",
+        "parent_title": "Hebrews",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 21,
+        "certainty": "probable",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "literary-observation",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    },
+    {
+      "id": "hebrews:interpretive_note:3",
+      "claim": "Audience: prior suffering, confiscated property, present weariness, prisoners, leaders, Timothy, and Italian associates are textual clues, not a complete demographic profile.",
+      "category": "culture",
+      "source_ids": [
+        "heb-greek",
+        "desilva"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Hebrews 13:3",
+        "Hebrews 13:7",
+        "Hebrews 13:23-24"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "hebrews",
+        "parent_title": "Hebrews",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 2,
+        "certainty": "textually_explicit",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "historical-context",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    },
+    {
+      "id": "hebrews:interpretive_note:35",
+      "claim": "Hospitality, prisoners, marriage, money, mutual care, and praise form embodied ethics; none should be isolated into class, sexual, or prosperity coercion.",
+      "category": "culture",
+      "source_ids": [
+        "heb-greek",
+        "desilva"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Hebrews 13:1-16"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "hebrews",
+        "parent_title": "Hebrews",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "textually_explicit",
+        "dispute_status": "denominational_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "interpretive-caution",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    },
+    {
+      "id": "hebrews:interpretive_note:36",
+      "claim": "Leadership: remembering, considering, obeying, and yielding are situated within teaching, example, and accountability; they do not authorize authoritarian control or silence complaints.",
+      "category": "culture",
+      "source_ids": [
+        "heb-greek",
+        "koester"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Hebrews 13:7",
+        "Hebrews 13:17"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "hebrews",
+        "parent_title": "Hebrews",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 6,
+        "certainty": "textually_explicit",
+        "dispute_status": "denominational_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "interpretive-caution",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    },
+    {
+      "id": "hebrews:interpretive_note:37",
+      "claim": "The altar and outside-the-camp exhortation combine cultic and shame imagery; they are not a command to abandon vulnerable people or pursue persecution.",
+      "category": "culture",
+      "source_ids": [
+        "heb-greek",
+        "attridge"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Hebrews 13:9-16"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "hebrews",
+        "parent_title": "Hebrews",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 8,
+        "certainty": "textually_explicit",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "literary-observation",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 102
+      }
+    },
+    {
+      "id": "hebrews:interpretive_note:38",
+      "claim": "Timothy's release and greetings from those of Italy are real closing notices, but they do not settle author, location, destination, or itinerary.",
+      "category": "culture",
+      "source_ids": [
+        "heb-greek",
+        "koester"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Hebrews 13:23-25"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "hebrews",
+        "parent_title": "Hebrews",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 22,
+        "certainty": "textually_explicit",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "historical-context",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    },
+    {
+      "id": "hebrews:interpretive_note:39",
+      "claim": "Application must reject antisemitism, supersessionism, misogyny, anti-LGBTQ coercion, forced conversion, colonial mission, nationalism, religious violence, prosperity extraction, and ecological neglect.",
+      "category": "culture",
+      "source_ids": [
+        "levine-jant",
+        "mitzi-smith",
+        "carter"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Hebrews 1:1-13:25"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "hebrews",
+        "parent_title": "Hebrews",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 1200,
+        "certainty": "strong_consensus",
+        "dispute_status": "denominational_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "later-reception",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "The Epistle to the Hebrews",
+        "author": "Harold W. Attridge",
+        "publisher": "Fortress Press",
+        "year": 1989,
+        "locator": "Hermeneia",
+        "url": "https://www.worldcat.org/title/13455343",
+        "source_type": "academic-book",
+        "supports": [],
+        "notes": "",
+        "id": "attridge",
+        "canonical_object_ids": [
+          "hebrews"
+        ]
+      },
+      {
+        "title": "The New Testament in Its Literary Environment",
+        "author": "David E. Aune",
+        "publisher": "Westminster Press",
+        "year": 1987,
+        "locator": "Homily, rhetoric, and letter forms",
+        "url": "https://www.worldcat.org/title/13424745",
+        "source_type": "academic-book",
+        "supports": [],
+        "notes": "",
+        "id": "aune",
+        "canonical_object_ids": [
+          "hebrews"
+        ]
+      },
+      {
+        "title": "The Roman Empire and the New Testament",
+        "author": "Warren Carter",
+        "publisher": "Abingdon Press",
+        "year": 2006,
+        "locator": "Imperial and social setting",
+        "url": "https://www.worldcat.org/title/62341494",
+        "source_type": "academic-book",
+        "supports": [],
+        "notes": "",
+        "id": "carter",
+        "canonical_object_ids": [
+          "hebrews"
+        ]
+      },
+      {
+        "title": "Perseverance in Gratitude",
+        "author": "David A. deSilva",
+        "publisher": "Eerdmans",
+        "year": 2000,
+        "locator": "Socio-rhetorical commentary",
+        "url": "https://www.eerdmans.com/9780802841888/perseverance-in-gratitude/",
+        "source_type": "academic-book",
+        "supports": [],
+        "notes": "",
+        "id": "desilva",
+        "canonical_object_ids": [
+          "hebrews"
+        ]
+      },
+      {
+        "title": "The Structure of Hebrews",
+        "author": "George H. Guthrie",
+        "publisher": "Brill",
+        "year": 1994,
+        "locator": "Literary analysis",
+        "url": "https://brill.com/display/title/2302",
+        "source_type": "academic-book",
+        "supports": [],
+        "notes": "",
+        "id": "guthrie",
+        "canonical_object_ids": [
+          "hebrews"
+        ]
+      },
+      {
+        "title": "SBL Greek New Testament: Hebrews",
+        "author": "Michael W. Holmes, editor",
+        "publisher": "Society of Biblical Literature and Logos Bible Software",
+        "year": 2010,
+        "locator": "Hebrews 1:1-13:25",
+        "url": "https://www.sblgnt.com/",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "heb-greek",
+        "canonical_object_ids": [
+          "hebrews"
+        ]
+      },
+      {
+        "title": "Hebrews: A Commentary",
+        "author": "Luke Timothy Johnson",
+        "publisher": "Westminster John Knox",
+        "year": 2006,
+        "locator": "New Testament Library",
+        "url": "https://www.wjkbooks.com/Products/0664221181/hebrews.aspx",
+        "source_type": "academic-book",
+        "supports": [],
+        "notes": "",
+        "id": "johnson",
+        "canonical_object_ids": [
+          "hebrews"
+        ]
+      },
+      {
+        "title": "Hebrews",
+        "author": "Craig R. Koester",
+        "publisher": "Yale University Press",
+        "year": 2001,
+        "locator": "Anchor Yale Bible 36",
+        "url": "https://yalebooks.yale.edu/book/9780300139891/hebrews/",
+        "source_type": "academic-book",
+        "supports": [],
+        "notes": "",
+        "id": "koester",
+        "canonical_object_ids": [
+          "hebrews"
+        ]
+      },
+      {
+        "title": "The Jewish Annotated New Testament",
+        "author": "Amy-Jill Levine and Marc Zvi Brettler, editors",
+        "publisher": "Oxford University Press",
+        "year": 2017,
+        "locator": "Hebrews notes and essays",
+        "url": "https://global.oup.com/academic/product/the-jewish-annotated-new-testament-9780190461850",
+        "source_type": "reference-work",
+        "supports": [],
+        "notes": "",
+        "id": "levine-jant",
+        "canonical_object_ids": [
+          "hebrews"
+        ]
+      },
+      {
+        "title": "Toward Decentering the New Testament",
+        "author": "Mitzi J. Smith",
+        "publisher": "Cascade Books",
+        "year": 2018,
+        "locator": "Womanist and postcolonial hermeneutics",
+        "url": "https://wipfandstock.com/9781532604652/toward-decentering-the-new-testament/",
+        "source_type": "academic-book",
+        "supports": [],
+        "notes": "",
+        "id": "mitzi-smith",
+        "canonical_object_ids": [
+          "hebrews"
+        ]
+      },
+      {
+        "title": "New Testament Virtual Manuscript Room",
+        "author": "Institut f\u00fcr Neutestamentliche Textforschung",
+        "publisher": "University of M\u00fcnster",
+        "year": null,
+        "locator": "Hebrews manuscript witnesses",
+        "url": "https://ntvmr.uni-muenster.de/",
+        "source_type": "reference-work",
+        "supports": [],
+        "notes": "",
+        "id": "ntvmr",
+        "canonical_object_ids": [
+          "hebrews"
+        ]
+      },
+      {
+        "title": "Papyrus 46",
+        "author": "Center for the Study of New Testament Manuscripts",
+        "publisher": "CSNTM",
+        "year": null,
+        "locator": "Hebrews 1:1-13:25 with lacunae",
+        "url": "https://manuscripts.csntm.org/manuscript/View/GA_P46",
+        "source_type": "ancient-primary-source",
+        "supports": [],
+        "notes": "",
+        "id": "p46",
+        "canonical_object_ids": [
+          "hebrews"
+        ]
+      },
+      {
+        "title": "Codex Sinaiticus: Hebrews",
+        "author": "Codex Sinaiticus Project",
+        "publisher": "British Library and partners",
+        "year": null,
+        "locator": "Add MS 43725, ff. 288v-293v",
+        "url": "https://www.codexsinaiticus.org/en/manuscript.aspx",
+        "source_type": "ancient-primary-source",
+        "supports": [],
+        "notes": "",
+        "id": "sinaiticus",
+        "canonical_object_ids": [
+          "hebrews"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "hebrews",
+        "type": "book",
+        "title": "Hebrews",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.917
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "807dc2017809d340fc2059d4a6af188fc97d349470c565b9f6e51a4d605ffba9",
+  "evidence_hash_version": "2"
+}

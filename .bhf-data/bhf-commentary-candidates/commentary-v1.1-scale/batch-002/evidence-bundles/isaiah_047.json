@@ -1,0 +1,181 @@
+{
+  "passage_ref": "Isaiah 47",
+  "entities": {
+    "people": [],
+    "places": [],
+    "groups": [],
+    "events": [],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "isaiah-qumran-witnesses",
+      "claim": "The Great Isaiah Scroll is an almost complete sixty-six-chapter witness broadly aligned with the Masoretic tradition but containing thousands of orthographic and substantive differences; other Qumran Isaiah manuscripts and pesharim show active transmission and interpretation.",
+      "category": "history",
+      "source_ids": [
+        "israel-museum-great-isaiah",
+        "brooke-qumran-isaiah",
+        "hogenhaven-qumran-isaiah",
+        "oxford-handbook-isaiah"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Isaiah 1:1-66:24"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "isaiah",
+        "parent_title": "Isaiah",
+        "parent_type": "book",
+        "object_importance": 98,
+        "retrieval_score": 0.918,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 4600,
+        "certainty": "strong_consensus",
+        "dispute_status": "textual_variant",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 35
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "Isaiah in the Qumran Scrolls",
+        "author": "George J. Brooke",
+        "publisher": "Oxford University Press",
+        "year": 2020,
+        "locator": "The Oxford Handbook of Isaiah, chapter 23",
+        "url": "https://academic.oup.com/edited-volume/38588/chapter-abstract/334631738",
+        "source_type": "academic-book",
+        "supports": [
+          "primary-sources",
+          "second-temple-context",
+          "intertextuality",
+          "isaiah-qumran-witnesses"
+        ],
+        "notes": "Overview of Isaiah manuscripts, pesharim, and reuse among the Dead Sea Scrolls.",
+        "id": "brooke-qumran-isaiah",
+        "canonical_object_ids": [
+          "isaiah"
+        ]
+      },
+      {
+        "title": "The Book of Isaiah at Qumran",
+        "author": "Jesper H\u00f8genhaven",
+        "publisher": "Cambridge University Press",
+        "year": 2024,
+        "locator": "The Cambridge Companion to the Book of Isaiah, chapter 5",
+        "url": "https://www.cambridge.org/core/books/cambridge-companion-to-the-book-of-isaiah/book-of-isaiah-at-qumran/093B8E8A1EE04CEC1F0E44EBCB79BC92",
+        "source_type": "academic-book",
+        "supports": [
+          "primary-sources",
+          "second-temple-context",
+          "intertextuality",
+          "isaiah-qumran-witnesses"
+        ],
+        "notes": "Recent treatment of textual witness and early interpretation at Qumran.",
+        "id": "hogenhaven-qumran-isaiah",
+        "canonical_object_ids": [
+          "isaiah"
+        ]
+      },
+      {
+        "title": "The Great Isaiah Scroll",
+        "author": "The Israel Museum, Jerusalem",
+        "publisher": "Digital Dead Sea Scrolls",
+        "year": null,
+        "locator": "1QIsa-a digital manuscript and introduction",
+        "url": "https://dss.collections.imj.org.il/isaiah",
+        "source_type": "museum-collection",
+        "supports": [
+          "primary-sources",
+          "second-temple-context",
+          "archaeology",
+          "timeline",
+          "isaiah-qumran-witnesses"
+        ],
+        "notes": "Official museum presentation of the almost complete scroll, its date, contents, and variants.",
+        "id": "israel-museum-great-isaiah",
+        "canonical_object_ids": [
+          "isaiah"
+        ]
+      },
+      {
+        "title": "The Oxford Handbook of Isaiah",
+        "author": "Lena-Sofia Tiemeyer, editor",
+        "publisher": "Oxford University Press",
+        "year": 2020,
+        "locator": "Formation, sections, contexts, themes, literature, texts, reception, and ideological readings",
+        "url": "https://academic.oup.com/edited-volume/38588",
+        "source_type": "reference-work",
+        "supports": [
+          "summary",
+          "historical-context",
+          "ancient-near-east-context",
+          "second-temple-context",
+          "canonical-context",
+          "later-christian-reception",
+          "authorship-positions",
+          "date-ranges",
+          "structure",
+          "major-themes",
+          "interpretive-disputes",
+          "isaiah-long-composition",
+          "isaiah-practical-outline",
+          "isaiah-assyria-trust",
+          "isaiah-royal-child-branch",
+          "isaiah-morning-star-taunt",
+          "isaiah-nations-empire",
+          "isaiah-servants-plural",
+          "isaiah-suffering-servant",
+          "isaiah-justice-fasting-inclusion",
+          "isaiah-death-new-creation",
+          "isaiah-qumran-witnesses",
+          "isaiah-old-greek",
+          "isaiah-reception-distinction"
+        ],
+        "notes": "Multi-author handbook representing diverse methods and traditions rather than one unified position.",
+        "id": "oxford-handbook-isaiah",
+        "canonical_object_ids": [
+          "isaiah"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "isaiah",
+        "type": "book",
+        "title": "Isaiah",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.918
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "33926e939adace22228b53754d5ce4b63e7e29188d683ba82bf17dc69e098186",
+  "evidence_hash_version": "2"
+}

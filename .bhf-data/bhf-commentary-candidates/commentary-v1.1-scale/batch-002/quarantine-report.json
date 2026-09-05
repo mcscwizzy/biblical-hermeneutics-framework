@@ -1,0 +1,968 @@
+{
+  "batch_id": "batch-002",
+  "status": "REVIEWED",
+  "chapters": [
+    {
+      "reference": "Hebrews 9",
+      "reason_codes": [
+        "CROSS_BOOK_PARENT_REUSE",
+        "EVIDENCE_HASH_DISAGREEMENT"
+      ],
+      "evidence_ids": [
+        "high-priesthood:ancient_near_east_context:0",
+        "high-priesthood:hebraic_worldview:0",
+        "high-priesthood:historical_context:0",
+        "high-priesthood:historical_setting:0",
+        "high-priesthood:original_audience:0",
+        "high-priesthood:second_temple_context:0",
+        "sacrifice-theme:ancient_near_east_context:0",
+        "sacrifice-theme:hebraic_worldview:0",
+        "sacrifice-theme:historical_context:0",
+        "sacrifice-theme:second_temple_context:0",
+        "what-is-the-second-temple:ancient_near_east_context:0",
+        "what-is-the-second-temple:historical_context:0"
+      ],
+      "ckl_parent_records": [
+        "high-priesthood",
+        "sacrifice-theme",
+        "what-is-the-second-temple"
+      ],
+      "explanation": "One non-lexical CKL parent is attached across unrelated books in the evaluated pool.",
+      "scope": "systemic"
+    },
+    {
+      "reference": "Leviticus 16",
+      "reason_codes": [
+        "CROSS_BOOK_PARENT_REUSE"
+      ],
+      "evidence_ids": [
+        "high-priesthood:ancient_near_east_context:0",
+        "high-priesthood:hebraic_worldview:0",
+        "high-priesthood:historical_context:0",
+        "high-priesthood:historical_setting:0",
+        "high-priesthood:original_audience:0",
+        "high-priesthood:second_temple_context:0",
+        "priesthood:ancient_near_east_context:0",
+        "priesthood:hebraic_worldview:0",
+        "priesthood:historical_context:0",
+        "priesthood:second_temple_context:0",
+        "sacrifice-theme:ancient_near_east_context:0",
+        "sacrifice-theme:hebraic_worldview:0",
+        "sacrifice-theme:historical_context:0",
+        "sacrifice-theme:second_temple_context:0",
+        "tabernacle:ancient_near_east_context:0",
+        "tabernacle:archaeology:0",
+        "tabernacle:archaeology:1",
+        "tabernacle:date_ranges:0",
+        "tabernacle:date_ranges:1",
+        "tabernacle:hebraic_worldview:0",
+        "tabernacle:historical_context:0",
+        "tabernacle:historical_setting:0",
+        "tabernacle:original_audience:0",
+        "tabernacle:second_temple_context:0",
+        "tabernacle:timeline:0",
+        "tabernacle:timeline:1",
+        "tabernacle:timeline:2",
+        "tabernacle:timeline:3"
+      ],
+      "ckl_parent_records": [
+        "high-priesthood",
+        "priesthood",
+        "sacrifice-theme",
+        "tabernacle"
+      ],
+      "explanation": "One non-lexical CKL parent is attached across unrelated books in the evaluated pool.",
+      "scope": "systemic"
+    },
+    {
+      "reference": "Psalms 103",
+      "reason_codes": [
+        "WORD_STUDY_BROAD_PARENT_ANCHOR"
+      ],
+      "evidence_ids": [
+        "agape:ancient_near_east_context:0",
+        "agape:historical_context:0",
+        "charis:ancient_near_east_context:0",
+        "charis:historical_context:0",
+        "eleos:ancient_near_east_context:0",
+        "eleos:historical_context:0",
+        "hesed:ancient_near_east_context:0",
+        "hesed:historical_context:0"
+      ],
+      "ckl_parent_records": [
+        "agape",
+        "charis",
+        "eleos",
+        "hesed"
+      ],
+      "explanation": "The word-study parent has a broad or cross-book authored anchor set.",
+      "scope": "systemic"
+    },
+    {
+      "reference": "Proverbs 1",
+      "reason_codes": [
+        "WORD_STUDY_BROAD_PARENT_ANCHOR"
+      ],
+      "evidence_ids": [
+        "sophia:ancient_near_east_context:0",
+        "sophia:historical_context:0",
+        "teleios:ancient_near_east_context:0",
+        "teleios:historical_context:0"
+      ],
+      "ckl_parent_records": [
+        "sophia",
+        "teleios"
+      ],
+      "explanation": "The word-study parent has a broad or cross-book authored anchor set.",
+      "scope": "systemic"
+    },
+    {
+      "reference": "Romans 5",
+      "reason_codes": [
+        "CROSS_BOOK_PARENT_REUSE",
+        "WORD_STUDY_BROAD_PARENT_ANCHOR"
+      ],
+      "evidence_ids": [
+        "hupomone:ancient_near_east_context:0",
+        "hupomone:historical_context:0",
+        "sarx:ancient_near_east_context:0",
+        "sarx:historical_context:0",
+        "what-does-shalom-mean:ancient_near_east_context:0",
+        "what-does-shalom-mean:historical_context:0"
+      ],
+      "ckl_parent_records": [
+        "hupomone",
+        "sarx",
+        "what-does-shalom-mean"
+      ],
+      "explanation": "The word-study parent has a broad or cross-book authored anchor set.; One non-lexical CKL parent is attached across unrelated books in the evaluated pool.",
+      "scope": "systemic"
+    },
+    {
+      "reference": "Luke 2",
+      "reason_codes": [
+        "CROSS_BOOK_PARENT_REUSE"
+      ],
+      "evidence_ids": [
+        "gospel-pilgrimage-and-temple-economy",
+        "gospel-pilgrimage-and-temple-economy:passage-relevance",
+        "what-is-the-second-temple:ancient_near_east_context:0",
+        "what-is-the-second-temple:historical_context:0"
+      ],
+      "ckl_parent_records": [
+        "judean-pilgrimage-taxation-and-roman-power",
+        "what-is-the-second-temple"
+      ],
+      "explanation": "One non-lexical CKL parent is attached across unrelated books in the evaluated pool.",
+      "scope": "systemic"
+    },
+    {
+      "reference": "Revelation 19",
+      "reason_codes": [
+        "WORD_STUDY_BROAD_PARENT_ANCHOR"
+      ],
+      "evidence_ids": [
+        "mishpat:ancient_near_east_context:0",
+        "mishpat:historical_context:0",
+        "tsedeq:ancient_near_east_context:0",
+        "tsedeq:historical_context:0"
+      ],
+      "ckl_parent_records": [
+        "mishpat",
+        "tsedeq"
+      ],
+      "explanation": "The word-study parent has a broad or cross-book authored anchor set.",
+      "scope": "systemic"
+    },
+    {
+      "reference": "Matthew 26",
+      "reason_codes": [
+        "CROSS_BOOK_PARENT_REUSE"
+      ],
+      "evidence_ids": [
+        "caiaphas-ossuary-identification",
+        "caiaphas-ossuary-identification:passage-relevance",
+        "gospel-acts-priestly-authority"
+      ],
+      "ckl_parent_records": [
+        "second-temple-priesthood-and-temple-authority"
+      ],
+      "explanation": "One non-lexical CKL parent is attached across unrelated books in the evaluated pool.",
+      "scope": "systemic"
+    },
+    {
+      "reference": "Haggai 2",
+      "reason_codes": [
+        "CROSS_BOOK_PARENT_REUSE"
+      ],
+      "evidence_ids": [
+        "what-is-the-second-temple:ancient_near_east_context:0",
+        "what-is-the-second-temple:historical_context:0"
+      ],
+      "ckl_parent_records": [
+        "what-is-the-second-temple"
+      ],
+      "explanation": "One non-lexical CKL parent is attached across unrelated books in the evaluated pool.",
+      "scope": "systemic"
+    },
+    {
+      "reference": "Lamentations 1",
+      "reason_codes": [
+        "CROSS_BOOK_PARENT_REUSE"
+      ],
+      "evidence_ids": [
+        "babylonian-exile:ancient_near_east_context:0",
+        "babylonian-exile:hebraic_worldview:0",
+        "babylonian-exile:historical_context:0",
+        "babylonian-exile:second_temple_context:0"
+      ],
+      "ckl_parent_records": [
+        "babylonian-exile"
+      ],
+      "explanation": "One non-lexical CKL parent is attached across unrelated books in the evaluated pool.",
+      "scope": "systemic"
+    },
+    {
+      "reference": "Matthew 27",
+      "reason_codes": [
+        "CROSS_BOOK_PARENT_REUSE"
+      ],
+      "evidence_ids": [
+        "pilate-stone:ancient_near_east_context:0",
+        "pilate-stone:hebraic_worldview:0",
+        "pilate-stone:historical_context:0",
+        "pilate-stone:second_temple_context:0",
+        "roman-governorship:ancient_near_east_context:0",
+        "roman-governorship:hebraic_worldview:0",
+        "roman-governorship:historical_context:0",
+        "roman-governorship:second_temple_context:0"
+      ],
+      "ckl_parent_records": [
+        "pilate-stone",
+        "roman-governorship"
+      ],
+      "explanation": "One non-lexical CKL parent is attached across unrelated books in the evaluated pool.",
+      "scope": "systemic"
+    },
+    {
+      "reference": "Acts 4",
+      "reason_codes": [
+        "CROSS_BOOK_PARENT_REUSE"
+      ],
+      "evidence_ids": [
+        "gospel-acts-priestly-authority",
+        "gospel-acts-priestly-authority:passage-relevance",
+        "high-priesthood:ancient_near_east_context:0",
+        "high-priesthood:hebraic_worldview:0",
+        "high-priesthood:historical_context:0",
+        "high-priesthood:historical_setting:0",
+        "high-priesthood:original_audience:0",
+        "high-priesthood:second_temple_context:0"
+      ],
+      "ckl_parent_records": [
+        "high-priesthood",
+        "second-temple-priesthood-and-temple-authority"
+      ],
+      "explanation": "One non-lexical CKL parent is attached across unrelated books in the evaluated pool.",
+      "scope": "systemic"
+    },
+    {
+      "reference": "Romans 1",
+      "reason_codes": [
+        "CROSS_BOOK_PARENT_REUSE"
+      ],
+      "evidence_ids": [
+        "categories-remain-distinct",
+        "romans-called-gospel-nations",
+        "romans-called-gospel-nations:passage-relevance",
+        "romans-same-sex-acts-identity-limit",
+        "romans-same-sex-acts-identity-limit:passage-relevance",
+        "romans-vice-rhetoric-universal-turn",
+        "romans-vice-rhetoric-universal-turn:passage-relevance"
+      ],
+      "ckl_parent_records": [
+        "pauline-bodies-marriage-sexual-ethics-discipline-and-restoration",
+        "pauline-mission-proclamation-travel-coworkers-letters-messengers-hospitality-house-assemblies-synagogues-marketplaces-adaptability-church-planting-and-interassembly-networks"
+      ],
+      "explanation": "One non-lexical CKL parent is attached across unrelated books in the evaluated pool.",
+      "scope": "systemic"
+    },
+    {
+      "reference": "Mark 12",
+      "reason_codes": [
+        "CROSS_BOOK_PARENT_REUSE"
+      ],
+      "evidence_ids": [
+        "gospel-taxation-distinctions",
+        "gospel-taxation-distinctions:passage-relevance"
+      ],
+      "ckl_parent_records": [
+        "judean-pilgrimage-taxation-and-roman-power"
+      ],
+      "explanation": "One non-lexical CKL parent is attached across unrelated books in the evaluated pool.",
+      "scope": "systemic"
+    },
+    {
+      "reference": "Numbers 6",
+      "reason_codes": [
+        "CROSS_BOOK_PARENT_REUSE"
+      ],
+      "evidence_ids": [
+        "what-does-shalom-mean:ancient_near_east_context:0",
+        "what-does-shalom-mean:historical_context:0"
+      ],
+      "ckl_parent_records": [
+        "what-does-shalom-mean"
+      ],
+      "explanation": "One non-lexical CKL parent is attached across unrelated books in the evaluated pool.",
+      "scope": "systemic"
+    },
+    {
+      "reference": "1 Kings 8",
+      "reason_codes": [
+        "CROSS_BOOK_PARENT_REUSE",
+        "EVIDENCE_HASH_DISAGREEMENT"
+      ],
+      "evidence_ids": [
+        "feast-calendar:ancient_near_east_context:0",
+        "feast-calendar:historical_context:0",
+        "levitical-service:ancient_near_east_context:0",
+        "levitical-service:historical_context:0",
+        "new-temple-theme:ancient_near_east_context:0",
+        "new-temple-theme:historical_context:0",
+        "priestly-service:ancient_near_east_context:0",
+        "priestly-service:historical_context:0",
+        "tabernacle:ancient_near_east_context:0",
+        "tabernacle:archaeology:0",
+        "tabernacle:archaeology:1",
+        "tabernacle:date_ranges:0",
+        "tabernacle:date_ranges:1",
+        "tabernacle:hebraic_worldview:0",
+        "tabernacle:historical_context:0",
+        "tabernacle:historical_setting:0",
+        "tabernacle:original_audience:0",
+        "tabernacle:second_temple_context:0",
+        "tabernacle:timeline:0",
+        "tabernacle:timeline:1",
+        "tabernacle:timeline:2",
+        "tabernacle:timeline:3"
+      ],
+      "ckl_parent_records": [
+        "feast-calendar",
+        "levitical-service",
+        "new-temple-theme",
+        "priestly-service",
+        "tabernacle"
+      ],
+      "explanation": "One non-lexical CKL parent is attached across unrelated books in the evaluated pool.",
+      "scope": "systemic"
+    },
+    {
+      "reference": "Hebrews 12",
+      "reason_codes": [
+        "WORD_STUDY_BROAD_PARENT_ANCHOR"
+      ],
+      "evidence_ids": [
+        "agios:ancient_near_east_context:0",
+        "agios:historical_context:0",
+        "hupomone:ancient_near_east_context:0",
+        "hupomone:historical_context:0",
+        "qadosh:ancient_near_east_context:0",
+        "qadosh:historical_context:0"
+      ],
+      "ckl_parent_records": [
+        "agios",
+        "hupomone",
+        "qadosh"
+      ],
+      "explanation": "The word-study parent has a broad or cross-book authored anchor set.",
+      "scope": "systemic"
+    },
+    {
+      "reference": "John 1",
+      "reason_codes": [
+        "CROSS_BOOK_PARENT_REUSE",
+        "WORD_STUDY_BROAD_PARENT_ANCHOR"
+      ],
+      "evidence_ids": [
+        "adonai:ancient_near_east_context:0",
+        "adonai:historical_context:0",
+        "dabar:ancient_near_east_context:0",
+        "dabar:historical_context:0",
+        "doxa:ancient_near_east_context:0",
+        "doxa:historical_context:0",
+        "elohim:ancient_near_east_context:0",
+        "elohim:historical_context:0",
+        "kyrios:ancient_near_east_context:0",
+        "kyrios:historical_context:0",
+        "logos:ancient_near_east_context:0",
+        "logos:historical_context:0",
+        "martyria:ancient_near_east_context:0",
+        "martyria:historical_context:0",
+        "nephesh:ancient_near_east_context:0",
+        "nephesh:historical_context:0",
+        "new-temple-theme:ancient_near_east_context:0",
+        "new-temple-theme:historical_context:0",
+        "phos:ancient_near_east_context:0",
+        "phos:historical_context:0",
+        "ruach:ancient_near_east_context:0",
+        "ruach:historical_context:0",
+        "sacrifice-theme:ancient_near_east_context:0",
+        "sacrifice-theme:hebraic_worldview:0",
+        "sacrifice-theme:historical_context:0",
+        "sacrifice-theme:second_temple_context:0",
+        "sanctuary-theme:ancient_near_east_context:0",
+        "sanctuary-theme:hebraic_worldview:0",
+        "sanctuary-theme:historical_context:0",
+        "sanctuary-theme:second_temple_context:0",
+        "shalom:ancient_near_east_context:0",
+        "shalom:historical_context:0",
+        "skotia:ancient_near_east_context:0",
+        "skotia:historical_context:0",
+        "theos:ancient_near_east_context:0",
+        "theos:historical_context:0",
+        "what-is-intertextuality:ancient_near_east_context:0",
+        "what-is-intertextuality:historical_context:0",
+        "what-verses-show-identity-in-christ:ancient_near_east_context:0",
+        "what-verses-show-identity-in-christ:historical_context:0",
+        "yahweh:ancient_near_east_context:0",
+        "yahweh:historical_context:0"
+      ],
+      "ckl_parent_records": [
+        "adonai",
+        "dabar",
+        "doxa",
+        "elohim",
+        "kyrios",
+        "logos",
+        "martyria",
+        "nephesh",
+        "new-temple-theme",
+        "phos",
+        "ruach",
+        "sacrifice-theme",
+        "sanctuary-theme",
+        "shalom",
+        "skotia",
+        "theos",
+        "what-is-intertextuality",
+        "what-verses-show-identity-in-christ",
+        "yahweh"
+      ],
+      "explanation": "The word-study parent has a broad or cross-book authored anchor set.; One non-lexical CKL parent is attached across unrelated books in the evaluated pool.",
+      "scope": "systemic"
+    },
+    {
+      "reference": "Numbers 18",
+      "reason_codes": [
+        "CROSS_BOOK_PARENT_REUSE"
+      ],
+      "evidence_ids": [
+        "priesthood:ancient_near_east_context:0",
+        "priesthood:hebraic_worldview:0",
+        "priesthood:historical_context:0",
+        "priesthood:second_temple_context:0"
+      ],
+      "ckl_parent_records": [
+        "priesthood"
+      ],
+      "explanation": "One non-lexical CKL parent is attached across unrelated books in the evaluated pool.",
+      "scope": "systemic"
+    },
+    {
+      "reference": "Jeremiah 31",
+      "reason_codes": [
+        "WORD_STUDY_BROAD_PARENT_ANCHOR"
+      ],
+      "evidence_ids": [
+        "basileia:ancient_near_east_context:0",
+        "basileia:historical_context:0",
+        "berit:ancient_near_east_context:0",
+        "berit:historical_context:0",
+        "diatheke:ancient_near_east_context:0",
+        "diatheke:historical_context:0"
+      ],
+      "ckl_parent_records": [
+        "basileia",
+        "berit",
+        "diatheke"
+      ],
+      "explanation": "The word-study parent has a broad or cross-book authored anchor set.",
+      "scope": "systemic"
+    },
+    {
+      "reference": "Ephesians 1",
+      "reason_codes": [
+        "CROSS_BOOK_PARENT_REUSE",
+        "WORD_STUDY_BROAD_PARENT_ANCHOR"
+      ],
+      "evidence_ids": [
+        "abba:ancient_near_east_context:0",
+        "abba:historical_context:0",
+        "what-verses-show-identity-in-christ:ancient_near_east_context:0",
+        "what-verses-show-identity-in-christ:historical_context:0"
+      ],
+      "ckl_parent_records": [
+        "abba",
+        "what-verses-show-identity-in-christ"
+      ],
+      "explanation": "The word-study parent has a broad or cross-book authored anchor set.; One non-lexical CKL parent is attached across unrelated books in the evaluated pool.",
+      "scope": "systemic"
+    },
+    {
+      "reference": "Luke 23",
+      "reason_codes": [
+        "CROSS_BOOK_PARENT_REUSE"
+      ],
+      "evidence_ids": [
+        "crucifixion:ancient_near_east_context:0",
+        "crucifixion:hebraic_worldview:0",
+        "crucifixion:historical_context:0",
+        "crucifixion:second_temple_context:0",
+        "pilate-stone:ancient_near_east_context:0",
+        "pilate-stone:hebraic_worldview:0",
+        "pilate-stone:historical_context:0",
+        "pilate-stone:second_temple_context:0"
+      ],
+      "ckl_parent_records": [
+        "crucifixion",
+        "pilate-stone"
+      ],
+      "explanation": "One non-lexical CKL parent is attached across unrelated books in the evaluated pool.",
+      "scope": "systemic"
+    },
+    {
+      "reference": "Acts 21",
+      "reason_codes": [
+        "CROSS_BOOK_PARENT_REUSE"
+      ],
+      "evidence_ids": [
+        "acts-decree-porneia-legal-dispute",
+        "temple-warning-inscription-boundary",
+        "temple-warning-inscription-boundary:passage-relevance"
+      ],
+      "ckl_parent_records": [
+        "pauline-bodies-marriage-sexual-ethics-discipline-and-restoration",
+        "second-temple-priesthood-and-temple-authority"
+      ],
+      "explanation": "One non-lexical CKL parent is attached across unrelated books in the evaluated pool.",
+      "scope": "systemic"
+    },
+    {
+      "reference": "1 Peter 2",
+      "reason_codes": [
+        "CROSS_BOOK_PARENT_REUSE",
+        "WORD_STUDY_BROAD_PARENT_ANCHOR"
+      ],
+      "evidence_ids": [
+        "crucifixion:ancient_near_east_context:0",
+        "crucifixion:hebraic_worldview:0",
+        "crucifixion:historical_context:0",
+        "crucifixion:second_temple_context:0",
+        "ekklesia:ancient_near_east_context:0",
+        "ekklesia:historical_context:0",
+        "koinonia:ancient_near_east_context:0",
+        "koinonia:historical_context:0",
+        "priesthood:ancient_near_east_context:0",
+        "priesthood:hebraic_worldview:0",
+        "priesthood:historical_context:0",
+        "priesthood:second_temple_context:0",
+        "what-verses-show-identity-in-christ:ancient_near_east_context:0",
+        "what-verses-show-identity-in-christ:historical_context:0"
+      ],
+      "ckl_parent_records": [
+        "crucifixion",
+        "ekklesia",
+        "koinonia",
+        "priesthood",
+        "what-verses-show-identity-in-christ"
+      ],
+      "explanation": "One non-lexical CKL parent is attached across unrelated books in the evaluated pool.; The word-study parent has a broad or cross-book authored anchor set.",
+      "scope": "systemic"
+    },
+    {
+      "reference": "Mark 14",
+      "reason_codes": [
+        "CROSS_BOOK_PARENT_REUSE"
+      ],
+      "evidence_ids": [
+        "gospel-acts-priestly-authority",
+        "gospel-acts-priestly-authority:passage-relevance"
+      ],
+      "ckl_parent_records": [
+        "second-temple-priesthood-and-temple-authority"
+      ],
+      "explanation": "One non-lexical CKL parent is attached across unrelated books in the evaluated pool.",
+      "scope": "systemic"
+    },
+    {
+      "reference": "Hebrews 10",
+      "reason_codes": [
+        "CROSS_BOOK_PARENT_REUSE",
+        "WORD_STUDY_BROAD_PARENT_ANCHOR"
+      ],
+      "evidence_ids": [
+        "crucifixion:ancient_near_east_context:0",
+        "crucifixion:hebraic_worldview:0",
+        "crucifixion:historical_context:0",
+        "crucifixion:second_temple_context:0",
+        "ekklesia:ancient_near_east_context:0",
+        "ekklesia:historical_context:0",
+        "feast-calendar:ancient_near_east_context:0",
+        "feast-calendar:historical_context:0",
+        "high-priesthood:ancient_near_east_context:0",
+        "high-priesthood:hebraic_worldview:0",
+        "high-priesthood:historical_context:0",
+        "high-priesthood:historical_setting:0",
+        "high-priesthood:original_audience:0",
+        "high-priesthood:second_temple_context:0",
+        "hupomone:ancient_near_east_context:0",
+        "hupomone:historical_context:0",
+        "koinonia:ancient_near_east_context:0",
+        "koinonia:historical_context:0",
+        "levitical-service:ancient_near_east_context:0",
+        "levitical-service:historical_context:0",
+        "priestly-service:ancient_near_east_context:0",
+        "priestly-service:historical_context:0",
+        "sacrifice-theme:ancient_near_east_context:0",
+        "sacrifice-theme:hebraic_worldview:0",
+        "sacrifice-theme:historical_context:0",
+        "sacrifice-theme:second_temple_context:0"
+      ],
+      "ckl_parent_records": [
+        "crucifixion",
+        "ekklesia",
+        "feast-calendar",
+        "high-priesthood",
+        "hupomone",
+        "koinonia",
+        "levitical-service",
+        "priestly-service",
+        "sacrifice-theme"
+      ],
+      "explanation": "One non-lexical CKL parent is attached across unrelated books in the evaluated pool.; The word-study parent has a broad or cross-book authored anchor set.",
+      "scope": "systemic"
+    },
+    {
+      "reference": "2 Chronicles 36",
+      "reason_codes": [
+        "CROSS_BOOK_PARENT_REUSE"
+      ],
+      "evidence_ids": [
+        "babylonian-exile:ancient_near_east_context:0",
+        "babylonian-exile:hebraic_worldview:0",
+        "babylonian-exile:historical_context:0",
+        "babylonian-exile:second_temple_context:0"
+      ],
+      "ckl_parent_records": [
+        "babylonian-exile"
+      ],
+      "explanation": "One non-lexical CKL parent is attached across unrelated books in the evaluated pool.",
+      "scope": "systemic"
+    },
+    {
+      "reference": "Leviticus 23",
+      "reason_codes": [
+        "CROSS_BOOK_PARENT_REUSE"
+      ],
+      "evidence_ids": [
+        "feast-calendar:ancient_near_east_context:0",
+        "feast-calendar:historical_context:0",
+        "levitical-service:ancient_near_east_context:0",
+        "levitical-service:historical_context:0",
+        "priestly-service:ancient_near_east_context:0",
+        "priestly-service:historical_context:0"
+      ],
+      "ckl_parent_records": [
+        "feast-calendar",
+        "levitical-service",
+        "priestly-service"
+      ],
+      "explanation": "One non-lexical CKL parent is attached across unrelated books in the evaluated pool.",
+      "scope": "systemic"
+    },
+    {
+      "reference": "Joshua 24",
+      "reason_codes": [
+        "EVIDENCE_HASH_DISAGREEMENT"
+      ],
+      "evidence_ids": [],
+      "ckl_parent_records": [],
+      "explanation": "Backend or audit disagreement prevented certification.",
+      "scope": "local"
+    },
+    {
+      "reference": "Ephesians 2",
+      "reason_codes": [
+        "CROSS_BOOK_PARENT_REUSE",
+        "EVIDENCE_HASH_DISAGREEMENT",
+        "WORD_STUDY_BROAD_PARENT_ANCHOR"
+      ],
+      "evidence_ids": [
+        "agape:ancient_near_east_context:0",
+        "agape:historical_context:0",
+        "charis:ancient_near_east_context:0",
+        "charis:historical_context:0",
+        "eleos:ancient_near_east_context:0",
+        "eleos:historical_context:0",
+        "hamartia:ancient_near_east_context:0",
+        "hamartia:historical_context:0",
+        "hesed:ancient_near_east_context:0",
+        "hesed:historical_context:0",
+        "new-temple-theme:ancient_near_east_context:0",
+        "new-temple-theme:historical_context:0",
+        "soteria:ancient_near_east_context:0",
+        "soteria:historical_context:0",
+        "what-does-shalom-mean:ancient_near_east_context:0",
+        "what-does-shalom-mean:historical_context:0"
+      ],
+      "ckl_parent_records": [
+        "agape",
+        "charis",
+        "eleos",
+        "hamartia",
+        "hesed",
+        "new-temple-theme",
+        "soteria",
+        "what-does-shalom-mean"
+      ],
+      "explanation": "The word-study parent has a broad or cross-book authored anchor set.; One non-lexical CKL parent is attached across unrelated books in the evaluated pool.",
+      "scope": "systemic"
+    },
+    {
+      "reference": "Luke 24",
+      "reason_codes": [
+        "CROSS_BOOK_PARENT_REUSE",
+        "WORD_STUDY_BROAD_PARENT_ANCHOR"
+      ],
+      "evidence_ids": [
+        "christos:ancient_near_east_context:0",
+        "christos:historical_context:0",
+        "mashiach:ancient_near_east_context:0",
+        "mashiach:historical_context:0",
+        "what-is-intertextuality:ancient_near_east_context:0",
+        "what-is-intertextuality:historical_context:0"
+      ],
+      "ckl_parent_records": [
+        "christos",
+        "mashiach",
+        "what-is-intertextuality"
+      ],
+      "explanation": "The word-study parent has a broad or cross-book authored anchor set.; One non-lexical CKL parent is attached across unrelated books in the evaluated pool.",
+      "scope": "systemic"
+    },
+    {
+      "reference": "Romans 15",
+      "reason_codes": [
+        "CROSS_BOOK_PARENT_REUSE",
+        "EVIDENCE_HASH_DISAGREEMENT"
+      ],
+      "evidence_ids": [
+        "romans-jerusalem-risk-prayer",
+        "romans-jerusalem-risk-prayer:passage-relevance",
+        "romans-pioneer-ambition-boundary",
+        "romans-pioneer-ambition-boundary:passage-relevance",
+        "romans-priestly-gentile-service",
+        "romans-priestly-gentile-service:passage-relevance",
+        "romans-spain-plan-helped-journey",
+        "romans-spain-plan-helped-journey:passage-relevance",
+        "what-is-intertextuality:ancient_near_east_context:0",
+        "what-is-intertextuality:historical_context:0"
+      ],
+      "ckl_parent_records": [
+        "pauline-mission-proclamation-travel-coworkers-letters-messengers-hospitality-house-assemblies-synagogues-marketplaces-adaptability-church-planting-and-interassembly-networks",
+        "what-is-intertextuality"
+      ],
+      "explanation": "One non-lexical CKL parent is attached across unrelated books in the evaluated pool.",
+      "scope": "systemic"
+    },
+    {
+      "reference": "Colossians 3",
+      "reason_codes": [
+        "CROSS_BOOK_PARENT_REUSE"
+      ],
+      "evidence_ids": [
+        "what-verses-show-identity-in-christ:ancient_near_east_context:0",
+        "what-verses-show-identity-in-christ:historical_context:0"
+      ],
+      "ckl_parent_records": [
+        "what-verses-show-identity-in-christ"
+      ],
+      "explanation": "One non-lexical CKL parent is attached across unrelated books in the evaluated pool.",
+      "scope": "systemic"
+    },
+    {
+      "reference": "Acts 24",
+      "reason_codes": [
+        "CROSS_BOOK_PARENT_REUSE"
+      ],
+      "evidence_ids": [
+        "roman-governorship:ancient_near_east_context:0",
+        "roman-governorship:hebraic_worldview:0",
+        "roman-governorship:historical_context:0",
+        "roman-governorship:second_temple_context:0"
+      ],
+      "ckl_parent_records": [
+        "roman-governorship"
+      ],
+      "explanation": "One non-lexical CKL parent is attached across unrelated books in the evaluated pool.",
+      "scope": "systemic"
+    },
+    {
+      "reference": "Romans 7",
+      "reason_codes": [
+        "WORD_STUDY_BROAD_PARENT_ANCHOR"
+      ],
+      "evidence_ids": [
+        "nomos:ancient_near_east_context:0",
+        "nomos:historical_context:0",
+        "sarx:ancient_near_east_context:0",
+        "sarx:historical_context:0",
+        "shema:ancient_near_east_context:0",
+        "shema:historical_context:0",
+        "torah:ancient_near_east_context:0",
+        "torah:historical_context:0"
+      ],
+      "ckl_parent_records": [
+        "nomos",
+        "sarx",
+        "shema",
+        "torah"
+      ],
+      "explanation": "The word-study parent has a broad or cross-book authored anchor set.",
+      "scope": "systemic"
+    },
+    {
+      "reference": "1 Corinthians 9",
+      "reason_codes": [
+        "CROSS_BOOK_PARENT_REUSE",
+        "EVIDENCE_HASH_DISAGREEMENT"
+      ],
+      "evidence_ids": [
+        "corinth-athletic-discipline-boundary",
+        "corinth-athletic-discipline-boundary:passage-relevance",
+        "corinth-bounded-adaptability",
+        "corinth-bounded-adaptability:passage-relevance",
+        "corinth-support-right-nonuse",
+        "corinth-support-right-nonuse:passage-relevance"
+      ],
+      "ckl_parent_records": [
+        "pauline-mission-proclamation-travel-coworkers-letters-messengers-hospitality-house-assemblies-synagogues-marketplaces-adaptability-church-planting-and-interassembly-networks"
+      ],
+      "explanation": "One non-lexical CKL parent is attached across unrelated books in the evaluated pool.",
+      "scope": "systemic"
+    },
+    {
+      "reference": "Acts 14",
+      "reason_codes": [
+        "CROSS_BOOK_PARENT_REUSE"
+      ],
+      "evidence_ids": [
+        "acts-revisit-local-elders",
+        "acts-revisit-local-elders:passage-relevance"
+      ],
+      "ckl_parent_records": [
+        "pauline-mission-proclamation-travel-coworkers-letters-messengers-hospitality-house-assemblies-synagogues-marketplaces-adaptability-church-planting-and-interassembly-networks"
+      ],
+      "explanation": "One non-lexical CKL parent is attached across unrelated books in the evaluated pool.",
+      "scope": "systemic"
+    },
+    {
+      "reference": "Daniel 1",
+      "reason_codes": [
+        "CROSS_BOOK_PARENT_REUSE"
+      ],
+      "evidence_ids": [
+        "babylonian-exile:ancient_near_east_context:0",
+        "babylonian-exile:hebraic_worldview:0",
+        "babylonian-exile:historical_context:0",
+        "babylonian-exile:second_temple_context:0"
+      ],
+      "ckl_parent_records": [
+        "babylonian-exile"
+      ],
+      "explanation": "One non-lexical CKL parent is attached across unrelated books in the evaluated pool.",
+      "scope": "systemic"
+    },
+    {
+      "reference": "Galatians 6",
+      "reason_codes": [
+        "CROSS_BOOK_PARENT_REUSE"
+      ],
+      "evidence_ids": [
+        "galatians-gentle-restoration-burdens",
+        "galatians-gentle-restoration-burdens:passage-relevance"
+      ],
+      "ckl_parent_records": [
+        "pauline-bodies-marriage-sexual-ethics-discipline-and-restoration"
+      ],
+      "explanation": "One non-lexical CKL parent is attached across unrelated books in the evaluated pool.",
+      "scope": "systemic"
+    },
+    {
+      "reference": "John 12",
+      "reason_codes": [
+        "CROSS_BOOK_PARENT_REUSE"
+      ],
+      "evidence_ids": [
+        "stepped-street-jerusalem",
+        "stepped-street-jerusalem:passage-relevance"
+      ],
+      "ckl_parent_records": [
+        "judean-pilgrimage-taxation-and-roman-power"
+      ],
+      "explanation": "One non-lexical CKL parent is attached across unrelated books in the evaluated pool.",
+      "scope": "systemic"
+    },
+    {
+      "reference": "John 18",
+      "reason_codes": [
+        "CROSS_BOOK_PARENT_REUSE"
+      ],
+      "evidence_ids": [
+        "caiaphas-ossuary-identification",
+        "caiaphas-ossuary-identification:passage-relevance",
+        "gospel-roman-hearing",
+        "gospel-roman-hearing:passage-relevance",
+        "pilate-prefect-inscription",
+        "pilate-prefect-inscription:passage-relevance",
+        "pilate-stone:ancient_near_east_context:0",
+        "pilate-stone:hebraic_worldview:0",
+        "pilate-stone:historical_context:0",
+        "pilate-stone:second_temple_context:0",
+        "roman-governorship:ancient_near_east_context:0",
+        "roman-governorship:hebraic_worldview:0",
+        "roman-governorship:historical_context:0",
+        "roman-governorship:second_temple_context:0"
+      ],
+      "ckl_parent_records": [
+        "judean-pilgrimage-taxation-and-roman-power",
+        "pilate-stone",
+        "roman-governorship",
+        "second-temple-priesthood-and-temple-authority"
+      ],
+      "explanation": "One non-lexical CKL parent is attached across unrelated books in the evaluated pool.",
+      "scope": "systemic"
+    },
+    {
+      "reference": "Micah 6",
+      "reason_codes": [
+        "WORD_STUDY_BROAD_PARENT_ANCHOR"
+      ],
+      "evidence_ids": [
+        "mishpat:ancient_near_east_context:0",
+        "mishpat:historical_context:0",
+        "tsedeq:ancient_near_east_context:0",
+        "tsedeq:historical_context:0"
+      ],
+      "ckl_parent_records": [
+        "mishpat",
+        "tsedeq"
+      ],
+      "explanation": "The word-study parent has a broad or cross-book authored anchor set.",
+      "scope": "systemic"
+    }
+  ],
+  "unresolved_blocker_count": 329,
+  "systemic_concern": "Repeated template-shaped background and broad-parent reuse should be handled in a separate CKL cleanup task; this preflight does not repair evidence."
+}

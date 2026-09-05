@@ -1,0 +1,396 @@
+{
+  "passage_ref": "Daniel 4",
+  "entities": {
+    "people": [],
+    "places": [],
+    "groups": [],
+    "events": [],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "daniel-greek-versions",
+      "claim": "Daniel survives in substantially distinct Old Greek and Theodotionic versions, with especially important differences in chapters 4-6 and in the form and placement of additions.",
+      "category": "history",
+      "source_ids": [
+        "daniel-old-greek-theodotion",
+        "nets-daniel",
+        "nets-susanna",
+        "segal-dreams-riddles-visions"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Daniel 4:1-37"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "daniel",
+        "parent_title": "Daniel",
+        "parent_type": "book",
+        "object_importance": 94,
+        "retrieval_score": 0.914,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "textual_variant",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "daniel-royal-humiliation",
+      "claim": "Daniel 4 narrates Nebuchadnezzar's tree dream, removal from human society, animal-like existence, recognition of heavenly rule, and restoration, while the Prayer of Nabonidus preserves a related but different royal-affliction tradition.",
+      "category": "culture",
+      "source_ids": [
+        "daniel-masoretic",
+        "newsom-daniel-commentary",
+        "prayer-nabonidus-iaa",
+        "segal-dreams-riddles-visions"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Daniel 4:1-37"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "daniel",
+        "parent_title": "Daniel",
+        "parent_type": "book",
+        "object_importance": 94,
+        "retrieval_score": 0.914,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "probable",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "historical_cultural",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 110
+      }
+    },
+    {
+      "id": "daniel:interpretive_note:25",
+      "claim": "Old Greek and Theodotionic Daniel must be compared passage by passage; neither label means that every difference has one cause.",
+      "category": "culture",
+      "source_ids": [
+        "nets-daniel",
+        "nets-susanna",
+        "segal-dreams-riddles-visions"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Daniel 4:1-37"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "daniel",
+        "parent_title": "Daniel",
+        "parent_type": "book",
+        "object_importance": 94,
+        "retrieval_score": 0.914,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "textual_variant",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "textual-observation",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    },
+    {
+      "id": "daniel:interpretive_note:8",
+      "claim": "Daniel 4 must not be used to stigmatize mental illness or retrospectively diagnose a living person; its royal humiliation is literary-theological narration.",
+      "category": "culture",
+      "source_ids": [
+        "daniel-masoretic",
+        "newsom-daniel-commentary",
+        "prayer-nabonidus-iaa"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Daniel 4:19-37"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "daniel",
+        "parent_title": "Daniel",
+        "parent_type": "book",
+        "object_importance": 94,
+        "retrieval_score": 0.914,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 18,
+        "certainty": "strong_consensus",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "interpretive-caution",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 102
+      }
+    },
+    {
+      "id": "daniel:interpretive_note:9",
+      "claim": "The Prayer of Nabonidus is a significant parallel to Daniel 4, not proof that the two accounts are identical or that one simple substitution explains every difference.",
+      "category": "culture",
+      "source_ids": [
+        "prayer-nabonidus-iaa",
+        "newsom-daniel-commentary",
+        "collins-flint-composition"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Daniel 4:1-37"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "daniel",
+        "parent_title": "Daniel",
+        "parent_type": "book",
+        "object_importance": 94,
+        "retrieval_score": 0.914,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "second-temple-context",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "The Book of Daniel: Composition and Reception, Volumes 1-2",
+        "author": "John J. Collins and Peter W. Flint, editors",
+        "publisher": "Brill",
+        "year": 2001,
+        "locator": "Supplements to Vetus Testamentum 83",
+        "url": "https://brill.com/edcollbook/title/7822",
+        "source_type": "academic-book",
+        "supports": [
+          "authorship-positions",
+          "second-temple-context",
+          "primary-sources",
+          "daniel-compositional-horizons",
+          "daniel-qumran-witnesses"
+        ],
+        "notes": "Multi-author reference for composition, transmission, social setting, theology, and reception.",
+        "id": "collins-flint-composition",
+        "canonical_object_ids": [
+          "daniel"
+        ]
+      },
+      {
+        "title": "Daniel: Masoretic Hebrew-Aramaic Text",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Daniel 1-12",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "literary-context",
+          "structure",
+          "scripture-references",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Primary received Hebrew-Aramaic text; textual form must be compared with Greek and Qumran witnesses.",
+        "id": "daniel-masoretic",
+        "canonical_object_ids": [
+          "daniel"
+        ]
+      },
+      {
+        "title": "Old Greek and Theodotionic Daniel",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Daniel and its additions in the two ancient Greek versions",
+        "url": "",
+        "source_type": "ancient-primary-source",
+        "supports": [
+          "primary-sources",
+          "daniel-greek-versions",
+          "interpretive-notes"
+        ],
+        "notes": "Ancient Greek textual forms treated as distinct witnesses rather than conflated.",
+        "id": "daniel-old-greek-theodotion",
+        "canonical_object_ids": [
+          "daniel"
+        ]
+      },
+      {
+        "title": "A New English Translation of the Septuagint: Daniel",
+        "author": "Timothy McLay, translator",
+        "publisher": "International Organization for Septuagint and Cognate Studies",
+        "year": 2007,
+        "locator": "Old Greek and Theodotion in parallel",
+        "url": "https://ccat.sas.upenn.edu/nets/edition/40-daniel-nets.pdf",
+        "source_type": "ancient-primary-source",
+        "supports": [
+          "primary-sources",
+          "daniel-greek-versions",
+          "daniel-greek-additions",
+          "interpretive-notes"
+        ],
+        "notes": "Translation and introduction documenting two complete ancient Greek versions and Papyrus 967 evidence.",
+        "id": "nets-daniel",
+        "canonical_object_ids": [
+          "daniel"
+        ]
+      },
+      {
+        "title": "A New English Translation of the Septuagint: Susanna",
+        "author": "Johan Lust, translator",
+        "publisher": "International Organization for Septuagint and Cognate Studies",
+        "year": 2007,
+        "locator": "Old Greek and Theodotion Susanna",
+        "url": "https://ccat.sas.upenn.edu/nets/edition/39-sousanna-nets.pdf",
+        "source_type": "ancient-primary-source",
+        "supports": [
+          "primary-sources",
+          "daniel-greek-versions",
+          "daniel-greek-additions",
+          "interpretive-notes"
+        ],
+        "notes": "Translation and introduction documenting distinct Susanna versions and placements.",
+        "id": "nets-susanna",
+        "canonical_object_ids": [
+          "daniel"
+        ]
+      },
+      {
+        "title": "Daniel: A Commentary",
+        "author": "Carol A. Newsom with Brennan W. Breed",
+        "publisher": "Westminster John Knox Press",
+        "year": 2014,
+        "locator": "Old Testament Library",
+        "url": "https://www.wjkbooks.com/bookproduct/0664260160-daniel/",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "literary-context",
+          "authorship-positions",
+          "interpretive-disputes",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Major literary, historical, textual, and theological commentary.",
+        "id": "newsom-daniel-commentary",
+        "canonical_object_ids": [
+          "daniel"
+        ]
+      },
+      {
+        "title": "4Q Prayer of Nabonidus",
+        "author": "Leon Levy Dead Sea Scrolls Digital Library",
+        "publisher": "Israel Antiquities Authority",
+        "year": null,
+        "locator": "4Q242",
+        "url": "https://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q242-1",
+        "source_type": "museum-collection",
+        "supports": [
+          "archaeology",
+          "primary-sources",
+          "daniel-royal-humiliation",
+          "daniel-qumran-witnesses",
+          "interpretive-notes"
+        ],
+        "notes": "Official manuscript record for the Aramaic Prayer of Nabonidus.",
+        "id": "prayer-nabonidus-iaa",
+        "canonical_object_ids": [
+          "daniel"
+        ]
+      },
+      {
+        "title": "Dreams, Riddles, and Visions",
+        "author": "Michael Segal",
+        "publisher": "De Gruyter",
+        "year": 2016,
+        "locator": "Textual, Contextual, and Intertextual Approaches to the Book of Daniel",
+        "url": "https://www.degruyterbrill.com/document/doi/10.1515/9783110330991/html",
+        "source_type": "academic-book",
+        "supports": [
+          "literary-context",
+          "intertextuality",
+          "daniel-court-identity",
+          "daniel-statue-four-kingdoms",
+          "daniel-greek-versions",
+          "interpretive-notes"
+        ],
+        "notes": "Textual and literary studies of Daniel 1, 2, 4, 5, 7, 9, Susanna, and angelology.",
+        "id": "segal-dreams-riddles-visions",
+        "canonical_object_ids": [
+          "daniel"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "daniel",
+        "type": "book",
+        "title": "Daniel",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.914
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "99502f0ddc3e0e431a3040c4fe8347da8723b4b95261b60019e644345ef75715",
+  "evidence_hash_version": "2"
+}

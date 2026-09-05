@@ -1,0 +1,177 @@
+{
+  "passage_ref": "Ecclesiastes 4",
+  "entities": {
+    "people": [],
+    "places": [],
+    "groups": [],
+    "events": [],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "ecclesiastes-oppression-injustice",
+      "claim": "Qohelet explicitly observes tears without comfort, power in oppressors' hands, corrupted places of judgment, political hierarchy, delayed justice, and the social fragility of poor wisdom.",
+      "category": "politics",
+      "source_ids": [
+        "ecclesiastes-masoretic",
+        "fox-jps-ecclesiastes",
+        "seow-ecclesiastes",
+        "gerstenberger-qoheleth-writings"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Ecclesiastes 4:1-3"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "ecclesiastes",
+        "parent_title": "Ecclesiastes",
+        "parent_type": "book",
+        "object_importance": 86,
+        "retrieval_score": 0.906,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "textually_explicit",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_theology",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 110
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "Masoretic Ecclesiastes",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Ecclesiastes 1-12 in the Masoretic textual tradition",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "historical-context",
+          "literary-context",
+          "structure",
+          "major-themes",
+          "key-people",
+          "key-places",
+          "key-events",
+          "hebrew-words",
+          "scripture-references",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "Primary received Hebrew canonical text.",
+        "id": "ecclesiastes-masoretic",
+        "canonical_object_ids": [
+          "ecclesiastes"
+        ]
+      },
+      {
+        "title": "The JPS Bible Commentary: Ecclesiastes",
+        "author": "Michael V. Fox",
+        "publisher": "Jewish Publication Society",
+        "year": 2004,
+        "locator": "JPS Bible Commentary",
+        "url": "https://jps.org/books/jps-bible-commentary-ecclesiastes/",
+        "source_type": "academic-book",
+        "supports": [
+          "authorship-positions",
+          "date-ranges",
+          "literary-context",
+          "major-themes",
+          "hebrew-words",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "Hebrew-text commentary focused on Qohelet's argument, absurdity, injustice, wisdom, enjoyment, God, and Jewish interpretation.",
+        "id": "fox-jps-ecclesiastes",
+        "canonical_object_ids": [
+          "ecclesiastes"
+        ]
+      },
+      {
+        "title": "Qoheleth in the Writings",
+        "author": "Erhard S. Gerstenberger",
+        "publisher": "Oxford University Press",
+        "year": 2018,
+        "locator": "The Oxford Handbook of the Writings of the Hebrew Bible, chapter 16, pp. 245-260",
+        "url": "https://academic.oup.com/edited-volume/28060/chapter-abstract/212046332",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context",
+          "second-temple-context",
+          "canonical-context",
+          "interpretive-disputes",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "Overview of Qohelet's setting, wisdom antecedents, property, honor, power, skepticism, enjoyment, and place in the Writings.",
+        "id": "gerstenberger-qoheleth-writings",
+        "canonical_object_ids": [
+          "ecclesiastes"
+        ]
+      },
+      {
+        "title": "Ecclesiastes",
+        "author": "Choon-Leong Seow",
+        "publisher": "Yale University Press",
+        "year": 1997,
+        "locator": "Anchor Yale Bible Commentary",
+        "url": "https://yalebooks.yale.edu/book/9780300139600/ecclesiastes/",
+        "source_type": "academic-book",
+        "supports": [
+          "authorship-positions",
+          "date-ranges",
+          "historical-context",
+          "ancient-near-east-context",
+          "literary-context",
+          "hebrew-words",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "Critical translation and commentary attending to language, social history, ancient comparisons, theology, and reception.",
+        "id": "seow-ecclesiastes",
+        "canonical_object_ids": [
+          "ecclesiastes"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "ecclesiastes",
+        "type": "book",
+        "title": "Ecclesiastes",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.906
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "a1bfeae9e30fac4b8a9e737d84c644af982840798b1192d6844d6122a3b65205",
+  "evidence_hash_version": "2"
+}
