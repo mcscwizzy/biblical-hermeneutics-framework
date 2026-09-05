@@ -54,12 +54,39 @@ def _reference_entries(library: Any, obj: Any) -> list[dict[str, Any]]:
     return entries
 
 
+def _raw_candidate_ids(library: Any, query: Any) -> list[str]:
+    """Read the backend's Scripture index before production result filtering."""
+
+    if query is None:
+        return []
+    repository = getattr(library, "repository", None)
+    connection = getattr(repository, "_conn", None)
+    if connection is not None:
+        rows = connection.execute(
+            """
+            SELECT object_id FROM canonical_scripture_references WHERE book = ?
+            UNION
+            SELECT object_id FROM canonical_evidence_scripture_references WHERE book = ?
+            UNION
+            SELECT object_id FROM canonical_claim_scripture_references WHERE book = ?
+            ORDER BY object_id
+            """,
+            (query.book, query.book, query.book),
+        ).fetchall()
+        return [str(row[0]) for row in rows]
+
+    json_index = getattr(library, "_scripture_book_index", None)
+    if json_index is not None:
+        return sorted(json_index.get(query.book, set()))
+    return []
+
+
 def diagnose(reference: str, library: Any) -> dict[str, Any]:
     query = parse_scripture_query(reference, book_alias_lookup=library._book_alias_lookup)
     results = library.retrieve_by_scripture_reference(reference, limit=100)
     result_by_id = {result.object.id: result for result in results}
 
-    candidate_ids = sorted(library._scripture_book_index.get(query.book, set())) if query else []
+    candidate_ids = _raw_candidate_ids(library, query)
     bundle = build_evidence_bundle(reference, canonical_results=results)
     admitted_by_parent: dict[str, list[str]] = {}
     for item in bundle.evidence_items:
@@ -91,6 +118,14 @@ def diagnose(reference: str, library: Any) -> dict[str, Any]:
                 "title": obj.title,
                 "scripture_anchors": anchors,
                 "overlapping_anchor_entries": overlaps,
+                "anchor_layer_counts": {
+                    layer: sum(
+                        entry["source"].startswith(f"{layer}[")
+                        and entry in overlaps
+                        for entry in anchors
+                    )
+                    for layer in ("object.scripture_references", "evidence_items", "claims", "interpretive_notes")
+                },
                 "match": "scripture" if object_id in result_by_id else "rejected",
                 "score": getattr(result_by_id.get(object_id), "score", None),
                 "admissible_for_chapter_commentary": bool(admitted_by_parent.get(object_id)),
@@ -100,6 +135,7 @@ def diagnose(reference: str, library: Any) -> dict[str, Any]:
 
     return {
         "requested_reference": reference,
+        "parsed_query": query.__dict__ if query else None,
         "raw_candidate_count": len(candidate_ids),
         "valid_scripture_anchored_result_count": len(results),
         "rejected_candidate_count": sum(candidate["match"] == "rejected" for candidate in candidates),

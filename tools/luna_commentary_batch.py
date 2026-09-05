@@ -118,9 +118,15 @@ def block(book, ch, evidence):
     refs = [f'{book} {ch}:1-{len(d["verses"])}']
     text = TEXT[ch] if book == 'Genesis' and ch in TEXT else NEXT.get((book, ch))
     if text is None:
-        verses = d['verses']
-        text = f"{book} {ch} contains {len(verses)} verses. It opens with: {verses[0]['text']} It concludes with: {verses[-1]['text']}"
-    return {'id': 'overview', 'text': text, 'verse_refs': refs, 'evidence_ids': [evidence], 'confidence': 'high', 'interpretation_level': 'fact'}
+        # DATA_GAP commentary must not manufacture contextual prose from a
+        # chapter's first and last verses. The canonical text remains
+        # available to the reader, while the generated note is transparent
+        # about the missing anchored context.
+        text = (
+            f"BHF does not currently have anchored contextual evidence for "
+            f"{book} {ch}."
+        )
+    return {'id': 'overview', 'text': text, 'verse_refs': refs, 'evidence_ids': [evidence] if evidence else [], 'confidence': 'high', 'interpretation_level': 'fact'}
 
 def choose_evidence(book, items):
     """Prefer contextual records belonging to the requested book over later cross-references."""

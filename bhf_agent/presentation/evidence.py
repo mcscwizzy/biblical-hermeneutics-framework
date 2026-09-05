@@ -421,6 +421,52 @@ def _append_object_evidence(
         )
         added += 1
 
+    # Structured interpretive notes are authored, source-addressable CKL
+    # material too. They were previously searchable but silently omitted from
+    # EvidenceBundle projection whenever a parent also had claims/evidence.
+    # Admit only notes carrying their own overlapping Scripture anchor; never
+    # inherit the parent's broader anchors into a note.
+    for index, raw in enumerate(_sequence(data.get("interpretive_notes"))):
+        note = mapping(raw)
+        note_text = _text(note.get("note"))
+        if not note_text:
+            continue
+        matched = passage_matching_scripture_anchors(passage_ref, note)
+        if not matched:
+            continue
+        note_source_ids = _strings(note.get("sources")) or parent_sources
+        note_id = f"{object_id}:interpretive_note:{index}"
+        _add_evidence(
+            evidence,
+            EvidenceItem(
+                id=note_id,
+                claim=note_text,
+                category=_category(note.get("note_type"), note_text),
+                source_ids=note_source_ids,
+                related_entity_ids=[object_id] if object_id in known_entity_ids else [],
+                passage_anchors=_unique(matched),
+                confidence=_certainty_confidence(note.get("certainty"), parent_confidence),
+                relevance_metadata=_relevance_metadata(
+                    passage_ref,
+                    matched,
+                    source_kind="ckl_interpretive_note",
+                    data=data,
+                    item={
+                        **note,
+                        "assertion_type": "inference",
+                        # Interpretive notes are passage-linked by their own
+                        # authored reference, so this is not parent inheritance.
+                        "scripture_references": [
+                            {"reference": anchor, "relationship": "direct"}
+                            for anchor in matched
+                        ],
+                    },
+                    retrieval_score=retrieval_score,
+                ),
+            ),
+        )
+        added += 1
+
     # Older CKL records do not all have claim-level evidence yet. Preserve a
     # narrow, source-addressable bridge without turning the entire object into
     # commentary prose.

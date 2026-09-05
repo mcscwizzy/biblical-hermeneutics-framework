@@ -9,8 +9,10 @@ import sys
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from bhf_agent.ckl import load_canonical_library
 from bhf_agent.presentation import build_evidence_bundle
+from bhf_agent.chapter_commentary.availability import classify_evidence_availability
 from framework.canonical_library import CKLRepositoryConfig
 from framework.canonical_library.scripture import parse_scripture_query
+from tools.diagnose_scripture_retrieval import _raw_candidate_ids
 from bhf_agent import bible
 
 REPORT_VERSION = '1.0'
@@ -36,12 +38,12 @@ def scan(scope: str|None=None) -> dict:
     for book,ch in chapters_for(scope):
         ref=bible.verse_range_reference(book,ch)
         query=parse_scripture_query(ref,book_alias_lookup=lib._book_alias_lookup)
-        candidates=sorted(lib._scripture_book_index.get(query.book,set())) if query else []
+        candidates=_raw_candidate_ids(lib, query)
         raw=lib.retrieve_by_scripture_reference(ref,limit=100)
         bundle=build_evidence_bundle(ref,canonical_results=raw)
         counts=Counter(i.category for i in bundle.evidence_items)
         anchored=len(raw)
-        status='DATA_GAP' if anchored==0 else 'THIN' if anchored<3 else 'AVAILABLE'
+        status=classify_evidence_availability(bundle).value
         results.append({'book':book,'chapter':ch,'reference':ref,'status':status,'raw_ckl_candidates':len(candidates),'valid_anchored_evidence':anchored,'bundle_items':len(bundle.evidence_items),'categories':dict(sorted(counts.items())),'evidence_ids':[i.id for i in bundle.evidence_items],'rejected_candidates':len(candidates)-anchored})
     bybook=defaultdict(list)
     for r in results: bybook[r['book']].append(r)

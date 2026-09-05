@@ -313,6 +313,18 @@ def _index_object(
                 script_refs.append(format_scripture_reference(parsed))
                 scripture_spans.append(parsed)
 
+    for note in getattr(obj, "interpretive_notes", []) or []:
+        note_data = note.to_dict() if hasattr(note, "to_dict") else note
+        if not isinstance(note_data, Mapping):
+            continue
+        for reference in note_data.get("scripture_references") or []:
+            for parsed in parse_scripture_references(
+                str(reference),
+                book_alias_lookup=book_alias_lookup,
+            ):
+                script_refs.append(format_scripture_reference(parsed))
+                scripture_spans.append(parsed)
+
     related_edges = [_normalize_related_edge(item) for item in getattr(obj, "related_objects", []) or []]
     legacy_related_ids = (
         [str(item) for item in getattr(obj, "related_people", []) or []]

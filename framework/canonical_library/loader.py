@@ -204,6 +204,17 @@ class CanonicalLibrary:
                             continue
                         parsed_references.append(parsed)
                         self._scripture_book_index.setdefault(parsed.book, set()).add(obj.id)
+            for note in obj.interpretive_notes:
+                for reference in note.scripture_references:
+                    parsed_values = parse_scripture_references(
+                        reference,
+                        book_alias_lookup=self._book_alias_lookup,
+                    )
+                    for parsed in parsed_values:
+                        if parsed in parsed_references:
+                            continue
+                        parsed_references.append(parsed)
+                        self._scripture_book_index.setdefault(parsed.book, set()).add(obj.id)
             self._scripture_references_by_object[obj.id] = parsed_references
             self._scripture_scoring_references_by_object[obj.id] = scoring_references
 
