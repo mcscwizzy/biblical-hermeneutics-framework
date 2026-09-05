@@ -8,6 +8,11 @@ from .models import mapping
 from .references import _BOOK_ALIASES, anchor_specificity, references_overlap
 from framework.canonical_library.scripture import format_scripture_reference, parse_scripture_references
 
+from .relevance import (
+    SEMANTICALLY_MISANCHORED,
+    classify_semantic_relationship,
+)
+
 
 def scripture_anchors(value: Any) -> list[str]:
     """Return normalized Scripture anchors declared by a canonical record."""
@@ -55,6 +60,20 @@ def is_canonical_object_passage_eligible(passage_ref: str, value: Any) -> bool:
     normalized_reference = " ".join(str(passage_ref or "").split())
     matching = passage_matching_scripture_anchors(normalized_reference, value)
     if not matching:
+        return False
+    data = mapping(value)
+    semantic_relationship = classify_semantic_relationship(
+        normalized_reference,
+        anchors=matching,
+        metadata={
+            "parent_object_id": str(data.get("id") or ""),
+            "parent_type": str(data.get("type") or ""),
+            "parent_title": str(data.get("title") or ""),
+            "source_kind": "ckl_legacy_field",
+            "passage_relationship": "contextual",
+        },
+    )
+    if semantic_relationship == SEMANTICALLY_MISANCHORED:
         return False
     if anchor_specificity(normalized_reference) == "book":
         return True

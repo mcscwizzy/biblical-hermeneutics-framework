@@ -8,7 +8,10 @@ from typing import Any
 
 from bhf_agent import bible
 from bhf_agent.presentation.evidence import build_evidence_bundle
-from bhf_agent.presentation.models import EvidenceBundle
+from bhf_agent.presentation.models import (
+    EVIDENCE_BUNDLE_VERSION,
+    EvidenceBundle,
+)
 from bhf_agent.ckl import load_canonical_library
 from bhf_agent.study_db import (
     list_archaeology_passage_summaries,
@@ -25,6 +28,9 @@ def get_chapter_evidence_bundle(
     book: str,
     chapter: int,
     study_db_path: str | Path | None = None,
+    *,
+    evidence_bundle_version: str = EVIDENCE_BUNDLE_VERSION,
+    canonical_library: Any | None = None,
 ) -> EvidenceBundle | None:
     """Retrieve REAL evidence bundle for a canonical chapter from BHF systems.
 
@@ -45,7 +51,7 @@ def get_chapter_evidence_bundle(
     reference = bible.verse_range_reference(book, chapter)
 
     # Retrieve canonical library results for this chapter
-    canonical_results = _retrieve_canonical_results(reference)
+    canonical_results = _retrieve_canonical_results(reference, canonical_library)
 
     # Retrieve archaeology summaries for this chapter
     archaeology_records = _retrieve_archaeology(book, chapter, study_db_path)
@@ -60,6 +66,7 @@ def get_chapter_evidence_bundle(
             canonical_results=canonical_results,
             geography=geography_data,
             archaeology=archaeology_records,
+            bundle_version=evidence_bundle_version,
         )
         return bundle
     except Exception as exc:
@@ -67,16 +74,20 @@ def get_chapter_evidence_bundle(
         return None
 
 
-def _retrieve_canonical_results(reference: str) -> list[Any]:
+def _retrieve_canonical_results(reference: str, canonical_library: Any | None = None) -> list[Any]:
     """Query the canonical library for all objects relevant to this scripture reference."""
     global _CANONICAL_LIBRARY_CACHE
 
     try:
-        if _CANONICAL_LIBRARY_CACHE is None:
+        if canonical_library is not None:
+            library = canonical_library
+        elif _CANONICAL_LIBRARY_CACHE is None:
             _CANONICAL_LIBRARY_CACHE = load_canonical_library(
                 config=CKLRepositoryConfig()
             )
-        library = _CANONICAL_LIBRARY_CACHE
+            library = _CANONICAL_LIBRARY_CACHE
+        else:
+            library = _CANONICAL_LIBRARY_CACHE
 
         lookup = getattr(library, "retrieve_by_scripture_reference", None)
         if not callable(lookup):
