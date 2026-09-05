@@ -1,0 +1,33 @@
+{
+  "reference": "Luke 5",
+  "book": "Luke",
+  "chapter": 5,
+  "status": "validated",
+  "evidence_availability": "DATA_GAP",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "overview",
+          "text": "BHF does not currently have anchored contextual evidence for this chapter. Scripture remains available for reading and study. The chapter links a catch of fish, healings, the calling of Levi, a meal, and a question about fasting. Those scenes are arranged as a sequence of encounters and responses, which is a useful feature to watch while reading.",
+          "verse_refs": [
+            "Luke 5:1-39"
+          ],
+          "evidence_ids": [],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "226a5a3687e635d9249bdbbf8266b1fa64cda63fd9ede88093d793f490c306fb",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-canary",
+    "generated_timestamp": "2026-09-05T19:36:37.985838+00:00"
+  }
+}

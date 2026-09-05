@@ -1,0 +1,54 @@
+{
+  "reference": "Deuteronomy 21",
+  "book": "Deuteronomy",
+  "chapter": 21,
+  "status": "validated",
+  "evidence_availability": "THIN",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "s1_b1",
+          "text": "Deuteronomy 21 belongs within the covenant instruction of chapters 5\u201326. Its laws address several different situations, but the book's repeated teaching is presented as rhetorically adapted exposition for a successor generation, not as a simple verbatim duplication of earlier laws. That larger setting helps readers take the chapter's varied cases seriously while recognizing that they belong to a sustained covenant address.",
+          "evidence_ids": [
+            "deuteronomy:interpretive_note:1",
+            "deuteronomy-literary-movement"
+          ],
+          "verse_refs": [
+            "Deuteronomy 21:1-23"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "dig_deeper",
+      "title": "Dig deeper",
+      "blocks": [
+        {
+          "id": "s2_b1",
+          "text": "Galatians later brings Deuteronomy's curse texts into conversation with Torah performance and the Messiah's crucifixion. Its use of Deuteronomy 21:23 does not say that Torah, Jews, or Jewish practice are themselves cursed. That later argument is best read as an optional canonical connection, not as a replacement for the chapter's own covenant setting.",
+          "evidence_ids": [
+            "gal-curse-law"
+          ],
+          "verse_refs": [
+            "Deuteronomy 21:23"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "ccde95853a1b7d4bff7a923799a96f66ff43688d591c2a4dfea75415d9b648be",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-canary",
+    "generated_timestamp": "2026-09-05T19:36:38.757118+00:00"
+  }
+}

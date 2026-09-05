@@ -1,0 +1,115 @@
+{
+  "reference": "Luke 1",
+  "book": "Luke",
+  "chapter": 1,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "s1_b1",
+          "text": "Luke begins with a formal prologue. Verses 1\u20134 speak of earlier accounts, traditions traced to eyewitnesses and servants of the word, careful investigation, an orderly account, and assurance for Theophilus. The prologue does not say that its author personally witnessed Jesus' ministry, and it does not name the author. It prepares readers to receive the rest of the chapter\u2014annunciations, songs, births, and prophetic speech\u2014as a carefully arranged account, not merely a sequence of isolated scenes.",
+          "evidence_ids": [
+            "luke-prologue",
+            "luke-anonymous"
+          ],
+          "verse_refs": [
+            "Luke 1:1-4"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "s2_b1",
+          "text": "The announcement to Mary is set in first-century Jewish life under Roman rule, in Nazareth and amid Davidic expectation. Birth announcements were a recognizable literary form, but Luke frames this announcement through Israel's royal and prophetic hopes. Archaeological remains at Nazareth establish a modest inhabited settlement, not the identity of any particular family home. That distinction keeps the setting concrete without claiming more than the evidence can show.",
+          "evidence_ids": [
+            "annunciation-to-mary:ancient_near_east_context:0",
+            "annunciation-to-mary:historical_context:0",
+            "nazareth:historical_context:0"
+          ],
+          "verse_refs": [
+            "Luke 1:26-38"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Literary context",
+      "blocks": [
+        {
+          "id": "s3_b1",
+          "text": "Luke 1\u20132 deliberately pairs John and Jesus through announcements, births, songs, Spirit-filled speech, temple scenes, and growth notices. Those scenes use language and patterns shaped by Israel's Scriptures. The prologue also has a wider literary connection: Luke and Acts share Theophilus, resumptions, language, characters, geography, and themes. This strongly supports common authorship or coordinated production, while questions about literary unity and publication history remain open.",
+          "evidence_ids": [
+            "luke-infancy",
+            "luke-acts-relation"
+          ],
+          "verse_refs": [
+            "Luke 1:1-4",
+            "Luke 1:5-80"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "interpretive_questions",
+      "title": "Interpretive questions",
+      "blocks": [
+        {
+          "id": "s4_b1",
+          "text": "Luke links the birth setting with Herod's era and a registration associated with Quirinius. That produces a serious chronological problem because Quirinius' documented Syrian governorship and census belong to 6 CE. Proposed resolutions exist, but the available evidence does not settle the issue. The Magnificat is attributed to Mary in the dominant Greek manuscript tradition, though some early reception associates it with Elizabeth; speaker, textual transmission, and composition are related but distinct questions.",
+          "evidence_ids": [
+            "luke-quirinius",
+            "luke-magnificat"
+          ],
+          "verse_refs": [
+            "Luke 1:5",
+            "Luke 1:46-55"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "dig_deeper",
+      "title": "Dig deeper",
+      "blocks": [
+        {
+          "id": "s5_b1",
+          "text": "Acts 1 explicitly resumes a former account addressed to Theophilus. Many scholars therefore regard Acts as Luke's sequel and common authorship as the majority view, while the exact composition and publication relationship remains debated. Reading the opening of Acts alongside Luke's prologue can illuminate the two-volume shape without making the whole of Luke 1 a discussion of source theory.",
+          "evidence_ids": [
+            "acts-sequel",
+            "acts-common-authorship"
+          ],
+          "verse_refs": [
+            "Luke 1:1-4"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "59723b25a14757f0fff9bb71b882411f62d0d0467e1f7fd7be720000e513415b",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-canary",
+    "generated_timestamp": "2026-09-05T19:36:39.547100+00:00"
+  }
+}

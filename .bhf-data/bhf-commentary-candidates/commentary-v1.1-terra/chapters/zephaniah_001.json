@@ -1,0 +1,116 @@
+{
+  "reference": "Zephaniah 1",
+  "book": "Zephaniah",
+  "chapter": 1,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "s1_b1",
+          "text": "Zephaniah 1:1 places this prophetic word in Josiah's reign and addresses Judah and Jerusalem. The chapter moves from a sweeping announcement of judgment to concrete accusations involving worship, public life, violence, fraud, complacency, and wealth. Its repeated focus is the Day of the LORD: a day described not as an abstract idea but with battle cry, darkness, distress, ruined defenses, and wealth that cannot rescue. Read the chapter as a prophetic warning aimed at a named people and city.",
+          "evidence_ids": [
+            "zephaniah-superscription",
+            "zephaniah-cult",
+            "zephaniah-day"
+          ],
+          "verse_refs": [
+            "Zephaniah 1:1",
+            "Zephaniah 1:4-6",
+            "Zephaniah 1:14-18"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "s2_b1",
+          "text": "The accusations in verses 4\u20136 are specific: Baal practice, rooftop worship of the heavenly host, divided oath-taking, turning back, and failure to seek the LORD. Verses 10\u201311 also name the Fish Gate, Second Quarter, hills, and Maktesh, placing cries and economic collapse within Jerusalem. The exact archaeological identification of those locations is not secure, so the names should orient the reading without being turned into a precise modern map.",
+          "evidence_ids": [
+            "zephaniah-cult",
+            "zephaniah-jerusalem-topography"
+          ],
+          "verse_refs": [
+            "Zephaniah 1:4-6",
+            "Zephaniah 1:10-11"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Literary context",
+      "blocks": [
+        {
+          "id": "s3_b1",
+          "text": "The opening judgment sequence names humans, animals, birds, and fish. Many readers understand that sweep as creation-scale reversal, with flood-like resonances; that is a reading of the imagery, not a settled explanation that removes all ambiguity. Later in the chapter, the sacrifice-and-guests image is followed by judgment on officials, royal sons, foreign dress, threshold behavior, violence, and fraud. The poetic images sharpen the chapter's indictment rather than softening it.",
+          "evidence_ids": [
+            "zephaniah-creation-reversal",
+            "zephaniah-sacrifice"
+          ],
+          "verse_refs": [
+            "Zephaniah 1:2-3",
+            "Zephaniah 1:7-9"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "interpretive_questions",
+      "title": "Interpretive questions",
+      "blocks": [
+        {
+          "id": "s4_b1",
+          "text": "The superscription gives Josiah's reign as the book's explicit frame, but the exact date and the relation of Zephaniah to Josiah's reform remain disputed. The long genealogy does not securely prove either African ancestry through Cushi or descent from King Hezekiah. These uncertainties need not prevent reading the chapter; they mark places where the available evidence does not settle a more detailed reconstruction.",
+          "evidence_ids": [
+            "zephaniah-date",
+            "zephaniah-genealogy"
+          ],
+          "verse_refs": [
+            "Zephaniah 1:1"
+          ],
+          "confidence": "low",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "dig_deeper",
+      "title": "Dig deeper",
+      "blocks": [
+        {
+          "id": "s5_b1",
+          "text": "Fragmentary Jewish interpretive texts on Zephaniah show later communities rereading prophetic lines for their own setting. They do not supply Zephaniah's original historical referents. That distinction is useful whenever later reception is brought into the discussion: it can show how the book was read, but it should not displace the chapter's address to Judah and Jerusalem.",
+          "evidence_ids": [
+            "zephaniah-pesher"
+          ],
+          "verse_refs": [
+            "Zephaniah 1:12-13"
+          ],
+          "confidence": "high",
+          "interpretation_level": "inference"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "3f951799f9fdc5998e32f2cfc8ecb5030581ad6b9b80adcbfbcfe29f5bde7d3b",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-canary",
+    "generated_timestamp": "2026-09-05T19:36:39.221055+00:00"
+  }
+}

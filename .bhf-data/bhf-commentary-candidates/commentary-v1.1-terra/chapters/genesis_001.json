@@ -1,0 +1,113 @@
+{
+  "reference": "Genesis 1",
+  "book": "Genesis",
+  "chapter": 1,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "s1_b1",
+          "text": "Genesis 1 presents creation as an ordered sequence: God speaks, separates, names, appoints, blesses, evaluates, and finally rests. That repeated pattern is a useful guide to the chapter. Before asking later questions of the text, notice how its own account moves from an unformed world toward a habitable, ordered one, and then to human beings within it.",
+          "evidence_ids": [
+            "genesis-ordered-worldview-observation:passage-relevance",
+            "genesis-ordered-worldview-observation"
+          ],
+          "verse_refs": [
+            "Genesis 1:1-31"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "s2_b1",
+          "text": "Genesis belongs to an ancient Near Eastern literary world in which people also told stories about creation, flood, genealogy, and cities. Mesopotamian creation accounts provide a real comparison for questions about waters, ordering, celestial bodies, rule, and human vocation. The parallels can clarify the conversation Genesis enters, but they do not prove that Genesis copied another account or make the accounts equivalent.",
+          "evidence_ids": [
+            "genesis-ane-comparative-context",
+            "creation:ancient_near_east_context:0",
+            "mesopotamian-creation-and-flood-comparisons:interpretive_note:0"
+          ],
+          "verse_refs": [
+            "Genesis 1:1-31"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Literary context",
+      "blocks": [
+        {
+          "id": "s3_b1",
+          "text": "Genesis begins with universal origins in chapters 1\u201311 before turning in chapters 12\u201350 to the ancestral family narratives. Genesis 1 therefore introduces the book at its widest horizon: the world and humanity come first, before the story narrows to particular families and finally reaches Jacob's household in Egypt. That movement keeps this chapter from being read as an isolated preface.",
+          "evidence_ids": [
+            "genesis-literary-movement"
+          ],
+          "verse_refs": [
+            "Genesis 1:1-31"
+          ],
+          "confidence": "high",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "things_easy_to_miss",
+      "title": "Things easy to miss",
+      "blocks": [
+        {
+          "id": "s4_b1",
+          "text": "The description of humanity in verses 26\u201328 comes after the ordered world has been prepared. In the ancient world, royal imagery could be limited to kings; Genesis extends representative dignity to humanity as a whole. That comparison may help readers see why the text joins human dignity with a task in the created world, without requiring one later theological definition of the phrase.",
+          "evidence_ids": [
+            "image-of-god-theme:ancient_near_east_context:0",
+            "what-is-the-image-of-god:ancient_near_east_context:0"
+          ],
+          "verse_refs": [
+            "Genesis 1:26-28"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "dig_deeper",
+      "title": "Dig deeper",
+      "blocks": [
+        {
+          "id": "s5_b1",
+          "text": "Later biblical writers return to this chapter in different ways. Paul reuses the language of light in 2 Corinthians 4:6 as theological metaphor, not as a scientific account. Colossians also calls the Messiah the image of the invisible God. Those later uses are worth tracing, but they should not replace Genesis 1's own first movement from disorder to ordered creation.",
+          "evidence_ids": [
+            "2-corinthians:interpretive_note:21",
+            "col-image"
+          ],
+          "verse_refs": [
+            "Genesis 1:3",
+            "Genesis 1:26-27"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "64459dfd7bc93273f6761e3e0a7248836638b2427fa8d4ec87694cd1e2d7e659",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-canary",
+    "generated_timestamp": "2026-09-05T19:36:40.085370+00:00"
+  }
+}

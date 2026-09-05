@@ -1,0 +1,94 @@
+{
+  "reference": "Psalms 1",
+  "book": "Psalms",
+  "chapter": 1,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "s1_b1",
+          "text": "Psalm 1 is a wisdom-shaped doorway into the Psalter. Its central word, torah, is not simply a generic legal code. In Israel's story it names the covenant instruction given through Moses and the way God's redeemed people are to live. The poem therefore contrasts two paths: a life formed by delight and meditation in that instruction, and a way that does not endure. Its images of a planted tree and windblown chaff make that contrast memorable rather than abstract.",
+          "evidence_ids": [
+            "torah:historical_context:0",
+            "what-does-torah-mean:historical_context:0",
+            "what-is-biblical-wisdom:historical_context:0"
+          ],
+          "verse_refs": [
+            "Psalms 1:1-3",
+            "Psalms 1:1-6"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "s2_b1",
+          "text": "Psalms arise from Israel's worship life and were sung in both public and private devotion. Wisdom teaching also grew in settings of family instruction, court life, and worship. Those broad settings help explain why Psalm 1 can sound at once like instruction and prayerful poetry: it is not merely a rule list, but a poem that forms a way of seeing the two paths it describes.",
+          "evidence_ids": [
+            "what-is-a-psalm:historical_context:0",
+            "what-is-biblical-wisdom:historical_context:0"
+          ],
+          "verse_refs": [
+            "Psalms 1:1-6"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Literary context",
+      "blocks": [
+        {
+          "id": "s3_b1",
+          "text": "Many readers treat Psalm 1 as the first piece of a collection, but Psalms 1 and 2 may also function together as an untitled gateway. The pairing places Torah-shaped flourishing and the way of the wicked beside the LORD's kingship and the anointed king. That literary frame does not settle every question about the Psalter's formation, but it helps explain why this short poem carries such programmatic weight at the collection's opening.",
+          "evidence_ids": [
+            "psalms-gateway-torah-king"
+          ],
+          "verse_refs": [
+            "Psalms 1:1-6"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "dig_deeper",
+      "title": "Dig deeper",
+      "blocks": [
+        {
+          "id": "s4_b1",
+          "text": "The word often translated \u201cblessed\u201d has a range of uses in Hebrew and Greek, so its force should be read in context rather than reduced to one English gloss. The comparison is useful as a prompt to attend to Psalm 1's poetry; it should not displace the poem's own contrast between two ways of life.",
+          "evidence_ids": [
+            "makarios:historical_context:0",
+            "makarios:ancient_near_east_context:0"
+          ],
+          "verse_refs": [
+            "Psalms 1:1-3"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "b7759e4e8a9c0b1a00d786c112c0773732c8ccd1b73afef95ca7d28e75b40450",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-canary",
+    "generated_timestamp": "2026-09-05T19:36:39.117043+00:00"
+  }
+}

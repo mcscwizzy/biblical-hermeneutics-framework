@@ -1,0 +1,54 @@
+{
+  "reference": "Numbers 16",
+  "book": "Numbers",
+  "chapter": 16,
+  "status": "validated",
+  "evidence_availability": "THIN",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "s1_b1",
+          "text": "BHF's anchored contextual material for this chapter is deliberately limited. One available caution concerns wilderness geography: proposed maps should identify uncertain sites as uncertain rather than present one reconstructed route as established. The chapter itself records a rapidly escalating conflict and its consequences; readers can follow that visible narrative movement while withholding claims about precise locations that the current evidence does not secure.",
+          "evidence_ids": [
+            "numbers:interpretive_note:2"
+          ],
+          "verse_refs": [
+            "Numbers 16:1-50"
+          ],
+          "confidence": "low",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "dig_deeper",
+      "title": "Dig deeper",
+      "blocks": [
+        {
+          "id": "s2_b1",
+          "text": "A later passage, 2 Timothy 2:19, brings together divine knowledge of God's own and a summons to turn from wickedness, using language connected with Numbers 16:5 and 16:26. This is a later canonical use, not an explanation that decides every question in Numbers 16.",
+          "evidence_ids": [
+            "2tim-foundation"
+          ],
+          "verse_refs": [
+            "Numbers 16:5",
+            "Numbers 16:26"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "57b85db0ee976d66f4c903fe2b3efa26c2a8abeafc2d443e6f235f0c1d1d02ad",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-canary",
+    "generated_timestamp": "2026-09-05T19:36:38.162808+00:00"
+  }
+}

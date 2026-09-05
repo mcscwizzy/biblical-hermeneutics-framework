@@ -1,0 +1,53 @@
+{
+  "reference": "Jeremiah 2",
+  "book": "Jeremiah",
+  "chapter": 2,
+  "status": "validated",
+  "evidence_availability": "THIN",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "s1_b1",
+          "text": "Jeremiah 2 is near the beginning of a received book that combines poetry, prose sermons, narratives, letters, headings, repeated accounts, restoration collections, nation oracles, and an appendix. This is the product of a long compositional and textual history. That does not require a reader to solve how every part was formed; it is a reminder to read chapter 2 as prophetic poetry within a book whose literary forms and arrangement are varied.",
+          "evidence_ids": [
+            "jeremiah-long-composition"
+          ],
+          "verse_refs": [
+            "Jeremiah 2:1-37"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Literary context",
+      "blocks": [
+        {
+          "id": "s2_b1",
+          "text": "A practical outline of the Masoretic form of Jeremiah places chapters 2\u201325 together after the opening chapter. The outline is a reading aid, not a decision about the book's composition. It can help a reader keep chapter 2 within the first broad movement of prophetic material without flattening its poetry into a simple chronological report.",
+          "evidence_ids": [
+            "jeremiah-practical-mt-outline"
+          ],
+          "verse_refs": [
+            "Jeremiah 2:1-37"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "d4e12cfd1b9012b1d58a3dab63eb0a566cd690a6e0ba7e216111fd4697151fca",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-canary",
+    "generated_timestamp": "2026-09-05T19:36:38.243567+00:00"
+  }
+}
