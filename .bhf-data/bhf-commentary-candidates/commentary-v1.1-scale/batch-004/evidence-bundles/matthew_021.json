@@ -1,0 +1,456 @@
+{
+  "passage_ref": "Matthew 21",
+  "entities": {
+    "people": [],
+    "places": [],
+    "groups": [],
+    "events": [],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "matthew-temple-action",
+      "claim": "Matthew narrates Jesus' royal entry, action in the temple, healings, children, and authority controversies through scriptural citations.",
+      "category": "history",
+      "source_ids": [
+        "matthew-greek",
+        "matthew-septuagint",
+        "jewish-annotated-nt"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Matthew 21:1-27"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "matthew",
+        "parent_title": "Matthew",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "textually_explicit",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 110
+      }
+    },
+    {
+      "id": "what-is-a-parable:ancient_near_east_context:0",
+      "claim": "Story-based moral instruction was familiar in the ancient world, but Jesus uses parables to announce God's reign.",
+      "category": "culture",
+      "source_ids": [
+        "matthew-13",
+        "mark-4",
+        "luke-10",
+        "luke-15",
+        "matthew-21",
+        "matthew-25",
+        "what-is-a-parable-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Matthew 21:33-46"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "what-is-a-parable",
+        "parent_title": "What is a parable?",
+        "parent_type": "faq",
+        "object_importance": 88,
+        "retrieval_score": 0.908,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 32,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "what-is-a-parable:historical_context:0",
+      "claim": "Jesus uses parables in first-century teaching settings to confront unbelief and form disciples.",
+      "category": "history",
+      "source_ids": [
+        "matthew-13",
+        "mark-4",
+        "luke-10",
+        "luke-15",
+        "matthew-21",
+        "matthew-25",
+        "what-is-a-parable-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Matthew 21:33-46"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "what-is-a-parable",
+        "parent_title": "What is a parable?",
+        "parent_type": "faq",
+        "object_importance": 88,
+        "retrieval_score": 0.908,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 32,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "zechariah-new-testament-reception",
+      "claim": "The New Testament explicitly receives Zechariah's humble king, struck shepherd, and pierced figure and more broadly reuses its shepherd, silver, measuring, lampstand, olive-tree, and living-water imagery.",
+      "category": "culture",
+      "source_ids": [
+        "zechariah-new-testament",
+        "prophets-new-testament",
+        "sblgnt",
+        "early-christianity"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Matthew 21:5"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "zechariah",
+        "parent_title": "Zechariah",
+        "parent_type": "book",
+        "object_importance": 92,
+        "retrieval_score": 0.912,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 4,
+        "certainty": "strong_consensus",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "reception_history",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "LATER_RECEPTION",
+        "presentation_role": "dig_deeper",
+        "overview_priority": 0
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "The Minor Prophets in Early Christianity",
+        "author": "Michael B. Shepherd",
+        "publisher": "Oxford University Press",
+        "year": 2021,
+        "locator": "The Oxford Handbook of the Minor Prophets, chapter 18, pages 243-251",
+        "url": "https://academic.oup.com/edited-volume/38566/chapter/334372365",
+        "source_type": "reference-work",
+        "supports": [
+          "later-christian-reception",
+          "zechariah-new-testament-reception"
+        ],
+        "notes": "New Testament and early Christian reception of the Twelve.",
+        "id": "early-christianity",
+        "canonical_object_ids": [
+          "zechariah"
+        ]
+      },
+      {
+        "title": "The Jewish Annotated New Testament",
+        "author": "Levine, Amy-Jill, and Marc Zvi Brettler, editors",
+        "publisher": "Oxford University Press",
+        "year": 2017,
+        "locator": "Second edition, Matthew annotations and contextual essays",
+        "url": "https://global.oup.com/academic/product/the-jewish-annotated-new-testament-9780190461850",
+        "source_type": "reference-work",
+        "supports": [
+          "second-temple-context",
+          "hebraic-worldview",
+          "matthew-jewish-context",
+          "matthew-anti-judaism"
+        ],
+        "notes": "Jewish scholarly contextualization and reception-aware annotation; exact edition page locators require human review.",
+        "id": "jewish-annotated-nt",
+        "canonical_object_ids": [
+          "matthew"
+        ]
+      },
+      {
+        "title": "Luke 10",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "luke-10",
+        "canonical_object_ids": [
+          "what-is-a-parable"
+        ]
+      },
+      {
+        "title": "Luke 15",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "luke-15",
+        "canonical_object_ids": [
+          "what-is-a-parable"
+        ]
+      },
+      {
+        "title": "Mark 4",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "mark-4",
+        "canonical_object_ids": [
+          "what-is-a-parable"
+        ]
+      },
+      {
+        "title": "Matthew 13",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "matthew-13",
+        "canonical_object_ids": [
+          "what-is-a-parable"
+        ]
+      },
+      {
+        "title": "Matthew 21",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "matthew-21",
+        "canonical_object_ids": [
+          "what-is-a-parable"
+        ]
+      },
+      {
+        "title": "Matthew 25",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "matthew-25",
+        "canonical_object_ids": [
+          "what-is-a-parable"
+        ]
+      },
+      {
+        "title": "The Greek New Testament: SBL Edition, Matthew",
+        "author": "Holmes, Michael W., editor",
+        "publisher": "Society of Biblical Literature",
+        "year": 2010,
+        "locator": "Matthew 1-28",
+        "url": "https://www.sbl-site.org/resources/digital-texts/sbl-greek-new-testament/",
+        "source_type": "scripture",
+        "supports": [
+          "scripture-references",
+          "greek-words",
+          "matthew-greek-narrative",
+          "matthew-discourses",
+          "matthew-passion-responsibility",
+          "matthew-resurrection"
+        ],
+        "notes": "Critical Greek reading edition; differences among published editions are documented separately from a manuscript apparatus.",
+        "id": "matthew-greek",
+        "canonical_object_ids": [
+          "matthew"
+        ]
+      },
+      {
+        "title": "Septuagint passages received in Matthew",
+        "author": "",
+        "publisher": "Society of Biblical Literature / German Bible Society",
+        "year": null,
+        "locator": "Greek Genesis through Malachi comparanda",
+        "url": "https://www.sbl-site.org/resources/digital-texts/",
+        "source_type": "scripture",
+        "supports": [
+          "greek-words",
+          "intertextuality",
+          "matthew-scripture-use",
+          "matthew-isaiah-714"
+        ],
+        "notes": "Ancient Greek Jewish scriptural tradition used for comparison with Matthean citations.",
+        "id": "matthew-septuagint",
+        "canonical_object_ids": [
+          "matthew"
+        ]
+      },
+      {
+        "title": "The Prophets in the New Testament",
+        "author": "J. Ross Wagner",
+        "publisher": "Oxford University Press",
+        "year": 2016,
+        "locator": "The Oxford Handbook of the Prophets, chapter 21, pages 373-387",
+        "url": "https://academic.oup.com/edited-volume/28016/chapter/211814413",
+        "source_type": "reference-work",
+        "supports": [
+          "new-testament-connections",
+          "zechariah-new-testament-reception"
+        ],
+        "notes": "Framework for differentiating prophetic texts and their New Testament reuse.",
+        "id": "prophets-new-testament",
+        "canonical_object_ids": [
+          "zechariah"
+        ]
+      },
+      {
+        "title": "The Greek New Testament: SBL Edition",
+        "author": "Michael W. Holmes, editor",
+        "publisher": "Society of Biblical Literature",
+        "year": 2010,
+        "locator": "Matthew, Mark, John, Hebrews, and Revelation",
+        "url": "https://www.sbl-site.org/resources/digital-texts/sbl-greek-new-testament/",
+        "source_type": "reference-work",
+        "supports": [
+          "new-testament-connections",
+          "zechariah-new-testament-reception"
+        ],
+        "notes": "Critical Greek New Testament text for reception passages.",
+        "id": "sblgnt",
+        "canonical_object_ids": [
+          "zechariah"
+        ]
+      },
+      {
+        "title": "Canonical historical orientation for What is a parable?",
+        "author": "",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "id": "what-is-a-parable-historical-orientation",
+        "canonical_object_ids": [
+          "what-is-a-parable"
+        ]
+      },
+      {
+        "title": "New Testament reception of Zechariah",
+        "author": "",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "Matthew; Mark; John; Hebrews; Revelation",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "new-testament-connections",
+          "zechariah-new-testament-reception"
+        ],
+        "notes": "Primary New Testament texts, distinguishing quotation, allusion, and broader reception.",
+        "id": "zechariah-new-testament",
+        "canonical_object_ids": [
+          "zechariah"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "matthew",
+        "type": "book",
+        "title": "Matthew",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.917
+      },
+      {
+        "id": "what-is-a-parable",
+        "type": "faq",
+        "title": "What is a parable?",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.908
+      },
+      {
+        "id": "zechariah",
+        "type": "book",
+        "title": "Zechariah",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.912
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "ea79ab41bd5ef39f55e28eb39159e740d1f86343c45ffbb609a6acecc6e3efeb",
+  "evidence_hash_version": "2"
+}

@@ -1,0 +1,367 @@
+{
+  "passage_ref": "Joshua 4",
+  "entities": {
+    "people": [],
+    "places": [],
+    "groups": [],
+    "events": [
+      {
+        "id": "crossing-the-jordan",
+        "title": "Crossing the Jordan",
+        "type": "event",
+        "aliases": [
+          "crossing the jordan",
+          "jordan crossing",
+          "joshua crosses jordan",
+          "joshua 3"
+        ],
+        "metadata": {
+          "summary": "Israel crosses the Jordan on dry ground under Joshua, entering the land promised to the ancestors.",
+          "importance": 88,
+          "retrieval_score": 0.908,
+          "ancient_names": [],
+          "modern_identification": "",
+          "region": "",
+          "terrain": "",
+          "elevation": null,
+          "archaeology": [],
+          "related_passages": [
+            "Joshua 3:1-17",
+            "Joshua 4:1-24",
+            "Psalms 114:1-8"
+          ]
+        }
+      }
+    ],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "crossing-the-jordan:ancient_near_east_context:0",
+      "claim": "River crossings could mark military and territorial transitions, while Joshua frames the crossing as covenant fulfillment.",
+      "category": "culture",
+      "source_ids": [
+        "joshua-3-1-17",
+        "joshua-4-1-24",
+        "psalm-114-1-8",
+        "crossing-the-jordan-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "crossing-the-jordan"
+      ],
+      "passage_anchors": [
+        "Joshua 4:1-24"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "crossing-the-jordan",
+        "parent_title": "Crossing the Jordan",
+        "parent_type": "event",
+        "object_importance": 88,
+        "retrieval_score": 0.908,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "crossing-the-jordan:historical_context:0",
+      "claim": "The event belongs to the transition from wilderness wandering to settlement in Canaan under Joshua's leadership.",
+      "category": "history",
+      "source_ids": [
+        "joshua-3-1-17",
+        "joshua-4-1-24",
+        "psalm-114-1-8",
+        "crossing-the-jordan-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "crossing-the-jordan"
+      ],
+      "passage_anchors": [
+        "Joshua 4:1-24"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "crossing-the-jordan",
+        "parent_title": "Crossing the Jordan",
+        "parent_type": "event",
+        "object_importance": 88,
+        "retrieval_score": 0.908,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "joshua-literary-movement",
+      "claim": "Joshua moves from succession and entry through campaigns to land allotment, tribal unity, farewell, and covenant renewal.",
+      "category": "culture",
+      "source_ids": [
+        "joshua-1-24",
+        "woudstra-joshua",
+        "butler-joshua"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Joshua 1-24"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "joshua",
+        "parent_title": "Joshua",
+        "parent_type": "book",
+        "object_importance": 94,
+        "retrieval_score": 0.914,
+        "passage_relationship": "direct",
+        "anchor_specificity": "chapter",
+        "verse_distance": 300,
+        "certainty": "strong_consensus",
+        "dispute_status": "not_disputed",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 73
+      }
+    },
+    {
+      "id": "joshua:interpretive_note:0",
+      "claim": "Joshua concerns entry, campaigns, allotment, tribal unity, and covenant renewal; David, Solomon, monarchy, exile, Jerusalem, and Samaria are not its principal people, events, or settings.",
+      "category": "culture",
+      "source_ids": [
+        "joshua-1-24",
+        "woudstra-joshua",
+        "butler-joshua"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Joshua 1-24"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "joshua",
+        "parent_title": "Joshua",
+        "parent_type": "book",
+        "object_importance": 94,
+        "retrieval_score": 0.914,
+        "passage_relationship": "direct",
+        "anchor_specificity": "chapter",
+        "verse_distance": 300,
+        "certainty": "textually_explicit",
+        "dispute_status": "not_disputed",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "literary-observation",
+        "field": "",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 85
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "Joshua, 2-Volume Set, Volumes 7A and 7B",
+        "author": "Trent C. Butler",
+        "publisher": "Zondervan",
+        "year": 2014,
+        "locator": "Second edition, introduction and commentary on Joshua 1-24",
+        "url": "https://zondervanacademic.com/products/joshua-2-volume-set-7a-and-7b",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context",
+          "literary-context",
+          "authorship-positions",
+          "interpretive-notes",
+          "joshua-literary-movement",
+          "joshua-fulfilled-and-remaining-land"
+        ],
+        "notes": "Critical commentary with translation, textual notes, updated bibliography, and historical-literary discussion.",
+        "id": "butler-joshua",
+        "canonical_object_ids": [
+          "joshua"
+        ]
+      },
+      {
+        "title": "Canonical historical orientation for Crossing the Jordan",
+        "author": "",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "id": "crossing-the-jordan-historical-orientation",
+        "canonical_object_ids": [
+          "crossing-the-jordan"
+        ]
+      },
+      {
+        "title": "Joshua 1-24",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Joshua 1:1-24:33",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "literary-context",
+          "structure",
+          "key-people",
+          "key-places",
+          "key-events",
+          "scripture-references",
+          "joshua-literary-movement",
+          "joshua-torah-shaped-leadership",
+          "joshua-rahab-rescue",
+          "joshua-fulfilled-and-remaining-land",
+          "joshua-shechem-covenant"
+        ],
+        "notes": "Primary biblical text.",
+        "id": "joshua-1-24",
+        "canonical_object_ids": [
+          "joshua"
+        ]
+      },
+      {
+        "title": "Joshua 3:1-17",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "crossing the Jordan",
+        "id": "joshua-3-1-17",
+        "canonical_object_ids": [
+          "crossing-the-jordan"
+        ]
+      },
+      {
+        "title": "Joshua 4:1-24",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "memorial stones",
+        "id": "joshua-4-1-24",
+        "canonical_object_ids": [
+          "crossing-the-jordan"
+        ]
+      },
+      {
+        "title": "Psalm 114:1-8",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "poetic memory of waters fleeing",
+        "id": "psalm-114-1-8",
+        "canonical_object_ids": [
+          "crossing-the-jordan"
+        ]
+      },
+      {
+        "title": "The Book of Joshua",
+        "author": "Marten Woudstra",
+        "publisher": "Eerdmans",
+        "year": 1981,
+        "locator": "Introduction and commentary on Joshua 1-24",
+        "url": "https://www.eerdmans.com/9780802825254/the-book-of-joshua/",
+        "source_type": "reference-work",
+        "supports": [
+          "literary-context",
+          "canonical-context",
+          "later-christian-reception",
+          "interpretive-notes",
+          "joshua-literary-movement",
+          "joshua-torah-shaped-leadership",
+          "joshua-shechem-covenant"
+        ],
+        "notes": "Technical and theological commentary in the NICOT series.",
+        "id": "woudstra-joshua",
+        "canonical_object_ids": [
+          "joshua"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "crossing-the-jordan",
+        "type": "event",
+        "title": "Crossing the Jordan",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.908
+      },
+      {
+        "id": "joshua",
+        "type": "book",
+        "title": "Joshua",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.914
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "f938b16452ece9cea2d2044b4b389b107f01e05596cedcb4cb5f90b8d13e36e2",
+  "evidence_hash_version": "2"
+}

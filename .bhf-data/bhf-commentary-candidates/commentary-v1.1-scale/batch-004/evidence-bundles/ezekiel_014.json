@@ -1,0 +1,182 @@
+{
+  "passage_ref": "Ezekiel 14",
+  "entities": {
+    "people": [],
+    "places": [],
+    "groups": [],
+    "events": [],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "job:interpretive_note:0",
+      "claim": "Ezekiel 14 treats Job as a renowned righteous figure, but that reception does not settle the genre or historical referentiality of the completed book. Job's prose setting, poetic dialogue, literary artistry, and ancient reception must be distinguished rather than used as shortcuts to prove either modern biography or pure fiction.",
+      "category": "culture",
+      "source_ids": [
+        "job-masoretic-1-42",
+        "ezekiel-james-job-reception",
+        "seow-job-1-21",
+        "clines-job-wbc"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Ezekiel 14:14",
+        "Ezekiel 14:20"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "job",
+        "parent_title": "Job",
+        "parent_type": "book",
+        "object_importance": 92,
+        "retrieval_score": 0.912,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 13,
+        "certainty": "strong_consensus",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "interpretive-caution",
+        "field": "",
+        "semantic_relationship": "INTERTEXTUAL_REUSE",
+        "presentation_role": "dig_deeper",
+        "overview_priority": 0
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "Job, Volumes 17, 18A, and 18B",
+        "author": "David J. A. Clines",
+        "publisher": "Zondervan Academic",
+        "year": 2017,
+        "locator": "Word Biblical Commentary three-volume set; introduction, translation, textual notes, and commentary",
+        "url": "https://zondervanacademic.com/products/job-3-volume-set-17-18a-and-18b",
+        "source_type": "reference-work",
+        "supports": [
+          "authorship-positions",
+          "date-ranges",
+          "historical-context",
+          "literary-context",
+          "hebrew-words",
+          "primary-sources",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "Technical commentary addressing Hebrew, textual variants, philology, structure, literary formation, historical context, and theology.",
+        "id": "clines-job-wbc",
+        "canonical_object_ids": [
+          "job"
+        ]
+      },
+      {
+        "title": "Job in Ezekiel and James",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Ezekiel 14:14, 20 and James 5:11",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "second-temple-context",
+          "canonical-context",
+          "later-christian-reception",
+          "intertextuality",
+          "new-testament-connections",
+          "interpretive-notes"
+        ],
+        "notes": "Canonical reception of Job as righteous figure and exemplar of endurance.",
+        "id": "ezekiel-james-job-reception",
+        "canonical_object_ids": [
+          "job"
+        ]
+      },
+      {
+        "title": "Job 1-42",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Job 1:1-42:17 in the Masoretic textual tradition",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "structure",
+          "key-people",
+          "key-places",
+          "key-events",
+          "scripture-references",
+          "interpretive-notes",
+          "job-righteous-before-testing",
+          "job-heavenly-challenge-losses",
+          "job-lament-dialogues",
+          "job-wisdom-oath",
+          "job-elihu-intervention",
+          "job-whirlwind-creation",
+          "job-friends-rebuked-intercession",
+          "job-restoration-new-family"
+        ],
+        "notes": "Primary Hebrew canonical text.",
+        "id": "job-masoretic-1-42",
+        "canonical_object_ids": [
+          "job"
+        ]
+      },
+      {
+        "title": "Job 1-21: Interpretation and Commentary",
+        "author": "C. L. Seow",
+        "publisher": "Wm. B. Eerdmans Publishing Co.",
+        "year": 2013,
+        "locator": "Illuminations commentary, introduction and Job 1-21",
+        "url": "https://eerdword.com/excerpt-from-c-l-seows-job-1-21-interpretation-and-commentary-illuminations/",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context",
+          "authorship-positions",
+          "date-ranges",
+          "second-temple-context",
+          "later-christian-reception",
+          "hebrew-words",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "Reception-historical and exegetical commentary with extensive attention to text, language, interpretation, art, and theology.",
+        "id": "seow-job-1-21",
+        "canonical_object_ids": [
+          "job"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "job",
+        "type": "book",
+        "title": "Job",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.912
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "39acc5cd7e1202d6130d965a1fd51cc5631139522d74528ad550ff21bea6339f",
+  "evidence_hash_version": "2"
+}

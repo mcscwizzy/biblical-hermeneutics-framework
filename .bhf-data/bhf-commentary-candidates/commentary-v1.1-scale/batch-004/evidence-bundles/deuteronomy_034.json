@@ -1,0 +1,851 @@
+{
+  "passage_ref": "Deuteronomy 34",
+  "entities": {
+    "people": [
+      {
+        "id": "moses",
+        "title": "Moses",
+        "type": "person",
+        "aliases": [
+          "who is moses",
+          "tell me about moses",
+          "why is moses important"
+        ],
+        "metadata": {
+          "summary": "The prophet and mediator through whom God delivers Israel from Egypt and gives Torah at Sinai.",
+          "importance": 98,
+          "retrieval_score": 0.918,
+          "ancient_names": [],
+          "modern_identification": "",
+          "region": "",
+          "terrain": "",
+          "elevation": null,
+          "archaeology": [],
+          "related_passages": [
+            "Exodus 3:1-15",
+            "Exodus 12:1-14",
+            "Exodus 19:1-6",
+            "Exodus 20:1-17",
+            "Exodus 24:1-18",
+            "Deuteronomy 5:1-33",
+            "Deuteronomy 34:1-12",
+            "Acts 7:17-44",
+            "Hebrews 3:1-6"
+          ]
+        }
+      }
+    ],
+    "places": [],
+    "groups": [],
+    "events": [],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "deuteronomy-literary-movement",
+      "claim": "Deuteronomy moves from remembered wilderness history through covenant instruction to covenant consequences, renewal, succession, song, blessing, and Moses's death.",
+      "category": "culture",
+      "source_ids": [
+        "deuteronomy-1-34",
+        "tigay-deuteronomy",
+        "cairns-deuteronomy"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Deuteronomy 1-34"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "deuteronomy",
+        "parent_title": "Deuteronomy",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "direct",
+        "anchor_specificity": "chapter",
+        "verse_distance": 3300,
+        "certainty": "strong_consensus",
+        "dispute_status": "not_disputed",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 98
+      }
+    },
+    {
+      "id": "deuteronomy-moses-joshua-transition",
+      "claim": "Deuteronomy closes Torah by transferring public leadership to Joshua while maintaining Moses's unique remembered role.",
+      "category": "culture",
+      "source_ids": [
+        "deuteronomy-1-34"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Deuteronomy 34:1-12"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "deuteronomy",
+        "parent_title": "Deuteronomy",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "textually_explicit",
+        "dispute_status": "not_disputed",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 98
+      }
+    },
+    {
+      "id": "moses:ancient_near_east_context:0",
+      "claim": "The Moses story engages Egyptian power, wilderness survival, and the formation of a covenant people in contrast to imperial domination.",
+      "category": "culture",
+      "source_ids": [
+        "exodus-3-24",
+        "deuteronomy-5-34",
+        "acts-7",
+        "hebrews-3",
+        "moses-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "moses"
+      ],
+      "passage_anchors": [
+        "Deuteronomy 34:1-12"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "moses",
+        "parent_title": "Moses",
+        "parent_type": "person",
+        "object_importance": 98,
+        "retrieval_score": 0.918,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "moses:hebraic_worldview:0",
+      "claim": "Moses' ministry presents covenant life as redeemed worship, mediated presence, Torah-shaped community, and dependence on God's holiness and mercy.",
+      "category": "culture",
+      "source_ids": [
+        "exodus-3-24",
+        "deuteronomy-5-34",
+        "acts-7",
+        "hebrews-3",
+        "moses-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "moses"
+      ],
+      "passage_anchors": [
+        "Deuteronomy 34:1-12"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "moses",
+        "parent_title": "Moses",
+        "parent_type": "person",
+        "object_importance": 98,
+        "retrieval_score": 0.918,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "hebraic_worldview",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "moses:historical_context:0",
+      "claim": "Moses stands at the center of the exodus, wilderness, and covenant-making narratives. His role frames Israel as a redeemed people shaped by divine instruction and holy presence.",
+      "category": "history",
+      "source_ids": [
+        "exodus-3-24",
+        "deuteronomy-5-34",
+        "acts-7",
+        "hebrews-3",
+        "moses-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "moses"
+      ],
+      "passage_anchors": [
+        "Deuteronomy 34:1-12"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "moses",
+        "parent_title": "Moses",
+        "parent_type": "person",
+        "object_importance": 98,
+        "retrieval_score": 0.918,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "moses:key_places:0",
+      "claim": "egypt",
+      "category": "geography",
+      "source_ids": [
+        "exodus-3-24",
+        "deuteronomy-5-34",
+        "acts-7",
+        "hebrews-3",
+        "moses-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "moses"
+      ],
+      "passage_anchors": [
+        "Deuteronomy 34:1-12"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "moses",
+        "parent_title": "Moses",
+        "parent_type": "person",
+        "object_importance": 98,
+        "retrieval_score": 0.918,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "key_places",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": null,
+        "overview_priority": 28
+      }
+    },
+    {
+      "id": "moses:key_places:1",
+      "claim": "mount-sinai",
+      "category": "geography",
+      "source_ids": [
+        "exodus-3-24",
+        "deuteronomy-5-34",
+        "acts-7",
+        "hebrews-3",
+        "moses-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "moses"
+      ],
+      "passage_anchors": [
+        "Deuteronomy 34:1-12"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "moses",
+        "parent_title": "Moses",
+        "parent_type": "person",
+        "object_importance": 98,
+        "retrieval_score": 0.918,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "key_places",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": null,
+        "overview_priority": 28
+      }
+    },
+    {
+      "id": "moses:key_places:2",
+      "claim": "red-sea-1",
+      "category": "geography",
+      "source_ids": [
+        "exodus-3-24",
+        "deuteronomy-5-34",
+        "acts-7",
+        "hebrews-3",
+        "moses-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "moses"
+      ],
+      "passage_anchors": [
+        "Deuteronomy 34:1-12"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "moses",
+        "parent_title": "Moses",
+        "parent_type": "person",
+        "object_importance": 98,
+        "retrieval_score": 0.918,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "key_places",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": null,
+        "overview_priority": 28
+      }
+    },
+    {
+      "id": "moses:key_places:3",
+      "claim": "kadesh-barnea",
+      "category": "geography",
+      "source_ids": [
+        "exodus-3-24",
+        "deuteronomy-5-34",
+        "acts-7",
+        "hebrews-3",
+        "moses-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "moses"
+      ],
+      "passage_anchors": [
+        "Deuteronomy 34:1-12"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "moses",
+        "parent_title": "Moses",
+        "parent_type": "person",
+        "object_importance": 98,
+        "retrieval_score": 0.918,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "key_places",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": null,
+        "overview_priority": 28
+      }
+    },
+    {
+      "id": "moses:second_temple_context:0",
+      "claim": "Second Temple Jewish traditions treat Moses as prophet, lawgiver, mediator, and model for interpreting Israel's identity under covenant pressure.",
+      "category": "culture",
+      "source_ids": [
+        "exodus-3-24",
+        "deuteronomy-5-34",
+        "acts-7",
+        "hebrews-3",
+        "moses-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "moses"
+      ],
+      "passage_anchors": [
+        "Deuteronomy 34:1-12"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "moses",
+        "parent_title": "Moses",
+        "parent_type": "person",
+        "object_importance": 98,
+        "retrieval_score": 0.918,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "second_temple_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "who-was-moses:ancient_near_east_context:0",
+      "claim": "Royal rescue stories and lawgiving are familiar in the ancient world, but Moses functions as prophet and covenant mediator under the LORD.",
+      "category": "culture",
+      "source_ids": [
+        "exodus-1",
+        "exodus-3",
+        "exodus-12",
+        "exodus-19",
+        "exodus-20",
+        "deuteronomy-34",
+        "matthew-17",
+        "hebrews-3",
+        "who-was-moses-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Deuteronomy 34:1-12"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "who-was-moses",
+        "parent_title": "Who was Moses?",
+        "parent_type": "faq",
+        "object_importance": 96,
+        "retrieval_score": 0.916,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "who-was-moses:historical_context:0",
+      "claim": "Moses confronts Pharaoh, leads Israel out of Egypt, and mediates covenant at Sinai.",
+      "category": "history",
+      "source_ids": [
+        "exodus-1",
+        "exodus-3",
+        "exodus-12",
+        "exodus-19",
+        "exodus-20",
+        "deuteronomy-34",
+        "matthew-17",
+        "hebrews-3",
+        "who-was-moses-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Deuteronomy 34:1-12"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "who-was-moses",
+        "parent_title": "Who was Moses?",
+        "parent_type": "faq",
+        "object_importance": 96,
+        "retrieval_score": 0.916,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "Acts 7",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "acts-7",
+        "canonical_object_ids": [
+          "moses"
+        ]
+      },
+      {
+        "title": "Deuteronomy: Word and Presence",
+        "author": "Ian Cairns",
+        "publisher": "Eerdmans",
+        "year": 1992,
+        "locator": "Introduction and commentary on Deuteronomy 1-34",
+        "url": "https://www.eerdmans.com/9780802801609/deuteronomy/",
+        "source_type": "reference-work",
+        "supports": [
+          "literary-context",
+          "covenantal-significance",
+          "canonical-context",
+          "interpretive-notes",
+          "deuteronomy-literary-movement",
+          "deuteronomy-shema-love",
+          "deuteronomy-choose-life"
+        ],
+        "notes": "Theological commentary treating Deuteronomy as speech, covenant, law, and final Pentateuchal volume.",
+        "id": "cairns-deuteronomy",
+        "canonical_object_ids": [
+          "deuteronomy"
+        ]
+      },
+      {
+        "title": "Deuteronomy 1-34",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Deuteronomy 1:1-34:12",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "literary-context",
+          "structure",
+          "key-people",
+          "key-places",
+          "key-events",
+          "scripture-references",
+          "deuteronomy-literary-movement",
+          "deuteronomy-shema-love",
+          "deuteronomy-moab-covenant",
+          "deuteronomy-choose-life",
+          "deuteronomy-moses-joshua-transition"
+        ],
+        "notes": "Primary biblical text.",
+        "id": "deuteronomy-1-34",
+        "canonical_object_ids": [
+          "deuteronomy"
+        ]
+      },
+      {
+        "title": "Deuteronomy 34",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "deuteronomy-34",
+        "canonical_object_ids": [
+          "who-was-moses"
+        ]
+      },
+      {
+        "title": "Deuteronomy 5-34",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "deuteronomy-5-34",
+        "canonical_object_ids": [
+          "moses"
+        ]
+      },
+      {
+        "title": "Exodus 1",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "exodus-1",
+        "canonical_object_ids": [
+          "who-was-moses"
+        ]
+      },
+      {
+        "title": "Exodus 12",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "exodus-12",
+        "canonical_object_ids": [
+          "who-was-moses"
+        ]
+      },
+      {
+        "title": "Exodus 19",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "exodus-19",
+        "canonical_object_ids": [
+          "who-was-moses"
+        ]
+      },
+      {
+        "title": "Exodus 20",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "exodus-20",
+        "canonical_object_ids": [
+          "who-was-moses"
+        ]
+      },
+      {
+        "title": "Exodus 3",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "exodus-3",
+        "canonical_object_ids": [
+          "who-was-moses"
+        ]
+      },
+      {
+        "title": "Exodus 3-24",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "exodus-3-24",
+        "canonical_object_ids": [
+          "moses"
+        ]
+      },
+      {
+        "title": "Hebrews 3",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "hebrews-3",
+        "canonical_object_ids": [
+          "moses",
+          "who-was-moses"
+        ]
+      },
+      {
+        "title": "Matthew 17",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "matthew-17",
+        "canonical_object_ids": [
+          "who-was-moses"
+        ]
+      },
+      {
+        "title": "Canonical historical orientation for Moses",
+        "author": "",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "id": "moses-historical-orientation",
+        "canonical_object_ids": [
+          "moses"
+        ]
+      },
+      {
+        "title": "The JPS Torah Commentary: Deuteronomy",
+        "author": "Jeffrey H. Tigay",
+        "publisher": "Jewish Publication Society",
+        "year": 1996,
+        "locator": "Introduction and commentary on Deuteronomy 1-34",
+        "url": "https://jps.org/books/jps-torah-commentary-deuteronomy/",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context",
+          "literary-context",
+          "ancient-near-east-context",
+          "hebrew-words",
+          "interpretive-notes",
+          "deuteronomy-literary-movement",
+          "deuteronomy-moab-covenant"
+        ],
+        "notes": "Jewish commentary integrating Hebrew text, classical interpretation, and modern scholarship.",
+        "id": "tigay-deuteronomy",
+        "canonical_object_ids": [
+          "deuteronomy"
+        ]
+      },
+      {
+        "title": "Canonical historical orientation for Who was Moses?",
+        "author": "",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "id": "who-was-moses-historical-orientation",
+        "canonical_object_ids": [
+          "who-was-moses"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "deuteronomy",
+        "type": "book",
+        "title": "Deuteronomy",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.917
+      },
+      {
+        "id": "moses",
+        "type": "person",
+        "title": "Moses",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.918
+      },
+      {
+        "id": "who-was-moses",
+        "type": "faq",
+        "title": "Who was Moses?",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.916
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "73da70c1c8ec77c615ebf74f1461320f75c8d95c7bec69ced1eba1a452e75d6b",
+  "evidence_hash_version": "2"
+}

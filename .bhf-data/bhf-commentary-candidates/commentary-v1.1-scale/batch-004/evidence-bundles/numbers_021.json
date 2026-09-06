@@ -1,0 +1,520 @@
+{
+  "passage_ref": "Numbers 21",
+  "entities": {
+    "people": [],
+    "places": [],
+    "groups": [],
+    "events": [],
+    "artifacts": [
+      {
+        "id": "bronze-snake",
+        "title": "Bronze Snake",
+        "type": "archaeology",
+        "aliases": [
+          "bronze snake artifact",
+          "bronze snake discovery",
+          "bronze snake excavation",
+          "bronze snake find"
+        ],
+        "metadata": {
+          "summary": "A commemorative stele that includes the earliest widely accepted extra-biblical reference to 'Israel'.",
+          "importance": 94,
+          "retrieval_score": 0.914,
+          "ancient_names": [],
+          "modern_identification": "",
+          "region": "",
+          "terrain": "",
+          "elevation": null,
+          "archaeology": [],
+          "related_passages": [
+            "Numbers 21:4-9",
+            "2 Kings 18:1-4",
+            "John 3:14-15"
+          ]
+        }
+      }
+    ]
+  },
+  "evidence_items": [
+    {
+      "id": "bronze-snake:ancient_near_east_context:0",
+      "claim": "Ancient background for Bronze Snake includes inscriptions, material culture, excavation layers, and imperial administration; the entry ties that world to Numbers 21:4-9, 2 Kings 18:1-4, jerusalem, and joshua without letting comparison replace the biblical witness.",
+      "category": "culture",
+      "source_ids": [
+        "merneptah-stele",
+        "egyptian-museum",
+        "egyptian-museum-cairo",
+        "victory-stele",
+        "numbers-21-4-9"
+      ],
+      "related_entity_ids": [
+        "bronze-snake"
+      ],
+      "passage_anchors": [
+        "Numbers 21:4-9"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "bronze-snake",
+        "parent_title": "Bronze Snake",
+        "parent_type": "archaeology",
+        "object_importance": 94,
+        "retrieval_score": 0.914,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 3,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "bronze-snake:historical_context:0",
+      "claim": "A key Egyptian witness to the historical memory of Israel in the late 13th century BCE.",
+      "category": "history",
+      "source_ids": [
+        "merneptah-stele",
+        "egyptian-museum",
+        "egyptian-museum-cairo",
+        "victory-stele",
+        "numbers-21-4-9"
+      ],
+      "related_entity_ids": [
+        "bronze-snake"
+      ],
+      "passage_anchors": [
+        "Numbers 21:4-9"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "bronze-snake",
+        "parent_title": "Bronze Snake",
+        "parent_type": "archaeology",
+        "object_importance": 94,
+        "retrieval_score": 0.914,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 3,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "numbers:interpretive_note:2",
+      "claim": "Proposed maps of the wilderness route should label uncertain site identifications rather than presenting a single itinerary reconstruction as established.",
+      "category": "geography",
+      "source_ids": [
+        "milgrom-numbers",
+        "ashley-numbers",
+        "zondervan-illustrated-pentateuch-backgrounds"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Numbers 10-21"
+      ],
+      "confidence": "low",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "numbers",
+        "parent_title": "Numbers",
+        "parent_type": "book",
+        "object_importance": 95,
+        "retrieval_score": 0.915,
+        "passage_relationship": "direct",
+        "anchor_specificity": "chapter",
+        "verse_distance": 1100,
+        "certainty": "insufficient_evidence",
+        "dispute_status": "archaeological_uncertainty",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "historical-context",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 80
+      }
+    },
+    {
+      "id": "typology:ancient_near_east_context:0",
+      "claim": "Ancient background for Typology includes covenant life, temple worship, royal ideology, wisdom teaching, and early church confession; the entry ties that world to Exodus 12:1-14, Numbers 21:4-9, what-is-typology, and hebrews without letting comparison replace the biblical witness.",
+      "category": "culture",
+      "source_ids": [
+        "exodus-12",
+        "numbers-21",
+        "romans-5",
+        "1-corinthians-10",
+        "hebrews-8",
+        "typology-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Numbers 21:4-9"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "typology",
+        "parent_title": "Typology",
+        "parent_type": "theology",
+        "object_importance": 90,
+        "retrieval_score": 0.91,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 3,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "typology:historical_context:0",
+      "claim": "Typology is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness.",
+      "category": "history",
+      "source_ids": [
+        "exodus-12",
+        "numbers-21",
+        "romans-5",
+        "1-corinthians-10",
+        "hebrews-8",
+        "typology-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Numbers 21:4-9"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "typology",
+        "parent_title": "Typology",
+        "parent_type": "theology",
+        "object_importance": 90,
+        "retrieval_score": 0.91,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 3,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "1 Corinthians 10",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "1-corinthians-10",
+        "canonical_object_ids": [
+          "typology"
+        ]
+      },
+      {
+        "title": "The Book of Numbers",
+        "author": "Timothy R. Ashley",
+        "publisher": "Eerdmans",
+        "year": 2022,
+        "locator": "Second edition, introduction and commentary on Numbers 1-36",
+        "url": "https://www.eerdmans.com/9780802872029/the-book-of-numbers/",
+        "source_type": "reference-work",
+        "supports": [
+          "literary-context",
+          "structure",
+          "canonical-context",
+          "later-christian-reception",
+          "interpretive-notes",
+          "numbers-literary-journey",
+          "numbers-kadesh-judgment",
+          "numbers-balaam-blessing"
+        ],
+        "notes": "Final-form literary and theological commentary; second edition.",
+        "id": "ashley-numbers",
+        "canonical_object_ids": [
+          "numbers"
+        ]
+      },
+      {
+        "title": "Egyptian Museum",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [],
+        "notes": "",
+        "id": "egyptian-museum",
+        "canonical_object_ids": [
+          "bronze-snake"
+        ]
+      },
+      {
+        "title": "Egyptian Museum, Cairo",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [],
+        "notes": "",
+        "id": "egyptian-museum-cairo",
+        "canonical_object_ids": [
+          "bronze-snake"
+        ]
+      },
+      {
+        "title": "Exodus 12",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "exodus-12",
+        "canonical_object_ids": [
+          "typology"
+        ]
+      },
+      {
+        "title": "Hebrews 8",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "hebrews-8",
+        "canonical_object_ids": [
+          "typology"
+        ]
+      },
+      {
+        "title": "Merneptah Stele",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [],
+        "notes": "",
+        "id": "merneptah-stele",
+        "canonical_object_ids": [
+          "bronze-snake"
+        ]
+      },
+      {
+        "title": "The JPS Torah Commentary: Numbers",
+        "author": "Jacob Milgrom",
+        "publisher": "Jewish Publication Society",
+        "year": 1990,
+        "locator": "Introduction and commentary on Numbers 1-36",
+        "url": "https://jps.org/books/jps-torah-commentary-numbers/",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context",
+          "literary-context",
+          "hebrew-words",
+          "interpretive-notes",
+          "numbers-literary-journey",
+          "numbers-two-generations",
+          "numbers-deir-alla-limits"
+        ],
+        "notes": "Jewish commentary integrating Hebrew text, classical interpretation, and modern scholarship.",
+        "id": "milgrom-numbers",
+        "canonical_object_ids": [
+          "numbers"
+        ]
+      },
+      {
+        "title": "Numbers 21",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "numbers-21",
+        "canonical_object_ids": [
+          "typology"
+        ]
+      },
+      {
+        "title": "Numbers 21:4-9",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "numbers-21-4-9",
+        "canonical_object_ids": [
+          "bronze-snake"
+        ]
+      },
+      {
+        "title": "Romans 5",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "romans-5",
+        "canonical_object_ids": [
+          "typology"
+        ]
+      },
+      {
+        "title": "Canonical historical orientation for Typology",
+        "author": "",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "id": "typology-historical-orientation",
+        "canonical_object_ids": [
+          "typology"
+        ]
+      },
+      {
+        "title": "Victory stele",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [],
+        "notes": "",
+        "id": "victory-stele",
+        "canonical_object_ids": [
+          "bronze-snake"
+        ]
+      },
+      {
+        "title": "Zondervan Illustrated Bible Backgrounds Commentary: Genesis, Exodus, Leviticus, Numbers, Deuteronomy",
+        "author": "John H. Walton, general editor; Roy Gane, R. Dennis Cole, and other contributors",
+        "publisher": "Zondervan",
+        "year": 2009,
+        "locator": "Numbers commentary and background notes",
+        "url": "https://zondervanacademic.com/products/genesis-exodus-leviticus-numbers-deuteronomy",
+        "source_type": "reference-work",
+        "supports": [
+          "ancient-near-east-context",
+          "archaeology",
+          "historical-context",
+          "interpretive-notes",
+          "numbers-deir-alla-limits"
+        ],
+        "notes": "Comparative textual, material, historical, geographical, and cultural background.",
+        "id": "zondervan-illustrated-pentateuch-backgrounds",
+        "canonical_object_ids": [
+          "numbers"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "bronze-snake",
+        "type": "archaeology",
+        "title": "Bronze Snake",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.914
+      },
+      {
+        "id": "numbers",
+        "type": "book",
+        "title": "Numbers",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.915
+      },
+      {
+        "id": "typology",
+        "type": "theology",
+        "title": "Typology",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.91
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "449980db2fd08e260e276cf3d95ffbf75710cf80b4d66167682167fdb9b04459",
+  "evidence_hash_version": "2"
+}

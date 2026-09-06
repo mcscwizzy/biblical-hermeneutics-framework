@@ -1,0 +1,751 @@
+{
+  "passage_ref": "2 Timothy 1",
+  "entities": {
+    "people": [],
+    "places": [],
+    "groups": [],
+    "events": [],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "1-timothy:interpretive_note:26",
+      "claim": "Gift: prophecy and the elders' laying on hands accompany Timothy's charisma, but later ordination systems differ on sacramental and institutional implications.",
+      "category": "culture",
+      "source_ids": [
+        "1tim-greek",
+        "towner",
+        "marshall"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "2 Timothy 1:6"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "1-timothy",
+        "parent_title": "1 Timothy",
+        "parent_type": "book",
+        "object_importance": 80,
+        "retrieval_score": 0.9,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 5,
+        "certainty": "textually_explicit",
+        "dispute_status": "denominational_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "theological-interpretation",
+        "field": "",
+        "semantic_relationship": "INTERTEXTUAL_REUSE",
+        "presentation_role": "dig_deeper",
+        "overview_priority": 0
+      }
+    },
+    {
+      "id": "2tim-address",
+      "claim": "Paul is named as sender and Timothy as beloved child and recipient.",
+      "category": "history",
+      "source_ids": [
+        "2tim-greek",
+        "marshall"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "2 Timothy 1:1-2"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "2-timothy",
+        "parent_title": "2 Timothy",
+        "parent_type": "book",
+        "object_importance": 80,
+        "retrieval_score": 0.94,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "textually_explicit",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "2tim-authorship",
+      "claim": "Modern scholarship represents Pauline, secretary-assisted, composite, and Pauline-school explanations of the letter.",
+      "category": "culture",
+      "source_ids": [
+        "marshall",
+        "towner",
+        "ehrman",
+        "smith"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "2 Timothy 1:1"
+      ],
+      "confidence": "low",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "2-timothy",
+        "parent_title": "2 Timothy",
+        "parent_type": "book",
+        "object_importance": 80,
+        "retrieval_score": 0.94,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "disputed",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "historical_cultural",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "2tim-date",
+      "claim": "A date in the 60s CE depends on direct Pauline authorship and a final imprisonment, while Pauline-school dates commonly fall later.",
+      "category": "culture",
+      "source_ids": [
+        "marshall",
+        "towner",
+        "collins"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "2 Timothy 1:8"
+      ],
+      "confidence": "low",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "2-timothy",
+        "parent_title": "2 Timothy",
+        "parent_type": "book",
+        "object_importance": 80,
+        "retrieval_score": 0.94,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 7,
+        "certainty": "disputed",
+        "dispute_status": "chronological_uncertainty",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "historical_cultural",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 60
+      }
+    },
+    {
+      "id": "2tim-deposit",
+      "claim": "The letter twice uses deposit or trust language but does not unambiguously define every referent.",
+      "category": "language",
+      "source_ids": [
+        "2tim-greek",
+        "bdag",
+        "marshall"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "2 Timothy 1:12-14"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "2-timothy",
+        "parent_title": "2 Timothy",
+        "parent_type": "book",
+        "object_importance": 80,
+        "retrieval_score": 0.94,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 11,
+        "certainty": "textually_explicit",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "lexical",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 81
+      }
+    },
+    {
+      "id": "2tim-family",
+      "claim": "The letter names Lois and Eunice in a maternal chain of sincere faith remembered in Timothy.",
+      "category": "history",
+      "source_ids": [
+        "2tim-greek",
+        "huizenga"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "2 Timothy 1:3-5"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "2-timothy",
+        "parent_title": "2 Timothy",
+        "parent_type": "book",
+        "object_importance": 80,
+        "retrieval_score": 0.94,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 2,
+        "certainty": "textually_explicit",
+        "dispute_status": "not_disputed",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 103
+      }
+    },
+    {
+      "id": "2tim-gift",
+      "claim": "Timothy is told to rekindle a divine gift associated with the sender's laying on of hands.",
+      "category": "history",
+      "source_ids": [
+        "2tim-greek",
+        "towner"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "2 Timothy 1:6-7"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "2-timothy",
+        "parent_title": "2 Timothy",
+        "parent_type": "book",
+        "object_importance": 80,
+        "retrieval_score": 0.94,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 5,
+        "certainty": "textually_explicit",
+        "dispute_status": "denominational_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "2tim-manuscripts",
+      "claim": "Codex Sinaiticus preserves 2 Timothy, while the surviving Codex Vaticanus ends before the Pastoral Epistles and is not a witness to this book.",
+      "category": "archaeology",
+      "source_ids": [
+        "sinaiticus",
+        "vaticanus",
+        "ntvmr"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "2 Timothy 1:1-4:22"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "2-timothy",
+        "parent_title": "2 Timothy",
+        "parent_type": "book",
+        "object_importance": 80,
+        "retrieval_score": 0.94,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "archaeological_uncertainty",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "archaeology",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 58
+      }
+    },
+    {
+      "id": "2tim-onesiphorus",
+      "claim": "Onesiphorus is praised for refreshment, lack of shame, diligent searching, and prior service at Ephesus.",
+      "category": "history",
+      "source_ids": [
+        "2tim-greek",
+        "johnson"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "2 Timothy 1:15-18"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "2-timothy",
+        "parent_title": "2 Timothy",
+        "parent_type": "book",
+        "object_importance": 80,
+        "retrieval_score": 0.94,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 14,
+        "certainty": "textually_explicit",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "2tim-testament",
+      "claim": "Farewell, succession, exemplary memory, warnings, final charge, and expected death make testament comparison plausible, though form and historicity remain disputed.",
+      "category": "culture",
+      "source_ids": [
+        "smith",
+        "johnson",
+        "aune-literary"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "2 Timothy 1:1-4:22"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "2-timothy",
+        "parent_title": "2 Timothy",
+        "parent_type": "book",
+        "object_importance": 80,
+        "retrieval_score": 0.94,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "probable",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 65
+      }
+    },
+    {
+      "id": "2tim-witness",
+      "claim": "Timothy is urged not to be ashamed but to share suffering for the gospel by God's power and grace.",
+      "category": "history",
+      "source_ids": [
+        "2tim-greek",
+        "johnson"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "2 Timothy 1:8-12"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "2-timothy",
+        "parent_title": "2 Timothy",
+        "parent_type": "book",
+        "object_importance": 80,
+        "retrieval_score": 0.94,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 7,
+        "certainty": "textually_explicit",
+        "dispute_status": "not_disputed",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 103
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "SBL Greek New Testament: 1 Timothy",
+        "author": "Michael W. Holmes, editor",
+        "publisher": "Society of Biblical Literature and Logos Bible Software",
+        "year": 2010,
+        "locator": "1 Timothy 1:1-6:21",
+        "url": "https://www.sbl-site.org/resources/digital-texts/sbl-greek-new-testament/",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "literary-context",
+          "structure",
+          "scripture-references",
+          "greek-words",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Primary critical Greek text; individual variants require an apparatus.",
+        "id": "1tim-greek",
+        "canonical_object_ids": [
+          "1-timothy"
+        ]
+      },
+      {
+        "title": "SBL Greek New Testament: 2 Timothy",
+        "author": "Michael W. Holmes, editor",
+        "publisher": "Society of Biblical Literature and Logos Bible Software",
+        "year": 2010,
+        "locator": "2 Timothy 1:1-4:22",
+        "url": "https://www.sbl-site.org/resources/digital-texts/sbl-greek-new-testament/",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "literary-context",
+          "structure",
+          "scripture-references",
+          "greek-words",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Primary critical Greek text; variants require an apparatus.",
+        "id": "2tim-greek",
+        "canonical_object_ids": [
+          "2-timothy"
+        ]
+      },
+      {
+        "title": "The New Testament in Its Literary Environment",
+        "author": "David E. Aune",
+        "publisher": "Westminster Press",
+        "year": 1987,
+        "locator": "Letters, paraenesis, testament and literary forms",
+        "url": "https://www.wjkbooks.com/Products/9780664250188/the-new-testament-in-its-literary-environment.aspx",
+        "source_type": "academic-book",
+        "supports": [
+          "literary-context",
+          "genre",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Genre control.",
+        "id": "aune-literary",
+        "canonical_object_ids": [
+          "1-timothy",
+          "2-timothy"
+        ]
+      },
+      {
+        "title": "A Greek-English Lexicon of the New Testament and Other Early Christian Literature",
+        "author": "Walter Bauer; Frederick W. Danker, editor",
+        "publisher": "University of Chicago Press",
+        "year": 2000,
+        "locator": "Third edition; selected 2 Timothy lexemes",
+        "url": "https://press.uchicago.edu/ucp/books/book/chicago/G/bo3626820.html",
+        "source_type": "lexicon",
+        "supports": [
+          "greek-words",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Lexical starting point, not a substitute for discourse analysis.",
+        "id": "bdag",
+        "canonical_object_ids": [
+          "1-timothy",
+          "2-timothy"
+        ]
+      },
+      {
+        "title": "1 & 2 Timothy and Titus",
+        "author": "Raymond F. Collins",
+        "publisher": "Westminster John Knox Press",
+        "year": 2002,
+        "locator": "New Testament Library; 2 Timothy",
+        "url": "https://www.wjkbooks.com/Products/9780664222475/1--2-timothy-and-titus.aspx",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "literary-context",
+          "authorship-positions",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Critical commentary; verify locators.",
+        "id": "collins",
+        "canonical_object_ids": [
+          "1-timothy",
+          "2-timothy"
+        ]
+      },
+      {
+        "title": "Forgery and Counterforgery",
+        "author": "Bart D. Ehrman",
+        "publisher": "Oxford University Press",
+        "year": 2013,
+        "locator": "Pastoral Epistles and authorship discourse",
+        "url": "https://global.oup.com/academic/product/forgery-and-counterforgery-9780199928033",
+        "source_type": "academic-book",
+        "supports": [
+          "authorship-positions",
+          "later-christian-reception",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Critical pseudepigraphy model; compare alternatives.",
+        "id": "ehrman",
+        "canonical_object_ids": [
+          "1-timothy",
+          "2-timothy"
+        ]
+      },
+      {
+        "title": "1-2 Timothy, Titus",
+        "author": "Annette Bourland Huizenga",
+        "publisher": "Liturgical Press",
+        "year": 2016,
+        "locator": "Wisdom Commentary 53; 2 Timothy",
+        "url": "https://litpress.org/Products/3702/12-Timothy-Titus",
+        "source_type": "academic-book",
+        "supports": [
+          "later-christian-reception",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Feminist interpretation and reception control.",
+        "id": "huizenga",
+        "canonical_object_ids": [
+          "1-timothy",
+          "2-timothy"
+        ]
+      },
+      {
+        "title": "The First and Second Letters to Timothy",
+        "author": "Luke Timothy Johnson",
+        "publisher": "Yale University Press",
+        "year": 2001,
+        "locator": "Anchor Yale Bible 35A; 2 Timothy",
+        "url": "https://yalebooks.yale.edu/book/9780300139884/the-first-and-second-letters-to-timothy/",
+        "source_type": "academic-book",
+        "supports": [
+          "literary-context",
+          "canonical-context",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Literary and theological commentary; verify locators.",
+        "id": "johnson",
+        "canonical_object_ids": [
+          "1-timothy",
+          "2-timothy"
+        ]
+      },
+      {
+        "title": "The Pastoral Epistles",
+        "author": "I. Howard Marshall with Philip H. Towner",
+        "publisher": "T&T Clark",
+        "year": 1999,
+        "locator": "International Critical Commentary; 2 Timothy",
+        "url": "https://www.logos.com/product/4191/the-pastoral-epistles",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "literary-context",
+          "authorship-positions",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Critical commentary; verify locators.",
+        "id": "marshall",
+        "canonical_object_ids": [
+          "1-timothy",
+          "2-timothy"
+        ]
+      },
+      {
+        "title": "New Testament Virtual Manuscript Room",
+        "author": "Institute for New Testament Textual Research",
+        "publisher": "University of M\u00fcnster",
+        "year": null,
+        "locator": "2 Timothy manuscript witnesses",
+        "url": "https://ntvmr.uni-muenster.de/",
+        "source_type": "ancient-primary-source",
+        "supports": [
+          "timeline",
+          "archaeology",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Catalog and images; specialist verification required.",
+        "id": "ntvmr",
+        "canonical_object_ids": [
+          "1-timothy",
+          "2-timothy"
+        ]
+      },
+      {
+        "title": "Codex Sinaiticus: 2 Timothy",
+        "author": "",
+        "publisher": "Codex Sinaiticus Project",
+        "year": 350,
+        "locator": "2 Timothy",
+        "url": "https://codexsinaiticus.org/en/manuscript.aspx?book=48&lid=en&side=r&zoomslider=0",
+        "source_type": "ancient-primary-source",
+        "supports": [
+          "timeline",
+          "archaeology",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Fourth-century images and transcription; year approximate.",
+        "id": "sinaiticus",
+        "canonical_object_ids": [
+          "1-timothy",
+          "2-timothy"
+        ]
+      },
+      {
+        "title": "2 Timothy",
+        "author": "Craig A. Smith",
+        "publisher": "Sheffield Phoenix Press",
+        "year": 2016,
+        "locator": "Authorship, amanuensis, paraenesis, and testament discussion",
+        "url": "https://cart.sbl-site.org/books/050919C",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "literary-context",
+          "authorship-positions",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Luke-as-amanuensis and paraenetic-letter proposal; verify locators.",
+        "id": "smith",
+        "canonical_object_ids": [
+          "2-timothy"
+        ]
+      },
+      {
+        "title": "The Letters to Timothy and Titus",
+        "author": "Philip H. Towner",
+        "publisher": "Eerdmans",
+        "year": 2006,
+        "locator": "2 Timothy",
+        "url": "https://www.eerdmans.com/9780802825131/the-letters-to-timothy-and-titus/",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "literary-context",
+          "authorship-positions",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Pauline-author approach; verify locators.",
+        "id": "towner",
+        "canonical_object_ids": [
+          "1-timothy",
+          "2-timothy"
+        ]
+      },
+      {
+        "title": "Codex Vaticanus",
+        "author": "",
+        "publisher": "Biblioteca Apostolica Vaticana",
+        "year": 350,
+        "locator": "Vat.gr.1209; surviving Pauline corpus ends before the Pastorals",
+        "url": "https://digi.vatlib.it/view/MSS_Vat.gr.1209",
+        "source_type": "ancient-primary-source",
+        "supports": [
+          "timeline",
+          "archaeology",
+          "claims"
+        ],
+        "notes": "Negative control: it does not preserve 2 Timothy.",
+        "id": "vaticanus",
+        "canonical_object_ids": [
+          "1-timothy",
+          "2-timothy"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "1-timothy",
+        "type": "book",
+        "title": "1 Timothy",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.9
+      },
+      {
+        "id": "2-timothy",
+        "type": "book",
+        "title": "2 Timothy",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.94
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "a196abaabcf11e46b3f8d46ced000b78ea0e148aa4e5710b3501991944f519ca",
+  "evidence_hash_version": "2"
+}

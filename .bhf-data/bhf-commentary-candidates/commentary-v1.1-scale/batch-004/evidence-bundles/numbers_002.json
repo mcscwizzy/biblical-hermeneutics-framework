@@ -1,0 +1,155 @@
+{
+  "passage_ref": "Numbers 2",
+  "entities": {
+    "people": [],
+    "places": [],
+    "groups": [],
+    "events": [],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "qadesh-royal-tent-comparison",
+      "claim": "Ramesside Qadesh relief compositions depict the royal campaign tent at the center of a bounded military camp; scholars have compared aspects of its plan and centrality with the tabernacle and Israelite camp.",
+      "category": "archaeology",
+      "source_ids": [
+        "qadesh-camp-reliefs",
+        "homan-to-your-tents-2002"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Numbers 2:1-34"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "ancient-portable-sanctuaries-and-tabernacle-comparisons",
+        "parent_title": "Ancient Portable Sanctuaries and Tabernacle Comparisons",
+        "parent_type": "cultural_background",
+        "object_importance": 94,
+        "retrieval_score": 0.914,
+        "passage_relationship": "comparative",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "plausible",
+        "dispute_status": "interpretive_uncertainty",
+        "assertion_type": "scholarly-reconstruction",
+        "exploration_potential": 1.0,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "material-culture",
+        "field": "",
+        "semantic_relationship": "COMPARATIVE_CONTEXT",
+        "presentation_role": "dig_deeper",
+        "overview_priority": 0
+      }
+    },
+    {
+      "id": "qadesh-royal-tent-comparison:passage-relevance",
+      "claim": "The reliefs show mobile royal architecture and camp centrality in New Kingdom Egypt but cannot identify the royal tent as a sanctuary or blueprint for Exodus.",
+      "category": "archaeology",
+      "source_ids": [
+        "qadesh-camp-reliefs",
+        "homan-to-your-tents-2002"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Numbers 2:1-34"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "ancient-portable-sanctuaries-and-tabernacle-comparisons",
+        "parent_title": "Ancient Portable Sanctuaries and Tabernacle Comparisons",
+        "parent_type": "cultural_background",
+        "object_importance": 94,
+        "retrieval_score": 0.914,
+        "passage_relationship": "comparative",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "plausible",
+        "dispute_status": "interpretive_uncertainty",
+        "assertion_type": "scholarly-reconstruction",
+        "exploration_potential": 1.0,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "material-culture",
+        "field": "",
+        "semantic_relationship": "COMPARATIVE_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 0,
+        "supports_evidence_ids": [
+          "qadesh-royal-tent-comparison"
+        ]
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "To Your Tents, O Israel! The Terminology, Function, Form, and Symbolism of Tents in the Hebrew Bible and the Ancient Near East",
+        "author": "Michael M. Homan",
+        "publisher": "Brill",
+        "year": 2002,
+        "locator": "Chapter 7, pp. 89-128: Tabernacle parallels",
+        "url": "https://brill.com/display/title/8060",
+        "source_type": "academic-book",
+        "supports": [
+          "mari-large-public-tent-comparison",
+          "qadesh-royal-tent-comparison",
+          "timna-tented-shrine-comparison"
+        ],
+        "notes": "Comparative study of tent terminology, form, function, and symbolism across the ancient Near East.",
+        "id": "homan-to-your-tents-2002",
+        "canonical_object_ids": [
+          "ancient-portable-sanctuaries-and-tabernacle-comparisons"
+        ]
+      },
+      {
+        "title": "Ramesses II Qadesh campaign relief compositions",
+        "author": "",
+        "publisher": "Ancient Egyptian temple relief programs",
+        "year": -1274,
+        "locator": "Camp scenes in the Qadesh relief compositions at Abu Simbel, Luxor, Karnak, the Ramesseum, and Abydos",
+        "url": "https://www.ucl.ac.uk/museums-static/digitalegypt/chronology/ramsesii.html",
+        "source_type": "ancient-primary-source",
+        "supports": [
+          "qadesh-royal-tent-comparison"
+        ],
+        "notes": "Pictorial royal source; the relief's ideological and commemorative genre requires source criticism.",
+        "id": "qadesh-camp-reliefs",
+        "canonical_object_ids": [
+          "ancient-portable-sanctuaries-and-tabernacle-comparisons"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "ancient-portable-sanctuaries-and-tabernacle-comparisons",
+        "type": "cultural_background",
+        "title": "Ancient Portable Sanctuaries and Tabernacle Comparisons",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.914
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "5c988eb328ab45b691253172a6122396031d93397727e27ac95241b1d0cf610d",
+  "evidence_hash_version": "2"
+}

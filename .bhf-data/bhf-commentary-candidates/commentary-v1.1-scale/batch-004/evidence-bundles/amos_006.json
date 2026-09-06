@@ -1,0 +1,130 @@
+{
+  "passage_ref": "Amos 6",
+  "entities": {
+    "people": [],
+    "places": [],
+    "groups": [],
+    "events": [],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "amos:interpretive_note:4",
+      "claim": "Prosperity under Jeroboam II and the book's accusations of inequality provide a plausible social horizon, but prophetic rhetoric is not a census or complete economic archive.",
+      "category": "economics",
+      "source_ids": [
+        "carroll-amos",
+        "oxford-amos-bibliography"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Amos 6:1-14"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "amos",
+        "parent_title": "Amos",
+        "parent_type": "book",
+        "object_importance": 84,
+        "retrieval_score": 0.904,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "probable",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "historical-context",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 97
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "The Book of Amos",
+        "author": "M. Daniel Carroll R.",
+        "publisher": "Eerdmans",
+        "year": 2020,
+        "locator": "New International Commentary on the Old Testament",
+        "url": "https://www.eerdmans.com/9780802825384/the-book-of-amos/",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "literary-context",
+          "historical-setting",
+          "amos-rulers-date",
+          "amos-earthquake",
+          "amos-nations-sequence",
+          "amos-election-accountability",
+          "amos-economic-exploitation",
+          "amos-worship-justice",
+          "amos-intercession",
+          "amos-summer-fruit",
+          "amos-famine-hearing",
+          "amos-composition-final-form"
+        ],
+        "notes": "Detailed Hebrew commentary with historical, literary, theological, and ethical attention.",
+        "id": "carroll-amos",
+        "canonical_object_ids": [
+          "amos"
+        ]
+      },
+      {
+        "title": "Amos",
+        "author": "Walter Houston",
+        "publisher": "Oxford University Press",
+        "year": 2025,
+        "locator": "Oxford Bibliographies in Biblical Studies",
+        "url": "https://academic.oup.com/reference/62341/reference-article-abstract/554094758",
+        "source_type": "reference-work",
+        "supports": [
+          "date-ranges",
+          "authorship-positions",
+          "canonical-placement",
+          "amos-superscription-identity",
+          "amos-rulers-date",
+          "amos-occupation",
+          "amos-composition-final-form"
+        ],
+        "notes": "Research bibliography and overview of major Amos questions.",
+        "id": "oxford-amos-bibliography",
+        "canonical_object_ids": [
+          "amos"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "amos",
+        "type": "book",
+        "title": "Amos",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.904
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "97c641328254f0b0cb3d8d462b022c52eb36aebc4f2a44b7552522657acd73ac",
+  "evidence_hash_version": "2"
+}

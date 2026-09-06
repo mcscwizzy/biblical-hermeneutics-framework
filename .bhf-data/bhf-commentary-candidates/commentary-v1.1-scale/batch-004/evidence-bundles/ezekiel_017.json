@@ -1,0 +1,212 @@
+{
+  "passage_ref": "Ezekiel 17",
+  "entities": {
+    "people": [],
+    "places": [],
+    "groups": [],
+    "events": [],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "what-is-the-kingdom-of-judah:ancient_near_east_context:0",
+      "claim": "Like other small kingdoms, Judah lives under imperial pressure, but Scripture frames its history around covenant fidelity and Davidic promise.",
+      "category": "culture",
+      "source_ids": [
+        "1-kings-12",
+        "2-kings-25",
+        "2-chronicles-36",
+        "jeremiah-22",
+        "ezekiel-17",
+        "psalm-89"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Ezekiel 17:1-24"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "what-is-the-kingdom-of-judah",
+        "parent_title": "What is the Kingdom of Judah?",
+        "parent_type": "faq",
+        "object_importance": 88,
+        "retrieval_score": 0.908,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55
+      }
+    },
+    {
+      "id": "what-is-the-kingdom-of-judah:historical_context:0",
+      "claim": "Judah survives after the split monarchy, then falls to Babylon and enters exile with its temple and king removed.",
+      "category": "history",
+      "source_ids": [
+        "1-kings-12",
+        "2-kings-25",
+        "2-chronicles-36",
+        "jeremiah-22",
+        "ezekiel-17",
+        "psalm-89"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Ezekiel 17:1-24"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "what-is-the-kingdom-of-judah",
+        "parent_title": "What is the Kingdom of Judah?",
+        "parent_type": "faq",
+        "object_importance": 88,
+        "retrieval_score": 0.908,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "1 Kings 12",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "1-kings-12",
+        "canonical_object_ids": [
+          "what-is-the-kingdom-of-judah"
+        ]
+      },
+      {
+        "title": "2 Chronicles 36",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "2-chronicles-36",
+        "canonical_object_ids": [
+          "what-is-the-kingdom-of-judah"
+        ]
+      },
+      {
+        "title": "2 Kings 25",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "2-kings-25",
+        "canonical_object_ids": [
+          "what-is-the-kingdom-of-judah"
+        ]
+      },
+      {
+        "title": "Ezekiel 17",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "ezekiel-17",
+        "canonical_object_ids": [
+          "what-is-the-kingdom-of-judah"
+        ]
+      },
+      {
+        "title": "Jeremiah 22",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "jeremiah-22",
+        "canonical_object_ids": [
+          "what-is-the-kingdom-of-judah"
+        ]
+      },
+      {
+        "title": "Psalm 89",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [],
+        "notes": "",
+        "id": "psalm-89",
+        "canonical_object_ids": [
+          "what-is-the-kingdom-of-judah"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "what-is-the-kingdom-of-judah",
+        "type": "faq",
+        "title": "What is the Kingdom of Judah?",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.908
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "5a08aca676a6137ed1a0e7949d16fd785c4aaa1cfa3324255d6976096df731b8",
+  "evidence_hash_version": "2"
+}

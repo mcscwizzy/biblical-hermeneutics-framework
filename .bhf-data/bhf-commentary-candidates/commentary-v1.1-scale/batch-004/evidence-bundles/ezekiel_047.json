@@ -1,0 +1,168 @@
+{
+  "passage_ref": "Ezekiel 47",
+  "entities": {
+    "people": [],
+    "places": [],
+    "groups": [],
+    "events": [],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "ezekiel-temple-vision",
+      "claim": "Ezekiel 40-48 presents a measured visionary sanctuary, returning glory, altar, priests and Levites, prince, offerings, land, river, tribes, resident aliens, and the city YHWH-shammah.",
+      "category": "geography",
+      "source_ids": [
+        "ezekiel-masoretic",
+        "block-ezekiel-25-48",
+        "ganzel-priests-prince",
+        "sulzbach-future-map"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Ezekiel 47:1-23"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "ezekiel",
+        "parent_title": "Ezekiel",
+        "parent_type": "book",
+        "object_importance": 92,
+        "retrieval_score": 0.912,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "textually_explicit",
+        "dispute_status": "denominational_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_theology",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "archaeology_geography",
+        "overview_priority": 83
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "The Book of Ezekiel, Chapters 25-48",
+        "author": "Daniel I. Block",
+        "publisher": "Eerdmans",
+        "year": 1998,
+        "locator": "New International Commentary on the Old Testament",
+        "url": "https://www.eerdmans.com/9781467423717/the-book-of-ezekiel-chapters-2548/",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "literary-context",
+          "structure",
+          "ezekiel-practical-outline",
+          "ezekiel-shepherd-david",
+          "ezekiel-new-heart-spirit",
+          "ezekiel-dry-bones",
+          "ezekiel-gog",
+          "ezekiel-temple-vision"
+        ],
+        "notes": "Extensive evangelical commentary on Ezekiel 25-48.",
+        "id": "block-ezekiel-25-48",
+        "canonical_object_ids": [
+          "ezekiel"
+        ]
+      },
+      {
+        "title": "Masoretic Ezekiel",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Ezekiel 1-48 in the Masoretic textual tradition",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "historical-context",
+          "literary-context",
+          "structure",
+          "major-themes",
+          "scripture-references",
+          "hebrew-words",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "Primary received Hebrew canonical text.",
+        "id": "ezekiel-masoretic",
+        "canonical_object_ids": [
+          "ezekiel"
+        ]
+      },
+      {
+        "title": "Priests, Levites, and the Nasi: New Roles in Ezekiel's Future Temple",
+        "author": "Tova Ganzel",
+        "publisher": "Oxford University Press",
+        "year": 2020,
+        "locator": "The Oxford Handbook of Ezekiel, chapter 12",
+        "url": "https://academic.oup.com/edited-volume/35418",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context",
+          "covenantal-significance",
+          "ezekiel-temple-vision"
+        ],
+        "notes": "Analysis of institutions and roles in Ezekiel 40-48.",
+        "id": "ganzel-priests-prince",
+        "canonical_object_ids": [
+          "ezekiel"
+        ]
+      },
+      {
+        "title": "Ezekiel's Map of Future Past",
+        "author": "Carla Sulzbach",
+        "publisher": "Oxford University Press",
+        "year": 2020,
+        "locator": "The Oxford Handbook of Ezekiel, chapter 25",
+        "url": "https://academic.oup.com/edited-volume/35418",
+        "source_type": "reference-work",
+        "supports": [
+          "maps",
+          "key-places",
+          "ezekiel-temple-vision"
+        ],
+        "notes": "Analysis of mapping, memory, boundaries, and future geography.",
+        "id": "sulzbach-future-map",
+        "canonical_object_ids": [
+          "ezekiel"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "ezekiel",
+        "type": "book",
+        "title": "Ezekiel",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.912
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "8d564a94c568d45314b8dca6d8397b69c2a5b4c428b71a10fc6f984b9f3e7498",
+  "evidence_hash_version": "2"
+}

@@ -1,0 +1,236 @@
+{
+  "passage_ref": "Matthew 20",
+  "entities": {
+    "people": [],
+    "places": [],
+    "groups": [],
+    "events": [],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "matthew-ransom-service",
+      "claim": "Matthew 20:28 connects Son of Man service, giving life, and ransom for many.",
+      "category": "culture",
+      "source_ids": [
+        "matthew-greek",
+        "france-matthew",
+        "deines-matthew"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Matthew 20:20-28"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "matthew",
+        "parent_title": "Matthew",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 19,
+        "certainty": "textually_explicit",
+        "dispute_status": "denominational_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_theology",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "matthew-rural-economy",
+      "claim": "Matthew's fields, fisheries, wages, debts, taxes, estates, slaves, patrons, and laborers resonate with an unequal agrarian Roman-Palestinian economy.",
+      "category": "economics",
+      "source_ids": [
+        "early-roman-archaeology",
+        "keddie-class-power",
+        "riches-roman-palestine"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Matthew 20:1-16"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "matthew",
+        "parent_title": "Matthew",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "historical_cultural",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 105
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "The Gospel according to Matthew",
+        "author": "Deines, Roland",
+        "publisher": "Cambridge University Press",
+        "year": 2021,
+        "locator": "The Cambridge Companion to the Gospels, chapter 7, pages 137-156",
+        "url": "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/73A64E6485F9DD3C65A5F3353972E091/9781108471954c7_137-156.pdf/the-gospel-according-to-matthew.pdf",
+        "source_type": "academic-book",
+        "supports": [
+          "summary",
+          "canonical-context",
+          "major-themes",
+          "matthew-jewish-context"
+        ],
+        "notes": "Specialist overview of Jewish particularity, universal significance, Christology, and ethics.",
+        "id": "deines-matthew",
+        "canonical_object_ids": [
+          "matthew"
+        ]
+      },
+      {
+        "title": "The Early Roman (Herodian) Period, 40 BCE-70 CE",
+        "author": "Magness, Jodi",
+        "publisher": "Cambridge University Press",
+        "year": 2012,
+        "locator": "The Archaeology of the Holy Land, chapter 9",
+        "url": "https://www.cambridge.org/core/books/abs/archaeology-of-the-holy-land/early-roman-herodian-period-40-bce70-ce/0A26A9F4D24BE3BA15CB261FE3A171F7",
+        "source_type": "excavation-report",
+        "supports": [
+          "archaeology",
+          "historical-context",
+          "matthew-rural-economy"
+        ],
+        "notes": "Archaeological synthesis for Bethlehem, Galilee, Jerusalem, rural life, and Early Roman material culture.",
+        "id": "early-roman-archaeology",
+        "canonical_object_ids": [
+          "matthew"
+        ]
+      },
+      {
+        "title": "The Gospel of Matthew",
+        "author": "France, R. T.",
+        "publisher": "Eerdmans",
+        "year": 2007,
+        "locator": "New International Commentary on the New Testament",
+        "url": "https://www.eerdmans.com/9780802825018/the-gospel-of-matthew/",
+        "source_type": "academic-book",
+        "supports": [
+          "summary",
+          "literary-context",
+          "interpretive-disputes",
+          "matthew-discourses",
+          "matthew-passion-responsibility",
+          "matthew-resurrection"
+        ],
+        "notes": "Major exegetical commentary focused on Matthew's final form in historical and cultural context.",
+        "id": "france-matthew",
+        "canonical_object_ids": [
+          "matthew"
+        ]
+      },
+      {
+        "title": "Class and Power in Roman Palestine",
+        "author": "Keddie, Anthony",
+        "publisher": "Cambridge University Press",
+        "year": 2019,
+        "locator": "The Socioeconomic Setting of Judaism and Christian Origins",
+        "url": "https://www.cambridge.org/core/books/class-and-power-in-roman-palestine/5B1250AEB368712B24A3657ABE112D01",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "matthew-rural-economy",
+          "matthew-temple-tax"
+        ],
+        "notes": "Literary, documentary, epigraphic, and archaeological analysis of taxation, tenancy, temple, and unequal power.",
+        "id": "keddie-class-power",
+        "canonical_object_ids": [
+          "matthew"
+        ]
+      },
+      {
+        "title": "The Greek New Testament: SBL Edition, Matthew",
+        "author": "Holmes, Michael W., editor",
+        "publisher": "Society of Biblical Literature",
+        "year": 2010,
+        "locator": "Matthew 1-28",
+        "url": "https://www.sbl-site.org/resources/digital-texts/sbl-greek-new-testament/",
+        "source_type": "scripture",
+        "supports": [
+          "scripture-references",
+          "greek-words",
+          "matthew-greek-narrative",
+          "matthew-discourses",
+          "matthew-passion-responsibility",
+          "matthew-resurrection"
+        ],
+        "notes": "Critical Greek reading edition; differences among published editions are documented separately from a manuscript apparatus.",
+        "id": "matthew-greek",
+        "canonical_object_ids": [
+          "matthew"
+        ]
+      },
+      {
+        "title": "The Political, Economic, Social, and Cultural Context of First-Century Palestinian Judaism",
+        "author": "Riches, John",
+        "publisher": "Cambridge University Press",
+        "year": 1990,
+        "locator": "The World of Jesus, chapter 1, pages 10-29",
+        "url": "https://www.cambridge.org/core/books/abs/world-of-jesus/political-economic-social-and-cultural-context-of-firstcentury-palestinian-judaism/78E9FC5FF52226BA04868426D9EDF481",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "matthew-roman-setting"
+        ],
+        "notes": "Broad political and socioeconomic context for Herodian and Roman Jewish life.",
+        "id": "riches-roman-palestine",
+        "canonical_object_ids": [
+          "matthew"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "matthew",
+        "type": "book",
+        "title": "Matthew",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.917
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "27607e46a71579b157de917e5640e165d5bf2cd4e79bd6b66d5f3fd0c25cf9f8",
+  "evidence_hash_version": "2"
+}

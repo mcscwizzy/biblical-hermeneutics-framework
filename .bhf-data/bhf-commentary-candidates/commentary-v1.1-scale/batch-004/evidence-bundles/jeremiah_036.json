@@ -1,0 +1,328 @@
+{
+  "passage_ref": "Jeremiah 36",
+  "entities": {
+    "people": [],
+    "places": [],
+    "groups": [],
+    "events": [],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "jeremiah-baruch-scroll",
+      "claim": "Jeremiah 36 portrays Baruch writing Jeremiah's dictated words, reading the scroll, surviving Jehoiakim's destruction of it, and producing a replacement with additional material.",
+      "category": "history",
+      "source_ids": [
+        "jeremiah-masoretic",
+        "lundbom-jeremiah-21-36",
+        "goldstein-jeremiah-legends"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Jeremiah 36:1-32"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "jeremiah",
+        "parent_title": "Jeremiah",
+        "parent_type": "book",
+        "object_importance": 96,
+        "retrieval_score": 0.916,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "textually_explicit",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "jeremiah-long-composition",
+      "claim": "The received book combines poetry, prose sermons, narratives, letters, headings, repeated accounts, restoration collections, nation oracles, and an appendix produced through a long compositional and textual history.",
+      "category": "culture",
+      "source_ids": [
+        "jeremiah-masoretic",
+        "oxford-handbook-jeremiah",
+        "biddle-jeremiah-content",
+        "stulman-jeremiah"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Jeremiah 1:1-52:34"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "jeremiah",
+        "parent_title": "Jeremiah",
+        "parent_type": "book",
+        "object_importance": 96,
+        "retrieval_score": 0.916,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 3500,
+        "certainty": "strong_consensus",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 45
+      }
+    },
+    {
+      "id": "jeremiah-multiple-voices",
+      "claim": "Jeremiah distinguishes divine speech, prophetic first-person speech, Baruch's scribal role, prose narration, royal and priestly speech, competing prophets, communal voices, nations, and personified Daughter Zion or Judah.",
+      "category": "culture",
+      "source_ids": [
+        "jeremiah-masoretic",
+        "biddle-jeremiah-content",
+        "oxford-handbook-jeremiah"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Jeremiah 36:1-32"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "jeremiah",
+        "parent_title": "Jeremiah",
+        "parent_type": "book",
+        "object_importance": 96,
+        "retrieval_score": 0.916,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 105
+      }
+    },
+    {
+      "id": "jeremiah-practical-mt-outline",
+      "claim": "Chapters 1; 2-25; 26-29; 30-33; 34-45; 46-51; and 52 provide a practical outline of Masoretic Jeremiah without settling its composition.",
+      "category": "culture",
+      "source_ids": [
+        "jeremiah-masoretic",
+        "biddle-jeremiah-content",
+        "stulman-jeremiah"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Jeremiah 1:1-52:34"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "jeremiah",
+        "parent_title": "Jeremiah",
+        "parent_type": "book",
+        "object_importance": 96,
+        "retrieval_score": 0.916,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 3500,
+        "certainty": "probable",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 30
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "Jeremiah: Content and Structure",
+        "author": "Mark E. Biddle",
+        "publisher": "Oxford University Press",
+        "year": 2021,
+        "locator": "Oxford Handbook of Jeremiah, chapter 13, pages 235-251",
+        "url": "https://academic.oup.com/edited-volume/37089/chapter-abstract/323191290",
+        "source_type": "academic-book",
+        "supports": [
+          "literary-context",
+          "genre",
+          "structure",
+          "authorship-positions",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "Study of poetry, prose, headings, collections, and the two versions.",
+        "id": "biddle-jeremiah-content",
+        "canonical_object_ids": [
+          "jeremiah"
+        ]
+      },
+      {
+        "title": "The Prophet Jeremiah: Legends, Traditions, and Their Evolution",
+        "author": "Ronnie Goldstein",
+        "publisher": "Oxford University Press",
+        "year": 2021,
+        "locator": "Oxford Handbook of Jeremiah, chapter 9, pages 159-176",
+        "url": "https://academic.oup.com/edited-volume/37089/chapter-abstract/323189421",
+        "source_type": "academic-book",
+        "supports": [
+          "authorship-positions",
+          "historical-context",
+          "literary-context",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "Study of Jeremiah narratives, doublets, biography, and editorial development.",
+        "id": "goldstein-jeremiah-legends",
+        "canonical_object_ids": [
+          "jeremiah"
+        ]
+      },
+      {
+        "title": "Masoretic Jeremiah",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Jeremiah 1-52 in the Masoretic textual tradition",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "historical-context",
+          "literary-context",
+          "structure",
+          "major-themes",
+          "key-people",
+          "key-places",
+          "key-events",
+          "hebrew-words",
+          "scripture-references",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "Primary received Hebrew canonical text.",
+        "id": "jeremiah-masoretic",
+        "canonical_object_ids": [
+          "jeremiah"
+        ]
+      },
+      {
+        "title": "Jeremiah 21-36",
+        "author": "Jack R. Lundbom",
+        "publisher": "Yale University Press",
+        "year": 2004,
+        "locator": "Anchor Yale Bible 21B",
+        "url": "https://yalebooks.yale.edu/book/9780300139648/jeremiah-21-36/",
+        "source_type": "academic-book",
+        "supports": [
+          "literary-context",
+          "historical-context",
+          "authorship-positions",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "Detailed commentary on Jeremiah 21-36.",
+        "id": "lundbom-jeremiah-21-36",
+        "canonical_object_ids": [
+          "jeremiah"
+        ]
+      },
+      {
+        "title": "The Oxford Handbook of Jeremiah",
+        "author": "Louis Stulman and Edward Silver, editors",
+        "publisher": "Oxford University Press",
+        "year": 2021,
+        "locator": "Whole volume",
+        "url": "https://academic.oup.com/edited-volume/37089",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context",
+          "literary-context",
+          "authorship-positions",
+          "second-temple-context",
+          "interpretive-disputes",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "Multi-author scholarly reference work spanning history, text, themes, reception, and ethics.",
+        "id": "oxford-handbook-jeremiah",
+        "canonical_object_ids": [
+          "jeremiah"
+        ]
+      },
+      {
+        "title": "Abingdon Old Testament Commentaries: Jeremiah",
+        "author": "Louis Stulman",
+        "publisher": "Abingdon Press",
+        "year": 2005,
+        "locator": "Introduction and commentary",
+        "url": "https://www.abingdonpress.com/product/9780687057962/",
+        "source_type": "academic-book",
+        "supports": [
+          "summary",
+          "literary-context",
+          "structure",
+          "major-themes",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "Final-form and prose-sensitive critical commentary.",
+        "id": "stulman-jeremiah",
+        "canonical_object_ids": [
+          "jeremiah"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "jeremiah",
+        "type": "book",
+        "title": "Jeremiah",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.916
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "044c6a89825bb64c38ffc12f5a1065d24a37ea6aa287adcb47dde36b2ee56be4",
+  "evidence_hash_version": "2"
+}

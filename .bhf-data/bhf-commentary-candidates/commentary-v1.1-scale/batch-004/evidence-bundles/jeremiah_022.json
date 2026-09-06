@@ -1,0 +1,577 @@
+{
+  "passage_ref": "Jeremiah 22",
+  "entities": {
+    "people": [],
+    "places": [],
+    "groups": [],
+    "events": [],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "haggai-jeremiah-signet",
+      "claim": "Zerubbabel as signet forms a strong canonical contrast with Jeremiah 22's removal of Coniah as a signet, but whether Haggai intentionally reverses that oracle cannot be proved solely by the shared image.",
+      "category": "culture",
+      "source_ids": [
+        "haggai-masoretic",
+        "haggai-comparanda",
+        "barker-haggai"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Jeremiah 22:24-30"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "haggai",
+        "parent_title": "Haggai",
+        "parent_type": "book",
+        "object_importance": 87,
+        "retrieval_score": 0.907,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 23,
+        "certainty": "probable",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "INTERTEXTUAL_REUSE",
+        "presentation_role": "dig_deeper",
+        "overview_priority": 0
+      }
+    },
+    {
+      "id": "haggai-zerubbabel",
+      "claim": "Haggai 2:23 calls Zerubbabel YHWH's servant, chosen one, and signet, conveying royal-Davidic significance without saying that he became king.",
+      "category": "culture",
+      "source_ids": [
+        "haggai-masoretic",
+        "haggai-comparanda",
+        "barker-haggai",
+        "kessler-haggai"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Jeremiah 22:24-30"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "haggai",
+        "parent_title": "Haggai",
+        "parent_type": "book",
+        "object_importance": 87,
+        "retrieval_score": 0.907,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 23,
+        "certainty": "strong_consensus",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_theology",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "INTERTEXTUAL_REUSE",
+        "presentation_role": "dig_deeper",
+        "overview_priority": 0
+      }
+    },
+    {
+      "id": "jeremiah-long-composition",
+      "claim": "The received book combines poetry, prose sermons, narratives, letters, headings, repeated accounts, restoration collections, nation oracles, and an appendix produced through a long compositional and textual history.",
+      "category": "culture",
+      "source_ids": [
+        "jeremiah-masoretic",
+        "oxford-handbook-jeremiah",
+        "biddle-jeremiah-content",
+        "stulman-jeremiah"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Jeremiah 1:1-52:34"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "jeremiah",
+        "parent_title": "Jeremiah",
+        "parent_type": "book",
+        "object_importance": 96,
+        "retrieval_score": 0.916,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 2100,
+        "certainty": "strong_consensus",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 45
+      }
+    },
+    {
+      "id": "jeremiah-practical-mt-outline",
+      "claim": "Chapters 1; 2-25; 26-29; 30-33; 34-45; 46-51; and 52 provide a practical outline of Masoretic Jeremiah without settling its composition.",
+      "category": "culture",
+      "source_ids": [
+        "jeremiah-masoretic",
+        "biddle-jeremiah-content",
+        "stulman-jeremiah"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Jeremiah 1:1-52:34"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "jeremiah",
+        "parent_title": "Jeremiah",
+        "parent_type": "book",
+        "object_importance": 96,
+        "retrieval_score": 0.916,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 2100,
+        "certainty": "probable",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 30
+      }
+    },
+    {
+      "id": "what-is-the-kingdom-of-judah:ancient_near_east_context:0",
+      "claim": "Like other small kingdoms, Judah lives under imperial pressure, but Scripture frames its history around covenant fidelity and Davidic promise.",
+      "category": "culture",
+      "source_ids": [
+        "1-kings-12",
+        "2-kings-25",
+        "2-chronicles-36",
+        "jeremiah-22",
+        "ezekiel-17",
+        "psalm-89"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Jeremiah 22:1-10"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "what-is-the-kingdom-of-judah",
+        "parent_title": "What is the Kingdom of Judah?",
+        "parent_type": "faq",
+        "object_importance": 88,
+        "retrieval_score": 0.908,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55
+      }
+    },
+    {
+      "id": "what-is-the-kingdom-of-judah:historical_context:0",
+      "claim": "Judah survives after the split monarchy, then falls to Babylon and enters exile with its temple and king removed.",
+      "category": "history",
+      "source_ids": [
+        "1-kings-12",
+        "2-kings-25",
+        "2-chronicles-36",
+        "jeremiah-22",
+        "ezekiel-17",
+        "psalm-89"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Jeremiah 22:1-10"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "what-is-the-kingdom-of-judah",
+        "parent_title": "What is the Kingdom of Judah?",
+        "parent_type": "faq",
+        "object_importance": 88,
+        "retrieval_score": 0.908,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "1 Kings 12",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "1-kings-12",
+        "canonical_object_ids": [
+          "what-is-the-kingdom-of-judah"
+        ]
+      },
+      {
+        "title": "2 Chronicles 36",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "2-chronicles-36",
+        "canonical_object_ids": [
+          "what-is-the-kingdom-of-judah"
+        ]
+      },
+      {
+        "title": "2 Kings 25",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "2-kings-25",
+        "canonical_object_ids": [
+          "what-is-the-kingdom-of-judah"
+        ]
+      },
+      {
+        "title": "Haggai",
+        "author": "John R. Barker, OFM",
+        "publisher": "Oxford University Press",
+        "year": 2021,
+        "locator": "The Oxford Handbook of the Minor Prophets, chapter 38, pages 511-523",
+        "url": "https://academic.oup.com/edited-volume/38566/chapter-abstract/334373730",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context",
+          "literary-context",
+          "interpretive-disputes",
+          "haggai-superscription",
+          "haggai-date",
+          "haggai-composition",
+          "haggai-delay",
+          "haggai-shaking",
+          "haggai-nations-treasure",
+          "haggai-glory-peace",
+          "haggai-torah-inquiry",
+          "haggai-foundation",
+          "haggai-zerubbabel"
+        ],
+        "notes": "Book-specific overview of content, historical context, socioeconomic dispute, temple, divine presence, and composition.",
+        "id": "barker-haggai",
+        "canonical_object_ids": [
+          "haggai"
+        ]
+      },
+      {
+        "title": "Jeremiah: Content and Structure",
+        "author": "Mark E. Biddle",
+        "publisher": "Oxford University Press",
+        "year": 2021,
+        "locator": "Oxford Handbook of Jeremiah, chapter 13, pages 235-251",
+        "url": "https://academic.oup.com/edited-volume/37089/chapter-abstract/323191290",
+        "source_type": "academic-book",
+        "supports": [
+          "literary-context",
+          "genre",
+          "structure",
+          "authorship-positions",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "Study of poetry, prose, headings, collections, and the two versions.",
+        "id": "biddle-jeremiah-content",
+        "canonical_object_ids": [
+          "jeremiah"
+        ]
+      },
+      {
+        "title": "Ezekiel 17",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "ezekiel-17",
+        "canonical_object_ids": [
+          "what-is-the-kingdom-of-judah"
+        ]
+      },
+      {
+        "title": "Canonical comparanda for Haggai",
+        "author": "",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "Exodus, Leviticus, Numbers, Deuteronomy, Kings, Chronicles, Ezra, Jeremiah, Zechariah",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "intertextuality",
+          "cross-references",
+          "haggai-scarcity",
+          "haggai-former-house",
+          "haggai-be-strong",
+          "haggai-torah-inquiry",
+          "haggai-foundation",
+          "haggai-zerubbabel",
+          "haggai-jeremiah-signet"
+        ],
+        "notes": "Scriptural comparison set; each relationship is separately labeled in the record.",
+        "id": "haggai-comparanda",
+        "canonical_object_ids": [
+          "haggai"
+        ]
+      },
+      {
+        "title": "Haggai",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Haggai 1:1-2:23",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "scripture-references",
+          "literary-context",
+          "haggai-superscription",
+          "haggai-delay",
+          "haggai-response",
+          "haggai-shaking",
+          "haggai-torah-inquiry",
+          "haggai-zerubbabel"
+        ],
+        "notes": "Primary Hebrew Bible text in the received Masoretic tradition.",
+        "id": "haggai-masoretic",
+        "canonical_object_ids": [
+          "haggai"
+        ]
+      },
+      {
+        "title": "Jeremiah 22",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "jeremiah-22",
+        "canonical_object_ids": [
+          "what-is-the-kingdom-of-judah"
+        ]
+      },
+      {
+        "title": "Masoretic Jeremiah",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Jeremiah 1-52 in the Masoretic textual tradition",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "historical-context",
+          "literary-context",
+          "structure",
+          "major-themes",
+          "key-people",
+          "key-places",
+          "key-events",
+          "hebrew-words",
+          "scripture-references",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "Primary received Hebrew canonical text.",
+        "id": "jeremiah-masoretic",
+        "canonical_object_ids": [
+          "jeremiah"
+        ]
+      },
+      {
+        "title": "The Book of Haggai: Prophecy and Society in Early Persian Yehud",
+        "author": "John Kessler",
+        "publisher": "Brill",
+        "year": 2002,
+        "locator": "Vetus Testamentum Supplements 91; introduction to exegesis, pages 97-102",
+        "url": "https://brill.com/display/book/9789004276178/B9789004276178-s005.pdf",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "ancient-near-east-context",
+          "authorship-positions",
+          "haggai-superscription",
+          "haggai-composition",
+          "haggai-paneled-houses",
+          "haggai-former-house",
+          "haggai-foundation",
+          "haggai-zerubbabel",
+          "haggai-yehud"
+        ],
+        "notes": "Major historical and social study of Haggai and early Persian Yehud; linked publisher chapter identifies the volume.",
+        "id": "kessler-haggai",
+        "canonical_object_ids": [
+          "haggai"
+        ]
+      },
+      {
+        "title": "The Oxford Handbook of Jeremiah",
+        "author": "Louis Stulman and Edward Silver, editors",
+        "publisher": "Oxford University Press",
+        "year": 2021,
+        "locator": "Whole volume",
+        "url": "https://academic.oup.com/edited-volume/37089",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context",
+          "literary-context",
+          "authorship-positions",
+          "second-temple-context",
+          "interpretive-disputes",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "Multi-author scholarly reference work spanning history, text, themes, reception, and ethics.",
+        "id": "oxford-handbook-jeremiah",
+        "canonical_object_ids": [
+          "jeremiah"
+        ]
+      },
+      {
+        "title": "Psalm 89",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [],
+        "notes": "",
+        "id": "psalm-89",
+        "canonical_object_ids": [
+          "what-is-the-kingdom-of-judah"
+        ]
+      },
+      {
+        "title": "Abingdon Old Testament Commentaries: Jeremiah",
+        "author": "Louis Stulman",
+        "publisher": "Abingdon Press",
+        "year": 2005,
+        "locator": "Introduction and commentary",
+        "url": "https://www.abingdonpress.com/product/9780687057962/",
+        "source_type": "academic-book",
+        "supports": [
+          "summary",
+          "literary-context",
+          "structure",
+          "major-themes",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "Final-form and prose-sensitive critical commentary.",
+        "id": "stulman-jeremiah",
+        "canonical_object_ids": [
+          "jeremiah"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "haggai",
+        "type": "book",
+        "title": "Haggai",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.907
+      },
+      {
+        "id": "jeremiah",
+        "type": "book",
+        "title": "Jeremiah",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.916
+      },
+      {
+        "id": "what-is-the-kingdom-of-judah",
+        "type": "faq",
+        "title": "What is the Kingdom of Judah?",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.908
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "2ec784483fc5ae892ff05ac5c1477cbd05730d56bf53231c0c6d56e0614e3eed",
+  "evidence_hash_version": "2"
+}

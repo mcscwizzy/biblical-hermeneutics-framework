@@ -1,0 +1,724 @@
+{
+  "passage_ref": "Isaiah 45",
+  "entities": {
+    "people": [],
+    "places": [],
+    "groups": [],
+    "events": [],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "isaiah-cyrus-anointed",
+      "claim": "Isaiah names Cyrus as YHWH's shepherd and anointed agent for Babylon's defeat and Jerusalem's restoration without depicting Cyrus as an Israelite Davidic king.",
+      "category": "history",
+      "source_ids": [
+        "isaiah-masoretic",
+        "blenkinsopp-isaiah-40-55",
+        "paul-isaiah-40-66",
+        "cyrus-cylinder-object"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Isaiah 44:24-45:13"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "isaiah",
+        "parent_title": "Isaiah",
+        "parent_type": "book",
+        "object_importance": 98,
+        "retrieval_score": 0.918,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 100,
+        "certainty": "textually_explicit",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 110
+      }
+    },
+    {
+      "id": "isaiah-long-composition",
+      "claim": "The received book spans identifiable Assyrian, Babylonian, Persian, and postexilic horizons and is widely studied as a product of long collection and editorial development, though no detailed reconstruction commands consensus.",
+      "category": "culture",
+      "source_ids": [
+        "blenkinsopp-isaiah-1-39",
+        "blenkinsopp-isaiah-40-55",
+        "blenkinsopp-isaiah-56-66",
+        "williamson-book-called-isaiah",
+        "oxford-handbook-isaiah",
+        "cambridge-formation-isaiah"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Isaiah 44:24-45:8"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "isaiah",
+        "parent_title": "Isaiah",
+        "parent_type": "book",
+        "object_importance": 98,
+        "retrieval_score": 0.918,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 100,
+        "certainty": "strong_consensus",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "historical_cultural",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 110
+      }
+    },
+    {
+      "id": "isaiah-nations-empire",
+      "claim": "Isaiah judges Judah, Israel, and foreign nations, portrays empires as instruments that are themselves accountable, and also envisions nations learning, worshiping, and participating in restoration.",
+      "category": "culture",
+      "source_ids": [
+        "isaiah-masoretic",
+        "oxford-handbook-isaiah",
+        "cambridge-ane-prophecy",
+        "cambridge-migration-isaiah"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Isaiah 45:20-25"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "isaiah",
+        "parent_title": "Isaiah",
+        "parent_type": "book",
+        "object_importance": 98,
+        "retrieval_score": 0.918,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 19,
+        "certainty": "strong_consensus",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_theology",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 110
+      }
+    },
+    {
+      "id": "isaiah-qumran-witnesses",
+      "claim": "The Great Isaiah Scroll is an almost complete sixty-six-chapter witness broadly aligned with the Masoretic tradition but containing thousands of orthographic and substantive differences; other Qumran Isaiah manuscripts and pesharim show active transmission and interpretation.",
+      "category": "history",
+      "source_ids": [
+        "israel-museum-great-isaiah",
+        "brooke-qumran-isaiah",
+        "hogenhaven-qumran-isaiah",
+        "oxford-handbook-isaiah"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Isaiah 1:1-66:24"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "isaiah",
+        "parent_title": "Isaiah",
+        "parent_type": "book",
+        "object_importance": 98,
+        "retrieval_score": 0.918,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 4400,
+        "certainty": "strong_consensus",
+        "dispute_status": "textual_variant",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 30
+      }
+    },
+    {
+      "id": "philippians:interpretive_note:14",
+      "claim": "Morph\u0113 theou, equality with God, and Adamic, Isaianic, imperial, wisdom, or divine-identity backgrounds generate competing readings rather than one proven source.",
+      "category": "politics",
+      "source_ids": [
+        "phl-greek",
+        "fee-philippians",
+        "bird-gupta-philippians"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Isaiah 45:23"
+      ],
+      "confidence": "low",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "philippians",
+        "parent_title": "Philippians",
+        "parent_type": "book",
+        "object_importance": 84,
+        "retrieval_score": 0.904,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 22,
+        "certainty": "disputed",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "theological-interpretation",
+        "field": "",
+        "semantic_relationship": "LATER_RECEPTION",
+        "presentation_role": "dig_deeper",
+        "overview_priority": 0
+      }
+    },
+    {
+      "id": "philippians:interpretive_note:18",
+      "claim": "Every knee and every tongue echo Isaiah's divine sovereignty; later doctrine must state when it moves from epistolary confession to a confessional system.",
+      "category": "culture",
+      "source_ids": [
+        "phl-greek",
+        "nets-lxx"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Isaiah 45:23"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "philippians",
+        "parent_title": "Philippians",
+        "parent_type": "book",
+        "object_importance": 84,
+        "retrieval_score": 0.904,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 22,
+        "certainty": "probable",
+        "dispute_status": "denominational_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "canonical-connection",
+        "field": "",
+        "semantic_relationship": "LATER_RECEPTION",
+        "presentation_role": "dig_deeper",
+        "overview_priority": 0
+      }
+    },
+    {
+      "id": "phl-exaltation",
+      "claim": "God highly exalts Messiah and grants the name associated with universal homage and confession, echoing Isaiah 45:23.",
+      "category": "culture",
+      "source_ids": [
+        "phl-greek",
+        "nets-lxx"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Isaiah 45:23"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "philippians",
+        "parent_title": "Philippians",
+        "parent_type": "book",
+        "object_importance": 84,
+        "retrieval_score": 0.904,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 22,
+        "certainty": "probable",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_theology",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "LATER_RECEPTION",
+        "presentation_role": "dig_deeper",
+        "overview_priority": 0
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "Philippians",
+        "author": "Michael F. Bird and Nijay K. Gupta",
+        "publisher": "Cambridge University Press",
+        "year": 2020,
+        "locator": "Introduction and commentary",
+        "url": "https://www.cambridge.org/core/books/philippians/F62254A02FFDF34E625C24B321D55860",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "literary-context",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Historical, rhetorical, theological, and reception claims require review.",
+        "id": "bird-gupta-philippians",
+        "canonical_object_ids": [
+          "philippians"
+        ]
+      },
+      {
+        "title": "Isaiah 1-39",
+        "author": "Joseph Blenkinsopp",
+        "publisher": "Yale University Press",
+        "year": 2000,
+        "locator": "Anchor Yale Bible 19",
+        "url": "https://yalebooks.yale.edu/book/9780300139617/isaiah-1-39/",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "literary-context",
+          "authorship-positions",
+          "date-ranges",
+          "structure",
+          "isaiah-superscription-prophet",
+          "isaiah-long-composition",
+          "isaiah-assyria-trust",
+          "isaiah-immanuel-sign",
+          "isaiah-royal-child-branch",
+          "isaiah-morning-star-taunt",
+          "isaiah-death-new-creation"
+        ],
+        "notes": "Critical commentary addressing formation, eighth-century settings, major disputed texts, and final form.",
+        "id": "blenkinsopp-isaiah-1-39",
+        "canonical_object_ids": [
+          "isaiah"
+        ]
+      },
+      {
+        "title": "Isaiah 40-55",
+        "author": "Joseph Blenkinsopp",
+        "publisher": "Yale University Press",
+        "year": 2002,
+        "locator": "Anchor Yale Bible 19A",
+        "url": "https://yalebooks.yale.edu/book/9780300140545/isaiah-40-55/",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "literary-context",
+          "authorship-positions",
+          "date-ranges",
+          "isaiah-long-composition",
+          "isaiah-cyrus-anointed",
+          "isaiah-servants-plural",
+          "isaiah-suffering-servant",
+          "isaiah-comfort-new-exodus"
+        ],
+        "notes": "Critical commentary on exilic context, Cyrus, servants, comfort, and return.",
+        "id": "blenkinsopp-isaiah-40-55",
+        "canonical_object_ids": [
+          "isaiah"
+        ]
+      },
+      {
+        "title": "Isaiah 56-66",
+        "author": "Joseph Blenkinsopp",
+        "publisher": "Yale University Press",
+        "year": 2003,
+        "locator": "Anchor Yale Bible 19B",
+        "url": "https://yalebooks.yale.edu/book/9780300139624/isaiah-56-66/",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "literary-context",
+          "authorship-positions",
+          "date-ranges",
+          "isaiah-long-composition",
+          "isaiah-justice-fasting-inclusion",
+          "isaiah-death-new-creation"
+        ],
+        "notes": "Critical commentary on postexilic community, justice, Zion, inclusion, judgment, and new creation.",
+        "id": "blenkinsopp-isaiah-56-66",
+        "canonical_object_ids": [
+          "isaiah"
+        ]
+      },
+      {
+        "title": "Isaiah in the Qumran Scrolls",
+        "author": "George J. Brooke",
+        "publisher": "Oxford University Press",
+        "year": 2020,
+        "locator": "The Oxford Handbook of Isaiah, chapter 23",
+        "url": "https://academic.oup.com/edited-volume/38588/chapter-abstract/334631738",
+        "source_type": "academic-book",
+        "supports": [
+          "primary-sources",
+          "second-temple-context",
+          "intertextuality",
+          "isaiah-qumran-witnesses"
+        ],
+        "notes": "Overview of Isaiah manuscripts, pesharim, and reuse among the Dead Sea Scrolls.",
+        "id": "brooke-qumran-isaiah",
+        "canonical_object_ids": [
+          "isaiah"
+        ]
+      },
+      {
+        "title": "Ancient Near Eastern Prophecy and the Study of Isaiah",
+        "author": "Jonathan St\u00f6kl",
+        "publisher": "Cambridge University Press",
+        "year": 2024,
+        "locator": "The Cambridge Companion to the Book of Isaiah, chapter 8",
+        "url": "https://www.cambridge.org/core/books/cambridge-companion-to-the-book-of-isaiah/ancient-near-eastern-prophecy-and-the-study-of-isaiah/3B0E4F90F810DDF2B09BB57E186E25A5",
+        "source_type": "academic-book",
+        "supports": [
+          "ancient-near-east-context",
+          "genre",
+          "isaiah-nations-empire"
+        ],
+        "notes": "Comparative prophetic texts, literary compilation, and gender without assuming direct dependence.",
+        "id": "cambridge-ane-prophecy",
+        "canonical_object_ids": [
+          "isaiah"
+        ]
+      },
+      {
+        "title": "The Formation of the Book of Isaiah: Foundations and Current Issues",
+        "author": "Marvin A. Sweeney",
+        "publisher": "Cambridge University Press",
+        "year": 2024,
+        "locator": "The Cambridge Companion to the Book of Isaiah, chapter 7",
+        "url": "https://www.cambridge.org/core/books/abs/cambridge-companion-to-the-book-of-isaiah/formation-of-the-book-of-isaiah/D02324B83F2BF701A9035AB757B3C31F",
+        "source_type": "academic-book",
+        "supports": [
+          "authorship-positions",
+          "date-ranges",
+          "structure",
+          "isaiah-long-composition"
+        ],
+        "notes": "Current overview of formation research and disputed editorial models.",
+        "id": "cambridge-formation-isaiah",
+        "canonical_object_ids": [
+          "isaiah"
+        ]
+      },
+      {
+        "title": "Migration in the Book of Isaiah",
+        "author": "C. L. Crouch",
+        "publisher": "Cambridge University Press",
+        "year": 2024,
+        "locator": "The Cambridge Companion to the Book of Isaiah, chapter 11",
+        "url": "https://www.cambridge.org/core/books/abs/cambridge-companion-to-the-book-of-isaiah/migration-in-the-book-of-isaiah/4C9BFF7B3BA5ABE66F2EF5100170B206",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "ancient-near-east-context",
+          "original-audience",
+          "isaiah-nations-empire",
+          "isaiah-comfort-new-exodus"
+        ],
+        "notes": "Assyrian and Babylonian deportation, other forced movements, displacement, and literary reception.",
+        "id": "cambridge-migration-isaiah",
+        "canonical_object_ids": [
+          "isaiah"
+        ]
+      },
+      {
+        "title": "Cyrus Cylinder",
+        "author": "",
+        "publisher": "Canonical Knowledge Library",
+        "year": null,
+        "locator": "cyrus-cylinder canonical object",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [
+          "ancient-near-east-context",
+          "archaeology",
+          "isaiah-cyrus-anointed"
+        ],
+        "notes": "Internal relationship to the separately sourced CKL object; used only as comparative context.",
+        "id": "cyrus-cylinder-object",
+        "canonical_object_ids": [
+          "isaiah"
+        ]
+      },
+      {
+        "title": "Paul's Letter to the Philippians",
+        "author": "Gordon D. Fee",
+        "publisher": "Eerdmans",
+        "year": 1995,
+        "locator": "Introduction and commentary",
+        "url": "https://www.eerdmans.com/9780802825117/pauls-letter-to-the-philippians/",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "literary-context",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Commentary positions require locator-level verification.",
+        "id": "fee-philippians",
+        "canonical_object_ids": [
+          "philippians"
+        ]
+      },
+      {
+        "title": "The Book of Isaiah at Qumran",
+        "author": "Jesper H\u00f8genhaven",
+        "publisher": "Cambridge University Press",
+        "year": 2024,
+        "locator": "The Cambridge Companion to the Book of Isaiah, chapter 5",
+        "url": "https://www.cambridge.org/core/books/cambridge-companion-to-the-book-of-isaiah/book-of-isaiah-at-qumran/093B8E8A1EE04CEC1F0E44EBCB79BC92",
+        "source_type": "academic-book",
+        "supports": [
+          "primary-sources",
+          "second-temple-context",
+          "intertextuality",
+          "isaiah-qumran-witnesses"
+        ],
+        "notes": "Recent treatment of textual witness and early interpretation at Qumran.",
+        "id": "hogenhaven-qumran-isaiah",
+        "canonical_object_ids": [
+          "isaiah"
+        ]
+      },
+      {
+        "title": "Masoretic Isaiah",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Isaiah 1-66 in the Masoretic textual tradition",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "historical-context",
+          "literary-context",
+          "structure",
+          "major-themes",
+          "key-people",
+          "key-places",
+          "key-events",
+          "hebrew-words",
+          "scripture-references",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "Primary received Hebrew canonical text.",
+        "id": "isaiah-masoretic",
+        "canonical_object_ids": [
+          "isaiah"
+        ]
+      },
+      {
+        "title": "The Great Isaiah Scroll",
+        "author": "The Israel Museum, Jerusalem",
+        "publisher": "Digital Dead Sea Scrolls",
+        "year": null,
+        "locator": "1QIsa-a digital manuscript and introduction",
+        "url": "https://dss.collections.imj.org.il/isaiah",
+        "source_type": "museum-collection",
+        "supports": [
+          "primary-sources",
+          "second-temple-context",
+          "archaeology",
+          "timeline",
+          "isaiah-qumran-witnesses"
+        ],
+        "notes": "Official museum presentation of the almost complete scroll, its date, contents, and variants.",
+        "id": "israel-museum-great-isaiah",
+        "canonical_object_ids": [
+          "isaiah"
+        ]
+      },
+      {
+        "title": "A New English Translation of the Septuagint",
+        "author": "Albert Pietersma and Benjamin G. Wright, eds.",
+        "publisher": "Oxford University Press",
+        "year": 2007,
+        "locator": "Isaiah, Deuteronomy, and Daniel",
+        "url": "https://ccat.sas.upenn.edu/nets/edition/",
+        "source_type": "ancient-primary-source",
+        "supports": [
+          "intertextuality",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Septuagint comparanda; Greek text and Hebrew relations need review.",
+        "id": "nets-lxx",
+        "canonical_object_ids": [
+          "philippians"
+        ]
+      },
+      {
+        "title": "The Oxford Handbook of Isaiah",
+        "author": "Lena-Sofia Tiemeyer, editor",
+        "publisher": "Oxford University Press",
+        "year": 2020,
+        "locator": "Formation, sections, contexts, themes, literature, texts, reception, and ideological readings",
+        "url": "https://academic.oup.com/edited-volume/38588",
+        "source_type": "reference-work",
+        "supports": [
+          "summary",
+          "historical-context",
+          "ancient-near-east-context",
+          "second-temple-context",
+          "canonical-context",
+          "later-christian-reception",
+          "authorship-positions",
+          "date-ranges",
+          "structure",
+          "major-themes",
+          "interpretive-disputes",
+          "isaiah-long-composition",
+          "isaiah-practical-outline",
+          "isaiah-assyria-trust",
+          "isaiah-royal-child-branch",
+          "isaiah-morning-star-taunt",
+          "isaiah-nations-empire",
+          "isaiah-servants-plural",
+          "isaiah-suffering-servant",
+          "isaiah-justice-fasting-inclusion",
+          "isaiah-death-new-creation",
+          "isaiah-qumran-witnesses",
+          "isaiah-old-greek",
+          "isaiah-reception-distinction"
+        ],
+        "notes": "Multi-author handbook representing diverse methods and traditions rather than one unified position.",
+        "id": "oxford-handbook-isaiah",
+        "canonical_object_ids": [
+          "isaiah"
+        ]
+      },
+      {
+        "title": "Isaiah 40-66: A Commentary",
+        "author": "Shalom M. Paul",
+        "publisher": "Eerdmans",
+        "year": 2012,
+        "locator": "Eerdmans Critical Commentary",
+        "url": "https://www.eerdmans.com/9780802826039/isaiah-40-66/",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "ancient-near-east-context",
+          "literary-context",
+          "hebrew-words",
+          "isaiah-cyrus-anointed",
+          "isaiah-servants-plural",
+          "isaiah-suffering-servant",
+          "isaiah-comfort-new-exodus",
+          "isaiah-justice-fasting-inclusion"
+        ],
+        "notes": "Jewish critical commentary with detailed philological, textual, literary, historical, and ancient Near Eastern analysis.",
+        "id": "paul-isaiah-40-66",
+        "canonical_object_ids": [
+          "isaiah"
+        ]
+      },
+      {
+        "title": "The Greek New Testament: SBL Edition",
+        "author": "Michael W. Holmes, ed.",
+        "publisher": "Society of Biblical Literature and Logos Bible Software",
+        "year": 2010,
+        "locator": "Philippians 1-4",
+        "url": "https://www.sblgnt.com/download/",
+        "source_type": "scripture",
+        "supports": [
+          "literary-context",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Critical Greek base text; readings require apparatus review.",
+        "id": "phl-greek",
+        "canonical_object_ids": [
+          "philippians"
+        ]
+      },
+      {
+        "title": "The Book Called Isaiah: Deutero-Isaiah's Role in Composition and Redaction",
+        "author": "H. G. M. Williamson",
+        "publisher": "Oxford University Press",
+        "year": 1994,
+        "locator": "Composition, redaction, unity, diversity, and witnesses",
+        "url": "https://academic.oup.com/book/27499",
+        "source_type": "academic-book",
+        "supports": [
+          "authorship-positions",
+          "date-ranges",
+          "literary-context",
+          "structure",
+          "isaiah-long-composition",
+          "isaiah-practical-outline",
+          "isaiah-immanuel-sign",
+          "isaiah-reception-distinction"
+        ],
+        "notes": "Study of unity and diversity through historical-critical and literary questions.",
+        "id": "williamson-book-called-isaiah",
+        "canonical_object_ids": [
+          "isaiah"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "isaiah",
+        "type": "book",
+        "title": "Isaiah",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.918
+      },
+      {
+        "id": "philippians",
+        "type": "book",
+        "title": "Philippians",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.904
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "63ff959202d90cbb9bcbd1ff08d11f39b489db0563e09e954867abdbc463947e",
+  "evidence_hash_version": "2"
+}

@@ -1,0 +1,480 @@
+{
+  "passage_ref": "Isaiah 19",
+  "entities": {
+    "people": [],
+    "places": [],
+    "groups": [],
+    "events": [],
+    "artifacts": [
+      {
+        "id": "elephantine-papyri",
+        "title": "Elephantine Papyri",
+        "type": "archaeology",
+        "aliases": [
+          "elephantine papyri artifact",
+          "elephantine papyri discovery",
+          "elephantine papyri excavation",
+          "elephantine papyri find"
+        ],
+        "metadata": {
+          "summary": "A Nile island with major Jewish papyri and a long sequence of cultic and administrative remains.",
+          "importance": 90,
+          "retrieval_score": 0.91,
+          "ancient_names": [],
+          "modern_identification": "",
+          "region": "",
+          "terrain": "",
+          "elevation": null,
+          "archaeology": [],
+          "related_passages": [
+            "Jeremiah 44",
+            "Isaiah 19"
+          ]
+        }
+      }
+    ]
+  },
+  "evidence_items": [
+    {
+      "id": "elephantine-papyri:ancient_near_east_context:0",
+      "claim": "Ancient background for Elephantine Papyri includes inscriptions, material culture, excavation layers, and imperial administration; the entry ties that world to Jeremiah 44, Isaiah 19, jerusalem, and joshua without letting comparison replace the biblical witness.",
+      "category": "culture",
+      "source_ids": [
+        "elephantine",
+        "island-settlement",
+        "jeremiah-44",
+        "isaiah-19",
+        "ancient-documentary-and-archive-study"
+      ],
+      "related_entity_ids": [
+        "elephantine-papyri"
+      ],
+      "passage_anchors": [
+        "Isaiah 19"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "elephantine-papyri",
+        "parent_title": "Elephantine Papyri",
+        "parent_type": "archaeology",
+        "object_importance": 90,
+        "retrieval_score": 0.91,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "chapter",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "elephantine-papyri:historical_context:0",
+      "claim": "Elephantine is a key witness to diaspora Judaism and imperial administration.",
+      "category": "history",
+      "source_ids": [
+        "elephantine",
+        "island-settlement",
+        "jeremiah-44",
+        "isaiah-19",
+        "ancient-documentary-and-archive-study"
+      ],
+      "related_entity_ids": [
+        "elephantine-papyri"
+      ],
+      "passage_anchors": [
+        "Isaiah 19"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "elephantine-papyri",
+        "parent_title": "Elephantine Papyri",
+        "parent_type": "archaeology",
+        "object_importance": 90,
+        "retrieval_score": 0.91,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "chapter",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "isaiah-nations-empire",
+      "claim": "Isaiah judges Judah, Israel, and foreign nations, portrays empires as instruments that are themselves accountable, and also envisions nations learning, worshiping, and participating in restoration.",
+      "category": "culture",
+      "source_ids": [
+        "isaiah-masoretic",
+        "oxford-handbook-isaiah",
+        "cambridge-ane-prophecy",
+        "cambridge-migration-isaiah"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Isaiah 13:1-23:18",
+        "Isaiah 19:16-25"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "isaiah",
+        "parent_title": "Isaiah",
+        "parent_type": "book",
+        "object_importance": 98,
+        "retrieval_score": 0.918,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 15,
+        "certainty": "strong_consensus",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_theology",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 85
+      }
+    },
+    {
+      "id": "isaiah-qumran-witnesses",
+      "claim": "The Great Isaiah Scroll is an almost complete sixty-six-chapter witness broadly aligned with the Masoretic tradition but containing thousands of orthographic and substantive differences; other Qumran Isaiah manuscripts and pesharim show active transmission and interpretation.",
+      "category": "history",
+      "source_ids": [
+        "israel-museum-great-isaiah",
+        "brooke-qumran-isaiah",
+        "hogenhaven-qumran-isaiah",
+        "oxford-handbook-isaiah"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Isaiah 1:1-66:24"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "isaiah",
+        "parent_title": "Isaiah",
+        "parent_type": "book",
+        "object_importance": 98,
+        "retrieval_score": 0.918,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 1800,
+        "certainty": "strong_consensus",
+        "dispute_status": "textual_variant",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 30
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "Ancient documentary and archive study",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [],
+        "notes": "",
+        "id": "ancient-documentary-and-archive-study",
+        "canonical_object_ids": [
+          "elephantine-papyri"
+        ]
+      },
+      {
+        "title": "Isaiah in the Qumran Scrolls",
+        "author": "George J. Brooke",
+        "publisher": "Oxford University Press",
+        "year": 2020,
+        "locator": "The Oxford Handbook of Isaiah, chapter 23",
+        "url": "https://academic.oup.com/edited-volume/38588/chapter-abstract/334631738",
+        "source_type": "academic-book",
+        "supports": [
+          "primary-sources",
+          "second-temple-context",
+          "intertextuality",
+          "isaiah-qumran-witnesses"
+        ],
+        "notes": "Overview of Isaiah manuscripts, pesharim, and reuse among the Dead Sea Scrolls.",
+        "id": "brooke-qumran-isaiah",
+        "canonical_object_ids": [
+          "isaiah"
+        ]
+      },
+      {
+        "title": "Ancient Near Eastern Prophecy and the Study of Isaiah",
+        "author": "Jonathan St\u00f6kl",
+        "publisher": "Cambridge University Press",
+        "year": 2024,
+        "locator": "The Cambridge Companion to the Book of Isaiah, chapter 8",
+        "url": "https://www.cambridge.org/core/books/cambridge-companion-to-the-book-of-isaiah/ancient-near-eastern-prophecy-and-the-study-of-isaiah/3B0E4F90F810DDF2B09BB57E186E25A5",
+        "source_type": "academic-book",
+        "supports": [
+          "ancient-near-east-context",
+          "genre",
+          "isaiah-nations-empire"
+        ],
+        "notes": "Comparative prophetic texts, literary compilation, and gender without assuming direct dependence.",
+        "id": "cambridge-ane-prophecy",
+        "canonical_object_ids": [
+          "isaiah"
+        ]
+      },
+      {
+        "title": "Migration in the Book of Isaiah",
+        "author": "C. L. Crouch",
+        "publisher": "Cambridge University Press",
+        "year": 2024,
+        "locator": "The Cambridge Companion to the Book of Isaiah, chapter 11",
+        "url": "https://www.cambridge.org/core/books/abs/cambridge-companion-to-the-book-of-isaiah/migration-in-the-book-of-isaiah/4C9BFF7B3BA5ABE66F2EF5100170B206",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "ancient-near-east-context",
+          "original-audience",
+          "isaiah-nations-empire",
+          "isaiah-comfort-new-exodus"
+        ],
+        "notes": "Assyrian and Babylonian deportation, other forced movements, displacement, and literary reception.",
+        "id": "cambridge-migration-isaiah",
+        "canonical_object_ids": [
+          "isaiah"
+        ]
+      },
+      {
+        "title": "Elephantine",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [],
+        "notes": "",
+        "id": "elephantine",
+        "canonical_object_ids": [
+          "elephantine-papyri"
+        ]
+      },
+      {
+        "title": "The Book of Isaiah at Qumran",
+        "author": "Jesper H\u00f8genhaven",
+        "publisher": "Cambridge University Press",
+        "year": 2024,
+        "locator": "The Cambridge Companion to the Book of Isaiah, chapter 5",
+        "url": "https://www.cambridge.org/core/books/cambridge-companion-to-the-book-of-isaiah/book-of-isaiah-at-qumran/093B8E8A1EE04CEC1F0E44EBCB79BC92",
+        "source_type": "academic-book",
+        "supports": [
+          "primary-sources",
+          "second-temple-context",
+          "intertextuality",
+          "isaiah-qumran-witnesses"
+        ],
+        "notes": "Recent treatment of textual witness and early interpretation at Qumran.",
+        "id": "hogenhaven-qumran-isaiah",
+        "canonical_object_ids": [
+          "isaiah"
+        ]
+      },
+      {
+        "title": "Isaiah 19",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "isaiah-19",
+        "canonical_object_ids": [
+          "elephantine-papyri"
+        ]
+      },
+      {
+        "title": "Masoretic Isaiah",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Isaiah 1-66 in the Masoretic textual tradition",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "historical-context",
+          "literary-context",
+          "structure",
+          "major-themes",
+          "key-people",
+          "key-places",
+          "key-events",
+          "hebrew-words",
+          "scripture-references",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "Primary received Hebrew canonical text.",
+        "id": "isaiah-masoretic",
+        "canonical_object_ids": [
+          "isaiah"
+        ]
+      },
+      {
+        "title": "Island settlement",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [],
+        "notes": "",
+        "id": "island-settlement",
+        "canonical_object_ids": [
+          "elephantine-papyri"
+        ]
+      },
+      {
+        "title": "The Great Isaiah Scroll",
+        "author": "The Israel Museum, Jerusalem",
+        "publisher": "Digital Dead Sea Scrolls",
+        "year": null,
+        "locator": "1QIsa-a digital manuscript and introduction",
+        "url": "https://dss.collections.imj.org.il/isaiah",
+        "source_type": "museum-collection",
+        "supports": [
+          "primary-sources",
+          "second-temple-context",
+          "archaeology",
+          "timeline",
+          "isaiah-qumran-witnesses"
+        ],
+        "notes": "Official museum presentation of the almost complete scroll, its date, contents, and variants.",
+        "id": "israel-museum-great-isaiah",
+        "canonical_object_ids": [
+          "isaiah"
+        ]
+      },
+      {
+        "title": "Jeremiah 44",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "jeremiah-44",
+        "canonical_object_ids": [
+          "elephantine-papyri"
+        ]
+      },
+      {
+        "title": "The Oxford Handbook of Isaiah",
+        "author": "Lena-Sofia Tiemeyer, editor",
+        "publisher": "Oxford University Press",
+        "year": 2020,
+        "locator": "Formation, sections, contexts, themes, literature, texts, reception, and ideological readings",
+        "url": "https://academic.oup.com/edited-volume/38588",
+        "source_type": "reference-work",
+        "supports": [
+          "summary",
+          "historical-context",
+          "ancient-near-east-context",
+          "second-temple-context",
+          "canonical-context",
+          "later-christian-reception",
+          "authorship-positions",
+          "date-ranges",
+          "structure",
+          "major-themes",
+          "interpretive-disputes",
+          "isaiah-long-composition",
+          "isaiah-practical-outline",
+          "isaiah-assyria-trust",
+          "isaiah-royal-child-branch",
+          "isaiah-morning-star-taunt",
+          "isaiah-nations-empire",
+          "isaiah-servants-plural",
+          "isaiah-suffering-servant",
+          "isaiah-justice-fasting-inclusion",
+          "isaiah-death-new-creation",
+          "isaiah-qumran-witnesses",
+          "isaiah-old-greek",
+          "isaiah-reception-distinction"
+        ],
+        "notes": "Multi-author handbook representing diverse methods and traditions rather than one unified position.",
+        "id": "oxford-handbook-isaiah",
+        "canonical_object_ids": [
+          "isaiah"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "elephantine-papyri",
+        "type": "archaeology",
+        "title": "Elephantine Papyri",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.91
+      },
+      {
+        "id": "isaiah",
+        "type": "book",
+        "title": "Isaiah",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.918
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "4fcf80388ee7258c77495fddcf64f3f85d2e2c1d459d11477ad5712bd357a49b",
+  "evidence_hash_version": "2"
+}

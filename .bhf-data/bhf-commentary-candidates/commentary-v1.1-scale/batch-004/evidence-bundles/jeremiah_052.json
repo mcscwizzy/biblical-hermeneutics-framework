@@ -1,0 +1,705 @@
+{
+  "passage_ref": "Jeremiah 52",
+  "entities": {
+    "people": [],
+    "places": [],
+    "groups": [],
+    "events": [
+      {
+        "id": "fall-of-jerusalem",
+        "title": "Fall of Jerusalem",
+        "type": "event",
+        "aliases": [
+          "what happened in fall of jerusalem",
+          "tell me about fall of jerusalem",
+          "why is fall of jerusalem important"
+        ],
+        "metadata": {
+          "summary": "Babylon destroys Jerusalem and the temple, sending Judah into exile.",
+          "importance": 98,
+          "retrieval_score": 0.918,
+          "ancient_names": [],
+          "modern_identification": "",
+          "region": "",
+          "terrain": "",
+          "elevation": null,
+          "archaeology": [],
+          "related_passages": [
+            "2 Kings 25:1-21",
+            "Jeremiah 39:1-10",
+            "Jeremiah 52:1-30",
+            "Lamentations 1:1-22",
+            "Psalms 137:1-9",
+            "Ezra 1:1-11"
+          ]
+        }
+      }
+    ],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "fall-of-jerusalem:ancient_near_east_context:0",
+      "claim": "The destruction followed Neo-Babylonian practices of punitive siege, royal removal, plunder, destruction, deportation, and installation of subordinate administration after rebellion. BM 21946 records the earlier 597 BCE capture, not this later catastrophe.",
+      "category": "culture",
+      "source_ids": [
+        "kings-jeremiah-fall-jerusalem",
+        "cogan-tadmor-fall-jerusalem",
+        "bm-21946-fall-boundary"
+      ],
+      "related_entity_ids": [
+        "fall-of-jerusalem"
+      ],
+      "passage_anchors": [
+        "Jeremiah 52:1-30"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "fall-of-jerusalem",
+        "parent_title": "Fall of Jerusalem",
+        "parent_type": "event",
+        "object_importance": 98,
+        "retrieval_score": 0.918,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55
+      }
+    },
+    {
+      "id": "fall-of-jerusalem:hebraic_worldview:0",
+      "claim": "Kings and Jeremiah interpret the fall as judgment after persistent covenant breach and rejected prophetic warning; Lamentations voices grief, protest, confession, and appeal from within the catastrophe.",
+      "category": "culture",
+      "source_ids": [
+        "kings-jeremiah-fall-jerusalem",
+        "cogan-tadmor-fall-jerusalem",
+        "bm-21946-fall-boundary"
+      ],
+      "related_entity_ids": [
+        "fall-of-jerusalem"
+      ],
+      "passage_anchors": [
+        "Jeremiah 52:1-30"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "fall-of-jerusalem",
+        "parent_title": "Fall of Jerusalem",
+        "parent_type": "event",
+        "object_importance": 98,
+        "retrieval_score": 0.918,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "hebraic_worldview",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55
+      }
+    },
+    {
+      "id": "fall-of-jerusalem:historical_context:0",
+      "claim": "After Zedekiah's revolt, Babylon besieged Jerusalem, breached the city, removed and executed officials, burned the temple and major buildings, dismantled defenses, and deported further inhabitants. The absolute date is conventionally 587/586 BCE because regnal-year and calendar calculations differ.",
+      "category": "history",
+      "source_ids": [
+        "kings-jeremiah-fall-jerusalem",
+        "cogan-tadmor-fall-jerusalem",
+        "bm-21946-fall-boundary"
+      ],
+      "related_entity_ids": [
+        "fall-of-jerusalem"
+      ],
+      "passage_anchors": [
+        "Jeremiah 52:1-30"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "fall-of-jerusalem",
+        "parent_title": "Fall of Jerusalem",
+        "parent_type": "event",
+        "object_importance": 98,
+        "retrieval_score": 0.918,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55
+      }
+    },
+    {
+      "id": "jehoiachin-palace-ration-lists",
+      "claim": "Administrative tablets from Nebuchadnezzar's palace record food or oil allocations to a ruler identified as Jehoiachin, king of Judah, his dependents, and other Judeans.",
+      "category": "history",
+      "source_ids": [
+        "berlin-jehoiachin-ration-list",
+        "weidner-jehoiachin",
+        "alstola-judeans-babylonia",
+        "cogan-tadmor-2-kings-babylon"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Jeremiah 52:31-34"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "babylonian-conquest-deportation-and-judean-diaspora",
+        "parent_title": "Babylonian Conquest, Deportation, and Judean Diaspora",
+        "parent_type": "cultural_background",
+        "object_importance": 97,
+        "retrieval_score": 0.937,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 30,
+        "certainty": "strong_consensus",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 1.0,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "ancient-text",
+        "field": "",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 47
+      }
+    },
+    {
+      "id": "jehoiachin-palace-ration-lists:passage-relevance",
+      "claim": "The tablets provide near-contemporary context for Jehoiachin's continued recognition and palace maintenance in Babylon, while stopping short of confirming the release scene in 2 Kings 25.",
+      "category": "history",
+      "source_ids": [
+        "berlin-jehoiachin-ration-list",
+        "weidner-jehoiachin",
+        "alstola-judeans-babylonia",
+        "cogan-tadmor-2-kings-babylon"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Jeremiah 52:31-34"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "babylonian-conquest-deportation-and-judean-diaspora",
+        "parent_title": "Babylonian Conquest, Deportation, and Judean Diaspora",
+        "parent_type": "cultural_background",
+        "object_importance": 97,
+        "retrieval_score": 0.937,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 30,
+        "certainty": "strong_consensus",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 1.0,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "ancient-text",
+        "field": "",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "significance",
+        "overview_priority": 47,
+        "supports_evidence_ids": [
+          "jehoiachin-palace-ration-lists"
+        ]
+      }
+    },
+    {
+      "id": "jeremiah-long-composition",
+      "claim": "The received book combines poetry, prose sermons, narratives, letters, headings, repeated accounts, restoration collections, nation oracles, and an appendix produced through a long compositional and textual history.",
+      "category": "culture",
+      "source_ids": [
+        "jeremiah-masoretic",
+        "oxford-handbook-jeremiah",
+        "biddle-jeremiah-content",
+        "stulman-jeremiah"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Jeremiah 1:1-52:34"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "jeremiah",
+        "parent_title": "Jeremiah",
+        "parent_type": "book",
+        "object_importance": 96,
+        "retrieval_score": 0.916,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 5100,
+        "certainty": "strong_consensus",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 70
+      }
+    },
+    {
+      "id": "jeremiah-practical-mt-outline",
+      "claim": "Chapters 1; 2-25; 26-29; 30-33; 34-45; 46-51; and 52 provide a practical outline of Masoretic Jeremiah without settling its composition.",
+      "category": "culture",
+      "source_ids": [
+        "jeremiah-masoretic",
+        "biddle-jeremiah-content",
+        "stulman-jeremiah"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Jeremiah 1:1-52:34"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "jeremiah",
+        "parent_title": "Jeremiah",
+        "parent_type": "book",
+        "object_importance": 96,
+        "retrieval_score": 0.916,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 5100,
+        "certainty": "probable",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 55
+      }
+    },
+    {
+      "id": "kings-jeremiah-deportation-sequence",
+      "claim": "Kings and Jeremiah distinguish the 597 BCE removal of Jehoiachin and selected groups from the later destruction of Jerusalem and additional deportations under Zedekiah.",
+      "category": "history",
+      "source_ids": [
+        "kings-jeremiah-exile-text",
+        "grayson-abc",
+        "cogan-tadmor-2-kings-babylon"
+      ],
+      "related_entity_ids": [
+        "fall-of-jerusalem"
+      ],
+      "passage_anchors": [
+        "Jeremiah 52:1-34"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "babylonian-conquest-deportation-and-judean-diaspora",
+        "parent_title": "Babylonian Conquest, Deportation, and Judean Diaspora",
+        "parent_type": "cultural_background",
+        "object_importance": 97,
+        "retrieval_score": 0.937,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "chronological_uncertainty",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.75,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "historical-event",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 102
+      }
+    },
+    {
+      "id": "kings-jeremiah-deportation-sequence:passage-relevance",
+      "claim": "This textual sequence prevents readers of 2 Kings 24-25 from treating the Babylonian exile as a single undifferentiated departure.",
+      "category": "history",
+      "source_ids": [
+        "kings-jeremiah-exile-text",
+        "grayson-abc",
+        "cogan-tadmor-2-kings-babylon"
+      ],
+      "related_entity_ids": [
+        "fall-of-jerusalem"
+      ],
+      "passage_anchors": [
+        "Jeremiah 52:1-34"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "babylonian-conquest-deportation-and-judean-diaspora",
+        "parent_title": "Babylonian Conquest, Deportation, and Judean Diaspora",
+        "parent_type": "cultural_background",
+        "object_importance": 97,
+        "retrieval_score": 0.937,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "chronological_uncertainty",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.75,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "historical-event",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 102,
+        "supports_evidence_ids": [
+          "kings-jeremiah-deportation-sequence"
+        ]
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "Judeans in Babylonia: A Study of Deportees in the Sixth and Fifth Centuries BCE",
+        "author": "Tero Alstola",
+        "publisher": "Brill",
+        "year": 2020,
+        "locator": "Culture and History of the Ancient Near East 109, especially chapters 2-5",
+        "url": "https://doi.org/10.1163/9789004365421",
+        "source_type": "academic-book",
+        "supports": [
+          "jehoiachin-palace-ration-lists",
+          "al-yahudu-judean-community-archive"
+        ],
+        "notes": "Open-access social and economic study emphasizing the limits of the documentary corpus.",
+        "id": "alstola-judeans-babylonia",
+        "canonical_object_ids": [
+          "babylonian-conquest-deportation-and-judean-diaspora"
+        ]
+      },
+      {
+        "title": "Ration list for captives mentioning the king of Judah",
+        "author": "",
+        "publisher": "Staatliche Museen zu Berlin, Vorderasiatisches Museum",
+        "year": null,
+        "locator": "Babylon palace ration-list fragment; museum web object obj-1743721",
+        "url": "https://visit.smb.museum/object/obj-1743721",
+        "source_type": "museum-collection",
+        "supports": [
+          "jehoiachin-palace-ration-lists"
+        ],
+        "notes": "Official collection record describing oil allocations to the king of Judah, his retinue, and other captives.",
+        "id": "berlin-jehoiachin-ration-list",
+        "canonical_object_ids": [
+          "babylonian-conquest-deportation-and-judean-diaspora"
+        ]
+      },
+      {
+        "title": "Jeremiah: Content and Structure",
+        "author": "Mark E. Biddle",
+        "publisher": "Oxford University Press",
+        "year": 2021,
+        "locator": "Oxford Handbook of Jeremiah, chapter 13, pages 235-251",
+        "url": "https://academic.oup.com/edited-volume/37089/chapter-abstract/323191290",
+        "source_type": "academic-book",
+        "supports": [
+          "literary-context",
+          "genre",
+          "structure",
+          "authorship-positions",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "Study of poetry, prose, headings, collections, and the two versions.",
+        "id": "biddle-jeremiah-content",
+        "canonical_object_ids": [
+          "jeremiah"
+        ]
+      },
+      {
+        "title": "Babylonian Chronicle for 605-594 BCE",
+        "author": "",
+        "publisher": "British Museum",
+        "year": null,
+        "locator": "BM 21946; date range 605-594 BCE",
+        "url": "https://www.britishmuseum.org/collection/object/W_1896-0409-51",
+        "source_type": "museum-collection",
+        "supports": [
+          "ancient-near-east-context",
+          "interpretive-notes"
+        ],
+        "notes": "Used to enforce the boundary between the documented 597 BCE capture and the later destruction.",
+        "id": "bm-21946-fall-boundary",
+        "canonical_object_ids": [
+          "fall-of-jerusalem"
+        ]
+      },
+      {
+        "title": "II Kings",
+        "author": "Mordechai Cogan and Hayim Tadmor",
+        "publisher": "Doubleday / Yale University Press",
+        "year": 1988,
+        "locator": "Commentary on 2 Kings 24:1-25:30",
+        "url": "https://yalebooks.yale.edu/book/9780300140743/ii-kings/",
+        "source_type": "academic-book",
+        "supports": [
+          "kings-jeremiah-deportation-sequence",
+          "babylonian-chronicle-597-capture",
+          "jehoiachin-palace-ration-lists"
+        ],
+        "notes": "Historical-critical commentary for the biblical sequence and Babylonian comparisons.",
+        "id": "cogan-tadmor-2-kings-babylon",
+        "canonical_object_ids": [
+          "babylonian-conquest-deportation-and-judean-diaspora"
+        ]
+      },
+      {
+        "title": "II Kings",
+        "author": "Mordechai Cogan and Hayim Tadmor",
+        "publisher": "Doubleday / Yale University Press",
+        "year": 1988,
+        "locator": "Commentary on 2 Kings 24:18-25:30",
+        "url": "https://yalebooks.yale.edu/book/9780300140743/ii-kings/",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "literary-context",
+          "interpretive-notes"
+        ],
+        "notes": "Historical-critical commentary on the final siege, chronology, destruction, and aftermath.",
+        "id": "cogan-tadmor-fall-jerusalem",
+        "canonical_object_ids": [
+          "fall-of-jerusalem"
+        ]
+      },
+      {
+        "title": "Assyrian and Babylonian Chronicles",
+        "author": "A. K. Grayson",
+        "publisher": "J. J. Augustin / Eisenbrauns",
+        "year": 1975,
+        "locator": "Texts from Cuneiform Sources 5, Chronicle 5, reverse lines 11-13",
+        "url": "https://cdli.earth/publications/1685149",
+        "source_type": "academic-book",
+        "supports": [
+          "babylonian-chronicle-597-capture",
+          "kings-jeremiah-deportation-sequence"
+        ],
+        "notes": "Standard edition used for the chronicle's transliteration, translation, and line numbering.",
+        "id": "grayson-abc",
+        "canonical_object_ids": [
+          "babylonian-conquest-deportation-and-judean-diaspora"
+        ]
+      },
+      {
+        "title": "Masoretic Jeremiah",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Jeremiah 1-52 in the Masoretic textual tradition",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "historical-context",
+          "literary-context",
+          "structure",
+          "major-themes",
+          "key-people",
+          "key-places",
+          "key-events",
+          "hebrew-words",
+          "scripture-references",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "Primary received Hebrew canonical text.",
+        "id": "jeremiah-masoretic",
+        "canonical_object_ids": [
+          "jeremiah"
+        ]
+      },
+      {
+        "title": "Second Kings 24-25; Jeremiah 29, 39, and 52; Ezekiel 1",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "2 Kings 24:1-25:30; Jeremiah 29:1-14; 39:1-10; 52:1-34; Ezekiel 1:1-3",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "kings-jeremiah-deportation-sequence",
+          "babylonian-chronicle-597-capture",
+          "jehoiachin-palace-ration-lists",
+          "al-yahudu-judean-community-archive"
+        ],
+        "notes": "Primary biblical witnesses; no modern translation is reproduced.",
+        "id": "kings-jeremiah-exile-text",
+        "canonical_object_ids": [
+          "babylonian-conquest-deportation-and-judean-diaspora"
+        ]
+      },
+      {
+        "title": "Second Kings 25; Jeremiah 39 and 52; Lamentations 1",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "2 Kings 25:1-21; Jeremiah 39:1-10; 52:1-30; Lamentations 1:1-22",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "historical-context",
+          "literary-context",
+          "interpretive-notes"
+        ],
+        "notes": "Primary biblical witnesses in prose and poetry.",
+        "id": "kings-jeremiah-fall-jerusalem",
+        "canonical_object_ids": [
+          "fall-of-jerusalem"
+        ]
+      },
+      {
+        "title": "The Oxford Handbook of Jeremiah",
+        "author": "Louis Stulman and Edward Silver, editors",
+        "publisher": "Oxford University Press",
+        "year": 2021,
+        "locator": "Whole volume",
+        "url": "https://academic.oup.com/edited-volume/37089",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context",
+          "literary-context",
+          "authorship-positions",
+          "second-temple-context",
+          "interpretive-disputes",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "Multi-author scholarly reference work spanning history, text, themes, reception, and ethics.",
+        "id": "oxford-handbook-jeremiah",
+        "canonical_object_ids": [
+          "jeremiah"
+        ]
+      },
+      {
+        "title": "Abingdon Old Testament Commentaries: Jeremiah",
+        "author": "Louis Stulman",
+        "publisher": "Abingdon Press",
+        "year": 2005,
+        "locator": "Introduction and commentary",
+        "url": "https://www.abingdonpress.com/product/9780687057962/",
+        "source_type": "academic-book",
+        "supports": [
+          "summary",
+          "literary-context",
+          "structure",
+          "major-themes",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "Final-form and prose-sensitive critical commentary.",
+        "id": "stulman-jeremiah",
+        "canonical_object_ids": [
+          "jeremiah"
+        ]
+      },
+      {
+        "title": "Jojachin, K\u00f6nig von Juda, in babylonischen Keilschrifttexten",
+        "author": "Ernst F. Weidner",
+        "publisher": "M\u00e9langes syriens offerts \u00e0 Monsieur Ren\u00e9 Dussaud II",
+        "year": 1939,
+        "locator": "Biblioth\u00e8que arch\u00e9ologique et historique 30.2, pp. 923-935, especially Babylon 28122",
+        "url": "https://vergil.uni-tuebingen.de/keibi/Record/KEI00106163",
+        "source_type": "journal-article",
+        "supports": [
+          "jehoiachin-palace-ration-lists"
+        ],
+        "notes": "Initial scholarly publication of the relevant Babylon palace texts.",
+        "id": "weidner-jehoiachin",
+        "canonical_object_ids": [
+          "babylonian-conquest-deportation-and-judean-diaspora"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "babylonian-conquest-deportation-and-judean-diaspora",
+        "type": "cultural_background",
+        "title": "Babylonian Conquest, Deportation, and Judean Diaspora",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.937
+      },
+      {
+        "id": "fall-of-jerusalem",
+        "type": "event",
+        "title": "Fall of Jerusalem",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.918
+      },
+      {
+        "id": "jeremiah",
+        "type": "book",
+        "title": "Jeremiah",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.916
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "48588109dce4a5b57ba7d0599da17c4b2e21d728d955aff60e6c320d1375ea7f",
+  "evidence_hash_version": "2"
+}

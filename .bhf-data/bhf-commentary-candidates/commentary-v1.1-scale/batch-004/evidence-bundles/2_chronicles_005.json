@@ -1,0 +1,522 @@
+{
+  "passage_ref": "2 Chronicles 5",
+  "entities": {
+    "people": [],
+    "places": [],
+    "groups": [],
+    "events": [
+      {
+        "id": "dedication-of-solomons-temple",
+        "title": "Dedication of Solomon's Temple",
+        "type": "event",
+        "aliases": [
+          "solomon temple dedication",
+          "dedication of the temple",
+          "1 kings 8",
+          "solomon prayer temple"
+        ],
+        "metadata": {
+          "summary": "Solomon dedicates the temple in Jerusalem with prayer, sacrifice, and the ark placed in the Most Holy Place.",
+          "importance": 88,
+          "retrieval_score": 0.908,
+          "ancient_names": [],
+          "modern_identification": "",
+          "region": "",
+          "terrain": "",
+          "elevation": null,
+          "archaeology": [],
+          "related_passages": [
+            "1 Kings 8:1-66",
+            "2 Chronicles 5:1-14",
+            "2 Chronicles 6:1-42",
+            "2 Chronicles 7:1-10"
+          ]
+        }
+      },
+      {
+        "id": "solomon-builds-the-temple",
+        "title": "Solomon Builds the Temple",
+        "type": "event",
+        "aliases": [
+          "what happened in solomon builds the temple",
+          "tell me about solomon builds the temple",
+          "why is solomon builds the temple important"
+        ],
+        "metadata": {
+          "summary": "Solomon Builds the Temple is a royal or kingdom event that shapes Israel's monarchy, temple life, or royal hope.",
+          "importance": 80,
+          "retrieval_score": 0.9,
+          "ancient_names": [],
+          "modern_identification": "",
+          "region": "",
+          "terrain": "",
+          "elevation": null,
+          "archaeology": [],
+          "related_passages": [
+            "2 Samuel 7:1-17",
+            "1 Kings 6:1-14",
+            "2 Kings 25:8-17",
+            "2 Chronicles 5:1-14"
+          ]
+        }
+      }
+    ],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "dedication-of-solomons-temple:ancient_near_east_context:0",
+      "claim": "Temple dedication ceremonies were major royal events, but Kings evaluates the temple by covenant prayer and divine presence.",
+      "category": "culture",
+      "source_ids": [
+        "1-kings-8-1-66",
+        "2-chronicles-5-1-14",
+        "2-chronicles-6-1-42",
+        "2-chronicles-7-1-10",
+        "dedication-of-solomons-temple-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "dedication-of-solomons-temple"
+      ],
+      "passage_anchors": [
+        "2 Chronicles 5:1-14"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "dedication-of-solomons-temple",
+        "parent_title": "Dedication of Solomon's Temple",
+        "parent_type": "event",
+        "object_importance": 88,
+        "retrieval_score": 0.908,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55
+      }
+    },
+    {
+      "id": "dedication-of-solomons-temple:historical_context:0",
+      "claim": "The event belongs to the united monarchy, when royal power, worship, and Jerusalem become closely linked.",
+      "category": "history",
+      "source_ids": [
+        "1-kings-8-1-66",
+        "2-chronicles-5-1-14",
+        "2-chronicles-6-1-42",
+        "2-chronicles-7-1-10",
+        "dedication-of-solomons-temple-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "dedication-of-solomons-temple"
+      ],
+      "passage_anchors": [
+        "2 Chronicles 5:1-14"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "dedication-of-solomons-temple",
+        "parent_title": "Dedication of Solomon's Temple",
+        "parent_type": "event",
+        "object_importance": 88,
+        "retrieval_score": 0.908,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55
+      }
+    },
+    {
+      "id": "second-chronicles-solomon-temple",
+      "claim": "Second Chronicles 1-7 portrays Solomon's wisdom and temple building as the completion of David's preparations, culminating in ark, glory, dedication prayer, fire, celebration, divine promise, and warning.",
+      "category": "history",
+      "source_ids": [
+        "2-chronicles-1-36",
+        "klein-second-chronicles"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "2 Chronicles 5:1-14"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "2-chronicles",
+        "parent_title": "2 Chronicles",
+        "parent_type": "book",
+        "object_importance": 86,
+        "retrieval_score": 0.906,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "textually_explicit",
+        "dispute_status": "not_disputed",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 118
+      }
+    },
+    {
+      "id": "solomon-builds-the-temple:ancient_near_east_context:0",
+      "claim": "Royal administration, dynastic succession, and state religion shape the background.",
+      "category": "culture",
+      "source_ids": [
+        "2-samuel",
+        "1-kings",
+        "2-kings",
+        "2-chronicles",
+        "solomon-builds-the-temple-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "solomon-builds-the-temple"
+      ],
+      "passage_anchors": [
+        "2 Chronicles 5:1-14"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "solomon-builds-the-temple",
+        "parent_title": "Solomon Builds the Temple",
+        "parent_type": "event",
+        "object_importance": 80,
+        "retrieval_score": 0.9,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55
+      }
+    },
+    {
+      "id": "solomon-builds-the-temple:historical_context:0",
+      "claim": "The event belongs to the rise and development of Israel's monarchy and its theological consequences.",
+      "category": "history",
+      "source_ids": [
+        "2-samuel",
+        "1-kings",
+        "2-kings",
+        "2-chronicles",
+        "solomon-builds-the-temple-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "solomon-builds-the-temple"
+      ],
+      "passage_anchors": [
+        "2 Chronicles 5:1-14"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "solomon-builds-the-temple",
+        "parent_title": "Solomon Builds the Temple",
+        "parent_type": "event",
+        "object_importance": 80,
+        "retrieval_score": 0.9,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "1 Kings",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "1-kings",
+        "canonical_object_ids": [
+          "solomon-builds-the-temple"
+        ]
+      },
+      {
+        "title": "1 Kings 8:1-66",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "temple dedication",
+        "id": "1-kings-8-1-66",
+        "canonical_object_ids": [
+          "dedication-of-solomons-temple"
+        ]
+      },
+      {
+        "title": "2 Chronicles",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "2-chronicles",
+        "canonical_object_ids": [
+          "solomon-builds-the-temple"
+        ]
+      },
+      {
+        "title": "2 Chronicles 1-36",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "2 Chronicles 1:1-36:23",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "structure",
+          "key-people",
+          "key-places",
+          "key-events",
+          "scripture-references",
+          "interpretive-notes",
+          "second-chronicles-solomon-temple",
+          "second-chronicles-fire-warning",
+          "second-chronicles-judah-focus",
+          "second-chronicles-seek-humble-pattern",
+          "second-chronicles-jehoshaphat-prayer",
+          "second-chronicles-hezekiah-passover",
+          "second-chronicles-manasseh-humbles",
+          "second-chronicles-josiah-reform",
+          "second-chronicles-exile-cyrus"
+        ],
+        "notes": "Primary biblical text.",
+        "id": "2-chronicles-1-36",
+        "canonical_object_ids": [
+          "2-chronicles"
+        ]
+      },
+      {
+        "title": "2 Chronicles 5:1-14",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "ark and glory",
+        "id": "2-chronicles-5-1-14",
+        "canonical_object_ids": [
+          "dedication-of-solomons-temple"
+        ]
+      },
+      {
+        "title": "2 Chronicles 6:1-42",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "Solomon's prayer",
+        "id": "2-chronicles-6-1-42",
+        "canonical_object_ids": [
+          "dedication-of-solomons-temple"
+        ]
+      },
+      {
+        "title": "2 Chronicles 7:1-10",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "fire and festival",
+        "id": "2-chronicles-7-1-10",
+        "canonical_object_ids": [
+          "dedication-of-solomons-temple"
+        ]
+      },
+      {
+        "title": "2 Kings",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "2-kings",
+        "canonical_object_ids": [
+          "solomon-builds-the-temple"
+        ]
+      },
+      {
+        "title": "2 Samuel",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "2-samuel",
+        "canonical_object_ids": [
+          "solomon-builds-the-temple"
+        ]
+      },
+      {
+        "title": "Canonical historical orientation for Dedication of Solomon's Temple",
+        "author": "",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "id": "dedication-of-solomons-temple-historical-orientation",
+        "canonical_object_ids": [
+          "dedication-of-solomons-temple"
+        ]
+      },
+      {
+        "title": "2 Chronicles",
+        "author": "Ralph W. Klein",
+        "publisher": "Fortress Press",
+        "year": 2012,
+        "locator": "Hermeneia introduction, translation, notes, and commentary",
+        "url": "https://ms.fortresspress.com/downloads/9780800661014Intro.pdf",
+        "source_type": "reference-work",
+        "supports": [
+          "authorship-positions",
+          "date-ranges",
+          "historical-context",
+          "literary-context",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "Technical critical commentary on text, historiography, theology, sources, historical setting, and reception.",
+        "id": "klein-second-chronicles",
+        "canonical_object_ids": [
+          "2-chronicles"
+        ]
+      },
+      {
+        "title": "Canonical historical orientation for Solomon Builds the Temple",
+        "author": "",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "id": "solomon-builds-the-temple-historical-orientation",
+        "canonical_object_ids": [
+          "solomon-builds-the-temple"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "2-chronicles",
+        "type": "book",
+        "title": "2 Chronicles",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.906
+      },
+      {
+        "id": "dedication-of-solomons-temple",
+        "type": "event",
+        "title": "Dedication of Solomon's Temple",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.908
+      },
+      {
+        "id": "solomon-builds-the-temple",
+        "type": "event",
+        "title": "Solomon Builds the Temple",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.9
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "b5a312bc4e0b60dd6713cd556551ba339a885508c8a2dc7caaa6d384990ae5df",
+  "evidence_hash_version": "2"
+}

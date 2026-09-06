@@ -1,0 +1,733 @@
+{
+  "passage_ref": "1 Kings 9",
+  "entities": {
+    "people": [],
+    "places": [],
+    "groups": [],
+    "events": [],
+    "artifacts": [
+      {
+        "id": "gezer-excavations",
+        "title": "Gezer Excavations",
+        "type": "archaeology",
+        "aliases": [
+          "gezer excavations artifact",
+          "gezer excavations discovery",
+          "gezer excavations excavation",
+          "gezer excavations find"
+        ],
+        "metadata": {
+          "summary": "A border city near the coastal plain and hill country with strong Bronze and Iron Age significance.",
+          "importance": 90,
+          "retrieval_score": 0.91,
+          "ancient_names": [],
+          "modern_identification": "",
+          "region": "",
+          "terrain": "",
+          "elevation": null,
+          "archaeology": [],
+          "related_passages": [
+            "Joshua 10",
+            "1 Kings 9",
+            "1 Chronicles 7"
+          ]
+        }
+      },
+      {
+        "id": "hazor-excavations",
+        "title": "Hazor Excavations",
+        "type": "archaeology",
+        "aliases": [
+          "hazor excavations artifact",
+          "hazor excavations discovery",
+          "hazor excavations excavation",
+          "hazor excavations find"
+        ],
+        "metadata": {
+          "summary": "A major northern city and administrative center with impressive Bronze and Iron Age remains.",
+          "importance": 90,
+          "retrieval_score": 0.91,
+          "ancient_names": [],
+          "modern_identification": "",
+          "region": "",
+          "terrain": "",
+          "elevation": null,
+          "archaeology": [],
+          "related_passages": [
+            "Joshua 11",
+            "1 Kings 9",
+            "2 Kings 15"
+          ]
+        }
+      },
+      {
+        "id": "megiddo-excavations",
+        "title": "Megiddo Excavations",
+        "type": "archaeology",
+        "aliases": [
+          "megiddo excavations artifact",
+          "megiddo excavations discovery",
+          "megiddo excavations excavation",
+          "megiddo excavations find"
+        ],
+        "metadata": {
+          "summary": "Megiddo stratigraphic sequence illuminates the biblical world through material remains and historical context.",
+          "importance": 90,
+          "retrieval_score": 0.91,
+          "ancient_names": [],
+          "modern_identification": "",
+          "region": "",
+          "terrain": "",
+          "elevation": null,
+          "archaeology": [],
+          "related_passages": [
+            "Joshua 12:7-24",
+            "1 Kings 9:15-19",
+            "Revelation 16:12-16"
+          ]
+        }
+      }
+    ]
+  },
+  "evidence_items": [
+    {
+      "id": "1-kings:interpretive_note:0",
+      "claim": "The scale, administration, chronology, and archaeological profile of Solomon's kingdom remain disputed; monumental remains may illuminate Iron Age state formation without independently proving every attribution in Kings.",
+      "category": "culture",
+      "source_ids": [
+        "1-kings-1-22",
+        "cogan-first-kings",
+        "zondervan-kings-chronicles-backgrounds"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Kings 9:15-28"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "1-kings",
+        "parent_title": "1 Kings",
+        "parent_type": "book",
+        "object_importance": 95,
+        "retrieval_score": 0.915,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 14,
+        "certainty": "probable",
+        "dispute_status": "archaeological_uncertainty",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "historical-context",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    },
+    {
+      "id": "first-kings-temple-prayer-warning",
+      "claim": "The temple dedication centers divine name, prayer, forgiveness, and mission to foreigners, while the following warning denies that temple or dynasty guarantees immunity from judgment.",
+      "category": "culture",
+      "source_ids": [
+        "1-kings-1-22",
+        "cogan-first-kings",
+        "rice-first-kings"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Kings 9:1-9"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "1-kings",
+        "parent_title": "1 Kings",
+        "parent_type": "book",
+        "object_importance": 95,
+        "retrieval_score": 0.915,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_theology",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 110
+      }
+    },
+    {
+      "id": "gezer-excavations:ancient_near_east_context:0",
+      "claim": "Ancient background for Gezer Excavations includes inscriptions, material culture, excavation layers, and imperial administration; the entry ties that world to Joshua 10, 1 Kings 9, joshua, and 1-kings without letting comparison replace the biblical witness.",
+      "category": "culture",
+      "source_ids": [
+        "gezer",
+        "tell-border-city",
+        "joshua-10",
+        "1-kings-9",
+        "excavation-report-and-stratigraphic-study"
+      ],
+      "related_entity_ids": [
+        "gezer-excavations"
+      ],
+      "passage_anchors": [
+        "1 Kings 9"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "gezer-excavations",
+        "parent_title": "Gezer Excavations",
+        "parent_type": "archaeology",
+        "object_importance": 90,
+        "retrieval_score": 0.91,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "chapter",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "gezer-excavations:historical_context:0",
+      "claim": "Gezer helps illuminate border control, agricultural life, and royal building programs.",
+      "category": "history",
+      "source_ids": [
+        "gezer",
+        "tell-border-city",
+        "joshua-10",
+        "1-kings-9",
+        "excavation-report-and-stratigraphic-study"
+      ],
+      "related_entity_ids": [
+        "gezer-excavations"
+      ],
+      "passage_anchors": [
+        "1 Kings 9"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "gezer-excavations",
+        "parent_title": "Gezer Excavations",
+        "parent_type": "archaeology",
+        "object_importance": 90,
+        "retrieval_score": 0.91,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "chapter",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "hazor-excavations:ancient_near_east_context:0",
+      "claim": "Ancient background for Hazor Excavations includes inscriptions, material culture, excavation layers, and imperial administration; the entry ties that world to Joshua 11, 1 Kings 9, joshua, and 1-kings without letting comparison replace the biblical witness.",
+      "category": "culture",
+      "source_ids": [
+        "hazor",
+        "royal-city-tell",
+        "joshua-11",
+        "1-kings-9",
+        "excavation-report-and-stratigraphic-study"
+      ],
+      "related_entity_ids": [
+        "hazor-excavations"
+      ],
+      "passage_anchors": [
+        "1 Kings 9"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "hazor-excavations",
+        "parent_title": "Hazor Excavations",
+        "parent_type": "archaeology",
+        "object_importance": 90,
+        "retrieval_score": 0.91,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "chapter",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "hazor-excavations:historical_context:0",
+      "claim": "Hazor is crucial for understanding northern Canaanite and Israelite urbanism.",
+      "category": "history",
+      "source_ids": [
+        "hazor",
+        "royal-city-tell",
+        "joshua-11",
+        "1-kings-9",
+        "excavation-report-and-stratigraphic-study"
+      ],
+      "related_entity_ids": [
+        "hazor-excavations"
+      ],
+      "passage_anchors": [
+        "1 Kings 9"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "hazor-excavations",
+        "parent_title": "Hazor Excavations",
+        "parent_type": "archaeology",
+        "object_importance": 90,
+        "retrieval_score": 0.91,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "chapter",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "megiddo-excavations:ancient_near_east_context:0",
+      "claim": "Ancient background for Megiddo Excavations includes inscriptions, material culture, excavation layers, and imperial administration; the entry ties that world to Joshua 12:7-24, 1 Kings 9:15-19, joshua, and 1-kings without letting comparison replace the biblical witness.",
+      "category": "culture",
+      "source_ids": [
+        "megiddo-stratigraphic-sequence",
+        "joshua-12-7-24",
+        "1-kings-9-15-19",
+        "excavation-report-and-stratigraphic-study"
+      ],
+      "related_entity_ids": [
+        "megiddo-excavations"
+      ],
+      "passage_anchors": [
+        "1 Kings 9:15-19"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "megiddo-excavations",
+        "parent_title": "Megiddo Excavations",
+        "parent_type": "archaeology",
+        "object_importance": 90,
+        "retrieval_score": 0.91,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 14,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "megiddo-excavations:historical_context:0",
+      "claim": "Megiddo Excavations helps anchor the biblical world in physical evidence and archaeological context.",
+      "category": "history",
+      "source_ids": [
+        "megiddo-stratigraphic-sequence",
+        "joshua-12-7-24",
+        "1-kings-9-15-19",
+        "excavation-report-and-stratigraphic-study"
+      ],
+      "related_entity_ids": [
+        "megiddo-excavations"
+      ],
+      "passage_anchors": [
+        "1 Kings 9:15-19"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "megiddo-excavations",
+        "parent_title": "Megiddo Excavations",
+        "parent_type": "archaeology",
+        "object_importance": 90,
+        "retrieval_score": 0.91,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 14,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "1 Kings 1-22",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "1 Kings 1:1-22:53",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "structure",
+          "key-people",
+          "key-places",
+          "key-events",
+          "scripture-references",
+          "interpretive-notes",
+          "first-kings-literary-movement",
+          "first-kings-solomon-discernment",
+          "first-kings-temple-prayer-warning",
+          "first-kings-kingdom-division",
+          "first-kings-carmel-confession",
+          "first-kings-naboth-condemnation"
+        ],
+        "notes": "Primary biblical text.",
+        "id": "1-kings-1-22",
+        "canonical_object_ids": [
+          "1-kings"
+        ]
+      },
+      {
+        "title": "1 Kings 9",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "1-kings-9",
+        "canonical_object_ids": [
+          "gezer-excavations",
+          "hazor-excavations"
+        ]
+      },
+      {
+        "title": "1 Kings 9:15-19",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "1-kings-9-15-19",
+        "canonical_object_ids": [
+          "megiddo-excavations"
+        ]
+      },
+      {
+        "title": "I Kings",
+        "author": "Mordechai Cogan",
+        "publisher": "Yale University Press",
+        "year": 2001,
+        "locator": "Anchor Yale Bible introduction, translation, notes, and commentary",
+        "url": "https://yalebooks.yale.edu/9780300140538/i-kings/",
+        "source_type": "reference-work",
+        "supports": [
+          "authorship-positions",
+          "date-ranges",
+          "historical-context",
+          "literary-context",
+          "hebrew-words",
+          "interpretive-notes",
+          "first-kings-literary-movement",
+          "first-kings-solomon-discernment",
+          "first-kings-temple-prayer-warning",
+          "first-kings-kingdom-division",
+          "first-kings-naboth-condemnation"
+        ],
+        "notes": "Technical commentary emphasizing Hebrew text, literary composition, regnal and political history, and external evidence.",
+        "id": "cogan-first-kings",
+        "canonical_object_ids": [
+          "1-kings"
+        ]
+      },
+      {
+        "title": "Excavation report and stratigraphic study",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [],
+        "notes": "",
+        "id": "excavation-report-and-stratigraphic-study",
+        "canonical_object_ids": [
+          "gezer-excavations",
+          "hazor-excavations",
+          "megiddo-excavations"
+        ]
+      },
+      {
+        "title": "Gezer",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [],
+        "notes": "",
+        "id": "gezer",
+        "canonical_object_ids": [
+          "gezer-excavations"
+        ]
+      },
+      {
+        "title": "Hazor",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [],
+        "notes": "",
+        "id": "hazor",
+        "canonical_object_ids": [
+          "hazor-excavations"
+        ]
+      },
+      {
+        "title": "Joshua 10",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "joshua-10",
+        "canonical_object_ids": [
+          "gezer-excavations"
+        ]
+      },
+      {
+        "title": "Joshua 11",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "joshua-11",
+        "canonical_object_ids": [
+          "hazor-excavations"
+        ]
+      },
+      {
+        "title": "Joshua 12:7-24",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "joshua-12-7-24",
+        "canonical_object_ids": [
+          "megiddo-excavations"
+        ]
+      },
+      {
+        "title": "Megiddo stratigraphic sequence",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [],
+        "notes": "",
+        "id": "megiddo-stratigraphic-sequence",
+        "canonical_object_ids": [
+          "megiddo-excavations"
+        ]
+      },
+      {
+        "title": "1 Kings: Nations under God",
+        "author": "Gene Rice",
+        "publisher": "Eerdmans",
+        "year": 1990,
+        "locator": "Introduction and commentary on 1 Kings 1-22",
+        "url": "https://www.eerdmans.com/9780802804921/1-kings/",
+        "source_type": "reference-work",
+        "supports": [
+          "canonical-role",
+          "covenantal-significance",
+          "literary-context",
+          "interpretive-notes",
+          "first-kings-temple-prayer-warning",
+          "first-kings-carmel-confession"
+        ],
+        "notes": "Theological commentary attending to political existence, divided loyalty, commandment, repentance, and reform.",
+        "id": "rice-first-kings",
+        "canonical_object_ids": [
+          "1-kings"
+        ]
+      },
+      {
+        "title": "Royal city / tell",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [],
+        "notes": "",
+        "id": "royal-city-tell",
+        "canonical_object_ids": [
+          "hazor-excavations"
+        ]
+      },
+      {
+        "title": "Tell / border city",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [],
+        "notes": "",
+        "id": "tell-border-city",
+        "canonical_object_ids": [
+          "gezer-excavations"
+        ]
+      },
+      {
+        "title": "Zondervan Illustrated Bible Backgrounds Commentary: 1 and 2 Kings, 1 and 2 Chronicles, Ezra, Nehemiah, Esther",
+        "author": "John H. Walton, general editor; John M. Monson, Iain Provan, and other contributors",
+        "publisher": "Zondervan",
+        "year": 2009,
+        "locator": "1 Kings commentary and background notes",
+        "url": "https://zondervanacademic.com/products/1-and-2-kings-1-and-2-chronicles-ezra-nehemiah-esther",
+        "source_type": "reference-work",
+        "supports": [
+          "ancient-near-east-context",
+          "archaeology",
+          "historical-context",
+          "maps",
+          "interpretive-notes"
+        ],
+        "notes": "Passage-level textual, artifactual, geographical, historical, and cultural background.",
+        "id": "zondervan-kings-chronicles-backgrounds",
+        "canonical_object_ids": [
+          "1-kings"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "1-kings",
+        "type": "book",
+        "title": "1 Kings",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.915
+      },
+      {
+        "id": "gezer-excavations",
+        "type": "archaeology",
+        "title": "Gezer Excavations",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.91
+      },
+      {
+        "id": "hazor-excavations",
+        "type": "archaeology",
+        "title": "Hazor Excavations",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.91
+      },
+      {
+        "id": "megiddo-excavations",
+        "type": "archaeology",
+        "title": "Megiddo Excavations",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.91
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "b399fef13d52db844b56de57a1f16c1273ba8433c43a2a2bba86d3f8ee58403f",
+  "evidence_hash_version": "2"
+}

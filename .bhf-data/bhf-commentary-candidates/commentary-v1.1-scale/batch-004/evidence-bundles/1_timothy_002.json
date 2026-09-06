@@ -1,0 +1,946 @@
+{
+  "passage_ref": "1 Timothy 2",
+  "entities": {
+    "people": [],
+    "places": [],
+    "groups": [],
+    "events": [],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "1-timothy:interpretive_note:0",
+      "claim": "Authorship: the text names Paul, but vocabulary, style, theology, biography, and institutional setting sustain major disagreement among qualified scholars.",
+      "category": "culture",
+      "source_ids": [
+        "1tim-greek",
+        "marshall",
+        "towner",
+        "johnson",
+        "collins"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Timothy 2:7"
+      ],
+      "confidence": "low",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "1-timothy",
+        "parent_title": "1 Timothy",
+        "parent_type": "book",
+        "object_importance": 80,
+        "retrieval_score": 0.92,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 6,
+        "certainty": "disputed",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "historical-context",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 67
+      }
+    },
+    {
+      "id": "1-timothy:interpretive_note:10",
+      "claim": "Mission: ransom and herald language cannot legitimate forced conversion, colonial mission, cultural erasure, or religious violence.",
+      "category": "culture",
+      "source_ids": [
+        "1tim-greek",
+        "ehrensperger",
+        "huizenga"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Timothy 2:5-7"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "1-timothy",
+        "parent_title": "1 Timothy",
+        "parent_type": "book",
+        "object_importance": 80,
+        "retrieval_score": 0.92,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 4,
+        "certainty": "textually_explicit",
+        "dispute_status": "denominational_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "interpretive-caution",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 102
+      }
+    },
+    {
+      "id": "1-timothy:interpretive_note:11",
+      "claim": "Dress: the contrast targets costly display and commends good works; it should not support body shame, purity surveillance, class contempt, or control of women's bodies.",
+      "category": "culture",
+      "source_ids": [
+        "1tim-greek",
+        "winter",
+        "osiek-macdonald",
+        "huizenga"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Timothy 2:9-10"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "1-timothy",
+        "parent_title": "1 Timothy",
+        "parent_type": "book",
+        "object_importance": 80,
+        "retrieval_score": 0.92,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 8,
+        "certainty": "probable",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "interpretive-caution",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    },
+    {
+      "id": "1-timothy:interpretive_note:12",
+      "claim": "Gender: the command that a woman learn is explicit, but the scope and duration of restrictions on teaching and authentein are disputed; silencing women through misogyny is not a neutral reading.",
+      "category": "culture",
+      "source_ids": [
+        "1tim-greek",
+        "bdag",
+        "westfall",
+        "huizenga",
+        "winter"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Timothy 2:11-12"
+      ],
+      "confidence": "low",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "1-timothy",
+        "parent_title": "1 Timothy",
+        "parent_type": "book",
+        "object_importance": 80,
+        "retrieval_score": 0.92,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 10,
+        "certainty": "disputed",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "interpretive-caution",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    },
+    {
+      "id": "1-timothy:interpretive_note:13",
+      "claim": "Authority: authentein occurs only here in the New Testament; its force cannot be settled by etymology alone, and it cannot authorize authoritarian leadership by men.",
+      "category": "culture",
+      "source_ids": [
+        "1tim-greek",
+        "bdag",
+        "westfall"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Timothy 2:12"
+      ],
+      "confidence": "low",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "1-timothy",
+        "parent_title": "1 Timothy",
+        "parent_type": "book",
+        "object_importance": 80,
+        "retrieval_score": 0.92,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 11,
+        "certainty": "disputed",
+        "dispute_status": "lexical_uncertainty",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "interpretive-caution",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    },
+    {
+      "id": "1-timothy:interpretive_note:14",
+      "claim": "Creation argument: Adam's formation and Eve's deception are invoked by the epistolary voice, but how this grounds a local or universal rule remains disputed.",
+      "category": "culture",
+      "source_ids": [
+        "1tim-greek",
+        "nets-lxx",
+        "westfall",
+        "huizenga"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Timothy 2:13-14"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "1-timothy",
+        "parent_title": "1 Timothy",
+        "parent_type": "book",
+        "object_importance": 80,
+        "retrieval_score": 0.92,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 12,
+        "certainty": "textually_explicit",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "theological-interpretation",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    },
+    {
+      "id": "1-timothy:interpretive_note:15",
+      "claim": "Childbearing: saved through childbearing has major lexical and theological uncertainty and must not imply that pregnancy is required, medically safe, or a cure for sin.",
+      "category": "culture",
+      "source_ids": [
+        "1tim-greek",
+        "marshall",
+        "westfall",
+        "huizenga"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Timothy 2:15"
+      ],
+      "confidence": "low",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "1-timothy",
+        "parent_title": "1 Timothy",
+        "parent_type": "book",
+        "object_importance": 80,
+        "retrieval_score": 0.92,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 14,
+        "certainty": "disputed",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "interpretive-caution",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    },
+    {
+      "id": "1-timothy:interpretive_note:42",
+      "claim": "Application: leadership, prayer, mission, wealth, and household teaching must resist nationalism, militarism, colonial domination, public shaming, and ecological neglect while protecting vulnerable people.",
+      "category": "economics",
+      "source_ids": [
+        "1tim-greek",
+        "huizenga",
+        "ehrensperger"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Timothy 2:1-7"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "1-timothy",
+        "parent_title": "1 Timothy",
+        "parent_type": "book",
+        "object_importance": 80,
+        "retrieval_score": 0.92,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "tradition_dependent",
+        "dispute_status": "denominational_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "interpretive-caution",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 82
+      }
+    },
+    {
+      "id": "1-timothy:interpretive_note:8",
+      "claim": "Prayer: intercession for kings seeks a quiet, dignified life and must not be turned into sacral nationalism, militarism, ruler worship, or partisan loyalty.",
+      "category": "culture",
+      "source_ids": [
+        "1tim-greek",
+        "johnson",
+        "aune-literary"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Timothy 2:1-4"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "1-timothy",
+        "parent_title": "1 Timothy",
+        "parent_type": "book",
+        "object_importance": 80,
+        "retrieval_score": 0.92,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "textually_explicit",
+        "dispute_status": "denominational_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "interpretive-caution",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    },
+    {
+      "id": "1-timothy:interpretive_note:9",
+      "claim": "Salvation: God's desire that all be saved and the one-mediator claim are explicit, while universalist, exclusivist, and other systematic conclusions remain contested.",
+      "category": "culture",
+      "source_ids": [
+        "1tim-greek",
+        "marshall",
+        "johnson"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Timothy 2:3-6"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "1-timothy",
+        "parent_title": "1 Timothy",
+        "parent_type": "book",
+        "object_importance": 80,
+        "retrieval_score": 0.92,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 2,
+        "certainty": "textually_explicit",
+        "dispute_status": "denominational_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "theological-interpretation",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    },
+    {
+      "id": "1tim-authentein",
+      "claim": "Authentein is a rare verb linked with teaching in 2:12, and proposals range from neutral exercise of authority to domineering or unauthorized action.",
+      "category": "language",
+      "source_ids": [
+        "1tim-greek",
+        "bdag",
+        "westfall",
+        "marshall"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Timothy 2:12"
+      ],
+      "confidence": "low",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "1-timothy",
+        "parent_title": "1 Timothy",
+        "parent_type": "book",
+        "object_importance": 80,
+        "retrieval_score": 0.92,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 11,
+        "certainty": "disputed",
+        "dispute_status": "lexical_uncertainty",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "lexical",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 81
+      }
+    },
+    {
+      "id": "1tim-childbearing",
+      "claim": "The statement that she or women will be saved through childbearing if they remain in faith, love, holiness, and self-control has no undisputed interpretation.",
+      "category": "culture",
+      "source_ids": [
+        "1tim-greek",
+        "marshall",
+        "westfall",
+        "huizenga"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Timothy 2:15"
+      ],
+      "confidence": "low",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "1-timothy",
+        "parent_title": "1 Timothy",
+        "parent_type": "book",
+        "object_importance": 80,
+        "retrieval_score": 0.92,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 14,
+        "certainty": "disputed",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_theology",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "1tim-creation",
+      "claim": "The rationale invokes Adam's prior formation and Eve's deception, but interpreters dispute how the Genesis reading supports the command.",
+      "category": "culture",
+      "source_ids": [
+        "1tim-greek",
+        "nets-lxx",
+        "westfall",
+        "huizenga"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Timothy 2:13-14"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "1-timothy",
+        "parent_title": "1 Timothy",
+        "parent_type": "book",
+        "object_importance": 80,
+        "retrieval_score": 0.92,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 12,
+        "certainty": "textually_explicit",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_theology",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "1tim-dress",
+      "claim": "Women are urged toward respectable dress, modesty, self-control, and good works rather than costly status display.",
+      "category": "culture",
+      "source_ids": [
+        "1tim-greek",
+        "winter",
+        "osiek-macdonald"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Timothy 2:9-10"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "1-timothy",
+        "parent_title": "1 Timothy",
+        "parent_type": "book",
+        "object_importance": 80,
+        "retrieval_score": 0.92,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 8,
+        "certainty": "probable",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "historical_cultural",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "1tim-mediator",
+      "claim": "The text joins one God, one mediator Christ Jesus, his self-giving ransom for all, and the desire that all be saved.",
+      "category": "culture",
+      "source_ids": [
+        "1tim-greek",
+        "marshall",
+        "johnson"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Timothy 2:3-7"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "1-timothy",
+        "parent_title": "1 Timothy",
+        "parent_type": "book",
+        "object_importance": 80,
+        "retrieval_score": 0.92,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 2,
+        "certainty": "textually_explicit",
+        "dispute_status": "denominational_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_theology",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "1tim-prayer",
+      "claim": "The letter calls for varied prayer for all people, including rulers, toward peaceful and dignified life.",
+      "category": "history",
+      "source_ids": [
+        "1tim-greek",
+        "johnson"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Timothy 2:1-4"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "1-timothy",
+        "parent_title": "1 Timothy",
+        "parent_type": "book",
+        "object_importance": 80,
+        "retrieval_score": 0.92,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "textually_explicit",
+        "dispute_status": "not_disputed",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 103
+      }
+    },
+    {
+      "id": "1tim-women-learn",
+      "claim": "A woman is commanded to learn in quietness and full submission before the prohibition involving teaching and authentein.",
+      "category": "history",
+      "source_ids": [
+        "1tim-greek",
+        "westfall",
+        "huizenga"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Timothy 2:11-12"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "1-timothy",
+        "parent_title": "1 Timothy",
+        "parent_type": "book",
+        "object_importance": 80,
+        "retrieval_score": 0.92,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 10,
+        "certainty": "textually_explicit",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "SBL Greek New Testament: 1 Timothy",
+        "author": "Michael W. Holmes, editor",
+        "publisher": "Society of Biblical Literature and Logos Bible Software",
+        "year": 2010,
+        "locator": "1 Timothy 1:1-6:21",
+        "url": "https://www.sbl-site.org/resources/digital-texts/sbl-greek-new-testament/",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "literary-context",
+          "structure",
+          "scripture-references",
+          "greek-words",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Primary critical Greek text; individual variants require an apparatus.",
+        "id": "1tim-greek",
+        "canonical_object_ids": [
+          "1-timothy"
+        ]
+      },
+      {
+        "title": "The New Testament in Its Literary Environment",
+        "author": "David E. Aune",
+        "publisher": "Westminster Press",
+        "year": 1987,
+        "locator": "Letters, paraenesis, lists, and early Christian literary forms",
+        "url": "https://www.wjkbooks.com/Products/9780664250188/the-new-testament-in-its-literary-environment.aspx",
+        "source_type": "academic-book",
+        "supports": [
+          "literary-context",
+          "genre",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Genre control; form classifications require passage-level verification.",
+        "id": "aune-literary",
+        "canonical_object_ids": [
+          "1-timothy"
+        ]
+      },
+      {
+        "title": "A Greek-English Lexicon of the New Testament and Other Early Christian Literature",
+        "author": "Walter Bauer; Frederick W. Danker, editor",
+        "publisher": "University of Chicago Press",
+        "year": 2000,
+        "locator": "Third edition; selected 1 Timothy lexemes",
+        "url": "https://press.uchicago.edu/ucp/books/book/chicago/G/bo3626820.html",
+        "source_type": "lexicon",
+        "supports": [
+          "greek-words",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Lexical starting point; entries do not by themselves resolve discourse or application.",
+        "id": "bdag",
+        "canonical_object_ids": [
+          "1-timothy"
+        ]
+      },
+      {
+        "title": "1 & 2 Timothy and Titus",
+        "author": "Raymond F. Collins",
+        "publisher": "Westminster John Knox Press",
+        "year": 2002,
+        "locator": "New Testament Library",
+        "url": "https://www.wjkbooks.com/Products/9780664222475/1--2-timothy-and-titus.aspx",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "literary-context",
+          "authorship-positions",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Critical commentary; verify locators and representations of positions.",
+        "id": "collins",
+        "canonical_object_ids": [
+          "1-timothy"
+        ]
+      },
+      {
+        "title": "Paul at the Crossroads of Cultures",
+        "author": "Kathy Ehrensperger",
+        "publisher": "Bloomsbury T&T Clark",
+        "year": 2013,
+        "locator": "Diaspora, ethnicity, power, and cross-cultural interpretation",
+        "url": "https://www.bloomsbury.com/us/paul-at-the-crossroads-of-cultures-9780567114808/",
+        "source_type": "academic-book",
+        "supports": [
+          "hebraic-worldview",
+          "second-temple-context",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Control against supersessionist and colonial Pauline interpretation.",
+        "id": "ehrensperger",
+        "canonical_object_ids": [
+          "1-timothy"
+        ]
+      },
+      {
+        "title": "1-2 Timothy, Titus",
+        "author": "Annette Bourland Huizenga",
+        "publisher": "Liturgical Press",
+        "year": 2016,
+        "locator": "Wisdom Commentary 53",
+        "url": "https://litpress.org/Products/3702/12-Timothy-Titus",
+        "source_type": "academic-book",
+        "supports": [
+          "later-christian-reception",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Feminist interpretation and reception control; verify locators.",
+        "id": "huizenga",
+        "canonical_object_ids": [
+          "1-timothy"
+        ]
+      },
+      {
+        "title": "The First and Second Letters to Timothy",
+        "author": "Luke Timothy Johnson",
+        "publisher": "Yale University Press",
+        "year": 2001,
+        "locator": "Anchor Yale Bible 35A",
+        "url": "https://yalebooks.yale.edu/book/9780300139884/the-first-and-second-letters-to-timothy/",
+        "source_type": "academic-book",
+        "supports": [
+          "literary-context",
+          "canonical-context",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Literary and theological commentary; verify locators.",
+        "id": "johnson",
+        "canonical_object_ids": [
+          "1-timothy"
+        ]
+      },
+      {
+        "title": "The Pastoral Epistles",
+        "author": "I. Howard Marshall with Philip H. Towner",
+        "publisher": "T&T Clark",
+        "year": 1999,
+        "locator": "International Critical Commentary",
+        "url": "https://www.bloomsbury.com/us/pastoral-epistles-9780567084552/",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "literary-context",
+          "authorship-positions",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Critical commentary; individual positions require locator verification.",
+        "id": "marshall",
+        "canonical_object_ids": [
+          "1-timothy"
+        ]
+      },
+      {
+        "title": "A New English Translation of the Septuagint",
+        "author": "Albert Pietersma and Benjamin G. Wright, editors",
+        "publisher": "Oxford University Press",
+        "year": 2007,
+        "locator": "Genesis, Deuteronomy, Leviticus, and wisdom comparanda",
+        "url": "https://ccat.sas.upenn.edu/nets/edition/",
+        "source_type": "scripture",
+        "supports": [
+          "hebraic-worldview",
+          "second-temple-context",
+          "intertextuality",
+          "hebrew-words",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Septuagint control; not evidence that every verbal parallel is a direct citation.",
+        "id": "nets-lxx",
+        "canonical_object_ids": [
+          "1-timothy"
+        ]
+      },
+      {
+        "title": "A Woman's Place: House Churches in Earliest Christianity",
+        "author": "Carolyn Osiek and Margaret Y. MacDonald, with Janet H. Tulloch",
+        "publisher": "Fortress Press",
+        "year": 2006,
+        "locator": "Households, women, patronage, and domestic space",
+        "url": "https://www.fortresspress.com/store/product/9780800637774/A-Woman-s-Place",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "archaeology",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Comparative social history; does not identify a particular Ephesian house assembly.",
+        "id": "osiek-macdonald",
+        "canonical_object_ids": [
+          "1-timothy"
+        ]
+      },
+      {
+        "title": "The Letters to Timothy and Titus",
+        "author": "Philip H. Towner",
+        "publisher": "Eerdmans",
+        "year": 2006,
+        "locator": "New International Commentary on the New Testament",
+        "url": "https://www.eerdmans.com/9780802825131/the-letters-to-timothy-and-titus/",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "literary-context",
+          "authorship-positions",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Commentary representing a Pauline-author approach; verify locators.",
+        "id": "towner",
+        "canonical_object_ids": [
+          "1-timothy"
+        ]
+      },
+      {
+        "title": "Paul and Gender",
+        "author": "Cynthia Long Westfall",
+        "publisher": "Baker Academic",
+        "year": 2016,
+        "locator": "Gendered instruction and Pauline comparison",
+        "url": "https://bakeracademic.com/p/paul-and-gender-cynthia-long-westfall/230962",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "greek-words",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Gender and discourse study; verify treatment and locators.",
+        "id": "westfall",
+        "canonical_object_ids": [
+          "1-timothy"
+        ]
+      },
+      {
+        "title": "Roman Wives, Roman Widows",
+        "author": "Bruce W. Winter",
+        "publisher": "Eerdmans",
+        "year": 2003,
+        "locator": "Dress, marriage, widows, and Roman social context",
+        "url": "https://www.eerdmans.com/9780802849717/roman-wives-roman-widows/",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "archaeology",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Historical reconstruction whose application to 1 Timothy remains disputed.",
+        "id": "winter",
+        "canonical_object_ids": [
+          "1-timothy"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "1-timothy",
+        "type": "book",
+        "title": "1 Timothy",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.92
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "04a00806d65aa01f782caa874e8dd74d143d538c631d0af04e467917c6d1456c",
+  "evidence_hash_version": "2"
+}
