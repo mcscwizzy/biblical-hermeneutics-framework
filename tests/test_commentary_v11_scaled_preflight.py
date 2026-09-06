@@ -19,6 +19,7 @@ from tools.commentary_v11_scaled_preflight import (
     _previous_batch_references,
     _checkpoint_identity,
     _json_dump,
+    _load_recovery_manifest,
     _load_checkpoint,
     _mapping_is_textual,
     _presentation_audit,
@@ -441,6 +442,17 @@ def test_checkpoint_identity_rejects_other_run_configuration(tmp_path):
     assert _load_checkpoint(path, identity)["stage"] == "selected"
     altered = {**identity, "target_count": 149}
     assert _load_checkpoint(path, altered) is None
+
+
+def test_recovery_manifest_rejects_duplicate_canonical_references(tmp_path):
+    path = tmp_path / "recovery.json"
+    _json_dump(path, {"chapters": [{"reference": "Genesis 1"}, {"reference": "Genesis 1"}]})
+    try:
+        _load_recovery_manifest(path)
+    except ValueError as exc:
+        assert "duplicate" in str(exc)
+    else:
+        raise AssertionError("duplicate recovery references must be rejected")
 
 
 def test_textual_criticism_routes_to_language_literary():

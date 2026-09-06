@@ -205,6 +205,23 @@ def _checkpoint_identity(
     }
 
 
+def _load_recovery_manifest(path: Path | None) -> tuple[dict[str, Any] | None, set[str]]:
+    """Load an explicit quarantine-recovery allowlist, if supplied."""
+
+    if path is None:
+        return None, set()
+    payload = json.loads(path.read_text(encoding="utf-8"))
+    chapters = payload.get("chapters")
+    if not isinstance(chapters, list):
+        raise ValueError("recovery manifest must contain a chapters list")
+    references = [str(row.get("reference")) for row in chapters if row.get("reference")]
+    if len(references) != len(set(references)):
+        raise ValueError("recovery manifest contains duplicate chapter identities")
+    if not references:
+        raise ValueError("recovery manifest contains no chapter identities")
+    return payload, set(references)
+
+
 def _load_checkpoint(path: Path, identity: Mapping[str, Any]) -> dict[str, Any] | None:
     """Load only a complete checkpoint belonging to this exact run configuration."""
 
@@ -2209,6 +2226,7 @@ def run_batch(
     output_root: Path,
     candidate_source: Path = DEFAULT_CANDIDATE_SOURCE,
     sqlite_database: Path | None = None,
+    recovery_manifest: Path | None = None,
 ) -> dict[str, Any]:
     """Run the evidence-only preflight with resumable, non-final work state.
 
@@ -2220,6 +2238,9 @@ def run_batch(
 
     output_root = (output_root if output_root.is_absolute() else REPO_ROOT / output_root).resolve()
     candidate_source = candidate_source.resolve()
+    recovery_manifest = recovery_manifest.resolve() if recovery_manifest else None
+    recovery_payload, recovery_refs = _load_recovery_manifest(recovery_manifest)
+    recovery_manifest_hash = hashlib.sha256(recovery_manifest.read_bytes()).hexdigest() if recovery_manifest else None
     pool_dir = output_root / batch_id
     work_root = output_root / f".{batch_id}.work"
     if pool_dir.exists():
@@ -2239,6 +2260,8 @@ def run_batch(
     )
     selection_path = work_root / "selection.json"
     selection = _load_checkpoint(selection_path, identity)
+    if selection is not None and recovery_manifest_hash != selection.get("recovery_manifest_hash"):
+        selection = None
     if selection is not None and selection.get("selection_policy_version") != SELECTION_POLICY_VERSION:
         # A selection-policy change invalidates only pool-derived work. The
         # population-record checkpoints remain reusable and are the source for
@@ -2269,11 +2292,24 @@ def run_batch(
         excluded = _canary_references()
         prior_batch_exclusions = _previous_batch_references(batch_id)
         prior_batch_verdicts = _previous_batch_reference_verdicts(batch_id)
-        excluded.update(prior_batch_exclusions)
-        eligible = _eligible_rows(current)
+        if recovery_refs:
+            eligible_all = _eligible_rows(current)
+            eligible_by_reference = {str(row["reference"]): row for row in eligible_all}
+            missing = sorted(recovery_refs - set(eligible_by_reference))
+            if missing:
+                raise ValueError(f"recovery manifest references are not currently eligible: {missing}")
+            if any(reference in _canary_references() for reference in recovery_refs):
+                raise ValueError("recovery manifest cannot include canary chapters")
+            if any(prior_batch_verdicts.get(reference) != "SKIP_PRIOR_QUARANTINE" for reference in recovery_refs):
+                raise ValueError("recovery manifest may include only prior-quarantine chapters")
+            eligible = [eligible_by_reference[reference] for reference in sorted(recovery_refs)]
+            excluded.update(reference for reference in prior_batch_exclusions if reference not in recovery_refs)
+        else:
+            excluded.update(prior_batch_exclusions)
+            eligible = _eligible_rows(current)
         candidate_pool = select_mixed_candidate_pool(
             eligible,
-            pool_size=candidate_pool_size,
+            pool_size=min(candidate_pool_size, len(eligible)),
             excluded_references=excluded,
         )
         full_pool = select_mixed_candidate_pool(
@@ -2283,6 +2319,8 @@ def run_batch(
         )
         skipped_verdicts = {reference: "SKIP_CANARY" for reference in _canary_references()}
         skipped_verdicts.update(prior_batch_verdicts)
+        for reference in recovery_refs:
+            skipped_verdicts.pop(reference, None)
         selection = {
             "checkpoint_identity": identity,
             "selection_policy_version": SELECTION_POLICY_VERSION,
@@ -2298,6 +2336,8 @@ def run_batch(
             "batch_001_fingerprints_before": batch_001_before,
             "batch_002_fingerprints_before": batch_002_before,
             "batch_003_fingerprints_before": batch_003_before,
+            "recovery_manifest_hash": recovery_manifest_hash,
+            "recovery_references": sorted(recovery_refs),
         }
         _json_dump(selection_path, selection)
         _progress(f"candidate pool checkpointed: {len(candidate_pool)}")
@@ -2338,6 +2378,8 @@ def run_batch(
         context = _load_checkpoint(context_path, identity)
         if context is not None and context.get("selection_policy_version") != SELECTION_POLICY_VERSION:
             context = None
+        if context is not None and context.get("recovery_manifest_hash") != recovery_manifest_hash:
+            context = None
         if context is None:
             batch002_path = work_root / "batch002-textual-audit.json"
             historical_path = work_root / "historical-textual-routing.json"
@@ -2364,6 +2406,7 @@ def run_batch(
             context = {
                 "checkpoint_identity": identity,
                 "selection_policy_version": SELECTION_POLICY_VERSION,
+                "recovery_manifest_hash": recovery_manifest_hash,
                 "stage": "audit_context_ready",
                 "batch002_textual_audit": batch002["report"],
                 "historical_textual_routing_review": historical["report"],
@@ -2513,6 +2556,10 @@ def run_batch(
         "tool_version": TOOL_VERSION,
         "checkpoint_version": CHECKPOINT_VERSION,
         "checkpoint_work_root": str(work_root.relative_to(REPO_ROOT)),
+        "recovery_mode": bool(recovery_refs),
+        "recovery_manifest": str(recovery_manifest.relative_to(REPO_ROOT)) if recovery_manifest and recovery_manifest.is_relative_to(REPO_ROOT) else (str(recovery_manifest) if recovery_manifest else None),
+        "recovery_manifest_hash": recovery_manifest_hash,
+        "recovery_reference_count": len(recovery_refs),
         "target_count": effective_target_count,
         "candidate_pool_size": len(candidate_pool),
         "candidate_pool_requested_size": candidate_pool_size,
@@ -2670,6 +2717,7 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--output-root", type=Path, default=DEFAULT_OUTPUT_ROOT)
     parser.add_argument("--candidate-source", type=Path, default=DEFAULT_CANDIDATE_SOURCE)
     parser.add_argument("--sqlite-database", type=Path, help="Use and verify an existing current CKL SQLite database.")
+    parser.add_argument("--recovery-manifest", type=Path, help="Evaluate only an explicit prior-quarantine recovery allowlist.")
     args = parser.parse_args(argv)
     report = run_batch(
         batch_id=args.batch_id,
@@ -2678,6 +2726,7 @@ def main(argv: list[str] | None = None) -> int:
         output_root=args.output_root,
         candidate_source=args.candidate_source,
         sqlite_database=args.sqlite_database,
+        recovery_manifest=args.recovery_manifest,
     )
     print(json.dumps({
         "batch_id": args.batch_id,
