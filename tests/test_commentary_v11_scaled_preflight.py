@@ -17,6 +17,10 @@ from tools.commentary_v11_scaled_preflight import (
     select_final_chapters,
     select_mixed_candidate_pool,
     _previous_batch_references,
+    _checkpoint_identity,
+    _json_dump,
+    _load_checkpoint,
+    _mapping_is_textual,
     _presentation_audit,
     terra_textual_suppression_simulation,
 )
@@ -105,6 +109,15 @@ def test_pool_mixes_available_and_thin():
     ]
     pool = select_mixed_candidate_pool(rows, pool_size=6)
     assert {row["availability_from_recalculation"] for row in pool} == {"AVAILABLE", "THIN"}
+
+
+def test_soft_book_cap_yields_to_requested_pool_size():
+    rows = [
+        {"reference": f"Genesis {n}", "book": "Genesis", "chapter": n, "availability_from_recalculation": "AVAILABLE"}
+        for n in range(1, 7)
+    ]
+    pool = select_mixed_candidate_pool(rows, pool_size=6)
+    assert len(pool) == 6
 
 
 def test_available_and_thin_can_pass_final_selection():
@@ -402,6 +415,32 @@ def test_textual_variant_does_not_route_to_archaeology_geography():
         category="geography",
         claim="The reading is present in major manuscript witnesses but absent in important Western witnesses.",
     ) == "language_literary"
+
+
+def test_dispute_status_alone_is_not_textual_witness_evidence():
+    metadata = {
+        "parent_type": "event",
+        "source_kind": "ckl_claim",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "dispute_status": "textual_variant",
+    }
+    claim = "A historical model remains disputed."
+    assert _mapping_is_textual({"relevance_metadata": metadata, "claim": claim}) is False
+    assert presentation_role(metadata, category="history", claim=claim) == "historical_context"
+
+
+def test_checkpoint_identity_rejects_other_run_configuration(tmp_path):
+    identity = _checkpoint_identity(
+        batch_id="batch-004",
+        target_count=150,
+        candidate_pool_size=250,
+        candidate_source=tmp_path / "candidate-source",
+    )
+    path = tmp_path / "checkpoint.json"
+    _json_dump(path, {"checkpoint_identity": identity, "stage": "selected"})
+    assert _load_checkpoint(path, identity)["stage"] == "selected"
+    altered = {**identity, "target_count": 149}
+    assert _load_checkpoint(path, altered) is None
 
 
 def test_textual_criticism_routes_to_language_literary():

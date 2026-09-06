@@ -16,6 +16,7 @@ import hashlib
 import json
 import math
 import re
+import shutil
 import sys
 import tempfile
 from collections import Counter, defaultdict
@@ -57,7 +58,12 @@ from bhf_agent.presentation.relevance import (
 from bhf_agent.presentation.evidence_normalization import evidence_category as _normalized_category
 from tools.commentary_v11_canary import _section_for_item, select_overview_item
 from tools.commentary_v11_expansion import _book_genre, _signal_score
-from tools.commentary_v11_low_information import audit as recalculate_low_information
+from tools.commentary_v11_low_information import (
+    _bundle_assessment,
+    audit as recalculate_low_information,
+    detect_low_information,
+)
+from bhf_agent.chapter_commentary.storage import list_commentaries, load_commentary
 from framework.canonical_library import CKLRepositoryConfig
 from framework.canonical_library.database_builder import build_database, verify_database
 from framework.canonical_library.scripture import (
@@ -75,7 +81,9 @@ DEFAULT_POOL_SIZE = 70
 DEFAULT_TARGET_COUNT = 50
 EVIDENCE_BUNDLE_VERSION = EVIDENCE_BUNDLE_CANDIDATE_VERSION
 EVIDENCE_HASH_VERSION = "2"
-TOOL_VERSION = "commentary-v11-scaled-preflight-1.0"
+TOOL_VERSION = "commentary-v11-scaled-preflight-1.1"
+CHECKPOINT_VERSION = "commentary-v11-scaled-preflight-checkpoint-1"
+SELECTION_POLICY_VERSION = "mixed-pool-v2-soft-book-cap"
 VERDICTS = (
     "PASS",
     "QUARANTINE",
@@ -105,6 +113,9 @@ BATCH_001_TERRA_ROOT = (
 )
 BATCH_002_TERRA_ROOT = (
     REPO_ROOT / ".bhf-data" / "bhf-commentary-candidates" / "commentary-v1.1-scale" / "batch-002" / "terra" / "chapters"
+)
+BATCH_003_TERRA_ROOT = (
+    REPO_ROOT / ".bhf-data" / "bhf-commentary-candidates" / "commentary-v1.1-scale" / "batch-003" / "terra" / "chapters"
 )
 
 SECTION_ROLES = {
@@ -148,8 +159,83 @@ def _progress(message: str) -> None:
 
 
 def _json_dump(path: Path, value: Any) -> None:
+    """Write a checkpoint or report atomically so interruption cannot fake completion."""
+
     path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(json.dumps(value, indent=2, ensure_ascii=True) + "\n", encoding="utf-8")
+    temporary = path.with_name(f".{path.name}.tmp")
+    temporary.write_text(json.dumps(value, indent=2, ensure_ascii=True) + "\n", encoding="utf-8")
+    temporary.replace(path)
+
+
+def _atomic_text(path: Path, value: str) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    temporary = path.with_name(f".{path.name}.tmp")
+    temporary.write_text(value, encoding="utf-8")
+    temporary.replace(path)
+
+
+def _pool_fingerprint(rows: Sequence[Mapping[str, Any]]) -> str:
+    payload = [
+        {
+            "reference": str(row["reference"]),
+            "book": str(row["book"]),
+            "chapter": int(row["chapter"]),
+            "genre": str(row.get("genre") or ""),
+            "availability_from_recalculation": str(row.get("availability_from_recalculation") or ""),
+        }
+        for row in rows
+    ]
+    return hashlib.sha256(json.dumps(payload, sort_keys=True, separators=(",", ":")).encode("utf-8")).hexdigest()
+
+
+def _checkpoint_identity(
+    *,
+    batch_id: str,
+    target_count: int,
+    candidate_pool_size: int,
+    candidate_source: Path,
+) -> dict[str, Any]:
+    return {
+        "checkpoint_version": CHECKPOINT_VERSION,
+        "tool_version": TOOL_VERSION,
+        "batch_id": batch_id,
+        "target_count": target_count,
+        "candidate_pool_size": candidate_pool_size,
+        "candidate_source": str(candidate_source.resolve()),
+    }
+
+
+def _load_checkpoint(path: Path, identity: Mapping[str, Any]) -> dict[str, Any] | None:
+    """Load only a complete checkpoint belonging to this exact run configuration."""
+
+    if not path.exists():
+        return None
+    try:
+        data = json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        return None
+    if data.get("checkpoint_identity") != dict(identity):
+        return None
+    return data
+
+
+def _work_record_valid(path: Path, *, reference: str, pool_fingerprint: str) -> bool:
+    """A cached evaluation is usable only when its bundle and identity agree."""
+
+    try:
+        record = json.loads(path.read_text(encoding="utf-8"))
+        bundle_path = path.parent.parent / "bundles" / path.name
+        bundle = json.loads(bundle_path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        return False
+    return (
+        record.get("checkpoint_version") == CHECKPOINT_VERSION
+        and record.get("pool_fingerprint") == pool_fingerprint
+        and record.get("reference") == reference
+        and record.get("status") in {"PASS", "QUARANTINE", "DATA_GAP"}
+        and record.get("evidence_hash") == bundle.get("evidence_hash")
+        and record.get("evidence_ids") == [item.get("id") for item in bundle.get("evidence_items", [])]
+    )
 
 
 def _canary_references() -> set[str]:
@@ -251,6 +337,13 @@ def _batch_002_terra_fingerprints() -> dict[str, str]:
     return {
         str(path.relative_to(REPO_ROOT)): hashlib.sha256(path.read_bytes()).hexdigest()
         for path in sorted(BATCH_002_TERRA_ROOT.glob("*.json"))
+    }
+
+
+def _batch_003_terra_fingerprints() -> dict[str, str]:
+    return {
+        str(path.relative_to(REPO_ROOT)): hashlib.sha256(path.read_bytes()).hexdigest()
+        for path in sorted(BATCH_003_TERRA_ROOT.glob("*.json"))
     }
 
 
@@ -368,10 +461,14 @@ def select_mixed_candidate_pool(
             break
 
     if len(selected) < pool_size:
+        # The five-chapter book limit is a diversity preference, not a hard
+        # corpus limit. If it cannot fill the requested approximate pool,
+        # continue deterministically through the ranked remainder rather than
+        # falsely concluding that the eligible corpus is exhausted.
         for row in ranked:
             if len(selected) >= pool_size:
                 break
-            if row["reference"] in selected_refs or book_counts[str(row["book"])] >= 5:
+            if row["reference"] in selected_refs:
                 continue
             selected.append(row)
             selected_refs.add(str(row["reference"]))
@@ -521,9 +618,12 @@ def _legacy_presentation_role(metadata: Mapping[str, Any], *, category: str, cla
         str(value or "")
         for value in (metadata.get("parent_object_id"), metadata.get("parent_title"), claim)
     ).casefold()
+    # Dispute status describes certainty; by itself it does not identify
+    # textual-witness evidence. Keep the authored claim/note/evidence fields
+    # as the metadata-first signals and require a textual claim fallback.
     normalized = {
         value.strip().replace("-", "_").replace(" ", "_")
-        for value in (claim_type, note_type, str(metadata.get("evidence_type") or "").casefold(), str(metadata.get("dispute_status") or "").casefold())
+        for value in (claim_type, note_type, str(metadata.get("evidence_type") or "").casefold())
         if value.strip()
     }
     textual = bool(normalized & set(TEXTUAL_CLAIM_SIGNALS)) or bool(
@@ -1377,7 +1477,7 @@ def _markdown_report(manifest: Mapping[str, Any], preflight: Mapping[str, Any], 
         "",
         f"- Candidate pool: {manifest['candidate_pool_size']} chapters; target: {manifest['target_count']}; evaluated: {manifest['chapters_evaluated']}; skipped outside the pool: {manifest.get('chapters_skipped', 0)}.",
         f"- Current deterministic low-information population: {manifest['current_population']['eligible']} eligible and {manifest['current_population']['insufficient']} insufficient (historical reference: 935 / 153).",
-        f"- Mixed selection: genre/availability round-robin, reader-benefit signals for ordering only, maximum five chapters per book in the pool.",
+        f"- Mixed selection: genre/availability round-robin, reader-benefit signals for ordering only, with a five-chapter-per-book soft preference that yields to the requested pool size.",
         f"- Replacements used: {manifest['replacements_used']}.",
         f"- Excluded prior/canary references: {len(manifest.get('excluded_regression_controls', []))}.",
         "",
@@ -1451,7 +1551,7 @@ def _markdown_report(manifest: Mapping[str, Any], preflight: Mapping[str, Any], 
         f"- Historical reconstructed hash-impact records: {historical.get('affected_chapters', 0)}; Terra-omitted affected items: {historical.get('terra_omitted_affected_item_count', 0)}; regeneration recommendations: {historical.get('regeneration_recommended_count', 0)}.",
         f"- Terra suppression simulation: {manifest.get('terra_suppression_required_count', 0)} evaluated chapters required suppression; final 150 required none.",
         "",
-        "## Batch 003 audit detail",
+        "## Audit detail",
         "",
         f"- Candidate pool: {manifest.get('candidate_pool_size')}; evaluated: {manifest.get('chapters_evaluated')}; PASS: {manifest.get('chapters_passed')}; QUARANTINE: {manifest.get('chapters_quarantined')}; DATA_GAP: {manifest.get('chapters_data_gap')}; replacements: {manifest.get('replacements_used')}; final locks: {len(final)}.",
         f"- Verdict counts including manifest-derived exclusions: {manifest.get('verdict_counts', {})}.",
@@ -1460,7 +1560,8 @@ def _markdown_report(manifest: Mapping[str, Any], preflight: Mapping[str, Any], 
         f"- Anomaly raw counts: {preflight.get('anomaly_raw_counts', manifest.get('anomaly_raw_counts', {}))}.",
         f"- Anomaly blocking counts: {preflight.get('anomaly_blocking_counts', manifest.get('anomaly_blocking_counts', {}))}.",
         f"- Backend disagreements: {preflight.get('disagreement_counts', {})}.",
-        f"- Artifact fingerprints: canary/supplemental {controls.get('canary_artifacts', {}).get('status')}; Batch 001 {controls.get('batch_001_terra_artifacts', {}).get('status')}; Batch 002 {controls.get('batch_002_terra_artifacts', {}).get('status')}.",
+        f"- Audit signals (raw / blocking): {preflight.get('audit_signal_counts', {})}.",
+        f"- Artifact fingerprints: canary/supplemental {controls.get('canary_artifacts', {}).get('status')}; Batch 001 {controls.get('batch_001_terra_artifacts', {}).get('status')}; Batch 002 {controls.get('batch_002_terra_artifacts', {}).get('status')}; Batch 003 {controls.get('batch_003_terra_artifacts', {}).get('status')}.",
         "- Terra was not run; prose_generated remains false.",
         "",
     ]
@@ -1484,6 +1585,8 @@ def _regression_controls(
     batch_001_after: Mapping[str, str],
     batch_002_before: Mapping[str, str],
     batch_002_after: Mapping[str, str],
+    batch_003_before: Mapping[str, str],
+    batch_003_after: Mapping[str, str],
 ) -> dict[str, Any]:
     controls: dict[str, Any] = {}
     for book, chapter in (("Genesis", 1), ("Zephaniah", 1), ("Luke", 1), ("Leviticus", 1), ("1 Samuel", 28), ("Numbers", 3), ("Luke", 22)):
@@ -1554,10 +1657,211 @@ def _regression_controls(
         "artifact_count": len(batch_002_after),
         "changed_paths": sorted(set(batch_002_before) ^ set(batch_002_after) | {path for path in batch_002_before.keys() & batch_002_after.keys() if batch_002_before[path] != batch_002_after[path]}),
     }
+    controls["batch_003_terra_artifacts"] = {
+        "status": "PASS" if dict(batch_003_before) == dict(batch_003_after) and len(batch_003_after) == 150 else "FAIL",
+        "summary": "150 Batch 003 Terra artifact fingerprints unchanged" if dict(batch_003_before) == dict(batch_003_after) and len(batch_003_after) == 150 else "Batch 003 Terra artifact fingerprint changed or count is not 150",
+        "before_fingerprint": _stable_fingerprint(batch_003_before),
+        "after_fingerprint": _stable_fingerprint(batch_003_after),
+        "artifact_count": len(batch_003_after),
+        "changed_paths": sorted(set(batch_003_before) ^ set(batch_003_after) | {path for path in batch_003_before.keys() & batch_003_after.keys() if batch_003_before[path] != batch_003_after[path]}),
+    }
     return controls
 
 
-def run_batch(
+def _parent_usage_checkpoint(
+    library: Any,
+    rows: Sequence[Mapping[str, Any]],
+    *,
+    pool_fingerprint: str,
+    epoch_dir: Path,
+) -> dict[str, dict[str, Any]]:
+    """Build parent reuse facts in resumable per-chapter units."""
+
+    entries_dir = epoch_dir / "parent-usage"
+    entries_dir.mkdir(parents=True, exist_ok=True)
+    for row in rows:
+        path = entries_dir / filename_for(str(row["book"]), int(row["chapter"]))
+        expected = {"checkpoint_version": CHECKPOINT_VERSION, "pool_fingerprint": pool_fingerprint, "reference": row["reference"]}
+        try:
+            cached = json.loads(path.read_text(encoding="utf-8"))
+        except (OSError, json.JSONDecodeError):
+            cached = None
+        if cached and all(cached.get(key) == value for key, value in expected.items()):
+            continue
+        _bundle, results = _build_bundle(library, str(row["book"]), int(row["chapter"]))
+        _json_dump(path, {
+            **expected,
+            "book": row["book"],
+            "parent_ids": sorted(_parent_records(library, results)),
+        })
+        _progress(f"parent usage checkpointed: {row['reference']}")
+
+    usage: dict[str, dict[str, Any]] = {}
+    for row in rows:
+        path = entries_dir / filename_for(str(row["book"]), int(row["chapter"]))
+        data = json.loads(path.read_text(encoding="utf-8"))
+        for parent_id in data.get("parent_ids", []):
+            entry = usage.setdefault(str(parent_id), {"books": [], "references": []})
+            if row["book"] not in entry["books"]:
+                entry["books"].append(row["book"])
+            entry["references"].append(row["reference"])
+    return usage
+
+
+def _audit_signal_counts(evaluated: Sequence[Mapping[str, Any]], outliers: Sequence[Mapping[str, Any]]) -> dict[str, dict[str, int]]:
+    raw = Counter(
+        item["code"]
+        for row in evaluated
+        for item in row.get("anomaly_scan", {}).get("anomalies", [])
+    )
+    blocking = Counter(
+        item["code"]
+        for row in evaluated
+        for item in row.get("anomaly_scan", {}).get("anomalies", [])
+        if item.get("severity") == "blocker"
+    )
+    def count(prefixes: tuple[str, ...]) -> dict[str, int]:
+        return {
+            "raw": sum(value for key, value in raw.items() if key.startswith(prefixes)),
+            "blocking": sum(value for key, value in blocking.items() if key.startswith(prefixes)),
+        }
+    return {
+        "word_study": count(("WORD_STUDY",)),
+        "cross_book_reuse": count(("CROSS_BOOK",)),
+        "broad_anchor": count(("BROAD", "WORD_STUDY_BROAD", "ARCHAEOLOGY_BROAD")),
+        "textual_routing": count(("TEXTUAL_EVIDENCE", "TERRA_SUPPRESSION")),
+        "archaeology": count(("ARCHAEOLOGY",)),
+        "later_reception": count(("LATER_RECEPTION",)),
+        "presentation_role": count(("PRESENTATION", "UNKNOWN_PRESENTATION")),
+        "template_evidence": count(("TEMPLATE", "ARCHAEOLOGY_TEMPLATE", "WORD_STUDY_TEMPLATE")),
+        "evidence_count_outliers": {"raw": len(outliers), "blocking": 0},
+        "json_sqlite_disagreement": {
+            "raw": sum(not row.get("json_sqlite_agreement", {}).get("result_ids_agree", False) or not row.get("json_sqlite_agreement", {}).get("evidence_ids_agree", False) for row in evaluated),
+            "blocking": sum(not row.get("json_sqlite_agreement", {}).get("result_ids_agree", False) or not row.get("json_sqlite_agreement", {}).get("evidence_ids_agree", False) for row in evaluated),
+        },
+        "backend_hash_disagreement": {
+            "raw": sum(not row.get("json_sqlite_agreement", {}).get("bundle_hash_agree", False) for row in evaluated),
+            "blocking": sum(not row.get("json_sqlite_agreement", {}).get("bundle_hash_agree", False) for row in evaluated),
+        },
+        "semantic_leakage": {
+            "raw": sum(row.get("semantic_audit", {}).get("status") != "PASS" for row in evaluated),
+            "blocking": sum(row.get("semantic_audit", {}).get("status") != "PASS" for row in evaluated),
+        },
+    }
+
+
+def _recalculate_population_resumable(source: Path, work_root: Path, identity: Mapping[str, Any]) -> dict[str, Any]:
+    """Rebuild the low-information population with one atomic checkpoint per artifact."""
+
+    records_dir = work_root / "population-records"
+    records_dir.mkdir(parents=True, exist_ok=True)
+    artifacts = list(list_commentaries(source))
+    for index, (book, chapter) in enumerate(artifacts, start=1):
+        path = records_dir / filename_for(book, chapter)
+        expected = {"checkpoint_identity": dict(identity), "reference": reference_key(book, chapter)}
+        try:
+            cached = json.loads(path.read_text(encoding="utf-8"))
+        except (OSError, json.JSONDecodeError):
+            cached = None
+        if cached and cached.get("checkpoint_identity") == expected["checkpoint_identity"] and cached.get("reference") == expected["reference"]:
+            continue
+        commentary = load_commentary(source, book, chapter)
+        if commentary is None or commentary.status != "validated":
+            payload = {**expected, "validated": False, "low_information": False}
+        else:
+            detection = detect_low_information(commentary)
+            payload = {**expected, "validated": True, "low_information": bool(detection.get("is_low_information"))}
+            if detection.get("is_low_information"):
+                assessment = _bundle_assessment(commentary, detection)
+                payload["record"] = {
+                    "book": book,
+                    "chapter": chapter,
+                    "reference": commentary.reference,
+                    "classification": "LOW_INFORMATION_COMMENTARY",
+                    "stored_availability": commentary.evidence_availability,
+                    "stored_status": commentary.status,
+                    "detection": detection,
+                    "bundle_assessment": assessment,
+                    "regeneration_decision": "REGENERATE_FROM_LOCKED_EVIDENCE" if assessment["evidence_supports_regeneration"] else "KEEP_CONSERVATIVE_AND_REPORT_LIMITATION",
+                }
+        _json_dump(path, payload)
+        if index % 50 == 0 or index == len(artifacts):
+            _progress(f"population checkpointed: {index}/{len(artifacts)}")
+
+    records = []
+    validated_count = 0
+    for path in sorted(records_dir.glob("*.json")):
+        data = json.loads(path.read_text(encoding="utf-8"))
+        validated_count += bool(data.get("validated"))
+        if data.get("low_information") and data.get("record"):
+            records.append(data["record"])
+    records.sort(key=lambda item: (item["book"].casefold(), item["chapter"]))
+    by_state = Counter(record["stored_availability"] for record in records)
+    by_book: dict[str, dict[str, Any]] = {}
+    grouped: dict[str, list[dict[str, Any]]] = defaultdict(list)
+    for record in records:
+        grouped[record["book"]].append(record)
+    for book, rows in sorted(grouped.items()):
+        by_book[book] = {
+            "total": len(rows),
+            "by_availability": dict(sorted(Counter(row["stored_availability"] for row in rows).items())),
+            "evidence_supports_regeneration": sum(row["bundle_assessment"]["evidence_supports_regeneration"] for row in rows),
+            "evidence_insufficient": sum(not row["bundle_assessment"]["evidence_supports_regeneration"] for row in rows),
+            "chapters": [row["chapter"] for row in sorted(rows, key=lambda item: item["chapter"])],
+        }
+    control = next((record for record in records if (record["book"], record["chapter"]) == ("Zephaniah", 1)), None)
+    if control is None:
+        raise RuntimeError("required LOW_INFORMATION_COMMENTARY control Zephaniah 1 was not detected")
+    report = {
+        "audit_version": "low-information-commentary-v2-semantic",
+        "generated_at": _now(),
+        "source_corpus": str(source),
+        "source_release": "commentary-v1.0.1",
+        "availability_mutated": False,
+        "classification": "LOW_INFORMATION_COMMENTARY",
+        "total_validated_commentary_artifacts": validated_count,
+        "total_low_information_commentary": len(records),
+        "counts_by_availability": dict(sorted(by_state.items())),
+        "counts_by_book": by_book,
+        "chapters_evidence_supports_regeneration": [record["reference"] for record in records if record["bundle_assessment"]["evidence_supports_regeneration"]],
+        "chapters_evidence_insufficient": [record["reference"] for record in records if not record["bundle_assessment"]["evidence_supports_regeneration"]],
+        "required_controls": {"Zephaniah 1": control},
+        "records": records,
+    }
+    _json_dump(work_root / "population.json", {"checkpoint_identity": dict(identity), "report": report})
+    return report
+
+
+def _validate_final_payloads(
+    manifest: Mapping[str, Any],
+    preflight: Mapping[str, Any],
+    certification: Mapping[str, Any],
+    terra_manifest: Mapping[str, Any],
+    bundle_paths: Mapping[str, Path],
+) -> None:
+    """Fail closed before the staged final directory is promoted."""
+
+    final_refs = list(manifest.get("final_references", []))
+    if len(final_refs) != manifest.get("target_count") or len(set(final_refs)) != len(final_refs):
+        raise RuntimeError("final manifest does not contain exactly the target unique references")
+    if [row.get("reference") for row in manifest.get("final_chapters", [])] != final_refs:
+        raise RuntimeError("candidate and final manifest references disagree")
+    if [row.get("reference") for row in certification.get("chapters", [])] != final_refs:
+        raise RuntimeError("certification and final manifest references disagree")
+    if [row.get("reference") for row in terra_manifest.get("chapters", [])] != final_refs:
+        raise RuntimeError("Terra input and final manifest references disagree")
+    if any(row.get("status") != "PASS" for row in preflight.get("evaluated", []) if row.get("reference") in set(final_refs)):
+        raise RuntimeError("non-PASS candidate appears in final references")
+    for reference in final_refs:
+        data = json.loads(bundle_paths[reference].read_text(encoding="utf-8"))
+        cert = next(row for row in certification["chapters"] if row["reference"] == reference)
+        if data.get("evidence_hash") != cert.get("locked_evidence_hash"):
+            raise RuntimeError(f"serialized evidence hash mismatch for {reference}")
+        if [item.get("id") for item in data.get("evidence_items", [])] != cert.get("evidence_ids"):
+            raise RuntimeError(f"serialized evidence IDs mismatch for {reference}")
+
+
+def _run_batch_legacy(
     *,
     batch_id: str,
     target_count: int,
@@ -1894,6 +2198,453 @@ def run_batch(
     _json_dump(pool_dir / "terra-input-manifest.json", terra_manifest)
     markdown_path = REPO_ROOT / "docs" / f"commentary-v1.1-scaled-{batch_id}-preflight.md"
     markdown_path.write_text(_markdown_report(manifest, preflight, quarantine_report, controls), encoding="utf-8")
+    return report
+
+
+def run_batch(
+    *,
+    batch_id: str,
+    target_count: int,
+    candidate_pool_size: int,
+    output_root: Path,
+    candidate_source: Path = DEFAULT_CANDIDATE_SOURCE,
+    sqlite_database: Path | None = None,
+) -> dict[str, Any]:
+    """Run the evidence-only preflight with resumable, non-final work state.
+
+    Work is checkpointed beside the eventual batch directory under a hidden
+    ``.<batch>.work`` directory.  Candidate records and bundles are written
+    atomically per chapter.  The required Batch 004 directory is created only
+    after every gate passes, by promoting a fully validated staging directory.
+    """
+
+    output_root = (output_root if output_root.is_absolute() else REPO_ROOT / output_root).resolve()
+    candidate_source = candidate_source.resolve()
+    pool_dir = output_root / batch_id
+    work_root = output_root / f".{batch_id}.work"
+    if pool_dir.exists():
+        if any(pool_dir.iterdir()):
+            raise RuntimeError(f"final batch directory already exists: {pool_dir}")
+        # An interrupted invocation may have created only the empty marker
+        # directory before entering work-state setup; it is not a final
+        # artifact and is safe to remove before resuming.
+        pool_dir.rmdir()
+    work_root.mkdir(parents=True, exist_ok=True)
+
+    identity = _checkpoint_identity(
+        batch_id=batch_id,
+        target_count=target_count,
+        candidate_pool_size=candidate_pool_size,
+        candidate_source=candidate_source,
+    )
+    selection_path = work_root / "selection.json"
+    selection = _load_checkpoint(selection_path, identity)
+    if selection is not None and selection.get("selection_policy_version") != SELECTION_POLICY_VERSION:
+        # A selection-policy change invalidates only pool-derived work. The
+        # population-record checkpoints remain reusable and are the source for
+        # rebuilding the new deterministic pool.
+        selection = None
+
+    population_checkpoint = work_root / "population.json"
+    if selection is None:
+        cached_population = _load_checkpoint(population_checkpoint, identity)
+        current = cached_population["report"] if cached_population else _recalculate_population_resumable(candidate_source, work_root, identity)
+    else:
+        current = None
+    if selection is None:
+        _progress("population recalculated")
+        historical = {"eligible": 935, "insufficient": 153}
+        current_population = {
+            "eligible": len(current["chapters_evidence_supports_regeneration"]),
+            "insufficient": len(current["chapters_evidence_insufficient"]),
+            "difference_from_historical": {
+                "eligible": len(current["chapters_evidence_supports_regeneration"]) - historical["eligible"],
+                "insufficient": len(current["chapters_evidence_insufficient"]) - historical["insufficient"],
+            },
+        }
+        before_fingerprints = _artifact_fingerprints()
+        batch_001_before = _batch_001_terra_fingerprints()
+        batch_002_before = _batch_002_terra_fingerprints()
+        batch_003_before = _batch_003_terra_fingerprints()
+        excluded = _canary_references()
+        prior_batch_exclusions = _previous_batch_references(batch_id)
+        prior_batch_verdicts = _previous_batch_reference_verdicts(batch_id)
+        excluded.update(prior_batch_exclusions)
+        eligible = _eligible_rows(current)
+        candidate_pool = select_mixed_candidate_pool(
+            eligible,
+            pool_size=candidate_pool_size,
+            excluded_references=excluded,
+        )
+        full_pool = select_mixed_candidate_pool(
+            eligible,
+            pool_size=len(eligible),
+            excluded_references=excluded,
+        )
+        skipped_verdicts = {reference: "SKIP_CANARY" for reference in _canary_references()}
+        skipped_verdicts.update(prior_batch_verdicts)
+        selection = {
+            "checkpoint_identity": identity,
+            "selection_policy_version": SELECTION_POLICY_VERSION,
+            "stage": "selected",
+            "current_population": current_population,
+            "candidate_pool": candidate_pool,
+            "initial_candidate_pool": [row["reference"] for row in candidate_pool],
+            "full_pool": full_pool,
+            "excluded": sorted(excluded),
+            "prior_batch_exclusions": sorted(prior_batch_exclusions),
+            "skipped_verdicts": skipped_verdicts,
+            "artifact_fingerprints_before": before_fingerprints,
+            "batch_001_fingerprints_before": batch_001_before,
+            "batch_002_fingerprints_before": batch_002_before,
+            "batch_003_fingerprints_before": batch_003_before,
+        }
+        _json_dump(selection_path, selection)
+        _progress(f"candidate pool checkpointed: {len(candidate_pool)}")
+    else:
+        before_fingerprints = selection["artifact_fingerprints_before"]
+        batch_001_before = selection["batch_001_fingerprints_before"]
+        batch_002_before = selection["batch_002_fingerprints_before"]
+        batch_003_before = selection["batch_003_fingerprints_before"]
+        current_population = selection["current_population"]
+        _progress(f"resuming checkpointed pool: {len(selection['candidate_pool'])} chapters")
+        if _artifact_fingerprints() != before_fingerprints:
+            raise RuntimeError("protected canary prose changed while the Batch 004 checkpoint was in progress")
+        if _batch_001_terra_fingerprints() != batch_001_before or _batch_002_terra_fingerprints() != batch_002_before or _batch_003_terra_fingerprints() != batch_003_before:
+            raise RuntimeError("protected prior-batch prose changed while the Batch 004 checkpoint was in progress")
+
+    candidate_pool = [dict(row) for row in selection["candidate_pool"]]
+    full_pool = [dict(row) for row in selection["full_pool"]]
+    excluded = set(selection["excluded"])
+    prior_batch_exclusions = set(selection["prior_batch_exclusions"])
+    skipped_verdicts = dict(selection["skipped_verdicts"])
+
+    db_path = sqlite_database.resolve() if sqlite_database else work_root / "ckl.sqlite"
+    if sqlite_database is None:
+        if not db_path.exists():
+            build_database(REPO_ROOT / "framework" / "canonical_library", db_path)
+        try:
+            verify_database(db_path, root=REPO_ROOT / "framework" / "canonical_library")
+        except Exception:
+            if db_path.exists():
+                db_path.unlink()
+            build_database(REPO_ROOT / "framework" / "canonical_library", db_path)
+            verify_database(db_path, root=REPO_ROOT / "framework" / "canonical_library")
+
+    context_path = work_root / "audit-context.json"
+    with _sqlite_workspace(db_path) as verified_db:
+        json_library = load_canonical_library(config=CKLRepositoryConfig(backend="json", json_root=str(REPO_ROOT / "framework" / "canonical_library")))
+        sqlite_library = load_canonical_library(config=CKLRepositoryConfig(backend="sqlite", database_path=str(verified_db), json_root=str(REPO_ROOT / "framework" / "canonical_library"), stale_database_policy="ignore"))
+        context = _load_checkpoint(context_path, identity)
+        if context is not None and context.get("selection_policy_version") != SELECTION_POLICY_VERSION:
+            context = None
+        if context is None:
+            batch002_path = work_root / "batch002-textual-audit.json"
+            historical_path = work_root / "historical-textual-routing.json"
+            corpus_path = work_root / "corpus-textual-routing.json"
+            batch002 = _load_checkpoint(batch002_path, identity)
+            if batch002 is None:
+                batch002 = {"checkpoint_identity": identity, "report": _batch002_textual_audit()}
+                _json_dump(batch002_path, batch002)
+                _progress("Batch 002 textual audit checkpointed")
+            historical = _load_checkpoint(historical_path, identity)
+            if historical is None:
+                _progress("reconstructing historical textual routing")
+                historical = {"checkpoint_identity": identity, "report": _historical_textual_routing_review(json_library)}
+                _json_dump(historical_path, historical)
+                _progress("historical textual routing checkpointed")
+            corpus = _load_checkpoint(corpus_path, identity)
+            if corpus is not None and corpus.get("selection_policy_version") != SELECTION_POLICY_VERSION:
+                corpus = None
+            if corpus is None:
+                _progress("scanning corpus textual routing")
+                corpus = {"checkpoint_identity": identity, "selection_policy_version": SELECTION_POLICY_VERSION, "report": _corpus_textual_routing_audit(json_library, full_pool)}
+                _json_dump(corpus_path, corpus)
+                _progress("corpus textual routing checkpointed")
+            context = {
+                "checkpoint_identity": identity,
+                "selection_policy_version": SELECTION_POLICY_VERSION,
+                "stage": "audit_context_ready",
+                "batch002_textual_audit": batch002["report"],
+                "historical_textual_routing_review": historical["report"],
+                "corpus_textual_routing_audit": corpus["report"],
+            }
+            _json_dump(context_path, context)
+            _progress("audit context checkpointed")
+
+        while True:
+            pool_fingerprint = _pool_fingerprint(candidate_pool)
+            epoch_dir = work_root / "epochs" / pool_fingerprint
+            parent_usage = _parent_usage_checkpoint(
+                json_library,
+                candidate_pool,
+                pool_fingerprint=pool_fingerprint,
+                epoch_dir=epoch_dir,
+            )
+            records_dir = epoch_dir / "records"
+            bundles_dir = epoch_dir / "bundles"
+            records_dir.mkdir(parents=True, exist_ok=True)
+            bundles_dir.mkdir(parents=True, exist_ok=True)
+            evaluated: list[dict[str, Any]] = []
+            bundle_paths: dict[str, Path] = {}
+            for row in candidate_pool:
+                reference = str(row["reference"])
+                record_path = records_dir / filename_for(str(row["book"]), int(row["chapter"]))
+                bundle_path = bundles_dir / record_path.name
+                if _work_record_valid(record_path, reference=reference, pool_fingerprint=pool_fingerprint):
+                    record = json.loads(record_path.read_text(encoding="utf-8"))
+                    evaluated.append(record)
+                    bundle_paths[reference] = bundle_path
+                    _progress(f"resumed evaluation: {reference}")
+                    continue
+
+                book, chapter = str(row["book"]), int(row["chapter"])
+                bundle, results = _build_bundle(json_library, book, chapter)
+                sqlite_bundle, sqlite_results = _build_bundle(sqlite_library, book, chapter)
+                record = _chapter_record(
+                    row,
+                    bundle,
+                    library=json_library,
+                    results=results,
+                    json_bundle=bundle,
+                    sqlite_bundle=None,
+                    parent_usage=parent_usage,
+                )
+                agreement = backend_agreement(results, sqlite_results, bundle, sqlite_bundle)
+                record["json_evidence_ids"] = agreement["json_evidence_ids"]
+                record["sqlite_evidence_ids"] = agreement["sqlite_evidence_ids"]
+                record["json_sqlite_agreement"] = agreement
+                reasons = quarantine_reasons(record, agreement=agreement)
+                record["status"] = "DATA_GAP" if reasons == ["DATA_GAP"] else ("QUARANTINE" if reasons else "PASS")
+                record["quarantine_reason_codes"] = reasons
+                record["checkpoint_version"] = CHECKPOINT_VERSION
+                record["pool_fingerprint"] = pool_fingerprint
+                _json_dump(bundle_path, _bundle_json(bundle))
+                _json_dump(record_path, record)
+                evaluated.append(record)
+                bundle_paths[reference] = bundle_path
+                _progress(f"evaluation checkpointed: {reference}")
+
+            pass_count = sum(row["status"] == "PASS" and row["availability"] in {"AVAILABLE", "THIN"} for row in evaluated)
+            if pass_count >= target_count or len(candidate_pool) >= len(full_pool):
+                break
+            existing = {str(row["reference"]) for row in candidate_pool}
+            additions = [row for row in full_pool if str(row["reference"]) not in existing][:25]
+            if not additions:
+                break
+            candidate_pool.extend(additions)
+            selection["candidate_pool"] = candidate_pool
+            selection["stage"] = "pool_extended"
+            _json_dump(selection_path, selection)
+            _progress(f"candidate pool extended: {len(candidate_pool)}")
+
+        outliers = _mark_extreme_counts(evaluated)
+        pass_records = [row for row in evaluated if row["status"] == "PASS" and row["availability"] in {"AVAILABLE", "THIN"}]
+        final_records = select_final_chapters(evaluated, target_count)
+        final_refs = {row["reference"] for row in final_records}
+        replacements = sorted(final_refs - set(selection["initial_candidate_pool"]))
+        for record in final_records:
+            record["locked_bundle_path"] = str((pool_dir / "evidence-bundles" / filename_for(str(record["book"]), int(record["chapter"]))).relative_to(REPO_ROOT))
+
+        reviewed_chapters = []
+        for record in evaluated:
+            if record["status"] not in {"QUARANTINE", "DATA_GAP"}:
+                continue
+            blockers = [item for item in record["anomaly_scan"]["anomalies"] if item["severity"] == "blocker"]
+            explanations = list(dict.fromkeys(item["explanation"] for item in blockers))
+            reviewed_chapters.append({
+                "reference": record["reference"],
+                "verdict": record["status"],
+                "reason_codes": record["quarantine_reason_codes"],
+                "evidence_ids": sorted({item["evidence_id"] for item in blockers if item.get("evidence_id")}),
+                "ckl_parent_records": sorted({item["ckl_parent_record"] for item in blockers if item.get("ckl_parent_record")}),
+                "explanation": "; ".join(explanations) or "Backend or audit disagreement prevented certification.",
+                "scope": "systemic" if any(code in {"CROSS_BOOK_PARENT_REUSE", "WORD_STUDY_BROAD_PARENT_ANCHOR"} for code in record["quarantine_reason_codes"]) else "local",
+            })
+
+        after_fingerprints = _artifact_fingerprints()
+        batch_001_after = _batch_001_terra_fingerprints()
+        batch_002_after = _batch_002_terra_fingerprints()
+        batch_003_after = _batch_003_terra_fingerprints()
+        controls = _regression_controls(
+            json_library,
+            before_fingerprints,
+            after_fingerprints,
+            batch_001_before,
+            batch_001_after,
+            batch_002_before,
+            batch_002_after,
+            batch_003_before,
+            batch_003_after,
+        )
+        _progress("regression controls and fingerprints completed")
+
+    status = "LOCKED" if len(final_records) == target_count and all(value["status"] == "PASS" for value in controls.values()) else "BLOCKED"
+    availability_distribution = dict(sorted(Counter(row["availability"] for row in final_records).items()))
+    genre_distribution = dict(sorted(Counter(row["genre"] for row in final_records).items()))
+    book_distribution = dict(sorted(Counter(row["book"] for row in final_records).items()))
+    semantic_role_totals = Counter(
+        relationship
+        for row in final_records
+        for relationship, count in row.get("semantic_relationship_counts", {}).items()
+        for _ in range(int(count))
+    )
+    presentation_role_totals = Counter(
+        role
+        for row in final_records
+        for role, count in row.get("presentation_role_counts", {}).items()
+        for _ in range(int(count))
+    )
+    anomaly_raw_totals = Counter(item["code"] for row in evaluated for item in row.get("anomaly_scan", {}).get("anomalies", []))
+    anomaly_blocking_totals = Counter(item["code"] for row in evaluated for item in row.get("anomaly_scan", {}).get("anomalies", []) if item["severity"] == "blocker")
+    signal_counts = _audit_signal_counts(evaluated, outliers)
+    pass_certifications = [_make_certification(record, record["locked_bundle_path"], record["json_sqlite_agreement"]) for record in final_records]
+    terra_inputs = [_terra_input(record, record["locked_bundle_path"]) for record in final_records]
+    manifest = {
+        "batch_id": batch_id,
+        "created_at": _now(),
+        "branch_head": _git_head(),
+        "tool_version": TOOL_VERSION,
+        "checkpoint_version": CHECKPOINT_VERSION,
+        "checkpoint_work_root": str(work_root.relative_to(REPO_ROOT)),
+        "target_count": target_count,
+        "candidate_pool_size": len(candidate_pool),
+        "candidate_pool_requested_size": candidate_pool_size,
+        "chapters_evaluated": len(evaluated),
+        "chapters_passed": len(pass_records),
+        "chapters_quarantined": sum(row["status"] == "QUARANTINE" for row in evaluated),
+        "chapters_data_gap": sum(row["status"] == "DATA_GAP" for row in evaluated),
+        "chapters_skipped": len(skipped_verdicts),
+        "skipped_verdicts": [{"reference": ref, "status": verdict} for ref, verdict in sorted(skipped_verdicts.items())],
+        "verdict_counts": dict(sorted(Counter([str(row["status"]) for row in evaluated] + list(skipped_verdicts.values())).items())),
+        "replacements_used": len(replacements),
+        "replacements": replacements,
+        "status": status,
+        "current_population": current_population,
+        "excluded_regression_controls": sorted(excluded),
+        "excluded_prior_batch_references": sorted(prior_batch_exclusions),
+        "final_chapters": final_records,
+        "final_references": [row["reference"] for row in final_records],
+        "availability_distribution": availability_distribution,
+        "genre_distribution": genre_distribution,
+        "book_distribution": book_distribution,
+        "evidence_count_statistics": _stats(final_records),
+        "semantic_relationship_totals": dict(sorted(semantic_role_totals.items())),
+        "presentation_role_totals": dict(sorted(presentation_role_totals.items())),
+        "anomaly_totals": dict(sorted(anomaly_raw_totals.items())),
+        "anomaly_raw_counts": dict(sorted(anomaly_raw_totals.items())),
+        "anomaly_blocking_counts": dict(sorted(anomaly_blocking_totals.items())),
+        "audit_signal_counts": signal_counts,
+        "terra_suppression_required_count": sum(bool(row.get("terra_suppression_simulation", {}).get("terra_textual_suppression_required")) for row in evaluated),
+        "evidence_bundle_version": EVIDENCE_BUNDLE_VERSION,
+        "evidence_hash_version": EVIDENCE_HASH_VERSION,
+        "candidate_pool": candidate_pool,
+        "artifact_fingerprints_before": before_fingerprints,
+        "artifact_fingerprints_after": after_fingerprints,
+        "artifact_fingerprint": _stable_fingerprint(after_fingerprints),
+        "batch_001_terra_artifact_fingerprints_before": batch_001_before,
+        "batch_001_terra_artifact_fingerprints_after": batch_001_after,
+        "batch_001_terra_artifact_fingerprint": _stable_fingerprint(batch_001_after),
+        "batch_002_terra_artifact_fingerprints_before": batch_002_before,
+        "batch_002_terra_artifact_fingerprints_after": batch_002_after,
+        "batch_002_terra_artifact_fingerprint": _stable_fingerprint(batch_002_after),
+        "batch_003_terra_artifact_fingerprints_before": batch_003_before,
+        "batch_003_terra_artifact_fingerprints_after": batch_003_after,
+        "batch_003_terra_artifact_fingerprint": _stable_fingerprint(batch_003_after),
+        "terra_run": False,
+        "prose_generated": False,
+        "batch002_textual_audit": context["batch002_textual_audit"],
+        "historical_textual_routing_review": context["historical_textual_routing_review"],
+        "corpus_textual_routing_audit": context["corpus_textual_routing_audit"],
+        "known_ckl_concerns": ["broad-parent reuse", "cross-book parent reuse", "evidence-count outliers", "backend hash disagreements outside locked final sets", "unresolved corpus ambiguity cases"],
+    }
+    preflight = {
+        "report_version": TOOL_VERSION,
+        "batch_id": batch_id,
+        "workflow": ["recalculate_population", "select_pool", "checkpoint_parent_usage", "retrieve_ckl", "build_evidence_bundle_1.1", "semantic_audit", "presentation_role_audit", "textual_routing_audit", "json_sqlite_agreement", "availability_classification", "anomaly_scan", "evidence_hash_lock"],
+        "resumability": {"enabled": True, "checkpoint_version": CHECKPOINT_VERSION, "work_root": str(work_root.relative_to(REPO_ROOT)), "atomic_promotion": True},
+        "evaluated": evaluated,
+        "evidence_count_outliers": outliers,
+        "disagreement_counts": {
+            "json_sqlite_result_id_disagreements": sum(not row["json_sqlite_agreement"]["result_ids_agree"] for row in evaluated),
+            "json_sqlite_evidence_id_disagreements": sum(not row["json_sqlite_agreement"]["evidence_ids_agree"] for row in evaluated),
+            "json_sqlite_hash_disagreements": sum(not row["json_sqlite_agreement"]["bundle_hash_agree"] for row in evaluated),
+            "semantic_leakage": sum(row["semantic_audit"]["status"] != "PASS" for row in evaluated),
+            "presentation_role_blockers": sum(row["presentation_role_audit"]["status"] != "PASS" for row in evaluated),
+            "textual_routing_anomalies": sum(row["textual_routing_audit"]["status"] != "PASS" for row in evaluated),
+        },
+        "anomaly_counts": dict(sorted(anomaly_blocking_totals.items())),
+        "anomaly_raw_counts": dict(sorted(anomaly_raw_totals.items())),
+        "anomaly_blocking_counts": dict(sorted(anomaly_blocking_totals.items())),
+        "audit_signal_counts": signal_counts,
+        "regression_controls": controls,
+        "batch002_textual_audit": context["batch002_textual_audit"],
+        "historical_textual_routing_review": context["historical_textual_routing_review"],
+        "corpus_textual_routing_audit": context["corpus_textual_routing_audit"],
+    }
+    quarantine_report = {
+        "batch_id": batch_id,
+        "status": "REVIEWED",
+        "chapters": reviewed_chapters,
+        "unresolved_blocker_count": sum(row["status"] == "QUARANTINE" for row in evaluated),
+        "systemic_concern": "Repeated template-shaped background and broad-parent reuse remain CKL cleanup concerns; this preflight does not repair evidence.",
+    }
+    certification = {
+        "batch_id": batch_id,
+        "status": status,
+        "evidence_bundle_version": EVIDENCE_BUNDLE_VERSION,
+        "evidence_hash_version": EVIDENCE_HASH_VERSION,
+        "chapters": pass_certifications,
+        "locked_evidence_bundle_count": len(pass_certifications),
+        "all_availability_allowed": all(row["availability"] in {"AVAILABLE", "THIN"} for row in final_records),
+        "json_sqlite_disagreements": preflight["disagreement_counts"]["json_sqlite_result_id_disagreements"] + preflight["disagreement_counts"]["json_sqlite_evidence_id_disagreements"],
+        "hash_disagreements": preflight["disagreement_counts"]["json_sqlite_hash_disagreements"],
+        "semantic_leakage": preflight["disagreement_counts"]["semantic_leakage"],
+        "presentation_role_blockers": preflight["disagreement_counts"]["presentation_role_blockers"],
+        "textual_routing_anomalies": preflight["disagreement_counts"]["textual_routing_anomalies"],
+    }
+    terra_manifest = {
+        "batch_id": batch_id,
+        "status": "READY_FOR_TERRA" if status == "LOCKED" else "NOT_READY",
+        "prose_included": False,
+        "chapters": terra_inputs,
+    }
+    report = {
+        "batch_id": batch_id,
+        "manifest": manifest,
+        "preflight": preflight,
+        "quarantine": quarantine_report,
+        "certification": certification,
+        "terra_manifest": terra_manifest,
+        "controls": controls,
+    }
+
+    if status != "LOCKED":
+        _json_dump(work_root / "blocked-report.json", report)
+        return report
+
+    staging = output_root / f".{batch_id}.finalizing"
+    if staging.exists():
+        shutil.rmtree(staging)
+    staged_bundle_paths: dict[str, Path] = {}
+    for record in final_records:
+        reference = str(record["reference"])
+        destination = staging / "evidence-bundles" / filename_for(str(record["book"]), int(record["chapter"]))
+        destination.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copyfile(bundle_paths[reference], destination)
+        staged_bundle_paths[reference] = destination
+    _validate_final_payloads(manifest, preflight, certification, terra_manifest, staged_bundle_paths)
+    _json_dump(staging / "batch-manifest.json", manifest)
+    _json_dump(staging / "preflight-report.json", preflight)
+    _json_dump(staging / "quarantine-report.json", quarantine_report)
+    _json_dump(staging / "evidence-certification.json", certification)
+    _json_dump(staging / "terra-input-manifest.json", terra_manifest)
+    markdown = _markdown_report(manifest, preflight, quarantine_report, controls)
+    markdown_staging = work_root / "final-report.md"
+    _atomic_text(markdown_staging, markdown)
+    staging.replace(pool_dir)
+    _atomic_text(REPO_ROOT / "docs" / f"commentary-v1.1-scaled-{batch_id}-preflight.md", markdown)
+    shutil.rmtree(work_root)
     return report
 
 
