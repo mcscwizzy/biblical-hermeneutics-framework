@@ -1,0 +1,4289 @@
+{
+  "passage_ref": "John 1",
+  "entities": {
+    "people": [
+      {
+        "id": "jesus",
+        "title": "Jesus",
+        "type": "person",
+        "aliases": [
+          "who is jesus",
+          "tell me about jesus",
+          "why is jesus important"
+        ],
+        "metadata": {
+          "summary": "The incarnate Son, Messiah, and Lord whose life, death, resurrection, and reign fulfill Israel's story.",
+          "importance": 100,
+          "retrieval_score": 0.92,
+          "ancient_names": [],
+          "modern_identification": "",
+          "region": "",
+          "terrain": "",
+          "elevation": null,
+          "archaeology": [],
+          "related_passages": [
+            "Matthew 1:18-25",
+            "Mark 1:1-15",
+            "Luke 4:16-21",
+            "John 1:1-18",
+            "Philippians 2:5-11",
+            "Colossians 1:15-20",
+            "Hebrews 1:1-4",
+            "1 Corinthians 15:1-28"
+          ]
+        }
+      }
+    ],
+    "places": [],
+    "groups": [],
+    "events": [
+      {
+        "id": "creation",
+        "title": "Creation",
+        "type": "event",
+        "aliases": [
+          "what happened in creation",
+          "tell me about creation",
+          "why is creation important"
+        ],
+        "metadata": {
+          "summary": "The divine ordering of the heavens and the earth and the blessing of life in the seven-day pattern of Genesis 1.",
+          "importance": 100,
+          "retrieval_score": 0.92,
+          "ancient_names": [],
+          "modern_identification": "",
+          "region": "",
+          "terrain": "",
+          "elevation": null,
+          "archaeology": [],
+          "related_passages": [
+            "Genesis 1:1-31",
+            "Genesis 2:1-25",
+            "Psalms 8:1-9",
+            "Psalms 104:1-35",
+            "John 1:1-5",
+            "Colossians 1:15-17",
+            "Hebrews 11:3",
+            "Revelation 21:1-5"
+          ]
+        }
+      }
+    ],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "creation-doctrine-framework:ancient_near_east_context:0",
+      "claim": "Creation texts stand alongside Mesopotamian origin traditions such as Enuma Elish and Atrahasis, while Scripture presents creation as ordered by the one covenant Lord.",
+      "category": "culture",
+      "source_ids": [
+        "genesis-1-2",
+        "psalm-104",
+        "john-1",
+        "colossians-1",
+        "revelation-21",
+        "creation-doctrine-framework-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "John 1:1-5"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "creation-doctrine-framework",
+        "parent_title": "Creation Doctrine Framework",
+        "parent_type": "doctrine",
+        "object_importance": 92,
+        "retrieval_score": 0.912,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "creation-doctrine-framework:hebraic_worldview:0",
+      "claim": "Creation is good, ordered, and accountable to God; humanity receives creaturely dignity and responsibility rather than autonomous self-definition.",
+      "category": "culture",
+      "source_ids": [
+        "genesis-1-2",
+        "psalm-104",
+        "john-1",
+        "colossians-1",
+        "revelation-21",
+        "creation-doctrine-framework-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "John 1:1-5"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "creation-doctrine-framework",
+        "parent_title": "Creation Doctrine Framework",
+        "parent_type": "doctrine",
+        "object_importance": 92,
+        "retrieval_score": 0.912,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "hebraic_worldview",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "creation-doctrine-framework:historical_context:0",
+      "claim": "Creation doctrine draws from Israel's confession of the LORD as Creator amid ancient origin accounts and from later biblical texts that extend creation language to redemption and new creation.",
+      "category": "history",
+      "source_ids": [
+        "genesis-1-2",
+        "psalm-104",
+        "john-1",
+        "colossians-1",
+        "revelation-21",
+        "creation-doctrine-framework-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "John 1:1-5"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "creation-doctrine-framework",
+        "parent_title": "Creation Doctrine Framework",
+        "parent_type": "doctrine",
+        "object_importance": 92,
+        "retrieval_score": 0.912,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "creation-doctrine-framework:historical_setting:0",
+      "claim": "Canonical teaching from Genesis through Revelation",
+      "category": "history",
+      "source_ids": [
+        "genesis-1-2",
+        "psalm-104",
+        "john-1",
+        "colossians-1",
+        "revelation-21",
+        "creation-doctrine-framework-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "John 1:1-5"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "creation-doctrine-framework",
+        "parent_title": "Creation Doctrine Framework",
+        "parent_type": "doctrine",
+        "object_importance": 92,
+        "retrieval_score": 0.912,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_setting",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "creation-doctrine-framework:original_audience:0",
+      "claim": "Readers learning Scripture's account of God, world, and human vocation",
+      "category": "social",
+      "source_ids": [
+        "genesis-1-2",
+        "psalm-104",
+        "john-1",
+        "colossians-1",
+        "revelation-21",
+        "creation-doctrine-framework-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "John 1:1-5"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "creation-doctrine-framework",
+        "parent_title": "Creation Doctrine Framework",
+        "parent_type": "doctrine",
+        "object_importance": 92,
+        "retrieval_score": 0.912,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "original_audience",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "creation-doctrine-framework:second_temple_context:0",
+      "claim": "Second Temple Jewish literature and early Christian texts often connect creation, wisdom, resurrection hope, and God's power to make all things new.",
+      "category": "culture",
+      "source_ids": [
+        "genesis-1-2",
+        "psalm-104",
+        "john-1",
+        "colossians-1",
+        "revelation-21",
+        "creation-doctrine-framework-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "John 1:1-5"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "creation-doctrine-framework",
+        "parent_title": "Creation Doctrine Framework",
+        "parent_type": "doctrine",
+        "object_importance": 92,
+        "retrieval_score": 0.912,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "second_temple_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "creation-doctrine-framework:timeline:0",
+      "claim": "Creation declared good",
+      "category": "chronology",
+      "source_ids": [
+        "genesis-1-2",
+        "psalm-104",
+        "john-1",
+        "colossians-1",
+        "revelation-21",
+        "creation-doctrine-framework-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "John 1:1-5"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "creation-doctrine-framework",
+        "parent_title": "Creation Doctrine Framework",
+        "parent_type": "doctrine",
+        "object_importance": 92,
+        "retrieval_score": 0.912,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "timeline",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "chronology",
+        "overview_priority": 25,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "creation-doctrine-framework:timeline:1",
+      "claim": "Human vocation given",
+      "category": "chronology",
+      "source_ids": [
+        "genesis-1-2",
+        "psalm-104",
+        "john-1",
+        "colossians-1",
+        "revelation-21",
+        "creation-doctrine-framework-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "John 1:1-5"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "creation-doctrine-framework",
+        "parent_title": "Creation Doctrine Framework",
+        "parent_type": "doctrine",
+        "object_importance": 92,
+        "retrieval_score": 0.912,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "timeline",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "chronology",
+        "overview_priority": 25,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "creation-doctrine-framework:timeline:2",
+      "claim": "Fall disorders creation",
+      "category": "chronology",
+      "source_ids": [
+        "genesis-1-2",
+        "psalm-104",
+        "john-1",
+        "colossians-1",
+        "revelation-21",
+        "creation-doctrine-framework-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "John 1:1-5"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "creation-doctrine-framework",
+        "parent_title": "Creation Doctrine Framework",
+        "parent_type": "doctrine",
+        "object_importance": 92,
+        "retrieval_score": 0.912,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "timeline",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "chronology",
+        "overview_priority": 25,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "creation-doctrine-framework:timeline:3",
+      "claim": "Wisdom and worship confess the Creator",
+      "category": "chronology",
+      "source_ids": [
+        "genesis-1-2",
+        "psalm-104",
+        "john-1",
+        "colossians-1",
+        "revelation-21",
+        "creation-doctrine-framework-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "John 1:1-5"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "creation-doctrine-framework",
+        "parent_title": "Creation Doctrine Framework",
+        "parent_type": "doctrine",
+        "object_importance": 92,
+        "retrieval_score": 0.912,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "timeline",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "chronology",
+        "overview_priority": 25,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "creation-doctrine-framework:timeline:4",
+      "claim": "Christ revealed as agent and heir of creation",
+      "category": "chronology",
+      "source_ids": [
+        "genesis-1-2",
+        "psalm-104",
+        "john-1",
+        "colossians-1",
+        "revelation-21",
+        "creation-doctrine-framework-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "John 1:1-5"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "creation-doctrine-framework",
+        "parent_title": "Creation Doctrine Framework",
+        "parent_type": "doctrine",
+        "object_importance": 92,
+        "retrieval_score": 0.912,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "timeline",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "chronology",
+        "overview_priority": 25,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "creation-doctrine-framework:timeline:5",
+      "claim": "New creation promised",
+      "category": "chronology",
+      "source_ids": [
+        "genesis-1-2",
+        "psalm-104",
+        "john-1",
+        "colossians-1",
+        "revelation-21",
+        "creation-doctrine-framework-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "John 1:1-5"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "creation-doctrine-framework",
+        "parent_title": "Creation Doctrine Framework",
+        "parent_type": "doctrine",
+        "object_importance": 92,
+        "retrieval_score": 0.912,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "timeline",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "chronology",
+        "overview_priority": 25,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "creation-doctrine:ancient_near_east_context:0",
+      "claim": "Ancient background for Creation Doctrine includes covenant life, temple worship, royal ideology, wisdom teaching, and early church confession; the entry ties that world to Genesis 1:1-31, Genesis 2:1-25, creation-theme, and genesis without letting comparison replace the biblical witness.",
+      "category": "culture",
+      "source_ids": [
+        "genesis-1-2",
+        "psalm-8",
+        "john-1",
+        "romans-8",
+        "revelation-21"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "John 1:1-5"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "creation-doctrine",
+        "parent_title": "Creation Doctrine",
+        "parent_type": "theology",
+        "object_importance": 95,
+        "retrieval_score": 0.915,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "creation-doctrine:historical_context:0",
+      "claim": "Creation Doctrine is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness.",
+      "category": "history",
+      "source_ids": [
+        "genesis-1-2",
+        "psalm-8",
+        "john-1",
+        "romans-8",
+        "revelation-21"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "John 1:1-5"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "creation-doctrine",
+        "parent_title": "Creation Doctrine",
+        "parent_type": "theology",
+        "object_importance": 95,
+        "retrieval_score": 0.915,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "creation-theme:ancient_near_east_context:0",
+      "claim": "The motif speaks against chaos-centered or polytheistic origin stories and keeps the creator God singular and sovereign.",
+      "category": "culture",
+      "source_ids": [
+        "genesis-1-2",
+        "psalm-8",
+        "psalm-104",
+        "john-1",
+        "romans-8",
+        "revelation-21"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "John 1:1-5"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "creation-theme",
+        "parent_title": "Creation Theme",
+        "parent_type": "theme",
+        "object_importance": 96,
+        "retrieval_score": 0.916,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "creation-theme:historical_context:0",
+      "claim": "Creation and new creation frame the Bible from Genesis to Revelation and give coherence to human vocation, fall, redemption, and hope.",
+      "category": "history",
+      "source_ids": [
+        "genesis-1-2",
+        "psalm-8",
+        "psalm-104",
+        "john-1",
+        "romans-8",
+        "revelation-21"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "John 1:1-5"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "creation-theme",
+        "parent_title": "Creation Theme",
+        "parent_type": "theme",
+        "object_importance": 96,
+        "retrieval_score": 0.916,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "creation:ancient_near_east_context:0",
+      "claim": "Genesis 1 can be compared with ancient Mesopotamian accounts of cosmic waters, ordering, celestial bodies, divine rule, and human vocation. The comparisons reveal shared discourse and marked differences without proving a single route of dependence.",
+      "category": "culture",
+      "source_ids": [
+        "genesis-1-2",
+        "psalm-8",
+        "psalm-104",
+        "john-1",
+        "colossians-1",
+        "revelation-21",
+        "sarna-genesis-creation"
+      ],
+      "related_entity_ids": [
+        "creation"
+      ],
+      "passage_anchors": [
+        "John 1:1-5"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "creation",
+        "parent_title": "Creation",
+        "parent_type": "event",
+        "object_importance": 100,
+        "retrieval_score": 0.92,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "creation:hebraic_worldview:0",
+      "claim": "Genesis 1 depicts one God ordering the world by speech, blessing living creatures, assigning humans an image-bearing vocation, and resting on the seventh day. These observations describe the passage before later theological synthesis.",
+      "category": "culture",
+      "source_ids": [
+        "genesis-1-2",
+        "psalm-8",
+        "psalm-104",
+        "john-1",
+        "colossians-1",
+        "revelation-21",
+        "sarna-genesis-creation"
+      ],
+      "related_entity_ids": [
+        "creation"
+      ],
+      "passage_anchors": [
+        "John 1:1-5"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "creation",
+        "parent_title": "Creation",
+        "parent_type": "event",
+        "object_importance": 100,
+        "retrieval_score": 0.92,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "hebraic_worldview",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "creation:historical_context:0",
+      "claim": "Genesis presents creation as the foundational act that begins biblical history and establishes God\u2019s sovereignty over all things.",
+      "category": "history",
+      "source_ids": [
+        "genesis-1-2",
+        "psalm-8",
+        "psalm-104",
+        "john-1",
+        "colossians-1",
+        "revelation-21",
+        "sarna-genesis-creation"
+      ],
+      "related_entity_ids": [
+        "creation"
+      ],
+      "passage_anchors": [
+        "John 1:1-5"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "creation",
+        "parent_title": "Creation",
+        "parent_type": "event",
+        "object_importance": 100,
+        "retrieval_score": 0.92,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "divine-presence:ancient_near_east_context:0",
+      "claim": "Ancient background for Divine Presence includes covenant life, temple worship, royal ideology, wisdom teaching, and early church confession; the entry ties that world to Exodus 3:1-6, Exodus 40:34-38, presence-theme, and glory-theme without letting comparison replace the biblical witness.",
+      "category": "culture",
+      "source_ids": [
+        "exodus-3",
+        "exodus-40",
+        "1-kings-8",
+        "john-1",
+        "revelation-21",
+        "divine-presence-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "John 1:14"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "divine-presence",
+        "parent_title": "Divine Presence",
+        "parent_type": "theology",
+        "object_importance": 90,
+        "retrieval_score": 0.91,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 13,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "divine-presence:historical_context:0",
+      "claim": "Divine Presence is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness.",
+      "category": "history",
+      "source_ids": [
+        "exodus-3",
+        "exodus-40",
+        "1-kings-8",
+        "john-1",
+        "revelation-21",
+        "divine-presence-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "John 1:14"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "divine-presence",
+        "parent_title": "Divine Presence",
+        "parent_type": "theology",
+        "object_importance": 90,
+        "retrieval_score": 0.91,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 13,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "glory-theme:ancient_near_east_context:0",
+      "claim": "Ancient background for Glory Theme includes covenant practice, worship, kingship, wisdom instruction, and prophetic critique; the entry ties that world to Exodus 3:1-6, Exodus 40:34-38, presence-theme, and sanctuary-theme without letting comparison replace the biblical witness.",
+      "category": "culture",
+      "source_ids": [
+        "exodus-3",
+        "exodus-40",
+        "1-kings-8",
+        "john-1",
+        "revelation-21",
+        "glory-theme-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "John 1:14"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "glory-theme",
+        "parent_title": "Glory Theme",
+        "parent_type": "theme",
+        "object_importance": 90,
+        "retrieval_score": 0.91,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 13,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "glory-theme:historical_context:0",
+      "claim": "Glory Theme is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness.",
+      "category": "history",
+      "source_ids": [
+        "exodus-3",
+        "exodus-40",
+        "1-kings-8",
+        "john-1",
+        "revelation-21",
+        "glory-theme-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "John 1:14"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "glory-theme",
+        "parent_title": "Glory Theme",
+        "parent_type": "theme",
+        "object_importance": 90,
+        "retrieval_score": 0.91,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 13,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "jesus:ancient_near_east_context:0",
+      "claim": "Jesus' ministry unfolds in Second Temple Jewish Galilee and Judea under Roman rule, with synagogue teaching, temple festivals, purity debates, and patronage networks forming the social world.",
+      "category": "culture",
+      "source_ids": [
+        "matthew-1-28",
+        "mark-1-16",
+        "luke-1-24",
+        "john-1-21",
+        "acts-2",
+        "philippians-2",
+        "colossians-1",
+        "hebrews-1",
+        "1-corinthians-15",
+        "jesus-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "jesus"
+      ],
+      "passage_anchors": [
+        "John 1:1-18"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "jesus",
+        "parent_title": "Jesus",
+        "parent_type": "person",
+        "object_importance": 100,
+        "retrieval_score": 0.92,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "jesus:hebraic_worldview:0",
+      "claim": "Jesus' teaching and actions assume Israel's Scripture-shaped world of covenant, temple, Torah, wisdom, prophetic hope, and the kingdom of God.",
+      "category": "culture",
+      "source_ids": [
+        "matthew-1-28",
+        "mark-1-16",
+        "luke-1-24",
+        "john-1-21",
+        "acts-2",
+        "philippians-2",
+        "colossians-1",
+        "hebrews-1",
+        "1-corinthians-15",
+        "jesus-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "jesus"
+      ],
+      "passage_anchors": [
+        "John 1:1-18"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "jesus",
+        "parent_title": "Jesus",
+        "parent_type": "person",
+        "object_importance": 100,
+        "retrieval_score": 0.92,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "hebraic_worldview",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "jesus:historical_context:0",
+      "claim": "Jesus lived in first-century Galilee and Judea under Roman rule within the world of Second Temple Judaism.",
+      "category": "history",
+      "source_ids": [
+        "matthew-1-28",
+        "mark-1-16",
+        "luke-1-24",
+        "john-1-21",
+        "acts-2",
+        "philippians-2",
+        "colossians-1",
+        "hebrews-1",
+        "1-corinthians-15",
+        "jesus-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "jesus"
+      ],
+      "passage_anchors": [
+        "John 1:1-18"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "jesus",
+        "parent_title": "Jesus",
+        "parent_type": "person",
+        "object_importance": 100,
+        "retrieval_score": 0.92,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "jesus:key_places:0",
+      "claim": "bethlehem-1",
+      "category": "geography",
+      "source_ids": [
+        "matthew-1-28",
+        "mark-1-16",
+        "luke-1-24",
+        "john-1-21",
+        "acts-2",
+        "philippians-2",
+        "colossians-1",
+        "hebrews-1",
+        "1-corinthians-15",
+        "jesus-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "jesus"
+      ],
+      "passage_anchors": [
+        "John 1:1-18"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "jesus",
+        "parent_title": "Jesus",
+        "parent_type": "person",
+        "object_importance": 100,
+        "retrieval_score": 0.92,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "key_places",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": null,
+        "overview_priority": 28,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "jesus:key_places:1",
+      "claim": "nazareth",
+      "category": "geography",
+      "source_ids": [
+        "matthew-1-28",
+        "mark-1-16",
+        "luke-1-24",
+        "john-1-21",
+        "acts-2",
+        "philippians-2",
+        "colossians-1",
+        "hebrews-1",
+        "1-corinthians-15",
+        "jesus-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "jesus"
+      ],
+      "passage_anchors": [
+        "John 1:1-18"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "jesus",
+        "parent_title": "Jesus",
+        "parent_type": "person",
+        "object_importance": 100,
+        "retrieval_score": 0.92,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "key_places",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": null,
+        "overview_priority": 28,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "jesus:key_places:2",
+      "claim": "galilee-1",
+      "category": "geography",
+      "source_ids": [
+        "matthew-1-28",
+        "mark-1-16",
+        "luke-1-24",
+        "john-1-21",
+        "acts-2",
+        "philippians-2",
+        "colossians-1",
+        "hebrews-1",
+        "1-corinthians-15",
+        "jesus-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "jesus"
+      ],
+      "passage_anchors": [
+        "John 1:1-18"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "jesus",
+        "parent_title": "Jesus",
+        "parent_type": "person",
+        "object_importance": 100,
+        "retrieval_score": 0.92,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "key_places",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": null,
+        "overview_priority": 28,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "jesus:key_places:3",
+      "claim": "jerusalem",
+      "category": "geography",
+      "source_ids": [
+        "matthew-1-28",
+        "mark-1-16",
+        "luke-1-24",
+        "john-1-21",
+        "acts-2",
+        "philippians-2",
+        "colossians-1",
+        "hebrews-1",
+        "1-corinthians-15",
+        "jesus-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "jesus"
+      ],
+      "passage_anchors": [
+        "John 1:1-18"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "jesus",
+        "parent_title": "Jesus",
+        "parent_type": "person",
+        "object_importance": 100,
+        "retrieval_score": 0.92,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "key_places",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": null,
+        "overview_priority": 43,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "jesus:key_places:4",
+      "claim": "judea-1",
+      "category": "geography",
+      "source_ids": [
+        "matthew-1-28",
+        "mark-1-16",
+        "luke-1-24",
+        "john-1-21",
+        "acts-2",
+        "philippians-2",
+        "colossians-1",
+        "hebrews-1",
+        "1-corinthians-15",
+        "jesus-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "jesus"
+      ],
+      "passage_anchors": [
+        "John 1:1-18"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "jesus",
+        "parent_title": "Jesus",
+        "parent_type": "person",
+        "object_importance": 100,
+        "retrieval_score": 0.92,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "key_places",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": null,
+        "overview_priority": 28,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "jesus:second_temple_context:0",
+      "claim": "Jesus ministers amid Second Temple Jewish expectation, Roman rule, synagogue life, purity debates, messianic hope, and disputes over Israel's restoration.",
+      "category": "culture",
+      "source_ids": [
+        "matthew-1-28",
+        "mark-1-16",
+        "luke-1-24",
+        "john-1-21",
+        "acts-2",
+        "philippians-2",
+        "colossians-1",
+        "hebrews-1",
+        "1-corinthians-15",
+        "jesus-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "jesus"
+      ],
+      "passage_anchors": [
+        "John 1:1-18"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "jesus",
+        "parent_title": "Jesus",
+        "parent_type": "person",
+        "object_importance": 100,
+        "retrieval_score": 0.92,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "second_temple_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "john-1-1",
+      "claim": "The Greek syntax of John 1:1 distinguishes the Logos from God while predicating theos of the Logos; translation and theological construal require attention to grammar and the whole prologue.",
+      "category": "language",
+      "source_ids": [
+        "john-greek",
+        "sblgnt-ref",
+        "logeion"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "John 1:1-2"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "john",
+        "parent_title": "John",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.937,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "denominational_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "lexical",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 81
+      }
+    },
+    {
+      "id": "john-1-18",
+      "claim": "John 1:18 has an early textual variation between readings such as 'unique God' and 'unique Son'; either reading belongs within the prologue's claim that Jesus makes God known.",
+      "category": "history",
+      "source_ids": [
+        "ntvmr-john",
+        "p66-bodmer",
+        "p75-john"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "John 1:18"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "john",
+        "parent_title": "John",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.937,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 17,
+        "certainty": "strong_consensus",
+        "dispute_status": "textual_variant",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "john-baptist-lamb",
+      "claim": "John the Baptist repeatedly rejects messianic status and testifies to Jesus; 'Lamb of God' may evoke sacrificial, Passover, servant, apocalyptic, or combined imagery.",
+      "category": "culture",
+      "source_ids": [
+        "john-greek",
+        "jewish-annotated-nt",
+        "oxford-johannine"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "John 1:19-36"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "john",
+        "parent_title": "John",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.937,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 18,
+        "certainty": "probable",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_theology",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "john-logos",
+      "claim": "John 1 depicts the Logos with God in the beginning, active in creation and life, becoming flesh and dwelling among humans; Jewish Scripture, wisdom, divine-word traditions, and Greek discourse all inform interpretation.",
+      "category": "culture",
+      "source_ids": [
+        "john-greek",
+        "boyarin-logos",
+        "oxford-johannine"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "John 1:1-18"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "john",
+        "parent_title": "John",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.937,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "textually_explicit",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_theology",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 110
+      }
+    },
+    {
+      "id": "light-and-darkness-theme:ancient_near_east_context:0",
+      "claim": "Ancient background for Light and Darkness Theme includes covenant practice, worship, kingship, wisdom instruction, and prophetic critique; the entry ties that world to Genesis 1:1-5, Psalm 27:1, phos, and skotia without letting comparison replace the biblical witness.",
+      "category": "culture",
+      "source_ids": [
+        "genesis-1",
+        "psalm-27",
+        "john-1",
+        "ephesians-5",
+        "1-john-1"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "John 1:1-9"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "light-and-darkness-theme",
+        "parent_title": "Light and Darkness Theme",
+        "parent_type": "theme",
+        "object_importance": 88,
+        "retrieval_score": 0.908,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "light-and-darkness-theme:historical_context:0",
+      "claim": "Light and Darkness Theme is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness.",
+      "category": "history",
+      "source_ids": [
+        "genesis-1",
+        "psalm-27",
+        "john-1",
+        "ephesians-5",
+        "1-john-1"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "John 1:1-9"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "light-and-darkness-theme",
+        "parent_title": "Light and Darkness Theme",
+        "parent_type": "theme",
+        "object_importance": 88,
+        "retrieval_score": 0.908,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "new-creation-theme:ancient_near_east_context:0",
+      "claim": "Ancient background for New Creation Theme includes covenant practice, worship, kingship, wisdom instruction, and prophetic critique; the entry ties that world to Genesis 1:1-31, Genesis 2:1-25, creation-theme, and creation-doctrine without letting comparison replace the biblical witness.",
+      "category": "culture",
+      "source_ids": [
+        "genesis-1-2",
+        "psalm-8",
+        "john-1",
+        "romans-8",
+        "revelation-21"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "John 1:1-5"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "new-creation-theme",
+        "parent_title": "New Creation Theme",
+        "parent_type": "theme",
+        "object_importance": 95,
+        "retrieval_score": 0.915,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "new-creation-theme:historical_context:0",
+      "claim": "New Creation Theme is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness.",
+      "category": "history",
+      "source_ids": [
+        "genesis-1-2",
+        "psalm-8",
+        "john-1",
+        "romans-8",
+        "revelation-21"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "John 1:1-5"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "new-creation-theme",
+        "parent_title": "New Creation Theme",
+        "parent_type": "theme",
+        "object_importance": 95,
+        "retrieval_score": 0.915,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "new-temple-theme:ancient_near_east_context:0",
+      "claim": "Ancient background for New Temple Theme includes covenant practice, worship, kingship, wisdom instruction, and prophetic critique; the entry ties that world to Exodus 25:8-9, Exodus 40:34-38, temple-theme, and what-is-the-temple without letting comparison replace the biblical witness.",
+      "category": "culture",
+      "source_ids": [
+        "exodus-25-40",
+        "1-kings-8",
+        "john-1-2",
+        "ephesians-2",
+        "revelation-21",
+        "new-temple-theme-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "John 1:14"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "new-temple-theme",
+        "parent_title": "New Temple Theme",
+        "parent_type": "theme",
+        "object_importance": 95,
+        "retrieval_score": 0.915,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 13,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "new-temple-theme:historical_context:0",
+      "claim": "New Temple Theme is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness.",
+      "category": "history",
+      "source_ids": [
+        "exodus-25-40",
+        "1-kings-8",
+        "john-1-2",
+        "ephesians-2",
+        "revelation-21",
+        "new-temple-theme-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "John 1:14"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "new-temple-theme",
+        "parent_title": "New Temple Theme",
+        "parent_type": "theme",
+        "object_importance": 95,
+        "retrieval_score": 0.915,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 13,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "presence-theme:ancient_near_east_context:0",
+      "claim": "Ancient background for Presence Theme includes covenant practice, worship, kingship, wisdom instruction, and prophetic critique; the entry ties that world to Exodus 3:1-6, Exodus 40:34-38, glory-theme, and sanctuary-theme without letting comparison replace the biblical witness.",
+      "category": "culture",
+      "source_ids": [
+        "exodus-3",
+        "exodus-40",
+        "1-kings-8",
+        "john-1",
+        "revelation-21",
+        "presence-theme-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "John 1:14"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "presence-theme",
+        "parent_title": "Presence Theme",
+        "parent_type": "theme",
+        "object_importance": 90,
+        "retrieval_score": 0.91,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 13,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "presence-theme:historical_context:0",
+      "claim": "Presence Theme is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness.",
+      "category": "history",
+      "source_ids": [
+        "exodus-3",
+        "exodus-40",
+        "1-kings-8",
+        "john-1",
+        "revelation-21",
+        "presence-theme-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "John 1:14"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "presence-theme",
+        "parent_title": "Presence Theme",
+        "parent_type": "theme",
+        "object_importance": 90,
+        "retrieval_score": 0.91,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 13,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "sacrifice-theme:ancient_near_east_context:0",
+      "claim": "Sacrifice was widespread in the ancient world, but Scripture ties it to holiness, covenant access, and God\u2019s redemptive purpose rather than mere appeasement.",
+      "category": "culture",
+      "source_ids": [
+        "genesis-22",
+        "exodus-12",
+        "leviticus-1-7",
+        "leviticus-16",
+        "isaiah-53",
+        "john-1",
+        "hebrews-9-10",
+        "sacrifice-theme-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "John 1:29"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "sacrifice-theme",
+        "parent_title": "Sacrifice Theme",
+        "parent_type": "theme",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 28,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "sacrifice-theme:hebraic_worldview:0",
+      "claim": "Sacrifice joins holiness, atonement, fellowship, and thanksgiving.",
+      "category": "culture",
+      "source_ids": [
+        "genesis-22",
+        "exodus-12",
+        "leviticus-1-7",
+        "leviticus-16",
+        "isaiah-53",
+        "john-1",
+        "hebrews-9-10",
+        "sacrifice-theme-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "John 1:29"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "sacrifice-theme",
+        "parent_title": "Sacrifice Theme",
+        "parent_type": "theme",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 28,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "hebraic_worldview",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "sacrifice-theme:historical_context:0",
+      "claim": "Sacrifice runs from early Genesis through Levitical worship and remains central in later prophetic and New Testament reflection.",
+      "category": "history",
+      "source_ids": [
+        "genesis-22",
+        "exodus-12",
+        "leviticus-1-7",
+        "leviticus-16",
+        "isaiah-53",
+        "john-1",
+        "hebrews-9-10",
+        "sacrifice-theme-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "John 1:29"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "sacrifice-theme",
+        "parent_title": "Sacrifice Theme",
+        "parent_type": "theme",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 28,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "sacrifice-theme:second_temple_context:0",
+      "claim": "Temple sacrifice remained a living institution in the Second Temple period and frames the New Testament's sacrificial language.",
+      "category": "culture",
+      "source_ids": [
+        "genesis-22",
+        "exodus-12",
+        "leviticus-1-7",
+        "leviticus-16",
+        "isaiah-53",
+        "john-1",
+        "hebrews-9-10",
+        "sacrifice-theme-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "John 1:29"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "sacrifice-theme",
+        "parent_title": "Sacrifice Theme",
+        "parent_type": "theme",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 28,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "second_temple_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "sanctuary-theme:ancient_near_east_context:0",
+      "claim": "Ancient temples and mobile shrines contextualize divine dwelling, restricted access, cult personnel, offerings, and royal patronage. Comparisons must remain feature-specific: no Mari tent, Egyptian royal tent, Timna shrine phase, or bark shrine is the biblical tabernacle.",
+      "category": "culture",
+      "source_ids": [
+        "exodus-25-40",
+        "1-kings-8",
+        "john-1-2",
+        "ephesians-2",
+        "revelation-21",
+        "hundley-sacred-common-space"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "John 1:14"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "sanctuary-theme",
+        "parent_title": "Sanctuary Theme",
+        "parent_type": "theme",
+        "object_importance": 95,
+        "retrieval_score": 0.915,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 13,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "sanctuary-theme:hebraic_worldview:0",
+      "claim": "Biblical sanctuary texts repeatedly join divine nearness with holiness, mediation, justice, and the warning that sacred space cannot be possessed as a guarantee against covenant judgment.",
+      "category": "culture",
+      "source_ids": [
+        "exodus-25-40",
+        "1-kings-8",
+        "john-1-2",
+        "ephesians-2",
+        "revelation-21",
+        "hundley-sacred-common-space"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "John 1:14"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "sanctuary-theme",
+        "parent_title": "Sanctuary Theme",
+        "parent_type": "theme",
+        "object_importance": 95,
+        "retrieval_score": 0.915,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 13,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "hebraic_worldview",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "sanctuary-theme:historical_context:0",
+      "claim": "Tabernacle, First Temple, exilic loss, Second Temple worship, and Roman-period destruction are different historical settings. A canonical theme connects their texts without treating every sanctuary as the same institution or assuming that archaeology proves theological claims.",
+      "category": "history",
+      "source_ids": [
+        "exodus-25-40",
+        "1-kings-8",
+        "john-1-2",
+        "ephesians-2",
+        "revelation-21",
+        "hundley-sacred-common-space"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "John 1:14"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "sanctuary-theme",
+        "parent_title": "Sanctuary Theme",
+        "parent_type": "theme",
+        "object_importance": 95,
+        "retrieval_score": 0.915,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 13,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "sanctuary-theme:second_temple_context:0",
+      "claim": "Second Temple Jewish communities lived with a rebuilt Jerusalem sanctuary while also developing synagogue, purity, priestly, apocalyptic, and heavenly-temple discourse. Jesus and the New Testament writings emerge within this diverse Jewish setting.",
+      "category": "culture",
+      "source_ids": [
+        "exodus-25-40",
+        "1-kings-8",
+        "john-1-2",
+        "ephesians-2",
+        "revelation-21",
+        "hundley-sacred-common-space"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "John 1:14"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "sanctuary-theme",
+        "parent_title": "Sanctuary Theme",
+        "parent_type": "theme",
+        "object_importance": 95,
+        "retrieval_score": 0.915,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 13,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "second_temple_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "trinity:ancient_near_east_context:0",
+      "claim": "Ancient background for Trinity includes covenant life, temple worship, royal ideology, wisdom teaching, and early church confession; the entry ties that world to Matthew 28:18-20, John 1:1-18, matthew, and john without letting comparison replace the biblical witness.",
+      "category": "culture",
+      "source_ids": [
+        "matthew-28",
+        "john-1",
+        "john-14-16",
+        "2-corinthians-13",
+        "ephesians-4",
+        "trinity-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "John 1:1-18"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "trinity",
+        "parent_title": "Trinity",
+        "parent_type": "theology",
+        "object_importance": 95,
+        "retrieval_score": 0.915,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "trinity:historical_context:0",
+      "claim": "Trinity is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness.",
+      "category": "history",
+      "source_ids": [
+        "matthew-28",
+        "john-1",
+        "john-14-16",
+        "2-corinthians-13",
+        "ephesians-4",
+        "trinity-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "John 1:1-18"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "trinity",
+        "parent_title": "Trinity",
+        "parent_type": "theology",
+        "object_importance": 95,
+        "retrieval_score": 0.915,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "water-theme:ancient_near_east_context:0",
+      "claim": "Ancient background for Water Theme includes covenant practice, worship, kingship, wisdom instruction, and prophetic critique; the entry ties that world to Exodus 3:1-6, Exodus 40:34-38, presence-theme, and glory-theme without letting comparison replace the biblical witness.",
+      "category": "culture",
+      "source_ids": [
+        "exodus-3",
+        "exodus-40",
+        "1-kings-8",
+        "john-1",
+        "revelation-21",
+        "water-theme-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "John 1:14"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "water-theme",
+        "parent_title": "Water Theme",
+        "parent_type": "theme",
+        "object_importance": 90,
+        "retrieval_score": 0.91,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 13,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "water-theme:historical_context:0",
+      "claim": "Water Theme is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness.",
+      "category": "history",
+      "source_ids": [
+        "exodus-3",
+        "exodus-40",
+        "1-kings-8",
+        "john-1",
+        "revelation-21",
+        "water-theme-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "John 1:14"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "water-theme",
+        "parent_title": "Water Theme",
+        "parent_type": "theme",
+        "object_importance": 90,
+        "retrieval_score": 0.91,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 13,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "what-is-intertextuality:ancient_near_east_context:0",
+      "claim": "In the ancient world, authoritative texts were often reactivated through citation and echo, and the Bible uses that practice to show ongoing divine speech.",
+      "category": "culture",
+      "source_ids": [
+        "luke-24",
+        "matthew-1",
+        "john-1",
+        "romans-15",
+        "1-corinthians-10",
+        "hebrews-1",
+        "revelation-5",
+        "what-is-intertextuality-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "John 1:1-18"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "what-is-intertextuality",
+        "parent_title": "What is intertextuality?",
+        "parent_type": "faq",
+        "object_importance": 93,
+        "retrieval_score": 0.913,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "what-is-intertextuality:historical_context:0",
+      "claim": "Biblical authors wrote within a tradition of remembering, reusing, and reinterpreting earlier Scripture for new settings and audiences.",
+      "category": "history",
+      "source_ids": [
+        "luke-24",
+        "matthew-1",
+        "john-1",
+        "romans-15",
+        "1-corinthians-10",
+        "hebrews-1",
+        "revelation-5",
+        "what-is-intertextuality-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "John 1:1-18"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "what-is-intertextuality",
+        "parent_title": "What is intertextuality?",
+        "parent_type": "faq",
+        "object_importance": 93,
+        "retrieval_score": 0.913,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "what-verses-show-identity-in-christ:ancient_near_east_context:0",
+      "claim": "Family, household, citizenship, and patronage language shaped ancient identity, but the New Testament grounds Christian identity in God's gracious action in Christ rather than social rank or ethnicity.",
+      "category": "culture",
+      "source_ids": [
+        "john-1",
+        "romans-8",
+        "1-corinthians-6",
+        "2-corinthians-5",
+        "galatians-2",
+        "galatians-3",
+        "ephesians-1",
+        "colossians-3",
+        "1-peter-2",
+        "1-john-3",
+        "what-verses-show-identity-in-christ-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "John 1:12"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "what-verses-show-identity-in-christ",
+        "parent_title": "What Verses Show Identity in Christ?",
+        "parent_type": "faq",
+        "object_importance": 96,
+        "retrieval_score": 0.916,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 11,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "what-verses-show-identity-in-christ:historical_context:0",
+      "claim": "These texts come mainly from Pauline and Johannine letters written to churches learning to understand their status, belonging, and conduct in light of Christ's death and resurrection.",
+      "category": "history",
+      "source_ids": [
+        "john-1",
+        "romans-8",
+        "1-corinthians-6",
+        "2-corinthians-5",
+        "galatians-2",
+        "galatians-3",
+        "ephesians-1",
+        "colossians-3",
+        "1-peter-2",
+        "1-john-3",
+        "what-verses-show-identity-in-christ-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "John 1:12"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "what-verses-show-identity-in-christ",
+        "parent_title": "What Verses Show Identity in Christ?",
+        "parent_type": "faq",
+        "object_importance": 96,
+        "retrieval_score": 0.916,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 11,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40,
+        "inherited_from_parent": true
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "1 Corinthians 10",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "1-corinthians-10",
+        "canonical_object_ids": [
+          "what-is-intertextuality"
+        ]
+      },
+      {
+        "title": "1 Corinthians 15",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "1-corinthians-15",
+        "canonical_object_ids": [
+          "jesus"
+        ]
+      },
+      {
+        "title": "1 Corinthians 6",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "1-corinthians-6",
+        "canonical_object_ids": [
+          "what-verses-show-identity-in-christ"
+        ]
+      },
+      {
+        "title": "1 John 1",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "1-john-1",
+        "canonical_object_ids": [
+          "light-and-darkness-theme"
+        ]
+      },
+      {
+        "title": "1 John 3",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "1-john-3",
+        "canonical_object_ids": [
+          "what-verses-show-identity-in-christ"
+        ]
+      },
+      {
+        "title": "1 Kings 8",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "1-kings-8",
+        "canonical_object_ids": [
+          "divine-presence",
+          "glory-theme",
+          "new-temple-theme",
+          "presence-theme",
+          "sanctuary-theme",
+          "water-theme"
+        ],
+        "canonical_source_variants": [
+          {
+            "title": "1 Kings 8",
+            "author": "",
+            "publisher": "",
+            "year": null,
+            "locator": "",
+            "url": "",
+            "source_type": "scripture",
+            "supports": [],
+            "notes": "",
+            "id": "1-kings-8"
+          },
+          {
+            "title": "1 Kings 8",
+            "author": "",
+            "publisher": "",
+            "year": null,
+            "locator": "1 Kings 8:1-66",
+            "url": "",
+            "source_type": "scripture",
+            "supports": [
+              "historical-context",
+              "canonical-context",
+              "interpretive-notes"
+            ],
+            "notes": "Primary temple dedication, cloud, glory, prayer, and exile-warning text.",
+            "id": "1-kings-8"
+          }
+        ]
+      },
+      {
+        "title": "1 Peter 2",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "1-peter-2",
+        "canonical_object_ids": [
+          "what-verses-show-identity-in-christ"
+        ]
+      },
+      {
+        "title": "2 Corinthians 13",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "2-corinthians-13",
+        "canonical_object_ids": [
+          "trinity"
+        ]
+      },
+      {
+        "title": "2 Corinthians 5",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "2-corinthians-5",
+        "canonical_object_ids": [
+          "what-verses-show-identity-in-christ"
+        ]
+      },
+      {
+        "title": "Acts 2",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "acts-2",
+        "canonical_object_ids": [
+          "jesus"
+        ]
+      },
+      {
+        "title": "The Gospel of the Memra: Jewish Binitarianism and the Prologue to John",
+        "author": "Daniel Boyarin",
+        "publisher": "Harvard Theological Review / Cambridge University Press",
+        "year": 2001,
+        "locator": "Harvard Theological Review 94",
+        "url": "https://www.cambridge.org/core/journals/harvard-theological-review/article/abs/gospel-of-the-memra-jewish-binitarianism-and-the-prologue-to-john/A97052954F201A3B1B79FD50EB9E3EFA",
+        "source_type": "journal-article",
+        "supports": [
+          "hebraic-worldview",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Jewish-contextual proposal for the Logos prologue.",
+        "id": "boyarin-logos",
+        "canonical_object_ids": [
+          "john"
+        ]
+      },
+      {
+        "title": "Colossians 1",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "colossians-1",
+        "canonical_object_ids": [
+          "creation",
+          "creation-doctrine-framework",
+          "jesus"
+        ]
+      },
+      {
+        "title": "Colossians 3",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "colossians-3",
+        "canonical_object_ids": [
+          "what-verses-show-identity-in-christ"
+        ]
+      },
+      {
+        "title": "Canonical historical orientation for Creation Doctrine Framework",
+        "author": "",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "Foundational doctrine introduced in Genesis and developed across the canon",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "id": "creation-doctrine-framework-historical-orientation",
+        "canonical_object_ids": [
+          "creation-doctrine-framework"
+        ]
+      },
+      {
+        "title": "Canonical historical orientation for Divine Presence",
+        "author": "",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "id": "divine-presence-historical-orientation",
+        "canonical_object_ids": [
+          "divine-presence"
+        ]
+      },
+      {
+        "title": "Ephesians 1",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "ephesians-1",
+        "canonical_object_ids": [
+          "what-verses-show-identity-in-christ"
+        ]
+      },
+      {
+        "title": "Ephesians 2",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "ephesians-2",
+        "canonical_object_ids": [
+          "new-temple-theme",
+          "sanctuary-theme"
+        ],
+        "canonical_source_variants": [
+          {
+            "title": "Ephesians 2",
+            "author": "",
+            "publisher": "",
+            "year": null,
+            "locator": "",
+            "url": "",
+            "source_type": "scripture",
+            "supports": [],
+            "notes": "",
+            "id": "ephesians-2"
+          },
+          {
+            "title": "Ephesians 2",
+            "author": "",
+            "publisher": "",
+            "year": null,
+            "locator": "Ephesians 2:11-22",
+            "url": "",
+            "source_type": "scripture",
+            "supports": [
+              "canonical-context",
+              "later-christian-reception",
+              "interpretive-notes"
+            ],
+            "notes": "Primary community-as-temple passage in its Jew-Gentile reconciliation context.",
+            "id": "ephesians-2"
+          }
+        ]
+      },
+      {
+        "title": "Ephesians 4",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "ephesians-4",
+        "canonical_object_ids": [
+          "trinity"
+        ]
+      },
+      {
+        "title": "Ephesians 5",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "ephesians-5",
+        "canonical_object_ids": [
+          "light-and-darkness-theme"
+        ]
+      },
+      {
+        "title": "Exodus 12",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "exodus-12",
+        "canonical_object_ids": [
+          "sacrifice-theme"
+        ]
+      },
+      {
+        "title": "Exodus 25-40",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "exodus-25-40",
+        "canonical_object_ids": [
+          "new-temple-theme",
+          "sanctuary-theme"
+        ],
+        "canonical_source_variants": [
+          {
+            "title": "Exodus 25-40",
+            "author": "",
+            "publisher": "",
+            "year": null,
+            "locator": "",
+            "url": "",
+            "source_type": "scripture",
+            "supports": [],
+            "notes": "",
+            "id": "exodus-25-40"
+          },
+          {
+            "title": "Exodus 25-40",
+            "author": "",
+            "publisher": "",
+            "year": null,
+            "locator": "Exodus 25:1-40:38",
+            "url": "",
+            "source_type": "scripture",
+            "supports": [
+              "historical-context",
+              "literary-context",
+              "canonical-context",
+              "interpretive-notes"
+            ],
+            "notes": "Primary tabernacle instruction, construction, and glory texts.",
+            "id": "exodus-25-40"
+          }
+        ]
+      },
+      {
+        "title": "Exodus 3",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "exodus-3",
+        "canonical_object_ids": [
+          "divine-presence",
+          "glory-theme",
+          "presence-theme",
+          "water-theme"
+        ]
+      },
+      {
+        "title": "Exodus 40",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "exodus-40",
+        "canonical_object_ids": [
+          "divine-presence",
+          "glory-theme",
+          "presence-theme",
+          "water-theme"
+        ]
+      },
+      {
+        "title": "Galatians 2",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "galatians-2",
+        "canonical_object_ids": [
+          "what-verses-show-identity-in-christ"
+        ]
+      },
+      {
+        "title": "Galatians 3",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "galatians-3",
+        "canonical_object_ids": [
+          "what-verses-show-identity-in-christ"
+        ]
+      },
+      {
+        "title": "Genesis 1",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "genesis-1",
+        "canonical_object_ids": [
+          "light-and-darkness-theme"
+        ]
+      },
+      {
+        "title": "Genesis 1-2",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "genesis-1-2",
+        "canonical_object_ids": [
+          "creation",
+          "creation-doctrine",
+          "creation-doctrine-framework",
+          "creation-theme",
+          "new-creation-theme"
+        ],
+        "canonical_source_variants": [
+          {
+            "title": "Genesis 1-2",
+            "author": "",
+            "publisher": "",
+            "year": null,
+            "locator": "",
+            "url": "",
+            "source_type": "scripture",
+            "supports": [],
+            "notes": "",
+            "id": "genesis-1-2"
+          },
+          {
+            "title": "Genesis 1-2",
+            "author": "",
+            "publisher": "",
+            "year": null,
+            "locator": "Genesis 1:1-2:25",
+            "url": "",
+            "source_type": "scripture",
+            "supports": [
+              "summary",
+              "literary-context",
+              "hebraic-worldview"
+            ],
+            "notes": "Primary biblical creation texts; no modern translation is reproduced.",
+            "id": "genesis-1-2"
+          }
+        ]
+      },
+      {
+        "title": "Genesis 22",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "genesis-22",
+        "canonical_object_ids": [
+          "sacrifice-theme"
+        ]
+      },
+      {
+        "title": "Canonical historical orientation for Glory Theme",
+        "author": "",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "id": "glory-theme-historical-orientation",
+        "canonical_object_ids": [
+          "glory-theme"
+        ]
+      },
+      {
+        "title": "Hebrews 1",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "hebrews-1",
+        "canonical_object_ids": [
+          "jesus",
+          "what-is-intertextuality"
+        ]
+      },
+      {
+        "title": "Hebrews 9-10",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "hebrews-9-10",
+        "canonical_object_ids": [
+          "sacrifice-theme"
+        ]
+      },
+      {
+        "title": "Sacred Space and Common Space",
+        "author": "Michael B. Hundley",
+        "publisher": "Oxford University Press",
+        "year": 2020,
+        "locator": "The Oxford Handbook of Ritual and Worship in the Hebrew Bible, chapter 11, pp. 160-178",
+        "url": "https://academic.oup.com/edited-volume/34254/chapter-abstract/290406086",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "ancient-near-east-context",
+          "hebraic-worldview"
+        ],
+        "notes": "Comparative synthesis of sacred and common spaces in the ancient Near East and Hebrew Bible.",
+        "id": "hundley-sacred-common-space",
+        "canonical_object_ids": [
+          "sanctuary-theme"
+        ]
+      },
+      {
+        "title": "Isaiah 53",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "isaiah-53",
+        "canonical_object_ids": [
+          "sacrifice-theme"
+        ]
+      },
+      {
+        "title": "Canonical historical orientation for Jesus",
+        "author": "",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "id": "jesus-historical-orientation",
+        "canonical_object_ids": [
+          "jesus"
+        ]
+      },
+      {
+        "title": "The Jewish Annotated New Testament",
+        "author": "Amy-Jill Levine and Marc Zvi Brettler, editors",
+        "publisher": "Oxford University Press",
+        "year": 2017,
+        "locator": "John introduction, annotations, and Jewish-context essays",
+        "url": "https://global.oup.com/academic/product/the-jewish-annotated-new-testament-9780190461850",
+        "source_type": "reference-work",
+        "supports": [
+          "hebraic-worldview",
+          "second-temple-context",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Jewish scholarly annotation and context.",
+        "id": "jewish-annotated-nt",
+        "canonical_object_ids": [
+          "john"
+        ]
+      },
+      {
+        "title": "John 1",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "john-1",
+        "canonical_object_ids": [
+          "creation",
+          "creation-doctrine",
+          "creation-doctrine-framework",
+          "creation-theme",
+          "divine-presence",
+          "glory-theme",
+          "light-and-darkness-theme",
+          "new-creation-theme",
+          "presence-theme",
+          "sacrifice-theme",
+          "trinity",
+          "water-theme",
+          "what-is-intertextuality",
+          "what-verses-show-identity-in-christ"
+        ]
+      },
+      {
+        "title": "John 1-2",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "john-1-2",
+        "canonical_object_ids": [
+          "new-temple-theme",
+          "sanctuary-theme"
+        ],
+        "canonical_source_variants": [
+          {
+            "title": "John 1-2",
+            "author": "",
+            "publisher": "",
+            "year": null,
+            "locator": "",
+            "url": "",
+            "source_type": "scripture",
+            "supports": [],
+            "notes": "",
+            "id": "john-1-2"
+          },
+          {
+            "title": "John 1-2",
+            "author": "",
+            "publisher": "",
+            "year": null,
+            "locator": "John 1:14; 2:13-22",
+            "url": "",
+            "source_type": "scripture",
+            "supports": [
+              "second-temple-context",
+              "later-christian-reception",
+              "interpretive-notes"
+            ],
+            "notes": "Primary Johannine dwelling, glory, and body-temple passages.",
+            "id": "john-1-2"
+          }
+        ]
+      },
+      {
+        "title": "John 1-21",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "john-1-21",
+        "canonical_object_ids": [
+          "jesus"
+        ]
+      },
+      {
+        "title": "John 14-16",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "john-14-16",
+        "canonical_object_ids": [
+          "trinity"
+        ]
+      },
+      {
+        "title": "The Gospel according to John, Greek text",
+        "author": "",
+        "publisher": "Society of Biblical Literature",
+        "year": 2010,
+        "locator": "John 1-21 in SBLGNT",
+        "url": "https://www.sbl-site.org/resources/digital-texts/sbl-greek-new-testament/",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "structure",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Open critical Greek text.",
+        "id": "john-greek",
+        "canonical_object_ids": [
+          "john"
+        ]
+      },
+      {
+        "title": "Leviticus 1-7",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "leviticus-1-7",
+        "canonical_object_ids": [
+          "sacrifice-theme"
+        ]
+      },
+      {
+        "title": "Leviticus 16",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "leviticus-16",
+        "canonical_object_ids": [
+          "sacrifice-theme"
+        ]
+      },
+      {
+        "title": "Logeion Greek Lexicon and Corpus Search",
+        "author": "",
+        "publisher": "University of Chicago",
+        "year": null,
+        "locator": "Johannine Greek vocabulary",
+        "url": "https://logeion.uchicago.edu/",
+        "source_type": "lexicon",
+        "supports": [
+          "greek-words",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Aggregated Greek lexical reference.",
+        "id": "logeion",
+        "canonical_object_ids": [
+          "john"
+        ]
+      },
+      {
+        "title": "Luke 1-24",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "luke-1-24",
+        "canonical_object_ids": [
+          "jesus"
+        ]
+      },
+      {
+        "title": "Luke 24",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "luke-24",
+        "canonical_object_ids": [
+          "what-is-intertextuality"
+        ]
+      },
+      {
+        "title": "Mark 1-16",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "mark-1-16",
+        "canonical_object_ids": [
+          "jesus"
+        ]
+      },
+      {
+        "title": "Matthew 1",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "matthew-1",
+        "canonical_object_ids": [
+          "what-is-intertextuality"
+        ]
+      },
+      {
+        "title": "Matthew 1-28",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "matthew-1-28",
+        "canonical_object_ids": [
+          "jesus"
+        ]
+      },
+      {
+        "title": "Matthew 28",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "matthew-28",
+        "canonical_object_ids": [
+          "trinity"
+        ]
+      },
+      {
+        "title": "Canonical historical orientation for New Temple Theme",
+        "author": "",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "id": "new-temple-theme-historical-orientation",
+        "canonical_object_ids": [
+          "new-temple-theme"
+        ]
+      },
+      {
+        "title": "New Testament Virtual Manuscript Room",
+        "author": "",
+        "publisher": "Institut f\u00fcr Neutestamentliche Textforschung",
+        "year": null,
+        "locator": "John manuscripts and textual apparatus workspace",
+        "url": "https://ntvmr.uni-muenster.de/manuscript-workspace",
+        "source_type": "reference-work",
+        "supports": [
+          "claims",
+          "interpretive-notes",
+          "archaeology"
+        ],
+        "notes": "Primary manuscript catalog and images where available.",
+        "id": "ntvmr-john",
+        "canonical_object_ids": [
+          "john"
+        ]
+      },
+      {
+        "title": "The Oxford Handbook of Johannine Studies",
+        "author": "Judith M. Lieu and Martinus C. de Boer, editors",
+        "publisher": "Oxford University Press",
+        "year": 2018,
+        "locator": "Chapters on text, sources, Gospels, community, authorship, archaeology, Jews, gender, signs, theology, ethics, festivals, and canon",
+        "url": "https://academic.oup.com/edited-volume/38583",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "literary-context",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Multi-author survey of Johannine scholarship.",
+        "id": "oxford-johannine",
+        "canonical_object_ids": [
+          "john"
+        ]
+      },
+      {
+        "title": "Papyrus Bodmer II, P66",
+        "author": "",
+        "publisher": "Fondation Martin Bodmer and Bodmer Lab",
+        "year": null,
+        "locator": "Substantial portions of John",
+        "url": "https://bodmerlab.unige.ch/fr/constellations/papyri",
+        "source_type": "museum-collection",
+        "supports": [
+          "claims",
+          "interpretive-notes",
+          "archaeology"
+        ],
+        "notes": "Early papyrus witness to John and its corrections.",
+        "id": "p66-bodmer",
+        "canonical_object_ids": [
+          "john"
+        ]
+      },
+      {
+        "title": "Papyrus Bodmer XIV-XV, P75",
+        "author": "",
+        "publisher": "Vatican Library",
+        "year": null,
+        "locator": "Luke and John",
+        "url": "https://digi.vatlib.it/view/MSS_Pap.Hanna.1(Mater.Verbi)",
+        "source_type": "museum-collection",
+        "supports": [
+          "claims",
+          "interpretive-notes",
+          "archaeology"
+        ],
+        "notes": "Early papyrus codex containing Luke and John.",
+        "id": "p75-john",
+        "canonical_object_ids": [
+          "john"
+        ]
+      },
+      {
+        "title": "Philippians 2",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "philippians-2",
+        "canonical_object_ids": [
+          "jesus"
+        ]
+      },
+      {
+        "title": "Canonical historical orientation for Presence Theme",
+        "author": "",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "id": "presence-theme-historical-orientation",
+        "canonical_object_ids": [
+          "presence-theme"
+        ]
+      },
+      {
+        "title": "Psalm 104",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [],
+        "notes": "",
+        "id": "psalm-104",
+        "canonical_object_ids": [
+          "creation",
+          "creation-doctrine-framework",
+          "creation-theme"
+        ],
+        "canonical_source_variants": [
+          {
+            "title": "Psalm 104",
+            "author": "",
+            "publisher": "",
+            "year": null,
+            "locator": "",
+            "url": "",
+            "source_type": "reference-work",
+            "supports": [],
+            "notes": "",
+            "id": "psalm-104"
+          },
+          {
+            "title": "Psalm 104",
+            "author": "",
+            "publisher": "",
+            "year": null,
+            "locator": "",
+            "url": "",
+            "source_type": "scripture",
+            "supports": [],
+            "notes": "",
+            "id": "psalm-104"
+          }
+        ]
+      },
+      {
+        "title": "Psalm 27",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [],
+        "notes": "",
+        "id": "psalm-27",
+        "canonical_object_ids": [
+          "light-and-darkness-theme"
+        ]
+      },
+      {
+        "title": "Psalm 8",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [],
+        "notes": "",
+        "id": "psalm-8",
+        "canonical_object_ids": [
+          "creation",
+          "creation-doctrine",
+          "creation-theme",
+          "new-creation-theme"
+        ],
+        "canonical_source_variants": [
+          {
+            "title": "Psalm 8",
+            "author": "",
+            "publisher": "",
+            "year": null,
+            "locator": "",
+            "url": "",
+            "source_type": "reference-work",
+            "supports": [],
+            "notes": "",
+            "id": "psalm-8"
+          },
+          {
+            "title": "Psalm 8",
+            "author": "",
+            "publisher": "",
+            "year": null,
+            "locator": "",
+            "url": "",
+            "source_type": "scripture",
+            "supports": [],
+            "notes": "",
+            "id": "psalm-8"
+          }
+        ]
+      },
+      {
+        "title": "Revelation 21",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "revelation-21",
+        "canonical_object_ids": [
+          "creation",
+          "creation-doctrine",
+          "creation-doctrine-framework",
+          "creation-theme",
+          "divine-presence",
+          "glory-theme",
+          "new-creation-theme",
+          "new-temple-theme",
+          "presence-theme",
+          "sanctuary-theme",
+          "water-theme"
+        ],
+        "canonical_source_variants": [
+          {
+            "title": "Revelation 21",
+            "author": "",
+            "publisher": "",
+            "year": null,
+            "locator": "",
+            "url": "",
+            "source_type": "scripture",
+            "supports": [],
+            "notes": "",
+            "id": "revelation-21"
+          },
+          {
+            "title": "Revelation 21",
+            "author": "",
+            "publisher": "",
+            "year": null,
+            "locator": "Revelation 21:1-27",
+            "url": "",
+            "source_type": "scripture",
+            "supports": [
+              "canonical-context",
+              "later-christian-reception",
+              "interpretive-notes"
+            ],
+            "notes": "Primary new-creation dwelling and no-temple-in-the-city passage.",
+            "id": "revelation-21"
+          }
+        ]
+      },
+      {
+        "title": "Revelation 5",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "revelation-5",
+        "canonical_object_ids": [
+          "what-is-intertextuality"
+        ]
+      },
+      {
+        "title": "Romans 15",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "romans-15",
+        "canonical_object_ids": [
+          "what-is-intertextuality"
+        ]
+      },
+      {
+        "title": "Romans 8",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "romans-8",
+        "canonical_object_ids": [
+          "creation-doctrine",
+          "creation-theme",
+          "new-creation-theme",
+          "what-verses-show-identity-in-christ"
+        ]
+      },
+      {
+        "title": "Canonical historical orientation for Sacrifice Theme",
+        "author": "",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "id": "sacrifice-theme-historical-orientation",
+        "canonical_object_ids": [
+          "sacrifice-theme"
+        ]
+      },
+      {
+        "title": "The JPS Torah Commentary: Genesis",
+        "author": "Nahum M. Sarna",
+        "publisher": "Jewish Publication Society",
+        "year": 1989,
+        "locator": "Introduction and commentary on Genesis 1-2",
+        "url": "https://jps.org/books/jps-torah-commentary-genesis/",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context",
+          "ancient-near-east-context",
+          "literary-context"
+        ],
+        "notes": "Academic Jewish commentary used for literary and ancient comparative context.",
+        "id": "sarna-genesis-creation",
+        "canonical_object_ids": [
+          "creation"
+        ]
+      },
+      {
+        "title": "SBL Greek New Testament",
+        "author": "Michael W. Holmes",
+        "publisher": "Society of Biblical Literature",
+        "year": 2010,
+        "locator": "John and apparatus resources",
+        "url": "https://www.sbl-site.org/resources/digital-texts/sbl-greek-new-testament/",
+        "source_type": "reference-work",
+        "supports": [
+          "greek-words",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Open Greek text and lexical orientation.",
+        "id": "sblgnt-ref",
+        "canonical_object_ids": [
+          "john"
+        ]
+      },
+      {
+        "title": "Canonical historical orientation for Trinity",
+        "author": "",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "id": "trinity-historical-orientation",
+        "canonical_object_ids": [
+          "trinity"
+        ]
+      },
+      {
+        "title": "Canonical historical orientation for Water Theme",
+        "author": "",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "id": "water-theme-historical-orientation",
+        "canonical_object_ids": [
+          "water-theme"
+        ]
+      },
+      {
+        "title": "Canonical historical orientation for What is intertextuality?",
+        "author": "",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "id": "what-is-intertextuality-historical-orientation",
+        "canonical_object_ids": [
+          "what-is-intertextuality"
+        ]
+      },
+      {
+        "title": "Canonical historical orientation for What Verses Show Identity in Christ?",
+        "author": "",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "id": "what-verses-show-identity-in-christ-historical-orientation",
+        "canonical_object_ids": [
+          "what-verses-show-identity-in-christ"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "creation",
+        "type": "event",
+        "title": "Creation",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.92
+      },
+      {
+        "id": "creation-doctrine",
+        "type": "theology",
+        "title": "Creation Doctrine",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.915
+      },
+      {
+        "id": "creation-doctrine-framework",
+        "type": "doctrine",
+        "title": "Creation Doctrine Framework",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.912
+      },
+      {
+        "id": "creation-theme",
+        "type": "theme",
+        "title": "Creation Theme",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.916
+      },
+      {
+        "id": "divine-presence",
+        "type": "theology",
+        "title": "Divine Presence",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.91
+      },
+      {
+        "id": "glory-theme",
+        "type": "theme",
+        "title": "Glory Theme",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.91
+      },
+      {
+        "id": "jesus",
+        "type": "person",
+        "title": "Jesus",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.92
+      },
+      {
+        "id": "john",
+        "type": "book",
+        "title": "John",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.937
+      },
+      {
+        "id": "light-and-darkness-theme",
+        "type": "theme",
+        "title": "Light and Darkness Theme",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.908
+      },
+      {
+        "id": "new-creation-theme",
+        "type": "theme",
+        "title": "New Creation Theme",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.915
+      },
+      {
+        "id": "new-temple-theme",
+        "type": "theme",
+        "title": "New Temple Theme",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.915
+      },
+      {
+        "id": "presence-theme",
+        "type": "theme",
+        "title": "Presence Theme",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.91
+      },
+      {
+        "id": "sacrifice-theme",
+        "type": "theme",
+        "title": "Sacrifice Theme",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.917
+      },
+      {
+        "id": "sanctuary-theme",
+        "type": "theme",
+        "title": "Sanctuary Theme",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.915
+      },
+      {
+        "id": "trinity",
+        "type": "theology",
+        "title": "Trinity",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.915
+      },
+      {
+        "id": "water-theme",
+        "type": "theme",
+        "title": "Water Theme",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.91
+      },
+      {
+        "id": "what-is-intertextuality",
+        "type": "faq",
+        "title": "What is intertextuality?",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.913
+      },
+      {
+        "id": "what-verses-show-identity-in-christ",
+        "type": "faq",
+        "title": "What Verses Show Identity in Christ?",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.916
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "94af797e700c2bbf818615b7fb99775cc1f8a920281c564ab643951fe9be845f",
+  "evidence_hash_version": "2"
+}

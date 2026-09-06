@@ -1,0 +1,936 @@
+{
+  "passage_ref": "John 12",
+  "entities": {
+    "people": [],
+    "places": [],
+    "groups": [],
+    "events": [
+      {
+        "id": "raising-of-lazarus",
+        "title": "Raising of Lazarus",
+        "type": "event",
+        "aliases": [
+          "raising of lazarus",
+          "lazarus raised",
+          "john 11 lazarus",
+          "resurrection and the life"
+        ],
+        "metadata": {
+          "summary": "Jesus raises Lazarus from the dead, revealing himself as the resurrection and the life and intensifying opposition.",
+          "importance": 86,
+          "retrieval_score": 0.906,
+          "ancient_names": [],
+          "modern_identification": "",
+          "region": "",
+          "terrain": "",
+          "elevation": null,
+          "archaeology": [],
+          "related_passages": [
+            "John 11:1-44",
+            "John 11:45-53",
+            "John 12:9-11"
+          ]
+        }
+      }
+    ],
+    "artifacts": [
+      {
+        "id": "pilgrimage-road-in-jerusalem",
+        "title": "Pilgrimage Road in Jerusalem",
+        "type": "archaeology",
+        "aliases": [
+          "pilgrimage road in jerusalem artifact",
+          "pilgrimage road in jerusalem discovery",
+          "pilgrimage road in jerusalem excavation",
+          "pilgrimage road in jerusalem find"
+        ],
+        "metadata": {
+          "summary": "An Early Roman stepped street ran north from the Pool of Siloam through Jerusalem toward the Temple Mount, providing material context for movement through the festival city without identifying any individual pilgrim's route.",
+          "importance": 94,
+          "retrieval_score": 0.914,
+          "ancient_names": [],
+          "modern_identification": "",
+          "region": "",
+          "terrain": "",
+          "elevation": null,
+          "archaeology": [],
+          "related_passages": [
+            "Luke 19:28-48",
+            "John 12:12-19"
+          ]
+        }
+      }
+    ]
+  },
+  "evidence_items": [
+    {
+      "id": "john-aposynagogos",
+      "claim": "John's aposynagogos notices have supported staged Johannine-community and synagogue-expulsion reconstructions, but a single late-first-century decree or uniform rupture is not established by the text.",
+      "category": "culture",
+      "source_ids": [
+        "cambridge-john-companion",
+        "oxford-johannine",
+        "vonwahlde-jews"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "John 12:42-43"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "john",
+        "parent_title": "John",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 41,
+        "certainty": "plausible",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "historical_cultural",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "john-draw-all",
+      "claim": "John 12:32 links being lifted up with Jesus' death and drawing 'all' or 'all people'; universal, representative, and judgment readings debate the scope, and no reading licenses coercion.",
+      "category": "culture",
+      "source_ids": [
+        "john-greek",
+        "smith-theology",
+        "postcolonial-john"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "John 12:20-36"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "john",
+        "parent_title": "John",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 19,
+        "certainty": "probable",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_theology",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 110
+      }
+    },
+    {
+      "id": "pilgrimage-road-in-jerusalem:ancient_near_east_context:0",
+      "claim": "The street belongs specifically to Roman-period Jerusalem, not to the Iron Age setting of Tell Dan or the monarchy narratives.",
+      "category": "culture",
+      "source_ids": [
+        "iaa-jerusalem-stepped-street-2023",
+        "jerusalem-entry-passages"
+      ],
+      "related_entity_ids": [
+        "pilgrimage-road-in-jerusalem"
+      ],
+      "passage_anchors": [
+        "John 12:12-19"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "pilgrimage-road-in-jerusalem",
+        "parent_title": "Pilgrimage Road in Jerusalem",
+        "parent_type": "archaeology",
+        "object_importance": 94,
+        "retrieval_score": 0.914,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 11,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "pilgrimage-road-in-jerusalem:hebraic_worldview:0",
+      "claim": "Pilgrimage brought worshipers into Jerusalem for covenant festivals, but the archaeology cannot identify their motives or ritual status.",
+      "category": "culture",
+      "source_ids": [
+        "iaa-jerusalem-stepped-street-2023",
+        "jerusalem-entry-passages"
+      ],
+      "related_entity_ids": [
+        "pilgrimage-road-in-jerusalem"
+      ],
+      "passage_anchors": [
+        "John 12:12-19"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "pilgrimage-road-in-jerusalem",
+        "parent_title": "Pilgrimage Road in Jerusalem",
+        "parent_type": "archaeology",
+        "object_importance": 94,
+        "retrieval_score": 0.914,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 11,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "hebraic_worldview",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "pilgrimage-road-in-jerusalem:historical_context:0",
+      "claim": "Excavation places the monumental street within Herodian and Early Roman Jerusalem and documents destruction debris associated with 70 CE. Its paving, drainage, shops, and adjacent buildings illuminate urban movement and commerce.",
+      "category": "history",
+      "source_ids": [
+        "iaa-jerusalem-stepped-street-2023",
+        "jerusalem-entry-passages"
+      ],
+      "related_entity_ids": [
+        "pilgrimage-road-in-jerusalem"
+      ],
+      "passage_anchors": [
+        "John 12:12-19"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "pilgrimage-road-in-jerusalem",
+        "parent_title": "Pilgrimage Road in Jerusalem",
+        "parent_type": "archaeology",
+        "object_importance": 94,
+        "retrieval_score": 0.914,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 11,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "pilgrimage-road-in-jerusalem:second_temple_context:0",
+      "claim": "The street connected the Siloam area with the vicinity of the Temple Mount during the late Second Temple period. Calling it a pilgrimage road is a functional interpretation, not an inscriptional ancient name.",
+      "category": "culture",
+      "source_ids": [
+        "iaa-jerusalem-stepped-street-2023",
+        "jerusalem-entry-passages"
+      ],
+      "related_entity_ids": [
+        "pilgrimage-road-in-jerusalem"
+      ],
+      "passage_anchors": [
+        "John 12:12-19"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "pilgrimage-road-in-jerusalem",
+        "parent_title": "Pilgrimage Road in Jerusalem",
+        "parent_type": "archaeology",
+        "object_importance": 94,
+        "retrieval_score": 0.914,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 11,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "second_temple_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "raising-of-lazarus:ancient_near_east_context:0",
+      "claim": "Funeral mourning and tomb practices form the social background, while John presents the sign as revelation of Jesus' identity.",
+      "category": "culture",
+      "source_ids": [
+        "john-11-1-44",
+        "john-11-45-53",
+        "john-12-9-11",
+        "raising-of-lazarus-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "raising-of-lazarus"
+      ],
+      "passage_anchors": [
+        "John 12:9-11"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "raising-of-lazarus",
+        "parent_title": "Raising of Lazarus",
+        "parent_type": "event",
+        "object_importance": 86,
+        "retrieval_score": 0.906,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 8,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "raising-of-lazarus:historical_context:0",
+      "claim": "The event belongs to Jesus' Judean ministry near Jerusalem shortly before the passion narrative.",
+      "category": "history",
+      "source_ids": [
+        "john-11-1-44",
+        "john-11-45-53",
+        "john-12-9-11",
+        "raising-of-lazarus-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "raising-of-lazarus"
+      ],
+      "passage_anchors": [
+        "John 12:9-11"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "raising-of-lazarus",
+        "parent_title": "Raising of Lazarus",
+        "parent_type": "event",
+        "object_importance": 86,
+        "retrieval_score": 0.906,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 8,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "stepped-street-jerusalem",
+      "claim": "Excavation has exposed long sections of a monumental stepped street running north from the Siloam area through Jerusalem's lower city toward the Temple Mount.",
+      "category": "archaeology",
+      "source_ids": [
+        "iaa-stepped-street-2023",
+        "keddie-class-power",
+        "fiensy-daily-life-judea"
+      ],
+      "related_entity_ids": [
+        "pilgrimage-road-in-jerusalem"
+      ],
+      "passage_anchors": [
+        "John 12:12-19"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "judean-pilgrimage-taxation-and-roman-power",
+        "parent_title": "Judean Pilgrimage, Taxation, and Roman Power",
+        "parent_type": "cultural_background",
+        "object_importance": 98,
+        "retrieval_score": 0.918,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 11,
+        "certainty": "strong_consensus",
+        "dispute_status": "archaeological_uncertainty",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 1.0,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "archaeological-site",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": null,
+        "overview_priority": 35
+      }
+    },
+    {
+      "id": "stepped-street-jerusalem:passage-relevance",
+      "claim": "The street supplies contemporary urban context for crowd movement, commerce, and ascent in festival Jerusalem but cannot identify Jesus's entry route.",
+      "category": "archaeology",
+      "source_ids": [
+        "iaa-stepped-street-2023",
+        "keddie-class-power",
+        "fiensy-daily-life-judea"
+      ],
+      "related_entity_ids": [
+        "pilgrimage-road-in-jerusalem"
+      ],
+      "passage_anchors": [
+        "John 12:12-19"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "judean-pilgrimage-taxation-and-roman-power",
+        "parent_title": "Judean Pilgrimage, Taxation, and Roman Power",
+        "parent_type": "cultural_background",
+        "object_importance": 98,
+        "retrieval_score": 0.918,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 11,
+        "certainty": "strong_consensus",
+        "dispute_status": "archaeological_uncertainty",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 1.0,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "archaeological-site",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "significance",
+        "overview_priority": 35,
+        "supports_evidence_ids": [
+          "stepped-street-jerusalem"
+        ]
+      }
+    },
+    {
+      "id": "synagogue-exclusion-caution",
+      "claim": "John's aposynagogos notices support historical inquiry but do not by themselves establish one late-first-century decree or a uniform rupture between synagogue and church.",
+      "category": "culture",
+      "source_ids": [
+        "synagogue-passages",
+        "oxford-johannine",
+        "vonwahlde-jews"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "John 12:42-43"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "synagogue-life-and-exclusion",
+        "parent_title": "Synagogue Life and Exclusion",
+        "parent_type": "cultural_background",
+        "object_importance": 91,
+        "retrieval_score": 0.911,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 41,
+        "certainty": "plausible",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "historical_cultural",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "WEAKLY_RELATED",
+        "presentation_role": null,
+        "overview_priority": 22
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "The Gospel of John",
+        "author": "George Parsenios",
+        "publisher": "Cambridge University Press",
+        "year": 2021,
+        "locator": "The Cambridge Companion to the New Testament, chapter 8",
+        "url": "https://www.cambridge.org/core/books/abs/cambridge-companion-to-the-new-testament/gospel-of-john/148BF75C92C615531EA1EF732393F0D1",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "authorship-positions",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Survey of date, historical value, Synoptic relation, Jewish characterization, and community theories.",
+        "id": "cambridge-john-companion",
+        "canonical_object_ids": [
+          "john"
+        ]
+      },
+      {
+        "title": "The Archaeology of Daily Life: Ordinary Persons in Late Second Temple Israel",
+        "author": "David A. Fiensy",
+        "publisher": "Cascade Books",
+        "year": 2021,
+        "locator": "Chapters on occupations, religion, mortality, disposal of the dead, and dwellings",
+        "url": "https://wipfandstock.com/9781532673078/the-archaeology-of-daily-life/",
+        "source_type": "academic-book",
+        "supports": [
+          "gospel-pilgrimage-and-temple-economy",
+          "gospel-taxation-distinctions",
+          "gospel-crucifixion-and-burial",
+          "stepped-street-jerusalem",
+          "yehohanan-crucifixion-burial"
+        ],
+        "notes": "Synthesis emphasizing ordinary persons and archaeological limits.",
+        "id": "fiensy-daily-life-judea",
+        "canonical_object_ids": [
+          "judean-pilgrimage-taxation-and-roman-power"
+        ]
+      },
+      {
+        "title": "Jerusalem, City of David, the Stepped Street",
+        "author": "Ari Levy and Yuval Baruch",
+        "publisher": "Israel Antiquities Authority",
+        "year": 2023,
+        "locator": "Hadashot Arkheologiyot 135, Early Roman Stratum VIII",
+        "url": "https://hadashot.iaa.org.il/report_detail_eng.aspx?id=26274&mag_id=135",
+        "source_type": "excavation-report",
+        "supports": [
+          "historical-context",
+          "second-temple-context"
+        ],
+        "notes": "Primary excavation report for the street, associated structures, and destruction sequence.",
+        "id": "iaa-jerusalem-stepped-street-2023",
+        "canonical_object_ids": [
+          "pilgrimage-road-in-jerusalem"
+        ]
+      },
+      {
+        "title": "Jerusalem, City of David, the Stepped Street",
+        "author": "Ari Levy and Yuval Baruch",
+        "publisher": "Israel Antiquities Authority",
+        "year": 2023,
+        "locator": "Hadashot Arkheologiyot 135, Early Roman Stratum VIII",
+        "url": "https://hadashot.iaa.org.il/report_detail_eng.aspx?id=26274&mag_id=135",
+        "source_type": "excavation-report",
+        "supports": [
+          "stepped-street-jerusalem"
+        ],
+        "notes": "Primary report for street stratigraphy, buildings, installations, and the 70 CE destruction layer.",
+        "id": "iaa-stepped-street-2023",
+        "canonical_object_ids": [
+          "judean-pilgrimage-taxation-and-roman-power"
+        ]
+      },
+      {
+        "title": "Luke and John Jerusalem passages",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Luke 19:28-48; John 12:12-19",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "canonical-context"
+        ],
+        "notes": "Primary biblical texts; neither passage names the excavated street.",
+        "id": "jerusalem-entry-passages",
+        "canonical_object_ids": [
+          "pilgrimage-road-in-jerusalem"
+        ]
+      },
+      {
+        "title": "John 11:1-44",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "Jesus raises Lazarus",
+        "id": "john-11-1-44",
+        "canonical_object_ids": [
+          "raising-of-lazarus"
+        ]
+      },
+      {
+        "title": "John 11:45-53",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "leaders plot Jesus' death",
+        "id": "john-11-45-53",
+        "canonical_object_ids": [
+          "raising-of-lazarus"
+        ]
+      },
+      {
+        "title": "John 12:9-11",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "Lazarus as witness and threat",
+        "id": "john-12-9-11",
+        "canonical_object_ids": [
+          "raising-of-lazarus"
+        ]
+      },
+      {
+        "title": "The Gospel according to John, Greek text",
+        "author": "",
+        "publisher": "Society of Biblical Literature",
+        "year": 2010,
+        "locator": "John 1-21 in SBLGNT",
+        "url": "https://www.sbl-site.org/resources/digital-texts/sbl-greek-new-testament/",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "structure",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Open critical Greek text.",
+        "id": "john-greek",
+        "canonical_object_ids": [
+          "john"
+        ]
+      },
+      {
+        "title": "Class and Power in Roman Palestine",
+        "author": "Anthony Keddie",
+        "publisher": "Cambridge University Press",
+        "year": 2019,
+        "locator": "Chapters 2-4 on provincial rule, taxation, and sacred economy",
+        "url": "https://doi.org/10.1017/9781108656757",
+        "source_type": "academic-book",
+        "supports": [
+          "gospel-pilgrimage-and-temple-economy",
+          "stepped-street-jerusalem",
+          "gospel-taxation-distinctions",
+          "josephus-census-tax-resistance",
+          "gospel-roman-hearing",
+          "pilate-prefect-inscription"
+        ],
+        "notes": "Socioeconomic synthesis attentive to imperial and local elite power.",
+        "id": "keddie-class-power",
+        "canonical_object_ids": [
+          "judean-pilgrimage-taxation-and-roman-power"
+        ]
+      },
+      {
+        "title": "The Oxford Handbook of Johannine Studies",
+        "author": "Judith M. Lieu and Martinus C. de Boer, editors",
+        "publisher": "Oxford University Press",
+        "year": 2018,
+        "locator": "Chapters on community, history, and Jewish characterization",
+        "url": "https://academic.oup.com/edited-volume/38583",
+        "source_type": "academic-book",
+        "supports": [
+          "synagogue-exclusion-caution"
+        ],
+        "notes": "Multi-author survey of Johannine scholarship.",
+        "id": "oxford-johannine",
+        "canonical_object_ids": [
+          "john",
+          "synagogue-life-and-exclusion"
+        ],
+        "canonical_source_variants": [
+          {
+            "title": "The Oxford Handbook of Johannine Studies",
+            "author": "Judith M. Lieu and Martinus C. de Boer, editors",
+            "publisher": "Oxford University Press",
+            "year": 2018,
+            "locator": "Chapters on community, history, and Jewish characterization",
+            "url": "https://academic.oup.com/edited-volume/38583",
+            "source_type": "academic-book",
+            "supports": [
+              "synagogue-exclusion-caution"
+            ],
+            "notes": "Multi-author survey of Johannine scholarship.",
+            "id": "oxford-johannine"
+          },
+          {
+            "title": "The Oxford Handbook of Johannine Studies",
+            "author": "Judith M. Lieu and Martinus C. de Boer, editors",
+            "publisher": "Oxford University Press",
+            "year": 2018,
+            "locator": "Chapters on text, sources, Gospels, community, authorship, archaeology, Jews, gender, signs, theology, ethics, festivals, and canon",
+            "url": "https://academic.oup.com/edited-volume/38583",
+            "source_type": "academic-book",
+            "supports": [
+              "historical-context",
+              "literary-context",
+              "claims",
+              "interpretive-notes"
+            ],
+            "notes": "Multi-author survey of Johannine scholarship.",
+            "id": "oxford-johannine"
+          }
+        ]
+      },
+      {
+        "title": "Postcolonial Perspectives in African Biblical Interpretations",
+        "author": "Musa W. Dube, Andrew M. Mbuvi, and Dora R. Mbuwayesango, editors",
+        "publisher": "Society of Biblical Literature",
+        "year": 2012,
+        "locator": "Postcolonial methods for empire, mission, gender, land, and power",
+        "url": "https://www.sbl-site.org/wp-content/uploads/2024/11/Postcolonial_DubeMbuvi_SBL.pdf",
+        "source_type": "academic-book",
+        "supports": [
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Safeguards against colonial and coercive interpretation.",
+        "id": "postcolonial-john",
+        "canonical_object_ids": [
+          "john"
+        ]
+      },
+      {
+        "title": "Canonical historical orientation for Raising of Lazarus",
+        "author": "",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "id": "raising-of-lazarus-historical-orientation",
+        "canonical_object_ids": [
+          "raising-of-lazarus"
+        ]
+      },
+      {
+        "title": "The Theology of the Gospel of John",
+        "author": "Dwight Moody Smith",
+        "publisher": "Cambridge University Press",
+        "year": 1995,
+        "locator": "Theology of John and the issues it raises",
+        "url": "https://www.cambridge.org/core/books/abs/theology-of-the-gospel-of-john/theology-of-john-and-the-issues-it-raises/975440B1EAE9424C6B2C919A3CC03DEB",
+        "source_type": "academic-book",
+        "supports": [
+          "major-themes",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Theological synthesis with attention to Christology, anti-Judaism, and reception.",
+        "id": "smith-theology",
+        "canonical_object_ids": [
+          "john"
+        ]
+      },
+      {
+        "title": "Luke 4; Acts 13; John 9, 12, and 16",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Luke 4:16-30; Acts 13:14-43; John 9:22; 12:42-43; 16:1-4",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "synagogue-textual-settings",
+          "synagogue-exclusion-caution"
+        ],
+        "notes": "Primary biblical texts.",
+        "id": "synagogue-passages",
+        "canonical_object_ids": [
+          "synagogue-life-and-exclusion"
+        ]
+      },
+      {
+        "title": "Narrative Criticism of the Religious Authorities as a Group Character in the Gospel of John: Some Problems",
+        "author": "Urban C. von Wahlde",
+        "publisher": "New Testament Studies / Cambridge University Press",
+        "year": 2017,
+        "locator": "New Testament Studies 63",
+        "url": "https://www.cambridge.org/core/journals/new-testament-studies/article/narrative-criticism-of-the-religious-authorities-as-a-group-character-in-the-gospel-of-john-some-problems/19A4E2C20ACFD4DB1E7CFB3A1838024B",
+        "source_type": "journal-article",
+        "supports": [
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Argues for context-sensitive differentiation among Jewish group labels.",
+        "id": "vonwahlde-jews",
+        "canonical_object_ids": [
+          "john",
+          "synagogue-life-and-exclusion"
+        ],
+        "canonical_source_variants": [
+          {
+            "title": "Narrative Criticism of the Religious Authorities as a Group Character in the Gospel of John: Some Problems",
+            "author": "Urban C. von Wahlde",
+            "publisher": "New Testament Studies / Cambridge University Press",
+            "year": 2017,
+            "locator": "New Testament Studies 63",
+            "url": "https://www.cambridge.org/core/journals/new-testament-studies/article/narrative-criticism-of-the-religious-authorities-as-a-group-character-in-the-gospel-of-john-some-problems/19A4E2C20ACFD4DB1E7CFB3A1838024B",
+            "source_type": "journal-article",
+            "supports": [
+              "claims",
+              "interpretive-notes"
+            ],
+            "notes": "Argues for context-sensitive differentiation among Jewish group labels.",
+            "id": "vonwahlde-jews"
+          },
+          {
+            "title": "Narrative Criticism of the Religious Authorities as a Group Character in the Gospel of John: Some Problems",
+            "author": "Urban C. von Wahlde",
+            "publisher": "New Testament Studies / Cambridge University Press",
+            "year": 2017,
+            "locator": "New Testament Studies 63",
+            "url": "https://www.cambridge.org/core/journals/new-testament-studies/article/narrative-criticism-of-the-religious-authorities-as-a-group-character-in-the-gospel-of-john-some-problems/19A4E2C20ACFD4DB1E7CFB3A1838024B",
+            "source_type": "journal-article",
+            "supports": [
+              "synagogue-exclusion-caution"
+            ],
+            "notes": "Argues for differentiation among Johannine group labels.",
+            "id": "vonwahlde-jews"
+          }
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "john",
+        "type": "book",
+        "title": "John",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.917
+      },
+      {
+        "id": "judean-pilgrimage-taxation-and-roman-power",
+        "type": "cultural_background",
+        "title": "Judean Pilgrimage, Taxation, and Roman Power",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.918
+      },
+      {
+        "id": "pilgrimage-road-in-jerusalem",
+        "type": "archaeology",
+        "title": "Pilgrimage Road in Jerusalem",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.914
+      },
+      {
+        "id": "raising-of-lazarus",
+        "type": "event",
+        "title": "Raising of Lazarus",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.906
+      },
+      {
+        "id": "synagogue-life-and-exclusion",
+        "type": "cultural_background",
+        "title": "Synagogue Life and Exclusion",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.911
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "46f10a0f5c34bb2229b77588c5a75b4509b455359288498cc2a1868ba7f0cf17",
+  "evidence_hash_version": "2"
+}

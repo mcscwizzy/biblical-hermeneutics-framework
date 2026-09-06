@@ -1,0 +1,1468 @@
+{
+  "passage_ref": "Psalms 22",
+  "entities": {
+    "people": [],
+    "places": [],
+    "groups": [],
+    "events": [
+      {
+        "id": "crucifixion",
+        "title": "Crucifixion",
+        "type": "event",
+        "aliases": [
+          "what happened in crucifixion",
+          "tell me about crucifixion",
+          "why is crucifixion important"
+        ],
+        "metadata": {
+          "summary": "The Roman execution of Jesus that Christians interpret as the climactic atoning death of the Messiah.",
+          "importance": 100,
+          "retrieval_score": 0.92,
+          "ancient_names": [],
+          "modern_identification": "",
+          "region": "",
+          "terrain": "",
+          "elevation": null,
+          "archaeology": [],
+          "related_passages": [
+            "Psalms 22:1-31",
+            "Isaiah 53:1-12",
+            "Mark 15:1-47",
+            "Luke 23:26-49",
+            "John 19:16-37",
+            "Romans 3:21-26",
+            "1 Peter 2:21-25",
+            "Hebrews 10:1-18"
+          ]
+        }
+      }
+    ],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "crucifixion:ancient_near_east_context:0",
+      "claim": "The execution belongs specifically to Roman imperial punishment while the Gospels interpret it through Israel's scriptural and covenantal categories.",
+      "category": "culture",
+      "source_ids": [
+        "psalm-22",
+        "isaiah-53",
+        "mark-15",
+        "luke-23",
+        "john-19",
+        "romans-3",
+        "hebrews-10"
+      ],
+      "related_entity_ids": [
+        "crucifixion"
+      ],
+      "passage_anchors": [
+        "Psalms 22:1-31"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "crucifixion",
+        "parent_title": "Crucifixion",
+        "parent_type": "event",
+        "object_importance": 100,
+        "retrieval_score": 0.92,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "crucifixion:hebraic_worldview:0",
+      "claim": "The narratives connect death, shame, kingship, lament, covenant, burial duty, and scriptural interpretation without making Roman execution a Jewish institution.",
+      "category": "culture",
+      "source_ids": [
+        "psalm-22",
+        "isaiah-53",
+        "mark-15",
+        "luke-23",
+        "john-19",
+        "romans-3",
+        "hebrews-10"
+      ],
+      "related_entity_ids": [
+        "crucifixion"
+      ],
+      "passage_anchors": [
+        "Psalms 22:1-31"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "crucifixion",
+        "parent_title": "Crucifixion",
+        "parent_type": "event",
+        "object_importance": 100,
+        "retrieval_score": 0.92,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "hebraic_worldview",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "crucifixion:historical_context:0",
+      "claim": "The crucifixion occurs in first-century Judea under Roman authority and amid Jewish expectations for redemption and deliverance.",
+      "category": "history",
+      "source_ids": [
+        "psalm-22",
+        "isaiah-53",
+        "mark-15",
+        "luke-23",
+        "john-19",
+        "romans-3",
+        "hebrews-10"
+      ],
+      "related_entity_ids": [
+        "crucifixion"
+      ],
+      "passage_anchors": [
+        "Psalms 22:1-31"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "crucifixion",
+        "parent_title": "Crucifixion",
+        "parent_type": "event",
+        "object_importance": 100,
+        "retrieval_score": 0.92,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "crucifixion:second_temple_context:0",
+      "claim": "Crucifixion displayed Roman coercive power in Judea. The Yehohanan remains show that at least one crucified person later received Jerusalem tomb and ossuary burial, but no single find defines every execution.",
+      "category": "culture",
+      "source_ids": [
+        "psalm-22",
+        "isaiah-53",
+        "mark-15",
+        "luke-23",
+        "john-19",
+        "romans-3",
+        "hebrews-10"
+      ],
+      "related_entity_ids": [
+        "crucifixion"
+      ],
+      "passage_anchors": [
+        "Psalms 22:1-31"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "crucifixion",
+        "parent_title": "Crucifixion",
+        "parent_type": "event",
+        "object_importance": 100,
+        "retrieval_score": 0.92,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "second_temple_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "honor-and-shame:ancient_near_east_context:0",
+      "claim": "Honor and shame patterns appear across ancient Mediterranean and Near Eastern societies, especially around kinship, hospitality, public speech, and status.",
+      "category": "culture",
+      "source_ids": [
+        "luke-14",
+        "hebrews-12",
+        "1-peter-2",
+        "honor-and-shame-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Psalms 22:6-8"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "honor-and-shame",
+        "parent_title": "Honor And Shame",
+        "parent_type": "cultural_background",
+        "object_importance": 88,
+        "retrieval_score": 0.908,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 5,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "honor-and-shame:hebraic_worldview:0",
+      "claim": "Scripture recognizes public honor and shame but reorders them under covenant faithfulness, divine vindication, humility, and God's care for the lowly.",
+      "category": "culture",
+      "source_ids": [
+        "luke-14",
+        "hebrews-12",
+        "1-peter-2",
+        "honor-and-shame-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Psalms 22:6-8"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "honor-and-shame",
+        "parent_title": "Honor And Shame",
+        "parent_type": "cultural_background",
+        "object_importance": 88,
+        "retrieval_score": 0.908,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 5,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "hebraic_worldview",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "honor-and-shame:historical_context:0",
+      "claim": "Many biblical texts assume group-oriented social worlds where household reputation, public accusation, patronage, and communal recognition mattered deeply.",
+      "category": "history",
+      "source_ids": [
+        "luke-14",
+        "hebrews-12",
+        "1-peter-2",
+        "honor-and-shame-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Psalms 22:6-8"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "honor-and-shame",
+        "parent_title": "Honor And Shame",
+        "parent_type": "cultural_background",
+        "object_importance": 88,
+        "retrieval_score": 0.908,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 5,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "honor-and-shame:historical_setting:0",
+      "claim": "Ancient Israelite, Second Temple Jewish, and Greco-Roman social worlds",
+      "category": "history",
+      "source_ids": [
+        "luke-14",
+        "hebrews-12",
+        "1-peter-2",
+        "honor-and-shame-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Psalms 22:6-8"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "honor-and-shame",
+        "parent_title": "Honor And Shame",
+        "parent_type": "cultural_background",
+        "object_importance": 88,
+        "retrieval_score": 0.908,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 5,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_setting",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "honor-and-shame:key_places:0",
+      "claim": "jerusalem",
+      "category": "geography",
+      "source_ids": [
+        "luke-14",
+        "hebrews-12",
+        "1-peter-2",
+        "honor-and-shame-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Psalms 22:6-8"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "honor-and-shame",
+        "parent_title": "Honor And Shame",
+        "parent_type": "cultural_background",
+        "object_importance": 88,
+        "retrieval_score": 0.908,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 5,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "key_places",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": null,
+        "overview_priority": 43,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "honor-and-shame:key_places:1",
+      "claim": "corinth",
+      "category": "geography",
+      "source_ids": [
+        "luke-14",
+        "hebrews-12",
+        "1-peter-2",
+        "honor-and-shame-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Psalms 22:6-8"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "honor-and-shame",
+        "parent_title": "Honor And Shame",
+        "parent_type": "cultural_background",
+        "object_importance": 88,
+        "retrieval_score": 0.908,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 5,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "key_places",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": null,
+        "overview_priority": 28,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "honor-and-shame:key_places:2",
+      "claim": "galilee-1",
+      "category": "geography",
+      "source_ids": [
+        "luke-14",
+        "hebrews-12",
+        "1-peter-2",
+        "honor-and-shame-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Psalms 22:6-8"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "honor-and-shame",
+        "parent_title": "Honor And Shame",
+        "parent_type": "cultural_background",
+        "object_importance": 88,
+        "retrieval_score": 0.908,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 5,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "key_places",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": null,
+        "overview_priority": 28,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "honor-and-shame:original_audience:0",
+      "claim": "Readers interpreting social dynamics in ancient biblical texts",
+      "category": "social",
+      "source_ids": [
+        "luke-14",
+        "hebrews-12",
+        "1-peter-2",
+        "honor-and-shame-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Psalms 22:6-8"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "honor-and-shame",
+        "parent_title": "Honor And Shame",
+        "parent_type": "cultural_background",
+        "object_importance": 88,
+        "retrieval_score": 0.908,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 5,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "original_audience",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "honor-and-shame:second_temple_context:0",
+      "claim": "Second Temple Jewish and Greco-Roman settings used honor, shame, patronage, and public status to frame disputes over authority, purity, discipleship, and crucifixion.",
+      "category": "culture",
+      "source_ids": [
+        "luke-14",
+        "hebrews-12",
+        "1-peter-2",
+        "honor-and-shame-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Psalms 22:6-8"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "honor-and-shame",
+        "parent_title": "Honor And Shame",
+        "parent_type": "cultural_background",
+        "object_importance": 88,
+        "retrieval_score": 0.908,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 5,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "second_temple_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "mark-crucifixion",
+      "claim": "Mark narrates crucifixion as Roman public execution, royal mockery, abandonment, scriptural lament, darkness, death, torn curtain, contested recognition, and women's witness.",
+      "category": "history",
+      "source_ids": [
+        "mark-greek",
+        "marcus-mark-8-16",
+        "postcolonial-mark"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Psalms 22:1"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "mark",
+        "parent_title": "Mark",
+        "parent_type": "book",
+        "object_importance": 95,
+        "retrieval_score": 0.915,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "textually_explicit",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "LATER_RECEPTION",
+        "presentation_role": "dig_deeper",
+        "overview_priority": 0
+      }
+    },
+    {
+      "id": "psalms-lament-praise-range",
+      "claim": "The Psalter authorizes individuals and communities to address YHWH through lament, protest, confession, petition, trust, thanksgiving, and praise rather than presenting praise as its only faithful emotional register.",
+      "category": "culture",
+      "source_ids": [
+        "psalms-masoretic",
+        "declaisse-walford-jacobson-tanner",
+        "goldingay-psalms"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Psalms 22:1-31"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "psalms",
+        "parent_title": "Psalms",
+        "parent_type": "book",
+        "object_importance": 95,
+        "retrieval_score": 0.915,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_theology",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "theology-of-suffering:ancient_near_east_context:0",
+      "claim": "Ancient background for Theology of Suffering includes covenant life, temple worship, royal ideology, wisdom teaching, and early church confession; the entry ties that world to Job 1:1-22, Psalm 22:1-31, theology-of-the-cross, and job without letting comparison replace the biblical witness.",
+      "category": "culture",
+      "source_ids": [
+        "job-1-2",
+        "psalm-22",
+        "isaiah-53",
+        "romans-5",
+        "1-peter-4"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Psalms 22:1-31"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "theology-of-suffering",
+        "parent_title": "Theology of Suffering",
+        "parent_type": "theology",
+        "object_importance": 89,
+        "retrieval_score": 0.909,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "theology-of-suffering:historical_context:0",
+      "claim": "Theology of Suffering is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness.",
+      "category": "history",
+      "source_ids": [
+        "job-1-2",
+        "psalm-22",
+        "isaiah-53",
+        "romans-5",
+        "1-peter-4"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Psalms 22:1-31"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "theology-of-suffering",
+        "parent_title": "Theology of Suffering",
+        "parent_type": "theology",
+        "object_importance": 89,
+        "retrieval_score": 0.909,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "theology-of-the-cross:ancient_near_east_context:0",
+      "claim": "Ancient background for Theology of the Cross includes covenant life, temple worship, royal ideology, wisdom teaching, and early church confession; the entry ties that world to Job 1:1-22, Psalm 22:1-31, theology-of-suffering, and job without letting comparison replace the biblical witness.",
+      "category": "culture",
+      "source_ids": [
+        "job-1-2",
+        "psalm-22",
+        "isaiah-53",
+        "romans-5",
+        "1-peter-4"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Psalms 22:1-31"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "theology-of-the-cross",
+        "parent_title": "Theology of the Cross",
+        "parent_type": "theology",
+        "object_importance": 89,
+        "retrieval_score": 0.909,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "theology-of-the-cross:historical_context:0",
+      "claim": "Theology of the Cross is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness.",
+      "category": "history",
+      "source_ids": [
+        "job-1-2",
+        "psalm-22",
+        "isaiah-53",
+        "romans-5",
+        "1-peter-4"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Psalms 22:1-31"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "theology-of-the-cross",
+        "parent_title": "Theology of the Cross",
+        "parent_type": "theology",
+        "object_importance": 89,
+        "retrieval_score": 0.909,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "what-is-a-psalm:ancient_near_east_context:0",
+      "claim": "Poetic prayer was common in the ancient world, but the Psalms uniquely bind emotion to covenant faith.",
+      "category": "culture",
+      "source_ids": [
+        "psalm-1",
+        "psalm-22",
+        "psalm-23",
+        "psalm-110",
+        "psalm-118",
+        "luke-24",
+        "acts-2",
+        "hebrews-1"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Psalms 22:1-31"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "what-is-a-psalm",
+        "parent_title": "What is a psalm?",
+        "parent_type": "faq",
+        "object_importance": 91,
+        "retrieval_score": 0.911,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "what-is-a-psalm:historical_context:0",
+      "claim": "Psalms arise in Israel's worship life and are sung in both public and private devotion.",
+      "category": "history",
+      "source_ids": [
+        "psalm-1",
+        "psalm-22",
+        "psalm-23",
+        "psalm-110",
+        "psalm-118",
+        "luke-24",
+        "acts-2",
+        "hebrews-1"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Psalms 22:1-31"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "what-is-a-psalm",
+        "parent_title": "What is a psalm?",
+        "parent_type": "faq",
+        "object_importance": 91,
+        "retrieval_score": 0.911,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40,
+        "inherited_from_parent": true
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "1 Peter 2",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "1-peter-2",
+        "canonical_object_ids": [
+          "honor-and-shame"
+        ]
+      },
+      {
+        "title": "1 Peter 4",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "1-peter-4",
+        "canonical_object_ids": [
+          "theology-of-suffering",
+          "theology-of-the-cross"
+        ]
+      },
+      {
+        "title": "Acts 2",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "acts-2",
+        "canonical_object_ids": [
+          "what-is-a-psalm"
+        ]
+      },
+      {
+        "title": "The Book of Psalms",
+        "author": "Nancy L. deClaiss\u00e9-Walford, Rolf A. Jacobson, and Beth LaNeel Tanner",
+        "publisher": "Wm. B. Eerdmans Publishing Co.",
+        "year": 2014,
+        "locator": "New International Commentary on the Old Testament",
+        "url": "https://www.eerdmans.com/9780802824936/the-book-of-psalms/",
+        "source_type": "reference-work",
+        "supports": [
+          "canonical-context",
+          "literary-context",
+          "genre",
+          "structure",
+          "later-christian-reception",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "One-volume commentary emphasizing translation, poetry, theology, textual criticism, Dead Sea Scrolls, and canonical shaping.",
+        "id": "declaisse-walford-jacobson-tanner",
+        "canonical_object_ids": [
+          "psalms"
+        ]
+      },
+      {
+        "title": "Psalms",
+        "author": "John Goldingay",
+        "publisher": "Baker Academic",
+        "year": 2008,
+        "locator": "Baker Commentary on the Old Testament Wisdom and Psalms, three-volume set",
+        "url": "https://tst.bakeracademic.com/p/Psalms-John-Goldingay/40486",
+        "source_type": "reference-work",
+        "supports": [
+          "summary",
+          "authorship-positions",
+          "date-ranges",
+          "historical-context",
+          "literary-context",
+          "genre",
+          "hebrew-words",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "Literary, historical, grammatical, theological, and pastoral commentary with original translation.",
+        "id": "goldingay-psalms",
+        "canonical_object_ids": [
+          "psalms"
+        ]
+      },
+      {
+        "title": "Hebrews 1",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "hebrews-1",
+        "canonical_object_ids": [
+          "what-is-a-psalm"
+        ]
+      },
+      {
+        "title": "Hebrews 10",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "hebrews-10",
+        "canonical_object_ids": [
+          "crucifixion"
+        ]
+      },
+      {
+        "title": "Hebrews 12",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "hebrews-12",
+        "canonical_object_ids": [
+          "honor-and-shame"
+        ]
+      },
+      {
+        "title": "Canonical historical orientation for Honor And Shame",
+        "author": "",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "Background pattern useful across narrative, wisdom, Gospel, and epistle texts",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "id": "honor-and-shame-historical-orientation",
+        "canonical_object_ids": [
+          "honor-and-shame"
+        ]
+      },
+      {
+        "title": "Isaiah 53",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "isaiah-53",
+        "canonical_object_ids": [
+          "crucifixion",
+          "theology-of-suffering",
+          "theology-of-the-cross"
+        ]
+      },
+      {
+        "title": "Job 1-2",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "job-1-2",
+        "canonical_object_ids": [
+          "theology-of-suffering",
+          "theology-of-the-cross"
+        ]
+      },
+      {
+        "title": "John 19",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "john-19",
+        "canonical_object_ids": [
+          "crucifixion"
+        ]
+      },
+      {
+        "title": "Luke 14",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "luke-14",
+        "canonical_object_ids": [
+          "honor-and-shame"
+        ]
+      },
+      {
+        "title": "Luke 23",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "luke-23",
+        "canonical_object_ids": [
+          "crucifixion"
+        ]
+      },
+      {
+        "title": "Luke 24",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "luke-24",
+        "canonical_object_ids": [
+          "what-is-a-psalm"
+        ]
+      },
+      {
+        "title": "Mark 8-16",
+        "author": "Joel Marcus",
+        "publisher": "Yale University Press",
+        "year": 2009,
+        "locator": "Anchor Yale Bible",
+        "url": "https://yalebooks.yale.edu/book/9780300141160/mark-8-16/",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "literary-context",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Critical commentary on Mark 8-16 and its enigmatic ending.",
+        "id": "marcus-mark-8-16",
+        "canonical_object_ids": [
+          "mark"
+        ]
+      },
+      {
+        "title": "Mark 15",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "mark-15",
+        "canonical_object_ids": [
+          "crucifixion"
+        ]
+      },
+      {
+        "title": "The Gospel according to Mark, Greek text",
+        "author": "",
+        "publisher": "Society of Biblical Literature",
+        "year": 2010,
+        "locator": "Mark 1-16 in SBLGNT",
+        "url": "https://www.sbl-site.org/resources/digital-texts/sbl-greek-new-testament/",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "structure",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Critical Greek text and apparatus resources.",
+        "id": "mark-greek",
+        "canonical_object_ids": [
+          "mark"
+        ]
+      },
+      {
+        "title": "Postcolonial Perspectives in African Biblical Interpretations",
+        "author": "Musa W. Dube, Andrew M. Mbuvi, and Dora R. Mbuwayesango, editors",
+        "publisher": "Society of Biblical Literature",
+        "year": 2012,
+        "locator": "Postcolonial feminist reading of Mark 14-16 and related essays",
+        "url": "https://www.sbl-site.org/wp-content/uploads/2024/11/Postcolonial_DubeMbuvi_SBL.pdf",
+        "source_type": "academic-book",
+        "supports": [
+          "later-christian-reception",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Postcolonial, gender-aware, and embodied reception.",
+        "id": "postcolonial-mark",
+        "canonical_object_ids": [
+          "mark"
+        ]
+      },
+      {
+        "title": "Psalm 1",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [],
+        "notes": "",
+        "id": "psalm-1",
+        "canonical_object_ids": [
+          "what-is-a-psalm"
+        ]
+      },
+      {
+        "title": "Psalm 110",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [],
+        "notes": "",
+        "id": "psalm-110",
+        "canonical_object_ids": [
+          "what-is-a-psalm"
+        ]
+      },
+      {
+        "title": "Psalm 118",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [],
+        "notes": "",
+        "id": "psalm-118",
+        "canonical_object_ids": [
+          "what-is-a-psalm"
+        ]
+      },
+      {
+        "title": "Psalm 22",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [],
+        "notes": "",
+        "id": "psalm-22",
+        "canonical_object_ids": [
+          "crucifixion",
+          "theology-of-suffering",
+          "theology-of-the-cross",
+          "what-is-a-psalm"
+        ]
+      },
+      {
+        "title": "Psalm 23",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [],
+        "notes": "",
+        "id": "psalm-23",
+        "canonical_object_ids": [
+          "what-is-a-psalm"
+        ]
+      },
+      {
+        "title": "Masoretic Psalter",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Psalms 1-150 in the Masoretic textual tradition",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "literary-context",
+          "structure",
+          "key-people",
+          "key-places",
+          "key-events",
+          "scripture-references",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "Primary Hebrew canonical text and base for common modern Protestant numbering.",
+        "id": "psalms-masoretic",
+        "canonical_object_ids": [
+          "psalms"
+        ]
+      },
+      {
+        "title": "Romans 3",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "romans-3",
+        "canonical_object_ids": [
+          "crucifixion"
+        ]
+      },
+      {
+        "title": "Romans 5",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "romans-5",
+        "canonical_object_ids": [
+          "theology-of-suffering",
+          "theology-of-the-cross"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "crucifixion",
+        "type": "event",
+        "title": "Crucifixion",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.92
+      },
+      {
+        "id": "honor-and-shame",
+        "type": "cultural_background",
+        "title": "Honor And Shame",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.908
+      },
+      {
+        "id": "mark",
+        "type": "book",
+        "title": "Mark",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.915
+      },
+      {
+        "id": "psalms",
+        "type": "book",
+        "title": "Psalms",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.915
+      },
+      {
+        "id": "theology-of-suffering",
+        "type": "theology",
+        "title": "Theology of Suffering",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.909
+      },
+      {
+        "id": "theology-of-the-cross",
+        "type": "theology",
+        "title": "Theology of the Cross",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.909
+      },
+      {
+        "id": "what-is-a-psalm",
+        "type": "faq",
+        "title": "What is a psalm?",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.911
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "7eff29bac9468f0230ce520d86718b7f84d4b7546b953b527c1773a420cd1380",
+  "evidence_hash_version": "2"
+}

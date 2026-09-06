@@ -1,0 +1,4478 @@
+{
+  "batch_id": "batch-007",
+  "status": "READY_FOR_TERRA",
+  "prose_included": false,
+  "chapters": [
+    {
+      "reference": "Revelation 19",
+      "book": "Revelation",
+      "chapter": 19,
+      "canonical_text_input_locator": "bible.resolve_chapter('Revelation', 19)",
+      "locked_evidence_bundle_hash": "37f007299ecf335c2db709826fa4a5f79b3bec3ae2b819bb11f37e14ef010b4d",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "dig_deeper",
+        "historical_context"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-007/evidence-bundles/revelation_019.json",
+      "dig_deeper_evidence_exists": true,
+      "disputed_evidence_count": 2,
+      "textual_evidence_present": false,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Revelation",
+          "chapter": 19,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "revelation_019.json"
+    },
+    {
+      "reference": "Hebrews 9",
+      "book": "Hebrews",
+      "chapter": 9,
+      "canonical_text_input_locator": "bible.resolve_chapter('Hebrews', 9)",
+      "locked_evidence_bundle_hash": "f0154bf7dd79e448f97c8a6eaf532775e81c9cad3a10dae5543aa444648fbf2f",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "chronology",
+        "dig_deeper",
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-007/evidence-bundles/hebrews_009.json",
+      "dig_deeper_evidence_exists": true,
+      "disputed_evidence_count": 16,
+      "textual_evidence_present": true,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Hebrews",
+          "chapter": 9,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "hebrews_009.json"
+    },
+    {
+      "reference": "Luke 2",
+      "book": "Luke",
+      "chapter": 2,
+      "canonical_text_input_locator": "bible.resolve_chapter('Luke', 2)",
+      "locked_evidence_bundle_hash": "81f47bbeece82ed2c6ec4f486135bd4b3e5c472841e6c72fcb4489354d98ec80",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "dig_deeper",
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-007/evidence-bundles/luke_002.json",
+      "dig_deeper_evidence_exists": true,
+      "disputed_evidence_count": 7,
+      "textual_evidence_present": false,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Luke",
+          "chapter": 2,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "luke_002.json"
+    },
+    {
+      "reference": "Deuteronomy 32",
+      "book": "Deuteronomy",
+      "chapter": 32,
+      "canonical_text_input_locator": "bible.resolve_chapter('Deuteronomy', 32)",
+      "locked_evidence_bundle_hash": "566e8e9fd0933a4026fbd4201a863c34b9c3b21c54144140593e5dbfeb7cd3d7",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "dig_deeper",
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-007/evidence-bundles/deuteronomy_032.json",
+      "dig_deeper_evidence_exists": true,
+      "disputed_evidence_count": 4,
+      "textual_evidence_present": true,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Deuteronomy",
+          "chapter": 32,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "deuteronomy_032.json"
+    },
+    {
+      "reference": "Haggai 2",
+      "book": "Haggai",
+      "chapter": 2,
+      "canonical_text_input_locator": "bible.resolve_chapter('Haggai', 2)",
+      "locked_evidence_bundle_hash": "b19ea2127ae2c079ff6da627e26451fa6dde52bab5aca3c6d8d6048091dfa82c",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "dig_deeper",
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-007/evidence-bundles/haggai_002.json",
+      "dig_deeper_evidence_exists": true,
+      "disputed_evidence_count": 18,
+      "textual_evidence_present": true,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Haggai",
+          "chapter": 2,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "haggai_002.json"
+    },
+    {
+      "reference": "Psalms 103",
+      "book": "Psalms",
+      "chapter": 103,
+      "canonical_text_input_locator": "bible.resolve_chapter('Psalms', 103)",
+      "locked_evidence_bundle_hash": "8985f9d09142cfdf8f78377cd3360340bc938add6368a78afaed8d5dc0881c3d",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "historical_context"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-007/evidence-bundles/psalms_103.json",
+      "dig_deeper_evidence_exists": false,
+      "disputed_evidence_count": 0,
+      "textual_evidence_present": false,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Psalms",
+          "chapter": 103,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "psalms_103.json"
+    },
+    {
+      "reference": "Jeremiah 31",
+      "book": "Jeremiah",
+      "chapter": 31,
+      "canonical_text_input_locator": "bible.resolve_chapter('Jeremiah', 31)",
+      "locked_evidence_bundle_hash": "04255edad35d9ca80b5b2d7205db195c96fe00e3f4c14c16ef46446ac46d149a",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-007/evidence-bundles/jeremiah_031.json",
+      "dig_deeper_evidence_exists": false,
+      "disputed_evidence_count": 4,
+      "textual_evidence_present": true,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Jeremiah",
+          "chapter": 31,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "jeremiah_031.json"
+    },
+    {
+      "reference": "Job 1",
+      "book": "Job",
+      "chapter": 1,
+      "canonical_text_input_locator": "bible.resolve_chapter('Job', 1)",
+      "locked_evidence_bundle_hash": "5a1f07d87121466f1b09649406d00d79cd756eba457dc921ec43e1e229fb28a3",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "dig_deeper",
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-007/evidence-bundles/job_001.json",
+      "dig_deeper_evidence_exists": true,
+      "disputed_evidence_count": 13,
+      "textual_evidence_present": true,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Job",
+          "chapter": 1,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "job_001.json"
+    },
+    {
+      "reference": "Ezekiel 18",
+      "book": "Ezekiel",
+      "chapter": 18,
+      "canonical_text_input_locator": "bible.resolve_chapter('Ezekiel', 18)",
+      "locked_evidence_bundle_hash": "01e1ffc59a0ec965f5380a3aba6cc6b338b1ccb58487a47f88c493aadfa7c992",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "THIN",
+      "allowed_section_roles": [
+        "historical_context"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-007/evidence-bundles/ezekiel_018.json",
+      "dig_deeper_evidence_exists": false,
+      "disputed_evidence_count": 1,
+      "textual_evidence_present": false,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Ezekiel",
+          "chapter": 18,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "ezekiel_018.json"
+    },
+    {
+      "reference": "Revelation 2",
+      "book": "Revelation",
+      "chapter": 2,
+      "canonical_text_input_locator": "bible.resolve_chapter('Revelation', 2)",
+      "locked_evidence_bundle_hash": "682fab0f1dcddc58449dc15fd23b8eb4ecc218d43346a7f5237265f37015aba1",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "dig_deeper",
+        "historical_context"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-007/evidence-bundles/revelation_002.json",
+      "dig_deeper_evidence_exists": true,
+      "disputed_evidence_count": 7,
+      "textual_evidence_present": false,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Revelation",
+          "chapter": 2,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "revelation_002.json"
+    },
+    {
+      "reference": "Romans 5",
+      "book": "Romans",
+      "chapter": 5,
+      "canonical_text_input_locator": "bible.resolve_chapter('Romans', 5)",
+      "locked_evidence_bundle_hash": "d39b27e128247def88be06857f009a0ac100f341e6ce5f9ae8d99dc5a893581c",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "archaeology_geography",
+        "dig_deeper",
+        "historical_context",
+        "interpretive_questions",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-007/evidence-bundles/romans_005.json",
+      "dig_deeper_evidence_exists": true,
+      "disputed_evidence_count": 7,
+      "textual_evidence_present": true,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Romans",
+          "chapter": 5,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "romans_005.json"
+    },
+    {
+      "reference": "Matthew 26",
+      "book": "Matthew",
+      "chapter": 26,
+      "canonical_text_input_locator": "bible.resolve_chapter('Matthew', 26)",
+      "locked_evidence_bundle_hash": "947d50fa7baa436089889425a40421ab496ea884c30b133c5d2476d369ab8712",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "dig_deeper",
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-007/evidence-bundles/matthew_026.json",
+      "dig_deeper_evidence_exists": true,
+      "disputed_evidence_count": 8,
+      "textual_evidence_present": false,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Matthew",
+          "chapter": 26,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "matthew_026.json"
+    },
+    {
+      "reference": "Leviticus 19",
+      "book": "Leviticus",
+      "chapter": 19,
+      "canonical_text_input_locator": "bible.resolve_chapter('Leviticus', 19)",
+      "locked_evidence_bundle_hash": "08d167b5697eb6e798471f233e2028c19b74b39804d24b7f2d8fffe469c246f8",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "dig_deeper",
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-007/evidence-bundles/leviticus_019.json",
+      "dig_deeper_evidence_exists": true,
+      "disputed_evidence_count": 3,
+      "textual_evidence_present": false,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Leviticus",
+          "chapter": 19,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "leviticus_019.json"
+    },
+    {
+      "reference": "Acts 4",
+      "book": "Acts",
+      "chapter": 4,
+      "canonical_text_input_locator": "bible.resolve_chapter('Acts', 4)",
+      "locked_evidence_bundle_hash": "6eb6a66c5e625e8b1c55fdaa6be88440ef9dd30ce8798800f5a5fc5d6bdd79f3",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "dig_deeper",
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-007/evidence-bundles/acts_004.json",
+      "dig_deeper_evidence_exists": true,
+      "disputed_evidence_count": 7,
+      "textual_evidence_present": true,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Acts",
+          "chapter": 4,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "acts_004.json"
+    },
+    {
+      "reference": "Lamentations 1",
+      "book": "Lamentations",
+      "chapter": 1,
+      "canonical_text_input_locator": "bible.resolve_chapter('Lamentations', 1)",
+      "locked_evidence_bundle_hash": "2fa0b743191b699b37abd63faac81ca52556170f01ec06b314381996741154a1",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-007/evidence-bundles/lamentations_001.json",
+      "dig_deeper_evidence_exists": false,
+      "disputed_evidence_count": 5,
+      "textual_evidence_present": false,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Lamentations",
+          "chapter": 1,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "lamentations_001.json"
+    },
+    {
+      "reference": "Isaiah 37",
+      "book": "Isaiah",
+      "chapter": 37,
+      "canonical_text_input_locator": "bible.resolve_chapter('Isaiah', 37)",
+      "locked_evidence_bundle_hash": "309320c4ee04a93c53994d0a631e06c42cddd4ab3f620e4d632ac5e6dddd83fb",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "archaeology_geography",
+        "dig_deeper",
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-007/evidence-bundles/isaiah_037.json",
+      "dig_deeper_evidence_exists": true,
+      "disputed_evidence_count": 11,
+      "textual_evidence_present": true,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Isaiah",
+          "chapter": 37,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "isaiah_037.json"
+    },
+    {
+      "reference": "Proverbs 1",
+      "book": "Proverbs",
+      "chapter": 1,
+      "canonical_text_input_locator": "bible.resolve_chapter('Proverbs', 1)",
+      "locked_evidence_bundle_hash": "a26ad6bb1594c112c5328a9a5b363e323d3f1fd94ea9fd3ed95fe6e87d6f49aa",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-007/evidence-bundles/proverbs_001.json",
+      "dig_deeper_evidence_exists": false,
+      "disputed_evidence_count": 3,
+      "textual_evidence_present": false,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Proverbs",
+          "chapter": 1,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "proverbs_001.json"
+    },
+    {
+      "reference": "Revelation 22",
+      "book": "Revelation",
+      "chapter": 22,
+      "canonical_text_input_locator": "bible.resolve_chapter('Revelation', 22)",
+      "locked_evidence_bundle_hash": "f211ceb0458fa6597d9fae765f070193c9776dc8ad6a922275ecd17ae143a62b",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "dig_deeper",
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-007/evidence-bundles/revelation_022.json",
+      "dig_deeper_evidence_exists": true,
+      "disputed_evidence_count": 6,
+      "textual_evidence_present": false,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Revelation",
+          "chapter": 22,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "revelation_022.json"
+    },
+    {
+      "reference": "Romans 1",
+      "book": "Romans",
+      "chapter": 1,
+      "canonical_text_input_locator": "bible.resolve_chapter('Romans', 1)",
+      "locked_evidence_bundle_hash": "49c646c803dc3587bb1012553857a69bdfbfc0ea2389e456a3495b3d6f3d2084",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "archaeology_geography",
+        "chronology",
+        "dig_deeper",
+        "historical_context",
+        "interpretive_questions",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-007/evidence-bundles/romans_001.json",
+      "dig_deeper_evidence_exists": true,
+      "disputed_evidence_count": 34,
+      "textual_evidence_present": true,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Romans",
+          "chapter": 1,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "romans_001.json"
+    },
+    {
+      "reference": "Matthew 27",
+      "book": "Matthew",
+      "chapter": 27,
+      "canonical_text_input_locator": "bible.resolve_chapter('Matthew', 27)",
+      "locked_evidence_bundle_hash": "3be0871c92842f6f7b84ecbd53e77e22476abe1b774c6de7da067cf56519e0b9",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "dig_deeper",
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-007/evidence-bundles/matthew_027.json",
+      "dig_deeper_evidence_exists": true,
+      "disputed_evidence_count": 5,
+      "textual_evidence_present": false,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Matthew",
+          "chapter": 27,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "matthew_027.json"
+    },
+    {
+      "reference": "Leviticus 16",
+      "book": "Leviticus",
+      "chapter": 16,
+      "canonical_text_input_locator": "bible.resolve_chapter('Leviticus', 16)",
+      "locked_evidence_bundle_hash": "8e5cbb871b1513cc91ad7b20d2f399c3796e3fe36516d99e6b36511dcadfab62",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "chronology",
+        "dig_deeper",
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-007/evidence-bundles/leviticus_016.json",
+      "dig_deeper_evidence_exists": true,
+      "disputed_evidence_count": 5,
+      "textual_evidence_present": false,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Leviticus",
+          "chapter": 16,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "leviticus_016.json"
+    },
+    {
+      "reference": "1 Kings 8",
+      "book": "1 Kings",
+      "chapter": 8,
+      "canonical_text_input_locator": "bible.resolve_chapter('1 Kings', 8)",
+      "locked_evidence_bundle_hash": "75bd1b6d5db156d58e6dd5726f1b711ae8594619003b2fa594ae892ce3287346",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "chronology",
+        "dig_deeper",
+        "historical_context"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-007/evidence-bundles/1_kings_008.json",
+      "dig_deeper_evidence_exists": true,
+      "disputed_evidence_count": 4,
+      "textual_evidence_present": false,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "1 Kings",
+          "chapter": 8,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "1_kings_008.json"
+    },
+    {
+      "reference": "Psalms 19",
+      "book": "Psalms",
+      "chapter": 19,
+      "canonical_text_input_locator": "bible.resolve_chapter('Psalms', 19)",
+      "locked_evidence_bundle_hash": "7cd0987d73d484d5aae31864a17fb8b006416ba4a5db711ef41e23f61634cb61",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "historical_context"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-007/evidence-bundles/psalms_019.json",
+      "dig_deeper_evidence_exists": false,
+      "disputed_evidence_count": 0,
+      "textual_evidence_present": false,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Psalms",
+          "chapter": 19,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "psalms_019.json"
+    },
+    {
+      "reference": "Ezekiel 37",
+      "book": "Ezekiel",
+      "chapter": 37,
+      "canonical_text_input_locator": "bible.resolve_chapter('Ezekiel', 37)",
+      "locked_evidence_bundle_hash": "11c6a87a09712ab2e89054b8b312402e81f6777141606b49df2324279167aa50",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-007/evidence-bundles/ezekiel_037.json",
+      "dig_deeper_evidence_exists": false,
+      "disputed_evidence_count": 2,
+      "textual_evidence_present": true,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Ezekiel",
+          "chapter": 37,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "ezekiel_037.json"
+    },
+    {
+      "reference": "Job 19",
+      "book": "Job",
+      "chapter": 19,
+      "canonical_text_input_locator": "bible.resolve_chapter('Job', 19)",
+      "locked_evidence_bundle_hash": "7a22599e2bb1c3c3f84f1698aab64cae802cf0bf8afa609634b89b78fd83c1a6",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "dig_deeper",
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-007/evidence-bundles/job_019.json",
+      "dig_deeper_evidence_exists": true,
+      "disputed_evidence_count": 6,
+      "textual_evidence_present": true,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Job",
+          "chapter": 19,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "job_019.json"
+    },
+    {
+      "reference": "Revelation 21",
+      "book": "Revelation",
+      "chapter": 21,
+      "canonical_text_input_locator": "bible.resolve_chapter('Revelation', 21)",
+      "locked_evidence_bundle_hash": "a470ccd9e79bf996b7b7a31161313c149d8de6e571ef0216f62242c2d91489ba",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "chronology",
+        "dig_deeper",
+        "historical_context"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-007/evidence-bundles/revelation_021.json",
+      "dig_deeper_evidence_exists": true,
+      "disputed_evidence_count": 7,
+      "textual_evidence_present": false,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Revelation",
+          "chapter": 21,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "revelation_021.json"
+    },
+    {
+      "reference": "Hebrews 12",
+      "book": "Hebrews",
+      "chapter": 12,
+      "canonical_text_input_locator": "bible.resolve_chapter('Hebrews', 12)",
+      "locked_evidence_bundle_hash": "e2fd64dcac65a5f07d0980d951ce2395a743c53bdb983eafa5bb22439672710e",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "archaeology_geography",
+        "dig_deeper",
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-007/evidence-bundles/hebrews_012.json",
+      "dig_deeper_evidence_exists": true,
+      "disputed_evidence_count": 11,
+      "textual_evidence_present": true,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Hebrews",
+          "chapter": 12,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "hebrews_012.json"
+    },
+    {
+      "reference": "Mark 12",
+      "book": "Mark",
+      "chapter": 12,
+      "canonical_text_input_locator": "bible.resolve_chapter('Mark', 12)",
+      "locked_evidence_bundle_hash": "52521229b2ddf7872848e3eb205674c76d845ee76711d475a4e8e1b4c5b2b603",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "historical_context"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-007/evidence-bundles/mark_012.json",
+      "dig_deeper_evidence_exists": false,
+      "disputed_evidence_count": 5,
+      "textual_evidence_present": false,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Mark",
+          "chapter": 12,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "mark_012.json"
+    },
+    {
+      "reference": "Numbers 6",
+      "book": "Numbers",
+      "chapter": 6,
+      "canonical_text_input_locator": "bible.resolve_chapter('Numbers', 6)",
+      "locked_evidence_bundle_hash": "123532ec5e0adef2d0f396258ef8784d4c3715f7af1fdbc58d0b11f53357c34e",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-007/evidence-bundles/numbers_006.json",
+      "dig_deeper_evidence_exists": false,
+      "disputed_evidence_count": 0,
+      "textual_evidence_present": true,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Numbers",
+          "chapter": 6,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "numbers_006.json"
+    },
+    {
+      "reference": "Acts 21",
+      "book": "Acts",
+      "chapter": 21,
+      "canonical_text_input_locator": "bible.resolve_chapter('Acts', 21)",
+      "locked_evidence_bundle_hash": "1ea790eef471b1fbc1e219246c5d83bf6a9d38d2a221a13479b5ef110b2b4528",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "dig_deeper",
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-007/evidence-bundles/acts_021.json",
+      "dig_deeper_evidence_exists": true,
+      "disputed_evidence_count": 12,
+      "textual_evidence_present": true,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Acts",
+          "chapter": 21,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "acts_021.json"
+    },
+    {
+      "reference": "Psalms 16",
+      "book": "Psalms",
+      "chapter": 16,
+      "canonical_text_input_locator": "bible.resolve_chapter('Psalms', 16)",
+      "locked_evidence_bundle_hash": "325331d8ab16bcf9eab222046ac4f7264030a88fe64dba3103a7da7fd558e86b",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "historical_context"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-007/evidence-bundles/psalms_016.json",
+      "dig_deeper_evidence_exists": false,
+      "disputed_evidence_count": 0,
+      "textual_evidence_present": false,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Psalms",
+          "chapter": 16,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "psalms_016.json"
+    },
+    {
+      "reference": "Isaiah 40",
+      "book": "Isaiah",
+      "chapter": 40,
+      "canonical_text_input_locator": "bible.resolve_chapter('Isaiah', 40)",
+      "locked_evidence_bundle_hash": "c237f261035ddd1537640d4b3aa5fdb798cef0be51b07f917340be3e57b7c133",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "chronology",
+        "dig_deeper",
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-007/evidence-bundles/isaiah_040.json",
+      "dig_deeper_evidence_exists": true,
+      "disputed_evidence_count": 7,
+      "textual_evidence_present": true,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Isaiah",
+          "chapter": 40,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "isaiah_040.json"
+    },
+    {
+      "reference": "Proverbs 8",
+      "book": "Proverbs",
+      "chapter": 8,
+      "canonical_text_input_locator": "bible.resolve_chapter('Proverbs', 8)",
+      "locked_evidence_bundle_hash": "1cd2fba512addadd899024e12197c0d6ad8c903bce6e1c80a08fe6aef742615f",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-007/evidence-bundles/proverbs_008.json",
+      "dig_deeper_evidence_exists": false,
+      "disputed_evidence_count": 2,
+      "textual_evidence_present": false,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Proverbs",
+          "chapter": 8,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "proverbs_008.json"
+    },
+    {
+      "reference": "Daniel 1",
+      "book": "Daniel",
+      "chapter": 1,
+      "canonical_text_input_locator": "bible.resolve_chapter('Daniel', 1)",
+      "locked_evidence_bundle_hash": "9061abf2303ae61a7a7fd234c391fc565e460156518f2ff6b145a8e530ebd897",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-007/evidence-bundles/daniel_001.json",
+      "dig_deeper_evidence_exists": false,
+      "disputed_evidence_count": 9,
+      "textual_evidence_present": true,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Daniel",
+          "chapter": 1,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "daniel_001.json"
+    },
+    {
+      "reference": "Ephesians 1",
+      "book": "Ephesians",
+      "chapter": 1,
+      "canonical_text_input_locator": "bible.resolve_chapter('Ephesians', 1)",
+      "locked_evidence_bundle_hash": "86ef5650251535c69677247ed0c2bf14f2f7fcea9600a55889367fe4e8c05e42",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "historical_context",
+        "interpretive_questions",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-007/evidence-bundles/ephesians_001.json",
+      "dig_deeper_evidence_exists": false,
+      "disputed_evidence_count": 12,
+      "textual_evidence_present": true,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Ephesians",
+          "chapter": 1,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "ephesians_001.json"
+    },
+    {
+      "reference": "John 1",
+      "book": "John",
+      "chapter": 1,
+      "canonical_text_input_locator": "bible.resolve_chapter('John', 1)",
+      "locked_evidence_bundle_hash": "94af797e700c2bbf818615b7fb99775cc1f8a920281c564ab643951fe9be845f",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "chronology",
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-007/evidence-bundles/john_001.json",
+      "dig_deeper_evidence_exists": false,
+      "disputed_evidence_count": 4,
+      "textual_evidence_present": false,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "John",
+          "chapter": 1,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "john_001.json"
+    },
+    {
+      "reference": "Numbers 18",
+      "book": "Numbers",
+      "chapter": 18,
+      "canonical_text_input_locator": "bible.resolve_chapter('Numbers', 18)",
+      "locked_evidence_bundle_hash": "94b518a68787e9ca707665e95a262b0169bfb611f3cd51d8654e799ad99d204d",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "historical_context"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-007/evidence-bundles/numbers_018.json",
+      "dig_deeper_evidence_exists": false,
+      "disputed_evidence_count": 1,
+      "textual_evidence_present": false,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Numbers",
+          "chapter": 18,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "numbers_018.json"
+    },
+    {
+      "reference": "2 Chronicles 36",
+      "book": "2 Chronicles",
+      "chapter": 36,
+      "canonical_text_input_locator": "bible.resolve_chapter('2 Chronicles', 36)",
+      "locked_evidence_bundle_hash": "6be500ae19e73ada15116aceb690f5e53c5bd97937bf685fcbb53f703eab9145",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "archaeology_geography",
+        "dig_deeper",
+        "historical_context"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-007/evidence-bundles/2_chronicles_036.json",
+      "dig_deeper_evidence_exists": true,
+      "disputed_evidence_count": 8,
+      "textual_evidence_present": false,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "2 Chronicles",
+          "chapter": 36,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "2_chronicles_036.json"
+    },
+    {
+      "reference": "Psalms 119",
+      "book": "Psalms",
+      "chapter": 119,
+      "canonical_text_input_locator": "bible.resolve_chapter('Psalms', 119)",
+      "locked_evidence_bundle_hash": "65540ccc387f8f1105da4f10699cbf7143e1fc8827d9a883594fe3f9858fcf8a",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-007/evidence-bundles/psalms_119.json",
+      "dig_deeper_evidence_exists": false,
+      "disputed_evidence_count": 1,
+      "textual_evidence_present": false,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Psalms",
+          "chapter": 119,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "psalms_119.json"
+    },
+    {
+      "reference": "Ezekiel 36",
+      "book": "Ezekiel",
+      "chapter": 36,
+      "canonical_text_input_locator": "bible.resolve_chapter('Ezekiel', 36)",
+      "locked_evidence_bundle_hash": "feded14d2efdbbd6ce5abac8844c73b9c1ce11ab93cc0b8626dde181861ab304",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-007/evidence-bundles/ezekiel_036.json",
+      "dig_deeper_evidence_exists": false,
+      "disputed_evidence_count": 2,
+      "textual_evidence_present": true,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Ezekiel",
+          "chapter": 36,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "ezekiel_036.json"
+    },
+    {
+      "reference": "Revelation 13",
+      "book": "Revelation",
+      "chapter": 13,
+      "canonical_text_input_locator": "bible.resolve_chapter('Revelation', 13)",
+      "locked_evidence_bundle_hash": "4002f0273d2f0f2bb3329cd7743e4cbd180d2f072cb651d8391aa5a4e161bfc2",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "dig_deeper",
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-007/evidence-bundles/revelation_013.json",
+      "dig_deeper_evidence_exists": true,
+      "disputed_evidence_count": 8,
+      "textual_evidence_present": true,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Revelation",
+          "chapter": 13,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "revelation_013.json"
+    },
+    {
+      "reference": "1 Peter 2",
+      "book": "1 Peter",
+      "chapter": 2,
+      "canonical_text_input_locator": "bible.resolve_chapter('1 Peter', 2)",
+      "locked_evidence_bundle_hash": "8bab263231c62fc050a750442d500f064f229990c994a14a55a510a487b8b858",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "dig_deeper",
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-007/evidence-bundles/1_peter_002.json",
+      "dig_deeper_evidence_exists": true,
+      "disputed_evidence_count": 21,
+      "textual_evidence_present": false,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "1 Peter",
+          "chapter": 2,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "1_peter_002.json"
+    },
+    {
+      "reference": "Luke 23",
+      "book": "Luke",
+      "chapter": 23,
+      "canonical_text_input_locator": "bible.resolve_chapter('Luke', 23)",
+      "locked_evidence_bundle_hash": "4f5e10f16cf5152530baafd626c4fc264fe30701a3136050b213fa8aea4c5e75",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-007/evidence-bundles/luke_023.json",
+      "dig_deeper_evidence_exists": false,
+      "disputed_evidence_count": 3,
+      "textual_evidence_present": true,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Luke",
+          "chapter": 23,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "luke_023.json"
+    },
+    {
+      "reference": "Numbers 11",
+      "book": "Numbers",
+      "chapter": 11,
+      "canonical_text_input_locator": "bible.resolve_chapter('Numbers', 11)",
+      "locked_evidence_bundle_hash": "4d1f62ac85bb5a996b9ed47363475376f17b7612d9ed06bd466935a994271051",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "historical_context"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-007/evidence-bundles/numbers_011.json",
+      "dig_deeper_evidence_exists": false,
+      "disputed_evidence_count": 1,
+      "textual_evidence_present": false,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Numbers",
+          "chapter": 11,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "numbers_011.json"
+    },
+    {
+      "reference": "Joshua 24",
+      "book": "Joshua",
+      "chapter": 24,
+      "canonical_text_input_locator": "bible.resolve_chapter('Joshua', 24)",
+      "locked_evidence_bundle_hash": "19da69abac7bf848a9205f99758f80c2ba62ff00cbc6882c5756b0271392ab3d",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-007/evidence-bundles/joshua_024.json",
+      "dig_deeper_evidence_exists": false,
+      "disputed_evidence_count": 0,
+      "textual_evidence_present": false,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Joshua",
+          "chapter": 24,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "joshua_024.json"
+    },
+    {
+      "reference": "Psalms 22",
+      "book": "Psalms",
+      "chapter": 22,
+      "canonical_text_input_locator": "bible.resolve_chapter('Psalms', 22)",
+      "locked_evidence_bundle_hash": "7eff29bac9468f0230ce520d86718b7f84d4b7546b953b527c1773a420cd1380",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "dig_deeper",
+        "historical_context"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-007/evidence-bundles/psalms_022.json",
+      "dig_deeper_evidence_exists": true,
+      "disputed_evidence_count": 2,
+      "textual_evidence_present": false,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Psalms",
+          "chapter": 22,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "psalms_022.json"
+    },
+    {
+      "reference": "Jeremiah 29",
+      "book": "Jeremiah",
+      "chapter": 29,
+      "canonical_text_input_locator": "bible.resolve_chapter('Jeremiah', 29)",
+      "locked_evidence_bundle_hash": "4108b833157df44dcc25e24cdfb380f94fcd6af0194a0445629de22eca745e62",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "chronology",
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-007/evidence-bundles/jeremiah_029.json",
+      "dig_deeper_evidence_exists": false,
+      "disputed_evidence_count": 6,
+      "textual_evidence_present": true,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Jeremiah",
+          "chapter": 29,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "jeremiah_029.json"
+    },
+    {
+      "reference": "Daniel 10",
+      "book": "Daniel",
+      "chapter": 10,
+      "canonical_text_input_locator": "bible.resolve_chapter('Daniel', 10)",
+      "locked_evidence_bundle_hash": "a744e8d041f3994d40d9456e8947f614297b07630cb1f5a5490c19dccef390a2",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "archaeology_geography",
+        "historical_context"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-007/evidence-bundles/daniel_010.json",
+      "dig_deeper_evidence_exists": false,
+      "disputed_evidence_count": 3,
+      "textual_evidence_present": false,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Daniel",
+          "chapter": 10,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "daniel_010.json"
+    },
+    {
+      "reference": "Hebrews 10",
+      "book": "Hebrews",
+      "chapter": 10,
+      "canonical_text_input_locator": "bible.resolve_chapter('Hebrews', 10)",
+      "locked_evidence_bundle_hash": "63ee14b1ae58d2f812b3461cae7ed5546f4d23a49d81d1790b81e83b8d6e8b6d",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "dig_deeper",
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-007/evidence-bundles/hebrews_010.json",
+      "dig_deeper_evidence_exists": true,
+      "disputed_evidence_count": 15,
+      "textual_evidence_present": true,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Hebrews",
+          "chapter": 10,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "hebrews_010.json"
+    },
+    {
+      "reference": "Mark 14",
+      "book": "Mark",
+      "chapter": 14,
+      "canonical_text_input_locator": "bible.resolve_chapter('Mark', 14)",
+      "locked_evidence_bundle_hash": "972ba2350dc25ba2154621375e536669904da9c5ff7f96611c0f512bbce343e0",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "dig_deeper",
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-007/evidence-bundles/mark_014.json",
+      "dig_deeper_evidence_exists": true,
+      "disputed_evidence_count": 7,
+      "textual_evidence_present": false,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Mark",
+          "chapter": 14,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "mark_014.json"
+    },
+    {
+      "reference": "Numbers 10",
+      "book": "Numbers",
+      "chapter": 10,
+      "canonical_text_input_locator": "bible.resolve_chapter('Numbers', 10)",
+      "locked_evidence_bundle_hash": "d846b99afc660d0f8a4777809aedf85e0e236838dbb05359a47ddfe1359ef40d",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "dig_deeper",
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-007/evidence-bundles/numbers_010.json",
+      "dig_deeper_evidence_exists": true,
+      "disputed_evidence_count": 4,
+      "textual_evidence_present": false,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Numbers",
+          "chapter": 10,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "numbers_010.json"
+    },
+    {
+      "reference": "Acts 24",
+      "book": "Acts",
+      "chapter": 24,
+      "canonical_text_input_locator": "bible.resolve_chapter('Acts', 24)",
+      "locked_evidence_bundle_hash": "f93532cb7cfcd0da49e66988731ce0bdb2880d4f6938a223080a73c762dc64cc",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-007/evidence-bundles/acts_024.json",
+      "dig_deeper_evidence_exists": false,
+      "disputed_evidence_count": 7,
+      "textual_evidence_present": true,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Acts",
+          "chapter": 24,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "acts_024.json"
+    },
+    {
+      "reference": "Isaiah 26",
+      "book": "Isaiah",
+      "chapter": 26,
+      "canonical_text_input_locator": "bible.resolve_chapter('Isaiah', 26)",
+      "locked_evidence_bundle_hash": "e08f0488a631693ebd94b9dc67a17b052fa23647cbe9f3ad4d86e05b0b49fad5",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-007/evidence-bundles/isaiah_026.json",
+      "dig_deeper_evidence_exists": false,
+      "disputed_evidence_count": 2,
+      "textual_evidence_present": true,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Isaiah",
+          "chapter": 26,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "isaiah_026.json"
+    },
+    {
+      "reference": "Daniel 12",
+      "book": "Daniel",
+      "chapter": 12,
+      "canonical_text_input_locator": "bible.resolve_chapter('Daniel', 12)",
+      "locked_evidence_bundle_hash": "05eb5aa083fad1f415aef33e92d974d8aedbbce194134d0f44b278085a43abfa",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-007/evidence-bundles/daniel_012.json",
+      "dig_deeper_evidence_exists": false,
+      "disputed_evidence_count": 6,
+      "textual_evidence_present": false,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Daniel",
+          "chapter": 12,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "daniel_012.json"
+    },
+    {
+      "reference": "Ephesians 2",
+      "book": "Ephesians",
+      "chapter": 2,
+      "canonical_text_input_locator": "bible.resolve_chapter('Ephesians', 2)",
+      "locked_evidence_bundle_hash": "754f0e0f933535c1fa4777193312e7cf3429f909192ac934aeb28f3c00432182",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "dig_deeper",
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-007/evidence-bundles/ephesians_002.json",
+      "dig_deeper_evidence_exists": true,
+      "disputed_evidence_count": 15,
+      "textual_evidence_present": false,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Ephesians",
+          "chapter": 2,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "ephesians_002.json"
+    },
+    {
+      "reference": "Matthew 16",
+      "book": "Matthew",
+      "chapter": 16,
+      "canonical_text_input_locator": "bible.resolve_chapter('Matthew', 16)",
+      "locked_evidence_bundle_hash": "63676efd57b3c3cab92bb93ccce42e4d8d4ca02256298e3d196b54513d12e02f",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "dig_deeper",
+        "historical_context"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-007/evidence-bundles/matthew_016.json",
+      "dig_deeper_evidence_exists": true,
+      "disputed_evidence_count": 2,
+      "textual_evidence_present": false,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Matthew",
+          "chapter": 16,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "matthew_016.json"
+    },
+    {
+      "reference": "Leviticus 23",
+      "book": "Leviticus",
+      "chapter": 23,
+      "canonical_text_input_locator": "bible.resolve_chapter('Leviticus', 23)",
+      "locked_evidence_bundle_hash": "411390682593ff4c9bf8add64a71a17d7a57980f82dfe4e765b9a39b4fe9e3e5",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-007/evidence-bundles/leviticus_023.json",
+      "dig_deeper_evidence_exists": false,
+      "disputed_evidence_count": 0,
+      "textual_evidence_present": false,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Leviticus",
+          "chapter": 23,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "leviticus_023.json"
+    },
+    {
+      "reference": "Acts 14",
+      "book": "Acts",
+      "chapter": 14,
+      "canonical_text_input_locator": "bible.resolve_chapter('Acts', 14)",
+      "locked_evidence_bundle_hash": "9fca804f1da62ced7be3405a315a1eb329e907c214836750b027ddbd9e2c33a0",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "archaeology_geography",
+        "dig_deeper",
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-007/evidence-bundles/acts_014.json",
+      "dig_deeper_evidence_exists": true,
+      "disputed_evidence_count": 34,
+      "textual_evidence_present": true,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Acts",
+          "chapter": 14,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "acts_014.json"
+    },
+    {
+      "reference": "Isaiah 10",
+      "book": "Isaiah",
+      "chapter": 10,
+      "canonical_text_input_locator": "bible.resolve_chapter('Isaiah', 10)",
+      "locked_evidence_bundle_hash": "afed4f41c74c8135660ed755a30e2a764bee99e98d9cea42d65322dad9f15e56",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-007/evidence-bundles/isaiah_010.json",
+      "dig_deeper_evidence_exists": false,
+      "disputed_evidence_count": 5,
+      "textual_evidence_present": true,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Isaiah",
+          "chapter": 10,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "isaiah_010.json"
+    },
+    {
+      "reference": "Hebrews 11",
+      "book": "Hebrews",
+      "chapter": 11,
+      "canonical_text_input_locator": "bible.resolve_chapter('Hebrews', 11)",
+      "locked_evidence_bundle_hash": "1ee771ec37fd2a53adf2523671cc40341d7745c4c8d5b0b804a5b3d538835c7f",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "dig_deeper",
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-007/evidence-bundles/hebrews_011.json",
+      "dig_deeper_evidence_exists": true,
+      "disputed_evidence_count": 7,
+      "textual_evidence_present": true,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Hebrews",
+          "chapter": 11,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "hebrews_011.json"
+    },
+    {
+      "reference": "Luke 24",
+      "book": "Luke",
+      "chapter": 24,
+      "canonical_text_input_locator": "bible.resolve_chapter('Luke', 24)",
+      "locked_evidence_bundle_hash": "a1180d6f54630b592b3e589adaaa7dec31c879db3d1c72feee6db5ef4045e12b",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "dig_deeper",
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-007/evidence-bundles/luke_024.json",
+      "dig_deeper_evidence_exists": true,
+      "disputed_evidence_count": 3,
+      "textual_evidence_present": true,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Luke",
+          "chapter": 24,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "luke_024.json"
+    },
+    {
+      "reference": "Numbers 35",
+      "book": "Numbers",
+      "chapter": 35,
+      "canonical_text_input_locator": "bible.resolve_chapter('Numbers', 35)",
+      "locked_evidence_bundle_hash": "dafa654540226dee6f94e41270f7a92e0c74142437a7f1fa5ad50356987e29a7",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-007/evidence-bundles/numbers_035.json",
+      "dig_deeper_evidence_exists": false,
+      "disputed_evidence_count": 0,
+      "textual_evidence_present": false,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Numbers",
+          "chapter": 35,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "numbers_035.json"
+    },
+    {
+      "reference": "Acts 19",
+      "book": "Acts",
+      "chapter": 19,
+      "canonical_text_input_locator": "bible.resolve_chapter('Acts', 19)",
+      "locked_evidence_bundle_hash": "712b901a926544c592b704204dff63209997ac5a75d5b1dc8c05e17b851e40c3",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "chronology",
+        "dig_deeper",
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-007/evidence-bundles/acts_019.json",
+      "dig_deeper_evidence_exists": true,
+      "disputed_evidence_count": 23,
+      "textual_evidence_present": true,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Acts",
+          "chapter": 19,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "acts_019.json"
+    },
+    {
+      "reference": "Isaiah 65",
+      "book": "Isaiah",
+      "chapter": 65,
+      "canonical_text_input_locator": "bible.resolve_chapter('Isaiah', 65)",
+      "locked_evidence_bundle_hash": "e1d54bbb845d1b8c2f4d33153b25c55203bc0e61014e1ff788c96e3d8d2542b4",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "dig_deeper",
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-007/evidence-bundles/isaiah_065.json",
+      "dig_deeper_evidence_exists": true,
+      "disputed_evidence_count": 5,
+      "textual_evidence_present": true,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Isaiah",
+          "chapter": 65,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "isaiah_065.json"
+    },
+    {
+      "reference": "Romans 15",
+      "book": "Romans",
+      "chapter": 15,
+      "canonical_text_input_locator": "bible.resolve_chapter('Romans', 15)",
+      "locked_evidence_bundle_hash": "30f7a9f008a569865592c1e15e982fc5fb41c6abbad9e9500bd59151d6a81bd8",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "archaeology_geography",
+        "chronology",
+        "dig_deeper",
+        "historical_context",
+        "interpretive_questions",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-007/evidence-bundles/romans_015.json",
+      "dig_deeper_evidence_exists": true,
+      "disputed_evidence_count": 54,
+      "textual_evidence_present": true,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Romans",
+          "chapter": 15,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "romans_015.json"
+    },
+    {
+      "reference": "Luke 7",
+      "book": "Luke",
+      "chapter": 7,
+      "canonical_text_input_locator": "bible.resolve_chapter('Luke', 7)",
+      "locked_evidence_bundle_hash": "988cb564a2fe7d4376d50a28342896eba421417ec65e9dedd242bc67ee1338b7",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "historical_context"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-007/evidence-bundles/luke_007.json",
+      "dig_deeper_evidence_exists": false,
+      "disputed_evidence_count": 0,
+      "textual_evidence_present": false,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Luke",
+          "chapter": 7,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "luke_007.json"
+    },
+    {
+      "reference": "Deuteronomy 31",
+      "book": "Deuteronomy",
+      "chapter": 31,
+      "canonical_text_input_locator": "bible.resolve_chapter('Deuteronomy', 31)",
+      "locked_evidence_bundle_hash": "4cae498370f3a78375136f97789740826e679d2fcb38d23a0a0d8968c4fc7f18",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-007/evidence-bundles/deuteronomy_031.json",
+      "dig_deeper_evidence_exists": false,
+      "disputed_evidence_count": 0,
+      "textual_evidence_present": false,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Deuteronomy",
+          "chapter": 31,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "deuteronomy_031.json"
+    },
+    {
+      "reference": "Ezekiel 40",
+      "book": "Ezekiel",
+      "chapter": 40,
+      "canonical_text_input_locator": "bible.resolve_chapter('Ezekiel', 40)",
+      "locked_evidence_bundle_hash": "17a411dee61131c60151d78b179f52fe82ffc8409e6f52a2cafb4b903b87401d",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "archaeology_geography",
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-007/evidence-bundles/ezekiel_040.json",
+      "dig_deeper_evidence_exists": false,
+      "disputed_evidence_count": 3,
+      "textual_evidence_present": false,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Ezekiel",
+          "chapter": 40,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "ezekiel_040.json"
+    },
+    {
+      "reference": "Colossians 3",
+      "book": "Colossians",
+      "chapter": 3,
+      "canonical_text_input_locator": "bible.resolve_chapter('Colossians', 3)",
+      "locked_evidence_bundle_hash": "3e770e5afd0fdbe15ef4e4686d69c2d5ff267215c0860cf6d33b6e53e8594bb9",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-007/evidence-bundles/colossians_003.json",
+      "dig_deeper_evidence_exists": false,
+      "disputed_evidence_count": 4,
+      "textual_evidence_present": false,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Colossians",
+          "chapter": 3,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "colossians_003.json"
+    },
+    {
+      "reference": "Matthew 2",
+      "book": "Matthew",
+      "chapter": 2,
+      "canonical_text_input_locator": "bible.resolve_chapter('Matthew', 2)",
+      "locked_evidence_bundle_hash": "1aeee333a66ab737a49c10c24eb5d603ddc1e22f140d03c62886a4990bfe524f",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "archaeology_geography",
+        "dig_deeper",
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-007/evidence-bundles/matthew_002.json",
+      "dig_deeper_evidence_exists": true,
+      "disputed_evidence_count": 7,
+      "textual_evidence_present": false,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Matthew",
+          "chapter": 2,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "matthew_002.json"
+    },
+    {
+      "reference": "Leviticus 17",
+      "book": "Leviticus",
+      "chapter": 17,
+      "canonical_text_input_locator": "bible.resolve_chapter('Leviticus', 17)",
+      "locked_evidence_bundle_hash": "b2a226dd378311eb19b9de83a9363dd391d7fad2844b0ca6dc5fd7ff343d3e1f",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "dig_deeper",
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-007/evidence-bundles/leviticus_017.json",
+      "dig_deeper_evidence_exists": true,
+      "disputed_evidence_count": 4,
+      "textual_evidence_present": true,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Leviticus",
+          "chapter": 17,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "leviticus_017.json"
+    },
+    {
+      "reference": "2 Chronicles 32",
+      "book": "2 Chronicles",
+      "chapter": 32,
+      "canonical_text_input_locator": "bible.resolve_chapter('2 Chronicles', 32)",
+      "locked_evidence_bundle_hash": "b24c0d7c99c558b3393a52eedb30dee2350bbe7b3752d17e92eada167a6cb36e",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-007/evidence-bundles/2_chronicles_032.json",
+      "dig_deeper_evidence_exists": false,
+      "disputed_evidence_count": 1,
+      "textual_evidence_present": false,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "2 Chronicles",
+          "chapter": 32,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "2_chronicles_032.json"
+    },
+    {
+      "reference": "Romans 7",
+      "book": "Romans",
+      "chapter": 7,
+      "canonical_text_input_locator": "bible.resolve_chapter('Romans', 7)",
+      "locked_evidence_bundle_hash": "dda5e9145a962ecce1ead52ba83160e4db35defaa6660bbcb8b0ad01981aa863",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "archaeology_geography",
+        "historical_context",
+        "interpretive_questions",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-007/evidence-bundles/romans_007.json",
+      "dig_deeper_evidence_exists": false,
+      "disputed_evidence_count": 10,
+      "textual_evidence_present": true,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Romans",
+          "chapter": 7,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "romans_007.json"
+    },
+    {
+      "reference": "Luke 6",
+      "book": "Luke",
+      "chapter": 6,
+      "canonical_text_input_locator": "bible.resolve_chapter('Luke', 6)",
+      "locked_evidence_bundle_hash": "9c74bfcf37f45cea89b7ff948df3792e4ae9224e753455c3b50fb8cd3194d719",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "historical_context"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-007/evidence-bundles/luke_006.json",
+      "dig_deeper_evidence_exists": false,
+      "disputed_evidence_count": 1,
+      "textual_evidence_present": false,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Luke",
+          "chapter": 6,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "luke_006.json"
+    },
+    {
+      "reference": "Deuteronomy 16",
+      "book": "Deuteronomy",
+      "chapter": 16,
+      "canonical_text_input_locator": "bible.resolve_chapter('Deuteronomy', 16)",
+      "locked_evidence_bundle_hash": "606888590b777f58b7a4f9f81a5d9501d48088c67ae5f92e60bc3dce60735cd6",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-007/evidence-bundles/deuteronomy_016.json",
+      "dig_deeper_evidence_exists": false,
+      "disputed_evidence_count": 1,
+      "textual_evidence_present": false,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Deuteronomy",
+          "chapter": 16,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "deuteronomy_016.json"
+    },
+    {
+      "reference": "Ezekiel 10",
+      "book": "Ezekiel",
+      "chapter": 10,
+      "canonical_text_input_locator": "bible.resolve_chapter('Ezekiel', 10)",
+      "locked_evidence_bundle_hash": "85a254bb8b6ede76abf0e5a1b98f710e0dda93d2f0231400d61c3d776a737899",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "chronology",
+        "historical_context"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-007/evidence-bundles/ezekiel_010.json",
+      "dig_deeper_evidence_exists": false,
+      "disputed_evidence_count": 2,
+      "textual_evidence_present": false,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Ezekiel",
+          "chapter": 10,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "ezekiel_010.json"
+    },
+    {
+      "reference": "1 Corinthians 9",
+      "book": "1 Corinthians",
+      "chapter": 9,
+      "canonical_text_input_locator": "bible.resolve_chapter('1 Corinthians', 9)",
+      "locked_evidence_bundle_hash": "8ead9de47a48463e8408168b5eb46ac5768f5f6ccf584963299aece4a828045e",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "chronology",
+        "dig_deeper",
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-007/evidence-bundles/1_corinthians_009.json",
+      "dig_deeper_evidence_exists": true,
+      "disputed_evidence_count": 55,
+      "textual_evidence_present": true,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "1 Corinthians",
+          "chapter": 9,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "1_corinthians_009.json"
+    },
+    {
+      "reference": "John 12",
+      "book": "John",
+      "chapter": 12,
+      "canonical_text_input_locator": "bible.resolve_chapter('John', 12)",
+      "locked_evidence_bundle_hash": "46f10a0f5c34bb2229b77588c5a75b4509b455359288498cc2a1868ba7f0cf17",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "historical_context"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-007/evidence-bundles/john_012.json",
+      "dig_deeper_evidence_exists": false,
+      "disputed_evidence_count": 5,
+      "textual_evidence_present": false,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "John",
+          "chapter": 12,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "john_012.json"
+    },
+    {
+      "reference": "Leviticus 11",
+      "book": "Leviticus",
+      "chapter": 11,
+      "canonical_text_input_locator": "bible.resolve_chapter('Leviticus', 11)",
+      "locked_evidence_bundle_hash": "7fbef9c92eda41f5e719030ab73b5e3f88a017b6950620d65e9b814527280559",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "dig_deeper",
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-007/evidence-bundles/leviticus_011.json",
+      "dig_deeper_evidence_exists": true,
+      "disputed_evidence_count": 6,
+      "textual_evidence_present": false,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Leviticus",
+          "chapter": 11,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "leviticus_011.json"
+    },
+    {
+      "reference": "Jeremiah 1",
+      "book": "Jeremiah",
+      "chapter": 1,
+      "canonical_text_input_locator": "bible.resolve_chapter('Jeremiah', 1)",
+      "locked_evidence_bundle_hash": "90795940b87901b8803af99b9a147d53c1e70b21dd38996d1f4b7adc36886abf",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-007/evidence-bundles/jeremiah_001.json",
+      "dig_deeper_evidence_exists": false,
+      "disputed_evidence_count": 5,
+      "textual_evidence_present": true,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Jeremiah",
+          "chapter": 1,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "jeremiah_001.json"
+    },
+    {
+      "reference": "Hebrews 3",
+      "book": "Hebrews",
+      "chapter": 3,
+      "canonical_text_input_locator": "bible.resolve_chapter('Hebrews', 3)",
+      "locked_evidence_bundle_hash": "63e0bb7a50c10d0a565c7716e7bde7ad5be19a1a1ec395d0bd416ade001f8a41",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "dig_deeper",
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-007/evidence-bundles/hebrews_003.json",
+      "dig_deeper_evidence_exists": true,
+      "disputed_evidence_count": 9,
+      "textual_evidence_present": true,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Hebrews",
+          "chapter": 3,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "hebrews_003.json"
+    },
+    {
+      "reference": "John 18",
+      "book": "John",
+      "chapter": 18,
+      "canonical_text_input_locator": "bible.resolve_chapter('John', 18)",
+      "locked_evidence_bundle_hash": "a0376a9d55a03c89a4efd13e9fe088a5a0485d6ddb72c26bac2e91c659985c6f",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-007/evidence-bundles/john_018.json",
+      "dig_deeper_evidence_exists": false,
+      "disputed_evidence_count": 9,
+      "textual_evidence_present": false,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "John",
+          "chapter": 18,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "john_018.json"
+    },
+    {
+      "reference": "Galatians 6",
+      "book": "Galatians",
+      "chapter": 6,
+      "canonical_text_input_locator": "bible.resolve_chapter('Galatians', 6)",
+      "locked_evidence_bundle_hash": "dda6ad5818a27cdcdae9624a4e31446a1bf2a9e0cd63dd4a69b6a1979911658a",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "dig_deeper",
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-007/evidence-bundles/galatians_006.json",
+      "dig_deeper_evidence_exists": true,
+      "disputed_evidence_count": 40,
+      "textual_evidence_present": false,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Galatians",
+          "chapter": 6,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "galatians_006.json"
+    },
+    {
+      "reference": "John 11",
+      "book": "John",
+      "chapter": 11,
+      "canonical_text_input_locator": "bible.resolve_chapter('John', 11)",
+      "locked_evidence_bundle_hash": "a23fd1ba4dd2c694612c1b95017bd8e86a9af909f1e9319cd59a6fa77b122d23",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "dig_deeper",
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-007/evidence-bundles/john_011.json",
+      "dig_deeper_evidence_exists": true,
+      "disputed_evidence_count": 9,
+      "textual_evidence_present": false,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "John",
+          "chapter": 11,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "john_011.json"
+    },
+    {
+      "reference": "Deuteronomy 4",
+      "book": "Deuteronomy",
+      "chapter": 4,
+      "canonical_text_input_locator": "bible.resolve_chapter('Deuteronomy', 4)",
+      "locked_evidence_bundle_hash": "315a49f977eeaf0ae443c917755124a0c55229de7a421368086e81e3f08c5955",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-007/evidence-bundles/deuteronomy_004.json",
+      "dig_deeper_evidence_exists": false,
+      "disputed_evidence_count": 0,
+      "textual_evidence_present": false,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Deuteronomy",
+          "chapter": 4,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "deuteronomy_004.json"
+    },
+    {
+      "reference": "Ephesians 5",
+      "book": "Ephesians",
+      "chapter": 5,
+      "canonical_text_input_locator": "bible.resolve_chapter('Ephesians', 5)",
+      "locked_evidence_bundle_hash": "d451efb9b60ac5b4337842118c7bc0e88c4d534661523d98839c715d544a4018",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "dig_deeper",
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-007/evidence-bundles/ephesians_005.json",
+      "dig_deeper_evidence_exists": true,
+      "disputed_evidence_count": 12,
+      "textual_evidence_present": false,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Ephesians",
+          "chapter": 5,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "ephesians_005.json"
+    },
+    {
+      "reference": "Mark 1",
+      "book": "Mark",
+      "chapter": 1,
+      "canonical_text_input_locator": "bible.resolve_chapter('Mark', 1)",
+      "locked_evidence_bundle_hash": "ee21b3c13ddb9487a76a379a8979ab76c7309c4a527495a8ec406ef792e24f53",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "archaeology_geography",
+        "dig_deeper",
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-007/evidence-bundles/mark_001.json",
+      "dig_deeper_evidence_exists": true,
+      "disputed_evidence_count": 14,
+      "textual_evidence_present": true,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Mark",
+          "chapter": 1,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "mark_001.json"
+    },
+    {
+      "reference": "Deuteronomy 5",
+      "book": "Deuteronomy",
+      "chapter": 5,
+      "canonical_text_input_locator": "bible.resolve_chapter('Deuteronomy', 5)",
+      "locked_evidence_bundle_hash": "74dacc4c1e92926c7ab52ca71d145ca493c61c9819494217a0ce15b32e4bcaee",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "dig_deeper",
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-007/evidence-bundles/deuteronomy_005.json",
+      "dig_deeper_evidence_exists": true,
+      "disputed_evidence_count": 3,
+      "textual_evidence_present": false,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Deuteronomy",
+          "chapter": 5,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "deuteronomy_005.json"
+    },
+    {
+      "reference": "Micah 6",
+      "book": "Micah",
+      "chapter": 6,
+      "canonical_text_input_locator": "bible.resolve_chapter('Micah', 6)",
+      "locked_evidence_bundle_hash": "810749b417c199100e59de5aee842020c590c5ac6f6ef37a71026c1b2c320fd7",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "dig_deeper",
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-007/evidence-bundles/micah_006.json",
+      "dig_deeper_evidence_exists": true,
+      "disputed_evidence_count": 11,
+      "textual_evidence_present": true,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Micah",
+          "chapter": 6,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "micah_006.json"
+    },
+    {
+      "reference": "John 20",
+      "book": "John",
+      "chapter": 20,
+      "canonical_text_input_locator": "bible.resolve_chapter('John', 20)",
+      "locked_evidence_bundle_hash": "3ebb3c12f1c500f61afa57eda2d8ba6690f4d5878ffe8f1c9533ba6b39834eed",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-007/evidence-bundles/john_020.json",
+      "dig_deeper_evidence_exists": false,
+      "disputed_evidence_count": 6,
+      "textual_evidence_present": true,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "John",
+          "chapter": 20,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "john_020.json"
+    },
+    {
+      "reference": "1 Corinthians 15",
+      "book": "1 Corinthians",
+      "chapter": 15,
+      "canonical_text_input_locator": "bible.resolve_chapter('1 Corinthians', 15)",
+      "locked_evidence_bundle_hash": "664e87499bba80965b4391eee89879eed00f81269008bfd2691f62225a748148",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "dig_deeper",
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-007/evidence-bundles/1_corinthians_015.json",
+      "dig_deeper_evidence_exists": true,
+      "disputed_evidence_count": 53,
+      "textual_evidence_present": true,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "1 Corinthians",
+          "chapter": 15,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "1_corinthians_015.json"
+    },
+    {
+      "reference": "Jeremiah 39",
+      "book": "Jeremiah",
+      "chapter": 39,
+      "canonical_text_input_locator": "bible.resolve_chapter('Jeremiah', 39)",
+      "locked_evidence_bundle_hash": "8dc6b85500d6f7bf0a6de207aabf0b65444dd47efb44fd8ffe7a5cea56c0b2ae",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-007/evidence-bundles/jeremiah_039.json",
+      "dig_deeper_evidence_exists": false,
+      "disputed_evidence_count": 5,
+      "textual_evidence_present": true,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Jeremiah",
+          "chapter": 39,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "jeremiah_039.json"
+    },
+    {
+      "reference": "Philippians 2",
+      "book": "Philippians",
+      "chapter": 2,
+      "canonical_text_input_locator": "bible.resolve_chapter('Philippians', 2)",
+      "locked_evidence_bundle_hash": "e200e1e8f5d7323be6741691abe7fbb12e3f5012c5c41a2a9da45333fa431174",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "dig_deeper",
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-007/evidence-bundles/philippians_002.json",
+      "dig_deeper_evidence_exists": true,
+      "disputed_evidence_count": 37,
+      "textual_evidence_present": false,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Philippians",
+          "chapter": 2,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "philippians_002.json"
+    },
+    {
+      "reference": "Matthew 5",
+      "book": "Matthew",
+      "chapter": 5,
+      "canonical_text_input_locator": "bible.resolve_chapter('Matthew', 5)",
+      "locked_evidence_bundle_hash": "836633465a8e1cd31fecb61c34791891a09c4ffd3137ff3a4e81f7e5966cb25d",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "dig_deeper",
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-007/evidence-bundles/matthew_005.json",
+      "dig_deeper_evidence_exists": true,
+      "disputed_evidence_count": 4,
+      "textual_evidence_present": false,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Matthew",
+          "chapter": 5,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "matthew_005.json"
+    },
+    {
+      "reference": "1 Kings 19",
+      "book": "1 Kings",
+      "chapter": 19,
+      "canonical_text_input_locator": "bible.resolve_chapter('1 Kings', 19)",
+      "locked_evidence_bundle_hash": "0f447d5a660d5f200c9bf07987388af85136cf1c48a4c290ebcd149a2d958fb9",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "historical_context"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-007/evidence-bundles/1_kings_019.json",
+      "dig_deeper_evidence_exists": false,
+      "disputed_evidence_count": 3,
+      "textual_evidence_present": false,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "1 Kings",
+          "chapter": 19,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "1_kings_019.json"
+    },
+    {
+      "reference": "2 Peter 1",
+      "book": "2 Peter",
+      "chapter": 1,
+      "canonical_text_input_locator": "bible.resolve_chapter('2 Peter', 1)",
+      "locked_evidence_bundle_hash": "6e63c843bf2d5d150d005f023da96cde0b282bc9d2d3c5af6f0804c6a9258b48",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-007/evidence-bundles/2_peter_001.json",
+      "dig_deeper_evidence_exists": false,
+      "disputed_evidence_count": 24,
+      "textual_evidence_present": false,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "2 Peter",
+          "chapter": 1,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "2_peter_001.json"
+    },
+    {
+      "reference": "Acts 2",
+      "book": "Acts",
+      "chapter": 2,
+      "canonical_text_input_locator": "bible.resolve_chapter('Acts', 2)",
+      "locked_evidence_bundle_hash": "d48cb5574608c80a53979ed9d737d8b7f94fa33d4e020fe9f74776459ef37af5",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "chronology",
+        "dig_deeper",
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-007/evidence-bundles/acts_002.json",
+      "dig_deeper_evidence_exists": true,
+      "disputed_evidence_count": 15,
+      "textual_evidence_present": true,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Acts",
+          "chapter": 2,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "acts_002.json"
+    },
+    {
+      "reference": "Acts 13",
+      "book": "Acts",
+      "chapter": 13,
+      "canonical_text_input_locator": "bible.resolve_chapter('Acts', 13)",
+      "locked_evidence_bundle_hash": "01ff8fe42dccad9c730cadab64fbdcb699f4416a6225d33de51bd1c0637ddd8f",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "archaeology_geography",
+        "dig_deeper",
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-007/evidence-bundles/acts_013.json",
+      "dig_deeper_evidence_exists": true,
+      "disputed_evidence_count": 29,
+      "textual_evidence_present": true,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Acts",
+          "chapter": 13,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "acts_013.json"
+    },
+    {
+      "reference": "Acts 18",
+      "book": "Acts",
+      "chapter": 18,
+      "canonical_text_input_locator": "bible.resolve_chapter('Acts', 18)",
+      "locked_evidence_bundle_hash": "19764a89a4a3b25abf82864c5f3d1298ce5470fa6ab37273fdfffccd53146e93",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "archaeology_geography",
+        "chronology",
+        "dig_deeper",
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-007/evidence-bundles/acts_018.json",
+      "dig_deeper_evidence_exists": true,
+      "disputed_evidence_count": 49,
+      "textual_evidence_present": true,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Acts",
+          "chapter": 18,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "acts_018.json"
+    },
+    {
+      "reference": "Acts 25",
+      "book": "Acts",
+      "chapter": 25,
+      "canonical_text_input_locator": "bible.resolve_chapter('Acts', 25)",
+      "locked_evidence_bundle_hash": "8354acbcd7044ade53111cef0e4a6d9f84f5908baa35fb4d7ee5246edcda2453",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-007/evidence-bundles/acts_025.json",
+      "dig_deeper_evidence_exists": false,
+      "disputed_evidence_count": 6,
+      "textual_evidence_present": true,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Acts",
+          "chapter": 25,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "acts_025.json"
+    },
+    {
+      "reference": "Acts 16",
+      "book": "Acts",
+      "chapter": 16,
+      "canonical_text_input_locator": "bible.resolve_chapter('Acts', 16)",
+      "locked_evidence_bundle_hash": "e37784f5bcd4a44435e8104ae9097f27c59d03fdf332707603fe81b8b87fe0f2",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "archaeology_geography",
+        "chronology",
+        "dig_deeper",
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-007/evidence-bundles/acts_016.json",
+      "dig_deeper_evidence_exists": true,
+      "disputed_evidence_count": 83,
+      "textual_evidence_present": true,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Acts",
+          "chapter": 16,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "acts_016.json"
+    },
+    {
+      "reference": "Acts 9",
+      "book": "Acts",
+      "chapter": 9,
+      "canonical_text_input_locator": "bible.resolve_chapter('Acts', 9)",
+      "locked_evidence_bundle_hash": "318a01509603d14f5f425f6642a736a43bf45e96574aec10c8ee02b7e74c524a",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "chronology",
+        "dig_deeper",
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-007/evidence-bundles/acts_009.json",
+      "dig_deeper_evidence_exists": true,
+      "disputed_evidence_count": 16,
+      "textual_evidence_present": true,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Acts",
+          "chapter": 9,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "acts_009.json"
+    },
+    {
+      "reference": "Acts 28",
+      "book": "Acts",
+      "chapter": 28,
+      "canonical_text_input_locator": "bible.resolve_chapter('Acts', 28)",
+      "locked_evidence_bundle_hash": "c295a9fac26193705875cb48c0475d76b265ae83d934da2ceab50aeef5876de5",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "archaeology_geography",
+        "dig_deeper",
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-007/evidence-bundles/acts_028.json",
+      "dig_deeper_evidence_exists": true,
+      "disputed_evidence_count": 19,
+      "textual_evidence_present": true,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Acts",
+          "chapter": 28,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "acts_028.json"
+    },
+    {
+      "reference": "Acts 20",
+      "book": "Acts",
+      "chapter": 20,
+      "canonical_text_input_locator": "bible.resolve_chapter('Acts', 20)",
+      "locked_evidence_bundle_hash": "ea1d29d6d241feb6d2da4bf74021535d6aa6230e6e08ae4d26e0130920a01540",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "archaeology_geography",
+        "chronology",
+        "dig_deeper",
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-007/evidence-bundles/acts_020.json",
+      "dig_deeper_evidence_exists": true,
+      "disputed_evidence_count": 20,
+      "textual_evidence_present": true,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Acts",
+          "chapter": 20,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "acts_020.json"
+    },
+    {
+      "reference": "Luke 4",
+      "book": "Luke",
+      "chapter": 4,
+      "canonical_text_input_locator": "bible.resolve_chapter('Luke', 4)",
+      "locked_evidence_bundle_hash": "124759817be14c42b8ccced5e71c2a1696f1512c28bffd8d2e8a3b5c5d148311",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "chronology",
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-007/evidence-bundles/luke_004.json",
+      "dig_deeper_evidence_exists": false,
+      "disputed_evidence_count": 7,
+      "textual_evidence_present": false,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Luke",
+          "chapter": 4,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "luke_004.json"
+    },
+    {
+      "reference": "Acts 15",
+      "book": "Acts",
+      "chapter": 15,
+      "canonical_text_input_locator": "bible.resolve_chapter('Acts', 15)",
+      "locked_evidence_bundle_hash": "f79726b0e661e0f37d2bfa48a20f51a71206987f77b63a392ef2bec38387eb2a",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "chronology",
+        "dig_deeper",
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-007/evidence-bundles/acts_015.json",
+      "dig_deeper_evidence_exists": true,
+      "disputed_evidence_count": 46,
+      "textual_evidence_present": true,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Acts",
+          "chapter": 15,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "acts_015.json"
+    },
+    {
+      "reference": "Hebrews 8",
+      "book": "Hebrews",
+      "chapter": 8,
+      "canonical_text_input_locator": "bible.resolve_chapter('Hebrews', 8)",
+      "locked_evidence_bundle_hash": "014c3768239840679a6643cce0cb3994edc8e4687a1fbc0623772483df34291a",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "chronology",
+        "dig_deeper",
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-007/evidence-bundles/hebrews_008.json",
+      "dig_deeper_evidence_exists": true,
+      "disputed_evidence_count": 13,
+      "textual_evidence_present": true,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Hebrews",
+          "chapter": 8,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "hebrews_008.json"
+    },
+    {
+      "reference": "Malachi 2",
+      "book": "Malachi",
+      "chapter": 2,
+      "canonical_text_input_locator": "bible.resolve_chapter('Malachi', 2)",
+      "locked_evidence_bundle_hash": "3f6a2c263b342ebe4376d1dd5dfaec0726abb8895a1f812607923305d7972c48",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "archaeology_geography",
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-007/evidence-bundles/malachi_002.json",
+      "dig_deeper_evidence_exists": false,
+      "disputed_evidence_count": 8,
+      "textual_evidence_present": false,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Malachi",
+          "chapter": 2,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "malachi_002.json"
+    },
+    {
+      "reference": "2 Kings 22",
+      "book": "2 Kings",
+      "chapter": 22,
+      "canonical_text_input_locator": "bible.resolve_chapter('2 Kings', 22)",
+      "locked_evidence_bundle_hash": "b9b6fa9363778419d8314a649af28d94d28fa6e521a2515c67eddf1af02dddeb",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "historical_context"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-007/evidence-bundles/2_kings_022.json",
+      "dig_deeper_evidence_exists": false,
+      "disputed_evidence_count": 0,
+      "textual_evidence_present": false,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "2 Kings",
+          "chapter": 22,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "2_kings_022.json"
+    },
+    {
+      "reference": "Acts 26",
+      "book": "Acts",
+      "chapter": 26,
+      "canonical_text_input_locator": "bible.resolve_chapter('Acts', 26)",
+      "locked_evidence_bundle_hash": "124154e7773459d4d4c7cd595b92d42fd066faf5f6832d8488f5f3b6ba138240",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-007/evidence-bundles/acts_026.json",
+      "dig_deeper_evidence_exists": false,
+      "disputed_evidence_count": 4,
+      "textual_evidence_present": true,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Acts",
+          "chapter": 26,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "acts_026.json"
+    },
+    {
+      "reference": "1 Samuel 1",
+      "book": "1 Samuel",
+      "chapter": 1,
+      "canonical_text_input_locator": "bible.resolve_chapter('1 Samuel', 1)",
+      "locked_evidence_bundle_hash": "079b1b16ea63cb93ccebc2424a3dc4f2058ec98eadeec3f6c974d5f4ede396fd",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "archaeology_geography",
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-007/evidence-bundles/1_samuel_001.json",
+      "dig_deeper_evidence_exists": false,
+      "disputed_evidence_count": 2,
+      "textual_evidence_present": false,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "1 Samuel",
+          "chapter": 1,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "1_samuel_001.json"
+    },
+    {
+      "reference": "Ezra 6",
+      "book": "Ezra",
+      "chapter": 6,
+      "canonical_text_input_locator": "bible.resolve_chapter('Ezra', 6)",
+      "locked_evidence_bundle_hash": "4aaa12b87e662041f15957a853ff1cfb547eb3a9c38a9b82dc37c4564b0868da",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "historical_context"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-007/evidence-bundles/ezra_006.json",
+      "dig_deeper_evidence_exists": false,
+      "disputed_evidence_count": 7,
+      "textual_evidence_present": false,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Ezra",
+          "chapter": 6,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "ezra_006.json"
+    },
+    {
+      "reference": "Luke 3",
+      "book": "Luke",
+      "chapter": 3,
+      "canonical_text_input_locator": "bible.resolve_chapter('Luke', 3)",
+      "locked_evidence_bundle_hash": "85e028a3a4ff9c24a1210b70b534e0a712acc28291674faa25c2271687ede830",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-007/evidence-bundles/luke_003.json",
+      "dig_deeper_evidence_exists": false,
+      "disputed_evidence_count": 2,
+      "textual_evidence_present": true,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Luke",
+          "chapter": 3,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "luke_003.json"
+    },
+    {
+      "reference": "Luke 19",
+      "book": "Luke",
+      "chapter": 19,
+      "canonical_text_input_locator": "bible.resolve_chapter('Luke', 19)",
+      "locked_evidence_bundle_hash": "92b1fdd8086cd07c8e90d4c86d31237860fada13a9d7531d2dc02e7075c9211e",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-007/evidence-bundles/luke_019.json",
+      "dig_deeper_evidence_exists": false,
+      "disputed_evidence_count": 7,
+      "textual_evidence_present": false,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Luke",
+          "chapter": 19,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "luke_019.json"
+    },
+    {
+      "reference": "Ezra 7",
+      "book": "Ezra",
+      "chapter": 7,
+      "canonical_text_input_locator": "bible.resolve_chapter('Ezra', 7)",
+      "locked_evidence_bundle_hash": "f115af62596dc894ba55be01b9cf8c5a9586607a3995f3d7e0415fb0a19b93d5",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "dig_deeper",
+        "historical_context"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-007/evidence-bundles/ezra_007.json",
+      "dig_deeper_evidence_exists": true,
+      "disputed_evidence_count": 5,
+      "textual_evidence_present": false,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Ezra",
+          "chapter": 7,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "ezra_007.json"
+    },
+    {
+      "reference": "Hebrews 7",
+      "book": "Hebrews",
+      "chapter": 7,
+      "canonical_text_input_locator": "bible.resolve_chapter('Hebrews', 7)",
+      "locked_evidence_bundle_hash": "4122addd66cb0423ed34304130e17a05f2391bb7b29ae0c914a2da3562459696",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "dig_deeper",
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-007/evidence-bundles/hebrews_007.json",
+      "dig_deeper_evidence_exists": true,
+      "disputed_evidence_count": 8,
+      "textual_evidence_present": true,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Hebrews",
+          "chapter": 7,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "hebrews_007.json"
+    },
+    {
+      "reference": "1 Peter 1",
+      "book": "1 Peter",
+      "chapter": 1,
+      "canonical_text_input_locator": "bible.resolve_chapter('1 Peter', 1)",
+      "locked_evidence_bundle_hash": "3bc49caceb6f9b8b0a19b3a1320598804eb6010e93d8257dbd5988e933f6cdd0",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-007/evidence-bundles/1_peter_001.json",
+      "dig_deeper_evidence_exists": false,
+      "disputed_evidence_count": 15,
+      "textual_evidence_present": false,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "1 Peter",
+          "chapter": 1,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "1_peter_001.json"
+    },
+    {
+      "reference": "Acts 17",
+      "book": "Acts",
+      "chapter": 17,
+      "canonical_text_input_locator": "bible.resolve_chapter('Acts', 17)",
+      "locked_evidence_bundle_hash": "536e0fd41d40e0ccae2e710f5c6dc58a3e90e6357352695ed2768a10ea09ceb6",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "archaeology_geography",
+        "chronology",
+        "dig_deeper",
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-007/evidence-bundles/acts_017.json",
+      "dig_deeper_evidence_exists": true,
+      "disputed_evidence_count": 94,
+      "textual_evidence_present": true,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Acts",
+          "chapter": 17,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "acts_017.json"
+    },
+    {
+      "reference": "John 3",
+      "book": "John",
+      "chapter": 3,
+      "canonical_text_input_locator": "bible.resolve_chapter('John', 3)",
+      "locked_evidence_bundle_hash": "b95bc27afdfcce7aafef918e97f93aaf4db770911d197c1dd3ac2a386954d81c",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "dig_deeper",
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-007/evidence-bundles/john_003.json",
+      "dig_deeper_evidence_exists": true,
+      "disputed_evidence_count": 4,
+      "textual_evidence_present": true,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "John",
+          "chapter": 3,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "john_003.json"
+    },
+    {
+      "reference": "Romans 11",
+      "book": "Romans",
+      "chapter": 11,
+      "canonical_text_input_locator": "bible.resolve_chapter('Romans', 11)",
+      "locked_evidence_bundle_hash": "6eb78dfc4ee2e96cba36de4beb26920bd2a44a93100096c1f1394958be55ff7b",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "archaeology_geography",
+        "dig_deeper",
+        "historical_context",
+        "interpretive_questions",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-007/evidence-bundles/romans_011.json",
+      "dig_deeper_evidence_exists": true,
+      "disputed_evidence_count": 32,
+      "textual_evidence_present": true,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Romans",
+          "chapter": 11,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "romans_011.json"
+    },
+    {
+      "reference": "1 Corinthians 7",
+      "book": "1 Corinthians",
+      "chapter": 7,
+      "canonical_text_input_locator": "bible.resolve_chapter('1 Corinthians', 7)",
+      "locked_evidence_bundle_hash": "3e01a5020e30cbba5874f2d6567cd314371d328ee5acebe4dff083a1022823a0",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "chronology",
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-007/evidence-bundles/1_corinthians_007.json",
+      "dig_deeper_evidence_exists": false,
+      "disputed_evidence_count": 34,
+      "textual_evidence_present": true,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "1 Corinthians",
+          "chapter": 7,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "1_corinthians_007.json"
+    },
+    {
+      "reference": "2 Kings 18",
+      "book": "2 Kings",
+      "chapter": 18,
+      "canonical_text_input_locator": "bible.resolve_chapter('2 Kings', 18)",
+      "locked_evidence_bundle_hash": "483d9e8edf9a57e63269c54b304a906a48ee8086750dea22c0027bf6decbfcb7",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "archaeology_geography",
+        "dig_deeper",
+        "historical_context"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-007/evidence-bundles/2_kings_018.json",
+      "dig_deeper_evidence_exists": true,
+      "disputed_evidence_count": 21,
+      "textual_evidence_present": false,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "2 Kings",
+          "chapter": 18,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "2_kings_018.json"
+    },
+    {
+      "reference": "Joshua 18",
+      "book": "Joshua",
+      "chapter": 18,
+      "canonical_text_input_locator": "bible.resolve_chapter('Joshua', 18)",
+      "locked_evidence_bundle_hash": "7f56cc39043a7b160432ebb1c5f8145c2afa41d9ba6f28d0d76f6ac71dd66082",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-007/evidence-bundles/joshua_018.json",
+      "dig_deeper_evidence_exists": false,
+      "disputed_evidence_count": 0,
+      "textual_evidence_present": false,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Joshua",
+          "chapter": 18,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "joshua_018.json"
+    },
+    {
+      "reference": "2 Corinthians 11",
+      "book": "2 Corinthians",
+      "chapter": 11,
+      "canonical_text_input_locator": "bible.resolve_chapter('2 Corinthians', 11)",
+      "locked_evidence_bundle_hash": "9e9ad40c68feeb72234c0b9eed2d74e74729eebbc84959aad1274825587d961d",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "archaeology_geography",
+        "chronology",
+        "dig_deeper",
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-007/evidence-bundles/2_corinthians_011.json",
+      "dig_deeper_evidence_exists": true,
+      "disputed_evidence_count": 30,
+      "textual_evidence_present": true,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "2 Corinthians",
+          "chapter": 11,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "2_corinthians_011.json"
+    },
+    {
+      "reference": "Acts 10",
+      "book": "Acts",
+      "chapter": 10,
+      "canonical_text_input_locator": "bible.resolve_chapter('Acts', 10)",
+      "locked_evidence_bundle_hash": "5d8b5f8a8a9880f2b00dd1017a500120805d6a5ecc89f6e2d98762b1da30d7cd",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "dig_deeper",
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-007/evidence-bundles/acts_010.json",
+      "dig_deeper_evidence_exists": true,
+      "disputed_evidence_count": 13,
+      "textual_evidence_present": true,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Acts",
+          "chapter": 10,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "acts_010.json"
+    },
+    {
+      "reference": "Judges 2",
+      "book": "Judges",
+      "chapter": 2,
+      "canonical_text_input_locator": "bible.resolve_chapter('Judges', 2)",
+      "locked_evidence_bundle_hash": "9ba6a333683aa785c5f1a3712ad42ee8f05de82dc43c02559b684de807bb3f2d",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-007/evidence-bundles/judges_002.json",
+      "dig_deeper_evidence_exists": false,
+      "disputed_evidence_count": 4,
+      "textual_evidence_present": false,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Judges",
+          "chapter": 2,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "judges_002.json"
+    },
+    {
+      "reference": "Judges 18",
+      "book": "Judges",
+      "chapter": 18,
+      "canonical_text_input_locator": "bible.resolve_chapter('Judges', 18)",
+      "locked_evidence_bundle_hash": "8b2112da55c443704cf37a8e9391854eec5efbf207e88c8e7061e62cb839ed26",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "archaeology_geography",
+        "dig_deeper",
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-007/evidence-bundles/judges_018.json",
+      "dig_deeper_evidence_exists": true,
+      "disputed_evidence_count": 7,
+      "textual_evidence_present": false,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Judges",
+          "chapter": 18,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "judges_018.json"
+    },
+    {
+      "reference": "1 Corinthians 14",
+      "book": "1 Corinthians",
+      "chapter": 14,
+      "canonical_text_input_locator": "bible.resolve_chapter('1 Corinthians', 14)",
+      "locked_evidence_bundle_hash": "0f687d600e3fc75cebc24b21f963314a508be0c880a7dfae862e317ad5adc3e9",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "archaeology_geography",
+        "dig_deeper",
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-007/evidence-bundles/1_corinthians_014.json",
+      "dig_deeper_evidence_exists": true,
+      "disputed_evidence_count": 58,
+      "textual_evidence_present": true,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "1 Corinthians",
+          "chapter": 14,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "1_corinthians_014.json"
+    },
+    {
+      "reference": "2 Peter 3",
+      "book": "2 Peter",
+      "chapter": 3,
+      "canonical_text_input_locator": "bible.resolve_chapter('2 Peter', 3)",
+      "locked_evidence_bundle_hash": "9db964ddc49b5fd7246f999c30b914d7dec6d20402f0159cf3b0792975ae49cd",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "dig_deeper",
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-007/evidence-bundles/2_peter_003.json",
+      "dig_deeper_evidence_exists": true,
+      "disputed_evidence_count": 22,
+      "textual_evidence_present": false,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "2 Peter",
+          "chapter": 3,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "2_peter_003.json"
+    },
+    {
+      "reference": "Joshua 5",
+      "book": "Joshua",
+      "chapter": 5,
+      "canonical_text_input_locator": "bible.resolve_chapter('Joshua', 5)",
+      "locked_evidence_bundle_hash": "deb9ea6d81fbf4e21d0ab13372185f2161b484d1aa664b27af7d5bedc736accf",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-007/evidence-bundles/joshua_005.json",
+      "dig_deeper_evidence_exists": false,
+      "disputed_evidence_count": 0,
+      "textual_evidence_present": false,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Joshua",
+          "chapter": 5,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "joshua_005.json"
+    },
+    {
+      "reference": "Romans 16",
+      "book": "Romans",
+      "chapter": 16,
+      "canonical_text_input_locator": "bible.resolve_chapter('Romans', 16)",
+      "locked_evidence_bundle_hash": "24c287cd76371706a6c6e586e8e5b384c79213a47703d130712218d5f62b7577",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "archaeology_geography",
+        "dig_deeper",
+        "historical_context",
+        "interpretive_questions",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-007/evidence-bundles/romans_016.json",
+      "dig_deeper_evidence_exists": true,
+      "disputed_evidence_count": 87,
+      "textual_evidence_present": true,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Romans",
+          "chapter": 16,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "romans_016.json"
+    },
+    {
+      "reference": "James 3",
+      "book": "James",
+      "chapter": 3,
+      "canonical_text_input_locator": "bible.resolve_chapter('James', 3)",
+      "locked_evidence_bundle_hash": "dc96acf4aa99d4c07fc473cba945ffe873677385ffc4cdfa3f7a59e90cf2e33d",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "dig_deeper",
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-007/evidence-bundles/james_003.json",
+      "dig_deeper_evidence_exists": true,
+      "disputed_evidence_count": 10,
+      "textual_evidence_present": false,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "James",
+          "chapter": 3,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "james_003.json"
+    },
+    {
+      "reference": "1 Thessalonians 2",
+      "book": "1 Thessalonians",
+      "chapter": 2,
+      "canonical_text_input_locator": "bible.resolve_chapter('1 Thessalonians', 2)",
+      "locked_evidence_bundle_hash": "ece44ab9b77483b814909f98e1171ad510fa745282b5a6b6879ec011df76fda5",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "archaeology_geography",
+        "chronology",
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-007/evidence-bundles/1_thessalonians_002.json",
+      "dig_deeper_evidence_exists": false,
+      "disputed_evidence_count": 31,
+      "textual_evidence_present": true,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "1 Thessalonians",
+          "chapter": 2,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "1_thessalonians_002.json"
+    },
+    {
+      "reference": "Acts 3",
+      "book": "Acts",
+      "chapter": 3,
+      "canonical_text_input_locator": "bible.resolve_chapter('Acts', 3)",
+      "locked_evidence_bundle_hash": "628e503386c22dcb4d3921c8d077b8508a17ffd0b1f90de63b5bef1dea84a5c6",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-007/evidence-bundles/acts_003.json",
+      "dig_deeper_evidence_exists": false,
+      "disputed_evidence_count": 1,
+      "textual_evidence_present": true,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Acts",
+          "chapter": 3,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "acts_003.json"
+    },
+    {
+      "reference": "Romans 4",
+      "book": "Romans",
+      "chapter": 4,
+      "canonical_text_input_locator": "bible.resolve_chapter('Romans', 4)",
+      "locked_evidence_bundle_hash": "534c1ec8e784b538d95048bde385ffd206a0a6f91fa406399a5ffa9c2f3c70b5",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "archaeology_geography",
+        "chronology",
+        "dig_deeper",
+        "historical_context",
+        "interpretive_questions",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-007/evidence-bundles/romans_004.json",
+      "dig_deeper_evidence_exists": true,
+      "disputed_evidence_count": 12,
+      "textual_evidence_present": true,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Romans",
+          "chapter": 4,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "romans_004.json"
+    },
+    {
+      "reference": "Acts 1",
+      "book": "Acts",
+      "chapter": 1,
+      "canonical_text_input_locator": "bible.resolve_chapter('Acts', 1)",
+      "locked_evidence_bundle_hash": "c863852caadd98620db6b842fc182d2026de65e926d69888a19a33019236aeff",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "dig_deeper",
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-007/evidence-bundles/acts_001.json",
+      "dig_deeper_evidence_exists": true,
+      "disputed_evidence_count": 13,
+      "textual_evidence_present": true,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Acts",
+          "chapter": 1,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "acts_001.json"
+    },
+    {
+      "reference": "Isaiah 58",
+      "book": "Isaiah",
+      "chapter": 58,
+      "canonical_text_input_locator": "bible.resolve_chapter('Isaiah', 58)",
+      "locked_evidence_bundle_hash": "de776b5aa8747077b8bf58b6f966c4311bf0a78a44d19fb84a361cbd629199c9",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-007/evidence-bundles/isaiah_058.json",
+      "dig_deeper_evidence_exists": false,
+      "disputed_evidence_count": 1,
+      "textual_evidence_present": true,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Isaiah",
+          "chapter": 58,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "isaiah_058.json"
+    },
+    {
+      "reference": "Numbers 27",
+      "book": "Numbers",
+      "chapter": 27,
+      "canonical_text_input_locator": "bible.resolve_chapter('Numbers', 27)",
+      "locked_evidence_bundle_hash": "bd0afd5e258b09cc69c0e4dbb3a53d1e25fe43350e6261f0af216c1055893a93",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-007/evidence-bundles/numbers_027.json",
+      "dig_deeper_evidence_exists": false,
+      "disputed_evidence_count": 0,
+      "textual_evidence_present": false,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Numbers",
+          "chapter": 27,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "numbers_027.json"
+    },
+    {
+      "reference": "2 Corinthians 6",
+      "book": "2 Corinthians",
+      "chapter": 6,
+      "canonical_text_input_locator": "bible.resolve_chapter('2 Corinthians', 6)",
+      "locked_evidence_bundle_hash": "305009725f4886f24160cbc3d7afce775006a051a2514ff51343fdad0bc1cdf7",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-007/evidence-bundles/2_corinthians_006.json",
+      "dig_deeper_evidence_exists": false,
+      "disputed_evidence_count": 8,
+      "textual_evidence_present": true,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "2 Corinthians",
+          "chapter": 6,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "2_corinthians_006.json"
+    },
+    {
+      "reference": "2 Kings 4",
+      "book": "2 Kings",
+      "chapter": 4,
+      "canonical_text_input_locator": "bible.resolve_chapter('2 Kings', 4)",
+      "locked_evidence_bundle_hash": "28890abd7899dc6e87dbeaf6a17fa4005eddf561f3a3731626815ede211ed993",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "historical_context"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-007/evidence-bundles/2_kings_004.json",
+      "dig_deeper_evidence_exists": false,
+      "disputed_evidence_count": 0,
+      "textual_evidence_present": false,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "2 Kings",
+          "chapter": 4,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "2_kings_004.json"
+    },
+    {
+      "reference": "1 Corinthians 3",
+      "book": "1 Corinthians",
+      "chapter": 3,
+      "canonical_text_input_locator": "bible.resolve_chapter('1 Corinthians', 3)",
+      "locked_evidence_bundle_hash": "285b415cfa3dc6bcca71edab966f939c7f18c0a670697d776520b9b7f16de0a8",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "chronology",
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-007/evidence-bundles/1_corinthians_003.json",
+      "dig_deeper_evidence_exists": false,
+      "disputed_evidence_count": 18,
+      "textual_evidence_present": true,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "1 Corinthians",
+          "chapter": 3,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "1_corinthians_003.json"
+    },
+    {
+      "reference": "2 Corinthians 12",
+      "book": "2 Corinthians",
+      "chapter": 12,
+      "canonical_text_input_locator": "bible.resolve_chapter('2 Corinthians', 12)",
+      "locked_evidence_bundle_hash": "de6d881cd9c235ccc8661199a923380ab740a2066c42d0c1573c32ca2a330f52",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "chronology",
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-007/evidence-bundles/2_corinthians_012.json",
+      "dig_deeper_evidence_exists": false,
+      "disputed_evidence_count": 41,
+      "textual_evidence_present": true,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "2 Corinthians",
+          "chapter": 12,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "2_corinthians_012.json"
+    },
+    {
+      "reference": "Matthew 28",
+      "book": "Matthew",
+      "chapter": 28,
+      "canonical_text_input_locator": "bible.resolve_chapter('Matthew', 28)",
+      "locked_evidence_bundle_hash": "b4d97a7849fe01398a8ce5f4f6512261de725dd1d58741611619dedf4b540e6f",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "dig_deeper",
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-007/evidence-bundles/matthew_028.json",
+      "dig_deeper_evidence_exists": true,
+      "disputed_evidence_count": 6,
+      "textual_evidence_present": true,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Matthew",
+          "chapter": 28,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "matthew_028.json"
+    },
+    {
+      "reference": "1 Corinthians 10",
+      "book": "1 Corinthians",
+      "chapter": 10,
+      "canonical_text_input_locator": "bible.resolve_chapter('1 Corinthians', 10)",
+      "locked_evidence_bundle_hash": "d0b04b234e914f45443f53830f9734a25dbac25d9c110d9ab4907778e65c4458",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "chronology",
+        "dig_deeper",
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-007/evidence-bundles/1_corinthians_010.json",
+      "dig_deeper_evidence_exists": true,
+      "disputed_evidence_count": 54,
+      "textual_evidence_present": true,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "1 Corinthians",
+          "chapter": 10,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "1_corinthians_010.json"
+    },
+    {
+      "reference": "1 Samuel 4",
+      "book": "1 Samuel",
+      "chapter": 4,
+      "canonical_text_input_locator": "bible.resolve_chapter('1 Samuel', 4)",
+      "locked_evidence_bundle_hash": "109f409db70b3d647c7968ff1c49594c09907398ac2ca25385f71260b067e5c1",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-007/evidence-bundles/1_samuel_004.json",
+      "dig_deeper_evidence_exists": false,
+      "disputed_evidence_count": 0,
+      "textual_evidence_present": false,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "1 Samuel",
+          "chapter": 4,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "1_samuel_004.json"
+    },
+    {
+      "reference": "Amos 5",
+      "book": "Amos",
+      "chapter": 5,
+      "canonical_text_input_locator": "bible.resolve_chapter('Amos', 5)",
+      "locked_evidence_bundle_hash": "677d33e36464f157dfba78571427d276697b29ea2d4e4cc80a4fd5cd2acd5116",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "dig_deeper",
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-007/evidence-bundles/amos_005.json",
+      "dig_deeper_evidence_exists": true,
+      "disputed_evidence_count": 15,
+      "textual_evidence_present": true,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Amos",
+          "chapter": 5,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "amos_005.json"
+    },
+    {
+      "reference": "Galatians 5",
+      "book": "Galatians",
+      "chapter": 5,
+      "canonical_text_input_locator": "bible.resolve_chapter('Galatians', 5)",
+      "locked_evidence_bundle_hash": "eb6d2b3790f0965f525839cb040029532964081fc2745b5ac644db29dde9b4a2",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "dig_deeper",
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-007/evidence-bundles/galatians_005.json",
+      "dig_deeper_evidence_exists": true,
+      "disputed_evidence_count": 33,
+      "textual_evidence_present": false,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Galatians",
+          "chapter": 5,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "galatians_005.json"
+    },
+    {
+      "reference": "Mark 7",
+      "book": "Mark",
+      "chapter": 7,
+      "canonical_text_input_locator": "bible.resolve_chapter('Mark', 7)",
+      "locked_evidence_bundle_hash": "a9dd7d9fea16d672cd2453bd4e782d6a7d6323bebedce484933b3a027c84d8a1",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "dig_deeper",
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-007/evidence-bundles/mark_007.json",
+      "dig_deeper_evidence_exists": true,
+      "disputed_evidence_count": 24,
+      "textual_evidence_present": true,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Mark",
+          "chapter": 7,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "mark_007.json"
+    },
+    {
+      "reference": "Acts 23",
+      "book": "Acts",
+      "chapter": 23,
+      "canonical_text_input_locator": "bible.resolve_chapter('Acts', 23)",
+      "locked_evidence_bundle_hash": "07e0e0bf2f3c2a1775b7225af69169d298b234902374f8453fa3bd38308967b0",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "dig_deeper",
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-007/evidence-bundles/acts_023.json",
+      "dig_deeper_evidence_exists": true,
+      "disputed_evidence_count": 8,
+      "textual_evidence_present": true,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Acts",
+          "chapter": 23,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "acts_023.json"
+    },
+    {
+      "reference": "Ezekiel 48",
+      "book": "Ezekiel",
+      "chapter": 48,
+      "canonical_text_input_locator": "bible.resolve_chapter('Ezekiel', 48)",
+      "locked_evidence_bundle_hash": "d923c41542bd5e11a271fb062b5ce8cd5b7359afc9f06b3999ffeec78de1e102",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "archaeology_geography",
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-007/evidence-bundles/ezekiel_048.json",
+      "dig_deeper_evidence_exists": false,
+      "disputed_evidence_count": 3,
+      "textual_evidence_present": false,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Ezekiel",
+          "chapter": 48,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "ezekiel_048.json"
+    }
+  ]
+}

@@ -1,0 +1,744 @@
+{
+  "passage_ref": "Revelation 22",
+  "entities": {
+    "people": [],
+    "places": [],
+    "groups": [],
+    "events": [
+      {
+        "id": "new-jerusalem",
+        "title": "New Jerusalem",
+        "type": "event",
+        "aliases": [
+          "what happened in new jerusalem",
+          "tell me about new jerusalem",
+          "why is new jerusalem important"
+        ],
+        "metadata": {
+          "summary": "The eschatological city of Revelation 21-22 where God dwells with his people and creation is renewed.",
+          "importance": 92,
+          "retrieval_score": 0.912,
+          "ancient_names": [],
+          "modern_identification": "",
+          "region": "",
+          "terrain": "",
+          "elevation": null,
+          "archaeology": [],
+          "related_passages": [
+            "Isaiah 65:17-25",
+            "Isaiah 66:22-23",
+            "Ezekiel 48:30-35",
+            "Revelation 21:1-27",
+            "Revelation 22:1-5"
+          ]
+        }
+      }
+    ],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "ezekiel-revelation-reuse",
+      "claim": "Revelation repeatedly recomposes Ezekielian throne, creature, scroll, measuring, witness, plague, Gog, battle, city, river, and tree imagery in its own literary sequence.",
+      "category": "geography",
+      "source_ids": [
+        "new-testament-ezekiel",
+        "mein-gog-politics",
+        "oxford-handbook-ezekiel"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Revelation 21:1-22:5"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "ezekiel",
+        "parent_title": "Ezekiel",
+        "parent_type": "book",
+        "object_importance": 92,
+        "retrieval_score": 0.912,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 100,
+        "certainty": "strong_consensus",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "reception_history",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "LATER_RECEPTION",
+        "presentation_role": "dig_deeper",
+        "overview_priority": 0
+      }
+    },
+    {
+      "id": "new-jerusalem:ancient_near_east_context:0",
+      "claim": "The vision reuses city and temple imagery familiar in the ancient world while transforming them around God\u2019s direct presence.",
+      "category": "culture",
+      "source_ids": [
+        "isaiah-65-66",
+        "ezekiel-48",
+        "revelation-21-22",
+        "new-jerusalem-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "new-jerusalem"
+      ],
+      "passage_anchors": [
+        "Revelation 22:1-5"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "new-jerusalem",
+        "parent_title": "New Jerusalem",
+        "parent_type": "event",
+        "object_importance": 92,
+        "retrieval_score": 0.912,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "new-jerusalem:historical_context:0",
+      "claim": "New Jerusalem appears as the final hope of the biblical story, reshaping Zion imagery after judgment and exile.",
+      "category": "history",
+      "source_ids": [
+        "isaiah-65-66",
+        "ezekiel-48",
+        "revelation-21-22",
+        "new-jerusalem-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "new-jerusalem"
+      ],
+      "passage_anchors": [
+        "Revelation 22:1-5"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "new-jerusalem",
+        "parent_title": "New Jerusalem",
+        "parent_type": "event",
+        "object_importance": 92,
+        "retrieval_score": 0.912,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "rev-closing-variant",
+      "claim": "Revelation 22:19 has ancient variation between tree of life and book of life traditions.",
+      "category": "history",
+      "source_ids": [
+        "metzger",
+        "ecm"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Revelation 22:19"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "revelation",
+        "parent_title": "Revelation",
+        "parent_type": "book",
+        "object_importance": 98,
+        "retrieval_score": 0.938,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 18,
+        "certainty": "strong_consensus",
+        "dispute_status": "textual_variant",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "rev-healed-nations",
+      "claim": "The tree's leaves are for healing the nations, and kings bring glory into the city.",
+      "category": "history",
+      "source_ids": [
+        "rev-greek",
+        "middleton",
+        "koester"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Revelation 22:2"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "revelation",
+        "parent_title": "Revelation",
+        "parent_type": "book",
+        "object_importance": 98,
+        "retrieval_score": 0.938,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 1,
+        "certainty": "textually_explicit",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "rev-mixed-genre",
+      "claim": "Revelation combines apocalypse, prophecy, and circular letter.",
+      "category": "culture",
+      "source_ids": [
+        "collins-apocalypse",
+        "aune",
+        "carey"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Revelation 22:6-21"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "revelation",
+        "parent_title": "Revelation",
+        "parent_type": "book",
+        "object_importance": 98,
+        "retrieval_score": 0.938,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 5,
+        "certainty": "strong_consensus",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 90
+      }
+    },
+    {
+      "id": "rev-new-jerusalem",
+      "claim": "New Jerusalem combines city, bride, sanctuary, Eden, and renewed-Zion imagery.",
+      "category": "culture",
+      "source_ids": [
+        "rev-greek",
+        "bauckham",
+        "moyise"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Revelation 21:9-22:5"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "revelation",
+        "parent_title": "Revelation",
+        "parent_type": "book",
+        "object_importance": 98,
+        "retrieval_score": 0.938,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 100,
+        "certainty": "strong_consensus",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_theology",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 110
+      }
+    },
+    {
+      "id": "rev-scriptural-reuse",
+      "claim": "Revelation repeatedly reworks Israel's Scriptures, especially Daniel, Ezekiel, Isaiah, Exodus, Zechariah, Genesis, and Psalms.",
+      "category": "culture",
+      "source_ids": [
+        "beale",
+        "moyise",
+        "koester"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Revelation 1:1-22:21"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "revelation",
+        "parent_title": "Revelation",
+        "parent_type": "book",
+        "object_importance": 98,
+        "retrieval_score": 0.938,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 2100,
+        "certainty": "strong_consensus",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_theology",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "Revelation",
+        "author": "David E. Aune",
+        "publisher": "Zondervan Academic",
+        "year": 1997,
+        "locator": "Word Biblical Commentary 52A-C",
+        "url": "https://zondervanacademic.com/products/revelation-1-5-volume-52a",
+        "source_type": "academic-book",
+        "supports": [
+          "date-ranges",
+          "genre",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Detailed three-volume critical commentary.",
+        "id": "aune",
+        "canonical_object_ids": [
+          "revelation"
+        ]
+      },
+      {
+        "title": "The Theology of the Book of Revelation",
+        "author": "Richard Bauckham",
+        "publisher": "Cambridge University Press",
+        "year": 1993,
+        "locator": "New Testament Theology",
+        "url": "https://www.cambridge.org/core/books/theology-of-the-book-of-revelation/8EA06CE90DE826B1F50EC27A3185D9D7",
+        "source_type": "academic-book",
+        "supports": [
+          "literary-context",
+          "canonical-context",
+          "claims"
+        ],
+        "notes": "Influential literary and theological synthesis.",
+        "id": "bauckham",
+        "canonical_object_ids": [
+          "revelation"
+        ]
+      },
+      {
+        "title": "The Book of Revelation: A Commentary on the Greek Text",
+        "author": "G. K. Beale",
+        "publisher": "Eerdmans",
+        "year": 1999,
+        "locator": "New International Greek Testament Commentary",
+        "url": "https://www.eerdmans.com/9780802821744/the-book-of-revelation/",
+        "source_type": "academic-book",
+        "supports": [
+          "intertextuality",
+          "structure",
+          "claims"
+        ],
+        "notes": "Extensive study of Greek text and scriptural reuse representing a recapitulative reading.",
+        "id": "beale",
+        "canonical_object_ids": [
+          "revelation"
+        ]
+      },
+      {
+        "title": "Ultimate Things",
+        "author": "Greg Carey",
+        "publisher": "Chalice Press",
+        "year": 2005,
+        "locator": "An Introduction to Jewish and Christian Apocalyptic Literature",
+        "url": "https://chalicepress.com/products/ultimate-things",
+        "source_type": "academic-book",
+        "supports": [
+          "genre",
+          "later-christian-reception",
+          "interpretive-notes"
+        ],
+        "notes": "Accessible scholarly guide emphasizing ethical interpretation.",
+        "id": "carey",
+        "canonical_object_ids": [
+          "revelation"
+        ]
+      },
+      {
+        "title": "The Apocalyptic Imagination",
+        "author": "John J. Collins",
+        "publisher": "Eerdmans",
+        "year": 2016,
+        "locator": "Third edition",
+        "url": "https://www.eerdmans.com/9780802872791/the-apocalyptic-imagination/",
+        "source_type": "academic-book",
+        "supports": [
+          "second-temple-context",
+          "genre",
+          "claims"
+        ],
+        "notes": "Historical and genre framework for Jewish apocalypse.",
+        "id": "collins-apocalypse",
+        "canonical_object_ids": [
+          "revelation"
+        ]
+      },
+      {
+        "title": "Editio Critica Maior: Revelation",
+        "author": "Institute for New Testament Textual Research",
+        "publisher": "German Bible Society",
+        "year": 2024,
+        "locator": "Revelation",
+        "url": "https://www.die-bibel.de/en/shop/biblia-graeca-1085",
+        "source_type": "reference-work",
+        "supports": [
+          "primary-sources",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Critical text and apparatus; bibliographic landing page requires reviewer confirmation.",
+        "id": "ecm",
+        "canonical_object_ids": [
+          "revelation"
+        ]
+      },
+      {
+        "title": "Ezekiel 48",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "ezekiel-48",
+        "canonical_object_ids": [
+          "new-jerusalem"
+        ]
+      },
+      {
+        "title": "Isaiah 65-66",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "isaiah-65-66",
+        "canonical_object_ids": [
+          "new-jerusalem"
+        ]
+      },
+      {
+        "title": "Revelation: A New Translation with Introduction and Commentary",
+        "author": "Craig R. Koester",
+        "publisher": "Yale University Press",
+        "year": 2014,
+        "locator": "Anchor Yale Bible 38A",
+        "url": "https://yalebooks.yale.edu/book/9780300216912/revelation/",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "literary-context",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Major historical, literary, textual, and theological commentary.",
+        "id": "koester",
+        "canonical_object_ids": [
+          "revelation"
+        ]
+      },
+      {
+        "title": "Ezekiel in Christian Interpretation: Gog, Magog, and Apocalyptic Politics",
+        "author": "Andrew Mein",
+        "publisher": "Oxford University Press",
+        "year": 2022,
+        "locator": "The Oxford Handbook of Ezekiel, chapter 17",
+        "url": "https://academic.oup.com/edited-volume/35418/chapter-abstract/371754589",
+        "source_type": "reference-work",
+        "supports": [
+          "later-christian-reception",
+          "ezekiel-gog",
+          "ezekiel-revelation-reuse"
+        ],
+        "notes": "Reception study documenting changing and politically charged Gog identifications.",
+        "id": "mein-gog-politics",
+        "canonical_object_ids": [
+          "ezekiel"
+        ]
+      },
+      {
+        "title": "A Textual Commentary on the Greek New Testament",
+        "author": "Bruce M. Metzger",
+        "publisher": "German Bible Society",
+        "year": 1994,
+        "locator": "Revelation variants",
+        "url": "https://www.die-bibel.de/en/shop/a-textual-commentary-on-the-greek-new-testament-6008",
+        "source_type": "reference-work",
+        "supports": [
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Text-critical commentary; later ECM evidence should also be consulted.",
+        "id": "metzger",
+        "canonical_object_ids": [
+          "revelation"
+        ]
+      },
+      {
+        "title": "A New Heaven and a New Earth",
+        "author": "J. Richard Middleton",
+        "publisher": "Baker Academic",
+        "year": 2014,
+        "locator": "Reclaiming Biblical Eschatology",
+        "url": "https://bakeracademic.com/p/a-new-heaven-and-a-new-earth-j-richard-middleton/230838",
+        "source_type": "academic-book",
+        "supports": [
+          "canonical-context",
+          "rev-cosmic-renewal",
+          "interpretive-notes"
+        ],
+        "notes": "Biblical-theological case for renewed cosmos; represents one synthesis.",
+        "id": "middleton",
+        "canonical_object_ids": [
+          "revelation"
+        ]
+      },
+      {
+        "title": "The Old Testament in the Book of Revelation",
+        "author": "Steve Moyise",
+        "publisher": "Bloomsbury T&T Clark",
+        "year": 1995,
+        "locator": "Journal for the Study of the New Testament Supplement 115",
+        "url": "https://www.bloomsbury.com/us/old-testament-in-the-book-of-revelation-9780567705341/",
+        "source_type": "academic-book",
+        "supports": [
+          "intertextuality",
+          "claims"
+        ],
+        "notes": "Study of allusion, intertextual method, and scriptural transformation.",
+        "id": "moyise",
+        "canonical_object_ids": [
+          "revelation"
+        ]
+      },
+      {
+        "title": "Canonical historical orientation for New Jerusalem",
+        "author": "",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "id": "new-jerusalem-historical-orientation",
+        "canonical_object_ids": [
+          "new-jerusalem"
+        ]
+      },
+      {
+        "title": "Ezekiel Traditions in the New Testament",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Selected New Testament quotations, allusions, and recompositions",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "new-testament-connections",
+          "later-christian-reception",
+          "ezekiel-revelation-reuse"
+        ],
+        "notes": "Primary New Testament texts, especially Revelation, read as later reception rather than direct historical commentary.",
+        "id": "new-testament-ezekiel",
+        "canonical_object_ids": [
+          "ezekiel"
+        ]
+      },
+      {
+        "title": "The Oxford Handbook of Ezekiel",
+        "author": "Corrine Carvalho, editor",
+        "publisher": "Oxford University Press",
+        "year": 2023,
+        "locator": "Text, history, themes, reception, and contextual interpretation",
+        "url": "https://academic.oup.com/edited-volume/35418",
+        "source_type": "reference-work",
+        "supports": [
+          "summary",
+          "historical-context",
+          "ancient-near-east-context",
+          "second-temple-context",
+          "canonical-context",
+          "later-christian-reception",
+          "authorship-positions",
+          "literary-context",
+          "interpretive-disputes",
+          "ezekiel-practical-outline",
+          "ezekiel-compositional-history",
+          "ezekiel-revelation-reuse"
+        ],
+        "notes": "Multi-perspectival scholarly handbook used for current research orientation.",
+        "id": "oxford-handbook-ezekiel",
+        "canonical_object_ids": [
+          "ezekiel"
+        ]
+      },
+      {
+        "title": "Revelation: Greek textual tradition",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Revelation 1-22",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "structure",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Primary Greek text; variants require manuscript and critical-edition control.",
+        "id": "rev-greek",
+        "canonical_object_ids": [
+          "revelation"
+        ]
+      },
+      {
+        "title": "Revelation 21-22",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "revelation-21-22",
+        "canonical_object_ids": [
+          "new-jerusalem"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "ezekiel",
+        "type": "book",
+        "title": "Ezekiel",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.912
+      },
+      {
+        "id": "new-jerusalem",
+        "type": "event",
+        "title": "New Jerusalem",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.912
+      },
+      {
+        "id": "revelation",
+        "type": "book",
+        "title": "Revelation",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.938
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "f211ceb0458fa6597d9fae765f070193c9776dc8ad6a922275ecd17ae143a62b",
+  "evidence_hash_version": "2"
+}

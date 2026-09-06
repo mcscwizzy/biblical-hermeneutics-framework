@@ -1,0 +1,1235 @@
+{
+  "passage_ref": "Luke 23",
+  "entities": {
+    "people": [],
+    "places": [],
+    "groups": [],
+    "events": [
+      {
+        "id": "burial-of-jesus",
+        "title": "Burial of Jesus",
+        "type": "event",
+        "aliases": [
+          "what happened in burial of jesus",
+          "tell me about burial of jesus",
+          "why is burial of jesus important"
+        ],
+        "metadata": {
+          "summary": "The Gospel accounts of Jesus's removal from the cross, preparation, and placement in a tomb before Sabbath, followed narratively by discovery of the empty tomb.",
+          "importance": 88,
+          "retrieval_score": 0.908,
+          "ancient_names": [],
+          "modern_identification": "",
+          "region": "",
+          "terrain": "",
+          "elevation": null,
+          "archaeology": [],
+          "related_passages": [
+            "Matthew 27:57-61",
+            "Mark 15:42-47",
+            "Luke 23:50-56",
+            "John 19:38-42"
+          ]
+        }
+      },
+      {
+        "id": "crucifixion",
+        "title": "Crucifixion",
+        "type": "event",
+        "aliases": [
+          "what happened in crucifixion",
+          "tell me about crucifixion",
+          "why is crucifixion important"
+        ],
+        "metadata": {
+          "summary": "The Roman execution of Jesus that Christians interpret as the climactic atoning death of the Messiah.",
+          "importance": 100,
+          "retrieval_score": 0.92,
+          "ancient_names": [],
+          "modern_identification": "",
+          "region": "",
+          "terrain": "",
+          "elevation": null,
+          "archaeology": [],
+          "related_passages": [
+            "Psalms 22:1-31",
+            "Isaiah 53:1-12",
+            "Mark 15:1-47",
+            "Luke 23:26-49",
+            "John 19:16-37",
+            "Romans 3:21-26",
+            "1 Peter 2:21-25",
+            "Hebrews 10:1-18"
+          ]
+        }
+      }
+    ],
+    "artifacts": [
+      {
+        "id": "pilate-stone",
+        "title": "Pilate Stone",
+        "type": "archaeology",
+        "aliases": [
+          "pilate stone artifact",
+          "pilate stone discovery",
+          "pilate stone excavation",
+          "pilate stone find"
+        ],
+        "metadata": {
+          "summary": "A Latin inscription naming Pontius Pilate and documenting Roman administration in Judea.",
+          "importance": 94,
+          "retrieval_score": 0.914,
+          "ancient_names": [],
+          "modern_identification": "",
+          "region": "",
+          "terrain": "",
+          "elevation": null,
+          "archaeology": [],
+          "related_passages": [
+            "Matthew 27",
+            "Mark 15",
+            "Luke 23",
+            "John 18",
+            "John 19"
+          ]
+        }
+      }
+    ]
+  },
+  "evidence_items": [
+    {
+      "id": "burial-of-jesus:ancient_near_east_context:0",
+      "claim": "The immediate comparison is Early Roman Judean execution and burial rather than a generalized ancient Near Eastern funerary pattern.",
+      "category": "culture",
+      "source_ids": [
+        "matthew",
+        "mark",
+        "luke",
+        "john",
+        "burial-of-jesus-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "burial-of-jesus"
+      ],
+      "passage_anchors": [
+        "Luke 23:50-56"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "burial-of-jesus",
+        "parent_title": "Burial of Jesus",
+        "parent_type": "event",
+        "object_importance": 88,
+        "retrieval_score": 0.908,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 49,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "burial-of-jesus:hebraic_worldview:0",
+      "claim": "Prompt burial, care for the dead, corpse impurity, Sabbath timing, kin and patron obligations, and tomb location shape the narrative setting.",
+      "category": "culture",
+      "source_ids": [
+        "matthew",
+        "mark",
+        "luke",
+        "john",
+        "burial-of-jesus-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "burial-of-jesus"
+      ],
+      "passage_anchors": [
+        "Luke 23:50-56"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "burial-of-jesus",
+        "parent_title": "Burial of Jesus",
+        "parent_type": "event",
+        "object_importance": 88,
+        "retrieval_score": 0.908,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 49,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "hebraic_worldview",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "burial-of-jesus:historical_context:0",
+      "claim": "The narratives combine Roman release of an executed body with Jewish concern for burial before Sabbath. Jerusalem rock-cut tombs and ossuary practice provide regional context but cannot identify Jesus's tomb or prove the narrated sequence.",
+      "category": "history",
+      "source_ids": [
+        "matthew",
+        "mark",
+        "luke",
+        "john",
+        "burial-of-jesus-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "burial-of-jesus"
+      ],
+      "passage_anchors": [
+        "Luke 23:50-56"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "burial-of-jesus",
+        "parent_title": "Burial of Jesus",
+        "parent_type": "event",
+        "object_importance": 88,
+        "retrieval_score": 0.908,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 49,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "burial-of-jesus:second_temple_context:0",
+      "claim": "Rock-cut family tombs and secondary ossuary burial were especially associated with Jerusalem-area households possessing the resources and tenure for such tombs; practice varied by region and status.",
+      "category": "culture",
+      "source_ids": [
+        "matthew",
+        "mark",
+        "luke",
+        "john",
+        "burial-of-jesus-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "burial-of-jesus"
+      ],
+      "passage_anchors": [
+        "Luke 23:50-56"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "burial-of-jesus",
+        "parent_title": "Burial of Jesus",
+        "parent_type": "event",
+        "object_importance": 88,
+        "retrieval_score": 0.908,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 49,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "second_temple_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "crucifixion:ancient_near_east_context:0",
+      "claim": "The execution belongs specifically to Roman imperial punishment while the Gospels interpret it through Israel's scriptural and covenantal categories.",
+      "category": "culture",
+      "source_ids": [
+        "psalm-22",
+        "isaiah-53",
+        "mark-15",
+        "luke-23",
+        "john-19",
+        "romans-3",
+        "hebrews-10"
+      ],
+      "related_entity_ids": [
+        "crucifixion"
+      ],
+      "passage_anchors": [
+        "Luke 23:26-49"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "crucifixion",
+        "parent_title": "Crucifixion",
+        "parent_type": "event",
+        "object_importance": 100,
+        "retrieval_score": 0.92,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 25,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "crucifixion:hebraic_worldview:0",
+      "claim": "The narratives connect death, shame, kingship, lament, covenant, burial duty, and scriptural interpretation without making Roman execution a Jewish institution.",
+      "category": "culture",
+      "source_ids": [
+        "psalm-22",
+        "isaiah-53",
+        "mark-15",
+        "luke-23",
+        "john-19",
+        "romans-3",
+        "hebrews-10"
+      ],
+      "related_entity_ids": [
+        "crucifixion"
+      ],
+      "passage_anchors": [
+        "Luke 23:26-49"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "crucifixion",
+        "parent_title": "Crucifixion",
+        "parent_type": "event",
+        "object_importance": 100,
+        "retrieval_score": 0.92,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 25,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "hebraic_worldview",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "crucifixion:historical_context:0",
+      "claim": "The crucifixion occurs in first-century Judea under Roman authority and amid Jewish expectations for redemption and deliverance.",
+      "category": "history",
+      "source_ids": [
+        "psalm-22",
+        "isaiah-53",
+        "mark-15",
+        "luke-23",
+        "john-19",
+        "romans-3",
+        "hebrews-10"
+      ],
+      "related_entity_ids": [
+        "crucifixion"
+      ],
+      "passage_anchors": [
+        "Luke 23:26-49"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "crucifixion",
+        "parent_title": "Crucifixion",
+        "parent_type": "event",
+        "object_importance": 100,
+        "retrieval_score": 0.92,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 25,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "crucifixion:second_temple_context:0",
+      "claim": "Crucifixion displayed Roman coercive power in Judea. The Yehohanan remains show that at least one crucified person later received Jerusalem tomb and ossuary burial, but no single find defines every execution.",
+      "category": "culture",
+      "source_ids": [
+        "psalm-22",
+        "isaiah-53",
+        "mark-15",
+        "luke-23",
+        "john-19",
+        "romans-3",
+        "hebrews-10"
+      ],
+      "related_entity_ids": [
+        "crucifixion"
+      ],
+      "passage_anchors": [
+        "Luke 23:26-49"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "crucifixion",
+        "parent_title": "Crucifixion",
+        "parent_type": "event",
+        "object_importance": 100,
+        "retrieval_score": 0.92,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 25,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "second_temple_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "luke-criminal",
+      "claim": "Jesus promises the petitioning criminal, 'today you will be with me in paradise'; punctuation and afterlife models are later interpretive questions, while mercy within Roman execution is narratively explicit.",
+      "category": "history",
+      "source_ids": [
+        "luke-greek",
+        "green-theology"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Luke 23:39-43"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "luke",
+        "parent_title": "Luke",
+        "parent_type": "book",
+        "object_importance": 95,
+        "retrieval_score": 0.915,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 38,
+        "certainty": "textually_explicit",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 110
+      }
+    },
+    {
+      "id": "luke-death",
+      "claim": "Luke narrates darkness, a torn temple curtain, Jesus' Psalm 31 prayer, a centurion's declaration of innocence or righteousness, crowds, women witnesses, death, and burial; comparisons with other Gospels must preserve Luke's wording.",
+      "category": "culture",
+      "source_ids": [
+        "luke-greek",
+        "green-theology"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Luke 23:44-56"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "luke",
+        "parent_title": "Luke",
+        "parent_type": "book",
+        "object_importance": 95,
+        "retrieval_score": 0.915,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 43,
+        "certainty": "textually_explicit",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 105
+      }
+    },
+    {
+      "id": "luke-forgive-variant",
+      "claim": "The prayer 'Father, forgive them' in Luke 23:34a is an ancient textual variant omitted by significant witnesses; whether original or early addition, it cannot transfer collective Jewish guilt or excuse perpetrators without accountability.",
+      "category": "history",
+      "source_ids": [
+        "whitlark-parsons-forgive",
+        "ntvmr-luke",
+        "p75-luke"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Luke 23:32-38"
+      ],
+      "confidence": "low",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "luke",
+        "parent_title": "Luke",
+        "parent_type": "book",
+        "object_importance": 95,
+        "retrieval_score": 0.915,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 31,
+        "certainty": "disputed",
+        "dispute_status": "textual_variant",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 105
+      }
+    },
+    {
+      "id": "luke-passion-responsibility",
+      "claim": "Luke distributes agency among Judas, arresting groups, high-priestly leaders, Pilate, Herod, a pressured crowd, and Roman execution personnel while depicting dissenting Jews and women witnesses; no text licenses deicide or collective Jewish guilt.",
+      "category": "culture",
+      "source_ids": [
+        "luke-greek",
+        "luke-jews",
+        "jewish-annotated-nt"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Luke 23:1-56"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "luke",
+        "parent_title": "Luke",
+        "parent_type": "book",
+        "object_importance": 95,
+        "retrieval_score": 0.915,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "textually_explicit",
+        "dispute_status": "not_disputed",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "pastoral_application",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 118
+      }
+    },
+    {
+      "id": "pilate-stone:ancient_near_east_context:0",
+      "claim": "The inscription belongs to Roman provincial administration in the eastern Mediterranean rather than generalized ancient Near Eastern kingship.",
+      "category": "culture",
+      "source_ids": [
+        "pilate-stone",
+        "israel-museum",
+        "israel-museum-jerusalem",
+        "latin-inscription",
+        "matthew-27"
+      ],
+      "related_entity_ids": [
+        "pilate-stone"
+      ],
+      "passage_anchors": [
+        "Luke 23"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "pilate-stone",
+        "parent_title": "Pilate Stone",
+        "parent_type": "archaeology",
+        "object_importance": 94,
+        "retrieval_score": 0.914,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "chapter",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "pilate-stone:hebraic_worldview:0",
+      "claim": "The stone supplies external evidence for the imperial office with which Judean leaders and populations had to negotiate.",
+      "category": "culture",
+      "source_ids": [
+        "pilate-stone",
+        "israel-museum",
+        "israel-museum-jerusalem",
+        "latin-inscription",
+        "matthew-27"
+      ],
+      "related_entity_ids": [
+        "pilate-stone"
+      ],
+      "passage_anchors": [
+        "Luke 23"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "pilate-stone",
+        "parent_title": "Pilate Stone",
+        "parent_type": "archaeology",
+        "object_importance": 94,
+        "retrieval_score": 0.914,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "chapter",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "hebraic_worldview",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "pilate-stone:historical_context:0",
+      "claim": "A damaged Latin building inscription from Caesarea names Pontius Pilate and gives his title as prefect of Judea. It independently anchors his office and provincial patronage, not the Gospel hearing itself.",
+      "category": "history",
+      "source_ids": [
+        "pilate-stone",
+        "israel-museum",
+        "israel-museum-jerusalem",
+        "latin-inscription",
+        "matthew-27"
+      ],
+      "related_entity_ids": [
+        "pilate-stone"
+      ],
+      "passage_anchors": [
+        "Luke 23"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "pilate-stone",
+        "parent_title": "Pilate Stone",
+        "parent_type": "archaeology",
+        "object_importance": 94,
+        "retrieval_score": 0.914,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "chapter",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "pilate-stone:second_temple_context:0",
+      "claim": "Pilate governed Judea from 26 to 36 CE while Jerusalem's temple and local elite institutions continued under Roman supremacy.",
+      "category": "culture",
+      "source_ids": [
+        "pilate-stone",
+        "israel-museum",
+        "israel-museum-jerusalem",
+        "latin-inscription",
+        "matthew-27"
+      ],
+      "related_entity_ids": [
+        "pilate-stone"
+      ],
+      "passage_anchors": [
+        "Luke 23"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "pilate-stone",
+        "parent_title": "Pilate Stone",
+        "parent_type": "archaeology",
+        "object_importance": 94,
+        "retrieval_score": 0.914,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "chapter",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "second_temple_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "Canonical historical orientation for Burial of Jesus",
+        "author": "",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "id": "burial-of-jesus-historical-orientation",
+        "canonical_object_ids": [
+          "burial-of-jesus"
+        ]
+      },
+      {
+        "title": "The Theology of the Gospel of Luke",
+        "author": "Joel B. Green",
+        "publisher": "Cambridge University Press",
+        "year": 1995,
+        "locator": "New Testament Theology",
+        "url": "https://www.cambridge.org/core/books/theology-of-the-gospel-of-luke/64F2896964BA4BF847E8F5433E87CA03",
+        "source_type": "academic-book",
+        "supports": [
+          "major-themes",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Book-level theological study.",
+        "id": "green-theology",
+        "canonical_object_ids": [
+          "luke"
+        ]
+      },
+      {
+        "title": "Hebrews 10",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "hebrews-10",
+        "canonical_object_ids": [
+          "crucifixion"
+        ]
+      },
+      {
+        "title": "Isaiah 53",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "isaiah-53",
+        "canonical_object_ids": [
+          "crucifixion"
+        ]
+      },
+      {
+        "title": "Israel Museum",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [],
+        "notes": "",
+        "id": "israel-museum",
+        "canonical_object_ids": [
+          "pilate-stone"
+        ]
+      },
+      {
+        "title": "Israel Museum, Jerusalem",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [],
+        "notes": "",
+        "id": "israel-museum-jerusalem",
+        "canonical_object_ids": [
+          "pilate-stone"
+        ]
+      },
+      {
+        "title": "The Jewish Annotated New Testament",
+        "author": "Amy-Jill Levine and Marc Zvi Brettler, editors",
+        "publisher": "Oxford University Press",
+        "year": 2017,
+        "locator": "Luke and thematic essays",
+        "url": "https://global.oup.com/academic/product/the-jewish-annotated-new-testament-9780190461850",
+        "source_type": "academic-book",
+        "supports": [
+          "second-temple-context",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Jewish historical and interpretive contexts.",
+        "id": "jewish-annotated-nt",
+        "canonical_object_ids": [
+          "luke"
+        ]
+      },
+      {
+        "title": "John",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "john",
+        "canonical_object_ids": [
+          "burial-of-jesus"
+        ]
+      },
+      {
+        "title": "John 19",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "john-19",
+        "canonical_object_ids": [
+          "crucifixion"
+        ]
+      },
+      {
+        "title": "Latin inscription",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [],
+        "notes": "",
+        "id": "latin-inscription",
+        "canonical_object_ids": [
+          "pilate-stone"
+        ]
+      },
+      {
+        "title": "Luke",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "luke",
+        "canonical_object_ids": [
+          "burial-of-jesus"
+        ]
+      },
+      {
+        "title": "Luke 23",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "luke-23",
+        "canonical_object_ids": [
+          "crucifixion"
+        ]
+      },
+      {
+        "title": "The Gospel according to Luke, Greek text",
+        "author": "",
+        "publisher": "Society of Biblical Literature",
+        "year": 2010,
+        "locator": "Luke 1-24 in SBLGNT",
+        "url": "https://www.sbl-site.org/resources/digital-texts/sbl-greek-new-testament/",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "structure",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Open critical Greek text.",
+        "id": "luke-greek",
+        "canonical_object_ids": [
+          "luke"
+        ]
+      },
+      {
+        "title": "Luke's Jewish Eschatology",
+        "author": "Isaac W. Oliver",
+        "publisher": "Oxford University Press",
+        "year": 2021,
+        "locator": "The National Restoration of Israel in Luke-Acts",
+        "url": "https://academic.oup.com/book/39383",
+        "source_type": "academic-book",
+        "supports": [
+          "second-temple-context",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Jewish identity, Israel, Jerusalem, and anti-supersessionist interpretation.",
+        "id": "luke-jews",
+        "canonical_object_ids": [
+          "luke"
+        ]
+      },
+      {
+        "title": "Mark",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "mark",
+        "canonical_object_ids": [
+          "burial-of-jesus"
+        ]
+      },
+      {
+        "title": "Mark 15",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "mark-15",
+        "canonical_object_ids": [
+          "crucifixion"
+        ]
+      },
+      {
+        "title": "Matthew",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "matthew",
+        "canonical_object_ids": [
+          "burial-of-jesus"
+        ]
+      },
+      {
+        "title": "Matthew 27",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "matthew-27",
+        "canonical_object_ids": [
+          "pilate-stone"
+        ]
+      },
+      {
+        "title": "New Testament Virtual Manuscript Room",
+        "author": "",
+        "publisher": "Institute for New Testament Textual Research",
+        "year": null,
+        "locator": "Luke manuscript workspace and variant evidence",
+        "url": "https://ntvmr.uni-muenster.de/manuscript-workspace",
+        "source_type": "reference-work",
+        "supports": [
+          "archaeology",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Official manuscript catalog, images where licensed, and textual tools.",
+        "id": "ntvmr-luke",
+        "canonical_object_ids": [
+          "luke"
+        ]
+      },
+      {
+        "title": "Papyrus Bodmer XIV-XV, P75",
+        "author": "",
+        "publisher": "Vatican Library",
+        "year": null,
+        "locator": "Luke and John, Papyrus Hanna 1 (Mater Verbi)",
+        "url": "https://digi.vatlib.it/view/MSS_Pap.Hanna.1(Mater.Verbi)",
+        "source_type": "museum-collection",
+        "supports": [
+          "archaeology",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Early Greek papyrus manuscript images.",
+        "id": "p75-luke",
+        "canonical_object_ids": [
+          "luke"
+        ]
+      },
+      {
+        "title": "Pilate Stone",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [],
+        "notes": "",
+        "id": "pilate-stone",
+        "canonical_object_ids": [
+          "pilate-stone"
+        ]
+      },
+      {
+        "title": "Psalm 22",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [],
+        "notes": "",
+        "id": "psalm-22",
+        "canonical_object_ids": [
+          "crucifixion"
+        ]
+      },
+      {
+        "title": "Romans 3",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "romans-3",
+        "canonical_object_ids": [
+          "crucifixion"
+        ]
+      },
+      {
+        "title": "The Seven Last Words: A Numerical Motivation for the Insertion of Luke 23:34a",
+        "author": "Jason A. Whitlark and Mikeal C. Parsons",
+        "publisher": "Cambridge University Press",
+        "year": 2006,
+        "locator": "New Testament Studies 52.2, 188-204",
+        "url": "https://www.cambridge.org/core/journals/new-testament-studies/article/seven-last-words-a-numerical-motivation-for-the-insertion-of-luke-2334a/322939908B7A3C028930B9DE69E61997",
+        "source_type": "journal-article",
+        "supports": [
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Argues that Luke 23:34a is secondary; cited as one position in an ongoing problem.",
+        "id": "whitlark-parsons-forgive",
+        "canonical_object_ids": [
+          "luke"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "burial-of-jesus",
+        "type": "event",
+        "title": "Burial of Jesus",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.908
+      },
+      {
+        "id": "crucifixion",
+        "type": "event",
+        "title": "Crucifixion",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.92
+      },
+      {
+        "id": "luke",
+        "type": "book",
+        "title": "Luke",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.915
+      },
+      {
+        "id": "pilate-stone",
+        "type": "archaeology",
+        "title": "Pilate Stone",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.914
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "4f5e10f16cf5152530baafd626c4fc264fe30701a3136050b213fa8aea4c5e75",
+  "evidence_hash_version": "2"
+}

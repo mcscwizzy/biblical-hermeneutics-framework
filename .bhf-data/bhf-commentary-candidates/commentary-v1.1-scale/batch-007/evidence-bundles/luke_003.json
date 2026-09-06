@@ -1,0 +1,634 @@
+{
+  "passage_ref": "Luke 3",
+  "entities": {
+    "people": [],
+    "places": [],
+    "groups": [],
+    "events": [],
+    "artifacts": [
+      {
+        "id": "qumran-caves",
+        "title": "Qumran Caves",
+        "type": "archaeology",
+        "aliases": [
+          "qumran caves artifact",
+          "qumran caves discovery",
+          "qumran caves excavation",
+          "qumran caves find"
+        ],
+        "metadata": {
+          "summary": "Qumran caves and manuscript recovery illuminates the biblical world through material remains and historical context.",
+          "importance": 90,
+          "retrieval_score": 0.91,
+          "ancient_names": [],
+          "modern_identification": "",
+          "region": "",
+          "terrain": "",
+          "elevation": null,
+          "archaeology": [],
+          "related_passages": [
+            "Isaiah 40:1-11",
+            "Daniel 7:1-28",
+            "Matthew 3:1-12",
+            "Luke 3:1-18"
+          ]
+        }
+      }
+    ]
+  },
+  "evidence_items": [
+    {
+      "id": "luke-baptism-variant",
+      "claim": "Most witnesses give the heavenly voice in Luke 3:22 in Synoptic form, while Codex Bezae and patristic evidence preserve Psalm 2:7 language, 'Today I have begotten you'; textual and christological judgments must be distinguished.",
+      "category": "history",
+      "source_ids": [
+        "bezae-luke",
+        "ntvmr-luke",
+        "baptism-variant"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Luke 3:22"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "luke",
+        "parent_title": "Luke",
+        "parent_type": "book",
+        "object_importance": 95,
+        "retrieval_score": 0.915,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 21,
+        "certainty": "probable",
+        "dispute_status": "textual_variant",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 105
+      }
+    },
+    {
+      "id": "luke-genealogy",
+      "claim": "Luke 3 traces Jesus' genealogy backward through David, Abraham, and Adam to God and differs substantially from Matthew's names, direction, placement, and organizing aims; harmonizations are later proposals.",
+      "category": "culture",
+      "source_ids": [
+        "luke-greek",
+        "jewish-annotated-nt"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Luke 3:23-38"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "luke",
+        "parent_title": "Luke",
+        "parent_type": "book",
+        "object_importance": 95,
+        "retrieval_score": 0.915,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 22,
+        "certainty": "textually_explicit",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 90
+      }
+    },
+    {
+      "id": "qumran-caves:ancient_near_east_context:0",
+      "claim": "Ancient background for Qumran Caves includes inscriptions, material culture, excavation layers, and imperial administration; the entry ties that world to Isaiah 40:1-11, Daniel 7:1-28, qumran-archaeological-site, and dead-sea-scrolls without letting comparison replace the biblical witness.",
+      "category": "culture",
+      "source_ids": [
+        "qumran-caves-and-manuscript-recovery",
+        "isaiah-40-1-11",
+        "daniel-7-1-28",
+        "archaeological-survey-and-historical-background"
+      ],
+      "related_entity_ids": [
+        "qumran-caves"
+      ],
+      "passage_anchors": [
+        "Luke 3:1-18"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "qumran-caves",
+        "parent_title": "Qumran Caves",
+        "parent_type": "archaeology",
+        "object_importance": 90,
+        "retrieval_score": 0.91,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "qumran-caves:historical_context:0",
+      "claim": "Qumran Caves helps anchor the biblical world in physical evidence and archaeological context.",
+      "category": "history",
+      "source_ids": [
+        "qumran-caves-and-manuscript-recovery",
+        "isaiah-40-1-11",
+        "daniel-7-1-28",
+        "archaeological-survey-and-historical-background"
+      ],
+      "related_entity_ids": [
+        "qumran-caves"
+      ],
+      "passage_anchors": [
+        "Luke 3:1-18"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "qumran-caves",
+        "parent_title": "Qumran Caves",
+        "parent_type": "archaeology",
+        "object_importance": 90,
+        "retrieval_score": 0.91,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "why-are-genealogies-included:ancient_near_east_context:0",
+      "claim": "Genealogy was a standard social form, but Scripture uses it to trace covenant promise and providence.",
+      "category": "culture",
+      "source_ids": [
+        "genesis-5",
+        "genesis-10",
+        "genesis-11",
+        "ruth-4",
+        "1-chronicles-1",
+        "matthew-1",
+        "luke-3",
+        "ezra-2",
+        "why-are-genealogies-included-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Luke 3:23-38"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "why-are-genealogies-included",
+        "parent_title": "Why are genealogies Included?",
+        "parent_type": "faq",
+        "object_importance": 88,
+        "retrieval_score": 0.908,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 22,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "why-are-genealogies-included:historical_context:0",
+      "claim": "Ancient families preserved lineages to mark belonging, rights, and memory.",
+      "category": "history",
+      "source_ids": [
+        "genesis-5",
+        "genesis-10",
+        "genesis-11",
+        "ruth-4",
+        "1-chronicles-1",
+        "matthew-1",
+        "luke-3",
+        "ezra-2",
+        "why-are-genealogies-included-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Luke 3:23-38"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "why-are-genealogies-included",
+        "parent_title": "Why are genealogies Included?",
+        "parent_type": "faq",
+        "object_importance": 88,
+        "retrieval_score": 0.908,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 22,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40,
+        "inherited_from_parent": true
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "1 Chronicles 1",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "1-chronicles-1",
+        "canonical_object_ids": [
+          "why-are-genealogies-included"
+        ]
+      },
+      {
+        "title": "Archaeological survey and historical background",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [],
+        "notes": "",
+        "id": "archaeological-survey-and-historical-background",
+        "canonical_object_ids": [
+          "qumran-caves"
+        ]
+      },
+      {
+        "title": "The Utility of Adoptionism as a Heuristic Category",
+        "author": "Michael Kok",
+        "publisher": "Cambridge University Press",
+        "year": 2023,
+        "locator": "Scottish Journal of Theology 76, 153-163",
+        "url": "https://www.cambridge.org/core/journals/scottish-journal-of-theology/article/utility-of-adoptionism-as-a-heuristic-category-the-baptism-narrative-in-the-gospel-of-the-ebionites-as-a-test-case/B4431ACF112ECACF2E50F2C9ABAEC696",
+        "source_type": "journal-article",
+        "supports": [
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Discusses Luke 3:22's Psalm 2:7 variant and christological reception.",
+        "id": "baptism-variant",
+        "canonical_object_ids": [
+          "luke"
+        ]
+      },
+      {
+        "title": "Codex Bezae Cantabrigiensis",
+        "author": "",
+        "publisher": "Cambridge University Library",
+        "year": null,
+        "locator": "Greek-Latin Luke",
+        "url": "https://cudl.lib.cam.ac.uk/view/MS-NN-00002-00041/1",
+        "source_type": "ancient-primary-source",
+        "supports": [
+          "archaeology",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Fifth-century bilingual Gospel-Acts manuscript.",
+        "id": "bezae-luke",
+        "canonical_object_ids": [
+          "luke"
+        ]
+      },
+      {
+        "title": "Daniel 7:1-28",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "daniel-7-1-28",
+        "canonical_object_ids": [
+          "qumran-caves"
+        ]
+      },
+      {
+        "title": "Ezra 2",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "ezra-2",
+        "canonical_object_ids": [
+          "why-are-genealogies-included"
+        ]
+      },
+      {
+        "title": "Genesis 10",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "genesis-10",
+        "canonical_object_ids": [
+          "why-are-genealogies-included"
+        ]
+      },
+      {
+        "title": "Genesis 11",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "genesis-11",
+        "canonical_object_ids": [
+          "why-are-genealogies-included"
+        ]
+      },
+      {
+        "title": "Genesis 5",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "genesis-5",
+        "canonical_object_ids": [
+          "why-are-genealogies-included"
+        ]
+      },
+      {
+        "title": "Isaiah 40:1-11",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "isaiah-40-1-11",
+        "canonical_object_ids": [
+          "qumran-caves"
+        ]
+      },
+      {
+        "title": "The Jewish Annotated New Testament",
+        "author": "Amy-Jill Levine and Marc Zvi Brettler, editors",
+        "publisher": "Oxford University Press",
+        "year": 2017,
+        "locator": "Luke and thematic essays",
+        "url": "https://global.oup.com/academic/product/the-jewish-annotated-new-testament-9780190461850",
+        "source_type": "academic-book",
+        "supports": [
+          "second-temple-context",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Jewish historical and interpretive contexts.",
+        "id": "jewish-annotated-nt",
+        "canonical_object_ids": [
+          "luke"
+        ]
+      },
+      {
+        "title": "Luke 3",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "luke-3",
+        "canonical_object_ids": [
+          "why-are-genealogies-included"
+        ]
+      },
+      {
+        "title": "The Gospel according to Luke, Greek text",
+        "author": "",
+        "publisher": "Society of Biblical Literature",
+        "year": 2010,
+        "locator": "Luke 1-24 in SBLGNT",
+        "url": "https://www.sbl-site.org/resources/digital-texts/sbl-greek-new-testament/",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "structure",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Open critical Greek text.",
+        "id": "luke-greek",
+        "canonical_object_ids": [
+          "luke"
+        ]
+      },
+      {
+        "title": "Matthew 1",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "matthew-1",
+        "canonical_object_ids": [
+          "why-are-genealogies-included"
+        ]
+      },
+      {
+        "title": "New Testament Virtual Manuscript Room",
+        "author": "",
+        "publisher": "Institute for New Testament Textual Research",
+        "year": null,
+        "locator": "Luke manuscript workspace and variant evidence",
+        "url": "https://ntvmr.uni-muenster.de/manuscript-workspace",
+        "source_type": "reference-work",
+        "supports": [
+          "archaeology",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Official manuscript catalog, images where licensed, and textual tools.",
+        "id": "ntvmr-luke",
+        "canonical_object_ids": [
+          "luke"
+        ]
+      },
+      {
+        "title": "Qumran caves and manuscript recovery",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [],
+        "notes": "",
+        "id": "qumran-caves-and-manuscript-recovery",
+        "canonical_object_ids": [
+          "qumran-caves"
+        ]
+      },
+      {
+        "title": "Ruth 4",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "ruth-4",
+        "canonical_object_ids": [
+          "why-are-genealogies-included"
+        ]
+      },
+      {
+        "title": "Canonical historical orientation for Why are genealogies Included?",
+        "author": "",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "id": "why-are-genealogies-included-historical-orientation",
+        "canonical_object_ids": [
+          "why-are-genealogies-included"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "luke",
+        "type": "book",
+        "title": "Luke",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.915
+      },
+      {
+        "id": "qumran-caves",
+        "type": "archaeology",
+        "title": "Qumran Caves",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.91
+      },
+      {
+        "id": "why-are-genealogies-included",
+        "type": "faq",
+        "title": "Why are genealogies Included?",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.908
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "85e028a3a4ff9c24a1210b70b534e0a712acc28291674faa25c2271687ede830",
+  "evidence_hash_version": "2"
+}

@@ -1,0 +1,1354 @@
+{
+  "passage_ref": "Mark 14",
+  "entities": {
+    "people": [],
+    "places": [],
+    "groups": [
+      {
+        "id": "lords-supper",
+        "title": "Lord's Supper",
+        "type": "institution",
+        "aliases": [
+          "lords supper institution",
+          "lords supper in scripture",
+          "lords supper structure",
+          "lords supper role"
+        ],
+        "metadata": {
+          "summary": "Lord's Supper is a new covenant practice that marks initiation, remembrance, and communal identity in the church.",
+          "importance": 80,
+          "retrieval_score": 0.9,
+          "ancient_names": [],
+          "modern_identification": "",
+          "region": "",
+          "terrain": "",
+          "elevation": null,
+          "archaeology": [],
+          "related_passages": [
+            "Matthew 26:17-30",
+            "Mark 14:12-26",
+            "Luke 22:7-23",
+            "1 Corinthians 10:14-22",
+            "1 Corinthians 11:17-34"
+          ]
+        }
+      },
+      {
+        "id": "sanhedrin",
+        "title": "Sanhedrin",
+        "type": "institution",
+        "aliases": [
+          "sanhedrin institution",
+          "sanhedrin in scripture",
+          "sanhedrin structure",
+          "sanhedrin role"
+        ],
+        "metadata": {
+          "summary": "A conventional label for Jewish councils represented by Greek synedrion terminology in late Second Temple sources, whose composition, jurisdiction, meeting forms, and institutional continuity remain debated.",
+          "importance": 74,
+          "retrieval_score": 0.894,
+          "ancient_names": [],
+          "modern_identification": "",
+          "region": "",
+          "terrain": "",
+          "elevation": null,
+          "archaeology": [],
+          "related_passages": [
+            "Mark 14:53-65",
+            "John 11:47-53",
+            "Acts 4:1-22",
+            "Acts 5:21-42",
+            "Acts 23:1-10"
+          ]
+        }
+      }
+    ],
+    "events": [],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "abba-bilingual-prayer",
+      "claim": "Mark, Galatians, and Romans preserve the Aramaic address Abba followed by Greek Father in prayer, with Galatians attributing the cry to the Son's Spirit and Romans to Spirit-enabled believers.",
+      "category": "history",
+      "source_ids": [
+        "abba-pauline-texts",
+        "galatians-adoption-text",
+        "romans-adoption-text",
+        "barr-abba"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Mark 14:36"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-kinship-guardianship-slavery-and-inheritance",
+        "parent_title": "Pauline Kinship, Guardianship, Slavery, and Inheritance",
+        "parent_type": "cultural_background",
+        "object_importance": 98,
+        "retrieval_score": 0.918,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 35,
+        "certainty": "strong_consensus",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "ancient-text",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 102
+      }
+    },
+    {
+      "id": "abba-bilingual-prayer:passage-relevance",
+      "claim": "The textual corpus supports filial intimacy and dependence while blocking the unsupported claim that Abba simply means Daddy.",
+      "category": "history",
+      "source_ids": [
+        "abba-pauline-texts",
+        "galatians-adoption-text",
+        "romans-adoption-text",
+        "barr-abba"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Mark 14:36"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-kinship-guardianship-slavery-and-inheritance",
+        "parent_title": "Pauline Kinship, Guardianship, Slavery, and Inheritance",
+        "parent_type": "cultural_background",
+        "object_importance": 98,
+        "retrieval_score": 0.918,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 35,
+        "certainty": "strong_consensus",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "ancient-text",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 102,
+        "supports_evidence_ids": [
+          "abba-bilingual-prayer"
+        ]
+      }
+    },
+    {
+      "id": "gospel-acts-priestly-authority",
+      "claim": "Multiple New Testament scenes distinguish a serving high priest, chief priests, temple officers, elders, scribes, rulers, and councils in Jerusalem.",
+      "category": "social",
+      "source_ids": [
+        "gospel-acts-priestly-text",
+        "vanderkam-early-judaism-institutions",
+        "grabbe-second-temple-introduction"
+      ],
+      "related_entity_ids": [
+        "sanhedrin"
+      ],
+      "passage_anchors": [
+        "Mark 14:53-65"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "second-temple-priesthood-and-temple-authority",
+        "parent_title": "Second Temple Priesthood and Temple Authority",
+        "parent_type": "cultural_background",
+        "object_importance": 98,
+        "retrieval_score": 0.918,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 52,
+        "certainty": "textually_explicit",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.75,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "institution",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 102
+      }
+    },
+    {
+      "id": "gospel-acts-priestly-authority:passage-relevance",
+      "claim": "The textual distinctions prevent readers from collapsing every priestly or council figure in the passion and Acts hearings into a single office.",
+      "category": "social",
+      "source_ids": [
+        "gospel-acts-priestly-text",
+        "vanderkam-early-judaism-institutions",
+        "grabbe-second-temple-introduction"
+      ],
+      "related_entity_ids": [
+        "sanhedrin"
+      ],
+      "passage_anchors": [
+        "Mark 14:53-65"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "second-temple-priesthood-and-temple-authority",
+        "parent_title": "Second Temple Priesthood and Temple Authority",
+        "parent_type": "cultural_background",
+        "object_importance": 98,
+        "retrieval_score": 0.918,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 52,
+        "certainty": "textually_explicit",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.75,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "institution",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 102,
+        "supports_evidence_ids": [
+          "gospel-acts-priestly-authority"
+        ]
+      }
+    },
+    {
+      "id": "lords-supper:ancient_near_east_context:0",
+      "claim": "The immediate context is Jewish festival and Greco-Roman communal dining rather than generalized ancient ritual.",
+      "category": "culture",
+      "source_ids": [
+        "matthew-28",
+        "acts-2",
+        "romans-6",
+        "1-corinthians-11",
+        "lords-supper-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "lords-supper"
+      ],
+      "passage_anchors": [
+        "Mark 14:12-26"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "lords-supper",
+        "parent_title": "Lord's Supper",
+        "parent_type": "institution",
+        "object_importance": 80,
+        "retrieval_score": 0.9,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 11,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "lords-supper:hebraic_worldview:0",
+      "claim": "Blessing, shared bread and cup, covenant memory, Passover chronology, table fellowship, and responsibility for other participants shape the meal traditions.",
+      "category": "culture",
+      "source_ids": [
+        "matthew-28",
+        "acts-2",
+        "romans-6",
+        "1-corinthians-11",
+        "lords-supper-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "lords-supper"
+      ],
+      "passage_anchors": [
+        "Mark 14:12-26"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "lords-supper",
+        "parent_title": "Lord's Supper",
+        "parent_type": "institution",
+        "object_importance": 80,
+        "retrieval_score": 0.9,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 11,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "hebraic_worldview",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "lords-supper:historical_context:0",
+      "claim": "The Synoptic passion narratives and First Corinthians preserve related but distinct meal traditions. First Corinthians embeds the received words within a conflict over unequal access, hunger, humiliation, and communal discernment.",
+      "category": "history",
+      "source_ids": [
+        "matthew-28",
+        "acts-2",
+        "romans-6",
+        "1-corinthians-11",
+        "lords-supper-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "lords-supper"
+      ],
+      "passage_anchors": [
+        "Mark 14:12-26"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "lords-supper",
+        "parent_title": "Lord's Supper",
+        "parent_type": "institution",
+        "object_importance": 80,
+        "retrieval_score": 0.9,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 11,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "lords-supper:second_temple_context:0",
+      "claim": "The Synoptic meals occur in a Jewish festival setting, though their chronology and relationship to Passover differ from John. Early assemblies also ate within hierarchical Roman households and cities.",
+      "category": "culture",
+      "source_ids": [
+        "matthew-28",
+        "acts-2",
+        "romans-6",
+        "1-corinthians-11",
+        "lords-supper-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "lords-supper"
+      ],
+      "passage_anchors": [
+        "Mark 14:12-26"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "lords-supper",
+        "parent_title": "Lord's Supper",
+        "parent_type": "institution",
+        "object_importance": 80,
+        "retrieval_score": 0.9,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 11,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "second_temple_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "mark-anti-judaism-safeguard",
+      "claim": "Mark's conflicts with particular Jewish leaders cannot authorize antisemitism, supersessionism, deicide accusations, collective Jewish guilt, or portraying Pharisees and Judaism as uniquely hypocritical, impure, or hard-hearted.",
+      "category": "culture",
+      "source_ids": [
+        "jewish-annotated-nt",
+        "mark-religious-authorities",
+        "mark-food-purity"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Mark 14:53-65"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "mark",
+        "parent_title": "Mark",
+        "parent_type": "book",
+        "object_importance": 95,
+        "retrieval_score": 0.935,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 52,
+        "certainty": "strong_consensus",
+        "dispute_status": "not_disputed",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "pastoral_application",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 118
+      }
+    },
+    {
+      "id": "mark-discipleship",
+      "claim": "The disciples are called, authorized, repeatedly uncomprehending, self-protective, and finally absent, making following on the way both gift and warning.",
+      "category": "culture",
+      "source_ids": [
+        "mark-greek",
+        "marcus-mark-8-16"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Mark 14:50"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "mark",
+        "parent_title": "Mark",
+        "parent_type": "book",
+        "object_importance": 95,
+        "retrieval_score": 0.935,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 49,
+        "certainty": "strong_consensus",
+        "dispute_status": "not_disputed",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 98
+      }
+    },
+    {
+      "id": "mark-passion-responsibility",
+      "claim": "Mark distributes narrative agency among Judas, arresting parties, priestly leaders, witnesses, a council, crowds, Pilate, Roman soldiers, and executioners; Roman authority carries out crucifixion.",
+      "category": "history",
+      "source_ids": [
+        "mark-greek",
+        "marcus-mark-8-16",
+        "jewish-annotated-nt"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Mark 14:43-65"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "mark",
+        "parent_title": "Mark",
+        "parent_type": "book",
+        "object_importance": 95,
+        "retrieval_score": 0.935,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 42,
+        "certainty": "textually_explicit",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 110
+      }
+    },
+    {
+      "id": "mark-women",
+      "claim": "Women act as petitioners, recipients of healing, prophetic exemplars, providers, witnesses to crucifixion and burial, and first recipients of the empty-tomb announcement.",
+      "category": "culture",
+      "source_ids": [
+        "mark-greek",
+        "women-mark-mary"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Mark 14:3-9"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "mark",
+        "parent_title": "Mark",
+        "parent_type": "book",
+        "object_importance": 95,
+        "retrieval_score": 0.935,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 2,
+        "certainty": "textually_explicit",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 90
+      }
+    },
+    {
+      "id": "pauline-kinship-guardianship-slavery-and-inheritance:interpretive_note:4",
+      "claim": "Abba is an Aramaic kinship address preserved beside Greek Father; it does not lexically require Daddy and cannot sanctify unsafe submission to a human father or authority figure.",
+      "category": "culture",
+      "source_ids": [
+        "abba-pauline-texts",
+        "barr-abba"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Mark 14:36"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "pauline-kinship-guardianship-slavery-and-inheritance",
+        "parent_title": "Pauline Kinship, Guardianship, Slavery, and Inheritance",
+        "parent_type": "cultural_background",
+        "object_importance": 98,
+        "retrieval_score": 0.918,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 35,
+        "certainty": "strong_consensus",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "interpretive-caution",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "INTERTEXTUAL_REUSE",
+        "presentation_role": "dig_deeper",
+        "overview_priority": 0
+      }
+    },
+    {
+      "id": "sanhedrin:ancient_near_east_context:0",
+      "claim": "The operative comparison is Hellenistic and Roman civic and provincial council practice, not generic Ancient Near Eastern judges or monarchy.",
+      "category": "culture",
+      "source_ids": [
+        "exodus-18",
+        "deuteronomy-16-18",
+        "1-samuel-8-12",
+        "acts-23-26",
+        "sanhedrin-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "sanhedrin"
+      ],
+      "passage_anchors": [
+        "Mark 14:53-65"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "sanhedrin",
+        "parent_title": "Sanhedrin",
+        "parent_type": "institution",
+        "object_importance": 74,
+        "retrieval_score": 0.894,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 52,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "sanhedrin:hebraic_worldview:0",
+      "claim": "Council scenes concern communal judgment, Torah, temple authority, public order, and accountability under both divine claims and imperial constraints.",
+      "category": "culture",
+      "source_ids": [
+        "exodus-18",
+        "deuteronomy-16-18",
+        "1-samuel-8-12",
+        "acts-23-26",
+        "sanhedrin-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "sanhedrin"
+      ],
+      "passage_anchors": [
+        "Mark 14:53-65"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "sanhedrin",
+        "parent_title": "Sanhedrin",
+        "parent_type": "institution",
+        "object_importance": 74,
+        "retrieval_score": 0.894,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 52,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "hebraic_worldview",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "sanhedrin:historical_context:0",
+      "claim": "Josephus and the New Testament attest councils and assemblies of rulers, elders, priests, and scribes under Hasmonean and Roman rule. The evidence does not justify one unchanged seventy-one-member body operating identically in every passage.",
+      "category": "history",
+      "source_ids": [
+        "exodus-18",
+        "deuteronomy-16-18",
+        "1-samuel-8-12",
+        "acts-23-26",
+        "sanhedrin-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "sanhedrin"
+      ],
+      "passage_anchors": [
+        "Mark 14:53-65"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "sanhedrin",
+        "parent_title": "Sanhedrin",
+        "parent_type": "institution",
+        "object_importance": 74,
+        "retrieval_score": 0.894,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 52,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "sanhedrin:historical_setting:0",
+      "claim": "Jerusalem under Hasmonean, Herodian, and early Roman rule, with changing local and imperial jurisdictions.",
+      "category": "history",
+      "source_ids": [
+        "exodus-18",
+        "deuteronomy-16-18",
+        "1-samuel-8-12",
+        "acts-23-26",
+        "sanhedrin-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "sanhedrin"
+      ],
+      "passage_anchors": [
+        "Mark 14:53-65"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "sanhedrin",
+        "parent_title": "Sanhedrin",
+        "parent_type": "institution",
+        "object_importance": 74,
+        "retrieval_score": 0.894,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 52,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_setting",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "sanhedrin:original_audience:0",
+      "claim": "Readers of Gospel passion accounts and Acts hearings who need cautious institutional rather than harmonized courtroom reconstruction.",
+      "category": "social",
+      "source_ids": [
+        "exodus-18",
+        "deuteronomy-16-18",
+        "1-samuel-8-12",
+        "acts-23-26",
+        "sanhedrin-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "sanhedrin"
+      ],
+      "passage_anchors": [
+        "Mark 14:53-65"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "sanhedrin",
+        "parent_title": "Sanhedrin",
+        "parent_type": "institution",
+        "object_importance": 74,
+        "retrieval_score": 0.894,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 52,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "original_audience",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "sanhedrin:second_temple_context:0",
+      "claim": "The Gospels and Acts use council language for Jerusalem hearings involving high priests, chief priests, elders, scribes, and rulers; source-specific composition and jurisdiction must be preserved.",
+      "category": "culture",
+      "source_ids": [
+        "exodus-18",
+        "deuteronomy-16-18",
+        "1-samuel-8-12",
+        "acts-23-26",
+        "sanhedrin-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "sanhedrin"
+      ],
+      "passage_anchors": [
+        "Mark 14:53-65"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "sanhedrin",
+        "parent_title": "Sanhedrin",
+        "parent_type": "institution",
+        "object_importance": 74,
+        "retrieval_score": 0.894,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 52,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "second_temple_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 20,
+        "inherited_from_parent": true
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "1 Corinthians 11",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "1-corinthians-11",
+        "canonical_object_ids": [
+          "lords-supper"
+        ]
+      },
+      {
+        "title": "1 Samuel 8-12",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "1-samuel-8-12",
+        "canonical_object_ids": [
+          "sanhedrin"
+        ]
+      },
+      {
+        "title": "Mark 14:36; Galatians 4:6; Romans 8:15",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "All three New Testament occurrences of Abba, Father",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "abba-bilingual-prayer",
+          "coheirs-suffering-and-safeguarding"
+        ],
+        "notes": "Primary textual corpus for the bilingual address.",
+        "id": "abba-pauline-texts",
+        "canonical_object_ids": [
+          "pauline-kinship-guardianship-slavery-and-inheritance"
+        ]
+      },
+      {
+        "title": "Acts 2",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "acts-2",
+        "canonical_object_ids": [
+          "lords-supper"
+        ]
+      },
+      {
+        "title": "Acts 23-26",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "acts-23-26",
+        "canonical_object_ids": [
+          "sanhedrin"
+        ]
+      },
+      {
+        "title": "Abba Isn't Daddy",
+        "author": "James Barr",
+        "publisher": "The Journal of Theological Studies",
+        "year": 1988,
+        "locator": "39.1, pp. 28-47",
+        "url": "https://doi.org/10.1093/jts/39.1.28",
+        "source_type": "journal-article",
+        "supports": [
+          "abba-bilingual-prayer"
+        ],
+        "notes": "Lexical and historical correction to sentimentalizing claims about the Aramaic address.",
+        "id": "barr-abba",
+        "canonical_object_ids": [
+          "pauline-kinship-guardianship-slavery-and-inheritance"
+        ]
+      },
+      {
+        "title": "Deuteronomy 16-18",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "deuteronomy-16-18",
+        "canonical_object_ids": [
+          "sanhedrin"
+        ]
+      },
+      {
+        "title": "Exodus 18",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "exodus-18",
+        "canonical_object_ids": [
+          "sanhedrin"
+        ]
+      },
+      {
+        "title": "Galatians 3:23-4:11",
+        "author": "Paul",
+        "publisher": "",
+        "year": null,
+        "locator": "Galatians 3:23-4:11",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "galatians-custody-before-faith",
+          "paidagogos-household-role",
+          "torah-temporality-and-anti-jewish-limits",
+          "baptismal-kinship-and-clothing",
+          "galatians-status-triad",
+          "abrahamic-seed-and-inheritance",
+          "minor-heir-analogy",
+          "guardians-and-estate-managers",
+          "father-appointed-time",
+          "stoicheia-and-enslavement",
+          "born-of-woman-born-under-torah",
+          "redemption-adoption-and-spirit",
+          "abba-bilingual-prayer",
+          "slave-son-heir-and-real-slavery",
+          "distinct-pauline-metaphor-networks"
+        ],
+        "notes": "Primary Pauline textual witness; no modern translation is reproduced.",
+        "id": "galatians-adoption-text",
+        "canonical_object_ids": [
+          "pauline-kinship-guardianship-slavery-and-inheritance"
+        ]
+      },
+      {
+        "title": "Priestly and temple-authority passages in the Gospels and Acts",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Matthew 26:3-5; Mark 14:53-65; John 11:47-53; 18:12-24; Acts 4:1-22; 21:27-36",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "gospel-acts-priestly-authority",
+          "temple-warning-inscription-boundary",
+          "caiaphas-ossuary-identification"
+        ],
+        "notes": "Primary biblical texts; no modern translation is reproduced.",
+        "id": "gospel-acts-priestly-text",
+        "canonical_object_ids": [
+          "second-temple-priesthood-and-temple-authority"
+        ]
+      },
+      {
+        "title": "An Introduction to Second Temple Judaism",
+        "author": "Lester L. Grabbe",
+        "publisher": "T&T Clark",
+        "year": 2010,
+        "locator": "Chapters 1-6 on sources, history, institutions, and Jewish currents",
+        "url": "https://www.bloomsbury.com/us/introduction-to-second-temple-judaism-9780567455017/",
+        "source_type": "academic-book",
+        "supports": [
+          "gospel-acts-priestly-authority",
+          "josephus-high-priestly-appointments",
+          "temple-warning-inscription-boundary",
+          "caiaphas-ossuary-identification"
+        ],
+        "notes": "Source-critical overview of the Second Temple period.",
+        "id": "grabbe-second-temple-introduction",
+        "canonical_object_ids": [
+          "second-temple-priesthood-and-temple-authority"
+        ]
+      },
+      {
+        "title": "The Jewish Annotated New Testament",
+        "author": "Amy-Jill Levine and Marc Zvi Brettler, editors",
+        "publisher": "Oxford University Press",
+        "year": 2017,
+        "locator": "Second edition, Mark and essays",
+        "url": "https://global.oup.com/academic/product/the-jewish-annotated-new-testament-9780190461850",
+        "source_type": "academic-book",
+        "supports": [
+          "hebraic-worldview",
+          "second-temple-context",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Jewish historical and interpretive context for New Testament texts.",
+        "id": "jewish-annotated-nt",
+        "canonical_object_ids": [
+          "mark"
+        ]
+      },
+      {
+        "title": "Canonical historical orientation for Lord's Supper",
+        "author": "",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "id": "lords-supper-historical-orientation",
+        "canonical_object_ids": [
+          "lords-supper"
+        ]
+      },
+      {
+        "title": "Mark 8-16",
+        "author": "Joel Marcus",
+        "publisher": "Yale University Press",
+        "year": 2009,
+        "locator": "Anchor Yale Bible",
+        "url": "https://yalebooks.yale.edu/book/9780300141160/mark-8-16/",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "literary-context",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Critical commentary on Mark 8-16 and its enigmatic ending.",
+        "id": "marcus-mark-8-16",
+        "canonical_object_ids": [
+          "mark"
+        ]
+      },
+      {
+        "title": "The Stomach Purifies All Foods: Jesus' Anatomical Argument in Mark 7.18-19",
+        "author": "Logan Williams",
+        "publisher": "Cambridge University Press",
+        "year": 2024,
+        "locator": "New Testament Studies 70.3, 371-391",
+        "url": "https://www.cambridge.org/core/journals/new-testament-studies/article/stomach-purifies-all-foods-jesus-anatomical-argument-in-mark-71819/FC869FEDFEB2425BEAC3029C21B5900A",
+        "source_type": "journal-article",
+        "supports": [
+          "second-temple-context",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Recent argument distinguishing ritual impurity, digestion, and kashrut.",
+        "id": "mark-food-purity",
+        "canonical_object_ids": [
+          "mark"
+        ]
+      },
+      {
+        "title": "The Gospel according to Mark, Greek text",
+        "author": "",
+        "publisher": "Society of Biblical Literature",
+        "year": 2010,
+        "locator": "Mark 1-16 in SBLGNT",
+        "url": "https://www.sbl-site.org/resources/digital-texts/sbl-greek-new-testament/",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "structure",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Critical Greek text and apparatus resources.",
+        "id": "mark-greek",
+        "canonical_object_ids": [
+          "mark"
+        ]
+      },
+      {
+        "title": "The Religious Authorities in the Gospel of Mark",
+        "author": "Jack Dean Kingsbury",
+        "publisher": "Cambridge University Press",
+        "year": 1990,
+        "locator": "New Testament Studies 36",
+        "url": "https://www.cambridge.org/core/journals/new-testament-studies/article/abs/religious-authorities-in-the-gospel-of-mark/9BF67DFC9981C8AC28BF6C210DEC883A",
+        "source_type": "journal-article",
+        "supports": [
+          "literary-context",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Literary characterization of Mark's varied authority groups.",
+        "id": "mark-religious-authorities",
+        "canonical_object_ids": [
+          "mark"
+        ]
+      },
+      {
+        "title": "Matthew 28",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "matthew-28",
+        "canonical_object_ids": [
+          "lords-supper"
+        ]
+      },
+      {
+        "title": "Romans 6",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "romans-6",
+        "canonical_object_ids": [
+          "lords-supper"
+        ]
+      },
+      {
+        "title": "Romans 8:12-25",
+        "author": "Paul and Tertius as named scribe",
+        "publisher": "",
+        "year": null,
+        "locator": "Romans 8:12-25",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "abba-bilingual-prayer",
+          "romans-spirit-adoption-and-fear",
+          "coheirs-suffering-and-safeguarding",
+          "creation-groaning-and-bodily-adoption",
+          "distinct-pauline-metaphor-networks"
+        ],
+        "notes": "Primary Pauline textual witness; no modern translation is reproduced.",
+        "id": "romans-adoption-text",
+        "canonical_object_ids": [
+          "pauline-kinship-guardianship-slavery-and-inheritance"
+        ]
+      },
+      {
+        "title": "An Introduction to Second Temple Judaism",
+        "author": "Lester L. Grabbe",
+        "publisher": "T&T Clark",
+        "year": 2010,
+        "locator": "Chapters on sources, institutions, and Roman Judea",
+        "url": "https://www.bloomsbury.com/us/introduction-to-second-temple-judaism-9780567455017/",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Source-critical overview used to bound reconstruction of councils and jurisdiction.",
+        "id": "sanhedrin-historical-orientation",
+        "canonical_object_ids": [
+          "sanhedrin"
+        ]
+      },
+      {
+        "title": "An Introduction to Early Judaism",
+        "author": "James C. VanderKam",
+        "publisher": "Eerdmans",
+        "year": 2022,
+        "locator": "2nd edition, chapters 1 and 4 on the Second Temple period, leaders, groups, and institutions",
+        "url": "https://www.eerdmans.com/9780802880161/an-introduction-to-early-judaism/",
+        "source_type": "academic-book",
+        "supports": [
+          "gospel-acts-priestly-authority",
+          "josephus-high-priestly-appointments",
+          "temple-warning-inscription-boundary",
+          "caiaphas-ossuary-identification"
+        ],
+        "notes": "Current scholarly synthesis of history, sources, groups, and institutions.",
+        "id": "vanderkam-early-judaism-institutions",
+        "canonical_object_ids": [
+          "second-temple-priesthood-and-temple-authority"
+        ]
+      },
+      {
+        "title": "Women in the Gospels of Mark and Mary",
+        "author": "",
+        "publisher": "Oxford University Press",
+        "year": 2018,
+        "locator": "Connecting Gospels",
+        "url": "https://academic.oup.com/book/32601/chapter-abstract/270427996",
+        "source_type": "academic-book",
+        "supports": [
+          "later-christian-reception",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Comparative study of women and discipleship.",
+        "id": "women-mark-mary",
+        "canonical_object_ids": [
+          "mark"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "lords-supper",
+        "type": "institution",
+        "title": "Lord's Supper",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.9
+      },
+      {
+        "id": "mark",
+        "type": "book",
+        "title": "Mark",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.935
+      },
+      {
+        "id": "pauline-kinship-guardianship-slavery-and-inheritance",
+        "type": "cultural_background",
+        "title": "Pauline Kinship, Guardianship, Slavery, and Inheritance",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.918
+      },
+      {
+        "id": "sanhedrin",
+        "type": "institution",
+        "title": "Sanhedrin",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.894
+      },
+      {
+        "id": "second-temple-priesthood-and-temple-authority",
+        "type": "cultural_background",
+        "title": "Second Temple Priesthood and Temple Authority",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.918
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "972ba2350dc25ba2154621375e536669904da9c5ff7f96611c0f512bbce343e0",
+  "evidence_hash_version": "2"
+}

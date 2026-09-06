@@ -1,0 +1,3035 @@
+{
+  "passage_ref": "1 Thessalonians 2",
+  "entities": {
+    "people": [],
+    "places": [
+      {
+        "id": "philippi",
+        "title": "Philippi",
+        "type": "place",
+        "aliases": [
+          "where is Philippi",
+          "Roman Philippi",
+          "Philippi in Macedonia",
+          "Philippi colony",
+          "biblical Philippi"
+        ],
+        "metadata": {
+          "summary": "Philippi was a Roman colony in eastern Macedonia on the Via Egnatia and the securely named setting for Acts 16's mission, household, exploitation, custody, and citizenship scenes and for the recipients of Philippians.",
+          "importance": 82,
+          "retrieval_score": 0.902,
+          "ancient_names": [],
+          "modern_identification": "",
+          "region": "",
+          "terrain": "",
+          "elevation": null,
+          "archaeology": [
+            "Via Egnatia",
+            "Roman forum",
+            "theater",
+            "rock sanctuaries",
+            "inscriptions",
+            "funerary monuments",
+            "later basilicas and traditional prison"
+          ],
+          "related_passages": [
+            "Acts 16:11-15",
+            "Acts 16:16-24",
+            "Acts 16:25-40",
+            "Acts 20:1-6",
+            "Philippians 1:1",
+            "Philippians 1:27-30",
+            "Philippians 3:20-21",
+            "Philippians 4:2-3",
+            "Philippians 4:10-20",
+            "1 Thessalonians 2:1-2",
+            "2 Corinthians 8:1-5"
+          ]
+        }
+      }
+    ],
+    "groups": [],
+    "events": [],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "1th-integrity",
+      "claim": "The mission recollection rejects error, impurity, deceit, flattery, greed, and glory seeking while emphasizing courage, testing, affection, labor, and holy conduct.",
+      "category": "history",
+      "source_ids": [
+        "1th-greek",
+        "malherbe"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Thessalonians 2:1-12"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "1-thessalonians",
+        "parent_title": "1 Thessalonians",
+        "parent_type": "book",
+        "object_importance": 79,
+        "retrieval_score": 0.939,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "textually_explicit",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "1th-interpolation",
+      "claim": "Interpolation proposals for 2:13-16 remain disputed and lack a surviving manuscript that omits the whole passage.",
+      "category": "culture",
+      "source_ids": [
+        "ntvmr",
+        "wanamaker",
+        "ehrensperger"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Thessalonians 2:13-16"
+      ],
+      "confidence": "low",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "1-thessalonians",
+        "parent_title": "1 Thessalonians",
+        "parent_type": "book",
+        "object_importance": 79,
+        "retrieval_score": 0.939,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 12,
+        "certainty": "disputed",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 55
+      }
+    },
+    {
+      "id": "1th-labor",
+      "claim": "The senders recall working night and day so as not to burden the recipients.",
+      "category": "history",
+      "source_ids": [
+        "1th-greek",
+        "malherbe"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Thessalonians 2:9"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "1-thessalonians",
+        "parent_title": "1 Thessalonians",
+        "parent_type": "book",
+        "object_importance": 79,
+        "retrieval_score": 0.939,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 8,
+        "certainty": "textually_explicit",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "1th-polemic",
+      "claim": "First Thessalonians 2:13-16 compares Thessalonian suffering with Judean assemblies and contains severe polemic about Judeans or Jews.",
+      "category": "culture",
+      "source_ids": [
+        "1th-greek",
+        "levine-jant",
+        "ehrensperger"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Thessalonians 2:13-16"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "1-thessalonians",
+        "parent_title": "1 Thessalonians",
+        "parent_type": "book",
+        "object_importance": 79,
+        "retrieval_score": 0.939,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 12,
+        "certainty": "textually_explicit",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 90
+      }
+    },
+    {
+      "id": "1th-senders",
+      "claim": "Paul, Silvanus, and Timothy are named as senders, while plural and singular voices vary across the letter.",
+      "category": "history",
+      "source_ids": [
+        "1th-greek",
+        "malherbe"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Thessalonians 2:18"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "1-thessalonians",
+        "parent_title": "1 Thessalonians",
+        "parent_type": "book",
+        "object_importance": 79,
+        "retrieval_score": 0.939,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 17,
+        "certainty": "textually_explicit",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "1th-variant",
+      "claim": "A textual variant in 2:7 reads either infants or gentle among you before the nursing-care image.",
+      "category": "culture",
+      "source_ids": [
+        "ntvmr",
+        "p30-csntm",
+        "wanamaker"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Thessalonians 2:7"
+      ],
+      "confidence": "low",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "1-thessalonians",
+        "parent_title": "1 Thessalonians",
+        "parent_type": "book",
+        "object_importance": 79,
+        "retrieval_score": 0.939,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 6,
+        "certainty": "disputed",
+        "dispute_status": "textual_variant",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 90
+      }
+    },
+    {
+      "id": "economic-categories-not-synonyms",
+      "claim": "Pauline passages distinguish gift, missionary maintenance, wage imagery, hospitality, partnership, collection, civic benefaction, obligation, and labor rather than naming one universal patronage arrangement.",
+      "category": "economics",
+      "source_ids": [
+        "pauline-economic-texts",
+        "first-corinthians-economic",
+        "second-corinthians-collection",
+        "philippians-gift",
+        "first-thessalonians-economic",
+        "saller-patronage",
+        "downs-offering",
+        "briones-financial"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Thessalonians 2:5-12"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "patronage-hospitality-and-debt",
+        "parent_title": "Pauline Economic Life, Patronage, Gifts, Collections, Labor, and Poverty",
+        "parent_type": "cultural_background",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 4,
+        "certainty": "strong_consensus",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "historical_cultural",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "WEAKLY_RELATED",
+        "presentation_role": null,
+        "overview_priority": 2
+      }
+    },
+    {
+      "id": "missionary-manual-labor",
+      "claim": "First Thessalonians recalls night-and-day labor and commands quiet conduct, personal responsibility, and work with the hands.",
+      "category": "culture",
+      "source_ids": [
+        "first-thessalonians-text",
+        "hock-social-context",
+        "malherbe-thessalonians-2000"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Thessalonians 2:9"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "thessalonian-civic-and-funerary-context",
+        "parent_title": "Roman Thessalonica: Civic, Cultic, Household, Labor, and Funerary Life",
+        "parent_type": "cultural_background",
+        "object_importance": 95,
+        "retrieval_score": 0.955,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 8,
+        "certainty": "textually_explicit",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.75,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "cultural-practice",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 102
+      }
+    },
+    {
+      "id": "missionary-manual-labor:passage-relevance",
+      "claim": "Ancient artisan and workshop comparison clarifies embodied labor without converting Paul's example into stigma against people unable to work.",
+      "category": "culture",
+      "source_ids": [
+        "first-thessalonians-text",
+        "hock-social-context",
+        "malherbe-thessalonians-2000"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Thessalonians 2:9"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "thessalonian-civic-and-funerary-context",
+        "parent_title": "Roman Thessalonica: Civic, Cultic, Household, Labor, and Funerary Life",
+        "parent_type": "cultural_background",
+        "object_importance": 95,
+        "retrieval_score": 0.955,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 8,
+        "certainty": "textually_explicit",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.75,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "cultural-practice",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 102,
+        "supports_evidence_ids": [
+          "missionary-manual-labor"
+        ]
+      }
+    },
+    {
+      "id": "philippi:ancient_near_east_context:0",
+      "claim": "The Ancient Near East is not the controlling context; Roman Macedonian, Greek, Thracian, diaspora Jewish, and wider Greco-Roman evidence is nearer.",
+      "category": "culture",
+      "source_ids": [
+        "acts-philippi",
+        "philippians-greek",
+        "philippi-unesco",
+        "culture-egnatia-philippi",
+        "brelaz-philippi"
+      ],
+      "related_entity_ids": [
+        "philippi"
+      ],
+      "passage_anchors": [
+        "1 Thessalonians 2:1-2"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "philippi",
+        "parent_title": "Philippi",
+        "parent_type": "place",
+        "object_importance": 82,
+        "retrieval_score": 0.902,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "philippi:archaeology:0",
+      "claim": "Via Egnatia",
+      "category": "archaeology",
+      "source_ids": [
+        "acts-philippi",
+        "philippians-greek",
+        "philippi-unesco",
+        "culture-egnatia-philippi",
+        "brelaz-philippi"
+      ],
+      "related_entity_ids": [
+        "philippi"
+      ],
+      "passage_anchors": [
+        "1 Thessalonians 2:1-2"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "philippi",
+        "parent_title": "Philippi",
+        "parent_type": "place",
+        "object_importance": 82,
+        "retrieval_score": 0.902,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "archaeology",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": null,
+        "overview_priority": 28,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "philippi:archaeology:1",
+      "claim": "Roman forum",
+      "category": "archaeology",
+      "source_ids": [
+        "acts-philippi",
+        "philippians-greek",
+        "philippi-unesco",
+        "culture-egnatia-philippi",
+        "brelaz-philippi"
+      ],
+      "related_entity_ids": [
+        "philippi"
+      ],
+      "passage_anchors": [
+        "1 Thessalonians 2:1-2"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "philippi",
+        "parent_title": "Philippi",
+        "parent_type": "place",
+        "object_importance": 82,
+        "retrieval_score": 0.902,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "archaeology",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": null,
+        "overview_priority": 43,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "philippi:archaeology:2",
+      "claim": "theater",
+      "category": "archaeology",
+      "source_ids": [
+        "acts-philippi",
+        "philippians-greek",
+        "philippi-unesco",
+        "culture-egnatia-philippi",
+        "brelaz-philippi"
+      ],
+      "related_entity_ids": [
+        "philippi"
+      ],
+      "passage_anchors": [
+        "1 Thessalonians 2:1-2"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "philippi",
+        "parent_title": "Philippi",
+        "parent_type": "place",
+        "object_importance": 82,
+        "retrieval_score": 0.902,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "archaeology",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": null,
+        "overview_priority": 28,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "philippi:archaeology:3",
+      "claim": "rock sanctuaries",
+      "category": "archaeology",
+      "source_ids": [
+        "acts-philippi",
+        "philippians-greek",
+        "philippi-unesco",
+        "culture-egnatia-philippi",
+        "brelaz-philippi"
+      ],
+      "related_entity_ids": [
+        "philippi"
+      ],
+      "passage_anchors": [
+        "1 Thessalonians 2:1-2"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "philippi",
+        "parent_title": "Philippi",
+        "parent_type": "place",
+        "object_importance": 82,
+        "retrieval_score": 0.902,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "archaeology",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": null,
+        "overview_priority": 28,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "philippi:archaeology:4",
+      "claim": "inscriptions",
+      "category": "archaeology",
+      "source_ids": [
+        "acts-philippi",
+        "philippians-greek",
+        "philippi-unesco",
+        "culture-egnatia-philippi",
+        "brelaz-philippi"
+      ],
+      "related_entity_ids": [
+        "philippi"
+      ],
+      "passage_anchors": [
+        "1 Thessalonians 2:1-2"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "philippi",
+        "parent_title": "Philippi",
+        "parent_type": "place",
+        "object_importance": 82,
+        "retrieval_score": 0.902,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "archaeology",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": null,
+        "overview_priority": 28,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "philippi:archaeology:5",
+      "claim": "funerary monuments",
+      "category": "archaeology",
+      "source_ids": [
+        "acts-philippi",
+        "philippians-greek",
+        "philippi-unesco",
+        "culture-egnatia-philippi",
+        "brelaz-philippi"
+      ],
+      "related_entity_ids": [
+        "philippi"
+      ],
+      "passage_anchors": [
+        "1 Thessalonians 2:1-2"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "philippi",
+        "parent_title": "Philippi",
+        "parent_type": "place",
+        "object_importance": 82,
+        "retrieval_score": 0.902,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "archaeology",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": null,
+        "overview_priority": 28,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "philippi:archaeology:6",
+      "claim": "later basilicas and traditional prison",
+      "category": "archaeology",
+      "source_ids": [
+        "acts-philippi",
+        "philippians-greek",
+        "philippi-unesco",
+        "culture-egnatia-philippi",
+        "brelaz-philippi"
+      ],
+      "related_entity_ids": [
+        "philippi"
+      ],
+      "passage_anchors": [
+        "1 Thessalonians 2:1-2"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "philippi",
+        "parent_title": "Philippi",
+        "parent_type": "place",
+        "object_importance": 82,
+        "retrieval_score": 0.902,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "archaeology",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": null,
+        "overview_priority": 28,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "philippi:hebraic_worldview:0",
+      "claim": "Acts' Sabbath prayer gathering and Lydia's worship of God place Israel's God and practices within the city's plural environment. The evidence does not establish a synagogue building, the gathering's complete membership, or a uniform Jewish identity.",
+      "category": "culture",
+      "source_ids": [
+        "acts-philippi",
+        "philippians-greek",
+        "philippi-unesco",
+        "culture-egnatia-philippi",
+        "brelaz-philippi"
+      ],
+      "related_entity_ids": [
+        "philippi"
+      ],
+      "passage_anchors": [
+        "1 Thessalonians 2:1-2"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "philippi",
+        "parent_title": "Philippi",
+        "parent_type": "place",
+        "object_importance": 82,
+        "retrieval_score": 0.902,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "hebraic_worldview",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "philippi:historical_context:0",
+      "claim": "After the battle of 42 BCE, Roman veteran settlement reshaped Philippi as a colony; Augustus refounded it and colonial institutions remained prominent. The city linked the port at Neapolis with inland Macedonia through the Via Egnatia. Its mid-first-century forum, inscriptions, cults, households, slavery, agriculture, and status hierarchy illuminate Acts and Philippians, while later visible phases require chronological control.",
+      "category": "history",
+      "source_ids": [
+        "acts-philippi",
+        "philippians-greek",
+        "philippi-unesco",
+        "culture-egnatia-philippi",
+        "brelaz-philippi"
+      ],
+      "related_entity_ids": [
+        "philippi"
+      ],
+      "passage_anchors": [
+        "1 Thessalonians 2:1-2"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "philippi",
+        "parent_title": "Philippi",
+        "parent_type": "place",
+        "object_importance": 82,
+        "retrieval_score": 0.902,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "philippi:historical_setting:0",
+      "claim": "Eastern Macedonia on the Via Egnatia between Neapolis and Amphipolis, especially the early Roman imperial period.",
+      "category": "history",
+      "source_ids": [
+        "acts-philippi",
+        "philippians-greek",
+        "philippi-unesco",
+        "culture-egnatia-philippi",
+        "brelaz-philippi"
+      ],
+      "related_entity_ids": [
+        "philippi"
+      ],
+      "passage_anchors": [
+        "1 Thessalonians 2:1-2"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "philippi",
+        "parent_title": "Philippi",
+        "parent_type": "place",
+        "object_importance": 82,
+        "retrieval_score": 0.902,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_setting",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "philippi:key_places:0",
+      "claim": "Neapolis",
+      "category": "geography",
+      "source_ids": [
+        "acts-philippi",
+        "philippians-greek",
+        "philippi-unesco",
+        "culture-egnatia-philippi",
+        "brelaz-philippi"
+      ],
+      "related_entity_ids": [
+        "philippi"
+      ],
+      "passage_anchors": [
+        "1 Thessalonians 2:1-2"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "philippi",
+        "parent_title": "Philippi",
+        "parent_type": "place",
+        "object_importance": 82,
+        "retrieval_score": 0.902,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "key_places",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": null,
+        "overview_priority": 28,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "philippi:key_places:1",
+      "claim": "Via Egnatia",
+      "category": "geography",
+      "source_ids": [
+        "acts-philippi",
+        "philippians-greek",
+        "philippi-unesco",
+        "culture-egnatia-philippi",
+        "brelaz-philippi"
+      ],
+      "related_entity_ids": [
+        "philippi"
+      ],
+      "passage_anchors": [
+        "1 Thessalonians 2:1-2"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "philippi",
+        "parent_title": "Philippi",
+        "parent_type": "place",
+        "object_importance": 82,
+        "retrieval_score": 0.902,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "key_places",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": null,
+        "overview_priority": 28,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "philippi:key_places:2",
+      "claim": "riverside prayer place",
+      "category": "geography",
+      "source_ids": [
+        "acts-philippi",
+        "philippians-greek",
+        "philippi-unesco",
+        "culture-egnatia-philippi",
+        "brelaz-philippi"
+      ],
+      "related_entity_ids": [
+        "philippi"
+      ],
+      "passage_anchors": [
+        "1 Thessalonians 2:1-2"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "philippi",
+        "parent_title": "Philippi",
+        "parent_type": "place",
+        "object_importance": 82,
+        "retrieval_score": 0.902,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "key_places",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": null,
+        "overview_priority": 28,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "philippi:key_places:3",
+      "claim": "forum",
+      "category": "geography",
+      "source_ids": [
+        "acts-philippi",
+        "philippians-greek",
+        "philippi-unesco",
+        "culture-egnatia-philippi",
+        "brelaz-philippi"
+      ],
+      "related_entity_ids": [
+        "philippi"
+      ],
+      "passage_anchors": [
+        "1 Thessalonians 2:1-2"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "philippi",
+        "parent_title": "Philippi",
+        "parent_type": "place",
+        "object_importance": 82,
+        "retrieval_score": 0.902,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "key_places",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": null,
+        "overview_priority": 28,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "philippi:key_places:4",
+      "claim": "Macedonia",
+      "category": "geography",
+      "source_ids": [
+        "acts-philippi",
+        "philippians-greek",
+        "philippi-unesco",
+        "culture-egnatia-philippi",
+        "brelaz-philippi"
+      ],
+      "related_entity_ids": [
+        "philippi"
+      ],
+      "passage_anchors": [
+        "1 Thessalonians 2:1-2"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "philippi",
+        "parent_title": "Philippi",
+        "parent_type": "place",
+        "object_importance": 82,
+        "retrieval_score": 0.902,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "key_places",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": null,
+        "overview_priority": 28,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "philippi:original_audience:0",
+      "claim": "Readers seeking geographically and historically controlled context for Acts 16 and Philippians.",
+      "category": "social",
+      "source_ids": [
+        "acts-philippi",
+        "philippians-greek",
+        "philippi-unesco",
+        "culture-egnatia-philippi",
+        "brelaz-philippi"
+      ],
+      "related_entity_ids": [
+        "philippi"
+      ],
+      "passage_anchors": [
+        "1 Thessalonians 2:1-2"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "philippi",
+        "parent_title": "Philippi",
+        "parent_type": "place",
+        "object_importance": 82,
+        "retrieval_score": 0.902,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "original_audience",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "philippi:second_temple_context:0",
+      "claim": "Acts 16 names a riverside place of prayer and women gathered on Sabbath. This supports a Jewish or Jewish-adjacent setting while leaving Philippi's Jewish population, institutions, and relation to a synagogue uncertain.",
+      "category": "culture",
+      "source_ids": [
+        "acts-philippi",
+        "philippians-greek",
+        "philippi-unesco",
+        "culture-egnatia-philippi",
+        "brelaz-philippi"
+      ],
+      "related_entity_ids": [
+        "philippi"
+      ],
+      "passage_anchors": [
+        "1 Thessalonians 2:1-2"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "philippi",
+        "parent_title": "Philippi",
+        "parent_type": "place",
+        "object_importance": 82,
+        "retrieval_score": 0.902,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "second_temple_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "philippi:timeline:0",
+      "claim": "356 BCE: foundation or refoundation by Philip II",
+      "category": "chronology",
+      "source_ids": [
+        "acts-philippi",
+        "philippians-greek",
+        "philippi-unesco",
+        "culture-egnatia-philippi",
+        "brelaz-philippi"
+      ],
+      "related_entity_ids": [
+        "philippi"
+      ],
+      "passage_anchors": [
+        "1 Thessalonians 2:1-2"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "philippi",
+        "parent_title": "Philippi",
+        "parent_type": "place",
+        "object_importance": 82,
+        "retrieval_score": 0.902,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "timeline",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "chronology",
+        "overview_priority": 25,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "philippi:timeline:1",
+      "claim": "42 BCE: battle and subsequent Roman veteran colony",
+      "category": "chronology",
+      "source_ids": [
+        "acts-philippi",
+        "philippians-greek",
+        "philippi-unesco",
+        "culture-egnatia-philippi",
+        "brelaz-philippi"
+      ],
+      "related_entity_ids": [
+        "philippi"
+      ],
+      "passage_anchors": [
+        "1 Thessalonians 2:1-2"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "philippi",
+        "parent_title": "Philippi",
+        "parent_type": "place",
+        "object_importance": 82,
+        "retrieval_score": 0.902,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "timeline",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "chronology",
+        "overview_priority": 40,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "philippi:timeline:2",
+      "claim": "approximately 30 BCE: Augustan refoundation",
+      "category": "chronology",
+      "source_ids": [
+        "acts-philippi",
+        "philippians-greek",
+        "philippi-unesco",
+        "culture-egnatia-philippi",
+        "brelaz-philippi"
+      ],
+      "related_entity_ids": [
+        "philippi"
+      ],
+      "passage_anchors": [
+        "1 Thessalonians 2:1-2"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "philippi",
+        "parent_title": "Philippi",
+        "parent_type": "place",
+        "object_importance": 82,
+        "retrieval_score": 0.902,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "timeline",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "chronology",
+        "overview_priority": 25,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "philippi:timeline:3",
+      "claim": "mid-first century CE: Claudian forum phase and conventional Pauline horizon",
+      "category": "chronology",
+      "source_ids": [
+        "acts-philippi",
+        "philippians-greek",
+        "philippi-unesco",
+        "culture-egnatia-philippi",
+        "brelaz-philippi"
+      ],
+      "related_entity_ids": [
+        "philippi"
+      ],
+      "passage_anchors": [
+        "1 Thessalonians 2:1-2"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "philippi",
+        "parent_title": "Philippi",
+        "parent_type": "place",
+        "object_importance": 82,
+        "retrieval_score": 0.902,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "timeline",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "chronology",
+        "overview_priority": 25,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "philippi:timeline:4",
+      "claim": "fourth century CE and later: Christian monumental and pilgrimage landscape",
+      "category": "chronology",
+      "source_ids": [
+        "acts-philippi",
+        "philippians-greek",
+        "philippi-unesco",
+        "culture-egnatia-philippi",
+        "brelaz-philippi"
+      ],
+      "related_entity_ids": [
+        "philippi"
+      ],
+      "passage_anchors": [
+        "1 Thessalonians 2:1-2"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "philippi",
+        "parent_title": "Philippi",
+        "parent_type": "place",
+        "object_importance": 82,
+        "retrieval_score": 0.902,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "timeline",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "chronology",
+        "overview_priority": 25,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "thess-authority-gentleness-shared-selves",
+      "claim": "Paul says the missionaries could have made a weighty claim as Messiah's apostles but instead describes gentleness, nursing care, affection, gospel sharing, and sharing their own selves.",
+      "category": "culture",
+      "source_ids": [
+        "thess-economics-text",
+        "weima-thessalonians"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Thessalonians 2:6-8"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-work-labor-wages-maintenance-poverty-wealth-collection-giving-reciprocity-equality-partnership-idleness-need-and-economic-solidarity",
+        "parent_title": "Pauline Work, Labor, Wages, Maintenance, Poverty, Wealth, Collection, Giving, Reciprocity, Equality, Partnership, Idleness, Need, and Economic Solidarity",
+        "parent_type": "cultural_background",
+        "object_importance": 99,
+        "retrieval_score": 0.979,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 5,
+        "certainty": "probable",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "worldview-concept",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    },
+    {
+      "id": "thess-authority-gentleness-shared-selves:passage-relevance",
+      "claim": "Prevents apostolic authority or familial metaphor from becoming entitlement to money, bodies, obedience, or leader ownership.",
+      "category": "culture",
+      "source_ids": [
+        "thess-economics-text",
+        "weima-thessalonians"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Thessalonians 2:6-8"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-work-labor-wages-maintenance-poverty-wealth-collection-giving-reciprocity-equality-partnership-idleness-need-and-economic-solidarity",
+        "parent_title": "Pauline Work, Labor, Wages, Maintenance, Poverty, Wealth, Collection, Giving, Reciprocity, Equality, Partnership, Idleness, Need, and Economic Solidarity",
+        "parent_type": "cultural_background",
+        "object_importance": 99,
+        "retrieval_score": 0.979,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 5,
+        "certainty": "probable",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "worldview-concept",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 87,
+        "supports_evidence_ids": [
+          "thess-authority-gentleness-shared-selves"
+        ]
+      }
+    },
+    {
+      "id": "thess-bold-no-manipulation",
+      "claim": "First Thessalonians claims boldness while denying error, impurity, deceit, flattery, greed, and pursuit of human glory.",
+      "category": "culture",
+      "source_ids": [
+        "thess-conflict-text",
+        "malherbe-thessalonians"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Thessalonians 2:1-6"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-authority-factions-discipline-shame-grief-forgiveness-reconciliation-restoration-commendation-boasting-weakness-and-conflict-transformation",
+        "parent_title": "Pauline Authority, Factions, Discipline, Shame, Grief, Forgiveness, Reconciliation, Restoration, Commendation, Boasting, Weakness, and Conflict Transformation",
+        "parent_type": "cultural_background",
+        "object_importance": 9,
+        "retrieval_score": 0.869,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "probable",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "literary-convention",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    },
+    {
+      "id": "thess-bold-no-manipulation:passage-relevance",
+      "claim": "Requires truthful communication and financial transparency while refusing to equate confidence with coercion.",
+      "category": "culture",
+      "source_ids": [
+        "thess-conflict-text",
+        "malherbe-thessalonians"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Thessalonians 2:1-6"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-authority-factions-discipline-shame-grief-forgiveness-reconciliation-restoration-commendation-boasting-weakness-and-conflict-transformation",
+        "parent_title": "Pauline Authority, Factions, Discipline, Shame, Grief, Forgiveness, Reconciliation, Restoration, Commendation, Boasting, Weakness, and Conflict Transformation",
+        "parent_type": "cultural_background",
+        "object_importance": 9,
+        "retrieval_score": 0.869,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "probable",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "literary-convention",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 87,
+        "supports_evidence_ids": [
+          "thess-bold-no-manipulation"
+        ]
+      }
+    },
+    {
+      "id": "thess-conduct-exhortation-parent-metaphors",
+      "claim": "Paul invokes holy, just, blameless conduct and paternal exhortation toward a life worthy of God after maternal or childlike care imagery.",
+      "category": "culture",
+      "source_ids": [
+        "thess-economics-text",
+        "weima-thessalonians"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Thessalonians 2:10-12"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-work-labor-wages-maintenance-poverty-wealth-collection-giving-reciprocity-equality-partnership-idleness-need-and-economic-solidarity",
+        "parent_title": "Pauline Work, Labor, Wages, Maintenance, Poverty, Wealth, Collection, Giving, Reciprocity, Equality, Partnership, Idleness, Need, and Economic Solidarity",
+        "parent_type": "cultural_background",
+        "object_importance": 99,
+        "retrieval_score": 0.979,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 9,
+        "certainty": "probable",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "literary-convention",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    },
+    {
+      "id": "thess-conduct-exhortation-parent-metaphors:passage-relevance",
+      "claim": "Keeps labor evidence within the letter's relational rhetoric while refusing gender hierarchy or compulsory spiritual parenthood.",
+      "category": "culture",
+      "source_ids": [
+        "thess-economics-text",
+        "weima-thessalonians"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Thessalonians 2:10-12"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-work-labor-wages-maintenance-poverty-wealth-collection-giving-reciprocity-equality-partnership-idleness-need-and-economic-solidarity",
+        "parent_title": "Pauline Work, Labor, Wages, Maintenance, Poverty, Wealth, Collection, Giving, Reciprocity, Equality, Partnership, Idleness, Need, and Economic Solidarity",
+        "parent_type": "cultural_background",
+        "object_importance": 99,
+        "retrieval_score": 0.979,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 9,
+        "certainty": "probable",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "literary-convention",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 87,
+        "supports_evidence_ids": [
+          "thess-conduct-exhortation-parent-metaphors"
+        ]
+      }
+    },
+    {
+      "id": "thess-gentle-sharing-selves",
+      "claim": "The senders deny flattering speech, greed, and glory seeking, describe gentleness like a nursing caregiver, affection, sharing both good news and their own selves, and exhortation like a parent.",
+      "category": "culture",
+      "source_ids": [
+        "thess-mission-text",
+        "schnabel-paul-missionary"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Thessalonians 2:1-12"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-mission-proclamation-travel-coworkers-letters-messengers-hospitality-house-assemblies-synagogues-marketplaces-adaptability-church-planting-and-interassembly-networks",
+        "parent_title": "Pauline Mission, Proclamation, Travel, Coworkers, Letters, Messengers, Hospitality, House Assemblies, Synagogues, Marketplaces, Adaptability, Church Planting, and Interassembly Networks",
+        "parent_type": "cultural_background",
+        "object_importance": 9,
+        "retrieval_score": 0.869,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "probable",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "cultural-practice",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    },
+    {
+      "id": "thess-gentle-sharing-selves:passage-relevance",
+      "claim": "Supplies relational tests against extraction and prestige while preventing parental metaphors from becoming control.",
+      "category": "culture",
+      "source_ids": [
+        "thess-mission-text",
+        "schnabel-paul-missionary"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Thessalonians 2:1-12"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-mission-proclamation-travel-coworkers-letters-messengers-hospitality-house-assemblies-synagogues-marketplaces-adaptability-church-planting-and-interassembly-networks",
+        "parent_title": "Pauline Mission, Proclamation, Travel, Coworkers, Letters, Messengers, Hospitality, House Assemblies, Synagogues, Marketplaces, Adaptability, Church Planting, and Interassembly Networks",
+        "parent_type": "cultural_background",
+        "object_importance": 9,
+        "retrieval_score": 0.869,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "probable",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "cultural-practice",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 87,
+        "supports_evidence_ids": [
+          "thess-gentle-sharing-selves"
+        ]
+      }
+    },
+    {
+      "id": "thess-labor-no-burden",
+      "claim": "The senders remind the audience of labor and toil night and day while proclaiming so as not to burden anyone.",
+      "category": "culture",
+      "source_ids": [
+        "thess-mission-text",
+        "schnabel-paul-missionary"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Thessalonians 2:9"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-mission-proclamation-travel-coworkers-letters-messengers-hospitality-house-assemblies-synagogues-marketplaces-adaptability-church-planting-and-interassembly-networks",
+        "parent_title": "Pauline Mission, Proclamation, Travel, Coworkers, Letters, Messengers, Hospitality, House Assemblies, Synagogues, Marketplaces, Adaptability, Church Planting, and Interassembly Networks",
+        "parent_type": "cultural_background",
+        "object_importance": 9,
+        "retrieval_score": 0.869,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 8,
+        "certainty": "probable",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "cultural-practice",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    },
+    {
+      "id": "thess-labor-no-burden:passage-relevance",
+      "claim": "Documents one team's contextual practice without making overwork or unpaid ministry a norm.",
+      "category": "culture",
+      "source_ids": [
+        "thess-mission-text",
+        "schnabel-paul-missionary"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Thessalonians 2:9"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-mission-proclamation-travel-coworkers-letters-messengers-hospitality-house-assemblies-synagogues-marketplaces-adaptability-church-planting-and-interassembly-networks",
+        "parent_title": "Pauline Mission, Proclamation, Travel, Coworkers, Letters, Messengers, Hospitality, House Assemblies, Synagogues, Marketplaces, Adaptability, Church Planting, and Interassembly Networks",
+        "parent_type": "cultural_background",
+        "object_importance": 9,
+        "retrieval_score": 0.869,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 8,
+        "certainty": "probable",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "cultural-practice",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 87,
+        "supports_evidence_ids": [
+          "thess-labor-no-burden"
+        ]
+      }
+    },
+    {
+      "id": "thess-motive-no-greed-pretext",
+      "claim": "Paul denies error, impurity, trickery, flattering speech, and a pretext for greed while locating approval and testing with God.",
+      "category": "culture",
+      "source_ids": [
+        "thess-economics-text",
+        "weima-thessalonians"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Thessalonians 2:1-5"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-work-labor-wages-maintenance-poverty-wealth-collection-giving-reciprocity-equality-partnership-idleness-need-and-economic-solidarity",
+        "parent_title": "Pauline Work, Labor, Wages, Maintenance, Poverty, Wealth, Collection, Giving, Reciprocity, Equality, Partnership, Idleness, Need, and Economic Solidarity",
+        "parent_type": "cultural_background",
+        "object_importance": 99,
+        "retrieval_score": 0.979,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "probable",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "literary-convention",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    },
+    {
+      "id": "thess-motive-no-greed-pretext:passage-relevance",
+      "claim": "Keeps missionary fundraising under motive and conduct scrutiny without pretending later readers can directly inspect Paul's heart.",
+      "category": "culture",
+      "source_ids": [
+        "thess-economics-text",
+        "weima-thessalonians"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Thessalonians 2:1-5"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-work-labor-wages-maintenance-poverty-wealth-collection-giving-reciprocity-equality-partnership-idleness-need-and-economic-solidarity",
+        "parent_title": "Pauline Work, Labor, Wages, Maintenance, Poverty, Wealth, Collection, Giving, Reciprocity, Equality, Partnership, Idleness, Need, and Economic Solidarity",
+        "parent_type": "cultural_background",
+        "object_importance": 99,
+        "retrieval_score": 0.979,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "probable",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "literary-convention",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 87,
+        "supports_evidence_ids": [
+          "thess-motive-no-greed-pretext"
+        ]
+      }
+    },
+    {
+      "id": "thess-night-day-labor-no-burden",
+      "claim": "Paul recalls labor and toil night and day while proclaiming so as not to burden anyone in the assembly.",
+      "category": "culture",
+      "source_ids": [
+        "thess-economics-text",
+        "weima-thessalonians"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Thessalonians 2:9"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-work-labor-wages-maintenance-poverty-wealth-collection-giving-reciprocity-equality-partnership-idleness-need-and-economic-solidarity",
+        "parent_title": "Pauline Work, Labor, Wages, Maintenance, Poverty, Wealth, Collection, Giving, Reciprocity, Equality, Partnership, Idleness, Need, and Economic Solidarity",
+        "parent_type": "cultural_background",
+        "object_importance": 99,
+        "retrieval_score": 0.979,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 8,
+        "certainty": "probable",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "cultural-practice",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    },
+    {
+      "id": "thess-night-day-labor-no-burden:passage-relevance",
+      "claim": "Documents contextual self-maintenance without romanticizing overwork, precarity, sleep deprivation, or unpaid ministry as universal norms.",
+      "category": "culture",
+      "source_ids": [
+        "thess-economics-text",
+        "weima-thessalonians"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Thessalonians 2:9"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-work-labor-wages-maintenance-poverty-wealth-collection-giving-reciprocity-equality-partnership-idleness-need-and-economic-solidarity",
+        "parent_title": "Pauline Work, Labor, Wages, Maintenance, Poverty, Wealth, Collection, Giving, Reciprocity, Equality, Partnership, Idleness, Need, and Economic Solidarity",
+        "parent_type": "cultural_background",
+        "object_importance": 99,
+        "retrieval_score": 0.979,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 8,
+        "certainty": "probable",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "cultural-practice",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 87,
+        "supports_evidence_ids": [
+          "thess-night-day-labor-no-burden"
+        ]
+      }
+    },
+    {
+      "id": "thess-parental-care-boundary",
+      "claim": "The writers compare themselves to a nursing caregiver and an exhorting father while recalling self-sharing and labor.",
+      "category": "culture",
+      "source_ids": [
+        "thess-conflict-text",
+        "malherbe-thessalonians"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Thessalonians 2:7-12"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-authority-factions-discipline-shame-grief-forgiveness-reconciliation-restoration-commendation-boasting-weakness-and-conflict-transformation",
+        "parent_title": "Pauline Authority, Factions, Discipline, Shame, Grief, Forgiveness, Reconciliation, Restoration, Commendation, Boasting, Weakness, and Conflict Transformation",
+        "parent_type": "cultural_background",
+        "object_importance": 9,
+        "retrieval_score": 0.869,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 6,
+        "certainty": "probable",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "cultural-practice",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    },
+    {
+      "id": "thess-parental-care-boundary:passage-relevance",
+      "claim": "Reads care and exhortation together without granting leaders parental ownership, infantilizing adults, or overriding consent.",
+      "category": "culture",
+      "source_ids": [
+        "thess-conflict-text",
+        "malherbe-thessalonians"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Thessalonians 2:7-12"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-authority-factions-discipline-shame-grief-forgiveness-reconciliation-restoration-commendation-boasting-weakness-and-conflict-transformation",
+        "parent_title": "Pauline Authority, Factions, Discipline, Shame, Grief, Forgiveness, Reconciliation, Restoration, Commendation, Boasting, Weakness, and Conflict Transformation",
+        "parent_type": "cultural_background",
+        "object_importance": 9,
+        "retrieval_score": 0.869,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 6,
+        "certainty": "probable",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "cultural-practice",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 87,
+        "supports_evidence_ids": [
+          "thess-parental-care-boundary"
+        ]
+      }
+    },
+    {
+      "id": "thess-separated-hindered-visit",
+      "claim": "Paul says the team was orphaned from the Thessalonians in person, repeatedly wanted to come, and was hindered, expressing intense desire to see them.",
+      "category": "geography",
+      "source_ids": [
+        "thess-mission-text",
+        "luckritz-transient-apostle"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Thessalonians 2:17-20"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-mission-proclamation-travel-coworkers-letters-messengers-hospitality-house-assemblies-synagogues-marketplaces-adaptability-church-planting-and-interassembly-networks",
+        "parent_title": "Pauline Mission, Proclamation, Travel, Coworkers, Letters, Messengers, Hospitality, House Assemblies, Synagogues, Marketplaces, Adaptability, Church Planting, and Interassembly Networks",
+        "parent_type": "cultural_background",
+        "object_importance": 9,
+        "retrieval_score": 0.869,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 16,
+        "certainty": "probable",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "geography-environment",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "archaeology_geography",
+        "overview_priority": 75
+      }
+    },
+    {
+      "id": "thess-separated-hindered-visit:passage-relevance",
+      "claim": "Shows mobility constraints and emotional attachment without promising that every intended visit must occur.",
+      "category": "geography",
+      "source_ids": [
+        "thess-mission-text",
+        "luckritz-transient-apostle"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Thessalonians 2:17-20"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-mission-proclamation-travel-coworkers-letters-messengers-hospitality-house-assemblies-synagogues-marketplaces-adaptability-church-planting-and-interassembly-networks",
+        "parent_title": "Pauline Mission, Proclamation, Travel, Coworkers, Letters, Messengers, Hospitality, House Assemblies, Synagogues, Marketplaces, Adaptability, Church Planting, and Interassembly Networks",
+        "parent_type": "cultural_background",
+        "object_importance": 9,
+        "retrieval_score": 0.869,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 16,
+        "certainty": "probable",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "geography-environment",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 75,
+        "supports_evidence_ids": [
+          "thess-separated-hindered-visit"
+        ]
+      }
+    },
+    {
+      "id": "thessalonian-affliction-opponents-uncertain",
+      "claim": "The letters repeatedly describe affliction, while Acts narrates one civic disturbance; the sources do not identify one exhaustive persecuting group.",
+      "category": "history",
+      "source_ids": [
+        "first-thessalonians-text",
+        "second-thessalonians-text",
+        "still-conflict-thessalonica",
+        "burnett-imperial-honors",
+        "malherbe-thessalonians-2000"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Thessalonians 2:13-16"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "thessalonian-civic-and-funerary-context",
+        "parent_title": "Roman Thessalonica: Civic, Cultic, Household, Labor, and Funerary Life",
+        "parent_type": "cultural_background",
+        "object_importance": 95,
+        "retrieval_score": 0.955,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 12,
+        "certainty": "strong_consensus",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "scholarly-reconstruction",
+        "exploration_potential": 0.75,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "historical-event",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 102
+      }
+    },
+    {
+      "id": "thessalonian-affliction-opponents-uncertain:passage-relevance",
+      "claim": "The item supports a real social-pressure setting while blocking collective Jewish blame, a single imperial-cult cause, or assumptions of formal state persecution.",
+      "category": "history",
+      "source_ids": [
+        "first-thessalonians-text",
+        "second-thessalonians-text",
+        "still-conflict-thessalonica",
+        "burnett-imperial-honors",
+        "malherbe-thessalonians-2000"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Thessalonians 2:13-16"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "thessalonian-civic-and-funerary-context",
+        "parent_title": "Roman Thessalonica: Civic, Cultic, Household, Labor, and Funerary Life",
+        "parent_type": "cultural_background",
+        "object_importance": 95,
+        "retrieval_score": 0.955,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 12,
+        "certainty": "strong_consensus",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "scholarly-reconstruction",
+        "exploration_potential": 0.75,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "historical-event",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 102,
+        "supports_evidence_ids": [
+          "thessalonian-affliction-opponents-uncertain"
+        ]
+      }
+    },
+    {
+      "id": "thessalonian-missionary-labor",
+      "claim": "First Thessalonians recalls night-and-day labor within a defense that denies greed and glory seeking and uses maternal and paternal care metaphors.",
+      "category": "culture",
+      "source_ids": [
+        "first-thessalonians-economic",
+        "hock-tentmaking",
+        "briones-financial"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Thessalonians 2:5-12"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "patronage-hospitality-and-debt",
+        "parent_title": "Pauline Economic Life, Patronage, Gifts, Collections, Labor, and Poverty",
+        "parent_type": "cultural_background",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 4,
+        "certainty": "textually_explicit",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "cultural-practice",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    },
+    {
+      "id": "thessalonian-missionary-labor:passage-relevance",
+      "claim": "Situates self-support within mission integrity without making one funding policy or leader-family metaphor universal.",
+      "category": "culture",
+      "source_ids": [
+        "first-thessalonians-economic",
+        "hock-tentmaking",
+        "briones-financial"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Thessalonians 2:5-12"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "patronage-hospitality-and-debt",
+        "parent_title": "Pauline Economic Life, Patronage, Gifts, Collections, Labor, and Poverty",
+        "parent_type": "cultural_background",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 4,
+        "certainty": "textually_explicit",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "cultural-practice",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 87,
+        "supports_evidence_ids": [
+          "thessalonian-missionary-labor"
+        ]
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "SBL Greek New Testament: 1 Thessalonians",
+        "author": "Michael W. Holmes, ed.",
+        "publisher": "Society of Biblical Literature and Logos Bible Software",
+        "year": 2010,
+        "locator": "1 Thessalonians",
+        "url": "https://www.sblgnt.com/",
+        "source_type": "scripture",
+        "supports": [
+          "scripture-references",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Primary Greek textual control.",
+        "id": "1th-greek",
+        "canonical_object_ids": [
+          "1-thessalonians"
+        ]
+      },
+      {
+        "title": "Acts 16:11-40 and 20:1-6",
+        "author": "Michael W. Holmes, ed.",
+        "publisher": "Society of Biblical Literature and Logos Bible Software",
+        "year": 2010,
+        "locator": "Acts 16:11-40; 20:1-6",
+        "url": "https://www.sblgnt.com/download/",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "historical-context",
+          "scripture-references",
+          "interpretive-notes"
+        ],
+        "notes": "Primary narrative text.",
+        "id": "acts-philippi",
+        "canonical_object_ids": [
+          "philippi"
+        ]
+      },
+      {
+        "title": "Philippes, colonie romaine d'Orient",
+        "author": "C\u00e9dric Br\u00e9laz",
+        "publisher": "\u00c9cole fran\u00e7aise d'Ath\u00e8nes",
+        "year": 2018,
+        "locator": "Institutions, magistracies, elites, colony, and Acts reception",
+        "url": "https://books.openedition.org/efa/3137",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "archaeology",
+          "interpretive-notes"
+        ],
+        "notes": "Epigraphic and institutional synthesis requiring item-level chronology.",
+        "id": "brelaz-philippi",
+        "canonical_object_ids": [
+          "philippi"
+        ]
+      },
+      {
+        "title": "Paul's Financial Policy: A Socio-Theological Approach",
+        "author": "David E. Briones",
+        "publisher": "T&T Clark",
+        "year": 2013,
+        "locator": "Paul's support, work, reciprocity, and theological framing",
+        "url": "https://www.bloomsbury.com/au/pauls-financial-policy-9780567623782/",
+        "source_type": "academic-book",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Argues for coherence across varied support practices; individual passage differences remain controlling.",
+        "id": "briones-financial",
+        "canonical_object_ids": [
+          "patronage-hospitality-and-debt"
+        ]
+      },
+      {
+        "title": "Imperial Divine Honors in Julio-Claudian Thessalonica and the Thessalonian Correspondence",
+        "author": "John H. Burnett",
+        "publisher": "Journal of Biblical Literature",
+        "year": 2020,
+        "locator": "JBL 139.3, 567-593",
+        "url": "https://doi.org/10.15699/jbl.1393.2020.7",
+        "source_type": "journal-article",
+        "supports": [
+          "julio-claudian-imperial-honors",
+          "thessalonian-affliction-opponents-uncertain"
+        ],
+        "notes": "Argues for a differentiated local imperial-cult landscape and against making imperial cult the sole cause of harassment.",
+        "id": "burnett-imperial-honors",
+        "canonical_object_ids": [
+          "thessalonian-civic-and-funerary-context"
+        ]
+      },
+      {
+        "title": "Philippoi: Via Egnatia Cultural Route",
+        "author": "Hellenic Ministry of Culture",
+        "publisher": "Hellenic Republic Ministry of Culture",
+        "year": null,
+        "locator": "History, Via Egnatia, Roman Forum, sanctuaries, and Christian monuments",
+        "url": "https://culturalegnatia.culture.gov.gr/en/route-stops/philippoi/",
+        "source_type": "excavation-report",
+        "supports": [
+          "historical-context",
+          "timeline",
+          "archaeology",
+          "interpretive-notes"
+        ],
+        "notes": "Official archaeological orientation with phase data.",
+        "id": "culture-egnatia-philippi",
+        "canonical_object_ids": [
+          "philippi"
+        ]
+      },
+      {
+        "title": "The Offering of the Gentiles",
+        "author": "David J. Downs",
+        "publisher": "Mohr Siebeck",
+        "year": 2008,
+        "locator": "Paul's collection in chronological, cultural, and cultic contexts",
+        "url": "https://www.mohrsiebeck.com/en/book/the-offering-of-the-gentiles-9783161515910/",
+        "source_type": "academic-book",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Reconstructs collection chronology and compares associations, benefaction, common funds, poor relief, and translocal links.",
+        "id": "downs-offering",
+        "canonical_object_ids": [
+          "patronage-hospitality-and-debt"
+        ]
+      },
+      {
+        "title": "Paul at the Crossroads of Cultures",
+        "author": "Kathy Ehrensperger",
+        "publisher": "Bloomsbury T&T Clark",
+        "year": 2013,
+        "locator": "Paul, Jewish identity, and intercultural interpretation",
+        "url": "https://www.bloomsbury.com/us/paul-at-the-crossroads-of-cultures-9780567114808/",
+        "source_type": "academic-book",
+        "supports": [
+          "hebraic-worldview",
+          "later-christian-reception",
+          "interpretive-notes"
+        ],
+        "notes": "Control against anti-Jewish and culturally imperial readings.",
+        "id": "ehrensperger",
+        "canonical_object_ids": [
+          "1-thessalonians"
+        ]
+      },
+      {
+        "title": "1 Corinthians 9:1-18 and 16:1-4",
+        "author": "Paul, with Sosthenes named as co-sender",
+        "publisher": "Society of Biblical Literature",
+        "year": 2010,
+        "locator": "1 Corinthians 9:1-18; 16:1-4",
+        "url": "https://www.sblgnt.com/download/",
+        "source_type": "scripture",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Primary Greek literary evidence; the two passages have different rhetorical functions.",
+        "id": "first-corinthians-economic",
+        "canonical_object_ids": [
+          "patronage-hospitality-and-debt"
+        ]
+      },
+      {
+        "title": "1 Thessalonians 2:5-12 and 4:9-12",
+        "author": "Paul, Silvanus, and Timothy",
+        "publisher": "Society of Biblical Literature",
+        "year": 2010,
+        "locator": "1 Thessalonians 2:5-12; 4:9-12",
+        "url": "https://www.sblgnt.com/download/",
+        "source_type": "scripture",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Primary Greek labor evidence; occupation and recipient profiles are not named.",
+        "id": "first-thessalonians-economic",
+        "canonical_object_ids": [
+          "patronage-hospitality-and-debt"
+        ]
+      },
+      {
+        "title": "First Thessalonians",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "1 Thessalonians 4:13-5:11",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "first-thessalonians-consolation",
+          "later-thessalonian-funerary-comparison",
+          "parousia-apantesis-civic-arrival-proposal"
+        ],
+        "notes": "Primary biblical text; observations are separated from proposed social scripts.",
+        "id": "first-thessalonians-text",
+        "canonical_object_ids": [
+          "thessalonian-civic-and-funerary-context"
+        ]
+      },
+      {
+        "title": "The Social Context of Paul's Ministry: Tentmaking and Apostleship",
+        "author": "Ronald F. Hock",
+        "publisher": "Fortress Press",
+        "year": 1980,
+        "locator": "Chapters 2-4: workshop, trade, support, and apostolic labor",
+        "url": "https://books.google.com/books/about/The_Social_Context_of_Paul_s_Ministry.html?id=nWkRAQAAIAAJ",
+        "source_type": "academic-book",
+        "supports": [
+          "missionary-manual-labor",
+          "work-instruction-and-patronage-proposal"
+        ],
+        "notes": "Comparative reconstruction of Paul's workshop and social location; the precise Thessalonian trade is not named.",
+        "id": "hock-social-context",
+        "canonical_object_ids": [
+          "thessalonian-civic-and-funerary-context"
+        ]
+      },
+      {
+        "title": "The Social Context of Paul's Ministry: Tentmaking and Apostleship",
+        "author": "Ronald F. Hock",
+        "publisher": "Fortress Press",
+        "year": 1980,
+        "locator": "Chapters 2-4: workshop, trade, support, and apostolic labor",
+        "url": "https://books.google.com/books/about/The_Social_Context_of_Paul_s_Ministry.html?id=nWkRAQAAIAAJ",
+        "source_type": "academic-book",
+        "supports": [
+          "thessalonian-missionary-labor",
+          "thessalonian-community-work",
+          "acts-corinth-workshop",
+          "acts-miletus-labor-support"
+        ],
+        "notes": "Workshop reconstruction; Acts' trade term does not settle material, status, hours, or every mission setting.",
+        "id": "hock-tentmaking",
+        "canonical_object_ids": [
+          "patronage-hospitality-and-debt"
+        ]
+      },
+      {
+        "title": "The Jewish Annotated New Testament",
+        "author": "Amy-Jill Levine and Marc Zvi Brettler, eds.",
+        "publisher": "Oxford University Press",
+        "year": 2017,
+        "locator": "1 Thessalonians and Jewish contexts",
+        "url": "https://global.oup.com/academic/product/the-jewish-annotated-new-testament-9780190461850",
+        "source_type": "academic-book",
+        "supports": [
+          "hebraic-worldview",
+          "second-temple-context",
+          "later-christian-reception",
+          "interpretive-notes"
+        ],
+        "notes": "Jewish-context and reception control.",
+        "id": "levine-jant",
+        "canonical_object_ids": [
+          "1-thessalonians"
+        ]
+      },
+      {
+        "title": "Transient Apostle: Paul, Travel, and the Rhetoric of Empire",
+        "author": "Timothy Luckritz Marquis",
+        "publisher": "Yale University Press",
+        "year": 2013,
+        "locator": "chapters 1-6",
+        "url": "https://yalebooks.yale.edu/book/9780300187144/transient-apostle/",
+        "source_type": "academic-book",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Relates travel rhetoric, material mobility, empire, and maintenance of translocal communities.",
+        "id": "luckritz-transient-apostle",
+        "canonical_object_ids": [
+          "pauline-mission-proclamation-travel-coworkers-letters-messengers-hospitality-house-assemblies-synagogues-marketplaces-adaptability-church-planting-and-interassembly-networks"
+        ]
+      },
+      {
+        "title": "The Letters to the Thessalonians",
+        "author": "Abraham J. Malherbe",
+        "publisher": "Yale University Press",
+        "year": 2000,
+        "locator": "Introduction and commentary on 1 Thessalonians",
+        "url": "https://yalebooks.yale.edu/book/9780300139846/the-letters-to-the-thessalonians/",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "literary-context",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Historical, literary, philosophical, and social commentary.",
+        "id": "malherbe",
+        "canonical_object_ids": [
+          "1-thessalonians"
+        ]
+      },
+      {
+        "title": "The Letters to the Thessalonians",
+        "author": "Abraham J. Malherbe",
+        "publisher": "Yale University Press",
+        "year": 2004,
+        "locator": "1 Thessalonians 2-5",
+        "url": "https://yalebooks.yale.edu/book/9780300139846/the-letters-to-the-thessalonians/",
+        "source_type": "academic-book",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Situates pastoral exhortation in literary, social, and philosophical contexts.",
+        "id": "malherbe-thessalonians",
+        "canonical_object_ids": [
+          "pauline-authority-factions-discipline-shame-grief-forgiveness-reconciliation-restoration-commendation-boasting-weakness-and-conflict-transformation"
+        ]
+      },
+      {
+        "title": "The Letters to the Thessalonians",
+        "author": "Abraham J. Malherbe",
+        "publisher": "Yale University Press",
+        "year": 2000,
+        "locator": "Anchor Yale Bible 32B; commentary on 1 Thessalonians 4:13-18",
+        "url": "https://yalebooks.yale.edu/book/9780300139846/the-letters-to-the-thessalonians/",
+        "source_type": "academic-book",
+        "supports": [
+          "later-thessalonian-funerary-evidence",
+          "parousia-apantesis-civic-arrival-proposal"
+        ],
+        "notes": "Historical and literary commentary used to control both comparison and interpretation.",
+        "id": "malherbe-thessalonians-2000",
+        "canonical_object_ids": [
+          "thessalonian-civic-and-funerary-context"
+        ]
+      },
+      {
+        "title": "New Testament Virtual Manuscript Room",
+        "author": "Institut f\u00fcr Neutestamentliche Textforschung",
+        "publisher": "University of M\u00fcnster",
+        "year": null,
+        "locator": "1 Thessalonians witnesses and variants",
+        "url": "https://ntvmr.uni-muenster.de/",
+        "source_type": "museum-collection",
+        "supports": [
+          "primary-sources",
+          "archaeology",
+          "interpretive-notes"
+        ],
+        "notes": "Manuscript catalog and textual workspace.",
+        "id": "ntvmr",
+        "canonical_object_ids": [
+          "1-thessalonians"
+        ]
+      },
+      {
+        "title": "Papyrus 30",
+        "author": "",
+        "publisher": "Center for the Study of New Testament Manuscripts",
+        "year": null,
+        "locator": "P30, portions of 1 Thessalonians 4-5",
+        "url": "https://manuscripts.csntm.org/Manuscript/Group/GA_P30",
+        "source_type": "museum-collection",
+        "supports": [
+          "primary-sources",
+          "timeline",
+          "interpretive-notes"
+        ],
+        "notes": "Third-century fragmentary Pauline manuscript.",
+        "id": "p30-csntm",
+        "canonical_object_ids": [
+          "1-thessalonians"
+        ]
+      },
+      {
+        "title": "Romans 15:25-16:23",
+        "author": "Paul, with Tertius named as scribe",
+        "publisher": "Society of Biblical Literature",
+        "year": 2010,
+        "locator": "Romans 15:25-16:23",
+        "url": "https://www.sblgnt.com/download/",
+        "source_type": "scripture",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Primary Greek literary evidence; no modern translation is reproduced.",
+        "id": "pauline-economic-texts",
+        "canonical_object_ids": [
+          "patronage-hospitality-and-debt"
+        ]
+      },
+      {
+        "title": "Archaeological Site of Philippi",
+        "author": "UNESCO World Heritage Centre",
+        "publisher": "UNESCO",
+        "year": 2016,
+        "locator": "Brief synthesis; criteria iii-iv; integrity and authenticity",
+        "url": "https://whc.unesco.org/en/list/1517/",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context",
+          "archaeology",
+          "interpretive-notes"
+        ],
+        "notes": "Official site synthesis; monuments span many phases.",
+        "id": "philippi-unesco",
+        "canonical_object_ids": [
+          "philippi"
+        ]
+      },
+      {
+        "title": "Philippians 4:10-20",
+        "author": "Paul, with Timothy named as co-sender",
+        "publisher": "Society of Biblical Literature",
+        "year": 2010,
+        "locator": "Philippians 4:10-20",
+        "url": "https://www.sblgnt.com/download/",
+        "source_type": "scripture",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Primary Greek gift-acknowledgment evidence; provenance is disputed.",
+        "id": "philippians-gift",
+        "canonical_object_ids": [
+          "patronage-hospitality-and-debt"
+        ]
+      },
+      {
+        "title": "Philippians in the SBL Greek New Testament",
+        "author": "Michael W. Holmes, ed.",
+        "publisher": "Society of Biblical Literature and Logos Bible Software",
+        "year": 2010,
+        "locator": "Philippians 1-4",
+        "url": "https://www.sblgnt.com/download/",
+        "source_type": "scripture",
+        "supports": [
+          "canonical-context",
+          "scripture-references",
+          "interpretive-notes"
+        ],
+        "notes": "Primary recipient and letter evidence.",
+        "id": "philippians-greek",
+        "canonical_object_ids": [
+          "philippi"
+        ]
+      },
+      {
+        "title": "Personal Patronage under the Early Empire",
+        "author": "Richard P. Saller",
+        "publisher": "Cambridge University Press",
+        "year": 1982,
+        "locator": "Patronage, friendship, hierarchy, access, reciprocity, and terminology",
+        "url": "https://www.cambridge.org/core/books/personal-patronage-under-the-early-empire/46E59A2AE1CD7041307C66F3AA8DDA97",
+        "source_type": "academic-book",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Roman social-history comparator; not every gift or host is a formal patron-client tie.",
+        "id": "saller-patronage",
+        "canonical_object_ids": [
+          "patronage-hospitality-and-debt"
+        ]
+      },
+      {
+        "title": "Paul the Missionary: Realities, Strategies and Methods",
+        "author": "Eckhard J. Schnabel",
+        "publisher": "IVP Academic",
+        "year": 2008,
+        "locator": "chapters 3-6",
+        "url": "https://ivpress.com/paul-the-missionary",
+        "source_type": "academic-book",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Synthesizes Pauline proclamation, geography, venues, persuasion, community formation, and contemporary transfer.",
+        "id": "schnabel-paul-missionary",
+        "canonical_object_ids": [
+          "pauline-mission-proclamation-travel-coworkers-letters-messengers-hospitality-house-assemblies-synagogues-marketplaces-adaptability-church-planting-and-interassembly-networks"
+        ]
+      },
+      {
+        "title": "2 Corinthians 8:1-9:15",
+        "author": "Paul, with Timothy named as co-sender",
+        "publisher": "Society of Biblical Literature",
+        "year": 2010,
+        "locator": "2 Corinthians 8:1-9:15",
+        "url": "https://www.sblgnt.com/download/",
+        "source_type": "scripture",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Primary Greek literary evidence; integrity and rhetorical situation remain disputed.",
+        "id": "second-corinthians-collection",
+        "canonical_object_ids": [
+          "patronage-hospitality-and-debt"
+        ]
+      },
+      {
+        "title": "Second Thessalonians",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "2 Thessalonians 1:1-3:18",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "thessalonian-affliction-opponents-uncertain",
+          "work-instruction-and-patronage-proposal"
+        ],
+        "notes": "Primary biblical text within the canon; Pauline authorship and date remain disputed.",
+        "id": "second-thessalonians-text",
+        "canonical_object_ids": [
+          "thessalonian-civic-and-funerary-context"
+        ]
+      },
+      {
+        "title": "Conflict at Thessalonica: A Pauline Church and Its Neighbours",
+        "author": "Todd D. Still",
+        "publisher": "Sheffield Academic Press",
+        "year": 1999,
+        "locator": "Chapters 4-7: sources, causes, forms, and effects of conflict",
+        "url": "https://www.bloomsbury.com/ca/conflict-at-thessalonica-9780567421098/",
+        "source_type": "academic-book",
+        "supports": [
+          "thessalonian-affliction-opponents-uncertain",
+          "acts-synagogue-and-audience-limits"
+        ],
+        "notes": "One detailed reconstruction within a field where the opponents and mechanisms of pressure remain disputed.",
+        "id": "still-conflict-thessalonica",
+        "canonical_object_ids": [
+          "thessalonian-civic-and-funerary-context"
+        ]
+      },
+      {
+        "title": "The Greek New Testament: 1 Thessalonians",
+        "author": "Michael W. Holmes, ed.",
+        "publisher": "Society of Biblical Literature",
+        "year": 2010,
+        "locator": "1 Thessalonians 2-5",
+        "url": "https://www.sblgnt.com/download/",
+        "source_type": "scripture",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Primary Greek evidence for appeal, care, peace, and discernment.",
+        "id": "thess-conflict-text",
+        "canonical_object_ids": [
+          "pauline-authority-factions-discipline-shame-grief-forgiveness-reconciliation-restoration-commendation-boasting-weakness-and-conflict-transformation"
+        ]
+      },
+      {
+        "title": "The Greek New Testament: 1 Thessalonians",
+        "author": "Michael W. Holmes, ed.",
+        "publisher": "Society of Biblical Literature",
+        "year": 2010,
+        "locator": "1 Thessalonians 2:1-12; 4:9-12",
+        "url": "https://www.sblgnt.com/download/",
+        "source_type": "scripture",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Primary Greek evidence; no modern translation is reproduced.",
+        "id": "thess-economics-text",
+        "canonical_object_ids": [
+          "pauline-work-labor-wages-maintenance-poverty-wealth-collection-giving-reciprocity-equality-partnership-idleness-need-and-economic-solidarity"
+        ]
+      },
+      {
+        "title": "The Greek New Testament: 1 Thessalonians",
+        "author": "Michael W. Holmes, ed.",
+        "publisher": "Society of Biblical Literature",
+        "year": 2010,
+        "locator": "1 Thessalonians 1:1-3:13",
+        "url": "https://www.sblgnt.com/download/",
+        "source_type": "scripture",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Primary Greek evidence for a plural sending voice, reception, labor, separation, and Timothy's embassy.",
+        "id": "thess-mission-text",
+        "canonical_object_ids": [
+          "pauline-mission-proclamation-travel-coworkers-letters-messengers-hospitality-house-assemblies-synagogues-marketplaces-adaptability-church-planting-and-interassembly-networks"
+        ]
+      },
+      {
+        "title": "The Epistle to the Thessalonians",
+        "author": "Charles A. Wanamaker",
+        "publisher": "Eerdmans",
+        "year": 1990,
+        "locator": "1 Thessalonians",
+        "url": "https://www.eerdmans.com/9780802823946/the-epistle-to-the-thessalonians/",
+        "source_type": "academic-book",
+        "supports": [
+          "literary-context",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Greek-text and social-science commentary.",
+        "id": "wanamaker",
+        "canonical_object_ids": [
+          "1-thessalonians"
+        ]
+      },
+      {
+        "title": "1-2 Thessalonians",
+        "author": "Jeffrey A. D. Weima",
+        "publisher": "Baker Academic",
+        "year": 2014,
+        "locator": "1 Thessalonians 2:1-12; 4:9-12; 2 Thessalonians 3:6-15",
+        "url": "https://newassets.bakerpublishinggroup.com/misc/catalogs/catalog_fa14/Fall2014Catalog_All.pdf",
+        "source_type": "academic-book",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Exegetical commentary used while retaining authorship, eschatology, and social-setting disputes.",
+        "id": "weima-thessalonians",
+        "canonical_object_ids": [
+          "pauline-work-labor-wages-maintenance-poverty-wealth-collection-giving-reciprocity-equality-partnership-idleness-need-and-economic-solidarity"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "1-thessalonians",
+        "type": "book",
+        "title": "1 Thessalonians",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.939
+      },
+      {
+        "id": "patronage-hospitality-and-debt",
+        "type": "cultural_background",
+        "title": "Pauline Economic Life, Patronage, Gifts, Collections, Labor, and Poverty",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.917
+      },
+      {
+        "id": "pauline-authority-factions-discipline-shame-grief-forgiveness-reconciliation-restoration-commendation-boasting-weakness-and-conflict-transformation",
+        "type": "cultural_background",
+        "title": "Pauline Authority, Factions, Discipline, Shame, Grief, Forgiveness, Reconciliation, Restoration, Commendation, Boasting, Weakness, and Conflict Transformation",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.869
+      },
+      {
+        "id": "pauline-mission-proclamation-travel-coworkers-letters-messengers-hospitality-house-assemblies-synagogues-marketplaces-adaptability-church-planting-and-interassembly-networks",
+        "type": "cultural_background",
+        "title": "Pauline Mission, Proclamation, Travel, Coworkers, Letters, Messengers, Hospitality, House Assemblies, Synagogues, Marketplaces, Adaptability, Church Planting, and Interassembly Networks",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.869
+      },
+      {
+        "id": "pauline-work-labor-wages-maintenance-poverty-wealth-collection-giving-reciprocity-equality-partnership-idleness-need-and-economic-solidarity",
+        "type": "cultural_background",
+        "title": "Pauline Work, Labor, Wages, Maintenance, Poverty, Wealth, Collection, Giving, Reciprocity, Equality, Partnership, Idleness, Need, and Economic Solidarity",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.979
+      },
+      {
+        "id": "philippi",
+        "type": "place",
+        "title": "Philippi",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.902
+      },
+      {
+        "id": "thessalonian-civic-and-funerary-context",
+        "type": "cultural_background",
+        "title": "Roman Thessalonica: Civic, Cultic, Household, Labor, and Funerary Life",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.955
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "ece44ab9b77483b814909f98e1171ad510fa745282b5a6b6879ec011df76fda5",
+  "evidence_hash_version": "2"
+}

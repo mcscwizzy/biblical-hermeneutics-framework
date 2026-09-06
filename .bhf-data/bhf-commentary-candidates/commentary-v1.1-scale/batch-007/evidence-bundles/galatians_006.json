@@ -1,0 +1,2454 @@
+{
+  "passage_ref": "Galatians 6",
+  "entities": {
+    "people": [],
+    "places": [],
+    "groups": [],
+    "events": [],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "gal-authorship",
+      "claim": "Pauline authorship of Galatians is a strong critical consensus, while an unnamed secretary or scribal assistant remains possible.",
+      "category": "culture",
+      "source_ids": [
+        "martyn-galatians",
+        "longenecker-galatians"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Galatians 6:11"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "galatians",
+        "parent_title": "Galatians",
+        "parent_type": "book",
+        "object_importance": 83,
+        "retrieval_score": 0.923,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 10,
+        "certainty": "strong_consensus",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "historical_cultural",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 60
+      }
+    },
+    {
+      "id": "gal-autograph",
+      "claim": "Galatians 6:11 calls attention to Paul's large letters written with his own hand, plausibly marking an autograph section but not proving why the letters were large.",
+      "category": "culture",
+      "source_ids": [
+        "gal-greek",
+        "p46-csntm",
+        "martyn-galatians"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Galatians 6:11"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "galatians",
+        "parent_title": "Galatians",
+        "parent_type": "book",
+        "object_importance": 83,
+        "retrieval_score": 0.923,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 10,
+        "certainty": "probable",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 90
+      }
+    },
+    {
+      "id": "gal-circumcision",
+      "claim": "Paul opposes circumcision for gentile addressees as a crisis of obligation and allegiance; this is not a blanket condemnation of Jewish circumcision or a warrant for anti-circumcision coercion.",
+      "category": "culture",
+      "source_ids": [
+        "gal-greek",
+        "thiessen-gentile-problem",
+        "soon-disabled-apostle"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Galatians 6:12-15"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "galatians",
+        "parent_title": "Galatians",
+        "parent_type": "book",
+        "object_importance": 83,
+        "retrieval_score": 0.923,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 11,
+        "certainty": "strong_consensus",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "historical_cultural",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 110
+      }
+    },
+    {
+      "id": "gal-cross-new-creation",
+      "claim": "The closing contrast denies that circumcision or uncircumcision is decisive and centers boasting in the Messiah's cross and new creation.",
+      "category": "culture",
+      "source_ids": [
+        "gal-greek",
+        "martyn-galatians"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Galatians 6:14-15"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "galatians",
+        "parent_title": "Galatians",
+        "parent_type": "book",
+        "object_importance": 83,
+        "retrieval_score": 0.923,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 13,
+        "certainty": "textually_explicit",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_theology",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "gal-israel-god",
+      "claim": "Israel of God in Galatians 6:16 may name Jewish Christ-followers, the whole Messiah assembly, Israel more broadly, or another qualified group; grammar and context have not produced consensus.",
+      "category": "language",
+      "source_ids": [
+        "gal-greek",
+        "martyn-galatians",
+        "nanos-irony"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Galatians 6:16"
+      ],
+      "confidence": "low",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "galatians",
+        "parent_title": "Galatians",
+        "parent_type": "book",
+        "object_importance": 83,
+        "retrieval_score": 0.923,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 15,
+        "certainty": "disputed",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "lexical",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 96
+      }
+    },
+    {
+      "id": "gal-marks",
+      "claim": "Paul's marks likely refer to bodily scars associated with service to Jesus and persecution, but branding, ownership, stigma, devotional, and medical reconstructions remain debated.",
+      "category": "culture",
+      "source_ids": [
+        "gal-greek",
+        "soon-disabled-apostle",
+        "martyn-galatians"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Galatians 6:17"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "galatians",
+        "parent_title": "Galatians",
+        "parent_type": "book",
+        "object_importance": 83,
+        "retrieval_score": 0.923,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 16,
+        "certainty": "probable",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "historical_cultural",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "gal-opponents",
+      "claim": "The letter indicates teachers pressing circumcision and Torah obligation, but their number, origin, self-description, motives, and full program cannot be recovered from Paul's polemic alone.",
+      "category": "culture",
+      "source_ids": [
+        "martyn-galatians",
+        "barclay-crisis",
+        "nanos-irony"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Galatians 6:12-13"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "galatians",
+        "parent_title": "Galatians",
+        "parent_type": "book",
+        "object_importance": 83,
+        "retrieval_score": 0.923,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 11,
+        "certainty": "probable",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "historical_cultural",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "gal-restoration",
+      "claim": "Galatians instructs people who are spiritual to restore a transgressor gently while watching themselves and bearing burdens; it does not prescribe public humiliation or unchecked discipline.",
+      "category": "history",
+      "source_ids": [
+        "gal-greek",
+        "barclay-gift"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Galatians 6:1-5"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "galatians",
+        "parent_title": "Galatians",
+        "parent_type": "book",
+        "object_importance": 83,
+        "retrieval_score": 0.923,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "textually_explicit",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "gal-rhetoric",
+      "claim": "Galatians combines letter conventions with rebuke, curse, autobiography, scriptural argument, allegory, exhortation, warning, and autograph; assignment to one classical rhetorical species is disputed.",
+      "category": "culture",
+      "source_ids": [
+        "martyn-galatians",
+        "longenecker-galatians"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Galatians 1:1-6:18"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "galatians",
+        "parent_title": "Galatians",
+        "parent_type": "book",
+        "object_importance": 83,
+        "retrieval_score": 0.923,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 500,
+        "certainty": "strong_consensus",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 90
+      }
+    },
+    {
+      "id": "gal-sowing",
+      "claim": "Sowing and reaping in Galatians 6 is an ethical-eschatological analogy about perseverance in communal good, not a formula guaranteeing financial profit.",
+      "category": "culture",
+      "source_ids": [
+        "gal-greek",
+        "martyn-galatians"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Galatians 6:7-10"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "galatians",
+        "parent_title": "Galatians",
+        "parent_type": "book",
+        "object_importance": 83,
+        "retrieval_score": 0.923,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 6,
+        "certainty": "strong_consensus",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 90
+      }
+    },
+    {
+      "id": "gal-teacher-support",
+      "claim": "Galatians 6:6 calls learners to share good things with the one teaching; the scope is debated and cannot license financial extraction or prosperity promises.",
+      "category": "history",
+      "source_ids": [
+        "gal-greek",
+        "barclay-gift"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Galatians 6:6"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "galatians",
+        "parent_title": "Galatians",
+        "parent_type": "book",
+        "object_importance": 83,
+        "retrieval_score": 0.923,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 5,
+        "certainty": "textually_explicit",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "galatians-gentile-circumcision-obligation",
+      "claim": "Paul warns addressees considering circumcision that the act entails whole-Torah obligation within their present rival-teacher conflict.",
+      "category": "culture",
+      "source_ids": [
+        "galatians-israel-text",
+        "thiessen-gentile",
+        "marchal-uncut-israel",
+        "soon-disabled-israel"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Galatians 6:12-15"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-israel-jewish-gentile-relations-abraham-torah-circumcision-justification-faith-election-hardening-remnant-olive-tree-and-all-israel",
+        "parent_title": "Pauline Israel, Jewish-Gentile Relations, Abraham, Torah, Circumcision, Justification, Faith, Election, Hardening, Remnant, Olive Tree, and All Israel",
+        "parent_type": "cultural_background",
+        "object_importance": 99,
+        "retrieval_score": 0.919,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 11,
+        "certainty": "strong_consensus",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "cultural-practice",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 102
+      }
+    },
+    {
+      "id": "galatians-gentile-circumcision-obligation:passage-relevance",
+      "claim": "Distinguishes opposition to compelling gentiles from condemnation of Jewish circumcision or authorization of bodily coercion.",
+      "category": "culture",
+      "source_ids": [
+        "galatians-israel-text",
+        "thiessen-gentile",
+        "marchal-uncut-israel",
+        "soon-disabled-israel"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Galatians 6:12-15"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-israel-jewish-gentile-relations-abraham-torah-circumcision-justification-faith-election-hardening-remnant-olive-tree-and-all-israel",
+        "parent_title": "Pauline Israel, Jewish-Gentile Relations, Abraham, Torah, Circumcision, Justification, Faith, Election, Hardening, Remnant, Olive Tree, and All Israel",
+        "parent_type": "cultural_background",
+        "object_importance": 99,
+        "retrieval_score": 0.919,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 11,
+        "certainty": "strong_consensus",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "cultural-practice",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 102,
+        "supports_evidence_ids": [
+          "galatians-gentile-circumcision-obligation"
+        ]
+      }
+    },
+    {
+      "id": "galatians-gentle-restoration-burdens",
+      "claim": "Galatians directs Spirit-shaped people to restore a caught person gently, examine themselves, carry burdens, test their work, and persist in good.",
+      "category": "culture",
+      "source_ids": [
+        "galatians-restoration-text",
+        "desilva-galatians"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Galatians 6:1-10"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-bodies-marriage-sexual-ethics-discipline-and-restoration",
+        "parent_title": "Pauline Bodies, Marriage, Sexual Ethics, Discipline, and Restoration",
+        "parent_type": "cultural_background",
+        "object_importance": 99,
+        "retrieval_score": 0.919,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "textually_explicit",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "worldview-concept",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    },
+    {
+      "id": "galatians-gentle-restoration-burdens:passage-relevance",
+      "claim": "Makes restoration accountable and non-humiliating without erasing restitution, boundaries, safeguarding, or reporting.",
+      "category": "culture",
+      "source_ids": [
+        "galatians-restoration-text",
+        "desilva-galatians"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Galatians 6:1-10"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-bodies-marriage-sexual-ethics-discipline-and-restoration",
+        "parent_title": "Pauline Bodies, Marriage, Sexual Ethics, Discipline, and Restoration",
+        "parent_type": "cultural_background",
+        "object_importance": 99,
+        "retrieval_score": 0.919,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "textually_explicit",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "worldview-concept",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 87,
+        "supports_evidence_ids": [
+          "galatians-gentle-restoration-burdens"
+        ]
+      }
+    },
+    {
+      "id": "galatians-grace-no-bypass",
+      "claim": "Galatians closes with body-mark rhetoric and a grace wish after sustained dispute and restorative exhortation.",
+      "category": "culture",
+      "source_ids": [
+        "galatians-prayer-text",
+        "martyn-galatians-prayer",
+        "wiles-intercessory-prayers"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Galatians 6:17-18"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-prayer-thanksgiving-intercession-lament-groaning-joy-peace-hope-benediction-blessing-and-communal-memory",
+        "parent_title": "Pauline Prayer, Thanksgiving, Intercession, Lament, Groaning, Joy, Peace, Hope, Benediction, Blessing, and Communal Memory",
+        "parent_type": "cultural_background",
+        "object_importance": 9,
+        "retrieval_score": 0.869,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 16,
+        "certainty": "probable",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "literary-convention",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    },
+    {
+      "id": "galatians-grace-no-bypass:passage-relevance",
+      "claim": "Prevents leaders from using blessing to end scrutiny, demand silence, or declare relational repair complete.",
+      "category": "culture",
+      "source_ids": [
+        "galatians-prayer-text",
+        "martyn-galatians-prayer",
+        "wiles-intercessory-prayers"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Galatians 6:17-18"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-prayer-thanksgiving-intercession-lament-groaning-joy-peace-hope-benediction-blessing-and-communal-memory",
+        "parent_title": "Pauline Prayer, Thanksgiving, Intercession, Lament, Groaning, Joy, Peace, Hope, Benediction, Blessing, and Communal Memory",
+        "parent_type": "cultural_background",
+        "object_importance": 9,
+        "retrieval_score": 0.869,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 16,
+        "certainty": "probable",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "literary-convention",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 87,
+        "supports_evidence_ids": [
+          "galatians-grace-no-bypass"
+        ]
+      }
+    },
+    {
+      "id": "galatians-peace-mercy-israel-dispute",
+      "claim": "Galatians pronounces peace and mercy upon those aligned with its rule and upon or even the Israel of God, depending on syntax.",
+      "category": "culture",
+      "source_ids": [
+        "galatians-prayer-text",
+        "martyn-galatians-prayer"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Galatians 6:16"
+      ],
+      "confidence": "low",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-prayer-thanksgiving-intercession-lament-groaning-joy-peace-hope-benediction-blessing-and-communal-memory",
+        "parent_title": "Pauline Prayer, Thanksgiving, Intercession, Lament, Groaning, Joy, Peace, Hope, Benediction, Blessing, and Communal Memory",
+        "parent_type": "cultural_background",
+        "object_importance": 9,
+        "retrieval_score": 0.869,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 15,
+        "certainty": "plausible",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "worldview-concept",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    },
+    {
+      "id": "galatians-peace-mercy-israel-dispute:passage-relevance",
+      "claim": "Requires anti-supersessionist restraint and prevents peace language from erasing Jewish identity or disagreement.",
+      "category": "culture",
+      "source_ids": [
+        "galatians-prayer-text",
+        "martyn-galatians-prayer"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Galatians 6:16"
+      ],
+      "confidence": "low",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-prayer-thanksgiving-intercession-lament-groaning-joy-peace-hope-benediction-blessing-and-communal-memory",
+        "parent_title": "Pauline Prayer, Thanksgiving, Intercession, Lament, Groaning, Joy, Peace, Hope, Benediction, Blessing, and Communal Memory",
+        "parent_type": "cultural_background",
+        "object_importance": 9,
+        "retrieval_score": 0.869,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 15,
+        "certainty": "plausible",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "worldview-concept",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 87,
+        "supports_evidence_ids": [
+          "galatians-peace-mercy-israel-dispute"
+        ]
+      }
+    },
+    {
+      "id": "galatians:interpretive_note:0",
+      "claim": "Paul is the sole named sender; possible scribal assistance should not be converted into a named coauthor or used to erase collaborative letter production.",
+      "category": "culture",
+      "source_ids": [
+        "gal-greek",
+        "martyn-galatians"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Galatians 6:11"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "galatians",
+        "parent_title": "Galatians",
+        "parent_type": "book",
+        "object_importance": 83,
+        "retrieval_score": 0.923,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 10,
+        "certainty": "strong_consensus",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "literary-observation",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    },
+    {
+      "id": "galatians:interpretive_note:3",
+      "claim": "Paul's opponents must be reconstructed through his adversarial rhetoric; calling them one settled Jewish-Christian party confuses a scholarly model with direct evidence.",
+      "category": "culture",
+      "source_ids": [
+        "martyn-galatians",
+        "nanos-irony"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Galatians 6:12-13"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "galatians",
+        "parent_title": "Galatians",
+        "parent_type": "book",
+        "object_importance": 83,
+        "retrieval_score": 0.923,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 11,
+        "certainty": "probable",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "interpretive-caution",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 102
+      }
+    },
+    {
+      "id": "galatians:interpretive_note:48",
+      "claim": "Gentle restoration in Galatians 6 requires self-watch and burden-bearing; it must not become public shaming, authoritarian discipline, coerced confession, surveillance, or forced reconciliation without safety and repair.",
+      "category": "culture",
+      "source_ids": [
+        "gal-greek",
+        "barclay-gift"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Galatians 6:1-5"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "galatians",
+        "parent_title": "Galatians",
+        "parent_type": "book",
+        "object_importance": 83,
+        "retrieval_score": 0.923,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "not_disputed",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "interpretive-caution",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "galatians:interpretive_note:49",
+      "claim": "Bearing one another's burdens and carrying one's own load are adjacent but use different terms; interpretation should preserve mutual aid and responsible self-assessment rather than weaponizing either.",
+      "category": "culture",
+      "source_ids": [
+        "gal-greek",
+        "bdag"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Galatians 6:2",
+        "Galatians 6:5"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "galatians",
+        "parent_title": "Galatians",
+        "parent_type": "book",
+        "object_importance": 83,
+        "retrieval_score": 0.923,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 1,
+        "certainty": "strong_consensus",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "textual-observation",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    },
+    {
+      "id": "galatians:interpretive_note:50",
+      "claim": "Sharing all good things with a teacher supports reciprocity but supplies no tithe rate, prosperity promise, collection pressure, leader entitlement, or exemption from financial accountability.",
+      "category": "culture",
+      "source_ids": [
+        "gal-greek",
+        "barclay-gift"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Galatians 6:6"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "galatians",
+        "parent_title": "Galatians",
+        "parent_type": "book",
+        "object_importance": 83,
+        "retrieval_score": 0.923,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 5,
+        "certainty": "strong_consensus",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "interpretive-caution",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    },
+    {
+      "id": "galatians:interpretive_note:51",
+      "claim": "God is not mocked and sowing-reaping language must not be used for victim blame, health-and-wealth promises, disability stigma, disaster explanation, or coercive fundraising.",
+      "category": "economics",
+      "source_ids": [
+        "gal-greek",
+        "martyn-galatians"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Galatians 6:7-10"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "galatians",
+        "parent_title": "Galatians",
+        "parent_type": "book",
+        "object_importance": 83,
+        "retrieval_score": 0.923,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 6,
+        "certainty": "strong_consensus",
+        "dispute_status": "not_disputed",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "interpretive-caution",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 90
+      }
+    },
+    {
+      "id": "galatians:interpretive_note:52",
+      "claim": "Doing good especially to the household of faith creates a community priority without permitting sectarian neglect, ethnic favoritism, or refusal of aid to outsiders.",
+      "category": "culture",
+      "source_ids": [
+        "gal-greek",
+        "barclay-gift"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Galatians 6:10"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "galatians",
+        "parent_title": "Galatians",
+        "parent_type": "book",
+        "object_importance": 83,
+        "retrieval_score": 0.923,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 9,
+        "certainty": "strong_consensus",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "interpretive-caution",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    },
+    {
+      "id": "galatians:interpretive_note:53",
+      "claim": "Large letters may signal emphasis, handwriting, eyesight, or another circumstance; Galatians 6:11 cannot diagnose Paul or prove the size of the entire original letter.",
+      "category": "culture",
+      "source_ids": [
+        "gal-greek",
+        "p46-csntm",
+        "soon-disabled-apostle"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Galatians 6:11"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "galatians",
+        "parent_title": "Galatians",
+        "parent_type": "book",
+        "object_importance": 83,
+        "retrieval_score": 0.923,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 10,
+        "certainty": "probable",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "textual-observation",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    },
+    {
+      "id": "galatians:interpretive_note:54",
+      "claim": "Boasting only in the cross is theological rhetoric about allegiance and status; it must not glorify suffering, demand abuse endurance, or turn trauma into spiritual prestige.",
+      "category": "culture",
+      "source_ids": [
+        "gal-greek",
+        "barclay-gift"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Galatians 6:14"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "galatians",
+        "parent_title": "Galatians",
+        "parent_type": "book",
+        "object_importance": 83,
+        "retrieval_score": 0.923,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 13,
+        "certainty": "strong_consensus",
+        "dispute_status": "not_disputed",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "interpretive-caution",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "galatians:interpretive_note:55",
+      "claim": "New creation in Galatians 6:15 carries cosmic and communal possibilities; it is not merely private self-improvement or permission to discard embodied, Jewish, or ecological histories.",
+      "category": "culture",
+      "source_ids": [
+        "gal-greek",
+        "martyn-galatians"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Galatians 6:15"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "galatians",
+        "parent_title": "Galatians",
+        "parent_type": "book",
+        "object_importance": 83,
+        "retrieval_score": 0.923,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 14,
+        "certainty": "textually_explicit",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "theological-interpretation",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 102
+      }
+    },
+    {
+      "id": "galatians:interpretive_note:56",
+      "claim": "Israel of God remains grammatically and theologically disputed; using it as an uncomplicated synonym for the church can fuel supersessionism, while excluding every gentile is also an argued inference.",
+      "category": "culture",
+      "source_ids": [
+        "gal-greek",
+        "nanos-irony",
+        "martyn-galatians"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Galatians 6:16"
+      ],
+      "confidence": "low",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "galatians",
+        "parent_title": "Galatians",
+        "parent_type": "book",
+        "object_importance": 83,
+        "retrieval_score": 0.923,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 15,
+        "certainty": "disputed",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "interpretive-caution",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    },
+    {
+      "id": "galatians:interpretive_note:57",
+      "claim": "Paul's marks likely evoke scars or branding, but Paul's marks must not romanticize trauma, stigmatize disability, promote medical neglect, or demand that leaders prove authority through suffering.",
+      "category": "culture",
+      "source_ids": [
+        "soon-disabled-apostle",
+        "gal-greek"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Galatians 6:17"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "galatians",
+        "parent_title": "Galatians",
+        "parent_type": "book",
+        "object_importance": 83,
+        "retrieval_score": 0.923,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 16,
+        "certainty": "probable",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "interpretive-caution",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 102
+      }
+    },
+    {
+      "id": "galatians:interpretive_note:58",
+      "claim": "Grace in the closing benediction addresses siblings without resolving every dispute; benediction must not be used to bypass accountability, safety, restitution, or repair.",
+      "category": "culture",
+      "source_ids": [
+        "gal-greek",
+        "martyn-galatians"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Galatians 6:18"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "galatians",
+        "parent_title": "Galatians",
+        "parent_type": "book",
+        "object_importance": 83,
+        "retrieval_score": 0.923,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 17,
+        "certainty": "strong_consensus",
+        "dispute_status": "not_disputed",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "interpretive-caution",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "galatians:interpretive_note:59",
+      "claim": "Galatians cannot authorize nationalism, ethnic supremacy, conspiracy theories, partisan capture, colonial mission, forced conversion, religious violence, or ecological neglect; those modern systems require independent ethical evaluation.",
+      "category": "culture",
+      "source_ids": [
+        "riches-reception",
+        "den-dulk-ethnicity",
+        "gal-greek"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Galatians 6:10-15"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "galatians",
+        "parent_title": "Galatians",
+        "parent_type": "book",
+        "object_importance": 83,
+        "retrieval_score": 0.923,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 9,
+        "certainty": "strong_consensus",
+        "dispute_status": "not_disputed",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "interpretive-caution",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "gentle-restoration-self-watch",
+      "claim": "Those called spiritual are told to restore a person caught in transgression with gentleness while watching themselves against temptation.",
+      "category": "culture",
+      "source_ids": [
+        "galatians-conflict-text",
+        "martyn-galatians"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Galatians 6:1"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-authority-factions-discipline-shame-grief-forgiveness-reconciliation-restoration-commendation-boasting-weakness-and-conflict-transformation",
+        "parent_title": "Pauline Authority, Factions, Discipline, Shame, Grief, Forgiveness, Reconciliation, Restoration, Commendation, Boasting, Weakness, and Conflict Transformation",
+        "parent_type": "cultural_background",
+        "object_importance": 9,
+        "retrieval_score": 0.889,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "textually_explicit",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "worldview-concept",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    },
+    {
+      "id": "gentle-restoration-self-watch:passage-relevance",
+      "claim": "Makes humility and risk of helper misconduct explicit controls on correction.",
+      "category": "culture",
+      "source_ids": [
+        "galatians-conflict-text",
+        "martyn-galatians"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Galatians 6:1"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-authority-factions-discipline-shame-grief-forgiveness-reconciliation-restoration-commendation-boasting-weakness-and-conflict-transformation",
+        "parent_title": "Pauline Authority, Factions, Discipline, Shame, Grief, Forgiveness, Reconciliation, Restoration, Commendation, Boasting, Weakness, and Conflict Transformation",
+        "parent_type": "cultural_background",
+        "object_importance": 9,
+        "retrieval_score": 0.889,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "textually_explicit",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "worldview-concept",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 87,
+        "supports_evidence_ids": [
+          "gentle-restoration-self-watch"
+        ]
+      }
+    },
+    {
+      "id": "modern-access-restoration-without-contact",
+      "claim": "Equitable processes provide disability and communication access, procedural accommodation, chosen support, safe pacing, and restoration paths compatible with permanent separation or indirect contact.",
+      "category": "culture",
+      "source_ids": [
+        "first-corinth-conflict-text",
+        "galatians-conflict-text",
+        "second-corinth-conflict-text",
+        "gorman-first-corinthians",
+        "un-crpd-conflict",
+        "samhsa-trauma"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Galatians 6:1-5"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-authority-factions-discipline-shame-grief-forgiveness-reconciliation-restoration-commendation-boasting-weakness-and-conflict-transformation",
+        "parent_title": "Pauline Authority, Factions, Discipline, Shame, Grief, Forgiveness, Reconciliation, Restoration, Commendation, Boasting, Weakness, and Conflict Transformation",
+        "parent_type": "cultural_background",
+        "object_importance": 9,
+        "retrieval_score": 0.889,
+        "passage_relationship": "comparative",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "probable",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "secondary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "worldview-concept",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "COMPARATIVE_CONTEXT",
+        "presentation_role": "dig_deeper",
+        "overview_priority": 0
+      }
+    },
+    {
+      "id": "modern-access-restoration-without-contact:passage-relevance",
+      "claim": "Requires accessible notices and interviews, interpreters, alternative formats, sensory and mobility access, remote or asynchronous participation, breaks, support persons, and no forced encounter.",
+      "category": "culture",
+      "source_ids": [
+        "first-corinth-conflict-text",
+        "galatians-conflict-text",
+        "second-corinth-conflict-text",
+        "gorman-first-corinthians",
+        "un-crpd-conflict",
+        "samhsa-trauma"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Galatians 6:1-5"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-authority-factions-discipline-shame-grief-forgiveness-reconciliation-restoration-commendation-boasting-weakness-and-conflict-transformation",
+        "parent_title": "Pauline Authority, Factions, Discipline, Shame, Grief, Forgiveness, Reconciliation, Restoration, Commendation, Boasting, Weakness, and Conflict Transformation",
+        "parent_type": "cultural_background",
+        "object_importance": 9,
+        "retrieval_score": 0.889,
+        "passage_relationship": "comparative",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "probable",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "secondary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "worldview-concept",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "COMPARATIVE_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 0,
+        "supports_evidence_ids": [
+          "modern-access-restoration-without-contact"
+        ]
+      }
+    },
+    {
+      "id": "modern-benediction-no-leader-immunity",
+      "claim": "A blessing may invoke grace, love, fellowship, mercy, peace, or divine presence, but it does not adjudicate allegations, restore trust, validate office, or bind another person to contact.",
+      "category": "social",
+      "source_ids": [
+        "second-corinth-prayer-text",
+        "galatians-prayer-text",
+        "harris-second-corinthians-prayer",
+        "martyn-galatians-prayer",
+        "ohchr-religion-coercion"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Galatians 6:16-18"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-prayer-thanksgiving-intercession-lament-groaning-joy-peace-hope-benediction-blessing-and-communal-memory",
+        "parent_title": "Pauline Prayer, Thanksgiving, Intercession, Lament, Groaning, Joy, Peace, Hope, Benediction, Blessing, and Communal Memory",
+        "parent_type": "cultural_background",
+        "object_importance": 9,
+        "retrieval_score": 0.869,
+        "passage_relationship": "comparative",
+        "anchor_specificity": "verse",
+        "verse_distance": 15,
+        "certainty": "probable",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "secondary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "institution",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "COMPARATIVE_CONTEXT",
+        "presentation_role": "dig_deeper",
+        "overview_priority": 0
+      }
+    },
+    {
+      "id": "modern-benediction-no-leader-immunity:passage-relevance",
+      "claim": "Rejects leaders blessing themselves or a meeting to close complaints, prevent reporting, suppress appeal, demand unity, or retaliate against dissent.",
+      "category": "social",
+      "source_ids": [
+        "second-corinth-prayer-text",
+        "galatians-prayer-text",
+        "harris-second-corinthians-prayer",
+        "martyn-galatians-prayer",
+        "ohchr-religion-coercion"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Galatians 6:16-18"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-prayer-thanksgiving-intercession-lament-groaning-joy-peace-hope-benediction-blessing-and-communal-memory",
+        "parent_title": "Pauline Prayer, Thanksgiving, Intercession, Lament, Groaning, Joy, Peace, Hope, Benediction, Blessing, and Communal Memory",
+        "parent_type": "cultural_background",
+        "object_importance": 9,
+        "retrieval_score": 0.869,
+        "passage_relationship": "comparative",
+        "anchor_specificity": "verse",
+        "verse_distance": 15,
+        "certainty": "probable",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "secondary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "institution",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "COMPARATIVE_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 0,
+        "supports_evidence_ids": [
+          "modern-benediction-no-leader-immunity"
+        ]
+      }
+    },
+    {
+      "id": "modern-correction-not-coercive-control",
+      "claim": "Modern conflict practice distinguishes bounded, transparent correction from patterns that dominate conscience, movement, relationships, money, work, health care, communication, or exit.",
+      "category": "culture",
+      "source_ids": [
+        "second-corinth-conflict-text",
+        "galatians-conflict-text",
+        "martyn-galatians",
+        "samhsa-trauma"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Galatians 6:1-5"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-authority-factions-discipline-shame-grief-forgiveness-reconciliation-restoration-commendation-boasting-weakness-and-conflict-transformation",
+        "parent_title": "Pauline Authority, Factions, Discipline, Shame, Grief, Forgiveness, Reconciliation, Restoration, Commendation, Boasting, Weakness, and Conflict Transformation",
+        "parent_type": "cultural_background",
+        "object_importance": 9,
+        "retrieval_score": 0.889,
+        "passage_relationship": "comparative",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "probable",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "secondary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "worldview-concept",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "COMPARATIVE_CONTEXT",
+        "presentation_role": "dig_deeper",
+        "overview_priority": 0
+      }
+    },
+    {
+      "id": "modern-correction-not-coercive-control:passage-relevance",
+      "claim": "Requires safety, voice, choice, clear authority limits, written process, support persons, and an unpenalized right to decline or leave.",
+      "category": "culture",
+      "source_ids": [
+        "second-corinth-conflict-text",
+        "galatians-conflict-text",
+        "martyn-galatians",
+        "samhsa-trauma"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Galatians 6:1-5"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-authority-factions-discipline-shame-grief-forgiveness-reconciliation-restoration-commendation-boasting-weakness-and-conflict-transformation",
+        "parent_title": "Pauline Authority, Factions, Discipline, Shame, Grief, Forgiveness, Reconciliation, Restoration, Commendation, Boasting, Weakness, and Conflict Transformation",
+        "parent_type": "cultural_background",
+        "object_importance": 9,
+        "retrieval_score": 0.889,
+        "passage_relationship": "comparative",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "probable",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "secondary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "worldview-concept",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "COMPARATIVE_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 0,
+        "supports_evidence_ids": [
+          "modern-correction-not-coercive-control"
+        ]
+      }
+    },
+    {
+      "id": "mutual-burden-bearing",
+      "claim": "Galatians commands bearing one another's burdens as fulfillment of Messiah's law.",
+      "category": "culture",
+      "source_ids": [
+        "galatians-conflict-text",
+        "martyn-galatians"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Galatians 6:2"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-authority-factions-discipline-shame-grief-forgiveness-reconciliation-restoration-commendation-boasting-weakness-and-conflict-transformation",
+        "parent_title": "Pauline Authority, Factions, Discipline, Shame, Grief, Forgiveness, Reconciliation, Restoration, Commendation, Boasting, Weakness, and Conflict Transformation",
+        "parent_type": "cultural_background",
+        "object_importance": 9,
+        "retrieval_score": 0.889,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 1,
+        "certainty": "textually_explicit",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "worldview-concept",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    },
+    {
+      "id": "mutual-burden-bearing:passage-relevance",
+      "claim": "Requires material, relational, communication, and access support through conflict rather than isolating reporters, survivors, accused people, families, or caregivers.",
+      "category": "culture",
+      "source_ids": [
+        "galatians-conflict-text",
+        "martyn-galatians"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Galatians 6:2"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-authority-factions-discipline-shame-grief-forgiveness-reconciliation-restoration-commendation-boasting-weakness-and-conflict-transformation",
+        "parent_title": "Pauline Authority, Factions, Discipline, Shame, Grief, Forgiveness, Reconciliation, Restoration, Commendation, Boasting, Weakness, and Conflict Transformation",
+        "parent_type": "cultural_background",
+        "object_importance": 9,
+        "retrieval_score": 0.889,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 1,
+        "certainty": "textually_explicit",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "worldview-concept",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 87,
+        "supports_evidence_ids": [
+          "mutual-burden-bearing"
+        ]
+      }
+    },
+    {
+      "id": "self-test-and-own-load",
+      "claim": "Galatians tells each person to test their own work and carry their own load while also bearing one another's burdens.",
+      "category": "culture",
+      "source_ids": [
+        "galatians-conflict-text",
+        "martyn-galatians"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Galatians 6:1-5"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-authority-factions-discipline-shame-grief-forgiveness-reconciliation-restoration-commendation-boasting-weakness-and-conflict-transformation",
+        "parent_title": "Pauline Authority, Factions, Discipline, Shame, Grief, Forgiveness, Reconciliation, Restoration, Commendation, Boasting, Weakness, and Conflict Transformation",
+        "parent_type": "cultural_background",
+        "object_importance": 9,
+        "retrieval_score": 0.889,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "probable",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "worldview-concept",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    },
+    {
+      "id": "self-test-and-own-load:passage-relevance",
+      "claim": "Balances mutual support with personal accountability and prevents leaders from transferring responsibility for their conduct to communities or victims.",
+      "category": "culture",
+      "source_ids": [
+        "galatians-conflict-text",
+        "martyn-galatians"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Galatians 6:1-5"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-authority-factions-discipline-shame-grief-forgiveness-reconciliation-restoration-commendation-boasting-weakness-and-conflict-transformation",
+        "parent_title": "Pauline Authority, Factions, Discipline, Shame, Grief, Forgiveness, Reconciliation, Restoration, Commendation, Boasting, Weakness, and Conflict Transformation",
+        "parent_type": "cultural_background",
+        "object_importance": 9,
+        "retrieval_score": 0.889,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "probable",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "worldview-concept",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 87,
+        "supports_evidence_ids": [
+          "self-test-and-own-load"
+        ]
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "Paul: Crisis in Galatia, Second Edition",
+        "author": "John M. G. Barclay",
+        "publisher": "Cambridge University Press",
+        "year": 2002,
+        "locator": "Galatian crisis, opponents, chronology, Torah",
+        "url": "https://www.cambridge.org/core/books/paul-crisis-in-galatia/0FEBDAE0C710746C0685D5A70913F9BE",
+        "source_type": "academic-book",
+        "supports": [
+          "claims",
+          "interpretive-notes",
+          "historical-context"
+        ],
+        "notes": "Reconstruction of the crisis; hypotheses remain contestable.",
+        "id": "barclay-crisis",
+        "canonical_object_ids": [
+          "galatians"
+        ]
+      },
+      {
+        "title": "Paul and the Gift",
+        "author": "John M. G. Barclay",
+        "publisher": "Eerdmans",
+        "year": 2015,
+        "locator": "Galatians; grace, gift, and community",
+        "url": "https://www.eerdmans.com/9780802875327/paul-and-the-gift/",
+        "source_type": "academic-book",
+        "supports": [
+          "claims",
+          "interpretive-notes",
+          "covenantal-significance"
+        ],
+        "notes": "Grace and gift analysis used alongside apocalyptic, covenantal, and participation readings.",
+        "id": "barclay-gift",
+        "canonical_object_ids": [
+          "galatians"
+        ]
+      },
+      {
+        "title": "A Greek-English Lexicon of the New Testament and Other Early Christian Literature, Third Edition",
+        "author": "Walter Bauer; Frederick W. Danker, rev. and ed.",
+        "publisher": "University of Chicago Press",
+        "year": 2000,
+        "locator": "Galatians lexical entries",
+        "url": "https://press.uchicago.edu/ucp/books/book/chicago/G/bo3622275.html",
+        "source_type": "lexicon",
+        "supports": [
+          "greek-words",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Lexical control; entries do not independently settle contextual disputes.",
+        "id": "bdag",
+        "canonical_object_ids": [
+          "galatians"
+        ]
+      },
+      {
+        "title": "Foolish Galatians",
+        "author": "Matthijs den Dulk",
+        "publisher": "Cambridge University Press",
+        "year": 2026,
+        "locator": "Ethnic Stereotypes and the Letters of Paul, chapter 4",
+        "url": "https://www.cambridge.org/core/books/ethnic-stereotypes-and-the-letters-of-paul/foolish-galatians/12BA96C6F5F884696C77BAF3412BF4BD",
+        "source_type": "academic-book",
+        "supports": [
+          "claims",
+          "interpretive-notes",
+          "later-christian-reception"
+        ],
+        "notes": "Reception-historical and ethnic-stereotype control.",
+        "id": "den-dulk-ethnicity",
+        "canonical_object_ids": [
+          "galatians"
+        ]
+      },
+      {
+        "title": "The Letter to the Galatians",
+        "author": "David A. deSilva",
+        "publisher": "Eerdmans",
+        "year": 2018,
+        "locator": "Galatians 5:13-26",
+        "url": "https://www.eerdmans.com/9781467450447/the-letter-to-the-galatians/",
+        "source_type": "academic-book",
+        "supports": [
+          "galatians-vice-fruit-whole-list",
+          "galatians-gentle-restoration-burdens"
+        ],
+        "notes": "Philological, rhetorical, historical, and theological commentary.",
+        "id": "desilva-galatians",
+        "canonical_object_ids": [
+          "pauline-bodies-marriage-sexual-ethics-discipline-and-restoration"
+        ]
+      },
+      {
+        "title": "The Greek New Testament: 1 Corinthians",
+        "author": "Michael W. Holmes, ed.",
+        "publisher": "Society of Biblical Literature",
+        "year": 2010,
+        "locator": "1 Corinthians 1-6; 10-14",
+        "url": "https://www.sblgnt.com/download/",
+        "source_type": "scripture",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Primary Greek evidence; no modern translation is reproduced.",
+        "id": "first-corinth-conflict-text",
+        "canonical_object_ids": [
+          "pauline-authority-factions-discipline-shame-grief-forgiveness-reconciliation-restoration-commendation-boasting-weakness-and-conflict-transformation"
+        ]
+      },
+      {
+        "title": "The Greek New Testament: SBL Edition",
+        "author": "Michael W. Holmes, ed.",
+        "publisher": "Society of Biblical Literature and Logos Bible Software",
+        "year": 2010,
+        "locator": "Galatians 1-6",
+        "url": "https://www.sblgnt.com/download/",
+        "source_type": "scripture",
+        "supports": [
+          "scripture-references",
+          "claims",
+          "interpretive-notes",
+          "greek-words"
+        ],
+        "notes": "Critical Greek base text, checked alongside manuscript resources.",
+        "id": "gal-greek",
+        "canonical_object_ids": [
+          "galatians"
+        ]
+      },
+      {
+        "title": "The Greek New Testament: Galatians",
+        "author": "Michael W. Holmes, ed.",
+        "publisher": "Society of Biblical Literature",
+        "year": 2010,
+        "locator": "Galatians 1-6",
+        "url": "https://www.sblgnt.com/download/",
+        "source_type": "scripture",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Primary Greek evidence for confrontation and restoration.",
+        "id": "galatians-conflict-text",
+        "canonical_object_ids": [
+          "pauline-authority-factions-discipline-shame-grief-forgiveness-reconciliation-restoration-commendation-boasting-weakness-and-conflict-transformation"
+        ]
+      },
+      {
+        "title": "The Greek New Testament: Galatians",
+        "author": "Michael W. Holmes, ed.",
+        "publisher": "Society of Biblical Literature",
+        "year": 2010,
+        "locator": "Galatians 2:1-5:26",
+        "url": "https://www.sblgnt.com/download/",
+        "source_type": "scripture",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Primary Greek evidence for the gentile crisis and scriptural argument.",
+        "id": "galatians-israel-text",
+        "canonical_object_ids": [
+          "pauline-israel-jewish-gentile-relations-abraham-torah-circumcision-justification-faith-election-hardening-remnant-olive-tree-and-all-israel"
+        ]
+      },
+      {
+        "title": "The Greek New Testament: Galatians",
+        "author": "Michael W. Holmes, ed.",
+        "publisher": "Society of Biblical Literature",
+        "year": 2010,
+        "locator": "Galatians 1, 4, and 6",
+        "url": "https://www.sblgnt.com/download/",
+        "source_type": "scripture",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Primary Greek evidence for greeting, Abba prayer, peace, mercy, and grace.",
+        "id": "galatians-prayer-text",
+        "canonical_object_ids": [
+          "pauline-prayer-thanksgiving-intercession-lament-groaning-joy-peace-hope-benediction-blessing-and-communal-memory"
+        ]
+      },
+      {
+        "title": "Galatians 5:13-26",
+        "author": "Paul and unnamed coworkers",
+        "publisher": "Society of Biblical Literature",
+        "year": 2010,
+        "locator": "Galatians 5:13-26",
+        "url": "https://www.sblgnt.com/download/",
+        "source_type": "scripture",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Primary Greek ethical and restorative evidence.",
+        "id": "galatians-restoration-text",
+        "canonical_object_ids": [
+          "pauline-bodies-marriage-sexual-ethics-discipline-and-restoration"
+        ]
+      },
+      {
+        "title": "1 Corinthians",
+        "author": "Michael J. Gorman",
+        "publisher": "Eerdmans",
+        "year": 2024,
+        "locator": "1 Corinthians 1-6 and 10-14",
+        "url": "https://www.eerdmans.com/9781467465748/1-corinthians/",
+        "source_type": "academic-book",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Recent theological commentary attentive to communal restoration and contemporary reception.",
+        "id": "gorman-first-corinthians",
+        "canonical_object_ids": [
+          "pauline-authority-factions-discipline-shame-grief-forgiveness-reconciliation-restoration-commendation-boasting-weakness-and-conflict-transformation"
+        ]
+      },
+      {
+        "title": "The Second Epistle to the Corinthians",
+        "author": "Murray J. Harris",
+        "publisher": "Eerdmans",
+        "year": 2005,
+        "locator": "2 Corinthians 1, 9, and 13",
+        "url": "https://www.eerdmans.com/9780802823939/the-second-epistle-to-the-corinthians/",
+        "source_type": "academic-book",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Detailed Greek commentary on comfort, prayer, generosity, restoration, and benediction.",
+        "id": "harris-second-corinthians-prayer",
+        "canonical_object_ids": [
+          "pauline-prayer-thanksgiving-intercession-lament-groaning-joy-peace-hope-benediction-blessing-and-communal-memory"
+        ]
+      },
+      {
+        "title": "Galatians",
+        "author": "Bruce W. Longenecker",
+        "publisher": "Cambridge University Press",
+        "year": 2003,
+        "locator": "The Cambridge Companion to St Paul, chapter 4",
+        "url": "https://www.cambridge.org/core/books/cambridge-companion-to-st-paul/galatians/405399A77EA4FE97DF9270CB98D95903",
+        "source_type": "academic-book",
+        "supports": [
+          "claims",
+          "interpretive-notes",
+          "historical-context"
+        ],
+        "notes": "Concise orientation to audience, crisis, rhetoric, and theology.",
+        "id": "longenecker-galatians",
+        "canonical_object_ids": [
+          "galatians"
+        ]
+      },
+      {
+        "title": "Uncut Galatians: Intersex/Eunuch",
+        "author": "Joseph A. Marchal",
+        "publisher": "Oxford University Press",
+        "year": 2019,
+        "locator": "Appalling Bodies, chapter 3, pages 68-112",
+        "url": "https://academic.oup.com/book/32366/chapter-abstract/268640211",
+        "source_type": "academic-book",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Intersex-critical analysis of bodies and circumcision rhetoric.",
+        "id": "marchal-uncut-israel",
+        "canonical_object_ids": [
+          "pauline-israel-jewish-gentile-relations-abraham-torah-circumcision-justification-faith-election-hardening-remnant-olive-tree-and-all-israel"
+        ]
+      },
+      {
+        "title": "Galatians: A New Translation with Introduction and Commentary",
+        "author": "J. Louis Martyn",
+        "publisher": "Yale University Press",
+        "year": 2004,
+        "locator": "Anchor Yale Bible 33A",
+        "url": "https://yalebooks.yale.edu/9780300139853/galatians/",
+        "source_type": "academic-book",
+        "supports": [
+          "claims",
+          "interpretive-notes",
+          "literary-context",
+          "historical-context"
+        ],
+        "notes": "Major apocalyptic commentary; used alongside competing views.",
+        "id": "martyn-galatians",
+        "canonical_object_ids": [
+          "galatians",
+          "pauline-authority-factions-discipline-shame-grief-forgiveness-reconciliation-restoration-commendation-boasting-weakness-and-conflict-transformation"
+        ],
+        "canonical_source_variants": [
+          {
+            "title": "Galatians: A New Translation with Introduction and Commentary",
+            "author": "J. Louis Martyn",
+            "publisher": "Yale University Press",
+            "year": 2004,
+            "locator": "Anchor Yale Bible 33A",
+            "url": "https://yalebooks.yale.edu/9780300139853/galatians/",
+            "source_type": "academic-book",
+            "supports": [
+              "claims",
+              "interpretive-notes",
+              "literary-context",
+              "historical-context"
+            ],
+            "notes": "Major apocalyptic commentary; used alongside competing views.",
+            "id": "martyn-galatians"
+          },
+          {
+            "title": "Galatians",
+            "author": "J. Louis Martyn",
+            "publisher": "Yale University Press",
+            "year": 2004,
+            "locator": "Galatians 1-6",
+            "url": "https://yalebooks.yale.edu/book/9780300139853/galatians/",
+            "source_type": "academic-book",
+            "supports": [
+              "claims",
+              "evidence-items"
+            ],
+            "notes": "Major commentary on the letter's crisis and opponents; its reconstruction remains one position among others.",
+            "id": "martyn-galatians"
+          }
+        ]
+      },
+      {
+        "title": "Galatians",
+        "author": "J. Louis Martyn",
+        "publisher": "Yale University Press",
+        "year": 2004,
+        "locator": "Galatians 1, 4, and 6",
+        "url": "https://yalebooks.yale.edu/book/9780300139853/galatians/",
+        "source_type": "academic-book",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Major commentary on the letter's crisis, rhetoric, and prayer language.",
+        "id": "martyn-galatians-prayer",
+        "canonical_object_ids": [
+          "pauline-prayer-thanksgiving-intercession-lament-groaning-joy-peace-hope-benediction-blessing-and-communal-memory"
+        ]
+      },
+      {
+        "title": "The Irony of Galatians: Paul's Letter in First-Century Context",
+        "author": "Mark D. Nanos",
+        "publisher": "Fortress Press",
+        "year": 2002,
+        "locator": "Opponents, irony, Jewish context, Israel of God",
+        "url": "https://www.fortresspress.com/store/product/9781451413762/The-Irony-of-Galatians",
+        "source_type": "academic-book",
+        "supports": [
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Revisionist Jewish-context reading used as a contested position.",
+        "id": "nanos-irony",
+        "canonical_object_ids": [
+          "galatians"
+        ]
+      },
+      {
+        "title": "Framework for Communications: Freedom of Religion or Belief and Freedom from Coercion",
+        "author": "UN Special Rapporteur on Freedom of Religion or Belief",
+        "publisher": "OHCHR",
+        "year": 2023,
+        "locator": "freedom from coercion and protection of persons in vulnerable situations",
+        "url": "https://www.ohchr.org/sites/default/files/documents/issues/religion/2023-01-24/SR-religion-Framework-for-communications.pdf",
+        "source_type": "reference-work",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Modern human-rights framework used for religious-consent safeguards.",
+        "id": "ohchr-religion-coercion",
+        "canonical_object_ids": [
+          "pauline-prayer-thanksgiving-intercession-lament-groaning-joy-peace-hope-benediction-blessing-and-communal-memory"
+        ]
+      },
+      {
+        "title": "GA P46 Digital Images and Metadata",
+        "author": "Center for the Study of New Testament Manuscripts",
+        "publisher": "CSNTM",
+        "year": null,
+        "locator": "Galatians portions",
+        "url": "https://manuscripts.csntm.org/manuscript/View/GA_P46",
+        "source_type": "museum-collection",
+        "supports": [
+          "primary-sources",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Early papyrus witness; surviving extent and readings require folio-level review.",
+        "id": "p46-csntm",
+        "canonical_object_ids": [
+          "galatians"
+        ]
+      },
+      {
+        "title": "Galatians Through the Centuries",
+        "author": "John Riches",
+        "publisher": "Wiley-Blackwell",
+        "year": 2008,
+        "locator": "Reception history",
+        "url": "https://onlinelibrary.wiley.com/doi/book/10.1002/9780470773956",
+        "source_type": "academic-book",
+        "supports": [
+          "later-christian-reception",
+          "interpretive-notes"
+        ],
+        "notes": "Reception history used to identify influential and harmful trajectories.",
+        "id": "riches-reception",
+        "canonical_object_ids": [
+          "galatians"
+        ]
+      },
+      {
+        "title": "SAMHSA's Concept of Trauma and Guidance for a Trauma-Informed Approach",
+        "author": "Substance Abuse and Mental Health Services Administration",
+        "publisher": "SAMHSA",
+        "year": 2014,
+        "locator": "pp. 9-11; safety, trustworthiness, collaboration, empowerment, voice, and choice",
+        "url": "https://library.samhsa.gov/sites/default/files/sma14-4884.pdf",
+        "source_type": "reference-work",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Modern trauma-informed framework used only for application safeguards.",
+        "id": "samhsa-trauma",
+        "canonical_object_ids": [
+          "pauline-authority-factions-discipline-shame-grief-forgiveness-reconciliation-restoration-commendation-boasting-weakness-and-conflict-transformation"
+        ]
+      },
+      {
+        "title": "The Greek New Testament: 2 Corinthians",
+        "author": "Michael W. Holmes, ed.",
+        "publisher": "Society of Biblical Literature",
+        "year": 2010,
+        "locator": "2 Corinthians 1-7; 10-13",
+        "url": "https://www.sblgnt.com/download/",
+        "source_type": "scripture",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Primary Greek evidence for the letter's contested relationship and rhetoric.",
+        "id": "second-corinth-conflict-text",
+        "canonical_object_ids": [
+          "pauline-authority-factions-discipline-shame-grief-forgiveness-reconciliation-restoration-commendation-boasting-weakness-and-conflict-transformation"
+        ]
+      },
+      {
+        "title": "The Greek New Testament: 2 Corinthians",
+        "author": "Michael W. Holmes, ed.",
+        "publisher": "Society of Biblical Literature",
+        "year": 2010,
+        "locator": "2 Corinthians 1, 9, and 13",
+        "url": "https://www.sblgnt.com/download/",
+        "source_type": "scripture",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Primary Greek evidence for blessing, comfort, intercession, giving, and benediction.",
+        "id": "second-corinth-prayer-text",
+        "canonical_object_ids": [
+          "pauline-prayer-thanksgiving-intercession-lament-groaning-joy-peace-hope-benediction-blessing-and-communal-memory"
+        ]
+      },
+      {
+        "title": "A Disabling Gospel",
+        "author": "Isaac T. Soon",
+        "publisher": "Oxford University Press",
+        "year": 2023,
+        "locator": "A Disabled Apostle, chapter 7, pp. 129-151",
+        "url": "https://academic.oup.com/book/46798/chapter/413428553",
+        "source_type": "academic-book",
+        "supports": [
+          "claims",
+          "interpretive-notes",
+          "later-christian-reception"
+        ],
+        "notes": "Disability-critical analysis of circumcision, impairment, and Pauline rhetoric.",
+        "id": "soon-disabled-apostle",
+        "canonical_object_ids": [
+          "galatians"
+        ]
+      },
+      {
+        "title": "A Disabling Gospel",
+        "author": "Isaac T. Soon",
+        "publisher": "Oxford University Press",
+        "year": 2023,
+        "locator": "A Disabled Apostle, chapter 7, pages 129-151",
+        "url": "https://academic.oup.com/book/46798/chapter/413428553",
+        "source_type": "academic-book",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Disability-critical analysis of circumcision and Pauline rhetoric.",
+        "id": "soon-disabled-israel",
+        "canonical_object_ids": [
+          "pauline-israel-jewish-gentile-relations-abraham-torah-circumcision-justification-faith-election-hardening-remnant-olive-tree-and-all-israel"
+        ]
+      },
+      {
+        "title": "Paul and the Gentile Problem",
+        "author": "Matthew Thiessen",
+        "publisher": "Oxford University Press",
+        "year": 2016,
+        "locator": "Paul, gentiles, Torah, circumcision, and Israel",
+        "url": "https://academic.oup.com/book/10678",
+        "source_type": "academic-book",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Paul-within-Judaism account used alongside competing constructions.",
+        "id": "thiessen-gentile",
+        "canonical_object_ids": [
+          "pauline-israel-jewish-gentile-relations-abraham-torah-circumcision-justification-faith-election-hardening-remnant-olive-tree-and-all-israel"
+        ]
+      },
+      {
+        "title": "Paul and the Gentile Problem",
+        "author": "Matthew Thiessen",
+        "publisher": "Oxford University Press",
+        "year": 2016,
+        "locator": "Galatians; circumcision, Torah, and gentile identity",
+        "url": "https://academic.oup.com/book/10657",
+        "source_type": "academic-book",
+        "supports": [
+          "claims",
+          "interpretive-notes",
+          "second-temple-context"
+        ],
+        "notes": "Paul-within-Judaism account used alongside competing constructions.",
+        "id": "thiessen-gentile-problem",
+        "canonical_object_ids": [
+          "galatians"
+        ]
+      },
+      {
+        "title": "Convention on the Rights of Persons with Disabilities",
+        "author": "United Nations",
+        "publisher": "United Nations",
+        "year": 2006,
+        "locator": "Articles 5, 9, 12, 13, 16 and 21",
+        "url": "https://www.un.org/disabilities/documents/convention/convoptprot-e.pdf",
+        "source_type": "reference-work",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Modern legal standard for accessibility, equal recognition, access to justice, communication, and protection; not ancient evidence.",
+        "id": "un-crpd-conflict",
+        "canonical_object_ids": [
+          "pauline-authority-factions-discipline-shame-grief-forgiveness-reconciliation-restoration-commendation-boasting-weakness-and-conflict-transformation"
+        ]
+      },
+      {
+        "title": "Paul's Intercessory Prayers: The Significance of the Intercessory Prayer Passages in the Letters of St Paul",
+        "author": "Gordon P. Wiles",
+        "publisher": "Cambridge University Press",
+        "year": 1974,
+        "locator": "chapters 1-7",
+        "url": "https://doi.org/10.1017/CBO9780511555145",
+        "source_type": "academic-book",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Classifies prayer reports, wishes, requests, thanksgiving periods, blessings, and curses in the Pauline letters.",
+        "id": "wiles-intercessory-prayers",
+        "canonical_object_ids": [
+          "pauline-prayer-thanksgiving-intercession-lament-groaning-joy-peace-hope-benediction-blessing-and-communal-memory"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "galatians",
+        "type": "book",
+        "title": "Galatians",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.923
+      },
+      {
+        "id": "pauline-authority-factions-discipline-shame-grief-forgiveness-reconciliation-restoration-commendation-boasting-weakness-and-conflict-transformation",
+        "type": "cultural_background",
+        "title": "Pauline Authority, Factions, Discipline, Shame, Grief, Forgiveness, Reconciliation, Restoration, Commendation, Boasting, Weakness, and Conflict Transformation",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.889
+      },
+      {
+        "id": "pauline-bodies-marriage-sexual-ethics-discipline-and-restoration",
+        "type": "cultural_background",
+        "title": "Pauline Bodies, Marriage, Sexual Ethics, Discipline, and Restoration",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.919
+      },
+      {
+        "id": "pauline-israel-jewish-gentile-relations-abraham-torah-circumcision-justification-faith-election-hardening-remnant-olive-tree-and-all-israel",
+        "type": "cultural_background",
+        "title": "Pauline Israel, Jewish-Gentile Relations, Abraham, Torah, Circumcision, Justification, Faith, Election, Hardening, Remnant, Olive Tree, and All Israel",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.919
+      },
+      {
+        "id": "pauline-prayer-thanksgiving-intercession-lament-groaning-joy-peace-hope-benediction-blessing-and-communal-memory",
+        "type": "cultural_background",
+        "title": "Pauline Prayer, Thanksgiving, Intercession, Lament, Groaning, Joy, Peace, Hope, Benediction, Blessing, and Communal Memory",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.869
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "dda6ad5818a27cdcdae9624a4e31446a1bf2a9e0cd63dd4a69b6a1979911658a",
+  "evidence_hash_version": "2"
+}
