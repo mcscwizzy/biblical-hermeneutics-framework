@@ -1,0 +1,53 @@
+{
+  "reference": "Psalms 29",
+  "book": "Psalms",
+  "chapter": 29,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_4",
+          "text": "Read the chapter with this setting in view: Used as a greeting and blessing, shalom points beyond social calm to a life made whole by God. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken.",
+          "evidence_ids": [
+            "what-does-shalom-mean:historical_context:0"
+          ],
+          "verse_refs": [
+            "Psalms 29:11"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_5",
+          "text": "For its historical and cultural setting, note that Ancient peace language often described stability after conflict, but Scripture expands shalom into flourishing, justice, and fullness. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "what-does-shalom-mean:ancient_near_east_context:0"
+          ],
+          "verse_refs": [
+            "Psalms 29:11"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "700f8a2ab648fc8f463ec95a205afe2cfbc5b778abaf5d1d2ac3e4cdbafc0290",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-005-medium",
+    "generated_timestamp": "2026-09-06T03:50:20Z"
+  }
+}

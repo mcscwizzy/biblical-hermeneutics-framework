@@ -1,0 +1,65 @@
+{
+  "reference": "Numbers 13",
+  "book": "Numbers",
+  "chapter": 13,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_148",
+          "text": "Read the chapter with this setting in view: Numbers 13-14 makes Israel's refusal to enter the land the decisive reason the counted wilderness generation will not receive it. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken.",
+          "evidence_ids": [
+            "numbers-kadesh-judgment"
+          ],
+          "verse_refs": [
+            "Numbers 13:1-33"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_149",
+          "text": "For its historical and cultural setting, note that Proposed maps of the wilderness route should label uncertain site identifications rather than presenting a single itinerary reconstruction as established. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "numbers:interpretive_note:2"
+          ],
+          "verse_refs": [
+            "Numbers 13:1-33"
+          ],
+          "confidence": "low",
+          "interpretation_level": "disputed"
+        },
+        {
+          "id": "historical_context_150",
+          "text": "For its historical and cultural setting, note that The event belongs to Israel's wilderness journey between Sinai and the land, where the generation is tested. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "twelve-spies-sent:historical_context:0"
+          ],
+          "verse_refs": [
+            "Numbers 13:1-33"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "fa711e656e5c5aaf332c47f80041b1c945c8a3ba83b0900e572e3dfefc0eedc3",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-005-medium",
+    "generated_timestamp": "2026-09-06T03:50:21Z"
+  }
+}

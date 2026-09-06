@@ -1,0 +1,65 @@
+{
+  "reference": "1 Samuel 3",
+  "book": "1 Samuel",
+  "chapter": 3,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_68",
+          "text": "Read the chapter with this setting in view: First Samuel moves from Eli's failing priestly house through Samuel's prophetic leadership and Saul's rejected kingship to David's anointing, rise, exile, and Saul's death. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken.",
+          "evidence_ids": [
+            "first-samuel-literary-movement"
+          ],
+          "verse_refs": [
+            "1 Samuel 3:1-21"
+          ],
+          "confidence": "high",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_69",
+          "text": "For its historical and cultural setting, note that Prophets appear in Israel's monarchy, temple, and exile settings as covenant messengers and watchmen. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "what-is-a-prophet:historical_context:0"
+          ],
+          "verse_refs": [
+            "1 Samuel 3:19-21"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        },
+        {
+          "id": "historical_context_70",
+          "text": "For its historical and cultural setting, note that Kings often had advisers and seers, but biblical prophets are distinct because they speak with the authority of the LORD. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "what-is-a-prophet:ancient_near_east_context:0"
+          ],
+          "verse_refs": [
+            "1 Samuel 3:19-21"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "249548c5427e3b007b8b9296672e44a8e2ddd09049877946961d275f7ed5da86",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-005-medium",
+    "generated_timestamp": "2026-09-06T03:50:20Z"
+  }
+}

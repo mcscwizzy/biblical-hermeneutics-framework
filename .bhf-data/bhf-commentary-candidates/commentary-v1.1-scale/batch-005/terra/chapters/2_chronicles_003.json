@@ -1,0 +1,35 @@
+{
+  "reference": "2 Chronicles 3",
+  "book": "2 Chronicles",
+  "chapter": 3,
+  "status": "validated",
+  "evidence_availability": "THIN",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_17",
+          "text": "Read the chapter with this setting in view: Second Chronicles 1-7 portrays Solomon's wisdom and temple building as the completion of David's preparations, culminating in ark, glory, dedication prayer, fire, celebration, divine promise, and warning. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken.",
+          "evidence_ids": [
+            "second-chronicles-solomon-temple"
+          ],
+          "verse_refs": [
+            "2 Chronicles 3:1-17"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "5b63472a0054d1e92866aa3b19f133f1ce285d9deadb904a9150d3bce67c08a1",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-005-medium",
+    "generated_timestamp": "2026-09-06T03:50:20Z"
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "reference": "Acts 6",
+  "book": "Acts",
+  "chapter": 6,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_51",
+          "text": "Read the chapter with this setting in view: Historical evaluation of Acts must compare particular claims with independent evidence rather than assign blanket reliability or unreliability. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken.",
+          "evidence_ids": [
+            "acts-historical-method"
+          ],
+          "verse_refs": [
+            "Acts 6:1-15"
+          ],
+          "confidence": "high",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_52",
+          "text": "A literary feature to notice is that Codex Bezae and related versional witnesses preserve a substantially distinctive text of Acts often called Western, whose individual readings require case-by-case judgment. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "acts-western-text"
+          ],
+          "verse_refs": [
+            "Acts 6:1-15"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "ec41fe679c46e098a035392c720bacce6560a70e9b9bad596d268f5fbe9960dc",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-005-medium",
+    "generated_timestamp": "2026-09-06T03:50:20Z"
+  }
+}

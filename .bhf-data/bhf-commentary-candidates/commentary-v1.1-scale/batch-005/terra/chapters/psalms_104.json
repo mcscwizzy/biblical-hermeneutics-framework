@@ -1,0 +1,83 @@
+{
+  "reference": "Psalms 104",
+  "book": "Psalms",
+  "chapter": 104,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_117",
+          "text": "Read the chapter with this setting in view: Genesis presents creation as the foundational act that begins biblical history and establishes God\u2019s sovereignty over all things. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken.",
+          "evidence_ids": [
+            "creation:historical_context:0"
+          ],
+          "verse_refs": [
+            "Psalms 104:1-35"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_118",
+          "text": "For its historical and cultural setting, note that Genesis 1 depicts one God ordering the world by speech, blessing living creatures, assigning humans an image-bearing vocation, and resting on the seventh day. These observations describe the passage before later theological synthesis. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "creation:hebraic_worldview:0"
+          ],
+          "verse_refs": [
+            "Psalms 104:1-35"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        },
+        {
+          "id": "historical_context_119",
+          "text": "For its historical and cultural setting, note that Genesis 1 can be compared with ancient Mesopotamian accounts of cosmic waters, ordering, celestial bodies, divine rule, and human vocation. The comparisons reveal shared discourse and marked differences without proving a single route of dependence. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "creation:ancient_near_east_context:0"
+          ],
+          "verse_refs": [
+            "Psalms 104:1-35"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "chronology",
+      "title": "Chronology",
+      "blocks": [
+        {
+          "id": "chronology_118",
+          "text": "For the chapter's sequence and setting, note that New creation promised This gives the reader a frame for the passage without deciding every larger reconstruction.",
+          "evidence_ids": [
+            "creation-doctrine-framework:timeline:5"
+          ],
+          "verse_refs": [
+            "Psalms 104:1-35"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "e368d352484ecc105407a2d9344aa36e9405ad64b0326068f9999cb0afcf4a48",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-005-medium",
+    "generated_timestamp": "2026-09-06T03:50:21Z"
+  }
+}

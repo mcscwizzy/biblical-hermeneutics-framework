@@ -1,0 +1,101 @@
+{
+  "reference": "Judges 1",
+  "book": "Judges",
+  "chapter": 1,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_91",
+          "text": "Read the chapter with this setting in view: Judges 1 reports different outcomes by tribe and locality: possession, inability or failure to drive out inhabitants, coexistence, and forced labor. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken.",
+          "evidence_ids": [
+            "judges-regional-settlement-pattern"
+          ],
+          "verse_refs": [
+            "Judges 1:1-36"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_92",
+          "text": "For its historical and cultural setting, note that Archaeology and settlement studies do not produce one uncontested chronology or historical model for all episodes in Judges. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "judges:interpretive_note:3"
+          ],
+          "verse_refs": [
+            "Judges 1:1-36"
+          ],
+          "confidence": "low",
+          "interpretation_level": "disputed"
+        },
+        {
+          "id": "historical_context_93",
+          "text": "For its historical and cultural setting, note that Merneptah reused a monument of Amenhotep III and inscribed a victory text that celebrates campaigns including action in the southern Levant. The Israel entry uses a people determinative rather than the city determinatives attached to several neighboring names. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "merneptah-stele:historical_context:0"
+          ],
+          "verse_refs": [
+            "Judges 1:1-36"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_92",
+          "text": "A literary feature to notice is that Judges moves from incomplete possession and covenant indictment through recurring deliverance narratives to internal idolatry, atrocity, and civil war. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image.",
+          "evidence_ids": [
+            "judges-literary-movement"
+          ],
+          "verse_refs": [
+            "Judges 1:1-36"
+          ],
+          "confidence": "high",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "chronology",
+      "title": "Chronology",
+      "blocks": [
+        {
+          "id": "chronology_92",
+          "text": "For the chapter's sequence and setting, note that Iron I combined highland village expansion with rebuilt or continuing towns and new coastal material traditions; Megiddo provides one stratified example of mixed cultural interaction. This gives the reader a frame for the passage without deciding every larger reconstruction. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "iron-i-regional-continuity-and-change"
+          ],
+          "verse_refs": [
+            "Judges 1:1-36"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "4ab31e392df378303e825ab847588484ba3f831e3888f207052ee3a2864a9bb7",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-005-medium",
+    "generated_timestamp": "2026-09-06T03:50:21Z"
+  }
+}

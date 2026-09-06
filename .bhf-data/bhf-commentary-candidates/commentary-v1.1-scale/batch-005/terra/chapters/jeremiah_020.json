@@ -1,0 +1,53 @@
+{
+  "reference": "Jeremiah 20",
+  "book": "Jeremiah",
+  "chapter": 20,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_47",
+          "text": "Read the chapter with this setting in view: First-person laments commonly called Jeremiah's confessions portray accusation, isolation, protest, compulsion, petition, and despair, but their exact boundaries and biographical value are disputed. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "jeremiah-confessions"
+          ],
+          "verse_refs": [
+            "Jeremiah 20:7-18"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_48",
+          "text": "A literary feature to notice is that Jeremiah uses siege, wound, tears, maternal bodies, non-burial, creation undone, imprisonment, displacement, and fractured memory to represent catastrophe and survival. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image. Interpretations differ on some details.",
+          "evidence_ids": [
+            "jeremiah-catastrophe-trauma"
+          ],
+          "verse_refs": [
+            "Jeremiah 20:14-18"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "3d0da71af22a1e202d23521c1873400dffef6834ff51868b4e3057c5f1729e38",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-005-medium",
+    "generated_timestamp": "2026-09-06T03:50:20Z"
+  }
+}

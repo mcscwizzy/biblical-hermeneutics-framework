@@ -1,0 +1,83 @@
+{
+  "reference": "John 21",
+  "book": "John",
+  "chapter": 21,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_20",
+          "text": "Read the chapter with this setting in view: The continuous Greek Gospel is internally anonymous; neither its narrator nor its purpose statement supplies the author's personal name. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken.",
+          "evidence_ids": [
+            "john-anonymous"
+          ],
+          "verse_refs": [
+            "John 21:24-25"
+          ],
+          "confidence": "high",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_21",
+          "text": "For its historical and cultural setting, note that John 21 commissions Peter to tend and feed Jesus' sheep, predicts costly witness, and refuses comparison with the beloved disciple; it does not settle every later theory of papal office or rival church factions. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. Interpretations differ on some details.",
+          "evidence_ids": [
+            "john-21-peter"
+          ],
+          "verse_refs": [
+            "John 21:15-23"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        },
+        {
+          "id": "historical_context_22",
+          "text": "For its historical and cultural setting, note that A fisherman from Galilee, Peter becomes a leading witness in Jesus' ministry and the early church. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "who-was-peter:historical_context:0"
+          ],
+          "verse_refs": [
+            "John 21:15-19"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_21",
+          "text": "A literary feature to notice is that The beloved disciple is presented as an authoritative witness, yet the Gospel never names that figure John son of Zebedee and John 21:24 speaks of the disciple in the third person. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image. Interpretations differ on some details.",
+          "evidence_ids": [
+            "john-beloved-disciple"
+          ],
+          "verse_refs": [
+            "John 21:20-24"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "219d9f590932d6ef34ee29b4c0f8d1e009389a99b7aceba752f429b9b1ffd0ae",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-005-medium",
+    "generated_timestamp": "2026-09-06T03:50:20Z"
+  }
+}

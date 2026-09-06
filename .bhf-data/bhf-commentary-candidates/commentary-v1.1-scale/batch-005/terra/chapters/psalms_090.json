@@ -1,0 +1,53 @@
+{
+  "reference": "Psalms 90",
+  "book": "Psalms",
+  "chapter": 90,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_136",
+          "text": "Read the chapter with this setting in view: The received superscriptions associate psalms with David, Asaph, the sons of Korah, Solomon, Moses, Heman, and Ethan and also preserve genre, performance, tune, instrument, and narrated-setting labels. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "psalms-superscription-collections"
+          ],
+          "verse_refs": [
+            "Psalms 90:1"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "dig_deeper",
+      "title": "Dig deeper",
+      "blocks": [
+        {
+          "id": "dig_deeper_137",
+          "text": "For a later or comparative connection, note that The day-thousand-years comparison relativizes human timing in both directions; it is not a conversion formula for calculating prophetic dates. This remains a secondary connection rather than the chapter's first-audience context. It can be traced further without replacing the chapter's own setting.",
+          "evidence_ids": [
+            "2-peter:interpretive_note:32"
+          ],
+          "verse_refs": [
+            "Psalms 90:4"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "bee1caaa83a75723d299c2dc2258a378bb900a19c50283fb4eac74f29460b750",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-005-medium",
+    "generated_timestamp": "2026-09-06T03:50:21Z"
+  }
+}

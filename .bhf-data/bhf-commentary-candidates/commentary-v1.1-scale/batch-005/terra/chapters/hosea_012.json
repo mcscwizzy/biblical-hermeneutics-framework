@@ -1,0 +1,83 @@
+{
+  "reference": "Hosea 12",
+  "book": "Hosea",
+  "chapter": 12,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_100",
+          "text": "Read the chapter with this setting in view: Hosea's references to Assyria, Egypt, tribute, treaties, war alarms, kings, and palace intrigue align with the northern kingdom's later eighth-century imperial crisis. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "hosea-assyrian-crisis"
+          ],
+          "verse_refs": [
+            "Hosea 12:1-14"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_101",
+          "text": "For its historical and cultural setting, note that Hosea's critique of kings and alliances concerns toxic power, elite extraction, war, and misplaced security; it does not prescribe one modern party or state policy. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "hosea:interpretive_note:14"
+          ],
+          "verse_refs": [
+            "Hosea 12:1-14"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        },
+        {
+          "id": "historical_context_102",
+          "text": "For its historical and cultural setting, note that The event belongs to the ancestral narratives, where family conflict, blessing, and identity shape the beginnings of Israel. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "jacob-wrestles-at-peniel:historical_context:0"
+          ],
+          "verse_refs": [
+            "Hosea 12:3-6"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_101",
+          "text": "A literary feature to notice is that Hosea rhetorically reuses exodus, wilderness, Jacob, Gibeah, Baal-peor, and prophetic traditions to diagnose present identity and summon change. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "hosea-historical-memory"
+          ],
+          "verse_refs": [
+            "Hosea 12:1-14"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "3e7baae6cd4dc0b9dc5fbc8dee361c39398f39f7141144658582a2c1892d1727",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-005-medium",
+    "generated_timestamp": "2026-09-06T03:50:21Z"
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "reference": "Matthew 6",
+  "book": "Matthew",
+  "chapter": 6,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_54",
+          "text": "Read the chapter with this setting in view: Matthew's Scripture, Torah debate, practices, institutions, and actors locate it within diverse Jewish worlds even where later identity conflict shapes its polemic. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken. Interpretations differ on some details.",
+          "evidence_ids": [
+            "matthew-jewish-context"
+          ],
+          "verse_refs": [
+            "Matthew 6:1-18"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_55",
+          "text": "For its historical and cultural setting, note that Matthew 6 places almsgiving, prayer, fasting, possessions, and trust within a critique of public status performance. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "matthew-prayer-piety"
+          ],
+          "verse_refs": [
+            "Matthew 6:1-34"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        },
+        {
+          "id": "historical_context_56",
+          "text": "For its historical and cultural setting, note that The phrase gathers Israel\u2019s royal psalms, prophetic hope, and Jesus\u2019 proclamation into one story of divine reign. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "what-is-the-kingdom-of-god:historical_context:0"
+          ],
+          "verse_refs": [
+            "Matthew 6:9-13"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "355a7ead09adb548e4a47bc0ee9d79d7ea4f719a585e2eb349943141c302a4c5",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-005-medium",
+    "generated_timestamp": "2026-09-06T03:50:20Z"
+  }
+}

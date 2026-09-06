@@ -1,0 +1,53 @@
+{
+  "reference": "1 Samuel 18",
+  "book": "1 Samuel",
+  "chapter": 18,
+  "status": "validated",
+  "evidence_availability": "THIN",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_8",
+          "text": "Read the chapter with this setting in view: The book explicitly attributes a harmful spirit affecting Saul to the LORD after the Spirit of the LORD departs; medical, psychological, spiritual, and theological explanations should not be collapsed into one diagnosis. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "1-samuel:interpretive_note:2"
+          ],
+          "verse_refs": [
+            "1 Samuel 18:10-12"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_9",
+          "text": "A literary feature to notice is that The David and Goliath account exists in a substantially shorter ancient Greek form and a longer Masoretic form; reconstruction of their literary relationship remains disputed. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image. Interpretations differ on some details.",
+          "evidence_ids": [
+            "1-samuel:interpretive_note:1"
+          ],
+          "verse_refs": [
+            "1 Samuel 18:1-30"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "1a3f7a8434843408e46b04a2a3a824e9b62d348f0275a76a5552d945d7059203",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-005-medium",
+    "generated_timestamp": "2026-09-06T03:50:20Z"
+  }
+}

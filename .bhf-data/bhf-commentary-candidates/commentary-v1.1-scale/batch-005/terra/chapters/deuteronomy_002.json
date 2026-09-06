@@ -1,0 +1,35 @@
+{
+  "reference": "Deuteronomy 2",
+  "book": "Deuteronomy",
+  "chapter": 2,
+  "status": "validated",
+  "evidence_availability": "THIN",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_16",
+          "text": "Read the chapter with this setting in view: Deuteronomy moves from remembered wilderness history through covenant instruction to covenant consequences, renewal, succession, song, blessing, and Moses's death. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken.",
+          "evidence_ids": [
+            "deuteronomy-literary-movement"
+          ],
+          "verse_refs": [
+            "Deuteronomy 2:1-37"
+          ],
+          "confidence": "high",
+          "interpretation_level": "inference"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "7ec29d40c24b1e71e868fcc3dceb07df36ed8418f30ff1ac722559e4224f4a48",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-005-medium",
+    "generated_timestamp": "2026-09-06T03:50:20Z"
+  }
+}

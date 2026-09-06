@@ -1,0 +1,53 @@
+{
+  "reference": "Isaiah 23",
+  "book": "Isaiah",
+  "chapter": 23,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_101",
+          "text": "Read the chapter with this setting in view: Isaiah judges Judah, Israel, and foreign nations, portrays empires as instruments that are themselves accountable, and also envisions nations learning, worshiping, and participating in restoration. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "isaiah-nations-empire"
+          ],
+          "verse_refs": [
+            "Isaiah 23:1-18"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_102",
+          "text": "A literary feature to notice is that The Great Isaiah Scroll is an almost complete sixty-six-chapter witness broadly aligned with the Masoretic tradition but containing thousands of orthographic and substantive differences; other Qumran Isaiah manuscripts and pesharim show active transmission and interpretation. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image. Interpretations differ on some details.",
+          "evidence_ids": [
+            "isaiah-qumran-witnesses"
+          ],
+          "verse_refs": [
+            "Isaiah 23:1-18"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "f1e9dd34e525fda77e137056e224e970709431959ba6000a6d13b11a4df31fa6",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-005-medium",
+    "generated_timestamp": "2026-09-06T03:50:21Z"
+  }
+}

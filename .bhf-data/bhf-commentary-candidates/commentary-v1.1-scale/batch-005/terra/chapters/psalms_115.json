@@ -1,0 +1,53 @@
+{
+  "reference": "Psalms 115",
+  "book": "Psalms",
+  "chapter": 115,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_139",
+          "text": "Read the chapter with this setting in view: Greek and Latin Psalter traditions number many psalms differently from the Masoretic tradition because they combine Psalms 9-10 and 114-115, divide Psalms 116 and 147, and transmit Psalm 151 beyond the 150-psalm count. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "psalms-numbering-witnesses"
+          ],
+          "verse_refs": [
+            "Psalms 115:1-18"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_140",
+          "text": "A literary feature to notice is that Communal psalms preserve sanctuary destruction and Babylonian exile, while Book V also gathers return thanksgiving, festival praise, Torah meditation, and Songs of Ascents oriented toward worship. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "psalms-exile-restoration-pilgrimage"
+          ],
+          "verse_refs": [
+            "Psalms 115:1-18"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "cf743a8763d05d7e6af706d8dfb2963e604e6f5fc9c4253db958503082b97f0d",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-005-medium",
+    "generated_timestamp": "2026-09-06T03:50:21Z"
+  }
+}

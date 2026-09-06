@@ -1,0 +1,65 @@
+{
+  "reference": "John 16",
+  "book": "John",
+  "chapter": 16,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_50",
+          "text": "Read the chapter with this setting in view: The Paraclete sayings describe the Spirit of truth as remaining, teaching, reminding, testifying, exposing, guiding, and glorifying Jesus; person, presence, advocacy, community memory, and later Trinitarian readings overlap but are not interchangeable. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "john-paraclete"
+          ],
+          "verse_refs": [
+            "John 16:4-15"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_51",
+          "text": "For its historical and cultural setting, note that John's aposynagogos notices have supported staged Johannine-community and synagogue-expulsion reconstructions, but a single late-first-century decree or uniform rupture is not established by the text. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. Interpretations differ on some details.",
+          "evidence_ids": [
+            "john-aposynagogos"
+          ],
+          "verse_refs": [
+            "John 16:1-4"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        },
+        {
+          "id": "historical_context_52",
+          "text": "For its historical and cultural setting, note that Spirit language stretches from creation and the prophets into the ministry of Jesus and the birth of the church. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "what-is-the-significance-of-the-holy-spirit:historical_context:0"
+          ],
+          "verse_refs": [
+            "John 16:7-15"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "7c1c72ab28febdda1ae1e277309f0a1b352bca6c69b7ad48895edc4c29309206",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-005-medium",
+    "generated_timestamp": "2026-09-06T03:50:20Z"
+  }
+}

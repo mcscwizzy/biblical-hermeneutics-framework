@@ -1,0 +1,71 @@
+{
+  "reference": "1 Samuel 13",
+  "book": "1 Samuel",
+  "chapter": 13,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_76",
+          "text": "Read the chapter with this setting in view: Saul is rejected from enduring kingship because he does not keep the commanded word, with First Samuel 15 emphasizing that obedience is better than sacrifice. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken.",
+          "evidence_ids": [
+            "first-samuel-saul-rejected"
+          ],
+          "verse_refs": [
+            "1 Samuel 13:13-14"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_77",
+          "text": "A literary feature to notice is that First Samuel moves from Eli's failing priestly house through Samuel's prophetic leadership and Saul's rejected kingship to David's anointing, rise, exile, and Saul's death. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image.",
+          "evidence_ids": [
+            "first-samuel-literary-movement"
+          ],
+          "verse_refs": [
+            "1 Samuel 13:1-23"
+          ],
+          "confidence": "high",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "dig_deeper",
+      "title": "Dig deeper",
+      "blocks": [
+        {
+          "id": "dig_deeper_77",
+          "text": "For a later or comparative connection, note that Excavated workshop features and metallurgical residues at Tell es-Safi/Gath document iron and bronze production in Iron Age IIA Philistia. This remains a secondary connection rather than the chapter's first-audience context. It can be traced further without replacing the chapter's own setting. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "tell-es-safi-metal-production"
+          ],
+          "verse_refs": [
+            "1 Samuel 13:19-23"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "c85005a11439759888ca6f561d5093cf5626e09428c40eec24e73c2a0fea8c3f",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-005-medium",
+    "generated_timestamp": "2026-09-06T03:50:21Z"
+  }
+}

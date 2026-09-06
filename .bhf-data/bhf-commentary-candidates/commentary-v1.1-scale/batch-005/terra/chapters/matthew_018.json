@@ -1,0 +1,83 @@
+{
+  "reference": "Matthew 18",
+  "book": "Matthew",
+  "chapter": 18,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_26",
+          "text": "Read the chapter with this setting in view: Matthew cannot legitimately be used to excuse abuse, stigmatize disability or mental illness, enforce misogyny or anti-LGBTQ harm, blame poverty, set apocalyptic dates, or map ancient judgments onto modern peoples. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken.",
+          "evidence_ids": [
+            "matthew-application-boundaries"
+          ],
+          "verse_refs": [
+            "Matthew 18:6"
+          ],
+          "confidence": "high",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_27",
+          "text": "For its historical and cultural setting, note that Matthew's fields, fisheries, wages, debts, taxes, estates, slaves, patrons, and laborers resonate with an unequal agrarian Roman-Palestinian economy. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. Interpretations differ on some details.",
+          "evidence_ids": [
+            "matthew-rural-economy"
+          ],
+          "verse_refs": [
+            "Matthew 18:23-35"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        },
+        {
+          "id": "historical_context_28",
+          "text": "For its historical and cultural setting, note that Matthew 18 links status reversal, protection of little ones, restoration, communal discipline, prayer, and forgiveness. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "matthew-community-discipline"
+          ],
+          "verse_refs": [
+            "Matthew 18:1-35"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "dig_deeper",
+      "title": "Dig deeper",
+      "blocks": [
+        {
+          "id": "dig_deeper_27",
+          "text": "For a later or comparative connection, note that Matthew uniquely joins Peter's confession with rock, ekklesia, keys, and binding-loosing sayings that generated major ecclesial disputes. This remains a secondary connection rather than the chapter's first-audience context. It can be traced further without replacing the chapter's own setting. Interpretations differ on some details.",
+          "evidence_ids": [
+            "matthew-peter-rock"
+          ],
+          "verse_refs": [
+            "Matthew 18:18"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "e4e136c6433df90a1e7113adf9c62fab7e0c0341c344b22c691e2f890e4349d6",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-005-medium",
+    "generated_timestamp": "2026-09-06T03:50:20Z"
+  }
+}

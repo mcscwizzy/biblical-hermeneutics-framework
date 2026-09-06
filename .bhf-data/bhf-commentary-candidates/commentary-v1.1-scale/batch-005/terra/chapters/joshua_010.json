@@ -1,0 +1,83 @@
+{
+  "reference": "Joshua 10",
+  "book": "Joshua",
+  "chapter": 10,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_78",
+          "text": "Read the chapter with this setting in view: Campaign summaries of broad victory must be read together with explicit remaining-land and incomplete-possession notices. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken. Interpretations differ on some details.",
+          "evidence_ids": [
+            "joshua:interpretive_note:1"
+          ],
+          "verse_refs": [
+            "Joshua 10:40-43"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_79",
+          "text": "For its historical and cultural setting, note that Joshua concerns entry, campaigns, allotment, tribal unity, and covenant renewal; David, Solomon, monarchy, exile, Jerusalem, and Samaria are not its principal people, events, or settings. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "joshua:interpretive_note:0"
+          ],
+          "verse_refs": [
+            "Joshua 10:1-43"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        },
+        {
+          "id": "historical_context_80",
+          "text": "For its historical and cultural setting, note that Archaeological evidence from Jericho, Ai, Hazor, the highlands, and Mount Ebal varies by site and chronology and does not yield one uncontested conquest reconstruction. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "joshua:interpretive_note:2"
+          ],
+          "verse_refs": [
+            "Joshua 10:1-43"
+          ],
+          "confidence": "low",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_79",
+          "text": "A literary feature to notice is that Joshua moves from succession and entry through campaigns to land allotment, tribal unity, farewell, and covenant renewal. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image.",
+          "evidence_ids": [
+            "joshua-literary-movement"
+          ],
+          "verse_refs": [
+            "Joshua 10:1-43"
+          ],
+          "confidence": "high",
+          "interpretation_level": "inference"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "c4df286bde2e326e77ed87aa0449be6d055f27e30459f69b0cfc3f3df26fda8a",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-005-medium",
+    "generated_timestamp": "2026-09-06T03:50:21Z"
+  }
+}

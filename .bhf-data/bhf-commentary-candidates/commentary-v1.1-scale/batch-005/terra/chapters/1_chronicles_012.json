@@ -1,0 +1,53 @@
+{
+  "reference": "1 Chronicles 12",
+  "book": "1 Chronicles",
+  "chapter": 12,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_13",
+          "text": "Read the chapter with this setting in view: All Israel gathers at Hebron to recognize David as king, and David captures Jerusalem as the shared royal center. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken.",
+          "evidence_ids": [
+            "first-chronicles-all-israel-david"
+          ],
+          "verse_refs": [
+            "1 Chronicles 12:23-40"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_14",
+          "text": "For its historical and cultural setting, note that Chronicles' all Israel includes Judah-centered institutions while repeatedly incorporating northern and Transjordanian tribes; it should not be reduced either to a narrow biological category or to a claim that every group was equally present. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "1-chronicles:interpretive_note:1"
+          ],
+          "verse_refs": [
+            "1 Chronicles 12:23-40"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "3cf68b0d70266b1aee44d446d22957f2660b6806cd3c4970efe200f69d5e0b01",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-005-medium",
+    "generated_timestamp": "2026-09-06T03:50:20Z"
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "reference": "John 9",
+  "book": "John",
+  "chapter": 9,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_32",
+          "text": "Read the chapter with this setting in view: John 9 rejects a direct causal blame of the man's blindness on his or his parents' sin, but disability should not be reduced to an object lesson or cure narrative and medical care should never be withheld. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "john-disability-sin"
+          ],
+          "verse_refs": [
+            "John 9:1-41"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_33",
+          "text": "For its historical and cultural setting, note that John's aposynagogos notices have supported staged Johannine-community and synagogue-expulsion reconstructions, but a single late-first-century decree or uniform rupture is not established by the text. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. Interpretations differ on some details.",
+          "evidence_ids": [
+            "john-aposynagogos"
+          ],
+          "verse_refs": [
+            "John 9:22"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        },
+        {
+          "id": "historical_context_34",
+          "text": "For its historical and cultural setting, note that Theodotus attests a Jerusalem synagogue for Torah reading and teaching before 70 CE; the Gospels and Acts portray diverse local synagogue scenes in Galilee and the diaspora. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "synagogue:second_temple_context:0"
+          ],
+          "verse_refs": [
+            "John 9:22"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "68416e5ede4b7818491c9f91d072768126217454ccdaf1e8f550132e43d72914",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-005-medium",
+    "generated_timestamp": "2026-09-06T03:50:20Z"
+  }
+}

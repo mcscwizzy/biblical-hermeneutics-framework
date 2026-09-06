@@ -1,0 +1,101 @@
+{
+  "reference": "Numbers 33",
+  "book": "Numbers",
+  "chapter": 33,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_38",
+          "text": "Read the chapter with this setting in view: Exodus 12:12 and Numbers 33:4 explicitly connect the departure and plague sequence with judgment on Egypt's gods. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "judgment-on-egypts-gods"
+          ],
+          "verse_refs": [
+            "Numbers 33:3-4"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_39",
+          "text": "For its historical and cultural setting, note that Proposed maps of the wilderness route should label uncertain site identifications rather than presenting a single itinerary reconstruction as established. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. Interpretations differ on some details.",
+          "evidence_ids": [
+            "numbers:interpretive_note:2"
+          ],
+          "verse_refs": [
+            "Numbers 33:1-56"
+          ],
+          "confidence": "low",
+          "interpretation_level": "disputed"
+        },
+        {
+          "id": "historical_context_40",
+          "text": "For its historical and cultural setting, note that Exodus and Numbers preserve narrative episodes and itinerary notices for travel from the Sea toward Sinai and eventually the Transjordan. The sequence is textually important, but most intermediate stations and the complete route cannot be assigned secure modern coordinates. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "wilderness-wandering:historical_context:0"
+          ],
+          "verse_refs": [
+            "Numbers 33:1-49"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "archaeology_geography",
+      "title": "Archaeology and geography",
+      "blocks": [
+        {
+          "id": "archaeology_geography_39",
+          "text": "For its geographical or material setting, note that Exodus contrasts a three-day water shortage and undrinkable water at Marah with the springs and palms reported at Elim; Numbers 33 preserves the same station order. It can illuminate the passage, while its limits should be kept in view.",
+          "evidence_ids": [
+            "marah-elim-water-stations"
+          ],
+          "verse_refs": [
+            "Numbers 33:8-10"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_39",
+          "text": "A literary feature to notice is that The final third of Numbers prepares the new generation for land inheritance through a second census, inheritance rulings, Joshua's commission, land boundaries, towns, and tribal safeguards. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image.",
+          "evidence_ids": [
+            "numbers-inheritance-preparation"
+          ],
+          "verse_refs": [
+            "Numbers 33:1-56"
+          ],
+          "confidence": "high",
+          "interpretation_level": "inference"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "37bccff4698a9e2825b15a9fe65aa987624dc091a4b2d782cf0c47680be7731c",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-005-medium",
+    "generated_timestamp": "2026-09-06T03:50:20Z"
+  }
+}

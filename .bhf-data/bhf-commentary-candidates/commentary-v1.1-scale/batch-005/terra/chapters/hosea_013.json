@@ -1,0 +1,101 @@
+{
+  "reference": "Hosea 13",
+  "book": "Hosea",
+  "chapter": 13,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_95",
+          "text": "Read the chapter with this setting in view: Hosea 13:14 addresses death and Sheol in a rhetorically and textually difficult passage that may threaten rather than promise deliverance in its immediate context. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "hosea-death-taunt"
+          ],
+          "verse_refs": [
+            "Hosea 13:1-16"
+          ],
+          "confidence": "low",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_96",
+          "text": "For its historical and cultural setting, note that Hosea contests attribution of grain, wine, oil, fertility, and security to Baal or rival practices, but the text does not document one simple or uniform fertility cult. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. Interpretations differ on some details.",
+          "evidence_ids": [
+            "hosea-baal-fertility"
+          ],
+          "verse_refs": [
+            "Hosea 13:1-16"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        },
+        {
+          "id": "historical_context_97",
+          "text": "For its historical and cultural setting, note that The fall of Samaria is Hosea's major historical horizon, but the commonly cited 722/721 dates and Sargon II's 720 consolidation must be distinguished. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "hosea:interpretive_note:16"
+          ],
+          "verse_refs": [
+            "Hosea 13:1-16"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_96",
+          "text": "A literary feature to notice is that Masoretic Hosea, Old Greek Osee, Qumran witnesses, Targum, Peshitta, and Vulgate preserve evidence for a difficult and pluriform textual history requiring passage-level comparison. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image. Interpretations differ on some details.",
+          "evidence_ids": [
+            "hosea-textual-witnesses"
+          ],
+          "verse_refs": [
+            "Hosea 13:1-16"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "dig_deeper",
+      "title": "Dig deeper",
+      "blocks": [
+        {
+          "id": "dig_deeper_96",
+          "text": "For a later or comparative connection, note that Paul's reuse of Hosea 13:14 in 1 Corinthians 15 belongs to a later resurrection argument and does not remove the threat-filled literary context in Hosea. This remains a secondary connection rather than the chapter's first-audience context. It can be traced further without replacing the chapter's own setting. Interpretations differ on some details.",
+          "evidence_ids": [
+            "hosea:interpretive_note:21"
+          ],
+          "verse_refs": [
+            "Hosea 13:1-16"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "870586145bb296a5e703ab5766fe4db0421b2f7803219565586135b272ebb419",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-005-medium",
+    "generated_timestamp": "2026-09-06T03:50:21Z"
+  }
+}

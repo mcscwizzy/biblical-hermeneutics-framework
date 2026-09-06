@@ -1,0 +1,53 @@
+{
+  "reference": "Psalms 40",
+  "book": "Psalms",
+  "chapter": 40,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_116",
+          "text": "Read the chapter with this setting in view: From the patriarchs to the temple, sacrifice organizes worship around sin, gratitude, and restored access to God. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken.",
+          "evidence_ids": [
+            "what-is-sacrifice-in-the-bible:historical_context:0"
+          ],
+          "verse_refs": [
+            "Psalms 40:6-8"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_117",
+          "text": "For its historical and cultural setting, note that Sacrifices were common across the ancient world, but Israel's system is distinct because the LORD defines the offering, its meaning, and its goal. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "what-is-sacrifice-in-the-bible:ancient_near_east_context:0"
+          ],
+          "verse_refs": [
+            "Psalms 40:6-8"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "fb94c5dd1d6d2b8a737a7918581a8ee50800aafef27d269d2c22b497bd6b6eb1",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-005-medium",
+    "generated_timestamp": "2026-09-06T03:50:21Z"
+  }
+}

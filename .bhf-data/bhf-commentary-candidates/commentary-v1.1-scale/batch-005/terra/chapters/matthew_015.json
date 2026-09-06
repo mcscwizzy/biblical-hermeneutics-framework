@@ -1,0 +1,65 @@
+{
+  "reference": "Matthew 15",
+  "book": "Matthew",
+  "chapter": 15,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_11",
+          "text": "Read the chapter with this setting in view: Matthew juxtaposes an initial mission focused on Israel with a concluding commission directed to all nations. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "matthew-mission-israel-nations"
+          ],
+          "verse_refs": [
+            "Matthew 15:24"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_12",
+          "text": "For its historical and cultural setting, note that Matthew's summaries and stories present Jesus teaching, proclaiming, healing, and exorcising amid ancient understandings of bodies and spirits. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. Interpretations differ on some details.",
+          "evidence_ids": [
+            "matthew-healing-disability"
+          ],
+          "verse_refs": [
+            "Matthew 15:29-31"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        },
+        {
+          "id": "historical_context_13",
+          "text": "For its historical and cultural setting, note that Matthew 15:21-28 narrates a Canaanite woman's persistent petition, a harsh boundary metaphor, Jesus' praise of her faith, and her daughter's healing. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "matthew-canaanite-woman"
+          ],
+          "verse_refs": [
+            "Matthew 15:21-28"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "2e5d6dfd5abf969810217c68bc8869984a3e383bea60960d7ea4afdfc9c54d71",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-005-medium",
+    "generated_timestamp": "2026-09-06T03:50:20Z"
+  }
+}
