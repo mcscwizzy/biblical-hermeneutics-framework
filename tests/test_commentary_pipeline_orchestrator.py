@@ -22,6 +22,8 @@ from framework.commentary.orchestrator import (
     validate_state,
     _terra_command,
     _preflight_outputs_already_complete,
+    _next,
+    _remediation_decision,
 )
 
 
@@ -201,6 +203,80 @@ def test_empty_preflight_pool_becomes_human_review_blocker(tmp_path, monkeypatch
     assert blocked["blocked_reason"]["affected_chapters"] == ["1 Corinthians 1"]
 
 
+def test_remediation_decision_exposes_retryable_prose_contract(monkeypatch, tmp_path):
+    references = ["Joshua 1", "Joshua 3", "2 Samuel 6"]
+    monkeypatch.setattr(
+        "framework.commentary.orchestrator._remediation_plan",
+        lambda repo_root, state, persist=False: {
+            "status": "READY",
+            "eligible_references": references,
+            "groups": [{"group_id": "group-001", "references": references, "attempt": 1}],
+        },
+    )
+    state = {
+        "status": "BLOCKED",
+        "current_stage": "POST_GENERATION_AUDIT",
+        "blocked_reason": {
+            "error_class": "HUMAN_REVIEW_REQUIRED",
+            "retry_allowed": False,
+            "affected_chapters": references,
+        },
+    }
+
+    decision = _remediation_decision(tmp_path, state)
+
+    assert decision["available"] is True
+    assert decision["references"] == references
+    assert decision["blocker"]["error_class"] == "PROSE_QUALITY_REMEDIATION_AVAILABLE"
+    assert decision["blocker"]["retry_allowed"] is True
+    assert decision["blocker"]["retry_type"] == "BOUNDED_TERRA_PROSE_REMEDIATION"
+    assert decision["blocker"]["attempt"] == 1
+    assert decision["blocker"]["model"] == "terra"
+    assert decision["blocker"]["effort"] == "medium"
+
+
+def test_next_persists_retryable_remediation_contract(monkeypatch, tmp_path):
+    initialize(tmp_path)
+    state = load_state(state_path(tmp_path))
+    state["status"] = "BLOCKED"
+    state["current_stage"] = "POST_GENERATION_AUDIT"
+    state["stage_status"] = "OUTPUT_VALIDATED"
+    state["blocked_reason"] = {
+        "error_class": "HUMAN_REVIEW_REQUIRED",
+        "retry_allowed": False,
+        "affected_chapters": ["Genesis 1"],
+    }
+    save_state(state_path(tmp_path), state)
+    decision = {
+        "available": True,
+        "references": ["Genesis 1"],
+        "attempt": 1,
+        "retry_type": "BOUNDED_TERRA_PROSE_REMEDIATION",
+        "blocker": {
+            "error_class": "PROSE_QUALITY_REMEDIATION_AVAILABLE",
+            "retry_allowed": True,
+            "remediation_available": True,
+            "retry_type": "BOUNDED_TERRA_PROSE_REMEDIATION",
+            "attempt": 1,
+            "model": "terra",
+            "effort": "medium",
+            "affected_chapters": ["Genesis 1"],
+        },
+        "plan": {"status": "READY"},
+        "model": "terra",
+        "effort": "medium",
+    }
+    monkeypatch.setattr("framework.commentary.orchestrator._remediation_decision", lambda *args, **kwargs: decision)
+
+    result = _next(tmp_path)
+    persisted = load_state(state_path(tmp_path))
+
+    assert result["action"] == "REMEDIATION_AVAILABLE"
+    assert result["references"] == ["Genesis 1"]
+    assert persisted["blocked_reason"]["retry_allowed"] is True
+    assert persisted["human_intervention_required"] is False
+
+
 def test_promoted_preflight_outputs_are_reconciled_without_child_rerun(tmp_path):
     _locked_batch(tmp_path)
     initialize(tmp_path)
@@ -252,3 +328,15 @@ def test_corpus_completion_is_explicit(tmp_path):
     final_state = load_state(state_path(tmp_path))
     assert final_state["status"] == CORPUS_COMPLETE
     assert (tmp_path / ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/final-corpus-certification.json").exists()
+
+
+def test_terminal_corpus_reports_no_next_batch(tmp_path):
+    _locked_batch(tmp_path)
+    state = initialize(tmp_path)
+    state["status"] = CORPUS_COMPLETE
+    state["current_stage"] = CORPUS_COMPLETE
+    state["stage_status"] = "PENDING"
+    save_state(state_path(tmp_path), state)
+
+    assert status(tmp_path)["next_action"] == CORPUS_COMPLETE
+    assert _next(tmp_path)["action"] == CORPUS_COMPLETE

@@ -258,7 +258,11 @@ def save_state(path: Path, state: Mapping[str, Any]) -> dict[str, Any]:
         updated["required_effort"] = definition.required_effort
         updated["resumable"] = definition.resumable
     updated["can_advance"] = updated.get("status") == ACTIVE and updated.get("current_stage") != CORPUS_COMPLETE
-    updated["human_intervention_required"] = updated.get("status") == BLOCKED or updated.get("current_stage") in {"READY_FOR_GENERATION", "PROSE_GENERATION"}
+    blocked_reason = updated.get("blocked_reason") or {}
+    blocked_requires_human = updated.get("status") == BLOCKED and not bool(
+        blocked_reason.get("remediation_available")
+    )
+    updated["human_intervention_required"] = blocked_requires_human or updated.get("current_stage") in {"READY_FOR_GENERATION", "PROSE_GENERATION"}
     updated["updated_at"] = _now()
     updated[STATE_HASH_FIELD] = _state_hash(updated)
     _atomic_json(path, updated)
@@ -1009,7 +1013,12 @@ def _empty_preflight_diagnostics(repo_root: Path, state: Mapping[str, Any]) -> d
     }
 
 
-def _remediation_plan(repo_root: Path, state: Mapping[str, Any]) -> dict[str, Any]:
+def _remediation_plan(
+    repo_root: Path,
+    state: Mapping[str, Any],
+    *,
+    persist: bool = True,
+) -> dict[str, Any]:
     """Build a conservative plan from the recorded failed certification."""
 
     batch = _batch_root(repo_root, int(state["current_batch"]))
@@ -1035,7 +1044,8 @@ def _remediation_plan(repo_root: Path, state: Mapping[str, Any]) -> dict[str, An
     }
     if report.get("status") != "NO_GO":
         plan["diagnostics"] = ["bounded remediation requires the recorded initial certification to be NO_GO"]
-        _atomic_json(batch / "remediation-plan.json", plan)
+        if persist:
+            _atomic_json(batch / "remediation-plan.json", plan)
         return plan
     findings = report.get("findings") or {}
     global_integrity_clean = bool(
@@ -1058,7 +1068,8 @@ def _remediation_plan(repo_root: Path, state: Mapping[str, Any]) -> dict[str, An
         lock, bundles = revalidate_locks(terra_input, batch_cert)
     except Exception as exc:
         plan["diagnostics"] = [f"lock revalidation could not run: {exc}"]
-        _atomic_json(batch / "remediation-plan.json", plan)
+        if persist:
+            _atomic_json(batch / "remediation-plan.json", plan)
         return plan
     certified = {str(row.get("reference")): row for row in batch_cert.get("chapters", [])}
     entries = {str(row.get("reference")): row for row in terra_input.get("chapters", [])}
@@ -1125,7 +1136,8 @@ def _remediation_plan(repo_root: Path, state: Mapping[str, Any]) -> dict[str, An
         plan["diagnostics"] = ["no failed chapters are available for bounded remediation"]
     elif plan["status"] != "READY":
         plan["diagnostics"] = ["at least one failed chapter is not a pure allowlisted prose-quality failure"]
-    _atomic_json(batch / "remediation-plan.json", plan)
+    if persist:
+        _atomic_json(batch / "remediation-plan.json", plan)
     return plan
 
 
@@ -1195,6 +1207,51 @@ def _prepare_remediation_plan(repo_root: Path, state: Mapping[str, Any]) -> dict
     )
     _atomic_json(path, plan)
     return plan
+
+
+def _remediation_decision(repo_root: Path, state: Mapping[str, Any], *, persist: bool = False) -> dict[str, Any] | None:
+    """Derive one authoritative post-audit remediation contract."""
+
+    if state.get("status") != BLOCKED or state.get("current_stage") != "POST_GENERATION_AUDIT":
+        return None
+    plan = _remediation_plan(repo_root, state, persist=persist)
+    eligible = list(plan.get("eligible_references") or [])
+    available = plan.get("status") == "READY"
+    blocker = dict(state.get("blocked_reason") or {})
+    blocker.update({
+        "remediation_available": available,
+        "retry_type": "BOUNDED_TERRA_PROSE_REMEDIATION" if available else "NONE",
+        "attempt": 1 if available else None,
+        "model": "terra" if available else None,
+        "effort": "medium" if available else None,
+        "recommended_next_action": (
+            "bounded Terra Medium remediation available"
+            if available else "human review required before retry"
+        ),
+        "retry_allowed": available,
+    })
+    if available:
+        blocker["error_class"] = "PROSE_QUALITY_REMEDIATION_AVAILABLE"
+        blocker["affected_chapters"] = eligible
+    return {
+        "available": available,
+        "plan": plan,
+        "blocker": blocker,
+        "references": eligible,
+        "model": "terra" if available else None,
+        "effort": "medium" if available else None,
+        "attempt": 1 if available else None,
+        "retry_type": blocker["retry_type"],
+    }
+
+
+def _persist_remediation_decision(repo_root: Path, state: Mapping[str, Any], decision: dict[str, Any]) -> dict[str, Any]:
+    """Persist the planner-backed blocker fields without changing policy."""
+
+    updated = load_state(state_path(repo_root))
+    updated["blocked_reason"] = decision["blocker"]
+    save_state(state_path(repo_root), updated)
+    return load_state(state_path(repo_root))
 
 
 def _is_remediation_checkpoint(state: Mapping[str, Any]) -> bool:
@@ -1667,7 +1724,13 @@ def _set_blocker(
     state["status"] = BLOCKED
     state["blocked_reason"] = blocker
     save_state(state_path(repo_root), state)
-    return _resume_result(state, "BLOCKED", message=reason) | {"blocker": blocker}
+    persisted = load_state(state_path(repo_root))
+    if error_class == "HUMAN_REVIEW_REQUIRED" and persisted.get("current_stage") == "POST_GENERATION_AUDIT":
+        decision = _remediation_decision(repo_root, persisted, persist=True)
+        if decision is not None:
+            persisted = _persist_remediation_decision(repo_root, persisted, decision)
+            blocker = persisted["blocked_reason"]
+    return _resume_result(persisted, "BLOCKED", message=reason) | {"blocker": blocker}
 
 
 def clear_blocker(repo_root: Path, *, resolution: str) -> dict[str, Any]:
@@ -1737,6 +1800,32 @@ def reconcile_recovery_blocker(repo_root: Path) -> dict[str, Any]:
 def status(repo_root: Path) -> dict[str, Any]:
     state = load_state(state_path(repo_root))
     errors = validate_state(repo_root, state)
+    decision = _remediation_decision(repo_root, state, persist=False)
+    reported_blocker = decision["blocker"] if decision else state.get("blocked_reason")
+    remediation = None
+    if decision:
+        remediation = {
+            "available": decision["available"],
+            "model": decision["model"],
+            "effort": decision["effort"],
+            "attempt": decision["attempt"],
+            "retry_type": decision["retry_type"],
+            "references": decision["references"],
+            "plan_status": decision["plan"].get("status"),
+        }
+    next_action = (
+        "CORPUS_COMPLETE"
+        if state["status"] == CORPUS_COMPLETE
+        else "REMEDIATION_AVAILABLE"
+        if decision and decision["available"]
+        else "BLOCKED"
+        if state["status"] == BLOCKED
+        else "RESUME_REQUIRED"
+        if errors or (state["stage_status"] == RUNNING and _is_remediation_checkpoint(state))
+        else "MODEL_HANDOFF_REQUIRED"
+        if state["current_stage"] in {"READY_FOR_GENERATION", "PROSE_GENERATION"}
+        else "RUN_STAGE"
+    )
     return {
         "pipeline": PIPELINE_VERSION,
         "status": state["status"],
@@ -1756,17 +1845,10 @@ def status(repo_root: Path) -> dict[str, Any]:
         "can_advance": state["can_advance"],
         "human_intervention_required": state["human_intervention_required"],
         "checkpoint": state.get("resume_token"),
-        "blocker": state.get("blocked_reason"),
+        "blocker": reported_blocker,
+        "remediation": remediation,
         "validation_errors": errors,
-        "next_action": (
-            "BLOCKED"
-            if state["status"] == BLOCKED
-            else "RESUME_REQUIRED"
-            if errors or (state["stage_status"] == RUNNING and _is_remediation_checkpoint(state))
-            else "MODEL_HANDOFF_REQUIRED"
-            if state["current_stage"] in {"READY_FOR_GENERATION", "PROSE_GENERATION"}
-            else "RUN_STAGE"
-        ),
+        "next_action": next_action,
     }
 
 
@@ -1784,6 +1866,7 @@ def report(repo_root: Path) -> str:
         f"Last Certified Batch: {data['last_completed_batch']:03d}",
         f"Checkpoint: {data['checkpoint'] or 'none'}",
         f"Blockers: {len(data['validation_errors']) if data['validation_errors'] else ('1' if data['blocker'] else 'none')}",
+        f"Remediation: {data['remediation'] or 'none'}",
         "",
         f"NEXT ACTION: {data['next_action']}",
     ]
@@ -1819,16 +1902,20 @@ def build_parser() -> argparse.ArgumentParser:
 
 def _next(repo_root: Path) -> dict[str, Any]:
     state = load_state(state_path(repo_root))
+    if state["status"] == CORPUS_COMPLETE:
+        return _resume_result(state, "CORPUS_COMPLETE", message="all derived eligible chapters are finalized")
     if state["status"] == BLOCKED:
-        if state.get("current_stage") == "POST_GENERATION_AUDIT":
-            plan = _remediation_plan(repo_root, state)
-            if plan.get("status") == "READY":
-                return _resume_result(state, "REMEDIATION_AVAILABLE", message="the failed chapters qualify for one bounded Terra Medium remediation attempt") | {
-                    "run_stage": "POST_GENERATION_AUDIT",
-                    "model": "terra",
-                    "effort": "medium",
-                    "references": plan.get("eligible_references", []),
-                }
+        decision = _remediation_decision(repo_root, state, persist=True)
+        if decision and decision["available"]:
+            state = _persist_remediation_decision(repo_root, state, decision)
+            return _resume_result(state, "REMEDIATION_AVAILABLE", message="the failed chapters qualify for one bounded Terra Medium remediation attempt") | {
+                "run_stage": "POST_GENERATION_AUDIT",
+                "model": "terra",
+                "effort": "medium",
+                "references": decision["references"],
+                "attempt": decision["attempt"],
+                "retry_type": decision["retry_type"],
+            }
         return _resume_result(state, "BLOCKED", message=str(state.get("blocked_reason")))
     if state.get("stage_status") == RUNNING and _is_remediation_checkpoint(state):
         plan = _prepare_remediation_plan(repo_root, state)
