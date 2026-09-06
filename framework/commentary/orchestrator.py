@@ -802,7 +802,23 @@ def _run_post_generation(repo_root: Path, state: dict[str, Any]) -> dict[str, An
     if post_report.get("status") != "GO":
         for name in ("post-generation-report.json", "prose-certification.json"):
             os.replace(staging / name, batch / name)
-        return _set_blocker(repo_root, load_state(state_path(repo_root)), "HUMAN_REVIEW_REQUIRED", "post-generation certification did not reach GO", [post_report.get("status")])
+        blocked_state = load_state(state_path(repo_root))
+        blocked_state["stage_status"] = OUTPUT_VALIDATED
+        save_state(state_path(repo_root), blocked_state)
+        affected = [
+            row.get("reference") for row in post_report.get("chapters", [])
+            if row.get("final_disposition") != "PASS"
+        ]
+        result = _set_blocker(
+            repo_root,
+            load_state(state_path(repo_root)),
+            "HUMAN_REVIEW_REQUIRED",
+            "post-generation certification did not reach GO",
+            [post_report.get("status"), post_report.get("quality_flag_counts", {})],
+            affected_chapters=affected,
+        )
+        shutil.rmtree(staging)
+        return result
     for name in ("post-generation-report.json", "prose-certification.json"):
         os.replace(staging / name, batch / name)
     final_doc = repo_root / "docs" / f"commentary-v1.1-scaled-{_batch_id(number)}-post-generation.md"
@@ -987,15 +1003,24 @@ def advance_batch(repo_root: Path) -> dict[str, Any]:
     return _resume_result(state, "ADVANCED", message="next batch initialized")
 
 
-def _set_blocker(repo_root: Path, state: dict[str, Any], error_class: str, reason: str, diagnostics: Iterable[Any]) -> dict[str, Any]:
+def _set_blocker(
+    repo_root: Path,
+    state: dict[str, Any],
+    error_class: str,
+    reason: str,
+    diagnostics: Iterable[Any],
+    *,
+    affected_chapters: Iterable[str] | None = None,
+    affected_evidence_ids: Iterable[str] | None = None,
+) -> dict[str, Any]:
     blocker = {
         "batch": state.get("current_batch"),
         "stage": state.get("current_stage"),
         "timestamp": _now(),
         "error_class": error_class,
         "reason": reason,
-        "affected_chapters": [],
-        "affected_evidence_ids": [],
+        "affected_chapters": sorted(str(value) for value in (affected_chapters or []) if value),
+        "affected_evidence_ids": sorted(str(value) for value in (affected_evidence_ids or []) if value),
         "expected_vs_actual_hashes": [],
         "diagnostics": list(diagnostics),
         "recommended_next_action": "human review required before retry" if error_class != "RETRYABLE" else "resume after the checkpoint is available",
