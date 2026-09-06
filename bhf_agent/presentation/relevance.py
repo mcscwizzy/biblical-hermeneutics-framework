@@ -13,7 +13,7 @@ from typing import Any, Mapping
 
 from framework.canonical_library.scripture import parse_scripture_references
 
-from .references import _BOOK_ALIASES
+from .references import _BOOK_ALIASES, anchor_specificity
 from bhf_agent.references import BOOKS
 
 
@@ -37,6 +37,26 @@ SEMANTIC_RELATIONSHIPS = frozenset(
         WEAKLY_RELATED,
         SEMANTICALLY_MISANCHORED,
     }
+)
+
+# Applicability is deliberately separate from semantic relevance.  A record
+# can be globally related to a passage without being passage-valid evidence for
+# it.  These values are derived deterministically from the authored child
+# anchor and source kind; they are not an LLM routing decision.
+APPLICABILITY_SCOPES = frozenset(
+    {
+        "global",
+        "testament",
+        "book",
+        "section",
+        "passage",
+        "lexical",
+        "entity",
+    }
+)
+
+STRUCTURED_CHILD_SOURCE_KINDS = frozenset(
+    {"ckl_evidence_item", "ckl_claim", "ckl_interpretive_note"}
 )
 
 PRESENTATION_SECTIONS = frozenset(
@@ -236,6 +256,45 @@ def classify_semantic_relationship(
         if relationship in {"background", "contextual", "supporting"}:
             return GENERIC_BACKGROUND
     return WEAKLY_RELATED
+
+
+def applicability_scope(
+    passage_ref: str,
+    *,
+    anchors: list[str],
+    metadata: Mapping[str, Any],
+    inherited: bool = False,
+) -> str:
+    """Return the narrowest deterministic scope supported by the record.
+
+    Structured CKL children are scoped by their own Scripture links.  Legacy
+    fields inherit only a background/entity scope from the parent; they never
+    acquire passage-specific scope merely because the parent was retrieved.
+    """
+
+    source_kind = str(metadata.get("source_kind") or "").casefold()
+    parent_type = str(metadata.get("parent_type") or "").casefold()
+    if source_kind in STRUCTURED_CHILD_SOURCE_KINDS and not inherited:
+        specificities = {anchor_specificity(anchor) for anchor in anchors}
+        if "verse" in specificities:
+            return "passage"
+        if "chapter" in specificities:
+            return "section"
+        if "book" in specificities:
+            return "book"
+        return "global"
+
+    if parent_type == "word_study":
+        return "lexical"
+    if parent_type in {"person", "place", "event", "institution", "archaeology"}:
+        return "entity"
+    if parent_type == "book":
+        return "book"
+    if parent_type in {"theology", "theme", "doctrine", "biblical_theology", "cultural_background", "faq"}:
+        return "global"
+    # Ambiguous legacy inheritance fails closed as broad background rather
+    # than being promoted to passage evidence.
+    return "global"
 
 
 def presentation_role(

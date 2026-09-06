@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 from dataclasses import replace
+import json
 from typing import Any, Iterable, Mapping, Sequence
 
 from .evidence_normalization import (
@@ -29,6 +30,7 @@ from .models import EVIDENCE_BUNDLE_VERSION, EntityRef, EvidenceBundle, Evidence
 from .references import anchor_specificity, reference_distance, references_overlap
 from .relevance import (
     SEMANTICALLY_MISANCHORED,
+    applicability_scope,
     with_presentation_metadata,
     with_semantic_relationship,
 )
@@ -493,6 +495,12 @@ def _append_object_evidence(
     # evidence for the requested passage. Only legacy-only records may use the
     # compatibility bridge below.
     if added == 0 and not has_structured_evidence:
+        # A word-study parent is a conceptual/lexical container.  Its legacy
+        # prose does not prove that the lemma is present in this passage.
+        # Without an authored child anchor, fail closed instead of exposing
+        # every parent field as lexical evidence.
+        if _text(data.get("type")).casefold() == "word_study":
+            return
         matched_parent = [anchor for anchor in parent_anchors if references_overlap(passage_ref, anchor)]
         if not matched_parent:
             return
@@ -561,6 +569,12 @@ def _relevance_metadata(
     if evidence_type:
         metadata["evidence_type"] = evidence_type
     metadata["field"] = _text(item.get("field"))
+    metadata["applicability_scope"] = applicability_scope(
+        passage_ref,
+        anchors=anchors,
+        metadata=metadata,
+    )
+    metadata["anchor_source"] = "child"
     metadata = with_semantic_relationship(
         passage_ref,
         metadata,
@@ -605,6 +619,14 @@ def _legacy_relevance_metadata(
     if _text(data.get("type")).casefold() == "book":
         metadata["passage_relationship"] = "background"
         metadata["broad_tag_only"] = True
+    metadata["applicability_scope"] = applicability_scope(
+        passage_ref,
+        anchors=anchors,
+        metadata=metadata,
+        inherited=True,
+    )
+    metadata["anchor_source"] = "parent"
+    metadata["inherited_from_parent"] = True
     return metadata
 
 
@@ -645,15 +667,30 @@ def _register_object_sources(data: Mapping[str, Any], target: dict[str, dict[str
         source_id = _text(source.get("id") or source.get("source_id"))
         if not source_id:
             continue
-        if source_id not in target:
-            normalized = dict(source)
-            normalized["id"] = source_id
-            normalized["canonical_object_ids"] = []
-            target[source_id] = normalized
-        canonical_ids = target[source_id].setdefault("canonical_object_ids", [])
-        if object_id and object_id not in canonical_ids:
-            canonical_ids.append(object_id)
-            canonical_ids.sort()
+        normalized = dict(source)
+        normalized["id"] = source_id
+        normalized.pop("canonical_object_ids", None)
+        existing = target.get(source_id)
+        variants = []
+        if existing is not None:
+            variants.extend(existing.get("canonical_source_variants", []))
+            variants.append({key: value for key, value in existing.items() if key not in {"canonical_object_ids", "canonical_source_variants"}})
+        variants.append(normalized)
+        unique_variants = {
+            json.dumps(value, sort_keys=True, separators=(",", ":"), ensure_ascii=False): value
+            for value in variants
+        }
+        canonical = dict(unique_variants[sorted(unique_variants)[0]])
+        canonical["id"] = source_id
+        canonical_ids = set(existing.get("canonical_object_ids", [])) if existing else set()
+        if object_id:
+            canonical_ids.add(object_id)
+        canonical["canonical_object_ids"] = sorted(canonical_ids)
+        if len(unique_variants) > 1:
+            canonical["canonical_source_variants"] = [
+                unique_variants[key] for key in sorted(unique_variants)
+            ]
+        target[source_id] = canonical
 
 
 def _internal_source(object_id: str, data: Mapping[str, Any], target: dict[str, dict[str, Any]]) -> str:

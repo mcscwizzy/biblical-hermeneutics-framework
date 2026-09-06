@@ -566,6 +566,9 @@ def _item_summary(item: Any) -> dict[str, Any]:
         "assertion_type": metadata.get("assertion_type"),
         "dispute_status": metadata.get("dispute_status"),
         "evidence_type": metadata.get("evidence_type"),
+        "source_kind": metadata.get("source_kind"),
+        "applicability_scope": metadata.get("applicability_scope"),
+        "anchor_source": metadata.get("anchor_source"),
     }
 
 
@@ -857,7 +860,18 @@ def scan_anomalies(
             ))
 
         usage = (parent_usage or {}).get(parent_id, {})
-        if len(set(usage.get("books", []))) >= 3 and parent_type not in {"book", "word_study"} and relation not in {INTERTEXTUAL_REUSE, LATER_RECEPTION, COMPARATIVE_CONTEXT}:
+        applicability = str(metadata.get("applicability_scope") or "")
+        source_kind = str(metadata.get("source_kind") or "")
+        child_anchor = source_kind in {"ckl_evidence_item", "ckl_claim", "ckl_interpretive_note"}
+        # A reused conceptual parent is not itself evidence leakage when the
+        # admitted child carries its own passage/section anchor. Global and
+        # entity background may also be reused, but only under their explicit
+        # non-passage scope. Inherited direct evidence remains a blocker.
+        scoped_child = child_anchor and applicability in {"passage", "section", "lexical"}
+        broad_background = applicability in {"global", "testament", "entity"} and relation in {
+            GENERIC_BACKGROUND, INTERTEXTUAL_REUSE, LATER_RECEPTION, COMPARATIVE_CONTEXT,
+        }
+        if len(set(usage.get("books", []))) >= 3 and parent_type not in {"book", "word_study"} and not (scoped_child or broad_background):
             anomalies.append(_anomaly(
                 "CROSS_BOOK_PARENT_REUSE", item,
                 "One non-lexical CKL parent is attached across unrelated books in the evaluated pool.",

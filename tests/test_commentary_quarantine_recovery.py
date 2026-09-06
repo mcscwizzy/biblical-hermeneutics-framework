@@ -72,3 +72,21 @@ def test_adjudication_requires_current_pass_and_keeps_ckl_queue(tmp_path):
     assert result["recoverable_references"] == ["Genesis 1"]
     assert json.loads(queue.read_text(encoding="utf-8"))["chapters"][0]["reference"] == "Genesis 3"
     assert result["ckl_mutated"] is False
+
+
+def test_adjudication_can_use_isolated_current_preflight(tmp_path):
+    scale = tmp_path / "scale"
+    _write(scale / "batch-001/quarantine-report.json", {"chapters": [_quarantine("Genesis 1", "CROSS_BOOK_PARENT_REUSE", "batch-001")]})
+    inventory = tmp_path / "inventory.json"
+    build_inventory(scale, inventory)
+    isolated = tmp_path / "isolated-preflight.json"
+    _write(isolated, {"evaluated": [{"reference": "Genesis 1", "status": "PASS", "availability": "AVAILABLE", "quarantine_reason_codes": []}]})
+    result = adjudicate(
+        scale,
+        inventory,
+        "batch-007",
+        tmp_path / "result.json",
+        preflight_report=isolated,
+    )
+    assert result["adjudication_counts"] == {"RECOVERABLE": 1}
+    assert result["preflight_source"] == str(isolated)

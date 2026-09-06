@@ -1,0 +1,33 @@
+{
+  "before_metrics": {
+    "cross_book_parent_reuse": 5183,
+    "hash_disagreements": 36,
+    "presentation_role_issues": 7,
+    "terra_suppression_signals": 4,
+    "textual_routing_issues": 7,
+    "word_study_broad_parent_anchor": 400
+  },
+  "evidence_added": 0,
+  "evidence_deleted": 0,
+  "generated_at": "2026-09-06T05:40:35Z",
+  "historical_reports_mutated": false,
+  "json_ckl_records_migrated": 0,
+  "parents_left_for_human_review": 30,
+  "parents_remediated_by_policy": 339,
+  "post_preflight_metrics": {
+    "cross_book_parent_reuse": 0,
+    "hash_disagreements": 0,
+    "presentation_role_issues": 7,
+    "terra_suppression_signals": 4,
+    "textual_routing_issues": 7,
+    "word_study_broad_parent_anchor": 0
+  },
+  "report_version": "ckl-scope-remediation-result-v1",
+  "semantic_changes": [
+    "structured child applicability is anchored to child Scripture references",
+    "legacy word-study fields without child anchors are excluded",
+    "legacy parent fields carry explicit background/entity scope"
+  ],
+  "sqlite_records_migrated": 0,
+  "terra_prose_generated": false
+}

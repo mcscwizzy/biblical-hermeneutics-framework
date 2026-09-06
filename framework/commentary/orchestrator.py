@@ -275,6 +275,11 @@ def _validate_state_shape(state: Mapping[str, Any]) -> None:
     for key in ("current_batch", "last_completed_batch", "eligible_corpus_total", "finalized_chapters", "remaining_chapters"):
         if not isinstance(state[key], int) or state[key] < 0:
             raise StateCorruptionError(f"invalid non-negative integer field: {key}")
+    if "eligible_finalized_chapters" in state and (
+        not isinstance(state["eligible_finalized_chapters"], int)
+        or state["eligible_finalized_chapters"] < 0
+    ):
+        raise StateCorruptionError("invalid non-negative integer field: eligible_finalized_chapters")
     if not isinstance(state["protected_fingerprints"], dict):
         raise StateCorruptionError("protected_fingerprints must be an object")
     if not isinstance(state["completed_stages"], list):
@@ -352,6 +357,44 @@ def _current_population(repo_root: Path) -> int:
 
 def _finalized_count(repo_root: Path, fingerprints: Mapping[str, str]) -> int:
     return len(fingerprints)
+
+
+def _eligible_references(repo_root: Path) -> set[str]:
+    """Return the derived evidence-supported commentary population.
+
+    This is intentionally reference-based rather than count-based.  The
+    pipeline's total protected artifact count includes canary controls, while
+    the derived eligible corpus contains only low-information chapters whose
+    current evidence supports regeneration.
+    """
+
+    candidates = [
+        repo_root / SCALE_ROOT_REL / ".batch-007.work" / "population.json",
+        repo_root / ".bhf-data/bhf-commentary-candidates/commentary-v1.1/low-information-commentary.json",
+    ]
+    for path in candidates:
+        data = _read_json(path)
+        report = (data or {}).get("report", data or {})
+        values = report.get("chapters_evidence_supports_regeneration")
+        if isinstance(values, list):
+            return {str(value) for value in values if str(value).strip()}
+    return set()
+
+
+def _protected_references(repo_root: Path, fingerprints: Mapping[str, str]) -> set[str]:
+    references: set[str] = set()
+    for relative in fingerprints:
+        data = _read_json(repo_root / relative)
+        if data and data.get("reference"):
+            references.add(str(data["reference"]))
+    return references
+
+
+def _eligible_finalized_count(repo_root: Path, fingerprints: Mapping[str, str]) -> int:
+    eligible = _eligible_references(repo_root)
+    if not eligible:
+        return len(fingerprints)
+    return len(eligible.intersection(_protected_references(repo_root, fingerprints)))
 
 
 def _stage_from_artifacts(repo_root: Path, number: int) -> str:
@@ -552,7 +595,8 @@ def _base_state(repo_root: Path) -> dict[str, Any]:
     fingerprints = collect_protected_fingerprints(repo_root)
     eligible = _current_population(repo_root)
     finalized = _finalized_count(repo_root, fingerprints)
-    remaining = max(0, eligible - finalized) if eligible else 0
+    eligible_finalized = _eligible_finalized_count(repo_root, fingerprints)
+    remaining = max(0, eligible - eligible_finalized) if eligible else 0
     definition = _stage_requirements(current_stage)
     work_root = repo_root / SCALE_ROOT_REL / f".{_batch_id(current)}.work"
     work_root.mkdir(parents=True, exist_ok=True)
@@ -571,6 +615,7 @@ def _base_state(repo_root: Path) -> dict[str, Any]:
         "last_completed_stage": "PROSE_CERTIFICATION" if completed else None,
         "eligible_corpus_total": eligible,
         "finalized_chapters": finalized,
+        "eligible_finalized_chapters": eligible_finalized,
         "remaining_chapters": remaining,
         "required_model": definition.required_model,
         "required_effort": definition.required_effort,
@@ -671,8 +716,13 @@ def _complete_stage(repo_root: Path, state: dict[str, Any], *, checkpoint: Any =
     state.setdefault("completed_stages", []).append({"batch": state["current_batch"], "stage": stage})
     if stage == "PROSE_CERTIFICATION":
         state["last_completed_batch"] = int(state["current_batch"])
-        state["finalized_chapters"] = len(collect_protected_fingerprints(repo_root))
-        state["remaining_chapters"] = max(0, int(state["eligible_corpus_total"]) - int(state["finalized_chapters"]))
+        fingerprints = collect_protected_fingerprints(repo_root)
+        state["finalized_chapters"] = len(fingerprints)
+        state["eligible_finalized_chapters"] = _eligible_finalized_count(repo_root, fingerprints)
+        state["remaining_chapters"] = max(
+            0,
+            int(state["eligible_corpus_total"]) - int(state["eligible_finalized_chapters"]),
+        )
     next_stage = "BATCH_COMPLETE" if stage == "PROSE_CERTIFICATION" else {
         "CANDIDATE_SELECTION": "EVIDENCE_PREFLIGHT",
         "EVIDENCE_PREFLIGHT": "EVIDENCE_CERTIFICATION",
@@ -1258,7 +1308,11 @@ def advance_batch(repo_root: Path) -> dict[str, Any]:
     fingerprints = collect_protected_fingerprints(repo_root)
     state["protected_fingerprints"] = fingerprints
     state["finalized_chapters"] = len(fingerprints)
-    state["remaining_chapters"] = max(0, int(state["eligible_corpus_total"]) - len(fingerprints))
+    state["eligible_finalized_chapters"] = _eligible_finalized_count(repo_root, fingerprints)
+    state["remaining_chapters"] = max(
+        0,
+        int(state["eligible_corpus_total"]) - int(state["eligible_finalized_chapters"]),
+    )
     if state["remaining_chapters"] == 0:
         state = _transition(state, next_stage=CORPUS_COMPLETE, event="CORPUS_COMPLETED")
         state["status"] = CORPUS_COMPLETE
@@ -1325,7 +1379,12 @@ def status(repo_root: Path) -> dict[str, Any]:
         "batch": state["current_batch"],
         "stage": state["current_stage"],
         "stage_status": state["stage_status"],
-        "progress": {"finalized": state["finalized_chapters"], "eligible": state["eligible_corpus_total"], "remaining": state["remaining_chapters"]},
+        "progress": {
+            "finalized": state["finalized_chapters"],
+            "eligible_finalized": state.get("eligible_finalized_chapters", state["finalized_chapters"]),
+            "eligible": state["eligible_corpus_total"],
+            "remaining": state["remaining_chapters"],
+        },
         "required_model": state["required_model"],
         "required_effort": state["required_effort"],
         "last_completed_batch": state["last_completed_batch"],
@@ -1347,7 +1406,7 @@ def report(repo_root: Path) -> str:
         f"Status: {data['status']}",
         f"Batch: {data['batch']:03d}",
         f"Stage: {data['stage']}",
-        f"Progress: {progress['finalized']} finalized / {progress['eligible']} eligible ({progress['remaining']} remaining)",
+        f"Progress: {progress['finalized']} finalized ({progress['eligible_finalized']} eligible) / {progress['eligible']} eligible ({progress['remaining']} remaining)",
         f"Required Model: {data['required_model']}",
         f"Effort: {data['required_effort']}",
         f"Last Certified Batch: {data['last_completed_batch']:03d}",

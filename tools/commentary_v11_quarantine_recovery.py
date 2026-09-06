@@ -124,7 +124,13 @@ def build_inventory(scale_root: Path, output: Path) -> dict[str, Any]:
     return payload
 
 
-def _preflight_report(scale_root: Path, batch_id: str) -> tuple[dict[str, Any], Path]:
+def _preflight_report(
+    scale_root: Path,
+    batch_id: str,
+    preflight_report: Path | None = None,
+) -> tuple[dict[str, Any], Path]:
+    if preflight_report is not None:
+        return _read(preflight_report), preflight_report
     batch = scale_root / batch_id
     final = batch / "preflight-report.json"
     if final.exists():
@@ -142,9 +148,10 @@ def adjudicate(
     batch_id: str,
     output: Path,
     queue_output: Path | None = None,
+    preflight_report: Path | None = None,
 ) -> dict[str, Any]:
     manifest = _read(manifest_path)
-    preflight, source_path = _preflight_report(scale_root, batch_id)
+    preflight, source_path = _preflight_report(scale_root, batch_id, preflight_report)
     evaluated = {str(row["reference"]): row for row in preflight.get("evaluated", [])}
     chapters = []
     future_queue = []
@@ -231,6 +238,7 @@ def main() -> int:
     parser.add_argument("--manifest", type=Path)
     parser.add_argument("--batch-id", default="batch-007")
     parser.add_argument("--queue-output", type=Path)
+    parser.add_argument("--preflight-report", type=Path)
     args = parser.parse_args()
     if args.command == "build":
         result = build_inventory(args.scale_root.resolve(), args.output.resolve())
@@ -243,6 +251,7 @@ def main() -> int:
             args.batch_id,
             args.output.resolve(),
             args.queue_output.resolve() if args.queue_output else None,
+            args.preflight_report.resolve() if args.preflight_report else None,
         )
     print(json.dumps({
         "status": result.get("adjudication_status"),

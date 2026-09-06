@@ -200,6 +200,38 @@ def test_claim_level_precise_anchor_does_not_trigger_broad_parent_rule():
     assert "BROAD_PARENT_ANCHOR_LEAKAGE" not in {row["code"] for row in scan_anomalies(_bundle(item), library=fake_library, parent_records=parent)}
 
 
+def test_explicitly_anchored_child_parent_reuse_is_not_inheritance_leakage():
+    item = _item("child", parent_type="theme", relationship="DIRECT_CONTEXT")
+    item = replace(
+        item,
+        relevance_metadata={
+            **item.relevance_metadata,
+            "source_kind": "ckl_evidence_item",
+            "applicability_scope": "passage",
+            "anchor_source": "child",
+        },
+    )
+    usage = {"theme-1": {"books": ["Genesis", "Romans", "John"], "references": []}}
+    codes = {row["code"] for row in scan_anomalies(_bundle(item), parent_usage=usage)}
+    assert "CROSS_BOOK_PARENT_REUSE" not in codes
+
+
+def test_inherited_direct_parent_reuse_remains_a_blocker():
+    item = _item("inherited", parent_type="event", relationship="DIRECT_CONTEXT")
+    item = replace(
+        item,
+        relevance_metadata={
+            **item.relevance_metadata,
+            "source_kind": "ckl_legacy_field",
+            "applicability_scope": "global",
+            "anchor_source": "parent",
+        },
+    )
+    usage = {"event-1": {"books": ["Genesis", "Romans", "John"], "references": []}}
+    codes = {row["code"] for row in scan_anomalies(_bundle(item), parent_usage=usage)}
+    assert "CROSS_BOOK_PARENT_REUSE" in codes
+
+
 def test_template_direct_context_is_flagged():
     item = _item(claim="Literarily, this chapter is read through a template.")
     codes = {row["code"] for row in scan_anomalies(_bundle(item))}

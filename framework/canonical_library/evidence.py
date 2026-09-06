@@ -174,6 +174,11 @@ def rank_claims(
 
         claim_refs = tuple(str(value) for value in _as_sequence(claim.get("scripture_references")) if str(value).strip())
         reference_matches = _matching_references(query_refs, claim_refs, question)
+        # Parent relevance and lexical overlap establish conceptual
+        # relatedness only. A passage-scoped claim must carry its own
+        # overlapping Scripture anchor before it can become evidence.
+        if query_refs and not reference_matches:
+            continue
         if reference_matches:
             score += min(0.22, 0.12 + 0.03 * len(reference_matches))
             reasons.append("Scripture overlap: " + ", ".join(reference_matches))
