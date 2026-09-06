@@ -1,0 +1,89 @@
+{
+  "reference": "Leviticus 20",
+  "book": "Leviticus",
+  "chapter": 20,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_61",
+          "text": "Read the chapter with this setting in view: Leviticus distinguishes ritual impurity from moral offenses rather than treating every unclean condition as personal sin. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "leviticus-purity-distinctions"
+          ],
+          "verse_refs": [
+            "Leviticus 20:1-27"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_62",
+          "text": "For its historical and cultural setting, note that Ritual impurity should not be treated as a simple synonym for personal moral guilt; Leviticus distinguishes bodily states, ritual status, prohibited acts, and culpable offenses. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "leviticus:interpretive_note:1"
+          ],
+          "verse_refs": [
+            "Leviticus 20:1-27"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_62",
+          "text": "A literary feature to notice is that Leviticus moves from sacrifice and priestly inauguration through purity and the Day of Atonement into instructions for holy communal life, sacred time, land, covenant consequences, and vows. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image.",
+          "evidence_ids": [
+            "leviticus-literary-movement"
+          ],
+          "verse_refs": [
+            "Leviticus 20:1-27"
+          ],
+          "confidence": "high",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "dig_deeper",
+      "title": "Dig deeper",
+      "blocks": [
+        {
+          "id": "dig_deeper_62",
+          "text": "For a later or comparative connection, note that Arsenokoitai occurs in the vice list and plausibly echoes Greek Levitical wording, but its exact historical scope is disputed. This remains a secondary connection rather than the chapter's first-audience context. It can be traced further without replacing the chapter's own setting. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "1tim-arsenokoitai"
+          ],
+          "verse_refs": [
+            "Leviticus 20:13"
+          ],
+          "confidence": "low",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "04edeb0ecc005de62bc7816b7768da7fde1e76b9beb70a3e6fb7c5249c9e3a1c",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-003-medium",
+    "generated_timestamp": "2026-09-06T00:47:11Z"
+  }
+}

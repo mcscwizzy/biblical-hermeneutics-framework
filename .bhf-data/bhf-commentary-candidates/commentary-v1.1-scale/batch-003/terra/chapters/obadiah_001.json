@@ -1,0 +1,101 @@
+{
+  "reference": "Obadiah 1",
+  "book": "Obadiah",
+  "chapter": 1,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_141",
+          "text": "Read the chapter with this setting in view: Christian or ecclesial readings of Zion, survivors, land, and kingdom must not erase Jewish readers or replace Israel. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken.",
+          "evidence_ids": [
+            "obadiah:interpretive_note:32"
+          ],
+          "verse_refs": [
+            "Obadiah 1:17-21"
+          ],
+          "confidence": "high",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_142",
+          "text": "For its historical and cultural setting, note that The book's reciprocal judgment, fire, dispossession, and conquest imagery does not delegate revenge, ethnic cleansing, genocide, forced displacement, border violence, or land seizure to later readers. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "obadiah:interpretive_note:31"
+          ],
+          "verse_refs": [
+            "Obadiah 1:15-21"
+          ],
+          "confidence": "high",
+          "interpretation_level": "inference"
+        },
+        {
+          "id": "historical_context_143",
+          "text": "For its historical and cultural setting, note that Verses 19-20 present possession by southern, lowland, Benjaminite, Israelite, and Jerusalem-exile groups, but syntax, borders, identities, and Sepharad's location are unusually uncertain. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "obadiah-territorial-catalogue"
+          ],
+          "verse_refs": [
+            "Obadiah 1:19-20"
+          ],
+          "confidence": "low",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "archaeology_geography",
+      "title": "Archaeology and geography",
+      "blocks": [
+        {
+          "id": "archaeology_geography_142",
+          "text": "For its geographical or material setting, note that The poem exploits Edom's association with rocky highlands and perceived security, while archaeology shows a more complex polity and long interaction across Edom, Judah, and the Negev. It can illuminate the passage, while its limits should be kept in view. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "obadiah-edom-geography"
+          ],
+          "verse_refs": [
+            "Obadiah 1:2-4"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_142",
+          "text": "A literary feature to notice is that Obadiah portrays Edom as standing aloof, gloating, entering the gate, reaching for wealth, intercepting fugitives, and handing over survivors, yet whether every clause describes a completed historical action remains disputed. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "obadiah-edom-actions"
+          ],
+          "verse_refs": [
+            "Obadiah 1:11-14"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "aa06a1bb467ddc8d0184ec08be92338d62a775fa1f7a66d3448d7a63774ba754",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-003-medium",
+    "generated_timestamp": "2026-09-06T00:47:11Z"
+  }
+}

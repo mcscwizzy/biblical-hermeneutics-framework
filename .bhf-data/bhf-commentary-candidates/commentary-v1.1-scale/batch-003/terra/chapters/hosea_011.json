@@ -1,0 +1,101 @@
+{
+  "reference": "Hosea 11",
+  "book": "Hosea",
+  "chapter": 11,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_122",
+          "text": "Read the chapter with this setting in view: Masoretic Hosea, Old Greek Osee, Qumran witnesses, Targum, Peshitta, and Vulgate preserve evidence for a difficult and pluriform textual history requiring passage-level comparison. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "hosea-textual-witnesses"
+          ],
+          "verse_refs": [
+            "Hosea 11:1-12"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_123",
+          "text": "For its historical and cultural setting, note that The received book contains northern features and later Judah-facing materials; assigning each line to Hosea or an editor exceeds the evidence. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. Interpretations differ on some details.",
+          "evidence_ids": [
+            "hosea:interpretive_note:25"
+          ],
+          "verse_refs": [
+            "Hosea 11:1-12"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        },
+        {
+          "id": "historical_context_124",
+          "text": "For its historical and cultural setting, note that Hosea 11's divine recoil and compassion support reflection on divine pathos, but competing classical, relational, Jewish, and Christian accounts of divine change should be named. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "hosea:interpretive_note:19"
+          ],
+          "verse_refs": [
+            "Hosea 11:1-12"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_123",
+          "text": "A literary feature to notice is that Hosea rhetorically reuses exodus, wilderness, Jacob, Gibeah, Baal-peor, and prophetic traditions to diagnose present identity and summon change. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image. Interpretations differ on some details.",
+          "evidence_ids": [
+            "hosea-historical-memory"
+          ],
+          "verse_refs": [
+            "Hosea 11:1-12"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "dig_deeper",
+      "title": "Dig deeper",
+      "blocks": [
+        {
+          "id": "dig_deeper_123",
+          "text": "For a later or comparative connection, note that Matthew's use of Hosea 11:1 is a later figural rereading of Israel's exodus, not a denial that Hosea refers retrospectively to Israel as God's child. This remains a secondary connection rather than the chapter's first-audience context. It can be traced further without replacing the chapter's own setting. Interpretations differ on some details.",
+          "evidence_ids": [
+            "hosea:interpretive_note:18"
+          ],
+          "verse_refs": [
+            "Hosea 11:1-12"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "76c92ba526a9769e32379f3db8a0df402cd8ecc85006016b2d8fd992e20c2adb",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-003-medium",
+    "generated_timestamp": "2026-09-06T00:47:11Z"
+  }
+}

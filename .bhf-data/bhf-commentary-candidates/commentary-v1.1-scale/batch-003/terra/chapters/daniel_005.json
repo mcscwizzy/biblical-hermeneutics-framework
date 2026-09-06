@@ -1,0 +1,83 @@
+{
+  "reference": "Daniel 5",
+  "book": "Daniel",
+  "chapter": 5,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_56",
+          "text": "Read the chapter with this setting in view: Daniel 5 portrays Belshazzar as king at Babylon's final banquet, while cuneiform inscriptions independently identify historical Belshazzar as Nabonidus's son with high authority but not as Babylon's final sovereign in the ordinary royal list. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "daniel-belshazzar"
+          ],
+          "verse_refs": [
+            "Daniel 5:1-31"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_57",
+          "text": "For its historical and cultural setting, note that No proposed identification of Darius the Mede has achieved broad historical consensus, so the problem must remain explicit. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. Interpretations differ on some details.",
+          "evidence_ids": [
+            "daniel:interpretive_note:11"
+          ],
+          "verse_refs": [
+            "Daniel 5:30-31"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        },
+        {
+          "id": "historical_context_58",
+          "text": "For its historical and cultural setting, note that Daniel 5-6 places Darius the Mede after Babylon's fall, but no securely identified ruler matching all of the book's notices is independently attested. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "daniel-darius-mede"
+          ],
+          "verse_refs": [
+            "Daniel 5:1-31"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_57",
+          "text": "A literary feature to notice is that Daniel survives in substantially distinct Old Greek and Theodotionic versions, with especially important differences in chapters 4-6 and in the form and placement of additions. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image. Interpretations differ on some details.",
+          "evidence_ids": [
+            "daniel-greek-versions"
+          ],
+          "verse_refs": [
+            "Daniel 5:1-31"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "b47aad5536834a6adf214a81d584fda47fd34d6f0b5e68bf6fe42e1f9beada70",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-003-medium",
+    "generated_timestamp": "2026-09-06T00:47:11Z"
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "reference": "Luke 14",
+  "book": "Luke",
+  "chapter": 14,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_41",
+          "text": "Read the chapter with this setting in view: Second Temple Jewish and Greco-Roman settings used honor, shame, patronage, and public status to frame disputes over authority, purity, discipleship, and crucifixion. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken.",
+          "evidence_ids": [
+            "honor-and-shame:second_temple_context:0"
+          ],
+          "verse_refs": [
+            "Luke 14:7-11"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_42",
+          "text": "For its historical and cultural setting, note that Readers interpreting social dynamics in ancient biblical texts This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "honor-and-shame:original_audience:0"
+          ],
+          "verse_refs": [
+            "Luke 14:7-11"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        },
+        {
+          "id": "historical_context_43",
+          "text": "For its historical and cultural setting, note that Ancient Israelite, Second Temple Jewish, and Greco-Roman social worlds This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "honor-and-shame:historical_setting:0"
+          ],
+          "verse_refs": [
+            "Luke 14:7-11"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "3f072e61e55e9263b1f95821f257674a84ef349ab6bbf8170af7bed5a5e3dcfa",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-003-medium",
+    "generated_timestamp": "2026-09-06T00:47:11Z"
+  }
+}

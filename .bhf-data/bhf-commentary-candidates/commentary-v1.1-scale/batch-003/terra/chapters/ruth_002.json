@@ -1,0 +1,101 @@
+{
+  "reference": "Ruth 2",
+  "book": "Ruth",
+  "chapter": 2,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_134",
+          "text": "Read the chapter with this setting in view: Ruth 2 portrays gleaning as survival labor and Boaz's provision as protection that exceeds mere permission to gather leftover grain. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken.",
+          "evidence_ids": [
+            "ruth-gleaning-protection"
+          ],
+          "verse_refs": [
+            "Ruth 2:1-23"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_135",
+          "text": "For its historical and cultural setting, note that Ruth repeatedly retains the designation Moabite while pledging herself to Naomi, Israel's people, and Israel's God; proposals that the book directly answers a specific later intermarriage policy remain debated. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. Interpretations differ on some details.",
+          "evidence_ids": [
+            "ruth:interpretive_note:3"
+          ],
+          "verse_refs": [
+            "Ruth 2:2"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        },
+        {
+          "id": "historical_context_136",
+          "text": "For its historical and cultural setting, note that Boaz's story is set in the judges-era world of harvest labor, kinship obligations, land continuity, and public negotiation at the town gate. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "boaz:historical_context:0"
+          ],
+          "verse_refs": [
+            "Ruth 2:1-23"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_135",
+          "text": "A literary feature to notice is that Ruth explicitly attributes food and conception to the LORD while most of the plot advances through Naomi's, Ruth's, Boaz's, workers', elders', and women's actions. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image. Interpretations differ on some details.",
+          "evidence_ids": [
+            "ruth-providence-through-action"
+          ],
+          "verse_refs": [
+            "Ruth 2:1-23"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "dig_deeper",
+      "title": "Dig deeper",
+      "blocks": [
+        {
+          "id": "dig_deeper_135",
+          "text": "For a later or comparative connection, note that The Ammonite and Moabite assembly exclusion in Nehemiah 13 cites Deuteronomy 23 and is applied amid Tobiah's temple access. Canonical reading must also reckon with Ruth the Moabite and texts welcoming faithful foreigners rather than turning the episode into a universal ethnic ban. This remains a secondary connection rather than the chapter's first-audience context. It can be traced further without replacing the chapter's own setting. Interpretations differ on some details.",
+          "evidence_ids": [
+            "nehemiah:interpretive_note:7"
+          ],
+          "verse_refs": [
+            "Ruth 2:1-23"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "586f6d0ec8340f6830b6f7567ed502573ec28522e31b67753ab5fad80c66ef50",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-003-medium",
+    "generated_timestamp": "2026-09-06T00:47:11Z"
+  }
+}

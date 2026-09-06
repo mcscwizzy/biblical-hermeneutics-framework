@@ -1,0 +1,83 @@
+{
+  "reference": "Matthew 10",
+  "book": "Matthew",
+  "chapter": 10,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_11",
+          "text": "Read the chapter with this setting in view: Matthew juxtaposes an initial mission focused on Israel with a concluding commission directed to all nations. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "matthew-mission-israel-nations"
+          ],
+          "verse_refs": [
+            "Matthew 10:5-6"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_12",
+          "text": "For its historical and cultural setting, note that The event belongs to Jesus' Galilean ministry, where discipleship, teaching, healing, and opposition develop together. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "calling-of-the-twelve:historical_context:0"
+          ],
+          "verse_refs": [
+            "Matthew 10:1-4"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        },
+        {
+          "id": "historical_context_13",
+          "text": "For its historical and cultural setting, note that Teacher-disciple relationships were familiar in Jewish settings, while the number twelve evokes Israel's tribal identity. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "calling-of-the-twelve:ancient_near_east_context:0"
+          ],
+          "verse_refs": [
+            "Matthew 10:1-4"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "dig_deeper",
+      "title": "Dig deeper",
+      "blocks": [
+        {
+          "id": "dig_deeper_12",
+          "text": "For a later or comparative connection, note that Matthew, Luke, and John reuse or echo Micah in Bethlehem, shepherd, household-conflict, and Davidic expectation contexts. This remains a secondary connection rather than the chapter's first-audience context. It can be traced further without replacing the chapter's own setting. Interpretations differ on some details.",
+          "evidence_ids": [
+            "micah-new-testament-reception"
+          ],
+          "verse_refs": [
+            "Matthew 10:35-36"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "74ab307d0d07397493c3cdb7aed68ca0b68b2fe3f0d34a85c632c885b705bb7d",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-003-medium",
+    "generated_timestamp": "2026-09-06T00:47:11Z"
+  }
+}

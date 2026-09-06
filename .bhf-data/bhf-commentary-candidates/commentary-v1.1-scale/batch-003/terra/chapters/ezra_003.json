@@ -1,0 +1,83 @@
+{
+  "reference": "Ezra 3",
+  "book": "Ezra",
+  "chapter": 3,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_58",
+          "text": "Read the chapter with this setting in view: The returned community rebuilds the altar and resumes offerings before the temple is completed, then lays the foundation amid simultaneous praise, shouting, and weeping. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken.",
+          "evidence_ids": [
+            "ezra-altar-temple"
+          ],
+          "verse_refs": [
+            "Ezra 3:1-13"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_59",
+          "text": "For its historical and cultural setting, note that Completion of the sanctuary begins the Second Temple's institutional history, including priestly and Levitical service, sacrifice, Passover, gifts, and continuing negotiation with Persian authorities and neighboring groups. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "rebuilding-the-temple:second_temple_context:0"
+          ],
+          "verse_refs": [
+            "Ezra 3:1-13"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        },
+        {
+          "id": "historical_context_60",
+          "text": "For its historical and cultural setting, note that Ezra 1-6 presents an initial Cyrus-era authorization, altar and foundation work, opposition, renewed construction under Darius I through Haggai and Zechariah, an imperial inquiry, and completion in Darius's sixth year. The exact documentary history and archaeology of each stage remain debated. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "rebuilding-the-temple:historical_context:0"
+          ],
+          "verse_refs": [
+            "Ezra 3:1-13"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "dig_deeper",
+      "title": "Dig deeper",
+      "blocks": [
+        {
+          "id": "dig_deeper_59",
+          "text": "For a later or comparative connection, note that The command to consider from the day the temple was founded has been related to 520 BCE work, earlier return-era foundation traditions, or a rhetorical resetting of the project's beginning. This remains a secondary connection rather than the chapter's first-audience context. It can be traced further without replacing the chapter's own setting. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "haggai-foundation"
+          ],
+          "verse_refs": [
+            "Ezra 3:8-13"
+          ],
+          "confidence": "low",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "e820660c39aeaac694b5ff929c66b98a7b2521c922a0d2d8cf1aaaf234496eeb",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-003-medium",
+    "generated_timestamp": "2026-09-06T00:47:11Z"
+  }
+}

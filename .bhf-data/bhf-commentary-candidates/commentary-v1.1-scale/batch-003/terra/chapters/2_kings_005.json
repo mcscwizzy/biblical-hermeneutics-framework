@@ -1,0 +1,35 @@
+{
+  "reference": "2 Kings 5",
+  "book": "2 Kings",
+  "chapter": 5,
+  "status": "validated",
+  "evidence_availability": "THIN",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_72",
+          "text": "Read the chapter with this setting in view: Naaman, an Aramean commander, is healed after following Elisha's instruction and confesses that there is no God in all the earth except in Israel. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken.",
+          "evidence_ids": [
+            "second-kings-naaman-healed"
+          ],
+          "verse_refs": [
+            "2 Kings 5:1-19"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "2f93856ea6398bd4f330f2d7943271aa13d850d0861bb8676c9b164f3aa23ccb",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-003-medium",
+    "generated_timestamp": "2026-09-06T00:47:11Z"
+  }
+}

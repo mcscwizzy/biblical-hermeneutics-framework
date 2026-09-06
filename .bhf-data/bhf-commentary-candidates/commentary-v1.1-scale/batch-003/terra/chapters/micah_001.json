@@ -1,0 +1,101 @@
+{
+  "reference": "Micah 1",
+  "book": "Micah",
+  "chapter": 1,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_125",
+          "text": "Read the chapter with this setting in view: The Sennacherib Prism records Hezekiah's tribute, and the Lachish reliefs depict Assyrian conquest, together illuminating imperial ideology and warfare around 701 BCE. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken.",
+          "evidence_ids": [
+            "micah-sennacherib-material"
+          ],
+          "verse_refs": [
+            "Micah 1:8-16"
+          ],
+          "confidence": "high",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_126",
+          "text": "For its historical and cultural setting, note that Micah 1:1 identifies Micah as the Moreshethite and locates his visions concerning Samaria and Jerusalem in the reigns of Jotham, Ahaz, and Hezekiah. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. Interpretations differ on some details.",
+          "evidence_ids": [
+            "micah-superscription"
+          ],
+          "verse_refs": [
+            "Micah 1:1"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        },
+        {
+          "id": "historical_context_127",
+          "text": "For its historical and cultural setting, note that Micah's land, housing, court, leadership, and urban-rural tensions support social-historical analysis, but the prophet's exact class identity and political role remain reconstructed rather than explicit. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "micah-social-location"
+          ],
+          "verse_refs": [
+            "Micah 1:1-16"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_126",
+          "text": "A literary feature to notice is that Micah 1:10-16 forms a lament or dirge organized through Shephelah place names and sound-play, though several puns, sites, and route proposals remain uncertain. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image. Interpretations differ on some details.",
+          "evidence_ids": [
+            "micah-place-dirge"
+          ],
+          "verse_refs": [
+            "Micah 1:10-16"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "dig_deeper",
+      "title": "Dig deeper",
+      "blocks": [
+        {
+          "id": "dig_deeper_126",
+          "text": "For a later or comparative connection, note that Postcolonial and trauma-aware interpretations examine Assyrian empire, siege, displacement, communal fracture, resistance, and hope while distinguishing ancient referent from modern analogy. This remains a secondary connection rather than the chapter's first-audience context. It can be traced further without replacing the chapter's own setting. Interpretations differ on some details.",
+          "evidence_ids": [
+            "micah-empire-reception"
+          ],
+          "verse_refs": [
+            "Micah 1:8-16"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "4c127e4b18249d9f0404b954b953adfa3ff4d0ad58d7ddcb4cd396e256048014",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-003-medium",
+    "generated_timestamp": "2026-09-06T00:47:11Z"
+  }
+}

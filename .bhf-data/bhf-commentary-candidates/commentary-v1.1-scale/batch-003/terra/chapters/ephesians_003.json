@@ -1,0 +1,83 @@
+{
+  "reference": "Ephesians 3",
+  "book": "Ephesians",
+  "chapter": 3,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_82",
+          "text": "Read the chapter with this setting in view: The prison language should not romanticize incarceration, martyrdom, trauma, or abusive leaders who display suffering as authority. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken.",
+          "evidence_ids": [
+            "ephesians:interpretive_note:17"
+          ],
+          "verse_refs": [
+            "Ephesians 3:1"
+          ],
+          "confidence": "high",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_83",
+          "text": "For its historical and cultural setting, note that The disclosed mystery is gentile co-heirship, co-membership, and co-participation in the promise in Messiah. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "eph-mystery"
+          ],
+          "verse_refs": [
+            "Ephesians 3:1-13"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        },
+        {
+          "id": "historical_context_84",
+          "text": "For its historical and cultural setting, note that Prayer for inner strength is compatible with medicine, mental-health care, safeguarding, and practical aid. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "ephesians:interpretive_note:19"
+          ],
+          "verse_refs": [
+            "Ephesians 3:14-21"
+          ],
+          "confidence": "high",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_83",
+          "text": "A literary feature to notice is that Ephesians and Colossians share extensive language and structure; direction and mechanism of dependence remain debated. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "eph-colossians"
+          ],
+          "verse_refs": [
+            "Ephesians 3:1-21"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "3443abd5c91879efae78a23e4a2b46e7b97dec9db263673404bccfe820df5574",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-003-medium",
+    "generated_timestamp": "2026-09-06T00:47:11Z"
+  }
+}

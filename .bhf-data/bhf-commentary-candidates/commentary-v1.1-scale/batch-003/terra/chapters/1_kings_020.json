@@ -1,0 +1,35 @@
+{
+  "reference": "1 Kings 20",
+  "book": "1 Kings",
+  "chapter": 20,
+  "status": "validated",
+  "evidence_availability": "THIN",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_63",
+          "text": "Read the chapter with this setting in view: The Kurkh Monolith names Ahab in a coalition at Qarqar, an event not narrated in 1 Kings; it independently locates an Israelite king in ninth-century regional politics but does not validate every detail or theological claim in the book. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken.",
+          "evidence_ids": [
+            "1-kings:interpretive_note:5"
+          ],
+          "verse_refs": [
+            "1 Kings 20:1-43"
+          ],
+          "confidence": "high",
+          "interpretation_level": "inference"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "43cfd67c96dd0fa6b28e60bc00b4835eaef8b453e461c9d3925b1795a1c8c9c4",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-003-medium",
+    "generated_timestamp": "2026-09-06T00:47:11Z"
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "reference": "Zechariah 7",
+  "book": "Zechariah",
+  "chapter": 7,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_132",
+          "text": "Read the chapter with this setting in view: The dated prose and visions of chapters 1-8 substantially fit the early Persian Yehud setting of temple rebuilding under Darius I. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken. Interpretations differ on some details.",
+          "evidence_ids": [
+            "zechariah-dated-core"
+          ],
+          "verse_refs": [
+            "Zechariah 7:1"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_133",
+          "text": "For its historical and cultural setting, note that Zechariah 7 identifies true justice, covenant loyalty, compassion, and protection from oppression as commands refused by the ancestors before scattering. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "zechariah-justice"
+          ],
+          "verse_refs": [
+            "Zechariah 7:8-14"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        },
+        {
+          "id": "historical_context_134",
+          "text": "For its historical and cultural setting, note that Zechariah 1:1, 1:7, and 7:1 date revelations to Darius I's second and fourth years and name Zechariah son of Berechiah son of Iddo. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "zechariah-superscriptions"
+          ],
+          "verse_refs": [
+            "Zechariah 7:1"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_133",
+          "text": "A literary feature to notice is that A Bethel delegation's question about fifth-month mourning prompts divine questions about self-directed fasting and feasting rather than a direct yes-or-no ritual ruling. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "zechariah-fasting-question"
+          ],
+          "verse_refs": [
+            "Zechariah 7:1-7"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "c755ecdadccdbd59e3a8ea516c9f9a92ec967274ef52e0a07de268b405e54386",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-003-medium",
+    "generated_timestamp": "2026-09-06T00:47:11Z"
+  }
+}

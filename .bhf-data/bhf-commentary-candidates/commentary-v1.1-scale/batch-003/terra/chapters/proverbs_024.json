@@ -1,0 +1,71 @@
+{
+  "reference": "Proverbs 24",
+  "book": "Proverbs",
+  "chapter": 24,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_84",
+          "text": "Read the chapter with this setting in view: The received book explicitly contains distinct Solomonic collections, words of unnamed wise teachers, material copied by Hezekiah's officials, words of Agur, and instruction from Lemuel's mother. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken. Interpretations differ on some details.",
+          "evidence_ids": [
+            "proverbs-multiple-collections"
+          ],
+          "verse_refs": [
+            "Proverbs 24:23"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_85",
+          "text": "For its historical and cultural setting, note that Proverbs 22:17-24:22 shares a sequence of unusually close themes and expressions with the Egyptian Instruction of Amenemope. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "proverbs-amenemope-parallels"
+          ],
+          "verse_refs": [
+            "Proverbs 24:1-22"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "dig_deeper",
+      "title": "Dig deeper",
+      "blocks": [
+        {
+          "id": "dig_deeper_85",
+          "text": "For a later or comparative connection, note that Greek Proverbs contains interpretive expansions and arranges portions corresponding to the Hebrew book's final collections in a different order. This remains a secondary connection rather than the chapter's first-audience context. It can be traced further without replacing the chapter's own setting. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "proverbs-greek-order"
+          ],
+          "verse_refs": [
+            "Proverbs 24:23-34"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "b94914e7128e223494a52aa72f7c54704014d97cecfbaf51a0a63260fec5c074",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-003-medium",
+    "generated_timestamp": "2026-09-06T00:47:11Z"
+  }
+}

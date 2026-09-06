@@ -1,0 +1,83 @@
+{
+  "reference": "Malachi 1",
+  "book": "Malachi",
+  "chapter": 1,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_123",
+          "text": "Read the chapter with this setting in view: A functioning Second Temple, priestly offerings, governor, tithes, storehouse, and agrarian economy make a Persian-period Yehud setting probable. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken. Interpretations differ on some details.",
+          "evidence_ids": [
+            "malachi-persian-setting"
+          ],
+          "verse_refs": [
+            "Malachi 1:6-9"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_124",
+          "text": "For its historical and cultural setting, note that Malachi 1:1 calls the work a massa of YHWH's word to Israel through malakhi. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "malachi-superscription"
+          ],
+          "verse_refs": [
+            "Malachi 1:1"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        },
+        {
+          "id": "historical_context_125",
+          "text": "For its historical and cultural setting, note that Malachi accuses priests of dishonoring YHWH's name by presenting polluted food and blemished animals at the divine table. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "malachi-priestly-dishonor"
+          ],
+          "verse_refs": [
+            "Malachi 1:6-9"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_124",
+          "text": "A literary feature to notice is that Repeated assertions, audience questions, and extended answers give Malachi a characteristic but flexible disputation pattern. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "malachi-disputation-form"
+          ],
+          "verse_refs": [
+            "Malachi 1:2-14"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "616f9f31b29e32dbed8b9ab34ff5cd097950e81eb9b909f699abf564defd720a",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-003-medium",
+    "generated_timestamp": "2026-09-06T00:47:11Z"
+  }
+}

@@ -1,0 +1,101 @@
+{
+  "reference": "Revelation 12",
+  "book": "Revelation",
+  "chapter": 12,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_33",
+          "text": "Read the chapter with this setting in view: The narrative identifies the dragon as the ancient serpent, Devil, and Satan. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken.",
+          "evidence_ids": [
+            "rev-dragon"
+          ],
+          "verse_refs": [
+            "Revelation 12:9"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_34",
+          "text": "For its historical and cultural setting, note that The book calls its hearers to endurance and witness, not to enact its divine judgment scenes through religious violence. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "rev-not-violence-license"
+          ],
+          "verse_refs": [
+            "Revelation 12:11"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        },
+        {
+          "id": "historical_context_35",
+          "text": "For its historical and cultural setting, note that Revelation repeatedly reworks Israel's Scriptures, especially Daniel, Ezekiel, Isaiah, Exodus, Zechariah, Genesis, and Psalms. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "rev-scriptural-reuse"
+          ],
+          "verse_refs": [
+            "Revelation 12:1-17"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_34",
+          "text": "A literary feature to notice is that Seals, trumpets, and bowls form major sevenfold judgment sequences with interludes and repeated motifs. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "rev-septets"
+          ],
+          "verse_refs": [
+            "Revelation 12:1-17"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "dig_deeper",
+      "title": "Dig deeper",
+      "blocks": [
+        {
+          "id": "dig_deeper_34",
+          "text": "For a later or comparative connection, note that Isaiah 14:4 frames the poem containing the morning star, son of dawn as a taunt against the king of Babylon; identification with Satan belongs to later Jewish and especially Christian reception rather than the explicit addressee. This remains a secondary connection rather than the chapter's first-audience context. It can be traced further without replacing the chapter's own setting. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "isaiah-morning-star-taunt"
+          ],
+          "verse_refs": [
+            "Revelation 12:7-12"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "a8fc3eb3315b17849bb4c779b1292bef70476281dfeb6f94fd7f5725fd69521d",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-003-medium",
+    "generated_timestamp": "2026-09-06T00:47:11Z"
+  }
+}

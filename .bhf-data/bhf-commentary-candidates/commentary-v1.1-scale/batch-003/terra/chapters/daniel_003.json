@@ -1,0 +1,83 @@
+{
+  "reference": "Daniel 3",
+  "book": "Daniel",
+  "chapter": 3,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_75",
+          "text": "Read the chapter with this setting in view: Daniel's tales and visions offer multiple practices of endurance and resistance under imperial domination rather than a single rule that faithful people must always comply, flee, revolt, or expect miraculous rescue. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken. Interpretations differ on some details.",
+          "evidence_ids": [
+            "daniel-imperial-resistance"
+          ],
+          "verse_refs": [
+            "Daniel 3:1-30"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_76",
+          "text": "For its historical and cultural setting, note that The furnace story does not promise that every persecuted person will survive or make victims responsible when deliverance does not occur. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "daniel:interpretive_note:7"
+          ],
+          "verse_refs": [
+            "Daniel 3:16-18"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        },
+        {
+          "id": "historical_context_77",
+          "text": "For its historical and cultural setting, note that Daniel 3 depicts Hananiah, Mishael, and Azariah refusing coerced worship, accepting the possibility of death without presuming rescue, and being delivered with a fourth figure present. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "daniel-furnace-resistance"
+          ],
+          "verse_refs": [
+            "Daniel 3:1-30"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "dig_deeper",
+      "title": "Dig deeper",
+      "blocks": [
+        {
+          "id": "dig_deeper_76",
+          "text": "For a later or comparative connection, note that The fourth furnace figure is described through divine-being and angelic language in the chapter; direct identification as the preincarnate Christ is later christological reception. This remains a secondary connection rather than the chapter's first-audience context. It can be traced further without replacing the chapter's own setting. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "daniel:interpretive_note:6"
+          ],
+          "verse_refs": [
+            "Daniel 3:24-30"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "8cd7b7a6994d890c698c2ca17407e6c0713c368fec46190ca6cf8836985e07a1",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-003-medium",
+    "generated_timestamp": "2026-09-06T00:47:11Z"
+  }
+}

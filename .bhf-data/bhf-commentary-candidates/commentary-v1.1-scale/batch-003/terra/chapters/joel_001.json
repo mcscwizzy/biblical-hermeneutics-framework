@@ -1,0 +1,83 @@
+{
+  "reference": "Joel 1",
+  "book": "Joel",
+  "chapter": 1,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_120",
+          "text": "Read the chapter with this setting in view: Priests are summoned to lament and intercede; the passage must not shield clergy abuse or turn institutional leaders into unchallengeable interpreters of crisis. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken.",
+          "evidence_ids": [
+            "joel:interpretive_note:13"
+          ],
+          "verse_refs": [
+            "Joel 1:13-14"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_121",
+          "text": "For its historical and cultural setting, note that The dating range from monarchic to Hellenistic settings must remain visible; Persian-period dating is a current majority judgment, not a datable statement in Joel. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "joel:interpretive_note:1"
+          ],
+          "verse_refs": [
+            "Joel 1:1-4"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        },
+        {
+          "id": "historical_context_122",
+          "text": "For its historical and cultural setting, note that Food insecurity, livelihood loss, and animal suffering are central to Joel's crisis and should not be spiritualized away as mere scenery. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "joel:interpretive_note:9"
+          ],
+          "verse_refs": [
+            "Joel 1:5-20"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_121",
+          "text": "A literary feature to notice is that The four Hebrew locust terms in Joel 1:4 and 2:25 describe total successive consumption, but evidence is insufficient to identify them securely as four species or four life stages. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "joel-locust-terms"
+          ],
+          "verse_refs": [
+            "Joel 1:1-4"
+          ],
+          "confidence": "low",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "df5e4b5f0a921ff3888fc0f0ab31b1396c365c5cdacdc299e1ec7f0fd0af5220",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-003-medium",
+    "generated_timestamp": "2026-09-06T00:47:11Z"
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "reference": "Esther 3",
+  "book": "Esther",
+  "chapter": 3,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_127",
+          "text": "Read the chapter with this setting in view: Haman's decree targets Jews as a dispersed people for annihilation and provides a significant scriptural lens on group-directed hatred and genocidal threat. Modern antisemitism and genocide vocabulary can illuminate the pattern, but ancient actors and modern movements must not be collapsed without historical analysis. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "esther:interpretive_note:9"
+          ],
+          "verse_refs": [
+            "Esther 3:6-15"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_128",
+          "text": "For its historical and cultural setting, note that The book treats Haman's first edict as irretractable and solves the crisis through a second authorization. Achaemenid administration makes rapid multilingual dispatch and sealed delegated authority intelligible, but no evidence establishes an absolute empire-wide rule that every Persian royal decree was legally impossible to revoke. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "esther:interpretive_note:7"
+          ],
+          "verse_refs": [
+            "Esther 3:12-15"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        },
+        {
+          "id": "historical_context_129",
+          "text": "For its historical and cultural setting, note that Ahasuerus is plausibly identified with Xerxes I because the Hebrew royal name corresponds closely to Old Persian Xshayarsha and the setting is Achaemenid Susa. This probable identification does not independently verify every person, date, edict, speech, or conflict in Esther. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. Interpretations differ on some details.",
+          "evidence_ids": [
+            "esther:interpretive_note:0"
+          ],
+          "verse_refs": [
+            "Esther 3:7"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "be5198a7f27d967ada351425721d1a31d0c2ab0bceb4c69761af736dc413945c",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-003-medium",
+    "generated_timestamp": "2026-09-06T00:47:11Z"
+  }
+}

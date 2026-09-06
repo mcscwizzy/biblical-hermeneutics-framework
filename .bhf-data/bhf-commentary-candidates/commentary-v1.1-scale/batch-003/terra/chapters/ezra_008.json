@@ -1,0 +1,65 @@
+{
+  "reference": "Ezra 8",
+  "book": "Ezra",
+  "chapter": 8,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_113",
+          "text": "Read the chapter with this setting in view: Ezra gathers returnees at Ahava, recruits needed Levites, proclaims a fast rather than requesting a military escort, entrusts gifts by weight, and credits God for safe arrival. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken.",
+          "evidence_ids": [
+            "ezra-ahava-journey"
+          ],
+          "verse_refs": [
+            "Ezra 8:1-36"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_114",
+          "text": "For its historical and cultural setting, note that Return established and enlarged an early Second Temple community concerned with worship, genealogy, land, Torah, taxation, and boundaries while many Judeans continued living throughout the empire. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "return-from-exile:second_temple_context:0"
+          ],
+          "verse_refs": [
+            "Ezra 8:1-36"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        },
+        {
+          "id": "historical_context_115",
+          "text": "For its historical and cultural setting, note that After Cyrus captured Babylon in 539 BCE, Ezra presents authorization and support for return toward Jerusalem. The narrative distinguishes an early return and temple community from Ezra's later Artaxerxes-era journey; dates, group sizes, and the historical form of the decrees remain debated. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "return-from-exile:historical_context:0"
+          ],
+          "verse_refs": [
+            "Ezra 8:1-36"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "9b098a2f6c3fddc0d34fd390efcd0185c7e0aeb043a575fb041867616b77b2ca",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-003-medium",
+    "generated_timestamp": "2026-09-06T00:47:11Z"
+  }
+}

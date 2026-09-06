@@ -1,0 +1,85 @@
+{
+  "reference": "1 Samuel 2",
+  "book": "1 Samuel",
+  "chapter": 2,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_2",
+          "text": "Read the chapter with this setting in view: Hannah's song praises the LORD for reversing human status, judging pride, raising the poor, and giving strength to his king and anointed. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken.",
+          "evidence_ids": [
+            "first-samuel-hannah-reversal"
+          ],
+          "verse_refs": [
+            "1 Samuel 2:1-10"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_3",
+          "text": "For its historical and cultural setting, note that Hannah's story is set at Shiloh in Israel's premonarchic period, where a household's fertility, inheritance, and worship life were socially consequential. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "hannah:historical_context:0"
+          ],
+          "verse_refs": [
+            "1 Samuel 2:1-10",
+            "1 Samuel 2:18-21"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        },
+        {
+          "id": "historical_context_4",
+          "text": "For its historical and cultural setting, note that The narrative depicts a household with two wives and the grief and rivalry surrounding childlessness; it should not be used to turn an ancient social setting into a timeless rule. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "hannah:ancient_near_east_context:0"
+          ],
+          "verse_refs": [
+            "1 Samuel 2:1-10",
+            "1 Samuel 2:18-21"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_3",
+          "text": "A literary feature to notice is that First Samuel moves from Eli's failing priestly house through Samuel's prophetic leadership and Saul's rejected kingship to David's anointing, rise, exile, and Saul's death. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image.",
+          "evidence_ids": [
+            "first-samuel-literary-movement"
+          ],
+          "verse_refs": [
+            "1 Samuel 2:1-36"
+          ],
+          "confidence": "high",
+          "interpretation_level": "inference"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "98833829e8d0799e1d596fd27b6cea938edc47f2ccec708da94193db54830ae1",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-003-medium",
+    "generated_timestamp": "2026-09-06T00:47:11Z"
+  }
+}
