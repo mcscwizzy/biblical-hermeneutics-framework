@@ -19,6 +19,7 @@ from framework.commentary.orchestrator import (
     state_path,
     status,
     validate_state,
+    _terra_command,
 )
 
 
@@ -95,6 +96,15 @@ def test_stage_metadata_contains_model_and_gate_policy():
     assert STAGES["PROSE_GENERATION"].required_effort == "medium"
     assert STAGES["EVIDENCE_PREFLIGHT"].resumable is True
     assert STAGES["PROSE_GENERATION"].mutates_prose is True
+    assert STAGES["PROSE_GENERATION"].resumable is False
+
+
+def test_terra_generation_uses_the_repository_runner(tmp_path):
+    state = initialize(tmp_path)
+    state["current_batch"] = 4
+    command = _terra_command(tmp_path, state, tmp_path / "staging", tmp_path / "report.md")
+    assert command[1].endswith("tools/terra_commentary_scaled_batch.py")
+    assert "--output" in command and "--report" in command
 
 
 def test_protected_fingerprint_change_is_a_validation_error(tmp_path):

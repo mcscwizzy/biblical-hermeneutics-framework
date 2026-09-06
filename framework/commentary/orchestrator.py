@@ -22,6 +22,7 @@ import hashlib
 import json
 import os
 import re
+import shutil
 import subprocess
 import sys
 from collections import Counter
@@ -133,7 +134,7 @@ STAGES: dict[str, StageDefinition] = {
     ),
     "PROSE_GENERATION": StageDefinition(
         "PROSE_GENERATION", "READY_FOR_GENERATION", ("terra-input-manifest.json",),
-        ("terra/chapters/*.json",), True, False, True, True, "terra", "medium",
+        ("terra/chapters/*.json",), True, False, False, True, "terra", "medium",
         ("locked evidence only", "no new evidence", "prose provenance"),
         "The externally executed Terra stage has produced outputs for every locked chapter.",
     ),
@@ -449,6 +450,8 @@ def _validate_batch_artifacts(repo_root: Path, number: int, stage: str) -> list[
         report = _read_json(batch / "prose-certification.json")
         if report is None:
             errors.append("missing prose-certification.json")
+        elif report.get("status") != "GO":
+            errors.append(f"prose certification status is {report.get('status')!r}, not GO")
     if stage == "BATCH_COMPLETE":
         report = _read_json(batch / "prose-certification.json")
         if not report or report.get("status") != "GO":
@@ -689,6 +692,126 @@ def _preflight_command(repo_root: Path, state: Mapping[str, Any]) -> list[str]:
     ]
 
 
+def _terra_staging_root(repo_root: Path, number: int) -> Path:
+    return repo_root / SCALE_ROOT_REL / f".{_batch_id(number)}.terra.finalizing"
+
+
+def _terra_command(repo_root: Path, state: Mapping[str, Any], staging: Path, report: Path) -> list[str]:
+    return [
+        sys.executable,
+        str(repo_root / "tools/terra_commentary_scaled_batch.py"),
+        "--batch-root", str(_batch_root(repo_root, int(state["current_batch"]))),
+        "--output", str(staging),
+        "--report", str(report),
+    ]
+
+
+def _validate_terra_staging(repo_root: Path, state: Mapping[str, Any], staging: Path) -> list[str]:
+    errors: list[str] = []
+    summary = _read_json(staging / "terra-batch-summary.json")
+    validation = _read_json(staging / "terra-validation-report.json")
+    quality = _read_json(staging / "terra-quality-audit.json")
+    lock = (summary or {}).get("lock_revalidation", {})
+    expected = _batch_evidence_refs(_batch_root(repo_root, int(state["current_batch"])))
+    actual: set[str] = set()
+    for path in sorted((staging / "chapters").glob("*.json")):
+        candidate = _read_json(path)
+        if candidate and candidate.get("reference"):
+            actual.add(str(candidate["reference"]))
+    if not summary:
+        errors.append("missing Terra batch summary")
+    elif summary.get("status") != f"READY_FOR_BATCH_{int(state['current_batch']) + 1:03d}":
+        errors.append(f"Terra quality status is {summary.get('status')!r}, not a ready status")
+    if not validation:
+        errors.append("missing Terra validation report")
+    elif validation.get("invalid", 0) or validation.get("valid") != len(expected):
+        errors.append("Terra validation did not pass for every locked chapter")
+    if not quality:
+        errors.append("missing Terra quality audit")
+    elif any(quality.get("flag_counts", {}).values()):
+        errors.append("Terra quality audit contains blocking flags")
+    if lock.get("status") != "PASS" or lock.get("stale_locks"):
+        errors.append("Terra lock revalidation is not PASS")
+    if actual != expected:
+        errors.append(f"Terra output coverage mismatch: expected {len(expected)}, found {len(actual)}")
+    if (summary or {}).get("quarantined_chapters_not_generated") is not True:
+        errors.append("Terra reports quarantined chapters in generation input")
+    if (summary or {}).get("canary_artifacts", {}).get("unchanged") is not True:
+        errors.append("Terra changed protected canary artifacts")
+    if (summary or {}).get("batch_001_terra_artifacts", {}).get("unchanged") is not True:
+        errors.append("Terra changed protected Batch 001 artifacts")
+    return errors
+
+
+def _run_terra(repo_root: Path, state: dict[str, Any]) -> dict[str, Any]:
+    number = int(state["current_batch"])
+    staging = _terra_staging_root(repo_root, number)
+    report = repo_root / "docs" / f".commentary-v1.1-scaled-{_batch_id(number)}-terra.finalizing.md"
+    staging.mkdir(parents=True, exist_ok=True)
+    command = _terra_command(repo_root, state, staging, report)
+    state["stage_status"] = RUNNING
+    state["resume_token"] = {"command": command, "staging_root": str(staging.relative_to(repo_root)), "model": "terra", "effort": "medium"}
+    save_state(state_path(repo_root), state)
+    completed = subprocess.run(command, cwd=repo_root, check=False)
+    state = load_state(state_path(repo_root))
+    if completed.returncode != 0:
+        return _resume_result(state, "RESUME_REQUIRED", message="Terra stage was interrupted or failed; temporary output remains unpromoted")
+    errors = _validate_terra_staging(repo_root, state, staging)
+    if errors:
+        return _set_blocker(repo_root, state, "NON_RETRYABLE", "Terra output validation failed", errors)
+    final_output = _batch_root(repo_root, number) / "terra"
+    if final_output.exists():
+        return _set_blocker(repo_root, state, "HUMAN_REVIEW_REQUIRED", "final Terra output already exists; refusing overwrite", [str(final_output)])
+    staging.replace(final_output)
+    final_report = repo_root / "docs" / f"commentary-v1.1-scaled-{_batch_id(number)}-terra.md"
+    if report.exists():
+        os.replace(report, final_report)
+    state = load_state(state_path(repo_root))
+    state["stage_status"] = OUTPUT_WRITTEN
+    checkpoint = {"stage": "PROSE_GENERATION", "output": str(final_output.relative_to(repo_root)), "summary_hash": _sha256_file(final_output / "terra-batch-summary.json")}
+    state = _complete_stage(repo_root, state, checkpoint=checkpoint)
+    save_state(state_path(repo_root), state)
+    return _resume_result(state, "STAGE_COMPLETE", message="Terra output validated and atomically promoted")
+
+
+def _run_post_generation(repo_root: Path, state: dict[str, Any]) -> dict[str, Any]:
+    """Run the proven certifier against a temporary batch copy before promotion."""
+
+    number = int(state["current_batch"])
+    batch = _batch_root(repo_root, number)
+    staging = repo_root / SCALE_ROOT_REL / f".{_batch_id(number)}.certifying"
+    if staging.exists():
+        shutil.rmtree(staging)
+    shutil.copytree(batch, staging)
+    state["stage_status"] = RUNNING
+    state["resume_token"] = {"staging_root": str(staging.relative_to(repo_root)), "policy": "existing-certification-policy"}
+    save_state(state_path(repo_root), state)
+    from tools.commentary_v11_post_generation import markdown as post_markdown
+    from tools.commentary_v11_post_generation import run as post_run
+
+    try:
+        post_report = post_run(staging)
+    except Exception as exc:
+        return _resume_result(load_state(state_path(repo_root)), "RESUME_REQUIRED", message=f"post-generation audit interrupted: {exc}")
+    _atomic_json(staging / "post-generation-report.json", post_report)
+    _atomic_json(staging / "prose-certification.json", post_report)
+    _atomic_text(staging / "post-generation.md", post_markdown(post_report))
+    if post_report.get("status") != "GO":
+        for name in ("post-generation-report.json", "prose-certification.json"):
+            os.replace(staging / name, batch / name)
+        return _set_blocker(repo_root, load_state(state_path(repo_root)), "HUMAN_REVIEW_REQUIRED", "post-generation certification did not reach GO", [post_report.get("status")])
+    for name in ("post-generation-report.json", "prose-certification.json"):
+        os.replace(staging / name, batch / name)
+    final_doc = repo_root / "docs" / f"commentary-v1.1-scaled-{_batch_id(number)}-post-generation.md"
+    os.replace(staging / "post-generation.md", final_doc)
+    shutil.rmtree(staging)
+    state = load_state(state_path(repo_root))
+    state["stage_status"] = OUTPUT_WRITTEN
+    state = _complete_stage(repo_root, state, checkpoint={"stage": "POST_GENERATION_AUDIT", "status": "GO"})
+    save_state(state_path(repo_root), state)
+    return _resume_result(state, "STAGE_COMPLETE", message="post-generation certification output validated and promoted")
+
+
 def _run_external_preflight(repo_root: Path, state: dict[str, Any]) -> dict[str, Any]:
     command = _preflight_command(repo_root, state)
     state["stage_status"] = RUNNING
@@ -718,10 +841,7 @@ def run_stage(repo_root: Path, *, model: str | None = None, effort: str | None =
             "model": "terra", "effort": "medium",
         }
     if stage == "PROSE_GENERATION":
-        return _resume_result(state, "MODEL_HANDOFF_REQUIRED", message="run Terra externally, then invoke resume") | {
-            "action": "MODEL_HANDOFF_REQUIRED", "run_stage": "PROSE_GENERATION",
-            "model": "terra", "effort": "medium",
-        }
+        return _run_terra(repo_root, state)
     if stage in {"CANDIDATE_SELECTION", "EVIDENCE_PREFLIGHT"}:
         state = _run_external_preflight(repo_root, state)
         state = save_state(path, state)
@@ -737,13 +857,10 @@ def run_stage(repo_root: Path, *, model: str | None = None, effort: str | None =
     if stage in {"EVIDENCE_CERTIFICATION", "EVIDENCE_LOCKED", "POST_GENERATION_AUDIT", "PROSE_CERTIFICATION", "BATCH_COMPLETE"}:
         if stage == "BATCH_COMPLETE":
             return advance_batch(repo_root)
+        if stage == "POST_GENERATION_AUDIT":
+            return _run_post_generation(repo_root, state)
         state["stage_status"] = RUNNING
         save_state(path, state)
-        if stage == "POST_GENERATION_AUDIT":
-            command = [sys.executable, str(repo_root / "tools/commentary_v11_post_generation.py"), "--batch-root", str(_batch_root(repo_root, int(state["current_batch"]))) ]
-            completed = subprocess.run(command, cwd=repo_root, check=False)
-            if completed.returncode != 0:
-                return _resume_result(load_state(path), "RESUME_REQUIRED", message="post-generation certification did not pass")
         state = load_state(path)
         state["stage_status"] = OUTPUT_WRITTEN
         state = _complete_stage(repo_root, state, checkpoint={"validated_at": _now()})
@@ -758,10 +875,12 @@ def resume(repo_root: Path) -> dict[str, Any]:
     if state["status"] == BLOCKED:
         return _resume_result(state, "BLOCKED", message=str(state.get("blocked_reason")))
     stage = str(state["current_stage"])
+    if stage in {"CANDIDATE_SELECTION", "EVIDENCE_PREFLIGHT"}:
+        return run_stage(repo_root, model="luna", effort="high")
     if stage == "PROSE_GENERATION":
-        errors = _validate_batch_artifacts(repo_root, int(state["current_batch"]), stage)
-        if errors:
-            return _resume_result(state, "RESUME_REQUIRED", message="external Terra output is not complete: " + "; ".join(errors))
+        return run_stage(repo_root, model="terra", effort="medium")
+    if stage == "POST_GENERATION_AUDIT":
+        return run_stage(repo_root)
     try:
         state = _complete_stage(repo_root, state, checkpoint=state.get("resume_token"))
     except PipelineError as exc:
