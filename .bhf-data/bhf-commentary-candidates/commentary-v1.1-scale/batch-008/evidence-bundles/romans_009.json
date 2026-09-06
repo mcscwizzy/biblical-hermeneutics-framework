@@ -1,0 +1,2953 @@
+{
+  "passage_ref": "Romans 9",
+  "entities": {
+    "people": [],
+    "places": [],
+    "groups": [],
+    "events": [
+      {
+        "id": "birth-of-isaac",
+        "title": "Birth of Isaac",
+        "type": "event",
+        "aliases": [
+          "isaac born",
+          "birth of isaac",
+          "promised son isaac",
+          "genesis 21 isaac"
+        ],
+        "metadata": {
+          "summary": "Isaac is born to Abraham and Sarah as the promised child through whom the covenant line continues.",
+          "importance": 88,
+          "retrieval_score": 0.908,
+          "ancient_names": [],
+          "modern_identification": "",
+          "region": "",
+          "terrain": "",
+          "elevation": null,
+          "archaeology": [],
+          "related_passages": [
+            "Genesis 18:9-15",
+            "Genesis 21:1-7",
+            "Romans 9:6-13",
+            "Hebrews 11:11-12"
+          ]
+        }
+      }
+    ],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "birth-of-isaac:ancient_near_east_context:0",
+      "claim": "Ancient households depended on heirs for land, memory, and provision, but Genesis presents Isaac primarily as gift and promise.",
+      "category": "culture",
+      "source_ids": [
+        "genesis-18-9-15",
+        "genesis-21-1-7",
+        "romans-9-6-13",
+        "hebrews-11-11-12",
+        "birth-of-isaac-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "birth-of-isaac"
+      ],
+      "passage_anchors": [
+        "Romans 9:6-13"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "birth-of-isaac",
+        "parent_title": "Birth of Isaac",
+        "parent_type": "event",
+        "object_importance": 88,
+        "retrieval_score": 0.908,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 5,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "birth-of-isaac:historical_context:0",
+      "claim": "The birth stands within the patriarchal household world, where inheritance and lineage shape family identity.",
+      "category": "history",
+      "source_ids": [
+        "genesis-18-9-15",
+        "genesis-21-1-7",
+        "romans-9-6-13",
+        "hebrews-11-11-12",
+        "birth-of-isaac-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "birth-of-isaac"
+      ],
+      "passage_anchors": [
+        "Romans 9:6-13"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "birth-of-isaac",
+        "parent_title": "Birth of Isaac",
+        "parent_type": "event",
+        "object_importance": 88,
+        "retrieval_score": 0.908,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 5,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "hosea:interpretive_note:30",
+      "claim": "Romans 9 and 1 Peter 2 reuse Lo-ammi and Lo-ruhamah language in distinct communities; neither passage licenses antisemitism or contempt for Jews.",
+      "category": "culture",
+      "source_ids": [
+        "new-testament-hosea-reuse",
+        "moyise-hosea-new-testament"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Romans 9:22-29"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "hosea",
+        "parent_title": "Hosea",
+        "parent_type": "book",
+        "object_importance": 91,
+        "retrieval_score": 0.911,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 21,
+        "certainty": "strong_consensus",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "interpretive-caution",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "LATER_RECEPTION",
+        "presentation_role": "dig_deeper",
+        "overview_priority": 0
+      }
+    },
+    {
+      "id": "jewish-cemetery-inscriptions-later-control",
+      "claim": "The Monteverde and related Roman Jewish inscriptions document Greek and Latin names, family relations, symbols, and communal titles mainly in the third and fourth centuries.",
+      "category": "archaeology",
+      "source_ids": [
+        "vatican-jewish-lapidarium",
+        "rutgers-jews-late-rome",
+        "philo-legatio-rome"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Romans 9:1-11:36"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "roman-rome-jewish-civic-household-and-imperial-life",
+        "parent_title": "Roman Rome: Jewish, Civic, Household, and Imperial Life",
+        "parent_type": "cultural_background",
+        "object_importance": 96,
+        "retrieval_score": 0.916,
+        "passage_relationship": "comparative",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "chronological_uncertainty",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 1.0,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "inscription",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "COMPARATIVE_CONTEXT",
+        "presentation_role": "dig_deeper",
+        "overview_priority": 0
+      }
+    },
+    {
+      "id": "jewish-cemetery-inscriptions-later-control:passage-relevance",
+      "claim": "The inscriptions confirm long-term Jewish plurality and adaptation at Rome while preventing later titles, language ratios, or burial customs from being treated as direct facts about Romans' first recipients.",
+      "category": "archaeology",
+      "source_ids": [
+        "vatican-jewish-lapidarium",
+        "rutgers-jews-late-rome",
+        "philo-legatio-rome"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Romans 9:1-11:36"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "roman-rome-jewish-civic-household-and-imperial-life",
+        "parent_title": "Roman Rome: Jewish, Civic, Household, and Imperial Life",
+        "parent_type": "cultural_background",
+        "object_importance": 96,
+        "retrieval_score": 0.916,
+        "passage_relationship": "comparative",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "chronological_uncertainty",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 1.0,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "inscription",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "COMPARATIVE_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 0,
+        "supports_evidence_ids": [
+          "jewish-cemetery-inscriptions-later-control"
+        ]
+      }
+    },
+    {
+      "id": "later-supersessionism-antisemitism-boundary",
+      "claim": "Later Christians have used Pauline contrast, hardening, branch, and election language to claim Jewish rejection, Christian ethnic succession, collective guilt, coercive conversion, and social exclusion.",
+      "category": "chronology",
+      "source_ids": [
+        "romans-israel-text",
+        "eastman-israel-mercy",
+        "nanos-mystery-israel",
+        "fredriksen-pagans"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Romans 9:1-5"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-israel-jewish-gentile-relations-abraham-torah-circumcision-justification-faith-election-hardening-remnant-olive-tree-and-all-israel",
+        "parent_title": "Pauline Israel, Jewish-Gentile Relations, Abraham, Torah, Circumcision, Justification, Faith, Election, Hardening, Remnant, Olive Tree, and All Israel",
+        "parent_type": "cultural_background",
+        "object_importance": 99,
+        "retrieval_score": 0.979,
+        "passage_relationship": "comparative",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "secondary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "historical-period",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "COMPARATIVE_CONTEXT",
+        "presentation_role": "dig_deeper",
+        "overview_priority": 0
+      }
+    },
+    {
+      "id": "later-supersessionism-antisemitism-boundary:passage-relevance",
+      "claim": "Makes explicit that Romans' lament, privileges, anti-boasting, beloved status, irrevocable calling, and mercy cannot authorize antisemitism or erasure of living Jewish communities.",
+      "category": "chronology",
+      "source_ids": [
+        "romans-israel-text",
+        "eastman-israel-mercy",
+        "nanos-mystery-israel",
+        "fredriksen-pagans"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Romans 9:1-5"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-israel-jewish-gentile-relations-abraham-torah-circumcision-justification-faith-election-hardening-remnant-olive-tree-and-all-israel",
+        "parent_title": "Pauline Israel, Jewish-Gentile Relations, Abraham, Torah, Circumcision, Justification, Faith, Election, Hardening, Remnant, Olive Tree, and All Israel",
+        "parent_type": "cultural_background",
+        "object_importance": 99,
+        "retrieval_score": 0.979,
+        "passage_relationship": "comparative",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "secondary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "historical-period",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "COMPARATIVE_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 0,
+        "supports_evidence_ids": [
+          "later-supersessionism-antisemitism-boundary"
+        ]
+      }
+    },
+    {
+      "id": "malachi-new-testament",
+      "claim": "Matthew, Mark, and Luke receive messenger and Elijah language in relation to John the Baptist, while Romans quotes Jacob-Esau language.",
+      "category": "culture",
+      "source_ids": [
+        "sblgnt",
+        "schart-malachi",
+        "early-christian-prophets"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Romans 9:10-13"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "malachi",
+        "parent_title": "Malachi",
+        "parent_type": "book",
+        "object_importance": 80,
+        "retrieval_score": 0.9,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 9,
+        "certainty": "textually_explicit",
+        "dispute_status": "denominational_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "reception_history",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "LATER_RECEPTION",
+        "presentation_role": "dig_deeper",
+        "overview_priority": 0
+      }
+    },
+    {
+      "id": "modern-lament-grief-trauma-care",
+      "claim": "Trauma-aware prayer care permits grief, anger, numbness, silence, uncertainty, fragmented speech, assisted communication, and changing participation without diagnosis by religious leaders.",
+      "category": "culture",
+      "source_ids": [
+        "romans-prayer-text",
+        "philippians-prayer-text",
+        "fitzmyer-romans",
+        "reumann-philippians-prayer",
+        "who-mental-health-rights",
+        "who-qualityrights"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Romans 9:1-3"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-prayer-thanksgiving-intercession-lament-groaning-joy-peace-hope-benediction-blessing-and-communal-memory",
+        "parent_title": "Pauline Prayer, Thanksgiving, Intercession, Lament, Groaning, Joy, Peace, Hope, Benediction, Blessing, and Communal Memory",
+        "parent_type": "cultural_background",
+        "object_importance": 9,
+        "retrieval_score": 0.849,
+        "passage_relationship": "comparative",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "probable",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "secondary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "worldview-concept",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "COMPARATIVE_CONTEXT",
+        "presentation_role": "dig_deeper",
+        "overview_priority": 0
+      }
+    },
+    {
+      "id": "modern-lament-grief-trauma-care:passage-relevance",
+      "claim": "Rejects compulsory positivity, coerced forgiveness, public catharsis, testimony deadlines, repeated retelling, and treating lament as rebellion.",
+      "category": "culture",
+      "source_ids": [
+        "romans-prayer-text",
+        "philippians-prayer-text",
+        "fitzmyer-romans",
+        "reumann-philippians-prayer",
+        "who-mental-health-rights",
+        "who-qualityrights"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Romans 9:1-3"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-prayer-thanksgiving-intercession-lament-groaning-joy-peace-hope-benediction-blessing-and-communal-memory",
+        "parent_title": "Pauline Prayer, Thanksgiving, Intercession, Lament, Groaning, Joy, Peace, Hope, Benediction, Blessing, and Communal Memory",
+        "parent_type": "cultural_background",
+        "object_importance": 9,
+        "retrieval_score": 0.849,
+        "passage_relationship": "comparative",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "probable",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "secondary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "worldview-concept",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "COMPARATIVE_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 0,
+        "supports_evidence_ids": [
+          "modern-lament-grief-trauma-care"
+        ]
+      }
+    },
+    {
+      "id": "pauline-identity-categories-distinct",
+      "claim": "Israel, Jew, gentile, circumcision, uncircumcision, Abrahamic children, remnant, branches, and Messiah assembly function differently across the selected arguments.",
+      "category": "culture",
+      "source_ids": [
+        "romans-israel-text",
+        "galatians-israel-text",
+        "wolter-romans-israel",
+        "thiessen-gentile"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Romans 9:1-11:32"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-israel-jewish-gentile-relations-abraham-torah-circumcision-justification-faith-election-hardening-remnant-olive-tree-and-all-israel",
+        "parent_title": "Pauline Israel, Jewish-Gentile Relations, Abraham, Torah, Circumcision, Justification, Faith, Election, Hardening, Remnant, Olive Tree, and All Israel",
+        "parent_type": "cultural_background",
+        "object_importance": 99,
+        "retrieval_score": 0.979,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "secondary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "worldview-concept",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 102
+      }
+    },
+    {
+      "id": "pauline-identity-categories-distinct:passage-relevance",
+      "claim": "Prevents gentile inclusion from becoming identity erasure, replacement ownership, or collective Jewish blame.",
+      "category": "culture",
+      "source_ids": [
+        "romans-israel-text",
+        "galatians-israel-text",
+        "wolter-romans-israel",
+        "thiessen-gentile"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Romans 9:1-11:32"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-israel-jewish-gentile-relations-abraham-torah-circumcision-justification-faith-election-hardening-remnant-olive-tree-and-all-israel",
+        "parent_title": "Pauline Israel, Jewish-Gentile Relations, Abraham, Torah, Circumcision, Justification, Faith, Election, Hardening, Remnant, Olive Tree, and All Israel",
+        "parent_type": "cultural_background",
+        "object_importance": 99,
+        "retrieval_score": 0.979,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "secondary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "worldview-concept",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 102,
+        "supports_evidence_ids": [
+          "pauline-identity-categories-distinct"
+        ]
+      }
+    },
+    {
+      "id": "remnant-prophecy:ancient_near_east_context:0",
+      "claim": "Ancient background for Remnant Prophecy includes royal courts, sanctuary worship, covenant lawsuits, exile, and restoration hope; the entry ties that world to Isaiah 10:20-23, Zephaniah 3:11-20, restoration-prophecy, and exile-theme without letting comparison replace the biblical witness.",
+      "category": "culture",
+      "source_ids": [
+        "isaiah-10",
+        "zephaniah-3",
+        "romans-9",
+        "romans-11",
+        "remnant-prophecy-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Romans 9:27-29"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "remnant-prophecy",
+        "parent_title": "Remnant Prophecy",
+        "parent_type": "prophecy",
+        "object_importance": 90,
+        "retrieval_score": 0.91,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 26,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "remnant-prophecy:historical_context:0",
+      "claim": "Remnant prophecy emerges as prophets explain how judgment does not end God's covenant purposes.",
+      "category": "history",
+      "source_ids": [
+        "isaiah-10",
+        "zephaniah-3",
+        "romans-9",
+        "romans-11",
+        "remnant-prophecy-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Romans 9:27-29"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "remnant-prophecy",
+        "parent_title": "Remnant Prophecy",
+        "parent_type": "prophecy",
+        "object_importance": 90,
+        "retrieval_score": 0.91,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 26,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "roman-jewish-communities",
+      "claim": "Philo's near-contemporary account describes Jewish residents across the Tiber, many with citizenship after manumission, synagogues, Sabbath study, and contributions sent to Jerusalem.",
+      "category": "social",
+      "source_ids": [
+        "philo-legatio-rome",
+        "lampe-rome",
+        "rutgers-jews-late-rome",
+        "romans-greek",
+        "acts-rome-texts"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Romans 9:1-11:36"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "roman-rome-jewish-civic-household-and-imperial-life",
+        "parent_title": "Roman Rome: Jewish, Civic, Household, and Imperial Life",
+        "parent_type": "cultural_background",
+        "object_importance": 96,
+        "retrieval_score": 0.916,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.75,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "people-group",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 47
+      }
+    },
+    {
+      "id": "roman-jewish-communities:passage-relevance",
+      "claim": "The evidence gives concrete Jewish-diaspora context for Romans and Acts 28 without making Roman Jews a uniform body or treating later catacomb offices as first-century institutions.",
+      "category": "social",
+      "source_ids": [
+        "philo-legatio-rome",
+        "lampe-rome",
+        "rutgers-jews-late-rome",
+        "romans-greek",
+        "acts-rome-texts"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Romans 9:1-11:36"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "roman-rome-jewish-civic-household-and-imperial-life",
+        "parent_title": "Roman Rome: Jewish, Civic, Household, and Imperial Life",
+        "parent_type": "cultural_background",
+        "object_importance": 96,
+        "retrieval_score": 0.916,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.75,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "people-group",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "significance",
+        "overview_priority": 47,
+        "supports_evidence_ids": [
+          "roman-jewish-communities"
+        ]
+      }
+    },
+    {
+      "id": "romans-christ-telos-torah",
+      "claim": "Romans places Christos telos nomou inside a contrast involving Israel, righteousness, Torah, trust, and the stumbling stone.",
+      "category": "culture",
+      "source_ids": [
+        "romans-israel-text",
+        "wolter-romans-israel",
+        "thiessen-gentile"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Romans 9:30-10:4"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-israel-jewish-gentile-relations-abraham-torah-circumcision-justification-faith-election-hardening-remnant-olive-tree-and-all-israel",
+        "parent_title": "Pauline Israel, Jewish-Gentile Relations, Abraham, Torah, Circumcision, Justification, Faith, Election, Hardening, Remnant, Olive Tree, and All Israel",
+        "parent_type": "cultural_background",
+        "object_importance": 99,
+        "retrieval_score": 0.979,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 29,
+        "certainty": "disputed",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "literary-convention",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 102
+      }
+    },
+    {
+      "id": "romans-christ-telos-torah:passage-relevance",
+      "claim": "Prevents automatic translation into Torah abolition and the antisemitic claim that Judaism persists only through stubborn legalism.",
+      "category": "culture",
+      "source_ids": [
+        "romans-israel-text",
+        "wolter-romans-israel",
+        "thiessen-gentile"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Romans 9:30-10:4"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-israel-jewish-gentile-relations-abraham-torah-circumcision-justification-faith-election-hardening-remnant-olive-tree-and-all-israel",
+        "parent_title": "Pauline Israel, Jewish-Gentile Relations, Abraham, Torah, Circumcision, Justification, Faith, Election, Hardening, Remnant, Olive Tree, and All Israel",
+        "parent_type": "cultural_background",
+        "object_importance": 99,
+        "retrieval_score": 0.979,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 29,
+        "certainty": "disputed",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "literary-convention",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 102,
+        "supports_evidence_ids": [
+          "romans-christ-telos-torah"
+        ]
+      }
+    },
+    {
+      "id": "romans-codices",
+      "claim": "Sinaiticus, Vaticanus, Alexandrinus, and Claromontanus are major Greek witnesses to Romans with distinct omissions, corrections, and textual profiles.",
+      "category": "archaeology",
+      "source_ids": [
+        "sinaiticus",
+        "vaticanus",
+        "alexandrinus",
+        "claromontanus"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Romans 1:1-16:27"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "romans",
+        "parent_title": "Romans",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 800,
+        "certainty": "strong_consensus",
+        "dispute_status": "not_disputed",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "archaeology",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "archaeology_geography",
+        "overview_priority": 81
+      }
+    },
+    {
+      "id": "romans-election-scriptural-examples",
+      "claim": "Paul cites Isaac, Jacob, Esau, Moses, and Pharaoh while arguing about calling, purpose, mercy, and hardening.",
+      "category": "culture",
+      "source_ids": [
+        "romans-israel-text",
+        "wolter-romans-israel",
+        "eastman-israel-mercy"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Romans 9:6-24"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-israel-jewish-gentile-relations-abraham-torah-circumcision-justification-faith-election-hardening-remnant-olive-tree-and-all-israel",
+        "parent_title": "Pauline Israel, Jewish-Gentile Relations, Abraham, Torah, Circumcision, Justification, Faith, Election, Hardening, Remnant, Olive Tree, and All Israel",
+        "parent_type": "cultural_background",
+        "object_importance": 99,
+        "retrieval_score": 0.979,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 5,
+        "certainty": "disputed",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "literary-convention",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 102
+      }
+    },
+    {
+      "id": "romans-election-scriptural-examples:passage-relevance",
+      "claim": "Prevents proof-texting ancient peoples into a deterministic system used to shame victims or excuse domination.",
+      "category": "culture",
+      "source_ids": [
+        "romans-israel-text",
+        "wolter-romans-israel",
+        "eastman-israel-mercy"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Romans 9:6-24"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-israel-jewish-gentile-relations-abraham-torah-circumcision-justification-faith-election-hardening-remnant-olive-tree-and-all-israel",
+        "parent_title": "Pauline Israel, Jewish-Gentile Relations, Abraham, Torah, Circumcision, Justification, Faith, Election, Hardening, Remnant, Olive Tree, and All Israel",
+        "parent_type": "cultural_background",
+        "object_importance": 99,
+        "retrieval_score": 0.979,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 5,
+        "certainty": "disputed",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "literary-convention",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 102,
+        "supports_evidence_ids": [
+          "romans-election-scriptural-examples"
+        ]
+      }
+    },
+    {
+      "id": "romans-hosea-isaiah-calling",
+      "claim": "Romans cites Hosea's not-my-people reversal and Isaiah's remnant language after naming a call from Jews and gentiles.",
+      "category": "culture",
+      "source_ids": [
+        "romans-israel-text",
+        "wolter-romans-israel",
+        "thiessen-gentile"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Romans 9:24-29"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-israel-jewish-gentile-relations-abraham-torah-circumcision-justification-faith-election-hardening-remnant-olive-tree-and-all-israel",
+        "parent_title": "Pauline Israel, Jewish-Gentile Relations, Abraham, Torah, Circumcision, Justification, Faith, Election, Hardening, Remnant, Olive Tree, and All Israel",
+        "parent_type": "cultural_background",
+        "object_importance": 99,
+        "retrieval_score": 0.979,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 23,
+        "certainty": "strong_consensus",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "literary-convention",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 102
+      }
+    },
+    {
+      "id": "romans-hosea-isaiah-calling:passage-relevance",
+      "claim": "Preserves scriptural rereading without allowing gentile readers to confiscate Israel's prophetic restoration language.",
+      "category": "culture",
+      "source_ids": [
+        "romans-israel-text",
+        "wolter-romans-israel",
+        "thiessen-gentile"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Romans 9:24-29"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-israel-jewish-gentile-relations-abraham-torah-circumcision-justification-faith-election-hardening-remnant-olive-tree-and-all-israel",
+        "parent_title": "Pauline Israel, Jewish-Gentile Relations, Abraham, Torah, Circumcision, Justification, Faith, Election, Hardening, Remnant, Olive Tree, and All Israel",
+        "parent_type": "cultural_background",
+        "object_importance": 99,
+        "retrieval_score": 0.979,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 23,
+        "certainty": "strong_consensus",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "literary-convention",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 102,
+        "supports_evidence_ids": [
+          "romans-hosea-isaiah-calling"
+        ]
+      }
+    },
+    {
+      "id": "romans-israel",
+      "claim": "Romans 9-11 is integral to the gospel argument and repeatedly affirms Israel's privileges, remnant, future hope, beloved status, and irrevocable gifts.",
+      "category": "culture",
+      "source_ids": [
+        "romans-greek",
+        "nanos-mystery",
+        "fredriksen-paul"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Romans 9:1-11:36"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "romans",
+        "parent_title": "Romans",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_theology",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 85
+      }
+    },
+    {
+      "id": "romans-israel-lament",
+      "claim": "Paul solemnly names great sorrow, unceasing anguish, and an extreme wish concerning his Israelite kin before listing Israel's privileges.",
+      "category": "culture",
+      "source_ids": [
+        "romans-prayer-text",
+        "fitzmyer-romans"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Romans 9:1-5"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-prayer-thanksgiving-intercession-lament-groaning-joy-peace-hope-benediction-blessing-and-communal-memory",
+        "parent_title": "Pauline Prayer, Thanksgiving, Intercession, Lament, Groaning, Joy, Peace, Hope, Benediction, Blessing, and Communal Memory",
+        "parent_type": "cultural_background",
+        "object_importance": 9,
+        "retrieval_score": 0.849,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "probable",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "worldview-concept",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    },
+    {
+      "id": "romans-israel-lament-privileges",
+      "claim": "Paul identifies Israelites as fleshly kin and lists adoption, glory, covenants, Torah, worship, promises, ancestors, and Messiah.",
+      "category": "culture",
+      "source_ids": [
+        "romans-israel-text",
+        "wolter-romans-israel",
+        "eastman-israel-mercy"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Romans 9:1-5"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-israel-jewish-gentile-relations-abraham-torah-circumcision-justification-faith-election-hardening-remnant-olive-tree-and-all-israel",
+        "parent_title": "Pauline Israel, Jewish-Gentile Relations, Abraham, Torah, Circumcision, Justification, Faith, Election, Hardening, Remnant, Olive Tree, and All Israel",
+        "parent_type": "cultural_background",
+        "object_importance": 99,
+        "retrieval_score": 0.979,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "textually_explicit",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "worldview-concept",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 102
+      }
+    },
+    {
+      "id": "romans-israel-lament-privileges:passage-relevance",
+      "claim": "Requires Romans 9-11 to begin with kinship and honored gifts, not detached speculation or collective blame.",
+      "category": "culture",
+      "source_ids": [
+        "romans-israel-text",
+        "wolter-romans-israel",
+        "eastman-israel-mercy"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Romans 9:1-5"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-israel-jewish-gentile-relations-abraham-torah-circumcision-justification-faith-election-hardening-remnant-olive-tree-and-all-israel",
+        "parent_title": "Pauline Israel, Jewish-Gentile Relations, Abraham, Torah, Circumcision, Justification, Faith, Election, Hardening, Remnant, Olive Tree, and All Israel",
+        "parent_type": "cultural_background",
+        "object_importance": 99,
+        "retrieval_score": 0.979,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "textually_explicit",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "worldview-concept",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 102,
+        "supports_evidence_ids": [
+          "romans-israel-lament-privileges"
+        ]
+      }
+    },
+    {
+      "id": "romans-israel-lament:passage-relevance",
+      "claim": "Shows lament within faith and prevents anti-Jewish readings that erase Paul's kinship, grief, or Israel's named gifts.",
+      "category": "culture",
+      "source_ids": [
+        "romans-prayer-text",
+        "fitzmyer-romans"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Romans 9:1-5"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-prayer-thanksgiving-intercession-lament-groaning-joy-peace-hope-benediction-blessing-and-communal-memory",
+        "parent_title": "Pauline Prayer, Thanksgiving, Intercession, Lament, Groaning, Joy, Peace, Hope, Benediction, Blessing, and Communal Memory",
+        "parent_type": "cultural_background",
+        "object_importance": 9,
+        "retrieval_score": 0.849,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "probable",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "worldview-concept",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 87,
+        "supports_evidence_ids": [
+          "romans-israel-lament"
+        ]
+      }
+    },
+    {
+      "id": "romans-papyri",
+      "claim": "P10, P26, P27, P31, P40, P46, and P61 preserve different portions of Romans, with P46 by far the most extensive early papyrus witness.",
+      "category": "archaeology",
+      "source_ids": [
+        "ntvmr",
+        "p46-csntm"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Romans 1:1-16:27"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "romans",
+        "parent_title": "Romans",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 800,
+        "certainty": "strong_consensus",
+        "dispute_status": "not_disputed",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "archaeology",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 81
+      }
+    },
+    {
+      "id": "romans-predestination",
+      "claim": "Romans 8-9 speaks of divine purpose, foreknowledge, predestination, election, hardening, and mercy in corporate-historical and personal language; deterministic systems remain contested.",
+      "category": "culture",
+      "source_ids": [
+        "bassler-impartiality",
+        "gaventa-romans"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Romans 9:6-24"
+      ],
+      "confidence": "low",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "romans",
+        "parent_title": "Romans",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 5,
+        "certainty": "disputed",
+        "dispute_status": "denominational_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "systematic_theology",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 110
+      }
+    },
+    {
+      "id": "romans-vessels-hardening-limits",
+      "claim": "Romans coordinates divine mercy and hardening with potter-vessel imagery and a call from Jews and gentiles.",
+      "category": "culture",
+      "source_ids": [
+        "romans-israel-text",
+        "wolter-romans-israel",
+        "eastman-israel-mercy"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Romans 9:14-24"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-israel-jewish-gentile-relations-abraham-torah-circumcision-justification-faith-election-hardening-remnant-olive-tree-and-all-israel",
+        "parent_title": "Pauline Israel, Jewish-Gentile Relations, Abraham, Torah, Circumcision, Justification, Faith, Election, Hardening, Remnant, Olive Tree, and All Israel",
+        "parent_type": "cultural_background",
+        "object_importance": 99,
+        "retrieval_score": 0.979,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 13,
+        "certainty": "disputed",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "worldview-concept",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 102
+      }
+    },
+    {
+      "id": "romans-vessels-hardening-limits:passage-relevance",
+      "claim": "Blocks fatalism, collective Jewish demonization, spiritual caste, and claims that leaders or oppressors are beyond accountability.",
+      "category": "culture",
+      "source_ids": [
+        "romans-israel-text",
+        "wolter-romans-israel",
+        "eastman-israel-mercy"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Romans 9:14-24"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-israel-jewish-gentile-relations-abraham-torah-circumcision-justification-faith-election-hardening-remnant-olive-tree-and-all-israel",
+        "parent_title": "Pauline Israel, Jewish-Gentile Relations, Abraham, Torah, Circumcision, Justification, Faith, Election, Hardening, Remnant, Olive Tree, and All Israel",
+        "parent_type": "cultural_background",
+        "object_importance": 99,
+        "retrieval_score": 0.979,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 13,
+        "certainty": "disputed",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "worldview-concept",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 102,
+        "supports_evidence_ids": [
+          "romans-vessels-hardening-limits"
+        ]
+      }
+    },
+    {
+      "id": "romans-word-not-failed",
+      "claim": "Romans introduces its Isaac-Jacob argument by denying that God's word has fallen or failed.",
+      "category": "culture",
+      "source_ids": [
+        "romans-israel-text",
+        "wolter-romans-israel",
+        "eastman-israel-mercy"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Romans 9:1-13"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-israel-jewish-gentile-relations-abraham-torah-circumcision-justification-faith-election-hardening-remnant-olive-tree-and-all-israel",
+        "parent_title": "Pauline Israel, Jewish-Gentile Relations, Abraham, Torah, Circumcision, Justification, Faith, Election, Hardening, Remnant, Olive Tree, and All Israel",
+        "parent_type": "cultural_background",
+        "object_importance": 99,
+        "retrieval_score": 0.979,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "textually_explicit",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "literary-convention",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 102
+      }
+    },
+    {
+      "id": "romans-word-not-failed:passage-relevance",
+      "claim": "Keeps election inside the question of God's faithfulness to Israel rather than isolating it as an abstract predestination proof.",
+      "category": "culture",
+      "source_ids": [
+        "romans-israel-text",
+        "wolter-romans-israel",
+        "eastman-israel-mercy"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Romans 9:1-13"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-israel-jewish-gentile-relations-abraham-torah-circumcision-justification-faith-election-hardening-remnant-olive-tree-and-all-israel",
+        "parent_title": "Pauline Israel, Jewish-Gentile Relations, Abraham, Torah, Circumcision, Justification, Faith, Election, Hardening, Remnant, Olive Tree, and All Israel",
+        "parent_type": "cultural_background",
+        "object_importance": 99,
+        "retrieval_score": 0.979,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "textually_explicit",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "literary-convention",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 102,
+        "supports_evidence_ids": [
+          "romans-word-not-failed"
+        ]
+      }
+    },
+    {
+      "id": "romans:interpretive_note:10",
+      "claim": "Sinaiticus, Vaticanus, Alexandrinus, and Claromontanus provide distinct textual witnesses; majority, antiquity, and manuscript prestige do not mechanically decide a reading.",
+      "category": "culture",
+      "source_ids": [
+        "sinaiticus",
+        "vaticanus",
+        "alexandrinus",
+        "claromontanus"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Romans 1:1-16:27"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "romans",
+        "parent_title": "Romans",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 800,
+        "certainty": "strong_consensus",
+        "dispute_status": "not_disputed",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "interpretive-caution",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "interpretive_questions",
+        "overview_priority": 45
+      }
+    },
+    {
+      "id": "romans:interpretive_note:39",
+      "claim": "Predestination in Romans 8-9 cannot responsibly be turned into fatalism, despair, suicide encouragement, passivity before abuse, or claims that harmed people were individually destined for suffering.",
+      "category": "culture",
+      "source_ids": [
+        "bassler-impartiality",
+        "gaventa-romans"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Romans 9:1-24"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "romans",
+        "parent_title": "Romans",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "denominational_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "interpretive-caution",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 102
+      }
+    },
+    {
+      "id": "romans:interpretive_note:40",
+      "claim": "Romans 9 begins with Paul's grief for Israel, so election arguments that erase lament, kinship, privileges, or covenant claims distort the section's rhetoric.",
+      "category": "culture",
+      "source_ids": [
+        "romans-greek",
+        "nanos-mystery"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Romans 9:1-5"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "romans",
+        "parent_title": "Romans",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "literary-observation",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 102
+      }
+    },
+    {
+      "id": "romans:interpretive_note:41",
+      "claim": "Jacob and Esau, Pharaoh, potter and vessels, remnant, and mercy participate in a scriptural-historical argument about Israel and nations; their relation to individual eternal destinies is disputed.",
+      "category": "culture",
+      "source_ids": [
+        "stanley-scripture",
+        "bassler-impartiality"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Romans 9:6-29"
+      ],
+      "confidence": "low",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "romans",
+        "parent_title": "Romans",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 5,
+        "certainty": "disputed",
+        "dispute_status": "denominational_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "interpretive-caution",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 102
+      }
+    },
+    {
+      "id": "romans:interpretive_note:47",
+      "claim": "Romans cannot make Torah or Judaism uniquely legalistic: Paul identifies sin and boasting across peoples and repeatedly honors Israel's Scriptures and gifts.",
+      "category": "culture",
+      "source_ids": [
+        "thiessen-gentile",
+        "fredriksen-paul"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Romans 9:1-5"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "romans",
+        "parent_title": "Romans",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "interpretive-caution",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 102
+      }
+    },
+    {
+      "id": "romans:interpretive_note:48",
+      "claim": "Romans 9-11 does not authorize modern territorial claims, seizure, displacement, ethnic supremacy, or violence; ancient covenant exegesis and modern political rights require separate arguments.",
+      "category": "politics",
+      "source_ids": [
+        "nanos-mystery",
+        "romans-greek"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Romans 9:1-11:36"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "romans",
+        "parent_title": "Romans",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "not_disputed",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "interpretive-caution",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 85
+      }
+    },
+    {
+      "id": "romans:interpretive_note:7",
+      "claim": "Romans is an occasional letter and should not be converted into a contextless systematic-theology outline, even though later systems legitimately engage it.",
+      "category": "culture",
+      "source_ids": [
+        "gaventa-romans",
+        "wolter-romans"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Romans 1:1-16:27"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "romans",
+        "parent_title": "Romans",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 800,
+        "certainty": "strong_consensus",
+        "dispute_status": "not_disputed",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "interpretive-caution",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 85
+      }
+    },
+    {
+      "id": "romans:interpretive_note:75",
+      "claim": "Do not infer that every historical analogy in Romans maps directly onto a modern nation, ethnic group, party, economic system, sexual identity, or church institution.",
+      "category": "economics",
+      "source_ids": [
+        "gaventa-romans",
+        "wolter-romans"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Romans 1:1-16:27"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "romans",
+        "parent_title": "Romans",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 800,
+        "certainty": "strong_consensus",
+        "dispute_status": "not_disputed",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "interpretive-caution",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 80
+      }
+    },
+    {
+      "id": "romans:interpretive_note:76",
+      "claim": "Claims about Paul, Rome, Corinth, Cenchreae, households, slavery, gender, sexuality, empire, and manuscripts should distinguish direct text, external evidence, inference, analogy, and later reception.",
+      "category": "politics",
+      "source_ids": [
+        "wolter-romans",
+        "holmes-textual"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Romans 1:1-16:27"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "romans",
+        "parent_title": "Romans",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 800,
+        "certainty": "strong_consensus",
+        "dispute_status": "not_disputed",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "interpretive-caution",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "interpretive_questions",
+        "overview_priority": 45
+      }
+    },
+    {
+      "id": "romans:interpretive_note:77",
+      "claim": "No automated validation, retrieval score, confessional popularity, or manuscript count constitutes human approval of this Romans record.",
+      "category": "culture",
+      "source_ids": [
+        "romans-greek",
+        "holmes-textual"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Romans 1:1-16:27"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "romans",
+        "parent_title": "Romans",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 800,
+        "certainty": "strong_consensus",
+        "dispute_status": "not_disputed",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "interpretive-caution",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "interpretive_questions",
+        "overview_priority": 45
+      }
+    },
+    {
+      "id": "romans:interpretive_note:8",
+      "claim": "P10, P26, P27, P31, P40, P46, and P61 preserve different Romans portions; their Gregory-Aland labels must not imply equal date, extent, or textual weight.",
+      "category": "culture",
+      "source_ids": [
+        "ntvmr",
+        "p46-csntm"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Romans 1:1-16:27"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "romans",
+        "parent_title": "Romans",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 800,
+        "certainty": "strong_consensus",
+        "dispute_status": "not_disputed",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "textual-observation",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 85
+      }
+    },
+    {
+      "id": "romans:interpretive_note:9",
+      "claim": "P46 is an early, extensive Pauline codex, but it is not the autograph and its readings require comparison with other Greek and versional witnesses.",
+      "category": "culture",
+      "source_ids": [
+        "p46-csntm",
+        "chester-beatty-p46"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Romans 5:17-16:27"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "romans",
+        "parent_title": "Romans",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 400,
+        "certainty": "strong_consensus",
+        "dispute_status": "not_disputed",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "interpretive-caution",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "interpretive_questions",
+        "overview_priority": 80
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "Acts",
+        "author": "Anonymous",
+        "publisher": "Society of Biblical Literature",
+        "year": 2010,
+        "locator": "Acts 18:1-3; 28:11-31",
+        "url": "https://www.sblgnt.com/download/",
+        "source_type": "scripture",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Primary narrative evidence, not an excavation report.",
+        "id": "acts-rome-texts",
+        "canonical_object_ids": [
+          "roman-rome-jewish-civic-household-and-imperial-life"
+        ]
+      },
+      {
+        "title": "Codex Alexandrinus, Royal MS 1 D VIII",
+        "author": "",
+        "publisher": "British Library",
+        "year": null,
+        "locator": "Romans",
+        "url": "https://www.bl.uk/manuscripts/FullDisplay.aspx?ref=Royal_MS_1_D_VIII",
+        "source_type": "museum-collection",
+        "supports": [
+          "claims",
+          "interpretive-notes",
+          "archaeology"
+        ],
+        "notes": "Fifth-century Greek manuscript witness.",
+        "id": "alexandrinus",
+        "canonical_object_ids": [
+          "romans"
+        ]
+      },
+      {
+        "title": "Divine Impartiality: Paul and a Theological Axiom",
+        "author": "Jouette M. Bassler",
+        "publisher": "Society of Biblical Literature",
+        "year": 1982,
+        "locator": "Romans 2, 3, 9-11",
+        "url": "https://archive.org/details/divineimpartiali0000bass",
+        "source_type": "academic-book",
+        "supports": [
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Study of impartiality, election and mercy.",
+        "id": "bassler-impartiality",
+        "canonical_object_ids": [
+          "romans"
+        ]
+      },
+      {
+        "title": "Canonical historical orientation for Birth of Isaac",
+        "author": "",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "id": "birth-of-isaac-historical-orientation",
+        "canonical_object_ids": [
+          "birth-of-isaac"
+        ]
+      },
+      {
+        "title": "Chester Beatty Biblical Papyrus II",
+        "author": "Frederic G. Kenyon, ed.",
+        "publisher": "Chester Beatty",
+        "year": 1936,
+        "locator": "Pauline Epistles, Romans leaves",
+        "url": "https://chesterbeatty.ie/assets/uploads/2018/11/Biblical-Papyri-Descriptions-and-Texts-of-Twelve-Manuscripts-on-Papyrus-of-the-Greek-Bible-III-Text-Opt_Part1.pdf",
+        "source_type": "museum-collection",
+        "supports": [
+          "claims",
+          "interpretive-notes",
+          "archaeology"
+        ],
+        "notes": "Collection publication and material description of P46.",
+        "id": "chester-beatty-p46",
+        "canonical_object_ids": [
+          "romans"
+        ]
+      },
+      {
+        "title": "Codex Claromontanus, GA 06",
+        "author": "",
+        "publisher": "Center for the Study of New Testament Manuscripts",
+        "year": null,
+        "locator": "Romans in Greek-Latin Pauline codex",
+        "url": "https://manuscripts.csntm.org/manuscript/View/GA_06",
+        "source_type": "museum-collection",
+        "supports": [
+          "claims",
+          "interpretive-notes",
+          "archaeology"
+        ],
+        "notes": "Sixth-century Greek-Latin manuscript witness.",
+        "id": "claromontanus",
+        "canonical_object_ids": [
+          "romans"
+        ]
+      },
+      {
+        "title": "Early Christian Reception of the Prophets",
+        "author": "Heine, Ronald E.",
+        "publisher": "Oxford University Press",
+        "year": 2016,
+        "locator": "The Oxford Handbook of the Prophets, chapter 23",
+        "url": "https://academic.oup.com/edited-volume/28016/chapter-abstract/211816065",
+        "source_type": "academic-book",
+        "supports": [
+          "later-christian-reception",
+          "malachi-new-testament"
+        ],
+        "notes": "Early Christian reading practices, worship, and prophetic interpretation.",
+        "id": "early-christian-prophets",
+        "canonical_object_ids": [
+          "malachi"
+        ]
+      },
+      {
+        "title": "Israel and the Mercy of God: A Re-reading of Galatians 6.16 and Romans 9-11",
+        "author": "Susan Grove Eastman",
+        "publisher": "Cambridge University Press",
+        "year": 2010,
+        "locator": "New Testament Studies 56, pages 367-395",
+        "url": "https://doi.org/10.1017/S0028688510000056",
+        "source_type": "journal-article",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Argues a Jewish referent for Israel in both passages; minority aspects remain labeled.",
+        "id": "eastman-israel-mercy",
+        "canonical_object_ids": [
+          "pauline-israel-jewish-gentile-relations-abraham-torah-circumcision-justification-faith-election-hardening-remnant-olive-tree-and-all-israel"
+        ]
+      },
+      {
+        "title": "Romans",
+        "author": "Joseph A. Fitzmyer",
+        "publisher": "Yale University Press",
+        "year": 1993,
+        "locator": "Romans 1, 8-9, 15-16",
+        "url": "https://yalebooks.yale.edu/book/9780300140781/romans/",
+        "source_type": "academic-book",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Major historical-critical commentary; individual readings remain contestable.",
+        "id": "fitzmyer-romans",
+        "canonical_object_ids": [
+          "pauline-prayer-thanksgiving-intercession-lament-groaning-joy-peace-hope-benediction-blessing-and-communal-memory"
+        ]
+      },
+      {
+        "title": "Paul: The Pagans' Apostle",
+        "author": "Paula Fredriksen",
+        "publisher": "Yale University Press",
+        "year": 2017,
+        "locator": "Paul's Jewish apocalyptic mission, gentiles, Israel, and chronology",
+        "url": "https://yalebooks.yale.edu/book/9780300240740/paul/",
+        "source_type": "academic-book",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Historical reconstruction of Paul's gentile mission.",
+        "id": "fredriksen-pagans",
+        "canonical_object_ids": [
+          "pauline-israel-jewish-gentile-relations-abraham-torah-circumcision-justification-faith-election-hardening-remnant-olive-tree-and-all-israel"
+        ]
+      },
+      {
+        "title": "Paul: The Pagans' Apostle",
+        "author": "Paula Fredriksen",
+        "publisher": "Yale University Press",
+        "year": 2017,
+        "locator": "Paul's Jewish apocalyptic mission and chronology",
+        "url": "https://yalebooks.yale.edu/book/9780300240740/paul/",
+        "source_type": "academic-book",
+        "supports": [
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Historical reconstruction of Paul, gentiles, Israel and empire.",
+        "id": "fredriksen-paul",
+        "canonical_object_ids": [
+          "romans"
+        ]
+      },
+      {
+        "title": "The Greek New Testament: Galatians",
+        "author": "Michael W. Holmes, ed.",
+        "publisher": "Society of Biblical Literature",
+        "year": 2010,
+        "locator": "Galatians 2:1-5:26",
+        "url": "https://www.sblgnt.com/download/",
+        "source_type": "scripture",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Primary Greek evidence for the gentile crisis and scriptural argument.",
+        "id": "galatians-israel-text",
+        "canonical_object_ids": [
+          "pauline-israel-jewish-gentile-relations-abraham-torah-circumcision-justification-faith-election-hardening-remnant-olive-tree-and-all-israel"
+        ]
+      },
+      {
+        "title": "When in Romans: An Invitation to Linger with the Gospel according to Paul",
+        "author": "Beverly Roberts Gaventa",
+        "publisher": "Baker Academic",
+        "year": 2016,
+        "locator": "Romans as letter and theological argument",
+        "url": "https://bakeracademic.com/p/when-in-romans-beverly-roberts-gaventa/231078",
+        "source_type": "academic-book",
+        "supports": [
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Literary-theological orientation emphasizing cosmic powers and the letter's whole argument.",
+        "id": "gaventa-romans",
+        "canonical_object_ids": [
+          "romans"
+        ]
+      },
+      {
+        "title": "Genesis 18:9-15",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "promise of a son",
+        "id": "genesis-18-9-15",
+        "canonical_object_ids": [
+          "birth-of-isaac"
+        ]
+      },
+      {
+        "title": "Genesis 21:1-7",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "birth of Isaac",
+        "id": "genesis-21-1-7",
+        "canonical_object_ids": [
+          "birth-of-isaac"
+        ]
+      },
+      {
+        "title": "Hebrews 11:11-12",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "faith and promised offspring",
+        "id": "hebrews-11-11-12",
+        "canonical_object_ids": [
+          "birth-of-isaac"
+        ]
+      },
+      {
+        "title": "The Textual History of the Letter to the Romans",
+        "author": "Michael W. Holmes",
+        "publisher": "Brill",
+        "year": 2013,
+        "locator": "Textual criticism and the endings of Romans",
+        "url": "https://doi.org/10.1163/9789004250442_004",
+        "source_type": "academic-book",
+        "supports": [
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Focused textual-history orientation requiring reviewer verification of individual variants.",
+        "id": "holmes-textual",
+        "canonical_object_ids": [
+          "romans"
+        ]
+      },
+      {
+        "title": "Isaiah 10",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "isaiah-10",
+        "canonical_object_ids": [
+          "remnant-prophecy"
+        ]
+      },
+      {
+        "title": "Christians at Rome in the First Two Centuries: From Paul to Valentinus",
+        "author": "Peter Lampe",
+        "publisher": "Continuum",
+        "year": 2003,
+        "locator": "Parts 1-2: topography, persons, groups, stratification, and fractionation",
+        "url": "https://www.bloomsbury.com/au/christians-at-rome-in-the-first-two-centuries-9780826481023/",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Prosopographic and topographic reconstructions remain probabilistic.",
+        "id": "lampe-rome",
+        "canonical_object_ids": [
+          "roman-rome-jewish-civic-household-and-imperial-life"
+        ]
+      },
+      {
+        "title": "Hosea in the New Testament",
+        "author": "Steve Moyise",
+        "publisher": "Oxford University Press",
+        "year": 2024,
+        "locator": "Oxford Handbook of Hosea, chapter 29",
+        "url": "https://academic.oup.com/edited-volume/56211/chapter/443863552",
+        "source_type": "reference-work",
+        "supports": [
+          "new-testament-connections",
+          "hosea-new-testament-reuse",
+          "interpretive-notes"
+        ],
+        "notes": "Study of Hosea's quotation and reuse across the New Testament.",
+        "id": "moyise-hosea-new-testament",
+        "canonical_object_ids": [
+          "hosea"
+        ]
+      },
+      {
+        "title": "The Mystery of Romans",
+        "author": "Mark D. Nanos",
+        "publisher": "Fortress Press",
+        "year": 1996,
+        "locator": "Roman Jewish setting; weak and strong; chapters 9-16",
+        "url": "https://www.jstor.org/stable/j.ctv1hqdmjj",
+        "source_type": "academic-book",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "One influential reconstruction within a disputed field.",
+        "id": "nanos-mystery",
+        "canonical_object_ids": [
+          "roman-rome-jewish-civic-household-and-imperial-life",
+          "romans"
+        ],
+        "canonical_source_variants": [
+          {
+            "title": "The Mystery of Romans",
+            "author": "Mark D. Nanos",
+            "publisher": "Fortress Press",
+            "year": 1996,
+            "locator": "Roman Jewish setting; weak and strong; chapters 9-16",
+            "url": "https://www.jstor.org/stable/j.ctv1hqdmjj",
+            "source_type": "academic-book",
+            "supports": [
+              "claims",
+              "evidence-items"
+            ],
+            "notes": "One influential reconstruction within a disputed field.",
+            "id": "nanos-mystery"
+          },
+          {
+            "title": "The Mystery of Romans: The Jewish Context of Paul's Letter",
+            "author": "Mark D. Nanos",
+            "publisher": "Fortress Press",
+            "year": 1996,
+            "locator": "Roman assemblies, Jews and gentiles, Romans 9-16",
+            "url": "https://www.jstor.org/stable/j.ctv1hqdmjj",
+            "source_type": "academic-book",
+            "supports": [
+              "claims",
+              "interpretive-notes"
+            ],
+            "notes": "Jewish-context reconstruction used as a debated scholarly position.",
+            "id": "nanos-mystery"
+          }
+        ]
+      },
+      {
+        "title": "The Mystery of Romans: The Jewish Context of Paul's Letter",
+        "author": "Mark D. Nanos",
+        "publisher": "Fortress Press",
+        "year": 1996,
+        "locator": "Romans 9-16; Jewish and gentile relations",
+        "url": "https://www.jstor.org/stable/j.ctv1hqdmjj",
+        "source_type": "academic-book",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Jewish-context reconstruction treated as a debated scholarly position.",
+        "id": "nanos-mystery-israel",
+        "canonical_object_ids": [
+          "pauline-israel-jewish-gentile-relations-abraham-torah-circumcision-justification-faith-election-hardening-remnant-olive-tree-and-all-israel"
+        ]
+      },
+      {
+        "title": "New Testament reuse of Hosea",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Matthew 2:15; 9:13; 12:7; Romans 9:25-26; 1 Corinthians 15:55; 1 Peter 2:10",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "new-testament-connections",
+          "hosea-new-testament-reuse",
+          "interpretive-notes"
+        ],
+        "notes": "Primary Christian reception texts requiring contextual and textual comparison.",
+        "id": "new-testament-hosea-reuse",
+        "canonical_object_ids": [
+          "hosea"
+        ]
+      },
+      {
+        "title": "New Testament Virtual Manuscript Room",
+        "author": "",
+        "publisher": "Institute for New Testament Textual Research",
+        "year": null,
+        "locator": "Romans witnesses P10, P26, P27, P31, P40, P46, P61 and codices",
+        "url": "https://ntvmr.uni-muenster.de/",
+        "source_type": "museum-collection",
+        "supports": [
+          "claims",
+          "interpretive-notes",
+          "archaeology"
+        ],
+        "notes": "Official catalogue and workspace for Greek New Testament manuscripts.",
+        "id": "ntvmr",
+        "canonical_object_ids": [
+          "romans"
+        ]
+      },
+      {
+        "title": "Gregory-Aland P46",
+        "author": "",
+        "publisher": "Center for the Study of New Testament Manuscripts",
+        "year": null,
+        "locator": "Pauline papyrus codex including most of Romans",
+        "url": "https://manuscripts.csntm.org/manuscript/View/GA_P46",
+        "source_type": "museum-collection",
+        "supports": [
+          "claims",
+          "interpretive-notes",
+          "archaeology"
+        ],
+        "notes": "Digital images and catalog description of the late second- or early third-century codex.",
+        "id": "p46-csntm",
+        "canonical_object_ids": [
+          "romans"
+        ]
+      },
+      {
+        "title": "The Greek New Testament: Philippians",
+        "author": "Michael W. Holmes, ed.",
+        "publisher": "Society of Biblical Literature",
+        "year": 2010,
+        "locator": "Philippians 1 and 4",
+        "url": "https://www.sblgnt.com/download/",
+        "source_type": "scripture",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Primary Greek evidence for partnership memory, prayer, joy, peace, gifts, and provision.",
+        "id": "philippians-prayer-text",
+        "canonical_object_ids": [
+          "pauline-prayer-thanksgiving-intercession-lament-groaning-joy-peace-hope-benediction-blessing-and-communal-memory"
+        ]
+      },
+      {
+        "title": "On the Embassy to Gaius",
+        "author": "Philo of Alexandria",
+        "publisher": "Early Jewish Writings",
+        "year": 40,
+        "locator": "155-158",
+        "url": "https://www.earlyjewishwritings.com/text/philo/book40.html",
+        "source_type": "ancient-primary-source",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Near-contemporary apologetic description of Jewish residence, citizenship, synagogues, Sabbath gathering, and contributions.",
+        "id": "philo-legatio-rome",
+        "canonical_object_ids": [
+          "roman-rome-jewish-civic-household-and-imperial-life"
+        ]
+      },
+      {
+        "title": "Canonical historical orientation for Remnant Prophecy",
+        "author": "",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "id": "remnant-prophecy-historical-orientation",
+        "canonical_object_ids": [
+          "remnant-prophecy"
+        ]
+      },
+      {
+        "title": "Philippians",
+        "author": "John Reumann",
+        "publisher": "Yale University Press",
+        "year": 2008,
+        "locator": "Philippians 1 and 4",
+        "url": "https://yalebooks.yale.edu/book/9780300140453/philippians/",
+        "source_type": "academic-book",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Detailed commentary on prayer, partnership, joy, peace, and gifts.",
+        "id": "reumann-philippians-prayer",
+        "canonical_object_ids": [
+          "pauline-prayer-thanksgiving-intercession-lament-groaning-joy-peace-hope-benediction-blessing-and-communal-memory"
+        ]
+      },
+      {
+        "title": "Romans 11",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "romans-11",
+        "canonical_object_ids": [
+          "remnant-prophecy"
+        ]
+      },
+      {
+        "title": "Romans 9",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "romans-9",
+        "canonical_object_ids": [
+          "remnant-prophecy"
+        ]
+      },
+      {
+        "title": "Romans 9:6-13",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "Paul reflects on promise and election",
+        "id": "romans-9-6-13",
+        "canonical_object_ids": [
+          "birth-of-isaac"
+        ]
+      },
+      {
+        "title": "The Greek New Testament: Romans",
+        "author": "Michael W. Holmes, ed.",
+        "publisher": "Society of Biblical Literature",
+        "year": 2010,
+        "locator": "Romans 1-16",
+        "url": "https://www.sblgnt.com/download/",
+        "source_type": "scripture",
+        "supports": [
+          "claims",
+          "interpretive-notes",
+          "scripture-references"
+        ],
+        "notes": "Open critical Greek text for direct textual and lexical control.",
+        "id": "romans-greek",
+        "canonical_object_ids": [
+          "roman-rome-jewish-civic-household-and-imperial-life",
+          "romans"
+        ],
+        "canonical_source_variants": [
+          {
+            "title": "The Greek New Testament: Romans",
+            "author": "Michael W. Holmes, ed.",
+            "publisher": "Society of Biblical Literature",
+            "year": 2010,
+            "locator": "Romans 1-16",
+            "url": "https://www.sblgnt.com/download/",
+            "source_type": "scripture",
+            "supports": [
+              "claims",
+              "interpretive-notes",
+              "scripture-references"
+            ],
+            "notes": "Open critical Greek text for direct textual and lexical control.",
+            "id": "romans-greek"
+          },
+          {
+            "title": "Romans",
+            "author": "Paul, with Tertius named as scribe",
+            "publisher": "Society of Biblical Literature",
+            "year": 2010,
+            "locator": "Romans 1-16",
+            "url": "https://www.sblgnt.com/download/",
+            "source_type": "scripture",
+            "supports": [
+              "claims",
+              "evidence-items"
+            ],
+            "notes": "Primary literary evidence; translation and audience reconstruction remain interpretive.",
+            "id": "romans-greek"
+          }
+        ]
+      },
+      {
+        "title": "The Greek New Testament: Romans",
+        "author": "Michael W. Holmes, ed.",
+        "publisher": "Society of Biblical Literature",
+        "year": 2010,
+        "locator": "Romans 2:1-4:25; 9:1-11:36",
+        "url": "https://www.sblgnt.com/download/",
+        "source_type": "scripture",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Primary Greek evidence; no modern translation is reproduced.",
+        "id": "romans-israel-text",
+        "canonical_object_ids": [
+          "pauline-israel-jewish-gentile-relations-abraham-torah-circumcision-justification-faith-election-hardening-remnant-olive-tree-and-all-israel"
+        ]
+      },
+      {
+        "title": "The Greek New Testament: Romans",
+        "author": "Michael W. Holmes, ed.",
+        "publisher": "Society of Biblical Literature",
+        "year": 2010,
+        "locator": "Romans 1, 8-9, 15-16",
+        "url": "https://www.sblgnt.com/download/",
+        "source_type": "scripture",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Primary Greek evidence; no modern translation is reproduced.",
+        "id": "romans-prayer-text",
+        "canonical_object_ids": [
+          "pauline-prayer-thanksgiving-intercession-lament-groaning-joy-peace-hope-benediction-blessing-and-communal-memory"
+        ]
+      },
+      {
+        "title": "The Jews in Late Ancient Rome",
+        "author": "Leonard V. Rutgers",
+        "publisher": "Brill",
+        "year": 1995,
+        "locator": "Funerary inscriptions, catacombs, chronology, and cultural interaction",
+        "url": "https://brill.com/display/title/990",
+        "source_type": "academic-book",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Primarily late-antique evidence; chronology controls first-century comparison.",
+        "id": "rutgers-jews-late-rome",
+        "canonical_object_ids": [
+          "roman-rome-jewish-civic-household-and-imperial-life"
+        ]
+      },
+      {
+        "title": "The Greek New Testament: SBL Edition",
+        "author": "Holmes, Michael W., editor",
+        "publisher": "Society of Biblical Literature",
+        "year": 2010,
+        "locator": "Matthew 11; Matthew 17; Mark 1; Luke 1 and 7; Romans 9",
+        "url": "https://www.sbl-site.org/resources/digital-texts/",
+        "source_type": "reference-work",
+        "supports": [
+          "new-testament-connections",
+          "malachi-new-testament"
+        ],
+        "notes": "Critical Greek New Testament reading edition for explicit reception claims.",
+        "id": "sblgnt",
+        "canonical_object_ids": [
+          "malachi"
+        ]
+      },
+      {
+        "title": "Malachi",
+        "author": "Schart, Aaron",
+        "publisher": "Oxford University Press",
+        "year": 2021,
+        "locator": "The Oxford Handbook of the Minor Prophets, chapter 40, pages 535-546",
+        "url": "https://academic.oup.com/edited-volume/38566/chapter-abstract/334373857",
+        "source_type": "academic-book",
+        "supports": [
+          "summary",
+          "historical-context",
+          "literary-context",
+          "interpretive-disputes",
+          "malachi-identity",
+          "malachi-persian-setting",
+          "malachi-disputation-form",
+          "malachi-final-shaping"
+        ],
+        "notes": "Specialist overview addressing textual transmission, Greek translation, disputations, redaction, historical economy, theology, and New Testament reception.",
+        "id": "schart-malachi",
+        "canonical_object_ids": [
+          "malachi"
+        ]
+      },
+      {
+        "title": "Codex Sinaiticus",
+        "author": "",
+        "publisher": "Codex Sinaiticus Project",
+        "year": null,
+        "locator": "Romans",
+        "url": "https://www.codexsinaiticus.org/en/manuscript.aspx",
+        "source_type": "museum-collection",
+        "supports": [
+          "claims",
+          "interpretive-notes",
+          "archaeology"
+        ],
+        "notes": "Fourth-century Greek manuscript witness.",
+        "id": "sinaiticus",
+        "canonical_object_ids": [
+          "romans"
+        ]
+      },
+      {
+        "title": "Paul and the Language of Scripture",
+        "author": "Christopher D. Stanley",
+        "publisher": "Cambridge University Press",
+        "year": 1992,
+        "locator": "Romans quotation technique",
+        "url": "https://doi.org/10.1017/CBO9780511896552",
+        "source_type": "academic-book",
+        "supports": [
+          "claims",
+          "interpretive-notes",
+          "intertextuality"
+        ],
+        "notes": "Detailed study of scriptural citation wording and technique.",
+        "id": "stanley-scripture",
+        "canonical_object_ids": [
+          "romans"
+        ]
+      },
+      {
+        "title": "Paul and the Gentile Problem",
+        "author": "Matthew Thiessen",
+        "publisher": "Oxford University Press",
+        "year": 2016,
+        "locator": "Paul, gentiles, Torah, circumcision and Israel",
+        "url": "https://academic.oup.com/book/10678",
+        "source_type": "academic-book",
+        "supports": [
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Study locating Paul within Jewish debates about gentile transformation.",
+        "id": "thiessen-gentile",
+        "canonical_object_ids": [
+          "pauline-israel-jewish-gentile-relations-abraham-torah-circumcision-justification-faith-election-hardening-remnant-olive-tree-and-all-israel",
+          "romans"
+        ],
+        "canonical_source_variants": [
+          {
+            "title": "Paul and the Gentile Problem",
+            "author": "Matthew Thiessen",
+            "publisher": "Oxford University Press",
+            "year": 2016,
+            "locator": "Paul, gentiles, Torah, circumcision and Israel",
+            "url": "https://academic.oup.com/book/10678",
+            "source_type": "academic-book",
+            "supports": [
+              "claims",
+              "interpretive-notes"
+            ],
+            "notes": "Study locating Paul within Jewish debates about gentile transformation.",
+            "id": "thiessen-gentile"
+          },
+          {
+            "title": "Paul and the Gentile Problem",
+            "author": "Matthew Thiessen",
+            "publisher": "Oxford University Press",
+            "year": 2016,
+            "locator": "Paul, gentiles, Torah, circumcision, and Israel",
+            "url": "https://academic.oup.com/book/10678",
+            "source_type": "academic-book",
+            "supports": [
+              "claims",
+              "evidence-items"
+            ],
+            "notes": "Paul-within-Judaism account used alongside competing constructions.",
+            "id": "thiessen-gentile"
+          }
+        ]
+      },
+      {
+        "title": "Jewish Lapidarium",
+        "author": "Vatican Museums",
+        "publisher": "Vatican Museums",
+        "year": 2025,
+        "locator": "Monteverde inscriptions and third-fourth-century dating",
+        "url": "https://www.museivaticani.va/content/museivaticani/en/collezioni/musei/lapidario-ebraico/lapidario-ebraico.html",
+        "source_type": "museum-collection",
+        "supports": [
+          "archaeology",
+          "evidence-items"
+        ],
+        "notes": "The collection is valuable later evidence, not a direct census of first-century Jews.",
+        "id": "vatican-jewish-lapidarium",
+        "canonical_object_ids": [
+          "roman-rome-jewish-civic-household-and-imperial-life"
+        ]
+      },
+      {
+        "title": "Codex Vaticanus, Vat. gr. 1209",
+        "author": "",
+        "publisher": "Vatican Library",
+        "year": null,
+        "locator": "Romans",
+        "url": "https://digi.vatlib.it/view/MSS_Vat.gr.1209",
+        "source_type": "museum-collection",
+        "supports": [
+          "claims",
+          "interpretive-notes",
+          "archaeology"
+        ],
+        "notes": "Fourth-century Greek manuscript witness.",
+        "id": "vaticanus",
+        "canonical_object_ids": [
+          "romans"
+        ]
+      },
+      {
+        "title": "Mental Health, Human Rights and Legislation: Guidance and Practice",
+        "author": "World Health Organization and Office of the United Nations High Commissioner for Human Rights",
+        "publisher": "World Health Organization",
+        "year": 2023,
+        "locator": "modules on rights-based, person-centred, noncoercive care",
+        "url": "https://www.who.int/publications/i/item/9789240080737",
+        "source_type": "reference-work",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Modern rights-based mental-health guidance used only for application safeguards.",
+        "id": "who-mental-health-rights",
+        "canonical_object_ids": [
+          "pauline-prayer-thanksgiving-intercession-lament-groaning-joy-peace-hope-benediction-blessing-and-communal-memory"
+        ]
+      },
+      {
+        "title": "WHO QualityRights: Transforming Services and Promoting Human Rights in Mental Health",
+        "author": "World Health Organization",
+        "publisher": "World Health Organization",
+        "year": 2023,
+        "locator": "informed consent, autonomy, choice, inclusion, and freedom from coercion",
+        "url": "https://www.who.int/activities/transforming-services-and-promoting-human-rights-in-mental-health-and-related-areas/",
+        "source_type": "reference-work",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Modern consent and autonomy framework, not ancient evidence.",
+        "id": "who-qualityrights",
+        "canonical_object_ids": [
+          "pauline-prayer-thanksgiving-intercession-lament-groaning-joy-peace-hope-benediction-blessing-and-communal-memory"
+        ]
+      },
+      {
+        "title": "The Letter to the Romans: A Commentary",
+        "author": "Michael Wolter",
+        "publisher": "Baylor University Press",
+        "year": 2023,
+        "locator": "Romans 1-16",
+        "url": "https://www.baylorpress.com/9781481317726/the-letter-to-the-romans/",
+        "source_type": "academic-book",
+        "supports": [
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Recent comprehensive historical and exegetical commentary.",
+        "id": "wolter-romans",
+        "canonical_object_ids": [
+          "romans"
+        ]
+      },
+      {
+        "title": "The Letter to the Romans: A Commentary",
+        "author": "Michael Wolter",
+        "publisher": "Baylor University Press",
+        "year": 2023,
+        "locator": "Romans 2-4 and 9-11",
+        "url": "https://www.baylorpress.com/9781481317726/the-letter-to-the-romans/",
+        "source_type": "academic-book",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Recent comprehensive commentary used with competing readings.",
+        "id": "wolter-romans-israel",
+        "canonical_object_ids": [
+          "pauline-israel-jewish-gentile-relations-abraham-torah-circumcision-justification-faith-election-hardening-remnant-olive-tree-and-all-israel"
+        ]
+      },
+      {
+        "title": "Zephaniah 3",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "zephaniah-3",
+        "canonical_object_ids": [
+          "remnant-prophecy"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "birth-of-isaac",
+        "type": "event",
+        "title": "Birth of Isaac",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.908
+      },
+      {
+        "id": "hosea",
+        "type": "book",
+        "title": "Hosea",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.911
+      },
+      {
+        "id": "malachi",
+        "type": "book",
+        "title": "Malachi",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.9
+      },
+      {
+        "id": "pauline-israel-jewish-gentile-relations-abraham-torah-circumcision-justification-faith-election-hardening-remnant-olive-tree-and-all-israel",
+        "type": "cultural_background",
+        "title": "Pauline Israel, Jewish-Gentile Relations, Abraham, Torah, Circumcision, Justification, Faith, Election, Hardening, Remnant, Olive Tree, and All Israel",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.979
+      },
+      {
+        "id": "pauline-prayer-thanksgiving-intercession-lament-groaning-joy-peace-hope-benediction-blessing-and-communal-memory",
+        "type": "cultural_background",
+        "title": "Pauline Prayer, Thanksgiving, Intercession, Lament, Groaning, Joy, Peace, Hope, Benediction, Blessing, and Communal Memory",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.849
+      },
+      {
+        "id": "remnant-prophecy",
+        "type": "prophecy",
+        "title": "Remnant Prophecy",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.91
+      },
+      {
+        "id": "roman-rome-jewish-civic-household-and-imperial-life",
+        "type": "cultural_background",
+        "title": "Roman Rome: Jewish, Civic, Household, and Imperial Life",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.916
+      },
+      {
+        "id": "romans",
+        "type": "book",
+        "title": "Romans",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.917
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "0b1f38a98492eb783c4e421acf9ae23a14bff7e8476082f4801de36a4407b470",
+  "evidence_hash_version": "2"
+}

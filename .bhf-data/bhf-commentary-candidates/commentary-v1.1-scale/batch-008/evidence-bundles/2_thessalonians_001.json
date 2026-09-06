@@ -1,0 +1,1585 @@
+{
+  "passage_ref": "2 Thessalonians 1",
+  "entities": {
+    "people": [],
+    "places": [
+      {
+        "id": "thessalonica",
+        "title": "Thessalonica",
+        "type": "place",
+        "aliases": [
+          "where is thessalonica",
+          "tell me about thessalonica",
+          "why is thessalonica important",
+          "Thessalonike",
+          "Salonika",
+          "Thessaloniki"
+        ],
+        "metadata": {
+          "summary": "Thessalonica was a free city, provincial center, road junction, and harbor on the Thermaic Gulf in Roman Macedonia. Acts 17 narrates a mission involving Paul and Silas, synagogue hearers, Jason, political accusations, and politarchs; First Thessalonians directly addresses the resulting assembly, while the historical placement of Second Thessalonians depends partly on its disputed authorship and date.",
+          "importance": 70,
+          "retrieval_score": 0.89,
+          "ancient_names": [],
+          "modern_identification": "",
+          "region": "",
+          "terrain": "",
+          "elevation": null,
+          "archaeology": [
+            "Thessalonian civic inscriptions including IG X,2 1 32",
+            "Julio-Claudian civic coin types RPC I 1555 and 1566",
+            "The Thessalonian sanctuary of Egyptian gods and its votives",
+            "Later Roman houses, honorific bases, cemeteries, and epitaphs retained as later comparisons"
+          ],
+          "related_passages": [
+            "Acts 17:1-9",
+            "1 Thessalonians 1:1-10",
+            "1 Thessalonians 4:13-18",
+            "2 Thessalonians 1:1-12",
+            "1 Thessalonians 4:9-12",
+            "1 Thessalonians 5:1-11",
+            "2 Thessalonians 3:6-15"
+          ]
+        }
+      }
+    ],
+    "groups": [],
+    "events": [],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "2th-authorship",
+      "claim": "Modern scholarship is divided between Pauline and Pauline-school authorship, with collaborative and secretary proposals also represented.",
+      "category": "culture",
+      "source_ids": [
+        "malherbe",
+        "wanamaker",
+        "weima",
+        "gaventa"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "2 Thessalonians 1:1"
+      ],
+      "confidence": "low",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "2-thessalonians",
+        "parent_title": "2 Thessalonians",
+        "parent_type": "book",
+        "object_importance": 78,
+        "retrieval_score": 0.938,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "disputed",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "historical_cultural",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 60
+      }
+    },
+    {
+      "id": "2th-city",
+      "claim": "Thessalonica was a Macedonian port city whose material and inscriptional evidence illuminates but does not identify the assembly.",
+      "category": "archaeology",
+      "source_ids": [
+        "ig-macedonia",
+        "thess-museum",
+        "green"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "2 Thessalonians 1:1"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "2-thessalonians",
+        "parent_title": "2 Thessalonians",
+        "parent_type": "book",
+        "object_importance": 78,
+        "retrieval_score": 0.938,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "archaeological_uncertainty",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "archaeology",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "archaeology_geography",
+        "overview_priority": 83
+      }
+    },
+    {
+      "id": "2th-date",
+      "claim": "A date around 50-52 CE and Corinthian provenance are plausible only within an early Pauline reconstruction.",
+      "category": "culture",
+      "source_ids": [
+        "malherbe",
+        "green",
+        "weima"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "2 Thessalonians 1:1"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "2-thessalonians",
+        "parent_title": "2 Thessalonians",
+        "parent_type": "book",
+        "object_importance": 78,
+        "retrieval_score": 0.938,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "plausible",
+        "dispute_status": "chronological_uncertainty",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "historical_cultural",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 60
+      }
+    },
+    {
+      "id": "2th-destruction",
+      "claim": "The phrase eternal destruction away from or from the presence of the Lord is grammatically and theologically disputed.",
+      "category": "language",
+      "source_ids": [
+        "2th-greek",
+        "bdag",
+        "malherbe"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "2 Thessalonians 1:9"
+      ],
+      "confidence": "low",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "2-thessalonians",
+        "parent_title": "2 Thessalonians",
+        "parent_type": "book",
+        "object_importance": 78,
+        "retrieval_score": 0.938,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 8,
+        "certainty": "disputed",
+        "dispute_status": "denominational_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "lexical",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 81
+      }
+    },
+    {
+      "id": "2th-judgment",
+      "claim": "The judgment oracle reverses present roles by promising relief to the afflicted and repayment to afflicters at Jesus' revelation.",
+      "category": "culture",
+      "source_ids": [
+        "2th-greek",
+        "gaventa"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "2 Thessalonians 1:5-10"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "2-thessalonians",
+        "parent_title": "2 Thessalonians",
+        "parent_type": "book",
+        "object_importance": 78,
+        "retrieval_score": 0.938,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 4,
+        "certainty": "textually_explicit",
+        "dispute_status": "denominational_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 105
+      }
+    },
+    {
+      "id": "2th-relation",
+      "claim": "Second Thessalonians shares extensive language and themes with 1 Thessalonians, but sequence, dependence, and common authorship remain disputed.",
+      "category": "culture",
+      "source_ids": [
+        "wanamaker",
+        "weima",
+        "gaventa"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "2 Thessalonians 1:1-12"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "2-thessalonians",
+        "parent_title": "2 Thessalonians",
+        "parent_type": "book",
+        "object_importance": 78,
+        "retrieval_score": 0.938,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 55
+      }
+    },
+    {
+      "id": "2th-senders",
+      "claim": "Paul, Silvanus, and Timothy are named as senders to the Thessalonian assembly.",
+      "category": "history",
+      "source_ids": [
+        "2th-greek",
+        "malherbe"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "2 Thessalonians 1:1"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "2-thessalonians",
+        "parent_title": "2 Thessalonians",
+        "parent_type": "book",
+        "object_importance": 78,
+        "retrieval_score": 0.938,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "textually_explicit",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "2th-thanksgiving",
+      "claim": "The opening thanksgiving emphasizes growing faith, increasing mutual love, and endurance amid persecution and affliction.",
+      "category": "culture",
+      "source_ids": [
+        "2th-greek",
+        "weima"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "2 Thessalonians 1:3-4"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "2-thessalonians",
+        "parent_title": "2 Thessalonians",
+        "parent_type": "book",
+        "object_importance": 78,
+        "retrieval_score": 0.938,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 2,
+        "certainty": "textually_explicit",
+        "dispute_status": "not_disputed",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 98
+      }
+    },
+    {
+      "id": "thessalonian-affliction-opponents-uncertain",
+      "claim": "The letters repeatedly describe affliction, while Acts narrates one civic disturbance; the sources do not identify one exhaustive persecuting group.",
+      "category": "history",
+      "source_ids": [
+        "first-thessalonians-text",
+        "second-thessalonians-text",
+        "still-conflict-thessalonica",
+        "burnett-imperial-honors",
+        "malherbe-thessalonians-2000"
+      ],
+      "related_entity_ids": [
+        "thessalonica"
+      ],
+      "passage_anchors": [
+        "2 Thessalonians 1:4-10"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "thessalonian-civic-and-funerary-context",
+        "parent_title": "Roman Thessalonica: Civic, Cultic, Household, Labor, and Funerary Life",
+        "parent_type": "cultural_background",
+        "object_importance": 95,
+        "retrieval_score": 0.935,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 3,
+        "certainty": "strong_consensus",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "scholarly-reconstruction",
+        "exploration_potential": 0.75,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "historical-event",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 102
+      }
+    },
+    {
+      "id": "thessalonian-affliction-opponents-uncertain:passage-relevance",
+      "claim": "The item supports a real social-pressure setting while blocking collective Jewish blame, a single imperial-cult cause, or assumptions of formal state persecution.",
+      "category": "history",
+      "source_ids": [
+        "first-thessalonians-text",
+        "second-thessalonians-text",
+        "still-conflict-thessalonica",
+        "burnett-imperial-honors",
+        "malherbe-thessalonians-2000"
+      ],
+      "related_entity_ids": [
+        "thessalonica"
+      ],
+      "passage_anchors": [
+        "2 Thessalonians 1:4-10"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "thessalonian-civic-and-funerary-context",
+        "parent_title": "Roman Thessalonica: Civic, Cultic, Household, Labor, and Funerary Life",
+        "parent_type": "cultural_background",
+        "object_importance": 95,
+        "retrieval_score": 0.935,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 3,
+        "certainty": "strong_consensus",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "scholarly-reconstruction",
+        "exploration_potential": 0.75,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "historical-event",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 102,
+        "supports_evidence_ids": [
+          "thessalonian-affliction-opponents-uncertain"
+        ]
+      }
+    },
+    {
+      "id": "thessalonica:archaeology:0",
+      "claim": "Thessalonian civic inscriptions including IG X,2 1 32",
+      "category": "archaeology",
+      "source_ids": [
+        "acts-17-thessalonica",
+        "thessalonian-correspondence",
+        "phi-thessalonica-politarchs-32",
+        "amth-thessalonian-funerary-context",
+        "pliny-thessalonica-free-city",
+        "cultural-egnatia-thessalonica",
+        "ocd-thessalonica-place",
+        "amth-thessalonica-metropolis",
+        "rpc-thessalonica-place-1555"
+      ],
+      "related_entity_ids": [
+        "thessalonica"
+      ],
+      "passage_anchors": [
+        "2 Thessalonians 1:1-12"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "thessalonica",
+        "parent_title": "Thessalonica",
+        "parent_type": "place",
+        "object_importance": 70,
+        "retrieval_score": 0.89,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "archaeology",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": null,
+        "overview_priority": 28,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "thessalonica:archaeology:1",
+      "claim": "Julio-Claudian civic coin types RPC I 1555 and 1566",
+      "category": "archaeology",
+      "source_ids": [
+        "acts-17-thessalonica",
+        "thessalonian-correspondence",
+        "phi-thessalonica-politarchs-32",
+        "amth-thessalonian-funerary-context",
+        "pliny-thessalonica-free-city",
+        "cultural-egnatia-thessalonica",
+        "ocd-thessalonica-place",
+        "amth-thessalonica-metropolis",
+        "rpc-thessalonica-place-1555"
+      ],
+      "related_entity_ids": [
+        "thessalonica"
+      ],
+      "passage_anchors": [
+        "2 Thessalonians 1:1-12"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "thessalonica",
+        "parent_title": "Thessalonica",
+        "parent_type": "place",
+        "object_importance": 70,
+        "retrieval_score": 0.89,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "archaeology",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": null,
+        "overview_priority": 28,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "thessalonica:archaeology:2",
+      "claim": "The Thessalonian sanctuary of Egyptian gods and its votives",
+      "category": "archaeology",
+      "source_ids": [
+        "acts-17-thessalonica",
+        "thessalonian-correspondence",
+        "phi-thessalonica-politarchs-32",
+        "amth-thessalonian-funerary-context",
+        "pliny-thessalonica-free-city",
+        "cultural-egnatia-thessalonica",
+        "ocd-thessalonica-place",
+        "amth-thessalonica-metropolis",
+        "rpc-thessalonica-place-1555"
+      ],
+      "related_entity_ids": [
+        "thessalonica"
+      ],
+      "passage_anchors": [
+        "2 Thessalonians 1:1-12"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "thessalonica",
+        "parent_title": "Thessalonica",
+        "parent_type": "place",
+        "object_importance": 70,
+        "retrieval_score": 0.89,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "archaeology",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": null,
+        "overview_priority": 28,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "thessalonica:archaeology:3",
+      "claim": "Later Roman houses, honorific bases, cemeteries, and epitaphs retained as later comparisons",
+      "category": "archaeology",
+      "source_ids": [
+        "acts-17-thessalonica",
+        "thessalonian-correspondence",
+        "phi-thessalonica-politarchs-32",
+        "amth-thessalonian-funerary-context",
+        "pliny-thessalonica-free-city",
+        "cultural-egnatia-thessalonica",
+        "ocd-thessalonica-place",
+        "amth-thessalonica-metropolis",
+        "rpc-thessalonica-place-1555"
+      ],
+      "related_entity_ids": [
+        "thessalonica"
+      ],
+      "passage_anchors": [
+        "2 Thessalonians 1:1-12"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "thessalonica",
+        "parent_title": "Thessalonica",
+        "parent_type": "place",
+        "object_importance": 70,
+        "retrieval_score": 0.89,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "archaeology",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": null,
+        "overview_priority": 43,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "thessalonica:hebraic_worldview:0",
+      "claim": "The Thessalonian writings combine living-God, resurrection, day-of-the-Lord, trumpet, prophetic, and apocalyptic language with an address to gentiles turning from idols. The city's Roman setting does not cancel the Jewish scriptural world of the mission and letters.",
+      "category": "culture",
+      "source_ids": [
+        "acts-17-thessalonica",
+        "thessalonian-correspondence",
+        "phi-thessalonica-politarchs-32",
+        "amth-thessalonian-funerary-context",
+        "pliny-thessalonica-free-city",
+        "cultural-egnatia-thessalonica",
+        "ocd-thessalonica-place",
+        "amth-thessalonica-metropolis",
+        "rpc-thessalonica-place-1555"
+      ],
+      "related_entity_ids": [
+        "thessalonica"
+      ],
+      "passage_anchors": [
+        "2 Thessalonians 1:1-12"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "thessalonica",
+        "parent_title": "Thessalonica",
+        "parent_type": "place",
+        "object_importance": 70,
+        "retrieval_score": 0.89,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "hebraic_worldview",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "thessalonica:historical_context:0",
+      "claim": "The city stood on the Via Egnatia at the head of the Thermaic Gulf and retained free-city institutions within Roman provincial rule. Pliny names its status; inscriptions attest politarchs; coins, sanctuaries, votives, associations, and later urban and funerary remains document a socially unequal and religiously plural city. These sources do not identify the assembly's building, full demographics, opponents, or every civic procedure narrated in Acts.",
+      "category": "history",
+      "source_ids": [
+        "acts-17-thessalonica",
+        "thessalonian-correspondence",
+        "phi-thessalonica-politarchs-32",
+        "amth-thessalonian-funerary-context",
+        "pliny-thessalonica-free-city",
+        "cultural-egnatia-thessalonica",
+        "ocd-thessalonica-place",
+        "amth-thessalonica-metropolis",
+        "rpc-thessalonica-place-1555"
+      ],
+      "related_entity_ids": [
+        "thessalonica"
+      ],
+      "passage_anchors": [
+        "2 Thessalonians 1:1-12"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "thessalonica",
+        "parent_title": "Thessalonica",
+        "parent_type": "place",
+        "object_importance": 70,
+        "retrieval_score": 0.89,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "thessalonica:second_temple_context:0",
+      "claim": "Acts places the mission in a synagogue and names Jewish, God-fearing Greek, and prominent female hearers. First Thessalonians suggests substantial gentile participation, but neither source gives a demographic census or warrants collective Jewish blame for the assembly's affliction.",
+      "category": "culture",
+      "source_ids": [
+        "acts-17-thessalonica",
+        "thessalonian-correspondence",
+        "phi-thessalonica-politarchs-32",
+        "amth-thessalonian-funerary-context",
+        "pliny-thessalonica-free-city",
+        "cultural-egnatia-thessalonica",
+        "ocd-thessalonica-place",
+        "amth-thessalonica-metropolis",
+        "rpc-thessalonica-place-1555"
+      ],
+      "related_entity_ids": [
+        "thessalonica"
+      ],
+      "passage_anchors": [
+        "2 Thessalonians 1:1-12"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "thessalonica",
+        "parent_title": "Thessalonica",
+        "parent_type": "place",
+        "object_importance": 70,
+        "retrieval_score": 0.89,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "second_temple_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "thessalonica:timeline:0",
+      "claim": "Second century BCE: construction and development of the Via Egnatia strengthens Thessalonica's east-west connections",
+      "category": "chronology",
+      "source_ids": [
+        "acts-17-thessalonica",
+        "thessalonian-correspondence",
+        "phi-thessalonica-politarchs-32",
+        "amth-thessalonian-funerary-context",
+        "pliny-thessalonica-free-city",
+        "cultural-egnatia-thessalonica",
+        "ocd-thessalonica-place",
+        "amth-thessalonica-metropolis",
+        "rpc-thessalonica-place-1555"
+      ],
+      "related_entity_ids": [
+        "thessalonica"
+      ],
+      "passage_anchors": [
+        "2 Thessalonians 1:1-12"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "thessalonica",
+        "parent_title": "Thessalonica",
+        "parent_type": "place",
+        "object_importance": 70,
+        "retrieval_score": 0.89,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "timeline",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "chronology",
+        "overview_priority": 25,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "thessalonica:timeline:1",
+      "claim": "Late first century BCE: free-city privileges and early imperial civic coinage shape the Augustan setting",
+      "category": "chronology",
+      "source_ids": [
+        "acts-17-thessalonica",
+        "thessalonian-correspondence",
+        "phi-thessalonica-politarchs-32",
+        "amth-thessalonian-funerary-context",
+        "pliny-thessalonica-free-city",
+        "cultural-egnatia-thessalonica",
+        "ocd-thessalonica-place",
+        "amth-thessalonica-metropolis",
+        "rpc-thessalonica-place-1555"
+      ],
+      "related_entity_ids": [
+        "thessalonica"
+      ],
+      "passage_anchors": [
+        "2 Thessalonians 1:1-12"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "thessalonica",
+        "parent_title": "Thessalonica",
+        "parent_type": "place",
+        "object_importance": 70,
+        "retrieval_score": 0.89,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "timeline",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "chronology",
+        "overview_priority": 40,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "thessalonica:timeline:2",
+      "claim": "Approximately 49-52 CE: conventional horizon for the mission and First Thessalonians",
+      "category": "chronology",
+      "source_ids": [
+        "acts-17-thessalonica",
+        "thessalonian-correspondence",
+        "phi-thessalonica-politarchs-32",
+        "amth-thessalonian-funerary-context",
+        "pliny-thessalonica-free-city",
+        "cultural-egnatia-thessalonica",
+        "ocd-thessalonica-place",
+        "amth-thessalonica-metropolis",
+        "rpc-thessalonica-place-1555"
+      ],
+      "related_entity_ids": [
+        "thessalonica"
+      ],
+      "passage_anchors": [
+        "2 Thessalonians 1:1-12"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "thessalonica",
+        "parent_title": "Thessalonica",
+        "parent_type": "place",
+        "object_importance": 70,
+        "retrieval_score": 0.89,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "timeline",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "chronology",
+        "overview_priority": 25,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "thessalonica:timeline:3",
+      "claim": "Before the end of the first century CE: IG X,2 1 32 attests politarchs and civic-cult offices",
+      "category": "chronology",
+      "source_ids": [
+        "acts-17-thessalonica",
+        "thessalonian-correspondence",
+        "phi-thessalonica-politarchs-32",
+        "amth-thessalonian-funerary-context",
+        "pliny-thessalonica-free-city",
+        "cultural-egnatia-thessalonica",
+        "ocd-thessalonica-place",
+        "amth-thessalonica-metropolis",
+        "rpc-thessalonica-place-1555"
+      ],
+      "related_entity_ids": [
+        "thessalonica"
+      ],
+      "passage_anchors": [
+        "2 Thessalonians 1:1-12"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "thessalonica",
+        "parent_title": "Thessalonica",
+        "parent_type": "place",
+        "object_importance": 70,
+        "retrieval_score": 0.89,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "timeline",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "chronology",
+        "overview_priority": 40,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "thessalonica:timeline:4",
+      "claim": "Second century CE: the British Museum politarch block supplies later local attestation",
+      "category": "chronology",
+      "source_ids": [
+        "acts-17-thessalonica",
+        "thessalonian-correspondence",
+        "phi-thessalonica-politarchs-32",
+        "amth-thessalonian-funerary-context",
+        "pliny-thessalonica-free-city",
+        "cultural-egnatia-thessalonica",
+        "ocd-thessalonica-place",
+        "amth-thessalonica-metropolis",
+        "rpc-thessalonica-place-1555"
+      ],
+      "related_entity_ids": [
+        "thessalonica"
+      ],
+      "passage_anchors": [
+        "2 Thessalonians 1:1-12"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "thessalonica",
+        "parent_title": "Thessalonica",
+        "parent_type": "place",
+        "object_importance": 70,
+        "retrieval_score": 0.89,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "timeline",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "chronology",
+        "overview_priority": 25,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "thessalonica:timeline:5",
+      "claim": "Second through fourth centuries CE: surviving urban-house and funerary material supplies explicitly later comparisons",
+      "category": "chronology",
+      "source_ids": [
+        "acts-17-thessalonica",
+        "thessalonian-correspondence",
+        "phi-thessalonica-politarchs-32",
+        "amth-thessalonian-funerary-context",
+        "pliny-thessalonica-free-city",
+        "cultural-egnatia-thessalonica",
+        "ocd-thessalonica-place",
+        "amth-thessalonica-metropolis",
+        "rpc-thessalonica-place-1555"
+      ],
+      "related_entity_ids": [
+        "thessalonica"
+      ],
+      "passage_anchors": [
+        "2 Thessalonians 1:1-12"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "thessalonica",
+        "parent_title": "Thessalonica",
+        "parent_type": "place",
+        "object_importance": 70,
+        "retrieval_score": 0.89,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "timeline",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "chronology",
+        "overview_priority": 25,
+        "inherited_from_parent": true
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "SBL Greek New Testament: 2 Thessalonians",
+        "author": "Michael W. Holmes, ed.",
+        "publisher": "Society of Biblical Literature and Logos Bible Software",
+        "year": 2010,
+        "locator": "2 Thessalonians",
+        "url": "https://www.sblgnt.com/",
+        "source_type": "scripture",
+        "supports": [
+          "scripture-references",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Primary Greek textual control.",
+        "id": "2th-greek",
+        "canonical_object_ids": [
+          "2-thessalonians"
+        ]
+      },
+      {
+        "title": "Acts 17",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Acts 17:1-9",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "historical-context",
+          "literary-context"
+        ],
+        "notes": "Primary mission narrative; no modern translation is reproduced.",
+        "id": "acts-17-thessalonica",
+        "canonical_object_ids": [
+          "thessalonica"
+        ]
+      },
+      {
+        "title": "Field, House, Garden, Grave",
+        "author": "Archaeological Museum of Thessaloniki",
+        "publisher": "Archaeological Museum of Thessaloniki",
+        "year": null,
+        "locator": "Permanent exhibition: second- to fourth-century CE cemetery and house material",
+        "url": "https://www.amth.gr/en/exhibitions/permanent-exhibitions/field-house-garden-grave",
+        "source_type": "museum-collection",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Explicitly later evidence used only for diachronic local context.",
+        "id": "amth-thessalonian-funerary-context",
+        "canonical_object_ids": [
+          "thessalonica"
+        ]
+      },
+      {
+        "title": "Thessaloniki, Metropolis of Macedonia: Museum Highlights",
+        "author": "Archaeological Museum of Thessaloniki",
+        "publisher": "Archaeological Museum of Thessaloniki",
+        "year": null,
+        "locator": "Augustus, Egyptian sanctuary, houses, honorific bases, and later graves",
+        "url": "https://www.amth.gr/en/exhibitions/highlights",
+        "source_type": "museum-collection",
+        "supports": [
+          "historical-context",
+          "archaeology",
+          "timeline"
+        ],
+        "notes": "Official museum synthesis with artifacts from distinct periods.",
+        "id": "amth-thessalonica-metropolis",
+        "canonical_object_ids": [
+          "thessalonica"
+        ]
+      },
+      {
+        "title": "A Greek-English Lexicon of the New Testament and Other Early Christian Literature",
+        "author": "Frederick William Danker, ed.",
+        "publisher": "University of Chicago Press",
+        "year": 2000,
+        "locator": "apostasia, katecho, ataktos, olethros, related entries",
+        "url": "https://press.uchicago.edu/ucp/books/book/chicago/G/bo3626820.html",
+        "source_type": "lexicon",
+        "supports": [
+          "greek-words",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Lexical control; glosses do not settle context.",
+        "id": "bdag",
+        "canonical_object_ids": [
+          "2-thessalonians"
+        ]
+      },
+      {
+        "title": "Imperial Divine Honors in Julio-Claudian Thessalonica and the Thessalonian Correspondence",
+        "author": "John H. Burnett",
+        "publisher": "Journal of Biblical Literature",
+        "year": 2020,
+        "locator": "JBL 139.3, 567-593",
+        "url": "https://doi.org/10.15699/jbl.1393.2020.7",
+        "source_type": "journal-article",
+        "supports": [
+          "julio-claudian-imperial-honors",
+          "thessalonian-affliction-opponents-uncertain"
+        ],
+        "notes": "Argues for a differentiated local imperial-cult landscape and against making imperial cult the sole cause of harassment.",
+        "id": "burnett-imperial-honors",
+        "canonical_object_ids": [
+          "thessalonian-civic-and-funerary-context"
+        ]
+      },
+      {
+        "title": "The Via Egnatia through the ages",
+        "author": "Hellenic Ministry of Culture",
+        "publisher": "Cultural Egnatia",
+        "year": null,
+        "locator": "Roman road history, course, and milestones",
+        "url": "https://culturalegnatia.culture.gov.gr/en/the-via-egnatia-through-the-ages/",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context",
+          "timeline",
+          "maps"
+        ],
+        "notes": "Official route orientation; it does not fix Paul's travel schedule.",
+        "id": "cultural-egnatia-thessalonica",
+        "canonical_object_ids": [
+          "thessalonica"
+        ]
+      },
+      {
+        "title": "First Thessalonians",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "1 Thessalonians 4:13-5:11",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "first-thessalonians-consolation",
+          "later-thessalonian-funerary-comparison",
+          "parousia-apantesis-civic-arrival-proposal"
+        ],
+        "notes": "Primary biblical text; observations are separated from proposed social scripts.",
+        "id": "first-thessalonians-text",
+        "canonical_object_ids": [
+          "thessalonian-civic-and-funerary-context"
+        ]
+      },
+      {
+        "title": "First and Second Thessalonians",
+        "author": "Beverly Roberts Gaventa",
+        "publisher": "Westminster John Knox Press",
+        "year": 1998,
+        "locator": "2 Thessalonians",
+        "url": "https://www.wjkbooks.com/Products/0664236553/first-and-second-thessalonians.aspx",
+        "source_type": "academic-book",
+        "supports": [
+          "canonical-context",
+          "later-christian-reception",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Literary and theological commentary.",
+        "id": "gaventa",
+        "canonical_object_ids": [
+          "2-thessalonians"
+        ]
+      },
+      {
+        "title": "The Letters to the Thessalonians",
+        "author": "Gene L. Green",
+        "publisher": "Eerdmans",
+        "year": 2002,
+        "locator": "2 Thessalonians",
+        "url": "https://www.eerdmans.com/9780802837387/the-letters-to-the-thessalonians/",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "historical-setting",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Commentary emphasizing Thessalonian social and archaeological setting.",
+        "id": "green",
+        "canonical_object_ids": [
+          "2-thessalonians"
+        ]
+      },
+      {
+        "title": "Inscriptiones Graecae, Macedonia",
+        "author": "Berlin-Brandenburg Academy of Sciences and Humanities",
+        "publisher": "Arachne / German Archaeological Institute",
+        "year": null,
+        "locator": "Thessalonica and Macedonia",
+        "url": "https://arachne.dainst.org/project/ig",
+        "source_type": "ancient-primary-source",
+        "supports": [
+          "historical-setting",
+          "archaeology"
+        ],
+        "notes": "Epigraphic control for civic and social setting.",
+        "id": "ig-macedonia",
+        "canonical_object_ids": [
+          "2-thessalonians"
+        ]
+      },
+      {
+        "title": "The Letters to the Thessalonians",
+        "author": "Abraham J. Malherbe",
+        "publisher": "Yale University Press",
+        "year": 2000,
+        "locator": "Introduction and commentary on 2 Thessalonians",
+        "url": "https://yalebooks.yale.edu/book/9780300139846/the-letters-to-the-thessalonians/",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "literary-context",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Historical, literary, philosophical, and social commentary.",
+        "id": "malherbe",
+        "canonical_object_ids": [
+          "2-thessalonians"
+        ]
+      },
+      {
+        "title": "The Letters to the Thessalonians",
+        "author": "Abraham J. Malherbe",
+        "publisher": "Yale University Press",
+        "year": 2000,
+        "locator": "Anchor Yale Bible 32B; commentary on 1 Thessalonians 4:13-18",
+        "url": "https://yalebooks.yale.edu/book/9780300139846/the-letters-to-the-thessalonians/",
+        "source_type": "academic-book",
+        "supports": [
+          "later-thessalonian-funerary-evidence",
+          "parousia-apantesis-civic-arrival-proposal"
+        ],
+        "notes": "Historical and literary commentary used to control both comparison and interpretation.",
+        "id": "malherbe-thessalonians-2000",
+        "canonical_object_ids": [
+          "thessalonian-civic-and-funerary-context"
+        ]
+      },
+      {
+        "title": "Thessalonica",
+        "author": "Nicholas Geoffrey Lempriere Hammond",
+        "publisher": "Oxford Classical Dictionary",
+        "year": 2015,
+        "locator": "Foundation, provincial capital, free-city status, Via Egnatia, and prosperity",
+        "url": "https://academic.oup.com/edited-volume/61673/chapter-abstract/548205401",
+        "source_type": "reference-work",
+        "supports": [
+          "summary",
+          "historical-context",
+          "timeline"
+        ],
+        "notes": "Concise historical synthesis.",
+        "id": "ocd-thessalonica-place",
+        "canonical_object_ids": [
+          "thessalonica"
+        ]
+      },
+      {
+        "title": "Thessalonian civic inscription IG X,2 1 32",
+        "author": "",
+        "publisher": "Packard Humanities Institute",
+        "year": 75,
+        "locator": "IG X,2 1 32; before the end of the first century CE",
+        "url": "https://inscriptions.packhum.org/text/137214",
+        "source_type": "ancient-primary-source",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Local inscription naming politarchs and civic-cult officials; year is approximate.",
+        "id": "phi-thessalonica-politarchs-32",
+        "canonical_object_ids": [
+          "thessalonian-civic-and-funerary-context",
+          "thessalonica"
+        ],
+        "canonical_source_variants": [
+          {
+            "title": "Thessalonian civic inscription IG X,2 1 32",
+            "author": "",
+            "publisher": "Packard Humanities Institute",
+            "year": 75,
+            "locator": "IG X,2 1 32; before the end of the first century CE",
+            "url": "https://inscriptions.packhum.org/text/137214",
+            "source_type": "ancient-primary-source",
+            "supports": [
+              "historical-context"
+            ],
+            "notes": "Local inscription naming politarchs and civic-cult officials; year is approximate.",
+            "id": "phi-thessalonica-politarchs-32"
+          },
+          {
+            "title": "Thessalonian civic inscription IG X,2 1 32",
+            "author": "",
+            "publisher": "Packard Humanities Institute",
+            "year": 75,
+            "locator": "IG X,2 1 32; dated before the end of the first century CE",
+            "url": "https://inscriptions.packhum.org/text/137214",
+            "source_type": "ancient-primary-source",
+            "supports": [
+              "thessalonian-politarch-inscription",
+              "acts-politarch-title"
+            ],
+            "notes": "Greek epigraphic record naming politarchs and civic-cult officials; the exact year is approximate.",
+            "id": "phi-thessalonica-politarchs-32"
+          }
+        ]
+      },
+      {
+        "title": "Natural History",
+        "author": "Pliny the Elder",
+        "publisher": "Perseus Digital Library",
+        "year": 77,
+        "locator": "4.17: Macedonia and Thessalonica as a free city",
+        "url": "https://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.02.0137%3Abook%3D4%3Achapter%3D17",
+        "source_type": "ancient-primary-source",
+        "supports": [
+          "summary",
+          "historical-context",
+          "timeline"
+        ],
+        "notes": "First-century geographic witness later than the conventional mission date.",
+        "id": "pliny-thessalonica-free-city",
+        "canonical_object_ids": [
+          "thessalonica"
+        ]
+      },
+      {
+        "title": "RPC I 1555: Thessalonica, Augustus and Divus Julius",
+        "author": "Roman Provincial Coinage Online",
+        "publisher": "Ashmolean Museum and partners",
+        "year": -20,
+        "locator": "RPC I 1555; local coin type and specimens",
+        "url": "https://rpc.ashmus.ox.ac.uk/coins/1/1555",
+        "source_type": "museum-collection",
+        "supports": [
+          "historical-context",
+          "archaeology",
+          "timeline"
+        ],
+        "notes": "Issue date is approximate; coin imagery does not establish individual belief.",
+        "id": "rpc-thessalonica-place-1555",
+        "canonical_object_ids": [
+          "thessalonica"
+        ]
+      },
+      {
+        "title": "Second Thessalonians",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "2 Thessalonians 1:1-3:18",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "thessalonian-affliction-opponents-uncertain",
+          "work-instruction-and-patronage-proposal"
+        ],
+        "notes": "Primary biblical text within the canon; Pauline authorship and date remain disputed.",
+        "id": "second-thessalonians-text",
+        "canonical_object_ids": [
+          "thessalonian-civic-and-funerary-context"
+        ]
+      },
+      {
+        "title": "Conflict at Thessalonica: A Pauline Church and Its Neighbours",
+        "author": "Todd D. Still",
+        "publisher": "Sheffield Academic Press",
+        "year": 1999,
+        "locator": "Chapters 4-7: sources, causes, forms, and effects of conflict",
+        "url": "https://www.bloomsbury.com/ca/conflict-at-thessalonica-9780567421098/",
+        "source_type": "academic-book",
+        "supports": [
+          "thessalonian-affliction-opponents-uncertain",
+          "acts-synagogue-and-audience-limits"
+        ],
+        "notes": "One detailed reconstruction within a field where the opponents and mechanisms of pressure remain disputed.",
+        "id": "still-conflict-thessalonica",
+        "canonical_object_ids": [
+          "thessalonian-civic-and-funerary-context"
+        ]
+      },
+      {
+        "title": "Archaeological Museum of Thessaloniki Collections",
+        "author": "",
+        "publisher": "Archaeological Museum of Thessaloniki",
+        "year": null,
+        "locator": "Roman Thessaloniki",
+        "url": "https://www.amth.gr/en",
+        "source_type": "museum-collection",
+        "supports": [
+          "historical-setting",
+          "archaeology",
+          "maps"
+        ],
+        "notes": "Regional material-culture control.",
+        "id": "thess-museum",
+        "canonical_object_ids": [
+          "2-thessalonians"
+        ]
+      },
+      {
+        "title": "First and Second Thessalonians",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "1 Thessalonians 1:1-5:28; 2 Thessalonians 1:1-3:18",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "canonical-context",
+          "covenantal-significance"
+        ],
+        "notes": "Primary letters addressed to the Thessalonian community.",
+        "id": "thessalonian-correspondence",
+        "canonical_object_ids": [
+          "thessalonica"
+        ]
+      },
+      {
+        "title": "The Epistle to the Thessalonians",
+        "author": "Charles A. Wanamaker",
+        "publisher": "Eerdmans",
+        "year": 1990,
+        "locator": "2 Thessalonians",
+        "url": "https://www.eerdmans.com/9780802823946/the-epistle-to-the-thessalonians/",
+        "source_type": "academic-book",
+        "supports": [
+          "literary-context",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Greek-text and social-science commentary.",
+        "id": "wanamaker",
+        "canonical_object_ids": [
+          "2-thessalonians"
+        ]
+      },
+      {
+        "title": "1-2 Thessalonians",
+        "author": "Jeffrey A. D. Weima",
+        "publisher": "Baker Academic",
+        "year": 2014,
+        "locator": "2 Thessalonians",
+        "url": "https://bakeracademic.com/collections/bible/products/9780801026850_1-2-thessalonians",
+        "source_type": "academic-book",
+        "supports": [
+          "literary-context",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Exegetical and epistolary commentary.",
+        "id": "weima",
+        "canonical_object_ids": [
+          "2-thessalonians"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "2-thessalonians",
+        "type": "book",
+        "title": "2 Thessalonians",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.938
+      },
+      {
+        "id": "thessalonian-civic-and-funerary-context",
+        "type": "cultural_background",
+        "title": "Roman Thessalonica: Civic, Cultic, Household, Labor, and Funerary Life",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.935
+      },
+      {
+        "id": "thessalonica",
+        "type": "place",
+        "title": "Thessalonica",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.89
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "d5b89353f28ba715691d70b30455b33816399cc59e95c973e7b9e3ad2e3659f7",
+  "evidence_hash_version": "2"
+}

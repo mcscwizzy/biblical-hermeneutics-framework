@@ -1,0 +1,2946 @@
+{
+  "passage_ref": "Hebrews 1",
+  "entities": {
+    "people": [
+      {
+        "id": "jesus",
+        "title": "Jesus",
+        "type": "person",
+        "aliases": [
+          "who is jesus",
+          "tell me about jesus",
+          "why is jesus important"
+        ],
+        "metadata": {
+          "summary": "The incarnate Son, Messiah, and Lord whose life, death, resurrection, and reign fulfill Israel's story.",
+          "importance": 100,
+          "retrieval_score": 0.92,
+          "ancient_names": [],
+          "modern_identification": "",
+          "region": "",
+          "terrain": "",
+          "elevation": null,
+          "archaeology": [],
+          "related_passages": [
+            "Matthew 1:18-25",
+            "Mark 1:1-15",
+            "Luke 4:16-21",
+            "John 1:1-18",
+            "Philippians 2:5-11",
+            "Colossians 1:15-20",
+            "Hebrews 1:1-4",
+            "1 Corinthians 15:1-28"
+          ]
+        }
+      }
+    ],
+    "places": [],
+    "groups": [],
+    "events": [],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "bibliology:ancient_near_east_context:0",
+      "claim": "Ancient background for Bibliology includes covenant life, temple worship, royal ideology, wisdom teaching, and early church confession; the entry ties that world to Deuteronomy 6:4-9, Psalm 19:7-11, inspiration, and inerrancy without letting comparison replace the biblical witness.",
+      "category": "culture",
+      "source_ids": [
+        "deuteronomy-6",
+        "psalm-19",
+        "psalm-119",
+        "luke-24",
+        "2-timothy-3",
+        "hebrews-1"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Hebrews 1:1-4"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "bibliology",
+        "parent_title": "Bibliology",
+        "parent_type": "theology",
+        "object_importance": 92,
+        "retrieval_score": 0.912,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "bibliology:historical_context:0",
+      "claim": "Bibliology is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness.",
+      "category": "history",
+      "source_ids": [
+        "deuteronomy-6",
+        "psalm-19",
+        "psalm-119",
+        "luke-24",
+        "2-timothy-3",
+        "hebrews-1"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Hebrews 1:1-4"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "bibliology",
+        "parent_title": "Bibliology",
+        "parent_type": "theology",
+        "object_importance": 92,
+        "retrieval_score": 0.912,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "heb-angels",
+      "claim": "A catena of scriptural quotations distinguishes the Son from angels and leads into a warning to attend to what was heard.",
+      "category": "culture",
+      "source_ids": [
+        "heb-greek",
+        "nets-lxx",
+        "stuckenbruck"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Hebrews 1:5-2:4"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "hebrews",
+        "parent_title": "Hebrews",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 4,
+        "certainty": "textually_explicit",
+        "dispute_status": "not_disputed",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 73
+      }
+    },
+    {
+      "id": "heb-anonymous",
+      "claim": "The work does not name its author in its opening or closing.",
+      "category": "culture",
+      "source_ids": [
+        "heb-greek",
+        "attridge"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Hebrews 1:1-4"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "hebrews",
+        "parent_title": "Hebrews",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 90
+      }
+    },
+    {
+      "id": "heb-p46",
+      "claim": "Papyrus 46 is an early substantial witness to Hebrews, though it has lacunae and its paleographic date remains approximate.",
+      "category": "archaeology",
+      "source_ids": [
+        "p46",
+        "ntvmr"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Hebrews 1:1-13:25"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "hebrews",
+        "parent_title": "Hebrews",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "archaeological_uncertainty",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "archaeology",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 58
+      }
+    },
+    {
+      "id": "heb-sinaiticus",
+      "claim": "Codex Sinaiticus preserves Hebrews in its New Testament sequence after 2 Thessalonians.",
+      "category": "archaeology",
+      "source_ids": [
+        "sinaiticus",
+        "ntvmr"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Hebrews 1:1-13:25"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "hebrews",
+        "parent_title": "Hebrews",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "archaeological_uncertainty",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "archaeology",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 58
+      }
+    },
+    {
+      "id": "heb-son",
+      "claim": "The opening presents divine speech in a Son who is heir, creator-agent, radiance, exact imprint, sustainer, purifier, and enthroned.",
+      "category": "culture",
+      "source_ids": [
+        "heb-greek",
+        "johnson"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Hebrews 1:1-4"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "hebrews",
+        "parent_title": "Hebrews",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "textually_explicit",
+        "dispute_status": "not_disputed",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_theology",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 103
+      }
+    },
+    {
+      "id": "hebrews:interpretive_note:0",
+      "claim": "Authorship: Hebrews is internally anonymous; Pauline, Barnabas, Apollos, Priscilla, Luke, and other proposals belong to reception or reconstruction, not explicit wording.",
+      "category": "culture",
+      "source_ids": [
+        "heb-greek",
+        "attridge",
+        "koester"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Hebrews 1:1"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "hebrews",
+        "parent_title": "Hebrews",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "historical-context",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 52
+      }
+    },
+    {
+      "id": "hebrews:interpretive_note:39",
+      "claim": "Application must reject antisemitism, supersessionism, misogyny, anti-LGBTQ coercion, forced conversion, colonial mission, nationalism, religious violence, prosperity extraction, and ecological neglect.",
+      "category": "culture",
+      "source_ids": [
+        "levine-jant",
+        "mitzi-smith",
+        "carter"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Hebrews 1:1-13:25"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "hebrews",
+        "parent_title": "Hebrews",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "denominational_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "later-reception",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "dig_deeper",
+        "overview_priority": 57
+      }
+    },
+    {
+      "id": "hebrews:interpretive_note:4",
+      "claim": "Son language draws on Psalms, wisdom, royal, creation, and agency traditions; later creedal synthesis should be named as reception rather than inserted into every clause.",
+      "category": "culture",
+      "source_ids": [
+        "heb-greek",
+        "nets-lxx",
+        "johnson"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Hebrews 1:1-14"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "hebrews",
+        "parent_title": "Hebrews",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "probable",
+        "dispute_status": "denominational_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "canonical-connection",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 67
+      }
+    },
+    {
+      "id": "hebrews:interpretive_note:5",
+      "claim": "Angels: the comparison exalts the Son through a scriptural catena and does not license contempt for Jewish angel traditions or speculative hierarchies.",
+      "category": "culture",
+      "source_ids": [
+        "heb-greek",
+        "nets-lxx",
+        "stuckenbruck"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Hebrews 1:5-14"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "hebrews",
+        "parent_title": "Hebrews",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 4,
+        "certainty": "textually_explicit",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "second-temple-context",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 102
+      }
+    },
+    {
+      "id": "how-do-the-old-and-new-testaments-connect:ancient_near_east_context:0",
+      "claim": "Like other ancient collections, Scripture reuses foundational stories, but it does so to show God's unfolding plan rather than a cycle of myths.",
+      "category": "culture",
+      "source_ids": [
+        "luke-24",
+        "matthew-5",
+        "romans-15",
+        "2-corinthians-1",
+        "hebrews-1",
+        "1-peter-1",
+        "how-do-the-old-and-new-testaments-connect-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Hebrews 1:1-4"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "how-do-the-old-and-new-testaments-connect",
+        "parent_title": "How do the Old and New Testaments connect?",
+        "parent_type": "faq",
+        "object_importance": 96,
+        "retrieval_score": 0.916,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "how-do-the-old-and-new-testaments-connect:historical_context:0",
+      "claim": "Israel's Scriptures formed the theological memory that the New Testament writers inherited, quoted, and reread in light of Christ.",
+      "category": "history",
+      "source_ids": [
+        "luke-24",
+        "matthew-5",
+        "romans-15",
+        "2-corinthians-1",
+        "hebrews-1",
+        "1-peter-1",
+        "how-do-the-old-and-new-testaments-connect-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Hebrews 1:1-4"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "how-do-the-old-and-new-testaments-connect",
+        "parent_title": "How do the Old and New Testaments connect?",
+        "parent_type": "faq",
+        "object_importance": 96,
+        "retrieval_score": 0.916,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "inerrancy:ancient_near_east_context:0",
+      "claim": "Ancient background for Inerrancy includes covenant life, temple worship, royal ideology, wisdom teaching, and early church confession; the entry ties that world to Deuteronomy 6:4-9, Psalm 19:7-11, bibliology, and inspiration without letting comparison replace the biblical witness.",
+      "category": "culture",
+      "source_ids": [
+        "deuteronomy-6",
+        "psalm-19",
+        "psalm-119",
+        "luke-24",
+        "2-timothy-3",
+        "hebrews-1"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Hebrews 1:1-4"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "inerrancy",
+        "parent_title": "Inerrancy",
+        "parent_type": "theology",
+        "object_importance": 92,
+        "retrieval_score": 0.912,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "inerrancy:historical_context:0",
+      "claim": "Inerrancy is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness.",
+      "category": "history",
+      "source_ids": [
+        "deuteronomy-6",
+        "psalm-19",
+        "psalm-119",
+        "luke-24",
+        "2-timothy-3",
+        "hebrews-1"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Hebrews 1:1-4"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "inerrancy",
+        "parent_title": "Inerrancy",
+        "parent_type": "theology",
+        "object_importance": 92,
+        "retrieval_score": 0.912,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "inspiration:ancient_near_east_context:0",
+      "claim": "Ancient background for Inspiration includes covenant life, temple worship, royal ideology, wisdom teaching, and early church confession; the entry ties that world to Deuteronomy 6:4-9, Psalm 19:7-11, bibliology, and inerrancy without letting comparison replace the biblical witness.",
+      "category": "culture",
+      "source_ids": [
+        "deuteronomy-6",
+        "psalm-19",
+        "psalm-119",
+        "luke-24",
+        "2-timothy-3",
+        "hebrews-1"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Hebrews 1:1-4"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "inspiration",
+        "parent_title": "Inspiration",
+        "parent_type": "theology",
+        "object_importance": 92,
+        "retrieval_score": 0.912,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "inspiration:historical_context:0",
+      "claim": "Inspiration is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness.",
+      "category": "history",
+      "source_ids": [
+        "deuteronomy-6",
+        "psalm-19",
+        "psalm-119",
+        "luke-24",
+        "2-timothy-3",
+        "hebrews-1"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Hebrews 1:1-4"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "inspiration",
+        "parent_title": "Inspiration",
+        "parent_type": "theology",
+        "object_importance": 92,
+        "retrieval_score": 0.912,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "jesus:ancient_near_east_context:0",
+      "claim": "Jesus' ministry unfolds in Second Temple Jewish Galilee and Judea under Roman rule, with synagogue teaching, temple festivals, purity debates, and patronage networks forming the social world.",
+      "category": "culture",
+      "source_ids": [
+        "matthew-1-28",
+        "mark-1-16",
+        "luke-1-24",
+        "john-1-21",
+        "acts-2",
+        "philippians-2",
+        "colossians-1",
+        "hebrews-1",
+        "1-corinthians-15",
+        "jesus-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "jesus"
+      ],
+      "passage_anchors": [
+        "Hebrews 1:1-4"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "jesus",
+        "parent_title": "Jesus",
+        "parent_type": "person",
+        "object_importance": 100,
+        "retrieval_score": 0.92,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "jesus:hebraic_worldview:0",
+      "claim": "Jesus' teaching and actions assume Israel's Scripture-shaped world of covenant, temple, Torah, wisdom, prophetic hope, and the kingdom of God.",
+      "category": "culture",
+      "source_ids": [
+        "matthew-1-28",
+        "mark-1-16",
+        "luke-1-24",
+        "john-1-21",
+        "acts-2",
+        "philippians-2",
+        "colossians-1",
+        "hebrews-1",
+        "1-corinthians-15",
+        "jesus-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "jesus"
+      ],
+      "passage_anchors": [
+        "Hebrews 1:1-4"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "jesus",
+        "parent_title": "Jesus",
+        "parent_type": "person",
+        "object_importance": 100,
+        "retrieval_score": 0.92,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "hebraic_worldview",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "jesus:historical_context:0",
+      "claim": "Jesus lived in first-century Galilee and Judea under Roman rule within the world of Second Temple Judaism.",
+      "category": "history",
+      "source_ids": [
+        "matthew-1-28",
+        "mark-1-16",
+        "luke-1-24",
+        "john-1-21",
+        "acts-2",
+        "philippians-2",
+        "colossians-1",
+        "hebrews-1",
+        "1-corinthians-15",
+        "jesus-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "jesus"
+      ],
+      "passage_anchors": [
+        "Hebrews 1:1-4"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "jesus",
+        "parent_title": "Jesus",
+        "parent_type": "person",
+        "object_importance": 100,
+        "retrieval_score": 0.92,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "jesus:key_places:0",
+      "claim": "bethlehem-1",
+      "category": "geography",
+      "source_ids": [
+        "matthew-1-28",
+        "mark-1-16",
+        "luke-1-24",
+        "john-1-21",
+        "acts-2",
+        "philippians-2",
+        "colossians-1",
+        "hebrews-1",
+        "1-corinthians-15",
+        "jesus-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "jesus"
+      ],
+      "passage_anchors": [
+        "Hebrews 1:1-4"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "jesus",
+        "parent_title": "Jesus",
+        "parent_type": "person",
+        "object_importance": 100,
+        "retrieval_score": 0.92,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "key_places",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": null,
+        "overview_priority": 28,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "jesus:key_places:1",
+      "claim": "nazareth",
+      "category": "geography",
+      "source_ids": [
+        "matthew-1-28",
+        "mark-1-16",
+        "luke-1-24",
+        "john-1-21",
+        "acts-2",
+        "philippians-2",
+        "colossians-1",
+        "hebrews-1",
+        "1-corinthians-15",
+        "jesus-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "jesus"
+      ],
+      "passage_anchors": [
+        "Hebrews 1:1-4"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "jesus",
+        "parent_title": "Jesus",
+        "parent_type": "person",
+        "object_importance": 100,
+        "retrieval_score": 0.92,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "key_places",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": null,
+        "overview_priority": 28,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "jesus:key_places:2",
+      "claim": "galilee-1",
+      "category": "geography",
+      "source_ids": [
+        "matthew-1-28",
+        "mark-1-16",
+        "luke-1-24",
+        "john-1-21",
+        "acts-2",
+        "philippians-2",
+        "colossians-1",
+        "hebrews-1",
+        "1-corinthians-15",
+        "jesus-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "jesus"
+      ],
+      "passage_anchors": [
+        "Hebrews 1:1-4"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "jesus",
+        "parent_title": "Jesus",
+        "parent_type": "person",
+        "object_importance": 100,
+        "retrieval_score": 0.92,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "key_places",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": null,
+        "overview_priority": 28,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "jesus:key_places:3",
+      "claim": "jerusalem",
+      "category": "geography",
+      "source_ids": [
+        "matthew-1-28",
+        "mark-1-16",
+        "luke-1-24",
+        "john-1-21",
+        "acts-2",
+        "philippians-2",
+        "colossians-1",
+        "hebrews-1",
+        "1-corinthians-15",
+        "jesus-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "jesus"
+      ],
+      "passage_anchors": [
+        "Hebrews 1:1-4"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "jesus",
+        "parent_title": "Jesus",
+        "parent_type": "person",
+        "object_importance": 100,
+        "retrieval_score": 0.92,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "key_places",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": null,
+        "overview_priority": 43,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "jesus:key_places:4",
+      "claim": "judea-1",
+      "category": "geography",
+      "source_ids": [
+        "matthew-1-28",
+        "mark-1-16",
+        "luke-1-24",
+        "john-1-21",
+        "acts-2",
+        "philippians-2",
+        "colossians-1",
+        "hebrews-1",
+        "1-corinthians-15",
+        "jesus-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "jesus"
+      ],
+      "passage_anchors": [
+        "Hebrews 1:1-4"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "jesus",
+        "parent_title": "Jesus",
+        "parent_type": "person",
+        "object_importance": 100,
+        "retrieval_score": 0.92,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "key_places",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": null,
+        "overview_priority": 28,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "jesus:second_temple_context:0",
+      "claim": "Jesus ministers amid Second Temple Jewish expectation, Roman rule, synagogue life, purity debates, messianic hope, and disputes over Israel's restoration.",
+      "category": "culture",
+      "source_ids": [
+        "matthew-1-28",
+        "mark-1-16",
+        "luke-1-24",
+        "john-1-21",
+        "acts-2",
+        "philippians-2",
+        "colossians-1",
+        "hebrews-1",
+        "1-corinthians-15",
+        "jesus-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "jesus"
+      ],
+      "passage_anchors": [
+        "Hebrews 1:1-4"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "jesus",
+        "parent_title": "Jesus",
+        "parent_type": "person",
+        "object_importance": 100,
+        "retrieval_score": 0.92,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "second_temple_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "messiah-theme:ancient_near_east_context:0",
+      "claim": "Royal anointing and kingship were common ancient practices, but the biblical messiah is defined by God\u2019s promise, righteousness, and suffering victory.",
+      "category": "culture",
+      "source_ids": [
+        "2-samuel-7",
+        "psalm-2",
+        "psalm-110",
+        "isaiah-9",
+        "isaiah-11",
+        "isaiah-53",
+        "luke-24",
+        "romans-1",
+        "philippians-2"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Hebrews 1:1-14"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "messiah-theme",
+        "parent_title": "Messiah Theme",
+        "parent_type": "theme",
+        "object_importance": 98,
+        "retrieval_score": 0.918,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "messiah-theme:historical_context:0",
+      "claim": "Messianic expectation develops from the Davidic covenant, prophetic promise, and the long experience of exile and hope.",
+      "category": "history",
+      "source_ids": [
+        "2-samuel-7",
+        "psalm-2",
+        "psalm-110",
+        "isaiah-9",
+        "isaiah-11",
+        "isaiah-53",
+        "luke-24",
+        "romans-1",
+        "philippians-2"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Hebrews 1:1-14"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "messiah-theme",
+        "parent_title": "Messiah Theme",
+        "parent_type": "theme",
+        "object_importance": 98,
+        "retrieval_score": 0.918,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "psalms-new-testament-reception",
+      "claim": "New Testament authors quote and echo psalms in arguments about Jesus' suffering, resurrection, enthronement, priesthood, mission, worship, creation rule, and the life of believing communities.",
+      "category": "culture",
+      "source_ids": [
+        "psalms-new-testament-reception",
+        "declaisse-walford-jacobson-tanner",
+        "goldingay-psalms"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Hebrews 1:5-13"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "psalms",
+        "parent_title": "Psalms",
+        "parent_type": "book",
+        "object_importance": 95,
+        "retrieval_score": 0.915,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 4,
+        "certainty": "textually_explicit",
+        "dispute_status": "denominational_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "reception_history",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "LATER_RECEPTION",
+        "presentation_role": "dig_deeper",
+        "overview_priority": 0
+      }
+    },
+    {
+      "id": "what-is-a-psalm:ancient_near_east_context:0",
+      "claim": "Poetic prayer was common in the ancient world, but the Psalms uniquely bind emotion to covenant faith.",
+      "category": "culture",
+      "source_ids": [
+        "psalm-1",
+        "psalm-22",
+        "psalm-23",
+        "psalm-110",
+        "psalm-118",
+        "luke-24",
+        "acts-2",
+        "hebrews-1"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Hebrews 1:5-14"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "what-is-a-psalm",
+        "parent_title": "What is a psalm?",
+        "parent_type": "faq",
+        "object_importance": 91,
+        "retrieval_score": 0.911,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 4,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "what-is-a-psalm:historical_context:0",
+      "claim": "Psalms arise in Israel's worship life and are sung in both public and private devotion.",
+      "category": "history",
+      "source_ids": [
+        "psalm-1",
+        "psalm-22",
+        "psalm-23",
+        "psalm-110",
+        "psalm-118",
+        "luke-24",
+        "acts-2",
+        "hebrews-1"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Hebrews 1:5-14"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "what-is-a-psalm",
+        "parent_title": "What is a psalm?",
+        "parent_type": "faq",
+        "object_importance": 91,
+        "retrieval_score": 0.911,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 4,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "what-is-canonical-theology:ancient_near_east_context:0",
+      "claim": "Ancient collections often guided interpretation by arrangement, and Scripture similarly invites readers to move from promise to fulfillment.",
+      "category": "culture",
+      "source_ids": [
+        "luke-24",
+        "matthew-5",
+        "romans-15",
+        "2-timothy-3",
+        "hebrews-1",
+        "2-peter-1",
+        "what-is-canonical-theology-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Hebrews 1:1-4"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "what-is-canonical-theology",
+        "parent_title": "What is canonical theology?",
+        "parent_type": "faq",
+        "object_importance": 94,
+        "retrieval_score": 0.914,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "what-is-canonical-theology:historical_context:0",
+      "claim": "This approach grows from the church's long habit of reading Scripture as a unified canon rather than isolated fragments.",
+      "category": "history",
+      "source_ids": [
+        "luke-24",
+        "matthew-5",
+        "romans-15",
+        "2-timothy-3",
+        "hebrews-1",
+        "2-peter-1",
+        "what-is-canonical-theology-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Hebrews 1:1-4"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "what-is-canonical-theology",
+        "parent_title": "What is canonical theology?",
+        "parent_type": "faq",
+        "object_importance": 94,
+        "retrieval_score": 0.914,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "what-is-intertextuality:ancient_near_east_context:0",
+      "claim": "In the ancient world, authoritative texts were often reactivated through citation and echo, and the Bible uses that practice to show ongoing divine speech.",
+      "category": "culture",
+      "source_ids": [
+        "luke-24",
+        "matthew-1",
+        "john-1",
+        "romans-15",
+        "1-corinthians-10",
+        "hebrews-1",
+        "revelation-5",
+        "what-is-intertextuality-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Hebrews 1:1-4"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "what-is-intertextuality",
+        "parent_title": "What is intertextuality?",
+        "parent_type": "faq",
+        "object_importance": 93,
+        "retrieval_score": 0.913,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "what-is-intertextuality:historical_context:0",
+      "claim": "Biblical authors wrote within a tradition of remembering, reusing, and reinterpreting earlier Scripture for new settings and audiences.",
+      "category": "history",
+      "source_ids": [
+        "luke-24",
+        "matthew-1",
+        "john-1",
+        "romans-15",
+        "1-corinthians-10",
+        "hebrews-1",
+        "revelation-5",
+        "what-is-intertextuality-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Hebrews 1:1-4"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "what-is-intertextuality",
+        "parent_title": "What is intertextuality?",
+        "parent_type": "faq",
+        "object_importance": 93,
+        "retrieval_score": 0.913,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "what-is-the-messiah:ancient_near_east_context:0",
+      "claim": "Royal anointing was familiar in the ancient world, but biblical messianism is anchored in God\u2019s promise and righteous rule.",
+      "category": "culture",
+      "source_ids": [
+        "2-samuel-7",
+        "psalm-2",
+        "psalm-110",
+        "isaiah-9",
+        "isaiah-11",
+        "isaiah-53",
+        "luke-24",
+        "romans-1",
+        "philippians-2",
+        "hebrews-1"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Hebrews 1:1-14"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "what-is-the-messiah",
+        "parent_title": "What is the Messiah?",
+        "parent_type": "faq",
+        "object_importance": 92,
+        "retrieval_score": 0.912,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "what-is-the-messiah:historical_context:0",
+      "claim": "Messianic expectation grows from the Davidic covenant, the prophets, and the experience of exile and return.",
+      "category": "history",
+      "source_ids": [
+        "2-samuel-7",
+        "psalm-2",
+        "psalm-110",
+        "isaiah-9",
+        "isaiah-11",
+        "isaiah-53",
+        "luke-24",
+        "romans-1",
+        "philippians-2",
+        "hebrews-1"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Hebrews 1:1-14"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "what-is-the-messiah",
+        "parent_title": "What is the Messiah?",
+        "parent_type": "faq",
+        "object_importance": 92,
+        "retrieval_score": 0.912,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "why-does-the-bible-repeat-themes:ancient_near_east_context:0",
+      "claim": "Repetition was mnemonic and pedagogical in the ancient world; biblical repetition also signals theological significance.",
+      "category": "culture",
+      "source_ids": [
+        "genesis-12",
+        "exodus-15",
+        "deuteronomy-6",
+        "psalm-78",
+        "isaiah-40",
+        "matthew-13",
+        "hebrews-1",
+        "revelation-21"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Hebrews 1:1-4"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "why-does-the-bible-repeat-themes",
+        "parent_title": "Why does the Bible repeat themes?",
+        "parent_type": "faq",
+        "object_importance": 87,
+        "retrieval_score": 0.907,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "why-does-the-bible-repeat-themes:historical_context:0",
+      "claim": "Oral and liturgical cultures rely on repetition, and Scripture uses that habit to form covenant memory.",
+      "category": "history",
+      "source_ids": [
+        "genesis-12",
+        "exodus-15",
+        "deuteronomy-6",
+        "psalm-78",
+        "isaiah-40",
+        "matthew-13",
+        "hebrews-1",
+        "revelation-21"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Hebrews 1:1-4"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "why-does-the-bible-repeat-themes",
+        "parent_title": "Why does the Bible repeat themes?",
+        "parent_type": "faq",
+        "object_importance": 87,
+        "retrieval_score": 0.907,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "word-of-god-theme:ancient_near_east_context:0",
+      "claim": "Ancient background for Word of God Theme includes covenant practice, worship, kingship, wisdom instruction, and prophetic critique; the entry ties that world to Deuteronomy 6:4-9, Psalm 19:7-11, bibliology, and inspiration without letting comparison replace the biblical witness.",
+      "category": "culture",
+      "source_ids": [
+        "deuteronomy-6",
+        "psalm-19",
+        "psalm-119",
+        "luke-24",
+        "2-timothy-3",
+        "hebrews-1"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Hebrews 1:1-4"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "word-of-god-theme",
+        "parent_title": "Word of God Theme",
+        "parent_type": "theme",
+        "object_importance": 92,
+        "retrieval_score": 0.912,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "word-of-god-theme:historical_context:0",
+      "claim": "Word of God Theme is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness.",
+      "category": "history",
+      "source_ids": [
+        "deuteronomy-6",
+        "psalm-19",
+        "psalm-119",
+        "luke-24",
+        "2-timothy-3",
+        "hebrews-1"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Hebrews 1:1-4"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "word-of-god-theme",
+        "parent_title": "Word of God Theme",
+        "parent_type": "theme",
+        "object_importance": 92,
+        "retrieval_score": 0.912,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40,
+        "inherited_from_parent": true
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "1 Corinthians 10",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "1-corinthians-10",
+        "canonical_object_ids": [
+          "what-is-intertextuality"
+        ]
+      },
+      {
+        "title": "1 Corinthians 15",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "1-corinthians-15",
+        "canonical_object_ids": [
+          "jesus"
+        ]
+      },
+      {
+        "title": "1 Peter 1",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "1-peter-1",
+        "canonical_object_ids": [
+          "how-do-the-old-and-new-testaments-connect"
+        ]
+      },
+      {
+        "title": "2 Corinthians 1",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "2-corinthians-1",
+        "canonical_object_ids": [
+          "how-do-the-old-and-new-testaments-connect"
+        ]
+      },
+      {
+        "title": "2 Peter 1",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "2-peter-1",
+        "canonical_object_ids": [
+          "what-is-canonical-theology"
+        ]
+      },
+      {
+        "title": "2 Samuel 7",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "2-samuel-7",
+        "canonical_object_ids": [
+          "messiah-theme",
+          "what-is-the-messiah"
+        ]
+      },
+      {
+        "title": "2 Timothy 3",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "2-timothy-3",
+        "canonical_object_ids": [
+          "bibliology",
+          "inerrancy",
+          "inspiration",
+          "what-is-canonical-theology",
+          "word-of-god-theme"
+        ]
+      },
+      {
+        "title": "Acts 2",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "acts-2",
+        "canonical_object_ids": [
+          "jesus",
+          "what-is-a-psalm"
+        ]
+      },
+      {
+        "title": "The Epistle to the Hebrews",
+        "author": "Harold W. Attridge",
+        "publisher": "Fortress Press",
+        "year": 1989,
+        "locator": "Hermeneia",
+        "url": "https://www.worldcat.org/title/13455343",
+        "source_type": "academic-book",
+        "supports": [],
+        "notes": "",
+        "id": "attridge",
+        "canonical_object_ids": [
+          "hebrews"
+        ]
+      },
+      {
+        "title": "The Roman Empire and the New Testament",
+        "author": "Warren Carter",
+        "publisher": "Abingdon Press",
+        "year": 2006,
+        "locator": "Imperial and social setting",
+        "url": "https://www.worldcat.org/title/62341494",
+        "source_type": "academic-book",
+        "supports": [],
+        "notes": "",
+        "id": "carter",
+        "canonical_object_ids": [
+          "hebrews"
+        ]
+      },
+      {
+        "title": "Colossians 1",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "colossians-1",
+        "canonical_object_ids": [
+          "jesus"
+        ]
+      },
+      {
+        "title": "The Book of Psalms",
+        "author": "Nancy L. deClaiss\u00e9-Walford, Rolf A. Jacobson, and Beth LaNeel Tanner",
+        "publisher": "Wm. B. Eerdmans Publishing Co.",
+        "year": 2014,
+        "locator": "New International Commentary on the Old Testament",
+        "url": "https://www.eerdmans.com/9780802824936/the-book-of-psalms/",
+        "source_type": "reference-work",
+        "supports": [
+          "canonical-context",
+          "literary-context",
+          "genre",
+          "structure",
+          "later-christian-reception",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "One-volume commentary emphasizing translation, poetry, theology, textual criticism, Dead Sea Scrolls, and canonical shaping.",
+        "id": "declaisse-walford-jacobson-tanner",
+        "canonical_object_ids": [
+          "psalms"
+        ]
+      },
+      {
+        "title": "Deuteronomy 6",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "deuteronomy-6",
+        "canonical_object_ids": [
+          "bibliology",
+          "inerrancy",
+          "inspiration",
+          "why-does-the-bible-repeat-themes",
+          "word-of-god-theme"
+        ]
+      },
+      {
+        "title": "Exodus 15",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "exodus-15",
+        "canonical_object_ids": [
+          "why-does-the-bible-repeat-themes"
+        ]
+      },
+      {
+        "title": "Genesis 12",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "genesis-12",
+        "canonical_object_ids": [
+          "why-does-the-bible-repeat-themes"
+        ]
+      },
+      {
+        "title": "Psalms",
+        "author": "John Goldingay",
+        "publisher": "Baker Academic",
+        "year": 2008,
+        "locator": "Baker Commentary on the Old Testament Wisdom and Psalms, three-volume set",
+        "url": "https://tst.bakeracademic.com/p/Psalms-John-Goldingay/40486",
+        "source_type": "reference-work",
+        "supports": [
+          "summary",
+          "authorship-positions",
+          "date-ranges",
+          "historical-context",
+          "literary-context",
+          "genre",
+          "hebrew-words",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "Literary, historical, grammatical, theological, and pastoral commentary with original translation.",
+        "id": "goldingay-psalms",
+        "canonical_object_ids": [
+          "psalms"
+        ]
+      },
+      {
+        "title": "SBL Greek New Testament: Hebrews",
+        "author": "Michael W. Holmes, editor",
+        "publisher": "Society of Biblical Literature and Logos Bible Software",
+        "year": 2010,
+        "locator": "Hebrews 1:1-13:25",
+        "url": "https://www.sblgnt.com/",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "heb-greek",
+        "canonical_object_ids": [
+          "hebrews"
+        ]
+      },
+      {
+        "title": "Hebrews 1",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "hebrews-1",
+        "canonical_object_ids": [
+          "bibliology",
+          "how-do-the-old-and-new-testaments-connect",
+          "inerrancy",
+          "inspiration",
+          "jesus",
+          "what-is-a-psalm",
+          "what-is-canonical-theology",
+          "what-is-intertextuality",
+          "what-is-the-messiah",
+          "why-does-the-bible-repeat-themes",
+          "word-of-god-theme"
+        ]
+      },
+      {
+        "title": "Canonical historical orientation for How do the Old and New Testaments connect?",
+        "author": "",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "id": "how-do-the-old-and-new-testaments-connect-historical-orientation",
+        "canonical_object_ids": [
+          "how-do-the-old-and-new-testaments-connect"
+        ]
+      },
+      {
+        "title": "Isaiah 11",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "isaiah-11",
+        "canonical_object_ids": [
+          "messiah-theme",
+          "what-is-the-messiah"
+        ]
+      },
+      {
+        "title": "Isaiah 40",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "isaiah-40",
+        "canonical_object_ids": [
+          "why-does-the-bible-repeat-themes"
+        ]
+      },
+      {
+        "title": "Isaiah 53",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "isaiah-53",
+        "canonical_object_ids": [
+          "messiah-theme",
+          "what-is-the-messiah"
+        ]
+      },
+      {
+        "title": "Isaiah 9",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "isaiah-9",
+        "canonical_object_ids": [
+          "messiah-theme",
+          "what-is-the-messiah"
+        ]
+      },
+      {
+        "title": "Canonical historical orientation for Jesus",
+        "author": "",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "id": "jesus-historical-orientation",
+        "canonical_object_ids": [
+          "jesus"
+        ]
+      },
+      {
+        "title": "John 1",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "john-1",
+        "canonical_object_ids": [
+          "what-is-intertextuality"
+        ]
+      },
+      {
+        "title": "John 1-21",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "john-1-21",
+        "canonical_object_ids": [
+          "jesus"
+        ]
+      },
+      {
+        "title": "Hebrews: A Commentary",
+        "author": "Luke Timothy Johnson",
+        "publisher": "Westminster John Knox",
+        "year": 2006,
+        "locator": "New Testament Library",
+        "url": "https://www.wjkbooks.com/Products/0664221181/hebrews.aspx",
+        "source_type": "academic-book",
+        "supports": [],
+        "notes": "",
+        "id": "johnson",
+        "canonical_object_ids": [
+          "hebrews"
+        ]
+      },
+      {
+        "title": "Hebrews",
+        "author": "Craig R. Koester",
+        "publisher": "Yale University Press",
+        "year": 2001,
+        "locator": "Anchor Yale Bible 36",
+        "url": "https://yalebooks.yale.edu/book/9780300139891/hebrews/",
+        "source_type": "academic-book",
+        "supports": [],
+        "notes": "",
+        "id": "koester",
+        "canonical_object_ids": [
+          "hebrews"
+        ]
+      },
+      {
+        "title": "The Jewish Annotated New Testament",
+        "author": "Amy-Jill Levine and Marc Zvi Brettler, editors",
+        "publisher": "Oxford University Press",
+        "year": 2017,
+        "locator": "Hebrews notes and essays",
+        "url": "https://global.oup.com/academic/product/the-jewish-annotated-new-testament-9780190461850",
+        "source_type": "reference-work",
+        "supports": [],
+        "notes": "",
+        "id": "levine-jant",
+        "canonical_object_ids": [
+          "hebrews"
+        ]
+      },
+      {
+        "title": "Luke 1-24",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "luke-1-24",
+        "canonical_object_ids": [
+          "jesus"
+        ]
+      },
+      {
+        "title": "Luke 24",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "luke-24",
+        "canonical_object_ids": [
+          "bibliology",
+          "how-do-the-old-and-new-testaments-connect",
+          "inerrancy",
+          "inspiration",
+          "messiah-theme",
+          "what-is-a-psalm",
+          "what-is-canonical-theology",
+          "what-is-intertextuality",
+          "what-is-the-messiah",
+          "word-of-god-theme"
+        ]
+      },
+      {
+        "title": "Mark 1-16",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "mark-1-16",
+        "canonical_object_ids": [
+          "jesus"
+        ]
+      },
+      {
+        "title": "Matthew 1",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "matthew-1",
+        "canonical_object_ids": [
+          "what-is-intertextuality"
+        ]
+      },
+      {
+        "title": "Matthew 1-28",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "matthew-1-28",
+        "canonical_object_ids": [
+          "jesus"
+        ]
+      },
+      {
+        "title": "Matthew 13",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "matthew-13",
+        "canonical_object_ids": [
+          "why-does-the-bible-repeat-themes"
+        ]
+      },
+      {
+        "title": "Matthew 5",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "matthew-5",
+        "canonical_object_ids": [
+          "how-do-the-old-and-new-testaments-connect",
+          "what-is-canonical-theology"
+        ]
+      },
+      {
+        "title": "Toward Decentering the New Testament",
+        "author": "Mitzi J. Smith",
+        "publisher": "Cascade Books",
+        "year": 2018,
+        "locator": "Womanist and postcolonial hermeneutics",
+        "url": "https://wipfandstock.com/9781532604652/toward-decentering-the-new-testament/",
+        "source_type": "academic-book",
+        "supports": [],
+        "notes": "",
+        "id": "mitzi-smith",
+        "canonical_object_ids": [
+          "hebrews"
+        ]
+      },
+      {
+        "title": "A New English Translation of the Septuagint",
+        "author": "Albert Pietersma and Benjamin G. Wright, editors",
+        "publisher": "Oxford University Press",
+        "year": 2007,
+        "locator": "Psalms, Genesis, Exodus, Jeremiah and Habakkuk comparanda",
+        "url": "https://ccat.sas.upenn.edu/nets/edition/",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "nets-lxx",
+        "canonical_object_ids": [
+          "hebrews"
+        ]
+      },
+      {
+        "title": "New Testament Virtual Manuscript Room",
+        "author": "Institut f\u00fcr Neutestamentliche Textforschung",
+        "publisher": "University of M\u00fcnster",
+        "year": null,
+        "locator": "Hebrews manuscript witnesses",
+        "url": "https://ntvmr.uni-muenster.de/",
+        "source_type": "reference-work",
+        "supports": [],
+        "notes": "",
+        "id": "ntvmr",
+        "canonical_object_ids": [
+          "hebrews"
+        ]
+      },
+      {
+        "title": "Papyrus 46",
+        "author": "Center for the Study of New Testament Manuscripts",
+        "publisher": "CSNTM",
+        "year": null,
+        "locator": "Hebrews 1:1-13:25 with lacunae",
+        "url": "https://manuscripts.csntm.org/manuscript/View/GA_P46",
+        "source_type": "ancient-primary-source",
+        "supports": [],
+        "notes": "",
+        "id": "p46",
+        "canonical_object_ids": [
+          "hebrews"
+        ]
+      },
+      {
+        "title": "Philippians 2",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "philippians-2",
+        "canonical_object_ids": [
+          "jesus",
+          "messiah-theme",
+          "what-is-the-messiah"
+        ]
+      },
+      {
+        "title": "Psalm 1",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [],
+        "notes": "",
+        "id": "psalm-1",
+        "canonical_object_ids": [
+          "what-is-a-psalm"
+        ]
+      },
+      {
+        "title": "Psalm 110",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [],
+        "notes": "",
+        "id": "psalm-110",
+        "canonical_object_ids": [
+          "messiah-theme",
+          "what-is-a-psalm",
+          "what-is-the-messiah"
+        ]
+      },
+      {
+        "title": "Psalm 118",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [],
+        "notes": "",
+        "id": "psalm-118",
+        "canonical_object_ids": [
+          "what-is-a-psalm"
+        ]
+      },
+      {
+        "title": "Psalm 119",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [],
+        "notes": "",
+        "id": "psalm-119",
+        "canonical_object_ids": [
+          "bibliology",
+          "inerrancy",
+          "inspiration",
+          "word-of-god-theme"
+        ]
+      },
+      {
+        "title": "Psalm 19",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [],
+        "notes": "",
+        "id": "psalm-19",
+        "canonical_object_ids": [
+          "bibliology",
+          "inerrancy",
+          "inspiration",
+          "word-of-god-theme"
+        ]
+      },
+      {
+        "title": "Psalm 2",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [],
+        "notes": "",
+        "id": "psalm-2",
+        "canonical_object_ids": [
+          "messiah-theme",
+          "what-is-the-messiah"
+        ]
+      },
+      {
+        "title": "Psalm 22",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [],
+        "notes": "",
+        "id": "psalm-22",
+        "canonical_object_ids": [
+          "what-is-a-psalm"
+        ]
+      },
+      {
+        "title": "Psalm 23",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [],
+        "notes": "",
+        "id": "psalm-23",
+        "canonical_object_ids": [
+          "what-is-a-psalm"
+        ]
+      },
+      {
+        "title": "Psalm 78",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [],
+        "notes": "",
+        "id": "psalm-78",
+        "canonical_object_ids": [
+          "why-does-the-bible-repeat-themes"
+        ]
+      },
+      {
+        "title": "Psalms in the New Testament",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Representative quotations and echoes in the Gospels, Acts, Pauline letters, Hebrews, 1 Peter, and Revelation",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "canonical-context",
+          "later-christian-reception",
+          "intertextuality",
+          "new-testament-connections",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "Canonical reception requiring passage-specific analysis of quotation, context, and argument.",
+        "id": "psalms-new-testament-reception",
+        "canonical_object_ids": [
+          "psalms"
+        ]
+      },
+      {
+        "title": "Revelation 21",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "revelation-21",
+        "canonical_object_ids": [
+          "why-does-the-bible-repeat-themes"
+        ]
+      },
+      {
+        "title": "Revelation 5",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "revelation-5",
+        "canonical_object_ids": [
+          "what-is-intertextuality"
+        ]
+      },
+      {
+        "title": "Romans 1",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "romans-1",
+        "canonical_object_ids": [
+          "messiah-theme",
+          "what-is-the-messiah"
+        ]
+      },
+      {
+        "title": "Romans 15",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "romans-15",
+        "canonical_object_ids": [
+          "how-do-the-old-and-new-testaments-connect",
+          "what-is-canonical-theology",
+          "what-is-intertextuality"
+        ]
+      },
+      {
+        "title": "Codex Sinaiticus: Hebrews",
+        "author": "Codex Sinaiticus Project",
+        "publisher": "British Library and partners",
+        "year": null,
+        "locator": "Add MS 43725, ff. 288v-293v",
+        "url": "https://www.codexsinaiticus.org/en/manuscript.aspx",
+        "source_type": "ancient-primary-source",
+        "supports": [],
+        "notes": "",
+        "id": "sinaiticus",
+        "canonical_object_ids": [
+          "hebrews"
+        ]
+      },
+      {
+        "title": "Angel Veneration and Christology",
+        "author": "Loren T. Stuckenbruck",
+        "publisher": "Mohr Siebeck",
+        "year": 1995,
+        "locator": "Jewish angelology and Revelation; comparative control",
+        "url": "https://www.mohrsiebeck.com/en/book/angel-veneration-and-christology-9783161463037/",
+        "source_type": "academic-book",
+        "supports": [],
+        "notes": "",
+        "id": "stuckenbruck",
+        "canonical_object_ids": [
+          "hebrews"
+        ]
+      },
+      {
+        "title": "Canonical historical orientation for What is canonical theology?",
+        "author": "",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "id": "what-is-canonical-theology-historical-orientation",
+        "canonical_object_ids": [
+          "what-is-canonical-theology"
+        ]
+      },
+      {
+        "title": "Canonical historical orientation for What is intertextuality?",
+        "author": "",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "id": "what-is-intertextuality-historical-orientation",
+        "canonical_object_ids": [
+          "what-is-intertextuality"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "bibliology",
+        "type": "theology",
+        "title": "Bibliology",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.912
+      },
+      {
+        "id": "hebrews",
+        "type": "book",
+        "title": "Hebrews",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.917
+      },
+      {
+        "id": "how-do-the-old-and-new-testaments-connect",
+        "type": "faq",
+        "title": "How do the Old and New Testaments connect?",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.916
+      },
+      {
+        "id": "inerrancy",
+        "type": "theology",
+        "title": "Inerrancy",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.912
+      },
+      {
+        "id": "inspiration",
+        "type": "theology",
+        "title": "Inspiration",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.912
+      },
+      {
+        "id": "jesus",
+        "type": "person",
+        "title": "Jesus",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.92
+      },
+      {
+        "id": "messiah-theme",
+        "type": "theme",
+        "title": "Messiah Theme",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.918
+      },
+      {
+        "id": "psalms",
+        "type": "book",
+        "title": "Psalms",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.915
+      },
+      {
+        "id": "what-is-a-psalm",
+        "type": "faq",
+        "title": "What is a psalm?",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.911
+      },
+      {
+        "id": "what-is-canonical-theology",
+        "type": "faq",
+        "title": "What is canonical theology?",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.914
+      },
+      {
+        "id": "what-is-intertextuality",
+        "type": "faq",
+        "title": "What is intertextuality?",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.913
+      },
+      {
+        "id": "what-is-the-messiah",
+        "type": "faq",
+        "title": "What is the Messiah?",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.912
+      },
+      {
+        "id": "why-does-the-bible-repeat-themes",
+        "type": "faq",
+        "title": "Why does the Bible repeat themes?",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.907
+      },
+      {
+        "id": "word-of-god-theme",
+        "type": "theme",
+        "title": "Word of God Theme",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.912
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "88d9d7c1771e9f9c0521afff5c233293d4fe91a51439eb4c372f3c5941699611",
+  "evidence_hash_version": "2"
+}

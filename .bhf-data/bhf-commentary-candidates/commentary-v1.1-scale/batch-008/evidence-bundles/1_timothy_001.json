@@ -1,0 +1,1368 @@
+{
+  "passage_ref": "1 Timothy 1",
+  "entities": {
+    "people": [],
+    "places": [
+      {
+        "id": "ephesus",
+        "title": "Ephesus",
+        "type": "place",
+        "aliases": [
+          "where is ephesus",
+          "tell me about ephesus",
+          "why is ephesus important"
+        ],
+        "metadata": {
+          "summary": "Ephesus was a major harbor city of Roman Asia and the explicit setting for mission, teaching, ritual conflict, civic assembly, and farewell traditions in Acts; it also anchors Revelation 2 and the narrated setting of 1 Timothy, while Ephesians' original destination remains textually disputed.",
+          "importance": 70,
+          "retrieval_score": 0.89,
+          "ancient_names": [],
+          "modern_identification": "",
+          "region": "",
+          "terrain": "",
+          "elevation": null,
+          "archaeology": [],
+          "related_passages": [
+            "Acts 18:18-28",
+            "Acts 19:1-20",
+            "Acts 19:21-41",
+            "Acts 20:1-38",
+            "Ephesians 1:1",
+            "1 Timothy 1:3-7",
+            "Revelation 2:1-7"
+          ]
+        }
+      }
+    ],
+    "groups": [],
+    "events": [],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "1-timothy:interpretive_note:0",
+      "claim": "Authorship: the text names Paul, but vocabulary, style, theology, biography, and institutional setting sustain major disagreement among qualified scholars.",
+      "category": "culture",
+      "source_ids": [
+        "1tim-greek",
+        "marshall",
+        "towner",
+        "johnson",
+        "collins"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Timothy 1:1"
+      ],
+      "confidence": "low",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "1-timothy",
+        "parent_title": "1 Timothy",
+        "parent_type": "book",
+        "object_importance": 80,
+        "retrieval_score": 0.96,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "disputed",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "historical-context",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 67
+      }
+    },
+    {
+      "id": "1-timothy:interpretive_note:1",
+      "claim": "Composition: secretary-assisted and Pauline-school proposals are explanatory models, not people identified by the letter or manuscript evidence.",
+      "category": "culture",
+      "source_ids": [
+        "marshall",
+        "towner",
+        "ehrman"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Timothy 1:1-2"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "1-timothy",
+        "parent_title": "1 Timothy",
+        "parent_type": "book",
+        "object_importance": 80,
+        "retrieval_score": 0.96,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "plausible",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "historical-context",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 47
+      }
+    },
+    {
+      "id": "1-timothy:interpretive_note:2",
+      "claim": "Setting: Ephesus and Macedonia are explicit in the narrated situation, but attempts to fit the itinerary inside or after Acts remain chronological reconstructions.",
+      "category": "culture",
+      "source_ids": [
+        "1tim-greek",
+        "trebilco",
+        "marshall"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Timothy 1:3"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "1-timothy",
+        "parent_title": "1 Timothy",
+        "parent_type": "book",
+        "object_importance": 80,
+        "retrieval_score": 0.96,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 2,
+        "certainty": "textually_explicit",
+        "dispute_status": "chronological_uncertainty",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "historical-context",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 102
+      }
+    },
+    {
+      "id": "1-timothy:interpretive_note:26",
+      "claim": "Gift: prophecy and the elders' laying on hands accompany Timothy's charisma, but later ordination systems differ on sacramental and institutional implications.",
+      "category": "culture",
+      "source_ids": [
+        "1tim-greek",
+        "towner",
+        "marshall"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Timothy 1:18"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "1-timothy",
+        "parent_title": "1 Timothy",
+        "parent_type": "book",
+        "object_importance": 80,
+        "retrieval_score": 0.96,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 17,
+        "certainty": "textually_explicit",
+        "dispute_status": "denominational_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "theological-interpretation",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 102
+      }
+    },
+    {
+      "id": "1-timothy:interpretive_note:3",
+      "claim": "Opponents: myths, genealogies, misuse of law, ascetic prohibitions, controversy, and false knowledge may not describe one coherent group.",
+      "category": "culture",
+      "source_ids": [
+        "1tim-greek",
+        "marshall",
+        "johnson",
+        "huizenga"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Timothy 1:3-7"
+      ],
+      "confidence": "low",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "1-timothy",
+        "parent_title": "1 Timothy",
+        "parent_type": "book",
+        "object_importance": 80,
+        "retrieval_score": 0.96,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 2,
+        "certainty": "insufficient_evidence",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "literary-observation",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    },
+    {
+      "id": "1-timothy:interpretive_note:4",
+      "claim": "Law: the letter calls the law good when used lawfully; it does not authorize antisemitism, supersessionism, or blame of Jewish people for false teaching.",
+      "category": "culture",
+      "source_ids": [
+        "1tim-greek",
+        "levine-jant",
+        "marshall"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Timothy 1:5-11"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "1-timothy",
+        "parent_title": "1 Timothy",
+        "parent_type": "book",
+        "object_importance": 80,
+        "retrieval_score": 0.96,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 4,
+        "certainty": "textually_explicit",
+        "dispute_status": "denominational_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "interpretive-caution",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 102
+      }
+    },
+    {
+      "id": "1-timothy:interpretive_note:5",
+      "claim": "Vice list: arsenokoitai is a rare compound with debated scope; translating it with a modern identity label can collapse lexical, historical, and ethical questions.",
+      "category": "culture",
+      "source_ids": [
+        "1tim-greek",
+        "bdag",
+        "levine-jant"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Timothy 1:9-10"
+      ],
+      "confidence": "low",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "1-timothy",
+        "parent_title": "1 Timothy",
+        "parent_type": "book",
+        "object_importance": 80,
+        "retrieval_score": 0.96,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 8,
+        "certainty": "disputed",
+        "dispute_status": "lexical_uncertainty",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "interpretive-caution",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 102
+      }
+    },
+    {
+      "id": "1-timothy:interpretive_note:6",
+      "claim": "Mercy: the autobiographical Paul is presented as a former persecutor whose receipt of mercy becomes an example, not a license to glorify trauma or excuse leaders' harm.",
+      "category": "culture",
+      "source_ids": [
+        "1tim-greek",
+        "johnson",
+        "huizenga"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Timothy 1:12-16"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "1-timothy",
+        "parent_title": "1 Timothy",
+        "parent_type": "book",
+        "object_importance": 80,
+        "retrieval_score": 0.96,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 11,
+        "certainty": "textually_explicit",
+        "dispute_status": "denominational_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "theological-interpretation",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    },
+    {
+      "id": "1-timothy:interpretive_note:7",
+      "claim": "Discipline: handing Hymenaeus and Alexander to Satan is not a transparent modern procedure and cannot justify violence, humiliation, or unaccountable spiritual abuse.",
+      "category": "culture",
+      "source_ids": [
+        "1tim-greek",
+        "marshall",
+        "huizenga"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Timothy 1:19-20"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "1-timothy",
+        "parent_title": "1 Timothy",
+        "parent_type": "book",
+        "object_importance": 80,
+        "retrieval_score": 0.96,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 18,
+        "certainty": "tradition_dependent",
+        "dispute_status": "denominational_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "interpretive-caution",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    },
+    {
+      "id": "1tim-arsenokoitai",
+      "claim": "Arsenokoitai occurs in the vice list and plausibly echoes Greek Levitical wording, but its exact historical scope is disputed.",
+      "category": "language",
+      "source_ids": [
+        "1tim-greek",
+        "nets-lxx",
+        "bdag",
+        "levine-jant"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Timothy 1:10"
+      ],
+      "confidence": "low",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "1-timothy",
+        "parent_title": "1 Timothy",
+        "parent_type": "book",
+        "object_importance": 80,
+        "retrieval_score": 0.96,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 9,
+        "certainty": "disputed",
+        "dispute_status": "lexical_uncertainty",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "lexical",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 96
+      }
+    },
+    {
+      "id": "1tim-attribution",
+      "claim": "The prescript names Paul as apostle and Timothy as a genuine child in faith.",
+      "category": "history",
+      "source_ids": [
+        "1tim-greek",
+        "marshall",
+        "towner"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Timothy 1:1-2"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "1-timothy",
+        "parent_title": "1 Timothy",
+        "parent_type": "book",
+        "object_importance": 80,
+        "retrieval_score": 0.96,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "textually_explicit",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "1tim-date",
+      "claim": "The letter supplies no absolute date; Pauline and Pauline-school models place it in different parts of the first or early second century.",
+      "category": "culture",
+      "source_ids": [
+        "marshall",
+        "towner",
+        "collins",
+        "trebilco"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Timothy 1:3"
+      ],
+      "confidence": "low",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "1-timothy",
+        "parent_title": "1 Timothy",
+        "parent_type": "book",
+        "object_importance": 80,
+        "retrieval_score": 0.96,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 2,
+        "certainty": "disputed",
+        "dispute_status": "chronological_uncertainty",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "historical_cultural",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "1tim-discipline",
+      "claim": "Hymenaeus and Alexander are said to have rejected conscience, shipwrecked faith, and been handed to Satan so that they might learn not to blaspheme.",
+      "category": "history",
+      "source_ids": [
+        "1tim-greek",
+        "marshall"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Timothy 1:18-20"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "1-timothy",
+        "parent_title": "1 Timothy",
+        "parent_type": "book",
+        "object_importance": 80,
+        "retrieval_score": 0.96,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 17,
+        "certainty": "textually_explicit",
+        "dispute_status": "denominational_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "1tim-ephesus",
+      "claim": "The narrated Paul urged Timothy to remain in Ephesus while traveling to Macedonia so that he might stop different teaching.",
+      "category": "history",
+      "source_ids": [
+        "1tim-greek",
+        "trebilco"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Timothy 1:3-4"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "1-timothy",
+        "parent_title": "1 Timothy",
+        "parent_type": "book",
+        "object_importance": 80,
+        "retrieval_score": 0.96,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 2,
+        "certainty": "textually_explicit",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "1tim-law",
+      "claim": "The letter calls the law good if used lawfully and aligns it with the entrusted gospel rather than rejecting it.",
+      "category": "culture",
+      "source_ids": [
+        "1tim-greek",
+        "levine-jant",
+        "marshall"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Timothy 1:8-11"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "1-timothy",
+        "parent_title": "1 Timothy",
+        "parent_type": "book",
+        "object_importance": 80,
+        "retrieval_score": 0.96,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 7,
+        "certainty": "textually_explicit",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_theology",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "1tim-mercy",
+      "claim": "The autobiographical voice describes prior blasphemy, persecution, and violence, receipt of mercy in ignorance and unbelief, overflowing grace, and exemplary patience.",
+      "category": "history",
+      "source_ids": [
+        "1tim-greek",
+        "johnson",
+        "marshall"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Timothy 1:12-16"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "1-timothy",
+        "parent_title": "1 Timothy",
+        "parent_type": "book",
+        "object_importance": 80,
+        "retrieval_score": 0.96,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 11,
+        "certainty": "textually_explicit",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "1tim-opponents",
+      "claim": "The letter attacks different teaching, myths, genealogies, speculative inquiry, misused law, ascetic prohibitions, controversy, and falsely named knowledge without demonstrating one opponent system.",
+      "category": "culture",
+      "source_ids": [
+        "1tim-greek",
+        "marshall",
+        "johnson",
+        "collins"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Timothy 1:3-7"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "1-timothy",
+        "parent_title": "1 Timothy",
+        "parent_type": "book",
+        "object_importance": 80,
+        "retrieval_score": 0.96,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 2,
+        "certainty": "probable",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 90
+      }
+    },
+    {
+      "id": "ephesus:ancient_near_east_context:0",
+      "claim": "Not directly applicable; Ephesus belongs to the Greco-Roman eastern Mediterranean, with earlier Near Eastern contexts entering through Jewish Scripture and diaspora traditions.",
+      "category": "culture",
+      "source_ids": [
+        "acts-ephesus-place",
+        "ephesian-letter-passages",
+        "oeai-ephesus-place",
+        "ephesus-evidence-cluster"
+      ],
+      "related_entity_ids": [
+        "ephesus"
+      ],
+      "passage_anchors": [
+        "1 Timothy 1:3-7"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "ephesus",
+        "parent_title": "Ephesus",
+        "parent_type": "place",
+        "object_importance": 70,
+        "retrieval_score": 0.89,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 2,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "ephesus:hebraic_worldview:0",
+      "claim": "Acts places Ephesian mission within diaspora synagogue and scriptural networks before narrating wider gentile reception. Jewish exorcists, synagogue hearers, and gentile ritual practitioners must remain differentiated rather than fused into a stereotype.",
+      "category": "culture",
+      "source_ids": [
+        "acts-ephesus-place",
+        "ephesian-letter-passages",
+        "oeai-ephesus-place",
+        "ephesus-evidence-cluster"
+      ],
+      "related_entity_ids": [
+        "ephesus"
+      ],
+      "passage_anchors": [
+        "1 Timothy 1:3-7"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "ephesus",
+        "parent_title": "Ephesus",
+        "parent_type": "place",
+        "object_importance": 70,
+        "retrieval_score": 0.89,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 2,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "hebraic_worldview",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 20,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "ephesus:historical_context:0",
+      "claim": "Roman Ephesus connected an engineered Aegean harbor with inland Anatolia. The city combined Greek civic institutions, Roman provincial power, the Artemision, imperial cults, associations, benefaction, craft and trade networks, households, slavery, and substantial migration. Surviving monuments span many centuries and require phase-specific use.",
+      "category": "history",
+      "source_ids": [
+        "acts-ephesus-place",
+        "ephesian-letter-passages",
+        "oeai-ephesus-place",
+        "ephesus-evidence-cluster"
+      ],
+      "related_entity_ids": [
+        "ephesus"
+      ],
+      "passage_anchors": [
+        "1 Timothy 1:3-7"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "ephesus",
+        "parent_title": "Ephesus",
+        "parent_type": "place",
+        "object_importance": 70,
+        "retrieval_score": 0.89,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 2,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "ephesus:second_temple_context:0",
+      "claim": "First-century diaspora Judaism, synagogue debate, scriptural instruction, and Jewish ritual specialists form part of Acts' Ephesian horizon. These settings do not identify the opponents in 1 Timothy or prove that every local Christ-follower shared one background.",
+      "category": "culture",
+      "source_ids": [
+        "acts-ephesus-place",
+        "ephesian-letter-passages",
+        "oeai-ephesus-place",
+        "ephesus-evidence-cluster"
+      ],
+      "related_entity_ids": [
+        "ephesus"
+      ],
+      "passage_anchors": [
+        "1 Timothy 1:3-7"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "ephesus",
+        "parent_title": "Ephesus",
+        "parent_type": "place",
+        "object_importance": 70,
+        "retrieval_score": 0.89,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 2,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "second_temple_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "first-timothy-ephesian-setting",
+      "claim": "First Timothy opens with Paul recalling a request that Timothy remain in Ephesus while he traveled to Macedonia to restrain different teaching.",
+      "category": "history",
+      "source_ids": [
+        "ephesus-biblical-texts",
+        "trebilco-ephesus"
+      ],
+      "related_entity_ids": [
+        "ephesus"
+      ],
+      "passage_anchors": [
+        "1 Timothy 1:3-7"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "roman-ephesus-civic-cultic-and-household-life",
+        "parent_title": "Roman Ephesus: Civic, Cultic, and Household Life",
+        "parent_type": "cultural_background",
+        "object_importance": 98,
+        "retrieval_score": 0.918,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 2,
+        "certainty": "textually_explicit",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.75,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "ancient-text",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 102
+      }
+    },
+    {
+      "id": "first-timothy-ephesian-setting:passage-relevance",
+      "claim": "The city name licenses bounded Ephesian comparison but neither dates the letter from Acts nor identifies its teachers as Artemis devotees, magicians, Jews, Gnostics, or women.",
+      "category": "history",
+      "source_ids": [
+        "ephesus-biblical-texts",
+        "trebilco-ephesus"
+      ],
+      "related_entity_ids": [
+        "ephesus"
+      ],
+      "passage_anchors": [
+        "1 Timothy 1:3-7"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "roman-ephesus-civic-cultic-and-household-life",
+        "parent_title": "Roman Ephesus: Civic, Cultic, and Household Life",
+        "parent_type": "cultural_background",
+        "object_importance": 98,
+        "retrieval_score": 0.918,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 2,
+        "certainty": "textually_explicit",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.75,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "ancient-text",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 102,
+        "supports_evidence_ids": [
+          "first-timothy-ephesian-setting"
+        ]
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "SBL Greek New Testament: 1 Timothy",
+        "author": "Michael W. Holmes, editor",
+        "publisher": "Society of Biblical Literature and Logos Bible Software",
+        "year": 2010,
+        "locator": "1 Timothy 1:1-6:21",
+        "url": "https://www.sbl-site.org/resources/digital-texts/sbl-greek-new-testament/",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "literary-context",
+          "structure",
+          "scripture-references",
+          "greek-words",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Primary critical Greek text; individual variants require an apparatus.",
+        "id": "1tim-greek",
+        "canonical_object_ids": [
+          "1-timothy"
+        ]
+      },
+      {
+        "title": "Acts",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Acts 18:18-20:38",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "historical-context",
+          "canonical-context",
+          "scripture-references"
+        ],
+        "notes": "Primary narrative witness.",
+        "id": "acts-ephesus-place",
+        "canonical_object_ids": [
+          "ephesus"
+        ]
+      },
+      {
+        "title": "A Greek-English Lexicon of the New Testament and Other Early Christian Literature",
+        "author": "Walter Bauer; Frederick W. Danker, editor",
+        "publisher": "University of Chicago Press",
+        "year": 2000,
+        "locator": "Third edition; selected 1 Timothy lexemes",
+        "url": "https://press.uchicago.edu/ucp/books/book/chicago/G/bo3626820.html",
+        "source_type": "lexicon",
+        "supports": [
+          "greek-words",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Lexical starting point; entries do not by themselves resolve discourse or application.",
+        "id": "bdag",
+        "canonical_object_ids": [
+          "1-timothy"
+        ]
+      },
+      {
+        "title": "1 & 2 Timothy and Titus",
+        "author": "Raymond F. Collins",
+        "publisher": "Westminster John Knox Press",
+        "year": 2002,
+        "locator": "New Testament Library",
+        "url": "https://www.wjkbooks.com/Products/9780664222475/1--2-timothy-and-titus.aspx",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "literary-context",
+          "authorship-positions",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Critical commentary; verify locators and representations of positions.",
+        "id": "collins",
+        "canonical_object_ids": [
+          "1-timothy"
+        ]
+      },
+      {
+        "title": "Forgery and Counterforgery",
+        "author": "Bart D. Ehrman",
+        "publisher": "Oxford University Press",
+        "year": 2013,
+        "locator": "Early Christian authorship discourse and Pastoral Epistles",
+        "url": "https://global.oup.com/academic/product/forgery-and-counterforgery-9780199928033",
+        "source_type": "academic-book",
+        "supports": [
+          "authorship-positions",
+          "later-christian-reception",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Critical pseudepigraphy model; compare alternative authorship accounts.",
+        "id": "ehrman",
+        "canonical_object_ids": [
+          "1-timothy"
+        ]
+      },
+      {
+        "title": "Ephesians, First Timothy, and Revelation",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Ephesians 1:1; 1 Timothy 1:3-7; Revelation 2:1-7",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "canonical-context",
+          "scripture-references"
+        ],
+        "notes": "Distinct canonical witnesses with different destination and chronology questions.",
+        "id": "ephesian-letter-passages",
+        "canonical_object_ids": [
+          "ephesus"
+        ]
+      },
+      {
+        "title": "Ephesian narrative, letter, and apocalypse passages",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Acts 18:18-20:38; Ephesians 1:1; 5:21-6:20; 1 Timothy 1:3-7; 3:1-15; 5:3-6:19; Revelation 2:1-7",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "acts-apollos-teaching-network",
+          "acts-tyrannus-regional-teaching",
+          "acts-exorcism-and-book-burning",
+          "artemis-craft-economy",
+          "theater-civic-assembly-offices",
+          "artemision-civic-cult",
+          "harbor-and-asian-travel-network",
+          "imperial-cult-and-civic-honor",
+          "ephesians-destination-variant",
+          "first-timothy-ephesian-setting",
+          "household-slavery-status-comparison",
+          "association-benefaction-office-comparison"
+        ],
+        "notes": "Primary biblical texts; no modern translation is reproduced.",
+        "id": "ephesus-biblical-texts",
+        "canonical_object_ids": [
+          "roman-ephesus-civic-cultic-and-household-life"
+        ]
+      },
+      {
+        "title": "Roman Ephesus: Civic, Cultic, and Household Life",
+        "author": "Canonical Knowledge Library",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "Companion cultural-background object",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context",
+          "canonical-context",
+          "archaeology",
+          "interpretive-notes",
+          "related-objects"
+        ],
+        "notes": "Passage-bounded evidence, sources, chronology, and dispute controls.",
+        "id": "ephesus-evidence-cluster",
+        "canonical_object_ids": [
+          "ephesus"
+        ]
+      },
+      {
+        "title": "1-2 Timothy, Titus",
+        "author": "Annette Bourland Huizenga",
+        "publisher": "Liturgical Press",
+        "year": 2016,
+        "locator": "Wisdom Commentary 53",
+        "url": "https://litpress.org/Products/3702/12-Timothy-Titus",
+        "source_type": "academic-book",
+        "supports": [
+          "later-christian-reception",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Feminist interpretation and reception control; verify locators.",
+        "id": "huizenga",
+        "canonical_object_ids": [
+          "1-timothy"
+        ]
+      },
+      {
+        "title": "The First and Second Letters to Timothy",
+        "author": "Luke Timothy Johnson",
+        "publisher": "Yale University Press",
+        "year": 2001,
+        "locator": "Anchor Yale Bible 35A",
+        "url": "https://yalebooks.yale.edu/book/9780300139884/the-first-and-second-letters-to-timothy/",
+        "source_type": "academic-book",
+        "supports": [
+          "literary-context",
+          "canonical-context",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Literary and theological commentary; verify locators.",
+        "id": "johnson",
+        "canonical_object_ids": [
+          "1-timothy"
+        ]
+      },
+      {
+        "title": "The Jewish Annotated New Testament",
+        "author": "Amy-Jill Levine and Marc Zvi Brettler, editors",
+        "publisher": "Oxford University Press",
+        "year": 2017,
+        "locator": "Second edition; 1 Timothy and Jewish contexts",
+        "url": "https://global.oup.com/academic/product/the-jewish-annotated-new-testament-9780190461850",
+        "source_type": "reference-work",
+        "supports": [
+          "hebraic-worldview",
+          "second-temple-context",
+          "intertextuality",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Jewish-context control; verify individual annotations.",
+        "id": "levine-jant",
+        "canonical_object_ids": [
+          "1-timothy"
+        ]
+      },
+      {
+        "title": "The Pastoral Epistles",
+        "author": "I. Howard Marshall with Philip H. Towner",
+        "publisher": "T&T Clark",
+        "year": 1999,
+        "locator": "International Critical Commentary",
+        "url": "https://www.bloomsbury.com/us/pastoral-epistles-9780567084552/",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "literary-context",
+          "authorship-positions",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Critical commentary; individual positions require locator verification.",
+        "id": "marshall",
+        "canonical_object_ids": [
+          "1-timothy"
+        ]
+      },
+      {
+        "title": "A New English Translation of the Septuagint",
+        "author": "Albert Pietersma and Benjamin G. Wright, editors",
+        "publisher": "Oxford University Press",
+        "year": 2007,
+        "locator": "Genesis, Deuteronomy, Leviticus, and wisdom comparanda",
+        "url": "https://ccat.sas.upenn.edu/nets/edition/",
+        "source_type": "scripture",
+        "supports": [
+          "hebraic-worldview",
+          "second-temple-context",
+          "intertextuality",
+          "hebrew-words",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Septuagint control; not evidence that every verbal parallel is a direct citation.",
+        "id": "nets-lxx",
+        "canonical_object_ids": [
+          "1-timothy"
+        ]
+      },
+      {
+        "title": "Forschungen in Ephesos",
+        "author": "Austrian Archaeological Institute",
+        "publisher": "Austrian Academy of Sciences",
+        "year": null,
+        "locator": "Open-access excavation monographs and monument studies",
+        "url": "https://www.oeaw.ac.at/en/oeai/publishing/series/forschungen-in-ephesos",
+        "source_type": "excavation-report",
+        "supports": [
+          "historical-context",
+          "archaeology",
+          "interpretive-notes"
+        ],
+        "notes": "Monument phases and later rebuilding require publication-level control.",
+        "id": "oeai-ephesus-place",
+        "canonical_object_ids": [
+          "ephesus"
+        ]
+      },
+      {
+        "title": "The Letters to Timothy and Titus",
+        "author": "Philip H. Towner",
+        "publisher": "Eerdmans",
+        "year": 2006,
+        "locator": "New International Commentary on the New Testament",
+        "url": "https://www.eerdmans.com/9780802825131/the-letters-to-timothy-and-titus/",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "literary-context",
+          "authorship-positions",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Commentary representing a Pauline-author approach; verify locators.",
+        "id": "towner",
+        "canonical_object_ids": [
+          "1-timothy"
+        ]
+      },
+      {
+        "title": "The Early Christians in Ephesus from Paul to Ignatius",
+        "author": "Paul Trebilco",
+        "publisher": "Eerdmans",
+        "year": 2007,
+        "locator": "Ephesian communities, identity, leadership, and chronology",
+        "url": "https://www.eerdmans.com/9780802807694/the-early-christians-in-ephesus-from-paul-to-ignatius/",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "historical-setting",
+          "archaeology",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Synthetic reconstruction requiring claim-level qualification.",
+        "id": "trebilco",
+        "canonical_object_ids": [
+          "1-timothy"
+        ]
+      },
+      {
+        "title": "The Early Christians in Ephesus from Paul to Ignatius",
+        "author": "Paul Trebilco",
+        "publisher": "Eerdmans",
+        "year": 2007,
+        "locator": "Ephesian communities, texts, identity, leadership, and chronology",
+        "url": "https://www.eerdmans.com/9780802807694/the-early-christians-in-ephesus-from-paul-to-ignatius/",
+        "source_type": "academic-book",
+        "supports": [
+          "acts-apollos-teaching-network",
+          "acts-tyrannus-regional-teaching",
+          "ephesians-destination-variant",
+          "first-timothy-ephesian-setting",
+          "association-benefaction-office-comparison"
+        ],
+        "notes": "Historical synthesis requiring source-by-source qualification.",
+        "id": "trebilco-ephesus",
+        "canonical_object_ids": [
+          "roman-ephesus-civic-cultic-and-household-life"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "1-timothy",
+        "type": "book",
+        "title": "1 Timothy",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.96
+      },
+      {
+        "id": "ephesus",
+        "type": "place",
+        "title": "Ephesus",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.89
+      },
+      {
+        "id": "roman-ephesus-civic-cultic-and-household-life",
+        "type": "cultural_background",
+        "title": "Roman Ephesus: Civic, Cultic, and Household Life",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.918
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "90ed328b2c8aaceb7a91b550620dbc30c07a946d4442c80700d31f8addabfb95",
+  "evidence_hash_version": "2"
+}

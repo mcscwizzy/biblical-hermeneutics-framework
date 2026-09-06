@@ -1,0 +1,826 @@
+{
+  "passage_ref": "Psalms 51",
+  "entities": {
+    "people": [
+      {
+        "id": "david",
+        "title": "David",
+        "type": "person",
+        "aliases": [
+          "who is david",
+          "tell me about david",
+          "why is david important"
+        ],
+        "metadata": {
+          "summary": "Israel's shepherd king, psalmist, and covenant figure whose reign shapes the royal line and messianic hope.",
+          "importance": 97,
+          "retrieval_score": 0.917,
+          "ancient_names": [],
+          "modern_identification": "",
+          "region": "",
+          "terrain": "",
+          "elevation": null,
+          "archaeology": [],
+          "related_passages": [
+            "1 Samuel 16:1-13",
+            "1 Samuel 17:1-58",
+            "2 Samuel 5:1-5",
+            "2 Samuel 7:1-29",
+            "Psalms 51:1-19",
+            "Psalms 110:1-7",
+            "Acts 13:22-23"
+          ]
+        }
+      }
+    ],
+    "places": [],
+    "groups": [
+      {
+        "id": "sacrificial-system",
+        "title": "Sacrificial System",
+        "type": "institution",
+        "aliases": [
+          "sacrificial system institution",
+          "sacrificial system in scripture",
+          "sacrificial system structure",
+          "sacrificial system role"
+        ],
+        "metadata": {
+          "summary": "The ordered pattern of offerings, atonement, consecration, and fellowship that sustains Israel's covenant worship.",
+          "importance": 95,
+          "retrieval_score": 0.915,
+          "ancient_names": [],
+          "modern_identification": "",
+          "region": "",
+          "terrain": "",
+          "elevation": null,
+          "archaeology": [],
+          "related_passages": [
+            "Leviticus 1:1-9",
+            "Leviticus 4:1-35",
+            "Leviticus 16:1-34",
+            "Leviticus 17:11",
+            "Psalms 51:16-19",
+            "Hebrews 9:11-28",
+            "Hebrews 10:1-18"
+          ]
+        }
+      }
+    ],
+    "events": [],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "david:ancient_near_east_context:0",
+      "claim": "His world is the world of kingship, patronage, warfare, and dynastic succession familiar across the ancient Near East.",
+      "category": "culture",
+      "source_ids": [
+        "1-samuel-16-17",
+        "2-samuel-5-7",
+        "psalm-51",
+        "psalm-110",
+        "acts-13"
+      ],
+      "related_entity_ids": [
+        "david"
+      ],
+      "passage_anchors": [
+        "Psalms 51:1-19"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "david",
+        "parent_title": "David",
+        "parent_type": "person",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "david:hebraic_worldview:0",
+      "claim": "David's story joins kingship, worship, repentance, covenant promise, and public responsibility before God rather than treating leadership as private charisma.",
+      "category": "culture",
+      "source_ids": [
+        "1-samuel-16-17",
+        "2-samuel-5-7",
+        "psalm-51",
+        "psalm-110",
+        "acts-13"
+      ],
+      "related_entity_ids": [
+        "david"
+      ],
+      "passage_anchors": [
+        "Psalms 51:1-19"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "david",
+        "parent_title": "David",
+        "parent_type": "person",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "hebraic_worldview",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "david:historical_context:0",
+      "claim": "David stands in the early monarchy of Israel, where tribal leadership, royal authority, court politics, and military conflict converge.",
+      "category": "history",
+      "source_ids": [
+        "1-samuel-16-17",
+        "2-samuel-5-7",
+        "psalm-51",
+        "psalm-110",
+        "acts-13"
+      ],
+      "related_entity_ids": [
+        "david"
+      ],
+      "passage_anchors": [
+        "Psalms 51:1-19"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "david",
+        "parent_title": "David",
+        "parent_type": "person",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "david:key_places:0",
+      "claim": "bethlehem-1",
+      "category": "geography",
+      "source_ids": [
+        "1-samuel-16-17",
+        "2-samuel-5-7",
+        "psalm-51",
+        "psalm-110",
+        "acts-13"
+      ],
+      "related_entity_ids": [
+        "david"
+      ],
+      "passage_anchors": [
+        "Psalms 51:1-19"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "david",
+        "parent_title": "David",
+        "parent_type": "person",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "key_places",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": null,
+        "overview_priority": 28,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "david:key_places:1",
+      "claim": "hebron",
+      "category": "geography",
+      "source_ids": [
+        "1-samuel-16-17",
+        "2-samuel-5-7",
+        "psalm-51",
+        "psalm-110",
+        "acts-13"
+      ],
+      "related_entity_ids": [
+        "david"
+      ],
+      "passage_anchors": [
+        "Psalms 51:1-19"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "david",
+        "parent_title": "David",
+        "parent_type": "person",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "key_places",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": null,
+        "overview_priority": 28,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "david:key_places:2",
+      "claim": "jerusalem",
+      "category": "geography",
+      "source_ids": [
+        "1-samuel-16-17",
+        "2-samuel-5-7",
+        "psalm-51",
+        "psalm-110",
+        "acts-13"
+      ],
+      "related_entity_ids": [
+        "david"
+      ],
+      "passage_anchors": [
+        "Psalms 51:1-19"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "david",
+        "parent_title": "David",
+        "parent_type": "person",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "key_places",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": null,
+        "overview_priority": 43,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "david:key_places:3",
+      "claim": "zion",
+      "category": "geography",
+      "source_ids": [
+        "1-samuel-16-17",
+        "2-samuel-5-7",
+        "psalm-51",
+        "psalm-110",
+        "acts-13"
+      ],
+      "related_entity_ids": [
+        "david"
+      ],
+      "passage_anchors": [
+        "Psalms 51:1-19"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "david",
+        "parent_title": "David",
+        "parent_type": "person",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "key_places",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": null,
+        "overview_priority": 28,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "david:second_temple_context:0",
+      "claim": "Second Temple Jewish hope often remembered David as the model king and used Davidic promise language to imagine restoration under foreign rule.",
+      "category": "culture",
+      "source_ids": [
+        "1-samuel-16-17",
+        "2-samuel-5-7",
+        "psalm-51",
+        "psalm-110",
+        "acts-13"
+      ],
+      "related_entity_ids": [
+        "david"
+      ],
+      "passage_anchors": [
+        "Psalms 51:1-19"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "david",
+        "parent_title": "David",
+        "parent_type": "person",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "second_temple_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "psalms-lament-praise-range",
+      "claim": "The Psalter authorizes individuals and communities to address YHWH through lament, protest, confession, petition, trust, thanksgiving, and praise rather than presenting praise as its only faithful emotional register.",
+      "category": "culture",
+      "source_ids": [
+        "psalms-masoretic",
+        "declaisse-walford-jacobson-tanner",
+        "goldingay-psalms"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Psalms 51:1-19"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "psalms",
+        "parent_title": "Psalms",
+        "parent_type": "book",
+        "object_importance": 95,
+        "retrieval_score": 0.915,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_theology",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "sacrificial-system:ancient_near_east_context:0",
+      "claim": "Sacrificial rituals were common in the ancient world, but Israel's system is distinct because it is bound to covenant holiness, substitution, purification, and the one true God.",
+      "category": "culture",
+      "source_ids": [
+        "leviticus-1-7",
+        "leviticus-16-17",
+        "psalm-40",
+        "psalm-51",
+        "hebrews-9-10",
+        "1-john-1"
+      ],
+      "related_entity_ids": [
+        "sacrificial-system"
+      ],
+      "passage_anchors": [
+        "Psalms 51:16-19"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "sacrificial-system",
+        "parent_title": "Sacrificial System",
+        "parent_type": "institution",
+        "object_importance": 95,
+        "retrieval_score": 0.915,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 15,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "sacrificial-system:historical_context:0",
+      "claim": "The sacrificial system is rooted in the wilderness tabernacle and continues through the temple periods as the central grammar of covenant approach to God.",
+      "category": "history",
+      "source_ids": [
+        "leviticus-1-7",
+        "leviticus-16-17",
+        "psalm-40",
+        "psalm-51",
+        "hebrews-9-10",
+        "1-john-1"
+      ],
+      "related_entity_ids": [
+        "sacrificial-system"
+      ],
+      "passage_anchors": [
+        "Psalms 51:16-19"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "sacrificial-system",
+        "parent_title": "Sacrificial System",
+        "parent_type": "institution",
+        "object_importance": 95,
+        "retrieval_score": 0.915,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 15,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "1 John 1",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "1-john-1",
+        "canonical_object_ids": [
+          "sacrificial-system"
+        ]
+      },
+      {
+        "title": "1 Samuel 16-17",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "1-samuel-16-17",
+        "canonical_object_ids": [
+          "david"
+        ]
+      },
+      {
+        "title": "2 Samuel 5-7",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "2-samuel-5-7",
+        "canonical_object_ids": [
+          "david"
+        ]
+      },
+      {
+        "title": "Acts 13",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "acts-13",
+        "canonical_object_ids": [
+          "david"
+        ]
+      },
+      {
+        "title": "The Book of Psalms",
+        "author": "Nancy L. deClaiss\u00e9-Walford, Rolf A. Jacobson, and Beth LaNeel Tanner",
+        "publisher": "Wm. B. Eerdmans Publishing Co.",
+        "year": 2014,
+        "locator": "New International Commentary on the Old Testament",
+        "url": "https://www.eerdmans.com/9780802824936/the-book-of-psalms/",
+        "source_type": "reference-work",
+        "supports": [
+          "canonical-context",
+          "literary-context",
+          "genre",
+          "structure",
+          "later-christian-reception",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "One-volume commentary emphasizing translation, poetry, theology, textual criticism, Dead Sea Scrolls, and canonical shaping.",
+        "id": "declaisse-walford-jacobson-tanner",
+        "canonical_object_ids": [
+          "psalms"
+        ]
+      },
+      {
+        "title": "Psalms",
+        "author": "John Goldingay",
+        "publisher": "Baker Academic",
+        "year": 2008,
+        "locator": "Baker Commentary on the Old Testament Wisdom and Psalms, three-volume set",
+        "url": "https://tst.bakeracademic.com/p/Psalms-John-Goldingay/40486",
+        "source_type": "reference-work",
+        "supports": [
+          "summary",
+          "authorship-positions",
+          "date-ranges",
+          "historical-context",
+          "literary-context",
+          "genre",
+          "hebrew-words",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "Literary, historical, grammatical, theological, and pastoral commentary with original translation.",
+        "id": "goldingay-psalms",
+        "canonical_object_ids": [
+          "psalms"
+        ]
+      },
+      {
+        "title": "Hebrews 9-10",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "hebrews-9-10",
+        "canonical_object_ids": [
+          "sacrificial-system"
+        ]
+      },
+      {
+        "title": "Leviticus 1-7",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "leviticus-1-7",
+        "canonical_object_ids": [
+          "sacrificial-system"
+        ]
+      },
+      {
+        "title": "Leviticus 16-17",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "leviticus-16-17",
+        "canonical_object_ids": [
+          "sacrificial-system"
+        ]
+      },
+      {
+        "title": "Psalm 110",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [],
+        "notes": "",
+        "id": "psalm-110",
+        "canonical_object_ids": [
+          "david"
+        ]
+      },
+      {
+        "title": "Psalm 40",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [],
+        "notes": "",
+        "id": "psalm-40",
+        "canonical_object_ids": [
+          "sacrificial-system"
+        ]
+      },
+      {
+        "title": "Psalm 51",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [],
+        "notes": "",
+        "id": "psalm-51",
+        "canonical_object_ids": [
+          "david",
+          "sacrificial-system"
+        ]
+      },
+      {
+        "title": "Masoretic Psalter",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Psalms 1-150 in the Masoretic textual tradition",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "literary-context",
+          "structure",
+          "key-people",
+          "key-places",
+          "key-events",
+          "scripture-references",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "Primary Hebrew canonical text and base for common modern Protestant numbering.",
+        "id": "psalms-masoretic",
+        "canonical_object_ids": [
+          "psalms"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "david",
+        "type": "person",
+        "title": "David",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.917
+      },
+      {
+        "id": "psalms",
+        "type": "book",
+        "title": "Psalms",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.915
+      },
+      {
+        "id": "sacrificial-system",
+        "type": "institution",
+        "title": "Sacrificial System",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.915
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "6a4d302a5c3a516b6e8cb9077c2bd49bc0854835a145be3f703156b9e2f4d18a",
+  "evidence_hash_version": "2"
+}

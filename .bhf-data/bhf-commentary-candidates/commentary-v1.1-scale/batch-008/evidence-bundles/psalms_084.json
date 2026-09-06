@@ -1,0 +1,702 @@
+{
+  "passage_ref": "Psalms 84",
+  "entities": {
+    "people": [],
+    "places": [],
+    "groups": [
+      {
+        "id": "temple",
+        "title": "Temple",
+        "type": "institution",
+        "aliases": [
+          "temple institution",
+          "temple in scripture",
+          "temple structure",
+          "temple role"
+        ],
+        "metadata": {
+          "summary": "The cultic institution centered on God\u2019s dwelling place, priestly mediation, sacrifice, and holiness.",
+          "importance": 98,
+          "retrieval_score": 0.918,
+          "ancient_names": [],
+          "modern_identification": "",
+          "region": "",
+          "terrain": "",
+          "elevation": null,
+          "archaeology": [],
+          "related_passages": [
+            "Exodus 25:8-9",
+            "1 Kings 8:1-13",
+            "2 Chronicles 7:1-3",
+            "Psalms 84:1-12",
+            "John 2:13-22",
+            "Hebrews 8:1-13",
+            "Hebrews 9:1-28",
+            "Revelation 21:22-27"
+          ]
+        }
+      }
+    ],
+    "events": [],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "temple-theme:ancient_near_east_context:0",
+      "claim": "Temples in the ancient Near East often marked divine presence and royal order; Israel\u2019s temple theme centers holiness, covenant, and atonement instead.",
+      "category": "culture",
+      "source_ids": [
+        "exodus-25",
+        "1-kings-8",
+        "psalm-84",
+        "john-2",
+        "hebrews-9-10",
+        "revelation-21",
+        "temple-theme-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Psalms 84:1-12"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "temple-theme",
+        "parent_title": "Temple Theme",
+        "parent_type": "theme",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "temple-theme:hebraic_worldview:0",
+      "claim": "Temple represents holy space, presence, purity, mediation, and pilgrimage.",
+      "category": "culture",
+      "source_ids": [
+        "exodus-25",
+        "1-kings-8",
+        "psalm-84",
+        "john-2",
+        "hebrews-9-10",
+        "revelation-21",
+        "temple-theme-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Psalms 84:1-12"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "temple-theme",
+        "parent_title": "Temple Theme",
+        "parent_type": "theme",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "hebraic_worldview",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "temple-theme:historical_context:0",
+      "claim": "Temple imagery develops from tabernacle instruction through Solomon\u2019s temple, exile, return, and the New Testament\u2019s re-reading of sacred space.",
+      "category": "history",
+      "source_ids": [
+        "exodus-25",
+        "1-kings-8",
+        "psalm-84",
+        "john-2",
+        "hebrews-9-10",
+        "revelation-21",
+        "temple-theme-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Psalms 84:1-12"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "temple-theme",
+        "parent_title": "Temple Theme",
+        "parent_type": "theme",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "temple-theme:second_temple_context:0",
+      "claim": "The rebuilt temple, priesthood, and festival calendar made temple theology central to Second Temple life.",
+      "category": "culture",
+      "source_ids": [
+        "exodus-25",
+        "1-kings-8",
+        "psalm-84",
+        "john-2",
+        "hebrews-9-10",
+        "revelation-21",
+        "temple-theme-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Psalms 84:1-12"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "temple-theme",
+        "parent_title": "Temple Theme",
+        "parent_type": "theme",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "second_temple_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "temple:ancient_near_east_context:0",
+      "claim": "Ancient temples were often royal and cultic centers; Israel\u2019s temple is distinct because it foregrounds covenant holiness and atonement under one God.",
+      "category": "culture",
+      "source_ids": [
+        "exodus-25",
+        "1-kings-8",
+        "psalm-84",
+        "john-2",
+        "hebrews-8-10",
+        "revelation-21"
+      ],
+      "related_entity_ids": [
+        "temple"
+      ],
+      "passage_anchors": [
+        "Psalms 84:1-12"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "temple",
+        "parent_title": "Temple",
+        "parent_type": "institution",
+        "object_importance": 98,
+        "retrieval_score": 0.918,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "temple:historical_context:0",
+      "claim": "The temple develops from tabernacle patterns into Solomon\u2019s temple, survives in exilic memory, and is rebuilt in the second temple period.",
+      "category": "history",
+      "source_ids": [
+        "exodus-25",
+        "1-kings-8",
+        "psalm-84",
+        "john-2",
+        "hebrews-8-10",
+        "revelation-21"
+      ],
+      "related_entity_ids": [
+        "temple"
+      ],
+      "passage_anchors": [
+        "Psalms 84:1-12"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "temple",
+        "parent_title": "Temple",
+        "parent_type": "institution",
+        "object_importance": 98,
+        "retrieval_score": 0.918,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "what-is-the-significance-of-the-temple:ancient_near_east_context:0",
+      "claim": "Temples were common in the ancient world, but Israel's temple is defined by covenant holiness and the one true God.",
+      "category": "culture",
+      "source_ids": [
+        "exodus-25",
+        "1-kings-8",
+        "psalm-84",
+        "john-2",
+        "hebrews-9-10",
+        "revelation-21"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Psalms 84:1-12"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "what-is-the-significance-of-the-temple",
+        "parent_title": "What is the significance of the Temple?",
+        "parent_type": "faq",
+        "object_importance": 95,
+        "retrieval_score": 0.915,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "what-is-the-significance-of-the-temple:historical_context:0",
+      "claim": "The temple grows out of the tabernacle, reaches its classical form under Solomon, and remains central in the second temple period.",
+      "category": "history",
+      "source_ids": [
+        "exodus-25",
+        "1-kings-8",
+        "psalm-84",
+        "john-2",
+        "hebrews-9-10",
+        "revelation-21"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Psalms 84:1-12"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "what-is-the-significance-of-the-temple",
+        "parent_title": "What is the significance of the Temple?",
+        "parent_type": "faq",
+        "object_importance": 95,
+        "retrieval_score": 0.915,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "what-is-the-temple:ancient_near_east_context:0",
+      "claim": "Temples were common in the ancient world, but Israel\u2019s temple is defined by covenant holiness and the one true God.",
+      "category": "culture",
+      "source_ids": [
+        "exodus-25",
+        "1-kings-8",
+        "psalm-84",
+        "john-2",
+        "hebrews-9-10",
+        "revelation-21"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Psalms 84:1-12"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "what-is-the-temple",
+        "parent_title": "What is the Temple?",
+        "parent_type": "faq",
+        "object_importance": 90,
+        "retrieval_score": 0.91,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "what-is-the-temple:historical_context:0",
+      "claim": "The temple grows out of the tabernacle, reaches its classical form under Solomon, and remains central in the second temple period.",
+      "category": "history",
+      "source_ids": [
+        "exodus-25",
+        "1-kings-8",
+        "psalm-84",
+        "john-2",
+        "hebrews-9-10",
+        "revelation-21"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Psalms 84:1-12"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "what-is-the-temple",
+        "parent_title": "What is the Temple?",
+        "parent_type": "faq",
+        "object_importance": 90,
+        "retrieval_score": 0.91,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "1 Kings 8",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "1-kings-8",
+        "canonical_object_ids": [
+          "temple",
+          "temple-theme",
+          "what-is-the-significance-of-the-temple",
+          "what-is-the-temple"
+        ]
+      },
+      {
+        "title": "Exodus 25",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "exodus-25",
+        "canonical_object_ids": [
+          "temple",
+          "temple-theme",
+          "what-is-the-significance-of-the-temple",
+          "what-is-the-temple"
+        ]
+      },
+      {
+        "title": "Hebrews 8-10",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "hebrews-8-10",
+        "canonical_object_ids": [
+          "temple"
+        ]
+      },
+      {
+        "title": "Hebrews 9-10",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "hebrews-9-10",
+        "canonical_object_ids": [
+          "temple-theme",
+          "what-is-the-significance-of-the-temple",
+          "what-is-the-temple"
+        ]
+      },
+      {
+        "title": "John 2",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "john-2",
+        "canonical_object_ids": [
+          "temple",
+          "temple-theme",
+          "what-is-the-significance-of-the-temple",
+          "what-is-the-temple"
+        ]
+      },
+      {
+        "title": "Psalm 84",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [],
+        "notes": "",
+        "id": "psalm-84",
+        "canonical_object_ids": [
+          "temple",
+          "temple-theme",
+          "what-is-the-significance-of-the-temple",
+          "what-is-the-temple"
+        ],
+        "canonical_source_variants": [
+          {
+            "title": "Psalm 84",
+            "author": "",
+            "publisher": "",
+            "year": null,
+            "locator": "",
+            "url": "",
+            "source_type": "reference-work",
+            "supports": [],
+            "notes": "",
+            "id": "psalm-84"
+          },
+          {
+            "title": "Psalm 84",
+            "author": "",
+            "publisher": "",
+            "year": null,
+            "locator": "",
+            "url": "",
+            "source_type": "scripture",
+            "supports": [],
+            "notes": "",
+            "id": "psalm-84"
+          }
+        ]
+      },
+      {
+        "title": "Revelation 21",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "revelation-21",
+        "canonical_object_ids": [
+          "temple",
+          "temple-theme",
+          "what-is-the-significance-of-the-temple",
+          "what-is-the-temple"
+        ]
+      },
+      {
+        "title": "Canonical historical orientation for Temple Theme",
+        "author": "",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "id": "temple-theme-historical-orientation",
+        "canonical_object_ids": [
+          "temple-theme"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "temple",
+        "type": "institution",
+        "title": "Temple",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.918
+      },
+      {
+        "id": "temple-theme",
+        "type": "theme",
+        "title": "Temple Theme",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.917
+      },
+      {
+        "id": "what-is-the-significance-of-the-temple",
+        "type": "faq",
+        "title": "What is the significance of the Temple?",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.915
+      },
+      {
+        "id": "what-is-the-temple",
+        "type": "faq",
+        "title": "What is the Temple?",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.91
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "8296c9f756b2d245f4d2c4663ead93acc3b2838f45d6730aeb397710a6547a5c",
+  "evidence_hash_version": "2"
+}

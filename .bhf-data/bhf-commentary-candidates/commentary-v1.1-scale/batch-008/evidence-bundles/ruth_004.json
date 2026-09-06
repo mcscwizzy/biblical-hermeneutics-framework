@@ -1,0 +1,1197 @@
+{
+  "passage_ref": "Ruth 4",
+  "entities": {
+    "people": [
+      {
+        "id": "boaz",
+        "title": "Boaz",
+        "type": "person",
+        "aliases": [
+          "who is boaz",
+          "tell me about boaz",
+          "why is boaz important"
+        ],
+        "metadata": {
+          "summary": "Boaz is a Bethlehem landowner and Naomi's relative in Ruth. He protects Ruth, responds to her request at the threshing floor, and completes the public redemption arrangement in Ruth 4.",
+          "importance": 70,
+          "retrieval_score": 0.91,
+          "ancient_names": [],
+          "modern_identification": "",
+          "region": "",
+          "terrain": "",
+          "elevation": null,
+          "archaeology": [],
+          "related_passages": [
+            "Ruth 2:1-23",
+            "Ruth 3:1-18",
+            "Ruth 4:1-13",
+            "Ruth 4:17-22"
+          ]
+        }
+      }
+    ],
+    "places": [],
+    "groups": [],
+    "events": [],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "boaz:ancient_near_east_context:0",
+      "claim": "Boaz belongs to a social world of kinship obligations, household economy, temple or synagogue life, royal courts, village elders, and imperial administration as the relevant passages require.",
+      "category": "culture",
+      "source_ids": [
+        "genesis-12-50",
+        "romans-4",
+        "galatians-3",
+        "hebrews-11",
+        "boaz-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "boaz"
+      ],
+      "passage_anchors": [
+        "Ruth 4:1-13",
+        "Ruth 4:17-22"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "boaz",
+        "parent_title": "Boaz",
+        "parent_type": "person",
+        "object_importance": 70,
+        "retrieval_score": 0.91,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "boaz:historical_context:0",
+      "claim": "Boaz's story is set in the judges-era world of harvest labor, kinship obligations, land continuity, and public negotiation at the town gate.",
+      "category": "history",
+      "source_ids": [
+        "genesis-12-50",
+        "romans-4",
+        "galatians-3",
+        "hebrews-11",
+        "boaz-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "boaz"
+      ],
+      "passage_anchors": [
+        "Ruth 4:1-13",
+        "Ruth 4:17-22"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "boaz",
+        "parent_title": "Boaz",
+        "parent_type": "person",
+        "object_importance": 70,
+        "retrieval_score": 0.91,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "kinship-legal-caution",
+      "claim": "Leviticus 25, Deuteronomy 25, and Ruth 4 address related land and family-continuity concerns but should not be treated as descriptions of one identical legal mechanism.",
+      "category": "culture",
+      "source_ids": [
+        "hubbard-ruth",
+        "lau-ruth"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Ruth 4:1-12"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "kinship-inheritance-and-redemption",
+        "parent_title": "Kinship, Inheritance, and Redemption",
+        "parent_type": "cultural_background",
+        "object_importance": 92,
+        "retrieval_score": 0.912,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "probable",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "historical_cultural",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "WEAKLY_RELATED",
+        "presentation_role": null,
+        "overview_priority": 7
+      }
+    },
+    {
+      "id": "kinship-ruth-arrangement",
+      "claim": "Ruth 4 publicly joins property responsibility, preservation of the deceased's name, and Boaz's acquisition of Ruth as wife after the nearer redeemer declines.",
+      "category": "history",
+      "source_ids": [
+        "ruth-4",
+        "hubbard-ruth",
+        "lau-ruth"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Ruth 4:1-12"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "kinship-inheritance-and-redemption",
+        "parent_title": "Kinship, Inheritance, and Redemption",
+        "parent_type": "cultural_background",
+        "object_importance": 92,
+        "retrieval_score": 0.912,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "textually_explicit",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "WEAKLY_RELATED",
+        "presentation_role": null,
+        "overview_priority": 7
+      }
+    },
+    {
+      "id": "nehemiah:interpretive_note:7",
+      "claim": "The Ammonite and Moabite assembly exclusion in Nehemiah 13 cites Deuteronomy 23 and is applied amid Tobiah's temple access. Canonical reading must also reckon with Ruth the Moabite and texts welcoming faithful foreigners rather than turning the episode into a universal ethnic ban.",
+      "category": "culture",
+      "source_ids": [
+        "nehemiah-1-13",
+        "shepherd-wright-ezra-nehemiah",
+        "williamson-ezra-nehemiah"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Ruth 1:1-4:22"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "nehemiah",
+        "parent_title": "Nehemiah",
+        "parent_type": "book",
+        "object_importance": 82,
+        "retrieval_score": 0.902,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 300,
+        "certainty": "textually_explicit",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "canonical-connection",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "INTERTEXTUAL_REUSE",
+        "presentation_role": "dig_deeper",
+        "overview_priority": 0
+      }
+    },
+    {
+      "id": "ruth-literary-movement",
+      "claim": "Ruth moves from famine, bereavement, and Naomi's emptiness to harvest, kinship redemption, birth, communal blessing, and genealogy.",
+      "category": "culture",
+      "source_ids": [
+        "ruth-1-4",
+        "hubbard-ruth",
+        "lau-ruth"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Ruth 1-4"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "ruth",
+        "parent_title": "Ruth",
+        "parent_type": "book",
+        "object_importance": 90,
+        "retrieval_score": 0.93,
+        "passage_relationship": "direct",
+        "anchor_specificity": "chapter",
+        "verse_distance": 300,
+        "certainty": "strong_consensus",
+        "dispute_status": "not_disputed",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "section",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 98
+      }
+    },
+    {
+      "id": "ruth-obed-david-genealogy",
+      "claim": "The women name Ruth's son Obed, identify him as Naomi's restorer, and the closing genealogy traces Obed through Jesse to David.",
+      "category": "history",
+      "source_ids": [
+        "ruth-1-4",
+        "lau-ruth"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Ruth 4:13-22"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "ruth",
+        "parent_title": "Ruth",
+        "parent_type": "book",
+        "object_importance": 90,
+        "retrieval_score": 0.93,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 12,
+        "certainty": "textually_explicit",
+        "dispute_status": "not_disputed",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 103
+      }
+    },
+    {
+      "id": "ruth-providence-through-action",
+      "claim": "Ruth explicitly attributes food and conception to the LORD while most of the plot advances through Naomi's, Ruth's, Boaz's, workers', elders', and women's actions.",
+      "category": "culture",
+      "source_ids": [
+        "ruth-1-4",
+        "hubbard-ruth",
+        "lau-ruth"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Ruth 4:1-17"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "ruth",
+        "parent_title": "Ruth",
+        "parent_type": "book",
+        "object_importance": 90,
+        "retrieval_score": 0.93,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 90
+      }
+    },
+    {
+      "id": "ruth-redemption-arrangement",
+      "claim": "Ruth 4 publicly joins property responsibility, preservation of the deceased's name, and Boaz's acquisition of Ruth as wife after the nearer redeemer declines.",
+      "category": "history",
+      "source_ids": [
+        "ruth-1-4",
+        "hubbard-ruth",
+        "lau-ruth"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Ruth 4:1-12"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "ruth",
+        "parent_title": "Ruth",
+        "parent_type": "book",
+        "object_importance": 90,
+        "retrieval_score": 0.93,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "textually_explicit",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "ruth:interpretive_note:0",
+      "claim": "Ruth's narrated setting in the days of the judges and genealogy to David do not establish the date when the anonymous book reached its final form.",
+      "category": "culture",
+      "source_ids": [
+        "ruth-1-4",
+        "hubbard-ruth",
+        "lau-ruth"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Ruth 4:18-22"
+      ],
+      "confidence": "low",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "ruth",
+        "parent_title": "Ruth",
+        "parent_type": "book",
+        "object_importance": 90,
+        "retrieval_score": 0.93,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 17,
+        "certainty": "insufficient_evidence",
+        "dispute_status": "chronological_uncertainty",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "historical-context",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 102
+      }
+    },
+    {
+      "id": "ruth:interpretive_note:1",
+      "claim": "Ruth 4 links family property, responsible kinship, public transfer, marriage, and preservation of the deceased's name, but its arrangement is not identical to the brother-in-law duty in Deuteronomy 25.",
+      "category": "culture",
+      "source_ids": [
+        "ruth-1-4",
+        "hubbard-ruth",
+        "lau-ruth",
+        "zondervan-illustrated-historical-books-backgrounds"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Ruth 4:1-12"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "ruth",
+        "parent_title": "Ruth",
+        "parent_type": "book",
+        "object_importance": 90,
+        "retrieval_score": 0.93,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "historical-context",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    },
+    {
+      "id": "ruth:interpretive_note:3",
+      "claim": "Ruth repeatedly retains the designation Moabite while pledging herself to Naomi, Israel's people, and Israel's God; proposals that the book directly answers a specific later intermarriage policy remain debated.",
+      "category": "culture",
+      "source_ids": [
+        "ruth-1-4",
+        "hubbard-ruth",
+        "lau-ruth"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Ruth 4:5-10"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "ruth",
+        "parent_title": "Ruth",
+        "parent_type": "book",
+        "object_importance": 90,
+        "retrieval_score": 0.93,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 4,
+        "certainty": "strong_consensus",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "canonical-connection",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    },
+    {
+      "id": "ruth:interpretive_note:4",
+      "claim": "Matthew's genealogy explicitly includes Ruth and Boaz, while interpreting Boaz as a direct type of Christ is later Christian reception rather than an explicit New Testament identification.",
+      "category": "culture",
+      "source_ids": [
+        "ruth-1-4",
+        "lau-ruth"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Ruth 4:13-22"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "ruth",
+        "parent_title": "Ruth",
+        "parent_type": "book",
+        "object_importance": 90,
+        "retrieval_score": 0.93,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 12,
+        "certainty": "strong_consensus",
+        "dispute_status": "denominational_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "later-reception",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "dig_deeper",
+        "overview_priority": 47
+      }
+    },
+    {
+      "id": "why-are-genealogies-included:ancient_near_east_context:0",
+      "claim": "Genealogy was a standard social form, but Scripture uses it to trace covenant promise and providence.",
+      "category": "culture",
+      "source_ids": [
+        "genesis-5",
+        "genesis-10",
+        "genesis-11",
+        "ruth-4",
+        "1-chronicles-1",
+        "matthew-1",
+        "luke-3",
+        "ezra-2",
+        "why-are-genealogies-included-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Ruth 4:13-22"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "why-are-genealogies-included",
+        "parent_title": "Why are genealogies Included?",
+        "parent_type": "faq",
+        "object_importance": 88,
+        "retrieval_score": 0.908,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 12,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "why-are-genealogies-included:historical_context:0",
+      "claim": "Ancient families preserved lineages to mark belonging, rights, and memory.",
+      "category": "history",
+      "source_ids": [
+        "genesis-5",
+        "genesis-10",
+        "genesis-11",
+        "ruth-4",
+        "1-chronicles-1",
+        "matthew-1",
+        "luke-3",
+        "ezra-2",
+        "why-are-genealogies-included-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Ruth 4:13-22"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "why-are-genealogies-included",
+        "parent_title": "Why are genealogies Included?",
+        "parent_type": "faq",
+        "object_importance": 88,
+        "retrieval_score": 0.908,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 12,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40,
+        "inherited_from_parent": true
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "1 Chronicles 1",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "1-chronicles-1",
+        "canonical_object_ids": [
+          "why-are-genealogies-included"
+        ]
+      },
+      {
+        "title": "Canonical historical orientation for Boaz",
+        "author": "",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "id": "boaz-historical-orientation",
+        "canonical_object_ids": [
+          "boaz"
+        ]
+      },
+      {
+        "title": "Ezra 2",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "ezra-2",
+        "canonical_object_ids": [
+          "why-are-genealogies-included"
+        ]
+      },
+      {
+        "title": "Galatians 3",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "galatians-3",
+        "canonical_object_ids": [
+          "boaz"
+        ]
+      },
+      {
+        "title": "Genesis 10",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "genesis-10",
+        "canonical_object_ids": [
+          "why-are-genealogies-included"
+        ]
+      },
+      {
+        "title": "Genesis 11",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "genesis-11",
+        "canonical_object_ids": [
+          "why-are-genealogies-included"
+        ]
+      },
+      {
+        "title": "Genesis 12-50",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "genesis-12-50",
+        "canonical_object_ids": [
+          "boaz"
+        ]
+      },
+      {
+        "title": "Genesis 5",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "genesis-5",
+        "canonical_object_ids": [
+          "why-are-genealogies-included"
+        ]
+      },
+      {
+        "title": "Hebrews 11",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "hebrews-11",
+        "canonical_object_ids": [
+          "boaz"
+        ]
+      },
+      {
+        "title": "The Book of Ruth",
+        "author": "Robert L. Hubbard Jr.",
+        "publisher": "Eerdmans",
+        "year": 1989,
+        "locator": "Commentary on Ruth 4",
+        "url": "https://www.eerdmans.com/9780802883315/the-book-of-ruth/",
+        "source_type": "reference-work",
+        "supports": [
+          "kinship-ruth-arrangement",
+          "kinship-legal-caution"
+        ],
+        "notes": "Technical commentary on the Hebrew text and legal background.",
+        "id": "hubbard-ruth",
+        "canonical_object_ids": [
+          "kinship-inheritance-and-redemption",
+          "ruth"
+        ],
+        "canonical_source_variants": [
+          {
+            "title": "The Book of Ruth",
+            "author": "Robert L. Hubbard Jr.",
+            "publisher": "Eerdmans",
+            "year": 1989,
+            "locator": "Commentary on Ruth 4",
+            "url": "https://www.eerdmans.com/9780802883315/the-book-of-ruth/",
+            "source_type": "reference-work",
+            "supports": [
+              "kinship-ruth-arrangement",
+              "kinship-legal-caution"
+            ],
+            "notes": "Technical commentary on the Hebrew text and legal background.",
+            "id": "hubbard-ruth"
+          },
+          {
+            "title": "The Book of Ruth",
+            "author": "Robert L. Hubbard Jr.",
+            "publisher": "Eerdmans",
+            "year": 1989,
+            "locator": "Introduction and commentary on Ruth 1-4",
+            "url": "https://www.eerdmans.com/9780802883315/the-book-of-ruth/",
+            "source_type": "reference-work",
+            "supports": [
+              "authorship-positions",
+              "historical-context",
+              "literary-context",
+              "hebrew-words",
+              "interpretive-notes",
+              "ruth-literary-movement",
+              "ruth-gleaning-protection",
+              "ruth-redemption-arrangement",
+              "ruth-providence-through-action"
+            ],
+            "notes": "Technical commentary treating text, genre, date, legal background, language, literary form, and theology.",
+            "id": "hubbard-ruth"
+          }
+        ]
+      },
+      {
+        "title": "The Book of Ruth",
+        "author": "Peter H. W. Lau",
+        "publisher": "Eerdmans",
+        "year": 2023,
+        "locator": "Commentary on Ruth 4",
+        "url": "https://www.eerdmans.com/9780802877260/the-book-of-ruth/",
+        "source_type": "reference-work",
+        "supports": [
+          "kinship-ruth-arrangement",
+          "kinship-legal-caution"
+        ],
+        "notes": "NICOT commentary with literary, historical, and cultural analysis.",
+        "id": "lau-ruth",
+        "canonical_object_ids": [
+          "kinship-inheritance-and-redemption",
+          "ruth"
+        ],
+        "canonical_source_variants": [
+          {
+            "title": "The Book of Ruth",
+            "author": "Peter H. W. Lau",
+            "publisher": "Eerdmans",
+            "year": 2023,
+            "locator": "Commentary on Ruth 4",
+            "url": "https://www.eerdmans.com/9780802877260/the-book-of-ruth/",
+            "source_type": "reference-work",
+            "supports": [
+              "kinship-ruth-arrangement",
+              "kinship-legal-caution"
+            ],
+            "notes": "NICOT commentary with literary, historical, and cultural analysis.",
+            "id": "lau-ruth"
+          },
+          {
+            "title": "The Book of Ruth",
+            "author": "Peter H. W. Lau",
+            "publisher": "Eerdmans",
+            "year": 2023,
+            "locator": "Introduction and commentary on Ruth 1-4",
+            "url": "https://www.eerdmans.com/9780802877260/the-book-of-ruth/",
+            "source_type": "reference-work",
+            "supports": [
+              "literary-context",
+              "historical-context",
+              "canonical-context",
+              "later-christian-reception",
+              "interpretive-notes",
+              "ruth-literary-movement",
+              "ruth-loyal-pledge",
+              "ruth-redemption-arrangement",
+              "ruth-providence-through-action",
+              "ruth-obed-david-genealogy"
+            ],
+            "notes": "NICOT commentary with detailed Hebrew, literary, historical, canonical, theological, and cultural analysis.",
+            "id": "lau-ruth"
+          }
+        ]
+      },
+      {
+        "title": "Luke 3",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "luke-3",
+        "canonical_object_ids": [
+          "why-are-genealogies-included"
+        ]
+      },
+      {
+        "title": "Matthew 1",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "matthew-1",
+        "canonical_object_ids": [
+          "why-are-genealogies-included"
+        ]
+      },
+      {
+        "title": "Nehemiah 1-13",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Nehemiah 1:1-13:31",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "structure",
+          "key-people",
+          "key-places",
+          "key-events",
+          "scripture-references",
+          "interpretive-notes",
+          "nehemiah-prayer-authorization",
+          "nehemiah-wall-opposition",
+          "nehemiah-economic-justice",
+          "nehemiah-wall-completed",
+          "nehemiah-torah-understanding",
+          "nehemiah-covenant-commitments",
+          "nehemiah-dedication-support",
+          "nehemiah-later-reforms"
+        ],
+        "notes": "Primary biblical text.",
+        "id": "nehemiah-1-13",
+        "canonical_object_ids": [
+          "nehemiah"
+        ]
+      },
+      {
+        "title": "Romans 4",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "romans-4",
+        "canonical_object_ids": [
+          "boaz"
+        ]
+      },
+      {
+        "title": "Ruth 1-4",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Ruth 1:1-4:22",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "literary-context",
+          "structure",
+          "key-people",
+          "key-places",
+          "key-events",
+          "scripture-references",
+          "ruth-literary-movement",
+          "ruth-loyal-pledge",
+          "ruth-gleaning-protection",
+          "ruth-redemption-arrangement",
+          "ruth-providence-through-action",
+          "ruth-obed-david-genealogy"
+        ],
+        "notes": "Primary biblical text.",
+        "id": "ruth-1-4",
+        "canonical_object_ids": [
+          "ruth"
+        ]
+      },
+      {
+        "title": "Ruth 4",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "ruth-4",
+        "canonical_object_ids": [
+          "kinship-inheritance-and-redemption",
+          "why-are-genealogies-included"
+        ],
+        "canonical_source_variants": [
+          {
+            "title": "Ruth 4",
+            "author": "",
+            "publisher": "",
+            "year": null,
+            "locator": "",
+            "url": "",
+            "source_type": "scripture",
+            "supports": [],
+            "notes": "",
+            "id": "ruth-4"
+          },
+          {
+            "title": "Ruth 4",
+            "author": "",
+            "publisher": "",
+            "year": null,
+            "locator": "Ruth 4:1-12",
+            "url": "",
+            "source_type": "scripture",
+            "supports": [
+              "kinship-ruth-arrangement",
+              "kinship-legal-caution"
+            ],
+            "notes": "Primary biblical text.",
+            "id": "ruth-4"
+          }
+        ]
+      },
+      {
+        "title": "Ezra and Nehemiah",
+        "author": "David J. Shepherd and Christopher J. H. Wright",
+        "publisher": "Eerdmans",
+        "year": 2018,
+        "locator": "Two Horizons Old Testament Commentary",
+        "url": "https://www.eerdmans.com/9781467449625/ezra-and-nehemiah/",
+        "source_type": "reference-work",
+        "supports": [
+          "covenantal-significance",
+          "later-christian-reception",
+          "canonical-role",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "Theological commentary that directly engages leadership and ethically difficult texts.",
+        "id": "shepherd-wright-ezra-nehemiah",
+        "canonical_object_ids": [
+          "nehemiah"
+        ]
+      },
+      {
+        "title": "Canonical historical orientation for Why are genealogies Included?",
+        "author": "",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "id": "why-are-genealogies-included-historical-orientation",
+        "canonical_object_ids": [
+          "why-are-genealogies-included"
+        ]
+      },
+      {
+        "title": "Ezra-Nehemiah, Volume 16",
+        "author": "H. G. M. Williamson",
+        "publisher": "Zondervan Academic",
+        "year": 1985,
+        "locator": "Word Biblical Commentary introduction, translation, notes, and commentary",
+        "url": "https://zondervanacademic.com/products/ezra-nehemiah-volume-16",
+        "source_type": "reference-work",
+        "supports": [
+          "authorship-positions",
+          "date-ranges",
+          "historical-context",
+          "literary-context",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "Technical textual, linguistic, historical, literary, and theological commentary.",
+        "id": "williamson-ezra-nehemiah",
+        "canonical_object_ids": [
+          "nehemiah"
+        ]
+      },
+      {
+        "title": "Zondervan Illustrated Bible Backgrounds Commentary: Joshua, Judges, Ruth, 1 and 2 Samuel",
+        "author": "John H. Walton, general editor; Dale W. Manor, Richard Hess, and other contributors",
+        "publisher": "Zondervan",
+        "year": 2009,
+        "locator": "Ruth commentary and background notes",
+        "url": "https://zondervanacademic.com/products/joshua-judges-ruth-1-and-2-samuel",
+        "source_type": "reference-work",
+        "supports": [
+          "ancient-near-east-context",
+          "historical-context",
+          "archaeology",
+          "hebrew-words",
+          "interpretive-notes",
+          "ruth-gleaning-protection"
+        ],
+        "notes": "Comparative textual, material, historical, geographical, and cultural background.",
+        "id": "zondervan-illustrated-historical-books-backgrounds",
+        "canonical_object_ids": [
+          "ruth"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "boaz",
+        "type": "person",
+        "title": "Boaz",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.91
+      },
+      {
+        "id": "kinship-inheritance-and-redemption",
+        "type": "cultural_background",
+        "title": "Kinship, Inheritance, and Redemption",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.912
+      },
+      {
+        "id": "nehemiah",
+        "type": "book",
+        "title": "Nehemiah",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.902
+      },
+      {
+        "id": "ruth",
+        "type": "book",
+        "title": "Ruth",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.93
+      },
+      {
+        "id": "why-are-genealogies-included",
+        "type": "faq",
+        "title": "Why are genealogies Included?",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.908
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "d2ce89c7f22f539a583cddbe8eaae26d9b36a6b97253bf1a400e17d5ac5e401f",
+  "evidence_hash_version": "2"
+}

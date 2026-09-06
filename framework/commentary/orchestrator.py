@@ -41,6 +41,13 @@ from framework.commentary.remediation_groups import (
     canonical_reference_sort_key,
     ordered_unique_references,
 )
+from framework.commentary.recovery import (
+    LEDGER_RELATIVE_PATH,
+    RecoveryLedgerError,
+    load_recovery_ledger,
+    recoverable_unconsumed_references,
+    recovery_accounting,
+)
 
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
@@ -774,17 +781,12 @@ def _preflight_command(repo_root: Path, state: Mapping[str, Any]) -> list[str]:
         "--candidate-pool-size", "250",
         "--sqlite-database", str(repo_root / ".bhf/ckl.sqlite"),
     ]
-    # A blocked batch may be undergoing an explicit historical-quarantine
-    # recovery. Preserve that reviewed scope when the orchestrator reruns the
-    # resumable Luna preflight; never infer recovery from stale reports alone.
-    recovery_manifest = (
-        repo_root
-        / SCALE_ROOT_REL
-        / f".{_batch_id(int(state['current_batch']))}.work"
-        / "quarantine-recovery-manifest.json"
-    )
-    if recovery_manifest.exists():
-        command.extend(["--recovery-manifest", str(recovery_manifest)])
+    # Recovery is corpus state, not a Batch-007 checkpoint.  The preflight
+    # validates the ledger and derives the unconsumed recoverable references;
+    # it never trusts a stale temporary allowlist.
+    recovery_ledger = repo_root / LEDGER_RELATIVE_PATH
+    if recovery_ledger.exists():
+        command.extend(["--recovery-ledger", str(recovery_ledger)])
     return command
 
 
@@ -983,10 +985,17 @@ def _empty_preflight_diagnostics(repo_root: Path, state: Mapping[str, Any]) -> d
         return None
     skipped = manifest.get("skipped_verdicts") or []
     counts = Counter(str(row.get("status")) for row in skipped if row.get("status"))
+    quarantine_skip_statuses = {
+        "SKIP_PRIOR_QUARANTINE",
+        "SKIP_PRIOR_QUARANTINE_UNADJUDICATED",
+        "SKIP_PRIOR_QUARANTINE_STILL_BLOCKED",
+        "SKIP_PRIOR_QUARANTINE_DATA_GAP",
+        "SKIP_PRIOR_QUARANTINE_CKL_REMEDIATION",
+    }
     affected = [
         str(row.get("reference"))
         for row in skipped
-        if row.get("status") == "SKIP_PRIOR_QUARANTINE" and row.get("reference")
+        if row.get("status") in quarantine_skip_statuses and row.get("reference")
     ]
     return {
         "reason": "preflight found no eligible candidate chapters under the current no-reuse policy",
@@ -1674,6 +1683,57 @@ def clear_blocker(repo_root: Path, *, resolution: str) -> dict[str, Any]:
     return _resume_result(state, "ADVANCED", message="blocker cleared; no stage was implicitly retried")
 
 
+def reconcile_recovery_blocker(repo_root: Path) -> dict[str, Any]:
+    """Clear the Batch 008 empty-pool blocker only after ledger reconciliation."""
+
+    path = state_path(repo_root)
+    state = load_state(path)
+    if state.get("status") != BLOCKED:
+        return _resume_result(state, "ADVANCED", message="no blocker is set")
+    blocker = state.get("blocked_reason") or {}
+    if blocker.get("stage") != "CANDIDATE_SELECTION" or blocker.get("error_class") != "HUMAN_REVIEW_REQUIRED":
+        raise PipelineError("recovery reconciliation applies only to the blocked candidate-selection review")
+    ledger_path = repo_root / LEDGER_RELATIVE_PATH
+    try:
+        ledger = load_recovery_ledger(
+            ledger_path,
+            repo_root=repo_root,
+            scale_root=repo_root / SCALE_ROOT_REL,
+        )
+    except RecoveryLedgerError as exc:
+        raise PipelineError(f"recovery authorization validation failed: {exc}") from exc
+    accounting = recovery_accounting(ledger)
+    pending = recoverable_unconsumed_references(ledger)
+    affected = {str(value) for value in blocker.get("affected_chapters", [])}
+    if affected != pending:
+        raise PipelineError(
+            "blocked population does not exactly match recovered-unconsumed ledger population: "
+            f"affected={len(affected)}, pending={len(pending)}"
+        )
+    resolution = (
+        "Batch 008 prior-quarantine exclusion reconciled against persistent recovery authorization; "
+        f"{len(pending)} previously adjudicated RECOVERABLE chapters are eligible for normal candidate selection."
+    )
+    state["status"] = ACTIVE
+    state["blocked_reason"] = None
+    state["stage_status"] = PENDING
+    state["human_intervention_required"] = False
+    state["history"].append({
+        "event": "BLOCKER_CLEARED",
+        "kind": "RECOVERY_LEDGER_RECONCILIATION",
+        "resolution": resolution,
+        "recovery_ledger": str(ledger_path.relative_to(repo_root)),
+        "recovery_ledger_hash": ledger["ledger_sha256"],
+        "recovery_accounting": accounting,
+        "at": _now(),
+    })
+    save_state(path, state)
+    return _resume_result(state, "ADVANCED", message=resolution) | {
+        "resolution": resolution,
+        "recovery_accounting": accounting,
+    }
+
+
 def status(repo_root: Path) -> dict[str, Any]:
     state = load_state(state_path(repo_root))
     errors = validate_state(repo_root, state)
@@ -1753,6 +1813,7 @@ def build_parser() -> argparse.ArgumentParser:
     handoff.add_argument("--effort", required=True)
     clear = commands.add_parser("clear-blocker", help="clear a reviewed blocker without retrying a stage")
     clear.add_argument("--resolution", required=True)
+    commands.add_parser("reconcile-recovery-blocker", help="clear the Batch 008 blocker after ledger reconciliation")
     return parser
 
 
@@ -1807,6 +1868,7 @@ def main(argv: list[str] | None = None) -> int:
         elif args.command == "remediate": result = remediate_batch(repo_root, model=args.model, effort=args.effort)
         elif args.command == "handoff": result = accept_handoff(repo_root, model=args.model, effort=args.effort)
         elif args.command == "clear-blocker": result = clear_blocker(repo_root, resolution=args.resolution)
+        elif args.command == "reconcile-recovery-blocker": result = reconcile_recovery_blocker(repo_root)
         else: raise PipelineError(f"unsupported command: {args.command}")
     except StateCorruptionError as exc:
         result = {"action": "BLOCKED", "status": "BLOCKED", "error_class": "CORRUPT_STATE", "message": str(exc)}

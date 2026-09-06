@@ -65,6 +65,12 @@ from tools.commentary_v11_low_information import (
 )
 from bhf_agent.chapter_commentary.storage import list_commentaries, load_commentary
 from framework.canonical_library import CKLRepositoryConfig
+from framework.commentary.recovery import (
+    load_recovery_ledger,
+    recoverable_unconsumed_references,
+    recovery_accounting,
+    recovery_record_map,
+)
 from framework.canonical_library.database_builder import build_database, verify_database
 from framework.canonical_library.scripture import (
     parse_scripture_references,
@@ -93,6 +99,11 @@ VERDICTS = (
     "DATA_GAP",
     "SKIP_ALREADY_GENERATED",
     "SKIP_PRIOR_QUARANTINE",
+    "SKIP_PRIOR_QUARANTINE_UNADJUDICATED",
+    "SKIP_PRIOR_QUARANTINE_STILL_BLOCKED",
+    "SKIP_PRIOR_QUARANTINE_DATA_GAP",
+    "SKIP_PRIOR_QUARANTINE_CKL_REMEDIATION",
+    "SKIP_PRIOR_QUARANTINE_RECOVERED_ALREADY_GENERATED",
     "SKIP_CANARY",
 )
 ROOT_CAUSE_FAMILIES = (
@@ -223,6 +234,23 @@ def _load_recovery_manifest(path: Path | None) -> tuple[dict[str, Any] | None, s
     if not references:
         raise ValueError("recovery manifest contains no chapter identities")
     return payload, set(references)
+
+
+def _load_recovery_ledger(
+    path: Path | None,
+    *,
+    scale_root: Path = DEFAULT_OUTPUT_ROOT,
+) -> tuple[dict[str, Any] | None, set[str]]:
+    """Load and validate corpus recovery state before selecting candidates."""
+
+    if path is None:
+        return None, set()
+    payload = load_recovery_ledger(
+        path,
+        repo_root=REPO_ROOT,
+        scale_root=scale_root,
+    )
+    return payload, recoverable_unconsumed_references(payload)
 
 
 def _load_checkpoint(path: Path, identity: Mapping[str, Any]) -> dict[str, Any] | None:
@@ -2244,6 +2272,7 @@ def run_batch(
     candidate_source: Path = DEFAULT_CANDIDATE_SOURCE,
     sqlite_database: Path | None = None,
     recovery_manifest: Path | None = None,
+    recovery_ledger: Path | None = None,
 ) -> dict[str, Any]:
     """Run the evidence-only preflight with resumable, non-final work state.
 
@@ -2256,8 +2285,17 @@ def run_batch(
     output_root = (output_root if output_root.is_absolute() else REPO_ROOT / output_root).resolve()
     candidate_source = candidate_source.resolve()
     recovery_manifest = recovery_manifest.resolve() if recovery_manifest else None
-    recovery_payload, recovery_refs = _load_recovery_manifest(recovery_manifest)
-    recovery_manifest_hash = hashlib.sha256(recovery_manifest.read_bytes()).hexdigest() if recovery_manifest else None
+    recovery_ledger = recovery_ledger.resolve() if recovery_ledger else None
+    if recovery_manifest is not None and recovery_ledger is not None:
+        raise ValueError("recovery manifest and recovery ledger cannot both be supplied")
+    recovery_payload, recovery_refs = (
+        _load_recovery_ledger(recovery_ledger, scale_root=output_root)
+        if recovery_ledger is not None
+        else _load_recovery_manifest(recovery_manifest)
+    )
+    recovery_manifest_hash = hashlib.sha256(
+        (recovery_ledger or recovery_manifest).read_bytes()
+    ).hexdigest() if (recovery_ledger or recovery_manifest) else None
     pool_dir = output_root / batch_id
     work_root = output_root / f".{batch_id}.work"
     if pool_dir.exists():
@@ -2309,21 +2347,54 @@ def run_batch(
         excluded = _canary_references()
         prior_batch_exclusions = _previous_batch_references(batch_id)
         prior_batch_verdicts = _previous_batch_reference_verdicts(batch_id)
-        if recovery_refs:
-            eligible_all = _eligible_rows(current)
-            eligible_by_reference = {str(row["reference"]): row for row in eligible_all}
+        eligible = _eligible_rows(current)
+        excluded.update(prior_batch_exclusions)
+        recovery_counts = None
+        if recovery_payload is not None:
+            recovery_counts = recovery_accounting(recovery_payload)
+            recovery_by_reference = recovery_record_map(recovery_payload)
+            historical_prior = {
+                reference
+                for reference, verdict in prior_batch_verdicts.items()
+                if verdict == "SKIP_PRIOR_QUARANTINE"
+            }
+            authorized = set(recovery_by_reference)
+            if historical_prior - authorized:
+                raise ValueError(
+                    "recovery ledger is missing prior-quarantine identities: "
+                    + repr(sorted(historical_prior - authorized))
+                )
+            if recovery_refs - historical_prior:
+                raise ValueError(
+                    "recovery ledger authorizes references that are not historical quarantines: "
+                    + repr(sorted(recovery_refs - historical_prior))
+                )
+            if recovery_refs & _canary_references():
+                raise ValueError("recovery ledger cannot authorize canary chapters")
+            eligible_by_reference = {str(row["reference"]): row for row in eligible}
             missing = sorted(recovery_refs - set(eligible_by_reference))
             if missing:
-                raise ValueError(f"recovery manifest references are not currently eligible: {missing}")
-            if any(reference in _canary_references() for reference in recovery_refs):
-                raise ValueError("recovery manifest cannot include canary chapters")
-            if any(prior_batch_verdicts.get(reference) != "SKIP_PRIOR_QUARANTINE" for reference in recovery_refs):
-                raise ValueError("recovery manifest may include only prior-quarantine chapters")
-            eligible = [eligible_by_reference[reference] for reference in sorted(recovery_refs)]
-            excluded.update(reference for reference in prior_batch_exclusions if reference not in recovery_refs)
+                raise ValueError(f"recovered references are not currently eligible: {missing}")
+            # A recoverable chapter is allowed to re-enter the ordinary pool;
+            # it still receives the exact same evidence and routing gates.
+            excluded.difference_update(recovery_refs)
+            for reference, prior_verdict in list(prior_batch_verdicts.items()):
+                if prior_verdict != "SKIP_PRIOR_QUARANTINE":
+                    continue
+                record = recovery_by_reference[reference]
+                if record.get("adjudication") == "RECOVERABLE":
+                    if record.get("consumption_status") == "PENDING_CONSUMPTION":
+                        continue
+                elif record.get("adjudication") == "DATA_GAP":
+                    prior_batch_verdicts[reference] = "SKIP_PRIOR_QUARANTINE_DATA_GAP"
+                elif record.get("adjudication") == "REQUIRES_CKL_REMEDIATION":
+                    prior_batch_verdicts[reference] = "SKIP_PRIOR_QUARANTINE_CKL_REMEDIATION"
+                elif record.get("adjudication") == "UNADJUDICATED":
+                    prior_batch_verdicts[reference] = "SKIP_PRIOR_QUARANTINE_UNADJUDICATED"
+                else:
+                    prior_batch_verdicts[reference] = "SKIP_PRIOR_QUARANTINE_STILL_BLOCKED"
         else:
             excluded.update(prior_batch_exclusions)
-            eligible = _eligible_rows(current)
         candidate_pool = select_mixed_candidate_pool(
             eligible,
             pool_size=min(candidate_pool_size, len(eligible)),
@@ -2354,7 +2425,9 @@ def run_batch(
             "batch_002_fingerprints_before": batch_002_before,
             "batch_003_fingerprints_before": batch_003_before,
             "recovery_manifest_hash": recovery_manifest_hash,
+            "recovery_ledger_hash": recovery_manifest_hash if recovery_ledger else None,
             "recovery_references": sorted(recovery_refs),
+            "recovery_accounting": recovery_counts,
         }
         _json_dump(selection_path, selection)
         _progress(f"candidate pool checkpointed: {len(candidate_pool)}")
@@ -2573,10 +2646,13 @@ def run_batch(
         "tool_version": TOOL_VERSION,
         "checkpoint_version": CHECKPOINT_VERSION,
         "checkpoint_work_root": str(work_root.relative_to(REPO_ROOT)),
-        "recovery_mode": bool(recovery_refs),
+        "recovery_mode": bool(recovery_payload),
         "recovery_manifest": str(recovery_manifest.relative_to(REPO_ROOT)) if recovery_manifest and recovery_manifest.is_relative_to(REPO_ROOT) else (str(recovery_manifest) if recovery_manifest else None),
         "recovery_manifest_hash": recovery_manifest_hash,
+        "recovery_ledger": str(recovery_ledger.relative_to(REPO_ROOT)) if recovery_ledger and recovery_ledger.is_relative_to(REPO_ROOT) else (str(recovery_ledger) if recovery_ledger else None),
+        "recovery_ledger_hash": recovery_manifest_hash if recovery_ledger else None,
         "recovery_reference_count": len(recovery_refs),
+        "recovery_accounting": recovery_accounting(recovery_payload) if recovery_payload is not None else None,
         "target_count": effective_target_count,
         "candidate_pool_size": len(candidate_pool),
         "candidate_pool_requested_size": candidate_pool_size,
@@ -2735,6 +2811,7 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--candidate-source", type=Path, default=DEFAULT_CANDIDATE_SOURCE)
     parser.add_argument("--sqlite-database", type=Path, help="Use and verify an existing current CKL SQLite database.")
     parser.add_argument("--recovery-manifest", type=Path, help="Evaluate only an explicit prior-quarantine recovery allowlist.")
+    parser.add_argument("--recovery-ledger", type=Path, help="Use the validated corpus-level quarantine recovery ledger.")
     args = parser.parse_args(argv)
     report = run_batch(
         batch_id=args.batch_id,
@@ -2744,6 +2821,7 @@ def main(argv: list[str] | None = None) -> int:
         candidate_source=args.candidate_source,
         sqlite_database=args.sqlite_database,
         recovery_manifest=args.recovery_manifest,
+        recovery_ledger=args.recovery_ledger,
     )
     print(json.dumps({
         "batch_id": args.batch_id,

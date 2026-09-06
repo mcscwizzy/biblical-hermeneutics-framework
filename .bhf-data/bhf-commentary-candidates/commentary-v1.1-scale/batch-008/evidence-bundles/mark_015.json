@@ -1,0 +1,1913 @@
+{
+  "passage_ref": "Mark 15",
+  "entities": {
+    "people": [],
+    "places": [],
+    "groups": [],
+    "events": [
+      {
+        "id": "burial-of-jesus",
+        "title": "Burial of Jesus",
+        "type": "event",
+        "aliases": [
+          "what happened in burial of jesus",
+          "tell me about burial of jesus",
+          "why is burial of jesus important"
+        ],
+        "metadata": {
+          "summary": "The Gospel accounts of Jesus's removal from the cross, preparation, and placement in a tomb before Sabbath, followed narratively by discovery of the empty tomb.",
+          "importance": 88,
+          "retrieval_score": 0.908,
+          "ancient_names": [],
+          "modern_identification": "",
+          "region": "",
+          "terrain": "",
+          "elevation": null,
+          "archaeology": [],
+          "related_passages": [
+            "Matthew 27:57-61",
+            "Mark 15:42-47",
+            "Luke 23:50-56",
+            "John 19:38-42"
+          ]
+        }
+      },
+      {
+        "id": "crucifixion",
+        "title": "Crucifixion",
+        "type": "event",
+        "aliases": [
+          "what happened in crucifixion",
+          "tell me about crucifixion",
+          "why is crucifixion important"
+        ],
+        "metadata": {
+          "summary": "The Roman execution of Jesus that Christians interpret as the climactic atoning death of the Messiah.",
+          "importance": 100,
+          "retrieval_score": 0.92,
+          "ancient_names": [],
+          "modern_identification": "",
+          "region": "",
+          "terrain": "",
+          "elevation": null,
+          "archaeology": [],
+          "related_passages": [
+            "Psalms 22:1-31",
+            "Isaiah 53:1-12",
+            "Mark 15:1-47",
+            "Luke 23:26-49",
+            "John 19:16-37",
+            "Romans 3:21-26",
+            "1 Peter 2:21-25",
+            "Hebrews 10:1-18"
+          ]
+        }
+      }
+    ],
+    "artifacts": [
+      {
+        "id": "pilate-stone",
+        "title": "Pilate Stone",
+        "type": "archaeology",
+        "aliases": [
+          "pilate stone artifact",
+          "pilate stone discovery",
+          "pilate stone excavation",
+          "pilate stone find"
+        ],
+        "metadata": {
+          "summary": "A Latin inscription naming Pontius Pilate and documenting Roman administration in Judea.",
+          "importance": 94,
+          "retrieval_score": 0.914,
+          "ancient_names": [],
+          "modern_identification": "",
+          "region": "",
+          "terrain": "",
+          "elevation": null,
+          "archaeology": [],
+          "related_passages": [
+            "Matthew 27",
+            "Mark 15",
+            "Luke 23",
+            "John 18",
+            "John 19"
+          ]
+        }
+      }
+    ]
+  },
+  "evidence_items": [
+    {
+      "id": "burial-of-jesus:ancient_near_east_context:0",
+      "claim": "The immediate comparison is Early Roman Judean execution and burial rather than a generalized ancient Near Eastern funerary pattern.",
+      "category": "culture",
+      "source_ids": [
+        "matthew",
+        "mark",
+        "luke",
+        "john",
+        "burial-of-jesus-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "burial-of-jesus"
+      ],
+      "passage_anchors": [
+        "Mark 15:42-47"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "burial-of-jesus",
+        "parent_title": "Burial of Jesus",
+        "parent_type": "event",
+        "object_importance": 88,
+        "retrieval_score": 0.908,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 41,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "burial-of-jesus:hebraic_worldview:0",
+      "claim": "Prompt burial, care for the dead, corpse impurity, Sabbath timing, kin and patron obligations, and tomb location shape the narrative setting.",
+      "category": "culture",
+      "source_ids": [
+        "matthew",
+        "mark",
+        "luke",
+        "john",
+        "burial-of-jesus-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "burial-of-jesus"
+      ],
+      "passage_anchors": [
+        "Mark 15:42-47"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "burial-of-jesus",
+        "parent_title": "Burial of Jesus",
+        "parent_type": "event",
+        "object_importance": 88,
+        "retrieval_score": 0.908,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 41,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "hebraic_worldview",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "burial-of-jesus:historical_context:0",
+      "claim": "The narratives combine Roman release of an executed body with Jewish concern for burial before Sabbath. Jerusalem rock-cut tombs and ossuary practice provide regional context but cannot identify Jesus's tomb or prove the narrated sequence.",
+      "category": "history",
+      "source_ids": [
+        "matthew",
+        "mark",
+        "luke",
+        "john",
+        "burial-of-jesus-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "burial-of-jesus"
+      ],
+      "passage_anchors": [
+        "Mark 15:42-47"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "burial-of-jesus",
+        "parent_title": "Burial of Jesus",
+        "parent_type": "event",
+        "object_importance": 88,
+        "retrieval_score": 0.908,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 41,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "burial-of-jesus:second_temple_context:0",
+      "claim": "Rock-cut family tombs and secondary ossuary burial were especially associated with Jerusalem-area households possessing the resources and tenure for such tombs; practice varied by region and status.",
+      "category": "culture",
+      "source_ids": [
+        "matthew",
+        "mark",
+        "luke",
+        "john",
+        "burial-of-jesus-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "burial-of-jesus"
+      ],
+      "passage_anchors": [
+        "Mark 15:42-47"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "burial-of-jesus",
+        "parent_title": "Burial of Jesus",
+        "parent_type": "event",
+        "object_importance": 88,
+        "retrieval_score": 0.908,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 41,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "second_temple_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "crucifixion:ancient_near_east_context:0",
+      "claim": "The execution belongs specifically to Roman imperial punishment while the Gospels interpret it through Israel's scriptural and covenantal categories.",
+      "category": "culture",
+      "source_ids": [
+        "psalm-22",
+        "isaiah-53",
+        "mark-15",
+        "luke-23",
+        "john-19",
+        "romans-3",
+        "hebrews-10"
+      ],
+      "related_entity_ids": [
+        "crucifixion"
+      ],
+      "passage_anchors": [
+        "Mark 15:1-47"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "crucifixion",
+        "parent_title": "Crucifixion",
+        "parent_type": "event",
+        "object_importance": 100,
+        "retrieval_score": 0.92,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "crucifixion:hebraic_worldview:0",
+      "claim": "The narratives connect death, shame, kingship, lament, covenant, burial duty, and scriptural interpretation without making Roman execution a Jewish institution.",
+      "category": "culture",
+      "source_ids": [
+        "psalm-22",
+        "isaiah-53",
+        "mark-15",
+        "luke-23",
+        "john-19",
+        "romans-3",
+        "hebrews-10"
+      ],
+      "related_entity_ids": [
+        "crucifixion"
+      ],
+      "passage_anchors": [
+        "Mark 15:1-47"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "crucifixion",
+        "parent_title": "Crucifixion",
+        "parent_type": "event",
+        "object_importance": 100,
+        "retrieval_score": 0.92,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "hebraic_worldview",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "crucifixion:historical_context:0",
+      "claim": "The crucifixion occurs in first-century Judea under Roman authority and amid Jewish expectations for redemption and deliverance.",
+      "category": "history",
+      "source_ids": [
+        "psalm-22",
+        "isaiah-53",
+        "mark-15",
+        "luke-23",
+        "john-19",
+        "romans-3",
+        "hebrews-10"
+      ],
+      "related_entity_ids": [
+        "crucifixion"
+      ],
+      "passage_anchors": [
+        "Mark 15:1-47"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "crucifixion",
+        "parent_title": "Crucifixion",
+        "parent_type": "event",
+        "object_importance": 100,
+        "retrieval_score": 0.92,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "crucifixion:second_temple_context:0",
+      "claim": "Crucifixion displayed Roman coercive power in Judea. The Yehohanan remains show that at least one crucified person later received Jerusalem tomb and ossuary burial, but no single find defines every execution.",
+      "category": "culture",
+      "source_ids": [
+        "psalm-22",
+        "isaiah-53",
+        "mark-15",
+        "luke-23",
+        "john-19",
+        "romans-3",
+        "hebrews-10"
+      ],
+      "related_entity_ids": [
+        "crucifixion"
+      ],
+      "passage_anchors": [
+        "Mark 15:1-47"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "crucifixion",
+        "parent_title": "Crucifixion",
+        "parent_type": "event",
+        "object_importance": 100,
+        "retrieval_score": 0.92,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "second_temple_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "gospel-crucifixion-and-burial",
+      "claim": "Mark narrates Roman crucifixion, public mockery, death, confirmation by a centurion, release of the body, linen wrapping, and placement in a rock-cut tomb before Sabbath.",
+      "category": "culture",
+      "source_ids": [
+        "judean-gospel-acts-passages",
+        "fine-burial",
+        "fiensy-daily-life-judea"
+      ],
+      "related_entity_ids": [
+        "crucifixion",
+        "burial-of-jesus"
+      ],
+      "passage_anchors": [
+        "Mark 15:21-47"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "judean-pilgrimage-taxation-and-roman-power",
+        "parent_title": "Judean Pilgrimage, Taxation, and Roman Power",
+        "parent_type": "cultural_background",
+        "object_importance": 98,
+        "retrieval_score": 0.918,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 20,
+        "certainty": "textually_explicit",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.75,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "cultural-practice",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 102
+      }
+    },
+    {
+      "id": "gospel-crucifixion-and-burial:passage-relevance",
+      "claim": "The passage itself distinguishes execution from burial and identifies Roman, elite Jewish, and women witnesses' roles.",
+      "category": "culture",
+      "source_ids": [
+        "judean-gospel-acts-passages",
+        "fine-burial",
+        "fiensy-daily-life-judea"
+      ],
+      "related_entity_ids": [
+        "crucifixion",
+        "burial-of-jesus"
+      ],
+      "passage_anchors": [
+        "Mark 15:21-47"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "judean-pilgrimage-taxation-and-roman-power",
+        "parent_title": "Judean Pilgrimage, Taxation, and Roman Power",
+        "parent_type": "cultural_background",
+        "object_importance": 98,
+        "retrieval_score": 0.918,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 20,
+        "certainty": "textually_explicit",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.75,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "cultural-practice",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 102,
+        "supports_evidence_ids": [
+          "gospel-crucifixion-and-burial"
+        ]
+      }
+    },
+    {
+      "id": "mark-aramaic",
+      "claim": "Mark preserves and translates several Semitic expressions, including Boanerges, Talitha koum, Corban, Ephphatha, Bartimaeus, Abba, Golgotha, and Eloi.",
+      "category": "language",
+      "source_ids": [
+        "mark-greek",
+        "sblgnt"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Mark 15:34"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "mark",
+        "parent_title": "Mark",
+        "parent_type": "book",
+        "object_importance": 95,
+        "retrieval_score": 0.955,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 33,
+        "certainty": "textually_explicit",
+        "dispute_status": "lexical_uncertainty",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "lexical",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 81
+      }
+    },
+    {
+      "id": "mark-archaeology",
+      "claim": "Archaeology and documentary evidence illuminate Galilean villages, fishing, agriculture, roads, households, purity practices, Jerusalem, taxation, status, and Roman execution but rarely verify individual narrated episodes.",
+      "category": "archaeology",
+      "source_ids": [
+        "magness-archaeology",
+        "keddie-class-power"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Mark 15:21-41"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "mark",
+        "parent_title": "Mark",
+        "parent_type": "book",
+        "object_importance": 95,
+        "retrieval_score": 0.955,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 20,
+        "certainty": "probable",
+        "dispute_status": "archaeological_uncertainty",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "archaeology",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "archaeology_geography",
+        "overview_priority": 98
+      }
+    },
+    {
+      "id": "mark-christology",
+      "claim": "Mark portrays Jesus through Messiah, Son of God, Son of Man, teacher, healer, exorcist, servant, suffering figure, vindicated figure, and kingly categories without reducing them to one later doctrinal formula.",
+      "category": "culture",
+      "source_ids": [
+        "collins-mark",
+        "marcus-mark-8-16",
+        "mark-readers"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Mark 15:26"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "mark",
+        "parent_title": "Mark",
+        "parent_type": "book",
+        "object_importance": 95,
+        "retrieval_score": 0.955,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 25,
+        "certainty": "strong_consensus",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_theology",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "mark-crucifixion",
+      "claim": "Mark narrates crucifixion as Roman public execution, royal mockery, abandonment, scriptural lament, darkness, death, torn curtain, contested recognition, and women's witness.",
+      "category": "history",
+      "source_ids": [
+        "mark-greek",
+        "marcus-mark-8-16",
+        "postcolonial-mark"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Mark 15:16-41"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "mark",
+        "parent_title": "Mark",
+        "parent_type": "book",
+        "object_importance": 95,
+        "retrieval_score": 0.955,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 15,
+        "certainty": "textually_explicit",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 110
+      }
+    },
+    {
+      "id": "mark-genre",
+      "claim": "Mark is reasonably read in relation to ancient biography while also functioning as the genre-shaping narrative called Gospel.",
+      "category": "culture",
+      "source_ids": [
+        "collins-mark",
+        "marcus-mark-1-8"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Mark 15:39"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "mark",
+        "parent_title": "Mark",
+        "parent_type": "book",
+        "object_importance": 95,
+        "retrieval_score": 0.955,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 38,
+        "certainty": "probable",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 105
+      }
+    },
+    {
+      "id": "mark-imperial-reception",
+      "claim": "Mark exposes Roman coercion and crucifixion while also using imperial language and patriarchal conventions; postcolonial interpretation must resist both imperial domination and romantic claims that the text stands outside its world.",
+      "category": "politics",
+      "source_ids": [
+        "postcolonial-mark",
+        "marcus-mark-8-16"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Mark 15:1-39"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "mark",
+        "parent_title": "Mark",
+        "parent_type": "book",
+        "object_importance": 95,
+        "retrieval_score": 0.955,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "probable",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "reception_history",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "dig_deeper",
+        "overview_priority": 105
+      }
+    },
+    {
+      "id": "mark-passion-responsibility",
+      "claim": "Mark distributes narrative agency among Judas, arresting parties, priestly leaders, witnesses, a council, crowds, Pilate, Roman soldiers, and executioners; Roman authority carries out crucifixion.",
+      "category": "history",
+      "source_ids": [
+        "mark-greek",
+        "marcus-mark-8-16",
+        "jewish-annotated-nt"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Mark 15:1-32"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "mark",
+        "parent_title": "Mark",
+        "parent_type": "book",
+        "object_importance": 95,
+        "retrieval_score": 0.955,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "textually_explicit",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 110
+      }
+    },
+    {
+      "id": "mark-provenance",
+      "claim": "Rome, Syria, Galilee, and other settings have been proposed, but no city or single ethnic audience can be established from the text.",
+      "category": "culture",
+      "source_ids": [
+        "collins-mark",
+        "cambridge-mark-introduction"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Mark 15:16"
+      ],
+      "confidence": "low",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "mark",
+        "parent_title": "Mark",
+        "parent_type": "book",
+        "object_importance": 95,
+        "retrieval_score": 0.955,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 15,
+        "certainty": "insufficient_evidence",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "historical_cultural",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 110
+      }
+    },
+    {
+      "id": "mark-son-of-god-variant",
+      "claim": "The words 'Son of God' in Mark 1:1 have significant manuscript variation and must not bear the whole weight of Mark's Christology.",
+      "category": "history",
+      "source_ids": [
+        "mark-greek",
+        "ntvmr",
+        "sinaiticus-mark"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Mark 15:39"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "mark",
+        "parent_title": "Mark",
+        "parent_type": "book",
+        "object_importance": 95,
+        "retrieval_score": 0.955,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 38,
+        "certainty": "strong_consensus",
+        "dispute_status": "textual_variant",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 55
+      }
+    },
+    {
+      "id": "mark-women",
+      "claim": "Women act as petitioners, recipients of healing, prophetic exemplars, providers, witnesses to crucifixion and burial, and first recipients of the empty-tomb announcement.",
+      "category": "culture",
+      "source_ids": [
+        "mark-greek",
+        "women-mark-mary"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Mark 15:40-47"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "mark",
+        "parent_title": "Mark",
+        "parent_type": "book",
+        "object_importance": 95,
+        "retrieval_score": 0.955,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 39,
+        "certainty": "textually_explicit",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 90
+      }
+    },
+    {
+      "id": "pilate-stone:ancient_near_east_context:0",
+      "claim": "The inscription belongs to Roman provincial administration in the eastern Mediterranean rather than generalized ancient Near Eastern kingship.",
+      "category": "culture",
+      "source_ids": [
+        "pilate-stone",
+        "israel-museum",
+        "israel-museum-jerusalem",
+        "latin-inscription",
+        "matthew-27"
+      ],
+      "related_entity_ids": [
+        "pilate-stone"
+      ],
+      "passage_anchors": [
+        "Mark 15"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "pilate-stone",
+        "parent_title": "Pilate Stone",
+        "parent_type": "archaeology",
+        "object_importance": 94,
+        "retrieval_score": 0.914,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "chapter",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "pilate-stone:hebraic_worldview:0",
+      "claim": "The stone supplies external evidence for the imperial office with which Judean leaders and populations had to negotiate.",
+      "category": "culture",
+      "source_ids": [
+        "pilate-stone",
+        "israel-museum",
+        "israel-museum-jerusalem",
+        "latin-inscription",
+        "matthew-27"
+      ],
+      "related_entity_ids": [
+        "pilate-stone"
+      ],
+      "passage_anchors": [
+        "Mark 15"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "pilate-stone",
+        "parent_title": "Pilate Stone",
+        "parent_type": "archaeology",
+        "object_importance": 94,
+        "retrieval_score": 0.914,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "chapter",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "hebraic_worldview",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "pilate-stone:historical_context:0",
+      "claim": "A damaged Latin building inscription from Caesarea names Pontius Pilate and gives his title as prefect of Judea. It independently anchors his office and provincial patronage, not the Gospel hearing itself.",
+      "category": "history",
+      "source_ids": [
+        "pilate-stone",
+        "israel-museum",
+        "israel-museum-jerusalem",
+        "latin-inscription",
+        "matthew-27"
+      ],
+      "related_entity_ids": [
+        "pilate-stone"
+      ],
+      "passage_anchors": [
+        "Mark 15"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "pilate-stone",
+        "parent_title": "Pilate Stone",
+        "parent_type": "archaeology",
+        "object_importance": 94,
+        "retrieval_score": 0.914,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "chapter",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "pilate-stone:second_temple_context:0",
+      "claim": "Pilate governed Judea from 26 to 36 CE while Jerusalem's temple and local elite institutions continued under Roman supremacy.",
+      "category": "culture",
+      "source_ids": [
+        "pilate-stone",
+        "israel-museum",
+        "israel-museum-jerusalem",
+        "latin-inscription",
+        "matthew-27"
+      ],
+      "related_entity_ids": [
+        "pilate-stone"
+      ],
+      "passage_anchors": [
+        "Mark 15"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "pilate-stone",
+        "parent_title": "Pilate Stone",
+        "parent_type": "archaeology",
+        "object_importance": 94,
+        "retrieval_score": 0.914,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "chapter",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "second_temple_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "yehohanan-crucifixion-burial",
+      "claim": "An iron nail remains embedded through a heel bone found among remains in an inscribed ossuary from an early Roman Jerusalem tomb at Giv'at Ha-Mivtar.",
+      "category": "archaeology",
+      "source_ids": [
+        "israel-museum-yehohanan",
+        "fine-burial",
+        "fiensy-daily-life-judea"
+      ],
+      "related_entity_ids": [
+        "crucifixion",
+        "burial-of-jesus"
+      ],
+      "passage_anchors": [
+        "Mark 15:21-47"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "judean-pilgrimage-taxation-and-roman-power",
+        "parent_title": "Judean Pilgrimage, Taxation, and Roman Power",
+        "parent_type": "cultural_background",
+        "object_importance": 98,
+        "retrieval_score": 0.918,
+        "passage_relationship": "comparative",
+        "anchor_specificity": "verse",
+        "verse_distance": 20,
+        "certainty": "strong_consensus",
+        "dispute_status": "archaeological_uncertainty",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 1.0,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "material-culture",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "COMPARATIVE_CONTEXT",
+        "presentation_role": "dig_deeper",
+        "overview_priority": 0
+      }
+    },
+    {
+      "id": "yehohanan-crucifixion-burial:passage-relevance",
+      "claim": "The find demonstrates that at least one crucified person received Jewish tomb and ossuary burial, countering absolute claims that such burial was impossible while not proving Jesus's case.",
+      "category": "archaeology",
+      "source_ids": [
+        "israel-museum-yehohanan",
+        "fine-burial",
+        "fiensy-daily-life-judea"
+      ],
+      "related_entity_ids": [
+        "crucifixion",
+        "burial-of-jesus"
+      ],
+      "passage_anchors": [
+        "Mark 15:21-47"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "judean-pilgrimage-taxation-and-roman-power",
+        "parent_title": "Judean Pilgrimage, Taxation, and Roman Power",
+        "parent_type": "cultural_background",
+        "object_importance": 98,
+        "retrieval_score": 0.918,
+        "passage_relationship": "comparative",
+        "anchor_specificity": "verse",
+        "verse_distance": 20,
+        "certainty": "strong_consensus",
+        "dispute_status": "archaeological_uncertainty",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 1.0,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "material-culture",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "COMPARATIVE_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 0,
+        "supports_evidence_ids": [
+          "yehohanan-crucifixion-burial"
+        ]
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "Canonical historical orientation for Burial of Jesus",
+        "author": "",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "id": "burial-of-jesus-historical-orientation",
+        "canonical_object_ids": [
+          "burial-of-jesus"
+        ]
+      },
+      {
+        "title": "The Gospel of Mark",
+        "author": "Delbert Burkett",
+        "publisher": "Cambridge University Press",
+        "year": 2018,
+        "locator": "An Introduction to the New Testament and the Origins of Christianity, chapter 11",
+        "url": "https://www.cambridge.org/highereducation/books/an-introduction-to-the-new-testament-and-the-origins-of-christianity/32A6751C4FE08D443DC4BDD934A3C343/the-gospel-of-mark/4E533B5CA894B84D1E9D5A501AA74352",
+        "source_type": "academic-book",
+        "supports": [
+          "authorship-positions",
+          "date-ranges",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "University introduction distinguishing anonymity, tradition, and historical analysis.",
+        "id": "cambridge-mark-introduction",
+        "canonical_object_ids": [
+          "mark"
+        ]
+      },
+      {
+        "title": "Mark: A Commentary",
+        "author": "Adela Yarbro Collins",
+        "publisher": "Fortress Press",
+        "year": 2007,
+        "locator": "Hermeneia",
+        "url": "https://ms.fortresspress.com/downloads/9780800660789_The%20Catholic%20Biblical%20Quarterly_Review.pdf",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "literary-context",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Critical commentary; linked scholarly review summarizes its major coverage.",
+        "id": "collins-mark",
+        "canonical_object_ids": [
+          "mark"
+        ]
+      },
+      {
+        "title": "The Archaeology of Daily Life: Ordinary Persons in Late Second Temple Israel",
+        "author": "David A. Fiensy",
+        "publisher": "Cascade Books",
+        "year": 2021,
+        "locator": "Chapters on occupations, religion, mortality, disposal of the dead, and dwellings",
+        "url": "https://wipfandstock.com/9781532673078/the-archaeology-of-daily-life/",
+        "source_type": "academic-book",
+        "supports": [
+          "gospel-pilgrimage-and-temple-economy",
+          "gospel-taxation-distinctions",
+          "gospel-crucifixion-and-burial",
+          "stepped-street-jerusalem",
+          "yehohanan-crucifixion-burial"
+        ],
+        "notes": "Synthesis emphasizing ordinary persons and archaeological limits.",
+        "id": "fiensy-daily-life-judea",
+        "canonical_object_ids": [
+          "judean-pilgrimage-taxation-and-roman-power"
+        ]
+      },
+      {
+        "title": "Death, Burial, and Afterlife",
+        "author": "Steven Fine",
+        "publisher": "Oxford University Press",
+        "year": 2012,
+        "locator": "The Oxford Handbook of Jewish Daily Life in Roman Palestine, pp. 440-462",
+        "url": "https://doi.org/10.1093/oxfordhb/9780199216437.013.0025",
+        "source_type": "academic-book",
+        "supports": [
+          "gospel-crucifixion-and-burial",
+          "yehohanan-crucifixion-burial"
+        ],
+        "notes": "Regional and chronological overview of tombs, ossuary burial, and later practice.",
+        "id": "fine-burial",
+        "canonical_object_ids": [
+          "judean-pilgrimage-taxation-and-roman-power"
+        ]
+      },
+      {
+        "title": "Hebrews 10",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "hebrews-10",
+        "canonical_object_ids": [
+          "crucifixion"
+        ]
+      },
+      {
+        "title": "Isaiah 53",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "isaiah-53",
+        "canonical_object_ids": [
+          "crucifixion"
+        ]
+      },
+      {
+        "title": "Israel Museum",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [],
+        "notes": "",
+        "id": "israel-museum",
+        "canonical_object_ids": [
+          "pilate-stone"
+        ]
+      },
+      {
+        "title": "Israel Museum, Jerusalem",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [],
+        "notes": "",
+        "id": "israel-museum-jerusalem",
+        "canonical_object_ids": [
+          "pilate-stone"
+        ]
+      },
+      {
+        "title": "Ossuary of Yehohanan with heel bone and nail",
+        "author": "",
+        "publisher": "Israel Museum / Israel Antiquities Authority",
+        "year": null,
+        "locator": "Giv'at Ha-Mivtar, Herodian period; IAA collection",
+        "url": "https://artsandculture.google.com/asset/ossuary-of-yehohanan-son-of-hagkol-with-heel-bone-and-nail-unknown/8gEPRIAlblWlqw",
+        "source_type": "museum-collection",
+        "supports": [
+          "yehohanan-crucifixion-burial",
+          "gospel-crucifixion-and-burial"
+        ],
+        "notes": "Officially attributed museum object record; osteological reconstructions remain qualified.",
+        "id": "israel-museum-yehohanan",
+        "canonical_object_ids": [
+          "judean-pilgrimage-taxation-and-roman-power"
+        ]
+      },
+      {
+        "title": "The Jewish Annotated New Testament",
+        "author": "Amy-Jill Levine and Marc Zvi Brettler, editors",
+        "publisher": "Oxford University Press",
+        "year": 2017,
+        "locator": "Second edition, Mark and essays",
+        "url": "https://global.oup.com/academic/product/the-jewish-annotated-new-testament-9780190461850",
+        "source_type": "academic-book",
+        "supports": [
+          "hebraic-worldview",
+          "second-temple-context",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Jewish historical and interpretive context for New Testament texts.",
+        "id": "jewish-annotated-nt",
+        "canonical_object_ids": [
+          "mark"
+        ]
+      },
+      {
+        "title": "John",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "john",
+        "canonical_object_ids": [
+          "burial-of-jesus"
+        ]
+      },
+      {
+        "title": "John 19",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "john-19",
+        "canonical_object_ids": [
+          "crucifixion"
+        ]
+      },
+      {
+        "title": "Pilgrimage, taxation, Roman trial, crucifixion, and burial passages",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Luke 2:1-52; 19:1-10; Mark 11:1-25; 12:13-17; 15:21-47; John 18:28-19:42; Acts 5:33-39",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "gospel-pilgrimage-and-temple-economy",
+          "gospel-taxation-distinctions",
+          "gospel-roman-hearing",
+          "gospel-crucifixion-and-burial",
+          "josephus-census-tax-resistance",
+          "stepped-street-jerusalem",
+          "pilate-prefect-inscription",
+          "yehohanan-crucifixion-burial"
+        ],
+        "notes": "Primary biblical texts; no modern translation is reproduced.",
+        "id": "judean-gospel-acts-passages",
+        "canonical_object_ids": [
+          "judean-pilgrimage-taxation-and-roman-power"
+        ]
+      },
+      {
+        "title": "Class and Power in Roman Palestine",
+        "author": "Anthony Keddie",
+        "publisher": "Cambridge University Press",
+        "year": 2019,
+        "locator": "Chapters 2-4 on provincial rule, taxation, and sacred economy",
+        "url": "https://doi.org/10.1017/9781108656757",
+        "source_type": "academic-book",
+        "supports": [
+          "gospel-pilgrimage-and-temple-economy",
+          "stepped-street-jerusalem",
+          "gospel-taxation-distinctions",
+          "josephus-census-tax-resistance",
+          "gospel-roman-hearing",
+          "pilate-prefect-inscription"
+        ],
+        "notes": "Socioeconomic synthesis attentive to imperial and local elite power.",
+        "id": "keddie-class-power",
+        "canonical_object_ids": [
+          "judean-pilgrimage-taxation-and-roman-power",
+          "mark"
+        ],
+        "canonical_source_variants": [
+          {
+            "title": "Class and Power in Roman Palestine",
+            "author": "Anthony Keddie",
+            "publisher": "Cambridge University Press",
+            "year": 2019,
+            "locator": "Chapters 2-4 on provincial rule, taxation, and sacred economy",
+            "url": "https://doi.org/10.1017/9781108656757",
+            "source_type": "academic-book",
+            "supports": [
+              "gospel-pilgrimage-and-temple-economy",
+              "stepped-street-jerusalem",
+              "gospel-taxation-distinctions",
+              "josephus-census-tax-resistance",
+              "gospel-roman-hearing",
+              "pilate-prefect-inscription"
+            ],
+            "notes": "Socioeconomic synthesis attentive to imperial and local elite power.",
+            "id": "keddie-class-power"
+          },
+          {
+            "title": "Class and Power in Roman Palestine",
+            "author": "G. Anthony Keddie",
+            "publisher": "Cambridge University Press",
+            "year": 2019,
+            "locator": "Whole volume",
+            "url": "https://www.cambridge.org/core/books/class-and-power-in-roman-palestine/5B1250AEB368712B24A3657ABE112D01",
+            "source_type": "academic-book",
+            "supports": [
+              "historical-context",
+              "archaeology",
+              "claims",
+              "interpretive-notes"
+            ],
+            "notes": "Study of class, extraction, status, and power in Roman Palestine.",
+            "id": "keddie-class-power"
+          }
+        ]
+      },
+      {
+        "title": "Latin inscription",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [],
+        "notes": "",
+        "id": "latin-inscription",
+        "canonical_object_ids": [
+          "pilate-stone"
+        ]
+      },
+      {
+        "title": "Luke",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "luke",
+        "canonical_object_ids": [
+          "burial-of-jesus"
+        ]
+      },
+      {
+        "title": "Luke 23",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "luke-23",
+        "canonical_object_ids": [
+          "crucifixion"
+        ]
+      },
+      {
+        "title": "The Archaeology of the Holy Land",
+        "author": "Jodi Magness",
+        "publisher": "Cambridge University Press",
+        "year": 2012,
+        "locator": "Early Roman period",
+        "url": "https://www.cambridge.org/core/books/abs/archaeology-of-the-holy-land/early-roman-herodian-period-40-bce70-ce/0A26A9F4D24BE3BA15CB261FE3A171F7",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "archaeology",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Archaeological synthesis for the early Roman setting.",
+        "id": "magness-archaeology",
+        "canonical_object_ids": [
+          "mark"
+        ]
+      },
+      {
+        "title": "Mark 1-8",
+        "author": "Joel Marcus",
+        "publisher": "Yale University Press",
+        "year": 2002,
+        "locator": "Anchor Yale Bible",
+        "url": "https://yalebooks.yale.edu/book/9780300139792/mark-1-8/",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "literary-context",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Critical commentary on Mark 1-8.",
+        "id": "marcus-mark-1-8",
+        "canonical_object_ids": [
+          "mark"
+        ]
+      },
+      {
+        "title": "Mark 8-16",
+        "author": "Joel Marcus",
+        "publisher": "Yale University Press",
+        "year": 2009,
+        "locator": "Anchor Yale Bible",
+        "url": "https://yalebooks.yale.edu/book/9780300141160/mark-8-16/",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "literary-context",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Critical commentary on Mark 8-16 and its enigmatic ending.",
+        "id": "marcus-mark-8-16",
+        "canonical_object_ids": [
+          "mark"
+        ]
+      },
+      {
+        "title": "Mark",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "mark",
+        "canonical_object_ids": [
+          "burial-of-jesus"
+        ]
+      },
+      {
+        "title": "Mark 15",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "mark-15",
+        "canonical_object_ids": [
+          "crucifixion"
+        ]
+      },
+      {
+        "title": "The Gospel according to Mark, Greek text",
+        "author": "",
+        "publisher": "Society of Biblical Literature",
+        "year": 2010,
+        "locator": "Mark 1-16 in SBLGNT",
+        "url": "https://www.sbl-site.org/resources/digital-texts/sbl-greek-new-testament/",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "structure",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Critical Greek text and apparatus resources.",
+        "id": "mark-greek",
+        "canonical_object_ids": [
+          "mark"
+        ]
+      },
+      {
+        "title": "Mark and His Readers: The Son of God among Jews",
+        "author": "Adela Yarbro Collins",
+        "publisher": "Cambridge University Press",
+        "year": 1999,
+        "locator": "Harvard Theological Review",
+        "url": "https://www.cambridge.org/core/journals/harvard-theological-review/article/abs/mark-and-his-readers-the-son-of-god-among-jews/765FC451556FBA90D6D0E95A2E2E1679",
+        "source_type": "journal-article",
+        "supports": [
+          "original-audience",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Study of sonship and Jewish hearers.",
+        "id": "mark-readers",
+        "canonical_object_ids": [
+          "mark"
+        ]
+      },
+      {
+        "title": "Matthew",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "matthew",
+        "canonical_object_ids": [
+          "burial-of-jesus"
+        ]
+      },
+      {
+        "title": "Matthew 27",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "matthew-27",
+        "canonical_object_ids": [
+          "pilate-stone"
+        ]
+      },
+      {
+        "title": "New Testament Virtual Manuscript Room",
+        "author": "",
+        "publisher": "Institut f\u00fcr Neutestamentliche Textforschung",
+        "year": null,
+        "locator": "Mark manuscript workspace",
+        "url": "https://ntvmr.uni-muenster.de/manuscript-workspace",
+        "source_type": "reference-work",
+        "supports": [
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Official manuscript catalog, images, transcriptions, and textual data.",
+        "id": "ntvmr",
+        "canonical_object_ids": [
+          "mark"
+        ]
+      },
+      {
+        "title": "Pilate Stone",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [],
+        "notes": "",
+        "id": "pilate-stone",
+        "canonical_object_ids": [
+          "pilate-stone"
+        ]
+      },
+      {
+        "title": "Postcolonial Perspectives in African Biblical Interpretations",
+        "author": "Musa W. Dube, Andrew M. Mbuvi, and Dora R. Mbuwayesango, editors",
+        "publisher": "Society of Biblical Literature",
+        "year": 2012,
+        "locator": "Postcolonial feminist reading of Mark 14-16 and related essays",
+        "url": "https://www.sbl-site.org/wp-content/uploads/2024/11/Postcolonial_DubeMbuvi_SBL.pdf",
+        "source_type": "academic-book",
+        "supports": [
+          "later-christian-reception",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Postcolonial, gender-aware, and embodied reception.",
+        "id": "postcolonial-mark",
+        "canonical_object_ids": [
+          "mark"
+        ]
+      },
+      {
+        "title": "Psalm 22",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [],
+        "notes": "",
+        "id": "psalm-22",
+        "canonical_object_ids": [
+          "crucifixion"
+        ]
+      },
+      {
+        "title": "Romans 3",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "romans-3",
+        "canonical_object_ids": [
+          "crucifixion"
+        ]
+      },
+      {
+        "title": "SBL Greek New Testament",
+        "author": "Michael W. Holmes",
+        "publisher": "Society of Biblical Literature",
+        "year": 2010,
+        "locator": "Mark",
+        "url": "https://www.sbl-site.org/resources/digital-texts/sbl-greek-new-testament/",
+        "source_type": "reference-work",
+        "supports": [
+          "greek-words",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Open critical Greek text.",
+        "id": "sblgnt",
+        "canonical_object_ids": [
+          "mark"
+        ]
+      },
+      {
+        "title": "Codex Sinaiticus: Mark",
+        "author": "",
+        "publisher": "Codex Sinaiticus Project",
+        "year": null,
+        "locator": "Mark, beginning folio 217b",
+        "url": "https://codexsinaiticus.org/en/manuscript.aspx?book=34",
+        "source_type": "ancient-primary-source",
+        "supports": [
+          "archaeology",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Fourth-century Greek manuscript images and transcription.",
+        "id": "sinaiticus-mark",
+        "canonical_object_ids": [
+          "mark"
+        ]
+      },
+      {
+        "title": "Women in the Gospels of Mark and Mary",
+        "author": "",
+        "publisher": "Oxford University Press",
+        "year": 2018,
+        "locator": "Connecting Gospels",
+        "url": "https://academic.oup.com/book/32601/chapter-abstract/270427996",
+        "source_type": "academic-book",
+        "supports": [
+          "later-christian-reception",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Comparative study of women and discipleship.",
+        "id": "women-mark-mary",
+        "canonical_object_ids": [
+          "mark"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "burial-of-jesus",
+        "type": "event",
+        "title": "Burial of Jesus",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.908
+      },
+      {
+        "id": "crucifixion",
+        "type": "event",
+        "title": "Crucifixion",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.92
+      },
+      {
+        "id": "judean-pilgrimage-taxation-and-roman-power",
+        "type": "cultural_background",
+        "title": "Judean Pilgrimage, Taxation, and Roman Power",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.918
+      },
+      {
+        "id": "mark",
+        "type": "book",
+        "title": "Mark",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.955
+      },
+      {
+        "id": "pilate-stone",
+        "type": "archaeology",
+        "title": "Pilate Stone",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.914
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "4ebce6b8870b34480122fea818432e13d4e5bebdde8735f3f17c0b2cd498b9a2",
+  "evidence_hash_version": "2"
+}

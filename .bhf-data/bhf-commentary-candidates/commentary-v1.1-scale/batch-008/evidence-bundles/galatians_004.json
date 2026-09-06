@@ -1,0 +1,4093 @@
+{
+  "passage_ref": "Galatians 4",
+  "entities": {
+    "people": [],
+    "places": [
+      {
+        "id": "galatia",
+        "title": "Roman and Ethnic Galatia",
+        "type": "place",
+        "aliases": [
+          "Galatia in the Bible",
+          "Roman province of Galatia",
+          "ethnic Galatia",
+          "North Galatia",
+          "South Galatia",
+          "Galatian region"
+        ],
+        "metadata": {
+          "summary": "Galatia in early Christian texts can evoke both the central Anatolian homeland associated with Galatian peoples and a much larger Roman province that included culturally diverse southern districts; this distinction is essential for reading Acts 13-16 and the address to the assemblies of Galatia.",
+          "importance": 95,
+          "retrieval_score": 0.915,
+          "ancient_names": [],
+          "modern_identification": "",
+          "region": "",
+          "terrain": "",
+          "elevation": null,
+          "archaeology": [
+            "Roman road and milestone survey",
+            "Pisidian Antioch civic and cultic remains",
+            "Iconium inscriptions and coinage",
+            "Lystra colonial inscriptions",
+            "competing Derbe site identifications"
+          ],
+          "related_passages": [
+            "Acts 13:13-52",
+            "Acts 14:1-28",
+            "Acts 16:1-6",
+            "Acts 18:23",
+            "Galatians 1:2",
+            "Galatians 3:1",
+            "Galatians 4:13-15"
+          ]
+        }
+      }
+    ],
+    "groups": [],
+    "events": [
+      {
+        "id": "birth-of-jesus",
+        "title": "Birth of Jesus",
+        "type": "event",
+        "aliases": [
+          "what happened in birth of jesus",
+          "tell me about birth of jesus",
+          "why is birth of jesus important"
+        ],
+        "metadata": {
+          "summary": "Jesus is born in Bethlehem under Roman rule as the promised Messiah and Son of David.",
+          "importance": 100,
+          "retrieval_score": 0.92,
+          "ancient_names": [],
+          "modern_identification": "",
+          "region": "",
+          "terrain": "",
+          "elevation": null,
+          "archaeology": [],
+          "related_passages": [
+            "Matthew 1:18-25",
+            "Matthew 2:1-12",
+            "Luke 1:26-38",
+            "Luke 2:1-20",
+            "Micah 5:2",
+            "Isaiah 7:14",
+            "Isaiah 9:1-7",
+            "Galatians 4:4-5",
+            "Philippians 2:5-11"
+          ]
+        }
+      }
+    ],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "abba-bilingual-prayer",
+      "claim": "Mark, Galatians, and Romans preserve the Aramaic address Abba followed by Greek Father in prayer, with Galatians attributing the cry to the Son's Spirit and Romans to Spirit-enabled believers.",
+      "category": "history",
+      "source_ids": [
+        "abba-pauline-texts",
+        "galatians-adoption-text",
+        "romans-adoption-text",
+        "barr-abba"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Galatians 4:6"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-kinship-guardianship-slavery-and-inheritance",
+        "parent_title": "Pauline Kinship, Guardianship, Slavery, and Inheritance",
+        "parent_type": "cultural_background",
+        "object_importance": 98,
+        "retrieval_score": 0.978,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 5,
+        "certainty": "strong_consensus",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "ancient-text",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 102
+      }
+    },
+    {
+      "id": "abba-bilingual-prayer:passage-relevance",
+      "claim": "The textual corpus supports filial intimacy and dependence while blocking the unsupported claim that Abba simply means Daddy.",
+      "category": "history",
+      "source_ids": [
+        "abba-pauline-texts",
+        "galatians-adoption-text",
+        "romans-adoption-text",
+        "barr-abba"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Galatians 4:6"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-kinship-guardianship-slavery-and-inheritance",
+        "parent_title": "Pauline Kinship, Guardianship, Slavery, and Inheritance",
+        "parent_type": "cultural_background",
+        "object_importance": 98,
+        "retrieval_score": 0.978,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 5,
+        "certainty": "strong_consensus",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "ancient-text",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 102,
+        "supports_evidence_ids": [
+          "abba-bilingual-prayer"
+        ]
+      }
+    },
+    {
+      "id": "acts-letter-chronology-control",
+      "claim": "Acts narrates earlier mission events from a later composition horizon, while Corinthians, Galatians, and Philippians are earlier occasional self-reports with different selections and aims.",
+      "category": "chronology",
+      "source_ids": [
+        "second-corinthians-suffering-text",
+        "galatians-weakness-text",
+        "acts-suffering-text",
+        "keener-acts-suffering",
+        "soon-disabled-apostle"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Galatians 4:12-15"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-suffering-weakness-disability-healing-power-and-apostolic-legitimacy",
+        "parent_title": "Pauline Suffering, Weakness, Disability, Healing, Power, and Apostolic Legitimacy",
+        "parent_type": "cultural_background",
+        "object_importance": 99,
+        "retrieval_score": 0.959,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 11,
+        "certainty": "strong_consensus",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "secondary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "historical-period",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "chronology",
+        "overview_priority": 37
+      }
+    },
+    {
+      "id": "acts-letter-chronology-control:passage-relevance",
+      "claim": "Prevents Acts' blindness, recovery, stoning, or prison scenes from diagnosing the thorn, Galatian weakness, or every Pauline hardship.",
+      "category": "chronology",
+      "source_ids": [
+        "second-corinthians-suffering-text",
+        "galatians-weakness-text",
+        "acts-suffering-text",
+        "keener-acts-suffering",
+        "soon-disabled-apostle"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Galatians 4:12-15"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-suffering-weakness-disability-healing-power-and-apostolic-legitimacy",
+        "parent_title": "Pauline Suffering, Weakness, Disability, Healing, Power, and Apostolic Legitimacy",
+        "parent_type": "cultural_background",
+        "object_importance": 99,
+        "retrieval_score": 0.959,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 11,
+        "certainty": "strong_consensus",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "secondary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "historical-period",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 37,
+        "supports_evidence_ids": [
+          "acts-letter-chronology-control"
+        ]
+      }
+    },
+    {
+      "id": "adoption-theme:ancient_near_east_context:0",
+      "claim": "For Adoption Theme, comparison draws from Israelite covenant practice, temple worship, royal ideology, wisdom instruction, prophetic speech, Second Temple Judaism, and Roman-period community life as context requires.",
+      "category": "culture",
+      "source_ids": [
+        "romans-8",
+        "galatians-4",
+        "ephesians-1",
+        "1-john-3",
+        "adoption-theme-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Galatians 4:4-7"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "adoption-theme",
+        "parent_title": "Adoption Theme",
+        "parent_type": "theme",
+        "object_importance": 90,
+        "retrieval_score": 0.91,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 3,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "adoption-theme:historical_context:0",
+      "claim": "Adoption Theme is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness.",
+      "category": "history",
+      "source_ids": [
+        "romans-8",
+        "galatians-4",
+        "ephesians-1",
+        "1-john-3",
+        "adoption-theme-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Galatians 4:4-7"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "adoption-theme",
+        "parent_title": "Adoption Theme",
+        "parent_type": "theme",
+        "object_importance": 90,
+        "retrieval_score": 0.91,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 3,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "adoption:ancient_near_east_context:0",
+      "claim": "Ancient background for Adoption includes covenant life, temple worship, royal ideology, wisdom teaching, and early church confession; the entry ties that world to Romans 8:14-17, Galatians 4:4-7, adoption-theme, and romans without letting comparison replace the biblical witness.",
+      "category": "culture",
+      "source_ids": [
+        "romans-8",
+        "galatians-4",
+        "ephesians-1",
+        "1-john-3",
+        "adoption-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Galatians 4:4-7"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "adoption",
+        "parent_title": "Adoption",
+        "parent_type": "theology",
+        "object_importance": 90,
+        "retrieval_score": 0.91,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 3,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "adoption:historical_context:0",
+      "claim": "Adoption is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness.",
+      "category": "history",
+      "source_ids": [
+        "romans-8",
+        "galatians-4",
+        "ephesians-1",
+        "1-john-3",
+        "adoption-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Galatians 4:4-7"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "adoption",
+        "parent_title": "Adoption",
+        "parent_type": "theology",
+        "object_importance": 90,
+        "retrieval_score": 0.91,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 3,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "birth-of-jesus:ancient_near_east_context:0",
+      "claim": "The setting is Greco-Roman and Second Temple Jewish rather than ancient Near Eastern, but the event fulfills the older promise story of Israel.",
+      "category": "culture",
+      "source_ids": [
+        "matthew-1-2",
+        "luke-1-2",
+        "galatians-4",
+        "philippians-2",
+        "micah-5",
+        "isaiah-7",
+        "isaiah-9",
+        "birth-of-jesus-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "birth-of-jesus"
+      ],
+      "passage_anchors": [
+        "Galatians 4:4-5"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "birth-of-jesus",
+        "parent_title": "Birth of Jesus",
+        "parent_type": "event",
+        "object_importance": 100,
+        "retrieval_score": 0.92,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 3,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "birth-of-jesus:historical_context:0",
+      "claim": "The nativity occurs in the first century amid Roman taxation, Herodian politics, and Jewish messianic expectation.",
+      "category": "history",
+      "source_ids": [
+        "matthew-1-2",
+        "luke-1-2",
+        "galatians-4",
+        "philippians-2",
+        "micah-5",
+        "isaiah-7",
+        "isaiah-9",
+        "birth-of-jesus-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "birth-of-jesus"
+      ],
+      "passage_anchors": [
+        "Galatians 4:4-5"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "birth-of-jesus",
+        "parent_title": "Birth of Jesus",
+        "parent_type": "event",
+        "object_importance": 100,
+        "retrieval_score": 0.92,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 3,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "born-of-woman-born-under-torah",
+      "claim": "At the fullness of time Galatians describes God's Son with parallel birth clauses: born of a woman and born under Torah.",
+      "category": "culture",
+      "source_ids": [
+        "galatians-adoption-text",
+        "martyn-galatians",
+        "hodge-sons-heirs",
+        "thiessen-gentile-problem"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Galatians 4:4"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-kinship-guardianship-slavery-and-inheritance",
+        "parent_title": "Pauline Kinship, Guardianship, Slavery, and Inheritance",
+        "parent_type": "cultural_background",
+        "object_importance": 98,
+        "retrieval_score": 0.978,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 3,
+        "certainty": "textually_explicit",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "literary-convention",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    },
+    {
+      "id": "born-of-woman-born-under-torah:passage-relevance",
+      "claim": "The clauses locate the mission in embodied human birth and Jewish Torah life rather than in an abstract Roman adoption transaction.",
+      "category": "culture",
+      "source_ids": [
+        "galatians-adoption-text",
+        "martyn-galatians",
+        "hodge-sons-heirs",
+        "thiessen-gentile-problem"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Galatians 4:4"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-kinship-guardianship-slavery-and-inheritance",
+        "parent_title": "Pauline Kinship, Guardianship, Slavery, and Inheritance",
+        "parent_type": "cultural_background",
+        "object_importance": 98,
+        "retrieval_score": 0.978,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 3,
+        "certainty": "textually_explicit",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "literary-convention",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 87,
+        "supports_evidence_ids": [
+          "born-of-woman-born-under-torah"
+        ]
+      }
+    },
+    {
+      "id": "categories-remain-distinct",
+      "claim": "Social weakness, bodily impairment, illness, injury, persecution, economic precarity, imprisonment, rhetorical weakness, and cruciform power overlap but are not interchangeable.",
+      "category": "economics",
+      "source_ids": [
+        "first-corinthians-suffering-text",
+        "second-corinthians-suffering-text",
+        "galatians-weakness-text",
+        "philippians-prison-text",
+        "acts-suffering-text",
+        "soon-disabled-apostle"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Galatians 4:12-15"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "pauline-suffering-weakness-disability-healing-power-and-apostolic-legitimacy",
+        "parent_title": "Pauline Suffering, Weakness, Disability, Healing, Power, and Apostolic Legitimacy",
+        "parent_type": "cultural_background",
+        "object_importance": 99,
+        "retrieval_score": 0.959,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 11,
+        "certainty": "strong_consensus",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "historical_cultural",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "WEAKLY_RELATED",
+        "presentation_role": null,
+        "overview_priority": 17
+      }
+    },
+    {
+      "id": "distinct-pauline-metaphor-networks",
+      "claim": "Galatians and Romans share slavery, Spirit, child, adoption, and heir terminology but arrange those words in different sequences shaped by different occasions, audiences, scriptural arguments, and eschatological emphases.",
+      "category": "culture",
+      "source_ids": [
+        "galatians-adoption-text",
+        "romans-adoption-text",
+        "genesis-inheritance-text",
+        "goodrich-guardians",
+        "scott-adoption",
+        "hodge-sons-heirs",
+        "gaventa-galatians-romans",
+        "galatians-captive-history"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Galatians 3:23-4:11"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-kinship-guardianship-slavery-and-inheritance",
+        "parent_title": "Pauline Kinship, Guardianship, Slavery, and Inheritance",
+        "parent_type": "cultural_background",
+        "object_importance": 98,
+        "retrieval_score": 0.978,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 100,
+        "certainty": "strong_consensus",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "scholarly-reconstruction",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "literary-convention",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 102
+      }
+    },
+    {
+      "id": "distinct-pauline-metaphor-networks:passage-relevance",
+      "claim": "The comparison permits canonical connection without producing one universal Roman family-law system or making either letter fill every silence in the other.",
+      "category": "culture",
+      "source_ids": [
+        "galatians-adoption-text",
+        "romans-adoption-text",
+        "genesis-inheritance-text",
+        "goodrich-guardians",
+        "scott-adoption",
+        "hodge-sons-heirs",
+        "gaventa-galatians-romans",
+        "galatians-captive-history"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Galatians 3:23-4:11"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-kinship-guardianship-slavery-and-inheritance",
+        "parent_title": "Pauline Kinship, Guardianship, Slavery, and Inheritance",
+        "parent_type": "cultural_background",
+        "object_importance": 98,
+        "retrieval_score": 0.978,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 100,
+        "certainty": "strong_consensus",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "scholarly-reconstruction",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "literary-convention",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 102,
+        "supports_evidence_ids": [
+          "distinct-pauline-metaphor-networks"
+        ]
+      }
+    },
+    {
+      "id": "father-appointed-time",
+      "claim": "Galatians makes the father's appointed time the limit of guardianship in its analogy but states neither the heir's age nor a statutory rule.",
+      "category": "culture",
+      "source_ids": [
+        "galatians-adoption-text",
+        "gaius-institutes",
+        "pryl-2-153",
+        "goodrich-guardians",
+        "goodrich-heir-child"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Galatians 4:2"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-kinship-guardianship-slavery-and-inheritance",
+        "parent_title": "Pauline Kinship, Guardianship, Slavery, and Inheritance",
+        "parent_type": "cultural_background",
+        "object_importance": 98,
+        "retrieval_score": 0.978,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 1,
+        "certainty": "textually_explicit",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "literary-convention",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    },
+    {
+      "id": "father-appointed-time:passage-relevance",
+      "claim": "The omission prevents interpreters from importing one age of majority, testamentary clause, or jurisdiction into Paul's compressed comparison.",
+      "category": "culture",
+      "source_ids": [
+        "galatians-adoption-text",
+        "gaius-institutes",
+        "pryl-2-153",
+        "goodrich-guardians",
+        "goodrich-heir-child"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Galatians 4:2"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-kinship-guardianship-slavery-and-inheritance",
+        "parent_title": "Pauline Kinship, Guardianship, Slavery, and Inheritance",
+        "parent_type": "cultural_background",
+        "object_importance": 98,
+        "retrieval_score": 0.978,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 1,
+        "certainty": "textually_explicit",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "literary-convention",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 87,
+        "supports_evidence_ids": [
+          "father-appointed-time"
+        ]
+      }
+    },
+    {
+      "id": "gal-adoption",
+      "claim": "Galatians uses heir, guardian, household, redemption, adoption, and Spirit language to describe believers' transition from minority and enslavement to filial belonging.",
+      "category": "culture",
+      "source_ids": [
+        "gal-greek",
+        "martyn-galatians"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Galatians 3:23-4:7"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "galatians",
+        "parent_title": "Galatians",
+        "parent_type": "book",
+        "object_importance": 83,
+        "retrieval_score": 0.943,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 100,
+        "certainty": "textually_explicit",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_theology",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "gal-allegory",
+      "claim": "Paul explicitly calls his Hagar-Sarah construction an allegory, mapping women, sons, mountains, covenants, and Jerusalems within a polemical argument whose details remain contested.",
+      "category": "culture",
+      "source_ids": [
+        "gal-greek",
+        "nets-lxx",
+        "martyn-galatians"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Galatians 4:21-31"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "galatians",
+        "parent_title": "Galatians",
+        "parent_type": "book",
+        "object_importance": 83,
+        "retrieval_score": 0.943,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 20,
+        "certainty": "textually_explicit",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 105
+      }
+    },
+    {
+      "id": "gal-audience",
+      "claim": "The audience appears substantially gentile, but the letter does not establish that every addressee was gentile or disclose a complete demographic profile.",
+      "category": "culture",
+      "source_ids": [
+        "longenecker-galatians",
+        "fredriksen-pagans-apostle"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Galatians 4:8-11"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "galatians",
+        "parent_title": "Galatians",
+        "parent_type": "book",
+        "object_importance": 83,
+        "retrieval_score": 0.943,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 7,
+        "certainty": "probable",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "historical_cultural",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "gal-elemental",
+      "claim": "Stoicheia tou kosmou in Galatians 4 may denote cosmic powers, elemental constituents, calendrical principles, rudimentary teachings, or overlapping enslaving structures.",
+      "category": "language",
+      "source_ids": [
+        "gal-greek",
+        "bdag",
+        "martyn-galatians"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Galatians 4:3",
+        "Galatians 4:8-10"
+      ],
+      "confidence": "low",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "galatians",
+        "parent_title": "Galatians",
+        "parent_type": "book",
+        "object_importance": 83,
+        "retrieval_score": 0.943,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 2,
+        "certainty": "disputed",
+        "dispute_status": "lexical_uncertainty",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "lexical",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 81
+      }
+    },
+    {
+      "id": "gal-illness",
+      "claim": "Paul recalls evangelizing because of bodily weakness and says the Galatians would have given him their eyes; a specific diagnosis cannot be recovered.",
+      "category": "culture",
+      "source_ids": [
+        "gal-greek",
+        "soon-disabled-apostle"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Galatians 4:13-15"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "galatians",
+        "parent_title": "Galatians",
+        "parent_type": "book",
+        "object_importance": 83,
+        "retrieval_score": 0.943,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 12,
+        "certainty": "textually_explicit",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "historical_cultural",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "gal-rhetoric",
+      "claim": "Galatians combines letter conventions with rebuke, curse, autobiography, scriptural argument, allegory, exhortation, warning, and autograph; assignment to one classical rhetorical species is disputed.",
+      "category": "culture",
+      "source_ids": [
+        "martyn-galatians",
+        "longenecker-galatians"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Galatians 1:1-6:18"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "galatians",
+        "parent_title": "Galatians",
+        "parent_type": "book",
+        "object_importance": 83,
+        "retrieval_score": 0.943,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 300,
+        "certainty": "strong_consensus",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 65
+      }
+    },
+    {
+      "id": "galatia-weakness-limits",
+      "claim": "Galatians recalls bodily weakness and hospitable reception but does not diagnose Paul or establish why he entered the region.",
+      "category": "history",
+      "source_ids": [
+        "galatia-galatians-text",
+        "martyn-galatians-region",
+        "goddard-cummins-ill-treated"
+      ],
+      "related_entity_ids": [
+        "galatia"
+      ],
+      "passage_anchors": [
+        "Galatians 4:13-15"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "galatia",
+        "parent_title": "Roman and Ethnic Galatia",
+        "parent_type": "place",
+        "object_importance": 95,
+        "retrieval_score": 0.915,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 12,
+        "certainty": "textually_explicit",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "WEAKLY_RELATED",
+        "presentation_role": null,
+        "overview_priority": 0
+      }
+    },
+    {
+      "id": "galatia:interpretive_note:3",
+      "claim": "Galatians 4:13-15 must not be converted into a confident diagnosis or used to stigmatize disability; it does not prove malaria, eye disease, or a mountain-detour route.",
+      "category": "geography",
+      "source_ids": [
+        "galatia-galatians-text",
+        "goddard-cummins-ill-treated"
+      ],
+      "related_entity_ids": [
+        "galatia"
+      ],
+      "passage_anchors": [
+        "Galatians 4:13-15"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "galatia",
+        "parent_title": "Roman and Ethnic Galatia",
+        "parent_type": "place",
+        "object_importance": 95,
+        "retrieval_score": 0.915,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 12,
+        "certainty": "strong_consensus",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "inference",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "interpretive-caution",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "INTERTEXTUAL_REUSE",
+        "presentation_role": "dig_deeper",
+        "overview_priority": 0
+      }
+    },
+    {
+      "id": "galatians-abba-spirit",
+      "claim": "Galatians says God sent the Spirit of the Son into hearts, crying Abba, Father, in a movement from slavery to heirship.",
+      "category": "culture",
+      "source_ids": [
+        "galatians-prayer-text",
+        "martyn-galatians-prayer"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Galatians 4:4-7"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-prayer-thanksgiving-intercession-lament-groaning-joy-peace-hope-benediction-blessing-and-communal-memory",
+        "parent_title": "Pauline Prayer, Thanksgiving, Intercession, Lament, Groaning, Joy, Peace, Hope, Benediction, Blessing, and Communal Memory",
+        "parent_type": "cultural_background",
+        "object_importance": 9,
+        "retrieval_score": 0.869,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 3,
+        "certainty": "probable",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "worldview-concept",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    },
+    {
+      "id": "galatians-abba-spirit:passage-relevance",
+      "claim": "Rejects coerced intimacy, fear-based prayer, and leader claims to mediate another person's access to God.",
+      "category": "culture",
+      "source_ids": [
+        "galatians-prayer-text",
+        "martyn-galatians-prayer"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Galatians 4:4-7"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-prayer-thanksgiving-intercession-lament-groaning-joy-peace-hope-benediction-blessing-and-communal-memory",
+        "parent_title": "Pauline Prayer, Thanksgiving, Intercession, Lament, Groaning, Joy, Peace, Hope, Benediction, Blessing, and Communal Memory",
+        "parent_type": "cultural_background",
+        "object_importance": 9,
+        "retrieval_score": 0.869,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 3,
+        "certainty": "probable",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "worldview-concept",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 87,
+        "supports_evidence_ids": [
+          "galatians-abba-spirit"
+        ]
+      }
+    },
+    {
+      "id": "galatians-bodily-weakness-and-route-diagnosis-limits",
+      "claim": "Galatians recalls that Paul first evangelized through or because of bodily weakness and that the recipients welcomed him, but the language identifies neither disease nor geographic cause.",
+      "category": "history",
+      "source_ids": [
+        "galatians-geography-text",
+        "keener-galatians-destination",
+        "goddard-cummins-galatia"
+      ],
+      "related_entity_ids": [
+        "galatia"
+      ],
+      "passage_anchors": [
+        "Galatians 4:13-15"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "roman-galatia-regions-roads-cities-and-audience",
+        "parent_title": "Roman Galatia: Regions, Roads, Cities, and Audience Reconstruction",
+        "parent_type": "cultural_background",
+        "object_importance": 97,
+        "retrieval_score": 0.937,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 12,
+        "certainty": "textually_explicit",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.75,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "historical-event",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 102
+      }
+    },
+    {
+      "id": "galatians-bodily-weakness-and-route-diagnosis-limits:passage-relevance",
+      "claim": "The item blocks a diagnosis from deciding North or South Galatia and resists disability stigma or medical speculation presented as fact.",
+      "category": "history",
+      "source_ids": [
+        "galatians-geography-text",
+        "keener-galatians-destination",
+        "goddard-cummins-galatia"
+      ],
+      "related_entity_ids": [
+        "galatia"
+      ],
+      "passage_anchors": [
+        "Galatians 4:13-15"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "roman-galatia-regions-roads-cities-and-audience",
+        "parent_title": "Roman Galatia: Regions, Roads, Cities, and Audience Reconstruction",
+        "parent_type": "cultural_background",
+        "object_importance": 97,
+        "retrieval_score": 0.937,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 12,
+        "certainty": "textually_explicit",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.75,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "historical-event",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 102,
+        "supports_evidence_ids": [
+          "galatians-bodily-weakness-and-route-diagnosis-limits"
+        ]
+      }
+    },
+    {
+      "id": "galatians-illness-eyes-limit",
+      "claim": "Galatians recalls bodily weakness at the first evangelization, a trial for the audience, welcome, and willingness to give eyes, without naming a disease.",
+      "category": "culture",
+      "source_ids": [
+        "galatians-weakness-text",
+        "soon-disabled-apostle"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Galatians 4:12-20"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-suffering-weakness-disability-healing-power-and-apostolic-legitimacy",
+        "parent_title": "Pauline Suffering, Weakness, Disability, Healing, Power, and Apostolic Legitimacy",
+        "parent_type": "cultural_background",
+        "object_importance": 99,
+        "retrieval_score": 0.959,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 11,
+        "certainty": "strong_consensus",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "person",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    },
+    {
+      "id": "galatians-illness-eyes-limit:passage-relevance",
+      "claim": "Preserves hospitality toward an impaired messenger while preventing ophthalmia, malaria, epilepsy, injury, or thorn claims from becoming fact.",
+      "category": "culture",
+      "source_ids": [
+        "galatians-weakness-text",
+        "soon-disabled-apostle"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Galatians 4:12-20"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-suffering-weakness-disability-healing-power-and-apostolic-legitimacy",
+        "parent_title": "Pauline Suffering, Weakness, Disability, Healing, Power, and Apostolic Legitimacy",
+        "parent_type": "cultural_background",
+        "object_importance": 99,
+        "retrieval_score": 0.959,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 11,
+        "certainty": "strong_consensus",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "person",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 87,
+        "supports_evidence_ids": [
+          "galatians-illness-eyes-limit"
+        ]
+      }
+    },
+    {
+      "id": "galatians-missing-thanksgiving",
+      "claim": "Unlike several Pauline letters, Galatians has no opening thanksgiving period, yet Paul continues appeal, kinship language, memory, and labor for the audience.",
+      "category": "culture",
+      "source_ids": [
+        "galatians-prayer-text",
+        "obrien-thanksgiving-gospel",
+        "martyn-galatians-prayer"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Galatians 4:12-20"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-prayer-thanksgiving-intercession-lament-groaning-joy-peace-hope-benediction-blessing-and-communal-memory",
+        "parent_title": "Pauline Prayer, Thanksgiving, Intercession, Lament, Groaning, Joy, Peace, Hope, Benediction, Blessing, and Communal Memory",
+        "parent_type": "cultural_background",
+        "object_importance": 9,
+        "retrieval_score": 0.869,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 11,
+        "certainty": "probable",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "literary-convention",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    },
+    {
+      "id": "galatians-missing-thanksgiving:passage-relevance",
+      "claim": "Prevents withholding gratitude from becoming humiliation or proof that conflicted people are worthless or beyond care.",
+      "category": "culture",
+      "source_ids": [
+        "galatians-prayer-text",
+        "obrien-thanksgiving-gospel",
+        "martyn-galatians-prayer"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Galatians 4:12-20"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-prayer-thanksgiving-intercession-lament-groaning-joy-peace-hope-benediction-blessing-and-communal-memory",
+        "parent_title": "Pauline Prayer, Thanksgiving, Intercession, Lament, Groaning, Joy, Peace, Hope, Benediction, Blessing, and Communal Memory",
+        "parent_type": "cultural_background",
+        "object_importance": 9,
+        "retrieval_score": 0.869,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 11,
+        "certainty": "probable",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "literary-convention",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 87,
+        "supports_evidence_ids": [
+          "galatians-missing-thanksgiving"
+        ]
+      }
+    },
+    {
+      "id": "galatians-plural-assemblies-and-demographic-limits",
+      "claim": "The letter addresses multiple assemblies and implies substantial gentile participation, yet it gives no population proportions, city names, occupations, household lists, or uniform ethnic profile.",
+      "category": "social",
+      "source_ids": [
+        "galatians-geography-text",
+        "keener-galatians-destination",
+        "den-dulk-galatians-ethnicity"
+      ],
+      "related_entity_ids": [
+        "galatia"
+      ],
+      "passage_anchors": [
+        "Galatians 4:8-11"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "roman-galatia-regions-roads-cities-and-audience",
+        "parent_title": "Roman Galatia: Regions, Roads, Cities, and Audience Reconstruction",
+        "parent_type": "cultural_background",
+        "object_importance": 97,
+        "retrieval_score": 0.937,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 7,
+        "certainty": "probable",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.75,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "people-group",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 102
+      }
+    },
+    {
+      "id": "galatians-plural-assemblies-and-demographic-limits:passage-relevance",
+      "claim": "The evidence prevents either destination model from turning Galatians into a census of uniformly Celtic, Roman, Lycaonian, gentile, poor, elite, male, or urban recipients.",
+      "category": "social",
+      "source_ids": [
+        "galatians-geography-text",
+        "keener-galatians-destination",
+        "den-dulk-galatians-ethnicity"
+      ],
+      "related_entity_ids": [
+        "galatia"
+      ],
+      "passage_anchors": [
+        "Galatians 4:8-11"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "roman-galatia-regions-roads-cities-and-audience",
+        "parent_title": "Roman Galatia: Regions, Roads, Cities, and Audience Reconstruction",
+        "parent_type": "cultural_background",
+        "object_importance": 97,
+        "retrieval_score": 0.937,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 7,
+        "certainty": "probable",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.75,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "people-group",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 102,
+        "supports_evidence_ids": [
+          "galatians-plural-assemblies-and-demographic-limits"
+        ]
+      }
+    },
+    {
+      "id": "galatians:interpretive_note:28",
+      "claim": "Slave and free language names a real ancient status divide while also serving metaphor; spiritualization cannot excuse slavery apologetics, trafficking, worker exploitation, or caste hierarchy.",
+      "category": "culture",
+      "source_ids": [
+        "gal-greek",
+        "marchal-uncut"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Galatians 4:1-31"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "galatians",
+        "parent_title": "Galatians",
+        "parent_type": "book",
+        "object_importance": 83,
+        "retrieval_score": 0.943,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "not_disputed",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "interpretive-caution",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "galatians:interpretive_note:29",
+      "claim": "Adoption and heir language combines household, scriptural, and theological imagery; it should not erase adoptees' experiences or make one Roman legal model exhaustive.",
+      "category": "culture",
+      "source_ids": [
+        "gal-greek",
+        "martyn-galatians"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Galatians 4:1-7"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "galatians",
+        "parent_title": "Galatians",
+        "parent_type": "book",
+        "object_importance": 83,
+        "retrieval_score": 0.943,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "theological-interpretation",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 102
+      }
+    },
+    {
+      "id": "galatians:interpretive_note:30",
+      "claim": "The cry Abba, Father is transmitted Aramaic prayer language; it does not require a childish translation, one gendered image for God, or unsafe submission to human fathers.",
+      "category": "culture",
+      "source_ids": [
+        "gal-greek",
+        "bdag"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Galatians 4:6"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "galatians",
+        "parent_title": "Galatians",
+        "parent_type": "book",
+        "object_importance": 83,
+        "retrieval_score": 0.943,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 5,
+        "certainty": "strong_consensus",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "interpretive-caution",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    },
+    {
+      "id": "galatians:interpretive_note:31",
+      "claim": "Elemental powers may be personal, cosmic, calendrical, pedagogical, or composite; the phrase cannot validate conspiracy theories, dangerous exorcism, or medical neglect.",
+      "category": "culture",
+      "source_ids": [
+        "gal-greek",
+        "bdag",
+        "martyn-galatians"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Galatians 4:3",
+        "Galatians 4:8-10"
+      ],
+      "confidence": "low",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "galatians",
+        "parent_title": "Galatians",
+        "parent_type": "book",
+        "object_importance": 83,
+        "retrieval_score": 0.943,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 2,
+        "certainty": "disputed",
+        "dispute_status": "lexical_uncertainty",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "interpretive-caution",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    },
+    {
+      "id": "galatians:interpretive_note:32",
+      "claim": "Paul's comparison of former pagan observance and proposed calendrical practice is rhetorically compressed; it does not equate Jews with pagans or authorize mockery of Jewish festivals.",
+      "category": "culture",
+      "source_ids": [
+        "gal-greek",
+        "fredriksen-pagans-apostle",
+        "thiessen-gentile-problem"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Galatians 4:8-11"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "galatians",
+        "parent_title": "Galatians",
+        "parent_type": "book",
+        "object_importance": 83,
+        "retrieval_score": 0.943,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 7,
+        "certainty": "probable",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "interpretive-caution",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 102
+      }
+    },
+    {
+      "id": "galatians:interpretive_note:33",
+      "claim": "Paul's bodily weakness and eye language do not disclose a diagnosis; malaria, eye disease, epilepsy, mental illness, and other proposals remain speculation.",
+      "category": "culture",
+      "source_ids": [
+        "gal-greek",
+        "soon-disabled-apostle"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Galatians 4:13-15"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "galatians",
+        "parent_title": "Galatians",
+        "parent_type": "book",
+        "object_importance": 83,
+        "retrieval_score": 0.943,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 12,
+        "certainty": "strong_consensus",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "historical-context",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    },
+    {
+      "id": "galatians:interpretive_note:34",
+      "claim": "Illness and disability in Galatians must not be spiritualized as deficient faith or used to promote disability stigma, forced healing, dangerous exorcism, or medical neglect.",
+      "category": "culture",
+      "source_ids": [
+        "soon-disabled-apostle",
+        "gal-greek"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Galatians 4:13-15"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "galatians",
+        "parent_title": "Galatians",
+        "parent_type": "book",
+        "object_importance": 83,
+        "retrieval_score": 0.943,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 12,
+        "certainty": "strong_consensus",
+        "dispute_status": "not_disputed",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "interpretive-caution",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "galatians:interpretive_note:35",
+      "claim": "Paul's maternal labor metaphor expresses pastoral anguish; it cannot authorize possessive leadership, reproductive coercion, misogyny, or treating members as a leader's children without boundaries.",
+      "category": "culture",
+      "source_ids": [
+        "gal-greek",
+        "martyn-galatians"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Galatians 4:19-20"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "galatians",
+        "parent_title": "Galatians",
+        "parent_type": "book",
+        "object_importance": 83,
+        "retrieval_score": 0.943,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 18,
+        "certainty": "strong_consensus",
+        "dispute_status": "not_disputed",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "interpretive-caution",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "galatians:interpretive_note:36",
+      "claim": "The Hagar-Sarah passage explicitly signals allegory, but its mapping is rhetorically unstable and has often harmed Jews, women, enslaved people, Muslims, and racialized communities.",
+      "category": "culture",
+      "source_ids": [
+        "gal-greek",
+        "riches-reception",
+        "martyn-galatians"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Galatians 4:21-31"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "galatians",
+        "parent_title": "Galatians",
+        "parent_type": "book",
+        "object_importance": 83,
+        "retrieval_score": 0.943,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 20,
+        "certainty": "strong_consensus",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "later-reception",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "dig_deeper",
+        "overview_priority": 82
+      }
+    },
+    {
+      "id": "galatians:interpretive_note:37",
+      "claim": "Cast out the enslaved woman and her son quotes Genesis within an allegory; it must not authorize family expulsion, racism, anti-Muslim hostility, slavery, or violence against marginalized people.",
+      "category": "culture",
+      "source_ids": [
+        "gal-greek",
+        "nets-lxx",
+        "riches-reception"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Galatians 4:30"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "galatians",
+        "parent_title": "Galatians",
+        "parent_type": "book",
+        "object_importance": 83,
+        "retrieval_score": 0.943,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 29,
+        "certainty": "strong_consensus",
+        "dispute_status": "not_disputed",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "interpretive-caution",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "guardians-and-estate-managers",
+      "claim": "Galatians places the minor under epitropoi and oikonomoi; later Roman juristic and Egyptian documentary sources attest differentiated guardianship and property-management arrangements without reproducing one universal office pair.",
+      "category": "social",
+      "source_ids": [
+        "galatians-adoption-text",
+        "gaius-institutes",
+        "pryl-2-153",
+        "goodrich-guardians",
+        "goodrich-heir-child"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Galatians 4:2"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-kinship-guardianship-slavery-and-inheritance",
+        "parent_title": "Pauline Kinship, Guardianship, Slavery, and Inheritance",
+        "parent_type": "cultural_background",
+        "object_importance": 98,
+        "retrieval_score": 0.978,
+        "passage_relationship": "comparative",
+        "anchor_specificity": "verse",
+        "verse_distance": 1,
+        "certainty": "probable",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "scholarly-reconstruction",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "institution",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "COMPARATIVE_CONTEXT",
+        "presentation_role": "dig_deeper",
+        "overview_priority": 0
+      }
+    },
+    {
+      "id": "guardians-and-estate-managers:passage-relevance",
+      "claim": "The evidence makes the analogy socially intelligible while preventing a later Roman or Egyptian arrangement from being declared the exact Galatian law.",
+      "category": "social",
+      "source_ids": [
+        "galatians-adoption-text",
+        "gaius-institutes",
+        "pryl-2-153",
+        "goodrich-guardians",
+        "goodrich-heir-child"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Galatians 4:2"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-kinship-guardianship-slavery-and-inheritance",
+        "parent_title": "Pauline Kinship, Guardianship, Slavery, and Inheritance",
+        "parent_type": "cultural_background",
+        "object_importance": 98,
+        "retrieval_score": 0.978,
+        "passage_relationship": "comparative",
+        "anchor_specificity": "verse",
+        "verse_distance": 1,
+        "certainty": "probable",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "scholarly-reconstruction",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "institution",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "COMPARATIVE_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 0,
+        "supports_evidence_ids": [
+          "guardians-and-estate-managers"
+        ]
+      }
+    },
+    {
+      "id": "minor-heir-analogy",
+      "claim": "Galatians 4:1 begins an analogy in which an heir who is still a minor differs in no practical control from an enslaved person despite prospective ownership of everything.",
+      "category": "culture",
+      "source_ids": [
+        "galatians-adoption-text",
+        "goodrich-guardians",
+        "goodrich-heir-child",
+        "galatians-captive-history"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Galatians 4:1"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-kinship-guardianship-slavery-and-inheritance",
+        "parent_title": "Pauline Kinship, Guardianship, Slavery, and Inheritance",
+        "parent_type": "cultural_background",
+        "object_importance": 98,
+        "retrieval_score": 0.978,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "textually_explicit",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "literary-convention",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    },
+    {
+      "id": "minor-heir-analogy:passage-relevance",
+      "claim": "This keeps Paul's rhetorical comparison distinct from a factual equation of freeborn minors and enslaved people or a complete statement of inheritance law.",
+      "category": "culture",
+      "source_ids": [
+        "galatians-adoption-text",
+        "goodrich-guardians",
+        "goodrich-heir-child",
+        "galatians-captive-history"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Galatians 4:1"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-kinship-guardianship-slavery-and-inheritance",
+        "parent_title": "Pauline Kinship, Guardianship, Slavery, and Inheritance",
+        "parent_type": "cultural_background",
+        "object_importance": 98,
+        "retrieval_score": 0.978,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "textually_explicit",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "literary-convention",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 87,
+        "supports_evidence_ids": [
+          "minor-heir-analogy"
+        ]
+      }
+    },
+    {
+      "id": "pauline-kinship-guardianship-slavery-and-inheritance:interpretive_note:1",
+      "claim": "Roman juristic and papyrus evidence illustrates possible guardianship and inheritance resonances, but its later dates and local forms prevent it from becoming the exact law behind Galatians 4.",
+      "category": "culture",
+      "source_ids": [
+        "gaius-institutes",
+        "pryl-2-153",
+        "goodrich-guardians",
+        "goodrich-heir-child"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Galatians 4:1-2"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "pauline-kinship-guardianship-slavery-and-inheritance",
+        "parent_title": "Pauline Kinship, Guardianship, Slavery, and Inheritance",
+        "parent_type": "cultural_background",
+        "object_importance": 98,
+        "retrieval_score": 0.978,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "historical-context",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "INTERTEXTUAL_REUSE",
+        "presentation_role": "dig_deeper",
+        "overview_priority": 0
+      }
+    },
+    {
+      "id": "pauline-kinship-guardianship-slavery-and-inheritance:interpretive_note:2",
+      "claim": "Adoption language cannot make one elite Roman male succession model universal or erase ancient and modern adoptees, daughters, enslaved people, or varied family forms.",
+      "category": "culture",
+      "source_ids": [
+        "lindsay-roman-adoption",
+        "scott-adoption",
+        "hodge-sons-heirs"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Galatians 4:4-7"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "pauline-kinship-guardianship-slavery-and-inheritance",
+        "parent_title": "Pauline Kinship, Guardianship, Slavery, and Inheritance",
+        "parent_type": "cultural_background",
+        "object_importance": 98,
+        "retrieval_score": 0.978,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 3,
+        "certainty": "strong_consensus",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "interpretive-caution",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "INTERTEXTUAL_REUSE",
+        "presentation_role": "dig_deeper",
+        "overview_priority": 0
+      }
+    },
+    {
+      "id": "pauline-kinship-guardianship-slavery-and-inheritance:interpretive_note:3",
+      "claim": "Slavery metaphors derive force from real domination; they cannot excuse chattel slavery, trafficking, worker exploitation, caste hierarchy, sexual violence, or demands that people remain in abuse.",
+      "category": "culture",
+      "source_ids": [
+        "glancy-slavery",
+        "harrill-slaves",
+        "galatians-captive-history"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Galatians 4:1-9"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "pauline-kinship-guardianship-slavery-and-inheritance",
+        "parent_title": "Pauline Kinship, Guardianship, Slavery, and Inheritance",
+        "parent_type": "cultural_background",
+        "object_importance": 98,
+        "retrieval_score": 0.978,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "not_disputed",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "interpretive-caution",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "INTERTEXTUAL_REUSE",
+        "presentation_role": "dig_deeper",
+        "overview_priority": 0
+      }
+    },
+    {
+      "id": "pauline-kinship-guardianship-slavery-and-inheritance:interpretive_note:4",
+      "claim": "Abba is an Aramaic kinship address preserved beside Greek Father; it does not lexically require Daddy and cannot sanctify unsafe submission to a human father or authority figure.",
+      "category": "culture",
+      "source_ids": [
+        "abba-pauline-texts",
+        "barr-abba"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Galatians 4:6"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "pauline-kinship-guardianship-slavery-and-inheritance",
+        "parent_title": "Pauline Kinship, Guardianship, Slavery, and Inheritance",
+        "parent_type": "cultural_background",
+        "object_importance": 98,
+        "retrieval_score": 0.978,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 5,
+        "certainty": "strong_consensus",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "interpretive-caution",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "INTERTEXTUAL_REUSE",
+        "presentation_role": "dig_deeper",
+        "overview_priority": 0
+      }
+    },
+    {
+      "id": "redemption-adoption-and-spirit",
+      "claim": "Galatians 4:5-7 compresses redemption from under Torah, reception of adoption, the sending of the Son's Spirit, the Abba cry, and heirship through God into one transition.",
+      "category": "culture",
+      "source_ids": [
+        "galatians-adoption-text",
+        "genesis-inheritance-text",
+        "lindsay-roman-adoption",
+        "scott-adoption",
+        "hodge-sons-heirs",
+        "martyn-galatians"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Galatians 4:5-7"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-kinship-guardianship-slavery-and-inheritance",
+        "parent_title": "Pauline Kinship, Guardianship, Slavery, and Inheritance",
+        "parent_type": "cultural_background",
+        "object_importance": 98,
+        "retrieval_score": 0.978,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 4,
+        "certainty": "textually_explicit",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "literary-convention",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 52
+      }
+    },
+    {
+      "id": "redemption-adoption-and-spirit:passage-relevance",
+      "claim": "The whole sequence prevents huiothesia from being isolated as a technical Roman-law term or redemption from becoming condemnation of Jews and Torah.",
+      "category": "culture",
+      "source_ids": [
+        "galatians-adoption-text",
+        "genesis-inheritance-text",
+        "lindsay-roman-adoption",
+        "scott-adoption",
+        "hodge-sons-heirs",
+        "martyn-galatians"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Galatians 4:5-7"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-kinship-guardianship-slavery-and-inheritance",
+        "parent_title": "Pauline Kinship, Guardianship, Slavery, and Inheritance",
+        "parent_type": "cultural_background",
+        "object_importance": 98,
+        "retrieval_score": 0.978,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 4,
+        "certainty": "textually_explicit",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "literary-convention",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 52,
+        "supports_evidence_ids": [
+          "redemption-adoption-and-spirit"
+        ]
+      }
+    },
+    {
+      "id": "roman-adoption-bounded-comparison",
+      "claim": "Roman adoptio and adrogatio could transfer people into paternal power and reorganize family membership, names, property, and succession, but procedures differed by prior status, place, period, and case.",
+      "category": "social",
+      "source_ids": [
+        "gaius-institutes",
+        "lindsay-roman-adoption",
+        "scott-adoption",
+        "hodge-sons-heirs"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Galatians 4:5"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-kinship-guardianship-slavery-and-inheritance",
+        "parent_title": "Pauline Kinship, Guardianship, Slavery, and Inheritance",
+        "parent_type": "cultural_background",
+        "object_importance": 98,
+        "retrieval_score": 0.978,
+        "passage_relationship": "comparative",
+        "anchor_specificity": "verse",
+        "verse_distance": 4,
+        "certainty": "strong_consensus",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "secondary-evidence",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "institution",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "COMPARATIVE_CONTEXT",
+        "presentation_role": "dig_deeper",
+        "overview_priority": 0
+      }
+    },
+    {
+      "id": "roman-adoption-bounded-comparison:passage-relevance",
+      "claim": "The comparison explains why adoption could signal status and inheritance while preventing elite male succession from becoming Paul's only background or a model for every modern adoption.",
+      "category": "social",
+      "source_ids": [
+        "gaius-institutes",
+        "lindsay-roman-adoption",
+        "scott-adoption",
+        "hodge-sons-heirs"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Galatians 4:5"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-kinship-guardianship-slavery-and-inheritance",
+        "parent_title": "Pauline Kinship, Guardianship, Slavery, and Inheritance",
+        "parent_type": "cultural_background",
+        "object_importance": 98,
+        "retrieval_score": 0.978,
+        "passage_relationship": "comparative",
+        "anchor_specificity": "verse",
+        "verse_distance": 4,
+        "certainty": "strong_consensus",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "secondary-evidence",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "institution",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "COMPARATIVE_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 0,
+        "supports_evidence_ids": [
+          "roman-adoption-bounded-comparison"
+        ]
+      }
+    },
+    {
+      "id": "roman-galatia-regions-roads-cities-and-audience:interpretive_note:4",
+      "claim": "Neither a South-Galatian reconstruction nor a North-Galatian reconstruction permits treating the recipients as uniformly Celtic, gentile, urban, poor, elite, or attached to one city.",
+      "category": "culture",
+      "source_ids": [
+        "galatians-geography-text",
+        "keener-galatians-destination",
+        "den-dulk-galatians-ethnicity"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Galatians 4:8"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "roman-galatia-regions-roads-cities-and-audience",
+        "parent_title": "Roman Galatia: Regions, Roads, Cities, and Audience Reconstruction",
+        "parent_type": "cultural_background",
+        "object_importance": 97,
+        "retrieval_score": 0.937,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 7,
+        "certainty": "strong_consensus",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "interpretive-caution",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "INTERTEXTUAL_REUSE",
+        "presentation_role": "dig_deeper",
+        "overview_priority": 0
+      }
+    },
+    {
+      "id": "slave-son-heir-and-real-slavery",
+      "claim": "Galatians moves from enslaved person to son and heir as a theological-status contrast, while the letter's own slave-free pairing and the surrounding Roman world show that actual enslavement had not disappeared.",
+      "category": "social",
+      "source_ids": [
+        "galatians-adoption-text",
+        "glancy-slavery",
+        "harrill-slaves",
+        "galatians-captive-history"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Galatians 4:1-9"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-kinship-guardianship-slavery-and-inheritance",
+        "parent_title": "Pauline Kinship, Guardianship, Slavery, and Inheritance",
+        "parent_type": "cultural_background",
+        "object_importance": 98,
+        "retrieval_score": 0.978,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "secondary-evidence",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "institution",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 102
+      }
+    },
+    {
+      "id": "slave-son-heir-and-real-slavery:passage-relevance",
+      "claim": "The evidence prevents spiritual freedom from becoming proof of historical abolition or an excuse to ignore enslaved members, captive bodies, and slavery's violence.",
+      "category": "social",
+      "source_ids": [
+        "galatians-adoption-text",
+        "glancy-slavery",
+        "harrill-slaves",
+        "galatians-captive-history"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Galatians 4:1-9"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-kinship-guardianship-slavery-and-inheritance",
+        "parent_title": "Pauline Kinship, Guardianship, Slavery, and Inheritance",
+        "parent_type": "cultural_background",
+        "object_importance": 98,
+        "retrieval_score": 0.978,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "secondary-evidence",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "institution",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 102,
+        "supports_evidence_ids": [
+          "slave-son-heir-and-real-slavery"
+        ]
+      }
+    },
+    {
+      "id": "sonship-theme:ancient_near_east_context:0",
+      "claim": "Ancient background for Sonship Theme includes covenant practice, worship, kingship, wisdom instruction, and prophetic critique; the entry ties that world to Romans 8:14-17, Galatians 4:4-7, adoption, and adoption-theme without letting comparison replace the biblical witness.",
+      "category": "culture",
+      "source_ids": [
+        "romans-8",
+        "galatians-4",
+        "ephesians-1",
+        "1-john-3",
+        "sonship-theme-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Galatians 4:4-7"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "sonship-theme",
+        "parent_title": "Sonship Theme",
+        "parent_type": "theme",
+        "object_importance": 90,
+        "retrieval_score": 0.91,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 3,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "sonship-theme:historical_context:0",
+      "claim": "Sonship Theme is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness.",
+      "category": "history",
+      "source_ids": [
+        "romans-8",
+        "galatians-4",
+        "ephesians-1",
+        "1-john-3",
+        "sonship-theme-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Galatians 4:4-7"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "sonship-theme",
+        "parent_title": "Sonship Theme",
+        "parent_type": "theme",
+        "object_importance": 90,
+        "retrieval_score": 0.91,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 3,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "stoicheia-and-enslavement",
+      "claim": "Galatians 4:3 calls the collective enslaved under the stoicheia of the world, and 4:8-10 warns gentile addressees about returning to weak and poor stoicheia through disputed observances.",
+      "category": "culture",
+      "source_ids": [
+        "galatians-adoption-text",
+        "martyn-galatians",
+        "gaventa-galatians-romans"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Galatians 4:3",
+        "Galatians 4:8-11"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-kinship-guardianship-slavery-and-inheritance",
+        "parent_title": "Pauline Kinship, Guardianship, Slavery, and Inheritance",
+        "parent_type": "cultural_background",
+        "object_importance": 98,
+        "retrieval_score": 0.978,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 2,
+        "certainty": "disputed",
+        "dispute_status": "lexical_uncertainty",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "worldview-concept",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    },
+    {
+      "id": "stoicheia-and-enslavement:passage-relevance",
+      "claim": "The item preserves the lexical dispute and blocks confident demonological, educational, material-element, or calendrical claims from masquerading as the text itself.",
+      "category": "culture",
+      "source_ids": [
+        "galatians-adoption-text",
+        "martyn-galatians",
+        "gaventa-galatians-romans"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Galatians 4:3",
+        "Galatians 4:8-11"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-kinship-guardianship-slavery-and-inheritance",
+        "parent_title": "Pauline Kinship, Guardianship, Slavery, and Inheritance",
+        "parent_type": "cultural_background",
+        "object_importance": 98,
+        "retrieval_score": 0.978,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 2,
+        "certainty": "disputed",
+        "dispute_status": "lexical_uncertainty",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "worldview-concept",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 87,
+        "supports_evidence_ids": [
+          "stoicheia-and-enslavement"
+        ]
+      }
+    },
+    {
+      "id": "thorn-diagnosis-limit",
+      "claim": "Paul names a fleshly thorn or stake and a satanic messenger, reports three pleas for removal, and gives no diagnostic details.",
+      "category": "culture",
+      "source_ids": [
+        "second-corinthians-suffering-text",
+        "galatians-weakness-text",
+        "soon-disabled-apostle",
+        "massmann-weakness-disability"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Galatians 4:13-15"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-suffering-weakness-disability-healing-power-and-apostolic-legitimacy",
+        "parent_title": "Pauline Suffering, Weakness, Disability, Healing, Power, and Apostolic Legitimacy",
+        "parent_type": "cultural_background",
+        "object_importance": 99,
+        "retrieval_score": 0.959,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 12,
+        "certainty": "strong_consensus",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "person",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    },
+    {
+      "id": "thorn-diagnosis-limit:passage-relevance",
+      "claim": "Prevents a disputed image from becoming a medical diagnosis or a stigma against disability, mental illness, sexuality, demonization, or faith.",
+      "category": "culture",
+      "source_ids": [
+        "second-corinthians-suffering-text",
+        "galatians-weakness-text",
+        "soon-disabled-apostle",
+        "massmann-weakness-disability"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Galatians 4:13-15"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-suffering-weakness-disability-healing-power-and-apostolic-legitimacy",
+        "parent_title": "Pauline Suffering, Weakness, Disability, Healing, Power, and Apostolic Legitimacy",
+        "parent_type": "cultural_background",
+        "object_importance": 99,
+        "retrieval_score": 0.959,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 12,
+        "certainty": "strong_consensus",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "person",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 87,
+        "supports_evidence_ids": [
+          "thorn-diagnosis-limit"
+        ]
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "1 John 3",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "1-john-3",
+        "canonical_object_ids": [
+          "adoption",
+          "adoption-theme",
+          "sonship-theme"
+        ]
+      },
+      {
+        "title": "Mark 14:36; Galatians 4:6; Romans 8:15",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "All three New Testament occurrences of Abba, Father",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "abba-bilingual-prayer",
+          "coheirs-suffering-and-safeguarding"
+        ],
+        "notes": "Primary textual corpus for the bilingual address.",
+        "id": "abba-pauline-texts",
+        "canonical_object_ids": [
+          "pauline-kinship-guardianship-slavery-and-inheritance"
+        ]
+      },
+      {
+        "title": "Acts 9:1-19; 14:8-20; 16:16-40",
+        "author": "Anonymous",
+        "publisher": "Society of Biblical Literature",
+        "year": 2010,
+        "locator": "Acts 9:1-19; 14:8-20; 16:16-40",
+        "url": "https://www.sblgnt.com/download/",
+        "source_type": "scripture",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Later primary narrative evidence; narrated events and composition horizon remain distinct.",
+        "id": "acts-suffering-text",
+        "canonical_object_ids": [
+          "pauline-suffering-weakness-disability-healing-power-and-apostolic-legitimacy"
+        ]
+      },
+      {
+        "title": "Canonical historical orientation for Adoption",
+        "author": "",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "id": "adoption-historical-orientation",
+        "canonical_object_ids": [
+          "adoption"
+        ]
+      },
+      {
+        "title": "Canonical historical orientation for Adoption Theme",
+        "author": "",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "id": "adoption-theme-historical-orientation",
+        "canonical_object_ids": [
+          "adoption-theme"
+        ]
+      },
+      {
+        "title": "Abba Isn't Daddy",
+        "author": "James Barr",
+        "publisher": "The Journal of Theological Studies",
+        "year": 1988,
+        "locator": "39.1, pp. 28-47",
+        "url": "https://doi.org/10.1093/jts/39.1.28",
+        "source_type": "journal-article",
+        "supports": [
+          "abba-bilingual-prayer"
+        ],
+        "notes": "Lexical and historical correction to sentimentalizing claims about the Aramaic address.",
+        "id": "barr-abba",
+        "canonical_object_ids": [
+          "pauline-kinship-guardianship-slavery-and-inheritance"
+        ]
+      },
+      {
+        "title": "A Greek-English Lexicon of the New Testament and Other Early Christian Literature, Third Edition",
+        "author": "Walter Bauer; Frederick W. Danker, rev. and ed.",
+        "publisher": "University of Chicago Press",
+        "year": 2000,
+        "locator": "Galatians lexical entries",
+        "url": "https://press.uchicago.edu/ucp/books/book/chicago/G/bo3622275.html",
+        "source_type": "lexicon",
+        "supports": [
+          "greek-words",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Lexical control; entries do not independently settle contextual disputes.",
+        "id": "bdag",
+        "canonical_object_ids": [
+          "galatians"
+        ]
+      },
+      {
+        "title": "Canonical historical orientation for Birth of Jesus",
+        "author": "",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "id": "birth-of-jesus-historical-orientation",
+        "canonical_object_ids": [
+          "birth-of-jesus"
+        ]
+      },
+      {
+        "title": "Foolish Galatians",
+        "author": "Matthijs den Dulk",
+        "publisher": "Cambridge University Press",
+        "year": 2026,
+        "locator": "Ethnic Stereotypes and the Letters of Paul, chapter 4",
+        "url": "https://doi.org/10.1017/9781009448772.005",
+        "source_type": "academic-book",
+        "supports": [
+          "galatians-destination",
+          "galatian-audience-diversity"
+        ],
+        "notes": "Shows why Galatian address language does not establish a uniformly ethnic-Galatian audience in either destination model.",
+        "id": "den-dulk-galatians-ethnicity",
+        "canonical_object_ids": [
+          "roman-galatia-regions-roads-cities-and-audience"
+        ]
+      },
+      {
+        "title": "Ephesians 1",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "ephesians-1",
+        "canonical_object_ids": [
+          "adoption",
+          "adoption-theme",
+          "sonship-theme"
+        ]
+      },
+      {
+        "title": "1 Corinthians 1:17-4:21 and 9:1-27",
+        "author": "Paul, with Sosthenes named as co-sender",
+        "publisher": "Society of Biblical Literature",
+        "year": 2010,
+        "locator": "1 Corinthians 1:17-4:21; 9:1-27",
+        "url": "https://www.sblgnt.com/download/",
+        "source_type": "scripture",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Primary Greek literary evidence; no modern translation is reproduced.",
+        "id": "first-corinthians-suffering-text",
+        "canonical_object_ids": [
+          "pauline-suffering-weakness-disability-healing-power-and-apostolic-legitimacy"
+        ]
+      },
+      {
+        "title": "Paul: The Pagans' Apostle",
+        "author": "Paula Fredriksen",
+        "publisher": "Yale University Press",
+        "year": 2017,
+        "locator": "Mission, persecution, circumcision, flesh, and Spirit",
+        "url": "https://academic.oup.com/yale-scholarship-online/book/14424",
+        "source_type": "academic-book",
+        "supports": [
+          "claims",
+          "interpretive-notes",
+          "historical-context"
+        ],
+        "notes": "Historical reconstruction of Paul's gentile mission.",
+        "id": "fredriksen-pagans-apostle",
+        "canonical_object_ids": [
+          "galatians"
+        ]
+      },
+      {
+        "title": "Institutes of Roman Law",
+        "author": "Gaius",
+        "publisher": "Online Library of Liberty",
+        "year": 1904,
+        "locator": "Book 1 sections 97-107, 142-196; Edward Poste edition and translation",
+        "url": "https://oll-resources.s3.us-east-2.amazonaws.com/oll3/store/titles/1154/Gaius_0533_EBk_v6.0.pdf",
+        "source_type": "ancient-primary-source",
+        "supports": [
+          "guardians-and-estate-managers",
+          "roman-adoption-bounded-comparison",
+          "father-appointed-time"
+        ],
+        "notes": "Second-century Roman juristic witness, later than Paul; the publication year describes this edition, not the ancient composition.",
+        "id": "gaius-institutes",
+        "canonical_object_ids": [
+          "pauline-kinship-guardianship-slavery-and-inheritance"
+        ]
+      },
+      {
+        "title": "The Greek New Testament: SBL Edition",
+        "author": "Michael W. Holmes, ed.",
+        "publisher": "Society of Biblical Literature and Logos Bible Software",
+        "year": 2010,
+        "locator": "Galatians 1-6",
+        "url": "https://www.sblgnt.com/download/",
+        "source_type": "scripture",
+        "supports": [
+          "scripture-references",
+          "claims",
+          "interpretive-notes",
+          "greek-words"
+        ],
+        "notes": "Critical Greek base text, checked alongside manuscript resources.",
+        "id": "gal-greek",
+        "canonical_object_ids": [
+          "galatians"
+        ]
+      },
+      {
+        "title": "Galatians 1:2; 3:1; 4:13-15",
+        "author": "Paul",
+        "publisher": "",
+        "year": null,
+        "locator": "Galatians 1:2; 3:1; 4:13-15",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "galatia-letter-destination",
+          "galatia-weakness-limits"
+        ],
+        "notes": "Primary letter witness under conventional Pauline authorship.",
+        "id": "galatia-galatians-text",
+        "canonical_object_ids": [
+          "galatia"
+        ]
+      },
+      {
+        "title": "Galatians 4",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "galatians-4",
+        "canonical_object_ids": [
+          "adoption",
+          "adoption-theme",
+          "birth-of-jesus",
+          "sonship-theme"
+        ]
+      },
+      {
+        "title": "Galatians 3:23-4:11",
+        "author": "Paul",
+        "publisher": "",
+        "year": null,
+        "locator": "Galatians 3:23-4:11",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "galatians-custody-before-faith",
+          "paidagogos-household-role",
+          "torah-temporality-and-anti-jewish-limits",
+          "baptismal-kinship-and-clothing",
+          "galatians-status-triad",
+          "abrahamic-seed-and-inheritance",
+          "minor-heir-analogy",
+          "guardians-and-estate-managers",
+          "father-appointed-time",
+          "stoicheia-and-enslavement",
+          "born-of-woman-born-under-torah",
+          "redemption-adoption-and-spirit",
+          "abba-bilingual-prayer",
+          "slave-son-heir-and-real-slavery",
+          "distinct-pauline-metaphor-networks"
+        ],
+        "notes": "Primary Pauline textual witness; no modern translation is reproduced.",
+        "id": "galatians-adoption-text",
+        "canonical_object_ids": [
+          "pauline-kinship-guardianship-slavery-and-inheritance"
+        ]
+      },
+      {
+        "title": "Historiographies of Enslavement: The Unthought Body of the Captive in Galatians 4:1-9",
+        "author": "Luis Men\u00e9ndez-Antu\u00f1a",
+        "publisher": "Harvard Theological Review",
+        "year": 2026,
+        "locator": "Harvard Theological Review 118.4 (October 2025), pp. 665-690; published online 19 January 2026",
+        "url": "https://doi.org/10.1017/S0017816025101016",
+        "source_type": "journal-article",
+        "supports": [
+          "galatians-status-triad",
+          "minor-heir-analogy",
+          "slave-son-heir-and-real-slavery",
+          "distinct-pauline-metaphor-networks"
+        ],
+        "notes": "Recent critical account foregrounding captive bodies and the slave/free grammar often obscured by legal and theological synthesis.",
+        "id": "galatians-captive-history",
+        "canonical_object_ids": [
+          "pauline-kinship-guardianship-slavery-and-inheritance"
+        ]
+      },
+      {
+        "title": "Galatians 1:2; 3:1; 4:8-15",
+        "author": "Paul",
+        "publisher": "",
+        "year": null,
+        "locator": "Galatians 1:2; 3:1; 4:8-15",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "galatians-destination",
+          "galatian-audience-diversity",
+          "galatians-weakness-route",
+          "acts-galatians-comparison"
+        ],
+        "notes": "Primary letter witness under conventional Pauline authorship.",
+        "id": "galatians-geography-text",
+        "canonical_object_ids": [
+          "roman-galatia-regions-roads-cities-and-audience"
+        ]
+      },
+      {
+        "title": "The Greek New Testament: Galatians",
+        "author": "Michael W. Holmes, ed.",
+        "publisher": "Society of Biblical Literature",
+        "year": 2010,
+        "locator": "Galatians 1, 4, and 6",
+        "url": "https://www.sblgnt.com/download/",
+        "source_type": "scripture",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Primary Greek evidence for greeting, Abba prayer, peace, mercy, and grace.",
+        "id": "galatians-prayer-text",
+        "canonical_object_ids": [
+          "pauline-prayer-thanksgiving-intercession-lament-groaning-joy-peace-hope-benediction-blessing-and-communal-memory"
+        ]
+      },
+      {
+        "title": "Galatians 4:12-20",
+        "author": "Paul and unnamed coworkers",
+        "publisher": "Society of Biblical Literature",
+        "year": 2010,
+        "locator": "Galatians 4:12-20",
+        "url": "https://www.sblgnt.com/download/",
+        "source_type": "scripture",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Primary Greek evidence for unspecified bodily weakness and Galatian welcome.",
+        "id": "galatians-weakness-text",
+        "canonical_object_ids": [
+          "pauline-suffering-weakness-disability-healing-power-and-apostolic-legitimacy"
+        ]
+      },
+      {
+        "title": "Galatians and Romans",
+        "author": "Beverly Roberts Gaventa",
+        "publisher": "Cambridge University Press",
+        "year": 2020,
+        "locator": "The New Cambridge Companion to St. Paul, chapter 5",
+        "url": "https://www.cambridge.org/core/books/new-cambridge-companion-to-st-paul/galatians-and-romans/439561D0587775DEC6E3E6DF74DC1DD5",
+        "source_type": "academic-book",
+        "supports": [
+          "distinct-pauline-metaphor-networks",
+          "stoicheia-and-enslavement",
+          "creation-groaning-and-bodily-adoption"
+        ],
+        "notes": "Letter comparison that preserves distinct occasions and arguments.",
+        "id": "gaventa-galatians-romans",
+        "canonical_object_ids": [
+          "pauline-kinship-guardianship-slavery-and-inheritance"
+        ]
+      },
+      {
+        "title": "Genesis 12; 15; 17; 21 in Hebrew and Greek textual traditions",
+        "author": "",
+        "publisher": "New English Translation of the Septuagint",
+        "year": 2007,
+        "locator": "Genesis 12:1-3; 15:1-6; 17:1-8; 21:8-12",
+        "url": "https://ccat.sas.upenn.edu/nets/edition/",
+        "source_type": "scripture",
+        "supports": [
+          "abrahamic-seed-and-inheritance",
+          "redemption-adoption-and-spirit",
+          "distinct-pauline-metaphor-networks"
+        ],
+        "notes": "Scriptural comparison; Paul's rereading does not exhaust Genesis or Jewish interpretation.",
+        "id": "genesis-inheritance-text",
+        "canonical_object_ids": [
+          "pauline-kinship-guardianship-slavery-and-inheritance"
+        ]
+      },
+      {
+        "title": "Slavery in Early Christianity",
+        "author": "Jennifer A. Glancy",
+        "publisher": "Oxford University Press",
+        "year": 2002,
+        "locator": "chapters 1-3; enslaved bodies, Pauline communities, and metaphor",
+        "url": "https://doi.org/10.1093/0195136098.001.0001",
+        "source_type": "academic-book",
+        "supports": [
+          "galatians-status-triad",
+          "slave-son-heir-and-real-slavery",
+          "romans-spirit-adoption-and-fear",
+          "coheirs-suffering-and-safeguarding"
+        ],
+        "notes": "Historical and ethical control against euphemizing slavery or separating metaphor from bodily domination.",
+        "id": "glancy-slavery",
+        "canonical_object_ids": [
+          "pauline-kinship-guardianship-slavery-and-inheritance"
+        ]
+      },
+      {
+        "title": "Ill or Ill-Treated? Conflict and Persecution as the Context of Paul's Original Ministry in Galatia",
+        "author": "A. J. Goddard and S. A. Cummins",
+        "publisher": "Journal for the Study of the New Testament",
+        "year": 1993,
+        "locator": "16.5, pp. 93-112",
+        "url": "https://doi.org/10.1177/0142064X9301605205",
+        "source_type": "journal-article",
+        "supports": [
+          "galatians-weakness-route"
+        ],
+        "notes": "Illustrates the contested interpretation of Galatians 4:13-15 and the danger of diagnostic certainty.",
+        "id": "goddard-cummins-galatia",
+        "canonical_object_ids": [
+          "roman-galatia-regions-roads-cities-and-audience"
+        ]
+      },
+      {
+        "title": "Ill or Ill-Treated? Conflict and Persecution as the Context of Paul's Original Ministry in Galatia",
+        "author": "A. J. Goddard and S. A. Cummins",
+        "publisher": "Journal for the Study of the New Testament",
+        "year": 1993,
+        "locator": "16.5, pp. 93-112",
+        "url": "https://doi.org/10.1177/0142064X9301605205",
+        "source_type": "journal-article",
+        "supports": [
+          "galatia-weakness-limits"
+        ],
+        "notes": "Demonstrates that even the illness reading and its implications are contested.",
+        "id": "goddard-cummins-ill-treated",
+        "canonical_object_ids": [
+          "galatia"
+        ]
+      },
+      {
+        "title": "Guardians, not Taskmasters: The Cultural Resonances of Paul's Metaphor in Galatians 4.1-2",
+        "author": "John K. Goodrich",
+        "publisher": "Journal for the Study of the New Testament",
+        "year": 2010,
+        "locator": "32.3, pp. 251-284",
+        "url": "https://doi.org/10.1177/0142064X09357677",
+        "source_type": "journal-article",
+        "supports": [
+          "minor-heir-analogy",
+          "guardians-and-estate-managers",
+          "father-appointed-time",
+          "distinct-pauline-metaphor-networks"
+        ],
+        "notes": "Argues for Roman guardianship resonances while engaging Exodus-oriented readings.",
+        "id": "goodrich-guardians",
+        "canonical_object_ids": [
+          "pauline-kinship-guardianship-slavery-and-inheritance"
+        ]
+      },
+      {
+        "title": "As Long as the Heir Is a Child: The Rhetoric of Inheritance in Galatians 4:1-2 and P.Ryl. 2.153",
+        "author": "John K. Goodrich",
+        "publisher": "Novum Testamentum",
+        "year": 2013,
+        "locator": "55.1, pp. 61-76",
+        "url": "https://brill.com/view/journals/nt/55/1/article-p61_6.xml",
+        "source_type": "journal-article",
+        "supports": [
+          "minor-heir-analogy",
+          "guardians-and-estate-managers",
+          "father-appointed-time"
+        ],
+        "notes": "Uses a 169 CE papyrus as a later documentary parallel, not a contemporary Galatian record.",
+        "id": "goodrich-heir-child",
+        "canonical_object_ids": [
+          "pauline-kinship-guardianship-slavery-and-inheritance"
+        ]
+      },
+      {
+        "title": "Slaves in the New Testament: Literary, Social, and Moral Dimensions",
+        "author": "J. Albert Harrill",
+        "publisher": "Fortress Press",
+        "year": 2006,
+        "locator": "Pauline slavery language, social history, and moral reception",
+        "url": "https://www.jstor.org/stable/j.ctv1hqdhgf",
+        "source_type": "academic-book",
+        "supports": [
+          "paidagogos-household-role",
+          "galatians-status-triad",
+          "slave-son-heir-and-real-slavery",
+          "romans-spirit-adoption-and-fear"
+        ],
+        "notes": "Social and literary analysis of New Testament slavery discourse.",
+        "id": "harrill-slaves",
+        "canonical_object_ids": [
+          "pauline-kinship-guardianship-slavery-and-inheritance"
+        ]
+      },
+      {
+        "title": "If Sons, Then Heirs: A Study of Kinship and Ethnicity in the Letters of Paul",
+        "author": "Caroline Johnson Hodge",
+        "publisher": "Oxford University Press",
+        "year": 2007,
+        "locator": "chapters 3-6; gentile origins, Abrahamic descent, adoption, and Romans 8",
+        "url": "https://doi.org/10.1093/acprof:oso/9780195182163.001.0001",
+        "source_type": "academic-book",
+        "supports": [
+          "baptismal-kinship-and-clothing",
+          "galatians-status-triad",
+          "abrahamic-seed-and-inheritance",
+          "born-of-woman-born-under-torah",
+          "redemption-adoption-and-spirit",
+          "roman-adoption-bounded-comparison",
+          "romans-spirit-adoption-and-fear",
+          "coheirs-suffering-and-safeguarding",
+          "distinct-pauline-metaphor-networks"
+        ],
+        "notes": "Kinship and ethnicity analysis that resists treating Pauline universality as erasure of Jewish and gentile difference.",
+        "id": "hodge-sons-heirs",
+        "canonical_object_ids": [
+          "pauline-kinship-guardianship-slavery-and-inheritance"
+        ]
+      },
+      {
+        "title": "Isaiah 7",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "isaiah-7",
+        "canonical_object_ids": [
+          "birth-of-jesus"
+        ]
+      },
+      {
+        "title": "Isaiah 9",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "isaiah-9",
+        "canonical_object_ids": [
+          "birth-of-jesus"
+        ]
+      },
+      {
+        "title": "Acts: An Exegetical Commentary",
+        "author": "Craig S. Keener",
+        "publisher": "Baker Academic",
+        "year": 2012,
+        "locator": "Acts 9, 14, and 16, volumes 2-3",
+        "url": "https://bakeracademic.com/p/acts-craig-s-keener/230945",
+        "source_type": "academic-book",
+        "supports": [
+          "acts-damascus-blindness-recovery",
+          "acts-lystra-stoning-recovery",
+          "acts-philippi-beating-custody-protest",
+          "acts-letter-chronology-control"
+        ],
+        "notes": "Extensive historical and narrative commentary; Acts' portrait remains distinct from Paul's letters.",
+        "id": "keener-acts-suffering",
+        "canonical_object_ids": [
+          "pauline-suffering-weakness-disability-healing-power-and-apostolic-legitimacy"
+        ]
+      },
+      {
+        "title": "Galatians",
+        "author": "Craig S. Keener",
+        "publisher": "Cambridge University Press",
+        "year": 2019,
+        "locator": "Author, provenance, date, and destination",
+        "url": "https://doi.org/10.1017/9781108565875",
+        "source_type": "academic-book",
+        "supports": [
+          "acts-regional-wording",
+          "galatians-destination",
+          "galatian-audience-diversity",
+          "galatians-weakness-route",
+          "acts-galatians-comparison"
+        ],
+        "notes": "Reviews north and south arguments and their dependence on Acts.",
+        "id": "keener-galatians-destination",
+        "canonical_object_ids": [
+          "roman-galatia-regions-roads-cities-and-audience"
+        ]
+      },
+      {
+        "title": "Adoption in the Roman World",
+        "author": "Hugh Lindsay",
+        "publisher": "Cambridge University Press",
+        "year": 2009,
+        "locator": "chapters 4-7 and 11-16; procedure, inheritance, and political adoption",
+        "url": "https://doi.org/10.1017/CBO9780511657399",
+        "source_type": "academic-book",
+        "supports": [
+          "roman-adoption-bounded-comparison",
+          "redemption-adoption-and-spirit"
+        ],
+        "notes": "Roman adoption synthesis used to prevent reduction to one procedure, class, or modern family model.",
+        "id": "lindsay-roman-adoption",
+        "canonical_object_ids": [
+          "pauline-kinship-guardianship-slavery-and-inheritance"
+        ]
+      },
+      {
+        "title": "Galatians",
+        "author": "Bruce W. Longenecker",
+        "publisher": "Cambridge University Press",
+        "year": 2003,
+        "locator": "The Cambridge Companion to St Paul, chapter 4",
+        "url": "https://www.cambridge.org/core/books/cambridge-companion-to-st-paul/galatians/405399A77EA4FE97DF9270CB98D95903",
+        "source_type": "academic-book",
+        "supports": [
+          "claims",
+          "interpretive-notes",
+          "historical-context"
+        ],
+        "notes": "Concise orientation to audience, crisis, rhetoric, and theology.",
+        "id": "longenecker-galatians",
+        "canonical_object_ids": [
+          "galatians"
+        ]
+      },
+      {
+        "title": "Luke 1-2",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "luke-1-2",
+        "canonical_object_ids": [
+          "birth-of-jesus"
+        ]
+      },
+      {
+        "title": "Uncut Galatians: Intersex/Eunuch",
+        "author": "Joseph A. Marchal",
+        "publisher": "Oxford University Press",
+        "year": 2019,
+        "locator": "Appalling Bodies, chapter 3, pp. 68-112",
+        "url": "https://academic.oup.com/book/32366/chapter-abstract/268640211",
+        "source_type": "academic-book",
+        "supports": [
+          "claims",
+          "interpretive-notes",
+          "later-christian-reception"
+        ],
+        "notes": "Queer and intersex-critical analysis of bodies, circumcision, castration, and Galatians 3:28.",
+        "id": "marchal-uncut",
+        "canonical_object_ids": [
+          "galatians"
+        ]
+      },
+      {
+        "title": "Galatians: A New Translation with Introduction and Commentary",
+        "author": "J. Louis Martyn",
+        "publisher": "Yale University Press",
+        "year": 2004,
+        "locator": "Anchor Yale Bible 33A",
+        "url": "https://yalebooks.yale.edu/9780300139853/galatians/",
+        "source_type": "academic-book",
+        "supports": [
+          "claims",
+          "interpretive-notes",
+          "literary-context",
+          "historical-context"
+        ],
+        "notes": "Major apocalyptic commentary; used alongside competing views.",
+        "id": "martyn-galatians",
+        "canonical_object_ids": [
+          "galatians",
+          "pauline-kinship-guardianship-slavery-and-inheritance"
+        ],
+        "canonical_source_variants": [
+          {
+            "title": "Galatians: A New Translation with Introduction and Commentary",
+            "author": "J. Louis Martyn",
+            "publisher": "Yale University Press",
+            "year": 2004,
+            "locator": "Anchor Yale Bible 33A",
+            "url": "https://yalebooks.yale.edu/9780300139853/galatians/",
+            "source_type": "academic-book",
+            "supports": [
+              "claims",
+              "interpretive-notes",
+              "literary-context",
+              "historical-context"
+            ],
+            "notes": "Major apocalyptic commentary; used alongside competing views.",
+            "id": "martyn-galatians"
+          },
+          {
+            "title": "Galatians: A New Translation with Introduction and Commentary",
+            "author": "J. Louis Martyn",
+            "publisher": "Yale University Press",
+            "year": 2004,
+            "locator": "Galatians 3:23-4:11",
+            "url": "https://yalebooks.yale.edu/9780300139853/galatians/",
+            "source_type": "academic-book",
+            "supports": [
+              "galatians-custody-before-faith",
+              "torah-temporality-and-anti-jewish-limits",
+              "stoicheia-and-enslavement",
+              "born-of-woman-born-under-torah",
+              "redemption-adoption-and-spirit",
+              "distinct-pauline-metaphor-networks"
+            ],
+            "notes": "Apocalyptic commentary used alongside Roman-law, scriptural, and social-critical readings.",
+            "id": "martyn-galatians"
+          }
+        ]
+      },
+      {
+        "title": "Galatians",
+        "author": "J. Louis Martyn",
+        "publisher": "Yale University Press",
+        "year": 2004,
+        "locator": "Galatians 1, 4, and 6",
+        "url": "https://yalebooks.yale.edu/book/9780300139853/galatians/",
+        "source_type": "academic-book",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Major commentary on the letter's crisis, rhetoric, and prayer language.",
+        "id": "martyn-galatians-prayer",
+        "canonical_object_ids": [
+          "pauline-prayer-thanksgiving-intercession-lament-groaning-joy-peace-hope-benediction-blessing-and-communal-memory"
+        ]
+      },
+      {
+        "title": "Galatians",
+        "author": "J. Louis Martyn",
+        "publisher": "Yale University Press",
+        "year": 1997,
+        "locator": "Anchor Yale Bible 33A, introduction and Galatians 1:2; 3:1; 4:13-15",
+        "url": "https://yalebooks.yale.edu/book/9780300139853/galatians/",
+        "source_type": "academic-book",
+        "supports": [
+          "galatia-letter-destination",
+          "galatia-weakness-limits"
+        ],
+        "notes": "Major critical commentary representing a North-Galatian reconstruction while documenting uncertainty.",
+        "id": "martyn-galatians-region",
+        "canonical_object_ids": [
+          "galatia"
+        ]
+      },
+      {
+        "title": "Fleshing Out the Strength of Weakness: Intercorporeality in the Theological Discourse on Disability",
+        "author": "Alexander Massmann",
+        "publisher": "Harvard Theological Review",
+        "year": 2024,
+        "locator": "117.2, pages 391-416; 1 Corinthians 1-2 and 12; 2 Corinthians 4 and 12",
+        "url": "https://doi.org/10.1017/S0017816024000063",
+        "source_type": "journal-article",
+        "supports": [
+          "cross-power-status-reversal",
+          "jars-body-metaphor-distinction",
+          "thorn-diagnosis-limit",
+          "power-in-weakness-not-coercion",
+          "signs-authority-accountability"
+        ],
+        "notes": "Open-access peer-reviewed disability-theology reading that also identifies risks in weakness and healing discourse.",
+        "id": "massmann-weakness-disability",
+        "canonical_object_ids": [
+          "pauline-suffering-weakness-disability-healing-power-and-apostolic-legitimacy"
+        ]
+      },
+      {
+        "title": "Matthew 1-2",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "matthew-1-2",
+        "canonical_object_ids": [
+          "birth-of-jesus"
+        ]
+      },
+      {
+        "title": "Micah 5",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "micah-5",
+        "canonical_object_ids": [
+          "birth-of-jesus"
+        ]
+      },
+      {
+        "title": "A New English Translation of the Septuagint",
+        "author": "Albert Pietersma and Benjamin G. Wright, eds.",
+        "publisher": "Oxford University Press",
+        "year": 2007,
+        "locator": "Genesis, Leviticus, Deuteronomy, Habakkuk, Isaiah",
+        "url": "https://ccat.sas.upenn.edu/nets/edition/",
+        "source_type": "ancient-primary-source",
+        "supports": [
+          "intertextuality",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Greek scriptural comparanda; translations and textual forms require review.",
+        "id": "nets-lxx",
+        "canonical_object_ids": [
+          "galatians"
+        ]
+      },
+      {
+        "title": "Thanksgiving and the Gospel in Paul",
+        "author": "P. T. O'Brien",
+        "publisher": "Cambridge University Press",
+        "year": 1974,
+        "locator": "New Testament Studies 21, pp. 144-155",
+        "url": "https://doi.org/10.1017/S0028688500008833",
+        "source_type": "journal-article",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Examines epistolary, didactic, and paraenetic functions of Pauline thanksgivings and Galatians' missing thanksgiving.",
+        "id": "obrien-thanksgiving-gospel",
+        "canonical_object_ids": [
+          "pauline-prayer-thanksgiving-intercession-lament-groaning-joy-peace-hope-benediction-blessing-and-communal-memory"
+        ]
+      },
+      {
+        "title": "Philippians 2",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "philippians-2",
+        "canonical_object_ids": [
+          "birth-of-jesus"
+        ]
+      },
+      {
+        "title": "Philippians 1:12-3:21",
+        "author": "Paul and Timothy",
+        "publisher": "Society of Biblical Literature",
+        "year": 2010,
+        "locator": "Philippians 1:12-3:21",
+        "url": "https://www.sblgnt.com/download/",
+        "source_type": "scripture",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Primary Greek prison-letter evidence for custody, possible death, suffering, illness, recovery, loss, and hope.",
+        "id": "philippians-prison-text",
+        "canonical_object_ids": [
+          "pauline-suffering-weakness-disability-healing-power-and-apostolic-legitimacy"
+        ]
+      },
+      {
+        "title": "P.Ryl. II 153: Will of a Hermopolite",
+        "author": "",
+        "publisher": "Duke Databank of Documentary Papyri via Universite Grenoble Alpes",
+        "year": 169,
+        "locator": "P.Ryl. II 153, dated 27 March 169 CE",
+        "url": "https://droitromain.univ-grenoble-alpes.fr/Negotia/Ryl1_DDBDP.gr.html",
+        "source_type": "ancient-primary-source",
+        "supports": [
+          "guardians-and-estate-managers",
+          "father-appointed-time"
+        ],
+        "notes": "Later Egyptian documentary comparison for inheritance administration; not direct evidence of the Galatian assemblies' local law.",
+        "id": "pryl-2-153",
+        "canonical_object_ids": [
+          "pauline-kinship-guardianship-slavery-and-inheritance"
+        ]
+      },
+      {
+        "title": "Galatians Through the Centuries",
+        "author": "John Riches",
+        "publisher": "Wiley-Blackwell",
+        "year": 2008,
+        "locator": "Reception history",
+        "url": "https://onlinelibrary.wiley.com/doi/book/10.1002/9780470773956",
+        "source_type": "academic-book",
+        "supports": [
+          "later-christian-reception",
+          "interpretive-notes"
+        ],
+        "notes": "Reception history used to identify influential and harmful trajectories.",
+        "id": "riches-reception",
+        "canonical_object_ids": [
+          "galatians"
+        ]
+      },
+      {
+        "title": "Romans 8",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "romans-8",
+        "canonical_object_ids": [
+          "adoption",
+          "adoption-theme",
+          "sonship-theme"
+        ]
+      },
+      {
+        "title": "Romans 8:12-25",
+        "author": "Paul and Tertius as named scribe",
+        "publisher": "",
+        "year": null,
+        "locator": "Romans 8:12-25",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "abba-bilingual-prayer",
+          "romans-spirit-adoption-and-fear",
+          "coheirs-suffering-and-safeguarding",
+          "creation-groaning-and-bodily-adoption",
+          "distinct-pauline-metaphor-networks"
+        ],
+        "notes": "Primary Pauline textual witness; no modern translation is reproduced.",
+        "id": "romans-adoption-text",
+        "canonical_object_ids": [
+          "pauline-kinship-guardianship-slavery-and-inheritance"
+        ]
+      },
+      {
+        "title": "Adoption as Sons of God: An Exegetical Investigation into the Background of Huiothesia in the Pauline Corpus",
+        "author": "James M. Scott",
+        "publisher": "Mohr Siebeck",
+        "year": 1992,
+        "locator": "WUNT II 48; Galatians 4 and Romans 8",
+        "url": "https://www.mohrsiebeck.com/en/book/adoption-as-sons-of-god-9783161574603/",
+        "source_type": "academic-book",
+        "supports": [
+          "abrahamic-seed-and-inheritance",
+          "redemption-adoption-and-spirit",
+          "roman-adoption-bounded-comparison",
+          "romans-spirit-adoption-and-fear",
+          "distinct-pauline-metaphor-networks"
+        ],
+        "notes": "Scriptural and exegetical account used alongside Roman-law and kinship approaches.",
+        "id": "scott-adoption",
+        "canonical_object_ids": [
+          "pauline-kinship-guardianship-slavery-and-inheritance"
+        ]
+      },
+      {
+        "title": "2 Corinthians 1:3-11; 4:7-6:13; 10:1-13:10",
+        "author": "Paul and Timothy",
+        "publisher": "Society of Biblical Literature",
+        "year": 2010,
+        "locator": "2 Corinthians 1:3-11; 4:7-6:13; 10:1-13:10",
+        "url": "https://www.sblgnt.com/download/",
+        "source_type": "scripture",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Primary Greek evidence for affliction, comfort, weakness, boasting, visions, thorn, signs, and authority.",
+        "id": "second-corinthians-suffering-text",
+        "canonical_object_ids": [
+          "pauline-suffering-weakness-disability-healing-power-and-apostolic-legitimacy"
+        ]
+      },
+      {
+        "title": "Canonical historical orientation for Sonship Theme",
+        "author": "",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "id": "sonship-theme-historical-orientation",
+        "canonical_object_ids": [
+          "sonship-theme"
+        ]
+      },
+      {
+        "title": "A Disabling Gospel",
+        "author": "Isaac T. Soon",
+        "publisher": "Oxford University Press",
+        "year": 2023,
+        "locator": "A Disabled Apostle, chapter 7, pp. 129-151",
+        "url": "https://academic.oup.com/book/46798/chapter/413428553",
+        "source_type": "academic-book",
+        "supports": [
+          "claims",
+          "interpretive-notes",
+          "later-christian-reception"
+        ],
+        "notes": "Disability-critical analysis of circumcision, impairment, and Pauline rhetoric.",
+        "id": "soon-disabled-apostle",
+        "canonical_object_ids": [
+          "galatians",
+          "pauline-suffering-weakness-disability-healing-power-and-apostolic-legitimacy"
+        ],
+        "canonical_source_variants": [
+          {
+            "title": "A Disabling Gospel",
+            "author": "Isaac T. Soon",
+            "publisher": "Oxford University Press",
+            "year": 2023,
+            "locator": "A Disabled Apostle, chapter 7, pp. 129-151",
+            "url": "https://academic.oup.com/book/46798/chapter/413428553",
+            "source_type": "academic-book",
+            "supports": [
+              "claims",
+              "interpretive-notes",
+              "later-christian-reception"
+            ],
+            "notes": "Disability-critical analysis of circumcision, impairment, and Pauline rhetoric.",
+            "id": "soon-disabled-apostle"
+          },
+          {
+            "title": "A Disabled Apostle: Impairment and Disability in the Letters of Paul",
+            "author": "Isaac T. Soon",
+            "publisher": "Oxford University Press",
+            "year": 2023,
+            "locator": "chapters 1-4 and epilogue; Pauline impairment and disability method",
+            "url": "https://doi.org/10.1093/oso/9780192885241.001.0001",
+            "source_type": "academic-book",
+            "supports": [
+              "categories-remain-distinct",
+              "corinthian-presence-speech-contest",
+              "thorn-diagnosis-limit",
+              "galatians-illness-eyes-limit",
+              "acts-letter-chronology-control"
+            ],
+            "notes": "Disability-studies analysis that critiques assumed able-bodiedness while controlling retrospective diagnosis.",
+            "id": "soon-disabled-apostle"
+          }
+        ]
+      },
+      {
+        "title": "Paul and the Gentile Problem",
+        "author": "Matthew Thiessen",
+        "publisher": "Oxford University Press",
+        "year": 2016,
+        "locator": "Galatians; circumcision, Torah, and gentile identity",
+        "url": "https://academic.oup.com/book/10657",
+        "source_type": "academic-book",
+        "supports": [
+          "claims",
+          "interpretive-notes",
+          "second-temple-context"
+        ],
+        "notes": "Paul-within-Judaism account used alongside competing constructions.",
+        "id": "thiessen-gentile-problem",
+        "canonical_object_ids": [
+          "galatians",
+          "pauline-kinship-guardianship-slavery-and-inheritance"
+        ],
+        "canonical_source_variants": [
+          {
+            "title": "Paul and the Gentile Problem",
+            "author": "Matthew Thiessen",
+            "publisher": "Oxford University Press",
+            "year": 2016,
+            "locator": "Galatians; circumcision, Torah, and gentile identity",
+            "url": "https://academic.oup.com/book/10657",
+            "source_type": "academic-book",
+            "supports": [
+              "claims",
+              "interpretive-notes",
+              "second-temple-context"
+            ],
+            "notes": "Paul-within-Judaism account used alongside competing constructions.",
+            "id": "thiessen-gentile-problem"
+          },
+          {
+            "title": "Paul and the Gentile Problem",
+            "author": "Matthew Thiessen",
+            "publisher": "Oxford University Press",
+            "year": 2016,
+            "locator": "Galatians; gentile circumcision, Torah, Abraham, and identity",
+            "url": "https://academic.oup.com/book/10657",
+            "source_type": "academic-book",
+            "supports": [
+              "torah-temporality-and-anti-jewish-limits",
+              "baptismal-kinship-and-clothing",
+              "galatians-status-triad",
+              "born-of-woman-born-under-torah"
+            ],
+            "notes": "Paul-within-Judaism control against universalizing gentile-directed Torah polemic.",
+            "id": "thiessen-gentile-problem"
+          }
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "adoption",
+        "type": "theology",
+        "title": "Adoption",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.91
+      },
+      {
+        "id": "adoption-theme",
+        "type": "theme",
+        "title": "Adoption Theme",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.91
+      },
+      {
+        "id": "birth-of-jesus",
+        "type": "event",
+        "title": "Birth of Jesus",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.92
+      },
+      {
+        "id": "galatia",
+        "type": "place",
+        "title": "Roman and Ethnic Galatia",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.915
+      },
+      {
+        "id": "galatians",
+        "type": "book",
+        "title": "Galatians",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.943
+      },
+      {
+        "id": "pauline-kinship-guardianship-slavery-and-inheritance",
+        "type": "cultural_background",
+        "title": "Pauline Kinship, Guardianship, Slavery, and Inheritance",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.978
+      },
+      {
+        "id": "pauline-prayer-thanksgiving-intercession-lament-groaning-joy-peace-hope-benediction-blessing-and-communal-memory",
+        "type": "cultural_background",
+        "title": "Pauline Prayer, Thanksgiving, Intercession, Lament, Groaning, Joy, Peace, Hope, Benediction, Blessing, and Communal Memory",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.869
+      },
+      {
+        "id": "pauline-suffering-weakness-disability-healing-power-and-apostolic-legitimacy",
+        "type": "cultural_background",
+        "title": "Pauline Suffering, Weakness, Disability, Healing, Power, and Apostolic Legitimacy",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.959
+      },
+      {
+        "id": "roman-galatia-regions-roads-cities-and-audience",
+        "type": "cultural_background",
+        "title": "Roman Galatia: Regions, Roads, Cities, and Audience Reconstruction",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.937
+      },
+      {
+        "id": "sonship-theme",
+        "type": "theme",
+        "title": "Sonship Theme",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.91
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "16a717539756dce3c37f18dc3ea58e1c737c106da2bae422fbc18061d8cff400",
+  "evidence_hash_version": "2"
+}

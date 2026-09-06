@@ -16,6 +16,8 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
+from framework.commentary.recovery import build_recovery_ledger
+
 
 REASON_TAXONOMY = {
     "CROSS_BOOK_PARENT_REUSE": "CROSS_BOOK_PARENT_REUSE",
@@ -232,17 +234,19 @@ def adjudicate(
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("command", choices=("build", "adjudicate"))
+    parser.add_argument("command", choices=("build", "adjudicate", "ledger"))
     parser.add_argument("--scale-root", type=Path, required=True)
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--manifest", type=Path)
+    parser.add_argument("--base-adjudication", type=Path)
+    parser.add_argument("--final-four-adjudication", type=Path)
     parser.add_argument("--batch-id", default="batch-007")
     parser.add_argument("--queue-output", type=Path)
     parser.add_argument("--preflight-report", type=Path)
     args = parser.parse_args()
     if args.command == "build":
         result = build_inventory(args.scale_root.resolve(), args.output.resolve())
-    else:
+    elif args.command == "adjudicate":
         if args.manifest is None:
             parser.error("--manifest is required for adjudicate")
         result = adjudicate(
@@ -253,12 +257,19 @@ def main() -> int:
             args.queue_output.resolve() if args.queue_output else None,
             args.preflight_report.resolve() if args.preflight_report else None,
         )
+    else:
+        result = build_recovery_ledger(
+            args.scale_root.resolve(),
+            args.output.resolve(),
+            base_adjudication=args.base_adjudication.resolve() if args.base_adjudication else None,
+            final_four_adjudication=args.final_four_adjudication.resolve() if args.final_four_adjudication else None,
+        )
     print(json.dumps({
-        "status": result.get("adjudication_status"),
+        "status": result.get("adjudication_status") or result.get("schema_version"),
         "raw_quarantine_records": result.get("raw_quarantine_records"),
-        "unique_quarantined_chapters": result.get("unique_quarantined_chapters"),
-        "adjudication_counts": result.get("adjudication_counts"),
-        "recoverable_count": len(result.get("recoverable_references", [])),
+        "unique_quarantined_chapters": result.get("unique_quarantined_chapters") or result.get("historical_quarantine_count"),
+        "adjudication_counts": result.get("adjudication_counts") or result.get("counts"),
+        "recoverable_count": len(result.get("recoverable_references", [])) or (result.get("counts") or {}).get("prior_quarantine_recoverable"),
         "output": str(args.output),
     }, indent=2, sort_keys=True))
     return 0

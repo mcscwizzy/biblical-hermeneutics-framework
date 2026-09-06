@@ -11,6 +11,7 @@ python -m framework.commentary.orchestrator next
 python -m framework.commentary.orchestrator run --model luna --effort high
 python -m framework.commentary.orchestrator resume
 python -m framework.commentary.orchestrator remediate --model terra --effort medium
+python -m framework.commentary.orchestrator reconcile-recovery-blocker
 ```
 
 State is stored at
@@ -67,6 +68,28 @@ python -m framework.commentary.orchestrator clear-blocker --resolution "reviewed
 
 Clearing a blocker never retries a stage implicitly. Run `validate` first, then
 `next`, `run`, or `resume` as appropriate.
+
+Historical quarantine recovery is stored at
+`.bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/quarantine-recovery-ledger.json`.
+The ledger is rebuilt from the reviewed adjudication artifacts with:
+
+```bash
+python -m tools.commentary_v11_quarantine_recovery ledger \
+  --scale-root .bhf-data/bhf-commentary-candidates/commentary-v1.1-scale \
+  --output .bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/quarantine-recovery-ledger.json
+```
+
+Its source hashes and chapter identities are validated before selection. A
+`RECOVERABLE` chapter re-enters ordinary candidate selection only while it is
+unconsumed; locked chapters remain excluded, and unresolved dispositions stay
+blocked. Recovery never bypasses current evidence preflight, routing, hashes,
+provenance, or Terra suppression controls. The Batch 008 empty-pool blocker
+has a derived reconciliation command; it clears only when the blocker’s
+affected set exactly matches the ledger’s pending recoverable set:
+
+```bash
+python -m framework.commentary.orchestrator reconcile-recovery-blocker
+```
 
 ### Bounded prose remediation
 

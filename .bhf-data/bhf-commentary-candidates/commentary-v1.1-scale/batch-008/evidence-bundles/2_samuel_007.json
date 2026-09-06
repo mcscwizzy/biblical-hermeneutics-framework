@@ -1,0 +1,2825 @@
+{
+  "passage_ref": "2 Samuel 7",
+  "entities": {
+    "people": [
+      {
+        "id": "david",
+        "title": "David",
+        "type": "person",
+        "aliases": [
+          "who is david",
+          "tell me about david",
+          "why is david important"
+        ],
+        "metadata": {
+          "summary": "Israel's shepherd king, psalmist, and covenant figure whose reign shapes the royal line and messianic hope.",
+          "importance": 97,
+          "retrieval_score": 0.917,
+          "ancient_names": [],
+          "modern_identification": "",
+          "region": "",
+          "terrain": "",
+          "elevation": null,
+          "archaeology": [],
+          "related_passages": [
+            "1 Samuel 16:1-13",
+            "1 Samuel 17:1-58",
+            "2 Samuel 5:1-5",
+            "2 Samuel 7:1-29",
+            "Psalms 51:1-19",
+            "Psalms 110:1-7",
+            "Acts 13:22-23"
+          ]
+        }
+      },
+      {
+        "id": "solomon",
+        "title": "Solomon",
+        "type": "person",
+        "aliases": [
+          "who is solomon",
+          "tell me about solomon",
+          "why is solomon important"
+        ],
+        "metadata": {
+          "summary": "Solomon belongs to Israel's monarchy or royal transition and helps trace kingship, judgment, and messianic hope.",
+          "importance": 70,
+          "retrieval_score": 0.89,
+          "ancient_names": [],
+          "modern_identification": "",
+          "region": "",
+          "terrain": "",
+          "elevation": null,
+          "archaeology": [],
+          "related_passages": [
+            "1 Samuel 16:1-13",
+            "2 Samuel 7:8-16",
+            "1 Kings 6:1-14",
+            "Psalms 2:1-12"
+          ]
+        }
+      }
+    ],
+    "places": [],
+    "groups": [],
+    "events": [
+      {
+        "id": "annunciation-to-mary",
+        "title": "Annunciation to Mary",
+        "type": "event",
+        "aliases": [
+          "annunciation",
+          "gabriel visits mary",
+          "luke 1 mary",
+          "announcement to mary"
+        ],
+        "metadata": {
+          "summary": "Gabriel announces to Mary that she will bear Jesus, the Son of David and Son of God.",
+          "importance": 88,
+          "retrieval_score": 0.908,
+          "ancient_names": [],
+          "modern_identification": "",
+          "region": "",
+          "terrain": "",
+          "elevation": null,
+          "archaeology": [],
+          "related_passages": [
+            "Luke 1:26-38",
+            "2 Samuel 7:12-16",
+            "Isaiah 7:14",
+            "Matthew 1:18-25"
+          ]
+        }
+      },
+      {
+        "id": "davidic-covenant",
+        "title": "Davidic Covenant",
+        "type": "event",
+        "aliases": [
+          "what happened in davidic covenant",
+          "tell me about davidic covenant",
+          "why is davidic covenant important"
+        ],
+        "metadata": {
+          "summary": "God promises David a lasting house, kingdom, and throne, shaping Israel's royal hope.",
+          "importance": 100,
+          "retrieval_score": 0.94,
+          "ancient_names": [],
+          "modern_identification": "",
+          "region": "",
+          "terrain": "",
+          "elevation": null,
+          "archaeology": [],
+          "related_passages": [
+            "2 Samuel 7:1-17",
+            "2 Samuel 7:18-29",
+            "Psalms 2:1-12",
+            "Psalms 89:1-37",
+            "Isaiah 9:1-7",
+            "Jeremiah 23:1-6",
+            "Luke 1:30-33",
+            "Revelation 5:5-10"
+          ]
+        }
+      },
+      {
+        "id": "solomon-builds-the-temple",
+        "title": "Solomon Builds the Temple",
+        "type": "event",
+        "aliases": [
+          "what happened in solomon builds the temple",
+          "tell me about solomon builds the temple",
+          "why is solomon builds the temple important"
+        ],
+        "metadata": {
+          "summary": "Solomon Builds the Temple is a royal or kingdom event that shapes Israel's monarchy, temple life, or royal hope.",
+          "importance": 80,
+          "retrieval_score": 0.9,
+          "ancient_names": [],
+          "modern_identification": "",
+          "region": "",
+          "terrain": "",
+          "elevation": null,
+          "archaeology": [],
+          "related_passages": [
+            "2 Samuel 7:1-17",
+            "1 Kings 6:1-14",
+            "2 Kings 25:8-17",
+            "2 Chronicles 5:1-14"
+          ]
+        }
+      }
+    ],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "1-chronicles:interpretive_note:4",
+      "claim": "Chronicles states that David's warfare and bloodshed disqualify him from building the temple, an explanation not given in Nathan's oracle in 2 Samuel 7; interpreters should preserve both presentations.",
+      "category": "culture",
+      "source_ids": [
+        "1-chronicles-1-29",
+        "knoppers-first-chronicles-10-29"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "2 Samuel 7:1-17"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "1-chronicles",
+        "parent_title": "1 Chronicles",
+        "parent_type": "book",
+        "object_importance": 88,
+        "retrieval_score": 0.908,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "textually_explicit",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "canonical-connection",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "INTERTEXTUAL_REUSE",
+        "presentation_role": "dig_deeper",
+        "overview_priority": 0
+      }
+    },
+    {
+      "id": "2-samuel:interpretive_note:0",
+      "claim": "Second Samuel 7 promises an enduring Davidic house, includes father-son relationship and discipline for wrongdoing, and withholds temple building from David; later texts develop how enduring promise and historical judgment relate.",
+      "category": "culture",
+      "source_ids": [
+        "2-samuel-1-24",
+        "tsumura-second-samuel",
+        "anderson-second-samuel"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "2 Samuel 7:1-29"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "2-samuel",
+        "parent_title": "2 Samuel",
+        "parent_type": "book",
+        "object_importance": 95,
+        "retrieval_score": 0.915,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "canonical-connection",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 102
+      }
+    },
+    {
+      "id": "2-samuel:interpretive_note:4",
+      "claim": "Archaeology supports the existence of a later Davidic dynasty but does not establish one uncontested size, administration, or chronology for David's kingdom.",
+      "category": "culture",
+      "source_ids": [
+        "anderson-second-samuel",
+        "zondervan-illustrated-historical-books-backgrounds"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "2 Samuel 5-8"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "2-samuel",
+        "parent_title": "2 Samuel",
+        "parent_type": "book",
+        "object_importance": 95,
+        "retrieval_score": 0.915,
+        "passage_relationship": "direct",
+        "anchor_specificity": "chapter",
+        "verse_distance": 200,
+        "certainty": "probable",
+        "dispute_status": "archaeological_uncertainty",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "historical-context",
+        "field": "",
+        "applicability_scope": "section",
+        "anchor_source": "child",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 62
+      }
+    },
+    {
+      "id": "annunciation-to-mary:ancient_near_east_context:0",
+      "claim": "Birth announcements are known literary forms, while Luke frames this announcement through Israel's royal and prophetic hopes.",
+      "category": "culture",
+      "source_ids": [
+        "luke-1-26-38",
+        "2-samuel-7-12-16",
+        "isaiah-7-14",
+        "matthew-1-18-25",
+        "annunciation-to-mary-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "annunciation-to-mary"
+      ],
+      "passage_anchors": [
+        "2 Samuel 7:12-16"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "annunciation-to-mary",
+        "parent_title": "Annunciation to Mary",
+        "parent_type": "event",
+        "object_importance": 88,
+        "retrieval_score": 0.908,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 11,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "annunciation-to-mary:historical_context:0",
+      "claim": "The event belongs to first-century Jewish life under Roman rule, in the setting of Nazareth and Davidic expectation.",
+      "category": "history",
+      "source_ids": [
+        "luke-1-26-38",
+        "2-samuel-7-12-16",
+        "isaiah-7-14",
+        "matthew-1-18-25",
+        "annunciation-to-mary-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "annunciation-to-mary"
+      ],
+      "passage_anchors": [
+        "2 Samuel 7:12-16"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "annunciation-to-mary",
+        "parent_title": "Annunciation to Mary",
+        "parent_type": "event",
+        "object_importance": 88,
+        "retrieval_score": 0.908,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 11,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "christology:ancient_near_east_context:0",
+      "claim": "Ancient background for Christology includes covenant life, temple worship, royal ideology, wisdom teaching, and early church confession; the entry ties that world to 2 Samuel 7:8-16, Psalm 2:1-12, messiah-theme, and jesus without letting comparison replace the biblical witness.",
+      "category": "culture",
+      "source_ids": [
+        "2-samuel-7",
+        "psalm-2",
+        "isaiah-11",
+        "isaiah-53",
+        "luke-24",
+        "acts-2"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "2 Samuel 7:8-16"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "christology",
+        "parent_title": "Christology",
+        "parent_type": "theology",
+        "object_importance": 96,
+        "retrieval_score": 0.916,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 7,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "christology:historical_context:0",
+      "claim": "Christology is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness.",
+      "category": "history",
+      "source_ids": [
+        "2-samuel-7",
+        "psalm-2",
+        "isaiah-11",
+        "isaiah-53",
+        "luke-24",
+        "acts-2"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "2 Samuel 7:8-16"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "christology",
+        "parent_title": "Christology",
+        "parent_type": "theology",
+        "object_importance": 96,
+        "retrieval_score": 0.916,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 7,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "covenant-theme:ancient_near_east_context:0",
+      "claim": "Biblical covenants converse with treaty and grant patterns in the ancient Near East while keeping divine grace and holiness at the center.",
+      "category": "culture",
+      "source_ids": [
+        "genesis-9-12-15-17",
+        "exodus-19-24",
+        "2-samuel-7",
+        "jeremiah-31",
+        "hebrews-8-10",
+        "covenant-theme-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "2 Samuel 7:8-16"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "covenant-theme",
+        "parent_title": "Covenant Theme",
+        "parent_type": "theme",
+        "object_importance": 100,
+        "retrieval_score": 0.92,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 7,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "covenant-theme:hebraic_worldview:0",
+      "claim": "Covenant is a corporate relationship of oath, loyalty, blessing, memory, and responsibility before God.",
+      "category": "culture",
+      "source_ids": [
+        "genesis-9-12-15-17",
+        "exodus-19-24",
+        "2-samuel-7",
+        "jeremiah-31",
+        "hebrews-8-10",
+        "covenant-theme-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "2 Samuel 7:8-16"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "covenant-theme",
+        "parent_title": "Covenant Theme",
+        "parent_type": "theme",
+        "object_importance": 100,
+        "retrieval_score": 0.92,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 7,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "hebraic_worldview",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "covenant-theme:historical_context:0",
+      "claim": "Covenant language organizes the story of Noah, Abraham, Israel, David, and the new covenant in Christ.",
+      "category": "history",
+      "source_ids": [
+        "genesis-9-12-15-17",
+        "exodus-19-24",
+        "2-samuel-7",
+        "jeremiah-31",
+        "hebrews-8-10",
+        "covenant-theme-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "2 Samuel 7:8-16"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "covenant-theme",
+        "parent_title": "Covenant Theme",
+        "parent_type": "theme",
+        "object_importance": 100,
+        "retrieval_score": 0.92,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 7,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "covenant-theme:second_temple_context:0",
+      "claim": "After the exile, covenant identity became central to debates about purity, law, and hope.",
+      "category": "culture",
+      "source_ids": [
+        "genesis-9-12-15-17",
+        "exodus-19-24",
+        "2-samuel-7",
+        "jeremiah-31",
+        "hebrews-8-10",
+        "covenant-theme-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "2 Samuel 7:8-16"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "covenant-theme",
+        "parent_title": "Covenant Theme",
+        "parent_type": "theme",
+        "object_importance": 100,
+        "retrieval_score": 0.92,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 7,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "second_temple_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "covenant-theology:ancient_near_east_context:0",
+      "claim": "Covenant theology draws on biblical covenant forms that intersect with Hittite suzerain treaties, Neo-Assyrian loyalty oaths, kinship obligations, and royal grants.",
+      "category": "culture",
+      "source_ids": [
+        "genesis-9-12-15-17",
+        "exodus-19-24",
+        "2-samuel-7",
+        "jeremiah-31",
+        "hebrews-8-10",
+        "covenant-theology-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "2 Samuel 7:8-16"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "covenant-theology",
+        "parent_title": "Covenant Theology",
+        "parent_type": "theology",
+        "object_importance": 96,
+        "retrieval_score": 0.916,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 7,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "covenant-theology:historical_context:0",
+      "claim": "Covenant theology developed as a way of reading the Bible\u2019s storyline, especially within Reformed and confessional traditions, but it is rooted in the biblical text itself.",
+      "category": "history",
+      "source_ids": [
+        "genesis-9-12-15-17",
+        "exodus-19-24",
+        "2-samuel-7",
+        "jeremiah-31",
+        "hebrews-8-10",
+        "covenant-theology-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "2 Samuel 7:8-16"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "covenant-theology",
+        "parent_title": "Covenant Theology",
+        "parent_type": "theology",
+        "object_importance": 96,
+        "retrieval_score": 0.916,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 7,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "david:ancient_near_east_context:0",
+      "claim": "His world is the world of kingship, patronage, warfare, and dynastic succession familiar across the ancient Near East.",
+      "category": "culture",
+      "source_ids": [
+        "1-samuel-16-17",
+        "2-samuel-5-7",
+        "psalm-51",
+        "psalm-110",
+        "acts-13"
+      ],
+      "related_entity_ids": [
+        "david"
+      ],
+      "passage_anchors": [
+        "2 Samuel 7:1-29"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "david",
+        "parent_title": "David",
+        "parent_type": "person",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "david:hebraic_worldview:0",
+      "claim": "David's story joins kingship, worship, repentance, covenant promise, and public responsibility before God rather than treating leadership as private charisma.",
+      "category": "culture",
+      "source_ids": [
+        "1-samuel-16-17",
+        "2-samuel-5-7",
+        "psalm-51",
+        "psalm-110",
+        "acts-13"
+      ],
+      "related_entity_ids": [
+        "david"
+      ],
+      "passage_anchors": [
+        "2 Samuel 7:1-29"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "david",
+        "parent_title": "David",
+        "parent_type": "person",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "hebraic_worldview",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "david:historical_context:0",
+      "claim": "David stands in the early monarchy of Israel, where tribal leadership, royal authority, court politics, and military conflict converge.",
+      "category": "history",
+      "source_ids": [
+        "1-samuel-16-17",
+        "2-samuel-5-7",
+        "psalm-51",
+        "psalm-110",
+        "acts-13"
+      ],
+      "related_entity_ids": [
+        "david"
+      ],
+      "passage_anchors": [
+        "2 Samuel 7:1-29"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "david",
+        "parent_title": "David",
+        "parent_type": "person",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "david:key_places:0",
+      "claim": "bethlehem-1",
+      "category": "geography",
+      "source_ids": [
+        "1-samuel-16-17",
+        "2-samuel-5-7",
+        "psalm-51",
+        "psalm-110",
+        "acts-13"
+      ],
+      "related_entity_ids": [
+        "david"
+      ],
+      "passage_anchors": [
+        "2 Samuel 7:1-29"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "david",
+        "parent_title": "David",
+        "parent_type": "person",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "key_places",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": null,
+        "overview_priority": 28,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "david:key_places:1",
+      "claim": "hebron",
+      "category": "geography",
+      "source_ids": [
+        "1-samuel-16-17",
+        "2-samuel-5-7",
+        "psalm-51",
+        "psalm-110",
+        "acts-13"
+      ],
+      "related_entity_ids": [
+        "david"
+      ],
+      "passage_anchors": [
+        "2 Samuel 7:1-29"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "david",
+        "parent_title": "David",
+        "parent_type": "person",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "key_places",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": null,
+        "overview_priority": 28,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "david:key_places:2",
+      "claim": "jerusalem",
+      "category": "geography",
+      "source_ids": [
+        "1-samuel-16-17",
+        "2-samuel-5-7",
+        "psalm-51",
+        "psalm-110",
+        "acts-13"
+      ],
+      "related_entity_ids": [
+        "david"
+      ],
+      "passage_anchors": [
+        "2 Samuel 7:1-29"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "david",
+        "parent_title": "David",
+        "parent_type": "person",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "key_places",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": null,
+        "overview_priority": 43,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "david:key_places:3",
+      "claim": "zion",
+      "category": "geography",
+      "source_ids": [
+        "1-samuel-16-17",
+        "2-samuel-5-7",
+        "psalm-51",
+        "psalm-110",
+        "acts-13"
+      ],
+      "related_entity_ids": [
+        "david"
+      ],
+      "passage_anchors": [
+        "2 Samuel 7:1-29"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "david",
+        "parent_title": "David",
+        "parent_type": "person",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "key_places",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": null,
+        "overview_priority": 28,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "david:second_temple_context:0",
+      "claim": "Second Temple Jewish hope often remembered David as the model king and used Davidic promise language to imagine restoration under foreign rule.",
+      "category": "culture",
+      "source_ids": [
+        "1-samuel-16-17",
+        "2-samuel-5-7",
+        "psalm-51",
+        "psalm-110",
+        "acts-13"
+      ],
+      "related_entity_ids": [
+        "david"
+      ],
+      "passage_anchors": [
+        "2 Samuel 7:1-29"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "david",
+        "parent_title": "David",
+        "parent_type": "person",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "second_temple_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "davidic-covenant:ancient_near_east_context:0",
+      "claim": "Royal covenants and dynastic promises were common in the ancient world, but this one is grounded in divine grace rather than royal achievement.",
+      "category": "culture",
+      "source_ids": [
+        "2-samuel-7",
+        "psalm-2",
+        "psalm-89",
+        "isaiah-9",
+        "jeremiah-23",
+        "luke-1",
+        "acts-2",
+        "revelation-5"
+      ],
+      "related_entity_ids": [
+        "davidic-covenant"
+      ],
+      "passage_anchors": [
+        "2 Samuel 7:1-17",
+        "2 Samuel 7:18-29"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "davidic-covenant",
+        "parent_title": "Davidic Covenant",
+        "parent_type": "event",
+        "object_importance": 100,
+        "retrieval_score": 0.94,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "davidic-covenant:historical_context:0",
+      "claim": "2 Samuel 7 frames a covenant promise to David after Jerusalem becomes the royal center.",
+      "category": "history",
+      "source_ids": [
+        "2-samuel-7",
+        "psalm-2",
+        "psalm-89",
+        "isaiah-9",
+        "jeremiah-23",
+        "luke-1",
+        "acts-2",
+        "revelation-5"
+      ],
+      "related_entity_ids": [
+        "davidic-covenant"
+      ],
+      "passage_anchors": [
+        "2 Samuel 7:1-17",
+        "2 Samuel 7:18-29"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "davidic-covenant",
+        "parent_title": "Davidic Covenant",
+        "parent_type": "event",
+        "object_importance": 100,
+        "retrieval_score": 0.94,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "incarnation:ancient_near_east_context:0",
+      "claim": "Ancient background for Incarnation includes covenant life, temple worship, royal ideology, wisdom teaching, and early church confession; the entry ties that world to 2 Samuel 7:8-16, Psalm 2:1-12, messiah-theme, and christology without letting comparison replace the biblical witness.",
+      "category": "culture",
+      "source_ids": [
+        "2-samuel-7",
+        "psalm-2",
+        "isaiah-11",
+        "isaiah-53",
+        "luke-24",
+        "acts-2"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "2 Samuel 7:8-16"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "incarnation",
+        "parent_title": "Incarnation",
+        "parent_type": "theology",
+        "object_importance": 96,
+        "retrieval_score": 0.916,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 7,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "incarnation:historical_context:0",
+      "claim": "Incarnation is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness.",
+      "category": "history",
+      "source_ids": [
+        "2-samuel-7",
+        "psalm-2",
+        "isaiah-11",
+        "isaiah-53",
+        "luke-24",
+        "acts-2"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "2 Samuel 7:8-16"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "incarnation",
+        "parent_title": "Incarnation",
+        "parent_type": "theology",
+        "object_importance": 96,
+        "retrieval_score": 0.916,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 7,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "messiah-theme:ancient_near_east_context:0",
+      "claim": "Royal anointing and kingship were common ancient practices, but the biblical messiah is defined by God\u2019s promise, righteousness, and suffering victory.",
+      "category": "culture",
+      "source_ids": [
+        "2-samuel-7",
+        "psalm-2",
+        "psalm-110",
+        "isaiah-9",
+        "isaiah-11",
+        "isaiah-53",
+        "luke-24",
+        "romans-1",
+        "philippians-2"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "2 Samuel 7:8-16"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "messiah-theme",
+        "parent_title": "Messiah Theme",
+        "parent_type": "theme",
+        "object_importance": 98,
+        "retrieval_score": 0.918,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 7,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "messiah-theme:historical_context:0",
+      "claim": "Messianic expectation develops from the Davidic covenant, prophetic promise, and the long experience of exile and hope.",
+      "category": "history",
+      "source_ids": [
+        "2-samuel-7",
+        "psalm-2",
+        "psalm-110",
+        "isaiah-9",
+        "isaiah-11",
+        "isaiah-53",
+        "luke-24",
+        "romans-1",
+        "philippians-2"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "2 Samuel 7:8-16"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "messiah-theme",
+        "parent_title": "Messiah Theme",
+        "parent_type": "theme",
+        "object_importance": 98,
+        "retrieval_score": 0.918,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 7,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "messianic-prophecy:ancient_near_east_context:0",
+      "claim": "Messianic Prophecy is set within prophetic speech shaped by Israelite covenant lawsuit, royal courts, temple worship, Assyrian and Babylonian pressure, Persian restoration, and poetic oracle forms.",
+      "category": "culture",
+      "source_ids": [
+        "2-samuel-7",
+        "psalm-2",
+        "isaiah-11",
+        "micah-5",
+        "luke-24",
+        "acts-2"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "2 Samuel 7:8-16"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "messianic-prophecy",
+        "parent_title": "Messianic Prophecy",
+        "parent_type": "prophecy",
+        "object_importance": 96,
+        "retrieval_score": 0.916,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 7,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "messianic-prophecy:historical_context:0",
+      "claim": "Messianic hope develops from the Davidic covenant and the prophetic search for a righteous king who will heal exile and injustice.",
+      "category": "history",
+      "source_ids": [
+        "2-samuel-7",
+        "psalm-2",
+        "isaiah-11",
+        "micah-5",
+        "luke-24",
+        "acts-2"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "2 Samuel 7:8-16"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "messianic-prophecy",
+        "parent_title": "Messianic Prophecy",
+        "parent_type": "prophecy",
+        "object_importance": 96,
+        "retrieval_score": 0.916,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 7,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "second-samuel-davidic-house",
+      "claim": "In 2 Samuel 7 the LORD refuses David's immediate temple plan, promises to make David a house, establishes his offspring's throne, and promises enduring covenant loyalty alongside discipline.",
+      "category": "history",
+      "source_ids": [
+        "2-samuel-1-24",
+        "tsumura-second-samuel",
+        "anderson-second-samuel"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "2 Samuel 7:1-29"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "2-samuel",
+        "parent_title": "2 Samuel",
+        "parent_type": "book",
+        "object_importance": 95,
+        "retrieval_score": 0.915,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "textually_explicit",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 110
+      }
+    },
+    {
+      "id": "second-samuel-literary-movement",
+      "claim": "Second Samuel moves from David's accession and kingdom consolidation through ark and dynasty promise to royal abuse, household violence, rebellion, grief, and a four-part closing appendix.",
+      "category": "culture",
+      "source_ids": [
+        "2-samuel-1-24",
+        "tsumura-second-samuel",
+        "anderson-second-samuel"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "2 Samuel 1-24"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "2-samuel",
+        "parent_title": "2 Samuel",
+        "parent_type": "book",
+        "object_importance": 95,
+        "retrieval_score": 0.915,
+        "passage_relationship": "direct",
+        "anchor_specificity": "chapter",
+        "verse_distance": 600,
+        "certainty": "strong_consensus",
+        "dispute_status": "not_disputed",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "section",
+        "anchor_source": "child",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 88
+      }
+    },
+    {
+      "id": "solomon-builds-the-temple:ancient_near_east_context:0",
+      "claim": "Royal administration, dynastic succession, and state religion shape the background.",
+      "category": "culture",
+      "source_ids": [
+        "2-samuel",
+        "1-kings",
+        "2-kings",
+        "2-chronicles",
+        "solomon-builds-the-temple-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "solomon-builds-the-temple"
+      ],
+      "passage_anchors": [
+        "2 Samuel 7:1-17"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "solomon-builds-the-temple",
+        "parent_title": "Solomon Builds the Temple",
+        "parent_type": "event",
+        "object_importance": 80,
+        "retrieval_score": 0.9,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "solomon-builds-the-temple:historical_context:0",
+      "claim": "The event belongs to the rise and development of Israel's monarchy and its theological consequences.",
+      "category": "history",
+      "source_ids": [
+        "2-samuel",
+        "1-kings",
+        "2-kings",
+        "2-chronicles",
+        "solomon-builds-the-temple-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "solomon-builds-the-temple"
+      ],
+      "passage_anchors": [
+        "2 Samuel 7:1-17"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "solomon-builds-the-temple",
+        "parent_title": "Solomon Builds the Temple",
+        "parent_type": "event",
+        "object_importance": 80,
+        "retrieval_score": 0.9,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "solomon:ancient_near_east_context:0",
+      "claim": "Royal courts, dynastic succession, warfare, and imperial pressure shape the background.",
+      "category": "culture",
+      "source_ids": [
+        "1-samuel-8-31",
+        "2-samuel-1-24",
+        "1-kings-1-22",
+        "psalm-2"
+      ],
+      "related_entity_ids": [
+        "solomon"
+      ],
+      "passage_anchors": [
+        "2 Samuel 7:8-16"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "solomon",
+        "parent_title": "Solomon",
+        "parent_type": "person",
+        "object_importance": 70,
+        "retrieval_score": 0.89,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 7,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "solomon:historical_context:0",
+      "claim": "Solomon appears in the rise, division, or decline of Israel's kingdoms, where royal power and covenant accountability collide.",
+      "category": "history",
+      "source_ids": [
+        "1-samuel-8-31",
+        "2-samuel-1-24",
+        "1-kings-1-22",
+        "psalm-2"
+      ],
+      "related_entity_ids": [
+        "solomon"
+      ],
+      "passage_anchors": [
+        "2 Samuel 7:8-16"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "solomon",
+        "parent_title": "Solomon",
+        "parent_type": "person",
+        "object_importance": 70,
+        "retrieval_score": 0.89,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 7,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "what-is-the-messiah:ancient_near_east_context:0",
+      "claim": "Royal anointing was familiar in the ancient world, but biblical messianism is anchored in God\u2019s promise and righteous rule.",
+      "category": "culture",
+      "source_ids": [
+        "2-samuel-7",
+        "psalm-2",
+        "psalm-110",
+        "isaiah-9",
+        "isaiah-11",
+        "isaiah-53",
+        "luke-24",
+        "romans-1",
+        "philippians-2",
+        "hebrews-1"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "2 Samuel 7:8-16"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "what-is-the-messiah",
+        "parent_title": "What is the Messiah?",
+        "parent_type": "faq",
+        "object_importance": 92,
+        "retrieval_score": 0.912,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 7,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "what-is-the-messiah:historical_context:0",
+      "claim": "Messianic expectation grows from the Davidic covenant, the prophets, and the experience of exile and return.",
+      "category": "history",
+      "source_ids": [
+        "2-samuel-7",
+        "psalm-2",
+        "psalm-110",
+        "isaiah-9",
+        "isaiah-11",
+        "isaiah-53",
+        "luke-24",
+        "romans-1",
+        "philippians-2",
+        "hebrews-1"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "2 Samuel 7:8-16"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "what-is-the-messiah",
+        "parent_title": "What is the Messiah?",
+        "parent_type": "faq",
+        "object_importance": 92,
+        "retrieval_score": 0.912,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 7,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "who-was-david:ancient_near_east_context:0",
+      "claim": "Kingship in the ancient world often tied ruler and deity closely together, but David is judged and upheld by the LORD.",
+      "category": "culture",
+      "source_ids": [
+        "1-samuel-16",
+        "1-samuel-17",
+        "2-samuel-7",
+        "psalm-2",
+        "psalm-110",
+        "luke-1",
+        "acts-2",
+        "revelation-5"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "2 Samuel 7:8-16"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "who-was-david",
+        "parent_title": "Who was David?",
+        "parent_type": "faq",
+        "object_importance": 96,
+        "retrieval_score": 0.916,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 7,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "who-was-david:historical_context:0",
+      "claim": "David unites the tribes, establishes Jerusalem, and receives the promise of an enduring house.",
+      "category": "history",
+      "source_ids": [
+        "1-samuel-16",
+        "1-samuel-17",
+        "2-samuel-7",
+        "psalm-2",
+        "psalm-110",
+        "luke-1",
+        "acts-2",
+        "revelation-5"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "2 Samuel 7:8-16"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "who-was-david",
+        "parent_title": "Who was David?",
+        "parent_type": "faq",
+        "object_importance": 96,
+        "retrieval_score": 0.916,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 7,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "1 Chronicles 1-29",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "1 Chronicles 1:1-29:30",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "structure",
+          "key-people",
+          "key-places",
+          "key-events",
+          "scripture-references",
+          "interpretive-notes",
+          "first-chronicles-genealogical-identity",
+          "first-chronicles-saul-unfaithful",
+          "first-chronicles-all-israel-david",
+          "first-chronicles-ark-ordered",
+          "first-chronicles-davidic-house",
+          "first-chronicles-census-temple-site",
+          "first-chronicles-david-prepares"
+        ],
+        "notes": "Primary biblical text.",
+        "id": "1-chronicles-1-29",
+        "canonical_object_ids": [
+          "1-chronicles"
+        ]
+      },
+      {
+        "title": "1 Kings",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "1-kings",
+        "canonical_object_ids": [
+          "solomon-builds-the-temple"
+        ]
+      },
+      {
+        "title": "1 Kings 1-22",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "1-kings-1-22",
+        "canonical_object_ids": [
+          "solomon"
+        ]
+      },
+      {
+        "title": "1 Samuel 16",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "1-samuel-16",
+        "canonical_object_ids": [
+          "who-was-david"
+        ]
+      },
+      {
+        "title": "1 Samuel 16-17",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "1-samuel-16-17",
+        "canonical_object_ids": [
+          "david"
+        ]
+      },
+      {
+        "title": "1 Samuel 17",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "1-samuel-17",
+        "canonical_object_ids": [
+          "who-was-david"
+        ]
+      },
+      {
+        "title": "1 Samuel 8-31",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "1-samuel-8-31",
+        "canonical_object_ids": [
+          "solomon"
+        ]
+      },
+      {
+        "title": "2 Chronicles",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "2-chronicles",
+        "canonical_object_ids": [
+          "solomon-builds-the-temple"
+        ]
+      },
+      {
+        "title": "2 Kings",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "2-kings",
+        "canonical_object_ids": [
+          "solomon-builds-the-temple"
+        ]
+      },
+      {
+        "title": "2 Samuel",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "2-samuel",
+        "canonical_object_ids": [
+          "solomon-builds-the-temple"
+        ]
+      },
+      {
+        "title": "2 Samuel 1-24",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "2-samuel-1-24",
+        "canonical_object_ids": [
+          "2-samuel",
+          "solomon"
+        ],
+        "canonical_source_variants": [
+          {
+            "title": "2 Samuel 1-24",
+            "author": "",
+            "publisher": "",
+            "year": null,
+            "locator": "",
+            "url": "",
+            "source_type": "scripture",
+            "supports": [],
+            "notes": "",
+            "id": "2-samuel-1-24"
+          },
+          {
+            "title": "2 Samuel 1-24",
+            "author": "",
+            "publisher": "",
+            "year": null,
+            "locator": "2 Samuel 1:1-24:25",
+            "url": "",
+            "source_type": "scripture",
+            "supports": [
+              "summary",
+              "literary-context",
+              "structure",
+              "key-people",
+              "key-places",
+              "key-events",
+              "scripture-references",
+              "second-samuel-literary-movement",
+              "second-samuel-david-lament",
+              "second-samuel-jerusalem-ark",
+              "second-samuel-davidic-house",
+              "second-samuel-david-condemned",
+              "second-samuel-absalom-rebellion"
+            ],
+            "notes": "Primary biblical text.",
+            "id": "2-samuel-1-24"
+          }
+        ]
+      },
+      {
+        "title": "2 Samuel 5-7",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "2-samuel-5-7",
+        "canonical_object_ids": [
+          "david"
+        ]
+      },
+      {
+        "title": "2 Samuel 7",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "2-samuel-7",
+        "canonical_object_ids": [
+          "christology",
+          "covenant-theme",
+          "covenant-theology",
+          "davidic-covenant",
+          "incarnation",
+          "messiah-theme",
+          "messianic-prophecy",
+          "what-is-the-messiah",
+          "who-was-david"
+        ]
+      },
+      {
+        "title": "2 Samuel 7:12-16",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "Davidic promise",
+        "id": "2-samuel-7-12-16",
+        "canonical_object_ids": [
+          "annunciation-to-mary"
+        ]
+      },
+      {
+        "title": "Acts 13",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "acts-13",
+        "canonical_object_ids": [
+          "david"
+        ]
+      },
+      {
+        "title": "Acts 2",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "acts-2",
+        "canonical_object_ids": [
+          "christology",
+          "davidic-covenant",
+          "incarnation",
+          "messianic-prophecy",
+          "who-was-david"
+        ]
+      },
+      {
+        "title": "2 Samuel, Volume 11",
+        "author": "Arnold A. Anderson",
+        "publisher": "Zondervan",
+        "year": 2015,
+        "locator": "Word Biblical Commentary on 2 Samuel 1-24",
+        "url": "https://zondervanacademic.com/products/2-samuel-volume-11",
+        "source_type": "reference-work",
+        "supports": [
+          "authorship-positions",
+          "historical-context",
+          "literary-context",
+          "interpretive-notes",
+          "second-samuel-literary-movement",
+          "second-samuel-davidic-house",
+          "second-samuel-david-condemned"
+        ],
+        "notes": "Technical commentary emphasizing textual, linguistic, structural, compositional, and theological evidence.",
+        "id": "anderson-second-samuel",
+        "canonical_object_ids": [
+          "2-samuel"
+        ]
+      },
+      {
+        "title": "Canonical historical orientation for Annunciation to Mary",
+        "author": "",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "id": "annunciation-to-mary-historical-orientation",
+        "canonical_object_ids": [
+          "annunciation-to-mary"
+        ]
+      },
+      {
+        "title": "Canonical historical orientation for Covenant Theme",
+        "author": "",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "id": "covenant-theme-historical-orientation",
+        "canonical_object_ids": [
+          "covenant-theme"
+        ]
+      },
+      {
+        "title": "Canonical historical orientation for Covenant Theology",
+        "author": "",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "id": "covenant-theology-historical-orientation",
+        "canonical_object_ids": [
+          "covenant-theology"
+        ]
+      },
+      {
+        "title": "Exodus 19-24",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "exodus-19-24",
+        "canonical_object_ids": [
+          "covenant-theme",
+          "covenant-theology"
+        ]
+      },
+      {
+        "title": "Genesis 9, 12, 15, 17",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "genesis-9-12-15-17",
+        "canonical_object_ids": [
+          "covenant-theme",
+          "covenant-theology"
+        ]
+      },
+      {
+        "title": "Hebrews 1",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "hebrews-1",
+        "canonical_object_ids": [
+          "what-is-the-messiah"
+        ]
+      },
+      {
+        "title": "Hebrews 8-10",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "hebrews-8-10",
+        "canonical_object_ids": [
+          "covenant-theme",
+          "covenant-theology"
+        ]
+      },
+      {
+        "title": "Isaiah 11",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "isaiah-11",
+        "canonical_object_ids": [
+          "christology",
+          "incarnation",
+          "messiah-theme",
+          "messianic-prophecy",
+          "what-is-the-messiah"
+        ]
+      },
+      {
+        "title": "Isaiah 53",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "isaiah-53",
+        "canonical_object_ids": [
+          "christology",
+          "incarnation",
+          "messiah-theme",
+          "what-is-the-messiah"
+        ]
+      },
+      {
+        "title": "Isaiah 7:14",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "birth-sign tradition",
+        "id": "isaiah-7-14",
+        "canonical_object_ids": [
+          "annunciation-to-mary"
+        ]
+      },
+      {
+        "title": "Isaiah 9",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "isaiah-9",
+        "canonical_object_ids": [
+          "davidic-covenant",
+          "messiah-theme",
+          "what-is-the-messiah"
+        ]
+      },
+      {
+        "title": "Jeremiah 23",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "jeremiah-23",
+        "canonical_object_ids": [
+          "davidic-covenant"
+        ]
+      },
+      {
+        "title": "Jeremiah 31",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "jeremiah-31",
+        "canonical_object_ids": [
+          "covenant-theme",
+          "covenant-theology"
+        ]
+      },
+      {
+        "title": "I Chronicles 10-29",
+        "author": "Gary N. Knoppers",
+        "publisher": "Yale University Press",
+        "year": 2004,
+        "locator": "Anchor Yale Bible translation, notes, and commentary on 1 Chronicles 10-29",
+        "url": "https://yalebooks.yale.edu/book/9780300139532/i-chronicles-10-29/",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context",
+          "literary-context",
+          "hebrew-words",
+          "interpretive-notes",
+          "first-chronicles-saul-unfaithful",
+          "first-chronicles-all-israel-david",
+          "first-chronicles-ark-ordered",
+          "first-chronicles-davidic-house",
+          "first-chronicles-census-temple-site",
+          "first-chronicles-david-prepares"
+        ],
+        "notes": "Technical commentary emphasizing the Davidic narrative, textual witnesses, historiography, institutions, and reuse of Samuel.",
+        "id": "knoppers-first-chronicles-10-29",
+        "canonical_object_ids": [
+          "1-chronicles"
+        ]
+      },
+      {
+        "title": "Luke 1",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "luke-1",
+        "canonical_object_ids": [
+          "davidic-covenant",
+          "who-was-david"
+        ]
+      },
+      {
+        "title": "Luke 1:26-38",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "Gabriel announces Jesus' birth",
+        "id": "luke-1-26-38",
+        "canonical_object_ids": [
+          "annunciation-to-mary"
+        ]
+      },
+      {
+        "title": "Luke 24",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "luke-24",
+        "canonical_object_ids": [
+          "christology",
+          "incarnation",
+          "messiah-theme",
+          "messianic-prophecy",
+          "what-is-the-messiah"
+        ]
+      },
+      {
+        "title": "Matthew 1:18-25",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "Joseph and Jesus' birth",
+        "id": "matthew-1-18-25",
+        "canonical_object_ids": [
+          "annunciation-to-mary"
+        ]
+      },
+      {
+        "title": "Micah 5",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "micah-5",
+        "canonical_object_ids": [
+          "messianic-prophecy"
+        ]
+      },
+      {
+        "title": "Philippians 2",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "philippians-2",
+        "canonical_object_ids": [
+          "messiah-theme",
+          "what-is-the-messiah"
+        ]
+      },
+      {
+        "title": "Psalm 110",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [],
+        "notes": "",
+        "id": "psalm-110",
+        "canonical_object_ids": [
+          "david",
+          "messiah-theme",
+          "what-is-the-messiah",
+          "who-was-david"
+        ]
+      },
+      {
+        "title": "Psalm 2",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [],
+        "notes": "",
+        "id": "psalm-2",
+        "canonical_object_ids": [
+          "christology",
+          "davidic-covenant",
+          "incarnation",
+          "messiah-theme",
+          "messianic-prophecy",
+          "solomon",
+          "what-is-the-messiah",
+          "who-was-david"
+        ]
+      },
+      {
+        "title": "Psalm 51",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [],
+        "notes": "",
+        "id": "psalm-51",
+        "canonical_object_ids": [
+          "david"
+        ]
+      },
+      {
+        "title": "Psalm 89",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [],
+        "notes": "",
+        "id": "psalm-89",
+        "canonical_object_ids": [
+          "davidic-covenant"
+        ]
+      },
+      {
+        "title": "Revelation 5",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "revelation-5",
+        "canonical_object_ids": [
+          "davidic-covenant",
+          "who-was-david"
+        ]
+      },
+      {
+        "title": "Romans 1",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "romans-1",
+        "canonical_object_ids": [
+          "messiah-theme",
+          "what-is-the-messiah"
+        ]
+      },
+      {
+        "title": "Canonical historical orientation for Solomon Builds the Temple",
+        "author": "",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "id": "solomon-builds-the-temple-historical-orientation",
+        "canonical_object_ids": [
+          "solomon-builds-the-temple"
+        ]
+      },
+      {
+        "title": "The Second Book of Samuel",
+        "author": "David Toshio Tsumura",
+        "publisher": "Eerdmans",
+        "year": 2019,
+        "locator": "Introduction and commentary on 2 Samuel 1-24",
+        "url": "https://www.eerdmans.com/9780802870964/the-second-book-of-samuel/",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context",
+          "literary-context",
+          "hebrew-words",
+          "interpretive-notes",
+          "second-samuel-literary-movement",
+          "second-samuel-jerusalem-ark",
+          "second-samuel-davidic-house",
+          "second-samuel-absalom-rebellion"
+        ],
+        "notes": "NICOT commentary with detailed Hebrew textual, literary, compositional, and historical analysis.",
+        "id": "tsumura-second-samuel",
+        "canonical_object_ids": [
+          "2-samuel"
+        ]
+      },
+      {
+        "title": "Zondervan Illustrated Bible Backgrounds Commentary: Joshua, Judges, Ruth, 1 and 2 Samuel",
+        "author": "John H. Walton, general editor; Dale W. Manor, V. Philips Long, Richard Hess, and other contributors",
+        "publisher": "Zondervan",
+        "year": 2009,
+        "locator": "2 Samuel commentary and background notes",
+        "url": "https://zondervanacademic.com/products/joshua-judges-ruth-1-and-2-samuel",
+        "source_type": "reference-work",
+        "supports": [
+          "ancient-near-east-context",
+          "archaeology",
+          "historical-context",
+          "maps",
+          "interpretive-notes"
+        ],
+        "notes": "Comparative textual, material, historical, geographical, and cultural background.",
+        "id": "zondervan-illustrated-historical-books-backgrounds",
+        "canonical_object_ids": [
+          "2-samuel"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "1-chronicles",
+        "type": "book",
+        "title": "1 Chronicles",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.908
+      },
+      {
+        "id": "2-samuel",
+        "type": "book",
+        "title": "2 Samuel",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.915
+      },
+      {
+        "id": "annunciation-to-mary",
+        "type": "event",
+        "title": "Annunciation to Mary",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.908
+      },
+      {
+        "id": "christology",
+        "type": "theology",
+        "title": "Christology",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.916
+      },
+      {
+        "id": "covenant-theme",
+        "type": "theme",
+        "title": "Covenant Theme",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.92
+      },
+      {
+        "id": "covenant-theology",
+        "type": "theology",
+        "title": "Covenant Theology",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.916
+      },
+      {
+        "id": "david",
+        "type": "person",
+        "title": "David",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.917
+      },
+      {
+        "id": "davidic-covenant",
+        "type": "event",
+        "title": "Davidic Covenant",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.94
+      },
+      {
+        "id": "incarnation",
+        "type": "theology",
+        "title": "Incarnation",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.916
+      },
+      {
+        "id": "messiah-theme",
+        "type": "theme",
+        "title": "Messiah Theme",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.918
+      },
+      {
+        "id": "messianic-prophecy",
+        "type": "prophecy",
+        "title": "Messianic Prophecy",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.916
+      },
+      {
+        "id": "solomon",
+        "type": "person",
+        "title": "Solomon",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.89
+      },
+      {
+        "id": "solomon-builds-the-temple",
+        "type": "event",
+        "title": "Solomon Builds the Temple",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.9
+      },
+      {
+        "id": "what-is-the-messiah",
+        "type": "faq",
+        "title": "What is the Messiah?",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.912
+      },
+      {
+        "id": "who-was-david",
+        "type": "faq",
+        "title": "Who was David?",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.916
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "3beb3a1faccfc1553f616acaea9af0a78fba1c03f1da226b156af2ca37242dbd",
+  "evidence_hash_version": "2"
+}

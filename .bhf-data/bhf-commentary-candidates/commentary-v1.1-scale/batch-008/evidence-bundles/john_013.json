@@ -1,0 +1,511 @@
+{
+  "passage_ref": "John 13",
+  "entities": {
+    "people": [],
+    "places": [],
+    "groups": [],
+    "events": [],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "1-john:interpretive_note:10",
+      "claim": "The old-new commandment participates in Johannine Jesus tradition; literary relationship is clearer than direction of borrowing.",
+      "category": "culture",
+      "source_ids": [
+        "john-gospel",
+        "brown"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "John 13:34-35"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "1-john",
+        "parent_title": "1 John",
+        "parent_type": "book",
+        "object_importance": 81,
+        "retrieval_score": 0.901,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 33,
+        "certainty": "strong_consensus",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "canonical-connection",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "INTERTEXTUAL_REUSE",
+        "presentation_role": "dig_deeper",
+        "overview_priority": 0
+      }
+    },
+    {
+      "id": "2-john:interpretive_note:8",
+      "claim": "The commandment is both received from the beginning and actively requested; its relation to Jesus tradition is close, but literary direction remains disputed.",
+      "category": "culture",
+      "source_ids": [
+        "john-gospel",
+        "brown"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "John 13:34-35"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "2-john",
+        "parent_title": "2 John",
+        "parent_type": "book",
+        "object_importance": 79,
+        "retrieval_score": 0.899,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 33,
+        "certainty": "strong_consensus",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "canonical-connection",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "INTERTEXTUAL_REUSE",
+        "presentation_role": "dig_deeper",
+        "overview_priority": 0
+      }
+    },
+    {
+      "id": "2jn-johannine-relation",
+      "claim": "2 John shares concentrated vocabulary, formulas, and concerns with 1 John, 3 John, and the Fourth Gospel.",
+      "category": "culture",
+      "source_ids": [
+        "john-gospel",
+        "1jn-scripture",
+        "3jn-scripture",
+        "brown",
+        "lieu"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "John 13:34-35"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "2-john",
+        "parent_title": "2 John",
+        "parent_type": "book",
+        "object_importance": 79,
+        "retrieval_score": 0.899,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 33,
+        "certainty": "strong_consensus",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "INTERTEXTUAL_REUSE",
+        "presentation_role": "dig_deeper",
+        "overview_priority": 0
+      }
+    },
+    {
+      "id": "john-beloved-disciple",
+      "claim": "The beloved disciple is presented as an authoritative witness, yet the Gospel never names that figure John son of Zebedee and John 21:24 speaks of the disciple in the third person.",
+      "category": "culture",
+      "source_ids": [
+        "john-greek",
+        "cambridge-john-introduction",
+        "beloved-eyewitness"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "John 13:23-26"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "john",
+        "parent_title": "John",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 22,
+        "certainty": "strong_consensus",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 90
+      }
+    },
+    {
+      "id": "john-footwashing",
+      "claim": "The footwashing enacts Jesus' love, service, cleansing, and a pattern for disciples; ritual, ethical, christological, and sacramental readings need not authorize humiliating or coercive leadership practices.",
+      "category": "culture",
+      "source_ids": [
+        "john-greek",
+        "oxford-johannine",
+        "trauma-john"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "John 13:1-20"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "john",
+        "parent_title": "John",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "denominational_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "pastoral_application",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 110
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "The First Letter of John",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "1 John 1:1-5:21",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "Canonical and literary comparator.",
+        "id": "1jn-scripture",
+        "canonical_object_ids": [
+          "1-john",
+          "2-john"
+        ],
+        "canonical_source_variants": [
+          {
+            "title": "The First Letter of John",
+            "author": "",
+            "publisher": "",
+            "year": null,
+            "locator": "1 John 1:1-5:21",
+            "url": "",
+            "source_type": "scripture",
+            "supports": [],
+            "notes": "Canonical and literary comparator.",
+            "id": "1jn-scripture"
+          },
+          {
+            "title": "The First Letter of John",
+            "author": "",
+            "publisher": "",
+            "year": null,
+            "locator": "1 John 1:1-5:21",
+            "url": "",
+            "source_type": "scripture",
+            "supports": [
+              "summary",
+              "structure",
+              "scripture-references"
+            ],
+            "notes": "Primary canonical text.",
+            "id": "1jn-scripture"
+          }
+        ]
+      },
+      {
+        "title": "The Third Letter of John",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "3 John 1:1-14",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "Canonical, epistolary, and hospitality comparator.",
+        "id": "3jn-scripture",
+        "canonical_object_ids": [
+          "2-john"
+        ]
+      },
+      {
+        "title": "The Beloved Eyewitness",
+        "author": "Richard Bauckham",
+        "publisher": "New Testament Studies / Cambridge University Press",
+        "year": 2022,
+        "locator": "Beloved disciple and eyewitness proposal",
+        "url": "https://www.cambridge.org/core/journals/new-testament-studies/article/beloved-eyewitness/964BF90DF6ECDC4EA7C6144A17F55754",
+        "source_type": "journal-article",
+        "supports": [
+          "authorship-positions",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "A recent eyewitness proposal used as one side of an active debate.",
+        "id": "beloved-eyewitness",
+        "canonical_object_ids": [
+          "john"
+        ]
+      },
+      {
+        "title": "The Epistles of John",
+        "author": "Raymond E. Brown",
+        "publisher": "Yale University Press",
+        "year": 1982,
+        "locator": "Anchor Bible 30",
+        "url": "https://yalebooks.yale.edu/book/9780300140279/the-epistles-of-john/",
+        "source_type": "academic-book",
+        "supports": [],
+        "notes": "Major critical commentary; its community reconstruction remains a proposal.",
+        "id": "brown",
+        "canonical_object_ids": [
+          "1-john",
+          "2-john"
+        ],
+        "canonical_source_variants": [
+          {
+            "title": "The Epistles of John",
+            "author": "Raymond E. Brown",
+            "publisher": "Yale University Press",
+            "year": 1982,
+            "locator": "Anchor Bible 30",
+            "url": "https://yalebooks.yale.edu/book/9780300140279/the-epistles-of-john/",
+            "source_type": "academic-book",
+            "supports": [],
+            "notes": "Major critical commentary; its community reconstruction remains a proposal.",
+            "id": "brown"
+          },
+          {
+            "title": "The Epistles of John",
+            "author": "Raymond E. Brown",
+            "publisher": "Yale University Press",
+            "year": 1982,
+            "locator": "Anchor Bible 30, 2 John",
+            "url": "https://yalebooks.yale.edu/book/9780300140279/the-epistles-of-john/",
+            "source_type": "academic-book",
+            "supports": [],
+            "notes": "Major critical commentary; community reconstruction remains a proposal.",
+            "id": "brown"
+          }
+        ]
+      },
+      {
+        "title": "The Gospel of John",
+        "author": "Delbert Burkett",
+        "publisher": "Cambridge University Press",
+        "year": 2018,
+        "locator": "An Introduction to the New Testament and the Origins of Christianity",
+        "url": "https://www.cambridge.org/highereducation/books/an-introduction-to-the-new-testament-and-the-origins-of-christianity/32A6751C4FE08D443DC4BDD934A3C343/the-gospel-of-john/E5DE55EB94D8BB02CCF12561DB2811F4",
+        "source_type": "academic-book",
+        "supports": [
+          "authorship-positions",
+          "date-ranges",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Introduction including beloved disciple and authorship evidence.",
+        "id": "cambridge-john-introduction",
+        "canonical_object_ids": [
+          "john"
+        ]
+      },
+      {
+        "title": "The Gospel according to John",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "John 1-21",
+        "url": "https://www.sblgnt.com/",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "Canonical and literary comparator; shared language does not settle authorship or direction.",
+        "id": "john-gospel",
+        "canonical_object_ids": [
+          "1-john",
+          "2-john"
+        ]
+      },
+      {
+        "title": "The Gospel according to John, Greek text",
+        "author": "",
+        "publisher": "Society of Biblical Literature",
+        "year": 2010,
+        "locator": "John 1-21 in SBLGNT",
+        "url": "https://www.sbl-site.org/resources/digital-texts/sbl-greek-new-testament/",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "structure",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Open critical Greek text.",
+        "id": "john-greek",
+        "canonical_object_ids": [
+          "john"
+        ]
+      },
+      {
+        "title": "I, II, & III John: A Commentary",
+        "author": "Judith M. Lieu",
+        "publisher": "Westminster John Knox Press",
+        "year": 2008,
+        "locator": "New Testament Library",
+        "url": "https://www.wjkbooks.com/Products/0664220983/i-ii-iii-john.aspx",
+        "source_type": "academic-book",
+        "supports": [],
+        "notes": "Literary, historical, theological, and ethical control.",
+        "id": "lieu",
+        "canonical_object_ids": [
+          "1-john",
+          "2-john"
+        ],
+        "canonical_source_variants": [
+          {
+            "title": "I, II, & III John: A Commentary",
+            "author": "Judith M. Lieu",
+            "publisher": "Westminster John Knox Press",
+            "year": 2008,
+            "locator": "New Testament Library",
+            "url": "https://www.wjkbooks.com/Products/0664220983/i-ii-iii-john.aspx",
+            "source_type": "academic-book",
+            "supports": [],
+            "notes": "Literary, historical, theological, and ethical control.",
+            "id": "lieu"
+          },
+          {
+            "title": "I, II, & III John: A Commentary",
+            "author": "Judith M. Lieu",
+            "publisher": "Westminster John Knox Press",
+            "year": 2008,
+            "locator": "New Testament Library, 2 John",
+            "url": "https://www.wjkbooks.com/Products/0664220983/i-ii-iii-john.aspx",
+            "source_type": "academic-book",
+            "supports": [],
+            "notes": "Literary, historical, theological, and ethical control.",
+            "id": "lieu"
+          }
+        ]
+      },
+      {
+        "title": "The Oxford Handbook of Johannine Studies",
+        "author": "Judith M. Lieu and Martinus C. de Boer, editors",
+        "publisher": "Oxford University Press",
+        "year": 2018,
+        "locator": "Chapters on text, sources, Gospels, community, authorship, archaeology, Jews, gender, signs, theology, ethics, festivals, and canon",
+        "url": "https://academic.oup.com/edited-volume/38583",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "literary-context",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Multi-author survey of Johannine scholarship.",
+        "id": "oxford-johannine",
+        "canonical_object_ids": [
+          "john"
+        ]
+      },
+      {
+        "title": "Trauma and Forgiveness",
+        "author": "C. Fred Alford",
+        "publisher": "Cambridge University Press",
+        "year": 2013,
+        "locator": "Trauma, memory, forgiveness, and repair",
+        "url": "https://www.cambridge.org/core/books/trauma-and-forgiveness/FC2C8DE6F3C6135372D824348F106C0E",
+        "source_type": "academic-book",
+        "supports": [
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Trauma-informed caution for suffering, forgiveness, and authority.",
+        "id": "trauma-john",
+        "canonical_object_ids": [
+          "john"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "1-john",
+        "type": "book",
+        "title": "1 John",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.901
+      },
+      {
+        "id": "2-john",
+        "type": "book",
+        "title": "2 John",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.899
+      },
+      {
+        "id": "john",
+        "type": "book",
+        "title": "John",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.917
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "618137f590635636d18aa1f2119046e9961e5f0732a07ed424e012032401b281",
+  "evidence_hash_version": "2"
+}

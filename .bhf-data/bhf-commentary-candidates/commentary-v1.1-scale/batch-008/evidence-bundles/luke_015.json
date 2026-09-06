@@ -1,0 +1,321 @@
+{
+  "passage_ref": "Luke 15",
+  "entities": {
+    "people": [],
+    "places": [],
+    "groups": [],
+    "events": [],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "luke-lost-sons",
+      "claim": "Luke 15's father and two sons stage lostness, costly welcome, resentment, and an unresolved invitation; reducing it to one conversion formula erases the elder brother and meal controversy.",
+      "category": "culture",
+      "source_ids": [
+        "luke-greek",
+        "nadella-reconciliation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Luke 15:11-32"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "luke",
+        "parent_title": "Luke",
+        "parent_type": "book",
+        "object_importance": 95,
+        "retrieval_score": 0.915,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 10,
+        "certainty": "textually_explicit",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 90
+      }
+    },
+    {
+      "id": "what-is-a-parable:ancient_near_east_context:0",
+      "claim": "Story-based moral instruction was familiar in the ancient world, but Jesus uses parables to announce God's reign.",
+      "category": "culture",
+      "source_ids": [
+        "matthew-13",
+        "mark-4",
+        "luke-10",
+        "luke-15",
+        "matthew-21",
+        "matthew-25",
+        "what-is-a-parable-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Luke 15:1-32"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "what-is-a-parable",
+        "parent_title": "What is a parable?",
+        "parent_type": "faq",
+        "object_importance": 88,
+        "retrieval_score": 0.908,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "what-is-a-parable:historical_context:0",
+      "claim": "Jesus uses parables in first-century teaching settings to confront unbelief and form disciples.",
+      "category": "history",
+      "source_ids": [
+        "matthew-13",
+        "mark-4",
+        "luke-10",
+        "luke-15",
+        "matthew-21",
+        "matthew-25",
+        "what-is-a-parable-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Luke 15:1-32"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "what-is-a-parable",
+        "parent_title": "What is a parable?",
+        "parent_type": "faq",
+        "object_importance": 88,
+        "retrieval_score": 0.908,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "Luke 10",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "luke-10",
+        "canonical_object_ids": [
+          "what-is-a-parable"
+        ]
+      },
+      {
+        "title": "Luke 15",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "luke-15",
+        "canonical_object_ids": [
+          "what-is-a-parable"
+        ]
+      },
+      {
+        "title": "The Gospel according to Luke, Greek text",
+        "author": "",
+        "publisher": "Society of Biblical Literature",
+        "year": 2010,
+        "locator": "Luke 1-24 in SBLGNT",
+        "url": "https://www.sbl-site.org/resources/digital-texts/sbl-greek-new-testament/",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "structure",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Open critical Greek text.",
+        "id": "luke-greek",
+        "canonical_object_ids": [
+          "luke"
+        ]
+      },
+      {
+        "title": "Mark 4",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "mark-4",
+        "canonical_object_ids": [
+          "what-is-a-parable"
+        ]
+      },
+      {
+        "title": "Matthew 13",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "matthew-13",
+        "canonical_object_ids": [
+          "what-is-a-parable"
+        ]
+      },
+      {
+        "title": "Matthew 21",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "matthew-21",
+        "canonical_object_ids": [
+          "what-is-a-parable"
+        ]
+      },
+      {
+        "title": "Matthew 25",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "matthew-25",
+        "canonical_object_ids": [
+          "what-is-a-parable"
+        ]
+      },
+      {
+        "title": "Luke's Gospel as a Narrative of Reconciliation",
+        "author": "Raj Nadella",
+        "publisher": "Cambridge University Press",
+        "year": 2025,
+        "locator": "Cambridge Companion to Biblical Narrative, chapter 12",
+        "url": "https://www.cambridge.org/core/books/cambridge-companion-to-biblical-narrative/lukes-gospel-as-a-narrative-of-reconciliation/440D2F4D387458C538F8050C89AB8671",
+        "source_type": "academic-book",
+        "supports": [
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Narrative approaches to parables and reconciliation.",
+        "id": "nadella-reconciliation",
+        "canonical_object_ids": [
+          "luke"
+        ]
+      },
+      {
+        "title": "Canonical historical orientation for What is a parable?",
+        "author": "",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "id": "what-is-a-parable-historical-orientation",
+        "canonical_object_ids": [
+          "what-is-a-parable"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "luke",
+        "type": "book",
+        "title": "Luke",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.915
+      },
+      {
+        "id": "what-is-a-parable",
+        "type": "faq",
+        "title": "What is a parable?",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.908
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "d4e4030f404f2f325c389bba278ba63816b258c548913f481f851908837a5783",
+  "evidence_hash_version": "2"
+}
