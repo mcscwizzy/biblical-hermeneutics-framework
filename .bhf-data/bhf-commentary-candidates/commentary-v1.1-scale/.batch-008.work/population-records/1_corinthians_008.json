@@ -1,0 +1,103 @@
+{
+  "checkpoint_identity": {
+    "checkpoint_version": "commentary-v11-scaled-preflight-checkpoint-1",
+    "tool_version": "commentary-v11-scaled-preflight-1.2-routing-remediation",
+    "batch_id": "batch-008",
+    "target_count": 107,
+    "candidate_pool_size": 250,
+    "candidate_source": "/home/johnwalker/Documents/github/biblical-hermeneutics-framework/.bhf-data/bhf-commentary-candidates/commentary-v1.0.1"
+  },
+  "reference": "1 Corinthians 8",
+  "validated": true,
+  "low_information": true,
+  "record": {
+    "book": "1 Corinthians",
+    "chapter": 8,
+    "reference": "1 Corinthians 8",
+    "classification": "LOW_INFORMATION_COMMENTARY",
+    "stored_availability": "AVAILABLE",
+    "stored_status": "validated",
+    "detection": {
+      "is_low_information": true,
+      "classification": "LOW_INFORMATION_COMMENTARY",
+      "markers": [
+        "verse_count_boilerplate",
+        "opening_quotation_label",
+        "closing_quotation_label"
+      ],
+      "section_kinds": [
+        "chapter_overview"
+      ],
+      "contextual_section_kinds": [],
+      "cited_evidence_ids": [
+        "1cor-demons"
+      ],
+      "canonical_summary_only": true,
+      "text_length": 313
+    },
+    "bundle_assessment": {
+      "evidence_bundle_available": true,
+      "evidence_hash": "189d5804a764d981660355c01fea2fea0740cbcdb0db35f770642f9a7591221c",
+      "evidence_item_count": 44,
+      "useful_contextual_evidence_count": 44,
+      "evidence_categories": [
+        "archaeology",
+        "chronology",
+        "culture",
+        "economics",
+        "history"
+      ],
+      "evidence_supports_regeneration": true,
+      "evidence_limitation": null,
+      "recomputed_availability": "AVAILABLE",
+      "cited_evidence_resolved": true,
+      "unused_evidence_ids": [
+        "1-corinthians:interpretive_note:34",
+        "1-corinthians:interpretive_note:35",
+        "1-corinthians:interpretive_note:36",
+        "1-corinthians:interpretive_note:42",
+        "1-corinthians:interpretive_note:84",
+        "1-corinthians:interpretive_note:85",
+        "1cor-idol-food",
+        "1cor-integrity",
+        "1cor-manuscripts",
+        "acts-pauline-letters-chronology",
+        "acts-pauline-letters-chronology:passage-relevance",
+        "corinth-conditional-never-meat",
+        "corinth-conditional-never-meat:passage-relevance",
+        "corinth-destroyed-sibling-wounded-conscience",
+        "corinth-destroyed-sibling-wounded-conscience:passage-relevance",
+        "corinth-food-does-not-commend",
+        "corinth-food-does-not-commend:passage-relevance",
+        "corinth-former-idol-association",
+        "corinth-former-idol-association:passage-relevance",
+        "corinth-idol-and-one-god-confession",
+        "corinth-idol-and-one-god-confession:passage-relevance",
+        "corinth-idol-ontology-cultic-table",
+        "corinth-idol-ontology-cultic-table:passage-relevance",
+        "corinth-knowledge-love-conscience",
+        "corinth-knowledge-love-conscience:passage-relevance",
+        "corinth-knowledge-love-known",
+        "corinth-knowledge-love-known:passage-relevance",
+        "corinth-topic-and-slogan-boundaries",
+        "corinth-topic-and-slogan-boundaries:passage-relevance",
+        "corinth-visible-temple-reclining",
+        "corinth-visible-temple-reclining:passage-relevance",
+        "cross-passage-diet-code-limit",
+        "cross-passage-diet-code-limit:passage-relevance",
+        "later-sarapis-meal-comparison",
+        "later-sarapis-meal-comparison:passage-relevance",
+        "modern-access-care-table-boundary",
+        "modern-access-care-table-boundary:passage-relevance",
+        "pauline-distinct-meal-settings",
+        "pauline-distinct-meal-settings:passage-relevance",
+        "sanctuary-market-idol-food",
+        "sanctuary-market-idol-food:passage-relevance",
+        "syneidesis-awareness-self-perception",
+        "syneidesis-awareness-self-perception:passage-relevance"
+      ],
+      "current_commentary_uses_contextual_section": false
+    },
+    "regeneration_decision": "REGENERATE_FROM_LOCKED_EVIDENCE"
+  }
+}

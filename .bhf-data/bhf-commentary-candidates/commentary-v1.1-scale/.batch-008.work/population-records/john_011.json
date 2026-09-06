@@ -1,0 +1,96 @@
+{
+  "checkpoint_identity": {
+    "checkpoint_version": "commentary-v11-scaled-preflight-checkpoint-1",
+    "tool_version": "commentary-v11-scaled-preflight-1.2-routing-remediation",
+    "batch_id": "batch-008",
+    "target_count": 107,
+    "candidate_pool_size": 250,
+    "candidate_source": "/home/johnwalker/Documents/github/biblical-hermeneutics-framework/.bhf-data/bhf-commentary-candidates/commentary-v1.0.1"
+  },
+  "reference": "John 11",
+  "validated": true,
+  "low_information": true,
+  "record": {
+    "book": "John",
+    "chapter": 11,
+    "reference": "John 11",
+    "classification": "LOW_INFORMATION_COMMENTARY",
+    "stored_availability": "AVAILABLE",
+    "stored_status": "validated",
+    "detection": {
+      "is_low_information": true,
+      "classification": "LOW_INFORMATION_COMMENTARY",
+      "markers": [
+        "verse_count_boilerplate",
+        "opening_quotation_label",
+        "closing_quotation_label"
+      ],
+      "section_kinds": [
+        "chapter_overview"
+      ],
+      "contextual_section_kinds": [],
+      "cited_evidence_ids": [
+        "john-caiaphas"
+      ],
+      "canonical_summary_only": true,
+      "text_length": 299
+    },
+    "bundle_assessment": {
+      "evidence_bundle_available": true,
+      "evidence_hash": "a23fd1ba4dd2c694612c1b95017bd8e86a9af909f1e9319cd59a6fa77b122d23",
+      "evidence_item_count": 37,
+      "useful_contextual_evidence_count": 37,
+      "evidence_categories": [
+        "archaeology",
+        "culture",
+        "history",
+        "politics",
+        "social"
+      ],
+      "evidence_supports_regeneration": true,
+      "evidence_limitation": null,
+      "recomputed_availability": "AVAILABLE",
+      "cited_evidence_resolved": true,
+      "unused_evidence_ids": [
+        "caiaphas-ossuary-identification",
+        "caiaphas-ossuary-identification:passage-relevance",
+        "gospel-acts-priestly-authority",
+        "gospel-acts-priestly-authority:passage-relevance",
+        "high-priesthood:ancient_near_east_context:0",
+        "high-priesthood:hebraic_worldview:0",
+        "high-priesthood:historical_context:0",
+        "high-priesthood:historical_setting:0",
+        "high-priesthood:original_audience:0",
+        "high-priesthood:second_temple_context:0",
+        "john-i-am",
+        "john-lazarus",
+        "josephus-high-priestly-appointments",
+        "josephus-high-priestly-appointments:passage-relevance",
+        "raising-of-lazarus:ancient_near_east_context:0",
+        "raising-of-lazarus:historical_context:0",
+        "resurrection-doctrine:ancient_near_east_context:0",
+        "resurrection-doctrine:historical_context:0",
+        "resurrection-theme:ancient_near_east_context:0",
+        "resurrection-theme:hebraic_worldview:0",
+        "resurrection-theme:historical_context:0",
+        "resurrection-theme:second_temple_context:0",
+        "sanhedrin:ancient_near_east_context:0",
+        "sanhedrin:hebraic_worldview:0",
+        "sanhedrin:historical_context:0",
+        "sanhedrin:historical_setting:0",
+        "sanhedrin:original_audience:0",
+        "sanhedrin:second_temple_context:0",
+        "second-temple-administration:ancient_near_east_context:0",
+        "second-temple-administration:hebraic_worldview:0",
+        "second-temple-administration:historical_context:0",
+        "second-temple-administration:historical_setting:0",
+        "second-temple-administration:original_audience:0",
+        "second-temple-administration:second_temple_context:0",
+        "what-is-resurrection:ancient_near_east_context:0",
+        "what-is-resurrection:historical_context:0"
+      ],
+      "current_commentary_uses_contextual_section": false
+    },
+    "regeneration_decision": "REGENERATE_FROM_LOCKED_EVIDENCE"
+  }
+}

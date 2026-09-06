@@ -1,0 +1,81 @@
+{
+  "checkpoint_identity": {
+    "checkpoint_version": "commentary-v11-scaled-preflight-checkpoint-1",
+    "tool_version": "commentary-v11-scaled-preflight-1.2-routing-remediation",
+    "batch_id": "batch-008",
+    "target_count": 107,
+    "candidate_pool_size": 250,
+    "candidate_source": "/home/johnwalker/Documents/github/biblical-hermeneutics-framework/.bhf-data/bhf-commentary-candidates/commentary-v1.0.1"
+  },
+  "reference": "Luke 2",
+  "validated": true,
+  "low_information": true,
+  "record": {
+    "book": "Luke",
+    "chapter": 2,
+    "reference": "Luke 2",
+    "classification": "LOW_INFORMATION_COMMENTARY",
+    "stored_availability": "AVAILABLE",
+    "stored_status": "validated",
+    "detection": {
+      "is_low_information": true,
+      "classification": "LOW_INFORMATION_COMMENTARY",
+      "markers": [
+        "verse_count_boilerplate",
+        "opening_quotation_label",
+        "closing_quotation_label"
+      ],
+      "section_kinds": [
+        "chapter_overview"
+      ],
+      "contextual_section_kinds": [],
+      "cited_evidence_ids": [
+        "luke-2-14"
+      ],
+      "canonical_summary_only": true,
+      "text_length": 253
+    },
+    "bundle_assessment": {
+      "evidence_bundle_available": true,
+      "evidence_hash": "81f47bbeece82ed2c6ec4f486135bd4b3e5c472841e6c72fcb4489354d98ec80",
+      "evidence_item_count": 23,
+      "useful_contextual_evidence_count": 23,
+      "evidence_categories": [
+        "culture",
+        "history",
+        "language",
+        "social"
+      ],
+      "evidence_supports_regeneration": true,
+      "evidence_limitation": null,
+      "recomputed_availability": "AVAILABLE",
+      "cited_evidence_resolved": true,
+      "unused_evidence_ids": [
+        "birth-of-jesus:ancient_near_east_context:0",
+        "birth-of-jesus:historical_context:0",
+        "gospel-pilgrimage-and-temple-economy",
+        "gospel-pilgrimage-and-temple-economy:passage-relevance",
+        "josephus-census-tax-resistance",
+        "josephus-census-tax-resistance:passage-relevance",
+        "luke-infancy",
+        "luke-quirinius",
+        "nazareth:ancient_near_east_context:0",
+        "nazareth:hebraic_worldview:0",
+        "nazareth:historical_context:0",
+        "nazareth:second_temple_context:0",
+        "second-temple-administration:ancient_near_east_context:0",
+        "second-temple-administration:hebraic_worldview:0",
+        "second-temple-administration:historical_context:0",
+        "second-temple-administration:historical_setting:0",
+        "second-temple-administration:original_audience:0",
+        "second-temple-administration:second_temple_context:0",
+        "what-is-the-roman-empire-in-the-bible:ancient_near_east_context:0",
+        "what-is-the-roman-empire-in-the-bible:historical_context:0",
+        "what-is-the-second-temple:ancient_near_east_context:0",
+        "what-is-the-second-temple:historical_context:0"
+      ],
+      "current_commentary_uses_contextual_section": false
+    },
+    "regeneration_decision": "REGENERATE_FROM_LOCKED_EVIDENCE"
+  }
+}

@@ -1,0 +1,102 @@
+{
+  "checkpoint_identity": {
+    "checkpoint_version": "commentary-v11-scaled-preflight-checkpoint-1",
+    "tool_version": "commentary-v11-scaled-preflight-1.2-routing-remediation",
+    "batch_id": "batch-008",
+    "target_count": 107,
+    "candidate_pool_size": 250,
+    "candidate_source": "/home/johnwalker/Documents/github/biblical-hermeneutics-framework/.bhf-data/bhf-commentary-candidates/commentary-v1.0.1"
+  },
+  "reference": "2 Corinthians 1",
+  "validated": true,
+  "low_information": true,
+  "record": {
+    "book": "2 Corinthians",
+    "chapter": 1,
+    "reference": "2 Corinthians 1",
+    "classification": "LOW_INFORMATION_COMMENTARY",
+    "stored_availability": "AVAILABLE",
+    "stored_status": "validated",
+    "detection": {
+      "is_low_information": true,
+      "classification": "LOW_INFORMATION_COMMENTARY",
+      "markers": [
+        "verse_count_boilerplate",
+        "opening_quotation_label",
+        "closing_quotation_label"
+      ],
+      "section_kinds": [
+        "chapter_overview"
+      ],
+      "contextual_section_kinds": [],
+      "cited_evidence_ids": [
+        "2cor-authorship"
+      ],
+      "canonical_summary_only": true,
+      "text_length": 349
+    },
+    "bundle_assessment": {
+      "evidence_bundle_available": true,
+      "evidence_hash": "685874c037b70b9470d147a6b13a14699cb51b29129ebd27714425d781607f39",
+      "evidence_item_count": 44,
+      "useful_contextual_evidence_count": 43,
+      "evidence_categories": [
+        "archaeology",
+        "culture",
+        "history",
+        "social"
+      ],
+      "evidence_supports_regeneration": true,
+      "evidence_limitation": null,
+      "recomputed_availability": "AVAILABLE",
+      "cited_evidence_resolved": true,
+      "unused_evidence_ids": [
+        "2-corinthians:interpretive_note:0",
+        "2-corinthians:interpretive_note:2",
+        "2-corinthians:interpretive_note:3",
+        "2-corinthians:interpretive_note:4",
+        "2-corinthians:interpretive_note:5",
+        "2cor-date",
+        "2cor-manuscripts",
+        "2cor-senders",
+        "2cor-travel",
+        "affliction-comfort-circulation",
+        "affliction-comfort-circulation:passage-relevance",
+        "categories-remain-distinct",
+        "corinth-changed-itinerary",
+        "corinth-changed-itinerary:passage-relevance",
+        "corinth-changed-plans-impact",
+        "corinth-changed-plans-impact:passage-relevance",
+        "corinth-despair-not-faithlessness",
+        "corinth-despair-not-faithlessness:passage-relevance",
+        "corinth-god-compassion-comfort",
+        "corinth-god-compassion-comfort:passage-relevance",
+        "corinth-not-lord-faith",
+        "corinth-not-lord-faith:passage-relevance",
+        "corinth-paul-not-lord-faith",
+        "corinth-paul-not-lord-faith:passage-relevance",
+        "corinth-prayer-thanksgiving-rescue",
+        "corinth-prayer-thanksgiving-rescue:passage-relevance",
+        "corinth-shared-comfort",
+        "corinth-shared-comfort:passage-relevance",
+        "corinth:ancient_near_east_context:0",
+        "corinth:hebraic_worldview:0",
+        "corinth:historical_context:0",
+        "corinth:second_temple_context:0",
+        "despair-death-sentence-honesty",
+        "despair-death-sentence-honesty:passage-relevance",
+        "how-do-the-old-and-new-testaments-connect:ancient_near_east_context:0",
+        "how-do-the-old-and-new-testaments-connect:historical_context:0",
+        "modern-anticolonial-local-accountability",
+        "modern-anticolonial-local-accountability:passage-relevance",
+        "modern-correction-not-coercive-control",
+        "modern-correction-not-coercive-control:passage-relevance",
+        "modern-prayer-not-safety-substitute",
+        "modern-prayer-not-safety-substitute:passage-relevance",
+        "pauline-mission-proclamation-travel-coworkers-letters-messengers-hospitality-house-assemblies-synagogues-marketplaces-adaptability-church-planting-and-interassembly-networks:interpretive_note:5"
+      ],
+      "current_commentary_uses_contextual_section": false
+    },
+    "regeneration_decision": "REGENERATE_FROM_LOCKED_EVIDENCE"
+  }
+}

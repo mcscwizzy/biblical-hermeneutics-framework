@@ -1,0 +1,72 @@
+{
+  "checkpoint_identity": {
+    "checkpoint_version": "commentary-v11-scaled-preflight-checkpoint-1",
+    "tool_version": "commentary-v11-scaled-preflight-1.2-routing-remediation",
+    "batch_id": "batch-008",
+    "target_count": 107,
+    "candidate_pool_size": 250,
+    "candidate_source": "/home/johnwalker/Documents/github/biblical-hermeneutics-framework/.bhf-data/bhf-commentary-candidates/commentary-v1.0.1"
+  },
+  "reference": "Colossians 2",
+  "validated": true,
+  "low_information": true,
+  "record": {
+    "book": "Colossians",
+    "chapter": 2,
+    "reference": "Colossians 2",
+    "classification": "LOW_INFORMATION_COMMENTARY",
+    "stored_availability": "AVAILABLE",
+    "stored_status": "validated",
+    "detection": {
+      "is_low_information": true,
+      "classification": "LOW_INFORMATION_COMMENTARY",
+      "markers": [
+        "verse_count_boilerplate",
+        "opening_quotation_label",
+        "closing_quotation_label"
+      ],
+      "section_kinds": [
+        "chapter_overview"
+      ],
+      "contextual_section_kinds": [],
+      "cited_evidence_ids": [
+        "col-angels-visions"
+      ],
+      "canonical_summary_only": true,
+      "text_length": 366
+    },
+    "bundle_assessment": {
+      "evidence_bundle_available": true,
+      "evidence_hash": "65d635444f4e42c7cd0be0ec7de6a0468d8d16ea100b95a09696731283674003",
+      "evidence_item_count": 14,
+      "useful_contextual_evidence_count": 14,
+      "evidence_categories": [
+        "archaeology",
+        "culture",
+        "history",
+        "language"
+      ],
+      "evidence_supports_regeneration": true,
+      "evidence_limitation": null,
+      "recomputed_availability": "AVAILABLE",
+      "cited_evidence_resolved": true,
+      "unused_evidence_ids": [
+        "col-asceticism",
+        "col-calendar",
+        "col-cheirographon",
+        "col-circumcision-baptism",
+        "col-fullness",
+        "col-lycus",
+        "col-opponents",
+        "col-philosophy",
+        "col-powers",
+        "what-is-a-covenant-sign:ancient_near_east_context:0",
+        "what-is-a-covenant-sign:historical_context:0",
+        "what-is-typology:ancient_near_east_context:0",
+        "what-is-typology:historical_context:0"
+      ],
+      "current_commentary_uses_contextual_section": false
+    },
+    "regeneration_decision": "REGENERATE_FROM_LOCKED_EVIDENCE"
+  }
+}

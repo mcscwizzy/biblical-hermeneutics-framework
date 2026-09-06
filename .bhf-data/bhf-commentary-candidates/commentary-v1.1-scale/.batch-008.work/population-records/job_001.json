@@ -1,0 +1,76 @@
+{
+  "checkpoint_identity": {
+    "checkpoint_version": "commentary-v11-scaled-preflight-checkpoint-1",
+    "tool_version": "commentary-v11-scaled-preflight-1.2-routing-remediation",
+    "batch_id": "batch-008",
+    "target_count": 107,
+    "candidate_pool_size": 250,
+    "candidate_source": "/home/johnwalker/Documents/github/biblical-hermeneutics-framework/.bhf-data/bhf-commentary-candidates/commentary-v1.0.1"
+  },
+  "reference": "Job 1",
+  "validated": true,
+  "low_information": true,
+  "record": {
+    "book": "Job",
+    "chapter": 1,
+    "reference": "Job 1",
+    "classification": "LOW_INFORMATION_COMMENTARY",
+    "stored_availability": "AVAILABLE",
+    "stored_status": "validated",
+    "detection": {
+      "is_low_information": true,
+      "classification": "LOW_INFORMATION_COMMENTARY",
+      "markers": [
+        "verse_count_boilerplate",
+        "opening_quotation_label",
+        "closing_quotation_label"
+      ],
+      "section_kinds": [
+        "chapter_overview"
+      ],
+      "contextual_section_kinds": [],
+      "cited_evidence_ids": [
+        "job-heavenly-challenge-losses"
+      ],
+      "canonical_summary_only": true,
+      "text_length": 259
+    },
+    "bundle_assessment": {
+      "evidence_bundle_available": true,
+      "evidence_hash": "5a1f07d87121466f1b09649406d00d79cd756eba457dc921ec43e1e229fb28a3",
+      "evidence_item_count": 19,
+      "useful_contextual_evidence_count": 19,
+      "evidence_categories": [
+        "culture",
+        "economics",
+        "history"
+      ],
+      "evidence_supports_regeneration": true,
+      "evidence_limitation": null,
+      "recomputed_availability": "AVAILABLE",
+      "cited_evidence_resolved": true,
+      "unused_evidence_ids": [
+        "ancient-divine-assembly-imagery:interpretive_note:0",
+        "james:interpretive_note:31",
+        "jas-job",
+        "job-righteous-before-testing",
+        "job-sons-of-god-assembly",
+        "job-sons-of-god-assembly:passage-relevance",
+        "job-the-sufferer:ancient_near_east_context:0",
+        "job-the-sufferer:historical_context:0",
+        "job:interpretive_note:0",
+        "job:interpretive_note:1",
+        "job:interpretive_note:11",
+        "job:interpretive_note:12",
+        "job:interpretive_note:2",
+        "job:interpretive_note:3",
+        "theology-of-suffering:ancient_near_east_context:0",
+        "theology-of-suffering:historical_context:0",
+        "theology-of-the-cross:ancient_near_east_context:0",
+        "theology-of-the-cross:historical_context:0"
+      ],
+      "current_commentary_uses_contextual_section": false
+    },
+    "regeneration_decision": "REGENERATE_FROM_LOCKED_EVIDENCE"
+  }
+}

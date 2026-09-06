@@ -1,0 +1,79 @@
+{
+  "checkpoint_identity": {
+    "checkpoint_version": "commentary-v11-scaled-preflight-checkpoint-1",
+    "tool_version": "commentary-v11-scaled-preflight-1.2-routing-remediation",
+    "batch_id": "batch-008",
+    "target_count": 107,
+    "candidate_pool_size": 250,
+    "candidate_source": "/home/johnwalker/Documents/github/biblical-hermeneutics-framework/.bhf-data/bhf-commentary-candidates/commentary-v1.0.1"
+  },
+  "reference": "Isaiah 37",
+  "validated": true,
+  "low_information": true,
+  "record": {
+    "book": "Isaiah",
+    "chapter": 37,
+    "reference": "Isaiah 37",
+    "classification": "LOW_INFORMATION_COMMENTARY",
+    "stored_availability": "AVAILABLE",
+    "stored_status": "validated",
+    "detection": {
+      "is_low_information": true,
+      "classification": "LOW_INFORMATION_COMMENTARY",
+      "markers": [
+        "verse_count_boilerplate",
+        "opening_quotation_label",
+        "closing_quotation_label"
+      ],
+      "section_kinds": [
+        "chapter_overview"
+      ],
+      "contextual_section_kinds": [],
+      "cited_evidence_ids": [
+        "isaiah-assyria-trust"
+      ],
+      "canonical_summary_only": true,
+      "text_length": 440
+    },
+    "bundle_assessment": {
+      "evidence_bundle_available": true,
+      "evidence_hash": "309320c4ee04a93c53994d0a631e06c42cddd4ab3f620e4d632ac5e6dddd83fb",
+      "evidence_item_count": 21,
+      "useful_contextual_evidence_count": 21,
+      "evidence_categories": [
+        "archaeology",
+        "culture",
+        "history",
+        "politics"
+      ],
+      "evidence_supports_regeneration": true,
+      "evidence_limitation": null,
+      "recomputed_availability": "AVAILABLE",
+      "cited_evidence_resolved": true,
+      "unused_evidence_ids": [
+        "assyrian-tribute-and-royal-representation:interpretive_note:2",
+        "assyrian-tribute-and-royal-representation:interpretive_note:3",
+        "isaiah-long-composition",
+        "isaiah-many-voices",
+        "isaiah-qumran-witnesses",
+        "isaiah-superscription-prophet",
+        "lachish-city-gate:ancient_near_east_context:0",
+        "lachish-city-gate:historical_context:0",
+        "lachish-ostraca:ancient_near_east_context:0",
+        "lachish-ostraca:historical_context:0",
+        "lachish-reliefs:ancient_near_east_context:0",
+        "lachish-reliefs:historical_context:0",
+        "nimrud-reliefs:ancient_near_east_context:0",
+        "nimrud-reliefs:historical_context:0",
+        "sennacherib-hezekiah-tribute",
+        "sennacherib-hezekiah-tribute:passage-relevance",
+        "taylor-prism-annals",
+        "taylor-prism-annals:passage-relevance",
+        "taylor-prism:ancient_near_east_context:0",
+        "taylor-prism:historical_context:0"
+      ],
+      "current_commentary_uses_contextual_section": false
+    },
+    "regeneration_decision": "REGENERATE_FROM_LOCKED_EVIDENCE"
+  }
+}

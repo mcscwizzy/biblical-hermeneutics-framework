@@ -1,0 +1,113 @@
+{
+  "checkpoint_identity": {
+    "checkpoint_version": "commentary-v11-scaled-preflight-checkpoint-1",
+    "tool_version": "commentary-v11-scaled-preflight-1.2-routing-remediation",
+    "batch_id": "batch-008",
+    "target_count": 107,
+    "candidate_pool_size": 250,
+    "candidate_source": "/home/johnwalker/Documents/github/biblical-hermeneutics-framework/.bhf-data/bhf-commentary-candidates/commentary-v1.0.1"
+  },
+  "reference": "Deuteronomy 30",
+  "validated": true,
+  "low_information": true,
+  "record": {
+    "book": "Deuteronomy",
+    "chapter": 30,
+    "reference": "Deuteronomy 30",
+    "classification": "LOW_INFORMATION_COMMENTARY",
+    "stored_availability": "AVAILABLE",
+    "stored_status": "validated",
+    "detection": {
+      "is_low_information": true,
+      "classification": "LOW_INFORMATION_COMMENTARY",
+      "markers": [
+        "verse_count_boilerplate",
+        "opening_quotation_label",
+        "closing_quotation_label"
+      ],
+      "section_kinds": [
+        "chapter_overview"
+      ],
+      "contextual_section_kinds": [],
+      "cited_evidence_ids": [
+        "deuteronomy-choose-life"
+      ],
+      "canonical_summary_only": true,
+      "text_length": 532
+    },
+    "bundle_assessment": {
+      "evidence_bundle_available": true,
+      "evidence_hash": "493946c2625abfe8e6ced71af27f031972fd77feb45cfd3a5cab05f2fc6d361f",
+      "evidence_item_count": 54,
+      "useful_contextual_evidence_count": 54,
+      "evidence_categories": [
+        "chronology",
+        "culture",
+        "geography",
+        "history",
+        "social"
+      ],
+      "evidence_supports_regeneration": true,
+      "evidence_limitation": null,
+      "recomputed_availability": "AVAILABLE",
+      "cited_evidence_resolved": true,
+      "unused_evidence_ids": [
+        "covenant-theme:ancient_near_east_context:0",
+        "covenant-theme:hebraic_worldview:0",
+        "covenant-theme:historical_context:0",
+        "covenant-theme:second_temple_context:0",
+        "deuteronomy-literary-movement",
+        "deuteronomy:interpretive_note:2",
+        "exile-and-return-storyline:ancient_near_east_context:0",
+        "exile-and-return-storyline:hebraic_worldview:0",
+        "exile-and-return-storyline:historical_context:0",
+        "exile-and-return-storyline:historical_setting:0",
+        "exile-and-return-storyline:key_places:0",
+        "exile-and-return-storyline:key_places:1",
+        "exile-and-return-storyline:key_places:2",
+        "exile-and-return-storyline:key_places:3",
+        "exile-and-return-storyline:key_places:4",
+        "exile-and-return-storyline:original_audience:0",
+        "exile-and-return-storyline:second_temple_context:0",
+        "exile-and-return-storyline:timeline:0",
+        "exile-and-return-storyline:timeline:1",
+        "exile-and-return-storyline:timeline:2",
+        "exile-and-return-storyline:timeline:3",
+        "exile-and-return-storyline:timeline:4",
+        "exile-and-return-storyline:timeline:5",
+        "exile-and-return-storyline:timeline:6",
+        "hope-theme:ancient_near_east_context:0",
+        "hope-theme:historical_context:0",
+        "land-theme:ancient_near_east_context:0",
+        "land-theme:historical_context:0",
+        "messianic-hope:ancient_near_east_context:0",
+        "messianic-hope:historical_context:0",
+        "new-exodus-theme:ancient_near_east_context:0",
+        "new-exodus-theme:historical_context:0",
+        "new-jerusalem-theme:ancient_near_east_context:0",
+        "new-jerusalem-theme:historical_context:0",
+        "providence:ancient_near_east_context:0",
+        "providence:historical_context:0",
+        "redemption-theme:ancient_near_east_context:0",
+        "redemption-theme:historical_context:0",
+        "remnant-theme:ancient_near_east_context:0",
+        "remnant-theme:historical_context:0",
+        "remnant:ancient_near_east_context:0",
+        "remnant:historical_context:0",
+        "repentance:ancient_near_east_context:0",
+        "repentance:historical_context:0",
+        "restoration-theme:ancient_near_east_context:0",
+        "restoration-theme:historical_context:0",
+        "romans-near-word-confession",
+        "romans-near-word-confession:passage-relevance",
+        "romans:interpretive_note:43",
+        "seed-theme:ancient_near_east_context:0",
+        "seed-theme:historical_context:0",
+        "shepherd-theme:ancient_near_east_context:0",
+        "shepherd-theme:historical_context:0"
+      ],
+      "current_commentary_uses_contextual_section": false
+    },
+    "regeneration_decision": "REGENERATE_FROM_LOCKED_EVIDENCE"
+  }
+}

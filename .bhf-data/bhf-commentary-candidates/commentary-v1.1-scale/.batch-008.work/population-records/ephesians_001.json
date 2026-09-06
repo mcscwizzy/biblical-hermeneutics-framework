@@ -1,0 +1,83 @@
+{
+  "checkpoint_identity": {
+    "checkpoint_version": "commentary-v11-scaled-preflight-checkpoint-1",
+    "tool_version": "commentary-v11-scaled-preflight-1.2-routing-remediation",
+    "batch_id": "batch-008",
+    "target_count": 107,
+    "candidate_pool_size": 250,
+    "candidate_source": "/home/johnwalker/Documents/github/biblical-hermeneutics-framework/.bhf-data/bhf-commentary-candidates/commentary-v1.0.1"
+  },
+  "reference": "Ephesians 1",
+  "validated": true,
+  "low_information": true,
+  "record": {
+    "book": "Ephesians",
+    "chapter": 1,
+    "reference": "Ephesians 1",
+    "classification": "LOW_INFORMATION_COMMENTARY",
+    "stored_availability": "AVAILABLE",
+    "stored_status": "validated",
+    "detection": {
+      "is_low_information": true,
+      "classification": "LOW_INFORMATION_COMMENTARY",
+      "markers": [
+        "verse_count_boilerplate",
+        "opening_quotation_label",
+        "closing_quotation_label"
+      ],
+      "section_kinds": [
+        "chapter_overview"
+      ],
+      "contextual_section_kinds": [],
+      "cited_evidence_ids": [
+        "eph-artemis"
+      ],
+      "canonical_summary_only": true,
+      "text_length": 255
+    },
+    "bundle_assessment": {
+      "evidence_bundle_available": true,
+      "evidence_hash": "86ef5650251535c69677247ed0c2bf14f2f7fcea9600a55889367fe4e8c05e42",
+      "evidence_item_count": 26,
+      "useful_contextual_evidence_count": 26,
+      "evidence_categories": [
+        "culture",
+        "history",
+        "language"
+      ],
+      "evidence_supports_regeneration": true,
+      "evidence_limitation": null,
+      "recomputed_availability": "AVAILABLE",
+      "cited_evidence_resolved": true,
+      "unused_evidence_ids": [
+        "adoption-theme:ancient_near_east_context:0",
+        "adoption-theme:historical_context:0",
+        "adoption:ancient_near_east_context:0",
+        "adoption:historical_context:0",
+        "eph-authorship",
+        "eph-blessing",
+        "eph-colossians",
+        "eph-destination",
+        "eph-voice",
+        "ephesians-destination-variant",
+        "ephesians-destination-variant:passage-relevance",
+        "ephesians:interpretive_note:0",
+        "ephesians:interpretive_note:1",
+        "ephesians:interpretive_note:2",
+        "ephesians:interpretive_note:3",
+        "ephesians:interpretive_note:4",
+        "ephesians:interpretive_note:45",
+        "ephesus:ancient_near_east_context:0",
+        "ephesus:hebraic_worldview:0",
+        "ephesus:historical_context:0",
+        "ephesus:second_temple_context:0",
+        "sonship-theme:ancient_near_east_context:0",
+        "sonship-theme:historical_context:0",
+        "what-verses-show-identity-in-christ:ancient_near_east_context:0",
+        "what-verses-show-identity-in-christ:historical_context:0"
+      ],
+      "current_commentary_uses_contextual_section": false
+    },
+    "regeneration_decision": "REGENERATE_FROM_LOCKED_EVIDENCE"
+  }
+}

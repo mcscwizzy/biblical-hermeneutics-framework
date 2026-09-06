@@ -1,0 +1,90 @@
+{
+  "checkpoint_identity": {
+    "checkpoint_version": "commentary-v11-scaled-preflight-checkpoint-1",
+    "tool_version": "commentary-v11-scaled-preflight-1.2-routing-remediation",
+    "batch_id": "batch-008",
+    "target_count": 107,
+    "candidate_pool_size": 250,
+    "candidate_source": "/home/johnwalker/Documents/github/biblical-hermeneutics-framework/.bhf-data/bhf-commentary-candidates/commentary-v1.0.1"
+  },
+  "reference": "Matthew 2",
+  "validated": true,
+  "low_information": true,
+  "record": {
+    "book": "Matthew",
+    "chapter": 2,
+    "reference": "Matthew 2",
+    "classification": "LOW_INFORMATION_COMMENTARY",
+    "stored_availability": "AVAILABLE",
+    "stored_status": "validated",
+    "detection": {
+      "is_low_information": true,
+      "classification": "LOW_INFORMATION_COMMENTARY",
+      "markers": [
+        "verse_count_boilerplate",
+        "opening_quotation_label",
+        "closing_quotation_label"
+      ],
+      "section_kinds": [
+        "chapter_overview"
+      ],
+      "contextual_section_kinds": [],
+      "cited_evidence_ids": [
+        "matthew-herod-bethlehem"
+      ],
+      "canonical_summary_only": true,
+      "text_length": 348
+    },
+    "bundle_assessment": {
+      "evidence_bundle_available": true,
+      "evidence_hash": "1aeee333a66ab737a49c10c24eb5d603ddc1e22f140d03c62886a4990bfe524f",
+      "evidence_item_count": 33,
+      "useful_contextual_evidence_count": 33,
+      "evidence_categories": [
+        "culture",
+        "geography",
+        "history"
+      ],
+      "evidence_supports_regeneration": true,
+      "evidence_limitation": null,
+      "recomputed_availability": "AVAILABLE",
+      "cited_evidence_resolved": true,
+      "unused_evidence_ids": [
+        "balaam:ancient_near_east_context:0",
+        "balaam:historical_context:0",
+        "birth-of-jesus:ancient_near_east_context:0",
+        "birth-of-jesus:historical_context:0",
+        "caiaphas:ancient_near_east_context:0",
+        "caiaphas:historical_context:0",
+        "cain:ancient_near_east_context:0",
+        "cain:historical_context:0",
+        "egypt:ancient_near_east_context:0",
+        "egypt:hebraic_worldview:0",
+        "egypt:historical_context:0",
+        "egypt:key_places:0",
+        "egypt:key_places:1",
+        "egypt:key_places:2",
+        "egypt:key_places:3",
+        "egypt:second_temple_context:0",
+        "herod-the-great:ancient_near_east_context:0",
+        "herod-the-great:historical_context:0",
+        "hosea:interpretive_note:18",
+        "jeremiah-reception-distinction",
+        "judas-iscariot:ancient_near_east_context:0",
+        "judas-iscariot:historical_context:0",
+        "matthew-magi-star",
+        "matthew-roman-setting",
+        "matthew-scripture-use",
+        "micah-new-testament-reception",
+        "nazareth:ancient_near_east_context:0",
+        "nazareth:hebraic_worldview:0",
+        "nazareth:historical_context:0",
+        "nazareth:second_temple_context:0",
+        "pontius-pilate:ancient_near_east_context:0",
+        "pontius-pilate:historical_context:0"
+      ],
+      "current_commentary_uses_contextual_section": false
+    },
+    "regeneration_decision": "REGENERATE_FROM_LOCKED_EVIDENCE"
+  }
+}

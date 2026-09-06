@@ -1,0 +1,88 @@
+{
+  "checkpoint_identity": {
+    "checkpoint_version": "commentary-v11-scaled-preflight-checkpoint-1",
+    "tool_version": "commentary-v11-scaled-preflight-1.2-routing-remediation",
+    "batch_id": "batch-008",
+    "target_count": 107,
+    "candidate_pool_size": 250,
+    "candidate_source": "/home/johnwalker/Documents/github/biblical-hermeneutics-framework/.bhf-data/bhf-commentary-candidates/commentary-v1.0.1"
+  },
+  "reference": "James 1",
+  "validated": true,
+  "low_information": true,
+  "record": {
+    "book": "James",
+    "chapter": 1,
+    "reference": "James 1",
+    "classification": "LOW_INFORMATION_COMMENTARY",
+    "stored_availability": "AVAILABLE",
+    "stored_status": "validated",
+    "detection": {
+      "is_low_information": true,
+      "classification": "LOW_INFORMATION_COMMENTARY",
+      "markers": [
+        "verse_count_boilerplate",
+        "opening_quotation_label",
+        "closing_quotation_label"
+      ],
+      "section_kinds": [
+        "chapter_overview"
+      ],
+      "contextual_section_kinds": [],
+      "cited_evidence_ids": [
+        "jas-address"
+      ],
+      "canonical_summary_only": true,
+      "text_length": 342
+    },
+    "bundle_assessment": {
+      "evidence_bundle_available": true,
+      "evidence_hash": "abbda8aa6fea2c32680338380ade8d478068a988fbc54bc2377a48bb8b18a305",
+      "evidence_item_count": 31,
+      "useful_contextual_evidence_count": 31,
+      "evidence_categories": [
+        "culture",
+        "economics",
+        "history"
+      ],
+      "evidence_supports_regeneration": true,
+      "evidence_limitation": null,
+      "recomputed_availability": "AVAILABLE",
+      "cited_evidence_resolved": true,
+      "unused_evidence_ids": [
+        "james:interpretive_note:0",
+        "james:interpretive_note:1",
+        "james:interpretive_note:10",
+        "james:interpretive_note:11",
+        "james:interpretive_note:12",
+        "james:interpretive_note:13",
+        "james:interpretive_note:14",
+        "james:interpretive_note:16",
+        "james:interpretive_note:3",
+        "james:interpretive_note:4",
+        "james:interpretive_note:40",
+        "james:interpretive_note:5",
+        "james:interpretive_note:6",
+        "james:interpretive_note:7",
+        "james:interpretive_note:8",
+        "james:interpretive_note:9",
+        "jas-author-identity",
+        "jas-desire",
+        "jas-firstfruits",
+        "jas-genre",
+        "jas-implanted-word",
+        "jas-provenance",
+        "jas-religion",
+        "jas-sender",
+        "jas-testing",
+        "jas-wisdom",
+        "perseverance:ancient_near_east_context:0",
+        "perseverance:historical_context:0",
+        "the-fall:ancient_near_east_context:0",
+        "the-fall:historical_context:0"
+      ],
+      "current_commentary_uses_contextual_section": false
+    },
+    "regeneration_decision": "REGENERATE_FROM_LOCKED_EVIDENCE"
+  }
+}

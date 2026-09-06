@@ -1,0 +1,77 @@
+{
+  "checkpoint_identity": {
+    "checkpoint_version": "commentary-v11-scaled-preflight-checkpoint-1",
+    "tool_version": "commentary-v11-scaled-preflight-1.2-routing-remediation",
+    "batch_id": "batch-008",
+    "target_count": 107,
+    "candidate_pool_size": 250,
+    "candidate_source": "/home/johnwalker/Documents/github/biblical-hermeneutics-framework/.bhf-data/bhf-commentary-candidates/commentary-v1.0.1"
+  },
+  "reference": "1 Timothy 3",
+  "validated": true,
+  "low_information": true,
+  "record": {
+    "book": "1 Timothy",
+    "chapter": 3,
+    "reference": "1 Timothy 3",
+    "classification": "LOW_INFORMATION_COMMENTARY",
+    "stored_availability": "AVAILABLE",
+    "stored_status": "validated",
+    "detection": {
+      "is_low_information": true,
+      "classification": "LOW_INFORMATION_COMMENTARY",
+      "markers": [
+        "verse_count_boilerplate",
+        "opening_quotation_label",
+        "closing_quotation_label"
+      ],
+      "section_kinds": [
+        "chapter_overview"
+      ],
+      "contextual_section_kinds": [],
+      "cited_evidence_ids": [
+        "1tim-confession"
+      ],
+      "canonical_summary_only": true,
+      "text_length": 367
+    },
+    "bundle_assessment": {
+      "evidence_bundle_available": true,
+      "evidence_hash": "59851f6b5dea7dc3bc36bd64eec0f7912f4e3d1378165c820bfddd8f5a6db8b4",
+      "evidence_item_count": 18,
+      "useful_contextual_evidence_count": 18,
+      "evidence_categories": [
+        "archaeology",
+        "culture",
+        "economics",
+        "history",
+        "social"
+      ],
+      "evidence_supports_regeneration": true,
+      "evidence_limitation": null,
+      "recomputed_availability": "AVAILABLE",
+      "cited_evidence_resolved": true,
+      "unused_evidence_ids": [
+        "1-timothy:interpretive_note:16",
+        "1-timothy:interpretive_note:17",
+        "1-timothy:interpretive_note:18",
+        "1-timothy:interpretive_note:19",
+        "1-timothy:interpretive_note:2",
+        "1-timothy:interpretive_note:20",
+        "1-timothy:interpretive_note:21",
+        "1-timothy:interpretive_note:42",
+        "1tim-date",
+        "1tim-deacons",
+        "1tim-overseer",
+        "1tim-p133",
+        "1tim-women-311",
+        "association-benefaction-office-comparison",
+        "association-benefaction-office-comparison:passage-relevance",
+        "household-slavery-status-comparison",
+        "household-slavery-status-comparison:passage-relevance"
+      ],
+      "current_commentary_uses_contextual_section": false
+    },
+    "regeneration_decision": "REGENERATE_FROM_LOCKED_EVIDENCE"
+  }
+}

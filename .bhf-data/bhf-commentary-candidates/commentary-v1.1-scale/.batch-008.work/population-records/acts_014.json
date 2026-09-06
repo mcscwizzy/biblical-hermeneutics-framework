@@ -1,0 +1,98 @@
+{
+  "checkpoint_identity": {
+    "checkpoint_version": "commentary-v11-scaled-preflight-checkpoint-1",
+    "tool_version": "commentary-v11-scaled-preflight-1.2-routing-remediation",
+    "batch_id": "batch-008",
+    "target_count": 107,
+    "candidate_pool_size": 250,
+    "candidate_source": "/home/johnwalker/Documents/github/biblical-hermeneutics-framework/.bhf-data/bhf-commentary-candidates/commentary-v1.0.1"
+  },
+  "reference": "Acts 14",
+  "validated": true,
+  "low_information": true,
+  "record": {
+    "book": "Acts",
+    "chapter": 14,
+    "reference": "Acts 14",
+    "classification": "LOW_INFORMATION_COMMENTARY",
+    "stored_availability": "AVAILABLE",
+    "stored_status": "validated",
+    "detection": {
+      "is_low_information": true,
+      "classification": "LOW_INFORMATION_COMMENTARY",
+      "markers": [
+        "verse_count_boilerplate",
+        "opening_quotation_label",
+        "closing_quotation_label"
+      ],
+      "section_kinds": [
+        "chapter_overview"
+      ],
+      "contextual_section_kinds": [],
+      "cited_evidence_ids": [
+        "acts-and-galatians-distinct-itinerary-witnesses"
+      ],
+      "canonical_summary_only": true,
+      "text_length": 276
+    },
+    "bundle_assessment": {
+      "evidence_bundle_available": true,
+      "evidence_hash": "9fca804f1da62ced7be3405a315a1eb329e907c214836750b027ddbd9e2c33a0",
+      "evidence_item_count": 39,
+      "useful_contextual_evidence_count": 34,
+      "evidence_categories": [
+        "archaeology",
+        "culture",
+        "geography",
+        "history",
+        "social"
+      ],
+      "evidence_supports_regeneration": true,
+      "evidence_limitation": null,
+      "recomputed_availability": "AVAILABLE",
+      "cited_evidence_resolved": true,
+      "unused_evidence_ids": [
+        "2tim-persecution",
+        "acts-and-galatians-distinct-itinerary-witnesses:passage-relevance",
+        "acts-highland-sequence",
+        "acts-historical-method",
+        "acts-letter-chronology-control",
+        "acts-lystra-stoning-recovery",
+        "acts-lystra-stoning-recovery:passage-relevance",
+        "acts-return-route-and-assembly-appointments",
+        "acts-return-route-and-assembly-appointments:passage-relevance",
+        "acts-revisit-local-elders",
+        "acts-revisit-local-elders:passage-relevance",
+        "acts-text-witnesses",
+        "acts-western-text",
+        "derbe-name-and-site-identification-limits",
+        "derbe-name-and-site-identification-limits:passage-relevance",
+        "galatia-acts-sequence",
+        "galatia-city-differences",
+        "galatia-road-network",
+        "galatia:interpretive_note:2",
+        "iconium-regional-and-civic-ambiguity",
+        "iconium-regional-and-civic-ambiguity:passage-relevance",
+        "lycaonian-language-and-multilingual-interaction",
+        "lycaonian-language-and-multilingual-interaction:passage-relevance",
+        "lystra-crowd-reversal-and-stoning-limits",
+        "lystra-crowd-reversal-and-stoning-limits:passage-relevance",
+        "lystra-healing-disability-and-agency",
+        "lystra-healing-disability-and-agency:passage-relevance",
+        "lystra-roman-colony-and-local-diversity",
+        "lystra-roman-colony-and-local-diversity:passage-relevance",
+        "lystra-zeus-hermes-and-sacrifice-comparanda",
+        "lystra-zeus-hermes-and-sacrifice-comparanda:passage-relevance",
+        "pauline-mission-proclamation-travel-coworkers-letters-messengers-hospitality-house-assemblies-synagogues-marketplaces-adaptability-church-planting-and-interassembly-networks:interpretive_note:0",
+        "roman-galatia-regions-roads-cities-and-audience:interpretive_note:0",
+        "roman-galatia-regions-roads-cities-and-audience:interpretive_note:1",
+        "roman-galatia-regions-roads-cities-and-audience:interpretive_note:2",
+        "roman-galatia-regions-roads-cities-and-audience:interpretive_note:3",
+        "via-sebaste-material-road-network",
+        "via-sebaste-material-road-network:passage-relevance"
+      ],
+      "current_commentary_uses_contextual_section": false
+    },
+    "regeneration_decision": "REGENERATE_FROM_LOCKED_EVIDENCE"
+  }
+}

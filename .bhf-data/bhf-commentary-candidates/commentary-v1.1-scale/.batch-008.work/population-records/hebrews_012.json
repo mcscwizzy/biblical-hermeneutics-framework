@@ -1,0 +1,102 @@
+{
+  "checkpoint_identity": {
+    "checkpoint_version": "commentary-v11-scaled-preflight-checkpoint-1",
+    "tool_version": "commentary-v11-scaled-preflight-1.2-routing-remediation",
+    "batch_id": "batch-008",
+    "target_count": 107,
+    "candidate_pool_size": 250,
+    "candidate_source": "/home/johnwalker/Documents/github/biblical-hermeneutics-framework/.bhf-data/bhf-commentary-candidates/commentary-v1.0.1"
+  },
+  "reference": "Hebrews 12",
+  "validated": true,
+  "low_information": true,
+  "record": {
+    "book": "Hebrews",
+    "chapter": 12,
+    "reference": "Hebrews 12",
+    "classification": "LOW_INFORMATION_COMMENTARY",
+    "stored_availability": "AVAILABLE",
+    "stored_status": "validated",
+    "detection": {
+      "is_low_information": true,
+      "classification": "LOW_INFORMATION_COMMENTARY",
+      "markers": [
+        "verse_count_boilerplate",
+        "opening_quotation_label",
+        "closing_quotation_label"
+      ],
+      "section_kinds": [
+        "chapter_overview"
+      ],
+      "contextual_section_kinds": [],
+      "cited_evidence_ids": [
+        "heb-discipline"
+      ],
+      "canonical_summary_only": true,
+      "text_length": 314
+    },
+    "bundle_assessment": {
+      "evidence_bundle_available": true,
+      "evidence_hash": "e2fd64dcac65a5f07d0980d951ce2395a743c53bdb983eafa5bb22439672710e",
+      "evidence_item_count": 42,
+      "useful_contextual_evidence_count": 42,
+      "evidence_categories": [
+        "archaeology",
+        "culture",
+        "geography",
+        "history",
+        "politics",
+        "social"
+      ],
+      "evidence_supports_regeneration": true,
+      "evidence_limitation": null,
+      "recomputed_availability": "AVAILABLE",
+      "cited_evidence_resolved": true,
+      "unused_evidence_ids": [
+        "divine-holiness:ancient_near_east_context:0",
+        "divine-holiness:historical_context:0",
+        "haggai-hebrews",
+        "heb-kingdom",
+        "heb-p46",
+        "heb-race",
+        "heb-sinai-zion",
+        "heb-sinaiticus",
+        "hebrews:interpretive_note:30",
+        "hebrews:interpretive_note:31",
+        "hebrews:interpretive_note:32",
+        "hebrews:interpretive_note:33",
+        "hebrews:interpretive_note:34",
+        "hebrews:interpretive_note:39",
+        "holiness-theme:ancient_near_east_context:0",
+        "holiness-theme:historical_context:0",
+        "honor-and-shame:ancient_near_east_context:0",
+        "honor-and-shame:hebraic_worldview:0",
+        "honor-and-shame:historical_context:0",
+        "honor-and-shame:historical_setting:0",
+        "honor-and-shame:key_places:0",
+        "honor-and-shame:key_places:1",
+        "honor-and-shame:key_places:2",
+        "honor-and-shame:original_audience:0",
+        "honor-and-shame:second_temple_context:0",
+        "mount-sinai:ancient_near_east_context:0",
+        "mount-sinai:hebraic_worldview:0",
+        "mount-sinai:historical_context:0",
+        "mount-sinai:key_places:0",
+        "mount-sinai:key_places:1",
+        "mount-sinai:key_places:2",
+        "mount-sinai:key_places:3",
+        "mount-sinai:second_temple_context:0",
+        "perseverance:ancient_near_east_context:0",
+        "perseverance:historical_context:0",
+        "sanctification:ancient_near_east_context:0",
+        "sanctification:historical_context:0",
+        "sinai-covenant:ancient_near_east_context:0",
+        "sinai-covenant:historical_context:0",
+        "what-is-holiness:ancient_near_east_context:0",
+        "what-is-holiness:historical_context:0"
+      ],
+      "current_commentary_uses_contextual_section": false
+    },
+    "regeneration_decision": "REGENERATE_FROM_LOCKED_EVIDENCE"
+  }
+}

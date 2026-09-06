@@ -1,0 +1,99 @@
+{
+  "checkpoint_identity": {
+    "checkpoint_version": "commentary-v11-scaled-preflight-checkpoint-1",
+    "tool_version": "commentary-v11-scaled-preflight-1.2-routing-remediation",
+    "batch_id": "batch-008",
+    "target_count": 107,
+    "candidate_pool_size": 250,
+    "candidate_source": "/home/johnwalker/Documents/github/biblical-hermeneutics-framework/.bhf-data/bhf-commentary-candidates/commentary-v1.0.1"
+  },
+  "reference": "Hebrews 1",
+  "validated": true,
+  "low_information": true,
+  "record": {
+    "book": "Hebrews",
+    "chapter": 1,
+    "reference": "Hebrews 1",
+    "classification": "LOW_INFORMATION_COMMENTARY",
+    "stored_availability": "AVAILABLE",
+    "stored_status": "validated",
+    "detection": {
+      "is_low_information": true,
+      "classification": "LOW_INFORMATION_COMMENTARY",
+      "markers": [
+        "verse_count_boilerplate",
+        "opening_quotation_label",
+        "closing_quotation_label"
+      ],
+      "section_kinds": [
+        "chapter_overview"
+      ],
+      "contextual_section_kinds": [],
+      "cited_evidence_ids": [
+        "heb-angels"
+      ],
+      "canonical_summary_only": true,
+      "text_length": 283
+    },
+    "bundle_assessment": {
+      "evidence_bundle_available": true,
+      "evidence_hash": "88d9d7c1771e9f9c0521afff5c233293d4fe91a51439eb4c372f3c5941699611",
+      "evidence_item_count": 41,
+      "useful_contextual_evidence_count": 41,
+      "evidence_categories": [
+        "archaeology",
+        "culture",
+        "geography",
+        "history"
+      ],
+      "evidence_supports_regeneration": true,
+      "evidence_limitation": null,
+      "recomputed_availability": "AVAILABLE",
+      "cited_evidence_resolved": true,
+      "unused_evidence_ids": [
+        "bibliology:ancient_near_east_context:0",
+        "bibliology:historical_context:0",
+        "heb-anonymous",
+        "heb-p46",
+        "heb-sinaiticus",
+        "heb-son",
+        "hebrews:interpretive_note:0",
+        "hebrews:interpretive_note:39",
+        "hebrews:interpretive_note:4",
+        "hebrews:interpretive_note:5",
+        "how-do-the-old-and-new-testaments-connect:ancient_near_east_context:0",
+        "how-do-the-old-and-new-testaments-connect:historical_context:0",
+        "inerrancy:ancient_near_east_context:0",
+        "inerrancy:historical_context:0",
+        "inspiration:ancient_near_east_context:0",
+        "inspiration:historical_context:0",
+        "jesus:ancient_near_east_context:0",
+        "jesus:hebraic_worldview:0",
+        "jesus:historical_context:0",
+        "jesus:key_places:0",
+        "jesus:key_places:1",
+        "jesus:key_places:2",
+        "jesus:key_places:3",
+        "jesus:key_places:4",
+        "jesus:second_temple_context:0",
+        "messiah-theme:ancient_near_east_context:0",
+        "messiah-theme:historical_context:0",
+        "psalms-new-testament-reception",
+        "what-is-a-psalm:ancient_near_east_context:0",
+        "what-is-a-psalm:historical_context:0",
+        "what-is-canonical-theology:ancient_near_east_context:0",
+        "what-is-canonical-theology:historical_context:0",
+        "what-is-intertextuality:ancient_near_east_context:0",
+        "what-is-intertextuality:historical_context:0",
+        "what-is-the-messiah:ancient_near_east_context:0",
+        "what-is-the-messiah:historical_context:0",
+        "why-does-the-bible-repeat-themes:ancient_near_east_context:0",
+        "why-does-the-bible-repeat-themes:historical_context:0",
+        "word-of-god-theme:ancient_near_east_context:0",
+        "word-of-god-theme:historical_context:0"
+      ],
+      "current_commentary_uses_contextual_section": false
+    },
+    "regeneration_decision": "REGENERATE_FROM_LOCKED_EVIDENCE"
+  }
+}

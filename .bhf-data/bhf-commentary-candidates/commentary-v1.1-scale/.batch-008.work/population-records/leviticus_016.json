@@ -1,0 +1,113 @@
+{
+  "checkpoint_identity": {
+    "checkpoint_version": "commentary-v11-scaled-preflight-checkpoint-1",
+    "tool_version": "commentary-v11-scaled-preflight-1.2-routing-remediation",
+    "batch_id": "batch-008",
+    "target_count": 107,
+    "candidate_pool_size": 250,
+    "candidate_source": "/home/johnwalker/Documents/github/biblical-hermeneutics-framework/.bhf-data/bhf-commentary-candidates/commentary-v1.0.1"
+  },
+  "reference": "Leviticus 16",
+  "validated": true,
+  "low_information": true,
+  "record": {
+    "book": "Leviticus",
+    "chapter": 16,
+    "reference": "Leviticus 16",
+    "classification": "LOW_INFORMATION_COMMENTARY",
+    "stored_availability": "AVAILABLE",
+    "stored_status": "validated",
+    "detection": {
+      "is_low_information": true,
+      "classification": "LOW_INFORMATION_COMMENTARY",
+      "markers": [
+        "verse_count_boilerplate",
+        "opening_quotation_label",
+        "closing_quotation_label"
+      ],
+      "section_kinds": [
+        "chapter_overview"
+      ],
+      "contextual_section_kinds": [],
+      "cited_evidence_ids": [
+        "leviticus-day-of-atonement"
+      ],
+      "canonical_summary_only": true,
+      "text_length": 363
+    },
+    "bundle_assessment": {
+      "evidence_bundle_available": true,
+      "evidence_hash": "8e5cbb871b1513cc91ad7b20d2f399c3796e3fe36516d99e6b36511dcadfab62",
+      "evidence_item_count": 53,
+      "useful_contextual_evidence_count": 53,
+      "evidence_categories": [
+        "archaeology",
+        "chronology",
+        "culture",
+        "geography",
+        "history",
+        "social"
+      ],
+      "evidence_supports_regeneration": true,
+      "evidence_limitation": null,
+      "recomputed_availability": "AVAILABLE",
+      "cited_evidence_resolved": true,
+      "unused_evidence_ids": [
+        "atonement:ancient_near_east_context:0",
+        "atonement:historical_context:0",
+        "high-priesthood:ancient_near_east_context:0",
+        "high-priesthood:hebraic_worldview:0",
+        "high-priesthood:historical_context:0",
+        "high-priesthood:historical_setting:0",
+        "high-priesthood:original_audience:0",
+        "high-priesthood:second_temple_context:0",
+        "leviticus-literary-movement",
+        "leviticus:interpretive_note:2",
+        "leviticus:interpretive_note:3",
+        "priesthood-of-believers:ancient_near_east_context:0",
+        "priesthood-of-believers:historical_context:0",
+        "priesthood:ancient_near_east_context:0",
+        "priesthood:hebraic_worldview:0",
+        "priesthood:historical_context:0",
+        "priesthood:second_temple_context:0",
+        "sacrifice-theme:ancient_near_east_context:0",
+        "sacrifice-theme:hebraic_worldview:0",
+        "sacrifice-theme:historical_context:0",
+        "sacrifice-theme:second_temple_context:0",
+        "sacrificial-system:ancient_near_east_context:0",
+        "sacrificial-system:historical_context:0",
+        "tabernacle-graded-sacred-space",
+        "tabernacle-graded-sacred-space:passage-relevance",
+        "tabernacle-presence-access-and-mobility:interpretive_note:1",
+        "tabernacle:ancient_near_east_context:0",
+        "tabernacle:archaeology:0",
+        "tabernacle:archaeology:1",
+        "tabernacle:date_ranges:0",
+        "tabernacle:date_ranges:1",
+        "tabernacle:hebraic_worldview:0",
+        "tabernacle:historical_context:0",
+        "tabernacle:historical_setting:0",
+        "tabernacle:original_audience:0",
+        "tabernacle:second_temple_context:0",
+        "tabernacle:timeline:0",
+        "tabernacle:timeline:1",
+        "tabernacle:timeline:2",
+        "tabernacle:timeline:3",
+        "what-is-sacrifice-in-the-bible:ancient_near_east_context:0",
+        "what-is-sacrifice-in-the-bible:historical_context:0",
+        "what-is-the-tabernacle:ancient_near_east_context:0",
+        "what-is-the-tabernacle:archaeology:0",
+        "what-is-the-tabernacle:archaeology:1",
+        "what-is-the-tabernacle:date_ranges:0",
+        "what-is-the-tabernacle:date_ranges:1",
+        "what-is-the-tabernacle:hebraic_worldview:0",
+        "what-is-the-tabernacle:historical_context:0",
+        "what-is-the-tabernacle:historical_setting:0",
+        "what-is-the-tabernacle:original_audience:0",
+        "what-is-the-tabernacle:second_temple_context:0"
+      ],
+      "current_commentary_uses_contextual_section": false
+    },
+    "regeneration_decision": "REGENERATE_FROM_LOCKED_EVIDENCE"
+  }
+}

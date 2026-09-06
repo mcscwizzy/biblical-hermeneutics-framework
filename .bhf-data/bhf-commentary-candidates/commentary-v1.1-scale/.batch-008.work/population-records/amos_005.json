@@ -1,0 +1,86 @@
+{
+  "checkpoint_identity": {
+    "checkpoint_version": "commentary-v11-scaled-preflight-checkpoint-1",
+    "tool_version": "commentary-v11-scaled-preflight-1.2-routing-remediation",
+    "batch_id": "batch-008",
+    "target_count": 107,
+    "candidate_pool_size": 250,
+    "candidate_source": "/home/johnwalker/Documents/github/biblical-hermeneutics-framework/.bhf-data/bhf-commentary-candidates/commentary-v1.0.1"
+  },
+  "reference": "Amos 5",
+  "validated": true,
+  "low_information": true,
+  "record": {
+    "book": "Amos",
+    "chapter": 5,
+    "reference": "Amos 5",
+    "classification": "LOW_INFORMATION_COMMENTARY",
+    "stored_availability": "AVAILABLE",
+    "stored_status": "validated",
+    "detection": {
+      "is_low_information": true,
+      "classification": "LOW_INFORMATION_COMMENTARY",
+      "markers": [
+        "verse_count_boilerplate",
+        "opening_quotation_label",
+        "closing_quotation_label"
+      ],
+      "section_kinds": [
+        "chapter_overview"
+      ],
+      "contextual_section_kinds": [],
+      "cited_evidence_ids": [
+        "amos-acts7-reuse"
+      ],
+      "canonical_summary_only": true,
+      "text_length": 253
+    },
+    "bundle_assessment": {
+      "evidence_bundle_available": true,
+      "evidence_hash": "677d33e36464f157dfba78571427d276697b29ea2d4e4cc80a4fd5cd2acd5116",
+      "evidence_item_count": 29,
+      "useful_contextual_evidence_count": 29,
+      "evidence_categories": [
+        "culture",
+        "economics",
+        "history"
+      ],
+      "evidence_supports_regeneration": true,
+      "evidence_limitation": null,
+      "recomputed_availability": "AVAILABLE",
+      "cited_evidence_resolved": true,
+      "unused_evidence_ids": [
+        "amos-day-yhwh",
+        "amos-economic-exploitation",
+        "amos-worship-justice",
+        "amos:interpretive_note:12",
+        "amos:interpretive_note:13",
+        "amos:interpretive_note:14",
+        "amos:interpretive_note:15",
+        "amos:interpretive_note:16",
+        "amos:interpretive_note:17",
+        "amos:interpretive_note:32",
+        "amos:interpretive_note:34",
+        "amos:interpretive_note:37",
+        "amos:interpretive_note:9",
+        "day-of-the-lord-prophecy:ancient_near_east_context:0",
+        "day-of-the-lord-prophecy:historical_context:0",
+        "fall-of-samaria:ancient_near_east_context:0",
+        "fall-of-samaria:hebraic_worldview:0",
+        "fall-of-samaria:historical_context:0",
+        "fall-of-samaria:historical_setting:0",
+        "how-should-i-read-prophecy:ancient_near_east_context:0",
+        "how-should-i-read-prophecy:historical_context:0",
+        "what-is-a-prophet:ancient_near_east_context:0",
+        "what-is-a-prophet:historical_context:0",
+        "what-is-the-day-of-the-lord:ancient_near_east_context:0",
+        "what-is-the-day-of-the-lord:historical_context:0",
+        "what-is-the-kingdom-of-israel:ancient_near_east_context:0",
+        "what-is-the-kingdom-of-israel:historical_context:0",
+        "zephaniah-day"
+      ],
+      "current_commentary_uses_contextual_section": false
+    },
+    "regeneration_decision": "REGENERATE_FROM_LOCKED_EVIDENCE"
+  }
+}

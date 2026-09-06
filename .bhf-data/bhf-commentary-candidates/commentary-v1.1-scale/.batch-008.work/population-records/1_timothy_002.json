@@ -1,0 +1,75 @@
+{
+  "checkpoint_identity": {
+    "checkpoint_version": "commentary-v11-scaled-preflight-checkpoint-1",
+    "tool_version": "commentary-v11-scaled-preflight-1.2-routing-remediation",
+    "batch_id": "batch-008",
+    "target_count": 107,
+    "candidate_pool_size": 250,
+    "candidate_source": "/home/johnwalker/Documents/github/biblical-hermeneutics-framework/.bhf-data/bhf-commentary-candidates/commentary-v1.0.1"
+  },
+  "reference": "1 Timothy 2",
+  "validated": true,
+  "low_information": true,
+  "record": {
+    "book": "1 Timothy",
+    "chapter": 2,
+    "reference": "1 Timothy 2",
+    "classification": "LOW_INFORMATION_COMMENTARY",
+    "stored_availability": "AVAILABLE",
+    "stored_status": "validated",
+    "detection": {
+      "is_low_information": true,
+      "classification": "LOW_INFORMATION_COMMENTARY",
+      "markers": [
+        "verse_count_boilerplate",
+        "opening_quotation_label",
+        "closing_quotation_label"
+      ],
+      "section_kinds": [
+        "chapter_overview"
+      ],
+      "contextual_section_kinds": [],
+      "cited_evidence_ids": [
+        "1tim-authentein"
+      ],
+      "canonical_summary_only": true,
+      "text_length": 298
+    },
+    "bundle_assessment": {
+      "evidence_bundle_available": true,
+      "evidence_hash": "1ade5c957f281ad227e7d0ab96f8009e427d360bb60832d0657b32745d9f670f",
+      "evidence_item_count": 17,
+      "useful_contextual_evidence_count": 17,
+      "evidence_categories": [
+        "culture",
+        "economics",
+        "history",
+        "language"
+      ],
+      "evidence_supports_regeneration": true,
+      "evidence_limitation": null,
+      "recomputed_availability": "AVAILABLE",
+      "cited_evidence_resolved": true,
+      "unused_evidence_ids": [
+        "1-timothy:interpretive_note:0",
+        "1-timothy:interpretive_note:10",
+        "1-timothy:interpretive_note:11",
+        "1-timothy:interpretive_note:12",
+        "1-timothy:interpretive_note:13",
+        "1-timothy:interpretive_note:14",
+        "1-timothy:interpretive_note:15",
+        "1-timothy:interpretive_note:42",
+        "1-timothy:interpretive_note:8",
+        "1-timothy:interpretive_note:9",
+        "1tim-childbearing",
+        "1tim-creation",
+        "1tim-dress",
+        "1tim-mediator",
+        "1tim-prayer",
+        "1tim-women-learn"
+      ],
+      "current_commentary_uses_contextual_section": false
+    },
+    "regeneration_decision": "REGENERATE_FROM_LOCKED_EVIDENCE"
+  }
+}

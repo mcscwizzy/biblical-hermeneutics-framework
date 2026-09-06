@@ -1,0 +1,104 @@
+{
+  "checkpoint_identity": {
+    "checkpoint_version": "commentary-v11-scaled-preflight-checkpoint-1",
+    "tool_version": "commentary-v11-scaled-preflight-1.2-routing-remediation",
+    "batch_id": "batch-008",
+    "target_count": 107,
+    "candidate_pool_size": 250,
+    "candidate_source": "/home/johnwalker/Documents/github/biblical-hermeneutics-framework/.bhf-data/bhf-commentary-candidates/commentary-v1.0.1"
+  },
+  "reference": "2 Corinthians 12",
+  "validated": true,
+  "low_information": true,
+  "record": {
+    "book": "2 Corinthians",
+    "chapter": 12,
+    "reference": "2 Corinthians 12",
+    "classification": "LOW_INFORMATION_COMMENTARY",
+    "stored_availability": "AVAILABLE",
+    "stored_status": "validated",
+    "detection": {
+      "is_low_information": true,
+      "classification": "LOW_INFORMATION_COMMENTARY",
+      "markers": [
+        "verse_count_boilerplate",
+        "opening_quotation_label",
+        "closing_quotation_label"
+      ],
+      "section_kinds": [
+        "chapter_overview"
+      ],
+      "contextual_section_kinds": [],
+      "cited_evidence_ids": [
+        "2cor-fool"
+      ],
+      "canonical_summary_only": true,
+      "text_length": 391
+    },
+    "bundle_assessment": {
+      "evidence_bundle_available": true,
+      "evidence_hash": "de6d881cd9c235ccc8661199a923380ab740a2066c42d0c1573c32ca2a330f52",
+      "evidence_item_count": 45,
+      "useful_contextual_evidence_count": 45,
+      "evidence_categories": [
+        "archaeology",
+        "chronology",
+        "culture",
+        "history",
+        "social"
+      ],
+      "evidence_supports_regeneration": true,
+      "evidence_limitation": null,
+      "recomputed_availability": "AVAILABLE",
+      "cited_evidence_resolved": true,
+      "unused_evidence_ids": [
+        "2-corinthians:interpretive_note:50",
+        "2-corinthians:interpretive_note:51",
+        "2-corinthians:interpretive_note:55",
+        "2-corinthians:interpretive_note:57",
+        "2-corinthians:interpretive_note:61",
+        "2-corinthians:interpretive_note:62",
+        "2-corinthians:interpretive_note:63",
+        "2-corinthians:interpretive_note:64",
+        "2-corinthians:interpretive_note:65",
+        "2-corinthians:interpretive_note:66",
+        "2-corinthians:interpretive_note:67",
+        "2cor-manuscripts",
+        "2cor-opponents",
+        "2cor-signs",
+        "2cor-superapostles",
+        "2cor-thorn",
+        "2cor-vision",
+        "2cor-weakness",
+        "acts-letter-chronology-control",
+        "acts-letter-chronology-control:passage-relevance",
+        "categories-remain-distinct",
+        "categories-remain-distinct:passage-relevance",
+        "foolish-boasting-irony",
+        "foolish-boasting-irony:passage-relevance",
+        "foolish-boasting-rhetoric",
+        "foolish-boasting-rhetoric:passage-relevance",
+        "leadership-hardship-not-immunity",
+        "leadership-hardship-not-immunity:passage-relevance",
+        "power-in-weakness-not-coercion",
+        "power-in-weakness-not-coercion:passage-relevance",
+        "rival-labels-partisan-evidence",
+        "rival-labels-partisan-evidence:passage-relevance",
+        "signs-authority-accountability",
+        "signs-authority-accountability:passage-relevance",
+        "signs-no-apostolic-immunity",
+        "signs-no-apostolic-immunity:passage-relevance",
+        "spending-self-not-others",
+        "spending-self-not-others:passage-relevance",
+        "thorn-diagnosis-limit",
+        "thorn-diagnosis-limit:passage-relevance",
+        "thorn-weakness-nonidentification",
+        "thorn-weakness-nonidentification:passage-relevance",
+        "visions-ecstasy-bounded",
+        "visions-ecstasy-bounded:passage-relevance"
+      ],
+      "current_commentary_uses_contextual_section": false
+    },
+    "regeneration_decision": "REGENERATE_FROM_LOCKED_EVIDENCE"
+  }
+}

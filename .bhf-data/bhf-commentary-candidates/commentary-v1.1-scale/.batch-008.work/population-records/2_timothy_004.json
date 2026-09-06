@@ -1,0 +1,106 @@
+{
+  "checkpoint_identity": {
+    "checkpoint_version": "commentary-v11-scaled-preflight-checkpoint-1",
+    "tool_version": "commentary-v11-scaled-preflight-1.2-routing-remediation",
+    "batch_id": "batch-008",
+    "target_count": 107,
+    "candidate_pool_size": 250,
+    "candidate_source": "/home/johnwalker/Documents/github/biblical-hermeneutics-framework/.bhf-data/bhf-commentary-candidates/commentary-v1.0.1"
+  },
+  "reference": "2 Timothy 4",
+  "validated": true,
+  "low_information": true,
+  "record": {
+    "book": "2 Timothy",
+    "chapter": 4,
+    "reference": "2 Timothy 4",
+    "classification": "LOW_INFORMATION_COMMENTARY",
+    "stored_availability": "AVAILABLE",
+    "stored_status": "validated",
+    "detection": {
+      "is_low_information": true,
+      "classification": "LOW_INFORMATION_COMMENTARY",
+      "markers": [
+        "verse_count_boilerplate",
+        "opening_quotation_label",
+        "closing_quotation_label"
+      ],
+      "section_kinds": [
+        "chapter_overview"
+      ],
+      "contextual_section_kinds": [],
+      "cited_evidence_ids": [
+        "2tim-authorship"
+      ],
+      "canonical_summary_only": true,
+      "text_length": 250
+    },
+    "bundle_assessment": {
+      "evidence_bundle_available": true,
+      "evidence_hash": "5ff8eadc97052bf0a74f938faa8596d2103521e3cd28d8eacd738645b5b75e20",
+      "evidence_item_count": 46,
+      "useful_contextual_evidence_count": 45,
+      "evidence_categories": [
+        "archaeology",
+        "chronology",
+        "culture",
+        "geography",
+        "history",
+        "social"
+      ],
+      "evidence_supports_regeneration": true,
+      "evidence_limitation": null,
+      "recomputed_availability": "AVAILABLE",
+      "cited_evidence_resolved": true,
+      "unused_evidence_ids": [
+        "2tim-coworkers",
+        "2tim-date",
+        "2tim-defense",
+        "2tim-departure",
+        "2tim-itching",
+        "2tim-manuscripts",
+        "2tim-proclaim",
+        "2tim-requests",
+        "2tim-testament",
+        "aquila:ancient_near_east_context:0",
+        "aquila:archaeology:0",
+        "aquila:hebraic_worldview:0",
+        "aquila:historical_context:0",
+        "aquila:historical_setting:0",
+        "aquila:key_places:0",
+        "aquila:key_places:1",
+        "aquila:key_places:2",
+        "aquila:key_places:3",
+        "aquila:key_places:4",
+        "aquila:key_places:5",
+        "aquila:original_audience:0",
+        "aquila:second_temple_context:0",
+        "aquila:timeline:0",
+        "aquila:timeline:1",
+        "aquila:timeline:2",
+        "aquila:timeline:3",
+        "prisca-aquila-mobility",
+        "priscilla:ancient_near_east_context:0",
+        "priscilla:archaeology:0",
+        "priscilla:hebraic_worldview:0",
+        "priscilla:historical_context:0",
+        "priscilla:historical_setting:0",
+        "priscilla:key_places:0",
+        "priscilla:key_places:1",
+        "priscilla:key_places:2",
+        "priscilla:key_places:3",
+        "priscilla:key_places:4",
+        "priscilla:original_audience:0",
+        "priscilla:second_temple_context:0",
+        "priscilla:timeline:0",
+        "priscilla:timeline:1",
+        "priscilla:timeline:2",
+        "priscilla:timeline:3",
+        "who-was-paul:ancient_near_east_context:0",
+        "who-was-paul:historical_context:0"
+      ],
+      "current_commentary_uses_contextual_section": false
+    },
+    "regeneration_decision": "REGENERATE_FROM_LOCKED_EVIDENCE"
+  }
+}

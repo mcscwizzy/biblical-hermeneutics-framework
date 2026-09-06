@@ -1,0 +1,90 @@
+{
+  "checkpoint_identity": {
+    "checkpoint_version": "commentary-v11-scaled-preflight-checkpoint-1",
+    "tool_version": "commentary-v11-scaled-preflight-1.2-routing-remediation",
+    "batch_id": "batch-008",
+    "target_count": 107,
+    "candidate_pool_size": 250,
+    "candidate_source": "/home/johnwalker/Documents/github/biblical-hermeneutics-framework/.bhf-data/bhf-commentary-candidates/commentary-v1.0.1"
+  },
+  "reference": "James 5",
+  "validated": true,
+  "low_information": true,
+  "record": {
+    "book": "James",
+    "chapter": 5,
+    "reference": "James 5",
+    "classification": "LOW_INFORMATION_COMMENTARY",
+    "stored_availability": "AVAILABLE",
+    "stored_status": "validated",
+    "detection": {
+      "is_low_information": true,
+      "classification": "LOW_INFORMATION_COMMENTARY",
+      "markers": [
+        "verse_count_boilerplate",
+        "opening_quotation_label",
+        "closing_quotation_label"
+      ],
+      "section_kinds": [
+        "chapter_overview"
+      ],
+      "contextual_section_kinds": [],
+      "cited_evidence_ids": [
+        "jas-anointing"
+      ],
+      "canonical_summary_only": true,
+      "text_length": 277
+    },
+    "bundle_assessment": {
+      "evidence_bundle_available": true,
+      "evidence_hash": "9ff5429ce83a27f744a60f7a812d5a9258c8c5715234712642f000978280efb0",
+      "evidence_item_count": 33,
+      "useful_contextual_evidence_count": 33,
+      "evidence_categories": [
+        "culture",
+        "economics",
+        "history"
+      ],
+      "evidence_supports_regeneration": true,
+      "evidence_limitation": null,
+      "recomputed_availability": "AVAILABLE",
+      "cited_evidence_resolved": true,
+      "unused_evidence_ids": [
+        "james:interpretive_note:28",
+        "james:interpretive_note:29",
+        "james:interpretive_note:30",
+        "james:interpretive_note:31",
+        "james:interpretive_note:32",
+        "james:interpretive_note:33",
+        "james:interpretive_note:34",
+        "james:interpretive_note:35",
+        "james:interpretive_note:36",
+        "james:interpretive_note:37",
+        "james:interpretive_note:38",
+        "james:interpretive_note:39",
+        "james:interpretive_note:41",
+        "james:interpretive_note:5",
+        "james:interpretive_note:6",
+        "jas-confession",
+        "jas-elijah",
+        "jas-genre",
+        "jas-healing",
+        "jas-job",
+        "jas-oaths",
+        "jas-parousia",
+        "jas-provenance",
+        "jas-restoration",
+        "jas-wages",
+        "job-the-sufferer:ancient_near_east_context:0",
+        "job-the-sufferer:historical_context:0",
+        "job:interpretive_note:13",
+        "prayer-theme:ancient_near_east_context:0",
+        "prayer-theme:historical_context:0",
+        "theology-of-prayer:ancient_near_east_context:0",
+        "theology-of-prayer:historical_context:0"
+      ],
+      "current_commentary_uses_contextual_section": false
+    },
+    "regeneration_decision": "REGENERATE_FROM_LOCKED_EVIDENCE"
+  }
+}

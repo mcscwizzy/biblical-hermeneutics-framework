@@ -1,0 +1,617 @@
+{
+  "checkpoint_identity": {
+    "checkpoint_version": "commentary-v11-scaled-preflight-checkpoint-1",
+    "tool_version": "commentary-v11-scaled-preflight-1.2-routing-remediation",
+    "batch_id": "batch-008",
+    "target_count": 107,
+    "candidate_pool_size": 250,
+    "candidate_source": "/home/johnwalker/Documents/github/biblical-hermeneutics-framework/.bhf-data/bhf-commentary-candidates/commentary-v1.0.1"
+  },
+  "report": {
+    "records_audited": 27,
+    "root_cause_counts": {
+      "LEGACY_CATEGORY_OVERRIDE": 0,
+      "MISSING_CLAIM_TYPE": 10,
+      "MISSING_NOTE_TYPE": 0,
+      "MISSING_EVIDENCE_TYPE": 0,
+      "PARENT_METADATA_INHERITANCE": 0,
+      "PRESENTATION_ROLE_HEURISTIC": 7,
+      "TEXTUAL_WITNESS_MISCLASSIFICATION": 2,
+      "INTERPRETIVE_TEXTUAL_UNCERTAINTY": 8,
+      "OTHER": 0
+    },
+    "contributing_root_cause_counts": {
+      "LEGACY_CATEGORY_OVERRIDE": 12,
+      "MISSING_CLAIM_TYPE": 10,
+      "MISSING_NOTE_TYPE": 0,
+      "MISSING_EVIDENCE_TYPE": 0,
+      "PARENT_METADATA_INHERITANCE": 0,
+      "PRESENTATION_ROLE_HEURISTIC": 15,
+      "TEXTUAL_WITNESS_MISCLASSIFICATION": 2,
+      "INTERPRETIVE_TEXTUAL_UNCERTAINTY": 8,
+      "OTHER": 0
+    },
+    "records": [
+      {
+        "reference": "Acts 5",
+        "evidence_id": "acts-text-witnesses",
+        "ckl_parent_object": "acts",
+        "parent_type": "book",
+        "source_kind": "ckl_claim",
+        "legacy_category": "culture",
+        "claim_type": "historical_cultural",
+        "note_type": "",
+        "evidence_type": null,
+        "dispute_status": "not_disputed",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "historical_context",
+        "passage_anchors": [
+          "Acts 1:1-28:31"
+        ],
+        "claim": "Acts is preserved in early papyri and major Greek codices, with P45, P53, P74, Sinaiticus, Vaticanus, and Bezae contributing different portions and textual profiles.",
+        "root_cause": "TEXTUAL_WITNESS_MISCLASSIFICATION",
+        "secondary_root_causes": [
+          "LEGACY_CATEGORY_OVERRIDE"
+        ]
+      },
+      {
+        "reference": "Psalms 9",
+        "evidence_id": "psalms-numbering-witnesses",
+        "ckl_parent_object": "psalms",
+        "parent_type": "book",
+        "source_kind": "ckl_claim",
+        "legacy_category": "history",
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "evidence_type": null,
+        "dispute_status": "textual_variant",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "historical_context",
+        "passage_anchors": [
+          "Psalms 9:1-10:18"
+        ],
+        "claim": "Greek and Latin Psalter traditions number many psalms differently from the Masoretic tradition because they combine Psalms 9-10 and 114-115, divide Psalms 116 and 147, and transmit Psalm 151 beyond the 150-psalm count.",
+        "root_cause": "MISSING_CLAIM_TYPE",
+        "secondary_root_causes": [
+          "LEGACY_CATEGORY_OVERRIDE"
+        ]
+      },
+      {
+        "reference": "Job 15",
+        "evidence_id": "job:interpretive_note:11",
+        "ckl_parent_object": "job",
+        "parent_type": "book",
+        "source_kind": "ckl_interpretive_note",
+        "legacy_category": "culture",
+        "claim_type": "",
+        "note_type": "textual-observation",
+        "evidence_type": null,
+        "dispute_status": "textual_variant",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "historical_context",
+        "passage_anchors": [
+          "Job 1:1-42:17"
+        ],
+        "claim": "Old Greek Job is substantially shorter than the Masoretic form in much of the poetry and also contains expansions, while Qumran preserves Hebrew fragments and an Aramaic targum. Translation and textual criticism should therefore identify the witness in view rather than treating every ancient form as verbally identical.",
+        "root_cause": "PRESENTATION_ROLE_HEURISTIC",
+        "secondary_root_causes": []
+      },
+      {
+        "reference": "Isaiah 47",
+        "evidence_id": "isaiah-qumran-witnesses",
+        "ckl_parent_object": "isaiah",
+        "parent_type": "book",
+        "source_kind": "ckl_claim",
+        "legacy_category": "history",
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "evidence_type": null,
+        "dispute_status": "textual_variant",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "historical_context",
+        "passage_anchors": [
+          "Isaiah 1:1-66:24"
+        ],
+        "claim": "The Great Isaiah Scroll is an almost complete sixty-six-chapter witness broadly aligned with the Masoretic tradition but containing thousands of orthographic and substantive differences; other Qumran Isaiah manuscripts and pesharim show active transmission and interpretation.",
+        "root_cause": "MISSING_CLAIM_TYPE",
+        "secondary_root_causes": [
+          "LEGACY_CATEGORY_OVERRIDE"
+        ]
+      },
+      {
+        "reference": "Isaiah 63",
+        "evidence_id": "isaiah-qumran-witnesses",
+        "ckl_parent_object": "isaiah",
+        "parent_type": "book",
+        "source_kind": "ckl_claim",
+        "legacy_category": "history",
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "evidence_type": null,
+        "dispute_status": "textual_variant",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "historical_context",
+        "passage_anchors": [
+          "Isaiah 1:1-66:24"
+        ],
+        "claim": "The Great Isaiah Scroll is an almost complete sixty-six-chapter witness broadly aligned with the Masoretic tradition but containing thousands of orthographic and substantive differences; other Qumran Isaiah manuscripts and pesharim show active transmission and interpretation.",
+        "root_cause": "MISSING_CLAIM_TYPE",
+        "secondary_root_causes": [
+          "LEGACY_CATEGORY_OVERRIDE"
+        ]
+      },
+      {
+        "reference": "Job 33",
+        "evidence_id": "job:interpretive_note:11",
+        "ckl_parent_object": "job",
+        "parent_type": "book",
+        "source_kind": "ckl_interpretive_note",
+        "legacy_category": "culture",
+        "claim_type": "",
+        "note_type": "textual-observation",
+        "evidence_type": null,
+        "dispute_status": "textual_variant",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "historical_context",
+        "passage_anchors": [
+          "Job 1:1-42:17"
+        ],
+        "claim": "Old Greek Job is substantially shorter than the Masoretic form in much of the poetry and also contains expansions, while Qumran preserves Hebrew fragments and an Aramaic targum. Translation and textual criticism should therefore identify the witness in view rather than treating every ancient form as verbally identical.",
+        "root_cause": "PRESENTATION_ROLE_HEURISTIC",
+        "secondary_root_causes": []
+      },
+      {
+        "reference": "Ezekiel 39",
+        "evidence_id": "ezekiel-p967-order",
+        "ckl_parent_object": "ezekiel",
+        "parent_type": "book",
+        "source_kind": "ckl_claim",
+        "legacy_category": "history",
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "evidence_type": null,
+        "dispute_status": "textual_variant",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "passage_anchors": [
+          "Ezekiel 39:1-29"
+        ],
+        "claim": "Papyrus 967 places the material conventionally numbered Ezekiel 38-39 before chapter 37, showing an ancient order different from the familiar Masoretic sequence.",
+        "root_cause": "MISSING_CLAIM_TYPE",
+        "secondary_root_causes": [
+          "LEGACY_CATEGORY_OVERRIDE"
+        ]
+      },
+      {
+        "reference": "Ecclesiastes 5",
+        "evidence_id": "ecclesiastes-hebrew-greek-qumran-witnesses",
+        "ckl_parent_object": "ecclesiastes",
+        "parent_type": "book",
+        "source_kind": "ckl_claim",
+        "legacy_category": "culture",
+        "claim_type": "reception_history",
+        "note_type": "",
+        "evidence_type": null,
+        "dispute_status": "textual_variant",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "passage_anchors": [
+          "Ecclesiastes 5:13-17"
+        ],
+        "claim": "Ecclesiastes is witnessed by the Masoretic Hebrew text, fragmentary Hebrew manuscripts 4QQoha and 4QQohb, and an exceptionally literal Greek form titled Ecclesiast.",
+        "root_cause": "TEXTUAL_WITNESS_MISCLASSIFICATION",
+        "secondary_root_causes": [
+          "LEGACY_CATEGORY_OVERRIDE"
+        ]
+      },
+      {
+        "reference": "Isaiah 57",
+        "evidence_id": "isaiah-qumran-witnesses",
+        "ckl_parent_object": "isaiah",
+        "parent_type": "book",
+        "source_kind": "ckl_claim",
+        "legacy_category": "history",
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "evidence_type": null,
+        "dispute_status": "textual_variant",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "historical_context",
+        "passage_anchors": [
+          "Isaiah 1:1-66:24"
+        ],
+        "claim": "The Great Isaiah Scroll is an almost complete sixty-six-chapter witness broadly aligned with the Masoretic tradition but containing thousands of orthographic and substantive differences; other Qumran Isaiah manuscripts and pesharim show active transmission and interpretation.",
+        "root_cause": "MISSING_CLAIM_TYPE",
+        "secondary_root_causes": [
+          "LEGACY_CATEGORY_OVERRIDE"
+        ]
+      },
+      {
+        "reference": "Job 11",
+        "evidence_id": "job:interpretive_note:11",
+        "ckl_parent_object": "job",
+        "parent_type": "book",
+        "source_kind": "ckl_interpretive_note",
+        "legacy_category": "culture",
+        "claim_type": "",
+        "note_type": "textual-observation",
+        "evidence_type": null,
+        "dispute_status": "textual_variant",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "historical_context",
+        "passage_anchors": [
+          "Job 1:1-42:17"
+        ],
+        "claim": "Old Greek Job is substantially shorter than the Masoretic form in much of the poetry and also contains expansions, while Qumran preserves Hebrew fragments and an Aramaic targum. Translation and textual criticism should therefore identify the witness in view rather than treating every ancient form as verbally identical.",
+        "root_cause": "PRESENTATION_ROLE_HEURISTIC",
+        "secondary_root_causes": []
+      },
+      {
+        "reference": "Isaiah 34",
+        "evidence_id": "isaiah-qumran-witnesses",
+        "ckl_parent_object": "isaiah",
+        "parent_type": "book",
+        "source_kind": "ckl_claim",
+        "legacy_category": "history",
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "evidence_type": null,
+        "dispute_status": "textual_variant",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "historical_context",
+        "passage_anchors": [
+          "Isaiah 1:1-66:24"
+        ],
+        "claim": "The Great Isaiah Scroll is an almost complete sixty-six-chapter witness broadly aligned with the Masoretic tradition but containing thousands of orthographic and substantive differences; other Qumran Isaiah manuscripts and pesharim show active transmission and interpretation.",
+        "root_cause": "MISSING_CLAIM_TYPE",
+        "secondary_root_causes": [
+          "LEGACY_CATEGORY_OVERRIDE"
+        ]
+      },
+      {
+        "reference": "Jeremiah 48",
+        "evidence_id": "jeremiah-two-editions",
+        "ckl_parent_object": "jeremiah",
+        "parent_type": "book",
+        "source_kind": "ckl_claim",
+        "legacy_category": "history",
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "evidence_type": null,
+        "dispute_status": "textual_variant",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "historical_context",
+        "passage_anchors": [
+          "Jeremiah 46:1-51:64"
+        ],
+        "claim": "Masoretic Jeremiah and Old Greek Ieremias represent markedly different ancient editions: the Alexandrian form is roughly one-seventh shorter and places the nation oracles earlier and in a different order.",
+        "root_cause": "MISSING_CLAIM_TYPE",
+        "secondary_root_causes": [
+          "LEGACY_CATEGORY_OVERRIDE"
+        ]
+      },
+      {
+        "reference": "Job 36",
+        "evidence_id": "job:interpretive_note:11",
+        "ckl_parent_object": "job",
+        "parent_type": "book",
+        "source_kind": "ckl_interpretive_note",
+        "legacy_category": "culture",
+        "claim_type": "",
+        "note_type": "textual-observation",
+        "evidence_type": null,
+        "dispute_status": "textual_variant",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "historical_context",
+        "passage_anchors": [
+          "Job 1:1-42:17"
+        ],
+        "claim": "Old Greek Job is substantially shorter than the Masoretic form in much of the poetry and also contains expansions, while Qumran preserves Hebrew fragments and an Aramaic targum. Translation and textual criticism should therefore identify the witness in view rather than treating every ancient form as verbally identical.",
+        "root_cause": "PRESENTATION_ROLE_HEURISTIC",
+        "secondary_root_causes": []
+      },
+      {
+        "reference": "Isaiah 1",
+        "evidence_id": "isaiah-qumran-witnesses",
+        "ckl_parent_object": "isaiah",
+        "parent_type": "book",
+        "source_kind": "ckl_claim",
+        "legacy_category": "history",
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "evidence_type": null,
+        "dispute_status": "textual_variant",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "historical_context",
+        "passage_anchors": [
+          "Isaiah 1:1-66:24"
+        ],
+        "claim": "The Great Isaiah Scroll is an almost complete sixty-six-chapter witness broadly aligned with the Masoretic tradition but containing thousands of orthographic and substantive differences; other Qumran Isaiah manuscripts and pesharim show active transmission and interpretation.",
+        "root_cause": "MISSING_CLAIM_TYPE",
+        "secondary_root_causes": [
+          "LEGACY_CATEGORY_OVERRIDE"
+        ]
+      },
+      {
+        "reference": "Job 7",
+        "evidence_id": "job:interpretive_note:11",
+        "ckl_parent_object": "job",
+        "parent_type": "book",
+        "source_kind": "ckl_interpretive_note",
+        "legacy_category": "culture",
+        "claim_type": "",
+        "note_type": "textual-observation",
+        "evidence_type": null,
+        "dispute_status": "textual_variant",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "historical_context",
+        "passage_anchors": [
+          "Job 1:1-42:17"
+        ],
+        "claim": "Old Greek Job is substantially shorter than the Masoretic form in much of the poetry and also contains expansions, while Qumran preserves Hebrew fragments and an Aramaic targum. Translation and textual criticism should therefore identify the witness in view rather than treating every ancient form as verbally identical.",
+        "root_cause": "PRESENTATION_ROLE_HEURISTIC",
+        "secondary_root_causes": []
+      },
+      {
+        "reference": "Lamentations 3",
+        "evidence_id": "lam-hope-memory",
+        "ckl_parent_object": "lamentations",
+        "parent_type": "book",
+        "source_kind": "ckl_claim",
+        "legacy_category": "history",
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "evidence_type": null,
+        "dispute_status": "textual_variant",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "passage_anchors": [
+          "Lamentations 3:19-24"
+        ],
+        "claim": "The chapter 3 speaker turns toward hope by recalling steadfast love, mercies, and faithfulness.",
+        "root_cause": "INTERPRETIVE_TEXTUAL_UNCERTAINTY",
+        "secondary_root_causes": [
+          "PRESENTATION_ROLE_HEURISTIC"
+        ]
+      },
+      {
+        "reference": "Daniel 4",
+        "evidence_id": "daniel-greek-versions",
+        "ckl_parent_object": "daniel",
+        "parent_type": "book",
+        "source_kind": "ckl_claim",
+        "legacy_category": "history",
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "evidence_type": null,
+        "dispute_status": "textual_variant",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "passage_anchors": [
+          "Daniel 4:1-37"
+        ],
+        "claim": "Daniel survives in substantially distinct Old Greek and Theodotionic versions, with especially important differences in chapters 4-6 and in the form and placement of additions.",
+        "root_cause": "MISSING_CLAIM_TYPE",
+        "secondary_root_causes": [
+          "LEGACY_CATEGORY_OVERRIDE"
+        ]
+      },
+      {
+        "reference": "Daniel 4",
+        "evidence_id": "daniel:interpretive_note:25",
+        "ckl_parent_object": "daniel",
+        "parent_type": "book",
+        "source_kind": "ckl_interpretive_note",
+        "legacy_category": "culture",
+        "claim_type": "",
+        "note_type": "textual-observation",
+        "evidence_type": null,
+        "dispute_status": "textual_variant",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "passage_anchors": [
+          "Daniel 4:1-37"
+        ],
+        "claim": "Old Greek and Theodotionic Daniel must be compared passage by passage; neither label means that every difference has one cause.",
+        "root_cause": "PRESENTATION_ROLE_HEURISTIC",
+        "secondary_root_causes": []
+      },
+      {
+        "reference": "Jude 1",
+        "evidence_id": "jude-addressees",
+        "ckl_parent_object": "jude",
+        "parent_type": "book",
+        "source_kind": "ckl_claim",
+        "legacy_category": "history",
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "evidence_type": null,
+        "dispute_status": "textual_variant",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "passage_anchors": [
+          "Jude 1:1"
+        ],
+        "claim": "Jude addresses called people described as beloved in God and kept for or by Jesus, with textual variation in the wording.",
+        "root_cause": "INTERPRETIVE_TEXTUAL_UNCERTAINTY",
+        "secondary_root_causes": [
+          "PRESENTATION_ROLE_HEURISTIC"
+        ]
+      },
+      {
+        "reference": "Jude 1",
+        "evidence_id": "jude-exodus",
+        "ckl_parent_object": "jude",
+        "parent_type": "book",
+        "source_kind": "ckl_claim",
+        "legacy_category": "history",
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "evidence_type": null,
+        "dispute_status": "textual_variant",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "passage_anchors": [
+          "Jude 1:5"
+        ],
+        "claim": "Jude recalls rescue from Egypt followed by destruction of those who did not believe, while the subject in verse 5 has a major textual variant.",
+        "root_cause": "MISSING_CLAIM_TYPE",
+        "secondary_root_causes": [
+          "LEGACY_CATEGORY_OVERRIDE"
+        ]
+      },
+      {
+        "reference": "Jude 1",
+        "evidence_id": "jude-fear-garment",
+        "ckl_parent_object": "jude",
+        "parent_type": "book",
+        "source_kind": "ckl_claim",
+        "legacy_category": "history",
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "evidence_type": null,
+        "dispute_status": "textual_variant",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "passage_anchors": [
+          "Jude 1:23"
+        ],
+        "claim": "A further instruction combines mercy with fear and hatred of a garment stained by flesh.",
+        "root_cause": "INTERPRETIVE_TEXTUAL_UNCERTAINTY",
+        "secondary_root_causes": [
+          "PRESENTATION_ROLE_HEURISTIC"
+        ]
+      },
+      {
+        "reference": "Jude 1",
+        "evidence_id": "jude-mercy-doubters",
+        "ckl_parent_object": "jude",
+        "parent_type": "book",
+        "source_kind": "ckl_claim",
+        "legacy_category": "history",
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "evidence_type": null,
+        "dispute_status": "textual_variant",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "passage_anchors": [
+          "Jude 1:22"
+        ],
+        "claim": "One well-attested form directs mercy toward people who doubt or dispute.",
+        "root_cause": "INTERPRETIVE_TEXTUAL_UNCERTAINTY",
+        "secondary_root_causes": [
+          "PRESENTATION_ROLE_HEURISTIC"
+        ]
+      },
+      {
+        "reference": "Jude 1",
+        "evidence_id": "jude-rescue-fire",
+        "ckl_parent_object": "jude",
+        "parent_type": "book",
+        "source_kind": "ckl_claim",
+        "legacy_category": "history",
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "evidence_type": null,
+        "dispute_status": "textual_variant",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "passage_anchors": [
+          "Jude 1:23"
+        ],
+        "claim": "The letter directs rescue of others by snatching them from fire.",
+        "root_cause": "INTERPRETIVE_TEXTUAL_UNCERTAINTY",
+        "secondary_root_causes": [
+          "PRESENTATION_ROLE_HEURISTIC"
+        ]
+      },
+      {
+        "reference": "Jude 1",
+        "evidence_id": "jude:interpretive_note:1",
+        "ckl_parent_object": "jude",
+        "parent_type": "book",
+        "source_kind": "ckl_interpretive_note",
+        "legacy_category": "culture",
+        "claim_type": "",
+        "note_type": "textual-observation",
+        "evidence_type": null,
+        "dispute_status": "textual_variant",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "passage_anchors": [
+          "Jude 1:1"
+        ],
+        "claim": "Beloved in God and kept for or by Jesus in verse 1 reflects a textual and grammatical question; theology should not be built as if only one wording and construal existed.",
+        "root_cause": "INTERPRETIVE_TEXTUAL_UNCERTAINTY",
+        "secondary_root_causes": [
+          "PRESENTATION_ROLE_HEURISTIC"
+        ]
+      },
+      {
+        "reference": "Jude 1",
+        "evidence_id": "jude:interpretive_note:30",
+        "ckl_parent_object": "jude",
+        "parent_type": "book",
+        "source_kind": "ckl_interpretive_note",
+        "legacy_category": "culture",
+        "claim_type": "",
+        "note_type": "textual-observation",
+        "evidence_type": null,
+        "dispute_status": "textual_variant",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "passage_anchors": [
+          "Jude 1:22-23"
+        ],
+        "claim": "Verses 22-23 have major variants affecting whether two or three groups receive mercy, rescue, or fear. Translation and pastoral policy must not conceal this instability.",
+        "root_cause": "INTERPRETIVE_TEXTUAL_UNCERTAINTY",
+        "secondary_root_causes": [
+          "PRESENTATION_ROLE_HEURISTIC"
+        ]
+      },
+      {
+        "reference": "Jude 1",
+        "evidence_id": "jude:interpretive_note:31",
+        "ckl_parent_object": "jude",
+        "parent_type": "book",
+        "source_kind": "ckl_interpretive_note",
+        "legacy_category": "culture",
+        "claim_type": "",
+        "note_type": "interpretive-caution",
+        "evidence_type": null,
+        "dispute_status": "textual_variant",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "passage_anchors": [
+          "Jude 1:22-23"
+        ],
+        "claim": "Discipline and rescue language call for discerning mercy; they do not authorize coercion, surveillance, spiritual abuse, forced confession, or removal of consent.",
+        "root_cause": "INTERPRETIVE_TEXTUAL_UNCERTAINTY",
+        "secondary_root_causes": [
+          "PRESENTATION_ROLE_HEURISTIC"
+        ]
+      },
+      {
+        "reference": "Jude 1",
+        "evidence_id": "jude:interpretive_note:7",
+        "ckl_parent_object": "jude",
+        "parent_type": "book",
+        "source_kind": "ckl_interpretive_note",
+        "legacy_category": "culture",
+        "claim_type": "",
+        "note_type": "textual-observation",
+        "evidence_type": null,
+        "dispute_status": "textual_variant",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "passage_anchors": [
+          "Jude 1:5"
+        ],
+        "claim": "Verse 5 reads Jesus, Lord, or God in different witnesses and editions. The Jesus reading makes an unusually explicit christological exodus claim; exact wording requires textual review.",
+        "root_cause": "PRESENTATION_ROLE_HEURISTIC",
+        "secondary_root_causes": []
+      }
+    ]
+  }
+}

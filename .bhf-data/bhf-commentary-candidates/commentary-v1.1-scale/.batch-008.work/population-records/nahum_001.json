@@ -1,0 +1,73 @@
+{
+  "checkpoint_identity": {
+    "checkpoint_version": "commentary-v11-scaled-preflight-checkpoint-1",
+    "tool_version": "commentary-v11-scaled-preflight-1.2-routing-remediation",
+    "batch_id": "batch-008",
+    "target_count": 107,
+    "candidate_pool_size": 250,
+    "candidate_source": "/home/johnwalker/Documents/github/biblical-hermeneutics-framework/.bhf-data/bhf-commentary-candidates/commentary-v1.0.1"
+  },
+  "reference": "Nahum 1",
+  "validated": true,
+  "low_information": true,
+  "record": {
+    "book": "Nahum",
+    "chapter": 1,
+    "reference": "Nahum 1",
+    "classification": "LOW_INFORMATION_COMMENTARY",
+    "stored_availability": "AVAILABLE",
+    "stored_status": "validated",
+    "detection": {
+      "is_low_information": true,
+      "classification": "LOW_INFORMATION_COMMENTARY",
+      "markers": [
+        "verse_count_boilerplate",
+        "opening_quotation_label",
+        "closing_quotation_label"
+      ],
+      "section_kinds": [
+        "chapter_overview"
+      ],
+      "contextual_section_kinds": [],
+      "cited_evidence_ids": [
+        "nahum-acrostic"
+      ],
+      "canonical_summary_only": true,
+      "text_length": 344
+    },
+    "bundle_assessment": {
+      "evidence_bundle_available": true,
+      "evidence_hash": "5f11adaf287642fdce18c090c47ee5eb4d86070cfca66958b6e13744f4cc7dad",
+      "evidence_item_count": 16,
+      "useful_contextual_evidence_count": 16,
+      "evidence_categories": [
+        "culture",
+        "history",
+        "politics"
+      ],
+      "evidence_supports_regeneration": true,
+      "evidence_limitation": null,
+      "recomputed_availability": "AVAILABLE",
+      "cited_evidence_resolved": true,
+      "unused_evidence_ids": [
+        "assyria:ancient_near_east_context:0",
+        "assyria:hebraic_worldview:0",
+        "assyria:historical_context:0",
+        "assyria:historical_setting:0",
+        "nahum-addressees",
+        "nahum-composition",
+        "nahum-divine-character",
+        "nahum-elkosh",
+        "nahum-ethical-reception",
+        "nahum-good-news",
+        "nahum-new-testament",
+        "nahum-numbering",
+        "nahum-refuge",
+        "nahum-superscription",
+        "nahum-textual-witnesses"
+      ],
+      "current_commentary_uses_contextual_section": false
+    },
+    "regeneration_decision": "REGENERATE_FROM_LOCKED_EVIDENCE"
+  }
+}

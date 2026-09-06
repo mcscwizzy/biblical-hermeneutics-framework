@@ -1,0 +1,65 @@
+{
+  "checkpoint_identity": {
+    "checkpoint_version": "commentary-v11-scaled-preflight-checkpoint-1",
+    "tool_version": "commentary-v11-scaled-preflight-1.2-routing-remediation",
+    "batch_id": "batch-008",
+    "target_count": 107,
+    "candidate_pool_size": 250,
+    "candidate_source": "/home/johnwalker/Documents/github/biblical-hermeneutics-framework/.bhf-data/bhf-commentary-candidates/commentary-v1.0.1"
+  },
+  "reference": "John 16",
+  "validated": true,
+  "low_information": true,
+  "record": {
+    "book": "John",
+    "chapter": 16,
+    "reference": "John 16",
+    "classification": "LOW_INFORMATION_COMMENTARY",
+    "stored_availability": "AVAILABLE",
+    "stored_status": "validated",
+    "detection": {
+      "is_low_information": true,
+      "classification": "LOW_INFORMATION_COMMENTARY",
+      "markers": [
+        "verse_count_boilerplate",
+        "opening_quotation_label",
+        "closing_quotation_label"
+      ],
+      "section_kinds": [
+        "chapter_overview"
+      ],
+      "contextual_section_kinds": [],
+      "cited_evidence_ids": [
+        "john-aposynagogos"
+      ],
+      "canonical_summary_only": true,
+      "text_length": 289
+    },
+    "bundle_assessment": {
+      "evidence_bundle_available": true,
+      "evidence_hash": "2b1bdd5250ab63dbf99bd2a4067cecfc4f7eaafb46d865360017272af07cdfe7",
+      "evidence_item_count": 9,
+      "useful_contextual_evidence_count": 8,
+      "evidence_categories": [
+        "culture",
+        "history"
+      ],
+      "evidence_supports_regeneration": true,
+      "evidence_limitation": null,
+      "recomputed_availability": "AVAILABLE",
+      "cited_evidence_resolved": true,
+      "unused_evidence_ids": [
+        "john-paraclete",
+        "spirit-theme:ancient_near_east_context:0",
+        "spirit-theme:historical_context:0",
+        "synagogue-exclusion-caution",
+        "what-is-the-holy-spirit:ancient_near_east_context:0",
+        "what-is-the-holy-spirit:historical_context:0",
+        "what-is-the-significance-of-the-holy-spirit:ancient_near_east_context:0",
+        "what-is-the-significance-of-the-holy-spirit:historical_context:0"
+      ],
+      "current_commentary_uses_contextual_section": false
+    },
+    "regeneration_decision": "REGENERATE_FROM_LOCKED_EVIDENCE"
+  }
+}

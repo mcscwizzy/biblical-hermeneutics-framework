@@ -1,0 +1,76 @@
+{
+  "checkpoint_identity": {
+    "checkpoint_version": "commentary-v11-scaled-preflight-checkpoint-1",
+    "tool_version": "commentary-v11-scaled-preflight-1.2-routing-remediation",
+    "batch_id": "batch-008",
+    "target_count": 107,
+    "candidate_pool_size": 250,
+    "candidate_source": "/home/johnwalker/Documents/github/biblical-hermeneutics-framework/.bhf-data/bhf-commentary-candidates/commentary-v1.0.1"
+  },
+  "reference": "1 Peter 3",
+  "validated": true,
+  "low_information": true,
+  "record": {
+    "book": "1 Peter",
+    "chapter": 3,
+    "reference": "1 Peter 3",
+    "classification": "LOW_INFORMATION_COMMENTARY",
+    "stored_availability": "AVAILABLE",
+    "stored_status": "validated",
+    "detection": {
+      "is_low_information": true,
+      "classification": "LOW_INFORMATION_COMMENTARY",
+      "markers": [
+        "verse_count_boilerplate",
+        "opening_quotation_label",
+        "closing_quotation_label"
+      ],
+      "section_kinds": [
+        "chapter_overview"
+      ],
+      "contextual_section_kinds": [],
+      "cited_evidence_ids": [
+        "1pet-baptism"
+      ],
+      "canonical_summary_only": true,
+      "text_length": 357
+    },
+    "bundle_assessment": {
+      "evidence_bundle_available": true,
+      "evidence_hash": "43f55cc22260a3e90b7726221e73a4a14252e45ee17b77afe0c45cf50179c7e8",
+      "evidence_item_count": 19,
+      "useful_contextual_evidence_count": 19,
+      "evidence_categories": [
+        "culture",
+        "history",
+        "politics"
+      ],
+      "evidence_supports_regeneration": true,
+      "evidence_limitation": null,
+      "recomputed_availability": "AVAILABLE",
+      "cited_evidence_resolved": true,
+      "unused_evidence_ids": [
+        "1-peter:interpretive_note:22",
+        "1-peter:interpretive_note:23",
+        "1-peter:interpretive_note:24",
+        "1-peter:interpretive_note:25",
+        "1-peter:interpretive_note:26",
+        "1-peter:interpretive_note:27",
+        "1-peter:interpretive_note:28",
+        "1-peter:interpretive_note:29",
+        "1-peter:interpretive_note:30",
+        "1-peter:interpretive_note:31",
+        "1pet-blessing",
+        "1pet-defense",
+        "1pet-genre",
+        "1pet-households",
+        "1pet-persecution",
+        "1pet-spirits",
+        "what-is-typology:ancient_near_east_context:0",
+        "what-is-typology:historical_context:0"
+      ],
+      "current_commentary_uses_contextual_section": false
+    },
+    "regeneration_decision": "REGENERATE_FROM_LOCKED_EVIDENCE"
+  }
+}

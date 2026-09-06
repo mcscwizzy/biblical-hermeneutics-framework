@@ -1,0 +1,89 @@
+{
+  "checkpoint_identity": {
+    "checkpoint_version": "commentary-v11-scaled-preflight-checkpoint-1",
+    "tool_version": "commentary-v11-scaled-preflight-1.2-routing-remediation",
+    "batch_id": "batch-008",
+    "target_count": 107,
+    "candidate_pool_size": 250,
+    "candidate_source": "/home/johnwalker/Documents/github/biblical-hermeneutics-framework/.bhf-data/bhf-commentary-candidates/commentary-v1.0.1"
+  },
+  "reference": "Acts 19",
+  "validated": true,
+  "low_information": true,
+  "record": {
+    "book": "Acts",
+    "chapter": 19,
+    "reference": "Acts 19",
+    "classification": "LOW_INFORMATION_COMMENTARY",
+    "stored_availability": "AVAILABLE",
+    "stored_status": "validated",
+    "detection": {
+      "is_low_information": true,
+      "classification": "LOW_INFORMATION_COMMENTARY",
+      "markers": [
+        "verse_count_boilerplate",
+        "opening_quotation_label",
+        "closing_quotation_label"
+      ],
+      "section_kinds": [
+        "chapter_overview"
+      ],
+      "contextual_section_kinds": [],
+      "cited_evidence_ids": [
+        "acts-ephesus"
+      ],
+      "canonical_summary_only": true,
+      "text_length": 265
+    },
+    "bundle_assessment": {
+      "evidence_bundle_available": true,
+      "evidence_hash": "712b901a926544c592b704204dff63209997ac5a75d5b1dc8c05e17b851e40c3",
+      "evidence_item_count": 29,
+      "useful_contextual_evidence_count": 29,
+      "evidence_categories": [
+        "archaeology",
+        "chronology",
+        "culture",
+        "geography",
+        "history",
+        "social"
+      ],
+      "evidence_supports_regeneration": true,
+      "evidence_limitation": null,
+      "recomputed_availability": "AVAILABLE",
+      "cited_evidence_resolved": true,
+      "unused_evidence_ids": [
+        "acts-ephesus-dialogue-venues",
+        "acts-ephesus-dialogue-venues:passage-relevance",
+        "acts-exorcism-and-book-burning",
+        "acts-exorcism-and-book-burning:passage-relevance",
+        "acts-historical-method",
+        "acts-letters-chronology-spirit",
+        "acts-letters-chronology-spirit:passage-relevance",
+        "acts-text-witnesses",
+        "acts-thessalonica-ephesus-civic-accusations",
+        "acts-thessalonica-ephesus-civic-accusations:passage-relevance",
+        "acts-tyrannus-regional-teaching",
+        "acts-tyrannus-regional-teaching:passage-relevance",
+        "acts-variable-reception-sequences",
+        "acts-variable-reception-sequences:passage-relevance",
+        "acts-western-text",
+        "artemis-craft-economy",
+        "artemis-craft-economy:passage-relevance",
+        "artemision-civic-cult",
+        "artemision-civic-cult:passage-relevance",
+        "ephesus:ancient_near_east_context:0",
+        "ephesus:hebraic_worldview:0",
+        "ephesus:historical_context:0",
+        "ephesus:second_temple_context:0",
+        "imperial-cult-and-civic-honor",
+        "imperial-cult-and-civic-honor:passage-relevance",
+        "pauline-mission-proclamation-travel-coworkers-letters-messengers-hospitality-house-assemblies-synagogues-marketplaces-adaptability-church-planting-and-interassembly-networks:interpretive_note:0",
+        "theater-civic-assembly-offices",
+        "theater-civic-assembly-offices:passage-relevance"
+      ],
+      "current_commentary_uses_contextual_section": false
+    },
+    "regeneration_decision": "REGENERATE_FROM_LOCKED_EVIDENCE"
+  }
+}

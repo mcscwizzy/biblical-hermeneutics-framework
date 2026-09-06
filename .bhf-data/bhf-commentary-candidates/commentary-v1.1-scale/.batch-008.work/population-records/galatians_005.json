@@ -1,0 +1,105 @@
+{
+  "checkpoint_identity": {
+    "checkpoint_version": "commentary-v11-scaled-preflight-checkpoint-1",
+    "tool_version": "commentary-v11-scaled-preflight-1.2-routing-remediation",
+    "batch_id": "batch-008",
+    "target_count": 107,
+    "candidate_pool_size": 250,
+    "candidate_source": "/home/johnwalker/Documents/github/biblical-hermeneutics-framework/.bhf-data/bhf-commentary-candidates/commentary-v1.0.1"
+  },
+  "reference": "Galatians 5",
+  "validated": true,
+  "low_information": true,
+  "record": {
+    "book": "Galatians",
+    "chapter": 5,
+    "reference": "Galatians 5",
+    "classification": "LOW_INFORMATION_COMMENTARY",
+    "stored_availability": "AVAILABLE",
+    "stored_status": "validated",
+    "detection": {
+      "is_low_information": true,
+      "classification": "LOW_INFORMATION_COMMENTARY",
+      "markers": [
+        "verse_count_boilerplate",
+        "opening_quotation_label",
+        "closing_quotation_label"
+      ],
+      "section_kinds": [
+        "chapter_overview"
+      ],
+      "contextual_section_kinds": [],
+      "cited_evidence_ids": [
+        "gal-audience"
+      ],
+      "canonical_summary_only": true,
+      "text_length": 248
+    },
+    "bundle_assessment": {
+      "evidence_bundle_available": true,
+      "evidence_hash": "eb6d2b3790f0965f525839cb040029532964081fc2745b5ac644db29dde9b4a2",
+      "evidence_item_count": 48,
+      "useful_contextual_evidence_count": 47,
+      "evidence_categories": [
+        "culture",
+        "history",
+        "language"
+      ],
+      "evidence_supports_regeneration": true,
+      "evidence_limitation": null,
+      "recomputed_availability": "AVAILABLE",
+      "cited_evidence_resolved": true,
+      "unused_evidence_ids": [
+        "bite-devour-mutual-destruction",
+        "bite-devour-mutual-destruction:passage-relevance",
+        "categories-remain-distinct",
+        "circumcision-intersex-consent-boundary",
+        "circumcision-intersex-consent-boundary:passage-relevance",
+        "gal-circumcision",
+        "gal-flesh-spirit",
+        "gal-freedom",
+        "gal-fruit",
+        "gal-opponents",
+        "gal-rhetoric",
+        "gal-works-torah",
+        "galatian-flesh-spirit-not-body-hatred",
+        "galatian-flesh-spirit-not-body-hatred:passage-relevance",
+        "galatian-fruit-communal-ethics",
+        "galatian-fruit-communal-ethics:passage-relevance",
+        "galatians-freedom-love",
+        "galatians-freedom-love:passage-relevance",
+        "galatians-gentile-circumcision-obligation",
+        "galatians-gentile-circumcision-obligation:passage-relevance",
+        "galatians-vice-fruit-whole-list",
+        "galatians-vice-fruit-whole-list:passage-relevance",
+        "galatians-works-torah-scope",
+        "galatians-works-torah-scope:passage-relevance",
+        "galatians:interpretive_note:15",
+        "galatians:interpretive_note:16",
+        "galatians:interpretive_note:3",
+        "galatians:interpretive_note:38",
+        "galatians:interpretive_note:39",
+        "galatians:interpretive_note:40",
+        "galatians:interpretive_note:41",
+        "galatians:interpretive_note:42",
+        "galatians:interpretive_note:43",
+        "galatians:interpretive_note:44",
+        "galatians:interpretive_note:45",
+        "galatians:interpretive_note:46",
+        "galatians:interpretive_note:47",
+        "galatians:interpretive_note:59",
+        "pauline-spirit-gifts-tongues-prophecy-discernment-healing-worship-and-assembly-order:interpretive_note:0",
+        "spirit-categories-distinct",
+        "spirit-categories-distinct:passage-relevance",
+        "spirit-theme:ancient_near_east_context:0",
+        "spirit-theme:historical_context:0",
+        "what-is-the-holy-spirit:ancient_near_east_context:0",
+        "what-is-the-holy-spirit:historical_context:0",
+        "what-is-the-significance-of-the-holy-spirit:ancient_near_east_context:0",
+        "what-is-the-significance-of-the-holy-spirit:historical_context:0"
+      ],
+      "current_commentary_uses_contextual_section": false
+    },
+    "regeneration_decision": "REGENERATE_FROM_LOCKED_EVIDENCE"
+  }
+}

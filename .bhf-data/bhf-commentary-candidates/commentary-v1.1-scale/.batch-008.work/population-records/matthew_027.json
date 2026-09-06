@@ -1,0 +1,88 @@
+{
+  "checkpoint_identity": {
+    "checkpoint_version": "commentary-v11-scaled-preflight-checkpoint-1",
+    "tool_version": "commentary-v11-scaled-preflight-1.2-routing-remediation",
+    "batch_id": "batch-008",
+    "target_count": 107,
+    "candidate_pool_size": 250,
+    "candidate_source": "/home/johnwalker/Documents/github/biblical-hermeneutics-framework/.bhf-data/bhf-commentary-candidates/commentary-v1.0.1"
+  },
+  "reference": "Matthew 27",
+  "validated": true,
+  "low_information": true,
+  "record": {
+    "book": "Matthew",
+    "chapter": 27,
+    "reference": "Matthew 27",
+    "classification": "LOW_INFORMATION_COMMENTARY",
+    "stored_availability": "AVAILABLE",
+    "stored_status": "validated",
+    "detection": {
+      "is_low_information": true,
+      "classification": "LOW_INFORMATION_COMMENTARY",
+      "markers": [
+        "verse_count_boilerplate",
+        "opening_quotation_label",
+        "closing_quotation_label"
+      ],
+      "section_kinds": [
+        "chapter_overview"
+      ],
+      "contextual_section_kinds": [],
+      "cited_evidence_ids": [
+        "matthew-anti-judaism"
+      ],
+      "canonical_summary_only": true,
+      "text_length": 279
+    },
+    "bundle_assessment": {
+      "evidence_bundle_available": true,
+      "evidence_hash": "3be0871c92842f6f7b84ecbd53e77e22476abe1b774c6de7da067cf56519e0b9",
+      "evidence_item_count": 32,
+      "useful_contextual_evidence_count": 32,
+      "evidence_categories": [
+        "culture",
+        "history"
+      ],
+      "evidence_supports_regeneration": true,
+      "evidence_limitation": null,
+      "recomputed_availability": "AVAILABLE",
+      "cited_evidence_resolved": true,
+      "unused_evidence_ids": [
+        "balaam:ancient_near_east_context:0",
+        "balaam:historical_context:0",
+        "burial-of-jesus:ancient_near_east_context:0",
+        "burial-of-jesus:hebraic_worldview:0",
+        "burial-of-jesus:historical_context:0",
+        "burial-of-jesus:second_temple_context:0",
+        "caiaphas:ancient_near_east_context:0",
+        "caiaphas:historical_context:0",
+        "cain:ancient_near_east_context:0",
+        "cain:historical_context:0",
+        "herod-the-great:ancient_near_east_context:0",
+        "herod-the-great:historical_context:0",
+        "judas-iscariot:ancient_near_east_context:0",
+        "judas-iscariot:historical_context:0",
+        "matthew-blood-guilt",
+        "matthew-crucifixion-signs",
+        "matthew-guard-story",
+        "matthew-passion-responsibility",
+        "matthew-roman-setting",
+        "matthew-women-witnesses",
+        "pilate-stone:ancient_near_east_context:0",
+        "pilate-stone:hebraic_worldview:0",
+        "pilate-stone:historical_context:0",
+        "pilate-stone:second_temple_context:0",
+        "pontius-pilate:ancient_near_east_context:0",
+        "pontius-pilate:historical_context:0",
+        "psalms-new-testament-reception",
+        "roman-governorship:ancient_near_east_context:0",
+        "roman-governorship:hebraic_worldview:0",
+        "roman-governorship:historical_context:0",
+        "roman-governorship:second_temple_context:0"
+      ],
+      "current_commentary_uses_contextual_section": false
+    },
+    "regeneration_decision": "REGENERATE_FROM_LOCKED_EVIDENCE"
+  }
+}

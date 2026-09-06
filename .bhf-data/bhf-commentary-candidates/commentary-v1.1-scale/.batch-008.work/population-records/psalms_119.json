@@ -1,0 +1,75 @@
+{
+  "checkpoint_identity": {
+    "checkpoint_version": "commentary-v11-scaled-preflight-checkpoint-1",
+    "tool_version": "commentary-v11-scaled-preflight-1.2-routing-remediation",
+    "batch_id": "batch-008",
+    "target_count": 107,
+    "candidate_pool_size": 250,
+    "candidate_source": "/home/johnwalker/Documents/github/biblical-hermeneutics-framework/.bhf-data/bhf-commentary-candidates/commentary-v1.0.1"
+  },
+  "reference": "Psalms 119",
+  "validated": true,
+  "low_information": true,
+  "record": {
+    "book": "Psalms",
+    "chapter": 119,
+    "reference": "Psalms 119",
+    "classification": "LOW_INFORMATION_COMMENTARY",
+    "stored_availability": "AVAILABLE",
+    "stored_status": "validated",
+    "detection": {
+      "is_low_information": true,
+      "classification": "LOW_INFORMATION_COMMENTARY",
+      "markers": [
+        "verse_count_boilerplate",
+        "opening_quotation_label",
+        "closing_quotation_label"
+      ],
+      "section_kinds": [
+        "chapter_overview"
+      ],
+      "contextual_section_kinds": [],
+      "cited_evidence_ids": [
+        "psalms-exile-restoration-pilgrimage"
+      ],
+      "canonical_summary_only": true,
+      "text_length": 273
+    },
+    "bundle_assessment": {
+      "evidence_bundle_available": true,
+      "evidence_hash": "65540ccc387f8f1105da4f10699cbf7143e1fc8827d9a883594fe3f9858fcf8a",
+      "evidence_item_count": 19,
+      "useful_contextual_evidence_count": 19,
+      "evidence_categories": [
+        "culture",
+        "history"
+      ],
+      "evidence_supports_regeneration": true,
+      "evidence_limitation": null,
+      "recomputed_availability": "AVAILABLE",
+      "cited_evidence_resolved": true,
+      "unused_evidence_ids": [
+        "bibliology:ancient_near_east_context:0",
+        "bibliology:historical_context:0",
+        "dead-sea-scrolls:ancient_near_east_context:0",
+        "dead-sea-scrolls:historical_context:0",
+        "inerrancy:ancient_near_east_context:0",
+        "inerrancy:historical_context:0",
+        "inspiration:ancient_near_east_context:0",
+        "inspiration:historical_context:0",
+        "mount-ebal-altar-discovery:ancient_near_east_context:0",
+        "mount-ebal-altar-discovery:historical_context:0",
+        "qumran-archaeological-site:ancient_near_east_context:0",
+        "qumran-archaeological-site:historical_context:0",
+        "temple-mount-area-finds:ancient_near_east_context:0",
+        "temple-mount-area-finds:historical_context:0",
+        "wadi-murabbaat-scrolls:ancient_near_east_context:0",
+        "wadi-murabbaat-scrolls:historical_context:0",
+        "word-of-god-theme:ancient_near_east_context:0",
+        "word-of-god-theme:historical_context:0"
+      ],
+      "current_commentary_uses_contextual_section": false
+    },
+    "regeneration_decision": "REGENERATE_FROM_LOCKED_EVIDENCE"
+  }
+}

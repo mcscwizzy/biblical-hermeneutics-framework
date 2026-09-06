@@ -1,0 +1,2637 @@
+{
+  "checkpoint_identity": {
+    "checkpoint_version": "commentary-v11-scaled-preflight-checkpoint-1",
+    "tool_version": "commentary-v11-scaled-preflight-1.2-routing-remediation",
+    "batch_id": "batch-008",
+    "target_count": 107,
+    "candidate_pool_size": 250,
+    "candidate_source": "/home/johnwalker/Documents/github/biblical-hermeneutics-framework/.bhf-data/bhf-commentary-candidates/commentary-v1.0.1"
+  },
+  "report": {
+    "review_version": "commentary-v11-post-batch-textual-routing-review-1.0",
+    "historical_chapters_scanned": 157,
+    "affected_chapters": 157,
+    "records": [
+      {
+        "reference": "1 Chronicles 16",
+        "historical_batch": "Batch 001",
+        "old_locked_hash": "a7d50a9620f2ec2e4b0c1f182b8864ef4b51e93c1a75ac488fc4fb960aa20bc3",
+        "newly_reconstructed_hash": "393ce21b3df093713c9653bc379554a35782a1efd7d4db8b1799171104031b0c",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [],
+        "new_presentation_roles": [],
+        "affected_items": [],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": false,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "1 Chronicles 29",
+        "historical_batch": "Batch 001",
+        "old_locked_hash": "2fedff998ef075a900d7f5d086d3e894566de00c17aa7d01e79719b4872c1fe9",
+        "newly_reconstructed_hash": "eb65ee687196b5cd87f0f19c3096db854ff7b81cfbb35cb871e6c03de812f696",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [],
+        "new_presentation_roles": [],
+        "affected_items": [],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": false,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "1 Kings 3",
+        "historical_batch": "Batch 001",
+        "old_locked_hash": "bd901a2f380e34ffa2940b21959e4bcf3a4bd134e43977d9847e2497290d208c",
+        "newly_reconstructed_hash": "9c24f4b33fcd6eb18b78196ca75242418b156638f81662d029ab700f1c5c6069",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [],
+        "new_presentation_roles": [],
+        "affected_items": [],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": false,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "2 Chronicles 26",
+        "historical_batch": "Batch 001",
+        "old_locked_hash": "11e43e30f507230697833e329860e7f591e921fbf941d5ba7af27717390b2c12",
+        "newly_reconstructed_hash": "960b587eb198e47f6a22e23d08d87c5a0acd2f518ccd8c05943de6c56a2e9cc6",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [],
+        "new_presentation_roles": [],
+        "affected_items": [],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": false,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "2 Chronicles 29",
+        "historical_batch": "Batch 001",
+        "old_locked_hash": "a99932edffd94967bbcbf4ef49446cc99dc2215810d92baf8218d81e8eba78de",
+        "newly_reconstructed_hash": "878982884fc884b68529edf6545facd19eac2b0ebf287c4b725e998bbea33680",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [],
+        "new_presentation_roles": [],
+        "affected_items": [],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": false,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "2 Chronicles 35",
+        "historical_batch": "Batch 001",
+        "old_locked_hash": "1a03c8262aa79a45d9bc47d313277b58cf2af3d20bb845cc4e60c726ca5fbf5b",
+        "newly_reconstructed_hash": "7b31c60919c1f4e83500ba16b5129aaf9420837f7a8aa0720a47560818389ddf",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [],
+        "new_presentation_roles": [],
+        "affected_items": [],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": false,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "2 Kings 23",
+        "historical_batch": "Batch 001",
+        "old_locked_hash": "37e1a48ab0c9a66820e4c9898dc44c38fdc626da90a58314efa155289fb80e2f",
+        "newly_reconstructed_hash": "0adaa3bd9f12ddb364712e370357b55cb3dd9c8a08418c0fd32893efe17ad781",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [],
+        "new_presentation_roles": [],
+        "affected_items": [],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": false,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "2 Samuel 15",
+        "historical_batch": "Batch 001",
+        "old_locked_hash": "55422103e4cfffbe69de2fa8b080a5064c2cd9f80b6986ffb8943352f29b306a",
+        "newly_reconstructed_hash": "efda508798c7fe2211f3edf6e42a4150231fa2c5f51730d4302e98a869a1f08c",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [],
+        "new_presentation_roles": [],
+        "affected_items": [],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": false,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "Acts 7",
+        "historical_batch": "Batch 001",
+        "old_locked_hash": "c9c333dfeb40cde683bb389496793a99579f5591bd6a22d73b7021629b9d5196",
+        "newly_reconstructed_hash": "a098d92d040d1d6d157705126c644856079d18617d77e6079969764f02b4364c",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [
+          "historical_context"
+        ],
+        "new_presentation_roles": [
+          "language_literary"
+        ],
+        "affected_items": [
+          {
+            "evidence_id": "acts-text-witnesses",
+            "old_presentation_role": "historical_context",
+            "new_presentation_role": "language_literary",
+            "existing_terra_prose_cited_affected_item": true,
+            "terra_omitted_affected_item": false,
+            "claim": "Acts is preserved in early papyri and major Greek codices, with P45, P53, P74, Sinaiticus, Vaticanus, and Bezae contributing different portions and textual profiles."
+          },
+          {
+            "evidence_id": "acts-western-text",
+            "old_presentation_role": "historical_context",
+            "new_presentation_role": "language_literary",
+            "existing_terra_prose_cited_affected_item": true,
+            "terra_omitted_affected_item": false,
+            "claim": "Codex Bezae and related versional witnesses preserve a substantially distinctive text of Acts often called Western, whose individual readings require case-by-case judgment."
+          }
+        ],
+        "existing_terra_prose_cited_affected_item": true,
+        "terra_omitted_affected_item": false,
+        "final_v1_1_regeneration_recommended": true,
+        "hash_changed": true
+      },
+      {
+        "reference": "Daniel 9",
+        "historical_batch": "Batch 001",
+        "old_locked_hash": "39019503fe0602353e0a38ee2bee01d72cd27bcfd75eb1c8b010a2bd25926c80",
+        "newly_reconstructed_hash": "cb7f4a50a235c7e974ac70a305177386c7133919f57c9cd03887a989a3aa1a65",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [],
+        "new_presentation_roles": [],
+        "affected_items": [],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": false,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "Daniel 11",
+        "historical_batch": "Batch 001",
+        "old_locked_hash": "7e7161c1c3b285ce6e1c4413a437467aff7ecd4853b2f3eb335ef6d81bf3ae98",
+        "newly_reconstructed_hash": "e006ccae8cbdcf2de29366105e2dd840e805540b1bfcafc6971ee1d826e35419",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [],
+        "new_presentation_roles": [],
+        "affected_items": [],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": false,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "Deuteronomy 7",
+        "historical_batch": "Batch 001",
+        "old_locked_hash": "d171c5f8d1d96c2052ea2347ce664822d34db91ee3b90e24082980026e16fde9",
+        "newly_reconstructed_hash": "4dac2c209c4d35ec297abf9893752ade77a4897fd3c23d3037f37a5a55d27e6b",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [],
+        "new_presentation_roles": [],
+        "affected_items": [],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": false,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "Deuteronomy 15",
+        "historical_batch": "Batch 001",
+        "old_locked_hash": "6f264377f07d0c2aa8ca787d930013cac8d786bc10afc25cb1bf71daff533c43",
+        "newly_reconstructed_hash": "72122edd8143579f48521f960303aa1b4b5fce856521c2599b699b667119e006",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [],
+        "new_presentation_roles": [],
+        "affected_items": [],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": false,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "Deuteronomy 18",
+        "historical_batch": "Batch 001",
+        "old_locked_hash": "9e2ced7006299bac1b10f062bb9ad979f259dbe9703b717e5fc1dc6d537f2512",
+        "newly_reconstructed_hash": "9263ed6140bcd55c1d390edb543b5f0cc3b2c4472cddeeda72345435c3b0f7de",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [],
+        "new_presentation_roles": [],
+        "affected_items": [],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": false,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "Deuteronomy 28",
+        "historical_batch": "Batch 001",
+        "old_locked_hash": "9fa5b2acc13fbcfa39f4f0d8cc80e75ebea11c039400e55db2d3d8377d73039a",
+        "newly_reconstructed_hash": "c0e270e2d716b229d1a8ab32f98aaa8018913464f7a798c7230ddbb0cc0b9fe3",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [],
+        "new_presentation_roles": [],
+        "affected_items": [],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": false,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "Ecclesiastes 8",
+        "historical_batch": "Batch 001",
+        "old_locked_hash": "39cf8b02c52d2e88a3e35c57ccde5a7149f447eb937c156801068fb353193a0c",
+        "newly_reconstructed_hash": "927ec7911e08e048c78148c90f9de268f843769e541ac0d1935a96c618a786c0",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [],
+        "new_presentation_roles": [],
+        "affected_items": [],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": false,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "Ecclesiastes 9",
+        "historical_batch": "Batch 001",
+        "old_locked_hash": "c28c567ef06c441d63b52199e9ad6d72e8c86274afad579f220757d772d54359",
+        "newly_reconstructed_hash": "e11a6c3c76e265be8487f18bf8aa853b08df5b2749b5bd94cb31e5570a10d47a",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [],
+        "new_presentation_roles": [],
+        "affected_items": [],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": false,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "Ezekiel 8",
+        "historical_batch": "Batch 001",
+        "old_locked_hash": "d4e800b36719e6f41798d77ebcf389ff11003740a863d35726fb63552999e037",
+        "newly_reconstructed_hash": "a89c03e63775f9bf51ac780a58b3382dc70f99bcfc73bbd6ddecc8e6886051e6",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [],
+        "new_presentation_roles": [],
+        "affected_items": [],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": false,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "Ezekiel 11",
+        "historical_batch": "Batch 001",
+        "old_locked_hash": "c9b5054da708cffa1e7b3b11a28275fc1f22baf3f494123043f4d4cbde8c14ef",
+        "newly_reconstructed_hash": "22f97dbd5f938cda46be0fd6d131c1d96f58286d1f9f5952d8214aba4d35ccdd",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [],
+        "new_presentation_roles": [],
+        "affected_items": [],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": false,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "Ezekiel 43",
+        "historical_batch": "Batch 001",
+        "old_locked_hash": "26e2425543433df4708d0e35944363c730475a42d59d11acad6fec67eeda4e53",
+        "newly_reconstructed_hash": "d985eff7860d6e5f944b41dd4826c13e99a7d7fa44758970cc05f7ac697caa32",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [],
+        "new_presentation_roles": [],
+        "affected_items": [],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": false,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "Haggai 2",
+        "historical_batch": "Batch 001",
+        "old_locked_hash": "e2c80e6c53f6989e23c5e6ca01a10825ee2ccbef5b2d9dbe1b770264ce64800a",
+        "newly_reconstructed_hash": "b19ea2127ae2c079ff6da627e26451fa6dde52bab5aca3c6d8d6048091dfa82c",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [
+          "historical_context"
+        ],
+        "new_presentation_roles": [
+          "language_literary"
+        ],
+        "affected_items": [
+          {
+            "evidence_id": "haggai-textual-witnesses",
+            "old_presentation_role": "historical_context",
+            "new_presentation_role": "language_literary",
+            "existing_terra_prose_cited_affected_item": null,
+            "terra_omitted_affected_item": null,
+            "claim": "Masoretic Haggai, Old Greek Aggaios, Judean Desert copies of the Twelve, and other versions attest transmission and textual plurality in difficult passages."
+          }
+        ],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": false,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "Isaiah 62",
+        "historical_batch": "Batch 001",
+        "old_locked_hash": "7fd7647a02040e5f721cef71acddb270f33f87b6896bd97065c43ddf7936ffcf",
+        "newly_reconstructed_hash": "4af205f5d277680f02578d0d8c292f2a25bef285cccf85183faf0abebef1e73e",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [
+          "historical_context"
+        ],
+        "new_presentation_roles": [
+          "language_literary"
+        ],
+        "affected_items": [
+          {
+            "evidence_id": "isaiah-qumran-witnesses",
+            "old_presentation_role": "historical_context",
+            "new_presentation_role": "language_literary",
+            "existing_terra_prose_cited_affected_item": true,
+            "terra_omitted_affected_item": false,
+            "claim": "The Great Isaiah Scroll is an almost complete sixty-six-chapter witness broadly aligned with the Masoretic tradition but containing thousands of orthographic and substantive differences; other Qumran Isaiah manuscripts and pesharim show active transmission and interpretation."
+          }
+        ],
+        "existing_terra_prose_cited_affected_item": true,
+        "terra_omitted_affected_item": false,
+        "final_v1_1_regeneration_recommended": true,
+        "hash_changed": true
+      },
+      {
+        "reference": "Isaiah 66",
+        "historical_batch": "Batch 001",
+        "old_locked_hash": "a0d7ac4e4f0892c87e5534a098973f9e7d476429cfe940e487f806a1db95f923",
+        "newly_reconstructed_hash": "3f9b70bffe088eaa00f4ae2e4dd62b266b8d6a531746a855d4b31fe28f045c5c",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [
+          "historical_context"
+        ],
+        "new_presentation_roles": [
+          "language_literary"
+        ],
+        "affected_items": [
+          {
+            "evidence_id": "isaiah-qumran-witnesses",
+            "old_presentation_role": "historical_context",
+            "new_presentation_role": "language_literary",
+            "existing_terra_prose_cited_affected_item": false,
+            "terra_omitted_affected_item": true,
+            "claim": "The Great Isaiah Scroll is an almost complete sixty-six-chapter witness broadly aligned with the Masoretic tradition but containing thousands of orthographic and substantive differences; other Qumran Isaiah manuscripts and pesharim show active transmission and interpretation."
+          }
+        ],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": true,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "Jeremiah 19",
+        "historical_batch": "Batch 001",
+        "old_locked_hash": "39c0f907153b2486d33a8788cc53bd25b992e138446b24898a76c5c9636ffb7e",
+        "newly_reconstructed_hash": "d5c0639485fe0ca1ed9cb6885c53fd9913dafeaa7a02f14dcb45a2bd27027df2",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [],
+        "new_presentation_roles": [],
+        "affected_items": [],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": false,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "Jeremiah 33",
+        "historical_batch": "Batch 001",
+        "old_locked_hash": "5e7465a385c96368b385ad6350ffbe2d28b14ad7916d8e1bb60414ee24a05932",
+        "newly_reconstructed_hash": "81e52b0d91a6982b17ff4cfeab7de6f7b71d2a5bad5511517b7e37330ff58561",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [],
+        "new_presentation_roles": [],
+        "affected_items": [],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": false,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "Jeremiah 51",
+        "historical_batch": "Batch 001",
+        "old_locked_hash": "ac385ffbeb300507b1f93c288c697931cc083e48b2c01fe9f3a905dc9c08f10d",
+        "newly_reconstructed_hash": "4d78be1de9664a8b2f0c1360961c80ca31a47cbe5bb087f7b3746c17b7917208",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [
+          "historical_context"
+        ],
+        "new_presentation_roles": [
+          "language_literary"
+        ],
+        "affected_items": [
+          {
+            "evidence_id": "jeremiah-two-editions",
+            "old_presentation_role": "historical_context",
+            "new_presentation_role": "language_literary",
+            "existing_terra_prose_cited_affected_item": true,
+            "terra_omitted_affected_item": false,
+            "claim": "Masoretic Jeremiah and Old Greek Ieremias represent markedly different ancient editions: the Alexandrian form is roughly one-seventh shorter and places the nation oracles earlier and in a different order."
+          }
+        ],
+        "existing_terra_prose_cited_affected_item": true,
+        "terra_omitted_affected_item": false,
+        "final_v1_1_regeneration_recommended": true,
+        "hash_changed": true
+      },
+      {
+        "reference": "Joel 2",
+        "historical_batch": "Batch 001",
+        "old_locked_hash": "1c09d71f5c2d5a42cb7315b2a0128766eb58bef1e84b2380f8a557723b6b702e",
+        "newly_reconstructed_hash": "a1de6a312a57fd44d6b8cf6d5cc8b313fdf7bffbf8a53addcfbcdbdac4fdc17c",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [
+          "historical_context"
+        ],
+        "new_presentation_roles": [
+          "language_literary"
+        ],
+        "affected_items": [
+          {
+            "evidence_id": "joel-text-versification",
+            "old_presentation_role": "historical_context",
+            "new_presentation_role": "language_literary",
+            "existing_terra_prose_cited_affected_item": false,
+            "terra_omitted_affected_item": true,
+            "claim": "Masoretic Joel is commonly divided into four chapters, while Old Greek Ioel and many English Bibles use three; the spirit oracle is Joel 3:1-5 MT but Joel 2:28-32 in common English numbering."
+          },
+          {
+            "evidence_id": "joel:interpretive_note:26",
+            "old_presentation_role": "historical_context",
+            "new_presentation_role": "language_literary",
+            "existing_terra_prose_cited_affected_item": false,
+            "terra_omitted_affected_item": true,
+            "claim": "Masoretic four-chapter and common English three-chapter numbering must be stated at every affected locator so that Joel 3 and 4 are not confused."
+          },
+          {
+            "evidence_id": "joel:interpretive_note:27",
+            "old_presentation_role": "historical_context",
+            "new_presentation_role": "language_literary",
+            "existing_terra_prose_cited_affected_item": false,
+            "terra_omitted_affected_item": true,
+            "claim": "Old Greek Ioel is an ancient translation and textual witness, not merely a Christian edition of Joel."
+          }
+        ],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": true,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "Lamentations 2",
+        "historical_batch": "Batch 001",
+        "old_locked_hash": "dfd6fd228e7bc926fd3ebf7762913e886e76ea6eb944fe222985e1b22b1388bd",
+        "newly_reconstructed_hash": "c725688989b8d820a883a31c00b39deed3758c049470d4a463e854cd9fff3f8f",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [],
+        "new_presentation_roles": [],
+        "affected_items": [],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": false,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "Lamentations 4",
+        "historical_batch": "Batch 001",
+        "old_locked_hash": "c70b123c324e5c98c61ac799f03ffda951773710b9eb769638b41ad2d775ce5a",
+        "newly_reconstructed_hash": "216089b3ca7195fcda528b5763ee1ff8b1c296104313bceda12cc468b003d3d0",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [],
+        "new_presentation_roles": [],
+        "affected_items": [],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": false,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "Leviticus 13",
+        "historical_batch": "Batch 001",
+        "old_locked_hash": "46e2be594780491ea4c96e03f3268e8a4fefe67e9197b8a59dde541d2a668c8d",
+        "newly_reconstructed_hash": "e3a77dbb6ee408287e2c9e0c878c0bbb3682a74c0da18c43ad2af76ae0b44aab",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [],
+        "new_presentation_roles": [],
+        "affected_items": [],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": false,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "Leviticus 14",
+        "historical_batch": "Batch 001",
+        "old_locked_hash": "18ea933e43802186fc1a49dd91517abd401875034faefc6c6fdc9c703046d5c9",
+        "newly_reconstructed_hash": "1ad3d561de2935a85dc2def2de4da5f91e276e18507668d07c021de99c25084c",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [],
+        "new_presentation_roles": [],
+        "affected_items": [],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": false,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "Leviticus 16",
+        "historical_batch": "Batch 001",
+        "old_locked_hash": "74fd1f2c40d1e8eed8b73af305c237d684e85a6c2eb2e7e41461cea06a6ab58f",
+        "newly_reconstructed_hash": "8e5cbb871b1513cc91ad7b20d2f399c3796e3fe36516d99e6b36511dcadfab62",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [],
+        "new_presentation_roles": [],
+        "affected_items": [],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": false,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "Leviticus 21",
+        "historical_batch": "Batch 001",
+        "old_locked_hash": "b1d139c1253f531036f9730604ae8d61fa80259eba32f0f95f49006362b1c04f",
+        "newly_reconstructed_hash": "01c5c2dc861de66b95ea6318f091ff336733038068f4546e64c3d3aa52d98dae",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [],
+        "new_presentation_roles": [],
+        "affected_items": [],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": false,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "Luke 11",
+        "historical_batch": "Batch 001",
+        "old_locked_hash": "0abed47b51e8a0610ff6751c9aea7bd1d2cee1db202d79c11886569acefb36a3",
+        "newly_reconstructed_hash": "4d5f8100ffafe9547307afb075be851bca5efc8aa5726333528011af14d857fc",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [
+          "historical_context"
+        ],
+        "new_presentation_roles": [
+          "language_literary"
+        ],
+        "affected_items": [
+          {
+            "evidence_id": "luke-prayer",
+            "old_presentation_role": "historical_context",
+            "new_presentation_role": "language_literary",
+            "existing_terra_prose_cited_affected_item": true,
+            "terra_omitted_affected_item": false,
+            "claim": "Luke's Lord's Prayer is shorter than Matthew's in the earliest recoverable text, while manuscripts show harmonizing expansions; its petitions concern God's name, kingdom, daily provision, forgiveness, and testing."
+          }
+        ],
+        "existing_terra_prose_cited_affected_item": true,
+        "terra_omitted_affected_item": false,
+        "final_v1_1_regeneration_recommended": true,
+        "hash_changed": true
+      },
+      {
+        "reference": "Luke 16",
+        "historical_batch": "Batch 001",
+        "old_locked_hash": "09468ccd946d37233af5206dcb76c4172246618e8eaf886342c422a088beeb9f",
+        "newly_reconstructed_hash": "f4b2800cc43e6db00b99b748f6e532d6824b840209f70852085f382cd9500e3b",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [],
+        "new_presentation_roles": [],
+        "affected_items": [],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": false,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "Luke 20",
+        "historical_batch": "Batch 001",
+        "old_locked_hash": "a1ef012a9fbf588e183f3eb53ffa7e0088d41a727897f87bb459d7b13ff20555",
+        "newly_reconstructed_hash": "d92eead354b64c33ce719d85e82c046147a81a49ebd6b2227aa28e9215dd2626",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [],
+        "new_presentation_roles": [],
+        "affected_items": [],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": false,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "Luke 22",
+        "historical_batch": "Batch 001",
+        "old_locked_hash": "ffde3ebe0c02e5c41f530158730c25ed8f7122950abf4ddd4b0995588ee6230e",
+        "newly_reconstructed_hash": "65ee0c60cfd378cf16b3b1198b223debb8c768d2a62d126608c92484bc7557d8",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [
+          "archaeology_geography"
+        ],
+        "new_presentation_roles": [
+          "language_literary"
+        ],
+        "affected_items": [
+          {
+            "evidence_id": "luke-meal-variant",
+            "old_presentation_role": "archaeology_geography",
+            "new_presentation_role": "language_literary",
+            "existing_terra_prose_cited_affected_item": false,
+            "terra_omitted_affected_item": true,
+            "claim": "Luke 22:19b-20, including the second cup and new-covenant language, is present in many major witnesses but absent in important Western witnesses; shorter-text, longer-text, and harmonization models remain debated."
+          }
+        ],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": true,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "Matthew 8",
+        "historical_batch": "Batch 001",
+        "old_locked_hash": "0cccd72ddb8a4bef688a6d1e6c030d9e0924ab0d2e646272143f7b68b568b73f",
+        "newly_reconstructed_hash": "7e59c4d9a0da37fb4e2ce8c5c3385e37469afae7d5a3259c5055bc6025d46af1",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [],
+        "new_presentation_roles": [],
+        "affected_items": [],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": false,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "Matthew 11",
+        "historical_batch": "Batch 001",
+        "old_locked_hash": "e35cddeb854eac6a569807d499161075ca68fb27f09e6827a4948c29a13ad9b4",
+        "newly_reconstructed_hash": "ca9fb335d38ce7e79141b63c010785cde08f83a9e86d4daf64e178344b9086d8",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [],
+        "new_presentation_roles": [],
+        "affected_items": [],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": false,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "Matthew 12",
+        "historical_batch": "Batch 001",
+        "old_locked_hash": "4937191a9b53f7677ea0e0c55e2872ed556d92cab49cfe4df1afcc9872efeaf3",
+        "newly_reconstructed_hash": "509d2c1545d33f25081782627e3592e84ed3dd02d57c26a38d9fe96a482c0769",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [],
+        "new_presentation_roles": [],
+        "affected_items": [],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": false,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "Matthew 23",
+        "historical_batch": "Batch 001",
+        "old_locked_hash": "36153683b44595549db7ab15426fc22d45b6d4bb676152c6cfc3bfca19eeb898",
+        "newly_reconstructed_hash": "b68c9ff1c259ab7a2b2760a966667d6459b610cfbeac98eab250fb83e1bca82e",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [],
+        "new_presentation_roles": [],
+        "affected_items": [],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": false,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "Matthew 24",
+        "historical_batch": "Batch 001",
+        "old_locked_hash": "1f081e6c6ddd3441a4bd86e5899f4a2dbb9882e713511de12ed513eef401db65",
+        "newly_reconstructed_hash": "6e15f0ed48efdd90f3046a46c1ae570f1d84ef1b4803cc84e15733d8d16fbcb6",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [],
+        "new_presentation_roles": [],
+        "affected_items": [],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": false,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "Numbers 14",
+        "historical_batch": "Batch 001",
+        "old_locked_hash": "411c3502aec8fff13c0996b31cd7d3e7f90e48212ebc34844cb0ce83e1fd61cc",
+        "newly_reconstructed_hash": "c961e10c4824cb7e329d373ec9d7d216f4e1030569c8dbe65a722afc3425caf0",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [],
+        "new_presentation_roles": [],
+        "affected_items": [],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": false,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "Proverbs 7",
+        "historical_batch": "Batch 001",
+        "old_locked_hash": "4444b9d9dba147914add12a6951e72b02fff87220978cfffbfb74662358d5c99",
+        "newly_reconstructed_hash": "1d61236c015e7ee534a20667101f7353b1451577cbb68802711d7d46b864d2ee",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [],
+        "new_presentation_roles": [],
+        "affected_items": [],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": false,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "Proverbs 14",
+        "historical_batch": "Batch 001",
+        "old_locked_hash": "119ba543ed2108d4ac77733ca66efffc2885cbe32e5498fffb621c127f2fd28e",
+        "newly_reconstructed_hash": "78e5b00b3a4732f1727e673f3a208e91d6d8c4569114879d1c76e3df047b2404",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [],
+        "new_presentation_roles": [],
+        "affected_items": [],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": false,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "Proverbs 17",
+        "historical_batch": "Batch 001",
+        "old_locked_hash": "3676a53e3335f69caccd4f6d3c7ce288255d5094d1ef94f3f482b59d68628a8f",
+        "newly_reconstructed_hash": "91e1b023f8c905203d3bd3d3f01a925dd9b6bc58aa33f5a097949eb798d0449b",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [],
+        "new_presentation_roles": [],
+        "affected_items": [],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": false,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "Proverbs 29",
+        "historical_batch": "Batch 001",
+        "old_locked_hash": "5903c5af82160aace447a302a8cc45d3d5cfbb450ca452f505dadb938de9920e",
+        "newly_reconstructed_hash": "dc62c07144fd44502899718df405245d43b6751968bf67d01230bbd21d332156",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [],
+        "new_presentation_roles": [],
+        "affected_items": [],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": false,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "Proverbs 30",
+        "historical_batch": "Batch 001",
+        "old_locked_hash": "d78029d8decc2af29b91f67d72f5d34c47b799e2b9e580fc796a57d97a6e893c",
+        "newly_reconstructed_hash": "e84dc1e2cc783f5a93c2c4cc518e098e6cfbd15c3f56b190ef252435135f3b03",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [],
+        "new_presentation_roles": [],
+        "affected_items": [],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": false,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "Psalms 18",
+        "historical_batch": "Batch 001",
+        "old_locked_hash": "2114d7b6bf4e32fd4e2e58150e56b643d2c492cf21e54d68572766c04dc56fc2",
+        "newly_reconstructed_hash": "236c5ce9338218af48553c7a8cd2c87f38289e7788c8d45d8597bb51d9820311",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [],
+        "new_presentation_roles": [],
+        "affected_items": [],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": false,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "Psalms 78",
+        "historical_batch": "Batch 001",
+        "old_locked_hash": "5f4977074ca2775d7626d6817ac3c39f52b71eb077c01097e3e2147702b25a80",
+        "newly_reconstructed_hash": "1e708f10366b3af711c9fee827ccf37bd133c59808112f31874e286abb12812b",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [],
+        "new_presentation_roles": [],
+        "affected_items": [],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": false,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "Psalms 79",
+        "historical_batch": "Batch 001",
+        "old_locked_hash": "ff407b0ac94bf425b1498bdb9d5014090982a2dc9bdda4d148885720e930775a",
+        "newly_reconstructed_hash": "8f13e388eefc2604e5c35888ab4cca751cc3c0544ac979f4592fa23f47c323cc",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [],
+        "new_presentation_roles": [],
+        "affected_items": [],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": false,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "Psalms 89",
+        "historical_batch": "Batch 001",
+        "old_locked_hash": "dd6d8a20ea9d18fcdbf976f9d2d4d24c4923aeadd3580115c7921a888f79f865",
+        "newly_reconstructed_hash": "9cb459fa385f1dbc021c2ec9feed03b69a6de382d1e8a335d92e3405b74b1870",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [],
+        "new_presentation_roles": [],
+        "affected_items": [],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": false,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "Psalms 132",
+        "historical_batch": "Batch 001",
+        "old_locked_hash": "06f0094a80896c25abe1fc242d06f855e7ed0362ae2b399d0e05298303a3e92a",
+        "newly_reconstructed_hash": "95ef06a65658d1dc2734bc4dd9dfbb013541c88d3e72ee5b03a27c99d00d2998",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [],
+        "new_presentation_roles": [],
+        "affected_items": [],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": false,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "Revelation 1",
+        "historical_batch": "Batch 001",
+        "old_locked_hash": "dbccb2d775f13823b172cbfeefd4efd3208a863a9ed63ab5613b50fd94af9bf5",
+        "newly_reconstructed_hash": "2d7f034f376afd4858deba03e26a913f22780feb35537b2acab0ef8efe021b57",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [],
+        "new_presentation_roles": [],
+        "affected_items": [],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": false,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "Revelation 3",
+        "historical_batch": "Batch 001",
+        "old_locked_hash": "f49db4df40ff90c5a256286b3043c2eb9d8fa95017a60903f6ce2e6f5b9f8ea0",
+        "newly_reconstructed_hash": "7ba0e377d0f2cf6a79d41ff143db8baf334042be3e49830743b172cef0bf7b62",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [],
+        "new_presentation_roles": [],
+        "affected_items": [],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": false,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "Revelation 11",
+        "historical_batch": "Batch 001",
+        "old_locked_hash": "697ac28f5b173260fa90558951c1ee879e62675290a4772f14e073df3cf2b28a",
+        "newly_reconstructed_hash": "c92ff7018dfb39919b552c33d5cf71185965d8f5faed3eb47a48c09c814e2732",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [],
+        "new_presentation_roles": [],
+        "affected_items": [],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": false,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "Revelation 16",
+        "historical_batch": "Batch 001",
+        "old_locked_hash": "fbf1720c8d253a2293f49737b95aa9f45c387ec6e25efb521ccaf0adc4b072c2",
+        "newly_reconstructed_hash": "d960c6f7f23940c07a05f03ab287b63d02bf90440cd5c43789dab4b04d4c903a",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [],
+        "new_presentation_roles": [],
+        "affected_items": [],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": false,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "1 Chronicles 22",
+        "historical_batch": "Batch 002",
+        "old_locked_hash": "127921e300e9e03061f4fb6c9a74cb99e86bfb580450a372d7e24d1a27b9822a",
+        "newly_reconstructed_hash": "54b28ca57870c6b201d950fb238f5d6f540d354b8ffa400c9cc21cac0abb5121",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [],
+        "new_presentation_roles": [],
+        "affected_items": [],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": false,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "1 Chronicles 23",
+        "historical_batch": "Batch 002",
+        "old_locked_hash": "fd81085a37840cfa66632dbb802857c76838f12fcd2074f0345686f68b5cf240",
+        "newly_reconstructed_hash": "8c7621d35f996988a8d97ff65f6650c6a3ffbbce2616f9b7546b75585a2e699b",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [],
+        "new_presentation_roles": [],
+        "affected_items": [],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": false,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "1 Chronicles 28",
+        "historical_batch": "Batch 002",
+        "old_locked_hash": "76e893ab1f976e718c451264064c058ecfb29484242a6e40a7d7ed5501a3ab8b",
+        "newly_reconstructed_hash": "496d1de66642a35f56aa67157128ebe07d9e7a60a6402ba629157c80be6acfe6",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [],
+        "new_presentation_roles": [],
+        "affected_items": [],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": false,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "1 Kings 1",
+        "historical_batch": "Batch 002",
+        "old_locked_hash": "e0429655e5b1153a9a2e5da72b938a9b9a8641b04b2e2ed83e08a2abd94b275d",
+        "newly_reconstructed_hash": "3326faefb8b00b5ad316533eb6e15fcb80a318bf7c97197630186a250ef6afe7",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [],
+        "new_presentation_roles": [],
+        "affected_items": [],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": false,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "1 Kings 3",
+        "historical_batch": "Batch 002",
+        "old_locked_hash": "bd901a2f380e34ffa2940b21959e4bcf3a4bd134e43977d9847e2497290d208c",
+        "newly_reconstructed_hash": "9c24f4b33fcd6eb18b78196ca75242418b156638f81662d029ab700f1c5c6069",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [],
+        "new_presentation_roles": [],
+        "affected_items": [],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": false,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "1 Kings 11",
+        "historical_batch": "Batch 002",
+        "old_locked_hash": "f296735c6037ed27e858d7f2d51c95ae8ed0af5cd211a3f7aef82514fb1d4e4e",
+        "newly_reconstructed_hash": "cb8f779ad3419e12629b953917e845255f407b23af98df627fba30aa7df63a83",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [],
+        "new_presentation_roles": [],
+        "affected_items": [],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": false,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "1 Kings 12",
+        "historical_batch": "Batch 002",
+        "old_locked_hash": "d9f26554dfb8514a0483814295170948e7a22564f22397546a2bc9f1e80ad800",
+        "newly_reconstructed_hash": "25447e54296fca1e7437272cb6425fed2261a63435210851379f98e19306fa4b",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [],
+        "new_presentation_roles": [],
+        "affected_items": [],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": false,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "1 Samuel 10",
+        "historical_batch": "Batch 002",
+        "old_locked_hash": "a16c1e4d35cc45faf3b2b79ad92c63ddb8e24ca9ff5b4d584200ca917095c5b3",
+        "newly_reconstructed_hash": "5be788827af5e6045d6240628e06d51989c2d3781615cf9027795bbb81ca9a42",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [],
+        "new_presentation_roles": [],
+        "affected_items": [],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": false,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "1 Samuel 14",
+        "historical_batch": "Batch 002",
+        "old_locked_hash": "57b4abe49d0de691636ab776e5fa4446135522c273d8c01f1f8b2944718732ca",
+        "newly_reconstructed_hash": "33968b2540a9a48f0c0e8cfe329818fadfda03d935a78b38111a4444f0329418",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [],
+        "new_presentation_roles": [],
+        "affected_items": [],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": false,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "1 Samuel 20",
+        "historical_batch": "Batch 002",
+        "old_locked_hash": "c6df59aabf1b2d77548966acb025a61869eb29123083cc4e363c64bf719dc69a",
+        "newly_reconstructed_hash": "07d735a1e556eb050a377d9ead61de95ca728ef14924678928b7e3981a35d8ee",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [],
+        "new_presentation_roles": [],
+        "affected_items": [],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": false,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "1 Samuel 25",
+        "historical_batch": "Batch 002",
+        "old_locked_hash": "e1bed0b5414dabfae7aa909a76273c4466a1930d4f579f86bd3bc53391ecec0f",
+        "newly_reconstructed_hash": "8cbda3f8279bf4422c0db97e79f8b8b9401ab5f6ae62427c5762a021b899dfb6",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [],
+        "new_presentation_roles": [],
+        "affected_items": [],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": false,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "1 Samuel 30",
+        "historical_batch": "Batch 002",
+        "old_locked_hash": "1069980aee0b6c06b0cba268333d8df7bb64175485ef83d1bda10d449d74a07f",
+        "newly_reconstructed_hash": "1e0eeb8f59c763615de93ab310f8977573fe2f981d563a81be276848b19de931",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [],
+        "new_presentation_roles": [],
+        "affected_items": [],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": false,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "2 Chronicles 15",
+        "historical_batch": "Batch 002",
+        "old_locked_hash": "347772aa1ad2920847c7fb67cc6af4379bf0ee2d4c923f7409b82dced3b12e9e",
+        "newly_reconstructed_hash": "fac9fe37061ff6b7b211ade3615b434bba072a00d9dad58e23b38ba0d366d55f",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [],
+        "new_presentation_roles": [],
+        "affected_items": [],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": false,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "2 Chronicles 20",
+        "historical_batch": "Batch 002",
+        "old_locked_hash": "7cd9b09e5938e608afc993e6092a8d4773504dfefdc69b47a80f588d620e093a",
+        "newly_reconstructed_hash": "756bd1b51c17855e7cb1df291649720616fe69f455ddd4b6c53e13e37e71f6a6",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [],
+        "new_presentation_roles": [],
+        "affected_items": [],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": false,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "2 Chronicles 24",
+        "historical_batch": "Batch 002",
+        "old_locked_hash": "d42ee18eb3070dc9665a14075ddc3a068728e009e539e46197982f272ad9d41b",
+        "newly_reconstructed_hash": "73bcf3a4c5035b480a2650a0d43d0682bc21a3d9bee43b670a4bcfb93610d055",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [],
+        "new_presentation_roles": [],
+        "affected_items": [],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": false,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "2 Chronicles 31",
+        "historical_batch": "Batch 002",
+        "old_locked_hash": "13d209f54d495140969a2ff648f24b89df4f20922ad767849df3fa1c4ee8e25c",
+        "newly_reconstructed_hash": "db24f7f0889bf91aa89e9918a7cbbf980c359a6516e904093e6ea9a2e6cad2cb",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [],
+        "new_presentation_roles": [],
+        "affected_items": [],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": false,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "2 Kings 10",
+        "historical_batch": "Batch 002",
+        "old_locked_hash": "42ac6ec96fa8f8146e38ce6d88fd6a2d23784096e066df7651536f73509af898",
+        "newly_reconstructed_hash": "ba4d881275fc21da7c41f50daa80ca6fff7aa64b03135292949110301ca5f47d",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [],
+        "new_presentation_roles": [],
+        "affected_items": [],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": false,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "2 Kings 14",
+        "historical_batch": "Batch 002",
+        "old_locked_hash": "7419ec649d2616f0fea926c11ba87141a271ce5becd90879401740d25133fdb5",
+        "newly_reconstructed_hash": "e0d5cca398afa8f7d4ac435b861e4a1c0ca4c4c78ca8f72cdc3fb8cf84fcd2e7",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [],
+        "new_presentation_roles": [],
+        "affected_items": [],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": false,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "2 Kings 16",
+        "historical_batch": "Batch 002",
+        "old_locked_hash": "06553974394cca0cc9c66ac1b6345bb8d10f1f4f1a0d64f765317387cbf20a56",
+        "newly_reconstructed_hash": "afebb3ba029102114050202f0aef550c3312c36571c48d9b3b41b8f4d1691fbe",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [],
+        "new_presentation_roles": [],
+        "affected_items": [],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": false,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "2 Kings 17",
+        "historical_batch": "Batch 002",
+        "old_locked_hash": "abaf8dda01b7ca1e930ab9c2100a0c02aeac64a67ff007bd84b97746521a280a",
+        "newly_reconstructed_hash": "4f0199d274354373ddd712e5960b09c78dbefbed865fa229b1ca1ef5d26b3618",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [],
+        "new_presentation_roles": [],
+        "affected_items": [],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": false,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "2 Kings 19",
+        "historical_batch": "Batch 002",
+        "old_locked_hash": "d9c486ecf5095e069ee2c0f78880a316395a8aac6c104b508db62dafa4e69ed9",
+        "newly_reconstructed_hash": "c112707d8a9d4ad6cdd49e6d8a50cc496dd9efe3a71f5243a5a5c493a8c7c3f0",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [],
+        "new_presentation_roles": [],
+        "affected_items": [],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": false,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "2 Samuel 1",
+        "historical_batch": "Batch 002",
+        "old_locked_hash": "938646c7649db668d1b31275a5bcc249f8c37e5b44861482b8f578dabf733820",
+        "newly_reconstructed_hash": "25c2bb765516ede2925534332a0be44c1fb0d4da2d42a4424f196fa0c45ecbaf",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [],
+        "new_presentation_roles": [],
+        "affected_items": [],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": false,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "2 Samuel 11",
+        "historical_batch": "Batch 002",
+        "old_locked_hash": "7a5466dd8191c80677baa793d5918cd92c2254be77ebbd8ad4768fef546a237a",
+        "newly_reconstructed_hash": "efce1aab477396655a6fb6793fec58b896f1f9bdf7558db52ec1028aab52a54e",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [],
+        "new_presentation_roles": [],
+        "affected_items": [],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": false,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "2 Samuel 15",
+        "historical_batch": "Batch 002",
+        "old_locked_hash": "55422103e4cfffbe69de2fa8b080a5064c2cd9f80b6986ffb8943352f29b306a",
+        "newly_reconstructed_hash": "efda508798c7fe2211f3edf6e42a4150231fa2c5f51730d4302e98a869a1f08c",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [],
+        "new_presentation_roles": [],
+        "affected_items": [],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": false,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "2 Samuel 19",
+        "historical_batch": "Batch 002",
+        "old_locked_hash": "c410bfdd12179b5c23d867d70bb005e3d0b6ea3789c3e0f3022c939b44beb60f",
+        "newly_reconstructed_hash": "90229164d25ce5f52bff2aacd68ed7d38c59a79eb2f80e9905109d6a75625dfe",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [],
+        "new_presentation_roles": [],
+        "affected_items": [],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": false,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "2 Samuel 20",
+        "historical_batch": "Batch 002",
+        "old_locked_hash": "4ce6792bd5e6c7f0c4af2bb8c0c1eb48c1d286defeb582cd272699134cfa399a",
+        "newly_reconstructed_hash": "29e6a88c20a519848a83750137c6624ae0efc0a5a97261948338586504e0d325",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [],
+        "new_presentation_roles": [],
+        "affected_items": [],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": false,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "2 Timothy 2",
+        "historical_batch": "Batch 002",
+        "old_locked_hash": "e0341bdee288f630ebb44c530f3e296e16f1cffda5ec3830e11499f4dd732259",
+        "newly_reconstructed_hash": "6e18af22ef74ed81c29746e409a737380702ba4d4bed7b0242dc6fd445e8c2b8",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [
+          "archaeology_geography"
+        ],
+        "new_presentation_roles": [
+          "language_literary"
+        ],
+        "affected_items": [
+          {
+            "evidence_id": "2tim-manuscripts",
+            "old_presentation_role": "archaeology_geography",
+            "new_presentation_role": "language_literary",
+            "existing_terra_prose_cited_affected_item": false,
+            "terra_omitted_affected_item": true,
+            "claim": "Codex Sinaiticus preserves 2 Timothy, while the surviving Codex Vaticanus ends before the Pastoral Epistles and is not a witness to this book."
+          }
+        ],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": true,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "Acts 5",
+        "historical_batch": "Batch 002",
+        "old_locked_hash": "f4e73954c68609c58b4cb79064da2efa1806db2a6416fc905a96df994a3a1ba1",
+        "newly_reconstructed_hash": "59174949351a519c0625b68eaf2561193ad9b7814db33f6812d209e0d1a8f256",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [
+          "historical_context"
+        ],
+        "new_presentation_roles": [
+          "language_literary"
+        ],
+        "affected_items": [
+          {
+            "evidence_id": "acts-text-witnesses",
+            "old_presentation_role": "historical_context",
+            "new_presentation_role": "language_literary",
+            "existing_terra_prose_cited_affected_item": false,
+            "terra_omitted_affected_item": true,
+            "claim": "Acts is preserved in early papyri and major Greek codices, with P45, P53, P74, Sinaiticus, Vaticanus, and Bezae contributing different portions and textual profiles."
+          }
+        ],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": true,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "Colossians 1",
+        "historical_batch": "Batch 002",
+        "old_locked_hash": "68c46ec6864828df62115c592fff37be5a7e956559f54699b980b15920146c32",
+        "newly_reconstructed_hash": "3037be45a353bde5adf8e9817b1f7bfebcf753da372c389a509b3f8c0fce4cef",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [],
+        "new_presentation_roles": [],
+        "affected_items": [],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": false,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "Daniel 2",
+        "historical_batch": "Batch 002",
+        "old_locked_hash": "8a513c5cb9453454f78f766a0fe00d200827d953a7eee3a989f861ed7937976f",
+        "newly_reconstructed_hash": "64f9a1c3cfaf30c1a02bf695e1a0726210b3aa38cb7228628ad32566e82a0e3c",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [],
+        "new_presentation_roles": [],
+        "affected_items": [],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": false,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "Daniel 4",
+        "historical_batch": "Batch 002",
+        "old_locked_hash": "99502f0ddc3e0e431a3040c4fe8347da8723b4b95261b60019e644345ef75715",
+        "newly_reconstructed_hash": "2f2b07ad75cb71558568f630fef8b239213912c6460114c6db016b612e76a956",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [
+          "historical_context"
+        ],
+        "new_presentation_roles": [
+          "language_literary"
+        ],
+        "affected_items": [
+          {
+            "evidence_id": "daniel-greek-versions",
+            "old_presentation_role": "historical_context",
+            "new_presentation_role": "language_literary",
+            "existing_terra_prose_cited_affected_item": false,
+            "terra_omitted_affected_item": true,
+            "claim": "Daniel survives in substantially distinct Old Greek and Theodotionic versions, with especially important differences in chapters 4-6 and in the form and placement of additions."
+          },
+          {
+            "evidence_id": "daniel:interpretive_note:25",
+            "old_presentation_role": "historical_context",
+            "new_presentation_role": "language_literary",
+            "existing_terra_prose_cited_affected_item": false,
+            "terra_omitted_affected_item": true,
+            "claim": "Old Greek and Theodotionic Daniel must be compared passage by passage; neither label means that every difference has one cause."
+          }
+        ],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": true,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "Daniel 7",
+        "historical_batch": "Batch 002",
+        "old_locked_hash": "ecd58466b5745bc1d27d97e09018e6cc0fb0d8649e7d46ffea4ebe1467c6a86f",
+        "newly_reconstructed_hash": "123734d1944fc6cb2d082a384f5b2ec8c49c42d9ace7a6c1c29aad56d8bf6111",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [],
+        "new_presentation_roles": [],
+        "affected_items": [],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": false,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "Daniel 8",
+        "historical_batch": "Batch 002",
+        "old_locked_hash": "c57b83ad588a593c2a818bc91b0e56eccca33b125c43d9a9532f591122ada7e3",
+        "newly_reconstructed_hash": "aa7dcb8a53bf35f8627ec6d1c98c885f73f0a7cac745e6a5ceba6f58ac4e36af",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [],
+        "new_presentation_roles": [],
+        "affected_items": [],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": false,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "Deuteronomy 9",
+        "historical_batch": "Batch 002",
+        "old_locked_hash": "9daaae469801d04fbecaf6eb1b7132937c6eaeea9f8cb57e4264b5e6da3f6539",
+        "newly_reconstructed_hash": "2338e6893a6c70a6f3c7928ce35e06db547ba1cbbb867bacd4003157577c00ca",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [],
+        "new_presentation_roles": [],
+        "affected_items": [],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": false,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "Deuteronomy 14",
+        "historical_batch": "Batch 002",
+        "old_locked_hash": "8df71748c46c97eddfac9675d83bbe59d960dccddace7689bc50475efa67d4e7",
+        "newly_reconstructed_hash": "99763fa735c4e96eef1be1a860cf859234f6801c1f5921e9fe6a54b61907d399",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [],
+        "new_presentation_roles": [],
+        "affected_items": [],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": false,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "Deuteronomy 17",
+        "historical_batch": "Batch 002",
+        "old_locked_hash": "82179872f22e3cc2def261518c196db71958aea777cf41c3263d8f0af0aba777",
+        "newly_reconstructed_hash": "3e8676526d7c76a3023ff0c0eb01925ac0bdc97dd368a10d8196f1ba6808829d",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [],
+        "new_presentation_roles": [],
+        "affected_items": [],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": false,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "Deuteronomy 18",
+        "historical_batch": "Batch 002",
+        "old_locked_hash": "9e2ced7006299bac1b10f062bb9ad979f259dbe9703b717e5fc1dc6d537f2512",
+        "newly_reconstructed_hash": "9263ed6140bcd55c1d390edb543b5f0cc3b2c4472cddeeda72345435c3b0f7de",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [],
+        "new_presentation_roles": [],
+        "affected_items": [],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": false,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "Deuteronomy 20",
+        "historical_batch": "Batch 002",
+        "old_locked_hash": "aa1e74a8e3211b6cd4e4ebf8e5fb5715d67763bd384a82fab1e9c89fb99ac6ee",
+        "newly_reconstructed_hash": "fabc12a80bb31c8f73d1cb1ebb5282adf9c9baa1a71e0b0409a686e942e67a33",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [],
+        "new_presentation_roles": [],
+        "affected_items": [],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": false,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "Ecclesiastes 4",
+        "historical_batch": "Batch 002",
+        "old_locked_hash": "a1bfeae9e30fac4b8a9e737d84c644af982840798b1192d6844d6122a3b65205",
+        "newly_reconstructed_hash": "c62095131c8b51f7e0ee4198f99b58d35cfc4d4ea20d80514957d63dbe6ff57b",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [],
+        "new_presentation_roles": [],
+        "affected_items": [],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": false,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "Ecclesiastes 5",
+        "historical_batch": "Batch 002",
+        "old_locked_hash": "21dd9f37d9b8ce56821c000b487ef3ea8152d50d8a9464a2f62a2ab37bab1d55",
+        "newly_reconstructed_hash": "a8277b834a35f548cf0295c758ecc80f1a25a7e3d9b38c32e2292ab2886a80ba",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [
+          "historical_context"
+        ],
+        "new_presentation_roles": [
+          "dig_deeper"
+        ],
+        "affected_items": [
+          {
+            "evidence_id": "ecclesiastes-hebrew-greek-qumran-witnesses",
+            "old_presentation_role": "historical_context",
+            "new_presentation_role": "dig_deeper",
+            "existing_terra_prose_cited_affected_item": false,
+            "terra_omitted_affected_item": true,
+            "claim": "Ecclesiastes is witnessed by the Masoretic Hebrew text, fragmentary Hebrew manuscripts 4QQoha and 4QQohb, and an exceptionally literal Greek form titled Ecclesiast."
+          }
+        ],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": true,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "Ecclesiastes 12",
+        "historical_batch": "Batch 002",
+        "old_locked_hash": "fd0de1d1d1bb2967b900603a826c4d37da85a167e7dd4c29189a368ee0c208a8",
+        "newly_reconstructed_hash": "675852f58da60cd09a16577420ac14eb4bf41c53df1e01facc10cce3da31214e",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [],
+        "new_presentation_roles": [],
+        "affected_items": [],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": false,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "Ephesians 6",
+        "historical_batch": "Batch 002",
+        "old_locked_hash": "0c837095395b3b11900b1d8232d65605269227c52be2de49eed5a6d121ebd1ed",
+        "newly_reconstructed_hash": "ce87ea715f0a2c8772fe0245c1e5878625edd3f6b235a50f7210449d191858b2",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [],
+        "new_presentation_roles": [],
+        "affected_items": [],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": false,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "Ezekiel 9",
+        "historical_batch": "Batch 002",
+        "old_locked_hash": "f6c01c899504d001f43f213d53c6307e685de522f3fcd29f990af91a0d0f53e8",
+        "newly_reconstructed_hash": "1ff3ddaf86bee5fd651bb3eca16257f21df0d4e2c3228bd31ecc8954f7eb14ed",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [],
+        "new_presentation_roles": [],
+        "affected_items": [],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": false,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "Ezekiel 16",
+        "historical_batch": "Batch 002",
+        "old_locked_hash": "9c38c521e0a8c40abee5301862634d707a0321e9f85bcc58641aece1341d4431",
+        "newly_reconstructed_hash": "88ca517a1e5b7cbeef287feaee29f727fd99b657293657fbf675a8794a333fef",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [],
+        "new_presentation_roles": [],
+        "affected_items": [],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": false,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "Ezekiel 23",
+        "historical_batch": "Batch 002",
+        "old_locked_hash": "1ec89b27d629497c2861336b0b613e53e376587ea47e5501bff86f689adce2b1",
+        "newly_reconstructed_hash": "293ae59746c119656670a5d4d2a3a88a3be09442537b1a39f5e7d92e191fc720",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [],
+        "new_presentation_roles": [],
+        "affected_items": [],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": false,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "Ezekiel 24",
+        "historical_batch": "Batch 002",
+        "old_locked_hash": "d75e0f4b6c9a7a2b37dac7d2eae5aedbd42b3ef0387a320753a6eb44518b2802",
+        "newly_reconstructed_hash": "e32e71a5e09e46e575ebfcd2bdfb904d5a68c0d9b01fc780e355e8d518af6f1c",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [],
+        "new_presentation_roles": [],
+        "affected_items": [],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": false,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "Ezekiel 39",
+        "historical_batch": "Batch 002",
+        "old_locked_hash": "19c99238802a8e7c312714f0dd21b88350504cd754399e049d3c4a13ea89c915",
+        "newly_reconstructed_hash": "9da06c6d0d066e8ef94474ab5881a4ee595cafb9682735110b6ea59929105170",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [
+          "historical_context"
+        ],
+        "new_presentation_roles": [
+          "language_literary"
+        ],
+        "affected_items": [
+          {
+            "evidence_id": "ezekiel-p967-order",
+            "old_presentation_role": "historical_context",
+            "new_presentation_role": "language_literary",
+            "existing_terra_prose_cited_affected_item": true,
+            "terra_omitted_affected_item": false,
+            "claim": "Papyrus 967 places the material conventionally numbered Ezekiel 38-39 before chapter 37, showing an ancient order different from the familiar Masoretic sequence."
+          }
+        ],
+        "existing_terra_prose_cited_affected_item": true,
+        "terra_omitted_affected_item": false,
+        "final_v1_1_regeneration_recommended": true,
+        "hash_changed": true
+      },
+      {
+        "reference": "Hebrews 2",
+        "historical_batch": "Batch 002",
+        "old_locked_hash": "04966088193aac18eb76ebd1e792aced430eb557ac5749ab0cde5312c6d5dc1b",
+        "newly_reconstructed_hash": "599e2ce47f324503132ef18efb59ea556a65bc6d7426c74e0906c3a6752d1521",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [
+          "archaeology_geography"
+        ],
+        "new_presentation_roles": [
+          "language_literary"
+        ],
+        "affected_items": [
+          {
+            "evidence_id": "heb-p46",
+            "old_presentation_role": "archaeology_geography",
+            "new_presentation_role": "language_literary",
+            "existing_terra_prose_cited_affected_item": false,
+            "terra_omitted_affected_item": true,
+            "claim": "Papyrus 46 is an early substantial witness to Hebrews, though it has lacunae and its paleographic date remains approximate."
+          },
+          {
+            "evidence_id": "heb-sinaiticus",
+            "old_presentation_role": "archaeology_geography",
+            "new_presentation_role": "language_literary",
+            "existing_terra_prose_cited_affected_item": false,
+            "terra_omitted_affected_item": true,
+            "claim": "Codex Sinaiticus preserves Hebrews in its New Testament sequence after 2 Thessalonians."
+          }
+        ],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": true,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "Hebrews 13",
+        "historical_batch": "Batch 002",
+        "old_locked_hash": "807dc2017809d340fc2059d4a6af188fc97d349470c565b9f6e51a4d605ffba9",
+        "newly_reconstructed_hash": "c1db9812890f718e7e28389b777f5f7f7a5616478c5cc649889050ab8f8504ee",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [
+          "archaeology_geography"
+        ],
+        "new_presentation_roles": [
+          "language_literary"
+        ],
+        "affected_items": [
+          {
+            "evidence_id": "heb-p46",
+            "old_presentation_role": "archaeology_geography",
+            "new_presentation_role": "language_literary",
+            "existing_terra_prose_cited_affected_item": false,
+            "terra_omitted_affected_item": true,
+            "claim": "Papyrus 46 is an early substantial witness to Hebrews, though it has lacunae and its paleographic date remains approximate."
+          },
+          {
+            "evidence_id": "heb-sinaiticus",
+            "old_presentation_role": "archaeology_geography",
+            "new_presentation_role": "language_literary",
+            "existing_terra_prose_cited_affected_item": false,
+            "terra_omitted_affected_item": true,
+            "claim": "Codex Sinaiticus preserves Hebrews in its New Testament sequence after 2 Thessalonians."
+          }
+        ],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": true,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "Hosea 4",
+        "historical_batch": "Batch 002",
+        "old_locked_hash": "304ff79f8a627eb1bccc0df04e118311aabb3e90a6e1e7045b51f068912b3089",
+        "newly_reconstructed_hash": "c6372594fe8cfd49bab7c4bc6f30e71bc3cf4e0237b4c7de1dfdb11c99d91c6c",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [],
+        "new_presentation_roles": [],
+        "affected_items": [],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": false,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "Hosea 5",
+        "historical_batch": "Batch 002",
+        "old_locked_hash": "c7427399f4418a91cc0567be5a8437c676d8118e49554a9bcc716691720672db",
+        "newly_reconstructed_hash": "a92d6dbd0394649d731d327732563264018c6024c27cdf2112dbc26f5b8dbb34",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [],
+        "new_presentation_roles": [],
+        "affected_items": [],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": false,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "Isaiah 1",
+        "historical_batch": "Batch 002",
+        "old_locked_hash": "f9b272dfb554d2f5e7e030babfe8b4b524ce2017b4f2a71a6675dd38a41c5094",
+        "newly_reconstructed_hash": "57266fc3192d43ead095aba378ccbf59d3df5459c2f8f96d7557916a9ae0f4dc",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [
+          "historical_context"
+        ],
+        "new_presentation_roles": [
+          "language_literary"
+        ],
+        "affected_items": [
+          {
+            "evidence_id": "isaiah-qumran-witnesses",
+            "old_presentation_role": "historical_context",
+            "new_presentation_role": "language_literary",
+            "existing_terra_prose_cited_affected_item": false,
+            "terra_omitted_affected_item": true,
+            "claim": "The Great Isaiah Scroll is an almost complete sixty-six-chapter witness broadly aligned with the Masoretic tradition but containing thousands of orthographic and substantive differences; other Qumran Isaiah manuscripts and pesharim show active transmission and interpretation."
+          }
+        ],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": true,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "Isaiah 34",
+        "historical_batch": "Batch 002",
+        "old_locked_hash": "e53bca8315804e5d1cb6e368aec07c43be41bb82897145d29950ce4366b5a8c3",
+        "newly_reconstructed_hash": "57b245ab1339b50239d8e89584a68e77390f6915ab978fe082200185e0600216",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [
+          "historical_context"
+        ],
+        "new_presentation_roles": [
+          "language_literary"
+        ],
+        "affected_items": [
+          {
+            "evidence_id": "isaiah-qumran-witnesses",
+            "old_presentation_role": "historical_context",
+            "new_presentation_role": "language_literary",
+            "existing_terra_prose_cited_affected_item": true,
+            "terra_omitted_affected_item": false,
+            "claim": "The Great Isaiah Scroll is an almost complete sixty-six-chapter witness broadly aligned with the Masoretic tradition but containing thousands of orthographic and substantive differences; other Qumran Isaiah manuscripts and pesharim show active transmission and interpretation."
+          }
+        ],
+        "existing_terra_prose_cited_affected_item": true,
+        "terra_omitted_affected_item": false,
+        "final_v1_1_regeneration_recommended": true,
+        "hash_changed": true
+      },
+      {
+        "reference": "Isaiah 47",
+        "historical_batch": "Batch 002",
+        "old_locked_hash": "33926e939adace22228b53754d5ce4b63e7e29188d683ba82bf17dc69e098186",
+        "newly_reconstructed_hash": "98c3ce201ba70a34ad4aac5c406a111850540abdc30d8ca14dd04f17a6123058",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [
+          "historical_context"
+        ],
+        "new_presentation_roles": [
+          "language_literary"
+        ],
+        "affected_items": [
+          {
+            "evidence_id": "isaiah-qumran-witnesses",
+            "old_presentation_role": "historical_context",
+            "new_presentation_role": "language_literary",
+            "existing_terra_prose_cited_affected_item": true,
+            "terra_omitted_affected_item": false,
+            "claim": "The Great Isaiah Scroll is an almost complete sixty-six-chapter witness broadly aligned with the Masoretic tradition but containing thousands of orthographic and substantive differences; other Qumran Isaiah manuscripts and pesharim show active transmission and interpretation."
+          }
+        ],
+        "existing_terra_prose_cited_affected_item": true,
+        "terra_omitted_affected_item": false,
+        "final_v1_1_regeneration_recommended": true,
+        "hash_changed": true
+      },
+      {
+        "reference": "Isaiah 57",
+        "historical_batch": "Batch 002",
+        "old_locked_hash": "acf008c023f9abe934b095aa55fbc1e98b60d8b4c3e0c13eccc82fb2d25fa982",
+        "newly_reconstructed_hash": "a87e7ae8bda06944c8a9de8b98d1bb03fce87c1d2cbeaf017da56a45bf411521",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [
+          "historical_context"
+        ],
+        "new_presentation_roles": [
+          "language_literary"
+        ],
+        "affected_items": [
+          {
+            "evidence_id": "isaiah-qumran-witnesses",
+            "old_presentation_role": "historical_context",
+            "new_presentation_role": "language_literary",
+            "existing_terra_prose_cited_affected_item": true,
+            "terra_omitted_affected_item": false,
+            "claim": "The Great Isaiah Scroll is an almost complete sixty-six-chapter witness broadly aligned with the Masoretic tradition but containing thousands of orthographic and substantive differences; other Qumran Isaiah manuscripts and pesharim show active transmission and interpretation."
+          }
+        ],
+        "existing_terra_prose_cited_affected_item": true,
+        "terra_omitted_affected_item": false,
+        "final_v1_1_regeneration_recommended": true,
+        "hash_changed": true
+      },
+      {
+        "reference": "Isaiah 63",
+        "historical_batch": "Batch 002",
+        "old_locked_hash": "ba7f25be6ffb6a2bc93c0f65997743bb145656868ca155a4dfcf163cc891da61",
+        "newly_reconstructed_hash": "c40d4988be6870f06c4da293ff5058bb62ecfe0bf703cedd93ac7f2e79a869a0",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [
+          "historical_context"
+        ],
+        "new_presentation_roles": [
+          "language_literary"
+        ],
+        "affected_items": [
+          {
+            "evidence_id": "isaiah-qumran-witnesses",
+            "old_presentation_role": "historical_context",
+            "new_presentation_role": "language_literary",
+            "existing_terra_prose_cited_affected_item": false,
+            "terra_omitted_affected_item": true,
+            "claim": "The Great Isaiah Scroll is an almost complete sixty-six-chapter witness broadly aligned with the Masoretic tradition but containing thousands of orthographic and substantive differences; other Qumran Isaiah manuscripts and pesharim show active transmission and interpretation."
+          }
+        ],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": true,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "James 2",
+        "historical_batch": "Batch 002",
+        "old_locked_hash": "c692e9bdf0734808e0a983a32fde024d25066754f4529019850a9a28f0840113",
+        "newly_reconstructed_hash": "d77e1b23e6c39e20eba560fb481ef40b37ae2cc6fb23ff1c23bf6b7fdf1773f2",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [],
+        "new_presentation_roles": [],
+        "affected_items": [],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": false,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "Jeremiah 7",
+        "historical_batch": "Batch 002",
+        "old_locked_hash": "17b07e1f020a264c68120c7a66f74a0a0bc474eec2d6b97950b2576104f027a6",
+        "newly_reconstructed_hash": "24d1e0ab2bfef08f1131b6fe4a4875c09d15475397bdd297fb7ff7c697767abc",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [],
+        "new_presentation_roles": [],
+        "affected_items": [],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": false,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "Jeremiah 32",
+        "historical_batch": "Batch 002",
+        "old_locked_hash": "db836e2b7476057b3296ce393ac8d612a542b12e15b03fd651cfe67df3a2fd7b",
+        "newly_reconstructed_hash": "bd65a0499d074d68835d24f9d2c1d6303613d82ce9cda9be4742c8bbb928718f",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [],
+        "new_presentation_roles": [],
+        "affected_items": [],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": false,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "Jeremiah 34",
+        "historical_batch": "Batch 002",
+        "old_locked_hash": "adc983639e0d39619da10b5b87213ef2662ca966f1e9f11b3270453ee1321a09",
+        "newly_reconstructed_hash": "c1d730fe4fcab27d6bcd5fa9b0c965f0c2421edcfb4fc895802babd4285d1554",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [],
+        "new_presentation_roles": [],
+        "affected_items": [],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": false,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "Jeremiah 48",
+        "historical_batch": "Batch 002",
+        "old_locked_hash": "8058de17fa4d441a7212b60a457d3b32da42a00492c0af15d47b24ab297ff956",
+        "newly_reconstructed_hash": "446039e2831b698d9807463dd0434bc7d0183fbd09c43654d5683741a660f31c",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [
+          "historical_context"
+        ],
+        "new_presentation_roles": [
+          "language_literary"
+        ],
+        "affected_items": [
+          {
+            "evidence_id": "jeremiah-two-editions",
+            "old_presentation_role": "historical_context",
+            "new_presentation_role": "language_literary",
+            "existing_terra_prose_cited_affected_item": true,
+            "terra_omitted_affected_item": false,
+            "claim": "Masoretic Jeremiah and Old Greek Ieremias represent markedly different ancient editions: the Alexandrian form is roughly one-seventh shorter and places the nation oracles earlier and in a different order."
+          }
+        ],
+        "existing_terra_prose_cited_affected_item": true,
+        "terra_omitted_affected_item": false,
+        "final_v1_1_regeneration_recommended": true,
+        "hash_changed": true
+      },
+      {
+        "reference": "Job 7",
+        "historical_batch": "Batch 002",
+        "old_locked_hash": "703ca089007ffab190c26ef3048e12e208bf169721e3d0e99290850a8cf83857",
+        "newly_reconstructed_hash": "5c4887f4eec28ca9ca6726378e6303a8b54902f28367606293267b0c2370547b",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [
+          "historical_context"
+        ],
+        "new_presentation_roles": [
+          "language_literary"
+        ],
+        "affected_items": [
+          {
+            "evidence_id": "job:interpretive_note:11",
+            "old_presentation_role": "historical_context",
+            "new_presentation_role": "language_literary",
+            "existing_terra_prose_cited_affected_item": false,
+            "terra_omitted_affected_item": true,
+            "claim": "Old Greek Job is substantially shorter than the Masoretic form in much of the poetry and also contains expansions, while Qumran preserves Hebrew fragments and an Aramaic targum. Translation and textual criticism should therefore identify the witness in view rather than treating every ancient form as verbally identical."
+          }
+        ],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": true,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "Job 11",
+        "historical_batch": "Batch 002",
+        "old_locked_hash": "54e04a81c570e9d2854052646325fc60b789b9f0c34da298f358853e18a2fbba",
+        "newly_reconstructed_hash": "4f3d30c65cbfe615e3b640b3e6a2378cc5b4a7f338f92a2b4d74481866eec205",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [
+          "historical_context"
+        ],
+        "new_presentation_roles": [
+          "language_literary"
+        ],
+        "affected_items": [
+          {
+            "evidence_id": "job:interpretive_note:11",
+            "old_presentation_role": "historical_context",
+            "new_presentation_role": "language_literary",
+            "existing_terra_prose_cited_affected_item": false,
+            "terra_omitted_affected_item": true,
+            "claim": "Old Greek Job is substantially shorter than the Masoretic form in much of the poetry and also contains expansions, while Qumran preserves Hebrew fragments and an Aramaic targum. Translation and textual criticism should therefore identify the witness in view rather than treating every ancient form as verbally identical."
+          }
+        ],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": true,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "Job 15",
+        "historical_batch": "Batch 002",
+        "old_locked_hash": "39cea54f8c5705feebe3e4b31661131156d34e64dd0d49269e6c24a9a4f33b83",
+        "newly_reconstructed_hash": "ffe5201ccaefc72b9d1c7b361f45f712f8424b4dee1df40d645c011c8ea0f7a6",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [
+          "historical_context"
+        ],
+        "new_presentation_roles": [
+          "language_literary"
+        ],
+        "affected_items": [
+          {
+            "evidence_id": "job:interpretive_note:11",
+            "old_presentation_role": "historical_context",
+            "new_presentation_role": "language_literary",
+            "existing_terra_prose_cited_affected_item": false,
+            "terra_omitted_affected_item": true,
+            "claim": "Old Greek Job is substantially shorter than the Masoretic form in much of the poetry and also contains expansions, while Qumran preserves Hebrew fragments and an Aramaic targum. Translation and textual criticism should therefore identify the witness in view rather than treating every ancient form as verbally identical."
+          }
+        ],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": true,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "Job 33",
+        "historical_batch": "Batch 002",
+        "old_locked_hash": "d408fecc8475e2c9ad259516028fd5e516042cd4657b3b980703cca95ca82a26",
+        "newly_reconstructed_hash": "b5a889bcc0ec3fe637956ebf9b0d0f5028b114ea9efce254c927bdcc510cb687",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [
+          "historical_context"
+        ],
+        "new_presentation_roles": [
+          "language_literary"
+        ],
+        "affected_items": [
+          {
+            "evidence_id": "job:interpretive_note:11",
+            "old_presentation_role": "historical_context",
+            "new_presentation_role": "language_literary",
+            "existing_terra_prose_cited_affected_item": false,
+            "terra_omitted_affected_item": true,
+            "claim": "Old Greek Job is substantially shorter than the Masoretic form in much of the poetry and also contains expansions, while Qumran preserves Hebrew fragments and an Aramaic targum. Translation and textual criticism should therefore identify the witness in view rather than treating every ancient form as verbally identical."
+          }
+        ],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": true,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "Job 36",
+        "historical_batch": "Batch 002",
+        "old_locked_hash": "269b5c4a31f07d39f55fe1668f69ca38c7cf9671cd7b39822976ffaa31bc71b0",
+        "newly_reconstructed_hash": "eb21dad4a11f7c4903ee30efec21455efc4fd23565c5ee010ec6184e587789c8",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [
+          "historical_context"
+        ],
+        "new_presentation_roles": [
+          "language_literary"
+        ],
+        "affected_items": [
+          {
+            "evidence_id": "job:interpretive_note:11",
+            "old_presentation_role": "historical_context",
+            "new_presentation_role": "language_literary",
+            "existing_terra_prose_cited_affected_item": false,
+            "terra_omitted_affected_item": true,
+            "claim": "Old Greek Job is substantially shorter than the Masoretic form in much of the poetry and also contains expansions, while Qumran preserves Hebrew fragments and an Aramaic targum. Translation and textual criticism should therefore identify the witness in view rather than treating every ancient form as verbally identical."
+          }
+        ],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": true,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "John 6",
+        "historical_batch": "Batch 002",
+        "old_locked_hash": "2ecd3a7af485c9726f8213fc26992e92b819a59ea44fc7f0667f59369fd39b45",
+        "newly_reconstructed_hash": "8d0ceddc110488f0de2b0b25e2bf885230873b8618c511d65eb46b3e21aa827f",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [],
+        "new_presentation_roles": [],
+        "affected_items": [],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": false,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "Joshua 20",
+        "historical_batch": "Batch 002",
+        "old_locked_hash": "7999c4db743db232bbb2240cca47c1cf0bd6a9c56c0bd0399d5dfe6de9d3afe7",
+        "newly_reconstructed_hash": "7a04bcc14cf8d50d4a42c188fc30733785c28e585d6b02602c98673bb6211f0b",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [],
+        "new_presentation_roles": [],
+        "affected_items": [],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": false,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "Joshua 22",
+        "historical_batch": "Batch 002",
+        "old_locked_hash": "662d535f9ee582dee7d709344f1ad52d46fb469d2d6620765d4d152897ba117d",
+        "newly_reconstructed_hash": "e50783726b7cdebba09a307bc23a92d8d645b686afb7c67cddaec6ba0193a3ff",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [],
+        "new_presentation_roles": [],
+        "affected_items": [],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": false,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "Jude 1",
+        "historical_batch": "Batch 002",
+        "old_locked_hash": "f413f0eb965b87b39353cb7859345dbd46a4141bd9573c4f88731bc194b3d1e0",
+        "newly_reconstructed_hash": "5f91148801945c4464fe639d2a9c95f0d97b74e4b57a9dad2b0b4cb6ab77c558",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [
+          "historical_context"
+        ],
+        "new_presentation_roles": [
+          "language_literary"
+        ],
+        "affected_items": [
+          {
+            "evidence_id": "jude-exodus",
+            "old_presentation_role": "historical_context",
+            "new_presentation_role": "language_literary",
+            "existing_terra_prose_cited_affected_item": false,
+            "terra_omitted_affected_item": true,
+            "claim": "Jude recalls rescue from Egypt followed by destruction of those who did not believe, while the subject in verse 5 has a major textual variant."
+          },
+          {
+            "evidence_id": "jude:interpretive_note:7",
+            "old_presentation_role": "historical_context",
+            "new_presentation_role": "language_literary",
+            "existing_terra_prose_cited_affected_item": false,
+            "terra_omitted_affected_item": true,
+            "claim": "Verse 5 reads Jesus, Lord, or God in different witnesses and editions. The Jesus reading makes an unusually explicit christological exodus claim; exact wording requires textual review."
+          }
+        ],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": true,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "Lamentations 3",
+        "historical_batch": "Batch 002",
+        "old_locked_hash": "f55b37074f06bcf159997a246a77ece0a5fbc58b851e5b498de3d699de2db8cb",
+        "newly_reconstructed_hash": "fe48546c37a0ff26ca3ff38b87da674a71a07fc4b64d49d69b98bff387814f08",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [],
+        "new_presentation_roles": [],
+        "affected_items": [],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": false,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "Leviticus 12",
+        "historical_batch": "Batch 002",
+        "old_locked_hash": "f663aeae80a35a5ebb5531e9f7c08c9aea4c3150c63321bed7f0fedaa4b831c2",
+        "newly_reconstructed_hash": "e71817bbb97b83b4cd234e9c5b28a7634e5ebfb20650e87ffb2dbf4b4ee12f75",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [],
+        "new_presentation_roles": [],
+        "affected_items": [],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": false,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "Leviticus 24",
+        "historical_batch": "Batch 002",
+        "old_locked_hash": "a7bbb265d727c19a3ce43e20617801f309687c6736d98216c42150b262ce9b81",
+        "newly_reconstructed_hash": "e6be1d91ffc8f190ca6ccca44e13fd2ef6d90af04b08d1ac99e06371f02868e3",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [],
+        "new_presentation_roles": [],
+        "affected_items": [],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": false,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "Leviticus 26",
+        "historical_batch": "Batch 002",
+        "old_locked_hash": "265c2d439d84fd0493753c30f7a214f3a21b488068d9adde7942921e68d52f2d",
+        "newly_reconstructed_hash": "94c98a03c7585f603c99627a1000adea55fbc81889af92124d2fc4a0e8aa4ab0",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [],
+        "new_presentation_roles": [],
+        "affected_items": [],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": false,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "Luke 12",
+        "historical_batch": "Batch 002",
+        "old_locked_hash": "56d91fdbe5331bd08ed64105c5ac236d09ecee894da434858b6a52a48b28e502",
+        "newly_reconstructed_hash": "a5b483b2f4dfe2f21b12887592e23525cb2a2a1765e6f51395613d05c314850b",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [],
+        "new_presentation_roles": [],
+        "affected_items": [],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": false,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "Luke 17",
+        "historical_batch": "Batch 002",
+        "old_locked_hash": "381b6244aa4ca8b5b0eeece23140d9c075536ff7807dab7087151a8783f8aa70",
+        "newly_reconstructed_hash": "dcbe2d8c15f2b98b7714b05609b615e4b76ae7107929daca48b6a64a00af0ef1",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [],
+        "new_presentation_roles": [],
+        "affected_items": [],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": false,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "Mark 6",
+        "historical_batch": "Batch 002",
+        "old_locked_hash": "0b00d6fc9049197594bc7a2bab27b55be1b1a193bdf923ff52ae3cd213078642",
+        "newly_reconstructed_hash": "56919fcd88115f0db8ef8a910552b92102d241d0283940e96383504c2b10a9ae",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [],
+        "new_presentation_roles": [],
+        "affected_items": [],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": false,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "Mark 8",
+        "historical_batch": "Batch 002",
+        "old_locked_hash": "d82a6b04997530aed9613a1740fb75367e4f6a8df02dd78ab2389b1cd71e05ae",
+        "newly_reconstructed_hash": "196c31336332cf405b7a03910128842280b7ca62cda04bd6dc55fd421360090e",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [],
+        "new_presentation_roles": [],
+        "affected_items": [],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": false,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "Mark 13",
+        "historical_batch": "Batch 002",
+        "old_locked_hash": "caef0096c9fe780de3d8e33d3637d41cdb812e572a97edf3b79fa291e1222aeb",
+        "newly_reconstructed_hash": "49aa935d593c534b02df464bd347966356837fb6370258dcb595cf3eb8d22487",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [],
+        "new_presentation_roles": [],
+        "affected_items": [],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": false,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "Matthew 9",
+        "historical_batch": "Batch 002",
+        "old_locked_hash": "f053545ea5cce4bfdec1f44aaa1daabf5b129071800684d5ebd512dc2b4e2634",
+        "newly_reconstructed_hash": "e5748861f0d5005e32d22ea5ccfee08b7966f0c02fec4f81ab7137b1ea008f0f",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [],
+        "new_presentation_roles": [],
+        "affected_items": [],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": false,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "Matthew 19",
+        "historical_batch": "Batch 002",
+        "old_locked_hash": "01ccf4f032d02c6e26f3ca12342b52b6582b147eec5506eeb90d848a73770b85",
+        "newly_reconstructed_hash": "4b6711c9b2aac978f402b74b468a56dc423cc3432d8393ae6410d79f688172db",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [],
+        "new_presentation_roles": [],
+        "affected_items": [],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": false,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "Matthew 24",
+        "historical_batch": "Batch 002",
+        "old_locked_hash": "1f081e6c6ddd3441a4bd86e5899f4a2dbb9882e713511de12ed513eef401db65",
+        "newly_reconstructed_hash": "6e15f0ed48efdd90f3046a46c1ae570f1d84ef1b4803cc84e15733d8d16fbcb6",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [],
+        "new_presentation_roles": [],
+        "affected_items": [],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": false,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "Nehemiah 9",
+        "historical_batch": "Batch 002",
+        "old_locked_hash": "8db8f79ff5e47ef919b39d62142fff222789a565516141445d31308f1dc6f6df",
+        "newly_reconstructed_hash": "9a0826b29d65a530e0beefa668d222b355222a34a902b505eb7a36c99e5a9217",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [],
+        "new_presentation_roles": [],
+        "affected_items": [],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": false,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "Nehemiah 10",
+        "historical_batch": "Batch 002",
+        "old_locked_hash": "59d7ec370df81b1c5db6447a9e4418819b83c6f60bddfcc058399049a6bd440b",
+        "newly_reconstructed_hash": "95a8a277f4edae166b53fb9e78c809bdc6b78dd490b81248b61c7f5771d29517",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [],
+        "new_presentation_roles": [],
+        "affected_items": [],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": false,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "Nehemiah 13",
+        "historical_batch": "Batch 002",
+        "old_locked_hash": "4cf5679f47abbba37b116cdbd6f81fe44712ca2fdf86fd65fce889097db1f255",
+        "newly_reconstructed_hash": "221d1aa6b1746a9c1942eb84dfad188b92aab156fff624e495e747fecc4e3949",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [],
+        "new_presentation_roles": [],
+        "affected_items": [],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": false,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "Numbers 12",
+        "historical_batch": "Batch 002",
+        "old_locked_hash": "0e98262d467dbaf829b9ffc84451eb854c212f0b031c75f23be383958f75780c",
+        "newly_reconstructed_hash": "4b4b56743349f6329df5b1ec7cc40a9472bb3e076199456d380ffc80124e41af",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [],
+        "new_presentation_roles": [],
+        "affected_items": [],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": false,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "Numbers 14",
+        "historical_batch": "Batch 002",
+        "old_locked_hash": "411c3502aec8fff13c0996b31cd7d3e7f90e48212ebc34844cb0ce83e1fd61cc",
+        "newly_reconstructed_hash": "c961e10c4824cb7e329d373ec9d7d216f4e1030569c8dbe65a722afc3425caf0",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [],
+        "new_presentation_roles": [],
+        "affected_items": [],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": false,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "Numbers 15",
+        "historical_batch": "Batch 002",
+        "old_locked_hash": "c5a7d245884296cc63b73041d7b6dc5aff7be9dca89f28d28a33f3b531f462dd",
+        "newly_reconstructed_hash": "3c5d1b3fbb68830fc102b9f5b0b7fac68437d8da8e691d89614bee8f01a517f5",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [],
+        "new_presentation_roles": [],
+        "affected_items": [],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": false,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "Proverbs 4",
+        "historical_batch": "Batch 002",
+        "old_locked_hash": "9d1fbf15d54b0941501c29dd57bba102a42da1e2f7901a57444d35f6f9d9c4a3",
+        "newly_reconstructed_hash": "d0bc80f3ca834389717492933b657628f548f7aaa98a29e42bbb3f7d9a7f9a3e",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [],
+        "new_presentation_roles": [],
+        "affected_items": [],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": false,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "Proverbs 11",
+        "historical_batch": "Batch 002",
+        "old_locked_hash": "2ac2c1cc92ca1e8fb01c9c01139b724e9ef7ca39854b19e67edcf58859cebf0b",
+        "newly_reconstructed_hash": "e50ab2cfe3ee3855555a0ad7acb5098a22a725a7952255a534ea8d0bcacdd4a2",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [],
+        "new_presentation_roles": [],
+        "affected_items": [],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": false,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "Proverbs 23",
+        "historical_batch": "Batch 002",
+        "old_locked_hash": "bc985d8ea84f12429e5ef9468012f22e92a956e8d7801df31685cf1b86b9cebd",
+        "newly_reconstructed_hash": "c4b0b69f43614e6df9697922fa34850d44c05b6decbf39bae11a222b73266f01",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [],
+        "new_presentation_roles": [],
+        "affected_items": [],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": false,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "Proverbs 27",
+        "historical_batch": "Batch 002",
+        "old_locked_hash": "9e1958c3cd438e1116e10eb36bc22874d772f185d9913887f3d35c82826c2813",
+        "newly_reconstructed_hash": "8c1685aa4d2ecba6915ee9ae0e2cac9fd023973cd89ee833a741bfad5fed13a7",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [],
+        "new_presentation_roles": [],
+        "affected_items": [],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": false,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "Psalms 9",
+        "historical_batch": "Batch 002",
+        "old_locked_hash": "66f606ba517f405e5cd9685932378a487c48c2ed3e411fef7acc1a31b6dfa778",
+        "newly_reconstructed_hash": "57bab9eabc6969680020bd1dda03bf44c0ab861ce3623f48e43bdee52b4b995e",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [
+          "historical_context"
+        ],
+        "new_presentation_roles": [
+          "language_literary"
+        ],
+        "affected_items": [
+          {
+            "evidence_id": "psalms-numbering-witnesses",
+            "old_presentation_role": "historical_context",
+            "new_presentation_role": "language_literary",
+            "existing_terra_prose_cited_affected_item": true,
+            "terra_omitted_affected_item": false,
+            "claim": "Greek and Latin Psalter traditions number many psalms differently from the Masoretic tradition because they combine Psalms 9-10 and 114-115, divide Psalms 116 and 147, and transmit Psalm 151 beyond the 150-psalm count."
+          }
+        ],
+        "existing_terra_prose_cited_affected_item": true,
+        "terra_omitted_affected_item": false,
+        "final_v1_1_regeneration_recommended": true,
+        "hash_changed": true
+      },
+      {
+        "reference": "Psalms 74",
+        "historical_batch": "Batch 002",
+        "old_locked_hash": "36f0a97c4239e3a41229ff92be0374540cdbedb9b7b99bee151466dd17c53ba4",
+        "newly_reconstructed_hash": "803245f90239925663c0fc422252c7bba5859e45334859017485e3926a643c0c",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [],
+        "new_presentation_roles": [],
+        "affected_items": [],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": false,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "Psalms 107",
+        "historical_batch": "Batch 002",
+        "old_locked_hash": "588e95a7fc994ddec93c1f7a0ecf249e8e05054a0b8b2849fb8a8236b41b71bd",
+        "newly_reconstructed_hash": "3521f5f7e1aa3e75bc91d0e353599dbad95b8c340505d110130fd00146f58cc9",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [],
+        "new_presentation_roles": [],
+        "affected_items": [],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": false,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "Psalms 149",
+        "historical_batch": "Batch 002",
+        "old_locked_hash": "8538d98beb94641f08cb9d260843f0d06aabe5a3d1c73cc4e852442b8a297286",
+        "newly_reconstructed_hash": "a9459bb97a352a993af3a757917144aec1a1575b6e2c8b706f9564d4313ce9eb",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [],
+        "new_presentation_roles": [],
+        "affected_items": [],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": false,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "Revelation 9",
+        "historical_batch": "Batch 002",
+        "old_locked_hash": "2aca31d601449f8deaac9cdaa36b27dd85e1bbe6b9cf1b9a10df2c7c91529f60",
+        "newly_reconstructed_hash": "fabc6824dabc1c98f330298c03f17efa5d4c635fc3dbd9550ec778dff1402a64",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [],
+        "new_presentation_roles": [],
+        "affected_items": [],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": false,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "Revelation 14",
+        "historical_batch": "Batch 002",
+        "old_locked_hash": "35a5b807cfd4e1b6bd6e7884d9e7a0b2af04f51158305a32e3035958cf595736",
+        "newly_reconstructed_hash": "7f77318fd65bf607c2643b6c46348c519892cc230dc0e09d6b36cf9ee2e6e8bd",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [],
+        "new_presentation_roles": [],
+        "affected_items": [],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": false,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "Revelation 18",
+        "historical_batch": "Batch 002",
+        "old_locked_hash": "aa85ea3e8a2f0e178a80ff084ef2d88bfea9d9e68487226f4246d3befb09df4f",
+        "newly_reconstructed_hash": "25557051dcec7d29672b60818336b838b7ad8c9f2b434129fc4628de3631eaa2",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [],
+        "new_presentation_roles": [],
+        "affected_items": [],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": false,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "Revelation 20",
+        "historical_batch": "Batch 002",
+        "old_locked_hash": "d23d950abc80620db31f876cae71f365068430a011673f22bcfce341f3eafc40",
+        "newly_reconstructed_hash": "10bdd6520946a94624785538b521141e16dc31be7fc21d4076188d456c1018a0",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [],
+        "new_presentation_roles": [],
+        "affected_items": [],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": false,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      }
+    ],
+    "terra_omitted_affected_item_count": 17,
+    "regeneration_recommended_count": 10
+  }
+}

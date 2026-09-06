@@ -1,0 +1,113 @@
+{
+  "checkpoint_identity": {
+    "checkpoint_version": "commentary-v11-scaled-preflight-checkpoint-1",
+    "tool_version": "commentary-v11-scaled-preflight-1.2-routing-remediation",
+    "batch_id": "batch-008",
+    "target_count": 107,
+    "candidate_pool_size": 250,
+    "candidate_source": "/home/johnwalker/Documents/github/biblical-hermeneutics-framework/.bhf-data/bhf-commentary-candidates/commentary-v1.0.1"
+  },
+  "reference": "Ephesians 2",
+  "validated": true,
+  "low_information": true,
+  "record": {
+    "book": "Ephesians",
+    "chapter": 2,
+    "reference": "Ephesians 2",
+    "classification": "LOW_INFORMATION_COMMENTARY",
+    "stored_availability": "AVAILABLE",
+    "stored_status": "validated",
+    "detection": {
+      "is_low_information": true,
+      "classification": "LOW_INFORMATION_COMMENTARY",
+      "markers": [
+        "verse_count_boilerplate",
+        "opening_quotation_label",
+        "closing_quotation_label"
+      ],
+      "section_kinds": [
+        "chapter_overview"
+      ],
+      "contextual_section_kinds": [],
+      "cited_evidence_ids": [
+        "eph-audience"
+      ],
+      "canonical_summary_only": true,
+      "text_length": 222
+    },
+    "bundle_assessment": {
+      "evidence_bundle_available": true,
+      "evidence_hash": "754f0e0f933535c1fa4777193312e7cf3429f909192ac934aeb28f3c00432182",
+      "evidence_item_count": 55,
+      "useful_contextual_evidence_count": 55,
+      "evidence_categories": [
+        "culture",
+        "history",
+        "language",
+        "social"
+      ],
+      "evidence_supports_regeneration": true,
+      "evidence_limitation": null,
+      "recomputed_availability": "AVAILABLE",
+      "cited_evidence_resolved": true,
+      "unused_evidence_ids": [
+        "conversion-of-paul:ancient_near_east_context:0",
+        "conversion-of-paul:historical_context:0",
+        "council-of-jerusalem:ancient_near_east_context:0",
+        "council-of-jerusalem:historical_context:0",
+        "divine-mercy:ancient_near_east_context:0",
+        "divine-mercy:historical_context:0",
+        "ecclesiology:ancient_near_east_context:0",
+        "ecclesiology:historical_context:0",
+        "eph-colossians",
+        "eph-faith-grammar",
+        "eph-grace",
+        "eph-peace",
+        "eph-reception",
+        "eph-temple",
+        "eph-torah",
+        "ephesians:interpretive_note:10",
+        "ephesians:interpretive_note:11",
+        "ephesians:interpretive_note:12",
+        "ephesians:interpretive_note:13",
+        "ephesians:interpretive_note:14",
+        "ephesians:interpretive_note:15",
+        "ephesians:interpretive_note:5",
+        "ephesians:interpretive_note:6",
+        "ephesians:interpretive_note:7",
+        "ephesians:interpretive_note:8",
+        "ephesians:interpretive_note:9",
+        "first-missionary-journey:ancient_near_east_context:0",
+        "first-missionary-journey:historical_context:0",
+        "grace:ancient_near_east_context:0",
+        "grace:historical_context:0",
+        "mercy-theme:ancient_near_east_context:0",
+        "mercy-theme:historical_context:0",
+        "new-temple-theme:ancient_near_east_context:0",
+        "new-temple-theme:historical_context:0",
+        "peace-theme:ancient_near_east_context:0",
+        "peace-theme:historical_context:0",
+        "people-of-god-theme:ancient_near_east_context:0",
+        "people-of-god-theme:historical_context:0",
+        "sanctuary-theme:interpretive_note:0",
+        "sanctuary-theme:interpretive_note:1",
+        "second-missionary-journey:ancient_near_east_context:0",
+        "second-missionary-journey:historical_context:0",
+        "temple-warning-inscription:ancient_near_east_context:0",
+        "temple-warning-inscription:hebraic_worldview:0",
+        "temple-warning-inscription:historical_context:0",
+        "temple-warning-inscription:historical_setting:0",
+        "temple-warning-inscription:original_audience:0",
+        "temple-warning-inscription:second_temple_context:0",
+        "third-missionary-journey:ancient_near_east_context:0",
+        "third-missionary-journey:historical_context:0",
+        "union-with-christ:ancient_near_east_context:0",
+        "union-with-christ:historical_context:0",
+        "what-does-shalom-mean:ancient_near_east_context:0",
+        "what-does-shalom-mean:historical_context:0"
+      ],
+      "current_commentary_uses_contextual_section": false
+    },
+    "regeneration_decision": "REGENERATE_FROM_LOCKED_EVIDENCE"
+  }
+}

@@ -1,0 +1,105 @@
+{
+  "checkpoint_identity": {
+    "checkpoint_version": "commentary-v11-scaled-preflight-checkpoint-1",
+    "tool_version": "commentary-v11-scaled-preflight-1.2-routing-remediation",
+    "batch_id": "batch-008",
+    "target_count": 107,
+    "candidate_pool_size": 250,
+    "candidate_source": "/home/johnwalker/Documents/github/biblical-hermeneutics-framework/.bhf-data/bhf-commentary-candidates/commentary-v1.0.1"
+  },
+  "reference": "Daniel 7",
+  "validated": true,
+  "low_information": true,
+  "record": {
+    "book": "Daniel",
+    "chapter": 7,
+    "reference": "Daniel 7",
+    "classification": "LOW_INFORMATION_COMMENTARY",
+    "stored_availability": "AVAILABLE",
+    "stored_status": "validated",
+    "detection": {
+      "is_low_information": true,
+      "classification": "LOW_INFORMATION_COMMENTARY",
+      "markers": [
+        "verse_count_boilerplate",
+        "opening_quotation_label",
+        "closing_quotation_label"
+      ],
+      "section_kinds": [
+        "chapter_overview"
+      ],
+      "contextual_section_kinds": [],
+      "cited_evidence_ids": [
+        "daniel-compositional-horizons"
+      ],
+      "canonical_summary_only": true,
+      "text_length": 377
+    },
+    "bundle_assessment": {
+      "evidence_bundle_available": true,
+      "evidence_hash": "123734d1944fc6cb2d082a384f5b2ec8c49c42d9ace7a6c1c29aad56d8bf6111",
+      "evidence_item_count": 48,
+      "useful_contextual_evidence_count": 48,
+      "evidence_categories": [
+        "culture",
+        "history",
+        "politics"
+      ],
+      "evidence_supports_regeneration": true,
+      "evidence_limitation": null,
+      "recomputed_availability": "AVAILABLE",
+      "cited_evidence_resolved": true,
+      "unused_evidence_ids": [
+        "daniel-four-beasts-humanlike",
+        "daniel-imperial-resistance",
+        "daniel-language-structure",
+        "daniel-practical-outline",
+        "daniel:interpretive_note:13",
+        "daniel:interpretive_note:14",
+        "daniel:interpretive_note:15",
+        "daniel:interpretive_note:16",
+        "daniel:interpretive_note:27",
+        "daniel:interpretive_note:28",
+        "daniel:interpretive_note:4",
+        "daniel:interpretive_note:5",
+        "dead-sea-scrolls:ancient_near_east_context:0",
+        "dead-sea-scrolls:historical_context:0",
+        "eschatology:ancient_near_east_context:0",
+        "eschatology:historical_context:0",
+        "final-judgment:ancient_near_east_context:0",
+        "final-judgment:historical_context:0",
+        "glorification:ancient_near_east_context:0",
+        "glorification:historical_context:0",
+        "great-white-throne-judgment:ancient_near_east_context:0",
+        "great-white-throne-judgment:historical_context:0",
+        "how-should-i-read-apocalyptic-literature:ancient_near_east_context:0",
+        "how-should-i-read-apocalyptic-literature:historical_context:0",
+        "kingdom-theme:ancient_near_east_context:0",
+        "kingdom-theme:hebraic_worldview:0",
+        "kingdom-theme:historical_context:0",
+        "kingdom-theme:second_temple_context:0",
+        "kingdom-theology:ancient_near_east_context:0",
+        "kingdom-theology:historical_context:0",
+        "letters-to-the-seven-churches:ancient_near_east_context:0",
+        "letters-to-the-seven-churches:historical_context:0",
+        "mark-apocalypse",
+        "marriage-supper-of-the-lamb:ancient_near_east_context:0",
+        "marriage-supper-of-the-lamb:historical_context:0",
+        "qumran-caves:ancient_near_east_context:0",
+        "qumran-caves:historical_context:0",
+        "second-coming:ancient_near_east_context:0",
+        "second-coming:historical_context:0",
+        "temple-mount-area-finds:ancient_near_east_context:0",
+        "temple-mount-area-finds:historical_context:0",
+        "theology-of-the-kingdom:ancient_near_east_context:0",
+        "theology-of-the-kingdom:historical_context:0",
+        "wadi-murabbaat-scrolls:ancient_near_east_context:0",
+        "wadi-murabbaat-scrolls:historical_context:0",
+        "writing-of-revelation:ancient_near_east_context:0",
+        "writing-of-revelation:historical_context:0"
+      ],
+      "current_commentary_uses_contextual_section": false
+    },
+    "regeneration_decision": "REGENERATE_FROM_LOCKED_EVIDENCE"
+  }
+}

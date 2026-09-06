@@ -1,0 +1,91 @@
+{
+  "checkpoint_identity": {
+    "checkpoint_version": "commentary-v11-scaled-preflight-checkpoint-1",
+    "tool_version": "commentary-v11-scaled-preflight-1.2-routing-remediation",
+    "batch_id": "batch-008",
+    "target_count": 107,
+    "candidate_pool_size": 250,
+    "candidate_source": "/home/johnwalker/Documents/github/biblical-hermeneutics-framework/.bhf-data/bhf-commentary-candidates/commentary-v1.0.1"
+  },
+  "reference": "Jonah 4",
+  "validated": true,
+  "low_information": true,
+  "record": {
+    "book": "Jonah",
+    "chapter": 4,
+    "reference": "Jonah 4",
+    "classification": "LOW_INFORMATION_COMMENTARY",
+    "stored_availability": "AVAILABLE",
+    "stored_status": "validated",
+    "detection": {
+      "is_low_information": true,
+      "classification": "LOW_INFORMATION_COMMENTARY",
+      "markers": [
+        "verse_count_boilerplate",
+        "opening_quotation_label",
+        "closing_quotation_label"
+      ],
+      "section_kinds": [
+        "chapter_overview"
+      ],
+      "contextual_section_kinds": [],
+      "cited_evidence_ids": [
+        "jonah-date-composition"
+      ],
+      "canonical_summary_only": true,
+      "text_length": 311
+    },
+    "bundle_assessment": {
+      "evidence_bundle_available": true,
+      "evidence_hash": "cc341fff61e87a3c28c0222eb4dabbf256f5305f4efc8561301db1ed15f8ba41",
+      "evidence_item_count": 31,
+      "useful_contextual_evidence_count": 31,
+      "evidence_categories": [
+        "archaeology",
+        "culture",
+        "geography",
+        "history",
+        "language",
+        "politics"
+      ],
+      "evidence_supports_regeneration": true,
+      "evidence_limitation": null,
+      "recomputed_availability": "AVAILABLE",
+      "cited_evidence_resolved": true,
+      "unused_evidence_ids": [
+        "jonah-double-structure",
+        "jonah-flight-motive",
+        "jonah-genre",
+        "jonah-multireligious-reception",
+        "jonah-nineveh-size",
+        "jonah-prayer-composition",
+        "jonah-qiqayon-wind",
+        "jonah-right-left-ending",
+        "jonah-textual-witnesses",
+        "jonah-twelve-placement",
+        "jonah-yom-kippur-reception",
+        "jonah:interpretive_note:2",
+        "jonah:interpretive_note:25",
+        "jonah:interpretive_note:26",
+        "jonah:interpretive_note:27",
+        "jonah:interpretive_note:28",
+        "jonah:interpretive_note:29",
+        "jonah:interpretive_note:3",
+        "jonah:interpretive_note:30",
+        "jonah:interpretive_note:31",
+        "jonah:interpretive_note:32",
+        "jonah:interpretive_note:33",
+        "jonah:interpretive_note:34",
+        "jonah:interpretive_note:37",
+        "jonah:interpretive_note:38",
+        "jonah:interpretive_note:39",
+        "jonah:interpretive_note:4",
+        "jonah:interpretive_note:41",
+        "jonah:interpretive_note:42",
+        "jonah:interpretive_note:43"
+      ],
+      "current_commentary_uses_contextual_section": false
+    },
+    "regeneration_decision": "REGENERATE_FROM_LOCKED_EVIDENCE"
+  }
+}

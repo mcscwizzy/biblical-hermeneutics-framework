@@ -1,0 +1,94 @@
+{
+  "checkpoint_identity": {
+    "checkpoint_version": "commentary-v11-scaled-preflight-checkpoint-1",
+    "tool_version": "commentary-v11-scaled-preflight-1.2-routing-remediation",
+    "batch_id": "batch-008",
+    "target_count": 107,
+    "candidate_pool_size": 250,
+    "candidate_source": "/home/johnwalker/Documents/github/biblical-hermeneutics-framework/.bhf-data/bhf-commentary-candidates/commentary-v1.0.1"
+  },
+  "reference": "1 Corinthians 7",
+  "validated": true,
+  "low_information": true,
+  "record": {
+    "book": "1 Corinthians",
+    "chapter": 7,
+    "reference": "1 Corinthians 7",
+    "classification": "LOW_INFORMATION_COMMENTARY",
+    "stored_availability": "AVAILABLE",
+    "stored_status": "validated",
+    "detection": {
+      "is_low_information": true,
+      "classification": "LOW_INFORMATION_COMMENTARY",
+      "markers": [
+        "verse_count_boilerplate",
+        "opening_quotation_label",
+        "closing_quotation_label"
+      ],
+      "section_kinds": [
+        "chapter_overview"
+      ],
+      "contextual_section_kinds": [],
+      "cited_evidence_ids": [
+        "1cor-divorce"
+      ],
+      "canonical_summary_only": true,
+      "text_length": 266
+    },
+    "bundle_assessment": {
+      "evidence_bundle_available": true,
+      "evidence_hash": "3e01a5020e30cbba5874f2d6567cd314371d328ee5acebe4dff083a1022823a0",
+      "evidence_item_count": 34,
+      "useful_contextual_evidence_count": 34,
+      "evidence_categories": [
+        "archaeology",
+        "chronology",
+        "culture",
+        "history",
+        "language",
+        "social"
+      ],
+      "evidence_supports_regeneration": true,
+      "evidence_limitation": null,
+      "recomputed_availability": "AVAILABLE",
+      "cited_evidence_resolved": true,
+      "unused_evidence_ids": [
+        "1-corinthians:interpretive_note:23",
+        "1-corinthians:interpretive_note:25",
+        "1-corinthians:interpretive_note:26",
+        "1-corinthians:interpretive_note:27",
+        "1-corinthians:interpretive_note:28",
+        "1-corinthians:interpretive_note:29",
+        "1-corinthians:interpretive_note:30",
+        "1-corinthians:interpretive_note:31",
+        "1-corinthians:interpretive_note:32",
+        "1-corinthians:interpretive_note:33",
+        "1-corinthians:interpretive_note:4",
+        "1-corinthians:interpretive_note:84",
+        "1-corinthians:interpretive_note:85",
+        "1cor-integrity",
+        "1cor-letter",
+        "1cor-manuscripts",
+        "1cor-marriage",
+        "1cor-slavery",
+        "1cor-virgins",
+        "circumcision-intersex-consent-boundary",
+        "circumcision-intersex-consent-boundary:passage-relevance",
+        "corinthian-distress-virgins-advice",
+        "corinthian-distress-virgins-advice:passage-relevance",
+        "corinthian-marriage-mutuality-consent",
+        "corinthian-marriage-mutuality-consent:passage-relevance",
+        "corinthian-marriage-singleness-charism",
+        "corinthian-marriage-singleness-charism:passage-relevance",
+        "corinthian-mixed-marriage-separation-safety",
+        "corinthian-mixed-marriage-separation-safety:passage-relevance",
+        "corinthians-circumcision-calling",
+        "corinthians-circumcision-calling:passage-relevance",
+        "household-slavery-status",
+        "household-slavery-status:passage-relevance"
+      ],
+      "current_commentary_uses_contextual_section": false
+    },
+    "regeneration_decision": "REGENERATE_FROM_LOCKED_EVIDENCE"
+  }
+}

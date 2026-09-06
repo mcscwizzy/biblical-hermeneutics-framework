@@ -1,0 +1,83 @@
+{
+  "checkpoint_identity": {
+    "checkpoint_version": "commentary-v11-scaled-preflight-checkpoint-1",
+    "tool_version": "commentary-v11-scaled-preflight-1.2-routing-remediation",
+    "batch_id": "batch-008",
+    "target_count": 107,
+    "candidate_pool_size": 250,
+    "candidate_source": "/home/johnwalker/Documents/github/biblical-hermeneutics-framework/.bhf-data/bhf-commentary-candidates/commentary-v1.0.1"
+  },
+  "reference": "Luke 1",
+  "validated": true,
+  "low_information": true,
+  "record": {
+    "book": "Luke",
+    "chapter": 1,
+    "reference": "Luke 1",
+    "classification": "LOW_INFORMATION_COMMENTARY",
+    "stored_availability": "AVAILABLE",
+    "stored_status": "validated",
+    "detection": {
+      "is_low_information": true,
+      "classification": "LOW_INFORMATION_COMMENTARY",
+      "markers": [
+        "verse_count_boilerplate",
+        "opening_quotation_label",
+        "closing_quotation_label"
+      ],
+      "section_kinds": [
+        "chapter_overview"
+      ],
+      "contextual_section_kinds": [],
+      "cited_evidence_ids": [
+        "luke-acts-relation"
+      ],
+      "canonical_summary_only": true,
+      "text_length": 293
+    },
+    "bundle_assessment": {
+      "evidence_bundle_available": true,
+      "evidence_hash": "08b62f45438d88f4934ff086abfd0c168167ed8d8801283b2f293c8f9ab3ad38",
+      "evidence_item_count": 26,
+      "useful_contextual_evidence_count": 26,
+      "evidence_categories": [
+        "culture",
+        "geography",
+        "history"
+      ],
+      "evidence_supports_regeneration": true,
+      "evidence_limitation": null,
+      "recomputed_availability": "AVAILABLE",
+      "cited_evidence_resolved": true,
+      "unused_evidence_ids": [
+        "acts-common-authorship",
+        "acts-sequel",
+        "acts-theophilus",
+        "annunciation-to-mary:ancient_near_east_context:0",
+        "annunciation-to-mary:historical_context:0",
+        "birth-of-jesus:ancient_near_east_context:0",
+        "birth-of-jesus:historical_context:0",
+        "davidic-covenant:ancient_near_east_context:0",
+        "davidic-covenant:historical_context:0",
+        "luke-anonymous",
+        "luke-infancy",
+        "luke-magnificat",
+        "luke-prologue",
+        "luke-provenance",
+        "luke-quirinius",
+        "luke-sources",
+        "malachi-new-testament",
+        "nazareth:ancient_near_east_context:0",
+        "nazareth:hebraic_worldview:0",
+        "nazareth:historical_context:0",
+        "nazareth:second_temple_context:0",
+        "spirit-theme:ancient_near_east_context:0",
+        "spirit-theme:historical_context:0",
+        "who-was-david:ancient_near_east_context:0",
+        "who-was-david:historical_context:0"
+      ],
+      "current_commentary_uses_contextual_section": false
+    },
+    "regeneration_decision": "REGENERATE_FROM_LOCKED_EVIDENCE"
+  }
+}

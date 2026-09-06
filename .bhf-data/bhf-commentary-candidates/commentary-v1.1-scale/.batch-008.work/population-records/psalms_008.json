@@ -1,0 +1,73 @@
+{
+  "checkpoint_identity": {
+    "checkpoint_version": "commentary-v11-scaled-preflight-checkpoint-1",
+    "tool_version": "commentary-v11-scaled-preflight-1.2-routing-remediation",
+    "batch_id": "batch-008",
+    "target_count": 107,
+    "candidate_pool_size": 250,
+    "candidate_source": "/home/johnwalker/Documents/github/biblical-hermeneutics-framework/.bhf-data/bhf-commentary-candidates/commentary-v1.0.1"
+  },
+  "reference": "Psalms 8",
+  "validated": true,
+  "low_information": true,
+  "record": {
+    "book": "Psalms",
+    "chapter": 8,
+    "reference": "Psalms 8",
+    "classification": "LOW_INFORMATION_COMMENTARY",
+    "stored_availability": "AVAILABLE",
+    "stored_status": "validated",
+    "detection": {
+      "is_low_information": true,
+      "classification": "LOW_INFORMATION_COMMENTARY",
+      "markers": [
+        "verse_count_boilerplate",
+        "opening_quotation_label",
+        "closing_quotation_label"
+      ],
+      "section_kinds": [
+        "chapter_overview"
+      ],
+      "contextual_section_kinds": [],
+      "cited_evidence_ids": [
+        "creation-doctrine:ancient_near_east_context:0"
+      ],
+      "canonical_summary_only": true,
+      "text_length": 301
+    },
+    "bundle_assessment": {
+      "evidence_bundle_available": true,
+      "evidence_hash": "4502b3083742a8c411525dff81178b0c6bbaefd3c0cbb737581eee1e0603253e",
+      "evidence_item_count": 17,
+      "useful_contextual_evidence_count": 17,
+      "evidence_categories": [
+        "culture",
+        "history"
+      ],
+      "evidence_supports_regeneration": true,
+      "evidence_limitation": null,
+      "recomputed_availability": "AVAILABLE",
+      "cited_evidence_resolved": true,
+      "unused_evidence_ids": [
+        "creation-doctrine:historical_context:0",
+        "creation-theme:ancient_near_east_context:0",
+        "creation-theme:historical_context:0",
+        "creation:ancient_near_east_context:0",
+        "creation:hebraic_worldview:0",
+        "creation:historical_context:0",
+        "firstfruits-order-last-enemy",
+        "firstfruits-order-last-enemy:passage-relevance",
+        "image-of-god-theme:ancient_near_east_context:0",
+        "image-of-god-theme:hebraic_worldview:0",
+        "image-of-god-theme:historical_context:0",
+        "image-of-god-theme:second_temple_context:0",
+        "new-creation-theme:ancient_near_east_context:0",
+        "new-creation-theme:historical_context:0",
+        "what-is-the-image-of-god:ancient_near_east_context:0",
+        "what-is-the-image-of-god:historical_context:0"
+      ],
+      "current_commentary_uses_contextual_section": false
+    },
+    "regeneration_decision": "REGENERATE_FROM_LOCKED_EVIDENCE"
+  }
+}

@@ -1,0 +1,84 @@
+{
+  "checkpoint_identity": {
+    "checkpoint_version": "commentary-v11-scaled-preflight-checkpoint-1",
+    "tool_version": "commentary-v11-scaled-preflight-1.2-routing-remediation",
+    "batch_id": "batch-008",
+    "target_count": 107,
+    "candidate_pool_size": 250,
+    "candidate_source": "/home/johnwalker/Documents/github/biblical-hermeneutics-framework/.bhf-data/bhf-commentary-candidates/commentary-v1.0.1"
+  },
+  "reference": "2 Corinthians 3",
+  "validated": true,
+  "low_information": true,
+  "record": {
+    "book": "2 Corinthians",
+    "chapter": 3,
+    "reference": "2 Corinthians 3",
+    "classification": "LOW_INFORMATION_COMMENTARY",
+    "stored_availability": "AVAILABLE",
+    "stored_status": "validated",
+    "detection": {
+      "is_low_information": true,
+      "classification": "LOW_INFORMATION_COMMENTARY",
+      "markers": [
+        "verse_count_boilerplate",
+        "opening_quotation_label",
+        "closing_quotation_label"
+      ],
+      "section_kinds": [
+        "chapter_overview"
+      ],
+      "contextual_section_kinds": [],
+      "cited_evidence_ids": [
+        "2cor-letter-spirit"
+      ],
+      "canonical_summary_only": true,
+      "text_length": 353
+    },
+    "bundle_assessment": {
+      "evidence_bundle_available": true,
+      "evidence_hash": "03a872fdf5ae88c19d6866a23051aaac2c6fe76d642d58a40275dfbc09251aff",
+      "evidence_item_count": 26,
+      "useful_contextual_evidence_count": 26,
+      "evidence_categories": [
+        "archaeology",
+        "culture",
+        "history",
+        "language"
+      ],
+      "evidence_supports_regeneration": true,
+      "evidence_limitation": null,
+      "recomputed_availability": "AVAILABLE",
+      "cited_evidence_resolved": true,
+      "unused_evidence_ids": [
+        "2-corinthians:interpretive_note:14",
+        "2-corinthians:interpretive_note:15",
+        "2-corinthians:interpretive_note:16",
+        "2-corinthians:interpretive_note:17",
+        "2-corinthians:interpretive_note:18",
+        "2-corinthians:interpretive_note:19",
+        "2-corinthians:interpretive_note:20",
+        "2cor-manuscripts",
+        "2cor-sufficiency",
+        "2cor-transformation",
+        "2cor-veil",
+        "corinth-living-letter",
+        "corinth-living-letter:passage-relevance",
+        "corinth-sufficiency-accountability",
+        "corinth-sufficiency-accountability:passage-relevance",
+        "living-letter-commendation-limit",
+        "living-letter-commendation-limit:passage-relevance",
+        "new-covenant-prophecy:ancient_near_east_context:0",
+        "new-covenant-prophecy:historical_context:0",
+        "new-covenant:ancient_near_east_context:0",
+        "new-covenant:historical_context:0",
+        "self-commendation-contested",
+        "self-commendation-contested:passage-relevance",
+        "what-is-the-new-covenant:ancient_near_east_context:0",
+        "what-is-the-new-covenant:historical_context:0"
+      ],
+      "current_commentary_uses_contextual_section": false
+    },
+    "regeneration_decision": "REGENERATE_FROM_LOCKED_EVIDENCE"
+  }
+}

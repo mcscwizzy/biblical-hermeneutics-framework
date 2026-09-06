@@ -1,0 +1,95 @@
+{
+  "checkpoint_identity": {
+    "checkpoint_version": "commentary-v11-scaled-preflight-checkpoint-1",
+    "tool_version": "commentary-v11-scaled-preflight-1.2-routing-remediation",
+    "batch_id": "batch-008",
+    "target_count": 107,
+    "candidate_pool_size": 250,
+    "candidate_source": "/home/johnwalker/Documents/github/biblical-hermeneutics-framework/.bhf-data/bhf-commentary-candidates/commentary-v1.0.1"
+  },
+  "reference": "Joshua 24",
+  "validated": true,
+  "low_information": true,
+  "record": {
+    "book": "Joshua",
+    "chapter": 24,
+    "reference": "Joshua 24",
+    "classification": "LOW_INFORMATION_COMMENTARY",
+    "stored_availability": "AVAILABLE",
+    "stored_status": "validated",
+    "detection": {
+      "is_low_information": true,
+      "classification": "LOW_INFORMATION_COMMENTARY",
+      "markers": [
+        "verse_count_boilerplate",
+        "opening_quotation_label",
+        "closing_quotation_label"
+      ],
+      "section_kinds": [
+        "chapter_overview"
+      ],
+      "contextual_section_kinds": [],
+      "cited_evidence_ids": [
+        "joshua-shechem-covenant"
+      ],
+      "canonical_summary_only": true,
+      "text_length": 406
+    },
+    "bundle_assessment": {
+      "evidence_bundle_available": true,
+      "evidence_hash": "19da69abac7bf848a9205f99758f80c2ba62ff00cbc6882c5756b0271392ab3d",
+      "evidence_item_count": 38,
+      "useful_contextual_evidence_count": 38,
+      "evidence_categories": [
+        "culture",
+        "geography",
+        "history"
+      ],
+      "evidence_supports_regeneration": true,
+      "evidence_limitation": null,
+      "recomputed_availability": "AVAILABLE",
+      "cited_evidence_resolved": true,
+      "unused_evidence_ids": [
+        "beersheba-1:ancient_near_east_context:0",
+        "beersheba-1:historical_context:0",
+        "bethel-1:ancient_near_east_context:0",
+        "bethel-1:historical_context:0",
+        "bethlehem-1:ancient_near_east_context:0",
+        "bethlehem-1:historical_context:0",
+        "city-of-david:ancient_near_east_context:0",
+        "city-of-david:historical_context:0",
+        "covenant-renewal-at-shechem:ancient_near_east_context:0",
+        "covenant-renewal-at-shechem:historical_context:0",
+        "gibeon:ancient_near_east_context:0",
+        "gibeon:historical_context:0",
+        "gilgal-1:ancient_near_east_context:0",
+        "gilgal-1:historical_context:0",
+        "hebron:ancient_near_east_context:0",
+        "hebron:historical_context:0",
+        "holy-place-2:ancient_near_east_context:0",
+        "holy-place-2:historical_context:0",
+        "joshua-literary-movement",
+        "joshua-son-of-nun:ancient_near_east_context:0",
+        "joshua-son-of-nun:historical_context:0",
+        "joshua:interpretive_note:0",
+        "mizpah-3:ancient_near_east_context:0",
+        "mizpah-3:historical_context:0",
+        "most-holy-place-2:ancient_near_east_context:0",
+        "most-holy-place-2:historical_context:0",
+        "mount-zion:ancient_near_east_context:0",
+        "mount-zion:historical_context:0",
+        "shechem:ancient_near_east_context:0",
+        "shechem:hebraic_worldview:0",
+        "shechem:historical_context:0",
+        "shechem:key_places:0",
+        "shechem:key_places:1",
+        "shechem:key_places:2",
+        "shechem:second_temple_context:0",
+        "zion:ancient_near_east_context:0",
+        "zion:historical_context:0"
+      ],
+      "current_commentary_uses_contextual_section": false
+    },
+    "regeneration_decision": "REGENERATE_FROM_LOCKED_EVIDENCE"
+  }
+}

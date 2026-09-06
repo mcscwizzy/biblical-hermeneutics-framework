@@ -1,0 +1,85 @@
+{
+  "checkpoint_identity": {
+    "checkpoint_version": "commentary-v11-scaled-preflight-checkpoint-1",
+    "tool_version": "commentary-v11-scaled-preflight-1.2-routing-remediation",
+    "batch_id": "batch-008",
+    "target_count": 107,
+    "candidate_pool_size": 250,
+    "candidate_source": "/home/johnwalker/Documents/github/biblical-hermeneutics-framework/.bhf-data/bhf-commentary-candidates/commentary-v1.0.1"
+  },
+  "reference": "James 2",
+  "validated": true,
+  "low_information": true,
+  "record": {
+    "book": "James",
+    "chapter": 2,
+    "reference": "James 2",
+    "classification": "LOW_INFORMATION_COMMENTARY",
+    "stored_availability": "AVAILABLE",
+    "stored_status": "validated",
+    "detection": {
+      "is_low_information": true,
+      "classification": "LOW_INFORMATION_COMMENTARY",
+      "markers": [
+        "verse_count_boilerplate",
+        "opening_quotation_label",
+        "closing_quotation_label"
+      ],
+      "section_kinds": [
+        "chapter_overview"
+      ],
+      "contextual_section_kinds": [],
+      "cited_evidence_ids": [
+        "jas-abraham-rahab"
+      ],
+      "canonical_summary_only": true,
+      "text_length": 252
+    },
+    "bundle_assessment": {
+      "evidence_bundle_available": true,
+      "evidence_hash": "d77e1b23e6c39e20eba560fb481ef40b37ae2cc6fb23ff1c23bf6b7fdf1773f2",
+      "evidence_item_count": 27,
+      "useful_contextual_evidence_count": 27,
+      "evidence_categories": [
+        "culture",
+        "economics",
+        "history",
+        "social"
+      ],
+      "evidence_supports_regeneration": true,
+      "evidence_limitation": null,
+      "recomputed_availability": "AVAILABLE",
+      "cited_evidence_resolved": true,
+      "unused_evidence_ids": [
+        "james:interpretive_note:14",
+        "james:interpretive_note:15",
+        "james:interpretive_note:16",
+        "james:interpretive_note:17",
+        "james:interpretive_note:18",
+        "james:interpretive_note:19",
+        "james:interpretive_note:4",
+        "james:interpretive_note:40",
+        "james:interpretive_note:41",
+        "james:interpretive_note:5",
+        "jas-faith-works",
+        "jas-genre",
+        "jas-partiality",
+        "jas-provenance",
+        "jas-royal-law",
+        "joshua:interpretive_note:4",
+        "synagogue:ancient_near_east_context:0",
+        "synagogue:hebraic_worldview:0",
+        "synagogue:historical_context:0",
+        "synagogue:historical_setting:0",
+        "synagogue:original_audience:0",
+        "synagogue:second_temple_context:0",
+        "what-is-the-synagogue:ancient_near_east_context:0",
+        "what-is-the-synagogue:historical_context:0",
+        "who-was-abraham:ancient_near_east_context:0",
+        "who-was-abraham:historical_context:0"
+      ],
+      "current_commentary_uses_contextual_section": false
+    },
+    "regeneration_decision": "REGENERATE_FROM_LOCKED_EVIDENCE"
+  }
+}

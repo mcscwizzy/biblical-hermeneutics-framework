@@ -1,0 +1,82 @@
+{
+  "checkpoint_identity": {
+    "checkpoint_version": "commentary-v11-scaled-preflight-checkpoint-1",
+    "tool_version": "commentary-v11-scaled-preflight-1.2-routing-remediation",
+    "batch_id": "batch-008",
+    "target_count": 107,
+    "candidate_pool_size": 250,
+    "candidate_source": "/home/johnwalker/Documents/github/biblical-hermeneutics-framework/.bhf-data/bhf-commentary-candidates/commentary-v1.0.1"
+  },
+  "reference": "Acts 10",
+  "validated": true,
+  "low_information": true,
+  "record": {
+    "book": "Acts",
+    "chapter": 10,
+    "reference": "Acts 10",
+    "classification": "LOW_INFORMATION_COMMENTARY",
+    "stored_availability": "AVAILABLE",
+    "stored_status": "validated",
+    "detection": {
+      "is_low_information": true,
+      "classification": "LOW_INFORMATION_COMMENTARY",
+      "markers": [
+        "verse_count_boilerplate",
+        "opening_quotation_label",
+        "closing_quotation_label"
+      ],
+      "section_kinds": [
+        "chapter_overview"
+      ],
+      "contextual_section_kinds": [],
+      "cited_evidence_ids": [
+        "acts-animal-vision-perplexity"
+      ],
+      "canonical_summary_only": true,
+      "text_length": 284
+    },
+    "bundle_assessment": {
+      "evidence_bundle_available": true,
+      "evidence_hash": "5d8b5f8a8a9880f2b00dd1017a500120805d6a5ecc89f6e2d98762b1da30d7cd",
+      "evidence_item_count": 25,
+      "useful_contextual_evidence_count": 25,
+      "evidence_categories": [
+        "culture",
+        "geography",
+        "history"
+      ],
+      "evidence_supports_regeneration": true,
+      "evidence_limitation": null,
+      "recomputed_availability": "AVAILABLE",
+      "cited_evidence_resolved": true,
+      "unused_evidence_ids": [
+        "acts-animal-vision-perplexity:passage-relevance",
+        "acts-cornelius",
+        "acts-historical-method",
+        "acts-household-baptism",
+        "acts-people-hospitality-spirit",
+        "acts-people-hospitality-spirit:passage-relevance",
+        "acts-text-witnesses",
+        "acts-variable-reception-sequences",
+        "acts-variable-reception-sequences:passage-relevance",
+        "acts-western-text",
+        "cornelius-household-receives-spirit:ancient_near_east_context:0",
+        "cornelius-household-receives-spirit:historical_context:0",
+        "cornelius:ancient_near_east_context:0",
+        "cornelius:historical_context:0",
+        "cross-passage-diet-code-limit",
+        "cross-passage-diet-code-limit:passage-relevance",
+        "leviticus-food-carcass-holiness",
+        "leviticus-food-carcass-holiness:passage-relevance",
+        "rahab:ancient_near_east_context:0",
+        "rahab:historical_context:0",
+        "ruth-the-moabite:ancient_near_east_context:0",
+        "ruth-the-moabite:historical_context:0",
+        "who-was-peter:ancient_near_east_context:0",
+        "who-was-peter:historical_context:0"
+      ],
+      "current_commentary_uses_contextual_section": false
+    },
+    "regeneration_decision": "REGENERATE_FROM_LOCKED_EVIDENCE"
+  }
+}

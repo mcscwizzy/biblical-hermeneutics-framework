@@ -1,0 +1,70 @@
+{
+  "checkpoint_identity": {
+    "checkpoint_version": "commentary-v11-scaled-preflight-checkpoint-1",
+    "tool_version": "commentary-v11-scaled-preflight-1.2-routing-remediation",
+    "batch_id": "batch-008",
+    "target_count": 107,
+    "candidate_pool_size": 250,
+    "candidate_source": "/home/johnwalker/Documents/github/biblical-hermeneutics-framework/.bhf-data/bhf-commentary-candidates/commentary-v1.0.1"
+  },
+  "reference": "2 Thessalonians 2",
+  "validated": true,
+  "low_information": true,
+  "record": {
+    "book": "2 Thessalonians",
+    "chapter": 2,
+    "reference": "2 Thessalonians 2",
+    "classification": "LOW_INFORMATION_COMMENTARY",
+    "stored_availability": "AVAILABLE",
+    "stored_status": "validated",
+    "detection": {
+      "is_low_information": true,
+      "classification": "LOW_INFORMATION_COMMENTARY",
+      "markers": [
+        "verse_count_boilerplate",
+        "opening_quotation_label",
+        "closing_quotation_label"
+      ],
+      "section_kinds": [
+        "chapter_overview"
+      ],
+      "contextual_section_kinds": [],
+      "cited_evidence_ids": [
+        "2th-alarm"
+      ],
+      "canonical_summary_only": true,
+      "text_length": 252
+    },
+    "bundle_assessment": {
+      "evidence_bundle_available": true,
+      "evidence_hash": "0b2273ce052f09107828ebbfae21fecd74a287433dcdf71f22baa1fcd63aa130",
+      "evidence_item_count": 13,
+      "useful_contextual_evidence_count": 13,
+      "evidence_categories": [
+        "culture",
+        "history",
+        "language"
+      ],
+      "evidence_supports_regeneration": true,
+      "evidence_limitation": null,
+      "recomputed_availability": "AVAILABLE",
+      "cited_evidence_resolved": true,
+      "unused_evidence_ids": [
+        "2th-coming-gathering",
+        "2th-defeat",
+        "2th-election",
+        "2th-election-variant",
+        "2th-lawless",
+        "2th-lawless-variant",
+        "2th-rebellion",
+        "2th-relation",
+        "2th-restrainer",
+        "2th-signs",
+        "2th-temple",
+        "2th-tradition"
+      ],
+      "current_commentary_uses_contextual_section": false
+    },
+    "regeneration_decision": "REGENERATE_FROM_LOCKED_EVIDENCE"
+  }
+}

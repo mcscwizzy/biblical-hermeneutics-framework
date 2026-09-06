@@ -1,0 +1,105 @@
+{
+  "checkpoint_identity": {
+    "checkpoint_version": "commentary-v11-scaled-preflight-checkpoint-1",
+    "tool_version": "commentary-v11-scaled-preflight-1.2-routing-remediation",
+    "batch_id": "batch-008",
+    "target_count": 107,
+    "candidate_pool_size": 250,
+    "candidate_source": "/home/johnwalker/Documents/github/biblical-hermeneutics-framework/.bhf-data/bhf-commentary-candidates/commentary-v1.0.1"
+  },
+  "reference": "Acts 28",
+  "validated": true,
+  "low_information": true,
+  "record": {
+    "book": "Acts",
+    "chapter": 28,
+    "reference": "Acts 28",
+    "classification": "LOW_INFORMATION_COMMENTARY",
+    "stored_availability": "AVAILABLE",
+    "stored_status": "validated",
+    "detection": {
+      "is_low_information": true,
+      "classification": "LOW_INFORMATION_COMMENTARY",
+      "markers": [
+        "verse_count_boilerplate",
+        "opening_quotation_label",
+        "closing_quotation_label"
+      ],
+      "section_kinds": [
+        "chapter_overview"
+      ],
+      "contextual_section_kinds": [],
+      "cited_evidence_ids": [
+        "acts-28-custody-and-rented-lodging"
+      ],
+      "canonical_summary_only": true,
+      "text_length": 262
+    },
+    "bundle_assessment": {
+      "evidence_bundle_available": true,
+      "evidence_hash": "c295a9fac26193705875cb48c0475d76b265ae83d934da2ceab50aeef5876de5",
+      "evidence_item_count": 46,
+      "useful_contextual_evidence_count": 46,
+      "evidence_categories": [
+        "archaeology",
+        "culture",
+        "geography",
+        "history",
+        "social"
+      ],
+      "evidence_supports_regeneration": true,
+      "evidence_limitation": null,
+      "recomputed_availability": "AVAILABLE",
+      "cited_evidence_resolved": true,
+      "unused_evidence_ids": [
+        "acts-28-custody-and-rented-lodging:passage-relevance",
+        "acts-citizenship-hearings-appeal-custody",
+        "acts-citizenship-hearings-appeal-custody:passage-relevance",
+        "acts-date",
+        "acts-ending",
+        "acts-genre",
+        "acts-geographic-program",
+        "acts-historical-method",
+        "acts-paul-fate",
+        "acts-text-witnesses",
+        "acts-we-passages",
+        "acts-western-text",
+        "ammon:ancient_near_east_context:0",
+        "ammon:historical_context:0",
+        "chaldea:ancient_near_east_context:0",
+        "chaldea:historical_context:0",
+        "edom:ancient_near_east_context:0",
+        "edom:historical_context:0",
+        "midian:ancient_near_east_context:0",
+        "midian:historical_context:0",
+        "moab-1:ancient_near_east_context:0",
+        "moab-1:historical_context:0",
+        "paul:ancient_near_east_context:0",
+        "paul:hebraic_worldview:0",
+        "paul:historical_context:0",
+        "paul:key_places:0",
+        "paul:key_places:1",
+        "paul:key_places:2",
+        "paul:key_places:3",
+        "paul:key_places:4",
+        "paul:second_temple_context:0",
+        "peter-paul-memory-and-sites",
+        "peter-paul-memory-and-sites:passage-relevance",
+        "philistia:ancient_near_east_context:0",
+        "philistia:historical_context:0",
+        "puteoli-appian-approach",
+        "puteoli-appian-approach:passage-relevance",
+        "roman-jewish-communities",
+        "roman-jewish-communities:passage-relevance",
+        "rome:interpretive_note:1",
+        "rome:interpretive_note:3",
+        "syria-1:ancient_near_east_context:0",
+        "syria-1:historical_context:0",
+        "urban-dwellings-and-meeting-space",
+        "urban-dwellings-and-meeting-space:passage-relevance"
+      ],
+      "current_commentary_uses_contextual_section": false
+    },
+    "regeneration_decision": "REGENERATE_FROM_LOCKED_EVIDENCE"
+  }
+}

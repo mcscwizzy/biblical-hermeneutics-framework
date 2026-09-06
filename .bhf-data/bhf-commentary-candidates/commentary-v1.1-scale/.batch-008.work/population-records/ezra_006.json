@@ -1,0 +1,74 @@
+{
+  "checkpoint_identity": {
+    "checkpoint_version": "commentary-v11-scaled-preflight-checkpoint-1",
+    "tool_version": "commentary-v11-scaled-preflight-1.2-routing-remediation",
+    "batch_id": "batch-008",
+    "target_count": 107,
+    "candidate_pool_size": 250,
+    "candidate_source": "/home/johnwalker/Documents/github/biblical-hermeneutics-framework/.bhf-data/bhf-commentary-candidates/commentary-v1.0.1"
+  },
+  "reference": "Ezra 6",
+  "validated": true,
+  "low_information": true,
+  "record": {
+    "book": "Ezra",
+    "chapter": 6,
+    "reference": "Ezra 6",
+    "classification": "LOW_INFORMATION_COMMENTARY",
+    "stored_availability": "AVAILABLE",
+    "stored_status": "validated",
+    "detection": {
+      "is_low_information": true,
+      "classification": "LOW_INFORMATION_COMMENTARY",
+      "markers": [
+        "verse_count_boilerplate",
+        "opening_quotation_label",
+        "closing_quotation_label"
+      ],
+      "section_kinds": [
+        "chapter_overview"
+      ],
+      "contextual_section_kinds": [],
+      "cited_evidence_ids": [
+        "ezra-opposition-darius"
+      ],
+      "canonical_summary_only": true,
+      "text_length": 422
+    },
+    "bundle_assessment": {
+      "evidence_bundle_available": true,
+      "evidence_hash": "4aaa12b87e662041f15957a853ff1cfb547eb3a9c38a9b82dc37c4564b0868da",
+      "evidence_item_count": 16,
+      "useful_contextual_evidence_count": 16,
+      "evidence_categories": [
+        "archaeology",
+        "culture",
+        "history",
+        "politics"
+      ],
+      "evidence_supports_regeneration": true,
+      "evidence_limitation": null,
+      "recomputed_availability": "AVAILABLE",
+      "cited_evidence_resolved": true,
+      "unused_evidence_ids": [
+        "ezra-persian-return-and-temple-sequence",
+        "ezra-persian-return-and-temple-sequence:passage-relevance",
+        "ezra-temple-passover",
+        "ezra:interpretive_note:1",
+        "ezra:interpretive_note:2",
+        "persia:ancient_near_east_context:0",
+        "persia:hebraic_worldview:0",
+        "persia:historical_context:0",
+        "persia:second_temple_context:0",
+        "rebuilding-the-temple:ancient_near_east_context:0",
+        "rebuilding-the-temple:hebraic_worldview:0",
+        "rebuilding-the-temple:historical_context:0",
+        "rebuilding-the-temple:second_temple_context:0",
+        "yehud-stamp-administration",
+        "yehud-stamp-administration:passage-relevance"
+      ],
+      "current_commentary_uses_contextual_section": false
+    },
+    "regeneration_decision": "REGENERATE_FROM_LOCKED_EVIDENCE"
+  }
+}

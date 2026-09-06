@@ -1,0 +1,76 @@
+{
+  "checkpoint_identity": {
+    "checkpoint_version": "commentary-v11-scaled-preflight-checkpoint-1",
+    "tool_version": "commentary-v11-scaled-preflight-1.2-routing-remediation",
+    "batch_id": "batch-008",
+    "target_count": 107,
+    "candidate_pool_size": 250,
+    "candidate_source": "/home/johnwalker/Documents/github/biblical-hermeneutics-framework/.bhf-data/bhf-commentary-candidates/commentary-v1.0.1"
+  },
+  "reference": "Numbers 33",
+  "validated": true,
+  "low_information": true,
+  "record": {
+    "book": "Numbers",
+    "chapter": 33,
+    "reference": "Numbers 33",
+    "classification": "LOW_INFORMATION_COMMENTARY",
+    "stored_availability": "AVAILABLE",
+    "stored_status": "validated",
+    "detection": {
+      "is_low_information": true,
+      "classification": "LOW_INFORMATION_COMMENTARY",
+      "markers": [
+        "verse_count_boilerplate",
+        "opening_quotation_label",
+        "closing_quotation_label"
+      ],
+      "section_kinds": [
+        "chapter_overview"
+      ],
+      "contextual_section_kinds": [],
+      "cited_evidence_ids": [
+        "judgment-on-egypts-gods"
+      ],
+      "canonical_summary_only": true,
+      "text_length": 296
+    },
+    "bundle_assessment": {
+      "evidence_bundle_available": true,
+      "evidence_hash": "262cb381a319e610cb3bca089ed63a8b8cd7f9ad08e4c90dabf4ebafef6413d1",
+      "evidence_item_count": 19,
+      "useful_contextual_evidence_count": 19,
+      "evidence_categories": [
+        "culture",
+        "geography",
+        "history"
+      ],
+      "evidence_supports_regeneration": true,
+      "evidence_limitation": null,
+      "recomputed_availability": "AVAILABLE",
+      "cited_evidence_resolved": true,
+      "unused_evidence_ids": [
+        "egyptian-kingship-and-divine-order:interpretive_note:0",
+        "exodus-wilderness-routes-and-water:interpretive_note:0",
+        "judgment-on-egypts-gods:passage-relevance",
+        "marah-elim-water-stations",
+        "marah-elim-water-stations:passage-relevance",
+        "numbers-inheritance-preparation",
+        "numbers:interpretive_note:2",
+        "plagues-of-egypt:ancient_near_east_context:0",
+        "plagues-of-egypt:hebraic_worldview:0",
+        "plagues-of-egypt:historical_context:0",
+        "red-sea-crossing:ancient_near_east_context:0",
+        "red-sea-crossing:historical_context:0",
+        "sinai-itinerary-models",
+        "sinai-itinerary-models:passage-relevance",
+        "wilderness-wandering:ancient_near_east_context:0",
+        "wilderness-wandering:historical_context:0",
+        "yam-suf-route-identification",
+        "yam-suf-route-identification:passage-relevance"
+      ],
+      "current_commentary_uses_contextual_section": false
+    },
+    "regeneration_decision": "REGENERATE_FROM_LOCKED_EVIDENCE"
+  }
+}

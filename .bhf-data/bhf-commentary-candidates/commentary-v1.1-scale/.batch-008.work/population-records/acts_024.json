@@ -1,0 +1,71 @@
+{
+  "checkpoint_identity": {
+    "checkpoint_version": "commentary-v11-scaled-preflight-checkpoint-1",
+    "tool_version": "commentary-v11-scaled-preflight-1.2-routing-remediation",
+    "batch_id": "batch-008",
+    "target_count": 107,
+    "candidate_pool_size": 250,
+    "candidate_source": "/home/johnwalker/Documents/github/biblical-hermeneutics-framework/.bhf-data/bhf-commentary-candidates/commentary-v1.0.1"
+  },
+  "reference": "Acts 24",
+  "validated": true,
+  "low_information": true,
+  "record": {
+    "book": "Acts",
+    "chapter": 24,
+    "reference": "Acts 24",
+    "classification": "LOW_INFORMATION_COMMENTARY",
+    "stored_availability": "AVAILABLE",
+    "stored_status": "validated",
+    "detection": {
+      "is_low_information": true,
+      "classification": "LOW_INFORMATION_COMMENTARY",
+      "markers": [
+        "verse_count_boilerplate",
+        "opening_quotation_label",
+        "closing_quotation_label"
+      ],
+      "section_kinds": [
+        "chapter_overview"
+      ],
+      "contextual_section_kinds": [],
+      "cited_evidence_ids": [
+        "acts-historical-method"
+      ],
+      "canonical_summary_only": true,
+      "text_length": 360
+    },
+    "bundle_assessment": {
+      "evidence_bundle_available": true,
+      "evidence_hash": "f93532cb7cfcd0da49e66988731ce0bdb2880d4f6938a223080a73c762dc64cc",
+      "evidence_item_count": 13,
+      "useful_contextual_evidence_count": 13,
+      "evidence_categories": [
+        "chronology",
+        "culture",
+        "geography",
+        "history"
+      ],
+      "evidence_supports_regeneration": true,
+      "evidence_limitation": null,
+      "recomputed_availability": "AVAILABLE",
+      "cited_evidence_resolved": true,
+      "unused_evidence_ids": [
+        "acts-letter-chronology-resurrection",
+        "acts-letter-chronology-resurrection:passage-relevance",
+        "acts-resurrection-judgment-conscience",
+        "acts-resurrection-judgment-conscience:passage-relevance",
+        "acts-text-witnesses",
+        "acts-western-text",
+        "death-life-categories-distinct",
+        "death-life-categories-distinct:passage-relevance",
+        "roman-governorship:ancient_near_east_context:0",
+        "roman-governorship:hebraic_worldview:0",
+        "roman-governorship:historical_context:0",
+        "roman-governorship:second_temple_context:0"
+      ],
+      "current_commentary_uses_contextual_section": false
+    },
+    "regeneration_decision": "REGENERATE_FROM_LOCKED_EVIDENCE"
+  }
+}

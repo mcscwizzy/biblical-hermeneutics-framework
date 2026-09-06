@@ -1,0 +1,64 @@
+{
+  "checkpoint_identity": {
+    "checkpoint_version": "commentary-v11-scaled-preflight-checkpoint-1",
+    "tool_version": "commentary-v11-scaled-preflight-1.2-routing-remediation",
+    "batch_id": "batch-008",
+    "target_count": 107,
+    "candidate_pool_size": 250,
+    "candidate_source": "/home/johnwalker/Documents/github/biblical-hermeneutics-framework/.bhf-data/bhf-commentary-candidates/commentary-v1.0.1"
+  },
+  "reference": "Lamentations 5",
+  "validated": true,
+  "low_information": true,
+  "record": {
+    "book": "Lamentations",
+    "chapter": 5,
+    "reference": "Lamentations 5",
+    "classification": "LOW_INFORMATION_COMMENTARY",
+    "stored_availability": "AVAILABLE",
+    "stored_status": "validated",
+    "detection": {
+      "is_low_information": true,
+      "classification": "LOW_INFORMATION_COMMENTARY",
+      "markers": [
+        "verse_count_boilerplate",
+        "opening_quotation_label",
+        "closing_quotation_label"
+      ],
+      "section_kinds": [
+        "chapter_overview"
+      ],
+      "contextual_section_kinds": [],
+      "cited_evidence_ids": [
+        "lam-acrostics"
+      ],
+      "canonical_summary_only": true,
+      "text_length": 208
+    },
+    "bundle_assessment": {
+      "evidence_bundle_available": true,
+      "evidence_hash": "0bb90bb941e461e3576dd40fbbe7790968ae9109450411dcc742cfa1c8ef8b1a",
+      "evidence_item_count": 8,
+      "useful_contextual_evidence_count": 8,
+      "evidence_categories": [
+        "culture",
+        "history"
+      ],
+      "evidence_supports_regeneration": true,
+      "evidence_limitation": null,
+      "recomputed_availability": "AVAILABLE",
+      "cited_evidence_resolved": true,
+      "unused_evidence_ids": [
+        "lam-communal-prayer",
+        "lam-final-unresolved",
+        "lam-five-poems",
+        "lam-hope-not-resolution",
+        "lam-inherited-consequences",
+        "lam-multiple-voices",
+        "lam-sexual-violence"
+      ],
+      "current_commentary_uses_contextual_section": false
+    },
+    "regeneration_decision": "REGENERATE_FROM_LOCKED_EVIDENCE"
+  }
+}

@@ -1,0 +1,96 @@
+{
+  "checkpoint_identity": {
+    "checkpoint_version": "commentary-v11-scaled-preflight-checkpoint-1",
+    "tool_version": "commentary-v11-scaled-preflight-1.2-routing-remediation",
+    "batch_id": "batch-008",
+    "target_count": 107,
+    "candidate_pool_size": 250,
+    "candidate_source": "/home/johnwalker/Documents/github/biblical-hermeneutics-framework/.bhf-data/bhf-commentary-candidates/commentary-v1.0.1"
+  },
+  "reference": "John 19",
+  "validated": true,
+  "low_information": true,
+  "record": {
+    "book": "John",
+    "chapter": 19,
+    "reference": "John 19",
+    "classification": "LOW_INFORMATION_COMMENTARY",
+    "stored_availability": "AVAILABLE",
+    "stored_status": "validated",
+    "detection": {
+      "is_low_information": true,
+      "classification": "LOW_INFORMATION_COMMENTARY",
+      "markers": [
+        "verse_count_boilerplate",
+        "opening_quotation_label",
+        "closing_quotation_label"
+      ],
+      "section_kinds": [
+        "chapter_overview"
+      ],
+      "contextual_section_kinds": [],
+      "cited_evidence_ids": [
+        "john-beloved-disciple"
+      ],
+      "canonical_summary_only": true,
+      "text_length": 206
+    },
+    "bundle_assessment": {
+      "evidence_bundle_available": true,
+      "evidence_hash": "3fb8bd669c36e00ffd561b73df0d5009360e78680330539c335e31b0568b3838",
+      "evidence_item_count": 38,
+      "useful_contextual_evidence_count": 38,
+      "evidence_categories": [
+        "archaeology",
+        "culture",
+        "history",
+        "politics"
+      ],
+      "evidence_supports_regeneration": true,
+      "evidence_limitation": null,
+      "recomputed_availability": "AVAILABLE",
+      "cited_evidence_resolved": true,
+      "unused_evidence_ids": [
+        "burial-of-jesus:ancient_near_east_context:0",
+        "burial-of-jesus:hebraic_worldview:0",
+        "burial-of-jesus:historical_context:0",
+        "burial-of-jesus:second_temple_context:0",
+        "crucifixion:ancient_near_east_context:0",
+        "crucifixion:hebraic_worldview:0",
+        "crucifixion:historical_context:0",
+        "crucifixion:second_temple_context:0",
+        "gospel-roman-hearing",
+        "gospel-roman-hearing:passage-relevance",
+        "john-blood-water",
+        "john-kingship",
+        "john-passion-responsibility",
+        "john-synoptic-relation",
+        "judea-1:ancient_near_east_context:0",
+        "judea-1:hebraic_worldview:0",
+        "judea-1:historical_context:0",
+        "judea-1:second_temple_context:0",
+        "passover:ancient_near_east_context:0",
+        "passover:historical_context:0",
+        "pilate-prefect-inscription",
+        "pilate-prefect-inscription:passage-relevance",
+        "pilate-stone:ancient_near_east_context:0",
+        "pilate-stone:hebraic_worldview:0",
+        "pilate-stone:historical_context:0",
+        "pilate-stone:second_temple_context:0",
+        "roman-governorship:ancient_near_east_context:0",
+        "roman-governorship:hebraic_worldview:0",
+        "roman-governorship:historical_context:0",
+        "roman-governorship:second_temple_context:0",
+        "what-is-the-roman-empire-in-the-bible:ancient_near_east_context:0",
+        "what-is-the-roman-empire-in-the-bible:historical_context:0",
+        "what-is-the-significance-of-passover:ancient_near_east_context:0",
+        "what-is-the-significance-of-passover:historical_context:0",
+        "yehohanan-crucifixion-burial",
+        "yehohanan-crucifixion-burial:passage-relevance",
+        "zechariah-new-testament-reception"
+      ],
+      "current_commentary_uses_contextual_section": false
+    },
+    "regeneration_decision": "REGENERATE_FROM_LOCKED_EVIDENCE"
+  }
+}

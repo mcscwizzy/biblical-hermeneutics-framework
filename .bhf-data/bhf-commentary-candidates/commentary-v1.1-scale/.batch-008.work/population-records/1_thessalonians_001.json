@@ -1,0 +1,105 @@
+{
+  "checkpoint_identity": {
+    "checkpoint_version": "commentary-v11-scaled-preflight-checkpoint-1",
+    "tool_version": "commentary-v11-scaled-preflight-1.2-routing-remediation",
+    "batch_id": "batch-008",
+    "target_count": 107,
+    "candidate_pool_size": 250,
+    "candidate_source": "/home/johnwalker/Documents/github/biblical-hermeneutics-framework/.bhf-data/bhf-commentary-candidates/commentary-v1.0.1"
+  },
+  "reference": "1 Thessalonians 1",
+  "validated": true,
+  "low_information": true,
+  "record": {
+    "book": "1 Thessalonians",
+    "chapter": 1,
+    "reference": "1 Thessalonians 1",
+    "classification": "LOW_INFORMATION_COMMENTARY",
+    "stored_availability": "AVAILABLE",
+    "stored_status": "validated",
+    "detection": {
+      "is_low_information": true,
+      "classification": "LOW_INFORMATION_COMMENTARY",
+      "markers": [
+        "verse_count_boilerplate",
+        "opening_quotation_label",
+        "closing_quotation_label"
+      ],
+      "section_kinds": [
+        "chapter_overview"
+      ],
+      "contextual_section_kinds": [],
+      "cited_evidence_ids": [
+        "1th-audience"
+      ],
+      "canonical_summary_only": true,
+      "text_length": 333
+    },
+    "bundle_assessment": {
+      "evidence_bundle_available": true,
+      "evidence_hash": "0abccda5c2eb6c827b81d7d0d0d3ca45f096cf918811e4a60f14fe06d7f60805",
+      "evidence_item_count": 45,
+      "useful_contextual_evidence_count": 44,
+      "evidence_categories": [
+        "archaeology",
+        "chronology",
+        "culture",
+        "geography",
+        "history",
+        "social"
+      ],
+      "evidence_supports_regeneration": true,
+      "evidence_limitation": null,
+      "recomputed_availability": "AVAILABLE",
+      "cited_evidence_resolved": true,
+      "unused_evidence_ids": [
+        "1th-city",
+        "1th-election",
+        "1th-senders",
+        "1th-triad",
+        "1th-turning",
+        "2th-relation",
+        "acts-synagogue-and-audience-limits",
+        "acts-synagogue-and-audience-limits:passage-relevance",
+        "julio-claudian-imperial-honors",
+        "julio-claudian-imperial-honors:passage-relevance",
+        "macedonia-regional-language",
+        "modern-prayer-confidentiality-not-surveillance",
+        "modern-prayer-confidentiality-not-surveillance:passage-relevance",
+        "thess-memory-not-surveillance",
+        "thess-memory-not-surveillance:passage-relevance",
+        "thess-plural-senders",
+        "thess-plural-senders:passage-relevance",
+        "thess-plural-thanksgiving-remembrance",
+        "thess-plural-thanksgiving-remembrance:passage-relevance",
+        "thess-reception-sounding-word",
+        "thess-reception-sounding-word:passage-relevance",
+        "thessalonian-affliction-opponents-uncertain",
+        "thessalonian-affliction-opponents-uncertain:passage-relevance",
+        "thessalonian-polytheistic-cult-landscape",
+        "thessalonian-polytheistic-cult-landscape:passage-relevance",
+        "thessalonian-regional-report-rhetoric",
+        "thessalonian-regional-report-rhetoric:passage-relevance",
+        "thessalonica:archaeology:0",
+        "thessalonica:archaeology:1",
+        "thessalonica:archaeology:2",
+        "thessalonica:archaeology:3",
+        "thessalonica:hebraic_worldview:0",
+        "thessalonica:historical_context:0",
+        "thessalonica:second_temple_context:0",
+        "thessalonica:timeline:0",
+        "thessalonica:timeline:1",
+        "thessalonica:timeline:2",
+        "thessalonica:timeline:3",
+        "thessalonica:timeline:4",
+        "thessalonica:timeline:5",
+        "turning-from-idols-living-god",
+        "turning-from-idols-living-god:passage-relevance",
+        "via-egnatia-port-and-free-city",
+        "via-egnatia-port-and-free-city:passage-relevance"
+      ],
+      "current_commentary_uses_contextual_section": false
+    },
+    "regeneration_decision": "REGENERATE_FROM_LOCKED_EVIDENCE"
+  }
+}

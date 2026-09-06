@@ -1,0 +1,90 @@
+{
+  "checkpoint_identity": {
+    "checkpoint_version": "commentary-v11-scaled-preflight-checkpoint-1",
+    "tool_version": "commentary-v11-scaled-preflight-1.2-routing-remediation",
+    "batch_id": "batch-008",
+    "target_count": 107,
+    "candidate_pool_size": 250,
+    "candidate_source": "/home/johnwalker/Documents/github/biblical-hermeneutics-framework/.bhf-data/bhf-commentary-candidates/commentary-v1.0.1"
+  },
+  "reference": "Luke 19",
+  "validated": true,
+  "low_information": true,
+  "record": {
+    "book": "Luke",
+    "chapter": 19,
+    "reference": "Luke 19",
+    "classification": "LOW_INFORMATION_COMMENTARY",
+    "stored_availability": "AVAILABLE",
+    "stored_status": "validated",
+    "detection": {
+      "is_low_information": true,
+      "classification": "LOW_INFORMATION_COMMENTARY",
+      "markers": [
+        "verse_count_boilerplate",
+        "opening_quotation_label",
+        "closing_quotation_label"
+      ],
+      "section_kinds": [
+        "chapter_overview"
+      ],
+      "contextual_section_kinds": [],
+      "cited_evidence_ids": [
+        "luke-date"
+      ],
+      "canonical_summary_only": true,
+      "text_length": 198
+    },
+    "bundle_assessment": {
+      "evidence_bundle_available": true,
+      "evidence_hash": "92b1fdd8086cd07c8e90d4c86d31237860fada13a9d7531d2dc02e7075c9211e",
+      "evidence_item_count": 30,
+      "useful_contextual_evidence_count": 30,
+      "evidence_categories": [
+        "archaeology",
+        "culture",
+        "economics",
+        "geography",
+        "history",
+        "politics"
+      ],
+      "evidence_supports_regeneration": true,
+      "evidence_limitation": null,
+      "recomputed_availability": "AVAILABLE",
+      "cited_evidence_resolved": true,
+      "unused_evidence_ids": [
+        "city-of-david-excavations:ancient_near_east_context:0",
+        "city-of-david-excavations:historical_context:0",
+        "gospel-taxation-distinctions",
+        "gospel-taxation-distinctions:passage-relevance",
+        "jerusalem:ancient_near_east_context:0",
+        "jerusalem:hebraic_worldview:0",
+        "jerusalem:historical_context:0",
+        "jerusalem:key_places:0",
+        "jerusalem:key_places:1",
+        "jerusalem:key_places:2",
+        "jerusalem:key_places:3",
+        "jerusalem:key_places:4",
+        "jerusalem:second_temple_context:0",
+        "judea-1:ancient_near_east_context:0",
+        "judea-1:hebraic_worldview:0",
+        "judea-1:historical_context:0",
+        "judea-1:second_temple_context:0",
+        "luke-minas-benefactors",
+        "luke-zacchaeus",
+        "pilgrimage-road-in-jerusalem:ancient_near_east_context:0",
+        "pilgrimage-road-in-jerusalem:hebraic_worldview:0",
+        "pilgrimage-road-in-jerusalem:historical_context:0",
+        "pilgrimage-road-in-jerusalem:second_temple_context:0",
+        "stepped-street-jerusalem",
+        "stepped-street-jerusalem:passage-relevance",
+        "tell-es-safi-excavations:ancient_near_east_context:0",
+        "tell-es-safi-excavations:historical_context:0",
+        "what-is-the-significance-of-jerusalem:ancient_near_east_context:0",
+        "what-is-the-significance-of-jerusalem:historical_context:0"
+      ],
+      "current_commentary_uses_contextual_section": false
+    },
+    "regeneration_decision": "REGENERATE_FROM_LOCKED_EVIDENCE"
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "checkpoint_identity": {
+    "checkpoint_version": "commentary-v11-scaled-preflight-checkpoint-1",
+    "tool_version": "commentary-v11-scaled-preflight-1.2-routing-remediation",
+    "batch_id": "batch-008",
+    "target_count": 107,
+    "candidate_pool_size": 250,
+    "candidate_source": "/home/johnwalker/Documents/github/biblical-hermeneutics-framework/.bhf-data/bhf-commentary-candidates/commentary-v1.0.1"
+  },
+  "reference": "Joel 1",
+  "validated": true,
+  "low_information": true,
+  "record": {
+    "book": "Joel",
+    "chapter": 1,
+    "reference": "Joel 1",
+    "classification": "LOW_INFORMATION_COMMENTARY",
+    "stored_availability": "AVAILABLE",
+    "stored_status": "validated",
+    "detection": {
+      "is_low_information": true,
+      "classification": "LOW_INFORMATION_COMMENTARY",
+      "markers": [
+        "verse_count_boilerplate",
+        "opening_quotation_label",
+        "closing_quotation_label"
+      ],
+      "section_kinds": [
+        "chapter_overview"
+      ],
+      "contextual_section_kinds": [],
+      "cited_evidence_ids": [
+        "joel-agrarian-catastrophe"
+      ],
+      "canonical_summary_only": true,
+      "text_length": 257
+    },
+    "bundle_assessment": {
+      "evidence_bundle_available": true,
+      "evidence_hash": "07a1758ec9c2ed7cd9b2a456a76d3f691edd667d1eccbe8676b829fce990410e",
+      "evidence_item_count": 19,
+      "useful_contextual_evidence_count": 19,
+      "evidence_categories": [
+        "culture",
+        "history",
+        "language"
+      ],
+      "evidence_supports_regeneration": true,
+      "evidence_limitation": null,
+      "recomputed_availability": "AVAILABLE",
+      "cited_evidence_resolved": true,
+      "unused_evidence_ids": [
+        "joel-date-composition",
+        "joel-ecological-restoration",
+        "joel-intergenerational-memory",
+        "joel-lament-fast",
+        "joel-locust-terms",
+        "joel-superscription-identity",
+        "joel:interpretive_note:0",
+        "joel:interpretive_note:1",
+        "joel:interpretive_note:12",
+        "joel:interpretive_note:13",
+        "joel:interpretive_note:2",
+        "joel:interpretive_note:27",
+        "joel:interpretive_note:3",
+        "joel:interpretive_note:5",
+        "joel:interpretive_note:6",
+        "joel:interpretive_note:7",
+        "joel:interpretive_note:8",
+        "joel:interpretive_note:9"
+      ],
+      "current_commentary_uses_contextual_section": false
+    },
+    "regeneration_decision": "REGENERATE_FROM_LOCKED_EVIDENCE"
+  }
+}

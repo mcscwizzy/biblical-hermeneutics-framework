@@ -1,0 +1,63 @@
+{
+  "checkpoint_identity": {
+    "checkpoint_version": "commentary-v11-scaled-preflight-checkpoint-1",
+    "tool_version": "commentary-v11-scaled-preflight-1.2-routing-remediation",
+    "batch_id": "batch-008",
+    "target_count": 107,
+    "candidate_pool_size": 250,
+    "candidate_source": "/home/johnwalker/Documents/github/biblical-hermeneutics-framework/.bhf-data/bhf-commentary-candidates/commentary-v1.0.1"
+  },
+  "reference": "Jeremiah 7",
+  "validated": true,
+  "low_information": true,
+  "record": {
+    "book": "Jeremiah",
+    "chapter": 7,
+    "reference": "Jeremiah 7",
+    "classification": "LOW_INFORMATION_COMMENTARY",
+    "stored_availability": "AVAILABLE",
+    "stored_status": "validated",
+    "detection": {
+      "is_low_information": true,
+      "classification": "LOW_INFORMATION_COMMENTARY",
+      "markers": [
+        "verse_count_boilerplate",
+        "opening_quotation_label",
+        "closing_quotation_label"
+      ],
+      "section_kinds": [
+        "chapter_overview"
+      ],
+      "contextual_section_kinds": [],
+      "cited_evidence_ids": [
+        "jeremiah-long-composition"
+      ],
+      "canonical_summary_only": true,
+      "text_length": 342
+    },
+    "bundle_assessment": {
+      "evidence_bundle_available": true,
+      "evidence_hash": "24d1e0ab2bfef08f1131b6fe4a4875c09d15475397bdd297fb7ff7c697767abc",
+      "evidence_item_count": 7,
+      "useful_contextual_evidence_count": 7,
+      "evidence_categories": [
+        "culture",
+        "history"
+      ],
+      "evidence_supports_regeneration": true,
+      "evidence_limitation": null,
+      "recomputed_availability": "AVAILABLE",
+      "cited_evidence_resolved": true,
+      "unused_evidence_ids": [
+        "jeremiah-practical-mt-outline",
+        "jeremiah-temple-justice",
+        "mark-temple-action",
+        "shiloh:ancient_near_east_context:0",
+        "shiloh:hebraic_worldview:0",
+        "shiloh:historical_context:0"
+      ],
+      "current_commentary_uses_contextual_section": false
+    },
+    "regeneration_decision": "REGENERATE_FROM_LOCKED_EVIDENCE"
+  }
+}

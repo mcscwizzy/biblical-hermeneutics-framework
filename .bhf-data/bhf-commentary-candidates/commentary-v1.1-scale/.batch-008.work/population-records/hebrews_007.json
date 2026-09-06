@@ -1,0 +1,79 @@
+{
+  "checkpoint_identity": {
+    "checkpoint_version": "commentary-v11-scaled-preflight-checkpoint-1",
+    "tool_version": "commentary-v11-scaled-preflight-1.2-routing-remediation",
+    "batch_id": "batch-008",
+    "target_count": 107,
+    "candidate_pool_size": 250,
+    "candidate_source": "/home/johnwalker/Documents/github/biblical-hermeneutics-framework/.bhf-data/bhf-commentary-candidates/commentary-v1.0.1"
+  },
+  "reference": "Hebrews 7",
+  "validated": true,
+  "low_information": true,
+  "record": {
+    "book": "Hebrews",
+    "chapter": 7,
+    "reference": "Hebrews 7",
+    "classification": "LOW_INFORMATION_COMMENTARY",
+    "stored_availability": "AVAILABLE",
+    "stored_status": "validated",
+    "detection": {
+      "is_low_information": true,
+      "classification": "LOW_INFORMATION_COMMENTARY",
+      "markers": [
+        "verse_count_boilerplate",
+        "opening_quotation_label",
+        "closing_quotation_label"
+      ],
+      "section_kinds": [
+        "chapter_overview"
+      ],
+      "contextual_section_kinds": [],
+      "cited_evidence_ids": [
+        "heb-melchizedek"
+      ],
+      "canonical_summary_only": true,
+      "text_length": 354
+    },
+    "bundle_assessment": {
+      "evidence_bundle_available": true,
+      "evidence_hash": "4122addd66cb0423ed34304130e17a05f2391bb7b29ae0c914a2da3562459696",
+      "evidence_item_count": 21,
+      "useful_contextual_evidence_count": 21,
+      "evidence_categories": [
+        "archaeology",
+        "culture",
+        "history",
+        "social"
+      ],
+      "evidence_supports_regeneration": true,
+      "evidence_limitation": null,
+      "recomputed_availability": "AVAILABLE",
+      "cited_evidence_resolved": true,
+      "unused_evidence_ids": [
+        "heb-p46",
+        "heb-priesthood-change",
+        "heb-sinaiticus",
+        "hebrews:interpretive_note:13",
+        "hebrews:interpretive_note:19",
+        "hebrews:interpretive_note:26",
+        "hebrews:interpretive_note:39",
+        "high-priesthood:ancient_near_east_context:0",
+        "high-priesthood:hebraic_worldview:0",
+        "high-priesthood:historical_context:0",
+        "high-priesthood:historical_setting:0",
+        "high-priesthood:original_audience:0",
+        "high-priesthood:second_temple_context:0",
+        "leviticus:interpretive_note:3",
+        "priesthood:ancient_near_east_context:0",
+        "priesthood:hebraic_worldview:0",
+        "priesthood:historical_context:0",
+        "priesthood:second_temple_context:0",
+        "what-is-the-role-of-priests:ancient_near_east_context:0",
+        "what-is-the-role-of-priests:historical_context:0"
+      ],
+      "current_commentary_uses_contextual_section": false
+    },
+    "regeneration_decision": "REGENERATE_FROM_LOCKED_EVIDENCE"
+  }
+}

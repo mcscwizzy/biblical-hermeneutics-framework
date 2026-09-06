@@ -1,0 +1,99 @@
+{
+  "checkpoint_identity": {
+    "checkpoint_version": "commentary-v11-scaled-preflight-checkpoint-1",
+    "tool_version": "commentary-v11-scaled-preflight-1.2-routing-remediation",
+    "batch_id": "batch-008",
+    "target_count": 107,
+    "candidate_pool_size": 250,
+    "candidate_source": "/home/johnwalker/Documents/github/biblical-hermeneutics-framework/.bhf-data/bhf-commentary-candidates/commentary-v1.0.1"
+  },
+  "reference": "2 Kings 18",
+  "validated": true,
+  "low_information": true,
+  "record": {
+    "book": "2 Kings",
+    "chapter": 18,
+    "reference": "2 Kings 18",
+    "classification": "LOW_INFORMATION_COMMENTARY",
+    "stored_availability": "AVAILABLE",
+    "stored_status": "validated",
+    "detection": {
+      "is_low_information": true,
+      "classification": "LOW_INFORMATION_COMMENTARY",
+      "markers": [
+        "verse_count_boilerplate",
+        "opening_quotation_label",
+        "closing_quotation_label"
+      ],
+      "section_kinds": [
+        "chapter_overview"
+      ],
+      "contextual_section_kinds": [],
+      "cited_evidence_ids": [
+        "second-kings-jerusalem-delivered"
+      ],
+      "canonical_summary_only": true,
+      "text_length": 403
+    },
+    "bundle_assessment": {
+      "evidence_bundle_available": true,
+      "evidence_hash": "483d9e8edf9a57e63269c54b304a906a48ee8086750dea22c0027bf6decbfcb7",
+      "evidence_item_count": 41,
+      "useful_contextual_evidence_count": 41,
+      "evidence_categories": [
+        "archaeology",
+        "culture",
+        "economics",
+        "history"
+      ],
+      "evidence_supports_regeneration": true,
+      "evidence_limitation": null,
+      "recomputed_availability": "AVAILABLE",
+      "cited_evidence_resolved": true,
+      "unused_evidence_ids": [
+        "2-kings:interpretive_note:4",
+        "assyria:ancient_near_east_context:0",
+        "assyria:hebraic_worldview:0",
+        "assyria:historical_context:0",
+        "assyria:historical_setting:0",
+        "assyrian-deportation-and-provincial-incorporation:interpretive_note:0",
+        "assyrian-deportation-and-provincial-incorporation:interpretive_note:1",
+        "assyrian-exile-of-israel:ancient_near_east_context:0",
+        "assyrian-exile-of-israel:hebraic_worldview:0",
+        "assyrian-exile-of-israel:historical_context:0",
+        "assyrian-exile-of-israel:historical_setting:0",
+        "assyrian-tribute-and-royal-representation:interpretive_note:0",
+        "assyrian-tribute-and-royal-representation:interpretive_note:2",
+        "bronze-snake:ancient_near_east_context:0",
+        "bronze-snake:historical_context:0",
+        "kings-staged-assyrian-reduction",
+        "kings-staged-assyrian-reduction:passage-relevance",
+        "kings-tribute-vassalage-sequence",
+        "kings-tribute-vassalage-sequence:passage-relevance",
+        "lachish-city-gate:ancient_near_east_context:0",
+        "lachish-city-gate:historical_context:0",
+        "lachish-ostraca:ancient_near_east_context:0",
+        "lachish-ostraca:historical_context:0",
+        "lachish-relief-royal-siege-rhetoric",
+        "lachish-relief-royal-siege-rhetoric:passage-relevance",
+        "lachish-reliefs:ancient_near_east_context:0",
+        "lachish-reliefs:historical_context:0",
+        "lachish-royal-victory-display",
+        "lachish-royal-victory-display:passage-relevance",
+        "micah-assyrian-horizon",
+        "nimrud-reliefs:ancient_near_east_context:0",
+        "nimrud-reliefs:historical_context:0",
+        "sargon-samaria-conquest-claim",
+        "sargon-samaria-conquest-claim:passage-relevance",
+        "sennacherib-hezekiah-tribute",
+        "sennacherib-hezekiah-tribute:passage-relevance",
+        "taylor-prism-annals",
+        "taylor-prism-annals:passage-relevance",
+        "taylor-prism:ancient_near_east_context:0",
+        "taylor-prism:historical_context:0"
+      ],
+      "current_commentary_uses_contextual_section": false
+    },
+    "regeneration_decision": "REGENERATE_FROM_LOCKED_EVIDENCE"
+  }
+}

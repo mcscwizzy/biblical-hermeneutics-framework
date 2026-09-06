@@ -1,0 +1,85 @@
+{
+  "checkpoint_identity": {
+    "checkpoint_version": "commentary-v11-scaled-preflight-checkpoint-1",
+    "tool_version": "commentary-v11-scaled-preflight-1.2-routing-remediation",
+    "batch_id": "batch-008",
+    "target_count": 107,
+    "candidate_pool_size": 250,
+    "candidate_source": "/home/johnwalker/Documents/github/biblical-hermeneutics-framework/.bhf-data/bhf-commentary-candidates/commentary-v1.0.1"
+  },
+  "reference": "Numbers 9",
+  "validated": true,
+  "low_information": true,
+  "record": {
+    "book": "Numbers",
+    "chapter": 9,
+    "reference": "Numbers 9",
+    "classification": "LOW_INFORMATION_COMMENTARY",
+    "stored_availability": "AVAILABLE",
+    "stored_status": "validated",
+    "detection": {
+      "is_low_information": true,
+      "classification": "LOW_INFORMATION_COMMENTARY",
+      "markers": [
+        "verse_count_boilerplate",
+        "opening_quotation_label",
+        "closing_quotation_label"
+      ],
+      "section_kinds": [
+        "chapter_overview"
+      ],
+      "contextual_section_kinds": [],
+      "cited_evidence_ids": [
+        "tabernacle-glory-and-movement"
+      ],
+      "canonical_summary_only": true,
+      "text_length": 381
+    },
+    "bundle_assessment": {
+      "evidence_bundle_available": true,
+      "evidence_hash": "bdac9bdcd4d6058c7c9bca025d9fc055a12ed5525a42a0f1c47c91d7ac1358e7",
+      "evidence_item_count": 26,
+      "useful_contextual_evidence_count": 26,
+      "evidence_categories": [
+        "archaeology",
+        "chronology",
+        "culture",
+        "history",
+        "social"
+      ],
+      "evidence_supports_regeneration": true,
+      "evidence_limitation": null,
+      "recomputed_availability": "AVAILABLE",
+      "cited_evidence_resolved": true,
+      "unused_evidence_ids": [
+        "tabernacle-glory-and-movement:passage-relevance",
+        "tabernacle:ancient_near_east_context:0",
+        "tabernacle:archaeology:0",
+        "tabernacle:archaeology:1",
+        "tabernacle:date_ranges:0",
+        "tabernacle:date_ranges:1",
+        "tabernacle:hebraic_worldview:0",
+        "tabernacle:historical_context:0",
+        "tabernacle:historical_setting:0",
+        "tabernacle:original_audience:0",
+        "tabernacle:second_temple_context:0",
+        "tabernacle:timeline:0",
+        "tabernacle:timeline:1",
+        "tabernacle:timeline:2",
+        "tabernacle:timeline:3",
+        "what-is-the-tabernacle:ancient_near_east_context:0",
+        "what-is-the-tabernacle:archaeology:0",
+        "what-is-the-tabernacle:archaeology:1",
+        "what-is-the-tabernacle:date_ranges:0",
+        "what-is-the-tabernacle:date_ranges:1",
+        "what-is-the-tabernacle:hebraic_worldview:0",
+        "what-is-the-tabernacle:historical_context:0",
+        "what-is-the-tabernacle:historical_setting:0",
+        "what-is-the-tabernacle:original_audience:0",
+        "what-is-the-tabernacle:second_temple_context:0"
+      ],
+      "current_commentary_uses_contextual_section": false
+    },
+    "regeneration_decision": "REGENERATE_FROM_LOCKED_EVIDENCE"
+  }
+}
