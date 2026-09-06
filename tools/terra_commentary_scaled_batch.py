@@ -422,7 +422,7 @@ def prose_audit(candidate: dict[str, Any], bundle: Any) -> list[str]:
     flags: list[str] = []
     if re.search(r"\bcontains \d+ verses\b|\bit opens with\b|\bit concludes with\b|\bthe chapter begins\b|\bthe chapter ends\b", text, re.I):
         flags.append("LOW_INFORMATION")
-    if re.search(r"\b(?:EvidenceBundle|CKL|source-addressable|semantic relationship|presentation role|preflight|retrieval|provider|model)\b|application cannot|applications? must reject|does not command leaders|not a command to abandon", text, re.I):
+    if re.search(r"\b(?:EvidenceBundle|CKL|source-addressable|semantic relationship|presentation role|preflight|retrieval|provider)\b|application cannot|applications? must reject|does not command leaders|not a command to abandon", text, re.I):
         flags.append("READER_UNFRIENDLY")
     words = _word_count(candidate)
     sections = len(candidate["sections"])
@@ -612,7 +612,7 @@ def _is_textual_evidence(item: Any) -> bool:
     metadata = item.relevance_metadata or {}
     authored_types = {
         str(metadata.get(key) or "").casefold().replace("-", "_").replace(" ", "_")
-        for key in ("claim_type", "note_type", "evidence_type", "dispute_status")
+        for key in ("claim_type", "note_type", "evidence_type")
     }
     textual_types = {
         "textual", "textual_variant", "textual_form", "textual_criticism", "text_critical",
