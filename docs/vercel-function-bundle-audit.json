@@ -1,0 +1,112 @@
+{
+  "report_version": "bhf-vercel-function-bundle-audit-v2",
+  "audited_head": "defde4dfe95a920400da94b559a7f50aa8f3037d",
+  "remote_head_verified": "defde4dfe95a920400da94b559a7f50aa8f3037d",
+  "before": {
+    "vercel_raw_bytes_approx": 388830000,
+    "vercel_optimized_bytes_approx": 397270000,
+    "limit_bytes": 225000000
+  },
+  "checkout_inventory_bytes": 873668608,
+  "tracked_source_bytes": 326992985,
+  "largest_directories_bytes": [
+    [310894592, ".bhf-data"],
+    [298057728, ".bhf"],
+    [96014336, ".venv"],
+    [81129472, ".git"],
+    [32866304, "build"],
+    [17846272, "framework"],
+    [17092608, "bhf_agent"],
+    [10854400, "tests"],
+    [2899968, "bhf_web"],
+    [2510848, "mobile"],
+    [1593344, "tools"],
+    [704512, "docs"]
+  ],
+  "largest_files_bytes": [
+    [162750464, ".bhf/lexicon.sqlite"],
+    [107597824, ".bhf/ckl.sqlite"],
+    [22499328, ".bhf/commentary.sqlite"],
+    [16428768, ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/.batch-007.work/blocked-report.json"],
+    [13598966, ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/ckl-scope-audit/preflight-run/batch-007/batch-manifest.json"],
+    [13250288, ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/ckl-scope-audit/preflight-run/batch-007/preflight-report.json"],
+    [12920902, ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-007/preflight-report.json"],
+    [8174114, ".git/objects/pack/pack-c9deb9337ef2cc54fadbf7d4e31a7d500329f8b7.pack"]
+  ],
+  "runtime_and_source_categories_bytes": {
+    "commentary_runtime_v1_1": 3264473,
+    "commentary_legacy_supported": 1566726,
+    "commentary_candidates_scale_working_tree": 282689536,
+    "commentary_candidates_scale_tracked": 277421720,
+    "ckl_json_and_source": 15215805,
+    "bible_and_agent_data": 13265644,
+    "application_source_bhf_agent": 16550947,
+    "application_source_bhf_web": 2446777,
+    "application_source_framework": 16144027,
+    "web_static_assets": 1476251,
+    "frontend_assets": 158657,
+    "tests": 9507043,
+    "docs": 550647,
+    "tooling": 1402241
+  },
+  "dependency_audit": {
+    "production_direct_and_transitive_installed_bytes_estimate": 10747416,
+    "production_dependency_closure_packages": 14,
+    "dev_gui_direct_packages_installed_locally_bytes": 35610420,
+    "largest_dev_gui_package": [27779740, "selenium"],
+    "cffi_declared_in_production_dependencies": false,
+    "lexicon_sqlite_tracked": false
+  },
+  "classification": {
+    ".bhf-data/bhf-commentary-v1.1": "REQUIRED_AT_RUNTIME",
+    ".bhf-data/bhf-commentary": "REQUIRED_AT_RUNTIME_FOR_LEGACY_RELEASE_OVERRIDE",
+    ".bhf-data/bhf-commentary-candidates": "CANDIDATE/AUDIT_ONLY",
+    "framework/canonical_library": "REQUIRED_AT_RUNTIME",
+    "bhf_agent/data": "REQUIRED_AT_RUNTIME",
+    "bhf_web/static": "REQUIRED_AT_RUNTIME",
+    "frontend": "REQUIRED_AT_RUNTIME_WHEN_PRESENT",
+    ".bhf": "DEVELOPMENT_ONLY",
+    ".venv": "DEVELOPMENT_ONLY",
+    "tests": "TEST_ONLY",
+    "docs": "DOCUMENTATION_ONLY",
+    "tools": "REQUIRED_AT_RUNTIME_FOR_INTERNAL_COVERAGE_ROUTE",
+    "scripts": "DEVELOPMENT_ONLY",
+    "mobile": "DEVELOPMENT_ONLY",
+    "requirements-gui.txt": "DEVELOPMENT_ONLY"
+  },
+  "changes": {
+    "vercelignore_entries": [
+      ".bhf-data/bhf-commentary-candidates/**",
+      ".bhf/",
+      ".venv/",
+      "build/",
+      "dist/",
+      ".pytest_cache/",
+      "**/__pycache__/**",
+      "tests/**",
+      "docs/**",
+      ".github/**",
+      "mobile/**",
+      "scripts/**",
+      "requirements-gui.txt",
+      "Dockerfile",
+      "docker-compose*.yml"
+    ],
+    "pyproject_production_dependencies_changed": false,
+    "runtime_data_excluded": false
+  },
+  "after_projection": {
+    "git_like_stage_without_candidates_bytes": 37417268,
+    "production_dependency_estimate_bytes": 10747416,
+    "projected_combined_bytes": 48164684,
+    "vercel_preview_status": "VERCEL_PREVIEW_REQUIRED"
+  },
+  "integrity": {
+    "pipeline_status": "CORPUS_COMPLETE",
+    "eligible_chapters": 935,
+    "runtime_chapters": 935,
+    "runtime_fingerprint": "9df456a3a22003587347cc0a78a9de5ca292e1d9554c4af3fc591207dd87e5db",
+    "ckl_changes": "none",
+    "commentary_prose_regeneration_count": 0
+  }
+}
