@@ -1,0 +1,65 @@
+{
+  "reference": "Luke 15",
+  "book": "Luke",
+  "chapter": 15,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_50",
+          "text": "Read the chapter with this setting in view: Luke 15's father and two sons stage lostness, costly welcome, resentment, and an unresolved invitation; reducing it to one conversion formula erases the elder brother and meal controversy. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "luke-lost-sons"
+          ],
+          "verse_refs": [
+            "Luke 15:11-32"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_51",
+          "text": "For its historical and cultural setting, note that Jesus uses parables in first-century teaching settings to confront unbelief and form disciples. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "what-is-a-parable:historical_context:0"
+          ],
+          "verse_refs": [
+            "Luke 15:1-32"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        },
+        {
+          "id": "historical_context_52",
+          "text": "For its historical and cultural setting, note that Story-based moral instruction was familiar in the ancient world, but Jesus uses parables to announce God's reign. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "what-is-a-parable:ancient_near_east_context:0"
+          ],
+          "verse_refs": [
+            "Luke 15:1-32"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "d4e4030f404f2f325c389bba278ba63816b258c548913f481f851908837a5783",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-008-medium",
+    "generated_timestamp": "2026-09-06T21:45:35Z"
+  }
+}

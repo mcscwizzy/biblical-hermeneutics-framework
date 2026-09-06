@@ -1,0 +1,101 @@
+{
+  "reference": "2 Corinthians 9",
+  "book": "2 Corinthians",
+  "chapter": 9,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_101",
+          "text": "Read the chapter with this setting in view: 2 Corinthians is commonly dated in the mid-50s CE after 1 Corinthians and before Romans. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "2cor-date"
+          ],
+          "verse_refs": [
+            "2 Corinthians 9:1-15"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_102",
+          "text": "For its historical and cultural setting, note that Chapters 8-9 renew a collection for Jerusalem through Macedonian example, Messiah's grace, equality, delegated administration, and thanksgiving. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. Interpretations differ on some details.",
+          "evidence_ids": [
+            "2cor-collection"
+          ],
+          "verse_refs": [
+            "2 Corinthians 9:1-15"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        },
+        {
+          "id": "historical_context_103",
+          "text": "For its historical and cultural setting, note that Paul uses a proportional agricultural maxim: sparse sowing corresponds to sparse reaping and blessing-oriented sowing to blessing-oriented reaping. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "second-corinth-sowing-reaping-metaphor"
+          ],
+          "verse_refs": [
+            "2 Corinthians 9:6"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_102",
+          "text": "A literary feature to notice is that Sowing and reaping imagery in chapter 9 urges willing generosity that produces provision and thanksgiving, not a guaranteed personal wealth return. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image. Interpretations differ on some details.",
+          "evidence_ids": [
+            "2cor-sowing"
+          ],
+          "verse_refs": [
+            "2 Corinthians 9:6-15"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "dig_deeper",
+      "title": "Dig deeper",
+      "blocks": [
+        {
+          "id": "dig_deeper_102",
+          "text": "For a later or comparative connection, note that The Jerusalem collection expresses material solidarity; it cannot justify prosperity extraction, compulsory giving, poverty romanticization, donor threats, or opaque control of funds. This remains a secondary connection rather than the chapter's first-audience context. It can be traced further without replacing the chapter's own setting.",
+          "evidence_ids": [
+            "romans:interpretive_note:61"
+          ],
+          "verse_refs": [
+            "2 Corinthians 9:1-15"
+          ],
+          "confidence": "high",
+          "interpretation_level": "inference"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "7fd4cfaab217810aa66ab626c1c4032aa2fe0c24b1de922ca642416ae7e3b2e7",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-008-medium",
+    "generated_timestamp": "2026-09-06T21:45:36Z"
+  }
+}

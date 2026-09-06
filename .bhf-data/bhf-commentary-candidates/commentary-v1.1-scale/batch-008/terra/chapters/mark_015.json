@@ -1,0 +1,101 @@
+{
+  "reference": "Mark 15",
+  "book": "Mark",
+  "chapter": 15,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_26",
+          "text": "Read the chapter with this setting in view: Rome, Syria, Galilee, and other settings have been proposed, but no city or single ethnic audience can be established from the text. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "mark-provenance"
+          ],
+          "verse_refs": [
+            "Mark 15:16"
+          ],
+          "confidence": "low",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_27",
+          "text": "For its historical and cultural setting, note that Mark distributes narrative agency among Judas, arresting parties, priestly leaders, witnesses, a council, crowds, Pilate, Roman soldiers, and executioners; Roman authority carries out crucifixion. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. Interpretations differ on some details.",
+          "evidence_ids": [
+            "mark-passion-responsibility"
+          ],
+          "verse_refs": [
+            "Mark 15:1-32"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        },
+        {
+          "id": "historical_context_28",
+          "text": "For its historical and cultural setting, note that Mark narrates crucifixion as Roman public execution, royal mockery, abandonment, scriptural lament, darkness, death, torn curtain, contested recognition, and women's witness. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "mark-crucifixion"
+          ],
+          "verse_refs": [
+            "Mark 15:16-41"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "archaeology_geography",
+      "title": "Archaeology and geography",
+      "blocks": [
+        {
+          "id": "archaeology_geography_27",
+          "text": "For its geographical or material setting, note that Archaeology and documentary evidence illuminate Galilean villages, fishing, agriculture, roads, households, purity practices, Jerusalem, taxation, status, and Roman execution but rarely verify individual narrated episodes. It can illuminate the passage, while its limits should be kept in view. Interpretations differ on some details.",
+          "evidence_ids": [
+            "mark-archaeology"
+          ],
+          "verse_refs": [
+            "Mark 15:21-41"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_27",
+          "text": "A literary feature to notice is that Mark is reasonably read in relation to ancient biography while also functioning as the genre-shaping narrative called Gospel. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image. Interpretations differ on some details.",
+          "evidence_ids": [
+            "mark-genre"
+          ],
+          "verse_refs": [
+            "Mark 15:39"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "4ebce6b8870b34480122fea818432e13d4e5bebdde8735f3f17c0b2cd498b9a2",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-008-medium",
+    "generated_timestamp": "2026-09-06T21:45:35Z"
+  }
+}

@@ -4,7 +4,7 @@ import json
 import shutil
 from pathlib import Path
 
-from tools.terra_commentary_scaled_batch import ROOT, prose_audit, run
+from tools.terra_commentary_scaled_batch import ROOT, _markdown, prose_audit, run
 
 
 BATCH_003_ROOT = ROOT / ".bhf-data" / "bhf-commentary-candidates" / "commentary-v1.1-scale" / "batch-003"
@@ -44,6 +44,41 @@ def test_scaled_terra_batch_stale_lock_stops_before_chapter_generation(tmp_path)
     assert result["status"] == "STALE_LOCK"
     assert len(result["lock_revalidation"]["stale_locks"]) == 1
     assert not (tmp_path / "terra" / "chapters").exists()
+
+
+def test_terra_report_supports_batches_without_thin_chapters():
+    summary = {
+        "batch_id": "batch-008",
+        "generation": {"chapters_generated": 1},
+        "lock_revalidation": {"locks_revalidated": 1, "stale_locks": []},
+        "validation": {"valid": 1, "chapters": 1},
+        "availability_distribution": {"AVAILABLE": 1},
+        "canary_artifacts": {"unchanged": True},
+        "batch_001_terra_artifacts": {"unchanged": True},
+        "statistics": {
+            "total_generated_words": 100,
+            "total_evidence_citations": 1,
+            "unique_evidence_ids_cited": 1,
+            "by_availability": {
+                "AVAILABLE": {
+                    "chapter_count": 1,
+                    "mean_word_count": 100,
+                    "median_word_count": 100,
+                    "mean_section_count": 2,
+                },
+            },
+            "available_evidence_used_percent": 100,
+            "dig_deeper_frequency": 0,
+            "section_kind_frequency": {},
+            "interpretation_level_distribution": {},
+        },
+    }
+    quality = {"flag_counts": {}, "possible_evidence_review": []}
+
+    report = _markdown(summary, quality, [], [])
+
+    assert "- AVAILABLE: 1 chapters" in report
+    assert "- THIN: 0 chapters" in report
 
 
 def test_scaled_terra_audit_rejects_internal_language_and_lost_dispute_semantics():

@@ -677,6 +677,19 @@ def _markdown(
     batch_label = _batch_label(batch_id)
     total = summary["generation"]["chapters_generated"]
     prior = "Batch 001" if batch_id == "batch-002" else "the prior batch"
+    availability_stats = summary["statistics"]["by_availability"]
+    available_stats = availability_stats.get("AVAILABLE", {
+        "chapter_count": 0,
+        "mean_word_count": 0,
+        "median_word_count": 0,
+        "mean_section_count": 0,
+    })
+    thin_stats = availability_stats.get("THIN", {
+        "chapter_count": 0,
+        "mean_word_count": 0,
+        "median_word_count": 0,
+        "mean_section_count": 0,
+    })
     lines = [
         f"# BHF Commentary v1.1 Scaled {batch_label} Terra",
         "",
@@ -695,8 +708,8 @@ def _markdown(
         "## Statistics",
         "",
         f"- Total words: {summary['statistics']['total_generated_words']}; citations: {summary['statistics']['total_evidence_citations']}; unique evidence IDs used: {summary['statistics']['unique_evidence_ids_cited']}.",
-        f"- AVAILABLE: {summary['statistics']['by_availability']['AVAILABLE']['chapter_count']} chapters; mean / median words: {summary['statistics']['by_availability']['AVAILABLE']['mean_word_count']} / {summary['statistics']['by_availability']['AVAILABLE']['median_word_count']}; mean sections: {summary['statistics']['by_availability']['AVAILABLE']['mean_section_count']}.",
-        f"- THIN: {summary['statistics']['by_availability']['THIN']['chapter_count']} chapters; mean / median words: {summary['statistics']['by_availability']['THIN']['mean_word_count']} / {summary['statistics']['by_availability']['THIN']['median_word_count']}; mean sections: {summary['statistics']['by_availability']['THIN']['mean_section_count']}.",
+        f"- AVAILABLE: {available_stats['chapter_count']} chapters; mean / median words: {available_stats['mean_word_count']} / {available_stats['median_word_count']}; mean sections: {available_stats['mean_section_count']}.",
+        f"- THIN: {thin_stats['chapter_count']} chapters; mean / median words: {thin_stats['mean_word_count']} / {thin_stats['median_word_count']}; mean sections: {thin_stats['mean_section_count']}.",
         f"- Evidence IDs used: {summary['statistics']['available_evidence_used_percent']}% of available locked items. Citation volume was not used as a quality target.",
         f"- Dig Deeper frequency: {summary['statistics']['dig_deeper_frequency']}/{total}.",
         f"- Section kinds: {summary['statistics']['section_kind_frequency']}.",

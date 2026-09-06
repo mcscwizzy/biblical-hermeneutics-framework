@@ -1,0 +1,65 @@
+{
+  "reference": "2 Chronicles 7",
+  "book": "2 Chronicles",
+  "chapter": 7,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_28",
+          "text": "Read the chapter with this setting in view: Second Chronicles 1-7 portrays Solomon's wisdom and temple building as the completion of David's preparations, culminating in ark, glory, dedication prayer, fire, celebration, divine promise, and warning. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken.",
+          "evidence_ids": [
+            "second-chronicles-solomon-temple"
+          ],
+          "verse_refs": [
+            "2 Chronicles 7:1-22"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_29",
+          "text": "For its historical and cultural setting, note that The divine response to the dedication includes both the possibility of forgiveness and healing when the covenant people humble themselves and a warning that apostasy can lead to exile and temple ruin. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "second-chronicles-fire-warning"
+          ],
+          "verse_refs": [
+            "2 Chronicles 7:11-22"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        },
+        {
+          "id": "historical_context_30",
+          "text": "For its historical and cultural setting, note that The temple develops from tabernacle patterns into Solomon\u2019s temple, survives in exilic memory, and is rebuilt in the second temple period. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "temple:historical_context:0"
+          ],
+          "verse_refs": [
+            "2 Chronicles 7:1-3"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "94c749b2f6b7285c3026c55d6b3f66994fab5257660f98bbacf5b315bf30e43c",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-008-medium",
+    "generated_timestamp": "2026-09-06T21:45:35Z"
+  }
+}

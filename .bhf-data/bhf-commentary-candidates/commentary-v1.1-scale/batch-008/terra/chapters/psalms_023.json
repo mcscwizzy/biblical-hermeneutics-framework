@@ -1,0 +1,53 @@
+{
+  "reference": "Psalms 23",
+  "book": "Psalms",
+  "chapter": 23,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_107",
+          "text": "Read the chapter with this setting in view: Psalms arise in Israel's worship life and are sung in both public and private devotion. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken.",
+          "evidence_ids": [
+            "what-is-a-psalm:historical_context:0"
+          ],
+          "verse_refs": [
+            "Psalms 23:1-6"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_108",
+          "text": "For its historical and cultural setting, note that Poetic prayer was common in the ancient world, but the Psalms uniquely bind emotion to covenant faith. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "what-is-a-psalm:ancient_near_east_context:0"
+          ],
+          "verse_refs": [
+            "Psalms 23:1-6"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "840b8bfe861062d1e70b87611cab5d280a7ee715f4b3bdd6af2ac32f2a1a8749",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-008-medium",
+    "generated_timestamp": "2026-09-06T21:45:36Z"
+  }
+}

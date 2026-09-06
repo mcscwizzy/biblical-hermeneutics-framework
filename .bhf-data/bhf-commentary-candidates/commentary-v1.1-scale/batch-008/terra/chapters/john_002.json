@@ -1,0 +1,101 @@
+{
+  "reference": "John 2",
+  "book": "John",
+  "chapter": 2,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_35",
+          "text": "Read the chapter with this setting in view: John places the temple action near the beginning while the Synoptics place it near the passion; harmonization and multiple-cleansing claims are possible but not textually demonstrated. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "john-temple-chronology"
+          ],
+          "verse_refs": [
+            "John 2:13-22"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_36",
+          "text": "For its historical and cultural setting, note that Luke, Mark, and John portray Jerusalem festival travel together with lodging, offerings, exchange, animal sales, crowds, teaching, and conflict in the temple precincts. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. Interpretations differ on some details.",
+          "evidence_ids": [
+            "gospel-pilgrimage-and-temple-economy"
+          ],
+          "verse_refs": [
+            "John 2:13-22"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        },
+        {
+          "id": "historical_context_37",
+          "text": "For its historical and cultural setting, note that Zion appears in patriarchal, monarchic, or exile-and-return narratives and becomes a theological marker for the people of God. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "zion:historical_context:0"
+          ],
+          "verse_refs": [
+            "John 2:13-22"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_36",
+          "text": "A literary feature to notice is that The Cana transformation is called the first sign and reveals glory; purification jars, abundance, wedding setting, and the mother-Jesus exchange shape interpretation without reducing the story to a proof trick. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image. Interpretations differ on some details.",
+          "evidence_ids": [
+            "john-cana"
+          ],
+          "verse_refs": [
+            "John 2:1-12"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "chronology",
+      "title": "Chronology",
+      "blocks": [
+        {
+          "id": "chronology_36",
+          "text": "For the chapter's sequence and setting, note that New Jerusalem has no temple because God and the Lamb dwell there This gives the reader a frame for the passage without deciding every larger reconstruction.",
+          "evidence_ids": [
+            "temple-symbol:timeline:5"
+          ],
+          "verse_refs": [
+            "John 2:18-22"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "f8f1e3ff98d5ee3540eab7ff1320e3ca9f8284f32e228e4c27e820cc7c811cde",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-008-medium",
+    "generated_timestamp": "2026-09-06T21:45:35Z"
+  }
+}

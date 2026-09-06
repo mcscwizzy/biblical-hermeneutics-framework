@@ -1,0 +1,83 @@
+{
+  "reference": "1 Timothy 1",
+  "book": "1 Timothy",
+  "chapter": 1,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_13",
+          "text": "Read the chapter with this setting in view: First Timothy opens with Paul recalling a request that Timothy remain in Ephesus while he traveled to Macedonia to restrain different teaching. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "first-timothy-ephesian-setting"
+          ],
+          "verse_refs": [
+            "1 Timothy 1:3-7"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_14",
+          "text": "For its historical and cultural setting, note that Vice list: arsenokoitai is a rare compound with debated scope; translating it with a modern identity label can collapse lexical, historical, and ethical questions. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "1-timothy:interpretive_note:5"
+          ],
+          "verse_refs": [
+            "1 Timothy 1:9-10"
+          ],
+          "confidence": "low",
+          "interpretation_level": "disputed"
+        },
+        {
+          "id": "historical_context_15",
+          "text": "For its historical and cultural setting, note that Gift: prophecy and the elders' laying on hands accompany Timothy's charisma, but later ordination systems differ on sacramental and institutional implications. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. Interpretations differ on some details.",
+          "evidence_ids": [
+            "1-timothy:interpretive_note:26"
+          ],
+          "verse_refs": [
+            "1 Timothy 1:18"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_14",
+          "text": "A literary feature to notice is that Arsenokoitai occurs in the vice list and plausibly echoes Greek Levitical wording, but its exact historical scope is disputed. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "1tim-arsenokoitai"
+          ],
+          "verse_refs": [
+            "1 Timothy 1:10"
+          ],
+          "confidence": "low",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "90ed328b2c8aaceb7a91b550620dbc30c07a946d4442c80700d31f8addabfb95",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-008-medium",
+    "generated_timestamp": "2026-09-06T21:45:35Z"
+  }
+}

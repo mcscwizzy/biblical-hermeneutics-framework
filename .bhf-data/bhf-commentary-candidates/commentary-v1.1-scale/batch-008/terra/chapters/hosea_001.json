@@ -1,0 +1,101 @@
+{
+  "reference": "Hosea 1",
+  "book": "Hosea",
+  "chapter": 1,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_56",
+          "text": "Read the chapter with this setting in view: The name Jezreel links Hosea's family sign to judgment on Jehu's dynasty and Israelite kingship, reinterpreting royal violence remembered in Kings. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "hosea-jezreel-jehu"
+          ],
+          "verse_refs": [
+            "Hosea 1:1-11"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_57",
+          "text": "For its historical and cultural setting, note that Hosea 1 narrates marriage to Gomer daughter of Diblaim and names three children Jezreel, Lo-ruhamah, and Lo-ammi as embodied signs of judgment and later reversal. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. Interpretations differ on some details.",
+          "evidence_ids": [
+            "hosea-family-signs"
+          ],
+          "verse_refs": [
+            "Hosea 1:1-11"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        },
+        {
+          "id": "historical_context_58",
+          "text": "For its historical and cultural setting, note that Romans cites Hosea's not-my-people reversal and Isaiah's remnant language after naming a call from Jews and gentiles. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "romans-hosea-isaiah-calling"
+          ],
+          "verse_refs": [
+            "Hosea 1:10"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_57",
+          "text": "A literary feature to notice is that Masoretic Hosea, Old Greek Osee, Qumran witnesses, Targum, Peshitta, and Vulgate preserve evidence for a difficult and pluriform textual history requiring passage-level comparison. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image. Interpretations differ on some details.",
+          "evidence_ids": [
+            "hosea-textual-witnesses"
+          ],
+          "verse_refs": [
+            "Hosea 1:1-11"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "dig_deeper",
+      "title": "Dig deeper",
+      "blocks": [
+        {
+          "id": "dig_deeper_57",
+          "text": "For a later or comparative connection, note that Rabbinic interpretations sometimes redistribute repentance among Israel, Hosea, and God and rework threatened violence; they should be heard as substantive interpretation, not a preface to Christian readings. This remains a secondary connection rather than the chapter's first-audience context. It can be traced further without replacing the chapter's own setting.",
+          "evidence_ids": [
+            "hosea:interpretive_note:28"
+          ],
+          "verse_refs": [
+            "Hosea 1:1-11"
+          ],
+          "confidence": "high",
+          "interpretation_level": "inference"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "03f14bd892aab9f1f2467c8b96c82c581c1179dc34ff865de4c6131ec4875236",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-008-medium",
+    "generated_timestamp": "2026-09-06T21:45:35Z"
+  }
+}

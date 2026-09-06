@@ -1,0 +1,35 @@
+{
+  "reference": "Matthew 3",
+  "book": "Matthew",
+  "chapter": 3,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_8",
+          "text": "Read the chapter with this setting in view: Matthew presents baptism and wilderness testing as Spirit-marked sonship interpreted through scriptural voices and Deuteronomy. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "matthew-baptism-temptation"
+          ],
+          "verse_refs": [
+            "Matthew 3:13-17"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "8213ee510836748014074346b3a74113fe422a2aaa3a1fea31f9b8b8861c82c2",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-008-medium",
+    "generated_timestamp": "2026-09-06T21:45:35Z"
+  }
+}

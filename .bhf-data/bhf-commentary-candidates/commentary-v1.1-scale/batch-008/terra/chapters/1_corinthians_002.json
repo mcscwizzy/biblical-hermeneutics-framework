@@ -1,0 +1,83 @@
+{
+  "reference": "1 Corinthians 2",
+  "book": "1 Corinthians",
+  "chapter": 2,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_83",
+          "text": "Read the chapter with this setting in view: The word of the cross reverses conventional evaluations of wisdom, power, status, and boasting. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "1cor-cross"
+          ],
+          "verse_refs": [
+            "1 Corinthians 2:1-5"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_84",
+          "text": "For its historical and cultural setting, note that First Corinthians names a crucified Messiah as apparent foolishness and weakness yet also as God's power and wisdom in a community marked by low status. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. Interpretations differ on some details.",
+          "evidence_ids": [
+            "cross-power-status-reversal"
+          ],
+          "verse_refs": [
+            "1 Corinthians 2:1-5"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        },
+        {
+          "id": "historical_context_85",
+          "text": "For its historical and cultural setting, note that First Corinthians describes Paul arriving with the proclaimed testimony about God in weakness, fear, and trembling rather than rhetorical superiority, with trust located in God's power. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "corinth-cross-proclamation"
+          ],
+          "verse_refs": [
+            "1 Corinthians 2:1-5"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_84",
+          "text": "A literary feature to notice is that Paul contrasts divine wisdom in the crucified Messiah with boasting wisdom without rejecting all reasoning or learning. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image. Interpretations differ on some details.",
+          "evidence_ids": [
+            "1cor-wisdom"
+          ],
+          "verse_refs": [
+            "1 Corinthians 2:1-16"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "528213dd708eadb7eaa0cc15d34b31e3b5a09be16f1f3af17e3e2c09393f6c7b",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-008-medium",
+    "generated_timestamp": "2026-09-06T21:45:35Z"
+  }
+}

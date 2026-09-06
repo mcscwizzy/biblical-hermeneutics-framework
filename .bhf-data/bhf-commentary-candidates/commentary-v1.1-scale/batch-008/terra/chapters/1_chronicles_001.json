@@ -1,0 +1,65 @@
+{
+  "reference": "1 Chronicles 1",
+  "book": "1 Chronicles",
+  "chapter": 1,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_51",
+          "text": "Read the chapter with this setting in view: First Chronicles 1-9 connects the restored community to Adam, Israel's tribes, David, priests, Levites, and preexilic Jerusalem through selective genealogies and registers. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken. Interpretations differ on some details.",
+          "evidence_ids": [
+            "first-chronicles-genealogical-identity"
+          ],
+          "verse_refs": [
+            "1 Chronicles 1:1-54"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_52",
+          "text": "For its historical and cultural setting, note that The genealogies are selective literary maps of kinship, land, office, and restored identity rather than exhaustive modern biological pedigrees; gaps, parallel lines, variant names, and telescoping require case-by-case review. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "1-chronicles:interpretive_note:0"
+          ],
+          "verse_refs": [
+            "1 Chronicles 1:1-54"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        },
+        {
+          "id": "historical_context_53",
+          "text": "For its historical and cultural setting, note that Genealogy was a standard social form, but Scripture uses it to trace covenant promise and providence. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "why-are-genealogies-included:ancient_near_east_context:0"
+          ],
+          "verse_refs": [
+            "1 Chronicles 1:1-27"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "837f28d12ad5aef63ebb3923c2127813da6af9fb2a622749fba1a86e503c2c87",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-008-medium",
+    "generated_timestamp": "2026-09-06T21:45:35Z"
+  }
+}

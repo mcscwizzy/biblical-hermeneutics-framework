@@ -1,0 +1,101 @@
+{
+  "reference": "Ezra 1",
+  "book": "Ezra",
+  "chapter": 1,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_62",
+          "text": "Read the chapter with this setting in view: Ezra presents Cyrus's authorization, divine stirring, voluntary support, and restoration of temple vessels as the opening means by which exile gives way to return. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "ezra-cyrus-return"
+          ],
+          "verse_refs": [
+            "Ezra 1:1-11"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_63",
+          "text": "For its historical and cultural setting, note that The Cyrus Cylinder is comparative evidence for Cyrus's Babylonian royal rhetoric and restoration of cults, not a copy of Ezra's decree and not direct archaeological proof that Cyrus issued the Jerusalem proclamation exactly as narrated. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. Interpretations differ on some details.",
+          "evidence_ids": [
+            "ezra:interpretive_note:2"
+          ],
+          "verse_refs": [
+            "Ezra 1:1-4"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        },
+        {
+          "id": "historical_context_64",
+          "text": "For its historical and cultural setting, note that Ezra 1-6 narrates return support, temple vessels, altar restoration, opposition, prophetic encouragement, Persian inquiries, and completion under successive kings rather than one instantaneous restoration. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "ezra-persian-return-and-temple-sequence"
+          ],
+          "verse_refs": [
+            "Ezra 1:1-11"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "archaeology_geography",
+      "title": "Archaeology and geography",
+      "blocks": [
+        {
+          "id": "archaeology_geography_63",
+          "text": "For its geographical or material setting, note that An Akkadian cuneiform foundation cylinder from Babylon that presents Cyrus's conquest, divine authorization by Marduk, and restoration of cult centers and displaced groups. It can illuminate the passage, while its limits should be kept in view. Interpretations differ on some details.",
+          "evidence_ids": [
+            "cyrus-cylinder-restoration-context"
+          ],
+          "verse_refs": [
+            "Ezra 1:1-11"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "chronology",
+      "title": "Chronology",
+      "blocks": [
+        {
+          "id": "chronology_63",
+          "text": "For the chapter's sequence and setting, note that Temple and city rebuilding This gives the reader a frame for the passage without deciding every larger reconstruction.",
+          "evidence_ids": [
+            "exile-and-return-storyline:timeline:4"
+          ],
+          "verse_refs": [
+            "Ezra 1:1-4"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "ab392b941a1d4b3757c57cd616230d389d37e3ec01a519e846154868cc8c5e6a",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-008-medium",
+    "generated_timestamp": "2026-09-06T21:45:35Z"
+  }
+}

@@ -1,0 +1,101 @@
+{
+  "reference": "Galatians 1",
+  "book": "Galatians",
+  "chapter": 1,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_1",
+          "text": "Read the chapter with this setting in view: Paul narrates a Jerusalem visit after three years and another after fourteen years, but the interval's starting point and correspondence with Acts are uncertain. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "gal-jerusalem"
+          ],
+          "verse_refs": [
+            "Galatians 1:18-20"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_2",
+          "text": "For its historical and cultural setting, note that Both North- and South-Galatian destination theories remain live because Galatia could denote an ethnic region or Roman province. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "gal-destination"
+          ],
+          "verse_refs": [
+            "Galatians 1:2"
+          ],
+          "confidence": "low",
+          "interpretation_level": "disputed"
+        },
+        {
+          "id": "historical_context_3",
+          "text": "For its historical and cultural setting, note that Galatians names Paul as sender to multiple assemblies of Galatia and does not name a co-sender. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "gal-sender"
+          ],
+          "verse_refs": [
+            "Galatians 1:1-2"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "archaeology_geography",
+      "title": "Archaeology and geography",
+      "blocks": [
+        {
+          "id": "archaeology_geography_2",
+          "text": "For its geographical or material setting, note that Paul says he went into the regions of Syria and Cilicia and remained personally unknown to the Judean assemblies in Messiah, which heard reports about him. It can illuminate the passage, while its limits should be kept in view. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "galatians-syria-cilicia-unknown"
+          ],
+          "verse_refs": [
+            "Galatians 1:21-24"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_2",
+          "text": "A literary feature to notice is that The doubled curse in Galatians 1 targets proclamations that overturn Paul's gospel and functions as polemical rhetoric, not authorization for violence against dissenters. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image.",
+          "evidence_ids": [
+            "gal-curse"
+          ],
+          "verse_refs": [
+            "Galatians 1:8-9"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "f13166a6c0ed535921c57fae680ba865373df846a12a667ffd7c67bc9404bca5",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-008-medium",
+    "generated_timestamp": "2026-09-06T21:45:35Z"
+  }
+}

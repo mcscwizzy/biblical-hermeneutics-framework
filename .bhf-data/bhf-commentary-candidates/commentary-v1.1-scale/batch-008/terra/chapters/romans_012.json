@@ -1,0 +1,101 @@
+{
+  "reference": "Romans 12",
+  "book": "Romans",
+  "chapter": 12,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_80",
+          "text": "Read the chapter with this setting in view: Romans' body, flesh, weakness, and groaning language must not stigmatize disability or mental-health conditions; spiritual interpretation cannot replace appropriate medical and psychological care. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken.",
+          "evidence_ids": [
+            "romans:interpretive_note:73"
+          ],
+          "verse_refs": [
+            "Romans 12:1-8"
+          ],
+          "confidence": "high",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_81",
+          "text": "For its historical and cultural setting, note that Romans' suffering and perseverance language cannot justify victim blaming, trauma glorification, denial of pain, forced reconciliation, mental-health stigma, medical neglect, or keeping people in danger. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "romans:interpretive_note:72"
+          ],
+          "verse_refs": [
+            "Romans 12:15"
+          ],
+          "confidence": "high",
+          "interpretation_level": "inference"
+        },
+        {
+          "id": "historical_context_82",
+          "text": "For its historical and cultural setting, note that Romans 12:1-2 describes embodied communal worship and transformed discernment rather than body rejection or unquestioning conformity. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "romans-living-sacrifice"
+          ],
+          "verse_refs": [
+            "Romans 12:1-2"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_81",
+          "text": "A literary feature to notice is that P10, P26, P27, P31, P40, P46, and P61 preserve different portions of Romans, with P46 by far the most extensive early papyrus witness. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image.",
+          "evidence_ids": [
+            "romans-papyri"
+          ],
+          "verse_refs": [
+            "Romans 12:1-21"
+          ],
+          "confidence": "high",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "dig_deeper",
+      "title": "Dig deeper",
+      "blocks": [
+        {
+          "id": "dig_deeper_81",
+          "text": "For a later or comparative connection, note that Nero's post-fire violence in 64 CE is later than Romans' probable date and cannot be assumed as the letter's original persecution setting. This remains a secondary connection rather than the chapter's first-audience context. It can be traced further without replacing the chapter's own setting. Interpretations differ on some details.",
+          "evidence_ids": [
+            "rome:interpretive_note:2"
+          ],
+          "verse_refs": [
+            "Romans 12:12-21"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "08b1a018ceefaad1b135b39f9d967866a8d8eea81d039ef8f33b3d0404964e93",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-008-medium",
+    "generated_timestamp": "2026-09-06T21:45:35Z"
+  }
+}

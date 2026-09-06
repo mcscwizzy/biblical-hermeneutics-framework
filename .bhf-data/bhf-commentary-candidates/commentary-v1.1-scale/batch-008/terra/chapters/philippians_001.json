@@ -1,0 +1,101 @@
+{
+  "reference": "Philippians 1",
+  "book": "Philippians",
+  "chapter": 1,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_67",
+          "text": "Read the chapter with this setting in view: \u2018To live is Messiah and to die is gain\u2019 expresses Paul's prison dilemma and hope; it must not romanticize death, encourage suicide, or replace urgent crisis support. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken.",
+          "evidence_ids": [
+            "philippians:interpretive_note:9"
+          ],
+          "verse_refs": [
+            "Philippians 1:20-26"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_68",
+          "text": "For its historical and cultural setting, note that Paul and Timothy are named as senders, while Paul supplies the dominant first-person voice. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "phl-voice"
+          ],
+          "verse_refs": [
+            "Philippians 1:1"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        },
+        {
+          "id": "historical_context_69",
+          "text": "For its historical and cultural setting, note that The letter frames the Philippians' relation to Paul as partnership in the gospel from the first day through imprisonment and renewed material aid. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "phl-partnership"
+          ],
+          "verse_refs": [
+            "Philippians 1:3-7"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "archaeology_geography",
+      "title": "Archaeology and geography",
+      "blocks": [
+        {
+          "id": "archaeology_geography_68",
+          "text": "For its geographical or material setting, note that Philippi was a Roman colony whose built environment and institutions were substantially Romanized while remaining culturally diverse. It can illuminate the passage, while its limits should be kept in view. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "phl-colony"
+          ],
+          "verse_refs": [
+            "Philippians 1:27"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_68",
+          "text": "A literary feature to notice is that Politeuesthe directs worthy communal conduct and may resonate with Philippi's civic setting, but the strength of that resonance is disputed. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "phl-politeuesthe"
+          ],
+          "verse_refs": [
+            "Philippians 1:27"
+          ],
+          "confidence": "low",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "ff3d5552eecc21955b53f78d8ffd39ff2900bf6237c06c2e52305ef1e03d1fd0",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-008-medium",
+    "generated_timestamp": "2026-09-06T21:45:35Z"
+  }
+}

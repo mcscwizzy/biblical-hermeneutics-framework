@@ -1,0 +1,101 @@
+{
+  "reference": "Hosea 2",
+  "book": "Hosea",
+  "chapter": 2,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_64",
+          "text": "Read the chapter with this setting in view: Hosea contests attribution of grain, wine, oil, fertility, and security to Baal or rival practices, but the text does not document one simple or uniform fertility cult. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "hosea-baal-fertility"
+          ],
+          "verse_refs": [
+            "Hosea 2:1-23"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_65",
+          "text": "For its historical and cultural setting, note that Romans cites Hosea's not-my-people reversal and Isaiah's remnant language after naming a call from Jews and gentiles. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "romans-hosea-isaiah-calling"
+          ],
+          "verse_refs": [
+            "Hosea 2:23"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        },
+        {
+          "id": "historical_context_66",
+          "text": "For its historical and cultural setting, note that Romans 9 and 1 Peter 2 reuse Lo-ammi and Lo-ruhamah language in distinct communities; neither passage licenses antisemitism or contempt for Jews. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. Interpretations differ on some details.",
+          "evidence_ids": [
+            "hosea:interpretive_note:30"
+          ],
+          "verse_refs": [
+            "Hosea 2:1-23"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_65",
+          "text": "A literary feature to notice is that Hosea 2 combines accusations and threats of deprivation or exposure with wilderness wooing, renewed relationship, land flourishing, and reversal of the children's negative names. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "hosea-lawsuit-restoration"
+          ],
+          "verse_refs": [
+            "Hosea 2:1-23"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "dig_deeper",
+      "title": "Dig deeper",
+      "blocks": [
+        {
+          "id": "dig_deeper_65",
+          "text": "For a later or comparative connection, note that Rabbinic interpretations sometimes redistribute repentance among Israel, Hosea, and God and rework threatened violence; they should be heard as substantive interpretation, not a preface to Christian readings. This remains a secondary connection rather than the chapter's first-audience context. It can be traced further without replacing the chapter's own setting.",
+          "evidence_ids": [
+            "hosea:interpretive_note:28"
+          ],
+          "verse_refs": [
+            "Hosea 2:1-23"
+          ],
+          "confidence": "high",
+          "interpretation_level": "inference"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "c72e4fa88f1d33630be1761ee2381ad31d04f6066df9ddb48d239152e57997d4",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-008-medium",
+    "generated_timestamp": "2026-09-06T21:45:35Z"
+  }
+}

@@ -1,0 +1,101 @@
+{
+  "reference": "2 Thessalonians 3",
+  "book": "2 Thessalonians",
+  "chapter": 3,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_102",
+          "text": "Read the chapter with this setting in view: The final greeting claims Pauline handwriting as the sign in every letter, while the historical force of that internal authentication is disputed. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken. Interpretations differ on some details.",
+          "evidence_ids": [
+            "2th-autograph"
+          ],
+          "verse_refs": [
+            "2 Thessalonians 3:17"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_103",
+          "text": "For its historical and cultural setting, note that The closing wish invokes the Lord of peace to give peace always in every way and to be with all recipients. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "2th-peace"
+          ],
+          "verse_refs": [
+            "2 Thessalonians 3:16"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        },
+        {
+          "id": "historical_context_104",
+          "text": "For its historical and cultural setting, note that The senders request prayer that the Lord's word may run, be glorified, and that they be delivered from wicked people. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "2th-word-run"
+          ],
+          "verse_refs": [
+            "2 Thessalonians 3:1-2"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_103",
+          "text": "A literary feature to notice is that The condition if anyone is unwilling to work targets refusal rather than inability. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image.",
+          "evidence_ids": [
+            "2th-unwilling-work"
+          ],
+          "verse_refs": [
+            "2 Thessalonians 3:10"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "chronology",
+      "title": "Chronology",
+      "blocks": [
+        {
+          "id": "chronology_103",
+          "text": "For the chapter's sequence and setting, note that Before the end of the first century CE: IG X,2 1 32 attests politarchs and civic-cult offices This gives the reader a frame for the passage without deciding every larger reconstruction.",
+          "evidence_ids": [
+            "thessalonica:timeline:3"
+          ],
+          "verse_refs": [
+            "2 Thessalonians 3:6-15"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "94095189d7532a8aaf4966fd93d0120fe594e7fc276f2be512b892550a2f1bc0",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-008-medium",
+    "generated_timestamp": "2026-09-06T21:45:36Z"
+  }
+}

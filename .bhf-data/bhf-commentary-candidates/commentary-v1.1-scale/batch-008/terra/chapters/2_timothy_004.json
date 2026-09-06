@@ -1,0 +1,101 @@
+{
+  "reference": "2 Timothy 4",
+  "book": "2 Timothy",
+  "chapter": 4,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_25",
+          "text": "Read the chapter with this setting in view: Timothy is charged before God and Christ to proclaim, persist, correct, rebuke, encourage, teach patiently, remain sober, endure, evangelize, and fulfill service. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken.",
+          "evidence_ids": [
+            "2tim-proclaim"
+          ],
+          "verse_refs": [
+            "2 Timothy 4:1-5"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_26",
+          "text": "For its historical and cultural setting, note that The letter requests Timothy, Mark, a cloak left with Carpus at Troas, books, and especially parchments. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "2tim-requests"
+          ],
+          "verse_refs": [
+            "2 Timothy 4:9-13"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        },
+        {
+          "id": "historical_context_27",
+          "text": "For its historical and cultural setting, note that The speaker says no one supported the first defense, the Lord strengthened him, proclamation was completed, and he was rescued from a lion's mouth. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. Interpretations differ on some details.",
+          "evidence_ids": [
+            "2tim-defense"
+          ],
+          "verse_refs": [
+            "2 Timothy 4:16-18"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_26",
+          "text": "A literary feature to notice is that Farewell, succession, exemplary memory, warnings, final charge, and expected death make testament comparison plausible, though form and historicity remain disputed. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "2tim-testament"
+          ],
+          "verse_refs": [
+            "2 Timothy 4:1-22"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "chronology",
+      "title": "Chronology",
+      "blocks": [
+        {
+          "id": "chronology_26",
+          "text": "For the chapter's sequence and setting, note that mid-50s CE: house assembly in Asia and greeting in Romans This gives the reader a frame for the passage without deciding every larger reconstruction.",
+          "evidence_ids": [
+            "priscilla:timeline:2"
+          ],
+          "verse_refs": [
+            "2 Timothy 4:19"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "5ff8eadc97052bf0a74f938faa8596d2103521e3cd28d8eacd738645b5b75e20",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-008-medium",
+    "generated_timestamp": "2026-09-06T21:45:35Z"
+  }
+}

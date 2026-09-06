@@ -1,0 +1,65 @@
+{
+  "reference": "Mark 2",
+  "book": "Mark",
+  "chapter": 2,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_41",
+          "text": "Read the chapter with this setting in view: Mark's Sabbath, handwashing, purity, divorce, commandment, and temple disputes are intrajewish arguments in a Jewish scriptural world, not evidence that Judaism was uniquely legalistic. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "mark-jewish-debate"
+          ],
+          "verse_refs": [
+            "Mark 2:23-28"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_42",
+          "text": "For its historical and cultural setting, note that Mark locates healing, teaching, hospitality, crowds, and conflict in village houses and describes movement between neighboring settlements. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. Interpretations differ on some details.",
+          "evidence_ids": [
+            "gospel-galilean-households"
+          ],
+          "verse_refs": [
+            "Mark 2:1-12"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        },
+        {
+          "id": "historical_context_43",
+          "text": "For its historical and cultural setting, note that Mark's healing stories portray embodied need and restored participation, yet cure-centered reception can stigmatize disabled people and must not equate bodily difference with sin, weak faith, or spiritual failure. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "mark-disability"
+          ],
+          "verse_refs": [
+            "Mark 2:1-12"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "3df2abc609c61a4ce8e49f2917d10324cf2f1aa4b0ea30ce14a492bbf94fa79c",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-008-medium",
+    "generated_timestamp": "2026-09-06T21:45:35Z"
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "reference": "1 Peter 3",
+  "book": "1 Peter",
+  "chapter": 3,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_63",
+          "text": "Read the chapter with this setting in view: First Peter attests social hostility and suffering but does not name Nero, Domitian, Trajan, or an empire-wide persecution decree. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken. Interpretations differ on some details.",
+          "evidence_ids": [
+            "1pet-persecution"
+          ],
+          "verse_refs": [
+            "1 Peter 3:16"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_64",
+          "text": "For its historical and cultural setting, note that Wives and husbands are separately addressed within an unequal Greco-Roman household setting. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "1pet-households"
+          ],
+          "verse_refs": [
+            "1 Peter 3:1-7"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        },
+        {
+          "id": "historical_context_65",
+          "text": "For its historical and cultural setting, note that The letter calls for a prepared answer concerning hope, given with gentleness and respect and a good conscience. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "1pet-defense"
+          ],
+          "verse_refs": [
+            "1 Peter 3:15-16"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_64",
+          "text": "A literary feature to notice is that First Peter is a coherent letter employing blessing, paraenesis, scriptural interpretation, household discourse, and apocalyptic consolation. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "1pet-genre"
+          ],
+          "verse_refs": [
+            "1 Peter 3:1-22"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "43f55cc22260a3e90b7726221e73a4a14252e45ee17b77afe0c45cf50179c7e8",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-008-medium",
+    "generated_timestamp": "2026-09-06T21:45:35Z"
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "reference": "John 13",
+  "book": "John",
+  "chapter": 13,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_38",
+          "text": "Read the chapter with this setting in view: The footwashing enacts Jesus' love, service, cleansing, and a pattern for disciples; ritual, ethical, christological, and sacramental readings need not authorize humiliating or coercive leadership practices. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "john-footwashing"
+          ],
+          "verse_refs": [
+            "John 13:1-20"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_39",
+          "text": "A literary feature to notice is that The beloved disciple is presented as an authoritative witness, yet the Gospel never names that figure John son of Zebedee and John 21:24 speaks of the disciple in the third person. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image. Interpretations differ on some details.",
+          "evidence_ids": [
+            "john-beloved-disciple"
+          ],
+          "verse_refs": [
+            "John 13:23-26"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "dig_deeper",
+      "title": "Dig deeper",
+      "blocks": [
+        {
+          "id": "dig_deeper_39",
+          "text": "For a later or comparative connection, note that 2 John shares concentrated vocabulary, formulas, and concerns with 1 John, 3 John, and the Fourth Gospel. This remains a secondary connection rather than the chapter's first-audience context. It can be traced further without replacing the chapter's own setting. Interpretations differ on some details.",
+          "evidence_ids": [
+            "2jn-johannine-relation"
+          ],
+          "verse_refs": [
+            "John 13:34-35"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "618137f590635636d18aa1f2119046e9961e5f0732a07ed424e012032401b281",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-008-medium",
+    "generated_timestamp": "2026-09-06T21:45:35Z"
+  }
+}
