@@ -50,7 +50,7 @@ from bhf_agent.presentation.relevance import (
     LATER_RECEPTION,
     SEMANTICALLY_MISANCHORED,
     TEXTUAL_CLAIM_SIGNALS,
-    TEXTUAL_CLAIM_TEXT_RE,
+    TEXTUAL_WITNESS_CLAIM_TEXT_RE,
     with_presentation_metadata,
     with_semantic_relationship,
     presentation_role,
@@ -81,7 +81,10 @@ DEFAULT_POOL_SIZE = 70
 DEFAULT_TARGET_COUNT = 50
 EVIDENCE_BUNDLE_VERSION = EVIDENCE_BUNDLE_CANDIDATE_VERSION
 EVIDENCE_HASH_VERSION = "2"
-TOOL_VERSION = "commentary-v11-scaled-preflight-1.1"
+# The routing projection changed after the previous checkpoint was produced.
+# Keep the adjudication policy unchanged, but invalidate cached records whose
+# presentation/textual routing was computed by the prior projection.
+TOOL_VERSION = "commentary-v11-scaled-preflight-1.2-routing-remediation"
 CHECKPOINT_VERSION = "commentary-v11-scaled-preflight-checkpoint-1"
 SELECTION_POLICY_VERSION = "mixed-pool-v2-soft-book-cap"
 VERDICTS = (
@@ -600,7 +603,7 @@ def _is_textual_witness_material(item: Any) -> bool:
         )
         if material_only:
             return False
-    return bool(TEXTUAL_CLAIM_TEXT_RE.search(claim))
+    return bool(TEXTUAL_WITNESS_CLAIM_TEXT_RE.search(claim))
 
 
 def terra_textual_suppression_simulation(bundle: Any) -> dict[str, Any]:
@@ -1276,7 +1279,7 @@ def _mapping_is_textual(item: Mapping[str, Any]) -> bool:
     if str(metadata.get("parent_type") or "").casefold() == "archaeology":
         if re.search(r"\b(?:discover(?:ed|y)|excavat(?:ed|ion)|found|cave|site|provenance|physical|artifact|deposit|stratigraph|archaeolog(?:y|ical))\b", claim, re.I) and not re.search(r"\b(?:reading|variant|version|transmission|preserv(?:es|ed)|textual\s+profile|textual\s+difference|different\s+text)\b", claim, re.I):
             return False
-    return bool(TEXTUAL_CLAIM_TEXT_RE.search(claim))
+    return bool(TEXTUAL_WITNESS_CLAIM_TEXT_RE.search(claim))
 
 
 def _prose_cited_evidence(path: Path) -> set[str] | None:

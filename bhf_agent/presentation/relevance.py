@@ -117,6 +117,18 @@ TEXTUAL_CLAIM_TEXT_RE = re.compile(
     r"versional\s+witness(?:es)?)\b",
     re.IGNORECASE,
 )
+# Claim text is only a fallback when authored textual metadata is absent.  Keep
+# that fallback narrow: a material-context sentence may mention textual
+# transmission without itself presenting a manuscript reading or variant.
+TEXTUAL_WITNESS_CLAIM_TEXT_RE = re.compile(
+    r"\b(?:textual\s+(?:variant|variants|form|criticism|critical|"
+    r"witness(?:es)?|omission|plurality)|manuscript(?:s)?(?:\s+(?:reading|"
+    r"witness(?:es)?|tradition|text))?|papyr(?:us|i)|codex|codices|"
+    r"masoretic|old\s+greek|theodotion(?:ic)?|shorter[- ]text|longer[- ]text|"
+    r"(?:different|variant|shorter|longer)\s+(?:reading|witness(?:es)?|"
+    r"wording|form)|versional\s+witness(?:es)?)\b",
+    re.IGNORECASE,
+)
 MATERIAL_MANUSCRIPT_RE = re.compile(
     r"\b(?:discover(?:ed|y)|excavat(?:ed|ion)|found|cave|site|provenance|"
     r"physical|artifact|deposit|stratigraph|archaeolog(?:y|ical))\b",
@@ -366,7 +378,7 @@ def presentation_role(
         or note_type in RECEPTION_CLAIM_SIGNALS
         or evidence_type in RECEPTION_CLAIM_SIGNALS
     )
-    claim_textual = bool(TEXTUAL_CLAIM_TEXT_RE.search(claim))
+    claim_textual = bool(TEXTUAL_WITNESS_CLAIM_TEXT_RE.search(claim))
     material_object_claim = (
         parent_type == "archaeology"
         and MATERIAL_MANUSCRIPT_RE.search(claim)

@@ -515,6 +515,7 @@ def _append_object_evidence(
                     data=data,
                     field_name=field_name,
                     category=category,
+                    claim=claim_text,
                     retrieval_score=retrieval_score,
                 )
                 if legacy_metadata.get("semantic_relationship") == SEMANTICALLY_MISANCHORED:
@@ -601,6 +602,7 @@ def _legacy_relevance_metadata(
     data: Mapping[str, Any],
     field_name: str,
     category: str,
+    claim: str,
     retrieval_score: float,
 ) -> dict[str, Any]:
     metadata = _relevance_metadata(
@@ -614,7 +616,7 @@ def _legacy_relevance_metadata(
     metadata = with_presentation_metadata(
         metadata,
         category=category,
-        claim="",
+        claim=claim,
     )
     if _text(data.get("type")).casefold() == "book":
         metadata["passage_relationship"] = "background"

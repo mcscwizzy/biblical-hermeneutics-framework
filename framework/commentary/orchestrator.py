@@ -760,7 +760,7 @@ def _resume_result(state: Mapping[str, Any], action: str, *, message: str = "") 
 
 
 def _preflight_command(repo_root: Path, state: Mapping[str, Any]) -> list[str]:
-    return [
+    command = [
         sys.executable,
         str(repo_root / "tools/commentary_v11_scaled_preflight.py"),
         "--batch-id", _batch_id(int(state["current_batch"])),
@@ -768,6 +768,18 @@ def _preflight_command(repo_root: Path, state: Mapping[str, Any]) -> list[str]:
         "--candidate-pool-size", "250",
         "--sqlite-database", str(repo_root / ".bhf/ckl.sqlite"),
     ]
+    # A blocked batch may be undergoing an explicit historical-quarantine
+    # recovery. Preserve that reviewed scope when the orchestrator reruns the
+    # resumable Luna preflight; never infer recovery from stale reports alone.
+    recovery_manifest = (
+        repo_root
+        / SCALE_ROOT_REL
+        / f".{_batch_id(int(state['current_batch']))}.work"
+        / "quarantine-recovery-manifest.json"
+    )
+    if recovery_manifest.exists():
+        command.extend(["--recovery-manifest", str(recovery_manifest)])
+    return command
 
 
 def _terra_staging_root(repo_root: Path, number: int) -> Path:
