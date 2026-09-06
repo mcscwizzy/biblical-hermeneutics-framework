@@ -36,11 +36,15 @@ environment. Automation should continue through feature branches and pull
 requests, with direct pushes to `master` disabled in GitHub branch protection.
 No administrative GitHub change is claimed here.
 
-Known test caveat: the Vercel subprocess smoke tests cannot run in this
-environment because `/usr/bin/python3` lacks the project FastAPI/httpx
-dependencies; the project interpreter’s focused runtime suite passes. Any
-remaining failures must be classified in the final test report rather than
-hidden by weakening assertions.
+Known test caveats: the Vercel subprocess smoke tests cannot run with
+`/usr/bin/python3` because that interpreter lacks the project FastAPI/httpx
+dependencies; the dependency-complete focused runtime suite passes. The broad
+Commentary suite reports 230 passes and three historical Terra fixture
+failures: the canary lock for Numbers 16 and the Batch 003 lock assumptions
+are stale against current evidence. The broad web-app suite exceeded its
+bounded 180-second check while running a canonical-editor test; focused
+commentary web checks pass. These are recorded rather than hidden by
+weakening assertions.
 
 Machine-readable audit artifacts are in `docs/commentary-v1.1-release/`:
 
