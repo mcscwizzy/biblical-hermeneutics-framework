@@ -35,6 +35,12 @@ from framework.commentary.remediation import (
     ALLOWLISTED_PROSE_FINDINGS,
     regeneration_eligibility,
 )
+from framework.commentary.remediation_groups import (
+    MAX_REMEDIATION_GROUP_SIZE,
+    build_remediation_groups,
+    canonical_reference_sort_key,
+    ordered_unique_references,
+)
 
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
@@ -1000,7 +1006,7 @@ def _remediation_plan(repo_root: Path, state: Mapping[str, Any]) -> dict[str, An
     batch = _batch_root(repo_root, int(state["current_batch"]))
     report = _read_json(batch / "post-generation-report.json") or {}
     plan: dict[str, Any] = {
-        "report_version": "commentary-v1.1-bounded-remediation-plan-v1",
+        "report_version": "commentary-v1.1-bounded-remediation-plan-v2",
         "generated_at": _now(),
         "batch_id": _batch_id(int(state["current_batch"])),
         "policy": {
@@ -1010,10 +1016,17 @@ def _remediation_plan(repo_root: Path, state: Mapping[str, Any]) -> dict[str, An
             "effort": "medium",
         },
         "targets": [],
+        "groups": [],
+        "pending_groups": [],
+        "completed_groups": [],
+        "failed_group": None,
+        "references_remediated": [],
+        "references_pending": [],
         "status": "BLOCKED",
     }
     if report.get("status") != "NO_GO":
         plan["diagnostics"] = ["bounded remediation requires the recorded initial certification to be NO_GO"]
+        _atomic_json(batch / "remediation-plan.json", plan)
         return plan
     findings = report.get("findings") or {}
     global_integrity_clean = bool(
@@ -1036,6 +1049,7 @@ def _remediation_plan(repo_root: Path, state: Mapping[str, Any]) -> dict[str, An
         lock, bundles = revalidate_locks(terra_input, batch_cert)
     except Exception as exc:
         plan["diagnostics"] = [f"lock revalidation could not run: {exc}"]
+        _atomic_json(batch / "remediation-plan.json", plan)
         return plan
     certified = {str(row.get("reference")): row for row in batch_cert.get("chapters", [])}
     entries = {str(row.get("reference")): row for row in terra_input.get("chapters", [])}
@@ -1087,18 +1101,213 @@ def _remediation_plan(repo_root: Path, state: Mapping[str, Any]) -> dict[str, An
             "diagnostics": diagnostics,
         })
     plan["targets"] = candidates
-    eligible = [row["reference"] for row in candidates if row["eligible"]]
+    eligible = ordered_unique_references(row["reference"] for row in candidates if row["eligible"])
     plan["eligible_references"] = eligible
     plan["status"] = "READY" if eligible and len(eligible) == len(candidates) else "BLOCKED"
+    if plan["status"] == "READY":
+        plan["groups"] = build_remediation_groups(eligible, attempt=1)
+        for group in plan["groups"]:
+            group["report_path"] = str(
+                (SCALE_ROOT_REL / _batch_id(int(state["current_batch"])) / "terra" / "remediation-attempts" / "attempt-001" / group["group_id"] / "remediation-report.json")
+            )
+        plan["pending_groups"] = [group["group_id"] for group in plan["groups"]]
+        plan["references_pending"] = eligible
     if not candidates:
         plan["diagnostics"] = ["no failed chapters are available for bounded remediation"]
     elif plan["status"] != "READY":
         plan["diagnostics"] = ["at least one failed chapter is not a pure allowlisted prose-quality failure"]
+    _atomic_json(batch / "remediation-plan.json", plan)
     return plan
 
 
+def _remediation_plan_path(repo_root: Path, number: int) -> Path:
+    return _batch_root(repo_root, number) / "remediation-plan.json"
+
+
+def _group_report_path(repo_root: Path, number: int, group: Mapping[str, Any]) -> Path:
+    path = group.get("report_path")
+    if path:
+        return repo_root / str(path)
+    return (
+        _batch_root(repo_root, number)
+        / "terra"
+        / "remediation-attempts"
+        / f"attempt-{int(group.get('attempt', 1)):03d}"
+        / str(group["group_id"])
+        / "remediation-report.json"
+    )
+
+
+def _prepare_remediation_plan(repo_root: Path, state: Mapping[str, Any]) -> dict[str, Any]:
+    """Load or migrate a deterministic group plan without losing checkpoints."""
+
+    number = int(state["current_batch"])
+    path = _remediation_plan_path(repo_root, number)
+    plan = _read_json(path)
+    if plan is None:
+        plan = _remediation_plan(repo_root, state)
+    if plan.get("status") != "READY":
+        return plan
+    eligible = ordered_unique_references(plan.get("eligible_references", []))
+    groups = plan.get("groups") or []
+    if not groups:
+        groups = build_remediation_groups(eligible, attempt=1)
+    flattened: list[str] = []
+    for index, group in enumerate(groups, start=1):
+        if group.get("group_id") != f"group-{index:03d}":
+            raise PipelineError("remediation plan has non-deterministic group identifiers")
+        references = ordered_unique_references(group.get("references", []))
+        if not references or len(references) > MAX_REMEDIATION_GROUP_SIZE:
+            raise PipelineError("remediation plan contains an invalid group size")
+        if int(group.get("attempt", 1)) != 1:
+            raise PipelineError("remediation groups must use chapter attempt 1")
+        group["references"] = references
+        group["attempt"] = 1
+        group.setdefault("status", "PENDING")
+        group["report_path"] = str(
+            SCALE_ROOT_REL / _batch_id(number) / "terra" / "remediation-attempts" / "attempt-001" / group["group_id"] / "remediation-report.json"
+        )
+        flattened.extend(references)
+    if ordered_unique_references(flattened) != eligible:
+        raise PipelineError("remediation plan groups disagree with eligible references")
+    complete = [group["group_id"] for group in groups if group.get("status") == "COMPLETE"]
+    pending = [group["group_id"] for group in groups if group.get("status") != "COMPLETE"]
+    if any(group.get("status") not in {"PENDING", "COMPLETE"} for group in groups):
+        raise PipelineError("remediation plan contains an invalid group status")
+    plan["groups"] = groups
+    plan["eligible_references"] = eligible
+    plan["completed_groups"] = complete
+    plan["pending_groups"] = pending
+    plan["references_remediated"] = ordered_unique_references(
+        reference for group in groups if group.get("status") == "COMPLETE" for reference in group["references"]
+    )
+    plan["references_pending"] = ordered_unique_references(
+        reference for group in groups if group.get("status") != "COMPLETE" for reference in group["references"]
+    )
+    _atomic_json(path, plan)
+    return plan
+
+
+def _is_remediation_checkpoint(state: Mapping[str, Any]) -> bool:
+    token = state.get("resume_token") or {}
+    command = " ".join(str(value) for value in token.get("command", []))
+    return token.get("kind") == "BOUNDED_REMEDIATION_GROUPS" or "terra_commentary_remediation.py" in command
+
+
+def _validate_group_report(
+    report: Mapping[str, Any] | None,
+    group: Mapping[str, Any],
+) -> None:
+    if not report or report.get("status") != "READY_FOR_RECERTIFICATION":
+        raise PipelineError(f"missing or invalid remediation report for {group['group_id']}")
+    if report.get("group_id") != group.get("group_id"):
+        raise PipelineError(f"remediation report group identity mismatch for {group['group_id']}")
+    expected = ordered_unique_references(group.get("references", []))
+    actual = ordered_unique_references(report.get("references", []))
+    targets = ordered_unique_references(row.get("reference") for row in report.get("targets", []))
+    if actual != expected or targets != expected:
+        raise PipelineError(f"remediation report target mismatch for {group['group_id']}")
+    if report.get("lock_revalidation", {}).get("status") != "PASS":
+        raise PipelineError(f"remediation report lock revalidation failed for {group['group_id']}")
+    for row in report.get("targets", []):
+        if row.get("regeneration_attempts") != 1:
+            raise PipelineError(f"remediation report attempt mismatch for {row.get('reference')}")
+        if row.get("quality_flags_after"):
+            raise PipelineError(f"remediation report retains quality flags for {row.get('reference')}")
+        if row.get("evidence_ids_before") != row.get("evidence_ids_after"):
+            raise PipelineError(f"remediation changed evidence IDs for {row.get('reference')}")
+        if not (
+            row.get("evidence_hash_before")
+            == row.get("evidence_hash_after")
+            == row.get("evidence_hash_locked")
+        ):
+            raise PipelineError(f"remediation changed evidence hash for {row.get('reference')}")
+
+
+def _complete_recovered_groups(repo_root: Path, state: dict[str, Any], plan: dict[str, Any]) -> dict[str, Any]:
+    """Promote reports written before a process interruption, never prose twice."""
+
+    number = int(state["current_batch"])
+    attempts = dict(state.get("remediation_attempts") or {})
+    changed = False
+    for group in plan["groups"]:
+        if group.get("status") == "COMPLETE":
+            report = _read_json(_group_report_path(repo_root, number, group))
+            _validate_group_report(report, group)
+            continue
+        report_path = _group_report_path(repo_root, number, group)
+        if not report_path.exists():
+            continue
+        report = _read_json(report_path)
+        _validate_group_report(report, group)
+        group["status"] = "COMPLETE"
+        group["completed_at"] = _now()
+        group["report_sha256"] = _sha256_file(report_path)
+        for reference in group["references"]:
+            attempts[reference] = 1
+        changed = True
+    if changed:
+        plan["completed_groups"] = [group["group_id"] for group in plan["groups"] if group.get("status") == "COMPLETE"]
+        plan["pending_groups"] = [group["group_id"] for group in plan["groups"] if group.get("status") != "COMPLETE"]
+        plan["references_remediated"] = ordered_unique_references(
+            reference for group in plan["groups"] if group.get("status") == "COMPLETE" for reference in group["references"]
+        )
+        plan["references_pending"] = ordered_unique_references(
+            reference for group in plan["groups"] if group.get("status") != "COMPLETE" for reference in group["references"]
+        )
+        _atomic_json(_remediation_plan_path(repo_root, number), plan)
+        state["remediation_attempts"] = attempts
+        save_state(state_path(repo_root), state)
+    return plan
+
+
+def _consolidate_remediation_reports(repo_root: Path, state: Mapping[str, Any], plan: Mapping[str, Any]) -> dict[str, Any]:
+    number = int(state["current_batch"])
+    batch = _batch_root(repo_root, number)
+    group_reports: list[dict[str, Any]] = []
+    targets: list[dict[str, Any]] = []
+    lock_revalidation: dict[str, Any] | None = None
+    for group in plan["groups"]:
+        report_path = _group_report_path(repo_root, number, group)
+        report = _read_json(report_path)
+        _validate_group_report(report, group)
+        if lock_revalidation is None:
+            lock_revalidation = dict(report["lock_revalidation"])
+        group_reports.append({
+            "group_id": group["group_id"],
+            "status": group["status"],
+            "attempt": 1,
+            "references": list(group["references"]),
+            "report_path": str(report_path.relative_to(repo_root)),
+            "report_sha256": _sha256_file(report_path),
+        })
+        targets.extend(report["targets"])
+    consolidated = {
+        "report_version": "commentary-v1.1-bounded-remediation-v2",
+        "generated_at": _now(),
+        "batch_id": _batch_id(number),
+        "status": "READY_FOR_RECERTIFICATION",
+        "policy": {
+            "allowlisted_findings": sorted(ALLOWLISTED_PROSE_FINDINGS),
+            "maximum_automatic_regeneration_attempts": 1,
+            "attempt_scope": "per_chapter",
+            "maximum_chapters_per_runner_invocation": MAX_REMEDIATION_GROUP_SIZE,
+            "model": "terra",
+            "effort": "medium",
+            "evidence_selection_changed": False,
+        },
+        "eligible_references": list(plan["eligible_references"]),
+        "groups": group_reports,
+        "targets": targets,
+        "lock_revalidation": lock_revalidation or {},
+        "overall_status": "READY_FOR_RECERTIFICATION",
+    }
+    _atomic_json(batch / "remediation-report.json", consolidated)
+    return consolidated
+
+
 def remediate_batch(repo_root: Path, *, model: str, effort: str) -> dict[str, Any]:
-    """Run exactly one allowlisted Terra-medium remediation attempt."""
+    """Run durable bounded groups for one allowlisted Terra-medium attempt."""
 
     path = state_path(repo_root)
     state = load_state(path)
@@ -1110,11 +1319,14 @@ def remediate_batch(repo_root: Path, *, model: str, effort: str) -> dict[str, An
         state.get("status") == ACTIVE
         and state.get("current_stage") == "POST_GENERATION_AUDIT"
         and state.get("stage_status") == RUNNING
-        and "terra_commentary_remediation.py" in " ".join(state.get("resume_token", {}).get("command", []))
+        and _is_remediation_checkpoint(state)
     )
     if (not resuming and state.get("status") != BLOCKED) or state.get("current_stage") != "POST_GENERATION_AUDIT":
         return _resume_result(state, "BLOCKED", message="bounded remediation is only available for a blocked post-generation audit")
-    plan = _remediation_plan(repo_root, state) if not resuming else (_read_json(_batch_root(repo_root, int(state["current_batch"])) / "remediation-plan.json") or {})
+    try:
+        plan = _prepare_remediation_plan(repo_root, state)
+    except PipelineError as exc:
+        return _set_blocker(repo_root, state, "NON_RETRYABLE", "remediation plan validation failed", [str(exc)])
     if plan.get("status") != "READY":
         return _set_blocker(
             repo_root, state, "HUMAN_REVIEW_REQUIRED",
@@ -1122,36 +1334,116 @@ def remediate_batch(repo_root: Path, *, model: str, effort: str) -> dict[str, An
             plan.get("diagnostics", []),
             affected_chapters=[row.get("reference") for row in plan.get("targets", []) if not row.get("eligible")],
         )
-    references = list(plan["eligible_references"])
-    command = [
-        sys.executable,
-        str(repo_root / "tools/terra_commentary_remediation.py"),
-        "--batch-root", str(_batch_root(repo_root, int(state["current_batch"]))),
-        "--attempt", "1",
-    ]
-    for reference in references:
-        command.extend(["--reference", reference])
-    state["status"] = ACTIVE
-    state["blocked_reason"] = None
-    state["stage_status"] = RUNNING
-    state["resume_token"] = {"command": command, "references": references, "model": model, "effort": effort, "attempt": 1}
-    save_state(path, state)
-    completed = subprocess.run(command, cwd=repo_root, check=False)
-    state = load_state(path)
-    if completed.returncode != 0:
-        return _resume_result(state, "RESUME_REQUIRED", message="bounded remediation did not complete; checkpoint remains available")
-    remediation = _read_json(_batch_root(repo_root, int(state["current_batch"])) / "remediation-report.json")
-    if not remediation or remediation.get("status") != "READY_FOR_RECERTIFICATION":
-        return _set_blocker(repo_root, state, "NON_RETRYABLE", "remediation output failed validation", ["missing or invalid remediation-report.json"], affected_chapters=references)
-    attempts = dict(state.get("remediation_attempts") or {})
-    for reference in references:
-        attempts[reference] = int(attempts.get(reference, 0) or 0) + 1
-    state["remediation_attempts"] = attempts
-    state["stage_status"] = OUTPUT_WRITTEN
-    state["resume_token"] = {"remediation_report": str((SCALE_ROOT_REL / _batch_id(int(state["current_batch"])) / "remediation-report.json")), "references": references, "attempt": 1}
-    state["history"].append({"event": "BOUNDED_REMEDIATION_STAGED", "batch": state["current_batch"], "references": references, "attempt": 1, "at": _now()})
-    save_state(path, state)
-    return _resume_result(state, "STAGE_COMPLETE", message="bounded remediation staged; recertify the affected prose and complete batch audit")
+    try:
+        plan = _complete_recovered_groups(repo_root, state, plan)
+    except PipelineError as exc:
+        return _set_blocker(repo_root, state, "NON_RETRYABLE", "remediation artifact validation failed", [str(exc)])
+
+    batch_root = _batch_root(repo_root, int(state["current_batch"]))
+    while True:
+        pending = [group for group in plan["groups"] if group.get("status") != "COMPLETE"]
+        if not pending:
+            try:
+                _consolidate_remediation_reports(repo_root, state, plan)
+            except PipelineError as exc:
+                return _set_blocker(repo_root, state, "NON_RETRYABLE", "remediation report consolidation failed", [str(exc)])
+            state = load_state(path)
+            state["status"] = ACTIVE
+            state["blocked_reason"] = None
+            state["stage_status"] = OUTPUT_WRITTEN
+            state["resume_token"] = {
+                "kind": "BOUNDED_REMEDIATION_GROUPS",
+                "remediation_report": str((SCALE_ROOT_REL / _batch_id(int(state["current_batch"])) / "remediation-report.json")),
+                "references": list(plan["eligible_references"]),
+                "completed_groups": list(plan["completed_groups"]),
+                "attempt": 1,
+            }
+            state["history"].append({
+                "event": "BOUNDED_REMEDIATION_STAGED",
+                "batch": state["current_batch"],
+                "references": list(plan["eligible_references"]),
+                "groups": list(plan["completed_groups"]),
+                "attempt": 1,
+                "at": _now(),
+            })
+            save_state(path, state)
+            return _resume_result(state, "STAGE_COMPLETE", message="all bounded remediation groups staged; recertify the full batch")
+
+        group = pending[0]
+        group_root = batch_root / "terra" / "remediation-attempts" / "attempt-001" / group["group_id"]
+        report_path = _group_report_path(repo_root, int(state["current_batch"]), group)
+        command = [
+            sys.executable,
+            str(repo_root / "tools/terra_commentary_remediation.py"),
+            "--batch-root", str(batch_root),
+            "--attempt", "1",
+            "--group-id", str(group["group_id"]),
+            "--group-root", str(group_root),
+            "--output-report", str(report_path),
+        ]
+        for reference in group["references"]:
+            command.extend(["--reference", reference])
+        state["status"] = ACTIVE
+        state["blocked_reason"] = None
+        state["stage_status"] = RUNNING
+        state["resume_token"] = {
+            "kind": "BOUNDED_REMEDIATION_GROUPS",
+            "command": command,
+            "group_id": group["group_id"],
+            "references": list(group["references"]),
+            "pending_groups": [item["group_id"] for item in pending],
+            "model": model,
+            "effort": effort,
+            "attempt": 1,
+        }
+        save_state(path, state)
+        completed = subprocess.run(command, cwd=repo_root, check=False)
+        state = load_state(path)
+        plan = _prepare_remediation_plan(repo_root, state)
+        current_group = next(
+            item for item in plan["groups"] if item.get("group_id") == group["group_id"]
+        )
+        if completed.returncode != 0:
+            plan["failed_group"] = current_group["group_id"]
+            plan["last_error"] = f"bounded runner exited with status {completed.returncode}"
+            _atomic_json(_remediation_plan_path(repo_root, int(state["current_batch"])), plan)
+            state["resume_token"]["last_error"] = plan["last_error"]
+            save_state(path, state)
+            return _resume_result(state, "RESUME_REQUIRED", message="bounded remediation group did not complete; completed groups remain durable")
+        report = _read_json(report_path)
+        try:
+            _validate_group_report(report, current_group)
+        except PipelineError as exc:
+            return _set_blocker(repo_root, state, "NON_RETRYABLE", "remediation group output failed validation", [str(exc)], affected_chapters=group["references"])
+        current_group["status"] = "COMPLETE"
+        current_group["completed_at"] = _now()
+        current_group["report_sha256"] = _sha256_file(report_path)
+        plan["failed_group"] = None
+        plan["last_error"] = None
+        plan["completed_groups"] = [item["group_id"] for item in plan["groups"] if item.get("status") == "COMPLETE"]
+        plan["pending_groups"] = [item["group_id"] for item in plan["groups"] if item.get("status") != "COMPLETE"]
+        plan["references_remediated"] = ordered_unique_references(
+            reference for item in plan["groups"] if item.get("status") == "COMPLETE" for reference in item["references"]
+        )
+        plan["references_pending"] = ordered_unique_references(
+            reference for item in plan["groups"] if item.get("status") != "COMPLETE" for reference in item["references"]
+        )
+        attempts = dict(state.get("remediation_attempts") or {})
+        for reference in group["references"]:
+            attempts[reference] = 1
+        plan["remediation_attempts"] = {reference: 1 for reference in plan["references_remediated"]}
+        _atomic_json(_remediation_plan_path(repo_root, int(state["current_batch"])), plan)
+        state["remediation_attempts"] = attempts
+        state["history"].append({
+            "event": "BOUNDED_REMEDIATION_GROUP_COMPLETE",
+            "batch": state["current_batch"],
+            "group_id": group["group_id"],
+            "references": list(group["references"]),
+            "attempt": 1,
+            "report": str(report_path.relative_to(repo_root)),
+            "at": _now(),
+        })
+        save_state(path, state)
 
 
 def run_stage(repo_root: Path, *, model: str | None = None, effort: str | None = None) -> dict[str, Any]:
@@ -1230,7 +1522,7 @@ def resume(repo_root: Path) -> dict[str, Any]:
     if stage == "PROSE_GENERATION":
         return run_stage(repo_root, model="terra", effort="medium")
     if stage == "POST_GENERATION_AUDIT":
-        if state.get("stage_status") == RUNNING and "terra_commentary_remediation.py" in " ".join(state.get("resume_token", {}).get("command", [])):
+        if state.get("stage_status") == RUNNING and _is_remediation_checkpoint(state):
             return remediate_batch(repo_root, model="terra", effort="medium")
         return run_stage(repo_root)
     try:
@@ -1406,7 +1698,15 @@ def status(repo_root: Path) -> dict[str, Any]:
         "checkpoint": state.get("resume_token"),
         "blocker": state.get("blocked_reason"),
         "validation_errors": errors,
-        "next_action": ("BLOCKED" if state["status"] == BLOCKED else "RESUME_REQUIRED" if errors else "MODEL_HANDOFF_REQUIRED" if state["current_stage"] in {"READY_FOR_GENERATION", "PROSE_GENERATION"} else "RUN_STAGE"),
+        "next_action": (
+            "BLOCKED"
+            if state["status"] == BLOCKED
+            else "RESUME_REQUIRED"
+            if errors or (state["stage_status"] == RUNNING and _is_remediation_checkpoint(state))
+            else "MODEL_HANDOFF_REQUIRED"
+            if state["current_stage"] in {"READY_FOR_GENERATION", "PROSE_GENERATION"}
+            else "RUN_STAGE"
+        ),
     }
 
 
@@ -1469,6 +1769,15 @@ def _next(repo_root: Path) -> dict[str, Any]:
                     "references": plan.get("eligible_references", []),
                 }
         return _resume_result(state, "BLOCKED", message=str(state.get("blocked_reason")))
+    if state.get("stage_status") == RUNNING and _is_remediation_checkpoint(state):
+        plan = _prepare_remediation_plan(repo_root, state)
+        return _resume_result(state, "RESUME_REQUIRED", message="resume the bounded remediation groups from their durable checkpoint") | {
+            "run_stage": "POST_GENERATION_AUDIT",
+            "model": "terra",
+            "effort": "medium",
+            "references": plan.get("eligible_references", []),
+            "groups": plan.get("groups", []),
+        }
     errors = validate_state(repo_root, state)
     if errors:
         return _resume_result(state, "BLOCKED", message="validation required: " + "; ".join(errors))
