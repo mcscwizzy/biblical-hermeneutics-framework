@@ -1,8 +1,8 @@
 # Vercel Function Bundle Audit
 
-Audit date: 2026-09-06  
-Branch: `feat/commentary-v1.1-expansion`  
-Audited HEAD: `defde4dfe95a920400da94b559a7f50aa8f3037d`  
+Audit date: 2026-09-06
+Branch: `feat/commentary-v1.1-expansion`
+Audited HEAD: `defde4dfe95a920400da94b559a7f50aa8f3037d`
 Remote HEAD after fetch: `defde4dfe95a920400da94b559a7f50aa8f3037d`
 
 ## Before
