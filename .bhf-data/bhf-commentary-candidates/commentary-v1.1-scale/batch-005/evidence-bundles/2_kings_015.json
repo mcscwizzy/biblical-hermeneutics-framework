@@ -1,0 +1,906 @@
+{
+  "passage_ref": "2 Kings 15",
+  "entities": {
+    "people": [],
+    "places": [],
+    "groups": [],
+    "events": [
+      {
+        "id": "assyrian-exile-of-israel",
+        "title": "Assyrian Exile of Israel",
+        "type": "event",
+        "aliases": [
+          "what happened in assyrian exile of israel",
+          "tell me about assyrian exile of israel",
+          "why is assyrian exile of israel important"
+        ],
+        "metadata": {
+          "summary": "The forced removal and imperial resettlement of populations from the northern kingdom during Assyrian expansion, especially the annexations of the 730s BCE and Samaria's fall around 722-720 BCE.",
+          "importance": 82,
+          "retrieval_score": 0.902,
+          "ancient_names": [],
+          "modern_identification": "",
+          "region": "",
+          "terrain": "",
+          "elevation": null,
+          "archaeology": [],
+          "related_passages": [
+            "2 Kings 17:1-23",
+            "2 Chronicles 30:6-12",
+            "2 Kings 15:29",
+            "2 Kings 18:9-12"
+          ]
+        }
+      }
+    ],
+    "artifacts": [
+      {
+        "id": "hazor-excavations",
+        "title": "Hazor Excavations",
+        "type": "archaeology",
+        "aliases": [
+          "hazor excavations artifact",
+          "hazor excavations discovery",
+          "hazor excavations excavation",
+          "hazor excavations find"
+        ],
+        "metadata": {
+          "summary": "A major northern city and administrative center with impressive Bronze and Iron Age remains.",
+          "importance": 90,
+          "retrieval_score": 0.91,
+          "ancient_names": [],
+          "modern_identification": "",
+          "region": "",
+          "terrain": "",
+          "elevation": null,
+          "archaeology": [],
+          "related_passages": [
+            "Joshua 11",
+            "1 Kings 9",
+            "2 Kings 15"
+          ]
+        }
+      }
+    ]
+  },
+  "evidence_items": [
+    {
+      "id": "assyrian-deportation-and-provincial-incorporation:interpretive_note:0",
+      "claim": "Do not compress Tiglath-pileser's annexations, Shalmaneser's siege, Sargon's conquest claims, the 720 BCE revolt, and later resettlements into one securely dated operation.",
+      "category": "culture",
+      "source_ids": [
+        "kings-assyrian-deportation-text",
+        "frame-rinap2-sargon",
+        "cogan-tadmor-2-kings",
+        "aster-fall-samaria-2012"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "2 Kings 15:29"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "assyrian-deportation-and-provincial-incorporation",
+        "parent_title": "Assyrian Deportation and Provincial Incorporation",
+        "parent_type": "cultural_background",
+        "object_importance": 96,
+        "retrieval_score": 0.916,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 28,
+        "certainty": "strong_consensus",
+        "dispute_status": "chronological_uncertainty",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "historical-context",
+        "field": "",
+        "semantic_relationship": "INTERTEXTUAL_REUSE",
+        "presentation_role": "dig_deeper",
+        "overview_priority": 0
+      }
+    },
+    {
+      "id": "assyrian-exile-of-israel:ancient_near_east_context:0",
+      "claim": "Neo-Assyrian officials used forced resettlement to punish resistance, redistribute labor and expertise, recruit specialists, repopulate strategic places, and incorporate provinces. The policy was organized and coercive, even where deportees received assigned work or settlement.",
+      "category": "culture",
+      "source_ids": [
+        "1-kings-18-2-kings-25",
+        "2-chronicles-29-36",
+        "jeremiah-25-29",
+        "haggai",
+        "zechariah"
+      ],
+      "related_entity_ids": [
+        "assyrian-exile-of-israel"
+      ],
+      "passage_anchors": [
+        "2 Kings 15:29"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "assyrian-exile-of-israel",
+        "parent_title": "Assyrian Exile of Israel",
+        "parent_type": "event",
+        "object_importance": 82,
+        "retrieval_score": 0.902,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 28,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55
+      }
+    },
+    {
+      "id": "assyrian-exile-of-israel:hebraic_worldview:0",
+      "claim": "Kings interprets exile as removal from YHWH's land and presence after covenant breach, but also preserves named destinations, imperial agents, and a differentiated aftermath.",
+      "category": "culture",
+      "source_ids": [
+        "1-kings-18-2-kings-25",
+        "2-chronicles-29-36",
+        "jeremiah-25-29",
+        "haggai",
+        "zechariah"
+      ],
+      "related_entity_ids": [
+        "assyrian-exile-of-israel"
+      ],
+      "passage_anchors": [
+        "2 Kings 15:29"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "assyrian-exile-of-israel",
+        "parent_title": "Assyrian Exile of Israel",
+        "parent_type": "event",
+        "object_importance": 82,
+        "retrieval_score": 0.902,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 28,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "hebraic_worldview",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55
+      }
+    },
+    {
+      "id": "assyrian-exile-of-israel:historical_context:0",
+      "claim": "Tiglath-pileser III deported populations from annexed northern territories before Samaria fell. Second Kings and Sargon II's inscriptions then describe further removal, while surviving populations, incoming settlers, and provincial communities complicate any single-wave or total-disappearance model.",
+      "category": "history",
+      "source_ids": [
+        "1-kings-18-2-kings-25",
+        "2-chronicles-29-36",
+        "jeremiah-25-29",
+        "haggai",
+        "zechariah"
+      ],
+      "related_entity_ids": [
+        "assyrian-exile-of-israel"
+      ],
+      "passage_anchors": [
+        "2 Kings 15:29"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "assyrian-exile-of-israel",
+        "parent_title": "Assyrian Exile of Israel",
+        "parent_type": "event",
+        "object_importance": 82,
+        "retrieval_score": 0.902,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 28,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55
+      }
+    },
+    {
+      "id": "assyrian-exile-of-israel:historical_setting:0",
+      "claim": "Northern Israel and Assyrian resettlement destinations during the later eighth and seventh centuries BCE.",
+      "category": "history",
+      "source_ids": [
+        "1-kings-18-2-kings-25",
+        "2-chronicles-29-36",
+        "jeremiah-25-29",
+        "haggai",
+        "zechariah"
+      ],
+      "related_entity_ids": [
+        "assyrian-exile-of-israel"
+      ],
+      "passage_anchors": [
+        "2 Kings 15:29"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "assyrian-exile-of-israel",
+        "parent_title": "Assyrian Exile of Israel",
+        "parent_type": "event",
+        "object_importance": 82,
+        "retrieval_score": 0.902,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 28,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_setting",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55
+      }
+    },
+    {
+      "id": "assyrian-tribute-and-royal-representation:interpretive_note:0",
+      "claim": "Tribute could result from defeat, strategic submission, purchased support, or restored vassalage; the payment itself does not reveal one ruler's complete motives.",
+      "category": "culture",
+      "source_ids": [
+        "kings-assyrian-tribute-text",
+        "cogan-tadmor-2-kings-tribute",
+        "cogan-raging-torrent-tribute"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "2 Kings 15:17-22"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "assyrian-tribute-and-royal-representation",
+        "parent_title": "Assyrian Tribute and Royal Representation",
+        "parent_type": "cultural_background",
+        "object_importance": 96,
+        "retrieval_score": 0.916,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 16,
+        "certainty": "strong_consensus",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "historical-context",
+        "field": "",
+        "semantic_relationship": "INTERTEXTUAL_REUSE",
+        "presentation_role": "dig_deeper",
+        "overview_priority": 0
+      }
+    },
+    {
+      "id": "hazor-excavations:ancient_near_east_context:0",
+      "claim": "Ancient background for Hazor Excavations includes inscriptions, material culture, excavation layers, and imperial administration; the entry ties that world to Joshua 11, 1 Kings 9, joshua, and 1-kings without letting comparison replace the biblical witness.",
+      "category": "culture",
+      "source_ids": [
+        "hazor",
+        "royal-city-tell",
+        "joshua-11",
+        "1-kings-9",
+        "excavation-report-and-stratigraphic-study"
+      ],
+      "related_entity_ids": [
+        "hazor-excavations"
+      ],
+      "passage_anchors": [
+        "2 Kings 15"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "hazor-excavations",
+        "parent_title": "Hazor Excavations",
+        "parent_type": "archaeology",
+        "object_importance": 90,
+        "retrieval_score": 0.91,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "chapter",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "hazor-excavations:historical_context:0",
+      "claim": "Hazor is crucial for understanding northern Canaanite and Israelite urbanism.",
+      "category": "history",
+      "source_ids": [
+        "hazor",
+        "royal-city-tell",
+        "joshua-11",
+        "1-kings-9",
+        "excavation-report-and-stratigraphic-study"
+      ],
+      "related_entity_ids": [
+        "hazor-excavations"
+      ],
+      "passage_anchors": [
+        "2 Kings 15"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "hazor-excavations",
+        "parent_title": "Hazor Excavations",
+        "parent_type": "archaeology",
+        "object_importance": 90,
+        "retrieval_score": 0.91,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "chapter",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "kings-staged-assyrian-reduction",
+      "claim": "Second Kings distributes Israel's territorial loss, Samaria's siege, deportation, and incoming resettlement across several notices rather than presenting them as one action.",
+      "category": "history",
+      "source_ids": [
+        "kings-assyrian-deportation-text",
+        "cogan-tadmor-2-kings",
+        "aster-fall-samaria-2012"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "2 Kings 15:29"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "assyrian-deportation-and-provincial-incorporation",
+        "parent_title": "Assyrian Deportation and Provincial Incorporation",
+        "parent_type": "cultural_background",
+        "object_importance": 96,
+        "retrieval_score": 0.916,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 28,
+        "certainty": "textually_explicit",
+        "dispute_status": "chronological_uncertainty",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.75,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "primary-source",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 102
+      }
+    },
+    {
+      "id": "kings-staged-assyrian-reduction:passage-relevance",
+      "claim": "This direct textual control prevents external royal claims from replacing the biblical narrative and establishes which stages require historical comparison.",
+      "category": "history",
+      "source_ids": [
+        "kings-assyrian-deportation-text",
+        "cogan-tadmor-2-kings",
+        "aster-fall-samaria-2012"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "2 Kings 15:29"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "assyrian-deportation-and-provincial-incorporation",
+        "parent_title": "Assyrian Deportation and Provincial Incorporation",
+        "parent_type": "cultural_background",
+        "object_importance": 96,
+        "retrieval_score": 0.916,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 28,
+        "certainty": "textually_explicit",
+        "dispute_status": "chronological_uncertainty",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.75,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "primary-source",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 102,
+        "supports_evidence_ids": [
+          "kings-staged-assyrian-reduction"
+        ]
+      }
+    },
+    {
+      "id": "kings-tribute-vassalage-sequence",
+      "claim": "Second Kings reports Menahem purchasing Assyrian support, Ahaz appealing for rescue with temple and palace wealth, Hoshea paying and then withholding tribute, and Hezekiah paying after revolt and invasion.",
+      "category": "economics",
+      "source_ids": [
+        "kings-assyrian-tribute-text",
+        "cogan-tadmor-2-kings-tribute",
+        "cogan-raging-torrent-tribute",
+        "oracc-assyrian-royal-inscriptions"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "2 Kings 15:17-22"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "assyrian-tribute-and-royal-representation",
+        "parent_title": "Assyrian Tribute and Royal Representation",
+        "parent_type": "cultural_background",
+        "object_importance": 96,
+        "retrieval_score": 0.916,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 16,
+        "certainty": "textually_explicit",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.75,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "cultural-practice",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 97
+      }
+    },
+    {
+      "id": "kings-tribute-vassalage-sequence:passage-relevance",
+      "claim": "This direct textual sequence prevents a generic model of tribute from flattening the different literary and political functions of each payment.",
+      "category": "economics",
+      "source_ids": [
+        "kings-assyrian-tribute-text",
+        "cogan-tadmor-2-kings-tribute",
+        "cogan-raging-torrent-tribute",
+        "oracc-assyrian-royal-inscriptions"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "2 Kings 15:17-22"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "assyrian-tribute-and-royal-representation",
+        "parent_title": "Assyrian Tribute and Royal Representation",
+        "parent_type": "cultural_background",
+        "object_importance": 96,
+        "retrieval_score": 0.916,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 16,
+        "certainty": "textually_explicit",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.75,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "cultural-practice",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 97,
+        "supports_evidence_ids": [
+          "kings-tribute-vassalage-sequence"
+        ]
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "1 Kings 18-2 Kings 25",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [],
+        "notes": "",
+        "id": "1-kings-18-2-kings-25",
+        "canonical_object_ids": [
+          "assyrian-exile-of-israel"
+        ]
+      },
+      {
+        "title": "1 Kings 9",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "1-kings-9",
+        "canonical_object_ids": [
+          "hazor-excavations"
+        ]
+      },
+      {
+        "title": "2 Chronicles 29-36",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "2-chronicles-29-36",
+        "canonical_object_ids": [
+          "assyrian-exile-of-israel"
+        ]
+      },
+      {
+        "title": "A New Historical Reconstruction of the Fall of Samaria",
+        "author": "Shawn Zelig Aster",
+        "publisher": "Biblica",
+        "year": 2012,
+        "locator": "Biblica 93.1, pp. 100-125",
+        "url": "https://doi.org/10.2143/BIB.93.1.3188748",
+        "source_type": "journal-article",
+        "supports": [
+          "kings-staged-assyrian-reduction",
+          "sargon-samaria-conquest-claim"
+        ],
+        "notes": "A proposed reconstruction of Shalmaneser V's conquest and Sargon II's later suppression; retained as a disputed scholarly model.",
+        "id": "aster-fall-samaria-2012",
+        "canonical_object_ids": [
+          "assyrian-deportation-and-provincial-incorporation"
+        ]
+      },
+      {
+        "title": "The Raging Torrent: Historical Inscriptions from Assyria and Babylonia Relating to Ancient Israel",
+        "author": "Mordechai Cogan",
+        "publisher": "Carta Jerusalem",
+        "year": 2015,
+        "locator": "Second updated edition, Shalmaneser III, Tiglath-pileser III, and Sennacherib sections",
+        "url": "https://store.carta-jerusalem.com/history/722-the-raging-torrent-second-updated-expanded-edition-9789652208682.html",
+        "source_type": "academic-book",
+        "supports": [
+          "kings-tribute-vassalage-sequence",
+          "black-obelisk-jehu-tribute",
+          "sennacherib-hezekiah-tribute"
+        ],
+        "notes": "Modern translations and commentary for cuneiform sources related to Israel and Judah.",
+        "id": "cogan-raging-torrent-tribute",
+        "canonical_object_ids": [
+          "assyrian-tribute-and-royal-representation"
+        ]
+      },
+      {
+        "title": "II Kings",
+        "author": "Mordechai Cogan and Hayim Tadmor",
+        "publisher": "Doubleday / Yale University Press",
+        "year": 1988,
+        "locator": "Commentary on 2 Kings 15:29; 17:1-41; 18:9-12",
+        "url": "https://yalebooks.yale.edu/book/9780300140743/ii-kings/",
+        "source_type": "academic-book",
+        "supports": [
+          "kings-staged-assyrian-reduction",
+          "sargon-samaria-conquest-claim"
+        ],
+        "notes": "Historical-critical commentary used for the biblical sequence and Assyrian comparison.",
+        "id": "cogan-tadmor-2-kings",
+        "canonical_object_ids": [
+          "assyrian-deportation-and-provincial-incorporation"
+        ]
+      },
+      {
+        "title": "II Kings",
+        "author": "Mordechai Cogan and Hayim Tadmor",
+        "publisher": "Doubleday / Yale University Press",
+        "year": 1988,
+        "locator": "Commentary on 2 Kings 15:17-22; 16:5-9; 17:1-6; 18:13-19:37",
+        "url": "https://yalebooks.yale.edu/book/9780300140743/ii-kings/",
+        "source_type": "academic-book",
+        "supports": [
+          "kings-tribute-vassalage-sequence",
+          "black-obelisk-jehu-tribute",
+          "sennacherib-hezekiah-tribute"
+        ],
+        "notes": "Historical-critical commentary relating biblical regnal narratives to Assyrian sources.",
+        "id": "cogan-tadmor-2-kings-tribute",
+        "canonical_object_ids": [
+          "assyrian-tribute-and-royal-representation"
+        ]
+      },
+      {
+        "title": "Excavation report and stratigraphic study",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [],
+        "notes": "",
+        "id": "excavation-report-and-stratigraphic-study",
+        "canonical_object_ids": [
+          "hazor-excavations"
+        ]
+      },
+      {
+        "title": "The Royal Inscriptions of Sargon II, King of Assyria (721-705 BC)",
+        "author": "Grant Frame",
+        "publisher": "Eisenbrauns / Penn State University Press",
+        "year": 2021,
+        "locator": "RINAP 2, text nos. 1 and 7, especially pp. 34-37 and 140-141",
+        "url": "https://oracc.museum.upenn.edu/rinap/downloads/Frame_RINAP_2.pdf",
+        "source_type": "academic-book",
+        "supports": [
+          "kings-staged-assyrian-reduction",
+          "sargon-samaria-conquest-claim",
+          "samaria-provincial-counter-resettlement"
+        ],
+        "notes": "Critical edition, translation, exemplar variants, and historical commentary for Sargon II's inscriptions.",
+        "id": "frame-rinap2-sargon",
+        "canonical_object_ids": [
+          "assyrian-deportation-and-provincial-incorporation"
+        ]
+      },
+      {
+        "title": "Haggai",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "haggai",
+        "canonical_object_ids": [
+          "assyrian-exile-of-israel"
+        ]
+      },
+      {
+        "title": "Hazor",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [],
+        "notes": "",
+        "id": "hazor",
+        "canonical_object_ids": [
+          "hazor-excavations"
+        ]
+      },
+      {
+        "title": "Jeremiah 25-29",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "jeremiah-25-29",
+        "canonical_object_ids": [
+          "assyrian-exile-of-israel"
+        ]
+      },
+      {
+        "title": "Joshua 11",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "joshua-11",
+        "canonical_object_ids": [
+          "hazor-excavations"
+        ]
+      },
+      {
+        "title": "Second Kings 15:29; 17:1-41; 18:9-12",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "2 Kings 15:29; 17:1-41; 18:9-12",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "kings-staged-assyrian-reduction",
+          "sargon-samaria-conquest-claim",
+          "neo-assyrian-resettlement-policy",
+          "samaria-provincial-counter-resettlement"
+        ],
+        "notes": "Primary biblical narrative and theological interpretation; no modern translation is reproduced.",
+        "id": "kings-assyrian-deportation-text",
+        "canonical_object_ids": [
+          "assyrian-deportation-and-provincial-incorporation"
+        ]
+      },
+      {
+        "title": "Second Kings 9-10; 15:17-22; 16:5-9; 17:1-6; 18:13-19:37 and Isaiah 36-37",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "2 Kings 9:1-10:36; 15:17-22; 16:5-9; 17:1-6; 18:13-19:37; Isaiah 36:1-37:38",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "kings-tribute-vassalage-sequence",
+          "black-obelisk-jehu-tribute",
+          "sennacherib-hezekiah-tribute",
+          "lachish-royal-victory-display"
+        ],
+        "notes": "Primary biblical texts used as direct controls and comparisons; no modern translation is reproduced.",
+        "id": "kings-assyrian-tribute-text",
+        "canonical_object_ids": [
+          "assyrian-tribute-and-royal-representation"
+        ]
+      },
+      {
+        "title": "Royal Inscriptions",
+        "author": "Nimrud: Materialities of Assyrian Knowledge Production project",
+        "publisher": "ORACC / University of Pennsylvania",
+        "year": 2019,
+        "locator": "Tradition and innovation at the Assyrian court",
+        "url": "https://oracc.museum.upenn.edu/nimrud/ancientkalhu/thewritings/royalinscriptions/index.html",
+        "source_type": "reference-work",
+        "supports": [
+          "kings-tribute-vassalage-sequence",
+          "black-obelisk-jehu-tribute",
+          "sennacherib-hezekiah-tribute",
+          "lachish-royal-victory-display"
+        ],
+        "notes": "Scholarly overview of Neo-Assyrian royal inscriptions as official records and ideological media.",
+        "id": "oracc-assyrian-royal-inscriptions",
+        "canonical_object_ids": [
+          "assyrian-tribute-and-royal-representation"
+        ]
+      },
+      {
+        "title": "Royal city / tell",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [],
+        "notes": "",
+        "id": "royal-city-tell",
+        "canonical_object_ids": [
+          "hazor-excavations"
+        ]
+      },
+      {
+        "title": "Zechariah",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "zechariah",
+        "canonical_object_ids": [
+          "assyrian-exile-of-israel"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "assyrian-deportation-and-provincial-incorporation",
+        "type": "cultural_background",
+        "title": "Assyrian Deportation and Provincial Incorporation",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.916
+      },
+      {
+        "id": "assyrian-exile-of-israel",
+        "type": "event",
+        "title": "Assyrian Exile of Israel",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.902
+      },
+      {
+        "id": "assyrian-tribute-and-royal-representation",
+        "type": "cultural_background",
+        "title": "Assyrian Tribute and Royal Representation",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.916
+      },
+      {
+        "id": "hazor-excavations",
+        "type": "archaeology",
+        "title": "Hazor Excavations",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.91
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "ae1fb63ad5e180b6217906c22620e4fba40b4b43e2030964828bd7dfa053945b",
+  "evidence_hash_version": "2"
+}

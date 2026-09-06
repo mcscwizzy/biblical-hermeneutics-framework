@@ -1,0 +1,316 @@
+{
+  "passage_ref": "John 17",
+  "entities": {
+    "people": [],
+    "places": [],
+    "groups": [],
+    "events": [],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "john-17-unity",
+      "claim": "John 17 prays for glorification, protection, sanctification in truth, mission, and unity modeled on Father-Son relation; unity cannot mean enforced institutional conformity or concealment of abuse.",
+      "category": "culture",
+      "source_ids": [
+        "john-greek",
+        "smith-theology",
+        "trauma-john"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "John 17:1-26"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "john",
+        "parent_title": "John",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "denominational_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "pastoral_application",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 110
+      }
+    },
+    {
+      "id": "sanctification:ancient_near_east_context:0",
+      "claim": "Ancient background for Sanctification includes covenant life, temple worship, royal ideology, wisdom teaching, and early church confession; the entry ties that world to Leviticus 20:7-8, John 17:17-19, perseverance, and grace without letting comparison replace the biblical witness.",
+      "category": "culture",
+      "source_ids": [
+        "leviticus-20",
+        "john-17",
+        "romans-6",
+        "1-thessalonians-4",
+        "hebrews-12",
+        "sanctification-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "John 17:17-19"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "sanctification",
+        "parent_title": "Sanctification",
+        "parent_type": "theology",
+        "object_importance": 90,
+        "retrieval_score": 0.91,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 16,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "sanctification:historical_context:0",
+      "claim": "Sanctification is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness.",
+      "category": "history",
+      "source_ids": [
+        "leviticus-20",
+        "john-17",
+        "romans-6",
+        "1-thessalonians-4",
+        "hebrews-12",
+        "sanctification-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "John 17:17-19"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "sanctification",
+        "parent_title": "Sanctification",
+        "parent_type": "theology",
+        "object_importance": 90,
+        "retrieval_score": 0.91,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 16,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "1 Thessalonians 4",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "1-thessalonians-4",
+        "canonical_object_ids": [
+          "sanctification"
+        ]
+      },
+      {
+        "title": "Hebrews 12",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "hebrews-12",
+        "canonical_object_ids": [
+          "sanctification"
+        ]
+      },
+      {
+        "title": "John 17",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "john-17",
+        "canonical_object_ids": [
+          "sanctification"
+        ]
+      },
+      {
+        "title": "The Gospel according to John, Greek text",
+        "author": "",
+        "publisher": "Society of Biblical Literature",
+        "year": 2010,
+        "locator": "John 1-21 in SBLGNT",
+        "url": "https://www.sbl-site.org/resources/digital-texts/sbl-greek-new-testament/",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "structure",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Open critical Greek text.",
+        "id": "john-greek",
+        "canonical_object_ids": [
+          "john"
+        ]
+      },
+      {
+        "title": "Leviticus 20",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "leviticus-20",
+        "canonical_object_ids": [
+          "sanctification"
+        ]
+      },
+      {
+        "title": "Romans 6",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "romans-6",
+        "canonical_object_ids": [
+          "sanctification"
+        ]
+      },
+      {
+        "title": "Canonical historical orientation for Sanctification",
+        "author": "",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "id": "sanctification-historical-orientation",
+        "canonical_object_ids": [
+          "sanctification"
+        ]
+      },
+      {
+        "title": "The Theology of the Gospel of John",
+        "author": "Dwight Moody Smith",
+        "publisher": "Cambridge University Press",
+        "year": 1995,
+        "locator": "Theology of John and the issues it raises",
+        "url": "https://www.cambridge.org/core/books/abs/theology-of-the-gospel-of-john/theology-of-john-and-the-issues-it-raises/975440B1EAE9424C6B2C919A3CC03DEB",
+        "source_type": "academic-book",
+        "supports": [
+          "major-themes",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Theological synthesis with attention to Christology, anti-Judaism, and reception.",
+        "id": "smith-theology",
+        "canonical_object_ids": [
+          "john"
+        ]
+      },
+      {
+        "title": "Trauma and Forgiveness",
+        "author": "C. Fred Alford",
+        "publisher": "Cambridge University Press",
+        "year": 2013,
+        "locator": "Trauma, memory, forgiveness, and repair",
+        "url": "https://www.cambridge.org/core/books/trauma-and-forgiveness/FC2C8DE6F3C6135372D824348F106C0E",
+        "source_type": "academic-book",
+        "supports": [
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Trauma-informed caution for suffering, forgiveness, and authority.",
+        "id": "trauma-john",
+        "canonical_object_ids": [
+          "john"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "john",
+        "type": "book",
+        "title": "John",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.917
+      },
+      {
+        "id": "sanctification",
+        "type": "theology",
+        "title": "Sanctification",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.91
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "b659cfcd123c77b3a40a0a5bd01d1acadf091a8d29be084efe3b99e194a522f0",
+  "evidence_hash_version": "2"
+}

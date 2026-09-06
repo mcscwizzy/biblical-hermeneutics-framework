@@ -1,0 +1,934 @@
+{
+  "passage_ref": "Psalms 104",
+  "entities": {
+    "people": [],
+    "places": [],
+    "groups": [],
+    "events": [
+      {
+        "id": "creation",
+        "title": "Creation",
+        "type": "event",
+        "aliases": [
+          "what happened in creation",
+          "tell me about creation",
+          "why is creation important"
+        ],
+        "metadata": {
+          "summary": "The divine ordering of the heavens and the earth and the blessing of life in the seven-day pattern of Genesis 1.",
+          "importance": 100,
+          "retrieval_score": 0.92,
+          "ancient_names": [],
+          "modern_identification": "",
+          "region": "",
+          "terrain": "",
+          "elevation": null,
+          "archaeology": [],
+          "related_passages": [
+            "Genesis 1:1-31",
+            "Genesis 2:1-25",
+            "Psalms 8:1-9",
+            "Psalms 104:1-35",
+            "John 1:1-5",
+            "Colossians 1:15-17",
+            "Hebrews 11:3",
+            "Revelation 21:1-5"
+          ]
+        }
+      }
+    ],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "creation-doctrine-framework:ancient_near_east_context:0",
+      "claim": "Creation texts stand alongside Mesopotamian origin traditions such as Enuma Elish and Atrahasis, while Scripture presents creation as ordered by the one covenant Lord.",
+      "category": "culture",
+      "source_ids": [
+        "genesis-1-2",
+        "psalm-104",
+        "john-1",
+        "colossians-1",
+        "revelation-21",
+        "creation-doctrine-framework-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Psalms 104:1-35"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "creation-doctrine-framework",
+        "parent_title": "Creation Doctrine Framework",
+        "parent_type": "doctrine",
+        "object_importance": 92,
+        "retrieval_score": 0.912,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "creation-doctrine-framework:hebraic_worldview:0",
+      "claim": "Creation is good, ordered, and accountable to God; humanity receives creaturely dignity and responsibility rather than autonomous self-definition.",
+      "category": "culture",
+      "source_ids": [
+        "genesis-1-2",
+        "psalm-104",
+        "john-1",
+        "colossians-1",
+        "revelation-21",
+        "creation-doctrine-framework-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Psalms 104:1-35"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "creation-doctrine-framework",
+        "parent_title": "Creation Doctrine Framework",
+        "parent_type": "doctrine",
+        "object_importance": 92,
+        "retrieval_score": 0.912,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "hebraic_worldview",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "creation-doctrine-framework:historical_context:0",
+      "claim": "Creation doctrine draws from Israel's confession of the LORD as Creator amid ancient origin accounts and from later biblical texts that extend creation language to redemption and new creation.",
+      "category": "history",
+      "source_ids": [
+        "genesis-1-2",
+        "psalm-104",
+        "john-1",
+        "colossians-1",
+        "revelation-21",
+        "creation-doctrine-framework-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Psalms 104:1-35"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "creation-doctrine-framework",
+        "parent_title": "Creation Doctrine Framework",
+        "parent_type": "doctrine",
+        "object_importance": 92,
+        "retrieval_score": 0.912,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "creation-doctrine-framework:historical_setting:0",
+      "claim": "Canonical teaching from Genesis through Revelation",
+      "category": "history",
+      "source_ids": [
+        "genesis-1-2",
+        "psalm-104",
+        "john-1",
+        "colossians-1",
+        "revelation-21",
+        "creation-doctrine-framework-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Psalms 104:1-35"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "creation-doctrine-framework",
+        "parent_title": "Creation Doctrine Framework",
+        "parent_type": "doctrine",
+        "object_importance": 92,
+        "retrieval_score": 0.912,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_setting",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "creation-doctrine-framework:original_audience:0",
+      "claim": "Readers learning Scripture's account of God, world, and human vocation",
+      "category": "social",
+      "source_ids": [
+        "genesis-1-2",
+        "psalm-104",
+        "john-1",
+        "colossians-1",
+        "revelation-21",
+        "creation-doctrine-framework-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Psalms 104:1-35"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "creation-doctrine-framework",
+        "parent_title": "Creation Doctrine Framework",
+        "parent_type": "doctrine",
+        "object_importance": 92,
+        "retrieval_score": 0.912,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "original_audience",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "creation-doctrine-framework:second_temple_context:0",
+      "claim": "Second Temple Jewish literature and early Christian texts often connect creation, wisdom, resurrection hope, and God's power to make all things new.",
+      "category": "culture",
+      "source_ids": [
+        "genesis-1-2",
+        "psalm-104",
+        "john-1",
+        "colossians-1",
+        "revelation-21",
+        "creation-doctrine-framework-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Psalms 104:1-35"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "creation-doctrine-framework",
+        "parent_title": "Creation Doctrine Framework",
+        "parent_type": "doctrine",
+        "object_importance": 92,
+        "retrieval_score": 0.912,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "second_temple_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "creation-doctrine-framework:timeline:0",
+      "claim": "Creation declared good",
+      "category": "chronology",
+      "source_ids": [
+        "genesis-1-2",
+        "psalm-104",
+        "john-1",
+        "colossians-1",
+        "revelation-21",
+        "creation-doctrine-framework-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Psalms 104:1-35"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "creation-doctrine-framework",
+        "parent_title": "Creation Doctrine Framework",
+        "parent_type": "doctrine",
+        "object_importance": 92,
+        "retrieval_score": 0.912,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "timeline",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "chronology",
+        "overview_priority": 25
+      }
+    },
+    {
+      "id": "creation-doctrine-framework:timeline:1",
+      "claim": "Human vocation given",
+      "category": "chronology",
+      "source_ids": [
+        "genesis-1-2",
+        "psalm-104",
+        "john-1",
+        "colossians-1",
+        "revelation-21",
+        "creation-doctrine-framework-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Psalms 104:1-35"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "creation-doctrine-framework",
+        "parent_title": "Creation Doctrine Framework",
+        "parent_type": "doctrine",
+        "object_importance": 92,
+        "retrieval_score": 0.912,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "timeline",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "chronology",
+        "overview_priority": 25
+      }
+    },
+    {
+      "id": "creation-doctrine-framework:timeline:2",
+      "claim": "Fall disorders creation",
+      "category": "chronology",
+      "source_ids": [
+        "genesis-1-2",
+        "psalm-104",
+        "john-1",
+        "colossians-1",
+        "revelation-21",
+        "creation-doctrine-framework-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Psalms 104:1-35"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "creation-doctrine-framework",
+        "parent_title": "Creation Doctrine Framework",
+        "parent_type": "doctrine",
+        "object_importance": 92,
+        "retrieval_score": 0.912,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "timeline",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "chronology",
+        "overview_priority": 25
+      }
+    },
+    {
+      "id": "creation-doctrine-framework:timeline:3",
+      "claim": "Wisdom and worship confess the Creator",
+      "category": "chronology",
+      "source_ids": [
+        "genesis-1-2",
+        "psalm-104",
+        "john-1",
+        "colossians-1",
+        "revelation-21",
+        "creation-doctrine-framework-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Psalms 104:1-35"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "creation-doctrine-framework",
+        "parent_title": "Creation Doctrine Framework",
+        "parent_type": "doctrine",
+        "object_importance": 92,
+        "retrieval_score": 0.912,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "timeline",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "chronology",
+        "overview_priority": 25
+      }
+    },
+    {
+      "id": "creation-doctrine-framework:timeline:4",
+      "claim": "Christ revealed as agent and heir of creation",
+      "category": "chronology",
+      "source_ids": [
+        "genesis-1-2",
+        "psalm-104",
+        "john-1",
+        "colossians-1",
+        "revelation-21",
+        "creation-doctrine-framework-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Psalms 104:1-35"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "creation-doctrine-framework",
+        "parent_title": "Creation Doctrine Framework",
+        "parent_type": "doctrine",
+        "object_importance": 92,
+        "retrieval_score": 0.912,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "timeline",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "chronology",
+        "overview_priority": 25
+      }
+    },
+    {
+      "id": "creation-doctrine-framework:timeline:5",
+      "claim": "New creation promised",
+      "category": "chronology",
+      "source_ids": [
+        "genesis-1-2",
+        "psalm-104",
+        "john-1",
+        "colossians-1",
+        "revelation-21",
+        "creation-doctrine-framework-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Psalms 104:1-35"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "creation-doctrine-framework",
+        "parent_title": "Creation Doctrine Framework",
+        "parent_type": "doctrine",
+        "object_importance": 92,
+        "retrieval_score": 0.912,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "timeline",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "chronology",
+        "overview_priority": 25
+      }
+    },
+    {
+      "id": "creation-theme:ancient_near_east_context:0",
+      "claim": "The motif speaks against chaos-centered or polytheistic origin stories and keeps the creator God singular and sovereign.",
+      "category": "culture",
+      "source_ids": [
+        "genesis-1-2",
+        "psalm-8",
+        "psalm-104",
+        "john-1",
+        "romans-8",
+        "revelation-21"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Psalms 104:1-35"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "creation-theme",
+        "parent_title": "Creation Theme",
+        "parent_type": "theme",
+        "object_importance": 96,
+        "retrieval_score": 0.916,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "creation-theme:historical_context:0",
+      "claim": "Creation and new creation frame the Bible from Genesis to Revelation and give coherence to human vocation, fall, redemption, and hope.",
+      "category": "history",
+      "source_ids": [
+        "genesis-1-2",
+        "psalm-8",
+        "psalm-104",
+        "john-1",
+        "romans-8",
+        "revelation-21"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Psalms 104:1-35"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "creation-theme",
+        "parent_title": "Creation Theme",
+        "parent_type": "theme",
+        "object_importance": 96,
+        "retrieval_score": 0.916,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "creation:ancient_near_east_context:0",
+      "claim": "Genesis 1 can be compared with ancient Mesopotamian accounts of cosmic waters, ordering, celestial bodies, divine rule, and human vocation. The comparisons reveal shared discourse and marked differences without proving a single route of dependence.",
+      "category": "culture",
+      "source_ids": [
+        "genesis-1-2",
+        "psalm-8",
+        "psalm-104",
+        "john-1",
+        "colossians-1",
+        "revelation-21",
+        "sarna-genesis-creation"
+      ],
+      "related_entity_ids": [
+        "creation"
+      ],
+      "passage_anchors": [
+        "Psalms 104:1-35"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "creation",
+        "parent_title": "Creation",
+        "parent_type": "event",
+        "object_importance": 100,
+        "retrieval_score": 0.92,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "creation:hebraic_worldview:0",
+      "claim": "Genesis 1 depicts one God ordering the world by speech, blessing living creatures, assigning humans an image-bearing vocation, and resting on the seventh day. These observations describe the passage before later theological synthesis.",
+      "category": "culture",
+      "source_ids": [
+        "genesis-1-2",
+        "psalm-8",
+        "psalm-104",
+        "john-1",
+        "colossians-1",
+        "revelation-21",
+        "sarna-genesis-creation"
+      ],
+      "related_entity_ids": [
+        "creation"
+      ],
+      "passage_anchors": [
+        "Psalms 104:1-35"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "creation",
+        "parent_title": "Creation",
+        "parent_type": "event",
+        "object_importance": 100,
+        "retrieval_score": 0.92,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "hebraic_worldview",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "creation:historical_context:0",
+      "claim": "Genesis presents creation as the foundational act that begins biblical history and establishes God\u2019s sovereignty over all things.",
+      "category": "history",
+      "source_ids": [
+        "genesis-1-2",
+        "psalm-8",
+        "psalm-104",
+        "john-1",
+        "colossians-1",
+        "revelation-21",
+        "sarna-genesis-creation"
+      ],
+      "related_entity_ids": [
+        "creation"
+      ],
+      "passage_anchors": [
+        "Psalms 104:1-35"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "creation",
+        "parent_title": "Creation",
+        "parent_type": "event",
+        "object_importance": 100,
+        "retrieval_score": 0.92,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "Colossians 1",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "colossians-1",
+        "canonical_object_ids": [
+          "creation",
+          "creation-doctrine-framework"
+        ]
+      },
+      {
+        "title": "Canonical historical orientation for Creation Doctrine Framework",
+        "author": "",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "Foundational doctrine introduced in Genesis and developed across the canon",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "id": "creation-doctrine-framework-historical-orientation",
+        "canonical_object_ids": [
+          "creation-doctrine-framework"
+        ]
+      },
+      {
+        "title": "Genesis 1-2",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Genesis 1:1-2:25",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "literary-context",
+          "hebraic-worldview"
+        ],
+        "notes": "Primary biblical creation texts; no modern translation is reproduced.",
+        "id": "genesis-1-2",
+        "canonical_object_ids": [
+          "creation",
+          "creation-doctrine-framework",
+          "creation-theme"
+        ]
+      },
+      {
+        "title": "John 1",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "john-1",
+        "canonical_object_ids": [
+          "creation",
+          "creation-doctrine-framework",
+          "creation-theme"
+        ]
+      },
+      {
+        "title": "Psalm 104",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "psalm-104",
+        "canonical_object_ids": [
+          "creation",
+          "creation-doctrine-framework",
+          "creation-theme"
+        ]
+      },
+      {
+        "title": "Psalm 8",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "psalm-8",
+        "canonical_object_ids": [
+          "creation",
+          "creation-theme"
+        ]
+      },
+      {
+        "title": "Revelation 21",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "revelation-21",
+        "canonical_object_ids": [
+          "creation",
+          "creation-doctrine-framework",
+          "creation-theme"
+        ]
+      },
+      {
+        "title": "Romans 8",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "romans-8",
+        "canonical_object_ids": [
+          "creation-theme"
+        ]
+      },
+      {
+        "title": "The JPS Torah Commentary: Genesis",
+        "author": "Nahum M. Sarna",
+        "publisher": "Jewish Publication Society",
+        "year": 1989,
+        "locator": "Introduction and commentary on Genesis 1-2",
+        "url": "https://jps.org/books/jps-torah-commentary-genesis/",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context",
+          "ancient-near-east-context",
+          "literary-context"
+        ],
+        "notes": "Academic Jewish commentary used for literary and ancient comparative context.",
+        "id": "sarna-genesis-creation",
+        "canonical_object_ids": [
+          "creation"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "creation",
+        "type": "event",
+        "title": "Creation",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.92
+      },
+      {
+        "id": "creation-doctrine-framework",
+        "type": "doctrine",
+        "title": "Creation Doctrine Framework",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.912
+      },
+      {
+        "id": "creation-theme",
+        "type": "theme",
+        "title": "Creation Theme",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.916
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "e368d352484ecc105407a2d9344aa36e9405ad64b0326068f9999cb0afcf4a48",
+  "evidence_hash_version": "2"
+}

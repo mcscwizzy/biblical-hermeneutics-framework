@@ -1,0 +1,246 @@
+{
+  "passage_ref": "Psalms 73",
+  "entities": {
+    "people": [
+      {
+        "id": "job-the-sufferer",
+        "title": "Job the Sufferer",
+        "type": "person",
+        "aliases": [
+          "who is job the sufferer",
+          "tell me about job the sufferer",
+          "why is job the sufferer important"
+        ],
+        "metadata": {
+          "summary": "Job the Sufferer belongs to the wisdom tradition and helps the Bible think about suffering, speech, or faithful living.",
+          "importance": 65,
+          "retrieval_score": 0.885,
+          "ancient_names": [],
+          "modern_identification": "",
+          "region": "",
+          "terrain": "",
+          "elevation": null,
+          "archaeology": [],
+          "related_passages": [
+            "Job 1:1-22",
+            "Psalms 73:1-17",
+            "Proverbs 3:5-12",
+            "James 5:7-11"
+          ]
+        }
+      }
+    ],
+    "places": [],
+    "groups": [],
+    "events": [],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "job-the-sufferer:ancient_near_east_context:0",
+      "claim": "Job's setting reflects patriarchal clan life, wisdom disputation, sacrificial practice, and Edomite or Arabian geography rather than a generic ancient-world backdrop.",
+      "category": "culture",
+      "source_ids": [
+        "job",
+        "psalms",
+        "proverbs",
+        "ecclesiastes",
+        "james",
+        "job-the-sufferer-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "job-the-sufferer"
+      ],
+      "passage_anchors": [
+        "Psalms 73:1-17"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "job-the-sufferer",
+        "parent_title": "Job the Sufferer",
+        "parent_type": "person",
+        "object_importance": 65,
+        "retrieval_score": 0.885,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "job-the-sufferer:historical_context:0",
+      "claim": "This figure is associated with reflection on suffering, reverence, and practical wisdom within Israel's life.",
+      "category": "history",
+      "source_ids": [
+        "job",
+        "psalms",
+        "proverbs",
+        "ecclesiastes",
+        "james",
+        "job-the-sufferer-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "job-the-sufferer"
+      ],
+      "passage_anchors": [
+        "Psalms 73:1-17"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "job-the-sufferer",
+        "parent_title": "Job the Sufferer",
+        "parent_type": "person",
+        "object_importance": 65,
+        "retrieval_score": 0.885,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "Ecclesiastes",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "ecclesiastes",
+        "canonical_object_ids": [
+          "job-the-sufferer"
+        ]
+      },
+      {
+        "title": "James",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "james",
+        "canonical_object_ids": [
+          "job-the-sufferer"
+        ]
+      },
+      {
+        "title": "Job",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "job",
+        "canonical_object_ids": [
+          "job-the-sufferer"
+        ]
+      },
+      {
+        "title": "Canonical historical orientation for Job the Sufferer",
+        "author": "",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "id": "job-the-sufferer-historical-orientation",
+        "canonical_object_ids": [
+          "job-the-sufferer"
+        ]
+      },
+      {
+        "title": "Proverbs",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "proverbs",
+        "canonical_object_ids": [
+          "job-the-sufferer"
+        ]
+      },
+      {
+        "title": "Psalms",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "psalms",
+        "canonical_object_ids": [
+          "job-the-sufferer"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "job-the-sufferer",
+        "type": "person",
+        "title": "Job the Sufferer",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.885
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "0448416e82a401fbe91492d32ddd17a5e9f79bd014ac7c195bd34cfc636f92ae",
+  "evidence_hash_version": "2"
+}

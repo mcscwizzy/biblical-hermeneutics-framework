@@ -1,0 +1,487 @@
+{
+  "passage_ref": "Hosea 12",
+  "entities": {
+    "people": [],
+    "places": [],
+    "groups": [],
+    "events": [
+      {
+        "id": "jacob-wrestles-at-peniel",
+        "title": "Jacob Wrestles at Peniel",
+        "type": "event",
+        "aliases": [
+          "jacob wrestles",
+          "jacob renamed israel",
+          "peniel",
+          "genesis 32 jacob"
+        ],
+        "metadata": {
+          "summary": "Jacob wrestles through the night, receives a blessing, and is renamed Israel before meeting Esau.",
+          "importance": 84,
+          "retrieval_score": 0.904,
+          "ancient_names": [],
+          "modern_identification": "",
+          "region": "",
+          "terrain": "",
+          "elevation": null,
+          "archaeology": [],
+          "related_passages": [
+            "Genesis 32:22-32",
+            "Genesis 33:1-11",
+            "Hosea 12:3-6"
+          ]
+        }
+      }
+    ],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "hosea-assyrian-crisis",
+      "claim": "Hosea's references to Assyria, Egypt, tribute, treaties, war alarms, kings, and palace intrigue align with the northern kingdom's later eighth-century imperial crisis.",
+      "category": "politics",
+      "source_ids": [
+        "hosea-masoretic",
+        "hasegawa-hosea-history",
+        "aster-assyria-hosea",
+        "oracc-sargon-samaria"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Hosea 12:1-14"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "hosea",
+        "parent_title": "Hosea",
+        "parent_type": "book",
+        "object_importance": 91,
+        "retrieval_score": 0.911,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "chronological_uncertainty",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "historical_cultural",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "hosea-historical-memory",
+      "claim": "Hosea rhetorically reuses exodus, wilderness, Jacob, Gibeah, Baal-peor, and prophetic traditions to diagnose present identity and summon change.",
+      "category": "culture",
+      "source_ids": [
+        "hosea-masoretic",
+        "goldingay-hosea-recollection",
+        "irvine-hosea"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Hosea 12:1-14"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "hosea",
+        "parent_title": "Hosea",
+        "parent_type": "book",
+        "object_importance": 91,
+        "retrieval_score": 0.911,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 90
+      }
+    },
+    {
+      "id": "hosea:interpretive_note:14",
+      "claim": "Hosea's critique of kings and alliances concerns toxic power, elite extraction, war, and misplaced security; it does not prescribe one modern party or state policy.",
+      "category": "culture",
+      "source_ids": [
+        "hwang-hosea-politics",
+        "hankins-hosea-economy"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Hosea 12:1-14"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "hosea",
+        "parent_title": "Hosea",
+        "parent_type": "book",
+        "object_importance": 91,
+        "retrieval_score": 0.911,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "interpretive-caution",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    },
+    {
+      "id": "jacob-wrestles-at-peniel:ancient_near_east_context:0",
+      "claim": "Name changes and blessings could mark vocation and status, but Genesis roots Jacob's new name in a mysterious divine encounter.",
+      "category": "culture",
+      "source_ids": [
+        "genesis-32-22-32",
+        "genesis-33-1-11",
+        "hosea-12-3-6",
+        "jacob-wrestles-at-peniel-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "jacob-wrestles-at-peniel"
+      ],
+      "passage_anchors": [
+        "Hosea 12:3-6"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "jacob-wrestles-at-peniel",
+        "parent_title": "Jacob Wrestles at Peniel",
+        "parent_type": "event",
+        "object_importance": 84,
+        "retrieval_score": 0.904,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 2,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "jacob-wrestles-at-peniel:historical_context:0",
+      "claim": "The event belongs to the ancestral narratives, where family conflict, blessing, and identity shape the beginnings of Israel.",
+      "category": "history",
+      "source_ids": [
+        "genesis-32-22-32",
+        "genesis-33-1-11",
+        "hosea-12-3-6",
+        "jacob-wrestles-at-peniel-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "jacob-wrestles-at-peniel"
+      ],
+      "passage_anchors": [
+        "Hosea 12:3-6"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "jacob-wrestles-at-peniel",
+        "parent_title": "Jacob Wrestles at Peniel",
+        "parent_type": "event",
+        "object_importance": 84,
+        "retrieval_score": 0.904,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 2,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "Assyria and Its Image in Hosea",
+        "author": "Shawn Zelig Aster",
+        "publisher": "Oxford University Press",
+        "year": 2024,
+        "locator": "Oxford Handbook of Hosea, chapter 3",
+        "url": "https://academic.oup.com/edited-volume/56211/chapter/443857261",
+        "source_type": "reference-work",
+        "supports": [
+          "ancient-near-east-context",
+          "hosea-assyrian-crisis",
+          "interpretive-notes"
+        ],
+        "notes": "Study of Assyrian context and its rhetorical image in Hosea.",
+        "id": "aster-assyria-hosea",
+        "canonical_object_ids": [
+          "hosea"
+        ]
+      },
+      {
+        "title": "Genesis 32:22-32",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "wrestling and renaming",
+        "id": "genesis-32-22-32",
+        "canonical_object_ids": [
+          "jacob-wrestles-at-peniel"
+        ]
+      },
+      {
+        "title": "Genesis 33:1-11",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "meeting Esau after the encounter",
+        "id": "genesis-33-1-11",
+        "canonical_object_ids": [
+          "jacob-wrestles-at-peniel"
+        ]
+      },
+      {
+        "title": "Hosea 12-13 and Prophetic Composition, Rhetoric, and Recollection",
+        "author": "John Goldingay",
+        "publisher": "Oxford University Press",
+        "year": 2024,
+        "locator": "Oxford Handbook of Hosea, chapter 15",
+        "url": "https://academic.oup.com/edited-volume/56211/chapter/443859939",
+        "source_type": "reference-work",
+        "supports": [
+          "hosea-historical-memory",
+          "literary-context"
+        ],
+        "notes": "Study of ambiguity, wordplay, prophetic compilation, and remembered traditions.",
+        "id": "goldingay-hosea-recollection",
+        "canonical_object_ids": [
+          "hosea"
+        ]
+      },
+      {
+        "title": "The Book of Hosea and the Socioeconomic Conditions of Eighth-Century BCE Israel",
+        "author": "Davis Hankins",
+        "publisher": "Oxford University Press",
+        "year": 2024,
+        "locator": "Oxford Handbook of Hosea, chapter 6",
+        "url": "https://academic.oup.com/edited-volume/56211/chapter-abstract/443857758",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context",
+          "ancient-near-east-context",
+          "hosea-land-lawsuit",
+          "hosea-kings-politics"
+        ],
+        "notes": "Political-economic analysis of elites, agrarian labor, tribute, and sustainability.",
+        "id": "hankins-hosea-economy",
+        "canonical_object_ids": [
+          "hosea"
+        ]
+      },
+      {
+        "title": "The Book of Hosea and the History of Eighth-Century BCE Israel",
+        "author": "Shuichi Hasegawa",
+        "publisher": "Oxford University Press",
+        "year": 2024,
+        "locator": "Oxford Handbook of Hosea, chapter 2",
+        "url": "https://academic.oup.com/edited-volume/56211/chapter-abstract/443857087",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context",
+          "timeline",
+          "hosea-superscription-setting",
+          "hosea-assyrian-crisis"
+        ],
+        "notes": "Historical synthesis that also cautions against precise event matching.",
+        "id": "hasegawa-hosea-history",
+        "canonical_object_ids": [
+          "hosea"
+        ]
+      },
+      {
+        "title": "Hosea 12:3-6",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "prophetic reflection on Jacob",
+        "id": "hosea-12-3-6",
+        "canonical_object_ids": [
+          "jacob-wrestles-at-peniel"
+        ]
+      },
+      {
+        "title": "Hosea in the Masoretic Text",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Hosea 1-14",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "scripture-references",
+          "claims",
+          "interpretive-notes",
+          "literary-context"
+        ],
+        "notes": "Primary Hebrew textual tradition; difficult passages require comparison with other witnesses.",
+        "id": "hosea-masoretic",
+        "canonical_object_ids": [
+          "hosea"
+        ]
+      },
+      {
+        "title": "Hosea 7-8 and the Critique of Kings, Politics, and Power",
+        "author": "Jerry Hwang",
+        "publisher": "Oxford University Press",
+        "year": 2024,
+        "locator": "Oxford Handbook of Hosea, chapter 13",
+        "url": "https://academic.oup.com/edited-volume/56211/chapter/443859514",
+        "source_type": "reference-work",
+        "supports": [
+          "hosea-kings-politics",
+          "interpretive-notes"
+        ],
+        "notes": "Political-theological analysis linking leadership, diplomacy, economics, and worship.",
+        "id": "hwang-hosea-politics",
+        "canonical_object_ids": [
+          "hosea"
+        ]
+      },
+      {
+        "title": "Hosea",
+        "author": "Stuart A. Irvine",
+        "publisher": "Oxford University Press",
+        "year": 2021,
+        "locator": "Oxford Handbook of the Minor Prophets, chapter 29",
+        "url": "https://academic.oup.com/edited-volume/38566/chapter-abstract/334373123",
+        "source_type": "reference-work",
+        "supports": [
+          "structure",
+          "major-themes",
+          "hosea-priestly-failure",
+          "hosea-baal-fertility",
+          "hosea-historical-memory"
+        ],
+        "notes": "Overview of structure, themes, redaction, marriage, exodus, wilderness, and knowledge of God.",
+        "id": "irvine-hosea",
+        "canonical_object_ids": [
+          "hosea"
+        ]
+      },
+      {
+        "title": "Canonical historical orientation for Jacob Wrestles at Peniel",
+        "author": "",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "id": "jacob-wrestles-at-peniel-historical-orientation",
+        "canonical_object_ids": [
+          "jacob-wrestles-at-peniel"
+        ]
+      },
+      {
+        "title": "Royal Inscriptions of Sargon II mentioning Samaria",
+        "author": "Royal Inscriptions of the Neo-Assyrian Period project",
+        "publisher": "ORACC, University of Pennsylvania",
+        "year": null,
+        "locator": "RINAP 2, Sargon II corpus",
+        "url": "https://oracc.museum.upenn.edu/rinap/rinap2/Q006639",
+        "source_type": "ancient-primary-source",
+        "supports": [
+          "historical-context",
+          "ancient-near-east-context",
+          "archaeology",
+          "hosea-assyrian-crisis"
+        ],
+        "notes": "Edition and metadata for Sargon II inscriptions associated with Samaria; imperial genre requires source criticism.",
+        "id": "oracc-sargon-samaria",
+        "canonical_object_ids": [
+          "hosea"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "hosea",
+        "type": "book",
+        "title": "Hosea",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.911
+      },
+      {
+        "id": "jacob-wrestles-at-peniel",
+        "type": "event",
+        "title": "Jacob Wrestles at Peniel",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.904
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "3e7baae6cd4dc0b9dc5fbc8dee361c39398f39f7141144658582a2c1892d1727",
+  "evidence_hash_version": "2"
+}

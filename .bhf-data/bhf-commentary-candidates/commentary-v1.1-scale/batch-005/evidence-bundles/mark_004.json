@@ -1,0 +1,481 @@
+{
+  "passage_ref": "Mark 4",
+  "entities": {
+    "people": [],
+    "places": [],
+    "groups": [],
+    "events": [],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "galilee-boat-comparison",
+      "claim": "A preserved wooden boat recovered near Ginosar measures roughly eight meters and was built and repaired from multiple timbers within a dating range of approximately 100 BCE-100 CE.",
+      "category": "archaeology",
+      "source_ids": [
+        "yigal-allon-galilee-boat",
+        "fiensy-strange-galilee",
+        "fiensy-daily-life"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Mark 4:35-41"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "galilean-villages-households-and-subsistence",
+        "parent_title": "Galilean Villages, Households, and Subsistence",
+        "parent_type": "cultural_background",
+        "object_importance": 98,
+        "retrieval_score": 0.958,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 34,
+        "certainty": "strong_consensus",
+        "dispute_status": "identification_uncertainty",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 1.0,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "artifact",
+        "field": "",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": null,
+        "overview_priority": 20
+      }
+    },
+    {
+      "id": "galilee-boat-comparison:passage-relevance",
+      "claim": "The boat supplies a contemporary physical control for the size, construction, rowing, sailing, and repair of lake craft presupposed in Gospel crossings.",
+      "category": "archaeology",
+      "source_ids": [
+        "yigal-allon-galilee-boat",
+        "fiensy-strange-galilee",
+        "fiensy-daily-life"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Mark 4:35-41"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "galilean-villages-households-and-subsistence",
+        "parent_title": "Galilean Villages, Households, and Subsistence",
+        "parent_type": "cultural_background",
+        "object_importance": 98,
+        "retrieval_score": 0.958,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 34,
+        "certainty": "strong_consensus",
+        "dispute_status": "identification_uncertainty",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 1.0,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "artifact",
+        "field": "",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "significance",
+        "overview_priority": 20,
+        "supports_evidence_ids": [
+          "galilee-boat-comparison"
+        ]
+      }
+    },
+    {
+      "id": "gospel-galilean-agriculture",
+      "claim": "The seed parables assume sowing, varied soils, grain growth, weeds, harvest, and garden plants familiar enough to carry comparison.",
+      "category": "culture",
+      "source_ids": [
+        "galilean-gospel-passages",
+        "fiensy-strange-galilee",
+        "fiensy-daily-life"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Mark 4:1-32"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "galilean-villages-households-and-subsistence",
+        "parent_title": "Galilean Villages, Households, and Subsistence",
+        "parent_type": "cultural_background",
+        "object_importance": 98,
+        "retrieval_score": 0.958,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "textually_explicit",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.75,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "cultural-practice",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    },
+    {
+      "id": "gospel-galilean-agriculture:passage-relevance",
+      "claim": "Recognizing ordinary agricultural processes clarifies the parables' imagery while preserving their literary function.",
+      "category": "culture",
+      "source_ids": [
+        "galilean-gospel-passages",
+        "fiensy-strange-galilee",
+        "fiensy-daily-life"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Mark 4:1-32"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "galilean-villages-households-and-subsistence",
+        "parent_title": "Galilean Villages, Households, and Subsistence",
+        "parent_type": "cultural_background",
+        "object_importance": 98,
+        "retrieval_score": 0.958,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "textually_explicit",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.75,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "cultural-practice",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 87,
+        "supports_evidence_ids": [
+          "gospel-galilean-agriculture"
+        ]
+      }
+    },
+    {
+      "id": "what-is-a-parable:ancient_near_east_context:0",
+      "claim": "Story-based moral instruction was familiar in the ancient world, but Jesus uses parables to announce God's reign.",
+      "category": "culture",
+      "source_ids": [
+        "matthew-13",
+        "mark-4",
+        "luke-10",
+        "luke-15",
+        "matthew-21",
+        "matthew-25",
+        "what-is-a-parable-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Mark 4:1-20"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "what-is-a-parable",
+        "parent_title": "What is a parable?",
+        "parent_type": "faq",
+        "object_importance": 88,
+        "retrieval_score": 0.908,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "what-is-a-parable:historical_context:0",
+      "claim": "Jesus uses parables in first-century teaching settings to confront unbelief and form disciples.",
+      "category": "history",
+      "source_ids": [
+        "matthew-13",
+        "mark-4",
+        "luke-10",
+        "luke-15",
+        "matthew-21",
+        "matthew-25",
+        "what-is-a-parable-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Mark 4:1-20"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "what-is-a-parable",
+        "parent_title": "What is a parable?",
+        "parent_type": "faq",
+        "object_importance": 88,
+        "retrieval_score": 0.908,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "The Archaeology of Daily Life: Ordinary Persons in Late Second Temple Israel",
+        "author": "David A. Fiensy",
+        "publisher": "Cascade Books",
+        "year": 2021,
+        "locator": "Chapters on dwellings, occupations, family, religion, mortality, and burial",
+        "url": "https://wipfandstock.com/9781532673078/the-archaeology-of-daily-life/",
+        "source_type": "academic-book",
+        "supports": [
+          "gospel-galilean-households",
+          "gospel-galilean-agriculture",
+          "capernaum-domestic-remains",
+          "nazareth-early-roman-dwelling",
+          "reina-stone-vessel-production",
+          "magdala-fishing-and-harbor",
+          "galilee-boat-comparison"
+        ],
+        "notes": "Archaeological synthesis focused on ordinary life rather than elite monuments.",
+        "id": "fiensy-daily-life",
+        "canonical_object_ids": [
+          "galilean-villages-households-and-subsistence"
+        ]
+      },
+      {
+        "title": "Galilee in the Late Second Temple and Mishnaic Periods, Volumes 1-2",
+        "author": "David A. Fiensy and James Riley Strange, editors",
+        "publisher": "Fortress Press",
+        "year": 2015,
+        "locator": "Volume 1: village life, economics, roads, and households; Volume 2: Capernaum, Nazareth, and Magdala",
+        "url": "https://academic.oup.com/jts/article-pdf/69/2/765/26180095/fly066.pdf",
+        "source_type": "academic-book",
+        "supports": [
+          "gospel-galilean-households",
+          "gospel-galilean-agriculture",
+          "capernaum-domestic-remains",
+          "nazareth-early-roman-dwelling",
+          "reina-stone-vessel-production",
+          "magdala-fishing-and-harbor",
+          "galilee-boat-comparison"
+        ],
+        "notes": "Multi-author archaeological and social-historical synthesis preserving scholarly disagreement.",
+        "id": "fiensy-strange-galilee",
+        "canonical_object_ids": [
+          "galilean-villages-households-and-subsistence"
+        ]
+      },
+      {
+        "title": "Galilean household, agriculture, and lake passages",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Mark 1:16-4:41; 6:1-13; Luke 4:16-30; John 2:1-12; 6:1-24",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "gospel-galilean-households",
+          "gospel-galilean-agriculture",
+          "reina-stone-vessel-production",
+          "magdala-fishing-and-harbor",
+          "galilee-boat-comparison"
+        ],
+        "notes": "Primary biblical texts; no modern translation is reproduced.",
+        "id": "galilean-gospel-passages",
+        "canonical_object_ids": [
+          "galilean-villages-households-and-subsistence"
+        ]
+      },
+      {
+        "title": "Luke 10",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "luke-10",
+        "canonical_object_ids": [
+          "what-is-a-parable"
+        ]
+      },
+      {
+        "title": "Luke 15",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "luke-15",
+        "canonical_object_ids": [
+          "what-is-a-parable"
+        ]
+      },
+      {
+        "title": "Mark 4",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "mark-4",
+        "canonical_object_ids": [
+          "what-is-a-parable"
+        ]
+      },
+      {
+        "title": "Matthew 13",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "matthew-13",
+        "canonical_object_ids": [
+          "what-is-a-parable"
+        ]
+      },
+      {
+        "title": "Matthew 21",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "matthew-21",
+        "canonical_object_ids": [
+          "what-is-a-parable"
+        ]
+      },
+      {
+        "title": "Matthew 25",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "matthew-25",
+        "canonical_object_ids": [
+          "what-is-a-parable"
+        ]
+      },
+      {
+        "title": "Canonical historical orientation for What is a parable?",
+        "author": "",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "id": "what-is-a-parable-historical-orientation",
+        "canonical_object_ids": [
+          "what-is-a-parable"
+        ]
+      },
+      {
+        "title": "The Ancient Boat",
+        "author": "",
+        "publisher": "Yigal Allon Center",
+        "year": null,
+        "locator": "Ginosar display; radiocarbon range approximately 100 BCE-100 CE",
+        "url": "https://en.yigal-allon-centre.org.il/the-ancient-boat/",
+        "source_type": "museum-collection",
+        "supports": [
+          "galilee-boat-comparison"
+        ],
+        "notes": "Official display record; the popular association with Jesus is not treated as identification.",
+        "id": "yigal-allon-galilee-boat",
+        "canonical_object_ids": [
+          "galilean-villages-households-and-subsistence"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "galilean-villages-households-and-subsistence",
+        "type": "cultural_background",
+        "title": "Galilean Villages, Households, and Subsistence",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.958
+      },
+      {
+        "id": "what-is-a-parable",
+        "type": "faq",
+        "title": "What is a parable?",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.908
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "4dedc0c30a7ebfa4061d390fd36f4569fd7dbb225ad0bb3928d0f98843c7708a",
+  "evidence_hash_version": "2"
+}

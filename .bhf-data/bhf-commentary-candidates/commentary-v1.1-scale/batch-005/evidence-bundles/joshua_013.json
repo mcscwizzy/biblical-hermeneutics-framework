@@ -1,0 +1,618 @@
+{
+  "passage_ref": "Joshua 13",
+  "entities": {
+    "people": [],
+    "places": [
+      {
+        "id": "canaan",
+        "title": "Canaan",
+        "type": "place",
+        "aliases": [
+          "land of Canaan",
+          "southern Levant in the biblical world",
+          "Canaanite land"
+        ],
+        "metadata": {
+          "summary": "Canaan is the biblical land west of the Jordan and a broader ancient regional designation whose boundaries and political meaning vary by period and source.",
+          "importance": 72,
+          "retrieval_score": 0.892,
+          "ancient_names": [],
+          "modern_identification": "",
+          "region": "",
+          "terrain": "",
+          "elevation": null,
+          "archaeology": [],
+          "related_passages": [
+            "Genesis 12:5-9",
+            "Exodus 3:7-17",
+            "Joshua 13:1-7",
+            "Judges 1:1-36",
+            "Judges 2:1-5"
+          ]
+        }
+      }
+    ],
+    "groups": [],
+    "events": [],
+    "artifacts": [
+      {
+        "id": "merneptah-stele",
+        "title": "Merneptah Stele",
+        "type": "archaeology",
+        "aliases": [
+          "Israel Stele",
+          "Merenptah Stele",
+          "Merneptah Israel inscription"
+        ],
+        "metadata": {
+          "summary": "An Egyptian victory stele conventionally dated about 1208/1207 BCE whose final hymn contains the earliest widely accepted extra-biblical reference to a people called Israel.",
+          "importance": 94,
+          "retrieval_score": 0.914,
+          "ancient_names": [],
+          "modern_identification": "",
+          "region": "",
+          "terrain": "",
+          "elevation": null,
+          "archaeology": [],
+          "related_passages": [
+            "Judges 1:1-36",
+            "Judges 2:6-23",
+            "Joshua 13:1-7"
+          ]
+        }
+      }
+    ]
+  },
+  "evidence_items": [
+    {
+      "id": "canaan:ancient_near_east_context:0",
+      "claim": "Canaan linked Egypt, Syria, and inland Transjordan through coastal, valley, and highland routes. Egyptian texts, Levantine archives, and archaeology use regional and political labels whose scope should not automatically be equated with every biblical use of the name.",
+      "category": "culture",
+      "source_ids": [
+        "canaan-biblical-texts",
+        "killebrew-canaan-2005",
+        "novacek-canaan-2011"
+      ],
+      "related_entity_ids": [
+        "canaan"
+      ],
+      "passage_anchors": [
+        "Joshua 13:1-7"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "canaan",
+        "parent_title": "Canaan",
+        "parent_type": "place",
+        "object_importance": 72,
+        "retrieval_score": 0.892,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "canaan:hebraic_worldview:0",
+      "claim": "The biblical texts portray the land as divine gift and covenant responsibility while also naming its existing peoples, towns, borders, and agricultural character. Geographic description and covenant claim are related but not interchangeable kinds of evidence.",
+      "category": "culture",
+      "source_ids": [
+        "canaan-biblical-texts",
+        "killebrew-canaan-2005",
+        "novacek-canaan-2011"
+      ],
+      "related_entity_ids": [
+        "canaan"
+      ],
+      "passage_anchors": [
+        "Joshua 13:1-7"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "canaan",
+        "parent_title": "Canaan",
+        "parent_type": "place",
+        "object_importance": 72,
+        "retrieval_score": 0.892,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "hebraic_worldview",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "canaan:historical_context:0",
+      "claim": "In the Late Bronze Age, the southern Levant contained Canaanite city-states under substantial Egyptian influence rather than one unified Canaanite empire. The Late Bronze-Iron transition brought uneven political, settlement, and material-cultural changes across highlands, valleys, and coast.",
+      "category": "history",
+      "source_ids": [
+        "canaan-biblical-texts",
+        "killebrew-canaan-2005",
+        "novacek-canaan-2011"
+      ],
+      "related_entity_ids": [
+        "canaan"
+      ],
+      "passage_anchors": [
+        "Joshua 13:1-7"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "canaan",
+        "parent_title": "Canaan",
+        "parent_type": "place",
+        "object_importance": 72,
+        "retrieval_score": 0.892,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "joshua-fulfilled-and-remaining-land",
+      "claim": "Joshua contains both comprehensive promise-fulfillment summaries and explicit notices that land and cities remained outside Israelite possession.",
+      "category": "culture",
+      "source_ids": [
+        "joshua-1-24",
+        "butler-joshua"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Joshua 13:1-7"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "joshua",
+        "parent_title": "Joshua",
+        "parent_type": "book",
+        "object_importance": 94,
+        "retrieval_score": 0.914,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "textually_explicit",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 90
+      }
+    },
+    {
+      "id": "joshua-literary-movement",
+      "claim": "Joshua moves from succession and entry through campaigns to land allotment, tribal unity, farewell, and covenant renewal.",
+      "category": "culture",
+      "source_ids": [
+        "joshua-1-24",
+        "woudstra-joshua",
+        "butler-joshua"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Joshua 1-24"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "joshua",
+        "parent_title": "Joshua",
+        "parent_type": "book",
+        "object_importance": 94,
+        "retrieval_score": 0.914,
+        "passage_relationship": "direct",
+        "anchor_specificity": "chapter",
+        "verse_distance": 1200,
+        "certainty": "strong_consensus",
+        "dispute_status": "not_disputed",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 73
+      }
+    },
+    {
+      "id": "joshua:interpretive_note:0",
+      "claim": "Joshua concerns entry, campaigns, allotment, tribal unity, and covenant renewal; David, Solomon, monarchy, exile, Jerusalem, and Samaria are not its principal people, events, or settings.",
+      "category": "culture",
+      "source_ids": [
+        "joshua-1-24",
+        "woudstra-joshua",
+        "butler-joshua"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Joshua 1-24"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "joshua",
+        "parent_title": "Joshua",
+        "parent_type": "book",
+        "object_importance": 94,
+        "retrieval_score": 0.914,
+        "passage_relationship": "direct",
+        "anchor_specificity": "chapter",
+        "verse_distance": 1200,
+        "certainty": "textually_explicit",
+        "dispute_status": "not_disputed",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "literary-observation",
+        "field": "",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 85
+      }
+    },
+    {
+      "id": "joshua:interpretive_note:1",
+      "claim": "Campaign summaries of broad victory must be read together with explicit remaining-land and incomplete-possession notices.",
+      "category": "culture",
+      "source_ids": [
+        "joshua-1-24",
+        "woudstra-joshua",
+        "butler-joshua"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Joshua 13:1-7"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "joshua",
+        "parent_title": "Joshua",
+        "parent_type": "book",
+        "object_importance": 94,
+        "retrieval_score": 0.914,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "literary-observation",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    },
+    {
+      "id": "merneptah-stele:ancient_near_east_context:0",
+      "claim": "Egyptian royal victory inscriptions employ ideological and rhetorical conventions; they identify claims made by a royal court more securely than the exact scale of destruction. The inscription supplies a late thirteenth-century external name and social designation, not a narrative of Israel's origins.",
+      "category": "culture",
+      "source_ids": [
+        "ucl-merneptah-stele",
+        "novacek-merneptah-2011"
+      ],
+      "related_entity_ids": [
+        "merneptah-stele"
+      ],
+      "passage_anchors": [
+        "Joshua 13:1-7"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "merneptah-stele",
+        "parent_title": "Merneptah Stele",
+        "parent_type": "archaeology",
+        "object_importance": 94,
+        "retrieval_score": 0.914,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "merneptah-stele:historical_context:0",
+      "claim": "Merneptah reused a monument of Amenhotep III and inscribed a victory text that celebrates campaigns including action in the southern Levant. The Israel entry uses a people determinative rather than the city determinatives attached to several neighboring names.",
+      "category": "history",
+      "source_ids": [
+        "ucl-merneptah-stele",
+        "novacek-merneptah-2011"
+      ],
+      "related_entity_ids": [
+        "merneptah-stele"
+      ],
+      "passage_anchors": [
+        "Joshua 13:1-7"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "merneptah-stele",
+        "parent_title": "Merneptah Stele",
+        "parent_type": "archaeology",
+        "object_importance": 94,
+        "retrieval_score": 0.914,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "Joshua, 2-Volume Set, Volumes 7A and 7B",
+        "author": "Trent C. Butler",
+        "publisher": "Zondervan",
+        "year": 2014,
+        "locator": "Second edition, introduction and commentary on Joshua 1-24",
+        "url": "https://zondervanacademic.com/products/joshua-2-volume-set-7a-and-7b",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context",
+          "literary-context",
+          "authorship-positions",
+          "interpretive-notes",
+          "joshua-literary-movement",
+          "joshua-fulfilled-and-remaining-land"
+        ],
+        "notes": "Critical commentary with translation, textual notes, updated bibliography, and historical-literary discussion.",
+        "id": "butler-joshua",
+        "canonical_object_ids": [
+          "joshua"
+        ]
+      },
+      {
+        "title": "Biblical Canaan Passages",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Genesis 12:5-9; Exodus 3:7-17; Joshua 13:1-7; Judges 1:1-2:5",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "canonical-context",
+          "covenantal-significance"
+        ],
+        "notes": "Primary biblical geography and land-theology texts.",
+        "id": "canaan-biblical-texts",
+        "canonical_object_ids": [
+          "canaan"
+        ]
+      },
+      {
+        "title": "Joshua 1-24",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Joshua 1:1-24:33",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "literary-context",
+          "structure",
+          "key-people",
+          "key-places",
+          "key-events",
+          "scripture-references",
+          "joshua-literary-movement",
+          "joshua-torah-shaped-leadership",
+          "joshua-rahab-rescue",
+          "joshua-fulfilled-and-remaining-land",
+          "joshua-shechem-covenant"
+        ],
+        "notes": "Primary biblical text.",
+        "id": "joshua-1-24",
+        "canonical_object_ids": [
+          "joshua"
+        ]
+      },
+      {
+        "title": "Biblical Peoples and Ethnicity: An Archaeological Study of Egyptians, Canaanites, Philistines, and Early Israel, 1300-1100 B.C.E.",
+        "author": "Ann E. Killebrew",
+        "publisher": "Society of Biblical Literature",
+        "year": 2005,
+        "locator": "Archaeology and Biblical Studies 9; Canaanite and early Israelite material culture",
+        "url": "https://cart.sbl-site.org/books/061709E",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "ancient-near-east-context"
+        ],
+        "notes": "Used for regional identity and material-culture cautions.",
+        "id": "killebrew-canaan-2005",
+        "canonical_object_ids": [
+          "canaan"
+        ]
+      },
+      {
+        "title": "Ancient Israel: Highlights from the Collections of the Oriental Institute, University of Chicago",
+        "author": "Gabrielle Vera Novacek",
+        "publisher": "Oriental Institute of the University of Chicago",
+        "year": 2011,
+        "locator": "pp. 1-6 and 65-68, southern Levant geography and the Late Bronze-Iron transition",
+        "url": "https://oi.uchicago.edu/sites/default/files/uploads/shared/docs/oimp31.pdf",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "ancient-near-east-context"
+        ],
+        "notes": "Regional overview used with explicit caution about ethnic inference.",
+        "id": "novacek-canaan-2011",
+        "canonical_object_ids": [
+          "canaan"
+        ]
+      },
+      {
+        "title": "Ancient Israel: Highlights from the Collections of the Oriental Institute, University of Chicago",
+        "author": "Gabrielle Vera Novacek",
+        "publisher": "Oriental Institute of the University of Chicago",
+        "year": 2011,
+        "locator": "pp. 66-68, Merneptah reference and Iron I context",
+        "url": "https://oi.uchicago.edu/sites/default/files/uploads/shared/docs/oimp31.pdf",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "canonical-context"
+        ],
+        "notes": "Used for date, determinative, and bounded historical significance.",
+        "id": "novacek-merneptah-2011",
+        "canonical_object_ids": [
+          "merneptah-stele"
+        ]
+      },
+      {
+        "title": "Israel Stela",
+        "author": "",
+        "publisher": "University College London Digital Egypt",
+        "year": -1207,
+        "locator": "Final victory-hymn lines; Israel entry and determinative",
+        "url": "https://www.ucl.ac.uk/museums-static/digitalegypt/thebes/merenptah/stela.html",
+        "source_type": "ancient-primary-source",
+        "supports": [
+          "summary",
+          "historical-context"
+        ],
+        "notes": "Institutional presentation of the inscription; date approximate.",
+        "id": "ucl-merneptah-stele",
+        "canonical_object_ids": [
+          "merneptah-stele"
+        ]
+      },
+      {
+        "title": "The Book of Joshua",
+        "author": "Marten Woudstra",
+        "publisher": "Eerdmans",
+        "year": 1981,
+        "locator": "Introduction and commentary on Joshua 1-24",
+        "url": "https://www.eerdmans.com/9780802825254/the-book-of-joshua/",
+        "source_type": "reference-work",
+        "supports": [
+          "literary-context",
+          "canonical-context",
+          "later-christian-reception",
+          "interpretive-notes",
+          "joshua-literary-movement",
+          "joshua-torah-shaped-leadership",
+          "joshua-shechem-covenant"
+        ],
+        "notes": "Technical and theological commentary in the NICOT series.",
+        "id": "woudstra-joshua",
+        "canonical_object_ids": [
+          "joshua"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "canaan",
+        "type": "place",
+        "title": "Canaan",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.892
+      },
+      {
+        "id": "joshua",
+        "type": "book",
+        "title": "Joshua",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.914
+      },
+      {
+        "id": "merneptah-stele",
+        "type": "archaeology",
+        "title": "Merneptah Stele",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.914
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "9eec29e1b083ba3be176796e96dfc9dcc3f34fcd749ad26df37c2b3d549eb41a",
+  "evidence_hash_version": "2"
+}

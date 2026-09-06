@@ -1,0 +1,326 @@
+{
+  "passage_ref": "Nehemiah 4",
+  "entities": {
+    "people": [],
+    "places": [],
+    "groups": [],
+    "events": [],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "nehemiah-wall-opposition",
+      "claim": "Jerusalem's wall is rebuilt by diverse households, priests, craftspeople, officials, and regional workers while Sanballat, Tobiah, Geshem, and allies use ridicule, threat, accusation, and intimidation.",
+      "category": "history",
+      "source_ids": [
+        "nehemiah-1-13",
+        "williamson-ezra-nehemiah"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Nehemiah 2:11-4:23"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "nehemiah",
+        "parent_title": "Nehemiah",
+        "parent_type": "book",
+        "object_importance": 82,
+        "retrieval_score": 0.902,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 200,
+        "certainty": "textually_explicit",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 110
+      }
+    },
+    {
+      "id": "nehemiah:interpretive_note:1",
+      "claim": "The first-person Nehemiah memoir supplies vivid court, building, prayer, opposition, and reform testimony, but the final book also contains third-person narrative, lists, Ezra material, and editorial transitions. Neither total autobiography nor total fictionalization accounts for all the evidence.",
+      "category": "culture",
+      "source_ids": [
+        "nehemiah-1-13",
+        "williamson-ezra-nehemiah",
+        "myers-ezra-nehemiah"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Nehemiah 1:1-7:5"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "nehemiah",
+        "parent_title": "Nehemiah",
+        "parent_type": "book",
+        "object_importance": 82,
+        "retrieval_score": 0.902,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 300,
+        "certainty": "strong_consensus",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "literary-observation",
+        "field": "",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 77
+      }
+    },
+    {
+      "id": "nehemiah:interpretive_note:3",
+      "claim": "Sanballat, Tobiah, and Geshem represent regional political and kinship interests affected by Jerusalem's fortification. The narrative's polemic should not be flattened into a timeless ethnic feud or used to vilify modern Samaritans, Ammonites, Arabs, or neighboring peoples.",
+      "category": "politics",
+      "source_ids": [
+        "nehemiah-1-13",
+        "fensham-ezra-nehemiah",
+        "zondervan-kings-chronicles-ezra-backgrounds"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Nehemiah 4:1-8"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "nehemiah",
+        "parent_title": "Nehemiah",
+        "parent_type": "book",
+        "object_importance": 82,
+        "retrieval_score": 0.902,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "probable",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "interpretive-caution",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 102
+      }
+    },
+    {
+      "id": "nehemiah:interpretive_note:5",
+      "claim": "The builders' weapons and Nehemiah's defense measures respond to a narrated threat within Persian-period Jerusalem. The passage does not independently authorize religious militias, preemptive violence, or treating critics of a modern project as enemies of God.",
+      "category": "culture",
+      "source_ids": [
+        "nehemiah-1-13",
+        "shepherd-wright-ezra-nehemiah"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Nehemiah 4:7-23"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "nehemiah",
+        "parent_title": "Nehemiah",
+        "parent_type": "book",
+        "object_importance": 82,
+        "retrieval_score": 0.902,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 6,
+        "certainty": "textually_explicit",
+        "dispute_status": "denominational_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "interpretive-caution",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 102
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "The Books of Ezra and Nehemiah",
+        "author": "F. Charles Fensham",
+        "publisher": "Eerdmans",
+        "year": 1983,
+        "locator": "NICOT introduction, translation, and commentary",
+        "url": "https://www.eerdmans.com/9780802882288/the-books-of-ezra-and-nehemiah/",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context",
+          "ancient-near-east-context",
+          "genre",
+          "structure",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "Commentary emphasizing Semitic language, ancient Near Eastern context, historical background, theology, and major interpretive options.",
+        "id": "fensham-ezra-nehemiah",
+        "canonical_object_ids": [
+          "nehemiah"
+        ]
+      },
+      {
+        "title": "Ezra, Nehemiah",
+        "author": "Jacob M. Myers",
+        "publisher": "Yale University Press",
+        "year": 1995,
+        "locator": "Anchor Yale Bible introduction, translation, notes, and commentary",
+        "url": "https://yalebooks.yale.edu/book/9780300139556/ezra-nehemiah/",
+        "source_type": "reference-work",
+        "supports": [
+          "canonical-context",
+          "literary-context",
+          "date-ranges",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "Detailed commentary on the textual, historical, literary, and compositional complexity of Ezra-Nehemiah.",
+        "id": "myers-ezra-nehemiah",
+        "canonical_object_ids": [
+          "nehemiah"
+        ]
+      },
+      {
+        "title": "Nehemiah 1-13",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Nehemiah 1:1-13:31",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "structure",
+          "key-people",
+          "key-places",
+          "key-events",
+          "scripture-references",
+          "interpretive-notes",
+          "nehemiah-prayer-authorization",
+          "nehemiah-wall-opposition",
+          "nehemiah-economic-justice",
+          "nehemiah-wall-completed",
+          "nehemiah-torah-understanding",
+          "nehemiah-covenant-commitments",
+          "nehemiah-dedication-support",
+          "nehemiah-later-reforms"
+        ],
+        "notes": "Primary biblical text.",
+        "id": "nehemiah-1-13",
+        "canonical_object_ids": [
+          "nehemiah"
+        ]
+      },
+      {
+        "title": "Ezra and Nehemiah",
+        "author": "David J. Shepherd and Christopher J. H. Wright",
+        "publisher": "Eerdmans",
+        "year": 2018,
+        "locator": "Two Horizons Old Testament Commentary",
+        "url": "https://www.eerdmans.com/9781467449625/ezra-and-nehemiah/",
+        "source_type": "reference-work",
+        "supports": [
+          "covenantal-significance",
+          "later-christian-reception",
+          "canonical-role",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "Theological commentary that directly engages leadership and ethically difficult texts.",
+        "id": "shepherd-wright-ezra-nehemiah",
+        "canonical_object_ids": [
+          "nehemiah"
+        ]
+      },
+      {
+        "title": "Ezra-Nehemiah, Volume 16",
+        "author": "H. G. M. Williamson",
+        "publisher": "Zondervan Academic",
+        "year": 1985,
+        "locator": "Word Biblical Commentary introduction, translation, notes, and commentary",
+        "url": "https://zondervanacademic.com/products/ezra-nehemiah-volume-16",
+        "source_type": "reference-work",
+        "supports": [
+          "authorship-positions",
+          "date-ranges",
+          "historical-context",
+          "literary-context",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "Technical textual, linguistic, historical, literary, and theological commentary.",
+        "id": "williamson-ezra-nehemiah",
+        "canonical_object_ids": [
+          "nehemiah"
+        ]
+      },
+      {
+        "title": "Zondervan Illustrated Bible Backgrounds Commentary: 1 and 2 Kings, 1 and 2 Chronicles, Ezra, Nehemiah, Esther",
+        "author": "John H. Walton, general editor; Frederick Mabie and other contributors",
+        "publisher": "Zondervan",
+        "year": 2009,
+        "locator": "Nehemiah commentary and background notes",
+        "url": "https://zondervanacademic.com/products/1-and-2-kings-1-and-2-chronicles-ezra-nehemiah-esther",
+        "source_type": "reference-work",
+        "supports": [
+          "ancient-near-east-context",
+          "archaeology",
+          "historical-context",
+          "maps",
+          "interpretive-notes"
+        ],
+        "notes": "Passage-level geographical, artifactual, textual, administrative, and cultural background.",
+        "id": "zondervan-kings-chronicles-ezra-backgrounds",
+        "canonical_object_ids": [
+          "nehemiah"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "nehemiah",
+        "type": "book",
+        "title": "Nehemiah",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.902
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "20fd4a0c784829640457a50959bce4e7419929db6c38a37edba19346c08653ab",
+  "evidence_hash_version": "2"
+}

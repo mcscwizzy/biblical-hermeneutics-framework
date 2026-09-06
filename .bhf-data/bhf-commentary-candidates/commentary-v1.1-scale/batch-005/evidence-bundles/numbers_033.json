@@ -1,0 +1,1339 @@
+{
+  "passage_ref": "Numbers 33",
+  "entities": {
+    "people": [],
+    "places": [],
+    "groups": [],
+    "events": [
+      {
+        "id": "plagues-of-egypt",
+        "title": "Plagues of Egypt",
+        "type": "event",
+        "aliases": [
+          "the ten plagues",
+          "Exodus plague sequence",
+          "judgments on the gods of Egypt"
+        ],
+        "metadata": {
+          "summary": "The escalating sign and plague sequence in Exodus 7-12 that precedes Passover and Pharaoh's release of Israel.",
+          "importance": 84,
+          "retrieval_score": 0.904,
+          "ancient_names": [],
+          "modern_identification": "",
+          "region": "",
+          "terrain": "",
+          "elevation": null,
+          "archaeology": [],
+          "related_passages": [
+            "Exodus 5:1-5",
+            "Exodus 7:1-25",
+            "Exodus 8:1-32",
+            "Exodus 9:1-35",
+            "Exodus 10:1-29",
+            "Exodus 11:1-10",
+            "Exodus 12:1-32",
+            "Numbers 33:3-4"
+          ]
+        }
+      },
+      {
+        "id": "red-sea-crossing",
+        "title": "Red Sea Crossing",
+        "type": "event",
+        "aliases": [
+          "crossing of the Sea",
+          "Yam Suph crossing",
+          "Sea of Reeds route"
+        ],
+        "metadata": {
+          "summary": "The Exodus 14 narrative in which Israel passes through the Sea while the pursuing Egyptian force is overwhelmed, followed by the victory song in Exodus 15.",
+          "importance": 84,
+          "retrieval_score": 0.904,
+          "ancient_names": [],
+          "modern_identification": "",
+          "region": "",
+          "terrain": "",
+          "elevation": null,
+          "archaeology": [],
+          "related_passages": [
+            "Exodus 13:17-22",
+            "Exodus 14:1-31",
+            "Exodus 15:1-21",
+            "Numbers 33:5-8"
+          ]
+        }
+      },
+      {
+        "id": "wilderness-wandering",
+        "title": "Wilderness Wandering",
+        "type": "event",
+        "aliases": [
+          "Israel in the wilderness",
+          "Exodus wilderness journey",
+          "wilderness itinerary and water crises"
+        ],
+        "metadata": {
+          "summary": "Israel's extended journey between Egypt and the Transjordan, narrated through ordered stations, resource crises, covenant episodes, rebellions, and changes of generation.",
+          "importance": 84,
+          "retrieval_score": 0.904,
+          "ancient_names": [],
+          "modern_identification": "",
+          "region": "",
+          "terrain": "",
+          "elevation": null,
+          "archaeology": [],
+          "related_passages": [
+            "Exodus 15:22-27",
+            "Exodus 16:1-36",
+            "Exodus 17:1-7",
+            "Exodus 19:1-6",
+            "Numbers 10:11-12",
+            "Numbers 20:1-13",
+            "Numbers 33:1-49"
+          ]
+        }
+      }
+    ],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "egyptian-kingship-and-divine-order:interpretive_note:0",
+      "claim": "The biblical text explicitly mentions judgment on Egypt's gods, but it does not provide a plague-by-plague list of divine targets.",
+      "category": "culture",
+      "source_ids": [
+        "exodus-royal-conflict-text",
+        "numbers-33-judgment-text",
+        "sarna-exodus-1991",
+        "meyers-exodus-2005"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Numbers 33:3-4"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "egyptian-kingship-and-divine-order",
+        "parent_title": "Egyptian Kingship and Divine Order",
+        "parent_type": "cultural_background",
+        "object_importance": 95,
+        "retrieval_score": 0.915,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 2,
+        "certainty": "strong_consensus",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "interpretive-caution",
+        "field": "",
+        "semantic_relationship": "INTERTEXTUAL_REUSE",
+        "presentation_role": "dig_deeper",
+        "overview_priority": 0
+      }
+    },
+    {
+      "id": "exodus-wilderness-routes-and-water:interpretive_note:0",
+      "claim": "The text's sequence of named stations is evidence; matching every name to a modern location is a separate and disputed reconstruction.",
+      "category": "culture",
+      "source_ids": [
+        "exodus-route-and-water-text",
+        "numbers-33-itinerary-text",
+        "davies-way-wilderness-1979",
+        "hoffmeier-ancient-israel-sinai-2005"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Numbers 33:5-16"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "exodus-wilderness-routes-and-water",
+        "parent_title": "Exodus Wilderness Routes and Water",
+        "parent_type": "cultural_background",
+        "object_importance": 95,
+        "retrieval_score": 0.975,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 4,
+        "certainty": "strong_consensus",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "interpretive-caution",
+        "field": "",
+        "semantic_relationship": "INTERTEXTUAL_REUSE",
+        "presentation_role": "dig_deeper",
+        "overview_priority": 0
+      }
+    },
+    {
+      "id": "judgment-on-egypts-gods",
+      "claim": "Exodus 12:12 and Numbers 33:4 explicitly connect the departure and plague sequence with judgment on Egypt's gods.",
+      "category": "culture",
+      "source_ids": [
+        "exodus-royal-conflict-text",
+        "numbers-33-judgment-text",
+        "sarna-exodus-1991",
+        "meyers-exodus-2005"
+      ],
+      "related_entity_ids": [
+        "plagues-of-egypt"
+      ],
+      "passage_anchors": [
+        "Numbers 33:3-4"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "egyptian-kingship-and-divine-order",
+        "parent_title": "Egyptian Kingship and Divine Order",
+        "parent_type": "cultural_background",
+        "object_importance": 95,
+        "retrieval_score": 0.915,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 2,
+        "certainty": "textually_explicit",
+        "dispute_status": "interpretive_uncertainty",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.75,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "worldview-concept",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 102
+      }
+    },
+    {
+      "id": "judgment-on-egypts-gods:passage-relevance",
+      "claim": "This evidence supplies the biblical text's own religious framing of the plague narrative without importing an unsourced one-to-one deity chart.",
+      "category": "culture",
+      "source_ids": [
+        "exodus-royal-conflict-text",
+        "numbers-33-judgment-text",
+        "sarna-exodus-1991",
+        "meyers-exodus-2005"
+      ],
+      "related_entity_ids": [
+        "plagues-of-egypt"
+      ],
+      "passage_anchors": [
+        "Numbers 33:3-4"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "egyptian-kingship-and-divine-order",
+        "parent_title": "Egyptian Kingship and Divine Order",
+        "parent_type": "cultural_background",
+        "object_importance": 95,
+        "retrieval_score": 0.915,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 2,
+        "certainty": "textually_explicit",
+        "dispute_status": "interpretive_uncertainty",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.75,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "worldview-concept",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 102,
+        "supports_evidence_ids": [
+          "judgment-on-egypts-gods"
+        ]
+      }
+    },
+    {
+      "id": "marah-elim-water-stations",
+      "claim": "Exodus contrasts a three-day water shortage and undrinkable water at Marah with the springs and palms reported at Elim; Numbers 33 preserves the same station order.",
+      "category": "geography",
+      "source_ids": [
+        "exodus-route-and-water-text",
+        "numbers-33-itinerary-text",
+        "hoffmeier-ancient-israel-sinai-2005",
+        "propp-exodus-1-18-1999",
+        "meyers-exodus-2005"
+      ],
+      "related_entity_ids": [
+        "wilderness-wandering"
+      ],
+      "passage_anchors": [
+        "Numbers 33:8-10"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "exodus-wilderness-routes-and-water",
+        "parent_title": "Exodus Wilderness Routes and Water",
+        "parent_type": "cultural_background",
+        "object_importance": 95,
+        "retrieval_score": 0.975,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 7,
+        "certainty": "textually_explicit",
+        "dispute_status": "not_disputed",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.75,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "geography-environment",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "archaeology_geography",
+        "overview_priority": 83
+      }
+    },
+    {
+      "id": "marah-elim-water-stations:passage-relevance",
+      "claim": "The sequence explains why water access is a concrete geographic constraint in the narrative rather than generic wilderness scenery.",
+      "category": "geography",
+      "source_ids": [
+        "exodus-route-and-water-text",
+        "numbers-33-itinerary-text",
+        "hoffmeier-ancient-israel-sinai-2005",
+        "propp-exodus-1-18-1999",
+        "meyers-exodus-2005"
+      ],
+      "related_entity_ids": [
+        "wilderness-wandering"
+      ],
+      "passage_anchors": [
+        "Numbers 33:8-10"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "exodus-wilderness-routes-and-water",
+        "parent_title": "Exodus Wilderness Routes and Water",
+        "parent_type": "cultural_background",
+        "object_importance": 95,
+        "retrieval_score": 0.975,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 7,
+        "certainty": "textually_explicit",
+        "dispute_status": "not_disputed",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.75,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "geography-environment",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 83,
+        "supports_evidence_ids": [
+          "marah-elim-water-stations"
+        ]
+      }
+    },
+    {
+      "id": "numbers-inheritance-preparation",
+      "claim": "The final third of Numbers prepares the new generation for land inheritance through a second census, inheritance rulings, Joshua's commission, land boundaries, towns, and tribal safeguards.",
+      "category": "culture",
+      "source_ids": [
+        "numbers-1-36",
+        "milgrom-numbers",
+        "ashley-numbers"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Numbers 26-36"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "numbers",
+        "parent_title": "Numbers",
+        "parent_type": "book",
+        "object_importance": 95,
+        "retrieval_score": 0.915,
+        "passage_relationship": "direct",
+        "anchor_specificity": "chapter",
+        "verse_distance": 700,
+        "certainty": "strong_consensus",
+        "dispute_status": "not_disputed",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 73
+      }
+    },
+    {
+      "id": "numbers:interpretive_note:2",
+      "claim": "Proposed maps of the wilderness route should label uncertain site identifications rather than presenting a single itinerary reconstruction as established.",
+      "category": "geography",
+      "source_ids": [
+        "milgrom-numbers",
+        "ashley-numbers",
+        "zondervan-illustrated-pentateuch-backgrounds"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Numbers 33"
+      ],
+      "confidence": "low",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "numbers",
+        "parent_title": "Numbers",
+        "parent_type": "book",
+        "object_importance": 95,
+        "retrieval_score": 0.915,
+        "passage_relationship": "direct",
+        "anchor_specificity": "chapter",
+        "verse_distance": 0,
+        "certainty": "insufficient_evidence",
+        "dispute_status": "archaeological_uncertainty",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "historical-context",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 80
+      }
+    },
+    {
+      "id": "plagues-of-egypt:ancient_near_east_context:0",
+      "claim": "Egyptian royal objects show kings represented through divine titulary and temple cult, supplying bounded comparison for Pharaoh's royal-religious role. The evidence does not establish popular plague-to-deity charts as historical fact.",
+      "category": "culture",
+      "source_ids": [
+        "exodus-plague-sequence-text",
+        "numbers-33-judgment-text",
+        "sarna-exodus-1991",
+        "meyers-exodus-2005"
+      ],
+      "related_entity_ids": [
+        "plagues-of-egypt"
+      ],
+      "passage_anchors": [
+        "Numbers 33:3-4"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "plagues-of-egypt",
+        "parent_title": "Plagues of Egypt",
+        "parent_type": "event",
+        "object_importance": 84,
+        "retrieval_score": 0.904,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 2,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "plagues-of-egypt:hebraic_worldview:0",
+      "claim": "Exodus 12:12 and Numbers 33:4 explicitly describe judgment on Egypt's gods, while the narrative repeatedly frames the conflict through recognition of YHWH.",
+      "category": "culture",
+      "source_ids": [
+        "exodus-plague-sequence-text",
+        "numbers-33-judgment-text",
+        "sarna-exodus-1991",
+        "meyers-exodus-2005"
+      ],
+      "related_entity_ids": [
+        "plagues-of-egypt"
+      ],
+      "passage_anchors": [
+        "Numbers 33:3-4"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "plagues-of-egypt",
+        "parent_title": "Plagues of Egypt",
+        "parent_type": "event",
+        "object_importance": 84,
+        "retrieval_score": 0.904,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 2,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "hebraic_worldview",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "plagues-of-egypt:historical_context:0",
+      "claim": "The narrative is set in Egypt under an unnamed Pharaoh and moves between royal audience scenes and disasters affecting land, animals, households, and cult. The record does not assign the episode to a dynasty or claim that an Egyptian artifact independently verifies the sequence.",
+      "category": "history",
+      "source_ids": [
+        "exodus-plague-sequence-text",
+        "numbers-33-judgment-text",
+        "sarna-exodus-1991",
+        "meyers-exodus-2005"
+      ],
+      "related_entity_ids": [
+        "plagues-of-egypt"
+      ],
+      "passage_anchors": [
+        "Numbers 33:3-4"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "plagues-of-egypt",
+        "parent_title": "Plagues of Egypt",
+        "parent_type": "event",
+        "object_importance": 84,
+        "retrieval_score": 0.904,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 2,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "red-sea-crossing:ancient_near_east_context:0",
+      "claim": "The episode is narrated against Egypt's eastern frontier, chariot pursuit, water, wind, and wilderness movement. Geographic comparison must remain separate from claims that a specific modern landform or alleged artifact proves the event.",
+      "category": "culture",
+      "source_ids": [
+        "exodus-sea-crossing-text",
+        "numbers-33-sea-itinerary-text",
+        "davies-way-wilderness-1979",
+        "hoffmeier-ancient-israel-sinai-2005",
+        "propp-exodus-1-18-1999"
+      ],
+      "related_entity_ids": [
+        "red-sea-crossing"
+      ],
+      "passage_anchors": [
+        "Numbers 33:5-8"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "red-sea-crossing",
+        "parent_title": "Red Sea Crossing",
+        "parent_type": "event",
+        "object_importance": 84,
+        "retrieval_score": 0.904,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 4,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "red-sea-crossing:historical_context:0",
+      "claim": "Exodus names route decisions and camps around the crossing but does not provide modern coordinates. Proposed identifications range across eastern Egyptian lakes, lagoons, and gulfs, so CKL preserves the route markers without selecting a crossing site.",
+      "category": "history",
+      "source_ids": [
+        "exodus-sea-crossing-text",
+        "numbers-33-sea-itinerary-text",
+        "davies-way-wilderness-1979",
+        "hoffmeier-ancient-israel-sinai-2005",
+        "propp-exodus-1-18-1999"
+      ],
+      "related_entity_ids": [
+        "red-sea-crossing"
+      ],
+      "passage_anchors": [
+        "Numbers 33:5-8"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "red-sea-crossing",
+        "parent_title": "Red Sea Crossing",
+        "parent_type": "event",
+        "object_importance": 84,
+        "retrieval_score": 0.904,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 4,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "sinai-itinerary-models",
+      "claim": "The combined Exodus and Numbers itineraries constrain proposed routes to Sinai but do not yield one consensus identification of all stations or of the mountain.",
+      "category": "geography",
+      "source_ids": [
+        "exodus-route-and-water-text",
+        "numbers-33-itinerary-text",
+        "davies-way-wilderness-1979",
+        "hoffmeier-ancient-israel-sinai-2005",
+        "meyers-exodus-2005"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Numbers 33:11-16"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "exodus-wilderness-routes-and-water",
+        "parent_title": "Exodus Wilderness Routes and Water",
+        "parent_type": "cultural_background",
+        "object_importance": 95,
+        "retrieval_score": 0.975,
+        "passage_relationship": "disputed",
+        "anchor_specificity": "verse",
+        "verse_distance": 10,
+        "certainty": "disputed",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "scholarly-reconstruction",
+        "exploration_potential": 0.75,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "geography-environment",
+        "field": "",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": null,
+        "overview_priority": 20
+      }
+    },
+    {
+      "id": "sinai-itinerary-models:passage-relevance",
+      "claim": "This item helps readers use itinerary evidence without treating a traditional or novel Mount Sinai candidate as an established fact of the passage.",
+      "category": "geography",
+      "source_ids": [
+        "exodus-route-and-water-text",
+        "numbers-33-itinerary-text",
+        "davies-way-wilderness-1979",
+        "hoffmeier-ancient-israel-sinai-2005",
+        "meyers-exodus-2005"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Numbers 33:11-16"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "exodus-wilderness-routes-and-water",
+        "parent_title": "Exodus Wilderness Routes and Water",
+        "parent_type": "cultural_background",
+        "object_importance": 95,
+        "retrieval_score": 0.975,
+        "passage_relationship": "disputed",
+        "anchor_specificity": "verse",
+        "verse_distance": 10,
+        "certainty": "disputed",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "scholarly-reconstruction",
+        "exploration_potential": 0.75,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "geography-environment",
+        "field": "",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "significance",
+        "overview_priority": 20,
+        "supports_evidence_ids": [
+          "sinai-itinerary-models"
+        ]
+      }
+    },
+    {
+      "id": "wilderness-wandering:ancient_near_east_context:0",
+      "claim": "Travel through arid zones depends on routes, water, pasture, and viable camps. Marah, Elim, Rephidim, Kadesh, and other episodes foreground those constraints without allowing present-day springs or mountains to be identified automatically with biblical stations.",
+      "category": "culture",
+      "source_ids": [
+        "exodus-wilderness-text",
+        "numbers-wilderness-itinerary-text",
+        "davies-way-wilderness-1979",
+        "hoffmeier-ancient-israel-sinai-2005",
+        "meyers-exodus-2005"
+      ],
+      "related_entity_ids": [
+        "wilderness-wandering"
+      ],
+      "passage_anchors": [
+        "Numbers 33:1-49"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "wilderness-wandering",
+        "parent_title": "Wilderness Wandering",
+        "parent_type": "event",
+        "object_importance": 84,
+        "retrieval_score": 0.904,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "wilderness-wandering:historical_context:0",
+      "claim": "Exodus and Numbers preserve narrative episodes and itinerary notices for travel from the Sea toward Sinai and eventually the Transjordan. The sequence is textually important, but most intermediate stations and the complete route cannot be assigned secure modern coordinates.",
+      "category": "history",
+      "source_ids": [
+        "exodus-wilderness-text",
+        "numbers-wilderness-itinerary-text",
+        "davies-way-wilderness-1979",
+        "hoffmeier-ancient-israel-sinai-2005",
+        "meyers-exodus-2005"
+      ],
+      "related_entity_ids": [
+        "wilderness-wandering"
+      ],
+      "passage_anchors": [
+        "Numbers 33:1-49"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "wilderness-wandering",
+        "parent_title": "Wilderness Wandering",
+        "parent_type": "event",
+        "object_importance": 84,
+        "retrieval_score": 0.904,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "yam-suf-route-identification",
+      "claim": "Exodus and Numbers preserve an ordered set of route choices and camp names around the Sea crossing, while modern geographic identifications remain contested.",
+      "category": "geography",
+      "source_ids": [
+        "exodus-route-and-water-text",
+        "numbers-33-itinerary-text",
+        "davies-way-wilderness-1979",
+        "hoffmeier-ancient-israel-sinai-2005",
+        "propp-exodus-1-18-1999"
+      ],
+      "related_entity_ids": [
+        "red-sea-crossing"
+      ],
+      "passage_anchors": [
+        "Numbers 33:5-8"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "exodus-wilderness-routes-and-water",
+        "parent_title": "Exodus Wilderness Routes and Water",
+        "parent_type": "cultural_background",
+        "object_importance": 95,
+        "retrieval_score": 0.975,
+        "passage_relationship": "disputed",
+        "anchor_specificity": "verse",
+        "verse_distance": 4,
+        "certainty": "disputed",
+        "dispute_status": "identification_uncertainty",
+        "assertion_type": "scholarly-reconstruction",
+        "exploration_potential": 0.75,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "geography-environment",
+        "field": "",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": null,
+        "overview_priority": 20
+      }
+    },
+    {
+      "id": "yam-suf-route-identification:passage-relevance",
+      "claim": "This evidence keeps the narrative's actual geographic vocabulary in view and prevents a familiar modern map from being treated as the only route allowed by the passage.",
+      "category": "geography",
+      "source_ids": [
+        "exodus-route-and-water-text",
+        "numbers-33-itinerary-text",
+        "davies-way-wilderness-1979",
+        "hoffmeier-ancient-israel-sinai-2005",
+        "propp-exodus-1-18-1999"
+      ],
+      "related_entity_ids": [
+        "red-sea-crossing"
+      ],
+      "passage_anchors": [
+        "Numbers 33:5-8"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "exodus-wilderness-routes-and-water",
+        "parent_title": "Exodus Wilderness Routes and Water",
+        "parent_type": "cultural_background",
+        "object_importance": 95,
+        "retrieval_score": 0.975,
+        "passage_relationship": "disputed",
+        "anchor_specificity": "verse",
+        "verse_distance": 4,
+        "certainty": "disputed",
+        "dispute_status": "identification_uncertainty",
+        "assertion_type": "scholarly-reconstruction",
+        "exploration_potential": 0.75,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "geography-environment",
+        "field": "",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "significance",
+        "overview_priority": 20,
+        "supports_evidence_ids": [
+          "yam-suf-route-identification"
+        ]
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "The Book of Numbers",
+        "author": "Timothy R. Ashley",
+        "publisher": "Eerdmans",
+        "year": 2022,
+        "locator": "Second edition, introduction and commentary on Numbers 1-36",
+        "url": "https://www.eerdmans.com/9780802872029/the-book-of-numbers/",
+        "source_type": "reference-work",
+        "supports": [
+          "literary-context",
+          "structure",
+          "canonical-context",
+          "later-christian-reception",
+          "interpretive-notes",
+          "numbers-literary-journey",
+          "numbers-kadesh-judgment",
+          "numbers-balaam-blessing"
+        ],
+        "notes": "Final-form literary and theological commentary; second edition.",
+        "id": "ashley-numbers",
+        "canonical_object_ids": [
+          "numbers"
+        ]
+      },
+      {
+        "title": "The Way of the Wilderness: A Geographical Study of the Wilderness Itineraries in the Old Testament",
+        "author": "G. I. Davies",
+        "publisher": "Cambridge University Press",
+        "year": 1979,
+        "locator": "Chapters 7-9: route points, Sinai routes, and identification",
+        "url": "https://www.cambridge.org/core/books/way-of-the-wilderness/19AE62B5E4C086F242F5C1F95BCC9CB1",
+        "source_type": "academic-book",
+        "supports": [
+          "yam-suf-route-markers-text",
+          "sinai-route-identifications-disputed",
+          "yam-suf-route-identification",
+          "sinai-itinerary-models"
+        ],
+        "notes": "Historical-geographic survey of itinerary interpretation and competing route identifications.",
+        "id": "davies-way-wilderness-1979",
+        "canonical_object_ids": [
+          "exodus-wilderness-routes-and-water",
+          "red-sea-crossing",
+          "wilderness-wandering"
+        ]
+      },
+      {
+        "title": "Exodus 5 and 7-12",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Exodus 5:1-5; 7:1-12:32",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "historical-context",
+          "hebraic-worldview",
+          "literary-context",
+          "interpretive-notes"
+        ],
+        "notes": "Primary biblical text; no modern translation is reproduced.",
+        "id": "exodus-plague-sequence-text",
+        "canonical_object_ids": [
+          "plagues-of-egypt"
+        ]
+      },
+      {
+        "title": "Exodus 13-19",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Exodus 13:17-14:31; 15:22-27; 17:1-7; 19:1-2",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "yam-suf-route-markers-text",
+          "marah-elim-water-sequence-text",
+          "sinai-route-identifications-disputed",
+          "yam-suf-route-identification",
+          "marah-elim-water-stations",
+          "sinai-itinerary-models"
+        ],
+        "notes": "Primary biblical narrative text; no modern translation is reproduced.",
+        "id": "exodus-route-and-water-text",
+        "canonical_object_ids": [
+          "exodus-wilderness-routes-and-water"
+        ]
+      },
+      {
+        "title": "Exodus 5, 7, and 12",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Exodus 5:1-5; 7:1-5; 12:12",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "exodus-pharaoh-authority-conflict",
+          "exodus-judgments-egyptian-gods",
+          "pharaoh-authority-question",
+          "judgment-on-egypts-gods"
+        ],
+        "notes": "Primary biblical text; no modern translation is reproduced.",
+        "id": "exodus-royal-conflict-text",
+        "canonical_object_ids": [
+          "egyptian-kingship-and-divine-order"
+        ]
+      },
+      {
+        "title": "Exodus 13-15",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Exodus 13:17-22; 14:1-31; 15:1-21",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "historical-context",
+          "ancient-near-east-context",
+          "literary-context",
+          "interpretive-notes"
+        ],
+        "notes": "Primary biblical narrative and poetic text; no modern translation is reproduced.",
+        "id": "exodus-sea-crossing-text",
+        "canonical_object_ids": [
+          "red-sea-crossing"
+        ]
+      },
+      {
+        "title": "Exodus 15-19",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Exodus 15:22-27; 16:1-36; 17:1-7; 19:1-6",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "historical-context",
+          "ancient-near-east-context",
+          "literary-context",
+          "interpretive-notes"
+        ],
+        "notes": "Primary biblical narrative text; no modern translation is reproduced.",
+        "id": "exodus-wilderness-text",
+        "canonical_object_ids": [
+          "wilderness-wandering"
+        ]
+      },
+      {
+        "title": "Ancient Israel in Sinai: The Evidence for the Authenticity of the Wilderness Traditions",
+        "author": "James K. Hoffmeier",
+        "publisher": "Oxford University Press",
+        "year": 2005,
+        "locator": "Chapters 4-7: route to the Sea, Sea identification, mountain, and wilderness travel",
+        "url": "https://academic.oup.com/book/36060",
+        "source_type": "academic-book",
+        "supports": [
+          "yam-suf-route-markers-text",
+          "marah-elim-water-sequence-text",
+          "sinai-route-identifications-disputed",
+          "yam-suf-route-identification",
+          "marah-elim-water-stations",
+          "sinai-itinerary-models"
+        ],
+        "notes": "A detailed route reconstruction included as one scholarly model, not as CKL's settled map.",
+        "id": "hoffmeier-ancient-israel-sinai-2005",
+        "canonical_object_ids": [
+          "exodus-wilderness-routes-and-water",
+          "red-sea-crossing",
+          "wilderness-wandering"
+        ]
+      },
+      {
+        "title": "Exodus",
+        "author": "Carol Meyers",
+        "publisher": "Cambridge University Press",
+        "year": 2005,
+        "locator": "New Cambridge Bible Commentary, Exodus 13-19",
+        "url": "https://www.cambridge.org/core/books/exodus/0BBD532445DFE6B3D2BA9CB53E3E6906",
+        "source_type": "academic-book",
+        "supports": [
+          "marah-elim-water-sequence-text",
+          "sinai-route-identifications-disputed",
+          "marah-elim-water-stations",
+          "sinai-itinerary-models"
+        ],
+        "notes": "Literary, social, and historical commentary used to keep narrative observations distinct from route reconstruction.",
+        "id": "meyers-exodus-2005",
+        "canonical_object_ids": [
+          "egyptian-kingship-and-divine-order",
+          "exodus-wilderness-routes-and-water",
+          "plagues-of-egypt",
+          "wilderness-wandering"
+        ]
+      },
+      {
+        "title": "The JPS Torah Commentary: Numbers",
+        "author": "Jacob Milgrom",
+        "publisher": "Jewish Publication Society",
+        "year": 1990,
+        "locator": "Introduction and commentary on Numbers 1-36",
+        "url": "https://jps.org/books/jps-torah-commentary-numbers/",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context",
+          "literary-context",
+          "hebrew-words",
+          "interpretive-notes",
+          "numbers-literary-journey",
+          "numbers-two-generations",
+          "numbers-deir-alla-limits"
+        ],
+        "notes": "Jewish commentary integrating Hebrew text, classical interpretation, and modern scholarship.",
+        "id": "milgrom-numbers",
+        "canonical_object_ids": [
+          "numbers"
+        ]
+      },
+      {
+        "title": "Numbers 1-36",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Numbers 1:1-36:13",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "literary-context",
+          "structure",
+          "key-people",
+          "key-places",
+          "key-events",
+          "scripture-references",
+          "numbers-two-generations",
+          "numbers-kadesh-judgment",
+          "numbers-balaam-blessing",
+          "numbers-inheritance-preparation"
+        ],
+        "notes": "Primary biblical text.",
+        "id": "numbers-1-36",
+        "canonical_object_ids": [
+          "numbers"
+        ]
+      },
+      {
+        "title": "Numbers 33",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Numbers 33:5-16",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "yam-suf-route-markers-text",
+          "marah-elim-water-sequence-text",
+          "sinai-route-identifications-disputed",
+          "yam-suf-route-identification",
+          "marah-elim-water-stations",
+          "sinai-itinerary-models"
+        ],
+        "notes": "Primary biblical itinerary text used alongside the narrative sequence.",
+        "id": "numbers-33-itinerary-text",
+        "canonical_object_ids": [
+          "exodus-wilderness-routes-and-water"
+        ]
+      },
+      {
+        "title": "Numbers 33",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Numbers 33:3-4",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "exodus-judgments-egyptian-gods",
+          "judgment-on-egypts-gods"
+        ],
+        "notes": "Primary biblical itinerary text repeating the judgment formulation.",
+        "id": "numbers-33-judgment-text",
+        "canonical_object_ids": [
+          "egyptian-kingship-and-divine-order",
+          "plagues-of-egypt"
+        ]
+      },
+      {
+        "title": "Numbers 33",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Numbers 33:5-8",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "historical-context",
+          "literary-context",
+          "interpretive-notes"
+        ],
+        "notes": "Primary biblical itinerary text.",
+        "id": "numbers-33-sea-itinerary-text",
+        "canonical_object_ids": [
+          "red-sea-crossing"
+        ]
+      },
+      {
+        "title": "Numbers 10, 20, and 33",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Numbers 10:11-12; 20:1-13; 33:1-49",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "historical-context",
+          "ancient-near-east-context",
+          "literary-context",
+          "interpretive-notes"
+        ],
+        "notes": "Primary biblical narrative and itinerary text.",
+        "id": "numbers-wilderness-itinerary-text",
+        "canonical_object_ids": [
+          "wilderness-wandering"
+        ]
+      },
+      {
+        "title": "Exodus 1-18",
+        "author": "William H. C. Propp",
+        "publisher": "Yale University Press",
+        "year": 1999,
+        "locator": "Anchor Yale Bible commentary on Exodus 13-18",
+        "url": "https://yalebooks.yale.edu/book/9780300139389/exodus-1-18/",
+        "source_type": "academic-book",
+        "supports": [
+          "yam-suf-route-markers-text",
+          "marah-elim-water-sequence-text",
+          "yam-suf-route-identification",
+          "marah-elim-water-stations"
+        ],
+        "notes": "Detailed philological and historical commentary used for route terminology and water episodes.",
+        "id": "propp-exodus-1-18-1999",
+        "canonical_object_ids": [
+          "exodus-wilderness-routes-and-water",
+          "red-sea-crossing"
+        ]
+      },
+      {
+        "title": "The JPS Torah Commentary: Exodus",
+        "author": "Nahum M. Sarna",
+        "publisher": "Jewish Publication Society",
+        "year": 1991,
+        "locator": "Commentary on Exodus 5:1-5, 7:1-5, and 12:12",
+        "url": "https://jps.org/books/jps-torah-commentary-exodus/",
+        "source_type": "reference-work",
+        "supports": [
+          "exodus-pharaoh-authority-conflict",
+          "exodus-judgments-egyptian-gods",
+          "pharaoh-authority-question",
+          "judgment-on-egypts-gods"
+        ],
+        "notes": "Academic Jewish commentary used to distinguish the text's statements from broader historical reconstructions.",
+        "id": "sarna-exodus-1991",
+        "canonical_object_ids": [
+          "egyptian-kingship-and-divine-order",
+          "plagues-of-egypt"
+        ]
+      },
+      {
+        "title": "Zondervan Illustrated Bible Backgrounds Commentary: Genesis, Exodus, Leviticus, Numbers, Deuteronomy",
+        "author": "John H. Walton, general editor; Roy Gane, R. Dennis Cole, and other contributors",
+        "publisher": "Zondervan",
+        "year": 2009,
+        "locator": "Numbers commentary and background notes",
+        "url": "https://zondervanacademic.com/products/genesis-exodus-leviticus-numbers-deuteronomy",
+        "source_type": "reference-work",
+        "supports": [
+          "ancient-near-east-context",
+          "archaeology",
+          "historical-context",
+          "interpretive-notes",
+          "numbers-deir-alla-limits"
+        ],
+        "notes": "Comparative textual, material, historical, geographical, and cultural background.",
+        "id": "zondervan-illustrated-pentateuch-backgrounds",
+        "canonical_object_ids": [
+          "numbers"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "egyptian-kingship-and-divine-order",
+        "type": "cultural_background",
+        "title": "Egyptian Kingship and Divine Order",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.915
+      },
+      {
+        "id": "exodus-wilderness-routes-and-water",
+        "type": "cultural_background",
+        "title": "Exodus Wilderness Routes and Water",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.975
+      },
+      {
+        "id": "numbers",
+        "type": "book",
+        "title": "Numbers",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.915
+      },
+      {
+        "id": "plagues-of-egypt",
+        "type": "event",
+        "title": "Plagues of Egypt",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.904
+      },
+      {
+        "id": "red-sea-crossing",
+        "type": "event",
+        "title": "Red Sea Crossing",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.904
+      },
+      {
+        "id": "wilderness-wandering",
+        "type": "event",
+        "title": "Wilderness Wandering",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.904
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "37bccff4698a9e2825b15a9fe65aa987624dc091a4b2d782cf0c47680be7731c",
+  "evidence_hash_version": "2"
+}

@@ -1,0 +1,659 @@
+{
+  "passage_ref": "Deuteronomy 25",
+  "entities": {
+    "people": [],
+    "places": [],
+    "groups": [],
+    "events": [],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "1-timothy:interpretive_note:32",
+      "claim": "Elder honor: double honor plausibly includes remuneration, but support does not create clerical entitlement or exempt leaders from scrutiny.",
+      "category": "culture",
+      "source_ids": [
+        "1tim-greek",
+        "marshall",
+        "towner"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Deuteronomy 25:4"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "1-timothy",
+        "parent_title": "1 Timothy",
+        "parent_type": "book",
+        "object_importance": 80,
+        "retrieval_score": 0.9,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 3,
+        "certainty": "probable",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "interpretive-caution",
+        "field": "",
+        "semantic_relationship": "LATER_RECEPTION",
+        "presentation_role": "dig_deeper",
+        "overview_priority": 0
+      }
+    },
+    {
+      "id": "1tim-elder-pay",
+      "claim": "Elders who lead well, especially in word and teaching, are worthy of double honor, supported by grain-treading and worker-wage citations.",
+      "category": "economics",
+      "source_ids": [
+        "1tim-greek",
+        "nets-lxx",
+        "marshall"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Deuteronomy 25:4"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "1-timothy",
+        "parent_title": "1 Timothy",
+        "parent_type": "book",
+        "object_importance": 80,
+        "retrieval_score": 0.9,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 3,
+        "certainty": "textually_explicit",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "LATER_RECEPTION",
+        "presentation_role": "dig_deeper",
+        "overview_priority": 0
+      }
+    },
+    {
+      "id": "deuteronomy-literary-movement",
+      "claim": "Deuteronomy moves from remembered wilderness history through covenant instruction to covenant consequences, renewal, succession, song, blessing, and Moses's death.",
+      "category": "culture",
+      "source_ids": [
+        "deuteronomy-1-34",
+        "tigay-deuteronomy",
+        "cairns-deuteronomy"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Deuteronomy 1-34"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "deuteronomy",
+        "parent_title": "Deuteronomy",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "direct",
+        "anchor_specificity": "chapter",
+        "verse_distance": 2400,
+        "certainty": "strong_consensus",
+        "dispute_status": "not_disputed",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 73
+      }
+    },
+    {
+      "id": "deuteronomy:interpretive_note:1",
+      "claim": "The repeated instruction is rhetorically adapted covenant exposition for a successor generation, not a simple verbatim duplication of earlier laws.",
+      "category": "culture",
+      "source_ids": [
+        "deuteronomy-1-34",
+        "tigay-deuteronomy",
+        "cairns-deuteronomy"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Deuteronomy 5-26"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "deuteronomy",
+        "parent_title": "Deuteronomy",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "direct",
+        "anchor_specificity": "chapter",
+        "verse_distance": 2000,
+        "certainty": "strong_consensus",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "literary-observation",
+        "field": "",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 62
+      }
+    },
+    {
+      "id": "esther:interpretive_note:5",
+      "claim": "The narrator never states why Mordecai refuses to bow to Haman. Mordecai's Benjaminite ancestry and Haman's Agagite title invite an Amalek-Saul echo, but religious-law explanations, personal defiance, and ethnic feud reconstructions should remain proposals rather than explicit facts.",
+      "category": "culture",
+      "source_ids": [
+        "esther-hebrew-1-10",
+        "levenson-esther-otl",
+        "fox-character-ideology-esther"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Deuteronomy 25:17-19"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "esther",
+        "parent_title": "Esther",
+        "parent_type": "book",
+        "object_importance": 83,
+        "retrieval_score": 0.903,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 16,
+        "certainty": "plausible",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "canonical-connection",
+        "field": "",
+        "semantic_relationship": "INTERTEXTUAL_REUSE",
+        "presentation_role": "dig_deeper",
+        "overview_priority": 0
+      }
+    },
+    {
+      "id": "kinship-legal-caution",
+      "claim": "Leviticus 25, Deuteronomy 25, and Ruth 4 address related land and family-continuity concerns but should not be treated as descriptions of one identical legal mechanism.",
+      "category": "culture",
+      "source_ids": [
+        "hubbard-ruth",
+        "lau-ruth"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Deuteronomy 25:5-10"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "kinship-inheritance-and-redemption",
+        "parent_title": "Kinship, Inheritance, and Redemption",
+        "parent_type": "cultural_background",
+        "object_importance": 92,
+        "retrieval_score": 0.912,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 4,
+        "certainty": "probable",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "historical_cultural",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "WEAKLY_RELATED",
+        "presentation_role": null,
+        "overview_priority": 7
+      }
+    },
+    {
+      "id": "ruth:interpretive_note:1",
+      "claim": "Ruth 4 links family property, responsible kinship, public transfer, marriage, and preservation of the deceased's name, but its arrangement is not identical to the brother-in-law duty in Deuteronomy 25.",
+      "category": "culture",
+      "source_ids": [
+        "ruth-1-4",
+        "hubbard-ruth",
+        "lau-ruth",
+        "zondervan-illustrated-historical-books-backgrounds"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Deuteronomy 25:5-10"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "ruth",
+        "parent_title": "Ruth",
+        "parent_type": "book",
+        "object_importance": 90,
+        "retrieval_score": 0.91,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 4,
+        "certainty": "strong_consensus",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "historical-context",
+        "field": "",
+        "semantic_relationship": "INTERTEXTUAL_REUSE",
+        "presentation_role": "dig_deeper",
+        "overview_priority": 0
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "SBL Greek New Testament: 1 Timothy",
+        "author": "Michael W. Holmes, editor",
+        "publisher": "Society of Biblical Literature and Logos Bible Software",
+        "year": 2010,
+        "locator": "1 Timothy 1:1-6:21",
+        "url": "https://www.sbl-site.org/resources/digital-texts/sbl-greek-new-testament/",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "literary-context",
+          "structure",
+          "scripture-references",
+          "greek-words",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Primary critical Greek text; individual variants require an apparatus.",
+        "id": "1tim-greek",
+        "canonical_object_ids": [
+          "1-timothy"
+        ]
+      },
+      {
+        "title": "Deuteronomy: Word and Presence",
+        "author": "Ian Cairns",
+        "publisher": "Eerdmans",
+        "year": 1992,
+        "locator": "Introduction and commentary on Deuteronomy 1-34",
+        "url": "https://www.eerdmans.com/9780802801609/deuteronomy/",
+        "source_type": "reference-work",
+        "supports": [
+          "literary-context",
+          "covenantal-significance",
+          "canonical-context",
+          "interpretive-notes",
+          "deuteronomy-literary-movement",
+          "deuteronomy-shema-love",
+          "deuteronomy-choose-life"
+        ],
+        "notes": "Theological commentary treating Deuteronomy as speech, covenant, law, and final Pentateuchal volume.",
+        "id": "cairns-deuteronomy",
+        "canonical_object_ids": [
+          "deuteronomy"
+        ]
+      },
+      {
+        "title": "Deuteronomy 1-34",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Deuteronomy 1:1-34:12",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "literary-context",
+          "structure",
+          "key-people",
+          "key-places",
+          "key-events",
+          "scripture-references",
+          "deuteronomy-literary-movement",
+          "deuteronomy-shema-love",
+          "deuteronomy-moab-covenant",
+          "deuteronomy-choose-life",
+          "deuteronomy-moses-joshua-transition"
+        ],
+        "notes": "Primary biblical text.",
+        "id": "deuteronomy-1-34",
+        "canonical_object_ids": [
+          "deuteronomy"
+        ]
+      },
+      {
+        "title": "Esther 1-10",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Esther 1:1-10:3 in the Hebrew textual tradition",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "structure",
+          "key-people",
+          "key-places",
+          "key-events",
+          "scripture-references",
+          "interpretive-notes",
+          "esther-vashti-deposed",
+          "esther-queen-hidden-identity",
+          "esther-haman-destruction-edict",
+          "esther-fast-risk-appeal",
+          "esther-honor-reversal",
+          "esther-counter-edict-defense",
+          "esther-conflict-no-plunder",
+          "esther-purim-established"
+        ],
+        "notes": "Primary Hebrew canonical text.",
+        "id": "esther-hebrew-1-10",
+        "canonical_object_ids": [
+          "esther"
+        ]
+      },
+      {
+        "title": "Character and Ideology in the Book of Esther",
+        "author": "Michael V. Fox",
+        "publisher": "Wipf and Stock",
+        "year": 2010,
+        "locator": "Second edition, translation, literary study, commentary, and scholarship postscript",
+        "url": "https://wipfandstock.com/9781608994953/character-and-ideology-in-the-book-of-esther/",
+        "source_type": "reference-work",
+        "supports": [
+          "literary-context",
+          "genre",
+          "authorship-positions",
+          "date-ranges",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "Detailed literary analysis of characterization, narrative artistry, ideology, diaspora, and Esther scholarship.",
+        "id": "fox-character-ideology-esther",
+        "canonical_object_ids": [
+          "esther"
+        ]
+      },
+      {
+        "title": "The Book of Ruth",
+        "author": "Robert L. Hubbard Jr.",
+        "publisher": "Eerdmans",
+        "year": 1989,
+        "locator": "Commentary on Ruth 4",
+        "url": "https://www.eerdmans.com/9780802883315/the-book-of-ruth/",
+        "source_type": "reference-work",
+        "supports": [
+          "kinship-ruth-arrangement",
+          "kinship-legal-caution"
+        ],
+        "notes": "Technical commentary on the Hebrew text and legal background.",
+        "id": "hubbard-ruth",
+        "canonical_object_ids": [
+          "kinship-inheritance-and-redemption",
+          "ruth"
+        ]
+      },
+      {
+        "title": "The Book of Ruth",
+        "author": "Peter H. W. Lau",
+        "publisher": "Eerdmans",
+        "year": 2023,
+        "locator": "Commentary on Ruth 4",
+        "url": "https://www.eerdmans.com/9780802877260/the-book-of-ruth/",
+        "source_type": "reference-work",
+        "supports": [
+          "kinship-ruth-arrangement",
+          "kinship-legal-caution"
+        ],
+        "notes": "NICOT commentary with literary, historical, and cultural analysis.",
+        "id": "lau-ruth",
+        "canonical_object_ids": [
+          "kinship-inheritance-and-redemption",
+          "ruth"
+        ]
+      },
+      {
+        "title": "Esther: A Commentary",
+        "author": "Jon D. Levenson",
+        "publisher": "Westminster John Knox Press",
+        "year": 1997,
+        "locator": "Old Testament Library introduction and commentary",
+        "url": "https://www.wjkbooks.com/bookproduct/0664228879-esther/",
+        "source_type": "reference-work",
+        "supports": [
+          "canonical-context",
+          "covenantal-significance",
+          "literary-context",
+          "second-temple-context",
+          "later-christian-reception",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "Commentary treating Hebrew and Greek versions, Jewish identity, Purim, theology, and literary coherence.",
+        "id": "levenson-esther-otl",
+        "canonical_object_ids": [
+          "esther"
+        ]
+      },
+      {
+        "title": "The Pastoral Epistles",
+        "author": "I. Howard Marshall with Philip H. Towner",
+        "publisher": "T&T Clark",
+        "year": 1999,
+        "locator": "International Critical Commentary",
+        "url": "https://www.bloomsbury.com/us/pastoral-epistles-9780567084552/",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "literary-context",
+          "authorship-positions",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Critical commentary; individual positions require locator verification.",
+        "id": "marshall",
+        "canonical_object_ids": [
+          "1-timothy"
+        ]
+      },
+      {
+        "title": "A New English Translation of the Septuagint",
+        "author": "Albert Pietersma and Benjamin G. Wright, editors",
+        "publisher": "Oxford University Press",
+        "year": 2007,
+        "locator": "Genesis, Deuteronomy, Leviticus, and wisdom comparanda",
+        "url": "https://ccat.sas.upenn.edu/nets/edition/",
+        "source_type": "scripture",
+        "supports": [
+          "hebraic-worldview",
+          "second-temple-context",
+          "intertextuality",
+          "hebrew-words",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Septuagint control; not evidence that every verbal parallel is a direct citation.",
+        "id": "nets-lxx",
+        "canonical_object_ids": [
+          "1-timothy"
+        ]
+      },
+      {
+        "title": "Ruth 1-4",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Ruth 1:1-4:22",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "literary-context",
+          "structure",
+          "key-people",
+          "key-places",
+          "key-events",
+          "scripture-references",
+          "ruth-literary-movement",
+          "ruth-loyal-pledge",
+          "ruth-gleaning-protection",
+          "ruth-redemption-arrangement",
+          "ruth-providence-through-action",
+          "ruth-obed-david-genealogy"
+        ],
+        "notes": "Primary biblical text.",
+        "id": "ruth-1-4",
+        "canonical_object_ids": [
+          "ruth"
+        ]
+      },
+      {
+        "title": "The JPS Torah Commentary: Deuteronomy",
+        "author": "Jeffrey H. Tigay",
+        "publisher": "Jewish Publication Society",
+        "year": 1996,
+        "locator": "Introduction and commentary on Deuteronomy 1-34",
+        "url": "https://jps.org/books/jps-torah-commentary-deuteronomy/",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context",
+          "literary-context",
+          "ancient-near-east-context",
+          "hebrew-words",
+          "interpretive-notes",
+          "deuteronomy-literary-movement",
+          "deuteronomy-moab-covenant"
+        ],
+        "notes": "Jewish commentary integrating Hebrew text, classical interpretation, and modern scholarship.",
+        "id": "tigay-deuteronomy",
+        "canonical_object_ids": [
+          "deuteronomy"
+        ]
+      },
+      {
+        "title": "The Letters to Timothy and Titus",
+        "author": "Philip H. Towner",
+        "publisher": "Eerdmans",
+        "year": 2006,
+        "locator": "New International Commentary on the New Testament",
+        "url": "https://www.eerdmans.com/9780802825131/the-letters-to-timothy-and-titus/",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "literary-context",
+          "authorship-positions",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Commentary representing a Pauline-author approach; verify locators.",
+        "id": "towner",
+        "canonical_object_ids": [
+          "1-timothy"
+        ]
+      },
+      {
+        "title": "Zondervan Illustrated Bible Backgrounds Commentary: Joshua, Judges, Ruth, 1 and 2 Samuel",
+        "author": "John H. Walton, general editor; Dale W. Manor, Richard Hess, and other contributors",
+        "publisher": "Zondervan",
+        "year": 2009,
+        "locator": "Ruth commentary and background notes",
+        "url": "https://zondervanacademic.com/products/joshua-judges-ruth-1-and-2-samuel",
+        "source_type": "reference-work",
+        "supports": [
+          "ancient-near-east-context",
+          "historical-context",
+          "archaeology",
+          "hebrew-words",
+          "interpretive-notes",
+          "ruth-gleaning-protection"
+        ],
+        "notes": "Comparative textual, material, historical, geographical, and cultural background.",
+        "id": "zondervan-illustrated-historical-books-backgrounds",
+        "canonical_object_ids": [
+          "ruth"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "1-timothy",
+        "type": "book",
+        "title": "1 Timothy",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.9
+      },
+      {
+        "id": "deuteronomy",
+        "type": "book",
+        "title": "Deuteronomy",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.917
+      },
+      {
+        "id": "esther",
+        "type": "book",
+        "title": "Esther",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.903
+      },
+      {
+        "id": "kinship-inheritance-and-redemption",
+        "type": "cultural_background",
+        "title": "Kinship, Inheritance, and Redemption",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.912
+      },
+      {
+        "id": "ruth",
+        "type": "book",
+        "title": "Ruth",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.91
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "a62bd5b9f08eadb0040d16bfbbba3555b0c7f5a1c562f254bfddaf86c4c6a939",
+  "evidence_hash_version": "2"
+}

@@ -1,0 +1,132 @@
+{
+  "passage_ref": "2 Chronicles 3",
+  "entities": {
+    "people": [],
+    "places": [],
+    "groups": [],
+    "events": [],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "second-chronicles-solomon-temple",
+      "claim": "Second Chronicles 1-7 portrays Solomon's wisdom and temple building as the completion of David's preparations, culminating in ark, glory, dedication prayer, fire, celebration, divine promise, and warning.",
+      "category": "history",
+      "source_ids": [
+        "2-chronicles-1-36",
+        "klein-second-chronicles"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "2 Chronicles 3:1-17"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "2-chronicles",
+        "parent_title": "2 Chronicles",
+        "parent_type": "book",
+        "object_importance": 86,
+        "retrieval_score": 0.906,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "textually_explicit",
+        "dispute_status": "not_disputed",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 118
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "2 Chronicles 1-36",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "2 Chronicles 1:1-36:23",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "structure",
+          "key-people",
+          "key-places",
+          "key-events",
+          "scripture-references",
+          "interpretive-notes",
+          "second-chronicles-solomon-temple",
+          "second-chronicles-fire-warning",
+          "second-chronicles-judah-focus",
+          "second-chronicles-seek-humble-pattern",
+          "second-chronicles-jehoshaphat-prayer",
+          "second-chronicles-hezekiah-passover",
+          "second-chronicles-manasseh-humbles",
+          "second-chronicles-josiah-reform",
+          "second-chronicles-exile-cyrus"
+        ],
+        "notes": "Primary biblical text.",
+        "id": "2-chronicles-1-36",
+        "canonical_object_ids": [
+          "2-chronicles"
+        ]
+      },
+      {
+        "title": "2 Chronicles",
+        "author": "Ralph W. Klein",
+        "publisher": "Fortress Press",
+        "year": 2012,
+        "locator": "Hermeneia introduction, translation, notes, and commentary",
+        "url": "https://ms.fortresspress.com/downloads/9780800661014Intro.pdf",
+        "source_type": "reference-work",
+        "supports": [
+          "authorship-positions",
+          "date-ranges",
+          "historical-context",
+          "literary-context",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "Technical critical commentary on text, historiography, theology, sources, historical setting, and reception.",
+        "id": "klein-second-chronicles",
+        "canonical_object_ids": [
+          "2-chronicles"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "2-chronicles",
+        "type": "book",
+        "title": "2 Chronicles",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.906
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "5b63472a0054d1e92866aa3b19f133f1ce285d9deadb904a9150d3bce67c08a1",
+  "evidence_hash_version": "2"
+}

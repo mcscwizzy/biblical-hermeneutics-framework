@@ -1,0 +1,228 @@
+{
+  "passage_ref": "Psalms 90",
+  "entities": {
+    "people": [],
+    "places": [],
+    "groups": [],
+    "events": [],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "2-peter:interpretive_note:32",
+      "claim": "The day-thousand-years comparison relativizes human timing in both directions; it is not a conversion formula for calculating prophetic dates.",
+      "category": "culture",
+      "source_ids": [
+        "2pet-scripture",
+        "nets-lxx"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Psalms 90:4"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "2-peter",
+        "parent_title": "2 Peter",
+        "parent_type": "book",
+        "object_importance": 77,
+        "retrieval_score": 0.897,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 3,
+        "certainty": "textually_explicit",
+        "dispute_status": "not_disputed",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "interpretive-caution",
+        "field": "",
+        "semantic_relationship": "LATER_RECEPTION",
+        "presentation_role": "dig_deeper",
+        "overview_priority": 0
+      }
+    },
+    {
+      "id": "psalms-superscription-collections",
+      "claim": "The received superscriptions associate psalms with David, Asaph, the sons of Korah, Solomon, Moses, Heman, and Ethan and also preserve genre, performance, tune, instrument, and narrated-setting labels.",
+      "category": "history",
+      "source_ids": [
+        "psalms-masoretic",
+        "baker-introducing-psalms",
+        "goldingay-psalms"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Psalms 90:1"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "psalms",
+        "parent_title": "Psalms",
+        "parent_type": "book",
+        "object_importance": 95,
+        "retrieval_score": 0.915,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "textually_explicit",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 110
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "The Second Letter of Peter",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "2 Peter 1:1-3:18",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "structure",
+          "scripture-references"
+        ],
+        "notes": "Primary canonical text.",
+        "id": "2pet-scripture",
+        "canonical_object_ids": [
+          "2-peter"
+        ]
+      },
+      {
+        "title": "Chapter 20: Psalms",
+        "author": "Rolf A. Jacobson and Michael J. Chan",
+        "publisher": "Baker Academic",
+        "year": 2023,
+        "locator": "Introducing the Old Testament online textbook resources",
+        "url": "https://bakeracademic.com/pages/jacobson-chan-introducing-the-old-testament-esources-1",
+        "source_type": "reference-work",
+        "supports": [
+          "authorship-positions",
+          "historical-context",
+          "literary-context",
+          "structure",
+          "interpretive-notes"
+        ],
+        "notes": "Accessible overview of the Psalter's contents, smaller collections, five-book division, superscriptions, and formation.",
+        "id": "baker-introducing-psalms",
+        "canonical_object_ids": [
+          "psalms"
+        ]
+      },
+      {
+        "title": "Psalms",
+        "author": "John Goldingay",
+        "publisher": "Baker Academic",
+        "year": 2008,
+        "locator": "Baker Commentary on the Old Testament Wisdom and Psalms, three-volume set",
+        "url": "https://tst.bakeracademic.com/p/Psalms-John-Goldingay/40486",
+        "source_type": "reference-work",
+        "supports": [
+          "summary",
+          "authorship-positions",
+          "date-ranges",
+          "historical-context",
+          "literary-context",
+          "genre",
+          "hebrew-words",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "Literary, historical, grammatical, theological, and pastoral commentary with original translation.",
+        "id": "goldingay-psalms",
+        "canonical_object_ids": [
+          "psalms"
+        ]
+      },
+      {
+        "title": "A New English Translation of the Septuagint",
+        "author": "Albert Pietersma and Benjamin G. Wright, editors",
+        "publisher": "International Organization for Septuagint and Cognate Studies",
+        "year": 2009,
+        "locator": "Genesis, Numbers, Psalms, Proverbs, and Isaiah comparanda",
+        "url": "https://septuaginta.uni-goettingen.de/ioscs/nets/",
+        "source_type": "reference-work",
+        "supports": [],
+        "notes": "Septuagint translation and comparison control.",
+        "id": "nets-lxx",
+        "canonical_object_ids": [
+          "2-peter"
+        ]
+      },
+      {
+        "title": "Masoretic Psalter",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Psalms 1-150 in the Masoretic textual tradition",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "literary-context",
+          "structure",
+          "key-people",
+          "key-places",
+          "key-events",
+          "scripture-references",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "Primary Hebrew canonical text and base for common modern Protestant numbering.",
+        "id": "psalms-masoretic",
+        "canonical_object_ids": [
+          "psalms"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "2-peter",
+        "type": "book",
+        "title": "2 Peter",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.897
+      },
+      {
+        "id": "psalms",
+        "type": "book",
+        "title": "Psalms",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.915
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "bee1caaa83a75723d299c2dc2258a378bb900a19c50283fb4eac74f29460b750",
+  "evidence_hash_version": "2"
+}

@@ -20,6 +20,7 @@ from framework.commentary.orchestrator import (
     status,
     validate_state,
     _terra_command,
+    _preflight_outputs_already_complete,
 )
 
 
@@ -170,6 +171,19 @@ def test_interrupted_stage_remains_resumable_and_is_not_pass(tmp_path):
     result = resume(tmp_path)
     assert result["action"] == "RESUME_REQUIRED"
     assert load_state(state_path(tmp_path))["stage_status"] == "RUNNING"
+
+
+def test_promoted_preflight_outputs_are_reconciled_without_child_rerun(tmp_path):
+    _locked_batch(tmp_path)
+    initialize(tmp_path)
+    assert _preflight_outputs_already_complete(tmp_path, 4) is True
+    state = load_state(state_path(tmp_path))
+    state["current_stage"] = "EVIDENCE_PREFLIGHT"
+    state["stage_status"] = "RUNNING"
+    save_state(state_path(tmp_path), state)
+    result = run_stage(tmp_path, model="luna", effort="high")
+    assert result["action"] == "STAGE_COMPLETE"
+    assert load_state(state_path(tmp_path))["current_stage"] == "EVIDENCE_CERTIFICATION"
 
 
 def test_pending_stage_validates_inputs_without_demanding_its_output(tmp_path):

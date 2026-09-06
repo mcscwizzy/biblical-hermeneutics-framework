@@ -1,0 +1,682 @@
+{
+  "passage_ref": "Job 42",
+  "entities": {
+    "people": [],
+    "places": [],
+    "groups": [],
+    "events": [],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "james:interpretive_note:31",
+      "claim": "Job's endurance or steadfastness can refer to persistence or outcome across the story; it must not demand silent endurance of abuse or prevent escape and protection.",
+      "category": "culture",
+      "source_ids": [
+        "james-greek",
+        "nets-lxx",
+        "allison"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Job 1:1-42:17"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "james",
+        "parent_title": "James",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 4100,
+        "certainty": "probable",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "interpretive-caution",
+        "field": "",
+        "semantic_relationship": "LATER_RECEPTION",
+        "presentation_role": "dig_deeper",
+        "overview_priority": 0
+      }
+    },
+    {
+      "id": "jas-job",
+      "claim": "James names the prophets and Job as examples connected with suffering, patience, endurance, and the Lord's compassionate outcome.",
+      "category": "culture",
+      "source_ids": [
+        "james-greek",
+        "nets-lxx",
+        "allison"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Job 1:1-42:17"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "james",
+        "parent_title": "James",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 4100,
+        "certainty": "textually_explicit",
+        "dispute_status": "lexical_uncertainty",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_theology",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "LATER_RECEPTION",
+        "presentation_role": "dig_deeper",
+        "overview_priority": 0
+      }
+    },
+    {
+      "id": "job-friends-rebuked-intercession",
+      "claim": "In the epilogue YHWH says Eliphaz and his two companions have not spoken rightly as Job has, orders sacrifices, and accepts Job's prayer for them.",
+      "category": "history",
+      "source_ids": [
+        "job-masoretic-1-42",
+        "clines-job-wbc",
+        "longman-job"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Job 42:7-9"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "job",
+        "parent_title": "Job",
+        "parent_type": "book",
+        "object_importance": 92,
+        "retrieval_score": 0.932,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 6,
+        "certainty": "textually_explicit",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 110
+      }
+    },
+    {
+      "id": "job-restoration-new-family",
+      "claim": "Job's fortunes and social relationships are restored, his livestock totals are doubled, seven sons and three named daughters are born, the daughters inherit among their brothers, and Job dies old and full of days.",
+      "category": "history",
+      "source_ids": [
+        "job-masoretic-1-42",
+        "clines-job-wbc",
+        "newsom-contest-moral-imaginations"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Job 42:10-17"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "job",
+        "parent_title": "Job",
+        "parent_type": "book",
+        "object_importance": 92,
+        "retrieval_score": 0.932,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 9,
+        "certainty": "textually_explicit",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 110
+      }
+    },
+    {
+      "id": "job:interpretive_note:11",
+      "claim": "Old Greek Job is substantially shorter than the Masoretic form in much of the poetry and also contains expansions, while Qumran preserves Hebrew fragments and an Aramaic targum. Translation and textual criticism should therefore identify the witness in view rather than treating every ancient form as verbally identical.",
+      "category": "culture",
+      "source_ids": [
+        "job-ancient-textual-witnesses",
+        "clines-job-wbc",
+        "pope-job-anchor",
+        "seow-job-1-21"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Job 1:1-42:17"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "job",
+        "parent_title": "Job",
+        "parent_type": "book",
+        "object_importance": 92,
+        "retrieval_score": 0.932,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 4100,
+        "certainty": "strong_consensus",
+        "dispute_status": "textual_variant",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "textual-observation",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 82
+      }
+    },
+    {
+      "id": "job:interpretive_note:12",
+      "claim": "The epilogue restores wealth, community, and a family future, but it does not say the first ten children were interchangeable or that new blessing erased grief. It must not become a prosperity guarantee or a formula promising doubled assets and replacement children to every faithful sufferer.",
+      "category": "economics",
+      "source_ids": [
+        "job-masoretic-1-42",
+        "newsom-contest-moral-imaginations",
+        "longman-job",
+        "walton-job-nivac"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Job 42:10-17"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "job",
+        "parent_title": "Job",
+        "parent_type": "book",
+        "object_importance": 92,
+        "retrieval_score": 0.932,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 9,
+        "certainty": "textually_explicit",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "interpretive-caution",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 82
+      }
+    },
+    {
+      "id": "job:interpretive_note:13",
+      "claim": "Job authorizes lament, anger, confusion, and demands for justice within sustained address to God. Pastoral use should listen before explaining, avoid victim blaming and secret-sin diagnosis, distinguish general moral wisdom from case-specific certainty, and never pressure traumatized people to imitate a flattened 'patience of Job' that ignores his protest.",
+      "category": "culture",
+      "source_ids": [
+        "job-masoretic-1-42",
+        "newsom-contest-moral-imaginations",
+        "longman-job",
+        "walton-job-nivac",
+        "ezekiel-james-job-reception"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Job 42:7-9"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "job",
+        "parent_title": "Job",
+        "parent_type": "book",
+        "object_importance": 92,
+        "retrieval_score": 0.932,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 6,
+        "certainty": "strong_consensus",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "interpretive-caution",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    },
+    {
+      "id": "job:interpretive_note:4",
+      "claim": "The friends first practice costly presence by sitting silently for seven days. Their counsel becomes harmful when they protect a rigid moral system by inferring Job's guilt, inventing offenses, minimizing his testimony, and treating suffering as proof. The epilogue's rebuke makes their speeches unsafe as undifferentiated pastoral advice.",
+      "category": "culture",
+      "source_ids": [
+        "job-masoretic-1-42",
+        "newsom-contest-moral-imaginations",
+        "clines-job-wbc",
+        "longman-job"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Job 42:7-9"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "job",
+        "parent_title": "Job",
+        "parent_type": "book",
+        "object_importance": 92,
+        "retrieval_score": 0.932,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 6,
+        "certainty": "textually_explicit",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "interpretive-caution",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 102
+      }
+    },
+    {
+      "id": "job:interpretive_note:6",
+      "claim": "Elihu is absent from the prologue's initial list, the divine address to Job, and the epilogue's rebuke. Some read him as a corrective preparing for YHWH; others as another inadequate defender of retribution or a later literary intervention. Narrative silence does not by itself prove either divine approval or condemnation.",
+      "category": "culture",
+      "source_ids": [
+        "job-masoretic-1-42",
+        "newsom-contest-moral-imaginations",
+        "longman-job",
+        "clines-job-wbc"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Job 42:7-9"
+      ],
+      "confidence": "low",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "job",
+        "parent_title": "Job",
+        "parent_type": "book",
+        "object_importance": 92,
+        "retrieval_score": 0.932,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 6,
+        "certainty": "disputed",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "literary-observation",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 102
+      }
+    },
+    {
+      "id": "job:interpretive_note:9",
+      "claim": "Job 42:6 is textually and lexically difficult: its verbs can be rendered reject, recant, despise, relent, repent, or be comforted, and 'dust and ashes' may mark what Job rejects, what he repents concerning, or where he sits. Claims that Job simply confesses that all his earlier protest was sinful overstate one disputed translation.",
+      "category": "culture",
+      "source_ids": [
+        "job-masoretic-1-42",
+        "job-ancient-textual-witnesses",
+        "clines-job-wbc",
+        "pope-job-anchor",
+        "longman-job"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Job 42:1-6"
+      ],
+      "confidence": "low",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "job",
+        "parent_title": "Job",
+        "parent_type": "book",
+        "object_importance": 92,
+        "retrieval_score": 0.932,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "disputed",
+        "dispute_status": "lexical_uncertainty",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "textual-observation",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 102
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "James: A Critical and Exegetical Commentary",
+        "author": "Dale C. Allison Jr.",
+        "publisher": "T&T Clark",
+        "year": 2013,
+        "locator": "International Critical Commentary",
+        "url": "https://www.bloomsbury.com/us/james-icc-9780567716934/",
+        "source_type": "academic-book",
+        "supports": [],
+        "notes": "Major critical commentary.",
+        "id": "allison",
+        "canonical_object_ids": [
+          "james"
+        ]
+      },
+      {
+        "title": "Job, Volumes 17, 18A, and 18B",
+        "author": "David J. A. Clines",
+        "publisher": "Zondervan Academic",
+        "year": 2017,
+        "locator": "Word Biblical Commentary three-volume set; introduction, translation, textual notes, and commentary",
+        "url": "https://zondervanacademic.com/products/job-3-volume-set-17-18a-and-18b",
+        "source_type": "reference-work",
+        "supports": [
+          "authorship-positions",
+          "date-ranges",
+          "historical-context",
+          "literary-context",
+          "hebrew-words",
+          "primary-sources",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "Technical commentary addressing Hebrew, textual variants, philology, structure, literary formation, historical context, and theology.",
+        "id": "clines-job-wbc",
+        "canonical_object_ids": [
+          "job"
+        ]
+      },
+      {
+        "title": "Job in Ezekiel and James",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Ezekiel 14:14, 20 and James 5:11",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "second-temple-context",
+          "canonical-context",
+          "later-christian-reception",
+          "intertextuality",
+          "new-testament-connections",
+          "interpretive-notes"
+        ],
+        "notes": "Canonical reception of Job as righteous figure and exemplar of endurance.",
+        "id": "ezekiel-james-job-reception",
+        "canonical_object_ids": [
+          "job"
+        ]
+      },
+      {
+        "title": "SBL Greek New Testament: James",
+        "author": "Michael W. Holmes, editor",
+        "publisher": "Society of Biblical Literature and Logos Bible Software",
+        "year": 2010,
+        "locator": "James",
+        "url": "https://www.sblgnt.com/",
+        "source_type": "reference-work",
+        "supports": [],
+        "notes": "Open critical Greek text used for lexical and textual controls.",
+        "id": "james-greek",
+        "canonical_object_ids": [
+          "james"
+        ]
+      },
+      {
+        "title": "Ancient textual witnesses to Job",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Old Greek Job, Qumran Hebrew Job fragments, and 11QtgJob",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "primary-sources",
+          "second-temple-context",
+          "greek-words",
+          "interpretive-notes"
+        ],
+        "notes": "Ancient Greek, Hebrew, and Aramaic witnesses with significant textual differences requiring witness-specific analysis.",
+        "id": "job-ancient-textual-witnesses",
+        "canonical_object_ids": [
+          "job"
+        ]
+      },
+      {
+        "title": "Job 1-42",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Job 1:1-42:17 in the Masoretic textual tradition",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "structure",
+          "key-people",
+          "key-places",
+          "key-events",
+          "scripture-references",
+          "interpretive-notes",
+          "job-righteous-before-testing",
+          "job-heavenly-challenge-losses",
+          "job-lament-dialogues",
+          "job-wisdom-oath",
+          "job-elihu-intervention",
+          "job-whirlwind-creation",
+          "job-friends-rebuked-intercession",
+          "job-restoration-new-family"
+        ],
+        "notes": "Primary Hebrew canonical text.",
+        "id": "job-masoretic-1-42",
+        "canonical_object_ids": [
+          "job"
+        ]
+      },
+      {
+        "title": "Job",
+        "author": "Tremper Longman III",
+        "publisher": "Baker Academic",
+        "year": 2012,
+        "locator": "Baker Commentary on the Old Testament Wisdom and Psalms",
+        "url": "https://dev.bakeracademic.com/p/Job-Tremper-III-Longman/41514",
+        "source_type": "reference-work",
+        "supports": [
+          "summary",
+          "structure",
+          "canonical-context",
+          "later-christian-reception",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "Exegetical, literary, theological, and pastoral commentary emphasizing wisdom and the critique of mechanical retribution.",
+        "id": "longman-job",
+        "canonical_object_ids": [
+          "job"
+        ]
+      },
+      {
+        "title": "A New English Translation of the Septuagint",
+        "author": "Albert Pietersma and Benjamin G. Wright, editors",
+        "publisher": "International Organization for Septuagint and Cognate Studies",
+        "year": 2009,
+        "locator": "Genesis, Proverbs, Job, Sirach, Wisdom, and prophetic comparanda",
+        "url": "https://septuaginta.uni-goettingen.de/ioscs/nets/",
+        "source_type": "reference-work",
+        "supports": [],
+        "notes": "Translation control for Greek Jewish scriptural comparisons.",
+        "id": "nets-lxx",
+        "canonical_object_ids": [
+          "james"
+        ]
+      },
+      {
+        "title": "The Book of Job: A Contest of Moral Imaginations",
+        "author": "Carol A. Newsom",
+        "publisher": "Oxford University Press",
+        "year": 2009,
+        "locator": "Chapters on prose tale, dialogue, Job 28, oath, Elihu, and whirlwind speeches",
+        "url": "https://academic.oup.com/book/3694",
+        "source_type": "academic-book",
+        "supports": [
+          "literary-context",
+          "genre",
+          "structure",
+          "interpretive-disputes",
+          "canonical-role",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "Polyphonic literary and ethical study of the book's genres, characters, rhetoric, moral imaginations, and final form.",
+        "id": "newsom-contest-moral-imaginations",
+        "canonical_object_ids": [
+          "job"
+        ]
+      },
+      {
+        "title": "Job",
+        "author": "Marvin H. Pope",
+        "publisher": "Yale University Press",
+        "year": 1965,
+        "locator": "Anchor Yale Bible Commentary, third edition",
+        "url": "https://yalebooks.yale.edu/9780300140750/job/",
+        "source_type": "reference-work",
+        "supports": [
+          "hebrew-words",
+          "ancient-near-east-context",
+          "second-temple-context",
+          "primary-sources",
+          "interpretive-notes"
+        ],
+        "notes": "Philological and comparative commentary incorporating ancient Near Eastern evidence and early Job textual witnesses.",
+        "id": "pope-job-anchor",
+        "canonical_object_ids": [
+          "job"
+        ]
+      },
+      {
+        "title": "Job 1-21: Interpretation and Commentary",
+        "author": "C. L. Seow",
+        "publisher": "Wm. B. Eerdmans Publishing Co.",
+        "year": 2013,
+        "locator": "Illuminations commentary, introduction and Job 1-21",
+        "url": "https://eerdword.com/excerpt-from-c-l-seows-job-1-21-interpretation-and-commentary-illuminations/",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context",
+          "authorship-positions",
+          "date-ranges",
+          "second-temple-context",
+          "later-christian-reception",
+          "hebrew-words",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "Reception-historical and exegetical commentary with extensive attention to text, language, interpretation, art, and theology.",
+        "id": "seow-job-1-21",
+        "canonical_object_ids": [
+          "job"
+        ]
+      },
+      {
+        "title": "Job",
+        "author": "John H. Walton",
+        "publisher": "Zondervan Academic",
+        "year": 2012,
+        "locator": "NIV Application Commentary",
+        "url": "https://zondervanacademic.com/products/job",
+        "source_type": "reference-work",
+        "supports": [
+          "ancient-near-east-context",
+          "historical-context",
+          "later-christian-reception",
+          "common-questions",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "Ancient-context, theological, and application-oriented commentary with attention to suffering, divine policy, and responsible contemporary use.",
+        "id": "walton-job-nivac",
+        "canonical_object_ids": [
+          "job"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "james",
+        "type": "book",
+        "title": "James",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.917
+      },
+      {
+        "id": "job",
+        "type": "book",
+        "title": "Job",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.932
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "ce244b73a0fc399548e1147c4f7f8d9250f3d154b722eb13cea22d922c26b6b4",
+  "evidence_hash_version": "2"
+}

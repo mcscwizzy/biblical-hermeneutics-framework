@@ -469,6 +469,23 @@ def _validate_batch_artifacts(repo_root: Path, number: int, stage: str) -> list[
     return errors
 
 
+def _preflight_outputs_already_complete(repo_root: Path, number: int) -> bool:
+    """Accept a child preflight that promoted final artifacts before return.
+
+    The resumable preflight owns its own atomic promotion.  If the parent
+    process window ends immediately afterward, the next orchestrator call
+    must validate and reconcile those artifacts instead of invoking the child
+    against an existing final batch directory.
+    """
+
+    batch = _batch_root(repo_root, number)
+    return bool(
+        _read_json(batch / "batch-manifest.json")
+        and _read_json(batch / "preflight-report.json")
+        and not _validate_batch_artifacts(repo_root, number, "EVIDENCE_LOCKED")
+    )
+
+
 def _validate_stage_prerequisites(repo_root: Path, number: int, stage: str) -> list[str]:
     """Validate inputs for a pending stage without requiring its outputs yet."""
 
@@ -1066,6 +1083,11 @@ def run_stage(repo_root: Path, *, model: str | None = None, effort: str | None =
     if stage == "PROSE_GENERATION":
         return _run_terra(repo_root, state)
     if stage in {"CANDIDATE_SELECTION", "EVIDENCE_PREFLIGHT"}:
+        if stage == "EVIDENCE_PREFLIGHT" and _preflight_outputs_already_complete(repo_root, int(state["current_batch"])):
+            state["stage_status"] = OUTPUT_WRITTEN
+            state = _complete_stage(repo_root, state, checkpoint={"reconciled_existing_preflight": True})
+            save_state(path, state)
+            return _resume_result(state, "STAGE_COMPLETE", message="existing promoted preflight artifacts reconciled without rerun")
         state = _run_external_preflight(repo_root, state)
         state = save_state(path, state)
         completed = subprocess.run(_preflight_command(repo_root, state), cwd=repo_root, check=False)

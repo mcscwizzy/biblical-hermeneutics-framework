@@ -1,0 +1,247 @@
+{
+  "passage_ref": "Zechariah 11",
+  "entities": {
+    "people": [],
+    "places": [],
+    "groups": [],
+    "events": [],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "zechariah-shepherd-sign",
+      "claim": "Zechariah 11 commands a shepherding sign act over a doomed or exploited flock and names two staffs Favor and Union, which the shepherd breaks.",
+      "category": "culture",
+      "source_ids": [
+        "zechariah-masoretic",
+        "boda-zechariah",
+        "foster-theology"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Zechariah 11:4-14"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "zechariah",
+        "parent_title": "Zechariah",
+        "parent_type": "book",
+        "object_importance": 92,
+        "retrieval_score": 0.912,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 3,
+        "certainty": "textually_explicit",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 90
+      }
+    },
+    {
+      "id": "zechariah-thirty-silver",
+      "claim": "The shepherd receives thirty pieces of silver as evaluated wages and is told to cast the magnificent price to the potter or treasury in YHWH's house.",
+      "category": "economics",
+      "source_ids": [
+        "zechariah-masoretic",
+        "catss-zechariah",
+        "boda-zechariah"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Zechariah 11:12-13"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "zechariah",
+        "parent_title": "Zechariah",
+        "parent_type": "book",
+        "object_importance": 92,
+        "retrieval_score": 0.912,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 11,
+        "certainty": "textually_explicit",
+        "dispute_status": "textual_variant",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "lexical",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 85
+      }
+    },
+    {
+      "id": "zechariah-worthless-shepherd",
+      "claim": "A second sign act portrays a foolish or worthless shepherd who neglects the vulnerable flock and receives a judgment woe.",
+      "category": "culture",
+      "source_ids": [
+        "zechariah-masoretic",
+        "boda-zechariah",
+        "foster-theology"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Zechariah 11:15-17"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "zechariah",
+        "parent_title": "Zechariah",
+        "parent_type": "book",
+        "object_importance": 92,
+        "retrieval_score": 0.912,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 14,
+        "certainty": "textually_explicit",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 105
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "The Book of Zechariah",
+        "author": "Mark J. Boda",
+        "publisher": "Eerdmans",
+        "year": 2016,
+        "locator": "New International Commentary on the Old Testament",
+        "url": "https://www.eerdmans.com/9780802823755/the-book-of-zechariah/",
+        "source_type": "academic-book",
+        "supports": [
+          "literary-context",
+          "interpretive-disputes",
+          "zechariah-horse-patrol",
+          "zechariah-branch-stone",
+          "zechariah-lampstand",
+          "zechariah-crowning",
+          "zechariah-pierced-mourning"
+        ],
+        "notes": "Major historical, literary, theological, philological, and text-critical commentary.",
+        "id": "boda-zechariah",
+        "canonical_object_ids": [
+          "zechariah"
+        ]
+      },
+      {
+        "title": "Old Greek Zechariah: Text and Textual Variants",
+        "author": "Gil Renberg; CATSS project staff; Robert A. Kraft, project director",
+        "publisher": "University of Pennsylvania CCAT",
+        "year": 2005,
+        "locator": "Minor Prophets, Zechariah / Zacharias",
+        "url": "https://ccat.sas.upenn.edu/gopher/text/religion/biblical/lxxvar/active/Zechariah.html",
+        "source_type": "reference-work",
+        "supports": [
+          "greek-words",
+          "zechariah-chariots",
+          "zechariah-crowning",
+          "zechariah-thirty-silver",
+          "zechariah-pierced-mourning",
+          "zechariah-textual-witnesses"
+        ],
+        "notes": "CATSS variants file is explicitly unfinished and must be used with its project warning.",
+        "id": "catss-zechariah",
+        "canonical_object_ids": [
+          "zechariah"
+        ]
+      },
+      {
+        "title": "The Theology of the Books of Haggai and Zechariah",
+        "author": "Robert L. Foster",
+        "publisher": "Cambridge University Press",
+        "year": 2020,
+        "locator": "Old Testament Theology",
+        "url": "https://www.cambridge.org/core/books/the-theology-of-the-books-of-haggai-and-zechariah/AD32181E6ADA835BF900CF0354E0A16F",
+        "source_type": "academic-book",
+        "supports": [
+          "major-themes",
+          "covenantal-significance",
+          "zechariah-return",
+          "zechariah-spirit-zerubbabel",
+          "zechariah-justice",
+          "zechariah-restoration-fasts-nations",
+          "zechariah-ethical-restraint"
+        ],
+        "notes": "Theological reading grounded in exegesis and contemporary ethical reflection.",
+        "id": "foster-theology",
+        "canonical_object_ids": [
+          "zechariah"
+        ]
+      },
+      {
+        "title": "Masoretic Text of Zechariah",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Zechariah 1:1-14:21",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "scripture-references",
+          "zechariah-superscriptions",
+          "zechariah-return",
+          "zechariah-horse-patrol",
+          "zechariah-joshua-cleansing",
+          "zechariah-lampstand",
+          "zechariah-fasting-question",
+          "zechariah-humble-king",
+          "zechariah-pierced-mourning",
+          "zechariah-day-mount"
+        ],
+        "notes": "Primary Hebrew Bible text in the received Masoretic tradition.",
+        "id": "zechariah-masoretic",
+        "canonical_object_ids": [
+          "zechariah"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "zechariah",
+        "type": "book",
+        "title": "Zechariah",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.912
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "765bd2135d89b7f87fa01cf2e3907d3193ce14f6d2e531f2299b9f4b0d3c8626",
+  "evidence_hash_version": "2"
+}

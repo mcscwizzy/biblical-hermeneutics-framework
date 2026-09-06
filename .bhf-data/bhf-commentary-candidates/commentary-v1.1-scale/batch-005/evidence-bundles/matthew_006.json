@@ -1,0 +1,646 @@
+{
+  "passage_ref": "Matthew 6",
+  "entities": {
+    "people": [],
+    "places": [],
+    "groups": [],
+    "events": [],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "matthew-jewish-context",
+      "claim": "Matthew's Scripture, Torah debate, practices, institutions, and actors locate it within diverse Jewish worlds even where later identity conflict shapes its polemic.",
+      "category": "culture",
+      "source_ids": [
+        "jewish-annotated-nt",
+        "deines-matthew",
+        "reinhartz-anti-judaism"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Matthew 6:1-18"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "matthew",
+        "parent_title": "Matthew",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "probable",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "historical_cultural",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 110
+      }
+    },
+    {
+      "id": "matthew-prayer-piety",
+      "claim": "Matthew 6 places almsgiving, prayer, fasting, possessions, and trust within a critique of public status performance.",
+      "category": "history",
+      "source_ids": [
+        "matthew-greek",
+        "sinaiticus-matthew",
+        "jewish-annotated-nt"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Matthew 6:1-34"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "matthew",
+        "parent_title": "Matthew",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "textually_explicit",
+        "dispute_status": "textual_variant",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "prayer-theme:ancient_near_east_context:0",
+      "claim": "Ancient background for Prayer Theme includes covenant practice, worship, kingship, wisdom instruction, and prophetic critique; the entry ties that world to Psalm 4:1-8, Matthew 6:5-13, theology-of-prayer, and psalms without letting comparison replace the biblical witness.",
+      "category": "culture",
+      "source_ids": [
+        "psalm-4",
+        "matthew-6",
+        "luke-11",
+        "philippians-4",
+        "james-5"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Matthew 6:5-13"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "prayer-theme",
+        "parent_title": "Prayer Theme",
+        "parent_type": "theme",
+        "object_importance": 90,
+        "retrieval_score": 0.91,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 4,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "prayer-theme:historical_context:0",
+      "claim": "Prayer Theme is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness.",
+      "category": "history",
+      "source_ids": [
+        "psalm-4",
+        "matthew-6",
+        "luke-11",
+        "philippians-4",
+        "james-5"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Matthew 6:5-13"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "prayer-theme",
+        "parent_title": "Prayer Theme",
+        "parent_type": "theme",
+        "object_importance": 90,
+        "retrieval_score": 0.91,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 4,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "theology-of-prayer:ancient_near_east_context:0",
+      "claim": "Ancient background for Theology of Prayer includes covenant life, temple worship, royal ideology, wisdom teaching, and early church confession; the entry ties that world to Psalm 4:1-8, Matthew 6:5-13, prayer-theme, and psalms without letting comparison replace the biblical witness.",
+      "category": "culture",
+      "source_ids": [
+        "psalm-4",
+        "matthew-6",
+        "luke-11",
+        "philippians-4",
+        "james-5"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Matthew 6:5-13"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "theology-of-prayer",
+        "parent_title": "Theology of Prayer",
+        "parent_type": "theology",
+        "object_importance": 90,
+        "retrieval_score": 0.91,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 4,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "theology-of-prayer:historical_context:0",
+      "claim": "Theology of Prayer is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness.",
+      "category": "history",
+      "source_ids": [
+        "psalm-4",
+        "matthew-6",
+        "luke-11",
+        "philippians-4",
+        "james-5"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Matthew 6:5-13"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "theology-of-prayer",
+        "parent_title": "Theology of Prayer",
+        "parent_type": "theology",
+        "object_importance": 90,
+        "retrieval_score": 0.91,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 4,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "what-is-the-kingdom-of-god:ancient_near_east_context:0",
+      "claim": "Kingship language was familiar across the ancient world, but Scripture insists that the LORD\u2019s rule is the true and final kingdom.",
+      "category": "culture",
+      "source_ids": [
+        "psalm-2",
+        "daniel-2",
+        "daniel-7",
+        "mark-1",
+        "romans-14",
+        "revelation-11"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Matthew 6:9-13"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "what-is-the-kingdom-of-god",
+        "parent_title": "What is the Kingdom of God?",
+        "parent_type": "faq",
+        "object_importance": 91,
+        "retrieval_score": 0.911,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 8,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "what-is-the-kingdom-of-god:historical_context:0",
+      "claim": "The phrase gathers Israel\u2019s royal psalms, prophetic hope, and Jesus\u2019 proclamation into one story of divine reign.",
+      "category": "history",
+      "source_ids": [
+        "psalm-2",
+        "daniel-2",
+        "daniel-7",
+        "mark-1",
+        "romans-14",
+        "revelation-11"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Matthew 6:9-13"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "what-is-the-kingdom-of-god",
+        "parent_title": "What is the Kingdom of God?",
+        "parent_type": "faq",
+        "object_importance": 91,
+        "retrieval_score": 0.911,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 8,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "Daniel 2",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "daniel-2",
+        "canonical_object_ids": [
+          "what-is-the-kingdom-of-god"
+        ]
+      },
+      {
+        "title": "Daniel 7",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "daniel-7",
+        "canonical_object_ids": [
+          "what-is-the-kingdom-of-god"
+        ]
+      },
+      {
+        "title": "The Gospel according to Matthew",
+        "author": "Deines, Roland",
+        "publisher": "Cambridge University Press",
+        "year": 2021,
+        "locator": "The Cambridge Companion to the Gospels, chapter 7, pages 137-156",
+        "url": "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/73A64E6485F9DD3C65A5F3353972E091/9781108471954c7_137-156.pdf/the-gospel-according-to-matthew.pdf",
+        "source_type": "academic-book",
+        "supports": [
+          "summary",
+          "canonical-context",
+          "major-themes",
+          "matthew-jewish-context"
+        ],
+        "notes": "Specialist overview of Jewish particularity, universal significance, Christology, and ethics.",
+        "id": "deines-matthew",
+        "canonical_object_ids": [
+          "matthew"
+        ]
+      },
+      {
+        "title": "James 5",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "james-5",
+        "canonical_object_ids": [
+          "prayer-theme",
+          "theology-of-prayer"
+        ]
+      },
+      {
+        "title": "The Jewish Annotated New Testament",
+        "author": "Levine, Amy-Jill, and Marc Zvi Brettler, editors",
+        "publisher": "Oxford University Press",
+        "year": 2017,
+        "locator": "Second edition, Matthew annotations and contextual essays",
+        "url": "https://global.oup.com/academic/product/the-jewish-annotated-new-testament-9780190461850",
+        "source_type": "reference-work",
+        "supports": [
+          "second-temple-context",
+          "hebraic-worldview",
+          "matthew-jewish-context",
+          "matthew-anti-judaism"
+        ],
+        "notes": "Jewish scholarly contextualization and reception-aware annotation; exact edition page locators require human review.",
+        "id": "jewish-annotated-nt",
+        "canonical_object_ids": [
+          "matthew"
+        ]
+      },
+      {
+        "title": "Luke 11",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "luke-11",
+        "canonical_object_ids": [
+          "prayer-theme",
+          "theology-of-prayer"
+        ]
+      },
+      {
+        "title": "Mark 1",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "mark-1",
+        "canonical_object_ids": [
+          "what-is-the-kingdom-of-god"
+        ]
+      },
+      {
+        "title": "Matthew 6",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "matthew-6",
+        "canonical_object_ids": [
+          "prayer-theme",
+          "theology-of-prayer"
+        ]
+      },
+      {
+        "title": "The Greek New Testament: SBL Edition, Matthew",
+        "author": "Holmes, Michael W., editor",
+        "publisher": "Society of Biblical Literature",
+        "year": 2010,
+        "locator": "Matthew 1-28",
+        "url": "https://www.sbl-site.org/resources/digital-texts/sbl-greek-new-testament/",
+        "source_type": "scripture",
+        "supports": [
+          "scripture-references",
+          "greek-words",
+          "matthew-greek-narrative",
+          "matthew-discourses",
+          "matthew-passion-responsibility",
+          "matthew-resurrection"
+        ],
+        "notes": "Critical Greek reading edition; differences among published editions are documented separately from a manuscript apparatus.",
+        "id": "matthew-greek",
+        "canonical_object_ids": [
+          "matthew"
+        ]
+      },
+      {
+        "title": "Philippians 4",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "philippians-4",
+        "canonical_object_ids": [
+          "prayer-theme",
+          "theology-of-prayer"
+        ]
+      },
+      {
+        "title": "Psalm 2",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [],
+        "notes": "",
+        "id": "psalm-2",
+        "canonical_object_ids": [
+          "what-is-the-kingdom-of-god"
+        ]
+      },
+      {
+        "title": "Psalm 4",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [],
+        "notes": "",
+        "id": "psalm-4",
+        "canonical_object_ids": [
+          "prayer-theme",
+          "theology-of-prayer"
+        ]
+      },
+      {
+        "title": "New Testament Origins of Christian Anti-Judaism",
+        "author": "Reinhartz, Adele",
+        "publisher": "Cambridge University Press",
+        "year": 2022,
+        "locator": "The Cambridge Companion to Antisemitism, chapter 2",
+        "url": "https://www.cambridge.org/core/books/abs/cambridge-companion-to-antisemitism/new-testament-origins-of-christian-antijudaism/B13BB1532EC63836E2B5DADF9CED9D00",
+        "source_type": "academic-book",
+        "supports": [
+          "later-christian-reception",
+          "matthew-blood-guilt",
+          "matthew-anti-judaism"
+        ],
+        "notes": "Addresses supersessionism, deicide, Satanic association, and post-Holocaust interpretation.",
+        "id": "reinhartz-anti-judaism",
+        "canonical_object_ids": [
+          "matthew"
+        ]
+      },
+      {
+        "title": "Revelation 11",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "revelation-11",
+        "canonical_object_ids": [
+          "what-is-the-kingdom-of-god"
+        ]
+      },
+      {
+        "title": "Romans 14",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "romans-14",
+        "canonical_object_ids": [
+          "what-is-the-kingdom-of-god"
+        ]
+      },
+      {
+        "title": "Codex Sinaiticus: Matthew",
+        "author": "",
+        "publisher": "Codex Sinaiticus Project",
+        "year": null,
+        "locator": "Matthew, beginning at folio 200",
+        "url": "https://codexsinaiticus.org/en/manuscript.aspx?book=33&lid=en&side=r&zoomSlider=0",
+        "source_type": "ancient-primary-source",
+        "supports": [
+          "archaeology",
+          "matthew-manuscripts",
+          "matthew-commission-formula"
+        ],
+        "notes": "Fourth-century Greek manuscript images and transcription from the international partner project.",
+        "id": "sinaiticus-matthew",
+        "canonical_object_ids": [
+          "matthew"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "matthew",
+        "type": "book",
+        "title": "Matthew",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.917
+      },
+      {
+        "id": "prayer-theme",
+        "type": "theme",
+        "title": "Prayer Theme",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.91
+      },
+      {
+        "id": "theology-of-prayer",
+        "type": "theology",
+        "title": "Theology of Prayer",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.91
+      },
+      {
+        "id": "what-is-the-kingdom-of-god",
+        "type": "faq",
+        "title": "What is the Kingdom of God?",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.911
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "355a7ead09adb548e4a47bc0ee9d79d7ea4f719a585e2eb349943141c302a4c5",
+  "evidence_hash_version": "2"
+}

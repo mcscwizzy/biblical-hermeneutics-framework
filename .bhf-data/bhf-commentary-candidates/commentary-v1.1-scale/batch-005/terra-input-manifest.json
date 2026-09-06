@@ -1,0 +1,4335 @@
+{
+  "batch_id": "batch-005",
+  "status": "READY_FOR_TERRA",
+  "prose_included": false,
+  "chapters": [
+    {
+      "reference": "Revelation 10",
+      "book": "Revelation",
+      "chapter": 10,
+      "canonical_text_input_locator": "bible.resolve_chapter('Revelation', 10)",
+      "locked_evidence_bundle_hash": "575109823fbeeae8cfb0d9a0c9054054e75a20a3d80ff664f5f4076a39876bf3",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "dig_deeper",
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-005/evidence-bundles/revelation_010.json",
+      "dig_deeper_evidence_exists": true,
+      "disputed_evidence_count": 3,
+      "textual_evidence_present": false,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Revelation",
+          "chapter": 10,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "revelation_010.json"
+    },
+    {
+      "reference": "Deuteronomy 10",
+      "book": "Deuteronomy",
+      "chapter": 10,
+      "canonical_text_input_locator": "bible.resolve_chapter('Deuteronomy', 10)",
+      "locked_evidence_bundle_hash": "fd862e7216199d18be9030ac25b3d3894387a05f448f929f7d0b4513239fd7d4",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-005/evidence-bundles/deuteronomy_010.json",
+      "dig_deeper_evidence_exists": false,
+      "disputed_evidence_count": 1,
+      "textual_evidence_present": false,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Deuteronomy",
+          "chapter": 10,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "deuteronomy_010.json"
+    },
+    {
+      "reference": "Judges 8",
+      "book": "Judges",
+      "chapter": 8,
+      "canonical_text_input_locator": "bible.resolve_chapter('Judges', 8)",
+      "locked_evidence_bundle_hash": "efe43dd941e05c538028200e1c989cde76736711995026956cfd9f8c6a218824",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-005/evidence-bundles/judges_008.json",
+      "dig_deeper_evidence_exists": false,
+      "disputed_evidence_count": 5,
+      "textual_evidence_present": false,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Judges",
+          "chapter": 8,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "judges_008.json"
+    },
+    {
+      "reference": "Psalms 29",
+      "book": "Psalms",
+      "chapter": 29,
+      "canonical_text_input_locator": "bible.resolve_chapter('Psalms', 29)",
+      "locked_evidence_bundle_hash": "700f8a2ab648fc8f463ec95a205afe2cfbc5b778abaf5d1d2ac3e4cdbafc0290",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "historical_context"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-005/evidence-bundles/psalms_029.json",
+      "dig_deeper_evidence_exists": false,
+      "disputed_evidence_count": 0,
+      "textual_evidence_present": false,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Psalms",
+          "chapter": 29,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "psalms_029.json"
+    },
+    {
+      "reference": "Isaiah 17",
+      "book": "Isaiah",
+      "chapter": 17,
+      "canonical_text_input_locator": "bible.resolve_chapter('Isaiah', 17)",
+      "locked_evidence_bundle_hash": "f28ff186ba3b2015506fdd8030f96a32cf5de7ddf8ee951b904223b1eeb53694",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-005/evidence-bundles/isaiah_017.json",
+      "dig_deeper_evidence_exists": false,
+      "disputed_evidence_count": 2,
+      "textual_evidence_present": true,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Isaiah",
+          "chapter": 17,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "isaiah_017.json"
+    },
+    {
+      "reference": "Job 10",
+      "book": "Job",
+      "chapter": 10,
+      "canonical_text_input_locator": "bible.resolve_chapter('Job', 10)",
+      "locked_evidence_bundle_hash": "d4433c21e77327e9a53c7749372bdedfc38d0d5c0f9901e930fc52fc101ce6f9",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "dig_deeper",
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-005/evidence-bundles/job_010.json",
+      "dig_deeper_evidence_exists": true,
+      "disputed_evidence_count": 5,
+      "textual_evidence_present": true,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Job",
+          "chapter": 10,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "job_010.json"
+    },
+    {
+      "reference": "Numbers 28",
+      "book": "Numbers",
+      "chapter": 28,
+      "canonical_text_input_locator": "bible.resolve_chapter('Numbers', 28)",
+      "locked_evidence_bundle_hash": "05f607511e285eb7e2eb456f12f1165acacb6f8b607855b78e2818e67197fdc5",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "THIN",
+      "allowed_section_roles": [
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-005/evidence-bundles/numbers_028.json",
+      "dig_deeper_evidence_exists": false,
+      "disputed_evidence_count": 0,
+      "textual_evidence_present": false,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Numbers",
+          "chapter": 28,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "numbers_028.json"
+    },
+    {
+      "reference": "1 Samuel 18",
+      "book": "1 Samuel",
+      "chapter": 18,
+      "canonical_text_input_locator": "bible.resolve_chapter('1 Samuel', 18)",
+      "locked_evidence_bundle_hash": "1a3f7a8434843408e46b04a2a3a824e9b62d348f0275a76a5552d945d7059203",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "THIN",
+      "allowed_section_roles": [
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-005/evidence-bundles/1_samuel_018.json",
+      "dig_deeper_evidence_exists": false,
+      "disputed_evidence_count": 2,
+      "textual_evidence_present": true,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "1 Samuel",
+          "chapter": 18,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "1_samuel_018.json"
+    },
+    {
+      "reference": "Psalms 42",
+      "book": "Psalms",
+      "chapter": 42,
+      "canonical_text_input_locator": "bible.resolve_chapter('Psalms', 42)",
+      "locked_evidence_bundle_hash": "d9ca3ce94207873313a61b44eb7129bc6b2b0f6529707b75e713cdbeb7afdb00",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "THIN",
+      "allowed_section_roles": [
+        "historical_context"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-005/evidence-bundles/psalms_042.json",
+      "dig_deeper_evidence_exists": false,
+      "disputed_evidence_count": 1,
+      "textual_evidence_present": false,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Psalms",
+          "chapter": 42,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "psalms_042.json"
+    },
+    {
+      "reference": "Isaiah 4",
+      "book": "Isaiah",
+      "chapter": 4,
+      "canonical_text_input_locator": "bible.resolve_chapter('Isaiah', 4)",
+      "locked_evidence_bundle_hash": "bde9c12054a596fb0ca0594279711a26b0157d8e4c60851493b31556c36883d6",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "THIN",
+      "allowed_section_roles": [
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-005/evidence-bundles/isaiah_004.json",
+      "dig_deeper_evidence_exists": false,
+      "disputed_evidence_count": 1,
+      "textual_evidence_present": true,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Isaiah",
+          "chapter": 4,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "isaiah_004.json"
+    },
+    {
+      "reference": "Matthew 15",
+      "book": "Matthew",
+      "chapter": 15,
+      "canonical_text_input_locator": "bible.resolve_chapter('Matthew', 15)",
+      "locked_evidence_bundle_hash": "2e5d6dfd5abf969810217c68bc8869984a3e383bea60960d7ea4afdfc9c54d71",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "historical_context"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-005/evidence-bundles/matthew_015.json",
+      "dig_deeper_evidence_exists": false,
+      "disputed_evidence_count": 3,
+      "textual_evidence_present": false,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Matthew",
+          "chapter": 15,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "matthew_015.json"
+    },
+    {
+      "reference": "Numbers 23",
+      "book": "Numbers",
+      "chapter": 23,
+      "canonical_text_input_locator": "bible.resolve_chapter('Numbers', 23)",
+      "locked_evidence_bundle_hash": "9d7bb07afec265a2db480a24677c59226e3114928effd5437c894f67c6944d12",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "archaeology_geography",
+        "dig_deeper",
+        "historical_context"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-005/evidence-bundles/numbers_023.json",
+      "dig_deeper_evidence_exists": true,
+      "disputed_evidence_count": 3,
+      "textual_evidence_present": false,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Numbers",
+          "chapter": 23,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "numbers_023.json"
+    },
+    {
+      "reference": "1 Chronicles 12",
+      "book": "1 Chronicles",
+      "chapter": 12,
+      "canonical_text_input_locator": "bible.resolve_chapter('1 Chronicles', 12)",
+      "locked_evidence_bundle_hash": "3cf68b0d70266b1aee44d446d22957f2660b6806cd3c4970efe200f69d5e0b01",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "historical_context"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-005/evidence-bundles/1_chronicles_012.json",
+      "dig_deeper_evidence_exists": false,
+      "disputed_evidence_count": 1,
+      "textual_evidence_present": false,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "1 Chronicles",
+          "chapter": 12,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "1_chronicles_012.json"
+    },
+    {
+      "reference": "Isaiah 48",
+      "book": "Isaiah",
+      "chapter": 48,
+      "canonical_text_input_locator": "bible.resolve_chapter('Isaiah', 48)",
+      "locked_evidence_bundle_hash": "ea8b2ba34caa69563417b3970b509f12954b0fd2cb486fd50521f75b523d7f58",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-005/evidence-bundles/isaiah_048.json",
+      "dig_deeper_evidence_exists": false,
+      "disputed_evidence_count": 3,
+      "textual_evidence_present": true,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Isaiah",
+          "chapter": 48,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "isaiah_048.json"
+    },
+    {
+      "reference": "Job 20",
+      "book": "Job",
+      "chapter": 20,
+      "canonical_text_input_locator": "bible.resolve_chapter('Job', 20)",
+      "locked_evidence_bundle_hash": "0e873a88107c1fb38ca8e2fb4b0a1497251f615be90cfa0d75a30290a246a799",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "dig_deeper",
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-005/evidence-bundles/job_020.json",
+      "dig_deeper_evidence_exists": true,
+      "disputed_evidence_count": 5,
+      "textual_evidence_present": true,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Job",
+          "chapter": 20,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "job_020.json"
+    },
+    {
+      "reference": "Deuteronomy 2",
+      "book": "Deuteronomy",
+      "chapter": 2,
+      "canonical_text_input_locator": "bible.resolve_chapter('Deuteronomy', 2)",
+      "locked_evidence_bundle_hash": "7ec29d40c24b1e71e868fcc3dceb07df36ed8418f30ff1ac722559e4224f4a48",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "THIN",
+      "allowed_section_roles": [
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-005/evidence-bundles/deuteronomy_002.json",
+      "dig_deeper_evidence_exists": false,
+      "disputed_evidence_count": 0,
+      "textual_evidence_present": false,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Deuteronomy",
+          "chapter": 2,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "deuteronomy_002.json"
+    },
+    {
+      "reference": "2 Chronicles 3",
+      "book": "2 Chronicles",
+      "chapter": 3,
+      "canonical_text_input_locator": "bible.resolve_chapter('2 Chronicles', 3)",
+      "locked_evidence_bundle_hash": "5b63472a0054d1e92866aa3b19f133f1ce285d9deadb904a9150d3bce67c08a1",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "THIN",
+      "allowed_section_roles": [
+        "historical_context"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-005/evidence-bundles/2_chronicles_003.json",
+      "dig_deeper_evidence_exists": false,
+      "disputed_evidence_count": 0,
+      "textual_evidence_present": false,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "2 Chronicles",
+          "chapter": 3,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "2_chronicles_003.json"
+    },
+    {
+      "reference": "Psalms 113",
+      "book": "Psalms",
+      "chapter": 113,
+      "canonical_text_input_locator": "bible.resolve_chapter('Psalms', 113)",
+      "locked_evidence_bundle_hash": "5e07c7d9ca7be9b191adf0cf0138f863e9310a697a41cef3469c59413c435c9e",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "THIN",
+      "allowed_section_roles": [
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-005/evidence-bundles/psalms_113.json",
+      "dig_deeper_evidence_exists": false,
+      "disputed_evidence_count": 1,
+      "textual_evidence_present": false,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Psalms",
+          "chapter": 113,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "psalms_113.json"
+    },
+    {
+      "reference": "Isaiah 61",
+      "book": "Isaiah",
+      "chapter": 61,
+      "canonical_text_input_locator": "bible.resolve_chapter('Isaiah', 61)",
+      "locked_evidence_bundle_hash": "b66bc16a04983754e70f06dd4b98b58a4a7fc6cb0766cb390e777b3e7fece9d6",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "THIN",
+      "allowed_section_roles": [
+        "dig_deeper",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-005/evidence-bundles/isaiah_061.json",
+      "dig_deeper_evidence_exists": true,
+      "disputed_evidence_count": 2,
+      "textual_evidence_present": true,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Isaiah",
+          "chapter": 61,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "isaiah_061.json"
+    },
+    {
+      "reference": "John 21",
+      "book": "John",
+      "chapter": 21,
+      "canonical_text_input_locator": "bible.resolve_chapter('John', 21)",
+      "locked_evidence_bundle_hash": "219d9f590932d6ef34ee29b4c0f8d1e009389a99b7aceba752f429b9b1ffd0ae",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-005/evidence-bundles/john_021.json",
+      "dig_deeper_evidence_exists": false,
+      "disputed_evidence_count": 3,
+      "textual_evidence_present": false,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "John",
+          "chapter": 21,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "john_021.json"
+    },
+    {
+      "reference": "Jeremiah 28",
+      "book": "Jeremiah",
+      "chapter": 28,
+      "canonical_text_input_locator": "bible.resolve_chapter('Jeremiah', 28)",
+      "locked_evidence_bundle_hash": "915335138f9cbd59767119c2079ce040962a66469db96884cf360efe21a62adf",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-005/evidence-bundles/jeremiah_028.json",
+      "dig_deeper_evidence_exists": false,
+      "disputed_evidence_count": 4,
+      "textual_evidence_present": true,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Jeremiah",
+          "chapter": 28,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "jeremiah_028.json"
+    },
+    {
+      "reference": "Job 4",
+      "book": "Job",
+      "chapter": 4,
+      "canonical_text_input_locator": "bible.resolve_chapter('Job', 4)",
+      "locked_evidence_bundle_hash": "125a59e55bfd501fc437257ede58b06a8fbbe6c8c596b6eeb5e415b3cf27eca4",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "dig_deeper",
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-005/evidence-bundles/job_004.json",
+      "dig_deeper_evidence_exists": true,
+      "disputed_evidence_count": 5,
+      "textual_evidence_present": true,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Job",
+          "chapter": 4,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "job_004.json"
+    },
+    {
+      "reference": "Deuteronomy 8",
+      "book": "Deuteronomy",
+      "chapter": 8,
+      "canonical_text_input_locator": "bible.resolve_chapter('Deuteronomy', 8)",
+      "locked_evidence_bundle_hash": "84fd7949bb2294fc7b3ff3f019239fd5a004e4bd8c852a2b1365e959f3168605",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "THIN",
+      "allowed_section_roles": [
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-005/evidence-bundles/deuteronomy_008.json",
+      "dig_deeper_evidence_exists": false,
+      "disputed_evidence_count": 1,
+      "textual_evidence_present": false,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Deuteronomy",
+          "chapter": 8,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "deuteronomy_008.json"
+    },
+    {
+      "reference": "1 Samuel 9",
+      "book": "1 Samuel",
+      "chapter": 9,
+      "canonical_text_input_locator": "bible.resolve_chapter('1 Samuel', 9)",
+      "locked_evidence_bundle_hash": "eb81202a827fbc06d58ec285a49c597c247383e7c49ac8da34615b680e632851",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "THIN",
+      "allowed_section_roles": [
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-005/evidence-bundles/1_samuel_009.json",
+      "dig_deeper_evidence_exists": false,
+      "disputed_evidence_count": 2,
+      "textual_evidence_present": false,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "1 Samuel",
+          "chapter": 9,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "1_samuel_009.json"
+    },
+    {
+      "reference": "Jeremiah 10",
+      "book": "Jeremiah",
+      "chapter": 10,
+      "canonical_text_input_locator": "bible.resolve_chapter('Jeremiah', 10)",
+      "locked_evidence_bundle_hash": "ed7d8459be4eab577a32b56033298eafe6bd652b2afe668b6098faa6b55763ba",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "THIN",
+      "allowed_section_roles": [
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-005/evidence-bundles/jeremiah_010.json",
+      "dig_deeper_evidence_exists": false,
+      "disputed_evidence_count": 2,
+      "textual_evidence_present": true,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Jeremiah",
+          "chapter": 10,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "jeremiah_010.json"
+    },
+    {
+      "reference": "Matthew 18",
+      "book": "Matthew",
+      "chapter": 18,
+      "canonical_text_input_locator": "bible.resolve_chapter('Matthew', 18)",
+      "locked_evidence_bundle_hash": "e4e136c6433df90a1e7113adf9c62fab7e0c0341c344b22c691e2f890e4349d6",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "dig_deeper",
+        "historical_context"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-005/evidence-bundles/matthew_018.json",
+      "dig_deeper_evidence_exists": true,
+      "disputed_evidence_count": 3,
+      "textual_evidence_present": false,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Matthew",
+          "chapter": 18,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "matthew_018.json"
+    },
+    {
+      "reference": "Deuteronomy 29",
+      "book": "Deuteronomy",
+      "chapter": 29,
+      "canonical_text_input_locator": "bible.resolve_chapter('Deuteronomy', 29)",
+      "locked_evidence_bundle_hash": "5c1bc459cd0c5f1376de649339843af901441ed1b591c9e99ff494341192e93a",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-005/evidence-bundles/deuteronomy_029.json",
+      "dig_deeper_evidence_exists": false,
+      "disputed_evidence_count": 1,
+      "textual_evidence_present": false,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Deuteronomy",
+          "chapter": 29,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "deuteronomy_029.json"
+    },
+    {
+      "reference": "Joshua 13",
+      "book": "Joshua",
+      "chapter": 13,
+      "canonical_text_input_locator": "bible.resolve_chapter('Joshua', 13)",
+      "locked_evidence_bundle_hash": "9eec29e1b083ba3be176796e96dfc9dcc3f34fcd749ad26df37c2b3d549eb41a",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-005/evidence-bundles/joshua_013.json",
+      "dig_deeper_evidence_exists": false,
+      "disputed_evidence_count": 2,
+      "textual_evidence_present": false,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Joshua",
+          "chapter": 13,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "joshua_013.json"
+    },
+    {
+      "reference": "Job 32",
+      "book": "Job",
+      "chapter": 32,
+      "canonical_text_input_locator": "bible.resolve_chapter('Job', 32)",
+      "locked_evidence_bundle_hash": "55e2f50039994c0ccf09bfe5cd20edf7dd66fd2e78395470b1406d13f5859994",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "dig_deeper",
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-005/evidence-bundles/job_032.json",
+      "dig_deeper_evidence_exists": true,
+      "disputed_evidence_count": 5,
+      "textual_evidence_present": true,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Job",
+          "chapter": 32,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "job_032.json"
+    },
+    {
+      "reference": "Deuteronomy 22",
+      "book": "Deuteronomy",
+      "chapter": 22,
+      "canonical_text_input_locator": "bible.resolve_chapter('Deuteronomy', 22)",
+      "locked_evidence_bundle_hash": "634acb042453ba5d713958bef92a4016d7344eb75b6bbfdfc85190f5cfcd7703",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "THIN",
+      "allowed_section_roles": [
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-005/evidence-bundles/deuteronomy_022.json",
+      "dig_deeper_evidence_exists": false,
+      "disputed_evidence_count": 1,
+      "textual_evidence_present": false,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Deuteronomy",
+          "chapter": 22,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "deuteronomy_022.json"
+    },
+    {
+      "reference": "2 Samuel 10",
+      "book": "2 Samuel",
+      "chapter": 10,
+      "canonical_text_input_locator": "bible.resolve_chapter('2 Samuel', 10)",
+      "locked_evidence_bundle_hash": "3764babfe7a404d4b006be132a9294ac709781c85c5813098da0e6ce17c7c35c",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "THIN",
+      "allowed_section_roles": [
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-005/evidence-bundles/2_samuel_010.json",
+      "dig_deeper_evidence_exists": false,
+      "disputed_evidence_count": 0,
+      "textual_evidence_present": false,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "2 Samuel",
+          "chapter": 10,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "2_samuel_010.json"
+    },
+    {
+      "reference": "John 9",
+      "book": "John",
+      "chapter": 9,
+      "canonical_text_input_locator": "bible.resolve_chapter('John', 9)",
+      "locked_evidence_bundle_hash": "68416e5ede4b7818491c9f91d072768126217454ccdaf1e8f550132e43d72914",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "historical_context"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-005/evidence-bundles/john_009.json",
+      "dig_deeper_evidence_exists": false,
+      "disputed_evidence_count": 3,
+      "textual_evidence_present": false,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "John",
+          "chapter": 9,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "john_009.json"
+    },
+    {
+      "reference": "2 Samuel 8",
+      "book": "2 Samuel",
+      "chapter": 8,
+      "canonical_text_input_locator": "bible.resolve_chapter('2 Samuel', 8)",
+      "locked_evidence_bundle_hash": "fc471cae9d82b2a286a3c39acd05a20144687fa96fe81fecc193d560f79bcf73",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-005/evidence-bundles/2_samuel_008.json",
+      "dig_deeper_evidence_exists": false,
+      "disputed_evidence_count": 1,
+      "textual_evidence_present": false,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "2 Samuel",
+          "chapter": 8,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "2_samuel_008.json"
+    },
+    {
+      "reference": "Job 14",
+      "book": "Job",
+      "chapter": 14,
+      "canonical_text_input_locator": "bible.resolve_chapter('Job', 14)",
+      "locked_evidence_bundle_hash": "8e725df35e7192f73a748772aa239e31e924cae854d1b45151db8c104c9fd5f6",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "dig_deeper",
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-005/evidence-bundles/job_014.json",
+      "dig_deeper_evidence_exists": true,
+      "disputed_evidence_count": 5,
+      "textual_evidence_present": true,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Job",
+          "chapter": 14,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "job_014.json"
+    },
+    {
+      "reference": "Numbers 29",
+      "book": "Numbers",
+      "chapter": 29,
+      "canonical_text_input_locator": "bible.resolve_chapter('Numbers', 29)",
+      "locked_evidence_bundle_hash": "0c811b1b80543162c1478610f791789111c6d6169e8b311b6f5743e71e7f17c3",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "THIN",
+      "allowed_section_roles": [
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-005/evidence-bundles/numbers_029.json",
+      "dig_deeper_evidence_exists": false,
+      "disputed_evidence_count": 0,
+      "textual_evidence_present": false,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Numbers",
+          "chapter": 29,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "numbers_029.json"
+    },
+    {
+      "reference": "1 Samuel 11",
+      "book": "1 Samuel",
+      "chapter": 11,
+      "canonical_text_input_locator": "bible.resolve_chapter('1 Samuel', 11)",
+      "locked_evidence_bundle_hash": "fde1e2b6960508c319871415e7aca7f3a16bd0a9a60a46be0615422aa4569543",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "THIN",
+      "allowed_section_roles": [
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-005/evidence-bundles/1_samuel_011.json",
+      "dig_deeper_evidence_exists": false,
+      "disputed_evidence_count": 1,
+      "textual_evidence_present": false,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "1 Samuel",
+          "chapter": 11,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "1_samuel_011.json"
+    },
+    {
+      "reference": "Jeremiah 35",
+      "book": "Jeremiah",
+      "chapter": 35,
+      "canonical_text_input_locator": "bible.resolve_chapter('Jeremiah', 35)",
+      "locked_evidence_bundle_hash": "671daddf5cdc9ad5a374cbf23697a4a9e956fd843986e547ff1f7e2a067127c4",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "THIN",
+      "allowed_section_roles": [
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-005/evidence-bundles/jeremiah_035.json",
+      "dig_deeper_evidence_exists": false,
+      "disputed_evidence_count": 2,
+      "textual_evidence_present": true,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Jeremiah",
+          "chapter": 35,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "jeremiah_035.json"
+    },
+    {
+      "reference": "Numbers 33",
+      "book": "Numbers",
+      "chapter": 33,
+      "canonical_text_input_locator": "bible.resolve_chapter('Numbers', 33)",
+      "locked_evidence_bundle_hash": "37bccff4698a9e2825b15a9fe65aa987624dc091a4b2d782cf0c47680be7731c",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "archaeology_geography",
+        "dig_deeper",
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-005/evidence-bundles/numbers_033.json",
+      "dig_deeper_evidence_exists": true,
+      "disputed_evidence_count": 9,
+      "textual_evidence_present": false,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Numbers",
+          "chapter": 33,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "numbers_033.json"
+    },
+    {
+      "reference": "1 Chronicles 5",
+      "book": "1 Chronicles",
+      "chapter": 5,
+      "canonical_text_input_locator": "bible.resolve_chapter('1 Chronicles', 5)",
+      "locked_evidence_bundle_hash": "30335d779abfa39353def21e935f05a8508c13665f61c6b04c5216a0ca10a2b7",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "historical_context"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-005/evidence-bundles/1_chronicles_005.json",
+      "dig_deeper_evidence_exists": false,
+      "disputed_evidence_count": 2,
+      "textual_evidence_present": false,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "1 Chronicles",
+          "chapter": 5,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "1_chronicles_005.json"
+    },
+    {
+      "reference": "Jeremiah 38",
+      "book": "Jeremiah",
+      "chapter": 38,
+      "canonical_text_input_locator": "bible.resolve_chapter('Jeremiah', 38)",
+      "locked_evidence_bundle_hash": "0d80cd7f0ec98ca67cfea22c0958be01da65910462a658298fddc7a9f8c7ed8e",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-005/evidence-bundles/jeremiah_038.json",
+      "dig_deeper_evidence_exists": false,
+      "disputed_evidence_count": 3,
+      "textual_evidence_present": true,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Jeremiah",
+          "chapter": 38,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "jeremiah_038.json"
+    },
+    {
+      "reference": "1 Samuel 5",
+      "book": "1 Samuel",
+      "chapter": 5,
+      "canonical_text_input_locator": "bible.resolve_chapter('1 Samuel', 5)",
+      "locked_evidence_bundle_hash": "7a187e8291072e8058c43fe1d1e34af2fe04c0eecedbff10710991b20be1d504",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "THIN",
+      "allowed_section_roles": [
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-005/evidence-bundles/1_samuel_005.json",
+      "dig_deeper_evidence_exists": false,
+      "disputed_evidence_count": 0,
+      "textual_evidence_present": false,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "1 Samuel",
+          "chapter": 5,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "1_samuel_005.json"
+    },
+    {
+      "reference": "Ezekiel 26",
+      "book": "Ezekiel",
+      "chapter": 26,
+      "canonical_text_input_locator": "bible.resolve_chapter('Ezekiel', 26)",
+      "locked_evidence_bundle_hash": "8f021f02dc59d5f0e39d754db302566ee5c08158b05c4e45d46ae5e9087feeff",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "THIN",
+      "allowed_section_roles": [
+        "historical_context"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-005/evidence-bundles/ezekiel_026.json",
+      "dig_deeper_evidence_exists": false,
+      "disputed_evidence_count": 1,
+      "textual_evidence_present": false,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Ezekiel",
+          "chapter": 26,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "ezekiel_026.json"
+    },
+    {
+      "reference": "John 15",
+      "book": "John",
+      "chapter": 15,
+      "canonical_text_input_locator": "bible.resolve_chapter('John', 15)",
+      "locked_evidence_bundle_hash": "08d05917b9adea71f8f88a661b072057ba6b74096ce15a566b6f81a3981f8395",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "historical_context"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-005/evidence-bundles/john_015.json",
+      "dig_deeper_evidence_exists": false,
+      "disputed_evidence_count": 3,
+      "textual_evidence_present": false,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "John",
+          "chapter": 15,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "john_015.json"
+    },
+    {
+      "reference": "2 Kings 9",
+      "book": "2 Kings",
+      "chapter": 9,
+      "canonical_text_input_locator": "bible.resolve_chapter('2 Kings', 9)",
+      "locked_evidence_bundle_hash": "748cd2c9b3965afcebcafed86e22ab7f017d5ca6e5d09daca0bf5444be327c4f",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "dig_deeper",
+        "historical_context"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-005/evidence-bundles/2_kings_009.json",
+      "dig_deeper_evidence_exists": true,
+      "disputed_evidence_count": 4,
+      "textual_evidence_present": false,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "2 Kings",
+          "chapter": 9,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "2_kings_009.json"
+    },
+    {
+      "reference": "Mark 4",
+      "book": "Mark",
+      "chapter": 4,
+      "canonical_text_input_locator": "bible.resolve_chapter('Mark', 4)",
+      "locked_evidence_bundle_hash": "4dedc0c30a7ebfa4061d390fd36f4569fd7dbb225ad0bb3928d0f98843c7708a",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "historical_context"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-005/evidence-bundles/mark_004.json",
+      "dig_deeper_evidence_exists": false,
+      "disputed_evidence_count": 4,
+      "textual_evidence_present": false,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Mark",
+          "chapter": 4,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "mark_004.json"
+    },
+    {
+      "reference": "2 Samuel 2",
+      "book": "2 Samuel",
+      "chapter": 2,
+      "canonical_text_input_locator": "bible.resolve_chapter('2 Samuel', 2)",
+      "locked_evidence_bundle_hash": "38321ab42ab85f62b5fcd898add27efaa161b6d8fa309314eeefa35e3190b2ae",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-005/evidence-bundles/2_samuel_002.json",
+      "dig_deeper_evidence_exists": false,
+      "disputed_evidence_count": 0,
+      "textual_evidence_present": false,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "2 Samuel",
+          "chapter": 2,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "2_samuel_002.json"
+    },
+    {
+      "reference": "Jeremiah 20",
+      "book": "Jeremiah",
+      "chapter": 20,
+      "canonical_text_input_locator": "bible.resolve_chapter('Jeremiah', 20)",
+      "locked_evidence_bundle_hash": "3d0da71af22a1e202d23521c1873400dffef6834ff51868b4e3057c5f1729e38",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-005/evidence-bundles/jeremiah_020.json",
+      "dig_deeper_evidence_exists": false,
+      "disputed_evidence_count": 4,
+      "textual_evidence_present": true,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Jeremiah",
+          "chapter": 20,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "jeremiah_020.json"
+    },
+    {
+      "reference": "2 Samuel 9",
+      "book": "2 Samuel",
+      "chapter": 9,
+      "canonical_text_input_locator": "bible.resolve_chapter('2 Samuel', 9)",
+      "locked_evidence_bundle_hash": "f39e193b9be4fb6576726a4e970d39a526fa6fa45e0dcdc2296899854df02126",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "THIN",
+      "allowed_section_roles": [
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-005/evidence-bundles/2_samuel_009.json",
+      "dig_deeper_evidence_exists": false,
+      "disputed_evidence_count": 0,
+      "textual_evidence_present": false,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "2 Samuel",
+          "chapter": 9,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "2_samuel_009.json"
+    },
+    {
+      "reference": "Ezekiel 27",
+      "book": "Ezekiel",
+      "chapter": 27,
+      "canonical_text_input_locator": "bible.resolve_chapter('Ezekiel', 27)",
+      "locked_evidence_bundle_hash": "8c82ab920a43a64b1e9cac05cbdc642e312221b844f61847bb8c311c5c03a271",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "THIN",
+      "allowed_section_roles": [
+        "historical_context"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-005/evidence-bundles/ezekiel_027.json",
+      "dig_deeper_evidence_exists": false,
+      "disputed_evidence_count": 1,
+      "textual_evidence_present": false,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Ezekiel",
+          "chapter": 27,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "ezekiel_027.json"
+    },
+    {
+      "reference": "John 16",
+      "book": "John",
+      "chapter": 16,
+      "canonical_text_input_locator": "bible.resolve_chapter('John', 16)",
+      "locked_evidence_bundle_hash": "7c1c72ab28febdda1ae1e277309f0a1b352bca6c69b7ad48895edc4c29309206",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "historical_context"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-005/evidence-bundles/john_016.json",
+      "dig_deeper_evidence_exists": false,
+      "disputed_evidence_count": 3,
+      "textual_evidence_present": false,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "John",
+          "chapter": 16,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "john_016.json"
+    },
+    {
+      "reference": "Acts 6",
+      "book": "Acts",
+      "chapter": 6,
+      "canonical_text_input_locator": "bible.resolve_chapter('Acts', 6)",
+      "locked_evidence_bundle_hash": "ec41fe679c46e098a035392c720bacce6560a70e9b9bad596d268f5fbe9960dc",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-005/evidence-bundles/acts_006.json",
+      "dig_deeper_evidence_exists": false,
+      "disputed_evidence_count": 4,
+      "textual_evidence_present": true,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Acts",
+          "chapter": 6,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "acts_006.json"
+    },
+    {
+      "reference": "1 Chronicles 27",
+      "book": "1 Chronicles",
+      "chapter": 27,
+      "canonical_text_input_locator": "bible.resolve_chapter('1 Chronicles', 27)",
+      "locked_evidence_bundle_hash": "190e547b424844d305ba7a03b178e398dddb5eefdf533cf74735ff661861cf21",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "THIN",
+      "allowed_section_roles": [
+        "historical_context"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-005/evidence-bundles/1_chronicles_027.json",
+      "dig_deeper_evidence_exists": false,
+      "disputed_evidence_count": 1,
+      "textual_evidence_present": false,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "1 Chronicles",
+          "chapter": 27,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "1_chronicles_027.json"
+    },
+    {
+      "reference": "2 Corinthians 10",
+      "book": "2 Corinthians",
+      "chapter": 10,
+      "canonical_text_input_locator": "bible.resolve_chapter('2 Corinthians', 10)",
+      "locked_evidence_bundle_hash": "ab9c12003fb44d520d7ce58a1ef2a1e4191c991f07169f06ee31307ae200938d",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-005/evidence-bundles/2_corinthians_010.json",
+      "dig_deeper_evidence_exists": false,
+      "disputed_evidence_count": 25,
+      "textual_evidence_present": true,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "2 Corinthians",
+          "chapter": 10,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "2_corinthians_010.json"
+    },
+    {
+      "reference": "Matthew 6",
+      "book": "Matthew",
+      "chapter": 6,
+      "canonical_text_input_locator": "bible.resolve_chapter('Matthew', 6)",
+      "locked_evidence_bundle_hash": "355a7ead09adb548e4a47bc0ee9d79d7ea4f719a585e2eb349943141c302a4c5",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "historical_context"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-005/evidence-bundles/matthew_006.json",
+      "dig_deeper_evidence_exists": false,
+      "disputed_evidence_count": 2,
+      "textual_evidence_present": false,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Matthew",
+          "chapter": 6,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "matthew_006.json"
+    },
+    {
+      "reference": "Ezra 10",
+      "book": "Ezra",
+      "chapter": 10,
+      "canonical_text_input_locator": "bible.resolve_chapter('Ezra', 10)",
+      "locked_evidence_bundle_hash": "4ff9925a135010b5eaa70fdb703577b7f51f8f30876abb55abdf0d693cfb35bb",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "historical_context"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-005/evidence-bundles/ezra_010.json",
+      "dig_deeper_evidence_exists": false,
+      "disputed_evidence_count": 3,
+      "textual_evidence_present": false,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Ezra",
+          "chapter": 10,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "ezra_010.json"
+    },
+    {
+      "reference": "1 Kings 14",
+      "book": "1 Kings",
+      "chapter": 14,
+      "canonical_text_input_locator": "bible.resolve_chapter('1 Kings', 14)",
+      "locked_evidence_bundle_hash": "e53a4055d3fbd09bb7b4851e00f716e534688658e3ad8298bc2475ebeff3552f",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "historical_context"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-005/evidence-bundles/1_kings_014.json",
+      "dig_deeper_evidence_exists": false,
+      "disputed_evidence_count": 0,
+      "textual_evidence_present": false,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "1 Kings",
+          "chapter": 14,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "1_kings_014.json"
+    },
+    {
+      "reference": "Joshua 23",
+      "book": "Joshua",
+      "chapter": 23,
+      "canonical_text_input_locator": "bible.resolve_chapter('Joshua', 23)",
+      "locked_evidence_bundle_hash": "d59622be6f982180270629971f246c8a447efa27798ec286ae241e32353abc96",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "THIN",
+      "allowed_section_roles": [
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-005/evidence-bundles/joshua_023.json",
+      "dig_deeper_evidence_exists": false,
+      "disputed_evidence_count": 0,
+      "textual_evidence_present": false,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Joshua",
+          "chapter": 23,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "joshua_023.json"
+    },
+    {
+      "reference": "1 Chronicles 24",
+      "book": "1 Chronicles",
+      "chapter": 24,
+      "canonical_text_input_locator": "bible.resolve_chapter('1 Chronicles', 24)",
+      "locked_evidence_bundle_hash": "e389f5d387315977fba7854b668b59d372291e31da74b386b3ff68bad50c141c",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "THIN",
+      "allowed_section_roles": [
+        "historical_context"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-005/evidence-bundles/1_chronicles_024.json",
+      "dig_deeper_evidence_exists": false,
+      "disputed_evidence_count": 1,
+      "textual_evidence_present": false,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "1 Chronicles",
+          "chapter": 24,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "1_chronicles_024.json"
+    },
+    {
+      "reference": "1 Chronicles 4",
+      "book": "1 Chronicles",
+      "chapter": 4,
+      "canonical_text_input_locator": "bible.resolve_chapter('1 Chronicles', 4)",
+      "locked_evidence_bundle_hash": "c0a03ae769718f0986590ea552123be9dde24df7015defed4aca297675f86782",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "THIN",
+      "allowed_section_roles": [
+        "historical_context"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-005/evidence-bundles/1_chronicles_004.json",
+      "dig_deeper_evidence_exists": false,
+      "disputed_evidence_count": 1,
+      "textual_evidence_present": false,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "1 Chronicles",
+          "chapter": 4,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "1_chronicles_004.json"
+    },
+    {
+      "reference": "Joshua 16",
+      "book": "Joshua",
+      "chapter": 16,
+      "canonical_text_input_locator": "bible.resolve_chapter('Joshua', 16)",
+      "locked_evidence_bundle_hash": "d040626bc04dc745c5d3ec3f8adc15cd57fd528a6a43bd2774fe3dc87856dbd1",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "THIN",
+      "allowed_section_roles": [
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-005/evidence-bundles/joshua_016.json",
+      "dig_deeper_evidence_exists": false,
+      "disputed_evidence_count": 1,
+      "textual_evidence_present": false,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Joshua",
+          "chapter": 16,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "joshua_016.json"
+    },
+    {
+      "reference": "Judges 12",
+      "book": "Judges",
+      "chapter": 12,
+      "canonical_text_input_locator": "bible.resolve_chapter('Judges', 12)",
+      "locked_evidence_bundle_hash": "449468fe89d763ed0ab8256987f7d4deee5107a5c3d60052b7c2cdab7b09064c",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "THIN",
+      "allowed_section_roles": [
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-005/evidence-bundles/judges_012.json",
+      "dig_deeper_evidence_exists": false,
+      "disputed_evidence_count": 2,
+      "textual_evidence_present": false,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Judges",
+          "chapter": 12,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "judges_012.json"
+    },
+    {
+      "reference": "Acts 11",
+      "book": "Acts",
+      "chapter": 11,
+      "canonical_text_input_locator": "bible.resolve_chapter('Acts', 11)",
+      "locked_evidence_bundle_hash": "5079ae5887dfd7580acf57368d89670ad0bdf7296d258aff01392e8d7a7f2ea4",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "dig_deeper",
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-005/evidence-bundles/acts_011.json",
+      "dig_deeper_evidence_exists": true,
+      "disputed_evidence_count": 8,
+      "textual_evidence_present": true,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Acts",
+          "chapter": 11,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "acts_011.json"
+    },
+    {
+      "reference": "2 Chronicles 10",
+      "book": "2 Chronicles",
+      "chapter": 10,
+      "canonical_text_input_locator": "bible.resolve_chapter('2 Chronicles', 10)",
+      "locked_evidence_bundle_hash": "4798cbac1f4ae81effa5b1fce0d20b36fb1948b12569612400a3ef09bbe31855",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-005/evidence-bundles/2_chronicles_010.json",
+      "dig_deeper_evidence_exists": false,
+      "disputed_evidence_count": 1,
+      "textual_evidence_present": false,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "2 Chronicles",
+          "chapter": 10,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "2_chronicles_010.json"
+    },
+    {
+      "reference": "2 Kings 15",
+      "book": "2 Kings",
+      "chapter": 15,
+      "canonical_text_input_locator": "bible.resolve_chapter('2 Kings', 15)",
+      "locked_evidence_bundle_hash": "ae1fb63ad5e180b6217906c22620e4fba40b4b43e2030964828bd7dfa053945b",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "dig_deeper",
+        "historical_context"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-005/evidence-bundles/2_kings_015.json",
+      "dig_deeper_evidence_exists": true,
+      "disputed_evidence_count": 6,
+      "textual_evidence_present": false,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "2 Kings",
+          "chapter": 15,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "2_kings_015.json"
+    },
+    {
+      "reference": "Judges 15",
+      "book": "Judges",
+      "chapter": 15,
+      "canonical_text_input_locator": "bible.resolve_chapter('Judges', 15)",
+      "locked_evidence_bundle_hash": "2ce97046733564dab5244822aecf5667175c9a567f8c205c7db9a7bcf6603d5e",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-005/evidence-bundles/judges_015.json",
+      "dig_deeper_evidence_exists": false,
+      "disputed_evidence_count": 2,
+      "textual_evidence_present": false,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Judges",
+          "chapter": 15,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "judges_015.json"
+    },
+    {
+      "reference": "Judges 21",
+      "book": "Judges",
+      "chapter": 21,
+      "canonical_text_input_locator": "bible.resolve_chapter('Judges', 21)",
+      "locked_evidence_bundle_hash": "ebad9cb61b7d963b1693b19f87e212c101b8784de41c248bbcf09f0ad076363e",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "archaeology_geography",
+        "dig_deeper",
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-005/evidence-bundles/judges_021.json",
+      "dig_deeper_evidence_exists": true,
+      "disputed_evidence_count": 6,
+      "textual_evidence_present": false,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Judges",
+          "chapter": 21,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "judges_021.json"
+    },
+    {
+      "reference": "Isaiah 27",
+      "book": "Isaiah",
+      "chapter": 27,
+      "canonical_text_input_locator": "bible.resolve_chapter('Isaiah', 27)",
+      "locked_evidence_bundle_hash": "4f066e89f7e5472ffe26d75a005bf0ce9c83ee30f534288b15d3191cf06d9184",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "THIN",
+      "allowed_section_roles": [
+        "dig_deeper",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-005/evidence-bundles/isaiah_027.json",
+      "dig_deeper_evidence_exists": true,
+      "disputed_evidence_count": 2,
+      "textual_evidence_present": true,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Isaiah",
+          "chapter": 27,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "isaiah_027.json"
+    },
+    {
+      "reference": "1 Samuel 3",
+      "book": "1 Samuel",
+      "chapter": 3,
+      "canonical_text_input_locator": "bible.resolve_chapter('1 Samuel', 3)",
+      "locked_evidence_bundle_hash": "249548c5427e3b007b8b9296672e44a8e2ddd09049877946961d275f7ed5da86",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-005/evidence-bundles/1_samuel_003.json",
+      "dig_deeper_evidence_exists": false,
+      "disputed_evidence_count": 0,
+      "textual_evidence_present": false,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "1 Samuel",
+          "chapter": 3,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "1_samuel_003.json"
+    },
+    {
+      "reference": "Isaiah 31",
+      "book": "Isaiah",
+      "chapter": 31,
+      "canonical_text_input_locator": "bible.resolve_chapter('Isaiah', 31)",
+      "locked_evidence_bundle_hash": "2369bc94228577812245962e6dec6ccb445f2c108556104f6448c37abf05e8fa",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-005/evidence-bundles/isaiah_031.json",
+      "dig_deeper_evidence_exists": false,
+      "disputed_evidence_count": 2,
+      "textual_evidence_present": true,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Isaiah",
+          "chapter": 31,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "isaiah_031.json"
+    },
+    {
+      "reference": "Isaiah 33",
+      "book": "Isaiah",
+      "chapter": 33,
+      "canonical_text_input_locator": "bible.resolve_chapter('Isaiah', 33)",
+      "locked_evidence_bundle_hash": "0080280c7b8cb3f29383d445940a2c132b436888d3c13376a5cf565636d95256",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "THIN",
+      "allowed_section_roles": [
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-005/evidence-bundles/isaiah_033.json",
+      "dig_deeper_evidence_exists": false,
+      "disputed_evidence_count": 1,
+      "textual_evidence_present": true,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Isaiah",
+          "chapter": 33,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "isaiah_033.json"
+    },
+    {
+      "reference": "1 Chronicles 17",
+      "book": "1 Chronicles",
+      "chapter": 17,
+      "canonical_text_input_locator": "bible.resolve_chapter('1 Chronicles', 17)",
+      "locked_evidence_bundle_hash": "22bc4e8a892134db447f3f07b773c0e1ec8db72e667c7fb8887d086806d0f8aa",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "dig_deeper",
+        "historical_context"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-005/evidence-bundles/1_chronicles_017.json",
+      "dig_deeper_evidence_exists": true,
+      "disputed_evidence_count": 2,
+      "textual_evidence_present": false,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "1 Chronicles",
+          "chapter": 17,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "1_chronicles_017.json"
+    },
+    {
+      "reference": "1 Samuel 15",
+      "book": "1 Samuel",
+      "chapter": 15,
+      "canonical_text_input_locator": "bible.resolve_chapter('1 Samuel', 15)",
+      "locked_evidence_bundle_hash": "600002ffb3ffc4649ff0e1e04ec5a0d96f316e3e9165604e7472160c88762875",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "dig_deeper",
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-005/evidence-bundles/1_samuel_015.json",
+      "dig_deeper_evidence_exists": true,
+      "disputed_evidence_count": 2,
+      "textual_evidence_present": false,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "1 Samuel",
+          "chapter": 15,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "1_samuel_015.json"
+    },
+    {
+      "reference": "Isaiah 51",
+      "book": "Isaiah",
+      "chapter": 51,
+      "canonical_text_input_locator": "bible.resolve_chapter('Isaiah', 51)",
+      "locked_evidence_bundle_hash": "0fb62f9460d9b339c5841910c1d68c14cbabd6ed8e76d3a0147785d2c44be6a5",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-005/evidence-bundles/isaiah_051.json",
+      "dig_deeper_evidence_exists": false,
+      "disputed_evidence_count": 2,
+      "textual_evidence_present": true,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Isaiah",
+          "chapter": 51,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "isaiah_051.json"
+    },
+    {
+      "reference": "Zechariah 1",
+      "book": "Zechariah",
+      "chapter": 1,
+      "canonical_text_input_locator": "bible.resolve_chapter('Zechariah', 1)",
+      "locked_evidence_bundle_hash": "51debed4b76e6f16d108ef1f2028628ce55867255125d4df876f8b8832d7ba97",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-005/evidence-bundles/zechariah_001.json",
+      "dig_deeper_evidence_exists": false,
+      "disputed_evidence_count": 5,
+      "textual_evidence_present": true,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Zechariah",
+          "chapter": 1,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "zechariah_001.json"
+    },
+    {
+      "reference": "Zechariah 9",
+      "book": "Zechariah",
+      "chapter": 9,
+      "canonical_text_input_locator": "bible.resolve_chapter('Zechariah', 9)",
+      "locked_evidence_bundle_hash": "d92acffc282d094e4311dd55fd7ac34663c0b75b0820496973c1fdadea351433",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-005/evidence-bundles/zechariah_009.json",
+      "dig_deeper_evidence_exists": false,
+      "disputed_evidence_count": 3,
+      "textual_evidence_present": false,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Zechariah",
+          "chapter": 9,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "zechariah_009.json"
+    },
+    {
+      "reference": "1 Samuel 13",
+      "book": "1 Samuel",
+      "chapter": 13,
+      "canonical_text_input_locator": "bible.resolve_chapter('1 Samuel', 13)",
+      "locked_evidence_bundle_hash": "c85005a11439759888ca6f561d5093cf5626e09428c40eec24e73c2a0fea8c3f",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "dig_deeper",
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-005/evidence-bundles/1_samuel_013.json",
+      "dig_deeper_evidence_exists": true,
+      "disputed_evidence_count": 2,
+      "textual_evidence_present": false,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "1 Samuel",
+          "chapter": 13,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "1_samuel_013.json"
+    },
+    {
+      "reference": "Jeremiah 30",
+      "book": "Jeremiah",
+      "chapter": 30,
+      "canonical_text_input_locator": "bible.resolve_chapter('Jeremiah', 30)",
+      "locked_evidence_bundle_hash": "edce1fe6f647baaf7a5726e87af9728b4ab468ed5c849b0ba3a2648e68afa3a7",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-005/evidence-bundles/jeremiah_030.json",
+      "dig_deeper_evidence_exists": false,
+      "disputed_evidence_count": 3,
+      "textual_evidence_present": true,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Jeremiah",
+          "chapter": 30,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "jeremiah_030.json"
+    },
+    {
+      "reference": "Joshua 10",
+      "book": "Joshua",
+      "chapter": 10,
+      "canonical_text_input_locator": "bible.resolve_chapter('Joshua', 10)",
+      "locked_evidence_bundle_hash": "c4df286bde2e326e77ed87aa0449be6d055f27e30459f69b0cfc3f3df26fda8a",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-005/evidence-bundles/joshua_010.json",
+      "dig_deeper_evidence_exists": false,
+      "disputed_evidence_count": 3,
+      "textual_evidence_present": false,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Joshua",
+          "chapter": 10,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "joshua_010.json"
+    },
+    {
+      "reference": "Judges 16",
+      "book": "Judges",
+      "chapter": 16,
+      "canonical_text_input_locator": "bible.resolve_chapter('Judges', 16)",
+      "locked_evidence_bundle_hash": "d564963313de996d889e58e2f6affd920596904bf77f57611ad900677b1985f5",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-005/evidence-bundles/judges_016.json",
+      "dig_deeper_evidence_exists": false,
+      "disputed_evidence_count": 2,
+      "textual_evidence_present": false,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Judges",
+          "chapter": 16,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "judges_016.json"
+    },
+    {
+      "reference": "Nehemiah 3",
+      "book": "Nehemiah",
+      "chapter": 3,
+      "canonical_text_input_locator": "bible.resolve_chapter('Nehemiah', 3)",
+      "locked_evidence_bundle_hash": "286cf5c06772d33a9a5ca0c261013a6a53f676bd1b188a6cae71fb5f60331610",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "historical_context"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-005/evidence-bundles/nehemiah_003.json",
+      "dig_deeper_evidence_exists": false,
+      "disputed_evidence_count": 3,
+      "textual_evidence_present": false,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Nehemiah",
+          "chapter": 3,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "nehemiah_003.json"
+    },
+    {
+      "reference": "1 Kings 4",
+      "book": "1 Kings",
+      "chapter": 4,
+      "canonical_text_input_locator": "bible.resolve_chapter('1 Kings', 4)",
+      "locked_evidence_bundle_hash": "aa3a9ac40129201702ffe85cdafb860215fd82f4b67b640a61c3c272804ddc11",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "historical_context"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-005/evidence-bundles/1_kings_004.json",
+      "dig_deeper_evidence_exists": false,
+      "disputed_evidence_count": 1,
+      "textual_evidence_present": false,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "1 Kings",
+          "chapter": 4,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "1_kings_004.json"
+    },
+    {
+      "reference": "Jeremiah 15",
+      "book": "Jeremiah",
+      "chapter": 15,
+      "canonical_text_input_locator": "bible.resolve_chapter('Jeremiah', 15)",
+      "locked_evidence_bundle_hash": "91d847a481413de45633e2a021938113cf0a1e75cad634794cdf582c5e014c46",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-005/evidence-bundles/jeremiah_015.json",
+      "dig_deeper_evidence_exists": false,
+      "disputed_evidence_count": 3,
+      "textual_evidence_present": true,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Jeremiah",
+          "chapter": 15,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "jeremiah_015.json"
+    },
+    {
+      "reference": "1 Samuel 31",
+      "book": "1 Samuel",
+      "chapter": 31,
+      "canonical_text_input_locator": "bible.resolve_chapter('1 Samuel', 31)",
+      "locked_evidence_bundle_hash": "6b172f6757c9e46fba6d3045ddcc79503865a596ed980d1be3a8ae2cb3ce5c84",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-005/evidence-bundles/1_samuel_031.json",
+      "dig_deeper_evidence_exists": false,
+      "disputed_evidence_count": 0,
+      "textual_evidence_present": false,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "1 Samuel",
+          "chapter": 31,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "1_samuel_031.json"
+    },
+    {
+      "reference": "Amos 8",
+      "book": "Amos",
+      "chapter": 8,
+      "canonical_text_input_locator": "bible.resolve_chapter('Amos', 8)",
+      "locked_evidence_bundle_hash": "6901f0b9ccae3eb93a522035b785bbc59030f0e973bb90e233e5ef077472bbf2",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "dig_deeper",
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-005/evidence-bundles/amos_008.json",
+      "dig_deeper_evidence_exists": true,
+      "disputed_evidence_count": 12,
+      "textual_evidence_present": false,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Amos",
+          "chapter": 8,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "amos_008.json"
+    },
+    {
+      "reference": "Nehemiah 8",
+      "book": "Nehemiah",
+      "chapter": 8,
+      "canonical_text_input_locator": "bible.resolve_chapter('Nehemiah', 8)",
+      "locked_evidence_bundle_hash": "ec1564ad8bb72e6dff49cefc433ae0c96c5dff0d82c2d6af32347daa3f277125",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "dig_deeper",
+        "historical_context"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-005/evidence-bundles/nehemiah_008.json",
+      "dig_deeper_evidence_exists": true,
+      "disputed_evidence_count": 4,
+      "textual_evidence_present": false,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Nehemiah",
+          "chapter": 8,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "nehemiah_008.json"
+    },
+    {
+      "reference": "Acts 27",
+      "book": "Acts",
+      "chapter": 27,
+      "canonical_text_input_locator": "bible.resolve_chapter('Acts', 27)",
+      "locked_evidence_bundle_hash": "d30e40b72edfd38f7b327f48eb45d30ad229c9518b60a49e7943f19df3c124ee",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-005/evidence-bundles/acts_027.json",
+      "dig_deeper_evidence_exists": false,
+      "disputed_evidence_count": 3,
+      "textual_evidence_present": true,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Acts",
+          "chapter": 27,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "acts_027.json"
+    },
+    {
+      "reference": "Jeremiah 12",
+      "book": "Jeremiah",
+      "chapter": 12,
+      "canonical_text_input_locator": "bible.resolve_chapter('Jeremiah', 12)",
+      "locked_evidence_bundle_hash": "be2bb2f419cb5bdc8e93b83a668828f49cbf62f9aeec37be8b13013e8baac15f",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-005/evidence-bundles/jeremiah_012.json",
+      "dig_deeper_evidence_exists": false,
+      "disputed_evidence_count": 3,
+      "textual_evidence_present": true,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Jeremiah",
+          "chapter": 12,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "jeremiah_012.json"
+    },
+    {
+      "reference": "Joshua 12",
+      "book": "Joshua",
+      "chapter": 12,
+      "canonical_text_input_locator": "bible.resolve_chapter('Joshua', 12)",
+      "locked_evidence_bundle_hash": "48ee746917c22911e23f295ffdb05bf2b0e4b80753b397b62f408c6de4bd215b",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-005/evidence-bundles/joshua_012.json",
+      "dig_deeper_evidence_exists": false,
+      "disputed_evidence_count": 2,
+      "textual_evidence_present": false,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Joshua",
+          "chapter": 12,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "joshua_012.json"
+    },
+    {
+      "reference": "Nehemiah 6",
+      "book": "Nehemiah",
+      "chapter": 6,
+      "canonical_text_input_locator": "bible.resolve_chapter('Nehemiah', 6)",
+      "locked_evidence_bundle_hash": "a0aefea7dc034971824f2a8c52f8df6e154d2fc82f6b31088e2f3b680fc4ba38",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "historical_context"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-005/evidence-bundles/nehemiah_006.json",
+      "dig_deeper_evidence_exists": false,
+      "disputed_evidence_count": 4,
+      "textual_evidence_present": false,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Nehemiah",
+          "chapter": 6,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "nehemiah_006.json"
+    },
+    {
+      "reference": "Zechariah 12",
+      "book": "Zechariah",
+      "chapter": 12,
+      "canonical_text_input_locator": "bible.resolve_chapter('Zechariah', 12)",
+      "locked_evidence_bundle_hash": "1c34185362d9df74bd56b52c0e5678aeaa4154ccd8ae2ba96e8c0622e5ddde92",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-005/evidence-bundles/zechariah_012.json",
+      "dig_deeper_evidence_exists": false,
+      "disputed_evidence_count": 4,
+      "textual_evidence_present": true,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Zechariah",
+          "chapter": 12,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "zechariah_012.json"
+    },
+    {
+      "reference": "Judges 1",
+      "book": "Judges",
+      "chapter": 1,
+      "canonical_text_input_locator": "bible.resolve_chapter('Judges', 1)",
+      "locked_evidence_bundle_hash": "4ab31e392df378303e825ab847588484ba3f831e3888f207052ee3a2864a9bb7",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "chronology",
+        "dig_deeper",
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-005/evidence-bundles/judges_001.json",
+      "dig_deeper_evidence_exists": true,
+      "disputed_evidence_count": 9,
+      "textual_evidence_present": false,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Judges",
+          "chapter": 1,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "judges_001.json"
+    },
+    {
+      "reference": "1 Kings 17",
+      "book": "1 Kings",
+      "chapter": 17,
+      "canonical_text_input_locator": "bible.resolve_chapter('1 Kings', 17)",
+      "locked_evidence_bundle_hash": "e1915e3b90474b110460aff916a5d42314d48af240b04d51ac13be5eea34b36d",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "dig_deeper",
+        "historical_context"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-005/evidence-bundles/1_kings_017.json",
+      "dig_deeper_evidence_exists": true,
+      "disputed_evidence_count": 2,
+      "textual_evidence_present": false,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "1 Kings",
+          "chapter": 17,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "1_kings_017.json"
+    },
+    {
+      "reference": "Ezra 5",
+      "book": "Ezra",
+      "chapter": 5,
+      "canonical_text_input_locator": "bible.resolve_chapter('Ezra', 5)",
+      "locked_evidence_bundle_hash": "eb4efd449144beedaf782b2f20188ea4fe3eec583257ffcfe5fac86bce4b9cb3",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "dig_deeper",
+        "historical_context"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-005/evidence-bundles/ezra_005.json",
+      "dig_deeper_evidence_exists": true,
+      "disputed_evidence_count": 7,
+      "textual_evidence_present": false,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Ezra",
+          "chapter": 5,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "ezra_005.json"
+    },
+    {
+      "reference": "Isaiah 21",
+      "book": "Isaiah",
+      "chapter": 21,
+      "canonical_text_input_locator": "bible.resolve_chapter('Isaiah', 21)",
+      "locked_evidence_bundle_hash": "b232abedc41104a2fcfa8d7ff5719e30a85baa790a92c058a12b06c0285f6939",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-005/evidence-bundles/isaiah_021.json",
+      "dig_deeper_evidence_exists": false,
+      "disputed_evidence_count": 2,
+      "textual_evidence_present": true,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Isaiah",
+          "chapter": 21,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "isaiah_021.json"
+    },
+    {
+      "reference": "Hosea 13",
+      "book": "Hosea",
+      "chapter": 13,
+      "canonical_text_input_locator": "bible.resolve_chapter('Hosea', 13)",
+      "locked_evidence_bundle_hash": "870586145bb296a5e703ab5766fe4db0421b2f7803219565586135b272ebb419",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "dig_deeper",
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-005/evidence-bundles/hosea_013.json",
+      "dig_deeper_evidence_exists": true,
+      "disputed_evidence_count": 9,
+      "textual_evidence_present": true,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Hosea",
+          "chapter": 13,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "hosea_013.json"
+    },
+    {
+      "reference": "Job 6",
+      "book": "Job",
+      "chapter": 6,
+      "canonical_text_input_locator": "bible.resolve_chapter('Job', 6)",
+      "locked_evidence_bundle_hash": "6d5847939dfa6b6e11de759ab61f511285823c8849d2661822387ca8a8a6e131",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "dig_deeper",
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-005/evidence-bundles/job_006.json",
+      "dig_deeper_evidence_exists": true,
+      "disputed_evidence_count": 6,
+      "textual_evidence_present": true,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Job",
+          "chapter": 6,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "job_006.json"
+    },
+    {
+      "reference": "Isaiah 55",
+      "book": "Isaiah",
+      "chapter": 55,
+      "canonical_text_input_locator": "bible.resolve_chapter('Isaiah', 55)",
+      "locked_evidence_bundle_hash": "2fef0df07971b6f16b401a5f6eac32e6a2e693a7fa68528f8b010653e9df08e6",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-005/evidence-bundles/isaiah_055.json",
+      "dig_deeper_evidence_exists": false,
+      "disputed_evidence_count": 2,
+      "textual_evidence_present": true,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Isaiah",
+          "chapter": 55,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "isaiah_055.json"
+    },
+    {
+      "reference": "Psalms 73",
+      "book": "Psalms",
+      "chapter": 73,
+      "canonical_text_input_locator": "bible.resolve_chapter('Psalms', 73)",
+      "locked_evidence_bundle_hash": "0448416e82a401fbe91492d32ddd17a5e9f79bd014ac7c195bd34cfc636f92ae",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "historical_context"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-005/evidence-bundles/psalms_073.json",
+      "dig_deeper_evidence_exists": false,
+      "disputed_evidence_count": 0,
+      "textual_evidence_present": false,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Psalms",
+          "chapter": 73,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "psalms_073.json"
+    },
+    {
+      "reference": "Psalms 122",
+      "book": "Psalms",
+      "chapter": 122,
+      "canonical_text_input_locator": "bible.resolve_chapter('Psalms', 122)",
+      "locked_evidence_bundle_hash": "d761488944a2ffd42750e093e076a5e77ee9aaf981dea6a6e33863fec8237508",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-005/evidence-bundles/psalms_122.json",
+      "dig_deeper_evidence_exists": false,
+      "disputed_evidence_count": 1,
+      "textual_evidence_present": false,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Psalms",
+          "chapter": 122,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "psalms_122.json"
+    },
+    {
+      "reference": "Hosea 12",
+      "book": "Hosea",
+      "chapter": 12,
+      "canonical_text_input_locator": "bible.resolve_chapter('Hosea', 12)",
+      "locked_evidence_bundle_hash": "3e7baae6cd4dc0b9dc5fbc8dee361c39398f39f7141144658582a2c1892d1727",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-005/evidence-bundles/hosea_012.json",
+      "dig_deeper_evidence_exists": false,
+      "disputed_evidence_count": 3,
+      "textual_evidence_present": false,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Hosea",
+          "chapter": 12,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "hosea_012.json"
+    },
+    {
+      "reference": "Isaiah 23",
+      "book": "Isaiah",
+      "chapter": 23,
+      "canonical_text_input_locator": "bible.resolve_chapter('Isaiah', 23)",
+      "locked_evidence_bundle_hash": "f1e9dd34e525fda77e137056e224e970709431959ba6000a6d13b11a4df31fa6",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-005/evidence-bundles/isaiah_023.json",
+      "dig_deeper_evidence_exists": false,
+      "disputed_evidence_count": 2,
+      "textual_evidence_present": true,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Isaiah",
+          "chapter": 23,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "isaiah_023.json"
+    },
+    {
+      "reference": "Isaiah 50",
+      "book": "Isaiah",
+      "chapter": 50,
+      "canonical_text_input_locator": "bible.resolve_chapter('Isaiah', 50)",
+      "locked_evidence_bundle_hash": "645c7c8ee14295b1569dec24b03a4d13f2455f88f189ef7f7059e235e223a4c1",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-005/evidence-bundles/isaiah_050.json",
+      "dig_deeper_evidence_exists": false,
+      "disputed_evidence_count": 2,
+      "textual_evidence_present": true,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Isaiah",
+          "chapter": 50,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "isaiah_050.json"
+    },
+    {
+      "reference": "Jeremiah 24",
+      "book": "Jeremiah",
+      "chapter": 24,
+      "canonical_text_input_locator": "bible.resolve_chapter('Jeremiah', 24)",
+      "locked_evidence_bundle_hash": "0724a969154606c54bcb0123d8984ec476e499e38b21f6b2bc3da2e12af51138",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "THIN",
+      "allowed_section_roles": [
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-005/evidence-bundles/jeremiah_024.json",
+      "dig_deeper_evidence_exists": false,
+      "disputed_evidence_count": 2,
+      "textual_evidence_present": true,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Jeremiah",
+          "chapter": 24,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "jeremiah_024.json"
+    },
+    {
+      "reference": "Jeremiah 43",
+      "book": "Jeremiah",
+      "chapter": 43,
+      "canonical_text_input_locator": "bible.resolve_chapter('Jeremiah', 43)",
+      "locked_evidence_bundle_hash": "7f6036f47d18a545d448205e79e9ae46722d91cd2d06e2e3fda3e463e13c8c81",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-005/evidence-bundles/jeremiah_043.json",
+      "dig_deeper_evidence_exists": false,
+      "disputed_evidence_count": 3,
+      "textual_evidence_present": true,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Jeremiah",
+          "chapter": 43,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "jeremiah_043.json"
+    },
+    {
+      "reference": "Job 22",
+      "book": "Job",
+      "chapter": 22,
+      "canonical_text_input_locator": "bible.resolve_chapter('Job', 22)",
+      "locked_evidence_bundle_hash": "0e3b1a4edbbfc9af1b9cbe5b00585daceefaf01894b1767fe5da932db7eb5842",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "dig_deeper",
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-005/evidence-bundles/job_022.json",
+      "dig_deeper_evidence_exists": true,
+      "disputed_evidence_count": 5,
+      "textual_evidence_present": true,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Job",
+          "chapter": 22,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "job_022.json"
+    },
+    {
+      "reference": "Job 42",
+      "book": "Job",
+      "chapter": 42,
+      "canonical_text_input_locator": "bible.resolve_chapter('Job', 42)",
+      "locked_evidence_bundle_hash": "ce244b73a0fc399548e1147c4f7f8d9250f3d154b722eb13cea22d922c26b6b4",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "dig_deeper",
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-005/evidence-bundles/job_042.json",
+      "dig_deeper_evidence_exists": true,
+      "disputed_evidence_count": 10,
+      "textual_evidence_present": true,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Job",
+          "chapter": 42,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "job_042.json"
+    },
+    {
+      "reference": "Zechariah 11",
+      "book": "Zechariah",
+      "chapter": 11,
+      "canonical_text_input_locator": "bible.resolve_chapter('Zechariah', 11)",
+      "locked_evidence_bundle_hash": "765bd2135d89b7f87fa01cf2e3907d3193ce14f6d2e531f2299b9f4b0d3c8626",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-005/evidence-bundles/zechariah_011.json",
+      "dig_deeper_evidence_exists": false,
+      "disputed_evidence_count": 3,
+      "textual_evidence_present": false,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Zechariah",
+          "chapter": 11,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "zechariah_011.json"
+    },
+    {
+      "reference": "Zechariah 13",
+      "book": "Zechariah",
+      "chapter": 13,
+      "canonical_text_input_locator": "bible.resolve_chapter('Zechariah', 13)",
+      "locked_evidence_bundle_hash": "87d136c159d105e08c8c74e9c5f10a71daf854e27540d7abc7d511d4609441f8",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "historical_context"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-005/evidence-bundles/zechariah_013.json",
+      "dig_deeper_evidence_exists": false,
+      "disputed_evidence_count": 3,
+      "textual_evidence_present": false,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Zechariah",
+          "chapter": 13,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "zechariah_013.json"
+    },
+    {
+      "reference": "Deuteronomy 25",
+      "book": "Deuteronomy",
+      "chapter": 25,
+      "canonical_text_input_locator": "bible.resolve_chapter('Deuteronomy', 25)",
+      "locked_evidence_bundle_hash": "a62bd5b9f08eadb0040d16bfbbba3555b0c7f5a1c562f254bfddaf86c4c6a939",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "dig_deeper",
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-005/evidence-bundles/deuteronomy_025.json",
+      "dig_deeper_evidence_exists": true,
+      "disputed_evidence_count": 6,
+      "textual_evidence_present": false,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Deuteronomy",
+          "chapter": 25,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "deuteronomy_025.json"
+    },
+    {
+      "reference": "Job 17",
+      "book": "Job",
+      "chapter": 17,
+      "canonical_text_input_locator": "bible.resolve_chapter('Job', 17)",
+      "locked_evidence_bundle_hash": "819c40a5c1212694de1e3214045960e9614f659f7d37b60e278a1f022c1e6ccb",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "dig_deeper",
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-005/evidence-bundles/job_017.json",
+      "dig_deeper_evidence_exists": true,
+      "disputed_evidence_count": 5,
+      "textual_evidence_present": true,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Job",
+          "chapter": 17,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "job_017.json"
+    },
+    {
+      "reference": "Psalms 88",
+      "book": "Psalms",
+      "chapter": 88,
+      "canonical_text_input_locator": "bible.resolve_chapter('Psalms', 88)",
+      "locked_evidence_bundle_hash": "de18f277faf7facdd159f2e1d12597a72601686e3a35251a5e60a1a036d33b95",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "historical_context"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-005/evidence-bundles/psalms_088.json",
+      "dig_deeper_evidence_exists": false,
+      "disputed_evidence_count": 2,
+      "textual_evidence_present": false,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Psalms",
+          "chapter": 88,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "psalms_088.json"
+    },
+    {
+      "reference": "Habakkuk 3",
+      "book": "Habakkuk",
+      "chapter": 3,
+      "canonical_text_input_locator": "bible.resolve_chapter('Habakkuk', 3)",
+      "locked_evidence_bundle_hash": "07b641aff676ae467e9e45445a613c4d8a837ae82108becb488c6527efaee33b",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "dig_deeper",
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-005/evidence-bundles/habakkuk_003.json",
+      "dig_deeper_evidence_exists": true,
+      "disputed_evidence_count": 7,
+      "textual_evidence_present": true,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Habakkuk",
+          "chapter": 3,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "habakkuk_003.json"
+    },
+    {
+      "reference": "Job 12",
+      "book": "Job",
+      "chapter": 12,
+      "canonical_text_input_locator": "bible.resolve_chapter('Job', 12)",
+      "locked_evidence_bundle_hash": "34e738a188d02e12ae5732382d5d990315ce8d97854f2fb124350ef027e0cf28",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "dig_deeper",
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-005/evidence-bundles/job_012.json",
+      "dig_deeper_evidence_exists": true,
+      "disputed_evidence_count": 5,
+      "textual_evidence_present": true,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Job",
+          "chapter": 12,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "job_012.json"
+    },
+    {
+      "reference": "Nahum 1",
+      "book": "Nahum",
+      "chapter": 1,
+      "canonical_text_input_locator": "bible.resolve_chapter('Nahum', 1)",
+      "locked_evidence_bundle_hash": "a2efdbbb1b3c905564b1a5c3c6c363d7d485fe29446284f55d757985747c8dcb",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-005/evidence-bundles/nahum_001.json",
+      "dig_deeper_evidence_exists": false,
+      "disputed_evidence_count": 10,
+      "textual_evidence_present": true,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Nahum",
+          "chapter": 1,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "nahum_001.json"
+    },
+    {
+      "reference": "Nehemiah 4",
+      "book": "Nehemiah",
+      "chapter": 4,
+      "canonical_text_input_locator": "bible.resolve_chapter('Nehemiah', 4)",
+      "locked_evidence_bundle_hash": "20fd4a0c784829640457a50959bce4e7419929db6c38a37edba19346c08653ab",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "historical_context"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-005/evidence-bundles/nehemiah_004.json",
+      "dig_deeper_evidence_exists": false,
+      "disputed_evidence_count": 4,
+      "textual_evidence_present": false,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Nehemiah",
+          "chapter": 4,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "nehemiah_004.json"
+    },
+    {
+      "reference": "Psalms 40",
+      "book": "Psalms",
+      "chapter": 40,
+      "canonical_text_input_locator": "bible.resolve_chapter('Psalms', 40)",
+      "locked_evidence_bundle_hash": "fb94c5dd1d6d2b8a737a7918581a8ee50800aafef27d269d2c22b497bd6b6eb1",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "historical_context"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-005/evidence-bundles/psalms_040.json",
+      "dig_deeper_evidence_exists": false,
+      "disputed_evidence_count": 0,
+      "textual_evidence_present": false,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Psalms",
+          "chapter": 40,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "psalms_040.json"
+    },
+    {
+      "reference": "Psalms 104",
+      "book": "Psalms",
+      "chapter": 104,
+      "canonical_text_input_locator": "bible.resolve_chapter('Psalms', 104)",
+      "locked_evidence_bundle_hash": "e368d352484ecc105407a2d9344aa36e9405ad64b0326068f9999cb0afcf4a48",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "chronology",
+        "historical_context"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-005/evidence-bundles/psalms_104.json",
+      "dig_deeper_evidence_exists": false,
+      "disputed_evidence_count": 0,
+      "textual_evidence_present": false,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Psalms",
+          "chapter": 104,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "psalms_104.json"
+    },
+    {
+      "reference": "Zechariah 8",
+      "book": "Zechariah",
+      "chapter": 8,
+      "canonical_text_input_locator": "bible.resolve_chapter('Zechariah', 8)",
+      "locked_evidence_bundle_hash": "d16d1a7c0033c9b5fc0488fc2fa82d6c818b1d355bcbdc35491e240c014ecaa4",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "dig_deeper",
+        "historical_context"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-005/evidence-bundles/zechariah_008.json",
+      "dig_deeper_evidence_exists": true,
+      "disputed_evidence_count": 2,
+      "textual_evidence_present": false,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Zechariah",
+          "chapter": 8,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "zechariah_008.json"
+    },
+    {
+      "reference": "1 Samuel 29",
+      "book": "1 Samuel",
+      "chapter": 29,
+      "canonical_text_input_locator": "bible.resolve_chapter('1 Samuel', 29)",
+      "locked_evidence_bundle_hash": "c9b54b911b9d8ff08b30df107aaec4dbeda790ae9f0cb3db9a0feec6d4ed6b07",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "THIN",
+      "allowed_section_roles": [
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-005/evidence-bundles/1_samuel_029.json",
+      "dig_deeper_evidence_exists": false,
+      "disputed_evidence_count": 0,
+      "textual_evidence_present": false,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "1 Samuel",
+          "chapter": 29,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "1_samuel_029.json"
+    },
+    {
+      "reference": "Psalms 116",
+      "book": "Psalms",
+      "chapter": 116,
+      "canonical_text_input_locator": "bible.resolve_chapter('Psalms', 116)",
+      "locked_evidence_bundle_hash": "0da8dd88ac23ccff4f80c997ccdec6faababc9ea1fa5df4032a2349556481c21",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-005/evidence-bundles/psalms_116.json",
+      "dig_deeper_evidence_exists": false,
+      "disputed_evidence_count": 2,
+      "textual_evidence_present": true,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Psalms",
+          "chapter": 116,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "psalms_116.json"
+    },
+    {
+      "reference": "Psalms 118",
+      "book": "Psalms",
+      "chapter": 118,
+      "canonical_text_input_locator": "bible.resolve_chapter('Psalms', 118)",
+      "locked_evidence_bundle_hash": "fc3a3a08852e26d8c3c73a2408efb787ca1b29e21f212a0c4fd435f08e7d2dbd",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-005/evidence-bundles/psalms_118.json",
+      "dig_deeper_evidence_exists": false,
+      "disputed_evidence_count": 1,
+      "textual_evidence_present": false,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Psalms",
+          "chapter": 118,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "psalms_118.json"
+    },
+    {
+      "reference": "Song of Songs 4",
+      "book": "Song of Songs",
+      "chapter": 4,
+      "canonical_text_input_locator": "bible.resolve_chapter('Song of Songs', 4)",
+      "locked_evidence_bundle_hash": "dea3a8ef79a2474ab57a9a9380e4ee0fff9045f260e0b0618017357ac2d26886",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "dig_deeper",
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-005/evidence-bundles/song_of_songs_004.json",
+      "dig_deeper_evidence_exists": true,
+      "disputed_evidence_count": 7,
+      "textual_evidence_present": true,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Song of Songs",
+          "chapter": 4,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "song_of_songs_004.json"
+    },
+    {
+      "reference": "Hosea 3",
+      "book": "Hosea",
+      "chapter": 3,
+      "canonical_text_input_locator": "bible.resolve_chapter('Hosea', 3)",
+      "locked_evidence_bundle_hash": "29e48308eb890d16a7f6e28ec8b66f759fa29510f1933634155f61a64df63741",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "historical_context"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-005/evidence-bundles/hosea_003.json",
+      "dig_deeper_evidence_exists": false,
+      "disputed_evidence_count": 4,
+      "textual_evidence_present": false,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Hosea",
+          "chapter": 3,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "hosea_003.json"
+    },
+    {
+      "reference": "Job 3",
+      "book": "Job",
+      "chapter": 3,
+      "canonical_text_input_locator": "bible.resolve_chapter('Job', 3)",
+      "locked_evidence_bundle_hash": "450d2c23f7fa5b87c30812f203bfb84dc1a854510802d9e153d65d9126bec1f9",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "dig_deeper",
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-005/evidence-bundles/job_003.json",
+      "dig_deeper_evidence_exists": true,
+      "disputed_evidence_count": 5,
+      "textual_evidence_present": true,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Job",
+          "chapter": 3,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "job_003.json"
+    },
+    {
+      "reference": "Job 24",
+      "book": "Job",
+      "chapter": 24,
+      "canonical_text_input_locator": "bible.resolve_chapter('Job', 24)",
+      "locked_evidence_bundle_hash": "34723be5bb9007ddd1d065dcc551b81d3eb1fb1a340f029370ae57b95160f488",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "dig_deeper",
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-005/evidence-bundles/job_024.json",
+      "dig_deeper_evidence_exists": true,
+      "disputed_evidence_count": 5,
+      "textual_evidence_present": true,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Job",
+          "chapter": 24,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "job_024.json"
+    },
+    {
+      "reference": "Job 26",
+      "book": "Job",
+      "chapter": 26,
+      "canonical_text_input_locator": "bible.resolve_chapter('Job', 26)",
+      "locked_evidence_bundle_hash": "f3be7a72879f6dbd1fe04c8d5c0e4d604a81abc8142e6d8c7fff20bc5a726aa7",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "dig_deeper",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-005/evidence-bundles/job_026.json",
+      "dig_deeper_evidence_exists": true,
+      "disputed_evidence_count": 4,
+      "textual_evidence_present": true,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Job",
+          "chapter": 26,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "job_026.json"
+    },
+    {
+      "reference": "Job 38",
+      "book": "Job",
+      "chapter": 38,
+      "canonical_text_input_locator": "bible.resolve_chapter('Job', 38)",
+      "locked_evidence_bundle_hash": "2de6cbf94c84bfb7951f5b11f161dfdd48de22371990923de70b4be5ab6a2a4b",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "dig_deeper",
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-005/evidence-bundles/job_038.json",
+      "dig_deeper_evidence_exists": true,
+      "disputed_evidence_count": 5,
+      "textual_evidence_present": true,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Job",
+          "chapter": 38,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "job_038.json"
+    },
+    {
+      "reference": "Job 30",
+      "book": "Job",
+      "chapter": 30,
+      "canonical_text_input_locator": "bible.resolve_chapter('Job', 30)",
+      "locked_evidence_bundle_hash": "a939268343cb75317d2ff5c2a80ac3058f019f602a0bbb74cfc950f30217d7bf",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "dig_deeper",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-005/evidence-bundles/job_030.json",
+      "dig_deeper_evidence_exists": true,
+      "disputed_evidence_count": 4,
+      "textual_evidence_present": true,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Job",
+          "chapter": 30,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "job_030.json"
+    },
+    {
+      "reference": "Job 37",
+      "book": "Job",
+      "chapter": 37,
+      "canonical_text_input_locator": "bible.resolve_chapter('Job', 37)",
+      "locked_evidence_bundle_hash": "b93b86ea8fb011e43343e33b021e08308d839bdd623cc91298a7b6d8e3d74c8d",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "dig_deeper",
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-005/evidence-bundles/job_037.json",
+      "dig_deeper_evidence_exists": true,
+      "disputed_evidence_count": 5,
+      "textual_evidence_present": true,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Job",
+          "chapter": 37,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "job_037.json"
+    },
+    {
+      "reference": "Judges 14",
+      "book": "Judges",
+      "chapter": 14,
+      "canonical_text_input_locator": "bible.resolve_chapter('Judges', 14)",
+      "locked_evidence_bundle_hash": "4f0227f9e4c6e90fcdd9ba87419943c87590f83bf875724fbf586ed5f6c239a1",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-005/evidence-bundles/judges_014.json",
+      "dig_deeper_evidence_exists": false,
+      "disputed_evidence_count": 2,
+      "textual_evidence_present": false,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Judges",
+          "chapter": 14,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "judges_014.json"
+    },
+    {
+      "reference": "Judges 17",
+      "book": "Judges",
+      "chapter": 17,
+      "canonical_text_input_locator": "bible.resolve_chapter('Judges', 17)",
+      "locked_evidence_bundle_hash": "211341cbf7c94110e9cad89e16898a97ae5c920a69785246dfdbb4d7ad69e1be",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "dig_deeper",
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-005/evidence-bundles/judges_017.json",
+      "dig_deeper_evidence_exists": true,
+      "disputed_evidence_count": 8,
+      "textual_evidence_present": false,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Judges",
+          "chapter": 17,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "judges_017.json"
+    },
+    {
+      "reference": "2 Kings 2",
+      "book": "2 Kings",
+      "chapter": 2,
+      "canonical_text_input_locator": "bible.resolve_chapter('2 Kings', 2)",
+      "locked_evidence_bundle_hash": "51f9001dea5f2d2d530592004afc4fb9c7ca179e94cc8ef0c596924978402fa5",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-005/evidence-bundles/2_kings_002.json",
+      "dig_deeper_evidence_exists": false,
+      "disputed_evidence_count": 1,
+      "textual_evidence_present": false,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "2 Kings",
+          "chapter": 2,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "2_kings_002.json"
+    },
+    {
+      "reference": "Esther 8",
+      "book": "Esther",
+      "chapter": 8,
+      "canonical_text_input_locator": "bible.resolve_chapter('Esther', 8)",
+      "locked_evidence_bundle_hash": "191c45731bfad7fede2ccc329e10c9ff89acef23d7d6b5503d34c1eb37d0cdaa",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "historical_context"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-005/evidence-bundles/esther_008.json",
+      "dig_deeper_evidence_exists": false,
+      "disputed_evidence_count": 5,
+      "textual_evidence_present": false,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Esther",
+          "chapter": 8,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "esther_008.json"
+    },
+    {
+      "reference": "Job 13",
+      "book": "Job",
+      "chapter": 13,
+      "canonical_text_input_locator": "bible.resolve_chapter('Job', 13)",
+      "locked_evidence_bundle_hash": "98c91bfec0fce0c1971456529d05507d7cd7b7fea78949c7b903487edbe074ff",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "dig_deeper",
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-005/evidence-bundles/job_013.json",
+      "dig_deeper_evidence_exists": true,
+      "disputed_evidence_count": 5,
+      "textual_evidence_present": true,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Job",
+          "chapter": 13,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "job_013.json"
+    },
+    {
+      "reference": "Job 23",
+      "book": "Job",
+      "chapter": 23,
+      "canonical_text_input_locator": "bible.resolve_chapter('Job', 23)",
+      "locked_evidence_bundle_hash": "4f448f3cb5ca165ed992464c79b4f2cea83d38196ea74013fa3f0ad235d71dce",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "dig_deeper",
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-005/evidence-bundles/job_023.json",
+      "dig_deeper_evidence_exists": true,
+      "disputed_evidence_count": 5,
+      "textual_evidence_present": true,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Job",
+          "chapter": 23,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "job_023.json"
+    },
+    {
+      "reference": "Psalms 90",
+      "book": "Psalms",
+      "chapter": 90,
+      "canonical_text_input_locator": "bible.resolve_chapter('Psalms', 90)",
+      "locked_evidence_bundle_hash": "bee1caaa83a75723d299c2dc2258a378bb900a19c50283fb4eac74f29460b750",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "dig_deeper",
+        "historical_context"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-005/evidence-bundles/psalms_090.json",
+      "dig_deeper_evidence_exists": true,
+      "disputed_evidence_count": 1,
+      "textual_evidence_present": false,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Psalms",
+          "chapter": 90,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "psalms_090.json"
+    },
+    {
+      "reference": "Esther 9",
+      "book": "Esther",
+      "chapter": 9,
+      "canonical_text_input_locator": "bible.resolve_chapter('Esther', 9)",
+      "locked_evidence_bundle_hash": "e1f861bdf80954c1340811907bc4fe26a78bca3f45234b439f2e1c32bef6797b",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "historical_context"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-005/evidence-bundles/esther_009.json",
+      "dig_deeper_evidence_exists": false,
+      "disputed_evidence_count": 6,
+      "textual_evidence_present": false,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Esther",
+          "chapter": 9,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "esther_009.json"
+    },
+    {
+      "reference": "John 17",
+      "book": "John",
+      "chapter": 17,
+      "canonical_text_input_locator": "bible.resolve_chapter('John', 17)",
+      "locked_evidence_bundle_hash": "b659cfcd123c77b3a40a0a5bd01d1acadf091a8d29be084efe3b99e194a522f0",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "historical_context"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-005/evidence-bundles/john_017.json",
+      "dig_deeper_evidence_exists": false,
+      "disputed_evidence_count": 1,
+      "textual_evidence_present": false,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "John",
+          "chapter": 17,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "john_017.json"
+    },
+    {
+      "reference": "Psalms 115",
+      "book": "Psalms",
+      "chapter": 115,
+      "canonical_text_input_locator": "bible.resolve_chapter('Psalms', 115)",
+      "locked_evidence_bundle_hash": "cf743a8763d05d7e6af706d8dfb2963e604e6f5fc9c4253db958503082b97f0d",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-005/evidence-bundles/psalms_115.json",
+      "dig_deeper_evidence_exists": false,
+      "disputed_evidence_count": 2,
+      "textual_evidence_present": true,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Psalms",
+          "chapter": 115,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "psalms_115.json"
+    },
+    {
+      "reference": "1 Samuel 27",
+      "book": "1 Samuel",
+      "chapter": 27,
+      "canonical_text_input_locator": "bible.resolve_chapter('1 Samuel', 27)",
+      "locked_evidence_bundle_hash": "f9077ace5e82138c04c448b94bb67f4571754a1ecb0bf5deb7e34d82a875e461",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "THIN",
+      "allowed_section_roles": [
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-005/evidence-bundles/1_samuel_027.json",
+      "dig_deeper_evidence_exists": false,
+      "disputed_evidence_count": 0,
+      "textual_evidence_present": false,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "1 Samuel",
+          "chapter": 27,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "1_samuel_027.json"
+    },
+    {
+      "reference": "Isaiah 35",
+      "book": "Isaiah",
+      "chapter": 35,
+      "canonical_text_input_locator": "bible.resolve_chapter('Isaiah', 35)",
+      "locked_evidence_bundle_hash": "8364985e93239384055a2aeb7c7e5a12229d43695319cfe95e641019abfef838",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "THIN",
+      "allowed_section_roles": [
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-005/evidence-bundles/isaiah_035.json",
+      "dig_deeper_evidence_exists": false,
+      "disputed_evidence_count": 1,
+      "textual_evidence_present": true,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Isaiah",
+          "chapter": 35,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "isaiah_035.json"
+    },
+    {
+      "reference": "Judges 7",
+      "book": "Judges",
+      "chapter": 7,
+      "canonical_text_input_locator": "bible.resolve_chapter('Judges', 7)",
+      "locked_evidence_bundle_hash": "65c6b5a20915192b2e6e215f3283a00df960b5f57536352f2c032282b00d18f2",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-005/evidence-bundles/judges_007.json",
+      "dig_deeper_evidence_exists": false,
+      "disputed_evidence_count": 3,
+      "textual_evidence_present": false,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Judges",
+          "chapter": 7,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "judges_007.json"
+    },
+    {
+      "reference": "Amos 1",
+      "book": "Amos",
+      "chapter": 1,
+      "canonical_text_input_locator": "bible.resolve_chapter('Amos', 1)",
+      "locked_evidence_bundle_hash": "9671ae5406661f3046a70c73174cdfd6db087767a26560ea0ae86a0b277e6f41",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-005/evidence-bundles/amos_001.json",
+      "dig_deeper_evidence_exists": false,
+      "disputed_evidence_count": 15,
+      "textual_evidence_present": true,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Amos",
+          "chapter": 1,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "amos_001.json"
+    },
+    {
+      "reference": "Song of Songs 7",
+      "book": "Song of Songs",
+      "chapter": 7,
+      "canonical_text_input_locator": "bible.resolve_chapter('Song of Songs', 7)",
+      "locked_evidence_bundle_hash": "eaad56a43825be78d82d99c6c6206df373e33ed1a68695d8d0fa2fa3ac9e1024",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "dig_deeper",
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-005/evidence-bundles/song_of_songs_007.json",
+      "dig_deeper_evidence_exists": true,
+      "disputed_evidence_count": 7,
+      "textual_evidence_present": true,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Song of Songs",
+          "chapter": 7,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "song_of_songs_007.json"
+    },
+    {
+      "reference": "Isaiah 18",
+      "book": "Isaiah",
+      "chapter": 18,
+      "canonical_text_input_locator": "bible.resolve_chapter('Isaiah', 18)",
+      "locked_evidence_bundle_hash": "f679cf3aabb58f5f6c96a72951cfe524e83eb3185ee76373db463ade8ac10e60",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-005/evidence-bundles/isaiah_018.json",
+      "dig_deeper_evidence_exists": false,
+      "disputed_evidence_count": 2,
+      "textual_evidence_present": true,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Isaiah",
+          "chapter": 18,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "isaiah_018.json"
+    },
+    {
+      "reference": "Jeremiah 47",
+      "book": "Jeremiah",
+      "chapter": 47,
+      "canonical_text_input_locator": "bible.resolve_chapter('Jeremiah', 47)",
+      "locked_evidence_bundle_hash": "97aa32bd0be5408fd5b77d65d1f5680a852e1e2ccfeff5127e0b86a0f5fd4ff8",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-005/evidence-bundles/jeremiah_047.json",
+      "dig_deeper_evidence_exists": false,
+      "disputed_evidence_count": 3,
+      "textual_evidence_present": true,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Jeremiah",
+          "chapter": 47,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "jeremiah_047.json"
+    },
+    {
+      "reference": "Job 16",
+      "book": "Job",
+      "chapter": 16,
+      "canonical_text_input_locator": "bible.resolve_chapter('Job', 16)",
+      "locked_evidence_bundle_hash": "9ee8c775b06d712003385cde4aac3d4bfcf862d60b9637a5c30d5d076647d954",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "dig_deeper",
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-005/evidence-bundles/job_016.json",
+      "dig_deeper_evidence_exists": true,
+      "disputed_evidence_count": 6,
+      "textual_evidence_present": true,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Job",
+          "chapter": 16,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "job_016.json"
+    },
+    {
+      "reference": "Numbers 13",
+      "book": "Numbers",
+      "chapter": 13,
+      "canonical_text_input_locator": "bible.resolve_chapter('Numbers', 13)",
+      "locked_evidence_bundle_hash": "fa711e656e5c5aaf332c47f80041b1c945c8a3ba83b0900e572e3dfefc0eedc3",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "historical_context"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-005/evidence-bundles/numbers_013.json",
+      "dig_deeper_evidence_exists": false,
+      "disputed_evidence_count": 1,
+      "textual_evidence_present": false,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Numbers",
+          "chapter": 13,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "numbers_013.json"
+    },
+    {
+      "reference": "Psalms 4",
+      "book": "Psalms",
+      "chapter": 4,
+      "canonical_text_input_locator": "bible.resolve_chapter('Psalms', 4)",
+      "locked_evidence_bundle_hash": "750fd18892be90c7da19d394e2513b48f3a003a30e018f8c9ed29c695d0369be",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "historical_context"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-005/evidence-bundles/psalms_004.json",
+      "dig_deeper_evidence_exists": false,
+      "disputed_evidence_count": 0,
+      "textual_evidence_present": false,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Psalms",
+          "chapter": 4,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "psalms_004.json"
+    },
+    {
+      "reference": "Jeremiah 42",
+      "book": "Jeremiah",
+      "chapter": 42,
+      "canonical_text_input_locator": "bible.resolve_chapter('Jeremiah', 42)",
+      "locked_evidence_bundle_hash": "f0fd224d2c1f8cbceb3ecd8e7049c3b8bf3cbd46ccf85fa417f01d79eff1b29c",
+      "evidence_bundle_version": "1.1",
+      "evidence_hash_version": "2",
+      "availability": "AVAILABLE",
+      "allowed_section_roles": [
+        "historical_context",
+        "language_literary"
+      ],
+      "evidence_bundle_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/batch-005/evidence-bundles/jeremiah_042.json",
+      "dig_deeper_evidence_exists": false,
+      "disputed_evidence_count": 3,
+      "textual_evidence_present": true,
+      "terra_textual_suppression_required": false,
+      "evidence_reconstruction": {
+        "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
+        "arguments": {
+          "book": "Jeremiah",
+          "chapter": 42,
+          "evidence_bundle_version": "1.1"
+        },
+        "verify_hash_before_generation": true
+      },
+      "candidate_output_filename": "jeremiah_042.json"
+    }
+  ]
+}

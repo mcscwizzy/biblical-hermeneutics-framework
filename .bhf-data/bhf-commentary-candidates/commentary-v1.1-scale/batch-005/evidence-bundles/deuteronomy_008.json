@@ -1,0 +1,190 @@
+{
+  "passage_ref": "Deuteronomy 8",
+  "entities": {
+    "people": [],
+    "places": [],
+    "groups": [],
+    "events": [],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "deuteronomy-literary-movement",
+      "claim": "Deuteronomy moves from remembered wilderness history through covenant instruction to covenant consequences, renewal, succession, song, blessing, and Moses's death.",
+      "category": "culture",
+      "source_ids": [
+        "deuteronomy-1-34",
+        "tigay-deuteronomy",
+        "cairns-deuteronomy"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Deuteronomy 1-34"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "deuteronomy",
+        "parent_title": "Deuteronomy",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "direct",
+        "anchor_specificity": "chapter",
+        "verse_distance": 700,
+        "certainty": "strong_consensus",
+        "dispute_status": "not_disputed",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 73
+      }
+    },
+    {
+      "id": "deuteronomy:interpretive_note:1",
+      "claim": "The repeated instruction is rhetorically adapted covenant exposition for a successor generation, not a simple verbatim duplication of earlier laws.",
+      "category": "culture",
+      "source_ids": [
+        "deuteronomy-1-34",
+        "tigay-deuteronomy",
+        "cairns-deuteronomy"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Deuteronomy 5-26"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "deuteronomy",
+        "parent_title": "Deuteronomy",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "direct",
+        "anchor_specificity": "chapter",
+        "verse_distance": 300,
+        "certainty": "strong_consensus",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "literary-observation",
+        "field": "",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 62
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "Deuteronomy: Word and Presence",
+        "author": "Ian Cairns",
+        "publisher": "Eerdmans",
+        "year": 1992,
+        "locator": "Introduction and commentary on Deuteronomy 1-34",
+        "url": "https://www.eerdmans.com/9780802801609/deuteronomy/",
+        "source_type": "reference-work",
+        "supports": [
+          "literary-context",
+          "covenantal-significance",
+          "canonical-context",
+          "interpretive-notes",
+          "deuteronomy-literary-movement",
+          "deuteronomy-shema-love",
+          "deuteronomy-choose-life"
+        ],
+        "notes": "Theological commentary treating Deuteronomy as speech, covenant, law, and final Pentateuchal volume.",
+        "id": "cairns-deuteronomy",
+        "canonical_object_ids": [
+          "deuteronomy"
+        ]
+      },
+      {
+        "title": "Deuteronomy 1-34",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Deuteronomy 1:1-34:12",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "literary-context",
+          "structure",
+          "key-people",
+          "key-places",
+          "key-events",
+          "scripture-references",
+          "deuteronomy-literary-movement",
+          "deuteronomy-shema-love",
+          "deuteronomy-moab-covenant",
+          "deuteronomy-choose-life",
+          "deuteronomy-moses-joshua-transition"
+        ],
+        "notes": "Primary biblical text.",
+        "id": "deuteronomy-1-34",
+        "canonical_object_ids": [
+          "deuteronomy"
+        ]
+      },
+      {
+        "title": "The JPS Torah Commentary: Deuteronomy",
+        "author": "Jeffrey H. Tigay",
+        "publisher": "Jewish Publication Society",
+        "year": 1996,
+        "locator": "Introduction and commentary on Deuteronomy 1-34",
+        "url": "https://jps.org/books/jps-torah-commentary-deuteronomy/",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context",
+          "literary-context",
+          "ancient-near-east-context",
+          "hebrew-words",
+          "interpretive-notes",
+          "deuteronomy-literary-movement",
+          "deuteronomy-moab-covenant"
+        ],
+        "notes": "Jewish commentary integrating Hebrew text, classical interpretation, and modern scholarship.",
+        "id": "tigay-deuteronomy",
+        "canonical_object_ids": [
+          "deuteronomy"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "deuteronomy",
+        "type": "book",
+        "title": "Deuteronomy",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.917
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "84fd7949bb2294fc7b3ff3f019239fd5a004e4bd8c852a2b1365e959f3168605",
+  "evidence_hash_version": "2"
+}

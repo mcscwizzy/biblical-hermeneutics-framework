@@ -1,0 +1,229 @@
+{
+  "passage_ref": "Psalms 29",
+  "entities": {
+    "people": [],
+    "places": [],
+    "groups": [],
+    "events": [],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "what-does-shalom-mean:ancient_near_east_context:0",
+      "claim": "Ancient peace language often described stability after conflict, but Scripture expands shalom into flourishing, justice, and fullness.",
+      "category": "culture",
+      "source_ids": [
+        "numbers-6",
+        "psalm-29",
+        "isaiah-32",
+        "isaiah-54",
+        "john-14",
+        "ephesians-2",
+        "romans-5"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Psalms 29:11"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "what-does-shalom-mean",
+        "parent_title": "What does shalom mean?",
+        "parent_type": "faq",
+        "object_importance": 90,
+        "retrieval_score": 0.91,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 10,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "what-does-shalom-mean:historical_context:0",
+      "claim": "Used as a greeting and blessing, shalom points beyond social calm to a life made whole by God.",
+      "category": "history",
+      "source_ids": [
+        "numbers-6",
+        "psalm-29",
+        "isaiah-32",
+        "isaiah-54",
+        "john-14",
+        "ephesians-2",
+        "romans-5"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Psalms 29:11"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "what-does-shalom-mean",
+        "parent_title": "What does shalom mean?",
+        "parent_type": "faq",
+        "object_importance": 90,
+        "retrieval_score": 0.91,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 10,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "Ephesians 2",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "ephesians-2",
+        "canonical_object_ids": [
+          "what-does-shalom-mean"
+        ]
+      },
+      {
+        "title": "Isaiah 32",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "isaiah-32",
+        "canonical_object_ids": [
+          "what-does-shalom-mean"
+        ]
+      },
+      {
+        "title": "Isaiah 54",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "isaiah-54",
+        "canonical_object_ids": [
+          "what-does-shalom-mean"
+        ]
+      },
+      {
+        "title": "John 14",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "john-14",
+        "canonical_object_ids": [
+          "what-does-shalom-mean"
+        ]
+      },
+      {
+        "title": "Numbers 6",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "numbers-6",
+        "canonical_object_ids": [
+          "what-does-shalom-mean"
+        ]
+      },
+      {
+        "title": "Psalm 29",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [],
+        "notes": "",
+        "id": "psalm-29",
+        "canonical_object_ids": [
+          "what-does-shalom-mean"
+        ]
+      },
+      {
+        "title": "Romans 5",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "romans-5",
+        "canonical_object_ids": [
+          "what-does-shalom-mean"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "what-does-shalom-mean",
+        "type": "faq",
+        "title": "What does shalom mean?",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.91
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "700f8a2ab648fc8f463ec95a205afe2cfbc5b778abaf5d1d2ac3e4cdbafc0290",
+  "evidence_hash_version": "2"
+}

@@ -1,0 +1,286 @@
+{
+  "passage_ref": "Psalms 4",
+  "entities": {
+    "people": [],
+    "places": [],
+    "groups": [],
+    "events": [],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "prayer-theme:ancient_near_east_context:0",
+      "claim": "Ancient background for Prayer Theme includes covenant practice, worship, kingship, wisdom instruction, and prophetic critique; the entry ties that world to Psalm 4:1-8, Matthew 6:5-13, theology-of-prayer, and psalms without letting comparison replace the biblical witness.",
+      "category": "culture",
+      "source_ids": [
+        "psalm-4",
+        "matthew-6",
+        "luke-11",
+        "philippians-4",
+        "james-5"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Psalms 4:1-8"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "prayer-theme",
+        "parent_title": "Prayer Theme",
+        "parent_type": "theme",
+        "object_importance": 90,
+        "retrieval_score": 0.91,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "prayer-theme:historical_context:0",
+      "claim": "Prayer Theme is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness.",
+      "category": "history",
+      "source_ids": [
+        "psalm-4",
+        "matthew-6",
+        "luke-11",
+        "philippians-4",
+        "james-5"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Psalms 4:1-8"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "prayer-theme",
+        "parent_title": "Prayer Theme",
+        "parent_type": "theme",
+        "object_importance": 90,
+        "retrieval_score": 0.91,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "theology-of-prayer:ancient_near_east_context:0",
+      "claim": "Ancient background for Theology of Prayer includes covenant life, temple worship, royal ideology, wisdom teaching, and early church confession; the entry ties that world to Psalm 4:1-8, Matthew 6:5-13, prayer-theme, and psalms without letting comparison replace the biblical witness.",
+      "category": "culture",
+      "source_ids": [
+        "psalm-4",
+        "matthew-6",
+        "luke-11",
+        "philippians-4",
+        "james-5"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Psalms 4:1-8"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "theology-of-prayer",
+        "parent_title": "Theology of Prayer",
+        "parent_type": "theology",
+        "object_importance": 90,
+        "retrieval_score": 0.91,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "theology-of-prayer:historical_context:0",
+      "claim": "Theology of Prayer is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness.",
+      "category": "history",
+      "source_ids": [
+        "psalm-4",
+        "matthew-6",
+        "luke-11",
+        "philippians-4",
+        "james-5"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Psalms 4:1-8"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "theology-of-prayer",
+        "parent_title": "Theology of Prayer",
+        "parent_type": "theology",
+        "object_importance": 90,
+        "retrieval_score": 0.91,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "James 5",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "james-5",
+        "canonical_object_ids": [
+          "prayer-theme",
+          "theology-of-prayer"
+        ]
+      },
+      {
+        "title": "Luke 11",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "luke-11",
+        "canonical_object_ids": [
+          "prayer-theme",
+          "theology-of-prayer"
+        ]
+      },
+      {
+        "title": "Matthew 6",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "matthew-6",
+        "canonical_object_ids": [
+          "prayer-theme",
+          "theology-of-prayer"
+        ]
+      },
+      {
+        "title": "Philippians 4",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "philippians-4",
+        "canonical_object_ids": [
+          "prayer-theme",
+          "theology-of-prayer"
+        ]
+      },
+      {
+        "title": "Psalm 4",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [],
+        "notes": "",
+        "id": "psalm-4",
+        "canonical_object_ids": [
+          "prayer-theme",
+          "theology-of-prayer"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "prayer-theme",
+        "type": "theme",
+        "title": "Prayer Theme",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.91
+      },
+      {
+        "id": "theology-of-prayer",
+        "type": "theology",
+        "title": "Theology of Prayer",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.91
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "750fd18892be90c7da19d394e2513b48f3a003a30e018f8c9ed29c695d0369be",
+  "evidence_hash_version": "2"
+}
