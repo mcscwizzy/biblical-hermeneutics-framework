@@ -2440,7 +2440,13 @@ def run_batch(
 
         outliers = _mark_extreme_counts(evaluated)
         pass_records = [row for row in evaluated if row["status"] == "PASS" and row["availability"] in {"AVAILABLE", "THIN"}]
-        final_records = select_final_chapters(evaluated, target_count)
+        # A final partial batch is valid when the complete eligible pool has
+        # been exhausted.  This changes only the batch size; it never admits
+        # quarantined or DATA_GAP chapters and never lowers an evidence gate.
+        effective_target_count = target_count
+        if len(candidate_pool) >= len(full_pool) and len(pass_records) < target_count:
+            effective_target_count = len(pass_records)
+        final_records = select_final_chapters(evaluated, effective_target_count)
         final_refs = {row["reference"] for row in final_records}
         replacements = sorted(final_refs - set(selection["initial_candidate_pool"]))
         for record in final_records:
@@ -2479,7 +2485,7 @@ def run_batch(
         )
         _progress("regression controls and fingerprints completed")
 
-    status = "LOCKED" if len(final_records) == target_count and all(value["status"] == "PASS" for value in controls.values()) else "BLOCKED"
+    status = "LOCKED" if effective_target_count > 0 and len(final_records) == effective_target_count and all(value["status"] == "PASS" for value in controls.values()) else "BLOCKED"
     availability_distribution = dict(sorted(Counter(row["availability"] for row in final_records).items()))
     genre_distribution = dict(sorted(Counter(row["genre"] for row in final_records).items()))
     book_distribution = dict(sorted(Counter(row["book"] for row in final_records).items()))
@@ -2507,7 +2513,7 @@ def run_batch(
         "tool_version": TOOL_VERSION,
         "checkpoint_version": CHECKPOINT_VERSION,
         "checkpoint_work_root": str(work_root.relative_to(REPO_ROOT)),
-        "target_count": target_count,
+        "target_count": effective_target_count,
         "candidate_pool_size": len(candidate_pool),
         "candidate_pool_requested_size": candidate_pool_size,
         "chapters_evaluated": len(evaluated),

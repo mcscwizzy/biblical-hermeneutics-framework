@@ -1,0 +1,36 @@
+{
+  "batch_id": "batch-006",
+  "status": "REVIEWED",
+  "chapters": [
+    {
+      "reference": "Psalms 23",
+      "verdict": "QUARANTINE",
+      "reason_codes": [
+        "WORD_STUDY_BROAD_PARENT_ANCHOR"
+      ],
+      "evidence_ids": [
+        "adonai:ancient_near_east_context:0",
+        "adonai:historical_context:0",
+        "elohim:ancient_near_east_context:0",
+        "elohim:historical_context:0",
+        "kyrios:ancient_near_east_context:0",
+        "kyrios:historical_context:0",
+        "theos:ancient_near_east_context:0",
+        "theos:historical_context:0",
+        "yahweh:ancient_near_east_context:0",
+        "yahweh:historical_context:0"
+      ],
+      "ckl_parent_records": [
+        "adonai",
+        "elohim",
+        "kyrios",
+        "theos",
+        "yahweh"
+      ],
+      "explanation": "The word-study parent has a broad or cross-book authored anchor set.",
+      "scope": "systemic"
+    }
+  ],
+  "unresolved_blocker_count": 1,
+  "systemic_concern": "Repeated template-shaped background and broad-parent reuse remain CKL cleanup concerns; this preflight does not repair evidence."
+}

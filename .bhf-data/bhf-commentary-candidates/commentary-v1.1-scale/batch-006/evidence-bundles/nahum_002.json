@@ -1,0 +1,780 @@
+{
+  "passage_ref": "Nahum 2",
+  "entities": {
+    "people": [],
+    "places": [
+      {
+        "id": "assyria",
+        "title": "Assyria",
+        "type": "place",
+        "aliases": [
+          "where is assyria",
+          "tell me about assyria",
+          "why is assyria important"
+        ],
+        "metadata": {
+          "summary": "A northern Mesopotamian imperial heartland and, in biblical usage, the Neo-Assyrian Empire that dominated the Levant, ended the northern kingdom, and nearly destroyed Judah in the eighth and seventh centuries BCE.",
+          "importance": 72,
+          "retrieval_score": 0.892,
+          "ancient_names": [],
+          "modern_identification": "",
+          "region": "",
+          "terrain": "",
+          "elevation": null,
+          "archaeology": [],
+          "related_passages": [
+            "Genesis 10:1-32",
+            "2 Kings 17:1-23",
+            "2 Kings 18:13-37",
+            "2 Kings 19:1-37",
+            "Isaiah 10:5-34",
+            "Nahum 1:1-15",
+            "Nahum 2:1-13",
+            "Nahum 3:1-19"
+          ]
+        }
+      }
+    ],
+    "groups": [],
+    "events": [],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "assyria:ancient_near_east_context:0",
+      "claim": "Assyria was not only a place but an imperial network of capitals, provinces, roads, governors, armies, scribes, tribute, resettlement, temples, and royal media. Inscriptions and reliefs voice elite imperial ideology rather than every inhabitant's experience.",
+      "category": "culture",
+      "source_ids": [
+        "genesis-10-12",
+        "exodus-1-15",
+        "2-kings-17-25",
+        "daniel-1-6",
+        "acts-18-28",
+        "assyria-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "assyria"
+      ],
+      "passage_anchors": [
+        "Nahum 2:1-13"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "assyria",
+        "parent_title": "Assyria",
+        "parent_type": "place",
+        "object_importance": 72,
+        "retrieval_score": 0.892,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "assyria:hebraic_worldview:0",
+      "claim": "Biblical texts can portray Assyria as a historical instrument of judgment, an arrogant power accountable to YHWH, an object of lament or oracle, and in Isaiah 19 even a participant in an eschatological blessing.",
+      "category": "culture",
+      "source_ids": [
+        "genesis-10-12",
+        "exodus-1-15",
+        "2-kings-17-25",
+        "daniel-1-6",
+        "acts-18-28",
+        "assyria-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "assyria"
+      ],
+      "passage_anchors": [
+        "Nahum 2:1-13"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "assyria",
+        "parent_title": "Assyria",
+        "parent_type": "place",
+        "object_importance": 72,
+        "retrieval_score": 0.892,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "hebraic_worldview",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "assyria:historical_context:0",
+      "claim": "Neo-Assyrian expansion under Tiglath-pileser III, Shalmaneser V, Sargon II, and Sennacherib transformed Israel and Judah through tribute, annexation, deportation, provincial rule, siege, and destruction. Nineveh fell in 612 BCE and the last Assyrian resistance ended soon afterward.",
+      "category": "history",
+      "source_ids": [
+        "genesis-10-12",
+        "exodus-1-15",
+        "2-kings-17-25",
+        "daniel-1-6",
+        "acts-18-28",
+        "assyria-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "assyria"
+      ],
+      "passage_anchors": [
+        "Nahum 2:1-13"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "assyria",
+        "parent_title": "Assyria",
+        "parent_type": "place",
+        "object_importance": 72,
+        "retrieval_score": 0.892,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "assyria:historical_setting:0",
+      "claim": "Northern Mesopotamia and the Neo-Assyrian imperial system, especially its Levantine expansion from the ninth to seventh centuries BCE.",
+      "category": "history",
+      "source_ids": [
+        "genesis-10-12",
+        "exodus-1-15",
+        "2-kings-17-25",
+        "daniel-1-6",
+        "acts-18-28",
+        "assyria-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "assyria"
+      ],
+      "passage_anchors": [
+        "Nahum 2:1-13"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "assyria",
+        "parent_title": "Assyria",
+        "parent_type": "place",
+        "object_importance": 72,
+        "retrieval_score": 0.892,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_setting",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "nahum-assyrian-sources",
+      "claim": "Assyrian inscriptions and palace reliefs illuminate imperial ideology, conquest, deportation, tribute, violence, lion symbolism, and Thebes, but are royal representations rather than neutral reports.",
+      "category": "politics",
+      "source_ids": [
+        "rinap-ashurbanipal",
+        "bm-assyria-gallery",
+        "bm-lion-hunts"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Nahum 2:1-13"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "nahum",
+        "parent_title": "Nahum",
+        "parent_type": "book",
+        "object_importance": 86,
+        "retrieval_score": 0.906,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "not_disputed",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "historical_cultural",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 118
+      }
+    },
+    {
+      "id": "nahum-chronicle",
+      "claim": "Babylonian Chronicle BM 21901 records Babylonian and Median campaigns culminating in Nineveh's capture and destruction in 612 BCE.",
+      "category": "culture",
+      "source_ids": [
+        "bm-nineveh-chronicle"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Nahum 2:1-13"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "nahum",
+        "parent_title": "Nahum",
+        "parent_type": "book",
+        "object_importance": 86,
+        "retrieval_score": 0.906,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "not_disputed",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "historical_cultural",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 103
+      }
+    },
+    {
+      "id": "nahum-lions",
+      "claim": "Nahum 2:11-13 turns Assyrian royal lion imagery into a taunt over an emptied den and ends with YHWH's declaration against Nineveh.",
+      "category": "culture",
+      "source_ids": [
+        "nahum-masoretic",
+        "bm-lion-hunts",
+        "christensen-nahum"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Nahum 2:11-13"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "nahum",
+        "parent_title": "Nahum",
+        "parent_type": "book",
+        "object_importance": 86,
+        "retrieval_score": 0.906,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 10,
+        "certainty": "strong_consensus",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 105
+      }
+    },
+    {
+      "id": "nahum-pesher",
+      "claim": "Pesher Nahum (4Q169) cites and reapplies Nahum to Second Temple political and sectarian figures through pesher interpretation.",
+      "category": "politics",
+      "source_ids": [
+        "iaa-4q169",
+        "cambridge-qumran"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Nahum 2:11-13"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "nahum",
+        "parent_title": "Nahum",
+        "parent_type": "book",
+        "object_importance": 86,
+        "retrieval_score": 0.906,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 10,
+        "certainty": "strong_consensus",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "reception_history",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "dig_deeper",
+        "overview_priority": 105
+      }
+    },
+    {
+      "id": "nahum-scatterer",
+      "claim": "Nahum 2:1 addresses Nineveh as a scatterer or shatterer advances, probably the forces attacking the city, although precise identification is disputed.",
+      "category": "culture",
+      "source_ids": [
+        "nahum-masoretic",
+        "christensen-nahum",
+        "bm-nineveh-chronicle"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Nahum 2:1"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "nahum",
+        "parent_title": "Nahum",
+        "parent_type": "book",
+        "object_importance": 86,
+        "retrieval_score": 0.906,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "probable",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 90
+      }
+    },
+    {
+      "id": "nahum-siege-poem",
+      "claim": "Nahum 2:1-10 uses rapid, sensory battle poetry to portray preparation, chariots, gates, palace collapse, flight, and plunder.",
+      "category": "culture",
+      "source_ids": [
+        "nahum-masoretic",
+        "christensen-nahum",
+        "obrien-nahum"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Nahum 2:1-10"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "nahum",
+        "parent_title": "Nahum",
+        "parent_type": "book",
+        "object_importance": 86,
+        "retrieval_score": 0.906,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 90
+      }
+    },
+    {
+      "id": "nahum-water",
+      "claim": "Nineveh's river gates, palace, and pool imagery can be read against its hydraulic setting, but the text does not prove that a literal flood caused the city's breach.",
+      "category": "geography",
+      "source_ids": [
+        "nahum-masoretic",
+        "bm-nineveh-chronicle",
+        "bm-assyria-gallery",
+        "christensen-nahum"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Nahum 2:6-8"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "nahum",
+        "parent_title": "Nahum",
+        "parent_type": "book",
+        "object_importance": 86,
+        "retrieval_score": 0.906,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 5,
+        "certainty": "plausible",
+        "dispute_status": "archaeological_uncertainty",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "archaeology",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "archaeology_geography",
+        "overview_priority": 98
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "2 Kings 17-25",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "2-kings-17-25",
+        "canonical_object_ids": [
+          "assyria"
+        ]
+      },
+      {
+        "title": "Acts 18-28",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "acts-18-28",
+        "canonical_object_ids": [
+          "assyria"
+        ]
+      },
+      {
+        "title": "Canonical historical orientation for Assyria",
+        "author": "",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "id": "assyria-historical-orientation",
+        "canonical_object_ids": [
+          "assyria"
+        ]
+      },
+      {
+        "title": "Assyria: Nineveh Palace Reliefs",
+        "author": "British Museum",
+        "publisher": "British Museum",
+        "year": null,
+        "locator": "Neo-Assyrian galleries and collections",
+        "url": "https://www.britishmuseum.org/collection/galleries/assyria-nineveh",
+        "source_type": "museum-collection",
+        "supports": [
+          "ancient-near-east-context",
+          "archaeology",
+          "nahum-water",
+          "nahum-assyrian-sources"
+        ],
+        "notes": "Official museum context for reliefs excavated at Nineveh; poetic dependence is not assumed.",
+        "id": "bm-assyria-gallery",
+        "canonical_object_ids": [
+          "nahum"
+        ]
+      },
+      {
+        "title": "Assyria: Lion Hunts and Siege Galleries",
+        "author": "British Museum",
+        "publisher": "British Museum",
+        "year": null,
+        "locator": "Rooms 10a-10b; Ashurbanipal lion hunts and Assyrian siege reliefs",
+        "url": "https://www.britishmuseum.org/collection/galleries/assyria-lion-hunts",
+        "source_type": "museum-collection",
+        "supports": [
+          "ancient-near-east-context",
+          "archaeology",
+          "nahum-assyrian-sources"
+        ],
+        "notes": "Official gallery overview for Ashurbanipal's lion-hunt reliefs and Assyrian siege imagery.",
+        "id": "bm-lion-hunts",
+        "canonical_object_ids": [
+          "nahum"
+        ]
+      },
+      {
+        "title": "Fall of Nineveh Chronicle",
+        "author": "British Museum",
+        "publisher": "British Museum",
+        "year": null,
+        "locator": "Museum number 21901; chronicle for 616-609 BCE",
+        "url": "https://www.britishmuseum.org/collection/object/W_1896-0409-6",
+        "source_type": "museum-collection",
+        "supports": [
+          "historical-context",
+          "ancient-near-east-context",
+          "timeline",
+          "archaeology",
+          "nahum-chronicle"
+        ],
+        "notes": "Official object record for the Late Babylonian tablet describing Nineveh's fall.",
+        "id": "bm-nineveh-chronicle",
+        "canonical_object_ids": [
+          "nahum"
+        ]
+      },
+      {
+        "title": "The Commentaries",
+        "author": "",
+        "publisher": "Cambridge University Press",
+        "year": 1995,
+        "locator": "The Qumran Community, including Pesher Nahum",
+        "url": "https://www.cambridge.org/core/books/qumran-community/commentaries/540A3085C641F929B15A3FB6172B33CB",
+        "source_type": "academic-book",
+        "supports": [
+          "second-temple-context",
+          "nahum-pesher"
+        ],
+        "notes": "Scholarly presentation of Qumran commentaries including 4Q169.",
+        "id": "cambridge-qumran",
+        "canonical_object_ids": [
+          "nahum"
+        ]
+      },
+      {
+        "title": "Nahum: A New Translation with Introduction and Commentary",
+        "author": "Duane L. Christensen",
+        "publisher": "Yale University Press",
+        "year": 2009,
+        "locator": "Anchor Yale Bible 24F",
+        "url": "https://yalebooks.yale.edu/book/9780300144796/nahum/",
+        "source_type": "academic-book",
+        "supports": [
+          "literary-context",
+          "hebrew-words",
+          "nahum-elkosh",
+          "nahum-addressees",
+          "nahum-siege-poem"
+        ],
+        "notes": "Detailed translation, literary, historical, prosodic, and philological commentary.",
+        "id": "christensen-nahum",
+        "canonical_object_ids": [
+          "nahum"
+        ]
+      },
+      {
+        "title": "Daniel 1-6",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "daniel-1-6",
+        "canonical_object_ids": [
+          "assyria"
+        ]
+      },
+      {
+        "title": "Exodus 1-15",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "exodus-1-15",
+        "canonical_object_ids": [
+          "assyria"
+        ]
+      },
+      {
+        "title": "Genesis 10-12",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "genesis-10-12",
+        "canonical_object_ids": [
+          "assyria"
+        ]
+      },
+      {
+        "title": "4Q Pesher Nahum (4Q169)",
+        "author": "Israel Antiquities Authority",
+        "publisher": "Leon Levy Dead Sea Scrolls Digital Library",
+        "year": null,
+        "locator": "4Q169 / 4QpNah",
+        "url": "https://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q169-1",
+        "source_type": "museum-collection",
+        "supports": [
+          "primary-sources",
+          "second-temple-context",
+          "nahum-textual-witnesses",
+          "nahum-pesher"
+        ],
+        "notes": "Official manuscript catalogue and images for the sectarian commentary on Nahum.",
+        "id": "iaa-4q169",
+        "canonical_object_ids": [
+          "nahum"
+        ]
+      },
+      {
+        "title": "Masoretic Text of Nahum",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Nahum 1:1-3:19, with MT chapter numbering",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "structure",
+          "scripture-references",
+          "nahum-superscription",
+          "nahum-bloody-city"
+        ],
+        "notes": "Primary Hebrew witness; translations and textual problems require review against a critical edition.",
+        "id": "nahum-masoretic",
+        "canonical_object_ids": [
+          "nahum"
+        ]
+      },
+      {
+        "title": "Nahum: Readings, A New Biblical Commentary",
+        "author": "Julia M. O'Brien",
+        "publisher": "Sheffield Academic Press",
+        "year": 2002,
+        "locator": "Readings series",
+        "url": "https://www.sbl-site.org/wp-content/uploads/2025/01/OBrienNahum.pdf",
+        "source_type": "academic-book",
+        "supports": [
+          "literary-context",
+          "later-christian-reception",
+          "nahum-gendered-rhetoric",
+          "nahum-ethical-reception"
+        ],
+        "notes": "Literary and ideological reading with sustained attention to gender, violence, and readers.",
+        "id": "obrien-nahum",
+        "canonical_object_ids": [
+          "nahum"
+        ]
+      },
+      {
+        "title": "The Royal Inscriptions of Ashurbanipal",
+        "author": "Joshua Jeffers; Jamie Novotny",
+        "publisher": "Eisenbrauns / Penn State University Press",
+        "year": 2023,
+        "locator": "RINAP 5/2, including texts on the plundering of Thebes",
+        "url": "https://oracc.museum.upenn.edu/rinap/downloads/0RINAP5_2_final.pdf",
+        "source_type": "ancient-primary-source",
+        "supports": [
+          "ancient-near-east-context",
+          "timeline",
+          "archaeology",
+          "nahum-thebes",
+          "nahum-assyrian-sources"
+        ],
+        "notes": "Open scholarly edition, transliteration, and translation of Ashurbanipal's royal inscriptions.",
+        "id": "rinap-ashurbanipal",
+        "canonical_object_ids": [
+          "nahum"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "assyria",
+        "type": "place",
+        "title": "Assyria",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.892
+      },
+      {
+        "id": "nahum",
+        "type": "book",
+        "title": "Nahum",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.906
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "d32a84c47066d53881d3314f2f5dba4b9f232469c9ebd471f4830ca9ed751723",
+  "evidence_hash_version": "2"
+}
