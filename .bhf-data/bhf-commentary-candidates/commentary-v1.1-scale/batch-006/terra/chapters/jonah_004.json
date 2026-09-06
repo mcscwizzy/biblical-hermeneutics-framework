@@ -1,0 +1,101 @@
+{
+  "reference": "Jonah 4",
+  "book": "Jonah",
+  "chapter": 4,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_38",
+          "text": "Read the chapter with this setting in view: The book's imperial, violent, and divine-judgment imagery does not authorize genocide, vengeance, enemy dehumanization, collective punishment, or political capture of divine mercy. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken.",
+          "evidence_ids": [
+            "jonah:interpretive_note:41"
+          ],
+          "verse_refs": [
+            "Jonah 4:10-11"
+          ],
+          "confidence": "high",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_39",
+          "text": "For its historical and cultural setting, note that Jonah must not be turned into an antisemitic caricature of Jews as uniquely disobedient, vengeful, or hostile to outsiders; the book is Jewish Scripture engaged in internal moral argument. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "jonah:interpretive_note:34"
+          ],
+          "verse_refs": [
+            "Jonah 4:1-11"
+          ],
+          "confidence": "high",
+          "interpretation_level": "inference"
+        },
+        {
+          "id": "historical_context_40",
+          "text": "For its historical and cultural setting, note that Divine compassion for Nineveh neither excuses Assyrian imperial violence nor licenses hatred of ancient or modern peoples; mercy and accountability must not be made opposites. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "jonah:interpretive_note:33"
+          ],
+          "verse_refs": [
+            "Jonah 4:11"
+          ],
+          "confidence": "high",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "archaeology_geography",
+      "title": "Archaeology and geography",
+      "blocks": [
+        {
+          "id": "archaeology_geography_39",
+          "text": "For its geographical or material setting, note that The wind in Jonah 4:8 is eastern and oppressive, but scorching, sultry, or quiet descriptors depend on textual and lexical judgments. It can illuminate the passage, while its limits should be kept in view. Interpretations differ on some details.",
+          "evidence_ids": [
+            "jonah:interpretive_note:28"
+          ],
+          "verse_refs": [
+            "Jonah 4:8"
+          ],
+          "confidence": "low",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_39",
+          "text": "A literary feature to notice is that Jonah is predominantly prose narrative about a commissioned figure and uses irony, hyperbole, repetition, reversal, and extraordinary nonhuman action; historical narrative, novella, didactic tale, satire, parody, and fiction remain debated labels. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image. Interpretations differ on some details.",
+          "evidence_ids": [
+            "jonah-genre"
+          ],
+          "verse_refs": [
+            "Jonah 4:1-11"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "2f3274f62483df09e29eebc02b4aeb8cd562edede18282f74a8872c8d9eeb1e2",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-006-medium",
+    "generated_timestamp": "2026-09-06T04:04:38Z"
+  }
+}

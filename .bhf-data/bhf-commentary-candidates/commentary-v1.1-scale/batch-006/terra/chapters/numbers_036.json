@@ -1,0 +1,53 @@
+{
+  "reference": "Numbers 36",
+  "book": "Numbers",
+  "chapter": 36,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_10",
+          "text": "Read the chapter with this setting in view: Numbers begins at Sinai and ends on the plains of Moab; Egypt is remembered as the place left behind rather than serving as the book's principal narrative location. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken.",
+          "evidence_ids": [
+            "numbers:interpretive_note:0"
+          ],
+          "verse_refs": [
+            "Numbers 36:13"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_11",
+          "text": "A literary feature to notice is that Numbers is geographically organized from preparation at Sinai through Kadesh and the Transjordan to preparation on the plains of Moab. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image.",
+          "evidence_ids": [
+            "numbers-literary-journey"
+          ],
+          "verse_refs": [
+            "Numbers 36:13"
+          ],
+          "confidence": "high",
+          "interpretation_level": "inference"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "7266cd43b20c5963aa5512c261ad29a6806ceab75dda55aabfc031833f6e6da4",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-006-medium",
+    "generated_timestamp": "2026-09-06T04:04:38Z"
+  }
+}

@@ -1,0 +1,101 @@
+{
+  "reference": "Zephaniah 2",
+  "book": "Zephaniah",
+  "chapter": 2,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_35",
+          "text": "Read the chapter with this setting in view: BM 21901 documents the fall of Nineveh in 612 BCE and Harran in 609 from a Babylonian chronicle perspective, providing a historical anchor but not a date stamp for every Zephaniah layer. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken.",
+          "evidence_ids": [
+            "zephaniah-chronicle"
+          ],
+          "verse_refs": [
+            "Zephaniah 2:13-15"
+          ],
+          "confidence": "high",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_36",
+          "text": "For its historical and cultural setting, note that Neo-Assyrian royal inscriptions illuminate Nineveh's palaces, gardens, cult, imperial ideology, tribute, conquest, and self-presentation but are not neutral descriptions of all late Assyrian society. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "zephaniah-assyrian-sources"
+          ],
+          "verse_refs": [
+            "Zephaniah 2:13-15"
+          ],
+          "confidence": "high",
+          "interpretation_level": "inference"
+        },
+        {
+          "id": "historical_context_37",
+          "text": "For its historical and cultural setting, note that Zephaniah 2:1-3 summons a difficultly described nation or people to gather and tells the humble to seek YHWH, righteousness, and humility, with perhaps preserving contingency rather than guaranteed protection. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "zephaniah-seek"
+          ],
+          "verse_refs": [
+            "Zephaniah 2:1-3"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_36",
+          "text": "A literary feature to notice is that Zephaniah 2:13-15 imagines Assyria's destruction and Nineveh as an arid ruin inhabited by creatures, reversing the secure city's self-exalting boast. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image. Interpretations differ on some details.",
+          "evidence_ids": [
+            "zephaniah-nineveh"
+          ],
+          "verse_refs": [
+            "Zephaniah 2:13-15"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "dig_deeper",
+      "title": "Dig deeper",
+      "blocks": [
+        {
+          "id": "dig_deeper_36",
+          "text": "For a later or comparative connection, note that Responsible modern reception confronts divine violence, racialized genealogy, anti-African and anti-Arab mapping, disability stigma, poverty romanticization, trauma exploitation, ecological loss, nationalism, colonialism, and partisan enemy-making. This remains a secondary connection rather than the chapter's first-audience context. It can be traced further without replacing the chapter's own setting.",
+          "evidence_ids": [
+            "zephaniah-ethical-reception"
+          ],
+          "verse_refs": [
+            "Zephaniah 2:4-15"
+          ],
+          "confidence": "high",
+          "interpretation_level": "inference"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "e0081d275e1af18b47b8d2a657b8251a80cc383a8c9c24534cdfab096dc216c2",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-006-medium",
+    "generated_timestamp": "2026-09-06T04:04:38Z"
+  }
+}

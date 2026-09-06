@@ -1,0 +1,53 @@
+{
+  "reference": "1 Chronicles 7",
+  "book": "1 Chronicles",
+  "chapter": 7,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_30",
+          "text": "Read the chapter with this setting in view: The genealogies are selective literary maps of kinship, land, office, and restored identity rather than exhaustive modern biological pedigrees; gaps, parallel lines, variant names, and telescoping require case-by-case review. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken. Interpretations differ on some details.",
+          "evidence_ids": [
+            "1-chronicles:interpretive_note:0"
+          ],
+          "verse_refs": [
+            "1 Chronicles 7:1-40"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_31",
+          "text": "For its historical and cultural setting, note that Gezer helps illuminate border control, agricultural life, and royal building programs. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "gezer-excavations:historical_context:0"
+          ],
+          "verse_refs": [
+            "1 Chronicles 7:1-40"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "01cae42ff4782ce6077b4530a53e2aaf12ea6852d8296c9f55383a67e2149a86",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-006-medium",
+    "generated_timestamp": "2026-09-06T04:04:38Z"
+  }
+}

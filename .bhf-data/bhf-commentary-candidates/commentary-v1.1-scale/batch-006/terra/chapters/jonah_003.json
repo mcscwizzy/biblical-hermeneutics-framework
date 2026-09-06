@@ -1,0 +1,101 @@
+{
+  "reference": "Jonah 3",
+  "book": "Jonah",
+  "chapter": 3,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_36",
+          "text": "Read the chapter with this setting in view: The book's imperial, violent, and divine-judgment imagery does not authorize genocide, vengeance, enemy dehumanization, collective punishment, or political capture of divine mercy. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken.",
+          "evidence_ids": [
+            "jonah:interpretive_note:41"
+          ],
+          "verse_refs": [
+            "Jonah 3:4-10"
+          ],
+          "confidence": "high",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_37",
+          "text": "For its historical and cultural setting, note that Divine compassion for Nineveh neither excuses Assyrian imperial violence nor licenses hatred of ancient or modern peoples; mercy and accountability must not be made opposites. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "jonah:interpretive_note:33"
+          ],
+          "verse_refs": [
+            "Jonah 3:8-10"
+          ],
+          "confidence": "high",
+          "interpretation_level": "inference"
+        },
+        {
+          "id": "historical_context_38",
+          "text": "For its historical and cultural setting, note that Nineveh's royal decree must not be used to justify coerced conversion, state-enforced belief, compulsory fasting, or punishment of people who cannot participate. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "jonah:interpretive_note:23"
+          ],
+          "verse_refs": [
+            "Jonah 3:6-9"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "archaeology_geography",
+      "title": "Archaeology and geography",
+      "blocks": [
+        {
+          "id": "archaeology_geography_37",
+          "text": "For its geographical or material setting, note that Jonah calls Nineveh an exceedingly great city and associates it with three days' travel; the rhetoric need not equal the excavated walled city's diameter and may evoke a visit, administrative region, or hyperbolic greatness. It can illuminate the passage, while its limits should be kept in view. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "jonah-nineveh-size"
+          ],
+          "verse_refs": [
+            "Jonah 3:3-4"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_37",
+          "text": "A literary feature to notice is that The book commissions Jonah to proclaim YHWH's word and places him in the Twelve, but its narrator never applies the noun prophet to Jonah. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image.",
+          "evidence_ids": [
+            "jonah-prophet-label"
+          ],
+          "verse_refs": [
+            "Jonah 3:1-2"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "a550ad5b4774ca8d962f4c1dc711aa629077574f3a15f530438e63e18f360187",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-006-medium",
+    "generated_timestamp": "2026-09-06T04:04:38Z"
+  }
+}

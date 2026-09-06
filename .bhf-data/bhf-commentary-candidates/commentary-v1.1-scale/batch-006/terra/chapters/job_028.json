@@ -1,0 +1,101 @@
+{
+  "reference": "Job 28",
+  "book": "Job",
+  "chapter": 28,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_21",
+          "text": "Read the chapter with this setting in view: Job 28's voice is not identified in the Hebrew text. It may be Job's speech, a narrator's interlude, or a distinct wisdom poem positioned by the book's composer. Its conclusion about fearing the Lord is clear, but assigning the poem to one character and using it to close the dispute are interpretive decisions. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken. Interpretations differ on some details.",
+          "evidence_ids": [
+            "job:interpretive_note:5"
+          ],
+          "verse_refs": [
+            "Job 28:1-28"
+          ],
+          "confidence": "low",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_22",
+          "text": "For its historical and cultural setting, note that Wisdom literature grew from family instruction, court life, and worship, then became a major way Scripture teaches faithful living. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "what-is-biblical-wisdom:historical_context:0"
+          ],
+          "verse_refs": [
+            "Job 28:28"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        },
+        {
+          "id": "historical_context_23",
+          "text": "For its historical and cultural setting, note that Israel shares wisdom forms with neighboring cultures, but anchors wisdom in covenant loyalty and the fear of the LORD. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "what-is-biblical-wisdom:ancient_near_east_context:0"
+          ],
+          "verse_refs": [
+            "Job 28:28"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_22",
+          "text": "A literary feature to notice is that Job 28 declares that mining can uncover hidden ore but humans cannot discover Wisdom's place; chapters 29-31 then culminate Job's case with memories, ethical self-testimony, and a formal demand that the Almighty answer. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "job-wisdom-oath"
+          ],
+          "verse_refs": [
+            "Job 28:1-28"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "dig_deeper",
+      "title": "Dig deeper",
+      "blocks": [
+        {
+          "id": "dig_deeper_22",
+          "text": "For a later or comparative connection, note that James names the prophets and Job as examples connected with suffering, patience, endurance, and the Lord's compassionate outcome. This remains a secondary connection rather than the chapter's first-audience context. It can be traced further without replacing the chapter's own setting. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "jas-job"
+          ],
+          "verse_refs": [
+            "Job 28:1-28"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "8f4d18b6c70adcaea56ac1a82da4a2aa10c27bc782086e55d4861d99bf78ab12",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-006-medium",
+    "generated_timestamp": "2026-09-06T04:04:38Z"
+  }
+}
