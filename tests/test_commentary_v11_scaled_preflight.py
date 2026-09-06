@@ -4,9 +4,12 @@ from dataclasses import replace
 from types import SimpleNamespace
 
 from bhf_agent.presentation.evidence_hash import calculate_evidence_hash
+from bhf_agent.presentation import build_evidence_bundle
 from bhf_agent.presentation.models import EvidenceBundle, EvidenceItem
 from bhf_agent.presentation.references import _BOOK_ALIASES
 from bhf_agent.presentation.relevance import presentation_role
+from bhf_agent.ckl import load_canonical_library
+from framework.canonical_library import CKLRepositoryConfig
 from bhf_agent.chapter_commentary.evidence_bundling import get_chapter_evidence_bundle
 from tools.commentary_v11_scaled_preflight import (
     EVIDENCE_BUNDLE_VERSION,
@@ -23,6 +26,7 @@ from tools.commentary_v11_scaled_preflight import (
     _load_checkpoint,
     _mapping_is_textual,
     _presentation_audit,
+    _textual_routing_audit,
     terra_textual_suppression_simulation,
 )
 
@@ -330,6 +334,74 @@ def test_manuscript_reading_is_not_archaeology_because_object_is_physical():
         category="archaeology",
         claim="This manuscript preserves a different reading of verse 5.",
     ) == "language_literary"
+
+
+def test_incidental_textual_transmission_in_archaeology_background_is_not_textual_witness():
+    metadata = {
+        "parent_type": "archaeology",
+        "source_kind": "ckl_legacy_field",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "applicability_scope": "entity",
+    }
+    claim = "Qumran connects archaeology, textual transmission, and Second Temple Judaism."
+    assert presentation_role(metadata, category="history", claim=claim) == "historical_context"
+    item = _item(
+        "qumran-background",
+        category="history",
+        claim=claim,
+        parent_type="archaeology",
+        relationship="GENERIC_BACKGROUND",
+        role="historical_context",
+    )
+    assert terra_textual_suppression_simulation(_bundle(item))["terra_textual_suppression_required"] is False
+
+
+def test_archaeology_legacy_textual_witness_remains_language_restricted():
+    metadata = {
+        "parent_type": "archaeology",
+        "source_kind": "ckl_legacy_field",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "applicability_scope": "entity",
+    }
+    claim = "Among the oldest known Hebrew textual witnesses linked to the Bible."
+    assert presentation_role(metadata, category="history", claim=claim) == "language_literary"
+    item = _item(
+        "ketef-witness",
+        category="history",
+        claim=claim,
+        parent_type="archaeology",
+        relationship="GENERIC_BACKGROUND",
+        role="language_literary",
+    )
+    simulation = terra_textual_suppression_simulation(_bundle(item))
+    assert simulation["terra_textual_suppression_required"] is False
+
+
+def test_final_four_chapters_use_semantic_roles_for_target_objects():
+    library = load_canonical_library(config=CKLRepositoryConfig())
+    target_objects = {
+        "Deuteronomy 32": {
+            "mount-ebal-altar-discovery:historical_context:0": "historical_context",
+            "qumran-archaeological-site:historical_context:0": "historical_context",
+        },
+        "Numbers 6": {"ketef-hinnom-silver-scrolls:historical_context:0": "language_literary"},
+        "Isaiah 40": {
+            "mount-ebal-altar-discovery:historical_context:0": "historical_context",
+            "qumran-archaeological-site:historical_context:0": "historical_context",
+        },
+        "Psalms 119": {
+            "mount-ebal-altar-discovery:historical_context:0": "historical_context",
+            "qumran-archaeological-site:historical_context:0": "historical_context",
+        },
+    }
+    for reference, expected in target_objects.items():
+        results = list(library.retrieve_by_scripture_reference(reference, limit=100, include_placeholders=False))
+        bundle = build_evidence_bundle(reference, canonical_results=results, bundle_version="1.1")
+        assert _presentation_audit(bundle)["status"] == "PASS"
+        assert _textual_routing_audit(bundle)["status"] == "PASS"
+        assert terra_textual_suppression_simulation(bundle)["terra_textual_suppression_required"] is False
+        for evidence_id, role in expected.items():
+            assert bundle.evidence_by_id[evidence_id].relevance_metadata["presentation_role"] == role
 
 
 def test_terra_suppression_simulation_catches_bad_textual_routing():
