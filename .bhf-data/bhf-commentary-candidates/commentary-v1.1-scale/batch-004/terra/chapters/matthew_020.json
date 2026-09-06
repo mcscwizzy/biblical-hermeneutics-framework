@@ -1,0 +1,53 @@
+{
+  "reference": "Matthew 20",
+  "book": "Matthew",
+  "chapter": 20,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_46",
+          "text": "Read the chapter with this setting in view: Matthew's fields, fisheries, wages, debts, taxes, estates, slaves, patrons, and laborers resonate with an unequal agrarian Roman-Palestinian economy. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "matthew-rural-economy"
+          ],
+          "verse_refs": [
+            "Matthew 20:1-16"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_47",
+          "text": "For its historical and cultural setting, note that Matthew 20:28 connects Son of Man service, giving life, and ransom for many. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "matthew-ransom-service"
+          ],
+          "verse_refs": [
+            "Matthew 20:20-28"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "27607e46a71579b157de917e5640e165d5bf2cd4e79bd6b66d5f3fd0c25cf9f8",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-004-medium",
+    "generated_timestamp": "2026-09-06T02:41:43Z"
+  }
+}

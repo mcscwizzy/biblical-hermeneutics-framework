@@ -1,0 +1,83 @@
+{
+  "reference": "Matthew 7",
+  "book": "Matthew",
+  "chapter": 7,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_34",
+          "text": "Read the chapter with this setting in view: Matthew cannot legitimately be used to excuse abuse, stigmatize disability or mental illness, enforce misogyny or anti-LGBTQ harm, blame poverty, set apocalyptic dates, or map ancient judgments onto modern peoples. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken.",
+          "evidence_ids": [
+            "matthew-application-boundaries"
+          ],
+          "verse_refs": [
+            "Matthew 7:12"
+          ],
+          "confidence": "high",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_35",
+          "text": "For its historical and cultural setting, note that Wisdom literature grew from family instruction, court life, and worship, then became a major way Scripture teaches faithful living. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "what-is-biblical-wisdom:historical_context:0"
+          ],
+          "verse_refs": [
+            "Matthew 7:24-27"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        },
+        {
+          "id": "historical_context_36",
+          "text": "For its historical and cultural setting, note that Israel shares wisdom forms with neighboring cultures, but anchors wisdom in covenant loyalty and the fear of the LORD. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "what-is-biblical-wisdom:ancient_near_east_context:0"
+          ],
+          "verse_refs": [
+            "Matthew 7:24-27"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_35",
+          "text": "A literary feature to notice is that Five repeated discourse-ending formulas organize large teaching collections without proving one universally accepted symbolic outline. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "matthew-discourses"
+          ],
+          "verse_refs": [
+            "Matthew 7:28"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "3b93ee9685f2cd423a33184593e41ec68a51407daacd9859ba69223a33c43821",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-004-medium",
+    "generated_timestamp": "2026-09-06T02:41:43Z"
+  }
+}

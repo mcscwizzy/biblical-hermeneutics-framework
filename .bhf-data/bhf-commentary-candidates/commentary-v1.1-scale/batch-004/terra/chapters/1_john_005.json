@@ -1,0 +1,101 @@
+{
+  "reference": "1 John 5",
+  "book": "1 John",
+  "chapter": 5,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_61",
+          "text": "Read the chapter with this setting in view: Confidence in prayer is qualified by asking according to God's will. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken.",
+          "evidence_ids": [
+            "1jn-prayer"
+          ],
+          "verse_refs": [
+            "1 John 5:14-15"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_62",
+          "text": "For its historical and cultural setting, note that The work does not name its writer, addressees, location, or destination. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "1jn-anonymous"
+          ],
+          "verse_refs": [
+            "1 John 5:1-21"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        },
+        {
+          "id": "historical_context_63",
+          "text": "For its historical and cultural setting, note that The final idol warning may be literal, metaphorical, or summarizing; it cannot justify destruction of others' property, cultures, or sacred sites. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. Interpretations differ on some details.",
+          "evidence_ids": [
+            "1-john:interpretive_note:38"
+          ],
+          "verse_refs": [
+            "1 John 5:21"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_62",
+          "text": "A literary feature to notice is that The work ends abruptly with an exhortation to guard from idols. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "1jn-idols"
+          ],
+          "verse_refs": [
+            "1 John 5:21"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "dig_deeper",
+      "title": "Dig deeper",
+      "blocks": [
+        {
+          "id": "dig_deeper_62",
+          "text": "For a later or comparative connection, note that The longer heavenly-witness wording known as the Comma Johanneum is secondary to the earliest recoverable Greek text. This remains a secondary connection rather than the chapter's first-audience context. It can be traced further without replacing the chapter's own setting. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "1jn-comma"
+          ],
+          "verse_refs": [
+            "1 John 5:7-8"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "1c5bf97a96a818f5c25e3cdaff6470784602639bd7d567f6fb802007f9edf78d",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-004-medium",
+    "generated_timestamp": "2026-09-06T02:41:43Z"
+  }
+}

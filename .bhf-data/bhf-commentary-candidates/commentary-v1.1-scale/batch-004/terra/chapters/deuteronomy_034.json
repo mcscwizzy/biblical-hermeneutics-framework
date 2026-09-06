@@ -1,0 +1,83 @@
+{
+  "reference": "Deuteronomy 34",
+  "book": "Deuteronomy",
+  "chapter": 34,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_21",
+          "text": "Read the chapter with this setting in view: Deuteronomy closes Torah by transferring public leadership to Joshua while maintaining Moses's unique remembered role. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken.",
+          "evidence_ids": [
+            "deuteronomy-moses-joshua-transition"
+          ],
+          "verse_refs": [
+            "Deuteronomy 34:1-12"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_22",
+          "text": "For its historical and cultural setting, note that Moses confronts Pharaoh, leads Israel out of Egypt, and mediates covenant at Sinai. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "who-was-moses:historical_context:0"
+          ],
+          "verse_refs": [
+            "Deuteronomy 34:1-12"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        },
+        {
+          "id": "historical_context_23",
+          "text": "For its historical and cultural setting, note that Royal rescue stories and lawgiving are familiar in the ancient world, but Moses functions as prophet and covenant mediator under the LORD. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "who-was-moses:ancient_near_east_context:0"
+          ],
+          "verse_refs": [
+            "Deuteronomy 34:1-12"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_22",
+          "text": "A literary feature to notice is that Deuteronomy moves from remembered wilderness history through covenant instruction to covenant consequences, renewal, succession, song, blessing, and Moses's death. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image.",
+          "evidence_ids": [
+            "deuteronomy-literary-movement"
+          ],
+          "verse_refs": [
+            "Deuteronomy 34:1-12"
+          ],
+          "confidence": "high",
+          "interpretation_level": "inference"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "73da70c1c8ec77c615ebf74f1461320f75c8d95c7bec69ced1eba1a452e75d6b",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-004-medium",
+    "generated_timestamp": "2026-09-06T02:41:43Z"
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "reference": "Jeremiah 52",
+  "book": "Jeremiah",
+  "chapter": 52,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_131",
+          "text": "Read the chapter with this setting in view: Kings and Jeremiah distinguish the 597 BCE removal of Jehoiachin and selected groups from the later destruction of Jerusalem and additional deportations under Zedekiah. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "kings-jeremiah-deportation-sequence"
+          ],
+          "verse_refs": [
+            "Jeremiah 52:1-34"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_132",
+          "text": "For its historical and cultural setting, note that Administrative tablets from Nebuchadnezzar's palace record food or oil allocations to a ruler identified as Jehoiachin, king of Judah, his dependents, and other Judeans. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. Interpretations differ on some details.",
+          "evidence_ids": [
+            "jehoiachin-palace-ration-lists"
+          ],
+          "verse_refs": [
+            "Jeremiah 52:31-34"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        },
+        {
+          "id": "historical_context_133",
+          "text": "For its historical and cultural setting, note that After Zedekiah's revolt, Babylon besieged Jerusalem, breached the city, removed and executed officials, burned the temple and major buildings, dismantled defenses, and deported further inhabitants. The absolute date is conventionally 587/586 BCE because regnal-year and calendar calculations differ. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "fall-of-jerusalem:historical_context:0"
+          ],
+          "verse_refs": [
+            "Jeremiah 52:1-30"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_132",
+          "text": "A literary feature to notice is that The received book combines poetry, prose sermons, narratives, letters, headings, repeated accounts, restoration collections, nation oracles, and an appendix produced through a long compositional and textual history. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image. Interpretations differ on some details.",
+          "evidence_ids": [
+            "jeremiah-long-composition"
+          ],
+          "verse_refs": [
+            "Jeremiah 52:1-34"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "48588109dce4a5b57ba7d0599da17c4b2e21d728d955aff60e6c320d1375ea7f",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-004-medium",
+    "generated_timestamp": "2026-09-06T02:41:43Z"
+  }
+}

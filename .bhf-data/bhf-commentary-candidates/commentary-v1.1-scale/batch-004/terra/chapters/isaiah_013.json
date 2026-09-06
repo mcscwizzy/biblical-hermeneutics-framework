@@ -1,0 +1,83 @@
+{
+  "reference": "Isaiah 13",
+  "book": "Isaiah",
+  "chapter": 13,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_139",
+          "text": "Read the chapter with this setting in view: The divisions 1-12, 13-27, 28-35, 36-39, 40-55, and 56-66 provide a practical reading map, not a proof of six authors or one uncontested macrostructure. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "isaiah-practical-outline"
+          ],
+          "verse_refs": [
+            "Isaiah 13:1"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_140",
+          "text": "For its historical and cultural setting, note that Isaiah judges Judah, Israel, and foreign nations, portrays empires as instruments that are themselves accountable, and also envisions nations learning, worshiping, and participating in restoration. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "isaiah-nations-empire"
+          ],
+          "verse_refs": [
+            "Isaiah 13:1-22"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        },
+        {
+          "id": "historical_context_141",
+          "text": "For its historical and cultural setting, note that These oracles respond to imperial aggression and the moral order of the nations. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "judgment-against-the-nations:historical_context:0"
+          ],
+          "verse_refs": [
+            "Isaiah 13:1-22"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_140",
+          "text": "A literary feature to notice is that The Great Isaiah Scroll is an almost complete sixty-six-chapter witness broadly aligned with the Masoretic tradition but containing thousands of orthographic and substantive differences; other Qumran Isaiah manuscripts and pesharim show active transmission and interpretation. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "isaiah-qumran-witnesses"
+          ],
+          "verse_refs": [
+            "Isaiah 13:1-22"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "7a5ef06edb084a4a45d8b7083536c62af45a975d32c5d956bf3cdbc307bd3a7e",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-004-medium",
+    "generated_timestamp": "2026-09-06T02:41:43Z"
+  }
+}

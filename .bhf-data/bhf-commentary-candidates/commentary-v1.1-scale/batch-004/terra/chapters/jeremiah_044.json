@@ -1,0 +1,71 @@
+{
+  "reference": "Jeremiah 44",
+  "book": "Jeremiah",
+  "chapter": 44,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_104",
+          "text": "Read the chapter with this setting in view: Jeremiah's narrated world is rooted in Judah's transition from Josiah through Babylonian domination, the 597 deportation, Zedekiah's siege, Jerusalem's 587/586 destruction, Gedaliah, and flight to Egypt. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "jeremiah-historical-crisis"
+          ],
+          "verse_refs": [
+            "Jeremiah 44:1-30"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_105",
+          "text": "For its historical and cultural setting, note that Elephantine is a key witness to diaspora Judaism and imperial administration. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "elephantine-papyri:historical_context:0"
+          ],
+          "verse_refs": [
+            "Jeremiah 44:1-30"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_105",
+          "text": "A literary feature to notice is that The received book combines poetry, prose sermons, narratives, letters, headings, repeated accounts, restoration collections, nation oracles, and an appendix produced through a long compositional and textual history. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image. Interpretations differ on some details.",
+          "evidence_ids": [
+            "jeremiah-long-composition"
+          ],
+          "verse_refs": [
+            "Jeremiah 44:1-30"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "11c326dcd963c9464db469336612a8821b953f2d004ca3b2328d2a91cafdaff4",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-004-medium",
+    "generated_timestamp": "2026-09-06T02:41:43Z"
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "reference": "John 10",
+  "book": "John",
+  "chapter": 10,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_44",
+          "text": "Read the chapter with this setting in view: John's predicated and absolute ego eimi sayings participate in characterization through ordinary identification, symbolic predicates, scriptural echoes, and divine-agency claims; each context must be read separately. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "john-i-am"
+          ],
+          "verse_refs": [
+            "John 10:7-14"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_45",
+          "text": "For its historical and cultural setting, note that 'I and the Father are one' occurs within shepherding, protection, works, agency, and dispute; later Trinitarian reception is important but should be distinguished from the immediate argument. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. Interpretations differ on some details.",
+          "evidence_ids": [
+            "john-10-30"
+          ],
+          "verse_refs": [
+            "John 10:22-39"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "90e4c3aa2ebc016ac47bb6faec3dde442981d4bee959c09080f834debd6b0096",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-004-medium",
+    "generated_timestamp": "2026-09-06T02:41:43Z"
+  }
+}

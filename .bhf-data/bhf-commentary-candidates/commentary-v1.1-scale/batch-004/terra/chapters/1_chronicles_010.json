@@ -1,0 +1,35 @@
+{
+  "reference": "1 Chronicles 10",
+  "book": "1 Chronicles",
+  "chapter": 10,
+  "status": "validated",
+  "evidence_availability": "THIN",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_59",
+          "text": "Read the chapter with this setting in view: The Chronicler interprets Saul's death as the result of unfaithfulness, failure to keep the LORD's word, consulting a medium, and failure to seek the LORD. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken.",
+          "evidence_ids": [
+            "first-chronicles-saul-unfaithful"
+          ],
+          "verse_refs": [
+            "1 Chronicles 10:13-14"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "4b85c484522b0d12c5d4d5b3c18515bef457e8ee56ce8e5bdafed2eeae288d30",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-004-medium",
+    "generated_timestamp": "2026-09-06T02:41:43Z"
+  }
+}

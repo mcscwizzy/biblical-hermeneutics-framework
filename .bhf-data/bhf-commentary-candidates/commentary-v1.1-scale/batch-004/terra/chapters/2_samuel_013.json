@@ -1,0 +1,53 @@
+{
+  "reference": "2 Samuel 13",
+  "book": "2 Samuel",
+  "chapter": 13,
+  "status": "validated",
+  "evidence_availability": "THIN",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_52",
+          "text": "Read the chapter with this setting in view: Amnon's violation of Tamar is explicitly condemned through her protest, desolation, Absalom's revenge, and the unfolding judgment on David's house; Tamar should not be reduced to a device in male succession politics. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken.",
+          "evidence_ids": [
+            "2-samuel:interpretive_note:2"
+          ],
+          "verse_refs": [
+            "2 Samuel 13:1-39"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_53",
+          "text": "A literary feature to notice is that Second Samuel moves from David's accession and kingdom consolidation through ark and dynasty promise to royal abuse, household violence, rebellion, grief, and a four-part closing appendix. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image.",
+          "evidence_ids": [
+            "second-samuel-literary-movement"
+          ],
+          "verse_refs": [
+            "2 Samuel 13:1-39"
+          ],
+          "confidence": "high",
+          "interpretation_level": "inference"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "61b073255830cf5ec21205ff7f8147856941574bc5cf397a73f8853d67dfe03e",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-004-medium",
+    "generated_timestamp": "2026-09-06T02:41:43Z"
+  }
+}

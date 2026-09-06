@@ -1,0 +1,35 @@
+{
+  "reference": "1 Samuel 7",
+  "book": "1 Samuel",
+  "chapter": 7,
+  "status": "validated",
+  "evidence_availability": "THIN",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_45",
+          "text": "Read the chapter with this setting in view: First Samuel moves from Eli's failing priestly house through Samuel's prophetic leadership and Saul's rejected kingship to David's anointing, rise, exile, and Saul's death. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken.",
+          "evidence_ids": [
+            "first-samuel-literary-movement"
+          ],
+          "verse_refs": [
+            "1 Samuel 7:1-17"
+          ],
+          "confidence": "high",
+          "interpretation_level": "inference"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "e2b8055319023701a8c0ec8f95e209268e816f6c063467d6fd2c480ed8e5990e",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-004-medium",
+    "generated_timestamp": "2026-09-06T02:41:43Z"
+  }
+}

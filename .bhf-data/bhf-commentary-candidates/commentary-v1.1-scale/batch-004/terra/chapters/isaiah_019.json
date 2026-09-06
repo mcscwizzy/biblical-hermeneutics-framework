@@ -1,0 +1,72 @@
+{
+  "reference": "Isaiah 19",
+  "book": "Isaiah",
+  "chapter": 19,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_108",
+          "text": "Read the chapter with this setting in view: Isaiah judges Judah, Israel, and foreign nations, portrays empires as instruments that are themselves accountable, and also envisions nations learning, worshiping, and participating in restoration. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken. Interpretations differ on some details.",
+          "evidence_ids": [
+            "isaiah-nations-empire"
+          ],
+          "verse_refs": [
+            "Isaiah 19:1-25",
+            "Isaiah 19:16-25"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_109",
+          "text": "For its historical and cultural setting, note that Elephantine is a key witness to diaspora Judaism and imperial administration. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "elephantine-papyri:historical_context:0"
+          ],
+          "verse_refs": [
+            "Isaiah 19:1-25"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_109",
+          "text": "A literary feature to notice is that The Great Isaiah Scroll is an almost complete sixty-six-chapter witness broadly aligned with the Masoretic tradition but containing thousands of orthographic and substantive differences; other Qumran Isaiah manuscripts and pesharim show active transmission and interpretation. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "isaiah-qumran-witnesses"
+          ],
+          "verse_refs": [
+            "Isaiah 19:1-25"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "4fcf80388ee7258c77495fddcf64f3f85d2e2c1d459d11477ad5712bd357a49b",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-004-medium",
+    "generated_timestamp": "2026-09-06T02:41:43Z"
+  }
+}

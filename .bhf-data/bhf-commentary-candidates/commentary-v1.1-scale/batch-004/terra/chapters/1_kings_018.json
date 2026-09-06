@@ -1,0 +1,71 @@
+{
+  "reference": "1 Kings 18",
+  "book": "1 Kings",
+  "chapter": 18,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_78",
+          "text": "Read the chapter with this setting in view: At Carmel the LORD answers by fire, the people confess that the LORD is God, and rain returns after the drought. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken.",
+          "evidence_ids": [
+            "first-kings-carmel-confession"
+          ],
+          "verse_refs": [
+            "1 Kings 18:20-46"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_79",
+          "text": "For its historical and cultural setting, note that The Kurkh Monolith names Ahab in a coalition at Qarqar, an event not narrated in 1 Kings; it independently locates an Israelite king in ninth-century regional politics but does not validate every detail or theological claim in the book. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "1-kings:interpretive_note:5"
+          ],
+          "verse_refs": [
+            "1 Kings 18:1-46"
+          ],
+          "confidence": "high",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "dig_deeper",
+      "title": "Dig deeper",
+      "blocks": [
+        {
+          "id": "dig_deeper_79",
+          "text": "For a later or comparative connection, note that James presents Elijah as a human like the audience whose prayer is associated with drought and renewed rain. This remains a secondary connection rather than the chapter's first-audience context. It can be traced further without replacing the chapter's own setting. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "jas-elijah"
+          ],
+          "verse_refs": [
+            "1 Kings 18:1-46"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "b4d207974082801b751587707f907869342c9cfed29bef2449f567b5110e36f8",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-004-medium",
+    "generated_timestamp": "2026-09-06T02:41:43Z"
+  }
+}

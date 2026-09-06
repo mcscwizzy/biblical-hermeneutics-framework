@@ -1,0 +1,101 @@
+{
+  "reference": "James 5",
+  "book": "James",
+  "chapter": 5,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_89",
+          "text": "Read the chapter with this setting in view: Restoring a wanderer aims to save from death and cover sins; it must be practiced without coercion, stalking, public shaming, forced conversion, or returning people to unsafe communities. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "james:interpretive_note:38"
+          ],
+          "verse_refs": [
+            "James 5:19-20"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_90",
+          "text": "For its historical and cultural setting, note that Anointing with oil can be read medicinally, symbolically, sacramentally, or in combination; the verb and practice do not settle one later rite. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. Interpretations differ on some details.",
+          "evidence_ids": [
+            "james:interpretive_note:33"
+          ],
+          "verse_refs": [
+            "James 5:14-15"
+          ],
+          "confidence": "low",
+          "interpretation_level": "disputed"
+        },
+        {
+          "id": "historical_context_91",
+          "text": "For its historical and cultural setting, note that James says wages withheld from harvest laborers cry out and that the laborers' cries reach the Lord of hosts. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "jas-wages"
+          ],
+          "verse_refs": [
+            "James 5:1-6"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_90",
+          "text": "A literary feature to notice is that James combines an epistolary greeting with sustained moral exhortation, wisdom contrasts, examples, questions, and prophetic warning. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image. Interpretations differ on some details.",
+          "evidence_ids": [
+            "jas-genre"
+          ],
+          "verse_refs": [
+            "James 5:1-20"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "dig_deeper",
+      "title": "Dig deeper",
+      "blocks": [
+        {
+          "id": "dig_deeper_90",
+          "text": "For a later or comparative connection, note that Job authorizes lament, anger, confusion, and demands for justice within sustained address to God. Pastoral use should listen before explaining, avoid victim blaming and secret-sin diagnosis, distinguish general moral wisdom from case-specific certainty, and never pressure traumatized people to imitate a flattened 'patience of Job' that ignores his protest. This remains a secondary connection rather than the chapter's first-audience context. It can be traced further without replacing the chapter's own setting. Interpretations differ on some details.",
+          "evidence_ids": [
+            "job:interpretive_note:13"
+          ],
+          "verse_refs": [
+            "James 5:11"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "a559b42fc9ada254986216081901df971514e2c09dbdafd83ab1cfca9766c4d8",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-004-medium",
+    "generated_timestamp": "2026-09-06T02:41:43Z"
+  }
+}

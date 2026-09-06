@@ -1,0 +1,101 @@
+{
+  "reference": "Jeremiah 22",
+  "book": "Jeremiah",
+  "chapter": 22,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_30",
+          "text": "Read the chapter with this setting in view: The received book combines poetry, prose sermons, narratives, letters, headings, repeated accounts, restoration collections, nation oracles, and an appendix produced through a long compositional and textual history. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken. Interpretations differ on some details.",
+          "evidence_ids": [
+            "jeremiah-long-composition"
+          ],
+          "verse_refs": [
+            "Jeremiah 22:1-30"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_31",
+          "text": "For its historical and cultural setting, note that Judah survives after the split monarchy, then falls to Babylon and enters exile with its temple and king removed. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "what-is-the-kingdom-of-judah:historical_context:0"
+          ],
+          "verse_refs": [
+            "Jeremiah 22:1-10"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        },
+        {
+          "id": "historical_context_32",
+          "text": "For its historical and cultural setting, note that Like other small kingdoms, Judah lives under imperial pressure, but Scripture frames its history around covenant fidelity and Davidic promise. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "what-is-the-kingdom-of-judah:ancient_near_east_context:0"
+          ],
+          "verse_refs": [
+            "Jeremiah 22:1-10"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_31",
+          "text": "A literary feature to notice is that Chapters 1; 2-25; 26-29; 30-33; 34-45; 46-51; and 52 provide a practical outline of Masoretic Jeremiah without settling its composition. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "jeremiah-practical-mt-outline"
+          ],
+          "verse_refs": [
+            "Jeremiah 22:1-30"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "dig_deeper",
+      "title": "Dig deeper",
+      "blocks": [
+        {
+          "id": "dig_deeper_31",
+          "text": "For a later or comparative connection, note that Haggai 2:23 calls Zerubbabel YHWH's servant, chosen one, and signet, conveying royal-Davidic significance without saying that he became king. This remains a secondary connection rather than the chapter's first-audience context. It can be traced further without replacing the chapter's own setting. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "haggai-zerubbabel"
+          ],
+          "verse_refs": [
+            "Jeremiah 22:24-30"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "2ec784483fc5ae892ff05ac5c1477cbd05730d56bf53231c0c6d56e0614e3eed",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-004-medium",
+    "generated_timestamp": "2026-09-06T02:41:43Z"
+  }
+}

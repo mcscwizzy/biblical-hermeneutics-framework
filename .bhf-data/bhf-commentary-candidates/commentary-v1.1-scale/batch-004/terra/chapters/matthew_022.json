@@ -1,0 +1,65 @@
+{
+  "reference": "Matthew 22",
+  "book": "Matthew",
+  "chapter": 22,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_48",
+          "text": "Read the chapter with this setting in view: Matthew cannot legitimately be used to excuse abuse, stigmatize disability or mental illness, enforce misogyny or anti-LGBTQ harm, blame poverty, set apocalyptic dates, or map ancient judgments onto modern peoples. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken.",
+          "evidence_ids": [
+            "matthew-application-boundaries"
+          ],
+          "verse_refs": [
+            "Matthew 22:34-40"
+          ],
+          "confidence": "high",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_49",
+          "text": "For its historical and cultural setting, note that Matthew distinguishes a temple-tax scene from the later tribute-to-Caesar controversy within layered fiscal and political contexts. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "matthew-temple-tax"
+          ],
+          "verse_refs": [
+            "Matthew 22:15-22"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        },
+        {
+          "id": "historical_context_50",
+          "text": "For its historical and cultural setting, note that Herodian client rule, Roman provincial authority, taxation, elite power, and crucifixion frame Matthew's remembered first-century setting. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "matthew-roman-setting"
+          ],
+          "verse_refs": [
+            "Matthew 22:17"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "e0b27617e981866675a838ddf48ea0f3f7507597ac59c52458f89951f74086b4",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-004-medium",
+    "generated_timestamp": "2026-09-06T02:41:43Z"
+  }
+}

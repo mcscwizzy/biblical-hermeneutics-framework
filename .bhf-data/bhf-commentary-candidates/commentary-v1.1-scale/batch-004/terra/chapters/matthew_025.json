@@ -1,0 +1,65 @@
+{
+  "reference": "Matthew 25",
+  "book": "Matthew",
+  "chapter": 25,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_42",
+          "text": "Read the chapter with this setting in view: Matthew 24-25 combines temple destruction, tribulation, Son of Man coming, uncertainty of timing, readiness, stewardship, and judgment. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken. Interpretations differ on some details.",
+          "evidence_ids": [
+            "matthew-eschatology"
+          ],
+          "verse_refs": [
+            "Matthew 25:1-46"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_43",
+          "text": "For its historical and cultural setting, note that Matthew's fields, fisheries, wages, debts, taxes, estates, slaves, patrons, and laborers resonate with an unequal agrarian Roman-Palestinian economy. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "matthew-rural-economy"
+          ],
+          "verse_refs": [
+            "Matthew 25:14-30"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        },
+        {
+          "id": "historical_context_44",
+          "text": "For its historical and cultural setting, note that Jesus uses parables in first-century teaching settings to confront unbelief and form disciples. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "what-is-a-parable:historical_context:0"
+          ],
+          "verse_refs": [
+            "Matthew 25:1-13"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "05c7b7a3cc52c48be70007712aec934dd1882f94c28f2adf6d29e12b6c2d153a",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-004-medium",
+    "generated_timestamp": "2026-09-06T02:41:43Z"
+  }
+}

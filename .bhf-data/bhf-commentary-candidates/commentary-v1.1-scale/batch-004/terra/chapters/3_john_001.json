@@ -1,0 +1,101 @@
+{
+  "reference": "3 John 1",
+  "book": "3 John",
+  "chapter": 1,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_95",
+          "text": "Read the chapter with this setting in view: The elder says he has much to write but does not wish to do so with ink and pen. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "3jn-writing-media"
+          ],
+          "verse_refs": [
+            "3 John 1:13"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_96",
+          "text": "For its historical and cultural setting, note that The elder anticipates coming and calling attention to Diotrephes's works. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. Interpretations differ on some details.",
+          "evidence_ids": [
+            "3jn-visit"
+          ],
+          "verse_refs": [
+            "3 John 1:10"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        },
+        {
+          "id": "historical_context_97",
+          "text": "For its historical and cultural setting, note that Traveling siblings testified to Gaius's truth and to his walking in truth. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "3jn-testimony-truth"
+          ],
+          "verse_refs": [
+            "3 John 1:3"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_96",
+          "text": "A literary feature to notice is that The elder says he wrote something to the church, but that writing is not preserved or quoted here. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image. Interpretations differ on some details.",
+          "evidence_ids": [
+            "3jn-prior-letter"
+          ],
+          "verse_refs": [
+            "3 John 1:9"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "dig_deeper",
+      "title": "Dig deeper",
+      "blocks": [
+        {
+          "id": "dig_deeper_96",
+          "text": "For a later or comparative connection, note that 2 John shares concentrated vocabulary, formulas, and concerns with 1 John, 3 John, and the Fourth Gospel. This remains a secondary connection rather than the chapter's first-audience context. It can be traced further without replacing the chapter's own setting. Interpretations differ on some details.",
+          "evidence_ids": [
+            "2jn-johannine-relation"
+          ],
+          "verse_refs": [
+            "3 John 1:1-14"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "6d7fded811a231d0b29c66ba680b2f0450510d1c3643591c28983440ac4dedb7",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-004-medium",
+    "generated_timestamp": "2026-09-06T02:41:43Z"
+  }
+}

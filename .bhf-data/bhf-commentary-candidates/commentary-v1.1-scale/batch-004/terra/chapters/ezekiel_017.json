@@ -1,0 +1,53 @@
+{
+  "reference": "Ezekiel 17",
+  "book": "Ezekiel",
+  "chapter": 17,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_148",
+          "text": "Read the chapter with this setting in view: Judah survives after the split monarchy, then falls to Babylon and enters exile with its temple and king removed. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken.",
+          "evidence_ids": [
+            "what-is-the-kingdom-of-judah:historical_context:0"
+          ],
+          "verse_refs": [
+            "Ezekiel 17:1-24"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_149",
+          "text": "For its historical and cultural setting, note that Like other small kingdoms, Judah lives under imperial pressure, but Scripture frames its history around covenant fidelity and Davidic promise. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "what-is-the-kingdom-of-judah:ancient_near_east_context:0"
+          ],
+          "verse_refs": [
+            "Ezekiel 17:1-24"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "5a08aca676a6137ed1a0e7949d16fd785c4aaa1cfa3324255d6976096df731b8",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-004-medium",
+    "generated_timestamp": "2026-09-06T02:41:43Z"
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "reference": "Revelation 4",
+  "book": "Revelation",
+  "chapter": 4,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_20",
+          "text": "Read the chapter with this setting in view: The throne vision presents the slaughtered Lamb as worthy to open the scroll and receive worship. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "rev-throne-lamb"
+          ],
+          "verse_refs": [
+            "Revelation 4:1-11"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_21",
+          "text": "For its historical and cultural setting, note that Revelation repeatedly reworks Israel's Scriptures, especially Daniel, Ezekiel, Isaiah, Exodus, Zechariah, Genesis, and Psalms. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. Interpretations differ on some details.",
+          "evidence_ids": [
+            "rev-scriptural-reuse"
+          ],
+          "verse_refs": [
+            "Revelation 4:1-11"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        },
+        {
+          "id": "historical_context_22",
+          "text": "For its historical and cultural setting, note that Holiness structures tabernacle and temple worship, but it also reaches into Israel's daily ethics and communal life. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "what-is-holiness:historical_context:0"
+          ],
+          "verse_refs": [
+            "Revelation 4:8"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "dig_deeper",
+      "title": "Dig deeper",
+      "blocks": [
+        {
+          "id": "dig_deeper_21",
+          "text": "For a later or comparative connection, note that Revelation repeatedly recomposes Ezekielian throne, creature, scroll, measuring, witness, plague, Gog, battle, city, river, and tree imagery in its own literary sequence. This remains a secondary connection rather than the chapter's first-audience context. It can be traced further without replacing the chapter's own setting. Interpretations differ on some details.",
+          "evidence_ids": [
+            "ezekiel-revelation-reuse"
+          ],
+          "verse_refs": [
+            "Revelation 4:1-11"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "ec87e0eb8fb885e648922afdbd80ca1c1fe550aa4e907a49815527a69f415556",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-004-medium",
+    "generated_timestamp": "2026-09-06T02:41:43Z"
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "reference": "Joshua 19",
+  "book": "Joshua",
+  "chapter": 19,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_147",
+          "text": "Read the chapter with this setting in view: Joshua concerns entry, campaigns, allotment, tribal unity, and covenant renewal; David, Solomon, monarchy, exile, Jerusalem, and Samaria are not its principal people, events, or settings. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken.",
+          "evidence_ids": [
+            "joshua:interpretive_note:0"
+          ],
+          "verse_refs": [
+            "Joshua 19:1-51"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_148",
+          "text": "For its historical and cultural setting, note that The site commonly identified as Tell Dan lies near major springs at the northern edge of the Hula Valley. Judges distinguishes the tribe's earlier allotted territory from its later seizure of Laish, and later royal and prophetic texts give the northern city additional roles. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "dan:historical_context:0"
+          ],
+          "verse_refs": [
+            "Joshua 19:40-48"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        },
+        {
+          "id": "historical_context_149",
+          "text": "For its historical and cultural setting, note that The Danite narrative ties land seeking, kinship identity, violence, priestly patronage, and cult objects together, while the no-king frame and the notice about the image guide readers away from treating success as divine approval. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "dan:hebraic_worldview:0"
+          ],
+          "verse_refs": [
+            "Joshua 19:40-48"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_148",
+          "text": "A literary feature to notice is that Joshua moves from succession and entry through campaigns to land allotment, tribal unity, farewell, and covenant renewal. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image.",
+          "evidence_ids": [
+            "joshua-literary-movement"
+          ],
+          "verse_refs": [
+            "Joshua 19:1-51"
+          ],
+          "confidence": "high",
+          "interpretation_level": "inference"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "10071ce910b96eb47d018b01dbad008b9d659e8dec6f4ad3247d2c7369936d54",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-004-medium",
+    "generated_timestamp": "2026-09-06T02:41:43Z"
+  }
+}
