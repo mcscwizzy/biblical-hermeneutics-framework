@@ -1,0 +1,1437 @@
+{
+  "passage_ref": "1 Thessalonians 3",
+  "entities": {
+    "people": [],
+    "places": [
+      {
+        "id": "athens",
+        "title": "Roman Athens",
+        "type": "place",
+        "aliases": [
+          "Athens in the Bible",
+          "Athens Acts 17",
+          "Paul in Athens",
+          "Areopagus city",
+          "Athenian agora"
+        ],
+        "metadata": {
+          "summary": "Athens was a Greek polis within Roman Achaia whose Classical monuments, active civic institutions, philosophical traditions, cult sites, and Augustan building projects form the immediate urban setting of Acts 17:16-34.",
+          "importance": 93,
+          "retrieval_score": 0.913,
+          "ancient_names": [],
+          "modern_identification": "",
+          "region": "",
+          "terrain": "",
+          "elevation": null,
+          "archaeology": [
+            "Athenian Agora excavation archive",
+            "Roman Agora",
+            "Temple of Ares and Augustan foundations",
+            "Acropolis cult and imperial monuments"
+          ],
+          "related_passages": [
+            "Acts 17:16-21",
+            "Acts 17:22-31",
+            "Acts 17:32-34",
+            "Acts 18:1",
+            "1 Thessalonians 3:1-2"
+          ]
+        }
+      },
+      {
+        "id": "macedonia",
+        "title": "Roman Macedonia",
+        "type": "place",
+        "aliases": [
+          "Macedonia in Acts",
+          "Roman province of Macedonia",
+          "Paul in Macedonia",
+          "Macedonian churches",
+          "Via Egnatia Macedonia"
+        ],
+        "metadata": {
+          "summary": "Roman Macedonia was the northern Greek province and travel region in which Acts locates Philippi, Thessalonica, and Beroea and which Paul's letters associate with specific assemblies, journeys, suffering, support, and the Jerusalem collection.",
+          "importance": 94,
+          "retrieval_score": 0.914,
+          "ancient_names": [],
+          "modern_identification": "",
+          "region": "",
+          "terrain": "",
+          "elevation": null,
+          "archaeology": [
+            "Via Egnatia road remains and milestones",
+            "Philippi colony, forum, and inscriptions",
+            "Thessalonian civic inscriptions and port-road setting",
+            "Beroean Roman roads, milestones, inscriptions, and urban remains"
+          ],
+          "related_passages": [
+            "Acts 16:9-15",
+            "Acts 16:16-40",
+            "Acts 17:1-15",
+            "Acts 18:1-5",
+            "Acts 19:21-22",
+            "Acts 20:1-6",
+            "Romans 15:25-29",
+            "1 Corinthians 16:5-6",
+            "2 Corinthians 7:5-16",
+            "2 Corinthians 8:1-24",
+            "2 Corinthians 9:1-5",
+            "Philippians 4:15-18",
+            "1 Thessalonians 1:7-8",
+            "1 Thessalonians 3:1-10"
+          ]
+        }
+      }
+    ],
+    "groups": [],
+    "events": [],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "1th-date",
+      "claim": "A date around 49-51 CE and Corinthian provenance are probable reconstructions rather than data stated by the letter.",
+      "category": "culture",
+      "source_ids": [
+        "malherbe",
+        "green",
+        "weima"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Thessalonians 3:1-6"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "1-thessalonians",
+        "parent_title": "1 Thessalonians",
+        "parent_type": "book",
+        "object_importance": 79,
+        "retrieval_score": 0.919,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "probable",
+        "dispute_status": "chronological_uncertainty",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "historical_cultural",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 60
+      }
+    },
+    {
+      "id": "1th-senders",
+      "claim": "Paul, Silvanus, and Timothy are named as senders, while plural and singular voices vary across the letter.",
+      "category": "history",
+      "source_ids": [
+        "1th-greek",
+        "malherbe"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Thessalonians 3:1-5"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "1-thessalonians",
+        "parent_title": "1 Thessalonians",
+        "parent_type": "book",
+        "object_importance": 79,
+        "retrieval_score": 0.919,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "textually_explicit",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "1th-timothy",
+      "claim": "Timothy is sent from Athens to strengthen and encourage the recipients and returns with news of their faith, love, and good memory.",
+      "category": "history",
+      "source_ids": [
+        "1th-greek",
+        "green"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Thessalonians 3:1-6"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "1-thessalonians",
+        "parent_title": "1 Thessalonians",
+        "parent_type": "book",
+        "object_importance": 79,
+        "retrieval_score": 0.919,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "textually_explicit",
+        "dispute_status": "not_disputed",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 103
+      }
+    },
+    {
+      "id": "acts-first-thessalonians-athens-itinerary",
+      "claim": "Acts narrates Paul arriving from Beroea, summoning Silas and Timothy, departing for Corinth, and later meeting them there; First Thessalonians says Timothy was sent from Athens and returned with news.",
+      "category": "culture",
+      "source_ids": [
+        "acts-athens-cluster-text",
+        "first-thessalonians-athens-text",
+        "keener-acts-speech"
+      ],
+      "related_entity_ids": [
+        "athens",
+        "macedonia"
+      ],
+      "passage_anchors": [
+        "1 Thessalonians 3:1-10"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "roman-athens-agora-cult-and-philosophy",
+        "parent_title": "Roman Athens: Agora, Cult, Philosophy, and the Areopagus Speech",
+        "parent_type": "cultural_background",
+        "object_importance": 96,
+        "retrieval_score": 0.936,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "disputed",
+        "dispute_status": "chronological_uncertainty",
+        "assertion_type": "scholarly-reconstruction",
+        "exploration_potential": 0.75,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "literary-convention",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 102
+      }
+    },
+    {
+      "id": "acts-first-thessalonians-athens-itinerary:passage-relevance",
+      "claim": "The comparison places Athens in Paul's travel network without inserting unreported movements into either source or using Acts as a transparent diary.",
+      "category": "culture",
+      "source_ids": [
+        "acts-athens-cluster-text",
+        "first-thessalonians-athens-text",
+        "keener-acts-speech"
+      ],
+      "related_entity_ids": [
+        "athens",
+        "macedonia"
+      ],
+      "passage_anchors": [
+        "1 Thessalonians 3:1-10"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "roman-athens-agora-cult-and-philosophy",
+        "parent_title": "Roman Athens: Agora, Cult, Philosophy, and the Areopagus Speech",
+        "parent_type": "cultural_background",
+        "object_importance": 96,
+        "retrieval_score": 0.936,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "disputed",
+        "dispute_status": "chronological_uncertainty",
+        "assertion_type": "scholarly-reconstruction",
+        "exploration_potential": 0.75,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "literary-convention",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 102,
+        "supports_evidence_ids": [
+          "acts-first-thessalonians-athens-itinerary"
+        ]
+      }
+    },
+    {
+      "id": "acts-first-thessalonians-itinerary-comparison",
+      "claim": "Acts 17-18 and 1 Thessalonians 3 both involve Paul, Timothy, Athens, Macedonia, and later reunion but preserve different levels and sequences of detail.",
+      "category": "culture",
+      "source_ids": [
+        "acts-macedonia-text",
+        "first-thessalonians-macedonia-text",
+        "harrill-paul-travels"
+      ],
+      "related_entity_ids": [
+        "macedonia"
+      ],
+      "passage_anchors": [
+        "1 Thessalonians 3:1-10"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "roman-macedonia-road-network-and-city-diversity",
+        "parent_title": "Roman Macedonia: Road Network, Provincial Context, and City Diversity",
+        "parent_type": "cultural_background",
+        "object_importance": 94,
+        "retrieval_score": 0.914,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "disputed",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "scholarly-reconstruction",
+        "exploration_potential": 0.75,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "literary-convention",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 102
+      }
+    },
+    {
+      "id": "acts-first-thessalonians-itinerary-comparison:passage-relevance",
+      "claim": "The evidence allows both sources to inform the mission setting without silently inserting Timothy's movements into Acts or making Acts the controlling outline of Paul's letter.",
+      "category": "culture",
+      "source_ids": [
+        "acts-macedonia-text",
+        "first-thessalonians-macedonia-text",
+        "harrill-paul-travels"
+      ],
+      "related_entity_ids": [
+        "macedonia"
+      ],
+      "passage_anchors": [
+        "1 Thessalonians 3:1-10"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "roman-macedonia-road-network-and-city-diversity",
+        "parent_title": "Roman Macedonia: Road Network, Provincial Context, and City Diversity",
+        "parent_type": "cultural_background",
+        "object_importance": 94,
+        "retrieval_score": 0.914,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "disputed",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "scholarly-reconstruction",
+        "exploration_potential": 0.75,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "literary-convention",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 102,
+        "supports_evidence_ids": [
+          "acts-first-thessalonians-itinerary-comparison"
+        ]
+      }
+    },
+    {
+      "id": "macedonia-source-limits",
+      "claim": "Acts and the Pauline letters provide overlapping but distinct Macedonian travel evidence, so any single continuous chronology is a reconstruction.",
+      "category": "culture",
+      "source_ids": [
+        "acts-macedonia-place-text",
+        "first-thessalonians-macedonia-place-text",
+        "harrill-paul-travels-macedonia"
+      ],
+      "related_entity_ids": [
+        "macedonia"
+      ],
+      "passage_anchors": [
+        "1 Thessalonians 3:1-10"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "macedonia",
+        "parent_title": "Roman Macedonia",
+        "parent_type": "place",
+        "object_importance": 94,
+        "retrieval_score": 0.914,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "WEAKLY_RELATED",
+        "presentation_role": null,
+        "overview_priority": 22
+      }
+    },
+    {
+      "id": "macedonia:interpretive_note:2",
+      "claim": "Acts and Paul's letters are distinct witnesses; a combined itinerary is a historical reconstruction rather than the wording of either source alone.",
+      "category": "culture",
+      "source_ids": [
+        "acts-macedonia-place-text",
+        "first-thessalonians-macedonia-place-text",
+        "harrill-paul-travels-macedonia"
+      ],
+      "related_entity_ids": [
+        "macedonia"
+      ],
+      "passage_anchors": [
+        "1 Thessalonians 3:1-10"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "macedonia",
+        "parent_title": "Roman Macedonia",
+        "parent_type": "place",
+        "object_importance": 94,
+        "retrieval_score": 0.914,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "interpretive-caution",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "INTERTEXTUAL_REUSE",
+        "presentation_role": "dig_deeper",
+        "overview_priority": 0
+      }
+    },
+    {
+      "id": "thess-affliction-no-martyr-pressure",
+      "claim": "The senders say the audience knew afflictions were occurring and that they warned beforehand, then describe Timothy's reassuring report.",
+      "category": "culture",
+      "source_ids": [
+        "thess-mission-text",
+        "luckritz-transient-apostle"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Thessalonians 3:1-8"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-mission-proclamation-travel-coworkers-letters-messengers-hospitality-house-assemblies-synagogues-marketplaces-adaptability-church-planting-and-interassembly-networks",
+        "parent_title": "Pauline Mission, Proclamation, Travel, Coworkers, Letters, Messengers, Hospitality, House Assemblies, Synagogues, Marketplaces, Adaptability, Church Planting, and Interassembly Networks",
+        "parent_type": "cultural_background",
+        "object_importance": 9,
+        "retrieval_score": 0.849,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "probable",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "worldview-concept",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    },
+    {
+      "id": "thess-affliction-no-martyr-pressure:passage-relevance",
+      "claim": "Names experienced pressure while refusing to turn suffering into a recruitment promise, holiness test, or bar to evacuation.",
+      "category": "culture",
+      "source_ids": [
+        "thess-mission-text",
+        "luckritz-transient-apostle"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Thessalonians 3:1-8"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-mission-proclamation-travel-coworkers-letters-messengers-hospitality-house-assemblies-synagogues-marketplaces-adaptability-church-planting-and-interassembly-networks",
+        "parent_title": "Pauline Mission, Proclamation, Travel, Coworkers, Letters, Messengers, Hospitality, House Assemblies, Synagogues, Marketplaces, Adaptability, Church Planting, and Interassembly Networks",
+        "parent_type": "cultural_background",
+        "object_importance": 9,
+        "retrieval_score": 0.849,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "probable",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "worldview-concept",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 87,
+        "supports_evidence_ids": [
+          "thess-affliction-no-martyr-pressure"
+        ]
+      }
+    },
+    {
+      "id": "thess-prayer-wish-love-not-control",
+      "claim": "The senders ask God and Jesus to direct their path and make the audience increase in love while strengthening hearts for holiness.",
+      "category": "culture",
+      "source_ids": [
+        "thess-prayer-text",
+        "lang-thess-prayer",
+        "wiles-intercessory-prayers"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Thessalonians 3:11-13"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-prayer-thanksgiving-intercession-lament-groaning-joy-peace-hope-benediction-blessing-and-communal-memory",
+        "parent_title": "Pauline Prayer, Thanksgiving, Intercession, Lament, Groaning, Joy, Peace, Hope, Benediction, Blessing, and Communal Memory",
+        "parent_type": "cultural_background",
+        "object_importance": 9,
+        "retrieval_score": 0.869,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 10,
+        "certainty": "textually_explicit",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "literary-convention",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    },
+    {
+      "id": "thess-prayer-wish-love-not-control:passage-relevance",
+      "claim": "Intercession for relationship, love, and holiness does not create rights to travel, access, affection, disclosure, or contact.",
+      "category": "culture",
+      "source_ids": [
+        "thess-prayer-text",
+        "lang-thess-prayer",
+        "wiles-intercessory-prayers"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Thessalonians 3:11-13"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-prayer-thanksgiving-intercession-lament-groaning-joy-peace-hope-benediction-blessing-and-communal-memory",
+        "parent_title": "Pauline Prayer, Thanksgiving, Intercession, Lament, Groaning, Joy, Peace, Hope, Benediction, Blessing, and Communal Memory",
+        "parent_type": "cultural_background",
+        "object_importance": 9,
+        "retrieval_score": 0.869,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 10,
+        "certainty": "textually_explicit",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "literary-convention",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 87,
+        "supports_evidence_ids": [
+          "thess-prayer-wish-love-not-control"
+        ]
+      }
+    },
+    {
+      "id": "thess-timothy-embassy-report",
+      "claim": "When the team could bear separation no longer, they sent Timothy, called brother and God's coworker or minister in textually variant wording, to strengthen the audience; he later returned with news.",
+      "category": "culture",
+      "source_ids": [
+        "thess-mission-text",
+        "burke-paul-colleagues"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Thessalonians 3:1-10"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-mission-proclamation-travel-coworkers-letters-messengers-hospitality-house-assemblies-synagogues-marketplaces-adaptability-church-planting-and-interassembly-networks",
+        "parent_title": "Pauline Mission, Proclamation, Travel, Coworkers, Letters, Messengers, Hospitality, House Assemblies, Synagogues, Marketplaces, Adaptability, Church Planting, and Interassembly Networks",
+        "parent_type": "cultural_background",
+        "object_importance": 9,
+        "retrieval_score": 0.849,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "probable",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "person",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 82
+      }
+    },
+    {
+      "id": "thess-timothy-embassy-report:passage-relevance",
+      "claim": "Shows delegated travel, local strengthening, information flow, and return reporting within the network.",
+      "category": "culture",
+      "source_ids": [
+        "thess-mission-text",
+        "burke-paul-colleagues"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Thessalonians 3:1-10"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-mission-proclamation-travel-coworkers-letters-messengers-hospitality-house-assemblies-synagogues-marketplaces-adaptability-church-planting-and-interassembly-networks",
+        "parent_title": "Pauline Mission, Proclamation, Travel, Coworkers, Letters, Messengers, Hospitality, House Assemblies, Synagogues, Marketplaces, Adaptability, Church Planting, and Interassembly Networks",
+        "parent_type": "cultural_background",
+        "object_importance": 9,
+        "retrieval_score": 0.849,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "probable",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "person",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 82,
+        "supports_evidence_ids": [
+          "thess-timothy-embassy-report"
+        ]
+      }
+    },
+    {
+      "id": "thess-timothy-mediated-report",
+      "claim": "Timothy returns with good news about faith, love, and favorable memory, prompting comfort, thanks, joy, and intensified prayer.",
+      "category": "social",
+      "source_ids": [
+        "thess-prayer-text",
+        "lang-thess-prayer",
+        "malherbe-thessalonians-prayer"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Thessalonians 3:6-10"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-prayer-thanksgiving-intercession-lament-groaning-joy-peace-hope-benediction-blessing-and-communal-memory",
+        "parent_title": "Pauline Prayer, Thanksgiving, Intercession, Lament, Groaning, Joy, Peace, Hope, Benediction, Blessing, and Communal Memory",
+        "parent_type": "cultural_background",
+        "object_importance": 9,
+        "retrieval_score": 0.869,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 5,
+        "certainty": "probable",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "institution",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    },
+    {
+      "id": "thess-timothy-mediated-report:passage-relevance",
+      "claim": "Makes mediation and missing voices visible and prevents treating Paul's joy as a full independent assessment.",
+      "category": "social",
+      "source_ids": [
+        "thess-prayer-text",
+        "lang-thess-prayer",
+        "malherbe-thessalonians-prayer"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Thessalonians 3:6-10"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-prayer-thanksgiving-intercession-lament-groaning-joy-peace-hope-benediction-blessing-and-communal-memory",
+        "parent_title": "Pauline Prayer, Thanksgiving, Intercession, Lament, Groaning, Joy, Peace, Hope, Benediction, Blessing, and Communal Memory",
+        "parent_type": "cultural_background",
+        "object_importance": 9,
+        "retrieval_score": 0.869,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 5,
+        "certainty": "probable",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "institution",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 87,
+        "supports_evidence_ids": [
+          "thess-timothy-mediated-report"
+        ]
+      }
+    },
+    {
+      "id": "thessalonian-affliction-opponents-uncertain",
+      "claim": "The letters repeatedly describe affliction, while Acts narrates one civic disturbance; the sources do not identify one exhaustive persecuting group.",
+      "category": "history",
+      "source_ids": [
+        "first-thessalonians-text",
+        "second-thessalonians-text",
+        "still-conflict-thessalonica",
+        "burnett-imperial-honors",
+        "malherbe-thessalonians-2000"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Thessalonians 3:1-5"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "thessalonian-civic-and-funerary-context",
+        "parent_title": "Roman Thessalonica: Civic, Cultic, Household, Labor, and Funerary Life",
+        "parent_type": "cultural_background",
+        "object_importance": 95,
+        "retrieval_score": 0.915,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "scholarly-reconstruction",
+        "exploration_potential": 0.75,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "historical-event",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 102
+      }
+    },
+    {
+      "id": "thessalonian-affliction-opponents-uncertain:passage-relevance",
+      "claim": "The item supports a real social-pressure setting while blocking collective Jewish blame, a single imperial-cult cause, or assumptions of formal state persecution.",
+      "category": "history",
+      "source_ids": [
+        "first-thessalonians-text",
+        "second-thessalonians-text",
+        "still-conflict-thessalonica",
+        "burnett-imperial-honors",
+        "malherbe-thessalonians-2000"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Thessalonians 3:1-5"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "thessalonian-civic-and-funerary-context",
+        "parent_title": "Roman Thessalonica: Civic, Cultic, Household, Labor, and Funerary Life",
+        "parent_type": "cultural_background",
+        "object_importance": 95,
+        "retrieval_score": 0.915,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "scholarly-reconstruction",
+        "exploration_potential": 0.75,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "historical-event",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 102,
+        "supports_evidence_ids": [
+          "thessalonian-affliction-opponents-uncertain"
+        ]
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "SBL Greek New Testament: 1 Thessalonians",
+        "author": "Michael W. Holmes, ed.",
+        "publisher": "Society of Biblical Literature and Logos Bible Software",
+        "year": 2010,
+        "locator": "1 Thessalonians",
+        "url": "https://www.sblgnt.com/",
+        "source_type": "scripture",
+        "supports": [
+          "scripture-references",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Primary Greek textual control.",
+        "id": "1th-greek",
+        "canonical_object_ids": [
+          "1-thessalonians"
+        ]
+      },
+      {
+        "title": "Acts 17:16-34",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Acts 17:16-34",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "athens-public-encounter",
+          "areopagus-ambiguity",
+          "athens-cult-plurality",
+          "unknown-god-wording",
+          "philosophical-interlocutors",
+          "deisidaimonesterous-range",
+          "speech-creator-argument",
+          "aratus-poetic-wording",
+          "acts-speech-composition",
+          "resurrection-response",
+          "named-hearer-limits"
+        ],
+        "notes": "Primary narrative and speech text; no modern translation is reproduced.",
+        "id": "acts-athens-cluster-text",
+        "canonical_object_ids": [
+          "roman-athens-agora-cult-and-philosophy"
+        ]
+      },
+      {
+        "title": "Acts 16-20",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Acts 16:6-20:6",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "macedonian-city-diversity",
+          "macedonia-source-limits"
+        ],
+        "notes": "Primary narrative source.",
+        "id": "acts-macedonia-place-text",
+        "canonical_object_ids": [
+          "macedonia"
+        ]
+      },
+      {
+        "title": "Acts 16-20",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Acts 16:6-20:6",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "acts-macedonia-entry",
+          "acts-east-macedonia-route",
+          "city-status-diversity",
+          "beroea-branch-city",
+          "macedonian-hearer-variety",
+          "acts-pauline-itinerary-limits",
+          "acts-return-companions"
+        ],
+        "notes": "Primary narrative witness; event setting and composition horizon are distinguished.",
+        "id": "acts-macedonia-text",
+        "canonical_object_ids": [
+          "roman-macedonia-road-network-and-city-diversity"
+        ]
+      },
+      {
+        "title": "Paul and His Colleagues: Identity, Collaboration, and Community",
+        "author": "Trevor J. Burke",
+        "publisher": "T&T Clark",
+        "year": 2026,
+        "locator": "chapters on Timothy, Apollos, Titus, Phoebe, Junia, Epaphroditus, Euodia, and Syntyche",
+        "url": "https://www.bloomsbury.com/us/paul-and-his-colleagues-9780567680143/",
+        "source_type": "academic-book",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Studies how coworker language constructs a differentiated social network.",
+        "id": "burke-paul-colleagues",
+        "canonical_object_ids": [
+          "pauline-mission-proclamation-travel-coworkers-letters-messengers-hospitality-house-assemblies-synagogues-marketplaces-adaptability-church-planting-and-interassembly-networks"
+        ]
+      },
+      {
+        "title": "Imperial Divine Honors in Julio-Claudian Thessalonica and the Thessalonian Correspondence",
+        "author": "John H. Burnett",
+        "publisher": "Journal of Biblical Literature",
+        "year": 2020,
+        "locator": "JBL 139.3, 567-593",
+        "url": "https://doi.org/10.15699/jbl.1393.2020.7",
+        "source_type": "journal-article",
+        "supports": [
+          "julio-claudian-imperial-honors",
+          "thessalonian-affliction-opponents-uncertain"
+        ],
+        "notes": "Argues for a differentiated local imperial-cult landscape and against making imperial cult the sole cause of harassment.",
+        "id": "burnett-imperial-honors",
+        "canonical_object_ids": [
+          "thessalonian-civic-and-funerary-context"
+        ]
+      },
+      {
+        "title": "First Thessalonians 3:1-2",
+        "author": "Paul, Silvanus, and Timothy",
+        "publisher": "",
+        "year": null,
+        "locator": "1 Thessalonians 3:1-2",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "athens-itinerary-comparison"
+        ],
+        "notes": "Earlier or independent first-person witness under conventional dating.",
+        "id": "first-thessalonians-athens-text",
+        "canonical_object_ids": [
+          "roman-athens-agora-cult-and-philosophy"
+        ]
+      },
+      {
+        "title": "First Thessalonians 1-3",
+        "author": "Paul, Silvanus, and Timothy",
+        "publisher": "",
+        "year": null,
+        "locator": "1 Thessalonians 1:1-3:10",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "macedonia-source-limits",
+          "macedonia-regional-language"
+        ],
+        "notes": "Earlier first-person correspondence under conventional dating.",
+        "id": "first-thessalonians-macedonia-place-text",
+        "canonical_object_ids": [
+          "macedonia"
+        ]
+      },
+      {
+        "title": "First Thessalonians 1-3",
+        "author": "Paul, Silvanus, and Timothy",
+        "publisher": "",
+        "year": null,
+        "locator": "1 Thessalonians 1:1-3:10",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "regional-report-language",
+          "acts-pauline-itinerary-limits"
+        ],
+        "notes": "Earlier first-person correspondence under the conventional chronology.",
+        "id": "first-thessalonians-macedonia-text",
+        "canonical_object_ids": [
+          "roman-macedonia-road-network-and-city-diversity"
+        ]
+      },
+      {
+        "title": "First Thessalonians",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "1 Thessalonians 4:13-5:11",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "first-thessalonians-consolation",
+          "later-thessalonian-funerary-comparison",
+          "parousia-apantesis-civic-arrival-proposal"
+        ],
+        "notes": "Primary biblical text; observations are separated from proposed social scripts.",
+        "id": "first-thessalonians-text",
+        "canonical_object_ids": [
+          "thessalonian-civic-and-funerary-context"
+        ]
+      },
+      {
+        "title": "The Letters to the Thessalonians",
+        "author": "Gene L. Green",
+        "publisher": "Eerdmans",
+        "year": 2002,
+        "locator": "1 Thessalonians",
+        "url": "https://www.eerdmans.com/9780802837387/the-letters-to-the-thessalonians/",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "historical-setting",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Commentary emphasizing Thessalonian social and archaeological setting.",
+        "id": "green",
+        "canonical_object_ids": [
+          "1-thessalonians"
+        ]
+      },
+      {
+        "title": "Communities in the Making",
+        "author": "J. Albert Harrill",
+        "publisher": "Cambridge University Press",
+        "year": 2012,
+        "locator": "Paul the Apostle, chapter 2, pp. 46-75",
+        "url": "https://doi.org/10.1017/CBO9781139049511.005",
+        "source_type": "academic-book",
+        "supports": [
+          "via-egnatia-measured-corridor",
+          "acts-pauline-itinerary-limits"
+        ],
+        "notes": "Distinguishes travel evidence in Paul's letters from Acts' journey framework.",
+        "id": "harrill-paul-travels",
+        "canonical_object_ids": [
+          "roman-macedonia-road-network-and-city-diversity"
+        ]
+      },
+      {
+        "title": "Communities in the Making",
+        "author": "J. Albert Harrill",
+        "publisher": "Cambridge University Press",
+        "year": 2012,
+        "locator": "Paul the Apostle, chapter 2, pp. 46-75",
+        "url": "https://doi.org/10.1017/CBO9781139049511.005",
+        "source_type": "academic-book",
+        "supports": [
+          "macedonia-source-limits"
+        ],
+        "notes": "Separates Paul's own travel evidence from Acts' journey structure.",
+        "id": "harrill-paul-travels-macedonia",
+        "canonical_object_ids": [
+          "macedonia"
+        ]
+      },
+      {
+        "title": "Acts",
+        "author": "Craig S. Keener",
+        "publisher": "Cambridge University Press",
+        "year": 2020,
+        "locator": "Introduction and commentary on Acts 17:16-34",
+        "url": "https://doi.org/10.1017/9781108678377",
+        "source_type": "academic-book",
+        "supports": [
+          "acts-speech-composition",
+          "resurrection-response",
+          "named-hearer-limits",
+          "athens-itinerary-comparison"
+        ],
+        "notes": "Treats Acts as ancient historiographic narrative and discusses its speeches.",
+        "id": "keener-acts-speech",
+        "canonical_object_ids": [
+          "roman-athens-agora-cult-and-philosophy"
+        ]
+      },
+      {
+        "title": "Transcending Epistolary Communication: Prayer in First Thessalonians",
+        "author": "Maria Bernadette Lang",
+        "publisher": "Cambridge University Press",
+        "year": 2025,
+        "locator": "New Testament Studies 71, pp. 105-118",
+        "url": "https://doi.org/10.1017/S0028688524000298",
+        "source_type": "journal-article",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Open-access study of prayer as structural, pastoral, didactic, and reciprocal epistolary communication.",
+        "id": "lang-thess-prayer",
+        "canonical_object_ids": [
+          "pauline-prayer-thanksgiving-intercession-lament-groaning-joy-peace-hope-benediction-blessing-and-communal-memory"
+        ]
+      },
+      {
+        "title": "Transient Apostle: Paul, Travel, and the Rhetoric of Empire",
+        "author": "Timothy Luckritz Marquis",
+        "publisher": "Yale University Press",
+        "year": 2013,
+        "locator": "chapters 1-6",
+        "url": "https://yalebooks.yale.edu/book/9780300187144/transient-apostle/",
+        "source_type": "academic-book",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Relates travel rhetoric, material mobility, empire, and maintenance of translocal communities.",
+        "id": "luckritz-transient-apostle",
+        "canonical_object_ids": [
+          "pauline-mission-proclamation-travel-coworkers-letters-messengers-hospitality-house-assemblies-synagogues-marketplaces-adaptability-church-planting-and-interassembly-networks"
+        ]
+      },
+      {
+        "title": "The Letters to the Thessalonians",
+        "author": "Abraham J. Malherbe",
+        "publisher": "Yale University Press",
+        "year": 2000,
+        "locator": "Introduction and commentary on 1 Thessalonians",
+        "url": "https://yalebooks.yale.edu/book/9780300139846/the-letters-to-the-thessalonians/",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "literary-context",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Historical, literary, philosophical, and social commentary.",
+        "id": "malherbe",
+        "canonical_object_ids": [
+          "1-thessalonians"
+        ]
+      },
+      {
+        "title": "The Letters to the Thessalonians",
+        "author": "Abraham J. Malherbe",
+        "publisher": "Yale University Press",
+        "year": 2000,
+        "locator": "Anchor Yale Bible 32B; commentary on 1 Thessalonians 4:13-18",
+        "url": "https://yalebooks.yale.edu/book/9780300139846/the-letters-to-the-thessalonians/",
+        "source_type": "academic-book",
+        "supports": [
+          "later-thessalonian-funerary-evidence",
+          "parousia-apantesis-civic-arrival-proposal"
+        ],
+        "notes": "Historical and literary commentary used to control both comparison and interpretation.",
+        "id": "malherbe-thessalonians-2000",
+        "canonical_object_ids": [
+          "thessalonian-civic-and-funerary-context"
+        ]
+      },
+      {
+        "title": "The Letters to the Thessalonians",
+        "author": "Abraham J. Malherbe",
+        "publisher": "Yale University Press",
+        "year": 2004,
+        "locator": "1 Thessalonians 1, 3, and 5",
+        "url": "https://yalebooks.yale.edu/book/9780300139846/the-letters-to-the-thessalonians/",
+        "source_type": "academic-book",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Situates Thessalonian prayer and exhortation in literary and social contexts.",
+        "id": "malherbe-thessalonians-prayer",
+        "canonical_object_ids": [
+          "pauline-prayer-thanksgiving-intercession-lament-groaning-joy-peace-hope-benediction-blessing-and-communal-memory"
+        ]
+      },
+      {
+        "title": "Second Thessalonians",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "2 Thessalonians 1:1-3:18",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "thessalonian-affliction-opponents-uncertain",
+          "work-instruction-and-patronage-proposal"
+        ],
+        "notes": "Primary biblical text within the canon; Pauline authorship and date remain disputed.",
+        "id": "second-thessalonians-text",
+        "canonical_object_ids": [
+          "thessalonian-civic-and-funerary-context"
+        ]
+      },
+      {
+        "title": "Conflict at Thessalonica: A Pauline Church and Its Neighbours",
+        "author": "Todd D. Still",
+        "publisher": "Sheffield Academic Press",
+        "year": 1999,
+        "locator": "Chapters 4-7: sources, causes, forms, and effects of conflict",
+        "url": "https://www.bloomsbury.com/ca/conflict-at-thessalonica-9780567421098/",
+        "source_type": "academic-book",
+        "supports": [
+          "thessalonian-affliction-opponents-uncertain",
+          "acts-synagogue-and-audience-limits"
+        ],
+        "notes": "One detailed reconstruction within a field where the opponents and mechanisms of pressure remain disputed.",
+        "id": "still-conflict-thessalonica",
+        "canonical_object_ids": [
+          "thessalonian-civic-and-funerary-context"
+        ]
+      },
+      {
+        "title": "The Greek New Testament: 1 Thessalonians",
+        "author": "Michael W. Holmes, ed.",
+        "publisher": "Society of Biblical Literature",
+        "year": 2010,
+        "locator": "1 Thessalonians 1:1-3:13",
+        "url": "https://www.sblgnt.com/download/",
+        "source_type": "scripture",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Primary Greek evidence for a plural sending voice, reception, labor, separation, and Timothy's embassy.",
+        "id": "thess-mission-text",
+        "canonical_object_ids": [
+          "pauline-mission-proclamation-travel-coworkers-letters-messengers-hospitality-house-assemblies-synagogues-marketplaces-adaptability-church-planting-and-interassembly-networks"
+        ]
+      },
+      {
+        "title": "The Greek New Testament: 1 Thessalonians",
+        "author": "Michael W. Holmes, ed.",
+        "publisher": "Society of Biblical Literature",
+        "year": 2010,
+        "locator": "1 Thessalonians 1, 3, and 5",
+        "url": "https://www.sblgnt.com/download/",
+        "source_type": "scripture",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Primary Greek evidence for plural remembrance, reciprocal prayer, and closing exhortations.",
+        "id": "thess-prayer-text",
+        "canonical_object_ids": [
+          "pauline-prayer-thanksgiving-intercession-lament-groaning-joy-peace-hope-benediction-blessing-and-communal-memory"
+        ]
+      },
+      {
+        "title": "1-2 Thessalonians",
+        "author": "Jeffrey A. D. Weima",
+        "publisher": "Baker Academic",
+        "year": 2014,
+        "locator": "1 Thessalonians",
+        "url": "https://bakeracademic.com/p/1-2-thessalonians-jeffrey-a-d-weima/230711",
+        "source_type": "academic-book",
+        "supports": [
+          "literary-context",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Exegetical and epistolary commentary.",
+        "id": "weima",
+        "canonical_object_ids": [
+          "1-thessalonians"
+        ]
+      },
+      {
+        "title": "Paul's Intercessory Prayers: The Significance of the Intercessory Prayer Passages in the Letters of St Paul",
+        "author": "Gordon P. Wiles",
+        "publisher": "Cambridge University Press",
+        "year": 1974,
+        "locator": "chapters 1-7",
+        "url": "https://doi.org/10.1017/CBO9780511555145",
+        "source_type": "academic-book",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Classifies prayer reports, wishes, requests, thanksgiving periods, blessings, and curses in the Pauline letters.",
+        "id": "wiles-intercessory-prayers",
+        "canonical_object_ids": [
+          "pauline-prayer-thanksgiving-intercession-lament-groaning-joy-peace-hope-benediction-blessing-and-communal-memory"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "1-thessalonians",
+        "type": "book",
+        "title": "1 Thessalonians",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.919
+      },
+      {
+        "id": "athens",
+        "type": "place",
+        "title": "Roman Athens",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.913
+      },
+      {
+        "id": "macedonia",
+        "type": "place",
+        "title": "Roman Macedonia",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.914
+      },
+      {
+        "id": "pauline-mission-proclamation-travel-coworkers-letters-messengers-hospitality-house-assemblies-synagogues-marketplaces-adaptability-church-planting-and-interassembly-networks",
+        "type": "cultural_background",
+        "title": "Pauline Mission, Proclamation, Travel, Coworkers, Letters, Messengers, Hospitality, House Assemblies, Synagogues, Marketplaces, Adaptability, Church Planting, and Interassembly Networks",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.849
+      },
+      {
+        "id": "pauline-prayer-thanksgiving-intercession-lament-groaning-joy-peace-hope-benediction-blessing-and-communal-memory",
+        "type": "cultural_background",
+        "title": "Pauline Prayer, Thanksgiving, Intercession, Lament, Groaning, Joy, Peace, Hope, Benediction, Blessing, and Communal Memory",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.869
+      },
+      {
+        "id": "roman-athens-agora-cult-and-philosophy",
+        "type": "cultural_background",
+        "title": "Roman Athens: Agora, Cult, Philosophy, and the Areopagus Speech",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.936
+      },
+      {
+        "id": "roman-macedonia-road-network-and-city-diversity",
+        "type": "cultural_background",
+        "title": "Roman Macedonia: Road Network, Provincial Context, and City Diversity",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.914
+      },
+      {
+        "id": "thessalonian-civic-and-funerary-context",
+        "type": "cultural_background",
+        "title": "Roman Thessalonica: Civic, Cultic, Household, Labor, and Funerary Life",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.915
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "3f2da7d0da92a18a328b3a29ff588d626453ef11d01c1dbdec3379092e54d10f",
+  "evidence_hash_version": "2"
+}

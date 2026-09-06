@@ -1,0 +1,35 @@
+{
+  "reference": "1 Kings 3",
+  "book": "1 Kings",
+  "chapter": 3,
+  "status": "validated",
+  "evidence_availability": "THIN",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_19",
+          "text": "Read the chapter with this setting in view: Solomon asks for a listening heart to judge the people, and the narrative illustrates that gift through the dispute over a child. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken.",
+          "evidence_ids": [
+            "first-kings-solomon-discernment"
+          ],
+          "verse_refs": [
+            "1 Kings 3:4-28"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "bd901a2f380e34ffa2940b21959e4bcf3a4bd134e43977d9847e2497290d208c",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-002-medium",
+    "generated_timestamp": "2026-09-05T22:51:03Z"
+  }
+}

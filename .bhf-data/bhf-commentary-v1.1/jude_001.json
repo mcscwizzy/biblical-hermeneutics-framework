@@ -1,0 +1,101 @@
+{
+  "reference": "Jude 1",
+  "book": "Jude",
+  "chapter": 1,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_86",
+          "text": "Read the chapter with this setting in view: Sodom, Gomorrah, and surrounding cities function as an example of sexual transgression and judgment by fire. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "jude-sodom"
+          ],
+          "verse_refs": [
+            "Jude 1:7"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_87",
+          "text": "For its historical and cultural setting, note that Cain's way, Balaam's error, and Korah's rebellion form a threefold judgment analogy. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. Interpretations differ on some details.",
+          "evidence_ids": [
+            "jude-cain-balaam-korah"
+          ],
+          "verse_refs": [
+            "Jude 1:11"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        },
+        {
+          "id": "historical_context_88",
+          "text": "For its historical and cultural setting, note that Angels who abandoned their own domain are portrayed as kept in eternal bonds under darkness for judgment. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "jude-angels"
+          ],
+          "verse_refs": [
+            "Jude 1:6"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_87",
+          "text": "A literary feature to notice is that The prescript asks that mercy, peace, and love be multiplied to the addressees. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image.",
+          "evidence_ids": [
+            "jude-blessing"
+          ],
+          "verse_refs": [
+            "Jude 1:2"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "dig_deeper",
+      "title": "Dig deeper",
+      "blocks": [
+        {
+          "id": "dig_deeper_87",
+          "text": "For a later or comparative connection, note that Second Peter 2 shares unusual sequence, examples, and language with Jude 4-18. This remains a secondary connection rather than the chapter's first-audience context. It can be traced further without replacing the chapter's own setting. Interpretations differ on some details.",
+          "evidence_ids": [
+            "2pet-jude-relation"
+          ],
+          "verse_refs": [
+            "Jude 1:4-18"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "f413f0eb965b87b39353cb7859345dbd46a4141bd9573c4f88731bc194b3d1e0",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-002-medium",
+    "generated_timestamp": "2026-09-05T22:51:03Z"
+  }
+}

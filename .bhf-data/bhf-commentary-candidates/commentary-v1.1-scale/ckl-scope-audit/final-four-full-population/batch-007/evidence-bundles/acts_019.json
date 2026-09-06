@@ -1,0 +1,2165 @@
+{
+  "passage_ref": "Acts 19",
+  "entities": {
+    "people": [],
+    "places": [
+      {
+        "id": "ephesus",
+        "title": "Ephesus",
+        "type": "place",
+        "aliases": [
+          "where is ephesus",
+          "tell me about ephesus",
+          "why is ephesus important"
+        ],
+        "metadata": {
+          "summary": "Ephesus was a major harbor city of Roman Asia and the explicit setting for mission, teaching, ritual conflict, civic assembly, and farewell traditions in Acts; it also anchors Revelation 2 and the narrated setting of 1 Timothy, while Ephesians' original destination remains textually disputed.",
+          "importance": 70,
+          "retrieval_score": 0.91,
+          "ancient_names": [],
+          "modern_identification": "",
+          "region": "",
+          "terrain": "",
+          "elevation": null,
+          "archaeology": [],
+          "related_passages": [
+            "Acts 18:18-28",
+            "Acts 19:1-20",
+            "Acts 19:21-41",
+            "Acts 20:1-38",
+            "Ephesians 1:1",
+            "1 Timothy 1:3-7",
+            "Revelation 2:1-7"
+          ]
+        }
+      },
+      {
+        "id": "macedonia",
+        "title": "Roman Macedonia",
+        "type": "place",
+        "aliases": [
+          "Macedonia in Acts",
+          "Roman province of Macedonia",
+          "Paul in Macedonia",
+          "Macedonian churches",
+          "Via Egnatia Macedonia"
+        ],
+        "metadata": {
+          "summary": "Roman Macedonia was the northern Greek province and travel region in which Acts locates Philippi, Thessalonica, and Beroea and which Paul's letters associate with specific assemblies, journeys, suffering, support, and the Jerusalem collection.",
+          "importance": 94,
+          "retrieval_score": 0.914,
+          "ancient_names": [],
+          "modern_identification": "",
+          "region": "",
+          "terrain": "",
+          "elevation": null,
+          "archaeology": [
+            "Via Egnatia road remains and milestones",
+            "Philippi colony, forum, and inscriptions",
+            "Thessalonian civic inscriptions and port-road setting",
+            "Beroean Roman roads, milestones, inscriptions, and urban remains"
+          ],
+          "related_passages": [
+            "Acts 16:9-15",
+            "Acts 16:16-40",
+            "Acts 17:1-15",
+            "Acts 18:1-5",
+            "Acts 19:21-22",
+            "Acts 20:1-6",
+            "Romans 15:25-29",
+            "1 Corinthians 16:5-6",
+            "2 Corinthians 7:5-16",
+            "2 Corinthians 8:1-24",
+            "2 Corinthians 9:1-5",
+            "Philippians 4:15-18",
+            "1 Thessalonians 1:7-8",
+            "1 Thessalonians 3:1-10"
+          ]
+        }
+      }
+    ],
+    "groups": [],
+    "events": [],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "acts-ephesus",
+      "claim": "Ephesian archaeology and inscriptions illuminate the theater, civic offices, benefaction, and Artemis cult in Acts 19 but do not verify every narrated action.",
+      "category": "culture",
+      "source_ids": [
+        "ephesus-unesco",
+        "billings-imperialism"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Acts 19:21-41"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "acts",
+        "parent_title": "Acts",
+        "parent_type": "book",
+        "object_importance": 96,
+        "retrieval_score": 0.916,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 20,
+        "certainty": "strong_consensus",
+        "dispute_status": "archaeological_uncertainty",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "historical_cultural",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 110
+      }
+    },
+    {
+      "id": "acts-ephesus-dialogue-venues",
+      "claim": "Acts narrates synagogue reasoning, withdrawal to the school of Tyrannus, extended daily dialogue, and a summary claim of regional hearing.",
+      "category": "culture",
+      "source_ids": [
+        "acts-mission-text",
+        "schnabel-paul-missionary"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Acts 19:8-20"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-mission-proclamation-travel-coworkers-letters-messengers-hospitality-house-assemblies-synagogues-marketplaces-adaptability-church-planting-and-interassembly-networks",
+        "parent_title": "Pauline Mission, Proclamation, Travel, Coworkers, Letters, Messengers, Hospitality, House Assemblies, Synagogues, Marketplaces, Adaptability, Church Planting, and Interassembly Networks",
+        "parent_type": "cultural_background",
+        "object_importance": 9,
+        "retrieval_score": 0.829,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 7,
+        "certainty": "probable",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "cultural-practice",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    },
+    {
+      "id": "acts-ephesus-dialogue-venues:passage-relevance",
+      "claim": "Provides later narrative evidence for varied venues and sustained teaching without making access, duration, or a charismatic founder universally normative.",
+      "category": "culture",
+      "source_ids": [
+        "acts-mission-text",
+        "schnabel-paul-missionary"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Acts 19:8-20"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-mission-proclamation-travel-coworkers-letters-messengers-hospitality-house-assemblies-synagogues-marketplaces-adaptability-church-planting-and-interassembly-networks",
+        "parent_title": "Pauline Mission, Proclamation, Travel, Coworkers, Letters, Messengers, Hospitality, House Assemblies, Synagogues, Marketplaces, Adaptability, Church Planting, and Interassembly Networks",
+        "parent_type": "cultural_background",
+        "object_importance": 9,
+        "retrieval_score": 0.829,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 7,
+        "certainty": "probable",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "cultural-practice",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 87,
+        "supports_evidence_ids": [
+          "acts-ephesus-dialogue-venues"
+        ]
+      }
+    },
+    {
+      "id": "acts-exorcism-and-book-burning",
+      "claim": "Acts differentiates Pauline healings, itinerant Jewish exorcists, failed name invocation, public confession, disclosure of practices, and voluntary destruction of costly books.",
+      "category": "history",
+      "source_ids": [
+        "ephesus-biblical-texts",
+        "arnold-power-magic",
+        "bernabe-ephesia-grammata"
+      ],
+      "related_entity_ids": [
+        "ephesus"
+      ],
+      "passage_anchors": [
+        "Acts 19:11-20"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "roman-ephesus-civic-cultic-and-household-life",
+        "parent_title": "Roman Ephesus: Civic, Cultic, and Household Life",
+        "parent_type": "cultural_background",
+        "object_importance": 98,
+        "retrieval_score": 0.978,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 10,
+        "certainty": "textually_explicit",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.75,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "ancient-text",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 102
+      }
+    },
+    {
+      "id": "acts-exorcism-and-book-burning:passage-relevance",
+      "claim": "Comparative ritual texts show that written formulas and powerful names circulated, but they neither identify the burned books as Ephesia grammata nor make magic an ethnic trait.",
+      "category": "history",
+      "source_ids": [
+        "ephesus-biblical-texts",
+        "arnold-power-magic",
+        "bernabe-ephesia-grammata"
+      ],
+      "related_entity_ids": [
+        "ephesus"
+      ],
+      "passage_anchors": [
+        "Acts 19:11-20"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "roman-ephesus-civic-cultic-and-household-life",
+        "parent_title": "Roman Ephesus: Civic, Cultic, and Household Life",
+        "parent_type": "cultural_background",
+        "object_importance": 98,
+        "retrieval_score": 0.978,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 10,
+        "certainty": "textually_explicit",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.75,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "ancient-text",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 102,
+        "supports_evidence_ids": [
+          "acts-exorcism-and-book-burning"
+        ]
+      }
+    },
+    {
+      "id": "acts-historical-method",
+      "claim": "Historical evaluation of Acts must compare particular claims with independent evidence rather than assign blanket reliability or unreliability.",
+      "category": "culture",
+      "source_ids": [
+        "marguerat-historian",
+        "keener-acts"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Acts 1:1-28:31"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "acts",
+        "parent_title": "Acts",
+        "parent_type": "book",
+        "object_importance": 96,
+        "retrieval_score": 0.916,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 1800,
+        "certainty": "strong_consensus",
+        "dispute_status": "not_disputed",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "historical_cultural",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 93
+      }
+    },
+    {
+      "id": "acts-letters-chronology-spirit",
+      "claim": "The undisputed letters address contemporary assembly problems before Acts later composes mission scenes with different narrators, sequences, wording, and aims.",
+      "category": "chronology",
+      "source_ids": [
+        "corinthians-spirit-text",
+        "galatians-spirit-text",
+        "acts-spirit-text",
+        "fee-1cor",
+        "keener-acts-spirit"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Acts 19:1-7"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-spirit-gifts-tongues-prophecy-discernment-healing-worship-and-assembly-order",
+        "parent_title": "Pauline Spirit, Gifts, Tongues, Prophecy, Discernment, Healing, Worship, and Assembly Order",
+        "parent_type": "cultural_background",
+        "object_importance": 99,
+        "retrieval_score": 0.919,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "secondary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "historical-period",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "chronology",
+        "overview_priority": 72
+      }
+    },
+    {
+      "id": "acts-letters-chronology-spirit:passage-relevance",
+      "claim": "Prevents Acts from becoming a verbatim Pauline manual while allowing bounded canonical comparison.",
+      "category": "chronology",
+      "source_ids": [
+        "corinthians-spirit-text",
+        "galatians-spirit-text",
+        "acts-spirit-text",
+        "fee-1cor",
+        "keener-acts-spirit"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Acts 19:1-7"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-spirit-gifts-tongues-prophecy-discernment-healing-worship-and-assembly-order",
+        "parent_title": "Pauline Spirit, Gifts, Tongues, Prophecy, Discernment, Healing, Worship, and Assembly Order",
+        "parent_type": "cultural_background",
+        "object_importance": 99,
+        "retrieval_score": 0.919,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "secondary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "historical-period",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 72,
+        "supports_evidence_ids": [
+          "acts-letters-chronology-spirit"
+        ]
+      }
+    },
+    {
+      "id": "acts-text-witnesses",
+      "claim": "Acts is preserved in early papyri and major Greek codices, with P45, P53, P74, Sinaiticus, Vaticanus, and Bezae contributing different portions and textual profiles.",
+      "category": "culture",
+      "source_ids": [
+        "p45-cbl",
+        "p53-michigan",
+        "p74-vatican",
+        "sinaiticus",
+        "vaticanus",
+        "bezae-cambridge"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Acts 1:1-28:31"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "acts",
+        "parent_title": "Acts",
+        "parent_type": "book",
+        "object_importance": 96,
+        "retrieval_score": 0.916,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 1800,
+        "certainty": "strong_consensus",
+        "dispute_status": "not_disputed",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "historical_cultural",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 73
+      }
+    },
+    {
+      "id": "acts-thessalonica-ephesus-civic-accusations",
+      "claim": "Acts narrates charges of acting against Caesar's decrees and naming another king in Thessalonica, then an Ephesian crowd, confused assembly, officials, legal channels, and a clerk's dismissal.",
+      "category": "history",
+      "source_ids": [
+        "acts-politics-text",
+        "keener-acts-politics"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Acts 19:21-41"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-governing-authorities-citizenship-empire-taxation-public-order-courts-peace-nonretaliation-violence-armor-triumph-imprisonment-civic-rights-and-political-allegiance",
+        "parent_title": "Pauline Governing Authorities, Citizenship, Empire, Taxation, Public Order, Courts, Peace, Nonretaliation, Violence, Armor, Triumph, Imprisonment, Civic Rights, and Political Allegiance",
+        "parent_type": "cultural_background",
+        "object_importance": 99,
+        "retrieval_score": 0.919,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 20,
+        "certainty": "probable",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "historical-event",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 102
+      }
+    },
+    {
+      "id": "acts-thessalonica-ephesus-civic-accusations:passage-relevance",
+      "claim": "Shows Luke's selected civic-political scenes without proving the exact charges against the letter audience or that Roman institutions were consistently fair.",
+      "category": "history",
+      "source_ids": [
+        "acts-politics-text",
+        "keener-acts-politics"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Acts 19:21-41"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-governing-authorities-citizenship-empire-taxation-public-order-courts-peace-nonretaliation-violence-armor-triumph-imprisonment-civic-rights-and-political-allegiance",
+        "parent_title": "Pauline Governing Authorities, Citizenship, Empire, Taxation, Public Order, Courts, Peace, Nonretaliation, Violence, Armor, Triumph, Imprisonment, Civic Rights, and Political Allegiance",
+        "parent_type": "cultural_background",
+        "object_importance": 99,
+        "retrieval_score": 0.919,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 20,
+        "certainty": "probable",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "historical-event",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 102,
+        "supports_evidence_ids": [
+          "acts-thessalonica-ephesus-civic-accusations"
+        ]
+      }
+    },
+    {
+      "id": "acts-tyrannus-regional-teaching",
+      "claim": "Acts moves Paul's Ephesian teaching from a synagogue to daily discussion in the hall of Tyrannus and summarizes broad hearing across Asia.",
+      "category": "social",
+      "source_ids": [
+        "ephesus-biblical-texts",
+        "trebilco-ephesus"
+      ],
+      "related_entity_ids": [
+        "ephesus"
+      ],
+      "passage_anchors": [
+        "Acts 19:1-10"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "roman-ephesus-civic-cultic-and-household-life",
+        "parent_title": "Roman Ephesus: Civic, Cultic, and Household Life",
+        "parent_type": "cultural_background",
+        "object_importance": 98,
+        "retrieval_score": 0.978,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "textually_explicit",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.75,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "institution",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 102
+      }
+    },
+    {
+      "id": "acts-tyrannus-regional-teaching:passage-relevance",
+      "claim": "The two settings distinguish diaspora synagogue debate from a named urban teaching venue without turning Tyrannus into a proven school proprietor or the regional summary into a headcount.",
+      "category": "social",
+      "source_ids": [
+        "ephesus-biblical-texts",
+        "trebilco-ephesus"
+      ],
+      "related_entity_ids": [
+        "ephesus"
+      ],
+      "passage_anchors": [
+        "Acts 19:1-10"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "roman-ephesus-civic-cultic-and-household-life",
+        "parent_title": "Roman Ephesus: Civic, Cultic, and Household Life",
+        "parent_type": "cultural_background",
+        "object_importance": 98,
+        "retrieval_score": 0.978,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "textually_explicit",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.75,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "institution",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 102,
+        "supports_evidence_ids": [
+          "acts-tyrannus-regional-teaching"
+        ]
+      }
+    },
+    {
+      "id": "acts-variable-reception-sequences",
+      "claim": "Four prominent Acts scenes vary the ordering and presence of hearing, repentance or faith, water baptism, prayer, laying on hands, tongues, prophecy, and Spirit reception.",
+      "category": "culture",
+      "source_ids": [
+        "acts-spirit-text",
+        "keener-acts-spirit"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Acts 19:1-7"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-spirit-gifts-tongues-prophecy-discernment-healing-worship-and-assembly-order",
+        "parent_title": "Pauline Spirit, Gifts, Tongues, Prophecy, Discernment, Healing, Worship, and Assembly Order",
+        "parent_type": "cultural_background",
+        "object_importance": 99,
+        "retrieval_score": 0.919,
+        "passage_relationship": "comparative",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "secondary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "literary-convention",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "COMPARATIVE_CONTEXT",
+        "presentation_role": "dig_deeper",
+        "overview_priority": 0
+      }
+    },
+    {
+      "id": "acts-variable-reception-sequences:passage-relevance",
+      "claim": "Prevents coercing one experiential sequence or treating absence of one sign as proof of exclusion.",
+      "category": "culture",
+      "source_ids": [
+        "acts-spirit-text",
+        "keener-acts-spirit"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Acts 19:1-7"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-spirit-gifts-tongues-prophecy-discernment-healing-worship-and-assembly-order",
+        "parent_title": "Pauline Spirit, Gifts, Tongues, Prophecy, Discernment, Healing, Worship, and Assembly Order",
+        "parent_type": "cultural_background",
+        "object_importance": 99,
+        "retrieval_score": 0.919,
+        "passage_relationship": "comparative",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "secondary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "literary-convention",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "COMPARATIVE_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 0,
+        "supports_evidence_ids": [
+          "acts-variable-reception-sequences"
+        ]
+      }
+    },
+    {
+      "id": "acts-western-text",
+      "claim": "Codex Bezae and related versional witnesses preserve a substantially distinctive text of Acts often called Western, whose individual readings require case-by-case judgment.",
+      "category": "geography",
+      "source_ids": [
+        "bezae-cambridge",
+        "parker-bezae"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Acts 1:1-28:31"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "acts",
+        "parent_title": "Acts",
+        "parent_type": "book",
+        "object_importance": 96,
+        "retrieval_score": 0.916,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 1800,
+        "certainty": "strong_consensus",
+        "dispute_status": "textual_variant",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "historical_cultural",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 73
+      }
+    },
+    {
+      "id": "artemis-craft-economy",
+      "claim": "Acts attributes to Demetrius a speech joining artisan income from silver shrines with Artemis's honor and the sanctuary's wider reputation.",
+      "category": "history",
+      "source_ids": [
+        "ephesus-biblical-texts",
+        "oeai-artemision",
+        "rogers-artemis"
+      ],
+      "related_entity_ids": [
+        "ephesus"
+      ],
+      "passage_anchors": [
+        "Acts 19:23-27"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "roman-ephesus-civic-cultic-and-household-life",
+        "parent_title": "Roman Ephesus: Civic, Cultic, and Household Life",
+        "parent_type": "cultural_background",
+        "object_importance": 98,
+        "retrieval_score": 0.978,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 22,
+        "certainty": "textually_explicit",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.75,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "ancient-text",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 102
+      }
+    },
+    {
+      "id": "artemis-craft-economy:passage-relevance",
+      "claim": "The protest shows livelihood, craft reputation, cult, and civic honor rhetorically intertwined without proving a formal guild, monopoly, or recovered Demetrian workshop.",
+      "category": "history",
+      "source_ids": [
+        "ephesus-biblical-texts",
+        "oeai-artemision",
+        "rogers-artemis"
+      ],
+      "related_entity_ids": [
+        "ephesus"
+      ],
+      "passage_anchors": [
+        "Acts 19:23-27"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "roman-ephesus-civic-cultic-and-household-life",
+        "parent_title": "Roman Ephesus: Civic, Cultic, and Household Life",
+        "parent_type": "cultural_background",
+        "object_importance": 98,
+        "retrieval_score": 0.978,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 22,
+        "certainty": "textually_explicit",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.75,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "ancient-text",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 102,
+        "supports_evidence_ids": [
+          "artemis-craft-economy"
+        ]
+      }
+    },
+    {
+      "id": "artemision-civic-cult",
+      "claim": "Excavation, dedications, boundary texts, statues, coins, and literary testimony document a long-lived sanctuary and the civic reach of Artemis Ephesia.",
+      "category": "archaeology",
+      "source_ids": [
+        "oeai-artemision",
+        "oeai-inscriptions",
+        "rogers-artemis",
+        "unesco-ephesus",
+        "ephesus-biblical-texts"
+      ],
+      "related_entity_ids": [
+        "ephesus"
+      ],
+      "passage_anchors": [
+        "Acts 19:23-41"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "roman-ephesus-civic-cultic-and-household-life",
+        "parent_title": "Roman Ephesus: Civic, Cultic, and Household Life",
+        "parent_type": "cultural_background",
+        "object_importance": 98,
+        "retrieval_score": 0.978,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 22,
+        "certainty": "strong_consensus",
+        "dispute_status": "archaeological_uncertainty",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 1.0,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "archaeological-site",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": null,
+        "overview_priority": 35
+      }
+    },
+    {
+      "id": "artemision-civic-cult:passage-relevance",
+      "claim": "The Artemision explains why Acts can present Artemis's honor as a civic concern, while supplying no physical proof for Demetrius, the silver shrines, the crowd's words, or every Ephesian religious identity.",
+      "category": "archaeology",
+      "source_ids": [
+        "oeai-artemision",
+        "oeai-inscriptions",
+        "rogers-artemis",
+        "unesco-ephesus",
+        "ephesus-biblical-texts"
+      ],
+      "related_entity_ids": [
+        "ephesus"
+      ],
+      "passage_anchors": [
+        "Acts 19:23-41"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "roman-ephesus-civic-cultic-and-household-life",
+        "parent_title": "Roman Ephesus: Civic, Cultic, and Household Life",
+        "parent_type": "cultural_background",
+        "object_importance": 98,
+        "retrieval_score": 0.978,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 22,
+        "certainty": "strong_consensus",
+        "dispute_status": "archaeological_uncertainty",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 1.0,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "archaeological-site",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "significance",
+        "overview_priority": 35,
+        "supports_evidence_ids": [
+          "artemision-civic-cult"
+        ]
+      }
+    },
+    {
+      "id": "ephesus:ancient_near_east_context:0",
+      "claim": "Not directly applicable; Ephesus belongs to the Greco-Roman eastern Mediterranean, with earlier Near Eastern contexts entering through Jewish Scripture and diaspora traditions.",
+      "category": "culture",
+      "source_ids": [
+        "acts-ephesus-place",
+        "ephesian-letter-passages",
+        "oeai-ephesus-place",
+        "ephesus-evidence-cluster"
+      ],
+      "related_entity_ids": [
+        "ephesus"
+      ],
+      "passage_anchors": [
+        "Acts 19:1-20",
+        "Acts 19:21-41"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "ephesus",
+        "parent_title": "Ephesus",
+        "parent_type": "place",
+        "object_importance": 70,
+        "retrieval_score": 0.91,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "ephesus:hebraic_worldview:0",
+      "claim": "Acts places Ephesian mission within diaspora synagogue and scriptural networks before narrating wider gentile reception. Jewish exorcists, synagogue hearers, and gentile ritual practitioners must remain differentiated rather than fused into a stereotype.",
+      "category": "culture",
+      "source_ids": [
+        "acts-ephesus-place",
+        "ephesian-letter-passages",
+        "oeai-ephesus-place",
+        "ephesus-evidence-cluster"
+      ],
+      "related_entity_ids": [
+        "ephesus"
+      ],
+      "passage_anchors": [
+        "Acts 19:1-20",
+        "Acts 19:21-41"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "ephesus",
+        "parent_title": "Ephesus",
+        "parent_type": "place",
+        "object_importance": 70,
+        "retrieval_score": 0.91,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "hebraic_worldview",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 20,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "ephesus:historical_context:0",
+      "claim": "Roman Ephesus connected an engineered Aegean harbor with inland Anatolia. The city combined Greek civic institutions, Roman provincial power, the Artemision, imperial cults, associations, benefaction, craft and trade networks, households, slavery, and substantial migration. Surviving monuments span many centuries and require phase-specific use.",
+      "category": "history",
+      "source_ids": [
+        "acts-ephesus-place",
+        "ephesian-letter-passages",
+        "oeai-ephesus-place",
+        "ephesus-evidence-cluster"
+      ],
+      "related_entity_ids": [
+        "ephesus"
+      ],
+      "passage_anchors": [
+        "Acts 19:1-20",
+        "Acts 19:21-41"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "ephesus",
+        "parent_title": "Ephesus",
+        "parent_type": "place",
+        "object_importance": 70,
+        "retrieval_score": 0.91,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "ephesus:second_temple_context:0",
+      "claim": "First-century diaspora Judaism, synagogue debate, scriptural instruction, and Jewish ritual specialists form part of Acts' Ephesian horizon. These settings do not identify the opponents in 1 Timothy or prove that every local Christ-follower shared one background.",
+      "category": "culture",
+      "source_ids": [
+        "acts-ephesus-place",
+        "ephesian-letter-passages",
+        "oeai-ephesus-place",
+        "ephesus-evidence-cluster"
+      ],
+      "related_entity_ids": [
+        "ephesus"
+      ],
+      "passage_anchors": [
+        "Acts 19:1-20",
+        "Acts 19:21-41"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "ephesus",
+        "parent_title": "Ephesus",
+        "parent_type": "place",
+        "object_importance": 70,
+        "retrieval_score": 0.91,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "second_temple_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "imperial-cult-and-civic-honor",
+      "claim": "Ephesian inscriptions and monuments attest cults for Roman rulers, civic temple-keeping claims, provincial competition, festivals, priesthoods, benefaction, and public honors.",
+      "category": "social",
+      "source_ids": [
+        "oeai-inscriptions",
+        "friesen-imperial-ephesus",
+        "harland-associations-ephesus",
+        "mitchell-imperial-cult",
+        "ephesus-biblical-texts"
+      ],
+      "related_entity_ids": [
+        "ephesus"
+      ],
+      "passage_anchors": [
+        "Acts 19:31-41"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "roman-ephesus-civic-cultic-and-household-life",
+        "parent_title": "Roman Ephesus: Civic, Cultic, and Household Life",
+        "parent_type": "cultural_background",
+        "object_importance": 98,
+        "retrieval_score": 0.978,
+        "passage_relationship": "comparative",
+        "anchor_specificity": "verse",
+        "verse_distance": 30,
+        "certainty": "strong_consensus",
+        "dispute_status": "chronological_uncertainty",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.75,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "institution",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "COMPARATIVE_CONTEXT",
+        "presentation_role": "dig_deeper",
+        "overview_priority": 0
+      }
+    },
+    {
+      "id": "imperial-cult-and-civic-honor:passage-relevance",
+      "claim": "Imperial-cult and honor institutions contextualize public allegiance in Acts and Revelation without making every Ephesian a worshiper, proving systematic persecution, or decoding each symbol.",
+      "category": "social",
+      "source_ids": [
+        "oeai-inscriptions",
+        "friesen-imperial-ephesus",
+        "harland-associations-ephesus",
+        "mitchell-imperial-cult",
+        "ephesus-biblical-texts"
+      ],
+      "related_entity_ids": [
+        "ephesus"
+      ],
+      "passage_anchors": [
+        "Acts 19:31-41"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "roman-ephesus-civic-cultic-and-household-life",
+        "parent_title": "Roman Ephesus: Civic, Cultic, and Household Life",
+        "parent_type": "cultural_background",
+        "object_importance": 98,
+        "retrieval_score": 0.978,
+        "passage_relationship": "comparative",
+        "anchor_specificity": "verse",
+        "verse_distance": 30,
+        "certainty": "strong_consensus",
+        "dispute_status": "chronological_uncertainty",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.75,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "institution",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "COMPARATIVE_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 0,
+        "supports_evidence_ids": [
+          "imperial-cult-and-civic-honor"
+        ]
+      }
+    },
+    {
+      "id": "pauline-mission-proclamation-travel-coworkers-letters-messengers-hospitality-house-assemblies-synagogues-marketplaces-adaptability-church-planting-and-interassembly-networks:interpretive_note:0",
+      "claim": "Build chronology first from the direct letters. Acts 13-20 is a later narrative witness whose sequence, speeches, travel compression, and emphases must not silently replace Galatians or the letters' own plans and absences.",
+      "category": "culture",
+      "source_ids": [
+        "galatians-mission-text",
+        "acts-mission-text",
+        "campbell-framing-paul",
+        "keener-acts"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Acts 13:1-20:38"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "pauline-mission-proclamation-travel-coworkers-letters-messengers-hospitality-house-assemblies-synagogues-marketplaces-adaptability-church-planting-and-interassembly-networks",
+        "parent_title": "Pauline Mission, Proclamation, Travel, Coworkers, Letters, Messengers, Hospitality, House Assemblies, Synagogues, Marketplaces, Adaptability, Church Planting, and Interassembly Networks",
+        "parent_type": "cultural_background",
+        "object_importance": 9,
+        "retrieval_score": 0.829,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 600,
+        "certainty": "strong_consensus",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "interpretive-caution",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "INTERTEXTUAL_REUSE",
+        "presentation_role": "dig_deeper",
+        "overview_priority": 0
+      }
+    },
+    {
+      "id": "theater-civic-assembly-offices",
+      "claim": "The Ephesian theater and inscriptions contextualize Acts' crowd setting, while Roman Asian civic evidence illuminates Asiarchs, the town clerk, courts, proconsuls, lawful assembly, and riot liability.",
+      "category": "archaeology",
+      "source_ids": [
+        "oeai-theater",
+        "oeai-inscriptions",
+        "oeai-ephesus",
+        "ephesus-biblical-texts",
+        "trebilco-ephesus"
+      ],
+      "related_entity_ids": [
+        "ephesus"
+      ],
+      "passage_anchors": [
+        "Acts 19:28-41"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "roman-ephesus-civic-cultic-and-household-life",
+        "parent_title": "Roman Ephesus: Civic, Cultic, and Household Life",
+        "parent_type": "cultural_background",
+        "object_importance": 98,
+        "retrieval_score": 0.978,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 27,
+        "certainty": "strong_consensus",
+        "dispute_status": "archaeological_uncertainty",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 1.0,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "archaeological-site",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": null,
+        "overview_priority": 35
+      }
+    },
+    {
+      "id": "theater-civic-assembly-offices:passage-relevance",
+      "claim": "The evidence grounds Acts' civic vocabulary while preventing the present enlarged theater or general epigraphy from becoming proof of the crowd, speech, route, or precise procedure.",
+      "category": "archaeology",
+      "source_ids": [
+        "oeai-theater",
+        "oeai-inscriptions",
+        "oeai-ephesus",
+        "ephesus-biblical-texts",
+        "trebilco-ephesus"
+      ],
+      "related_entity_ids": [
+        "ephesus"
+      ],
+      "passage_anchors": [
+        "Acts 19:28-41"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "roman-ephesus-civic-cultic-and-household-life",
+        "parent_title": "Roman Ephesus: Civic, Cultic, and Household Life",
+        "parent_type": "cultural_background",
+        "object_importance": 98,
+        "retrieval_score": 0.978,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 27,
+        "certainty": "strong_consensus",
+        "dispute_status": "archaeological_uncertainty",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 1.0,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "archaeological-site",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "significance",
+        "overview_priority": 35,
+        "supports_evidence_ids": [
+          "theater-civic-assembly-offices"
+        ]
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "Acts",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Acts 18:18-20:38",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "historical-context",
+          "canonical-context",
+          "scripture-references"
+        ],
+        "notes": "Primary narrative witness.",
+        "id": "acts-ephesus-place",
+        "canonical_object_ids": [
+          "ephesus"
+        ]
+      },
+      {
+        "title": "The Greek New Testament: Acts",
+        "author": "Michael W. Holmes, ed.",
+        "publisher": "Society of Biblical Literature",
+        "year": 2010,
+        "locator": "Acts 13:1-20:38",
+        "url": "https://www.sblgnt.com/download/",
+        "source_type": "scripture",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Later narrative evidence; it is not treated as a transcript of the letters.",
+        "id": "acts-mission-text",
+        "canonical_object_ids": [
+          "pauline-mission-proclamation-travel-coworkers-letters-messengers-hospitality-house-assemblies-synagogues-marketplaces-adaptability-church-planting-and-interassembly-networks"
+        ]
+      },
+      {
+        "title": "The Greek New Testament: Acts",
+        "author": "Michael W. Holmes, ed.",
+        "publisher": "Society of Biblical Literature",
+        "year": 2010,
+        "locator": "Acts 16:16-40; 17:1-9; 19:21-41; 21:27-28:31",
+        "url": "https://www.sblgnt.com/download/",
+        "source_type": "scripture",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Later narrative evidence; narrated events and composition remain distinct.",
+        "id": "acts-politics-text",
+        "canonical_object_ids": [
+          "pauline-governing-authorities-citizenship-empire-taxation-public-order-courts-peace-nonretaliation-violence-armor-triumph-imprisonment-civic-rights-and-political-allegiance"
+        ]
+      },
+      {
+        "title": "Acts 2:1-21; 8:4-25; 10:34-48; 19:1-7",
+        "author": "Anonymous",
+        "publisher": "Society of Biblical Literature",
+        "year": 2010,
+        "locator": "Acts 2:1-21; 8:4-25; 10:34-48; 19:1-7",
+        "url": "https://www.sblgnt.com/download/",
+        "source_type": "scripture",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Later narrative evidence; narrated events and source composition remain chronologically distinct.",
+        "id": "acts-spirit-text",
+        "canonical_object_ids": [
+          "pauline-spirit-gifts-tongues-prophecy-discernment-healing-worship-and-assembly-order"
+        ]
+      },
+      {
+        "title": "Ephesians: Power and Magic",
+        "author": "Clinton E. Arnold",
+        "publisher": "Cambridge University Press",
+        "year": 1989,
+        "locator": "Powers language, ritual practice, and proposed Ephesian context",
+        "url": "https://doi.org/10.1017/CBO9780511554988",
+        "source_type": "academic-book",
+        "supports": [
+          "acts-exorcism-and-book-burning",
+          "ephesians-destination-variant"
+        ],
+        "notes": "Influential contextual proposal; destination and explanatory scope remain disputed.",
+        "id": "arnold-power-magic",
+        "canonical_object_ids": [
+          "roman-ephesus-civic-cultic-and-household-life"
+        ]
+      },
+      {
+        "title": "The Ephesia Grammata: Genesis of a Magical Formula",
+        "author": "Alberto Bernabe",
+        "publisher": "Oxford University Press",
+        "year": 2013,
+        "locator": "The Getty Hexameters, chapter 4, pages 71-95",
+        "url": "https://academic.oup.com/book/11335/chapter/159947198",
+        "source_type": "academic-book",
+        "supports": [
+          "acts-exorcism-and-book-burning"
+        ],
+        "notes": "The formula's complex transmission is comparative and does not identify the Acts books.",
+        "id": "bernabe-ephesia-grammata",
+        "canonical_object_ids": [
+          "roman-ephesus-civic-cultic-and-household-life"
+        ]
+      },
+      {
+        "title": "Codex Bezae",
+        "author": "",
+        "publisher": "Cambridge University Library",
+        "year": null,
+        "locator": "Greek and Latin Acts",
+        "url": "https://exhibitions.lib.cam.ac.uk/linesofthought/artifacts/codex-bezae/",
+        "source_type": "museum-collection",
+        "supports": [
+          "claims",
+          "interpretive-notes",
+          "archaeology"
+        ],
+        "notes": "Fifth-century Greek-Latin codex with a distinctive form of Acts.",
+        "id": "bezae-cambridge",
+        "canonical_object_ids": [
+          "acts"
+        ]
+      },
+      {
+        "title": "Acts of the Apostles and the Rhetoric of Roman Imperialism",
+        "author": "Drew W. Billings",
+        "publisher": "Cambridge University Press",
+        "year": 2017,
+        "locator": "Empire, anti-Judaism, and gender",
+        "url": "https://doi.org/10.1017/9781316946251",
+        "source_type": "academic-book",
+        "supports": [
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Study of imperial representation, gender, and anti-Jewish rhetoric.",
+        "id": "billings-imperialism",
+        "canonical_object_ids": [
+          "acts"
+        ]
+      },
+      {
+        "title": "Framing Paul: An Epistolary Biography",
+        "author": "Douglas A. Campbell",
+        "publisher": "Eerdmans",
+        "year": 2014,
+        "locator": "chapters on Galatians, Corinthians, Romans, and Philippians",
+        "url": "https://www.eerdmans.com/9780802871510/framing-paul/",
+        "source_type": "academic-book",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Builds a chronology from the letters and explicitly weighs its relation to Acts.",
+        "id": "campbell-framing-paul",
+        "canonical_object_ids": [
+          "pauline-mission-proclamation-travel-coworkers-letters-messengers-hospitality-house-assemblies-synagogues-marketplaces-adaptability-church-planting-and-interassembly-networks"
+        ]
+      },
+      {
+        "title": "1 Corinthians 2:6-16 and 12:1-14:40",
+        "author": "Paul, with Sosthenes named as co-sender",
+        "publisher": "Society of Biblical Literature",
+        "year": 2010,
+        "locator": "1 Corinthians 2:6-16; 12:1-14:40",
+        "url": "https://www.sblgnt.com/download/",
+        "source_type": "scripture",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Primary Greek literary evidence for wisdom, gifts, body, love, tongues, prophecy, and order.",
+        "id": "corinthians-spirit-text",
+        "canonical_object_ids": [
+          "pauline-spirit-gifts-tongues-prophecy-discernment-healing-worship-and-assembly-order"
+        ]
+      },
+      {
+        "title": "Ephesians, First Timothy, and Revelation",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Ephesians 1:1; 1 Timothy 1:3-7; Revelation 2:1-7",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "canonical-context",
+          "scripture-references"
+        ],
+        "notes": "Distinct canonical witnesses with different destination and chronology questions.",
+        "id": "ephesian-letter-passages",
+        "canonical_object_ids": [
+          "ephesus"
+        ]
+      },
+      {
+        "title": "Ephesian narrative, letter, and apocalypse passages",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Acts 18:18-20:38; Ephesians 1:1; 5:21-6:20; 1 Timothy 1:3-7; 3:1-15; 5:3-6:19; Revelation 2:1-7",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "acts-apollos-teaching-network",
+          "acts-tyrannus-regional-teaching",
+          "acts-exorcism-and-book-burning",
+          "artemis-craft-economy",
+          "theater-civic-assembly-offices",
+          "artemision-civic-cult",
+          "harbor-and-asian-travel-network",
+          "imperial-cult-and-civic-honor",
+          "ephesians-destination-variant",
+          "first-timothy-ephesian-setting",
+          "household-slavery-status-comparison",
+          "association-benefaction-office-comparison"
+        ],
+        "notes": "Primary biblical texts; no modern translation is reproduced.",
+        "id": "ephesus-biblical-texts",
+        "canonical_object_ids": [
+          "roman-ephesus-civic-cultic-and-household-life"
+        ]
+      },
+      {
+        "title": "Roman Ephesus: Civic, Cultic, and Household Life",
+        "author": "Canonical Knowledge Library",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "Companion cultural-background object",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context",
+          "canonical-context",
+          "archaeology",
+          "interpretive-notes",
+          "related-objects"
+        ],
+        "notes": "Passage-bounded evidence, sources, chronology, and dispute controls.",
+        "id": "ephesus-evidence-cluster",
+        "canonical_object_ids": [
+          "ephesus"
+        ]
+      },
+      {
+        "title": "Ephesus",
+        "author": "",
+        "publisher": "UNESCO World Heritage Centre",
+        "year": 2015,
+        "locator": "Theater, civic center, harbor, and cult landscape",
+        "url": "https://whc.unesco.org/en/list/1018/",
+        "source_type": "museum-collection",
+        "supports": [
+          "claims",
+          "interpretive-notes",
+          "archaeology"
+        ],
+        "notes": "Authoritative site overview for Ephesus.",
+        "id": "ephesus-unesco",
+        "canonical_object_ids": [
+          "acts"
+        ]
+      },
+      {
+        "title": "The First Epistle to the Corinthians, Revised Edition",
+        "author": "Gordon D. Fee",
+        "publisher": "Eerdmans",
+        "year": 2014,
+        "locator": "1 Corinthians 2 and 12-14",
+        "url": "https://www.eerdmans.com/9780802871367/the-first-epistle-to-the-corinthians-revised-edition/",
+        "source_type": "academic-book",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Detailed exegetical and theological commentary from a Pentecostal scholar.",
+        "id": "fee-1cor",
+        "canonical_object_ids": [
+          "pauline-spirit-gifts-tongues-prophecy-discernment-healing-worship-and-assembly-order"
+        ]
+      },
+      {
+        "title": "Imperial Cults and the Apocalypse of John",
+        "author": "Steven J. Friesen",
+        "publisher": "Oxford University Press",
+        "year": 2001,
+        "locator": "Ephesus, Roman Asia, imperial-cult institutions, and Revelation",
+        "url": "https://global.oup.com/academic/product/imperial-cults-and-the-apocalypse-of-john-9780195131536",
+        "source_type": "academic-book",
+        "supports": [
+          "imperial-cult-and-civic-honor",
+          "association-benefaction-office-comparison"
+        ],
+        "notes": "Institutional context does not prove continuous coercion or one-to-one symbol referents.",
+        "id": "friesen-imperial-ephesus",
+        "canonical_object_ids": [
+          "roman-ephesus-civic-cultic-and-household-life"
+        ]
+      },
+      {
+        "title": "The Greek New Testament: Galatians",
+        "author": "Michael W. Holmes, ed.",
+        "publisher": "Society of Biblical Literature",
+        "year": 2010,
+        "locator": "Galatians 1:1-2:21",
+        "url": "https://www.sblgnt.com/download/",
+        "source_type": "scripture",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Primary Greek evidence for Paul's retrospective chronology and negotiated mission.",
+        "id": "galatians-mission-text",
+        "canonical_object_ids": [
+          "pauline-mission-proclamation-travel-coworkers-letters-messengers-hospitality-house-assemblies-synagogues-marketplaces-adaptability-church-planting-and-interassembly-networks"
+        ]
+      },
+      {
+        "title": "Galatians 3:1-14 and 5:13-26",
+        "author": "Paul",
+        "publisher": "Society of Biblical Literature",
+        "year": 2010,
+        "locator": "Galatians 3:1-14; 5:13-26",
+        "url": "https://www.sblgnt.com/download/",
+        "source_type": "scripture",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Primary Greek literary evidence for Spirit reception and ethical fruit.",
+        "id": "galatians-spirit-text",
+        "canonical_object_ids": [
+          "pauline-spirit-gifts-tongues-prophecy-discernment-healing-worship-and-assembly-order"
+        ]
+      },
+      {
+        "title": "Honours and Worship: Emperors, Imperial Cults and Associations at Ephesus",
+        "author": "Philip A. Harland",
+        "publisher": "Studies in Religion",
+        "year": 1996,
+        "locator": "Volume 25, issue 3, pages 319-334",
+        "url": "https://journals.sagepub.com/doi/10.1177/000842989602500306",
+        "source_type": "journal-article",
+        "supports": [
+          "imperial-cult-and-civic-honor",
+          "association-benefaction-office-comparison"
+        ],
+        "notes": "Epigraphic comparison; associations varied by date, membership, and purpose.",
+        "id": "harland-associations-ephesus",
+        "canonical_object_ids": [
+          "roman-ephesus-civic-cultic-and-household-life"
+        ]
+      },
+      {
+        "title": "Acts: An Exegetical Commentary",
+        "author": "Craig S. Keener",
+        "publisher": "Baker Academic",
+        "year": 2012,
+        "locator": "Volumes 1-4",
+        "url": "https://bakeracademic.com/p/acts-craig-s-keener/230945",
+        "source_type": "academic-book",
+        "supports": [
+          "claims",
+          "interpretive-notes",
+          "archaeology"
+        ],
+        "notes": "Extensive historical, literary, and comparative commentary.",
+        "id": "keener-acts",
+        "canonical_object_ids": [
+          "acts",
+          "pauline-mission-proclamation-travel-coworkers-letters-messengers-hospitality-house-assemblies-synagogues-marketplaces-adaptability-church-planting-and-interassembly-networks"
+        ],
+        "canonical_source_variants": [
+          {
+            "title": "Acts: An Exegetical Commentary",
+            "author": "Craig S. Keener",
+            "publisher": "Baker Academic",
+            "year": 2012,
+            "locator": "Volumes 1-4",
+            "url": "https://bakeracademic.com/p/acts-craig-s-keener/230945",
+            "source_type": "academic-book",
+            "supports": [
+              "claims",
+              "interpretive-notes",
+              "archaeology"
+            ],
+            "notes": "Extensive historical, literary, and comparative commentary.",
+            "id": "keener-acts"
+          },
+          {
+            "title": "Acts: An Exegetical Commentary",
+            "author": "Craig S. Keener",
+            "publisher": "Baker Academic",
+            "year": 2012,
+            "locator": "volumes 2-3, Acts 13-20",
+            "url": "https://bakeracademic.com/pages/keener-acts-esources",
+            "source_type": "reference-work",
+            "supports": [
+              "claims",
+              "evidence-items"
+            ],
+            "notes": "Detailed literary and historical commentary on the later Acts mission narrative.",
+            "id": "keener-acts"
+          }
+        ]
+      },
+      {
+        "title": "Acts: An Exegetical Commentary, Volumes 3-4",
+        "author": "Craig S. Keener",
+        "publisher": "Baker Academic",
+        "year": 2014,
+        "locator": "Acts 16-28; civic accusations, assemblies, custody, hearings, and appeal",
+        "url": "https://bakeracademic.com/pages/keener-acts-esources",
+        "source_type": "academic-book",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Historical-exegetical commentary used without treating Acts as a transcript of the letters.",
+        "id": "keener-acts-politics",
+        "canonical_object_ids": [
+          "pauline-governing-authorities-citizenship-empire-taxation-public-order-courts-peace-nonretaliation-violence-armor-triumph-imprisonment-civic-rights-and-political-allegiance"
+        ]
+      },
+      {
+        "title": "Acts: An Exegetical Commentary",
+        "author": "Craig S. Keener",
+        "publisher": "Baker Academic",
+        "year": 2012,
+        "locator": "Acts 2, 8, 10, and 19",
+        "url": "https://bakeracademic.com/p/acts-craig-s-keener/230945",
+        "source_type": "academic-book",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Extensive historical and exegetical commentary; narrative patterns remain interpreted.",
+        "id": "keener-acts-spirit",
+        "canonical_object_ids": [
+          "pauline-spirit-gifts-tongues-prophecy-discernment-healing-worship-and-assembly-order"
+        ]
+      },
+      {
+        "title": "The First Christian Historian",
+        "author": "Daniel Marguerat",
+        "publisher": "Cambridge University Press",
+        "year": 2002,
+        "locator": "Narrative and historiography in Acts",
+        "url": "https://doi.org/10.1017/CBO9780511488061",
+        "source_type": "academic-book",
+        "supports": [
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Critical study of Acts as ancient historical narrative.",
+        "id": "marguerat-historian",
+        "canonical_object_ids": [
+          "acts"
+        ]
+      },
+      {
+        "title": "Anatolia: Land, Men, and Gods in Asia Minor",
+        "author": "Stephen Mitchell",
+        "publisher": "Oxford University Press",
+        "year": 1993,
+        "locator": "Chapter 8, The Imperial Cult, pages 102-120",
+        "url": "https://academic.oup.com/book/47035/chapter-abstract/422655051",
+        "source_type": "academic-book",
+        "supports": [
+          "imperial-cult-and-civic-honor"
+        ],
+        "notes": "Regional institutional synthesis with chronology-sensitive Ephesian evidence.",
+        "id": "mitchell-imperial-cult",
+        "canonical_object_ids": [
+          "roman-ephesus-civic-cultic-and-household-life"
+        ]
+      },
+      {
+        "title": "Cult and Sanctuary: Artemision of Ephesos",
+        "author": "Austrian Archaeological Institute",
+        "publisher": "Austrian Academy of Sciences",
+        "year": null,
+        "locator": "Sanctuary form, functions, cult activities, and dedication practices",
+        "url": "https://www.oeaw.ac.at/en/oeai/research/historical-archaeology/historical-archaeology-in-the-mediterranean/cult-and-sanctuary",
+        "source_type": "excavation-report",
+        "supports": [
+          "artemision-civic-cult",
+          "artemis-craft-economy"
+        ],
+        "notes": "Archaeological program; it does not recover Demetrius's workshop or the Acts crowd.",
+        "id": "oeai-artemision",
+        "canonical_object_ids": [
+          "roman-ephesus-civic-cultic-and-household-life"
+        ]
+      },
+      {
+        "title": "Forschungen in Ephesos",
+        "author": "Austrian Archaeological Institute",
+        "publisher": "Austrian Academy of Sciences",
+        "year": null,
+        "locator": "Open-access excavation monographs and monument studies",
+        "url": "https://www.oeaw.ac.at/en/oeai/publishing/series/forschungen-in-ephesos",
+        "source_type": "excavation-report",
+        "supports": [
+          "artemision-civic-cult",
+          "theater-civic-assembly-offices",
+          "harbor-and-asian-travel-network",
+          "imperial-cult-and-civic-honor"
+        ],
+        "notes": "Primary excavation publication gateway; individual monument phases must be checked.",
+        "id": "oeai-ephesus",
+        "canonical_object_ids": [
+          "roman-ephesus-civic-cultic-and-household-life"
+        ]
+      },
+      {
+        "title": "Forschungen in Ephesos",
+        "author": "Austrian Archaeological Institute",
+        "publisher": "Austrian Academy of Sciences",
+        "year": null,
+        "locator": "Open-access excavation monographs and monument studies",
+        "url": "https://www.oeaw.ac.at/en/oeai/publishing/series/forschungen-in-ephesos",
+        "source_type": "excavation-report",
+        "supports": [
+          "historical-context",
+          "archaeology",
+          "interpretive-notes"
+        ],
+        "notes": "Monument phases and later rebuilding require publication-level control.",
+        "id": "oeai-ephesus-place",
+        "canonical_object_ids": [
+          "ephesus"
+        ]
+      },
+      {
+        "title": "The Inscriptions of Ephesus",
+        "author": "Austrian Archaeological Institute",
+        "publisher": "Austrian Academy of Sciences",
+        "year": null,
+        "locator": "Approximately 7000 stone inscriptions and 1500 graffiti and dipinti",
+        "url": "https://www.oeaw.ac.at/en/oeai/research/classical-studies/epigraphy/the-inscriptions-of-asia-minor",
+        "source_type": "ancient-primary-source",
+        "supports": [
+          "theater-civic-assembly-offices",
+          "artemision-civic-cult",
+          "imperial-cult-and-civic-honor",
+          "association-benefaction-office-comparison"
+        ],
+        "notes": "Corpus and project gateway; titles and institutions require inscription-level dating.",
+        "id": "oeai-inscriptions",
+        "canonical_object_ids": [
+          "roman-ephesus-civic-cultic-and-household-life"
+        ]
+      },
+      {
+        "title": "Reconstructing the History of the Theatre in Ephesos",
+        "author": "Austrian Archaeological Institute",
+        "publisher": "Austrian Academy of Sciences",
+        "year": 2022,
+        "locator": "Building phases and chronology of the auditorium",
+        "url": "https://www.oeaw.ac.at/en/oeai/media/news-archive/news-detail/baugeschichte-des-theaters-von-ephesos-rekonstruiert-2",
+        "source_type": "excavation-report",
+        "supports": [
+          "theater-civic-assembly-offices"
+        ],
+        "notes": "Shows that major visible Roman expansions postdate the conventional Pauline horizon.",
+        "id": "oeai-theater",
+        "canonical_object_ids": [
+          "roman-ephesus-civic-cultic-and-household-life"
+        ]
+      },
+      {
+        "title": "Chester Beatty Biblical Papyrus I (P45)",
+        "author": "",
+        "publisher": "Chester Beatty",
+        "year": null,
+        "locator": "Gospels and Acts papyrus",
+        "url": "https://viewer.cbl.ie/viewer/object/BP_I/1/",
+        "source_type": "museum-collection",
+        "supports": [
+          "claims",
+          "interpretive-notes",
+          "archaeology"
+        ],
+        "notes": "Early third-century papyrus codex preserving portions of Acts.",
+        "id": "p45-cbl",
+        "canonical_object_ids": [
+          "acts"
+        ]
+      },
+      {
+        "title": "Papyrus 53",
+        "author": "",
+        "publisher": "University of Michigan Library",
+        "year": null,
+        "locator": "Acts 9:33-10:1",
+        "url": "https://quod.lib.umich.edu/a/apis/x-1554",
+        "source_type": "museum-collection",
+        "supports": [
+          "claims",
+          "interpretive-notes",
+          "archaeology"
+        ],
+        "notes": "Early papyrus fragment containing portions of Acts and Matthew.",
+        "id": "p53-michigan",
+        "canonical_object_ids": [
+          "acts"
+        ]
+      },
+      {
+        "title": "Papyrus Bodmer XVII (P74)",
+        "author": "",
+        "publisher": "Vatican Library",
+        "year": null,
+        "locator": "Acts and Catholic Epistles",
+        "url": "https://digi.vatlib.it/",
+        "source_type": "museum-collection",
+        "supports": [
+          "claims",
+          "interpretive-notes",
+          "archaeology"
+        ],
+        "notes": "Important early manuscript witness preserving most of Acts.",
+        "id": "p74-vatican",
+        "canonical_object_ids": [
+          "acts"
+        ]
+      },
+      {
+        "title": "Codex Bezae: An Early Christian Manuscript and Its Text",
+        "author": "D. C. Parker",
+        "publisher": "Cambridge University Press",
+        "year": 1992,
+        "locator": "Acts and the Greek-Latin textual tradition",
+        "url": "https://doi.org/10.1017/CBO9780511470509",
+        "source_type": "academic-book",
+        "supports": [
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Text-critical study of Bezae and its distinctive Acts text.",
+        "id": "parker-bezae",
+        "canonical_object_ids": [
+          "acts"
+        ]
+      },
+      {
+        "title": "The Mysteries of Artemis of Ephesos",
+        "author": "Guy MacLean Rogers",
+        "publisher": "Yale University Press",
+        "year": 2012,
+        "locator": "Artemis cult, mysteries, festivals, inscriptions, and urban development",
+        "url": "https://academic.oup.com/yale-scholarship-online/book/29769",
+        "source_type": "academic-book",
+        "supports": [
+          "artemision-civic-cult",
+          "artemis-craft-economy",
+          "imperial-cult-and-civic-honor"
+        ],
+        "notes": "Synthetic reconstruction; proposed ritual interpretations remain disputable.",
+        "id": "rogers-artemis",
+        "canonical_object_ids": [
+          "roman-ephesus-civic-cultic-and-household-life"
+        ]
+      },
+      {
+        "title": "Paul the Missionary: Realities, Strategies and Methods",
+        "author": "Eckhard J. Schnabel",
+        "publisher": "IVP Academic",
+        "year": 2008,
+        "locator": "chapters 3-6",
+        "url": "https://ivpress.com/paul-the-missionary",
+        "source_type": "academic-book",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Synthesizes Pauline proclamation, geography, venues, persuasion, community formation, and contemporary transfer.",
+        "id": "schnabel-paul-missionary",
+        "canonical_object_ids": [
+          "pauline-mission-proclamation-travel-coworkers-letters-messengers-hospitality-house-assemblies-synagogues-marketplaces-adaptability-church-planting-and-interassembly-networks"
+        ]
+      },
+      {
+        "title": "Codex Sinaiticus",
+        "author": "",
+        "publisher": "Codex Sinaiticus Project",
+        "year": null,
+        "locator": "Acts",
+        "url": "https://www.codexsinaiticus.org/en/manuscript.aspx",
+        "source_type": "museum-collection",
+        "supports": [
+          "claims",
+          "interpretive-notes",
+          "archaeology"
+        ],
+        "notes": "Fourth-century Greek manuscript witness.",
+        "id": "sinaiticus",
+        "canonical_object_ids": [
+          "acts"
+        ]
+      },
+      {
+        "title": "The Early Christians in Ephesus from Paul to Ignatius",
+        "author": "Paul Trebilco",
+        "publisher": "Eerdmans",
+        "year": 2007,
+        "locator": "Ephesian communities, texts, identity, leadership, and chronology",
+        "url": "https://www.eerdmans.com/9780802807694/the-early-christians-in-ephesus-from-paul-to-ignatius/",
+        "source_type": "academic-book",
+        "supports": [
+          "acts-apollos-teaching-network",
+          "acts-tyrannus-regional-teaching",
+          "ephesians-destination-variant",
+          "first-timothy-ephesian-setting",
+          "association-benefaction-office-comparison"
+        ],
+        "notes": "Historical synthesis requiring source-by-source qualification.",
+        "id": "trebilco-ephesus",
+        "canonical_object_ids": [
+          "roman-ephesus-civic-cultic-and-household-life"
+        ]
+      },
+      {
+        "title": "Ephesus World Heritage Site",
+        "author": "UNESCO World Heritage Centre",
+        "publisher": "UNESCO",
+        "year": 2015,
+        "locator": "World Heritage List 1018rev",
+        "url": "https://whc.unesco.org/en/list/1018/",
+        "source_type": "reference-work",
+        "supports": [
+          "artemision-civic-cult",
+          "harbor-and-asian-travel-network",
+          "theater-civic-assembly-offices"
+        ],
+        "notes": "Site orientation only; standing monuments span many periods.",
+        "id": "unesco-ephesus",
+        "canonical_object_ids": [
+          "roman-ephesus-civic-cultic-and-household-life"
+        ]
+      },
+      {
+        "title": "Codex Vaticanus, Vat. gr. 1209",
+        "author": "",
+        "publisher": "Vatican Library",
+        "year": null,
+        "locator": "Acts",
+        "url": "https://digi.vatlib.it/view/MSS_Vat.gr.1209",
+        "source_type": "museum-collection",
+        "supports": [
+          "claims",
+          "interpretive-notes",
+          "archaeology"
+        ],
+        "notes": "Fourth-century Greek manuscript witness.",
+        "id": "vaticanus",
+        "canonical_object_ids": [
+          "acts"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "acts",
+        "type": "book",
+        "title": "Acts",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.916
+      },
+      {
+        "id": "ephesus",
+        "type": "place",
+        "title": "Ephesus",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.91
+      },
+      {
+        "id": "macedonia",
+        "type": "place",
+        "title": "Roman Macedonia",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.914
+      },
+      {
+        "id": "pauline-governing-authorities-citizenship-empire-taxation-public-order-courts-peace-nonretaliation-violence-armor-triumph-imprisonment-civic-rights-and-political-allegiance",
+        "type": "cultural_background",
+        "title": "Pauline Governing Authorities, Citizenship, Empire, Taxation, Public Order, Courts, Peace, Nonretaliation, Violence, Armor, Triumph, Imprisonment, Civic Rights, and Political Allegiance",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.919
+      },
+      {
+        "id": "pauline-mission-proclamation-travel-coworkers-letters-messengers-hospitality-house-assemblies-synagogues-marketplaces-adaptability-church-planting-and-interassembly-networks",
+        "type": "cultural_background",
+        "title": "Pauline Mission, Proclamation, Travel, Coworkers, Letters, Messengers, Hospitality, House Assemblies, Synagogues, Marketplaces, Adaptability, Church Planting, and Interassembly Networks",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.829
+      },
+      {
+        "id": "pauline-spirit-gifts-tongues-prophecy-discernment-healing-worship-and-assembly-order",
+        "type": "cultural_background",
+        "title": "Pauline Spirit, Gifts, Tongues, Prophecy, Discernment, Healing, Worship, and Assembly Order",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.919
+      },
+      {
+        "id": "roman-ephesus-civic-cultic-and-household-life",
+        "type": "cultural_background",
+        "title": "Roman Ephesus: Civic, Cultic, and Household Life",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.978
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "712b901a926544c592b704204dff63209997ac5a75d5b1dc8c05e17b851e40c3",
+  "evidence_hash_version": "2"
+}

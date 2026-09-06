@@ -1,0 +1,101 @@
+{
+  "reference": "Acts 1",
+  "book": "Acts",
+  "chapter": 1,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_136",
+          "text": "Read the chapter with this setting in view: Acts 1:8 supplies a major geographic and theological program of witness in Jerusalem, Judea, Samaria, and to the earth's end. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken.",
+          "evidence_ids": [
+            "acts-geographic-program"
+          ],
+          "verse_refs": [
+            "Acts 1:8"
+          ],
+          "confidence": "high",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_137",
+          "text": "For its historical and cultural setting, note that Theophilus is named as addressee, but whether he was a patron, official, convert, representative reader, or literary dedicatee is unknown. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "acts-theophilus"
+          ],
+          "verse_refs": [
+            "Acts 1:1"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        },
+        {
+          "id": "historical_context_138",
+          "text": "For its historical and cultural setting, note that Acts is internally anonymous and never names its narrator or implied author. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "acts-anonymous"
+          ],
+          "verse_refs": [
+            "Acts 1:1-2"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_137",
+          "text": "A literary feature to notice is that Acts 1 explicitly resumes a former account addressed to Theophilus and is most naturally read as a sequel to Luke. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "acts-sequel"
+          ],
+          "verse_refs": [
+            "Acts 1:1-2"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "dig_deeper",
+      "title": "Dig deeper",
+      "blocks": [
+        {
+          "id": "dig_deeper_137",
+          "text": "For a later or comparative connection, note that Later Christian tradition identifies the author as Luke, Paul's physician companion, but Acts itself does not make that identification. This remains a secondary connection rather than the chapter's first-audience context. It can be traced further without replacing the chapter's own setting. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "acts-luke-tradition"
+          ],
+          "verse_refs": [
+            "Acts 1:1-2"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "c863852caadd98620db6b842fc182d2026de65e926d69888a19a33019236aeff",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-007-medium",
+    "generated_timestamp": "2026-09-06T20:17:55Z"
+  }
+}

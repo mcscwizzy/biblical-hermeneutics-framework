@@ -1,0 +1,101 @@
+{
+  "reference": "James 2",
+  "book": "James",
+  "chapter": 2,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_81",
+          "text": "Read the chapter with this setting in view: James calls love of neighbor the royal law and names mercy in relation to judgment. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken.",
+          "evidence_ids": [
+            "jas-royal-law"
+          ],
+          "verse_refs": [
+            "James 2:8-13"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_82",
+          "text": "For its historical and cultural setting, note that Wealth-based partiality is condemned; application must resist class and caste hierarchy without class contempt, poverty romanticization, or treating poor people as moral props. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "james:interpretive_note:16"
+          ],
+          "verse_refs": [
+            "James 2:1-7"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        },
+        {
+          "id": "historical_context_83",
+          "text": "For its historical and cultural setting, note that James condemns preferential seating and honor for a richly dressed person while humiliating a poor person. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "jas-partiality"
+          ],
+          "verse_refs": [
+            "James 2:1-7"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_82",
+          "text": "A literary feature to notice is that James combines an epistolary greeting with sustained moral exhortation, wisdom contrasts, examples, questions, and prophetic warning. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "jas-genre"
+          ],
+          "verse_refs": [
+            "James 2:1-26"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "dig_deeper",
+      "title": "Dig deeper",
+      "blocks": [
+        {
+          "id": "dig_deeper_82",
+          "text": "For a later or comparative connection, note that Christian connections involving Rahab and rest are later canonical reception and should be stated separately from the book's own land and covenant claims. This remains a secondary connection rather than the chapter's first-audience context. It can be traced further without replacing the chapter's own setting. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "joshua:interpretive_note:4"
+          ],
+          "verse_refs": [
+            "James 2:25"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "c692e9bdf0734808e0a983a32fde024d25066754f4529019850a9a28f0840113",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-002-medium",
+    "generated_timestamp": "2026-09-05T22:51:03Z"
+  }
+}

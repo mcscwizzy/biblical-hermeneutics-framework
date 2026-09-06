@@ -1,0 +1,65 @@
+{
+  "reference": "Matthew 17",
+  "book": "Matthew",
+  "chapter": 17,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_2",
+          "text": "Read the chapter with this setting in view: Matthew distinguishes a temple-tax scene from the later tribute-to-Caesar controversy within layered fiscal and political contexts. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "matthew-temple-tax"
+          ],
+          "verse_refs": [
+            "Matthew 17:24-27"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_3",
+          "text": "For its historical and cultural setting, note that Gospel passages use different settings and vocabulary for imperial tribute, toll collectors, and temple-associated payments. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. Interpretations differ on some details.",
+          "evidence_ids": [
+            "gospel-taxation-distinctions"
+          ],
+          "verse_refs": [
+            "Matthew 17:24-27"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        },
+        {
+          "id": "historical_context_4",
+          "text": "For its historical and cultural setting, note that Royal rescue stories and lawgiving are familiar in the ancient world, but Moses functions as prophet and covenant mediator under the LORD. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "who-was-moses:ancient_near_east_context:0"
+          ],
+          "verse_refs": [
+            "Matthew 17:1-8"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "a7f4cf626f929a99e356157935ee2e60e2fbcd42bf40387f1b18cc2bd69d7b55",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-008-medium",
+    "generated_timestamp": "2026-09-06T21:45:35Z"
+  }
+}

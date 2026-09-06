@@ -1,0 +1,101 @@
+{
+  "reference": "Nahum 3",
+  "book": "Nahum",
+  "chapter": 3,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_136",
+          "text": "Read the chapter with this setting in view: Assyrian inscriptions and palace reliefs illuminate imperial ideology, conquest, deportation, tribute, violence, lion symbolism, and Thebes, but are royal representations rather than neutral reports. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken.",
+          "evidence_ids": [
+            "nahum-assyrian-sources"
+          ],
+          "verse_refs": [
+            "Nahum 3:8-10"
+          ],
+          "confidence": "high",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_137",
+          "text": "For its historical and cultural setting, note that Nahum 3:8-10 compares Nineveh with Thebes or No-amon, an Egyptian city sacked by Assyrian forces in 663 BCE. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "nahum-thebes"
+          ],
+          "verse_refs": [
+            "Nahum 3:8-10"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        },
+        {
+          "id": "historical_context_138",
+          "text": "For its historical and cultural setting, note that Babylonian Chronicle BM 21901 records Babylonian and Median campaigns culminating in Nineveh's capture and destruction in 612 BCE. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "nahum-chronicle"
+          ],
+          "verse_refs": [
+            "Nahum 3:18-19"
+          ],
+          "confidence": "high",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_137",
+          "text": "A literary feature to notice is that Nahum 3:15-17 compares proliferating merchants, scribes, guards, or commanders with locusts that swarm and disappear; lexical identification of offices is uncertain. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "nahum-locusts"
+          ],
+          "verse_refs": [
+            "Nahum 3:15-17"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "dig_deeper",
+      "title": "Dig deeper",
+      "blocks": [
+        {
+          "id": "dig_deeper_137",
+          "text": "For a later or comparative connection, note that Pesher Nahum (4Q169) cites and reapplies Nahum to Second Temple political and sectarian figures through pesher interpretation. This remains a secondary connection rather than the chapter's first-audience context. It can be traced further without replacing the chapter's own setting. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "nahum-pesher"
+          ],
+          "verse_refs": [
+            "Nahum 3:1-11"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "e7a1c40d761b089a52fb7847177b7a95fa345d43b21478f5eace2c67dd176e17",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-003-medium",
+    "generated_timestamp": "2026-09-06T00:47:11Z"
+  }
+}

@@ -9,8 +9,13 @@ from pathlib import Path
 from typing import Mapping
 
 
-DEFAULT_COMMENTARY_RELEASE = "commentary-v1.0"
+DEFAULT_COMMENTARY_RELEASE = "commentary-v1.1"
+LEGACY_COMMENTARY_RELEASE = "commentary-v1.0"
 _COMMENTARY_RELEASE_RE = re.compile(r"^[A-Za-z0-9][A-Za-z0-9._-]*$")
+_PACKAGED_COMMENTARY_DIRS = {
+    DEFAULT_COMMENTARY_RELEASE: ".bhf-data/bhf-commentary-v1.1",
+    LEGACY_COMMENTARY_RELEASE: ".bhf-data/bhf-commentary",
+}
 
 
 @dataclass(frozen=True)
@@ -42,16 +47,17 @@ def configured_commentary_release(environ: Mapping[str, str] | None = None) -> s
 
     values = os.environ if environ is None else environ
     release = str(values.get("BHF_COMMENTARY_RELEASE") or DEFAULT_COMMENTARY_RELEASE).strip()
-    return release if _COMMENTARY_RELEASE_RE.fullmatch(release) else DEFAULT_COMMENTARY_RELEASE
+    if not _COMMENTARY_RELEASE_RE.fullmatch(release):
+        return DEFAULT_COMMENTARY_RELEASE
+    return release if release in _PACKAGED_COMMENTARY_DIRS else DEFAULT_COMMENTARY_RELEASE
 
 
 def packaged_commentary_storage_path(release: str = DEFAULT_COMMENTARY_RELEASE) -> Path:
     """Return the immutable commentary corpus bundled with the application."""
 
     project_root = Path(__file__).resolve().parents[1]
-    if release != DEFAULT_COMMENTARY_RELEASE:
-        return project_root / ".bhf-data" / "bhf-commentary-candidates" / release
-    return project_root / ".bhf-data" / "bhf-commentary"
+    packaged_dir = _PACKAGED_COMMENTARY_DIRS.get(release, _PACKAGED_COMMENTARY_DIRS[DEFAULT_COMMENTARY_RELEASE])
+    return project_root / packaged_dir
 
 
 def default_commentary_storage_path(environ: Mapping[str, str]) -> Path:
@@ -60,16 +66,22 @@ def default_commentary_storage_path(environ: Mapping[str, str]) -> Path:
     Vercel's ``/tmp`` directory is appropriate for mutable runtime state but
     does not contain the released commentary corpus. The corpus is packaged
     with the application and must be read from the resolved project root.
-    Local development retains the existing relative path for NAS and source
-    checkout compatibility.
+    Local development uses the immutable packaged snapshot through a relative
+    source-checkout path. An explicit local override remains available for
+    development and audit tooling, but Vercel cannot redirect production to a
+    candidate workspace.
     """
 
     release = configured_commentary_release(environ)
+    explicit_path = environ.get("BHF_COMMENTARY_STORAGE_PATH")
+    if explicit_path:
+        explicit = Path(explicit_path)
+        if environ.get("VERCEL") and "bhf-commentary-candidates" in explicit.parts:
+            return packaged_commentary_storage_path(release)
+        return explicit
     if environ.get("VERCEL"):
         return packaged_commentary_storage_path(release)
-    if release != DEFAULT_COMMENTARY_RELEASE:
-        return Path(".bhf-data") / "bhf-commentary-candidates" / release
-    return Path(".bhf-data") / "bhf-commentary"
+    return Path(_PACKAGED_COMMENTARY_DIRS[release])
 
 
 def resolve_runtime_data_paths(
@@ -88,10 +100,7 @@ def resolve_runtime_data_paths(
         commentary_db_path=Path(
             values.get("BHF_COMMENTARY_DB_PATH") or data_dir / "commentary.sqlite"
         ),
-        bhf_commentary_storage_path=Path(
-            values.get("BHF_COMMENTARY_STORAGE_PATH")
-            or default_commentary_storage_path(values)
-        ),
+        bhf_commentary_storage_path=default_commentary_storage_path(values),
         translations_path=Path(
             values.get("BHF_TRANSLATIONS_PATH") or data_dir / "translations"
         ),
@@ -117,6 +126,7 @@ __all__ = [
     "RUNTIME_DATA_PATHS",
     "RuntimeDataPaths",
     "DEFAULT_COMMENTARY_RELEASE",
+    "LEGACY_COMMENTARY_RELEASE",
     "configured_commentary_release",
     "default_commentary_storage_path",
     "default_runtime_data_dir",

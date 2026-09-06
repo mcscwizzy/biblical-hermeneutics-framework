@@ -1,0 +1,83 @@
+{
+  "reference": "Jeremiah 25",
+  "book": "Jeremiah",
+  "chapter": 25,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_110",
+          "text": "Read the chapter with this setting in view: Jeremiah 25 and 29 associate Babylonian domination and restoration with seventy years, a period later reinterpreted in Chronicles, Daniel, and Second Temple literature. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "jeremiah-seventy-years"
+          ],
+          "verse_refs": [
+            "Jeremiah 25:11-12"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_111",
+          "text": "For its historical and cultural setting, note that Jeremiah's narrated world is rooted in Judah's transition from Josiah through Babylonian domination, the 597 deportation, Zedekiah's siege, Jerusalem's 587/586 destruction, Gedaliah, and flight to Egypt. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. Interpretations differ on some details.",
+          "evidence_ids": [
+            "jeremiah-historical-crisis"
+          ],
+          "verse_refs": [
+            "Jeremiah 25:1-14"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        },
+        {
+          "id": "historical_context_112",
+          "text": "For its historical and cultural setting, note that The Babylonian conquest removed Judah's king, temple, and land, forcing the people to rethink covenant failure and future hope. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "why-is-exile-important:historical_context:0"
+          ],
+          "verse_refs": [
+            "Jeremiah 25:1-14"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_111",
+          "text": "A literary feature to notice is that Masoretic Jeremiah and Old Greek Ieremias represent markedly different ancient editions: the Alexandrian form is roughly one-seventh shorter and places the nation oracles earlier and in a different order. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image. Interpretations differ on some details.",
+          "evidence_ids": [
+            "jeremiah-two-editions"
+          ],
+          "verse_refs": [
+            "Jeremiah 25:1-38"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "7dc28be46c2b8f9582e103a752a22bcb0d5a45548ea3442aaf8375340168afcc",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-004-medium",
+    "generated_timestamp": "2026-09-06T02:41:43Z"
+  }
+}

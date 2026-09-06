@@ -1,0 +1,53 @@
+{
+  "reference": "Psalms 32",
+  "book": "Psalms",
+  "chapter": 32,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_105",
+          "text": "Read the chapter with this setting in view: Paul frames justification with courtroom and covenant language, especially through Abraham and the law. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken.",
+          "evidence_ids": [
+            "what-is-justification:historical_context:0"
+          ],
+          "verse_refs": [
+            "Psalms 32:1-2"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_106",
+          "text": "For its historical and cultural setting, note that Ancient courts issued verdicts that established status, and Scripture uses that legal language for God's saving declaration. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "what-is-justification:ancient_near_east_context:0"
+          ],
+          "verse_refs": [
+            "Psalms 32:1-2"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "e7ee33cbe157ea37e15e5b1006313024b43e51dffa946d65cf1ab42bf9f2c724",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-008-medium",
+    "generated_timestamp": "2026-09-06T21:45:36Z"
+  }
+}

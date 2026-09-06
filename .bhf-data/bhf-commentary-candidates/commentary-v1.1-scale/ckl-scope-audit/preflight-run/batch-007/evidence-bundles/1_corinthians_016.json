@@ -1,0 +1,3537 @@
+{
+  "passage_ref": "1 Corinthians 16",
+  "entities": {
+    "people": [
+      {
+        "id": "aquila",
+        "title": "Aquila",
+        "type": "person",
+        "aliases": [
+          "Aquila of Pontus",
+          "Aquila husband of Priscilla",
+          "Aquila in Acts 18",
+          "Aquila in Romans 16"
+        ],
+        "metadata": {
+          "summary": "Aquila is a Jewish man from Pontus whom Acts and Pauline greetings portray with Prisca or Priscilla as displaced from Rome, sharing a craft and lodging with Paul at Corinth, traveling to Ephesus, instructing Apollos jointly, risking his life in coworking, and hosting assemblies across cities.",
+          "importance": 78,
+          "retrieval_score": 0.898,
+          "ancient_names": [],
+          "modern_identification": "",
+          "region": "",
+          "terrain": "",
+          "elevation": null,
+          "archaeology": [
+            "No securely identified house, workshop, inscription, or tomb belonging to the canonical Aquila"
+          ],
+          "related_passages": [
+            "Acts 18:1-3",
+            "Acts 18:18-26",
+            "Romans 16:3-5",
+            "1 Corinthians 16:19",
+            "2 Timothy 4:19"
+          ]
+        }
+      },
+      {
+        "id": "priscilla",
+        "title": "Priscilla (Prisca)",
+        "type": "person",
+        "aliases": [
+          "Prisca",
+          "Priscilla",
+          "Prisca wife of Aquila",
+          "Priscilla in Acts 18",
+          "Prisca in Romans 16"
+        ],
+        "metadata": {
+          "summary": "Prisca, called Priscilla in Acts, is portrayed with Aquila as displaced from Rome, traveling through Corinth and Ephesus, jointly instructing Apollos, coworking and risking life with Paul, and hosting assemblies; the texts give her unusual visibility without defining a later formal office.",
+          "importance": 80,
+          "retrieval_score": 0.9,
+          "ancient_names": [],
+          "modern_identification": "",
+          "region": "",
+          "terrain": "",
+          "elevation": null,
+          "archaeology": [
+            "No securely identified canonical Prisca house, workshop, inscription, catacomb, church, or tomb"
+          ],
+          "related_passages": [
+            "Acts 18:1-3",
+            "Acts 18:18-26",
+            "Romans 16:3-5",
+            "1 Corinthians 16:19",
+            "2 Timothy 4:19"
+          ]
+        }
+      }
+    ],
+    "places": [
+      {
+        "id": "macedonia",
+        "title": "Roman Macedonia",
+        "type": "place",
+        "aliases": [
+          "Macedonia in Acts",
+          "Roman province of Macedonia",
+          "Paul in Macedonia",
+          "Macedonian churches",
+          "Via Egnatia Macedonia"
+        ],
+        "metadata": {
+          "summary": "Roman Macedonia was the northern Greek province and travel region in which Acts locates Philippi, Thessalonica, and Beroea and which Paul's letters associate with specific assemblies, journeys, suffering, support, and the Jerusalem collection.",
+          "importance": 94,
+          "retrieval_score": 0.914,
+          "ancient_names": [],
+          "modern_identification": "",
+          "region": "",
+          "terrain": "",
+          "elevation": null,
+          "archaeology": [
+            "Via Egnatia road remains and milestones",
+            "Philippi colony, forum, and inscriptions",
+            "Thessalonian civic inscriptions and port-road setting",
+            "Beroean Roman roads, milestones, inscriptions, and urban remains"
+          ],
+          "related_passages": [
+            "Acts 16:9-15",
+            "Acts 16:16-40",
+            "Acts 17:1-15",
+            "Acts 18:1-5",
+            "Acts 19:21-22",
+            "Acts 20:1-6",
+            "Romans 15:25-29",
+            "1 Corinthians 16:5-6",
+            "2 Corinthians 7:5-16",
+            "2 Corinthians 8:1-24",
+            "2 Corinthians 9:1-5",
+            "Philippians 4:15-18",
+            "1 Thessalonians 1:7-8",
+            "1 Thessalonians 3:1-10"
+          ]
+        }
+      }
+    ],
+    "groups": [],
+    "events": [],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "1-corinthians:interpretive_note:2",
+      "claim": "Ephesus is the stated writing location horizon, but 53-55 CE remains a reconstruction rather than an inscribed date.",
+      "category": "culture",
+      "source_ids": [
+        "1cor-greek",
+        "fee-1cor"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Corinthians 16:8"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "1-corinthians",
+        "parent_title": "1 Corinthians",
+        "parent_type": "book",
+        "object_importance": 92,
+        "retrieval_score": 0.912,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 7,
+        "certainty": "probable",
+        "dispute_status": "chronological_uncertainty",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "historical-context",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    },
+    {
+      "id": "1-corinthians:interpretive_note:75",
+      "claim": "The weekly collection is planned, proportional, accountable, and directed to saints; it cannot authorize prosperity extraction or coercive fundraising.",
+      "category": "culture",
+      "source_ids": [
+        "1cor-greek",
+        "friesen-poverty"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Corinthians 16:1-4"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "1-corinthians",
+        "parent_title": "1 Corinthians",
+        "parent_type": "book",
+        "object_importance": 92,
+        "retrieval_score": 0.912,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "interpretive-caution",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    },
+    {
+      "id": "1-corinthians:interpretive_note:76",
+      "claim": "Jerusalem collection recipients are called saints, but their exact economic crisis and the collection's political meanings remain debated; poverty must not be romanticized.",
+      "category": "economics",
+      "source_ids": [
+        "friesen-poverty",
+        "hays-1cor"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Corinthians 16:1-4"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "1-corinthians",
+        "parent_title": "1 Corinthians",
+        "parent_type": "book",
+        "object_importance": 92,
+        "retrieval_score": 0.912,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "probable",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "historical-context",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 97
+      }
+    },
+    {
+      "id": "1-corinthians:interpretive_note:77",
+      "claim": "Stephanas's household is called firstfruits of Achaia and devoted to service; household language does not prove one modern office or erase enslaved and dependent members.",
+      "category": "culture",
+      "source_ids": [
+        "1cor-greek",
+        "murphy-corinth"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Corinthians 16:15-18"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "1-corinthians",
+        "parent_title": "1 Corinthians",
+        "parent_type": "book",
+        "object_importance": 92,
+        "retrieval_score": 0.912,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 14,
+        "certainty": "textually_explicit",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "historical-context",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    },
+    {
+      "id": "1-corinthians:interpretive_note:78",
+      "claim": "Submission to such coworkers is linked to recognized labor and cannot create unaccountable authority, clerical domination, or immunity from review.",
+      "category": "culture",
+      "source_ids": [
+        "1cor-greek",
+        "mitchell-rhetoric"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Corinthians 16:15-18"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "1-corinthians",
+        "parent_title": "1 Corinthians",
+        "parent_type": "book",
+        "object_importance": 92,
+        "retrieval_score": 0.912,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 14,
+        "certainty": "strong_consensus",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "interpretive-caution",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    },
+    {
+      "id": "1-corinthians:interpretive_note:79",
+      "claim": "Maranatha is an Aramaic invocation within a Greek letter; alternate word division remains possible and speculative end-times timetables do not follow.",
+      "category": "culture",
+      "source_ids": [
+        "1cor-greek",
+        "bdag"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Corinthians 16:22"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "1-corinthians",
+        "parent_title": "1 Corinthians",
+        "parent_type": "book",
+        "object_importance": 92,
+        "retrieval_score": 0.912,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 21,
+        "certainty": "probable",
+        "dispute_status": "lexical_uncertainty",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "textual-observation",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    },
+    {
+      "id": "1-corinthians:interpretive_note:80",
+      "claim": "The closing anathema is severe rhetorical boundary language; it cannot authorize religious violence, forced conversion, harassment, or treating questioners as enemies.",
+      "category": "culture",
+      "source_ids": [
+        "1cor-greek",
+        "thiselton-1cor"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Corinthians 16:22"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "1-corinthians",
+        "parent_title": "1 Corinthians",
+        "parent_type": "book",
+        "object_importance": 92,
+        "retrieval_score": 0.912,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 21,
+        "certainty": "strong_consensus",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "interpretive-caution",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    },
+    {
+      "id": "1-corinthians:interpretive_note:84",
+      "claim": "P15, P46, P123, Sinaiticus, Vaticanus, Alexandrinus, Ephraemi, and Claromontanus preserve different portions and variants; no one witness simply equals the autograph.",
+      "category": "culture",
+      "source_ids": [
+        "ntvmr",
+        "p46-csntm",
+        "sinaiticus"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Corinthians 1:1-16:24"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "1-corinthians",
+        "parent_title": "1 Corinthians",
+        "parent_type": "book",
+        "object_importance": 92,
+        "retrieval_score": 0.912,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 1500,
+        "certainty": "strong_consensus",
+        "dispute_status": "textual_variant",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "textual-observation",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    },
+    {
+      "id": "1-corinthians:interpretive_note:85",
+      "claim": "Partition theories and local interpolation proposals should be evaluated passage by passage; neither abrupt transitions nor theological preference alone proves excision.",
+      "category": "culture",
+      "source_ids": [
+        "malcolm-reversal",
+        "fee-1cor"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Corinthians 1:1-16:24"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "1-corinthians",
+        "parent_title": "1 Corinthians",
+        "parent_type": "book",
+        "object_importance": 92,
+        "retrieval_score": 0.912,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 1500,
+        "certainty": "probable",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "interpretive-caution",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    },
+    {
+      "id": "1cor-collection",
+      "claim": "Paul instructs regular proportional saving for a collection for the saints and promises approved carriers.",
+      "category": "history",
+      "source_ids": [
+        "1cor-greek",
+        "friesen-poverty"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Corinthians 16:1-4"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "1-corinthians",
+        "parent_title": "1 Corinthians",
+        "parent_type": "book",
+        "object_importance": 92,
+        "retrieval_score": 0.912,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "textually_explicit",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "1cor-coworkers",
+      "claim": "Stephanas's household, Fortunatus, Achaicus, Timothy, Apollos, Aquila, and Prisca belong to the letter's coworker network.",
+      "category": "history",
+      "source_ids": [
+        "1cor-greek",
+        "murphy-corinth"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Corinthians 16:10-19"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "1-corinthians",
+        "parent_title": "1 Corinthians",
+        "parent_type": "book",
+        "object_importance": 92,
+        "retrieval_score": 0.912,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 9,
+        "certainty": "textually_explicit",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "1cor-date-place",
+      "claim": "A date about 53-55 CE and composition in Ephesus are probable.",
+      "category": "culture",
+      "source_ids": [
+        "murphy-corinth",
+        "fee-1cor"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Corinthians 16:5-9"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "1-corinthians",
+        "parent_title": "1 Corinthians",
+        "parent_type": "book",
+        "object_importance": 92,
+        "retrieval_score": 0.912,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 4,
+        "certainty": "probable",
+        "dispute_status": "chronological_uncertainty",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "historical_cultural",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 60
+      }
+    },
+    {
+      "id": "1cor-integrity",
+      "claim": "The extant letter is best treated as a coherent rhetorical whole while local interpolation and partition proposals remain reviewable.",
+      "category": "culture",
+      "source_ids": [
+        "malcolm-reversal",
+        "fee-1cor"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Corinthians 1:1-16:24"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "1-corinthians",
+        "parent_title": "1 Corinthians",
+        "parent_type": "book",
+        "object_importance": 92,
+        "retrieval_score": 0.912,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 1500,
+        "certainty": "probable",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 90
+      }
+    },
+    {
+      "id": "1cor-manuscripts",
+      "claim": "P15, P46, P123 and the major codices provide material evidence for transmission, variation, and early collection context.",
+      "category": "archaeology",
+      "source_ids": [
+        "ntvmr",
+        "p46-csntm",
+        "sinaiticus"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Corinthians 1:1-16:24"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "1-corinthians",
+        "parent_title": "1 Corinthians",
+        "parent_type": "book",
+        "object_importance": 92,
+        "retrieval_score": 0.912,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 1500,
+        "certainty": "strong_consensus",
+        "dispute_status": "textual_variant",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "archaeology",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 48
+      }
+    },
+    {
+      "id": "1cor-maranatha",
+      "claim": "The closing Maranatha preserves an Aramaic invocation commonly understood as Our Lord, come.",
+      "category": "language",
+      "source_ids": [
+        "1cor-greek",
+        "bdag"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Corinthians 16:22"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "1-corinthians",
+        "parent_title": "1 Corinthians",
+        "parent_type": "book",
+        "object_importance": 92,
+        "retrieval_score": 0.912,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 21,
+        "certainty": "probable",
+        "dispute_status": "lexical_uncertainty",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "lexical",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 81
+      }
+    },
+    {
+      "id": "acts-return-party-collection-limit",
+      "claim": "Acts names companions on the return through Macedonia and toward Asia but does not identify them as collection carriers.",
+      "category": "culture",
+      "source_ids": [
+        "acts-economic",
+        "first-corinthians-economic",
+        "second-corinthians-collection",
+        "downs-offering"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Corinthians 16:3-4"
+      ],
+      "confidence": "low",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "patronage-hospitality-and-debt",
+        "parent_title": "Pauline Economic Life, Patronage, Gifts, Collections, Labor, and Poverty",
+        "parent_type": "cultural_background",
+        "object_importance": 97,
+        "retrieval_score": 0.937,
+        "passage_relationship": "comparative",
+        "anchor_specificity": "verse",
+        "verse_distance": 2,
+        "certainty": "disputed",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "scholarly-reconstruction",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "literary-convention",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "COMPARATIVE_CONTEXT",
+        "presentation_role": "dig_deeper",
+        "overview_priority": 0
+      }
+    },
+    {
+      "id": "acts-return-party-collection-limit:passage-relevance",
+      "claim": "Keeps plausible collection logistics from becoming narrative fact through Acts-Paul harmonization.",
+      "category": "culture",
+      "source_ids": [
+        "acts-economic",
+        "first-corinthians-economic",
+        "second-corinthians-collection",
+        "downs-offering"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Corinthians 16:3-4"
+      ],
+      "confidence": "low",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "patronage-hospitality-and-debt",
+        "parent_title": "Pauline Economic Life, Patronage, Gifts, Collections, Labor, and Poverty",
+        "parent_type": "cultural_background",
+        "object_importance": 97,
+        "retrieval_score": 0.937,
+        "passage_relationship": "comparative",
+        "anchor_specificity": "verse",
+        "verse_distance": 2,
+        "certainty": "disputed",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "scholarly-reconstruction",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "literary-convention",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "COMPARATIVE_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 0,
+        "supports_evidence_ids": [
+          "acts-return-party-collection-limit"
+        ]
+      }
+    },
+    {
+      "id": "aquila:interpretive_note:2",
+      "claim": "The couple's hosting and coworking show agency, but name order and domestic gathering do not by themselves prove a fixed office, wealth level, or marital authority pattern.",
+      "category": "economics",
+      "source_ids": [
+        "romans-aquila",
+        "cohick-aquila",
+        "sybrandi-aquila"
+      ],
+      "related_entity_ids": [
+        "aquila"
+      ],
+      "passage_anchors": [
+        "1 Corinthians 16:19"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "aquila",
+        "parent_title": "Aquila",
+        "parent_type": "person",
+        "object_importance": 78,
+        "retrieval_score": 0.898,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 18,
+        "certainty": "probable",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "interpretive-caution",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "INTERTEXTUAL_REUSE",
+        "presentation_role": "dig_deeper",
+        "overview_priority": 0
+      }
+    },
+    {
+      "id": "association-meal-status",
+      "claim": "Greco-Roman associations commonly organized membership, officers, funds, honors, cult, funerals, and shared meals, offering bounded comparisons for Corinthian assemblies.",
+      "category": "social",
+      "source_ids": [
+        "corinth-biblical-texts",
+        "last-associations",
+        "smith-banquet",
+        "friesen-economics",
+        "nasrallah-corinth"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Corinthians 16:15-18"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "roman-corinth-civic-household-and-association-life",
+        "parent_title": "Roman Corinth: Civic, Household, and Association Life",
+        "parent_type": "cultural_background",
+        "object_importance": 98,
+        "retrieval_score": 0.938,
+        "passage_relationship": "comparative",
+        "anchor_specificity": "verse",
+        "verse_distance": 14,
+        "certainty": "probable",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "secondary-evidence",
+        "exploration_potential": 0.75,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "institution",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "COMPARATIVE_CONTEXT",
+        "presentation_role": "dig_deeper",
+        "overview_priority": 0
+      }
+    },
+    {
+      "id": "association-meal-status:passage-relevance",
+      "claim": "Association and banquet comparison helps explain why arrival time, food quantity, honor, leadership, and humiliation could structure a communal meal without proving the meeting occurred in a known dining room.",
+      "category": "social",
+      "source_ids": [
+        "corinth-biblical-texts",
+        "last-associations",
+        "smith-banquet",
+        "friesen-economics",
+        "nasrallah-corinth"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Corinthians 16:15-18"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "roman-corinth-civic-household-and-association-life",
+        "parent_title": "Roman Corinth: Civic, Household, and Association Life",
+        "parent_type": "cultural_background",
+        "object_importance": 98,
+        "retrieval_score": 0.938,
+        "passage_relationship": "comparative",
+        "anchor_specificity": "verse",
+        "verse_distance": 14,
+        "certainty": "probable",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "secondary-evidence",
+        "exploration_potential": 0.75,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "institution",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "COMPARATIVE_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 0,
+        "supports_evidence_ids": [
+          "association-meal-status"
+        ]
+      }
+    },
+    {
+      "id": "corinth-apollos-agency",
+      "claim": "Paul says he strongly urged Apollos to visit Corinth with the siblings, but it was not at all Apollos's will to go then; he would go when opportunity arose.",
+      "category": "culture",
+      "source_ids": [
+        "first-corinth-mission-text",
+        "burke-paul-colleagues"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Corinthians 16:12"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-mission-proclamation-travel-coworkers-letters-messengers-hospitality-house-assemblies-synagogues-marketplaces-adaptability-church-planting-and-interassembly-networks",
+        "parent_title": "Pauline Mission, Proclamation, Travel, Coworkers, Letters, Messengers, Hospitality, House Assemblies, Synagogues, Marketplaces, Adaptability, Church Planting, and Interassembly Networks",
+        "parent_type": "cultural_background",
+        "object_importance": 9,
+        "retrieval_score": 0.889,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 11,
+        "certainty": "probable",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "person",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    },
+    {
+      "id": "corinth-apollos-agency:passage-relevance",
+      "claim": "Directly preserves a coworker's ability to decline Paul's requested itinerary without condemnation.",
+      "category": "culture",
+      "source_ids": [
+        "first-corinth-mission-text",
+        "burke-paul-colleagues"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Corinthians 16:12"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-mission-proclamation-travel-coworkers-letters-messengers-hospitality-house-assemblies-synagogues-marketplaces-adaptability-church-planting-and-interassembly-networks",
+        "parent_title": "Pauline Mission, Proclamation, Travel, Coworkers, Letters, Messengers, Hospitality, House Assemblies, Synagogues, Marketplaces, Adaptability, Church Planting, and Interassembly Networks",
+        "parent_type": "cultural_background",
+        "object_importance": 9,
+        "retrieval_score": 0.889,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 11,
+        "certainty": "probable",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "person",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 87,
+        "supports_evidence_ids": [
+          "corinth-apollos-agency"
+        ]
+      }
+    },
+    {
+      "id": "corinth-contingent-itinerary",
+      "claim": "Paul hopes to remain in Ephesus until Pentecost because of an open door and many opponents, and says he may spend time in Corinth if the Lord permits.",
+      "category": "geography",
+      "source_ids": [
+        "first-corinth-mission-text",
+        "luckritz-transient-apostle"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Corinthians 16:5-9"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-mission-proclamation-travel-coworkers-letters-messengers-hospitality-house-assemblies-synagogues-marketplaces-adaptability-church-planting-and-interassembly-networks",
+        "parent_title": "Pauline Mission, Proclamation, Travel, Coworkers, Letters, Messengers, Hospitality, House Assemblies, Synagogues, Marketplaces, Adaptability, Church Planting, and Interassembly Networks",
+        "parent_type": "cultural_background",
+        "object_importance": 9,
+        "retrieval_score": 0.889,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 4,
+        "certainty": "probable",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "geography-environment",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "archaeology_geography",
+        "overview_priority": 75
+      }
+    },
+    {
+      "id": "corinth-contingent-itinerary:passage-relevance",
+      "claim": "Shows planning shaped by opportunity, conflict, time, and contingency rather than guaranteed revelation.",
+      "category": "geography",
+      "source_ids": [
+        "first-corinth-mission-text",
+        "luckritz-transient-apostle"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Corinthians 16:5-9"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-mission-proclamation-travel-coworkers-letters-messengers-hospitality-house-assemblies-synagogues-marketplaces-adaptability-church-planting-and-interassembly-networks",
+        "parent_title": "Pauline Mission, Proclamation, Travel, Coworkers, Letters, Messengers, Hospitality, House Assemblies, Synagogues, Marketplaces, Adaptability, Church Planting, and Interassembly Networks",
+        "parent_type": "cultural_background",
+        "object_importance": 9,
+        "retrieval_score": 0.889,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 4,
+        "certainty": "probable",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "geography-environment",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 75,
+        "supports_evidence_ids": [
+          "corinth-contingent-itinerary"
+        ]
+      }
+    },
+    {
+      "id": "corinth-grace-love-closing",
+      "claim": "Paul closes with a grace wish and his love in Messiah after correction, curse rhetoric, travel planning, and local greetings.",
+      "category": "culture",
+      "source_ids": [
+        "first-corinth-prayer-text",
+        "gorman-first-corinthians-prayer",
+        "wiles-intercessory-prayers"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Corinthians 16:22-24"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-prayer-thanksgiving-intercession-lament-groaning-joy-peace-hope-benediction-blessing-and-communal-memory",
+        "parent_title": "Pauline Prayer, Thanksgiving, Intercession, Lament, Groaning, Joy, Peace, Hope, Benediction, Blessing, and Communal Memory",
+        "parent_type": "cultural_background",
+        "object_importance": 9,
+        "retrieval_score": 0.889,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 21,
+        "certainty": "textually_explicit",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "literary-convention",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    },
+    {
+      "id": "corinth-grace-love-closing:passage-relevance",
+      "claim": "Benediction and affection cannot be used to declare a complaint resolved or accountability complete.",
+      "category": "culture",
+      "source_ids": [
+        "first-corinth-prayer-text",
+        "gorman-first-corinthians-prayer",
+        "wiles-intercessory-prayers"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Corinthians 16:22-24"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-prayer-thanksgiving-intercession-lament-groaning-joy-peace-hope-benediction-blessing-and-communal-memory",
+        "parent_title": "Pauline Prayer, Thanksgiving, Intercession, Lament, Groaning, Joy, Peace, Hope, Benediction, Blessing, and Communal Memory",
+        "parent_type": "cultural_background",
+        "object_importance": 9,
+        "retrieval_score": 0.889,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 21,
+        "certainty": "textually_explicit",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "literary-convention",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 87,
+        "supports_evidence_ids": [
+          "corinth-grace-love-closing"
+        ]
+      }
+    },
+    {
+      "id": "corinth-holy-kiss-consent",
+      "claim": "First Corinthians transmits a holy-kiss greeting within ancient communal correspondence.",
+      "category": "culture",
+      "source_ids": [
+        "first-corinth-prayer-text",
+        "gorman-first-corinthians-prayer",
+        "who-qualityrights",
+        "ohchr-religion-coercion"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Corinthians 16:20"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-prayer-thanksgiving-intercession-lament-groaning-joy-peace-hope-benediction-blessing-and-communal-memory",
+        "parent_title": "Pauline Prayer, Thanksgiving, Intercession, Lament, Groaning, Joy, Peace, Hope, Benediction, Blessing, and Communal Memory",
+        "parent_type": "cultural_background",
+        "object_importance": 9,
+        "retrieval_score": 0.889,
+        "passage_relationship": "comparative",
+        "anchor_specificity": "verse",
+        "verse_distance": 19,
+        "certainty": "probable",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "secondary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "cultural-practice",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "COMPARATIVE_CONTEXT",
+        "presentation_role": "dig_deeper",
+        "overview_priority": 0
+      }
+    },
+    {
+      "id": "corinth-holy-kiss-consent:passage-relevance",
+      "claim": "Requires a freely chosen, culturally appropriate, accessible alternative and the unpenalized right to decline touch.",
+      "category": "culture",
+      "source_ids": [
+        "first-corinth-prayer-text",
+        "gorman-first-corinthians-prayer",
+        "who-qualityrights",
+        "ohchr-religion-coercion"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Corinthians 16:20"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-prayer-thanksgiving-intercession-lament-groaning-joy-peace-hope-benediction-blessing-and-communal-memory",
+        "parent_title": "Pauline Prayer, Thanksgiving, Intercession, Lament, Groaning, Joy, Peace, Hope, Benediction, Blessing, and Communal Memory",
+        "parent_type": "cultural_background",
+        "object_importance": 9,
+        "retrieval_score": 0.889,
+        "passage_relationship": "comparative",
+        "anchor_specificity": "verse",
+        "verse_distance": 19,
+        "certainty": "probable",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "secondary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "cultural-practice",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "COMPARATIVE_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 0,
+        "supports_evidence_ids": [
+          "corinth-holy-kiss-consent"
+        ]
+      }
+    },
+    {
+      "id": "corinth-prisca-aquila-assembly",
+      "claim": "First Corinthians transmits greetings from the assemblies of Asia and especially from Aquila, Prisca, and the assembly in their house.",
+      "category": "social",
+      "source_ids": [
+        "first-corinth-mission-text",
+        "gehring-house-church"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Corinthians 16:19"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-mission-proclamation-travel-coworkers-letters-messengers-hospitality-house-assemblies-synagogues-marketplaces-adaptability-church-planting-and-interassembly-networks",
+        "parent_title": "Pauline Mission, Proclamation, Travel, Coworkers, Letters, Messengers, Hospitality, House Assemblies, Synagogues, Marketplaces, Adaptability, Church Planting, and Interassembly Networks",
+        "parent_type": "cultural_background",
+        "object_importance": 9,
+        "retrieval_score": 0.889,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 18,
+        "certainty": "probable",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "institution",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    },
+    {
+      "id": "corinth-prisca-aquila-assembly:passage-relevance",
+      "claim": "Provides direct evidence of one house assembly and a translocal greeting network.",
+      "category": "social",
+      "source_ids": [
+        "first-corinth-mission-text",
+        "gehring-house-church"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Corinthians 16:19"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-mission-proclamation-travel-coworkers-letters-messengers-hospitality-house-assemblies-synagogues-marketplaces-adaptability-church-planting-and-interassembly-networks",
+        "parent_title": "Pauline Mission, Proclamation, Travel, Coworkers, Letters, Messengers, Hospitality, House Assemblies, Synagogues, Marketplaces, Adaptability, Church Planting, and Interassembly Networks",
+        "parent_type": "cultural_background",
+        "object_importance": 9,
+        "retrieval_score": 0.889,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 18,
+        "certainty": "probable",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "institution",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 87,
+        "supports_evidence_ids": [
+          "corinth-prisca-aquila-assembly"
+        ]
+      }
+    },
+    {
+      "id": "corinth-returning-envoys",
+      "claim": "Paul rejoices at the arrival of Stephanas, Fortunatus, and Achaicus, says they supplied what was lacking and refreshed his spirit and the Corinthians', and asks that such people be recognized.",
+      "category": "culture",
+      "source_ids": [
+        "first-corinth-mission-text",
+        "barclay-paul-networks"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Corinthians 16:17-18"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-mission-proclamation-travel-coworkers-letters-messengers-hospitality-house-assemblies-synagogues-marketplaces-adaptability-church-planting-and-interassembly-networks",
+        "parent_title": "Pauline Mission, Proclamation, Travel, Coworkers, Letters, Messengers, Hospitality, House Assemblies, Synagogues, Marketplaces, Adaptability, Church Planting, and Interassembly Networks",
+        "parent_type": "cultural_background",
+        "object_importance": 9,
+        "retrieval_score": 0.889,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 16,
+        "certainty": "probable",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "person",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    },
+    {
+      "id": "corinth-returning-envoys:passage-relevance",
+      "claim": "Identifies movement and relational service without reducing messengers to silent delivery mechanisms.",
+      "category": "culture",
+      "source_ids": [
+        "first-corinth-mission-text",
+        "barclay-paul-networks"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Corinthians 16:17-18"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-mission-proclamation-travel-coworkers-letters-messengers-hospitality-house-assemblies-synagogues-marketplaces-adaptability-church-planting-and-interassembly-networks",
+        "parent_title": "Pauline Mission, Proclamation, Travel, Coworkers, Letters, Messengers, Hospitality, House Assemblies, Synagogues, Marketplaces, Adaptability, Church Planting, and Interassembly Networks",
+        "parent_type": "cultural_background",
+        "object_importance": 9,
+        "retrieval_score": 0.889,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 16,
+        "certainty": "probable",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "person",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 87,
+        "supports_evidence_ids": [
+          "corinth-returning-envoys"
+        ]
+      }
+    },
+    {
+      "id": "corinth-stephanas-service",
+      "claim": "The household of Stephanas is called Achaia's firstfruits and said to have devoted itself to service of the holy ones; the audience is urged to recognize such laborers.",
+      "category": "social",
+      "source_ids": [
+        "first-corinth-mission-text",
+        "gehring-house-church"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Corinthians 16:15-18"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-mission-proclamation-travel-coworkers-letters-messengers-hospitality-house-assemblies-synagogues-marketplaces-adaptability-church-planting-and-interassembly-networks",
+        "parent_title": "Pauline Mission, Proclamation, Travel, Coworkers, Letters, Messengers, Hospitality, House Assemblies, Synagogues, Marketplaces, Adaptability, Church Planting, and Interassembly Networks",
+        "parent_type": "cultural_background",
+        "object_importance": 9,
+        "retrieval_score": 0.889,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 14,
+        "certainty": "probable",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "institution",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    },
+    {
+      "id": "corinth-stephanas-service:passage-relevance",
+      "claim": "Recognizes local household labor without assuming every household member consented identically or granting hosts coercive authority.",
+      "category": "social",
+      "source_ids": [
+        "first-corinth-mission-text",
+        "gehring-house-church"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Corinthians 16:15-18"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-mission-proclamation-travel-coworkers-letters-messengers-hospitality-house-assemblies-synagogues-marketplaces-adaptability-church-planting-and-interassembly-networks",
+        "parent_title": "Pauline Mission, Proclamation, Travel, Coworkers, Letters, Messengers, Hospitality, House Assemblies, Synagogues, Marketplaces, Adaptability, Church Planting, and Interassembly Networks",
+        "parent_type": "cultural_background",
+        "object_importance": 9,
+        "retrieval_score": 0.889,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 14,
+        "certainty": "probable",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "institution",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 87,
+        "supports_evidence_ids": [
+          "corinth-stephanas-service"
+        ]
+      }
+    },
+    {
+      "id": "corinth-timothy-without-fear",
+      "claim": "Paul asks the Corinthians to ensure that Timothy has no reason to be afraid among them, because he does the Lord's work, and to send him onward in peace.",
+      "category": "culture",
+      "source_ids": [
+        "first-corinth-mission-text",
+        "burke-paul-colleagues"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Corinthians 16:10-11"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-mission-proclamation-travel-coworkers-letters-messengers-hospitality-house-assemblies-synagogues-marketplaces-adaptability-church-planting-and-interassembly-networks",
+        "parent_title": "Pauline Mission, Proclamation, Travel, Coworkers, Letters, Messengers, Hospitality, House Assemblies, Synagogues, Marketplaces, Adaptability, Church Planting, and Interassembly Networks",
+        "parent_type": "cultural_background",
+        "object_importance": 9,
+        "retrieval_score": 0.889,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 9,
+        "certainty": "probable",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "cultural-practice",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    },
+    {
+      "id": "corinth-timothy-without-fear:passage-relevance",
+      "claim": "Makes the safety and peaceful onward travel of a delegated coworker a community responsibility.",
+      "category": "culture",
+      "source_ids": [
+        "first-corinth-mission-text",
+        "burke-paul-colleagues"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Corinthians 16:10-11"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-mission-proclamation-travel-coworkers-letters-messengers-hospitality-house-assemblies-synagogues-marketplaces-adaptability-church-planting-and-interassembly-networks",
+        "parent_title": "Pauline Mission, Proclamation, Travel, Coworkers, Letters, Messengers, Hospitality, House Assemblies, Synagogues, Marketplaces, Adaptability, Church Planting, and Interassembly Networks",
+        "parent_type": "cultural_background",
+        "object_importance": 9,
+        "retrieval_score": 0.889,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 9,
+        "certainty": "probable",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "cultural-practice",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 87,
+        "supports_evidence_ids": [
+          "corinth-timothy-without-fear"
+        ]
+      }
+    },
+    {
+      "id": "corinth-watch-strength-love",
+      "claim": "Closing commands to watch, stand firm, act courageously, and be strong are immediately governed by doing everything in love.",
+      "category": "culture",
+      "source_ids": [
+        "first-corinth-prayer-text",
+        "gorman-first-corinthians-prayer"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Corinthians 16:13-14"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-prayer-thanksgiving-intercession-lament-groaning-joy-peace-hope-benediction-blessing-and-communal-memory",
+        "parent_title": "Pauline Prayer, Thanksgiving, Intercession, Lament, Groaning, Joy, Peace, Hope, Benediction, Blessing, and Communal Memory",
+        "parent_type": "cultural_background",
+        "object_importance": 9,
+        "retrieval_score": 0.889,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 12,
+        "certainty": "textually_explicit",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "worldview-concept",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    },
+    {
+      "id": "corinth-watch-strength-love:passage-relevance",
+      "claim": "Rejects aggressive prayer enforcement, militarized leadership, intimidation, and control presented as spiritual strength.",
+      "category": "culture",
+      "source_ids": [
+        "first-corinth-prayer-text",
+        "gorman-first-corinthians-prayer"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Corinthians 16:13-14"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-prayer-thanksgiving-intercession-lament-groaning-joy-peace-hope-benediction-blessing-and-communal-memory",
+        "parent_title": "Pauline Prayer, Thanksgiving, Intercession, Lament, Groaning, Joy, Peace, Hope, Benediction, Blessing, and Communal Memory",
+        "parent_type": "cultural_background",
+        "object_importance": 9,
+        "retrieval_score": 0.889,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 12,
+        "certainty": "textually_explicit",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "worldview-concept",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 87,
+        "supports_evidence_ids": [
+          "corinth-watch-strength-love"
+        ]
+      }
+    },
+    {
+      "id": "corinthian-weekly-collection-logistics",
+      "claim": "First Corinthians 16 instructs regular setting aside according to prosperity and anticipates approved persons, letters, and possibly Paul traveling with them.",
+      "category": "culture",
+      "source_ids": [
+        "first-corinthians-economic",
+        "downs-offering",
+        "furnish-second-corinthians"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Corinthians 16:1-4"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "patronage-hospitality-and-debt",
+        "parent_title": "Pauline Economic Life, Patronage, Gifts, Collections, Labor, and Poverty",
+        "parent_type": "cultural_background",
+        "object_importance": 97,
+        "retrieval_score": 0.937,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "textually_explicit",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "cultural-practice",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 102
+      }
+    },
+    {
+      "id": "corinthian-weekly-collection-logistics:passage-relevance",
+      "claim": "Supplies concrete logistics without turning the instruction into a universal tithe or modern banking system.",
+      "category": "culture",
+      "source_ids": [
+        "first-corinthians-economic",
+        "downs-offering",
+        "furnish-second-corinthians"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Corinthians 16:1-4"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "patronage-hospitality-and-debt",
+        "parent_title": "Pauline Economic Life, Patronage, Gifts, Collections, Labor, and Poverty",
+        "parent_type": "cultural_background",
+        "object_importance": 97,
+        "retrieval_score": 0.937,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "textually_explicit",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "cultural-practice",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 102,
+        "supports_evidence_ids": [
+          "corinthian-weekly-collection-logistics"
+        ]
+      }
+    },
+    {
+      "id": "first-corinth-approved-carriers-letters",
+      "claim": "The Corinthians are to approve representatives whom Paul will send with letters to carry their gift to Jerusalem; Paul may accompany them if appropriate.",
+      "category": "social",
+      "source_ids": [
+        "first-corinth-economics-text",
+        "downs-offering-gentiles"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Corinthians 16:3-4"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-work-labor-wages-maintenance-poverty-wealth-collection-giving-reciprocity-equality-partnership-idleness-need-and-economic-solidarity",
+        "parent_title": "Pauline Work, Labor, Wages, Maintenance, Poverty, Wealth, Collection, Giving, Reciprocity, Equality, Partnership, Idleness, Need, and Economic Solidarity",
+        "parent_type": "cultural_background",
+        "object_importance": 99,
+        "retrieval_score": 0.959,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 2,
+        "certainty": "probable",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "institution",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 102
+      }
+    },
+    {
+      "id": "first-corinth-approved-carriers-letters:passage-relevance",
+      "claim": "Grounds shared custody and donor-community participation rather than unilateral leader control of funds.",
+      "category": "social",
+      "source_ids": [
+        "first-corinth-economics-text",
+        "downs-offering-gentiles"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Corinthians 16:3-4"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-work-labor-wages-maintenance-poverty-wealth-collection-giving-reciprocity-equality-partnership-idleness-need-and-economic-solidarity",
+        "parent_title": "Pauline Work, Labor, Wages, Maintenance, Poverty, Wealth, Collection, Giving, Reciprocity, Equality, Partnership, Idleness, Need, and Economic Solidarity",
+        "parent_type": "cultural_background",
+        "object_importance": 99,
+        "retrieval_score": 0.959,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 2,
+        "certainty": "probable",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "institution",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 102,
+        "supports_evidence_ids": [
+          "first-corinth-approved-carriers-letters"
+        ]
+      }
+    },
+    {
+      "id": "first-corinth-no-arrival-collection",
+      "claim": "The stated purpose of weekly setting aside is that collections not occur when Paul arrives.",
+      "category": "culture",
+      "source_ids": [
+        "first-corinth-economics-text",
+        "downs-offering-gentiles"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Corinthians 16:2"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-work-labor-wages-maintenance-poverty-wealth-collection-giving-reciprocity-equality-partnership-idleness-need-and-economic-solidarity",
+        "parent_title": "Pauline Work, Labor, Wages, Maintenance, Poverty, Wealth, Collection, Giving, Reciprocity, Equality, Partnership, Idleness, Need, and Economic Solidarity",
+        "parent_type": "cultural_background",
+        "object_importance": 99,
+        "retrieval_score": 0.959,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 1,
+        "certainty": "probable",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "cultural-practice",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 102
+      }
+    },
+    {
+      "id": "first-corinth-no-arrival-collection:passage-relevance",
+      "claim": "Provides a textual check against high-pressure offerings tied to a leader's physical presence.",
+      "category": "culture",
+      "source_ids": [
+        "first-corinth-economics-text",
+        "downs-offering-gentiles"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Corinthians 16:2"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-work-labor-wages-maintenance-poverty-wealth-collection-giving-reciprocity-equality-partnership-idleness-need-and-economic-solidarity",
+        "parent_title": "Pauline Work, Labor, Wages, Maintenance, Poverty, Wealth, Collection, Giving, Reciprocity, Equality, Partnership, Idleness, Need, and Economic Solidarity",
+        "parent_type": "cultural_background",
+        "object_importance": 99,
+        "retrieval_score": 0.959,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 1,
+        "certainty": "probable",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "cultural-practice",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 102,
+        "supports_evidence_ids": [
+          "first-corinth-no-arrival-collection"
+        ]
+      }
+    },
+    {
+      "id": "first-corinth-weekly-proportional-saving",
+      "claim": "Paul directs each person to set aside something on the first day of every week in keeping with whatever prosperity has occurred, as also directed in Galatia.",
+      "category": "culture",
+      "source_ids": [
+        "first-corinth-economics-text",
+        "downs-offering-gentiles"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Corinthians 16:1-2"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-work-labor-wages-maintenance-poverty-wealth-collection-giving-reciprocity-equality-partnership-idleness-need-and-economic-solidarity",
+        "parent_title": "Pauline Work, Labor, Wages, Maintenance, Poverty, Wealth, Collection, Giving, Reciprocity, Equality, Partnership, Idleness, Need, and Economic Solidarity",
+        "parent_type": "cultural_background",
+        "object_importance": 99,
+        "retrieval_score": 0.959,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "probable",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "cultural-practice",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    },
+    {
+      "id": "first-corinth-weekly-proportional-saving:passage-relevance",
+      "claim": "Supports planned and proportionate giving rather than impulsive extraction or a fixed burden indifferent to means.",
+      "category": "culture",
+      "source_ids": [
+        "first-corinth-economics-text",
+        "downs-offering-gentiles"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Corinthians 16:1-2"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-work-labor-wages-maintenance-poverty-wealth-collection-giving-reciprocity-equality-partnership-idleness-need-and-economic-solidarity",
+        "parent_title": "Pauline Work, Labor, Wages, Maintenance, Poverty, Wealth, Collection, Giving, Reciprocity, Equality, Partnership, Idleness, Need, and Economic Solidarity",
+        "parent_type": "cultural_background",
+        "object_importance": 99,
+        "retrieval_score": 0.959,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "probable",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "cultural-practice",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 87,
+        "supports_evidence_ids": [
+          "first-corinth-weekly-proportional-saving"
+        ]
+      }
+    },
+    {
+      "id": "household-slavery-status",
+      "claim": "The letters address assemblies that included named households, enslaved and free people, patrons, workers, litigants, hungry people, and participants with unequal resources and vulnerability.",
+      "category": "culture",
+      "source_ids": [
+        "corinth-biblical-texts",
+        "glancy-slavery",
+        "friesen-economics",
+        "last-associations",
+        "nasrallah-corinth"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Corinthians 16:15-18"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "roman-corinth-civic-household-and-association-life",
+        "parent_title": "Roman Corinth: Civic, Household, and Association Life",
+        "parent_type": "cultural_background",
+        "object_importance": 98,
+        "retrieval_score": 0.938,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 14,
+        "certainty": "textually_explicit",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.75,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "cultural-practice",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 102
+      }
+    },
+    {
+      "id": "household-slavery-status:passage-relevance",
+      "claim": "The evidence keeps calling, freedom, bodily belonging, meal humiliation, and household service within a slaveholding and economically unequal society without turning description into endorsement.",
+      "category": "culture",
+      "source_ids": [
+        "corinth-biblical-texts",
+        "glancy-slavery",
+        "friesen-economics",
+        "last-associations",
+        "nasrallah-corinth"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Corinthians 16:15-18"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "roman-corinth-civic-household-and-association-life",
+        "parent_title": "Roman Corinth: Civic, Household, and Association Life",
+        "parent_type": "cultural_background",
+        "object_importance": 98,
+        "retrieval_score": 0.938,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 14,
+        "certainty": "textually_explicit",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.75,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "cultural-practice",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 102,
+        "supports_evidence_ids": [
+          "household-slavery-status"
+        ]
+      }
+    },
+    {
+      "id": "modern-public-prayer-consent",
+      "claim": "Consent-based pastoral practice asks before naming a need, recording or streaming prayer, touching, anointing, gathering others, or sharing updates, and makes decline safe and reversible.",
+      "category": "social",
+      "source_ids": [
+        "first-corinth-prayer-text",
+        "thess-prayer-text",
+        "who-qualityrights",
+        "ohchr-religion-coercion"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Corinthians 16:20"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-prayer-thanksgiving-intercession-lament-groaning-joy-peace-hope-benediction-blessing-and-communal-memory",
+        "parent_title": "Pauline Prayer, Thanksgiving, Intercession, Lament, Groaning, Joy, Peace, Hope, Benediction, Blessing, and Communal Memory",
+        "parent_type": "cultural_background",
+        "object_importance": 9,
+        "retrieval_score": 0.889,
+        "passage_relationship": "comparative",
+        "anchor_specificity": "verse",
+        "verse_distance": 19,
+        "certainty": "probable",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "secondary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "institution",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "COMPARATIVE_CONTEXT",
+        "presentation_role": "dig_deeper",
+        "overview_priority": 0
+      }
+    },
+    {
+      "id": "modern-public-prayer-consent:passage-relevance",
+      "claim": "Requires opt-in public disclosure, specific touch consent, no surprise prayer circle, no coerced testimony, and no penalty for silence or refusal.",
+      "category": "social",
+      "source_ids": [
+        "first-corinth-prayer-text",
+        "thess-prayer-text",
+        "who-qualityrights",
+        "ohchr-religion-coercion"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Corinthians 16:20"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "pauline-prayer-thanksgiving-intercession-lament-groaning-joy-peace-hope-benediction-blessing-and-communal-memory",
+        "parent_title": "Pauline Prayer, Thanksgiving, Intercession, Lament, Groaning, Joy, Peace, Hope, Benediction, Blessing, and Communal Memory",
+        "parent_type": "cultural_background",
+        "object_importance": 9,
+        "retrieval_score": 0.889,
+        "passage_relationship": "comparative",
+        "anchor_specificity": "verse",
+        "verse_distance": 19,
+        "certainty": "probable",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "secondary-evidence",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "institution",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "COMPARATIVE_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 0,
+        "supports_evidence_ids": [
+          "modern-public-prayer-consent"
+        ]
+      }
+    },
+    {
+      "id": "prisca-aquila-mobility",
+      "claim": "Acts and Pauline greetings locate Prisca and Aquila in mobile craft, teaching, coworker, risk, and household-assembly relationships across several cities.",
+      "category": "culture",
+      "source_ids": [
+        "acts-rome-texts",
+        "pauline-prisca-aquila-texts",
+        "cohick-women",
+        "lampe-rome",
+        "romans-greek"
+      ],
+      "related_entity_ids": [
+        "aquila",
+        "priscilla"
+      ],
+      "passage_anchors": [
+        "1 Corinthians 16:19"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "roman-rome-jewish-civic-household-and-imperial-life",
+        "parent_title": "Roman Rome: Jewish, Civic, Household, and Imperial Life",
+        "parent_type": "cultural_background",
+        "object_importance": 96,
+        "retrieval_score": 0.916,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 18,
+        "certainty": "textually_explicit",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.75,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "person",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 102
+      }
+    },
+    {
+      "id": "prisca-aquila-mobility:passage-relevance",
+      "claim": "Their mobility shows that Roman networks were translocal while preventing name order, tentmaking, or house hosting from becoming a complete biography or fixed hierarchy.",
+      "category": "culture",
+      "source_ids": [
+        "acts-rome-texts",
+        "pauline-prisca-aquila-texts",
+        "cohick-women",
+        "lampe-rome",
+        "romans-greek"
+      ],
+      "related_entity_ids": [
+        "aquila",
+        "priscilla"
+      ],
+      "passage_anchors": [
+        "1 Corinthians 16:19"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "roman-rome-jewish-civic-household-and-imperial-life",
+        "parent_title": "Roman Rome: Jewish, Civic, Household, and Imperial Life",
+        "parent_type": "cultural_background",
+        "object_importance": 96,
+        "retrieval_score": 0.916,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 18,
+        "certainty": "textually_explicit",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.75,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "person",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 102,
+        "supports_evidence_ids": [
+          "prisca-aquila-mobility"
+        ]
+      }
+    },
+    {
+      "id": "priscilla:interpretive_note:2",
+      "claim": "Prisca's frequent first position and designation as coworker support her prominence, but name order alone cannot establish wealth, social rank, marital authority, or a fixed office.",
+      "category": "economics",
+      "source_ids": [
+        "romans-prisca",
+        "cohick-prisca",
+        "sybrandi-prisca"
+      ],
+      "related_entity_ids": [
+        "priscilla"
+      ],
+      "passage_anchors": [
+        "1 Corinthians 16:19"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "priscilla",
+        "parent_title": "Priscilla (Prisca)",
+        "parent_type": "person",
+        "object_importance": 80,
+        "retrieval_score": 0.9,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 18,
+        "certainty": "probable",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "interpretive-caution",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "INTERTEXTUAL_REUSE",
+        "presentation_role": "dig_deeper",
+        "overview_priority": 0
+      }
+    },
+    {
+      "id": "two-harbor-travel-network",
+      "claim": "Corinth occupied the isthmus between eastern Cenchreae and western Lechaeum, connecting Aegean and Adriatic-facing routes with north-south land travel.",
+      "category": "geography",
+      "source_ids": [
+        "corinth-biblical-texts",
+        "strabo-corinth",
+        "pausanias-corinth",
+        "ascsa-corinth",
+        "murphy-corinth"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Corinthians 16:1-24"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "roman-corinth-civic-household-and-association-life",
+        "parent_title": "Roman Corinth: Civic, Household, and Association Life",
+        "parent_type": "cultural_background",
+        "object_importance": 98,
+        "retrieval_score": 0.938,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 1.0,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "geography-environment",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "archaeology_geography",
+        "overview_priority": 90
+      }
+    },
+    {
+      "id": "two-harbor-travel-network:passage-relevance",
+      "claim": "The two-port network makes Acts' departure from Cenchreae, Phoebe's location there, Pauline travel planning, coworker movement, and collection logistics geographically concrete.",
+      "category": "geography",
+      "source_ids": [
+        "corinth-biblical-texts",
+        "strabo-corinth",
+        "pausanias-corinth",
+        "ascsa-corinth",
+        "murphy-corinth"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Corinthians 16:1-24"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "roman-corinth-civic-household-and-association-life",
+        "parent_title": "Roman Corinth: Civic, Household, and Association Life",
+        "parent_type": "cultural_background",
+        "object_importance": 98,
+        "retrieval_score": 0.938,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 1.0,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "geography-environment",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 90,
+        "supports_evidence_ids": [
+          "two-harbor-travel-network"
+        ]
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "The Greek New Testament: 1 Corinthians",
+        "author": "Michael W. Holmes, ed.",
+        "publisher": "Society of Biblical Literature",
+        "year": 2010,
+        "locator": "1 Corinthians 1-16",
+        "url": "https://www.sblgnt.com/download/",
+        "source_type": "scripture",
+        "supports": [
+          "claims",
+          "interpretive-notes",
+          "scripture-references"
+        ],
+        "notes": "Open critical Greek text for direct textual and lexical control.",
+        "id": "1cor-greek",
+        "canonical_object_ids": [
+          "1-corinthians"
+        ]
+      },
+      {
+        "title": "Acts 18:1-4 and 20:1-38",
+        "author": "Anonymous",
+        "publisher": "Society of Biblical Literature",
+        "year": 2010,
+        "locator": "Acts 18:1-4; 20:1-6, 17-38",
+        "url": "https://www.sblgnt.com/download/",
+        "source_type": "scripture",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Later narrative evidence; narrative setting, composition, and Pauline letters remain distinct.",
+        "id": "acts-economic",
+        "canonical_object_ids": [
+          "patronage-hospitality-and-debt"
+        ]
+      },
+      {
+        "title": "Acts",
+        "author": "Anonymous",
+        "publisher": "Society of Biblical Literature",
+        "year": 2010,
+        "locator": "Acts 18:1-3; 28:11-31",
+        "url": "https://www.sblgnt.com/download/",
+        "source_type": "scripture",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Primary narrative evidence, not an excavation report.",
+        "id": "acts-rome-texts",
+        "canonical_object_ids": [
+          "roman-rome-jewish-civic-household-and-imperial-life"
+        ]
+      },
+      {
+        "title": "Ancient Corinth Excavations",
+        "author": "",
+        "publisher": "American School of Classical Studies at Athens",
+        "year": null,
+        "locator": "Corinth excavation archive and publications",
+        "url": "https://www.ascsa.edu.gr/excavations/ancient-corinth",
+        "source_type": "excavation-report",
+        "supports": [
+          "historical-context",
+          "archaeology",
+          "claims"
+        ],
+        "notes": "Primary archaeological program and publication gateway.",
+        "id": "ascsa-corinth",
+        "canonical_object_ids": [
+          "1-corinthians",
+          "roman-corinth-civic-household-and-association-life"
+        ],
+        "canonical_source_variants": [
+          {
+            "title": "Ancient Corinth Excavations",
+            "author": "",
+            "publisher": "American School of Classical Studies at Athens",
+            "year": null,
+            "locator": "Corinth excavation archive and publications",
+            "url": "https://www.ascsa.edu.gr/excavations/ancient-corinth",
+            "source_type": "excavation-report",
+            "supports": [
+              "historical-context",
+              "archaeology",
+              "claims"
+            ],
+            "notes": "Primary archaeological program and publication gateway.",
+            "id": "ascsa-corinth"
+          },
+          {
+            "title": "Ancient Corinth Excavations and Digital Resources",
+            "author": "",
+            "publisher": "American School of Classical Studies at Athens",
+            "year": null,
+            "locator": "Roman Corinth excavation archive, publications, site history, and GIS",
+            "url": "https://www.ascsa.edu.gr/excavations/ancient-corinth/digital-corinth",
+            "source_type": "excavation-report",
+            "supports": [
+              "roman-colony-public-space",
+              "erastus-benefaction-inscription",
+              "sanctuary-market-idol-food",
+              "two-harbor-travel-network"
+            ],
+            "notes": "Primary archaeological program and publication gateway.",
+            "id": "ascsa-corinth"
+          }
+        ]
+      },
+      {
+        "title": "The Letters of Paul and the Construction of Early Christian Networks",
+        "author": "John M. G. Barclay",
+        "publisher": "Oxford University Press",
+        "year": 2018,
+        "locator": "pp. 289-302",
+        "url": "https://doi.org/10.1093/oso/9780198804208.003.0012",
+        "source_type": "academic-book",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Analyzes letters, messengers, face-to-face communication, reputation, and control within Pauline networks.",
+        "id": "barclay-paul-networks",
+        "canonical_object_ids": [
+          "pauline-mission-proclamation-travel-coworkers-letters-messengers-hospitality-house-assemblies-synagogues-marketplaces-adaptability-church-planting-and-interassembly-networks"
+        ]
+      },
+      {
+        "title": "A Greek-English Lexicon of the New Testament and Other Early Christian Literature",
+        "author": "Frederick W. Danker, ed.",
+        "publisher": "University of Chicago Press",
+        "year": 2000,
+        "locator": "relevant lemmas",
+        "url": "https://press.uchicago.edu/ucp/books/book/chicago/G/bo3620484.html",
+        "source_type": "lexicon",
+        "supports": [
+          "greek-words",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Standard historical Greek lexicon.",
+        "id": "bdag",
+        "canonical_object_ids": [
+          "1-corinthians"
+        ]
+      },
+      {
+        "title": "Paul and His Colleagues: Identity, Collaboration, and Community",
+        "author": "Trevor J. Burke",
+        "publisher": "T&T Clark",
+        "year": 2026,
+        "locator": "chapters on Timothy, Apollos, Titus, Phoebe, Junia, Epaphroditus, Euodia, and Syntyche",
+        "url": "https://www.bloomsbury.com/us/paul-and-his-colleagues-9780567680143/",
+        "source_type": "academic-book",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Studies how coworker language constructs a differentiated social network.",
+        "id": "burke-paul-colleagues",
+        "canonical_object_ids": [
+          "pauline-mission-proclamation-travel-coworkers-letters-messengers-hospitality-house-assemblies-synagogues-marketplaces-adaptability-church-planting-and-interassembly-networks"
+        ]
+      },
+      {
+        "title": "Women in the World of the Earliest Christians",
+        "author": "Lynn H. Cohick",
+        "publisher": "Baker Academic",
+        "year": 2009,
+        "locator": "Prisca, households, work, patronage, and travel",
+        "url": "https://bakeracademic.com/p/women-in-the-world-of-the-earliest-christians-lynn-h-cohick/230758",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "interpretive-notes"
+        ],
+        "notes": "Social comparison does not establish individual wealth or office.",
+        "id": "cohick-aquila",
+        "canonical_object_ids": [
+          "aquila"
+        ]
+      },
+      {
+        "title": "Women in the World of the Earliest Christians",
+        "author": "Lynn H. Cohick",
+        "publisher": "Baker Academic",
+        "year": 2009,
+        "locator": "Prisca, households, work, patronage, and travel",
+        "url": "https://bakeracademic.com/p/women-in-the-world-of-the-earliest-christians-lynn-h-cohick/230758",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "interpretive-notes"
+        ],
+        "notes": "Social comparison does not establish individual wealth or office.",
+        "id": "cohick-prisca",
+        "canonical_object_ids": [
+          "priscilla"
+        ]
+      },
+      {
+        "title": "Women in the World of the Earliest Christians",
+        "author": "Lynn H. Cohick",
+        "publisher": "Baker Academic",
+        "year": 2009,
+        "locator": "Households, work, patronage, travel, and women",
+        "url": "https://bakeracademic.com/p/women-in-the-world-of-the-earliest-christians-lynn-h-cohick/230758",
+        "source_type": "academic-book",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Comparative social history does not assign unstated offices or wealth.",
+        "id": "cohick-women",
+        "canonical_object_ids": [
+          "roman-rome-jewish-civic-household-and-imperial-life"
+        ]
+      },
+      {
+        "title": "Corinthian narrative and letter passages",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Acts 18:1-18; Romans 16:1-2, 23; 1 Corinthians 1:10-31; 6:1-11; 7:17-24; 8:1-13; 9:19-27; 10:14-33; 11:17-34; 16:1-24; 2 Corinthians 8:1-9:15",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "acts-corinthian-work-household-synagogue",
+          "acts-gallio-hearing",
+          "gallio-delphi-inscription",
+          "roman-colony-public-space",
+          "two-harbor-travel-network",
+          "erastus-benefaction-inscription",
+          "sanctuary-market-idol-food",
+          "association-meal-status",
+          "household-slavery-status",
+          "isthmian-athletic-comparison"
+        ],
+        "notes": "Primary biblical texts; no modern translation is reproduced.",
+        "id": "corinth-biblical-texts",
+        "canonical_object_ids": [
+          "roman-corinth-civic-household-and-association-life"
+        ]
+      },
+      {
+        "title": "The Offering of the Gentiles",
+        "author": "David J. Downs",
+        "publisher": "Mohr Siebeck",
+        "year": 2008,
+        "locator": "Paul's collection in chronological, cultural, and cultic contexts",
+        "url": "https://www.mohrsiebeck.com/en/book/the-offering-of-the-gentiles-9783161515910/",
+        "source_type": "academic-book",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Reconstructs collection chronology and compares associations, benefaction, common funds, poor relief, and translocal links.",
+        "id": "downs-offering",
+        "canonical_object_ids": [
+          "patronage-hospitality-and-debt"
+        ]
+      },
+      {
+        "title": "The Offering of the Gentiles",
+        "author": "David J. Downs",
+        "publisher": "Mohr Siebeck",
+        "year": 2008,
+        "locator": "Paul's collection chronology, social analogies, and cultic metaphors",
+        "url": "https://doi.org/10.1628/978-3-16-151591-0",
+        "source_type": "academic-book",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Collection study distinguishing letter chronology, associations, reciprocity, and worship rhetoric.",
+        "id": "downs-offering-gentiles",
+        "canonical_object_ids": [
+          "pauline-work-labor-wages-maintenance-poverty-wealth-collection-giving-reciprocity-equality-partnership-idleness-need-and-economic-solidarity"
+        ]
+      },
+      {
+        "title": "The First Epistle to the Corinthians, Revised Edition",
+        "author": "Gordon D. Fee",
+        "publisher": "Eerdmans",
+        "year": 2014,
+        "locator": "passim",
+        "url": "https://www.eerdmans.com/9780802871367/the-first-epistle-to-the-corinthians-revised-edition/",
+        "source_type": "academic-book",
+        "supports": [
+          "claims",
+          "interpretive-notes",
+          "literary-context"
+        ],
+        "notes": "Major critical commentary.",
+        "id": "fee-1cor",
+        "canonical_object_ids": [
+          "1-corinthians"
+        ]
+      },
+      {
+        "title": "The Greek New Testament: 1 Corinthians",
+        "author": "Michael W. Holmes, ed.",
+        "publisher": "Society of Biblical Literature",
+        "year": 2010,
+        "locator": "1 Corinthians 9:1-27; 16:1-4",
+        "url": "https://www.sblgnt.com/download/",
+        "source_type": "scripture",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Primary Greek evidence for maintenance rights, nonuse, and collection procedure.",
+        "id": "first-corinth-economics-text",
+        "canonical_object_ids": [
+          "pauline-work-labor-wages-maintenance-poverty-wealth-collection-giving-reciprocity-equality-partnership-idleness-need-and-economic-solidarity"
+        ]
+      },
+      {
+        "title": "The Greek New Testament: 1 Corinthians",
+        "author": "Michael W. Holmes, ed.",
+        "publisher": "Society of Biblical Literature",
+        "year": 2010,
+        "locator": "1 Corinthians 1:1-4:21; 9:1-27; 16:1-24",
+        "url": "https://www.sblgnt.com/download/",
+        "source_type": "scripture",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Primary Greek evidence for proclamation, coworkers, adaptability, visits, and greetings.",
+        "id": "first-corinth-mission-text",
+        "canonical_object_ids": [
+          "pauline-mission-proclamation-travel-coworkers-letters-messengers-hospitality-house-assemblies-synagogues-marketplaces-adaptability-church-planting-and-interassembly-networks"
+        ]
+      },
+      {
+        "title": "The Greek New Testament: 1 Corinthians",
+        "author": "Michael W. Holmes, ed.",
+        "publisher": "Society of Biblical Literature",
+        "year": 2010,
+        "locator": "1 Corinthians 1 and 16",
+        "url": "https://www.sblgnt.com/download/",
+        "source_type": "scripture",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Primary Greek evidence for thanksgiving and closing language.",
+        "id": "first-corinth-prayer-text",
+        "canonical_object_ids": [
+          "pauline-prayer-thanksgiving-intercession-lament-groaning-joy-peace-hope-benediction-blessing-and-communal-memory"
+        ]
+      },
+      {
+        "title": "1 Corinthians 9:1-18 and 16:1-4",
+        "author": "Paul, with Sosthenes named as co-sender",
+        "publisher": "Society of Biblical Literature",
+        "year": 2010,
+        "locator": "1 Corinthians 9:1-18; 16:1-4",
+        "url": "https://www.sblgnt.com/download/",
+        "source_type": "scripture",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Primary Greek literary evidence; the two passages have different rhetorical functions.",
+        "id": "first-corinthians-economic",
+        "canonical_object_ids": [
+          "patronage-hospitality-and-debt"
+        ]
+      },
+      {
+        "title": "Paul and Economics",
+        "author": "Steven J. Friesen",
+        "publisher": "Fortress Press",
+        "year": 2017,
+        "locator": "Corinthian assemblies, economic stratification, and collection",
+        "url": "https://www.fortresspress.com/store/product/9781451481662/Paul-and-Economics",
+        "source_type": "academic-book",
+        "supports": [
+          "association-meal-status",
+          "household-slavery-status",
+          "erastus-benefaction-inscription"
+        ],
+        "notes": "Economic analysis without assigning every participant to a fixed modern class.",
+        "id": "friesen-economics",
+        "canonical_object_ids": [
+          "roman-corinth-civic-household-and-association-life"
+        ]
+      },
+      {
+        "title": "Paul and Economics",
+        "author": "Steven J. Friesen",
+        "publisher": "Fortress Press",
+        "year": 2017,
+        "locator": "Corinthian assemblies and collection",
+        "url": "https://www.fortresspress.com/store/product/9781451481662/Paul-and-Economics",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Economic stratification and Pauline practice.",
+        "id": "friesen-poverty",
+        "canonical_object_ids": [
+          "1-corinthians"
+        ]
+      },
+      {
+        "title": "II Corinthians",
+        "author": "Victor Paul Furnish",
+        "publisher": "Yale University Press",
+        "year": 1984,
+        "locator": "2 Corinthians 8-9",
+        "url": "https://yalebooks.yale.edu/book/9780300139839/ii-corinthians/",
+        "source_type": "academic-book",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Literary, historical, rhetorical, and theological commentary.",
+        "id": "furnish-second-corinthians",
+        "canonical_object_ids": [
+          "patronage-hospitality-and-debt"
+        ]
+      },
+      {
+        "title": "House Church and Mission: The Importance of Household Structures in Early Christianity",
+        "author": "Roger W. Gehring",
+        "publisher": "Hendrickson",
+        "year": 2004,
+        "locator": "Pauline house assemblies and mission",
+        "url": "https://books.google.com/books/about/House_Church_and_Mission.html?id=Rs3YAAAAMAAJ",
+        "source_type": "academic-book",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Examines household structures while leaving individual venue identifications open to textual evidence.",
+        "id": "gehring-house-church",
+        "canonical_object_ids": [
+          "pauline-mission-proclamation-travel-coworkers-letters-messengers-hospitality-house-assemblies-synagogues-marketplaces-adaptability-church-planting-and-interassembly-networks"
+        ]
+      },
+      {
+        "title": "Slavery in Early Christianity",
+        "author": "Jennifer A. Glancy",
+        "publisher": "Oxford University Press",
+        "year": 2002,
+        "locator": "Bodies and Pauline churches",
+        "url": "https://academic.oup.com/book/7076",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Critical study foregrounding enslaved bodies and sexual vulnerability.",
+        "id": "glancy-slavery",
+        "canonical_object_ids": [
+          "1-corinthians",
+          "roman-corinth-civic-household-and-association-life"
+        ],
+        "canonical_source_variants": [
+          {
+            "title": "Slavery in Early Christianity",
+            "author": "Jennifer A. Glancy",
+            "publisher": "Oxford University Press",
+            "year": 2002,
+            "locator": "Bodies and Pauline churches",
+            "url": "https://academic.oup.com/book/7076",
+            "source_type": "academic-book",
+            "supports": [
+              "historical-context",
+              "claims",
+              "interpretive-notes"
+            ],
+            "notes": "Critical study foregrounding enslaved bodies and sexual vulnerability.",
+            "id": "glancy-slavery"
+          },
+          {
+            "title": "Slavery in Early Christianity",
+            "author": "Jennifer A. Glancy",
+            "publisher": "Oxford University Press",
+            "year": 2002,
+            "locator": "Enslaved bodies, households, sexuality, and Pauline assemblies",
+            "url": "https://academic.oup.com/book/7076",
+            "source_type": "academic-book",
+            "supports": [
+              "household-slavery-status"
+            ],
+            "notes": "Critical study foregrounding coercion and enslaved people's vulnerability.",
+            "id": "glancy-slavery"
+          }
+        ]
+      },
+      {
+        "title": "1 Corinthians",
+        "author": "Michael J. Gorman",
+        "publisher": "Eerdmans",
+        "year": 2024,
+        "locator": "1 Corinthians 1 and 16",
+        "url": "https://www.eerdmans.com/9781467465748/1-corinthians/",
+        "source_type": "academic-book",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Recent commentary attentive to communal ethics and contemporary reception.",
+        "id": "gorman-first-corinthians-prayer",
+        "canonical_object_ids": [
+          "pauline-prayer-thanksgiving-intercession-lament-groaning-joy-peace-hope-benediction-blessing-and-communal-memory"
+        ]
+      },
+      {
+        "title": "First Corinthians",
+        "author": "Richard B. Hays",
+        "publisher": "Westminster John Knox Press",
+        "year": 1997,
+        "locator": "passim",
+        "url": "https://www.wjkbooks.com/Products/0664234408/first-corinthians.aspx",
+        "source_type": "academic-book",
+        "supports": [
+          "claims",
+          "interpretive-notes",
+          "canonical-context"
+        ],
+        "notes": "Literary and theological commentary.",
+        "id": "hays-1cor",
+        "canonical_object_ids": [
+          "1-corinthians"
+        ]
+      },
+      {
+        "title": "Christians at Rome in the First Two Centuries: From Paul to Valentinus",
+        "author": "Peter Lampe",
+        "publisher": "Continuum",
+        "year": 2003,
+        "locator": "Parts 1-2: topography, persons, groups, stratification, and fractionation",
+        "url": "https://www.bloomsbury.com/au/christians-at-rome-in-the-first-two-centuries-9780826481023/",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Prosopographic and topographic reconstructions remain probabilistic.",
+        "id": "lampe-rome",
+        "canonical_object_ids": [
+          "roman-rome-jewish-civic-household-and-imperial-life"
+        ]
+      },
+      {
+        "title": "The Pauline Church and the Corinthian Ekklesia",
+        "author": "Richard Last",
+        "publisher": "Cambridge University Press",
+        "year": 2016,
+        "locator": "Greco-Roman associations in comparative context",
+        "url": "https://doi.org/10.1017/CBO9781316338104",
+        "source_type": "academic-book",
+        "supports": [
+          "association-meal-status",
+          "household-slavery-status"
+        ],
+        "notes": "Comparative association model; similarity does not establish institutional identity.",
+        "id": "last-associations",
+        "canonical_object_ids": [
+          "roman-corinth-civic-household-and-association-life"
+        ]
+      },
+      {
+        "title": "Transient Apostle: Paul, Travel, and the Rhetoric of Empire",
+        "author": "Timothy Luckritz Marquis",
+        "publisher": "Yale University Press",
+        "year": 2013,
+        "locator": "chapters 1-6",
+        "url": "https://yalebooks.yale.edu/book/9780300187144/transient-apostle/",
+        "source_type": "academic-book",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Relates travel rhetoric, material mobility, empire, and maintenance of translocal communities.",
+        "id": "luckritz-transient-apostle",
+        "canonical_object_ids": [
+          "pauline-mission-proclamation-travel-coworkers-letters-messengers-hospitality-house-assemblies-synagogues-marketplaces-adaptability-church-planting-and-interassembly-networks"
+        ]
+      },
+      {
+        "title": "Paul and the Rhetoric of Reversal in 1 Corinthians",
+        "author": "Matthew R. Malcolm",
+        "publisher": "Cambridge University Press",
+        "year": 2013,
+        "locator": "passim",
+        "url": "https://www.cambridge.org/core/books/paul-and-the-rhetoric-of-reversal-in-1-corinthians/941B2433019D1F7ABE0E68651DF76BA2",
+        "source_type": "academic-book",
+        "supports": [
+          "literary-context",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Study of coherence, arrangement, and cruciform reversal.",
+        "id": "malcolm-reversal",
+        "canonical_object_ids": [
+          "1-corinthians"
+        ]
+      },
+      {
+        "title": "Paul and the Rhetoric of Reconciliation",
+        "author": "Margaret M. Mitchell",
+        "publisher": "Mohr Siebeck",
+        "year": 1991,
+        "locator": "passim",
+        "url": "https://www.mohrsiebeck.com/en/book/paul-and-the-rhetoric-of-reconciliation-9783161570018/",
+        "source_type": "academic-book",
+        "supports": [
+          "literary-context",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Rhetorical study of unity and deliberation.",
+        "id": "mitchell-rhetoric",
+        "canonical_object_ids": [
+          "1-corinthians"
+        ]
+      },
+      {
+        "title": "St. Paul's Corinth: Texts and Archaeology",
+        "author": "Jerome Murphy-O'Connor",
+        "publisher": "Liturgical Press",
+        "year": 2002,
+        "locator": "Roman city, ports, inscriptions, cults, and Pauline passages",
+        "url": "https://litpress.org/Products/2336/St-Pauls-Corinth",
+        "source_type": "academic-book",
+        "supports": [
+          "acts-corinthian-work-household-synagogue",
+          "acts-gallio-hearing",
+          "gallio-delphi-inscription",
+          "roman-colony-public-space",
+          "two-harbor-travel-network",
+          "erastus-benefaction-inscription",
+          "sanctuary-market-idol-food",
+          "isthmian-athletic-comparison"
+        ],
+        "notes": "Textual and archaeological sourcebook.",
+        "id": "murphy-corinth",
+        "canonical_object_ids": [
+          "1-corinthians",
+          "roman-corinth-civic-household-and-association-life"
+        ],
+        "canonical_source_variants": [
+          {
+            "title": "St. Paul's Corinth: Texts and Archaeology",
+            "author": "Jerome Murphy-O'Connor",
+            "publisher": "Liturgical Press",
+            "year": 2002,
+            "locator": "Roman city, ports, inscriptions, cults, and Pauline passages",
+            "url": "https://litpress.org/Products/2336/St-Pauls-Corinth",
+            "source_type": "academic-book",
+            "supports": [
+              "acts-corinthian-work-household-synagogue",
+              "acts-gallio-hearing",
+              "gallio-delphi-inscription",
+              "roman-colony-public-space",
+              "two-harbor-travel-network",
+              "erastus-benefaction-inscription",
+              "sanctuary-market-idol-food",
+              "isthmian-athletic-comparison"
+            ],
+            "notes": "Textual and archaeological sourcebook.",
+            "id": "murphy-corinth"
+          },
+          {
+            "title": "St. Paul's Corinth: Texts and Archaeology",
+            "author": "Jerome Murphy-O'Connor",
+            "publisher": "Liturgical Press",
+            "year": 2002,
+            "locator": "passim",
+            "url": "https://litpress.org/Products/2336/St-Pauls-Corinth",
+            "source_type": "academic-book",
+            "supports": [
+              "historical-context",
+              "archaeology",
+              "claims"
+            ],
+            "notes": "Textual and archaeological sourcebook.",
+            "id": "murphy-corinth"
+          }
+        ]
+      },
+      {
+        "title": "Archaeology and the Letters of Paul",
+        "author": "Laura Salah Nasrallah",
+        "publisher": "Oxford University Press",
+        "year": 2019,
+        "locator": "Corinth, public life, bodies, inequality, and archaeological method",
+        "url": "https://academic.oup.com/book/34986",
+        "source_type": "academic-book",
+        "supports": [
+          "roman-colony-public-space",
+          "erastus-benefaction-inscription",
+          "sanctuary-market-idol-food",
+          "association-meal-status",
+          "household-slavery-status"
+        ],
+        "notes": "Material-culture study that resists using monuments as decorative proof texts.",
+        "id": "nasrallah-corinth",
+        "canonical_object_ids": [
+          "roman-corinth-civic-household-and-association-life"
+        ]
+      },
+      {
+        "title": "New Testament Virtual Manuscript Room",
+        "author": "",
+        "publisher": "Institute for New Testament Textual Research",
+        "year": null,
+        "locator": "1 Corinthians witnesses including P15, P46, P123 and majuscules",
+        "url": "https://ntvmr.uni-muenster.de/",
+        "source_type": "museum-collection",
+        "supports": [
+          "archaeology",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Official manuscript catalogue and research workspace.",
+        "id": "ntvmr",
+        "canonical_object_ids": [
+          "1-corinthians"
+        ]
+      },
+      {
+        "title": "Framework for Communications: Freedom of Religion or Belief and Freedom from Coercion",
+        "author": "UN Special Rapporteur on Freedom of Religion or Belief",
+        "publisher": "OHCHR",
+        "year": 2023,
+        "locator": "freedom from coercion and protection of persons in vulnerable situations",
+        "url": "https://www.ohchr.org/sites/default/files/documents/issues/religion/2023-01-24/SR-religion-Framework-for-communications.pdf",
+        "source_type": "reference-work",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Modern human-rights framework used for religious-consent safeguards.",
+        "id": "ohchr-religion-coercion",
+        "canonical_object_ids": [
+          "pauline-prayer-thanksgiving-intercession-lament-groaning-joy-peace-hope-benediction-blessing-and-communal-memory"
+        ]
+      },
+      {
+        "title": "Gregory-Aland P46",
+        "author": "",
+        "publisher": "Center for the Study of New Testament Manuscripts",
+        "year": null,
+        "locator": "Pauline codex including most of 1 Corinthians",
+        "url": "https://manuscripts.csntm.org/manuscript/View/GA_P46",
+        "source_type": "museum-collection",
+        "supports": [
+          "archaeology",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Digital images and catalogue data.",
+        "id": "p46-csntm",
+        "canonical_object_ids": [
+          "1-corinthians"
+        ]
+      },
+      {
+        "title": "Pauline references to Prisca and Aquila",
+        "author": "Paul and later Pauline tradition",
+        "publisher": "Society of Biblical Literature",
+        "year": 2010,
+        "locator": "Romans 16:3-5; 1 Corinthians 16:19; 2 Timothy 4:19",
+        "url": "https://www.sblgnt.com/download/",
+        "source_type": "scripture",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "The texts name locations and relationships selectively.",
+        "id": "pauline-prisca-aquila-texts",
+        "canonical_object_ids": [
+          "roman-rome-jewish-civic-household-and-imperial-life"
+        ]
+      },
+      {
+        "title": "Description of Greece 2.1-5",
+        "author": "Pausanias",
+        "publisher": "Perseus Digital Library",
+        "year": 160,
+        "locator": "Book 2, Corinth and its ports",
+        "url": "https://www.perseus.tufts.edu/hopper/text?doc=Paus.+2.1&lang=original",
+        "source_type": "ancient-primary-source",
+        "supports": [
+          "roman-colony-public-space",
+          "two-harbor-travel-network",
+          "sanctuary-market-idol-food",
+          "isthmian-athletic-comparison"
+        ],
+        "notes": "Second-century local description used as explicitly later comparative evidence.",
+        "id": "pausanias-corinth",
+        "canonical_object_ids": [
+          "roman-corinth-civic-household-and-association-life"
+        ]
+      },
+      {
+        "title": "Romans 16:3-5",
+        "author": "Michael W. Holmes, ed.",
+        "publisher": "Society of Biblical Literature and Logos Bible Software",
+        "year": 2010,
+        "locator": "Romans 16:3-5",
+        "url": "https://www.sblgnt.com/download/",
+        "source_type": "scripture",
+        "supports": [
+          "canonical-context",
+          "scripture-references",
+          "interpretive-notes"
+        ],
+        "notes": "Primary Pauline greeting.",
+        "id": "romans-aquila",
+        "canonical_object_ids": [
+          "aquila"
+        ]
+      },
+      {
+        "title": "Romans",
+        "author": "Paul, with Tertius named as scribe",
+        "publisher": "Society of Biblical Literature",
+        "year": 2010,
+        "locator": "Romans 1-16",
+        "url": "https://www.sblgnt.com/download/",
+        "source_type": "scripture",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Primary literary evidence; translation and audience reconstruction remain interpretive.",
+        "id": "romans-greek",
+        "canonical_object_ids": [
+          "roman-rome-jewish-civic-household-and-imperial-life"
+        ]
+      },
+      {
+        "title": "Romans 16:3-5",
+        "author": "Michael W. Holmes, ed.",
+        "publisher": "Society of Biblical Literature and Logos Bible Software",
+        "year": 2010,
+        "locator": "Romans 16:3-5",
+        "url": "https://www.sblgnt.com/download/",
+        "source_type": "scripture",
+        "supports": [
+          "canonical-context",
+          "scripture-references",
+          "interpretive-notes"
+        ],
+        "notes": "Primary Pauline greeting using Prisca.",
+        "id": "romans-prisca",
+        "canonical_object_ids": [
+          "priscilla"
+        ]
+      },
+      {
+        "title": "2 Corinthians 8:1-9:15",
+        "author": "Paul, with Timothy named as co-sender",
+        "publisher": "Society of Biblical Literature",
+        "year": 2010,
+        "locator": "2 Corinthians 8:1-9:15",
+        "url": "https://www.sblgnt.com/download/",
+        "source_type": "scripture",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Primary Greek literary evidence; integrity and rhetorical situation remain disputed.",
+        "id": "second-corinthians-collection",
+        "canonical_object_ids": [
+          "patronage-hospitality-and-debt"
+        ]
+      },
+      {
+        "title": "Codex Sinaiticus",
+        "author": "",
+        "publisher": "Codex Sinaiticus Project",
+        "year": null,
+        "locator": "1 Corinthians",
+        "url": "https://www.codexsinaiticus.org/en/",
+        "source_type": "museum-collection",
+        "supports": [
+          "archaeology",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Official collaborative digital edition.",
+        "id": "sinaiticus",
+        "canonical_object_ids": [
+          "1-corinthians"
+        ]
+      },
+      {
+        "title": "From Symposium to Eucharist",
+        "author": "Dennis E. Smith",
+        "publisher": "Fortress Press",
+        "year": 2003,
+        "locator": "Early Christian meals and association banquets",
+        "url": "https://www.fortresspress.com/store/product/9780800634896/From-Symposium-to-Eucharist",
+        "source_type": "academic-book",
+        "supports": [
+          "association-meal-status"
+        ],
+        "notes": "Ancient meal comparison for First Corinthians 11.",
+        "id": "smith-banquet",
+        "canonical_object_ids": [
+          "1-corinthians",
+          "roman-corinth-civic-household-and-association-life"
+        ],
+        "canonical_source_variants": [
+          {
+            "title": "From Symposium to Eucharist",
+            "author": "Dennis E. Smith",
+            "publisher": "Fortress Press",
+            "year": 2003,
+            "locator": "Early Christian meals and association banquets",
+            "url": "https://www.fortresspress.com/store/product/9780800634896/From-Symposium-to-Eucharist",
+            "source_type": "academic-book",
+            "supports": [
+              "association-meal-status"
+            ],
+            "notes": "Ancient meal comparison for First Corinthians 11.",
+            "id": "smith-banquet"
+          },
+          {
+            "title": "From Symposium to Eucharist",
+            "author": "Dennis E. Smith",
+            "publisher": "Fortress Press",
+            "year": 2003,
+            "locator": "Early Christian meals",
+            "url": "https://www.fortresspress.com/store/product/9780800634896/From-Symposium-to-Eucharist",
+            "source_type": "academic-book",
+            "supports": [
+              "historical-context",
+              "claims",
+              "interpretive-notes"
+            ],
+            "notes": "Ancient meal and association comparanda.",
+            "id": "smith-banquet"
+          }
+        ]
+      },
+      {
+        "title": "Geography 8.6.20",
+        "author": "Strabo",
+        "publisher": "Perseus Digital Library",
+        "year": 20,
+        "locator": "Book 8, chapter 6, section 20",
+        "url": "https://www.perseus.tufts.edu/hopper/text?doc=Strab.+8.6.20&lang=original",
+        "source_type": "ancient-primary-source",
+        "supports": [
+          "two-harbor-travel-network",
+          "sanctuary-market-idol-food"
+        ],
+        "notes": "Early Imperial literary witness for ports and commerce; its sexualized rhetoric is not neutral demographic evidence.",
+        "id": "strabo-corinth",
+        "canonical_object_ids": [
+          "roman-corinth-civic-household-and-association-life"
+        ]
+      },
+      {
+        "title": "Women Leaders Lost in Translation? A Study in Romans 16:1-16",
+        "author": "Marieke Sybrandi",
+        "publisher": "The Expository Times",
+        "year": 2024,
+        "locator": "136.3, pages 92-101",
+        "url": "https://doi.org/10.1177/00145246241287148",
+        "source_type": "journal-article",
+        "supports": [
+          "interpretive-notes"
+        ],
+        "notes": "Examines Prisca and other women coworkers in Romans 16.",
+        "id": "sybrandi-aquila",
+        "canonical_object_ids": [
+          "aquila"
+        ]
+      },
+      {
+        "title": "Women Leaders Lost in Translation? A Study in Romans 16:1-16",
+        "author": "Marieke Sybrandi",
+        "publisher": "The Expository Times",
+        "year": 2024,
+        "locator": "136.3, pages 92-101",
+        "url": "https://doi.org/10.1177/00145246241287148",
+        "source_type": "journal-article",
+        "supports": [
+          "interpretive-notes"
+        ],
+        "notes": "Examines Prisca and other women coworkers in Romans 16.",
+        "id": "sybrandi-prisca",
+        "canonical_object_ids": [
+          "priscilla"
+        ]
+      },
+      {
+        "title": "The Greek New Testament: 1 Thessalonians",
+        "author": "Michael W. Holmes, ed.",
+        "publisher": "Society of Biblical Literature",
+        "year": 2010,
+        "locator": "1 Thessalonians 1, 3, and 5",
+        "url": "https://www.sblgnt.com/download/",
+        "source_type": "scripture",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Primary Greek evidence for plural remembrance, reciprocal prayer, and closing exhortations.",
+        "id": "thess-prayer-text",
+        "canonical_object_ids": [
+          "pauline-prayer-thanksgiving-intercession-lament-groaning-joy-peace-hope-benediction-blessing-and-communal-memory"
+        ]
+      },
+      {
+        "title": "The First Epistle to the Corinthians",
+        "author": "Anthony C. Thiselton",
+        "publisher": "Eerdmans",
+        "year": 2000,
+        "locator": "passim",
+        "url": "https://www.eerdmans.com/9780802824493/the-first-epistle-to-the-corinthians/",
+        "source_type": "academic-book",
+        "supports": [
+          "claims",
+          "interpretive-notes",
+          "greek-words"
+        ],
+        "notes": "Detailed commentary with lexical and reception analysis.",
+        "id": "thiselton-1cor",
+        "canonical_object_ids": [
+          "1-corinthians"
+        ]
+      },
+      {
+        "title": "WHO QualityRights: Transforming Services and Promoting Human Rights in Mental Health",
+        "author": "World Health Organization",
+        "publisher": "World Health Organization",
+        "year": 2023,
+        "locator": "informed consent, autonomy, choice, inclusion, and freedom from coercion",
+        "url": "https://www.who.int/activities/transforming-services-and-promoting-human-rights-in-mental-health-and-related-areas/",
+        "source_type": "reference-work",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Modern consent and autonomy framework, not ancient evidence.",
+        "id": "who-qualityrights",
+        "canonical_object_ids": [
+          "pauline-prayer-thanksgiving-intercession-lament-groaning-joy-peace-hope-benediction-blessing-and-communal-memory"
+        ]
+      },
+      {
+        "title": "Paul's Intercessory Prayers: The Significance of the Intercessory Prayer Passages in the Letters of St Paul",
+        "author": "Gordon P. Wiles",
+        "publisher": "Cambridge University Press",
+        "year": 1974,
+        "locator": "chapters 1-7",
+        "url": "https://doi.org/10.1017/CBO9780511555145",
+        "source_type": "academic-book",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Classifies prayer reports, wishes, requests, thanksgiving periods, blessings, and curses in the Pauline letters.",
+        "id": "wiles-intercessory-prayers",
+        "canonical_object_ids": [
+          "pauline-prayer-thanksgiving-intercession-lament-groaning-joy-peace-hope-benediction-blessing-and-communal-memory"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "1-corinthians",
+        "type": "book",
+        "title": "1 Corinthians",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.912
+      },
+      {
+        "id": "aquila",
+        "type": "person",
+        "title": "Aquila",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.898
+      },
+      {
+        "id": "macedonia",
+        "type": "place",
+        "title": "Roman Macedonia",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.914
+      },
+      {
+        "id": "patronage-hospitality-and-debt",
+        "type": "cultural_background",
+        "title": "Pauline Economic Life, Patronage, Gifts, Collections, Labor, and Poverty",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.937
+      },
+      {
+        "id": "pauline-mission-proclamation-travel-coworkers-letters-messengers-hospitality-house-assemblies-synagogues-marketplaces-adaptability-church-planting-and-interassembly-networks",
+        "type": "cultural_background",
+        "title": "Pauline Mission, Proclamation, Travel, Coworkers, Letters, Messengers, Hospitality, House Assemblies, Synagogues, Marketplaces, Adaptability, Church Planting, and Interassembly Networks",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.889
+      },
+      {
+        "id": "pauline-prayer-thanksgiving-intercession-lament-groaning-joy-peace-hope-benediction-blessing-and-communal-memory",
+        "type": "cultural_background",
+        "title": "Pauline Prayer, Thanksgiving, Intercession, Lament, Groaning, Joy, Peace, Hope, Benediction, Blessing, and Communal Memory",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.889
+      },
+      {
+        "id": "pauline-work-labor-wages-maintenance-poverty-wealth-collection-giving-reciprocity-equality-partnership-idleness-need-and-economic-solidarity",
+        "type": "cultural_background",
+        "title": "Pauline Work, Labor, Wages, Maintenance, Poverty, Wealth, Collection, Giving, Reciprocity, Equality, Partnership, Idleness, Need, and Economic Solidarity",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.959
+      },
+      {
+        "id": "priscilla",
+        "type": "person",
+        "title": "Priscilla (Prisca)",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.9
+      },
+      {
+        "id": "roman-corinth-civic-household-and-association-life",
+        "type": "cultural_background",
+        "title": "Roman Corinth: Civic, Household, and Association Life",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.938
+      },
+      {
+        "id": "roman-rome-jewish-civic-household-and-imperial-life",
+        "type": "cultural_background",
+        "title": "Roman Rome: Jewish, Civic, Household, and Imperial Life",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.916
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "b943cf45552233d09cb8183f3564318bde022681432158f93183466d62a45c88",
+  "evidence_hash_version": "2"
+}

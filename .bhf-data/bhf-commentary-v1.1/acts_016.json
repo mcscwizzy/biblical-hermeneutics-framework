@@ -1,0 +1,101 @@
+{
+  "reference": "Acts 16",
+  "book": "Acts",
+  "chapter": 16,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_101",
+          "text": "Read the chapter with this setting in view: Acts repeatedly portrays Paul as a Roman citizen, but independent confirmation of that personal status is unavailable. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "acts-roman-citizenship"
+          ],
+          "verse_refs": [
+            "Acts 16:35-40"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_102",
+          "text": "For its historical and cultural setting, note that Acts encounters Timothy while moving through Derbe and Lystra, identifies his believing Jewish mother and Greek father, and reports approval among siblings at Lystra and Iconium. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. Interpretations differ on some details.",
+          "evidence_ids": [
+            "timothy-derbe-lystra-household-and-origin-limits"
+          ],
+          "verse_refs": [
+            "Acts 16:1-3"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        },
+        {
+          "id": "historical_context_103",
+          "text": "For its historical and cultural setting, note that Acts names a Philippian women's prayer gathering and Lydia's household, prominent women and varied hearers at Thessalonica, and prominent Greek women and men at Beroea. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "macedonian-hearers-women-and-households"
+          ],
+          "verse_refs": [
+            "Acts 16:13-15"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "archaeology_geography",
+      "title": "Archaeology and geography",
+      "blocks": [
+        {
+          "id": "archaeology_geography_102",
+          "text": "For its geographical or material setting, note that Acts locates a Sabbath gathering outside the gate by a river, uses proseuche, and depicts Paul speaking to assembled women. It can illuminate the passage, while its limits should be kept in view. Interpretations differ on some details.",
+          "evidence_ids": [
+            "riverside-prayer-gathering"
+          ],
+          "verse_refs": [
+            "Acts 16:13-16"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_102",
+          "text": "A literary feature to notice is that Codex Bezae and related versional witnesses preserve a substantially distinctive text of Acts often called Western, whose individual readings require case-by-case judgment. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image. Interpretations differ on some details.",
+          "evidence_ids": [
+            "acts-western-text"
+          ],
+          "verse_refs": [
+            "Acts 16:1-40"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "e37784f5bcd4a44435e8104ae9097f27c59d03fdf332707603fe81b8b87fe0f2",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-007-medium",
+    "generated_timestamp": "2026-09-06T20:17:55Z"
+  }
+}

@@ -1,0 +1,101 @@
+{
+  "reference": "James 3",
+  "book": "James",
+  "chapter": 3,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_132",
+          "text": "Read the chapter with this setting in view: James warns that teachers will receive stricter judgment and immediately treats failures in speech. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken. Interpretations differ on some details.",
+          "evidence_ids": [
+            "jas-teachers"
+          ],
+          "verse_refs": [
+            "James 3:1-2"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_133",
+          "text": "For its historical and cultural setting, note that Tongue and fire are metaphors for disproportionate harm by speech; they do not authorize policing marginalized speech while ignoring institutional power. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "james:interpretive_note:21"
+          ],
+          "verse_refs": [
+            "James 3:1-12"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        },
+        {
+          "id": "historical_context_134",
+          "text": "For its historical and cultural setting, note that Teachers receive stricter judgment because speech carries responsibility; the text cannot legitimate authoritarian teaching, clerical immunity, or spiritual abuse. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "james:interpretive_note:20"
+          ],
+          "verse_refs": [
+            "James 3:1-2"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_133",
+          "text": "A literary feature to notice is that James uses bit, rudder, fire, animal, spring, and tree images to expose speech's disproportionate power and inconsistency. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image.",
+          "evidence_ids": [
+            "jas-tongue"
+          ],
+          "verse_refs": [
+            "James 3:3-12"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "dig_deeper",
+      "title": "Dig deeper",
+      "blocks": [
+        {
+          "id": "dig_deeper_133",
+          "text": "For a later or comparative connection, note that James addresses brothers and sisters through conventionally masculine Greek forms; reception should neither erase women nor turn ancient address forms into a warrant for misogyny. This remains a secondary connection rather than the chapter's first-audience context. It can be traced further without replacing the chapter's own setting. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "james:interpretive_note:40"
+          ],
+          "verse_refs": [
+            "James 3:1"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "dc96acf4aa99d4c07fc473cba945ffe873677385ffc4cdfa3f7a59e90cf2e33d",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-007-medium",
+    "generated_timestamp": "2026-09-06T20:17:55Z"
+  }
+}

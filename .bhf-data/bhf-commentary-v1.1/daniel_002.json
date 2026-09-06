@@ -1,0 +1,83 @@
+{
+  "reference": "Daniel 2",
+  "book": "Daniel",
+  "chapter": 2,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_54",
+          "text": "Read the chapter with this setting in view: The statue and four kingdoms should first be interpreted within Daniel's literary and Hellenistic horizons; competing Jewish and Christian identifications must be named as interpretations. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken. Interpretations differ on some details.",
+          "evidence_ids": [
+            "daniel:interpretive_note:5"
+          ],
+          "verse_refs": [
+            "Daniel 2:31-45"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_55",
+          "text": "For its historical and cultural setting, note that Daniel 2 interprets a multi-metal statue as a succession of kingdoms destroyed by a divinely established kingdom represented by a stone, without naming every kingdom in that chapter. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "daniel-statue-four-kingdoms"
+          ],
+          "verse_refs": [
+            "Daniel 2:1-49"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        },
+        {
+          "id": "historical_context_56",
+          "text": "For its historical and cultural setting, note that The Hebrew-Aramaic-Hebrew pattern is real evidence for literary analysis but does not by itself date each language section or prove one compositional theory. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "daniel:interpretive_note:4"
+          ],
+          "verse_refs": [
+            "Daniel 2:1-49"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_55",
+          "text": "A literary feature to notice is that The Masoretic book moves from Hebrew to Aramaic at Daniel 2:4b and back to Hebrew at 8:1, so the Aramaic unit crosses the common tales-versus-visions division. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "daniel-language-structure"
+          ],
+          "verse_refs": [
+            "Daniel 2:1-49"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "8a513c5cb9453454f78f766a0fe00d200827d953a7eee3a989f861ed7937976f",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-002-medium",
+    "generated_timestamp": "2026-09-05T22:51:03Z"
+  }
+}

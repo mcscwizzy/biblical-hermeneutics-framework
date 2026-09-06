@@ -1,0 +1,3552 @@
+{
+  "passage_ref": "1 Peter 2",
+  "entities": {
+    "people": [],
+    "places": [],
+    "groups": [
+      {
+        "id": "priesthood",
+        "title": "Priesthood",
+        "type": "institution",
+        "aliases": [
+          "priesthood institution",
+          "priesthood in scripture",
+          "priesthood structure",
+          "priesthood role"
+        ],
+        "metadata": {
+          "summary": "The mediating office charged with teaching, sacrifice, blessing, and maintaining holy access to God.",
+          "importance": 95,
+          "retrieval_score": 0.915,
+          "ancient_names": [],
+          "modern_identification": "",
+          "region": "",
+          "terrain": "",
+          "elevation": null,
+          "archaeology": [],
+          "related_passages": [
+            "Exodus 28:1-43",
+            "Leviticus 8:1-36",
+            "Leviticus 9:1-24",
+            "Leviticus 16:1-34",
+            "Numbers 18:1-32",
+            "Deuteronomy 33:8-11",
+            "Psalms 110:4",
+            "Hebrews 4:14-16",
+            "Hebrews 7:1-28",
+            "1 Peter 2:4-10"
+          ]
+        }
+      }
+    ],
+    "events": [
+      {
+        "id": "crucifixion",
+        "title": "Crucifixion",
+        "type": "event",
+        "aliases": [
+          "what happened in crucifixion",
+          "tell me about crucifixion",
+          "why is crucifixion important"
+        ],
+        "metadata": {
+          "summary": "The Roman execution of Jesus that Christians interpret as the climactic atoning death of the Messiah.",
+          "importance": 100,
+          "retrieval_score": 0.92,
+          "ancient_names": [],
+          "modern_identification": "",
+          "region": "",
+          "terrain": "",
+          "elevation": null,
+          "archaeology": [],
+          "related_passages": [
+            "Psalms 22:1-31",
+            "Isaiah 53:1-12",
+            "Mark 15:1-47",
+            "Luke 23:26-49",
+            "John 19:16-37",
+            "Romans 3:21-26",
+            "1 Peter 2:21-25",
+            "Hebrews 10:1-18"
+          ]
+        }
+      }
+    ],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "1-peter:interpretive_note:13",
+      "claim": "Logikon milk may mean rational, spiritual, or word-related nourishment; translation cannot establish a sacramental or anti-intellectual theory by itself.",
+      "category": "culture",
+      "source_ids": [
+        "1pet-greek",
+        "bdag",
+        "michaels"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Peter 2:2"
+      ],
+      "confidence": "low",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "1-peter",
+        "parent_title": "1 Peter",
+        "parent_type": "book",
+        "object_importance": 80,
+        "retrieval_score": 0.94,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 1,
+        "certainty": "disputed",
+        "dispute_status": "lexical_uncertainty",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "textual-observation",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    },
+    {
+      "id": "1-peter:interpretive_note:14",
+      "claim": "Living stones and spiritual house are communal temple metaphors centered on the scriptural cornerstone; they do not identify a building, clerical caste, or territorial Christian state.",
+      "category": "culture",
+      "source_ids": [
+        "1pet-greek",
+        "nets-lxx",
+        "jobes"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Peter 2:4-8"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "1-peter",
+        "parent_title": "1 Peter",
+        "parent_type": "book",
+        "object_importance": 80,
+        "retrieval_score": 0.94,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 3,
+        "certainty": "textually_explicit",
+        "dispute_status": "denominational_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "canonical-connection",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 102
+      }
+    },
+    {
+      "id": "1-peter:interpretive_note:15",
+      "claim": "People of God and royal priesthood language must not become antisemitism, supersessionism, ethnic nationalism, or a claim that Jewish people were rejected; First Peter reasons through Israel's scriptures rather than erasing Israel.",
+      "category": "culture",
+      "source_ids": [
+        "levine-jant",
+        "nets-lxx",
+        "jobes"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Peter 2:9-10"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "1-peter",
+        "parent_title": "1 Peter",
+        "parent_type": "book",
+        "object_importance": 80,
+        "retrieval_score": 0.94,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 8,
+        "certainty": "strong_consensus",
+        "dispute_status": "denominational_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "interpretive-caution",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 102
+      }
+    },
+    {
+      "id": "1-peter:interpretive_note:16",
+      "claim": "Honorable conduct responds to slander through visible good works; it does not require assimilation, respectability politics, concealment of abuse, or silence before injustice.",
+      "category": "politics",
+      "source_ids": [
+        "1pet-greek",
+        "horrell"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Peter 2:11-12"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "1-peter",
+        "parent_title": "1 Peter",
+        "parent_type": "book",
+        "object_importance": 80,
+        "retrieval_score": 0.94,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 10,
+        "certainty": "textually_explicit",
+        "dispute_status": "denominational_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "interpretive-caution",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    },
+    {
+      "id": "1-peter:interpretive_note:17",
+      "claim": "Submission to authorities is bounded in the same paragraph by freedom, universal honor, sibling love, fear of God, and limited honor of the emperor; it is not unlimited obedience.",
+      "category": "culture",
+      "source_ids": [
+        "1pet-greek",
+        "green",
+        "bdag"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Peter 2:13-17"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "1-peter",
+        "parent_title": "1 Peter",
+        "parent_type": "book",
+        "object_importance": 80,
+        "retrieval_score": 0.94,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 12,
+        "certainty": "probable",
+        "dispute_status": "denominational_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "literary-observation",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    },
+    {
+      "id": "1-peter:interpretive_note:18",
+      "claim": "Authorities language must not legitimate authoritarian government, nationalism, colonial rule, concealment of state violence, or obedience to commands that produce injustice and harm.",
+      "category": "culture",
+      "source_ids": [
+        "green",
+        "horrell"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Peter 2:13-17"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "1-peter",
+        "parent_title": "1 Peter",
+        "parent_type": "book",
+        "object_importance": 80,
+        "retrieval_score": 0.94,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 12,
+        "certainty": "strong_consensus",
+        "dispute_status": "denominational_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "interpretive-caution",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    },
+    {
+      "id": "1-peter:interpretive_note:19",
+      "claim": "Slavery is an exploitative status relation in the passage, not benign employment; the exhortation must never support slavery apologetics, trafficking, returning people to enslavers, or worker exploitation.",
+      "category": "culture",
+      "source_ids": [
+        "1pet-greek",
+        "glancy",
+        "balch"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Peter 2:18-20"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "1-peter",
+        "parent_title": "1 Peter",
+        "parent_type": "book",
+        "object_importance": 80,
+        "retrieval_score": 0.94,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 17,
+        "certainty": "strong_consensus",
+        "dispute_status": "denominational_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "interpretive-caution",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    },
+    {
+      "id": "1-peter:interpretive_note:20",
+      "claim": "Christ's footsteps address unjust suffering in an enslaved-person unit; imitation cannot mean seeking harm, staying with an abuser, refusing rescue, or shielding perpetrators from accountability.",
+      "category": "culture",
+      "source_ids": [
+        "1pet-greek",
+        "perkins",
+        "glancy"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Peter 2:21-25"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "1-peter",
+        "parent_title": "1 Peter",
+        "parent_type": "book",
+        "object_importance": 80,
+        "retrieval_score": 0.94,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 20,
+        "certainty": "textually_explicit",
+        "dispute_status": "denominational_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "interpretive-caution",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    },
+    {
+      "id": "1-peter:interpretive_note:21",
+      "claim": "Sin-bearing, wounds, healing, shepherd, and guardian images combine scriptural and pastoral language; later atonement theories must identify their additional synthesis.",
+      "category": "culture",
+      "source_ids": [
+        "1pet-greek",
+        "nets-lxx",
+        "achtemeier"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Peter 2:24-25"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "1-peter",
+        "parent_title": "1 Peter",
+        "parent_type": "book",
+        "object_importance": 80,
+        "retrieval_score": 0.94,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 23,
+        "certainty": "textually_explicit",
+        "dispute_status": "denominational_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "theological-interpretation",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    },
+    {
+      "id": "1-peter:interpretive_note:42",
+      "claim": "Application must reject antisemitism, supersessionism, xenophobia, ethnic nationalism, colonial settlement, slavery apologetics, trafficking, worker exploitation, misogyny, anti-LGBTQ coercion, forced conversion, religious violence, prosperity extraction, and ecological neglect.",
+      "category": "culture",
+      "source_ids": [
+        "levine-jant",
+        "glancy",
+        "horrell",
+        "perkins"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Peter 2:9-17"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "1-peter",
+        "parent_title": "1 Peter",
+        "parent_type": "book",
+        "object_importance": 80,
+        "retrieval_score": 0.94,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 8,
+        "certainty": "strong_consensus",
+        "dispute_status": "denominational_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "interpretive-caution",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    },
+    {
+      "id": "1pet-audience",
+      "claim": "The letter's language supports debate over Jewish, gentile, and mixed recipients but does not settle exact demographics.",
+      "category": "culture",
+      "source_ids": [
+        "elliott",
+        "jobes",
+        "levine-jant"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Peter 2:9-12"
+      ],
+      "confidence": "low",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "1-peter",
+        "parent_title": "1 Peter",
+        "parent_type": "book",
+        "object_importance": 80,
+        "retrieval_score": 0.94,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 8,
+        "certainty": "insufficient_evidence",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "historical_cultural",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 110
+      }
+    },
+    {
+      "id": "1pet-authorities",
+      "claim": "The letter calls for submission to human institutions while also commanding fear of God.",
+      "category": "culture",
+      "source_ids": [
+        "1pet-greek",
+        "green"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Peter 2:13-17"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "1-peter",
+        "parent_title": "1 Peter",
+        "parent_type": "book",
+        "object_importance": 80,
+        "retrieval_score": 0.94,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 12,
+        "certainty": "textually_explicit",
+        "dispute_status": "denominational_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "pastoral_application",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 110
+      }
+    },
+    {
+      "id": "1pet-conduct",
+      "claim": "Honorable conduct among the nations is linked to responding to slander and anticipated divine visitation.",
+      "category": "culture",
+      "source_ids": [
+        "1pet-greek",
+        "horrell"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Peter 2:11-12"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "1-peter",
+        "parent_title": "1 Peter",
+        "parent_type": "book",
+        "object_importance": 80,
+        "retrieval_score": 0.94,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 10,
+        "certainty": "textually_explicit",
+        "dispute_status": "lexical_uncertainty",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 90
+      }
+    },
+    {
+      "id": "1pet-example",
+      "claim": "Christ's suffering is presented both as an example to follow and in sin-bearing and healing imagery.",
+      "category": "culture",
+      "source_ids": [
+        "1pet-greek",
+        "nets-lxx",
+        "achtemeier"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Peter 2:21-25"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "1-peter",
+        "parent_title": "1 Peter",
+        "parent_type": "book",
+        "object_importance": 80,
+        "retrieval_score": 0.94,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 20,
+        "certainty": "textually_explicit",
+        "dispute_status": "denominational_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_theology",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "1pet-genre",
+      "claim": "First Peter is a coherent letter employing blessing, paraenesis, scriptural interpretation, household discourse, and apocalyptic consolation.",
+      "category": "culture",
+      "source_ids": [
+        "green",
+        "michaels",
+        "elliott"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Peter 1:1-5:14"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "1-peter",
+        "parent_title": "1 Peter",
+        "parent_type": "book",
+        "object_importance": 80,
+        "retrieval_score": 0.94,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 100,
+        "certainty": "strong_consensus",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 65
+      }
+    },
+    {
+      "id": "1pet-persecution",
+      "claim": "First Peter attests social hostility and suffering but does not name Nero, Domitian, Trajan, or an empire-wide persecution decree.",
+      "category": "politics",
+      "source_ids": [
+        "horrell",
+        "achtemeier",
+        "elliott"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Peter 2:12"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "1-peter",
+        "parent_title": "1 Peter",
+        "parent_type": "book",
+        "object_importance": 80,
+        "retrieval_score": 0.94,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 11,
+        "certainty": "strong_consensus",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "historical_cultural",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 110
+      }
+    },
+    {
+      "id": "1pet-priesthood",
+      "claim": "The addressees receive royal-priesthood and holy-nation language drawn from Israel's scriptures.",
+      "category": "culture",
+      "source_ids": [
+        "1pet-greek",
+        "nets-lxx",
+        "levine-jant"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Peter 2:9-10"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "1-peter",
+        "parent_title": "1 Peter",
+        "parent_type": "book",
+        "object_importance": 80,
+        "retrieval_score": 0.94,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 8,
+        "certainty": "textually_explicit",
+        "dispute_status": "denominational_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_theology",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 110
+      }
+    },
+    {
+      "id": "1pet-slavery",
+      "claim": "The household address directly exhorts enslaved household members under masters, including unjust masters.",
+      "category": "culture",
+      "source_ids": [
+        "1pet-greek",
+        "glancy",
+        "balch"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Peter 2:18-20"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "1-peter",
+        "parent_title": "1 Peter",
+        "parent_type": "book",
+        "object_importance": 80,
+        "retrieval_score": 0.94,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 17,
+        "certainty": "textually_explicit",
+        "dispute_status": "denominational_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "historical_cultural",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "1pet-stones",
+      "claim": "Christ is presented as a living stone and the addressees as living stones being built into a spiritual house.",
+      "category": "culture",
+      "source_ids": [
+        "1pet-greek",
+        "nets-lxx",
+        "jobes"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Peter 2:4-8"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "1-peter",
+        "parent_title": "1 Peter",
+        "parent_type": "book",
+        "object_importance": 80,
+        "retrieval_score": 0.94,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 3,
+        "certainty": "textually_explicit",
+        "dispute_status": "denominational_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_theology",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "crucifixion:ancient_near_east_context:0",
+      "claim": "The execution belongs specifically to Roman imperial punishment while the Gospels interpret it through Israel's scriptural and covenantal categories.",
+      "category": "culture",
+      "source_ids": [
+        "psalm-22",
+        "isaiah-53",
+        "mark-15",
+        "luke-23",
+        "john-19",
+        "romans-3",
+        "hebrews-10"
+      ],
+      "related_entity_ids": [
+        "crucifixion"
+      ],
+      "passage_anchors": [
+        "1 Peter 2:21-25"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "crucifixion",
+        "parent_title": "Crucifixion",
+        "parent_type": "event",
+        "object_importance": 100,
+        "retrieval_score": 0.92,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 20,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "crucifixion:hebraic_worldview:0",
+      "claim": "The narratives connect death, shame, kingship, lament, covenant, burial duty, and scriptural interpretation without making Roman execution a Jewish institution.",
+      "category": "culture",
+      "source_ids": [
+        "psalm-22",
+        "isaiah-53",
+        "mark-15",
+        "luke-23",
+        "john-19",
+        "romans-3",
+        "hebrews-10"
+      ],
+      "related_entity_ids": [
+        "crucifixion"
+      ],
+      "passage_anchors": [
+        "1 Peter 2:21-25"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "crucifixion",
+        "parent_title": "Crucifixion",
+        "parent_type": "event",
+        "object_importance": 100,
+        "retrieval_score": 0.92,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 20,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "hebraic_worldview",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "crucifixion:historical_context:0",
+      "claim": "The crucifixion occurs in first-century Judea under Roman authority and amid Jewish expectations for redemption and deliverance.",
+      "category": "history",
+      "source_ids": [
+        "psalm-22",
+        "isaiah-53",
+        "mark-15",
+        "luke-23",
+        "john-19",
+        "romans-3",
+        "hebrews-10"
+      ],
+      "related_entity_ids": [
+        "crucifixion"
+      ],
+      "passage_anchors": [
+        "1 Peter 2:21-25"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "crucifixion",
+        "parent_title": "Crucifixion",
+        "parent_type": "event",
+        "object_importance": 100,
+        "retrieval_score": 0.92,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 20,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "crucifixion:second_temple_context:0",
+      "claim": "Crucifixion displayed Roman coercive power in Judea. The Yehohanan remains show that at least one crucified person later received Jerusalem tomb and ossuary burial, but no single find defines every execution.",
+      "category": "culture",
+      "source_ids": [
+        "psalm-22",
+        "isaiah-53",
+        "mark-15",
+        "luke-23",
+        "john-19",
+        "romans-3",
+        "hebrews-10"
+      ],
+      "related_entity_ids": [
+        "crucifixion"
+      ],
+      "passage_anchors": [
+        "1 Peter 2:21-25"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "crucifixion",
+        "parent_title": "Crucifixion",
+        "parent_type": "event",
+        "object_importance": 100,
+        "retrieval_score": 0.92,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 20,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "second_temple_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "ecclesiology:ancient_near_east_context:0",
+      "claim": "Ancient background for Ecclesiology includes covenant life, temple worship, royal ideology, wisdom teaching, and early church confession; the entry ties that world to Matthew 16:13-19, Acts 2:42-47, people-of-god-theme, and ekklesia without letting comparison replace the biblical witness.",
+      "category": "culture",
+      "source_ids": [
+        "matthew-16",
+        "acts-2",
+        "ephesians-2",
+        "ephesians-4",
+        "1-peter-2",
+        "ecclesiology-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Peter 2:4-10"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "ecclesiology",
+        "parent_title": "Ecclesiology",
+        "parent_type": "theology",
+        "object_importance": 91,
+        "retrieval_score": 0.911,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 3,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "ecclesiology:historical_context:0",
+      "claim": "Ecclesiology is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness.",
+      "category": "history",
+      "source_ids": [
+        "matthew-16",
+        "acts-2",
+        "ephesians-2",
+        "ephesians-4",
+        "1-peter-2",
+        "ecclesiology-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Peter 2:4-10"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "ecclesiology",
+        "parent_title": "Ecclesiology",
+        "parent_type": "theology",
+        "object_importance": 91,
+        "retrieval_score": 0.911,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 3,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "honor-and-shame:ancient_near_east_context:0",
+      "claim": "Honor and shame patterns appear across ancient Mediterranean and Near Eastern societies, especially around kinship, hospitality, public speech, and status.",
+      "category": "culture",
+      "source_ids": [
+        "luke-14",
+        "hebrews-12",
+        "1-peter-2",
+        "honor-and-shame-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Peter 2:19-23"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "honor-and-shame",
+        "parent_title": "Honor And Shame",
+        "parent_type": "cultural_background",
+        "object_importance": 88,
+        "retrieval_score": 0.908,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 18,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "honor-and-shame:hebraic_worldview:0",
+      "claim": "Scripture recognizes public honor and shame but reorders them under covenant faithfulness, divine vindication, humility, and God's care for the lowly.",
+      "category": "culture",
+      "source_ids": [
+        "luke-14",
+        "hebrews-12",
+        "1-peter-2",
+        "honor-and-shame-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Peter 2:19-23"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "honor-and-shame",
+        "parent_title": "Honor And Shame",
+        "parent_type": "cultural_background",
+        "object_importance": 88,
+        "retrieval_score": 0.908,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 18,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "hebraic_worldview",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "honor-and-shame:historical_context:0",
+      "claim": "Many biblical texts assume group-oriented social worlds where household reputation, public accusation, patronage, and communal recognition mattered deeply.",
+      "category": "history",
+      "source_ids": [
+        "luke-14",
+        "hebrews-12",
+        "1-peter-2",
+        "honor-and-shame-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Peter 2:19-23"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "honor-and-shame",
+        "parent_title": "Honor And Shame",
+        "parent_type": "cultural_background",
+        "object_importance": 88,
+        "retrieval_score": 0.908,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 18,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "honor-and-shame:historical_setting:0",
+      "claim": "Ancient Israelite, Second Temple Jewish, and Greco-Roman social worlds",
+      "category": "history",
+      "source_ids": [
+        "luke-14",
+        "hebrews-12",
+        "1-peter-2",
+        "honor-and-shame-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Peter 2:19-23"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "honor-and-shame",
+        "parent_title": "Honor And Shame",
+        "parent_type": "cultural_background",
+        "object_importance": 88,
+        "retrieval_score": 0.908,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 18,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_setting",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "honor-and-shame:key_places:0",
+      "claim": "jerusalem",
+      "category": "geography",
+      "source_ids": [
+        "luke-14",
+        "hebrews-12",
+        "1-peter-2",
+        "honor-and-shame-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Peter 2:19-23"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "honor-and-shame",
+        "parent_title": "Honor And Shame",
+        "parent_type": "cultural_background",
+        "object_importance": 88,
+        "retrieval_score": 0.908,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 18,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "key_places",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": null,
+        "overview_priority": 43,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "honor-and-shame:key_places:1",
+      "claim": "corinth",
+      "category": "geography",
+      "source_ids": [
+        "luke-14",
+        "hebrews-12",
+        "1-peter-2",
+        "honor-and-shame-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Peter 2:19-23"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "honor-and-shame",
+        "parent_title": "Honor And Shame",
+        "parent_type": "cultural_background",
+        "object_importance": 88,
+        "retrieval_score": 0.908,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 18,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "key_places",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": null,
+        "overview_priority": 28,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "honor-and-shame:key_places:2",
+      "claim": "galilee-1",
+      "category": "geography",
+      "source_ids": [
+        "luke-14",
+        "hebrews-12",
+        "1-peter-2",
+        "honor-and-shame-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Peter 2:19-23"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "honor-and-shame",
+        "parent_title": "Honor And Shame",
+        "parent_type": "cultural_background",
+        "object_importance": 88,
+        "retrieval_score": 0.908,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 18,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "key_places",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": null,
+        "overview_priority": 28,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "honor-and-shame:original_audience:0",
+      "claim": "Readers interpreting social dynamics in ancient biblical texts",
+      "category": "social",
+      "source_ids": [
+        "luke-14",
+        "hebrews-12",
+        "1-peter-2",
+        "honor-and-shame-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Peter 2:19-23"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "honor-and-shame",
+        "parent_title": "Honor And Shame",
+        "parent_type": "cultural_background",
+        "object_importance": 88,
+        "retrieval_score": 0.908,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 18,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "original_audience",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "honor-and-shame:second_temple_context:0",
+      "claim": "Second Temple Jewish and Greco-Roman settings used honor, shame, patronage, and public status to frame disputes over authority, purity, discipleship, and crucifixion.",
+      "category": "culture",
+      "source_ids": [
+        "luke-14",
+        "hebrews-12",
+        "1-peter-2",
+        "honor-and-shame-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Peter 2:19-23"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "honor-and-shame",
+        "parent_title": "Honor And Shame",
+        "parent_type": "cultural_background",
+        "object_importance": 88,
+        "retrieval_score": 0.908,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 18,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "second_temple_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "hosea:interpretive_note:30",
+      "claim": "Romans 9 and 1 Peter 2 reuse Lo-ammi and Lo-ruhamah language in distinct communities; neither passage licenses antisemitism or contempt for Jews.",
+      "category": "culture",
+      "source_ids": [
+        "new-testament-hosea-reuse",
+        "moyise-hosea-new-testament"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Peter 2:4-10"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "hosea",
+        "parent_title": "Hosea",
+        "parent_type": "book",
+        "object_importance": 91,
+        "retrieval_score": 0.911,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 3,
+        "certainty": "strong_consensus",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "interpretive-caution",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "LATER_RECEPTION",
+        "presentation_role": "dig_deeper",
+        "overview_priority": 0
+      }
+    },
+    {
+      "id": "isaiah-suffering-servant",
+      "claim": "Isaiah 52:13-53:12 narrates a servant's humiliation, suffering, death, representative bearing, vindication, and benefit to others, but does not explicitly name the servant; collective, individual, prophetic, messianic, and christological readings have long histories.",
+      "category": "history",
+      "source_ids": [
+        "isaiah-masoretic",
+        "blenkinsopp-isaiah-40-55",
+        "paul-isaiah-40-66",
+        "oxford-handbook-isaiah",
+        "moyise-isaiah-nt"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Peter 2:21-25"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "isaiah",
+        "parent_title": "Isaiah",
+        "parent_type": "book",
+        "object_importance": 98,
+        "retrieval_score": 0.918,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 20,
+        "certainty": "textually_explicit",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "LATER_RECEPTION",
+        "presentation_role": "dig_deeper",
+        "overview_priority": 0
+      }
+    },
+    {
+      "id": "mission:ancient_near_east_context:0",
+      "claim": "Ancient background for Mission includes covenant life, temple worship, royal ideology, wisdom teaching, and early church confession; the entry ties that world to Genesis 12:1-3, Matthew 28:18-20, witness-theme, and martyria without letting comparison replace the biblical witness.",
+      "category": "culture",
+      "source_ids": [
+        "genesis-12",
+        "matthew-28",
+        "acts-1",
+        "romans-15",
+        "1-peter-2",
+        "mission-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Peter 2:9-12"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "mission",
+        "parent_title": "Mission",
+        "parent_type": "theology",
+        "object_importance": 90,
+        "retrieval_score": 0.91,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 8,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "mission:historical_context:0",
+      "claim": "Mission is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness.",
+      "category": "history",
+      "source_ids": [
+        "genesis-12",
+        "matthew-28",
+        "acts-1",
+        "romans-15",
+        "1-peter-2",
+        "mission-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Peter 2:9-12"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "mission",
+        "parent_title": "Mission",
+        "parent_type": "theology",
+        "object_importance": 90,
+        "retrieval_score": 0.91,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 8,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "people-of-god-theme:ancient_near_east_context:0",
+      "claim": "Ancient background for People of God Theme includes covenant practice, worship, kingship, wisdom instruction, and prophetic critique; the entry ties that world to Matthew 16:13-19, Acts 2:42-47, ecclesiology, and ekklesia without letting comparison replace the biblical witness.",
+      "category": "culture",
+      "source_ids": [
+        "matthew-16",
+        "acts-2",
+        "ephesians-2",
+        "ephesians-4",
+        "1-peter-2",
+        "people-of-god-theme-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Peter 2:4-10"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "people-of-god-theme",
+        "parent_title": "People of God Theme",
+        "parent_type": "theme",
+        "object_importance": 91,
+        "retrieval_score": 0.911,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 3,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "people-of-god-theme:historical_context:0",
+      "claim": "People of God Theme is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness.",
+      "category": "history",
+      "source_ids": [
+        "matthew-16",
+        "acts-2",
+        "ephesians-2",
+        "ephesians-4",
+        "1-peter-2",
+        "people-of-god-theme-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Peter 2:4-10"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "people-of-god-theme",
+        "parent_title": "People of God Theme",
+        "parent_type": "theme",
+        "object_importance": 91,
+        "retrieval_score": 0.911,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 3,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "priesthood:ancient_near_east_context:0",
+      "claim": "Ancient priests often mediated cult and purity; Israel\u2019s priesthood is defined by covenant holiness, sacrificial service, and instruction.",
+      "category": "culture",
+      "source_ids": [
+        "exodus-28-29",
+        "leviticus-8-16",
+        "numbers-18",
+        "psalm-110",
+        "hebrews-4-7",
+        "1-peter-2",
+        "priesthood-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "priesthood"
+      ],
+      "passage_anchors": [
+        "1 Peter 2:4-10"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "priesthood",
+        "parent_title": "Priesthood",
+        "parent_type": "institution",
+        "object_importance": 95,
+        "retrieval_score": 0.915,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 3,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "priesthood:hebraic_worldview:0",
+      "claim": "Priesthood mediates access, blesses the people, teaches holiness, and guards sacred space.",
+      "category": "culture",
+      "source_ids": [
+        "exodus-28-29",
+        "leviticus-8-16",
+        "numbers-18",
+        "psalm-110",
+        "hebrews-4-7",
+        "1-peter-2",
+        "priesthood-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "priesthood"
+      ],
+      "passage_anchors": [
+        "1 Peter 2:4-10"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "priesthood",
+        "parent_title": "Priesthood",
+        "parent_type": "institution",
+        "object_importance": 95,
+        "retrieval_score": 0.915,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 3,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "hebraic_worldview",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "priesthood:historical_context:0",
+      "claim": "Priesthood is rooted in the wilderness, tabernacle, and temple settings of Israel\u2019s worship, then reappears in the second temple world and in New Testament reflection.",
+      "category": "history",
+      "source_ids": [
+        "exodus-28-29",
+        "leviticus-8-16",
+        "numbers-18",
+        "psalm-110",
+        "hebrews-4-7",
+        "1-peter-2",
+        "priesthood-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "priesthood"
+      ],
+      "passage_anchors": [
+        "1 Peter 2:4-10"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "priesthood",
+        "parent_title": "Priesthood",
+        "parent_type": "institution",
+        "object_importance": 95,
+        "retrieval_score": 0.915,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 3,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "priesthood:second_temple_context:0",
+      "claim": "Second Temple Judaism centered priestly service in the temple and made priestly legitimacy a live issue.",
+      "category": "culture",
+      "source_ids": [
+        "exodus-28-29",
+        "leviticus-8-16",
+        "numbers-18",
+        "psalm-110",
+        "hebrews-4-7",
+        "1-peter-2",
+        "priesthood-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "priesthood"
+      ],
+      "passage_anchors": [
+        "1 Peter 2:4-10"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "priesthood",
+        "parent_title": "Priesthood",
+        "parent_type": "institution",
+        "object_importance": 95,
+        "retrieval_score": 0.915,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 3,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "second_temple_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "suffering-servant-prophecy:ancient_near_east_context:0",
+      "claim": "Ancient background for Suffering Servant Prophecy includes royal courts, sanctuary worship, covenant lawsuits, exile, and restoration hope; the entry ties that world to Isaiah 42:1-9, Isaiah 49:1-7, isaiah, and jesus without letting comparison replace the biblical witness.",
+      "category": "culture",
+      "source_ids": [
+        "isaiah-42",
+        "isaiah-49",
+        "isaiah-50",
+        "isaiah-52-53",
+        "acts-8",
+        "1-peter-2",
+        "suffering-servant-prophecy-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Peter 2:21-25"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "suffering-servant-prophecy",
+        "parent_title": "Suffering Servant Prophecy",
+        "parent_type": "prophecy",
+        "object_importance": 96,
+        "retrieval_score": 0.916,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 20,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "suffering-servant-prophecy:historical_context:0",
+      "claim": "The servant songs emerge from Isaiah's prophetic world and hold together Israel's vocation, suffering, and restoration.",
+      "category": "history",
+      "source_ids": [
+        "isaiah-42",
+        "isaiah-49",
+        "isaiah-50",
+        "isaiah-52-53",
+        "acts-8",
+        "1-peter-2",
+        "suffering-servant-prophecy-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Peter 2:21-25"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "suffering-servant-prophecy",
+        "parent_title": "Suffering Servant Prophecy",
+        "parent_type": "prophecy",
+        "object_importance": 96,
+        "retrieval_score": 0.916,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 20,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "what-is-the-roman-empire-in-the-bible:ancient_near_east_context:0",
+      "claim": "Imperial rule, public cult, and patronage were normal features of the ancient world, and the New Testament speaks into that environment.",
+      "category": "culture",
+      "source_ids": [
+        "luke-2",
+        "john-19",
+        "acts-17",
+        "romans-13",
+        "1-peter-2",
+        "revelation-13",
+        "revelation-17-18",
+        "what-is-the-roman-empire-in-the-bible-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Peter 2:13-17"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "what-is-the-roman-empire-in-the-bible",
+        "parent_title": "What is the Roman Empire in the Bible?",
+        "parent_type": "faq",
+        "object_importance": 87,
+        "retrieval_score": 0.907,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 12,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "what-is-the-roman-empire-in-the-bible:historical_context:0",
+      "claim": "The first-century world of Jesus and the apostles is governed by Rome, with local rulers, roads, and armies serving imperial power.",
+      "category": "history",
+      "source_ids": [
+        "luke-2",
+        "john-19",
+        "acts-17",
+        "romans-13",
+        "1-peter-2",
+        "revelation-13",
+        "revelation-17-18",
+        "what-is-the-roman-empire-in-the-bible-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Peter 2:13-17"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "what-is-the-roman-empire-in-the-bible",
+        "parent_title": "What is the Roman Empire in the Bible?",
+        "parent_type": "faq",
+        "object_importance": 87,
+        "retrieval_score": 0.907,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 12,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "what-verses-show-identity-in-christ:ancient_near_east_context:0",
+      "claim": "Family, household, citizenship, and patronage language shaped ancient identity, but the New Testament grounds Christian identity in God's gracious action in Christ rather than social rank or ethnicity.",
+      "category": "culture",
+      "source_ids": [
+        "john-1",
+        "romans-8",
+        "1-corinthians-6",
+        "2-corinthians-5",
+        "galatians-2",
+        "galatians-3",
+        "ephesians-1",
+        "colossians-3",
+        "1-peter-2",
+        "1-john-3",
+        "what-verses-show-identity-in-christ-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Peter 2:9-10"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "what-verses-show-identity-in-christ",
+        "parent_title": "What Verses Show Identity in Christ?",
+        "parent_type": "faq",
+        "object_importance": 96,
+        "retrieval_score": 0.916,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 8,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "what-verses-show-identity-in-christ:historical_context:0",
+      "claim": "These texts come mainly from Pauline and Johannine letters written to churches learning to understand their status, belonging, and conduct in light of Christ's death and resurrection.",
+      "category": "history",
+      "source_ids": [
+        "john-1",
+        "romans-8",
+        "1-corinthians-6",
+        "2-corinthians-5",
+        "galatians-2",
+        "galatians-3",
+        "ephesians-1",
+        "colossians-3",
+        "1-peter-2",
+        "1-john-3",
+        "what-verses-show-identity-in-christ-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Peter 2:9-10"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "what-verses-show-identity-in-christ",
+        "parent_title": "What Verses Show Identity in Christ?",
+        "parent_type": "faq",
+        "object_importance": 96,
+        "retrieval_score": 0.916,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 8,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "witness-theme:ancient_near_east_context:0",
+      "claim": "Ancient background for Witness Theme includes covenant practice, worship, kingship, wisdom instruction, and prophetic critique; the entry ties that world to Genesis 12:1-3, Matthew 28:18-20, mission, and martyria without letting comparison replace the biblical witness.",
+      "category": "culture",
+      "source_ids": [
+        "genesis-12",
+        "matthew-28",
+        "acts-1",
+        "romans-15",
+        "1-peter-2",
+        "witness-theme-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Peter 2:9-12"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "witness-theme",
+        "parent_title": "Witness Theme",
+        "parent_type": "theme",
+        "object_importance": 90,
+        "retrieval_score": 0.91,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 8,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "witness-theme:historical_context:0",
+      "claim": "Witness Theme is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness.",
+      "category": "history",
+      "source_ids": [
+        "genesis-12",
+        "matthew-28",
+        "acts-1",
+        "romans-15",
+        "1-peter-2",
+        "witness-theme-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Peter 2:9-12"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "witness-theme",
+        "parent_title": "Witness Theme",
+        "parent_type": "theme",
+        "object_importance": 90,
+        "retrieval_score": 0.91,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 8,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40,
+        "inherited_from_parent": true
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "1 Corinthians 6",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "1-corinthians-6",
+        "canonical_object_ids": [
+          "what-verses-show-identity-in-christ"
+        ]
+      },
+      {
+        "title": "1 John 3",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "1-john-3",
+        "canonical_object_ids": [
+          "what-verses-show-identity-in-christ"
+        ]
+      },
+      {
+        "title": "1 Peter 2",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "1-peter-2",
+        "canonical_object_ids": [
+          "ecclesiology",
+          "honor-and-shame",
+          "mission",
+          "people-of-god-theme",
+          "priesthood",
+          "suffering-servant-prophecy",
+          "what-is-the-roman-empire-in-the-bible",
+          "what-verses-show-identity-in-christ",
+          "witness-theme"
+        ]
+      },
+      {
+        "title": "SBL Greek New Testament: 1 Peter",
+        "author": "Michael W. Holmes, editor",
+        "publisher": "Society of Biblical Literature and Logos Bible Software",
+        "year": 2010,
+        "locator": "1 Peter",
+        "url": "https://www.sblgnt.com/",
+        "source_type": "reference-work",
+        "supports": [],
+        "notes": "Open critical Greek text used for lexical and textual controls.",
+        "id": "1pet-greek",
+        "canonical_object_ids": [
+          "1-peter"
+        ]
+      },
+      {
+        "title": "2 Corinthians 5",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "2-corinthians-5",
+        "canonical_object_ids": [
+          "what-verses-show-identity-in-christ"
+        ]
+      },
+      {
+        "title": "1 Peter: A Commentary on First Peter",
+        "author": "Paul J. Achtemeier",
+        "publisher": "Fortress Press",
+        "year": 1996,
+        "locator": "Hermeneia",
+        "url": "https://www.worldcat.org/title/32893820",
+        "source_type": "academic-book",
+        "supports": [],
+        "notes": "Critical commentary control for text, authorship, history, and interpretation.",
+        "id": "achtemeier",
+        "canonical_object_ids": [
+          "1-peter"
+        ]
+      },
+      {
+        "title": "Acts 1",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "acts-1",
+        "canonical_object_ids": [
+          "mission",
+          "witness-theme"
+        ]
+      },
+      {
+        "title": "Acts 17",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "acts-17",
+        "canonical_object_ids": [
+          "what-is-the-roman-empire-in-the-bible"
+        ]
+      },
+      {
+        "title": "Acts 2",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "acts-2",
+        "canonical_object_ids": [
+          "ecclesiology",
+          "people-of-god-theme"
+        ]
+      },
+      {
+        "title": "Acts 8",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "acts-8",
+        "canonical_object_ids": [
+          "suffering-servant-prophecy"
+        ]
+      },
+      {
+        "title": "Let Wives Be Submissive: The Domestic Code in 1 Peter",
+        "author": "David L. Balch",
+        "publisher": "Scholars Press",
+        "year": 1981,
+        "locator": "Society of Biblical Literature Monograph Series 26",
+        "url": "https://www.worldcat.org/title/7552693",
+        "source_type": "academic-book",
+        "supports": [],
+        "notes": "Historical analysis of household rhetoric.",
+        "id": "balch",
+        "canonical_object_ids": [
+          "1-peter"
+        ]
+      },
+      {
+        "title": "A Greek-English Lexicon of the New Testament and Other Early Christian Literature",
+        "author": "Frederick W. Danker, editor",
+        "publisher": "University of Chicago Press",
+        "year": 2000,
+        "locator": "3rd edition",
+        "url": "https://press.uchicago.edu/ucp/books/book/chicago/G/bo3624576.html",
+        "source_type": "lexicon",
+        "supports": [],
+        "notes": "Greek lexical control.",
+        "id": "bdag",
+        "canonical_object_ids": [
+          "1-peter"
+        ]
+      },
+      {
+        "title": "Isaiah 40-55",
+        "author": "Joseph Blenkinsopp",
+        "publisher": "Yale University Press",
+        "year": 2002,
+        "locator": "Anchor Yale Bible 19A",
+        "url": "https://yalebooks.yale.edu/book/9780300140545/isaiah-40-55/",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "literary-context",
+          "authorship-positions",
+          "date-ranges",
+          "isaiah-long-composition",
+          "isaiah-cyrus-anointed",
+          "isaiah-servants-plural",
+          "isaiah-suffering-servant",
+          "isaiah-comfort-new-exodus"
+        ],
+        "notes": "Critical commentary on exilic context, Cyrus, servants, comfort, and return.",
+        "id": "blenkinsopp-isaiah-40-55",
+        "canonical_object_ids": [
+          "isaiah"
+        ]
+      },
+      {
+        "title": "Colossians 3",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "colossians-3",
+        "canonical_object_ids": [
+          "what-verses-show-identity-in-christ"
+        ]
+      },
+      {
+        "title": "Canonical historical orientation for Ecclesiology",
+        "author": "",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "id": "ecclesiology-historical-orientation",
+        "canonical_object_ids": [
+          "ecclesiology"
+        ]
+      },
+      {
+        "title": "1 Peter: A New Translation with Introduction and Commentary",
+        "author": "John H. Elliott",
+        "publisher": "Yale University Press",
+        "year": 2000,
+        "locator": "Anchor Bible 37B",
+        "url": "https://yalebooks.yale.edu/book/9780300139891/1-peter/",
+        "source_type": "academic-book",
+        "supports": [],
+        "notes": "Major social-historical and exegetical commentary.",
+        "id": "elliott",
+        "canonical_object_ids": [
+          "1-peter"
+        ]
+      },
+      {
+        "title": "Ephesians 1",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "ephesians-1",
+        "canonical_object_ids": [
+          "what-verses-show-identity-in-christ"
+        ]
+      },
+      {
+        "title": "Ephesians 2",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "ephesians-2",
+        "canonical_object_ids": [
+          "ecclesiology",
+          "people-of-god-theme"
+        ]
+      },
+      {
+        "title": "Ephesians 4",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "ephesians-4",
+        "canonical_object_ids": [
+          "ecclesiology",
+          "people-of-god-theme"
+        ]
+      },
+      {
+        "title": "Exodus 28-29",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "exodus-28-29",
+        "canonical_object_ids": [
+          "priesthood"
+        ]
+      },
+      {
+        "title": "Galatians 2",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "galatians-2",
+        "canonical_object_ids": [
+          "what-verses-show-identity-in-christ"
+        ]
+      },
+      {
+        "title": "Galatians 3",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "galatians-3",
+        "canonical_object_ids": [
+          "what-verses-show-identity-in-christ"
+        ]
+      },
+      {
+        "title": "Genesis 12",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "genesis-12",
+        "canonical_object_ids": [
+          "mission",
+          "witness-theme"
+        ]
+      },
+      {
+        "title": "Slavery in Early Christianity",
+        "author": "Jennifer A. Glancy",
+        "publisher": "Oxford University Press",
+        "year": 2002,
+        "locator": "Slavery, bodies, households, and reception",
+        "url": "https://global.oup.com/academic/product/slavery-in-early-christianity-9780195136098",
+        "source_type": "academic-book",
+        "supports": [],
+        "notes": "Historical and ethical control for slavery interpretation.",
+        "id": "glancy",
+        "canonical_object_ids": [
+          "1-peter"
+        ]
+      },
+      {
+        "title": "1 Peter",
+        "author": "Joel B. Green",
+        "publisher": "Eerdmans",
+        "year": 2007,
+        "locator": "Two Horizons New Testament Commentary",
+        "url": "https://www.eerdmans.com/9780802825537/1-peter/",
+        "source_type": "academic-book",
+        "supports": [],
+        "notes": "Literary and theological interpretation control.",
+        "id": "green",
+        "canonical_object_ids": [
+          "1-peter"
+        ]
+      },
+      {
+        "title": "Hebrews 10",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "hebrews-10",
+        "canonical_object_ids": [
+          "crucifixion"
+        ]
+      },
+      {
+        "title": "Hebrews 12",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "hebrews-12",
+        "canonical_object_ids": [
+          "honor-and-shame"
+        ]
+      },
+      {
+        "title": "Hebrews 4-7",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "hebrews-4-7",
+        "canonical_object_ids": [
+          "priesthood"
+        ]
+      },
+      {
+        "title": "Canonical historical orientation for Honor And Shame",
+        "author": "",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "Background pattern useful across narrative, wisdom, Gospel, and epistle texts",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "id": "honor-and-shame-historical-orientation",
+        "canonical_object_ids": [
+          "honor-and-shame"
+        ]
+      },
+      {
+        "title": "Becoming Christian: Essays on 1 Peter and the Making of Christian Identity",
+        "author": "David G. Horrell",
+        "publisher": "Bloomsbury T&T Clark",
+        "year": 2013,
+        "locator": "Collected studies",
+        "url": "https://www.bloomsbury.com/us/becoming-christian-9780567423825/",
+        "source_type": "academic-book",
+        "supports": [],
+        "notes": "Identity, ethnicity, ethics, and social-world analysis.",
+        "id": "horrell",
+        "canonical_object_ids": [
+          "1-peter"
+        ]
+      },
+      {
+        "title": "Isaiah 42",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "isaiah-42",
+        "canonical_object_ids": [
+          "suffering-servant-prophecy"
+        ]
+      },
+      {
+        "title": "Isaiah 49",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "isaiah-49",
+        "canonical_object_ids": [
+          "suffering-servant-prophecy"
+        ]
+      },
+      {
+        "title": "Isaiah 50",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "isaiah-50",
+        "canonical_object_ids": [
+          "suffering-servant-prophecy"
+        ]
+      },
+      {
+        "title": "Isaiah 52-53",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "isaiah-52-53",
+        "canonical_object_ids": [
+          "suffering-servant-prophecy"
+        ]
+      },
+      {
+        "title": "Isaiah 53",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "isaiah-53",
+        "canonical_object_ids": [
+          "crucifixion"
+        ]
+      },
+      {
+        "title": "Masoretic Isaiah",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Isaiah 1-66 in the Masoretic textual tradition",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "historical-context",
+          "literary-context",
+          "structure",
+          "major-themes",
+          "key-people",
+          "key-places",
+          "key-events",
+          "hebrew-words",
+          "scripture-references",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "Primary received Hebrew canonical text.",
+        "id": "isaiah-masoretic",
+        "canonical_object_ids": [
+          "isaiah"
+        ]
+      },
+      {
+        "title": "1 Peter",
+        "author": "Karen H. Jobes",
+        "publisher": "Baker Academic",
+        "year": 2005,
+        "locator": "Baker Exegetical Commentary on the New Testament",
+        "url": "https://bakeracademic.com/p/1-peter-karen-h-jobes/230734",
+        "source_type": "academic-book",
+        "supports": [],
+        "notes": "Exegetical commentary representing a Petrine-authorship case.",
+        "id": "jobes",
+        "canonical_object_ids": [
+          "1-peter"
+        ]
+      },
+      {
+        "title": "John 1",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "john-1",
+        "canonical_object_ids": [
+          "what-verses-show-identity-in-christ"
+        ]
+      },
+      {
+        "title": "John 19",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "john-19",
+        "canonical_object_ids": [
+          "crucifixion",
+          "what-is-the-roman-empire-in-the-bible"
+        ]
+      },
+      {
+        "title": "The Jewish Annotated New Testament",
+        "author": "Amy-Jill Levine and Marc Zvi Brettler, editors",
+        "publisher": "Oxford University Press",
+        "year": 2017,
+        "locator": "2nd edition, 1 Peter and essays",
+        "url": "https://global.oup.com/academic/product/the-jewish-annotated-new-testament-9780190461850",
+        "source_type": "reference-work",
+        "supports": [],
+        "notes": "Jewish contextual and anti-supersessionist control.",
+        "id": "levine-jant",
+        "canonical_object_ids": [
+          "1-peter"
+        ]
+      },
+      {
+        "title": "Leviticus 8-16",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "leviticus-8-16",
+        "canonical_object_ids": [
+          "priesthood"
+        ]
+      },
+      {
+        "title": "Luke 14",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "luke-14",
+        "canonical_object_ids": [
+          "honor-and-shame"
+        ]
+      },
+      {
+        "title": "Luke 2",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "luke-2",
+        "canonical_object_ids": [
+          "what-is-the-roman-empire-in-the-bible"
+        ]
+      },
+      {
+        "title": "Luke 23",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "luke-23",
+        "canonical_object_ids": [
+          "crucifixion"
+        ]
+      },
+      {
+        "title": "Mark 15",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "mark-15",
+        "canonical_object_ids": [
+          "crucifixion"
+        ]
+      },
+      {
+        "title": "Matthew 16",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "matthew-16",
+        "canonical_object_ids": [
+          "ecclesiology",
+          "people-of-god-theme"
+        ]
+      },
+      {
+        "title": "Matthew 28",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "matthew-28",
+        "canonical_object_ids": [
+          "mission",
+          "witness-theme"
+        ]
+      },
+      {
+        "title": "1 Peter",
+        "author": "J. Ramsey Michaels",
+        "publisher": "Zondervan Academic",
+        "year": 1988,
+        "locator": "Word Biblical Commentary 49",
+        "url": "https://www.worldcat.org/title/17301532",
+        "source_type": "academic-book",
+        "supports": [],
+        "notes": "Critical exegetical commentary.",
+        "id": "michaels",
+        "canonical_object_ids": [
+          "1-peter"
+        ]
+      },
+      {
+        "title": "Canonical historical orientation for Mission",
+        "author": "",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "id": "mission-historical-orientation",
+        "canonical_object_ids": [
+          "mission"
+        ]
+      },
+      {
+        "title": "Hosea in the New Testament",
+        "author": "Steve Moyise",
+        "publisher": "Oxford University Press",
+        "year": 2024,
+        "locator": "Oxford Handbook of Hosea, chapter 29",
+        "url": "https://academic.oup.com/edited-volume/56211/chapter/443863552",
+        "source_type": "reference-work",
+        "supports": [
+          "new-testament-connections",
+          "hosea-new-testament-reuse",
+          "interpretive-notes"
+        ],
+        "notes": "Study of Hosea's quotation and reuse across the New Testament.",
+        "id": "moyise-hosea-new-testament",
+        "canonical_object_ids": [
+          "hosea"
+        ]
+      },
+      {
+        "title": "Isaiah in the New Testament",
+        "author": "Steve Moyise",
+        "publisher": "Oxford University Press",
+        "year": 2020,
+        "locator": "The Oxford Handbook of Isaiah, chapter 28",
+        "url": "https://academic.oup.com/edited-volume/38588/chapter-abstract/334632502",
+        "source_type": "academic-book",
+        "supports": [
+          "canonical-context",
+          "later-christian-reception",
+          "new-testament-connections",
+          "isaiah-immanuel-sign",
+          "isaiah-suffering-servant",
+          "isaiah-death-new-creation",
+          "isaiah-old-greek",
+          "isaiah-reception-distinction"
+        ],
+        "notes": "New Testament quotation and allusion, Gentile inclusion, new exodus, new creation, and New Jerusalem.",
+        "id": "moyise-isaiah-nt",
+        "canonical_object_ids": [
+          "isaiah"
+        ]
+      },
+      {
+        "title": "A New English Translation of the Septuagint",
+        "author": "Albert Pietersma and Benjamin G. Wright, editors",
+        "publisher": "International Organization for Septuagint and Cognate Studies",
+        "year": 2009,
+        "locator": "Genesis, Exodus, Leviticus, Psalms, Proverbs, Isaiah, and Hosea comparanda",
+        "url": "https://septuaginta.uni-goettingen.de/ioscs/nets/",
+        "source_type": "reference-work",
+        "supports": [],
+        "notes": "Septuagint translation and comparison control.",
+        "id": "nets-lxx",
+        "canonical_object_ids": [
+          "1-peter"
+        ]
+      },
+      {
+        "title": "New Testament reuse of Hosea",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Matthew 2:15; 9:13; 12:7; Romans 9:25-26; 1 Corinthians 15:55; 1 Peter 2:10",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "new-testament-connections",
+          "hosea-new-testament-reuse",
+          "interpretive-notes"
+        ],
+        "notes": "Primary Christian reception texts requiring contextual and textual comparison.",
+        "id": "new-testament-hosea-reuse",
+        "canonical_object_ids": [
+          "hosea"
+        ]
+      },
+      {
+        "title": "Numbers 18",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "numbers-18",
+        "canonical_object_ids": [
+          "priesthood"
+        ]
+      },
+      {
+        "title": "The Oxford Handbook of Isaiah",
+        "author": "Lena-Sofia Tiemeyer, editor",
+        "publisher": "Oxford University Press",
+        "year": 2020,
+        "locator": "Formation, sections, contexts, themes, literature, texts, reception, and ideological readings",
+        "url": "https://academic.oup.com/edited-volume/38588",
+        "source_type": "reference-work",
+        "supports": [
+          "summary",
+          "historical-context",
+          "ancient-near-east-context",
+          "second-temple-context",
+          "canonical-context",
+          "later-christian-reception",
+          "authorship-positions",
+          "date-ranges",
+          "structure",
+          "major-themes",
+          "interpretive-disputes",
+          "isaiah-long-composition",
+          "isaiah-practical-outline",
+          "isaiah-assyria-trust",
+          "isaiah-royal-child-branch",
+          "isaiah-morning-star-taunt",
+          "isaiah-nations-empire",
+          "isaiah-servants-plural",
+          "isaiah-suffering-servant",
+          "isaiah-justice-fasting-inclusion",
+          "isaiah-death-new-creation",
+          "isaiah-qumran-witnesses",
+          "isaiah-old-greek",
+          "isaiah-reception-distinction"
+        ],
+        "notes": "Multi-author handbook representing diverse methods and traditions rather than one unified position.",
+        "id": "oxford-handbook-isaiah",
+        "canonical_object_ids": [
+          "isaiah"
+        ]
+      },
+      {
+        "title": "Isaiah 40-66: A Commentary",
+        "author": "Shalom M. Paul",
+        "publisher": "Eerdmans",
+        "year": 2012,
+        "locator": "Eerdmans Critical Commentary",
+        "url": "https://www.eerdmans.com/9780802826039/isaiah-40-66/",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "ancient-near-east-context",
+          "literary-context",
+          "hebrew-words",
+          "isaiah-cyrus-anointed",
+          "isaiah-servants-plural",
+          "isaiah-suffering-servant",
+          "isaiah-comfort-new-exodus",
+          "isaiah-justice-fasting-inclusion"
+        ],
+        "notes": "Jewish critical commentary with detailed philological, textual, literary, historical, and ancient Near Eastern analysis.",
+        "id": "paul-isaiah-40-66",
+        "canonical_object_ids": [
+          "isaiah"
+        ]
+      },
+      {
+        "title": "Canonical historical orientation for People of God Theme",
+        "author": "",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "id": "people-of-god-theme-historical-orientation",
+        "canonical_object_ids": [
+          "people-of-god-theme"
+        ]
+      },
+      {
+        "title": "First and Second Peter, James, and Jude",
+        "author": "Pheme Perkins",
+        "publisher": "Westminster John Knox Press",
+        "year": 1995,
+        "locator": "Interpretation commentary",
+        "url": "https://www.wjkbooks.com/Products/0664238688/first-and-second-peter-james-and-jude.aspx",
+        "source_type": "academic-book",
+        "supports": [],
+        "notes": "Literary, pastoral, and reception commentary.",
+        "id": "perkins",
+        "canonical_object_ids": [
+          "1-peter"
+        ]
+      },
+      {
+        "title": "Canonical historical orientation for Priesthood",
+        "author": "",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "id": "priesthood-historical-orientation",
+        "canonical_object_ids": [
+          "priesthood"
+        ]
+      },
+      {
+        "title": "Psalm 110",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "psalm-110",
+        "canonical_object_ids": [
+          "priesthood"
+        ]
+      },
+      {
+        "title": "Psalm 22",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [],
+        "notes": "",
+        "id": "psalm-22",
+        "canonical_object_ids": [
+          "crucifixion"
+        ]
+      },
+      {
+        "title": "Revelation 13",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "revelation-13",
+        "canonical_object_ids": [
+          "what-is-the-roman-empire-in-the-bible"
+        ]
+      },
+      {
+        "title": "Revelation 17-18",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "revelation-17-18",
+        "canonical_object_ids": [
+          "what-is-the-roman-empire-in-the-bible"
+        ]
+      },
+      {
+        "title": "Romans 13",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "romans-13",
+        "canonical_object_ids": [
+          "what-is-the-roman-empire-in-the-bible"
+        ]
+      },
+      {
+        "title": "Romans 15",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "romans-15",
+        "canonical_object_ids": [
+          "mission",
+          "witness-theme"
+        ]
+      },
+      {
+        "title": "Romans 3",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "romans-3",
+        "canonical_object_ids": [
+          "crucifixion"
+        ]
+      },
+      {
+        "title": "Romans 8",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "romans-8",
+        "canonical_object_ids": [
+          "what-verses-show-identity-in-christ"
+        ]
+      },
+      {
+        "title": "Canonical historical orientation for Suffering Servant Prophecy",
+        "author": "",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "id": "suffering-servant-prophecy-historical-orientation",
+        "canonical_object_ids": [
+          "suffering-servant-prophecy"
+        ]
+      },
+      {
+        "title": "Canonical historical orientation for What is the Roman Empire in the Bible?",
+        "author": "",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "id": "what-is-the-roman-empire-in-the-bible-historical-orientation",
+        "canonical_object_ids": [
+          "what-is-the-roman-empire-in-the-bible"
+        ]
+      },
+      {
+        "title": "Canonical historical orientation for What Verses Show Identity in Christ?",
+        "author": "",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "id": "what-verses-show-identity-in-christ-historical-orientation",
+        "canonical_object_ids": [
+          "what-verses-show-identity-in-christ"
+        ]
+      },
+      {
+        "title": "Canonical historical orientation for Witness Theme",
+        "author": "",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "id": "witness-theme-historical-orientation",
+        "canonical_object_ids": [
+          "witness-theme"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "1-peter",
+        "type": "book",
+        "title": "1 Peter",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.94
+      },
+      {
+        "id": "crucifixion",
+        "type": "event",
+        "title": "Crucifixion",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.92
+      },
+      {
+        "id": "ecclesiology",
+        "type": "theology",
+        "title": "Ecclesiology",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.911
+      },
+      {
+        "id": "honor-and-shame",
+        "type": "cultural_background",
+        "title": "Honor And Shame",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.908
+      },
+      {
+        "id": "hosea",
+        "type": "book",
+        "title": "Hosea",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.911
+      },
+      {
+        "id": "isaiah",
+        "type": "book",
+        "title": "Isaiah",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.918
+      },
+      {
+        "id": "mission",
+        "type": "theology",
+        "title": "Mission",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.91
+      },
+      {
+        "id": "people-of-god-theme",
+        "type": "theme",
+        "title": "People of God Theme",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.911
+      },
+      {
+        "id": "priesthood",
+        "type": "institution",
+        "title": "Priesthood",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.915
+      },
+      {
+        "id": "suffering-servant-prophecy",
+        "type": "prophecy",
+        "title": "Suffering Servant Prophecy",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.916
+      },
+      {
+        "id": "what-is-the-roman-empire-in-the-bible",
+        "type": "faq",
+        "title": "What is the Roman Empire in the Bible?",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.907
+      },
+      {
+        "id": "what-verses-show-identity-in-christ",
+        "type": "faq",
+        "title": "What Verses Show Identity in Christ?",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.916
+      },
+      {
+        "id": "witness-theme",
+        "type": "theme",
+        "title": "Witness Theme",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.91
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "8bab263231c62fc050a750442d500f064f229990c994a14a55a510a487b8b858",
+  "evidence_hash_version": "2"
+}

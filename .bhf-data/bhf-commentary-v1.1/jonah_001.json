@@ -1,0 +1,101 @@
+{
+  "reference": "Jonah 1",
+  "book": "Jonah",
+  "chapter": 1,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_145",
+          "text": "Read the chapter with this setting in view: The lot functions within Jonah's plot to identify responsibility; the episode does not authorize gambling, divination, or coercive ordeal as general religious practice. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken.",
+          "evidence_ids": [
+            "jonah:interpretive_note:9"
+          ],
+          "verse_refs": [
+            "Jonah 1:7"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_146",
+          "text": "For its historical and cultural setting, note that Jonah 1:1 names Jonah son of Amittai, matching the patronymic of the prophetic figure in 2 Kings 14:25, but this link does not establish that the eighth-century figure authored the later third-person narrative. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "jonah-identity-2-kings"
+          ],
+          "verse_refs": [
+            "Jonah 1:1"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        },
+        {
+          "id": "historical_context_147",
+          "text": "For its historical and cultural setting, note that YHWH appoints a great fish to swallow Jonah and later commands it to return him to dry land; no species, anatomical mechanism, or statement of Jonah's death is supplied. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "jonah-great-fish"
+          ],
+          "verse_refs": [
+            "Jonah 1:17"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "archaeology_geography",
+      "title": "Archaeology and geography",
+      "blocks": [
+        {
+          "id": "archaeology_geography_146",
+          "text": "For its geographical or material setting, note that Jonah's repeated downward movement toward Joppa, the ship, sleep, sea, and mountain roots in the prayer creates descent imagery that later reverses in rescue, but not every verb encodes a technical death-and-resurrection scheme. It can illuminate the passage, while its limits should be kept in view. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "jonah:interpretive_note:5"
+          ],
+          "verse_refs": [
+            "Jonah 1:1-17"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_146",
+          "text": "A literary feature to notice is that Common English Christian and Masoretic or Jewish numbering divide the fish and prayer unit differently, so citations around Jonah 1:17 and 2:10 should identify the system used. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image.",
+          "evidence_ids": [
+            "jonah:interpretive_note:15"
+          ],
+          "verse_refs": [
+            "Jonah 1:17"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "d91a8d5a34d536a0c95d552dfd6a03669aa0d94bd9cedfd1f6382dab946a1ba8",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-003-medium",
+    "generated_timestamp": "2026-09-06T00:47:11Z"
+  }
+}

@@ -1,0 +1,101 @@
+{
+  "reference": "Philippians 3",
+  "book": "Philippians",
+  "chapter": 3,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_65",
+          "text": "Read the chapter with this setting in view: Paul lists Jewish and Pharisaic credentials before revaluing them as loss in comparison with knowing Messiah. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken.",
+          "evidence_ids": [
+            "phl-autobiography"
+          ],
+          "verse_refs": [
+            "Philippians 3:4-8"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_66",
+          "text": "For its historical and cultural setting, note that Paul and Timothy are named as senders, while Paul supplies the dominant first-person voice. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "phl-voice"
+          ],
+          "verse_refs": [
+            "Philippians 3:4-14"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        },
+        {
+          "id": "historical_context_67",
+          "text": "For its historical and cultural setting, note that Philippians uses related civic terms for worthy communal conduct and a heavenly commonwealth or citizenship in a securely Roman colonial destination. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "politeuesthe-politeuma-colonial-resonance"
+          ],
+          "verse_refs": [
+            "Philippians 3:20-21"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "archaeology_geography",
+      "title": "Archaeology and geography",
+      "blocks": [
+        {
+          "id": "archaeology_geography_66",
+          "text": "For its geographical or material setting, note that Philippi was a Roman colony whose built environment and institutions were substantially Romanized while remaining culturally diverse. It can illuminate the passage, while its limits should be kept in view. Interpretations differ on some details.",
+          "evidence_ids": [
+            "phl-colony"
+          ],
+          "verse_refs": [
+            "Philippians 3:20"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_66",
+          "text": "A literary feature to notice is that One-letter and composite-letter models both account for features of the canonical text; no proposed component survives separately. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image. Interpretations differ on some details.",
+          "evidence_ids": [
+            "phl-integrity"
+          ],
+          "verse_refs": [
+            "Philippians 3:1"
+          ],
+          "confidence": "low",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "c03fe274f205091e04e0adaf1e817c361cb5dcd8fe4023239b1435a1ed9b49d0",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-008-medium",
+    "generated_timestamp": "2026-09-06T21:45:35Z"
+  }
+}

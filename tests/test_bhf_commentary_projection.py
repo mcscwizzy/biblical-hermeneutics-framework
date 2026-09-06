@@ -54,7 +54,7 @@ def test_projection_exposes_only_the_read_model_and_deduplicates_references():
     result = project_commentary(commentary())
 
     assert result == {
-        "release": "commentary-v1.0",
+        "release": "commentary-v1.1",
         "book": "Genesis",
         "chapter": 13,
         "availability": "AVAILABLE",
@@ -180,13 +180,13 @@ def test_packaged_corpus_loads_known_availability_and_legacy_metadata():
     assert corinthians["availability"] == "AVAILABLE"
     assert corinthians["commentary"]
 
-    leviticus = load_commentary_projection(storage_dir, "Leviticus", 2)
-    assert leviticus is not None
-    assert leviticus["availability"] == "DATA_GAP"
+    joshua = load_commentary_projection(storage_dir, "Joshua", 1)
+    assert joshua is not None
+    assert joshua["availability"] in {"AVAILABLE", "THIN"}
 
-    genesis = load_commentary_projection(storage_dir, "Genesis", 13)
-    assert genesis is not None
-    assert genesis["availability"] is None
+    deuteronomy = load_commentary_projection(storage_dir, "Deuteronomy", 32)
+    assert deuteronomy is not None
+    assert deuteronomy["availability"] == "AVAILABLE"
 
 
 def test_api_projection_returns_minimal_payload_when_fastapi_is_available(tmp_path):
@@ -234,7 +234,7 @@ def test_api_missing_artifact_is_a_normal_unavailable_response(tmp_path):
     assert response.json() == {
         "available": False,
         "reason": "bhf_commentary_not_available",
-        "release": "commentary-v1.0",
+        "release": "commentary-v1.1",
         "book": "Leviticus",
         "chapter": 2,
     }
@@ -295,6 +295,6 @@ def test_api_commentary_search_returns_read_only_results(tmp_path):
 
     response = asyncio.run(request())
     assert response.status_code == 200
-    assert response.json()["release"] == "commentary-v1.0"
+    assert response.json()["release"] == "commentary-v1.1"
     assert response.json()["count"] == 1
     assert response.json()["results"][0]["book"] == "Genesis"

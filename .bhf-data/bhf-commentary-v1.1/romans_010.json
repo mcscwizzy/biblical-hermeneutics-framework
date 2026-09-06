@@ -1,0 +1,101 @@
+{
+  "reference": "Romans 10",
+  "book": "Romans",
+  "chapter": 10,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_85",
+          "text": "Read the chapter with this setting in view: Romans adapts Deuteronomy's ascent, descent, and near-word language to Messiah, confession, trust, proclamation, and one Lord for Jew and Greek. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "romans-near-word-confession"
+          ],
+          "verse_refs": [
+            "Romans 10:5-17"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_86",
+          "text": "For its historical and cultural setting, note that Romans places Christos telos nomou inside a contrast involving Israel, righteousness, Torah, trust, and the stumbling stone. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "romans-christ-telos-torah"
+          ],
+          "verse_refs": [
+            "Romans 10:1-4"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        },
+        {
+          "id": "historical_context_87",
+          "text": "For its historical and cultural setting, note that Israel, Jew, gentile, circumcision, uncircumcision, Abrahamic children, remnant, branches, and Messiah assembly function differently across the selected arguments. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. Interpretations differ on some details.",
+          "evidence_ids": [
+            "pauline-identity-categories-distinct"
+          ],
+          "verse_refs": [
+            "Romans 10:1-21"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_86",
+          "text": "A literary feature to notice is that P10, P26, P27, P31, P40, P46, and P61 preserve different portions of Romans, with P46 by far the most extensive early papyrus witness. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image.",
+          "evidence_ids": [
+            "romans-papyri"
+          ],
+          "verse_refs": [
+            "Romans 10:1-21"
+          ],
+          "confidence": "high",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "dig_deeper",
+      "title": "Dig deeper",
+      "blocks": [
+        {
+          "id": "dig_deeper_86",
+          "text": "For a later or comparative connection, note that Romans 10:15 most directly cites Isaiah 52:7; Nahum 1:15 is a related good-news messenger parallel rather than Paul's direct source. This remains a secondary connection rather than the chapter's first-audience context. It can be traced further without replacing the chapter's own setting. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "nahum-new-testament"
+          ],
+          "verse_refs": [
+            "Romans 10:15"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "8950628b1beec31049ba1194f173dff0b45066e195c9f218dd8597abac07341e",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-008-medium",
+    "generated_timestamp": "2026-09-06T21:45:35Z"
+  }
+}

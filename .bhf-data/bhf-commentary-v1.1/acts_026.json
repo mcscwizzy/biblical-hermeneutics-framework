@@ -1,0 +1,71 @@
+{
+  "reference": "Acts 26",
+  "book": "Acts",
+  "chapter": 26,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_110",
+          "text": "Read the chapter with this setting in view: Historical evaluation of Acts must compare particular claims with independent evidence rather than assign blanket reliability or unreliability. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken.",
+          "evidence_ids": [
+            "acts-historical-method"
+          ],
+          "verse_refs": [
+            "Acts 26:1-32"
+          ],
+          "confidence": "high",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_111",
+          "text": "For its historical and cultural setting, note that Acts portrays Paul unable to see, led by others, fasting three days, visited and touched by Ananias, regaining sight, receiving baptism and food, and entering mission. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. Interpretations differ on some details.",
+          "evidence_ids": [
+            "acts-damascus-blindness-recovery"
+          ],
+          "verse_refs": [
+            "Acts 26:12-18"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_111",
+          "text": "A literary feature to notice is that Acts narrates Paul's encounter three times with rhetorical differences; conversion, prophetic call, and commissioning are overlapping but debated descriptions. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image. Interpretations differ on some details.",
+          "evidence_ids": [
+            "acts-paul-call"
+          ],
+          "verse_refs": [
+            "Acts 26:9-23"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "124154e7773459d4d4c7cd595b92d42fd066faf5f6832d8488f5f3b6ba138240",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-007-medium",
+    "generated_timestamp": "2026-09-06T20:17:55Z"
+  }
+}

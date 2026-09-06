@@ -1,0 +1,101 @@
+{
+  "reference": "Hebrews 12",
+  "book": "Hebrews",
+  "chapter": 12,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_27",
+          "text": "Read the chapter with this setting in view: The hearers are said to receive an unshakable kingdom and are called to gratitude, acceptable service, reverence, and awe. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken.",
+          "evidence_ids": [
+            "heb-kingdom"
+          ],
+          "verse_refs": [
+            "Hebrews 12:25-29"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_28",
+          "text": "For its historical and cultural setting, note that Sinai and Zion are rhetorically contrasted scriptural scenes; reading them as evil Judaism replaced by good Christianity is anti-Jewish distortion. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "hebrews:interpretive_note:33"
+          ],
+          "verse_refs": [
+            "Hebrews 12:18-24"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        },
+        {
+          "id": "historical_context_29",
+          "text": "For its historical and cultural setting, note that The discourse interprets hardship with parental discipline imagery and then commands strengthening weak hands and knees. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "heb-discipline"
+          ],
+          "verse_refs": [
+            "Hebrews 12:4-13"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "archaeology_geography",
+      "title": "Archaeology and geography",
+      "blocks": [
+        {
+          "id": "archaeology_geography_28",
+          "text": "For its geographical or material setting, note that Hebrews contrasts a terrifying mountain scene with Zion, heavenly Jerusalem, assembly, God, spirits, Jesus, and sprinkled blood. It can illuminate the passage, while its limits should be kept in view. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "heb-sinai-zion"
+          ],
+          "verse_refs": [
+            "Hebrews 12:18-24"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_28",
+          "text": "A literary feature to notice is that The cloud of witnesses frames laying aside encumbrance, running with endurance, and looking to Jesus. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image.",
+          "evidence_ids": [
+            "heb-race"
+          ],
+          "verse_refs": [
+            "Hebrews 12:1-3"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "e2fd64dcac65a5f07d0980d951ce2395a743c53bdb983eafa5bb22439672710e",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-007-medium",
+    "generated_timestamp": "2026-09-06T20:17:54Z"
+  }
+}

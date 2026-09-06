@@ -1,0 +1,101 @@
+{
+  "reference": "Acts 19",
+  "book": "Acts",
+  "chapter": 19,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_63",
+          "text": "Read the chapter with this setting in view: Ephesian archaeology and inscriptions illuminate the theater, civic offices, benefaction, and Artemis cult in Acts 19 but do not verify every narrated action. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken. Interpretations differ on some details.",
+          "evidence_ids": [
+            "acts-ephesus"
+          ],
+          "verse_refs": [
+            "Acts 19:21-41"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_64",
+          "text": "For its historical and cultural setting, note that Acts attributes to Demetrius a speech joining artisan income from silver shrines with Artemis's honor and the sanctuary's wider reputation. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "artemis-craft-economy"
+          ],
+          "verse_refs": [
+            "Acts 19:23-27"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        },
+        {
+          "id": "historical_context_65",
+          "text": "For its historical and cultural setting, note that Acts moves Paul's Ephesian teaching from a synagogue to daily discussion in the hall of Tyrannus and summarizes broad hearing across Asia. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "acts-tyrannus-regional-teaching"
+          ],
+          "verse_refs": [
+            "Acts 19:1-10"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_64",
+          "text": "A literary feature to notice is that Codex Bezae and related versional witnesses preserve a substantially distinctive text of Acts often called Western, whose individual readings require case-by-case judgment. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "acts-western-text"
+          ],
+          "verse_refs": [
+            "Acts 19:1-41"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "chronology",
+      "title": "Chronology",
+      "blocks": [
+        {
+          "id": "chronology_64",
+          "text": "For the chapter's sequence and setting, note that The undisputed letters address contemporary assembly problems before Acts later composes mission scenes with different narrators, sequences, wording, and aims. This gives the reader a frame for the passage without deciding every larger reconstruction. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "acts-letters-chronology-spirit"
+          ],
+          "verse_refs": [
+            "Acts 19:1-7"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "712b901a926544c592b704204dff63209997ac5a75d5b1dc8c05e17b851e40c3",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-007-medium",
+    "generated_timestamp": "2026-09-06T20:17:54Z"
+  }
+}

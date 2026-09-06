@@ -1,0 +1,83 @@
+{
+  "reference": "Micah 2",
+  "book": "Micah",
+  "chapter": 2,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_86",
+          "text": "Read the chapter with this setting in view: Micah's land, housing, court, leadership, and urban-rural tensions support social-historical analysis, but the prophet's exact class identity and political role remain reconstructed rather than explicit. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "micah-social-location"
+          ],
+          "verse_refs": [
+            "Micah 2:1-11"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_87",
+          "text": "For its historical and cultural setting, note that Micah 2:12-13 promises gathering and breakthrough for a remnant, while the breaker may be construed as royal, divine, prophetic, or composite imagery. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. Interpretations differ on some details.",
+          "evidence_ids": [
+            "micah-breaker"
+          ],
+          "verse_refs": [
+            "Micah 2:12-13"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        },
+        {
+          "id": "historical_context_88",
+          "text": "For its historical and cultural setting, note that Micah 2:1-5 condemns powerful planners who seize fields, houses, people, and inheritance, locating economic injustice in coercive control of household land. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "micah-land-seizure"
+          ],
+          "verse_refs": [
+            "Micah 2:1-5"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_87",
+          "text": "A literary feature to notice is that Daughter Zion, labor, women and children dispossessed, and the gathered vulnerable remnant make gender, embodiment, and erasure necessary interpretive questions. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image. Interpretations differ on some details.",
+          "evidence_ids": [
+            "micah-gendered-images"
+          ],
+          "verse_refs": [
+            "Micah 2:9"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "620a3e2e7de8fa2e961d6ddabec7288a1a5fd9d1b01b5b316fab6b487d6b49fa",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-003-medium",
+    "generated_timestamp": "2026-09-06T00:47:11Z"
+  }
+}

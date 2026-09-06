@@ -1,0 +1,83 @@
+{
+  "reference": "Deuteronomy 6",
+  "book": "Deuteronomy",
+  "chapter": 6,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_21",
+          "text": "Read the chapter with this setting in view: Deuteronomy 6 joins Israel's confession concerning the LORD with wholehearted love, internalized words, intergenerational teaching, and embodied remembrance. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken.",
+          "evidence_ids": [
+            "deuteronomy-shema-love"
+          ],
+          "verse_refs": [
+            "Deuteronomy 6:4-9"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_22",
+          "text": "For its historical and cultural setting, note that The repeated instruction is rhetorically adapted covenant exposition for a successor generation, not a simple verbatim duplication of earlier laws. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "deuteronomy:interpretive_note:1"
+          ],
+          "verse_refs": [
+            "Deuteronomy 6:1-25"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        },
+        {
+          "id": "historical_context_23",
+          "text": "For its historical and cultural setting, note that Oral and liturgical cultures rely on repetition, and Scripture uses that habit to form covenant memory. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "why-does-the-bible-repeat-themes:historical_context:0"
+          ],
+          "verse_refs": [
+            "Deuteronomy 6:4-9"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_22",
+          "text": "A literary feature to notice is that Deuteronomy moves from remembered wilderness history through covenant instruction to covenant consequences, renewal, succession, song, blessing, and Moses's death. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image.",
+          "evidence_ids": [
+            "deuteronomy-literary-movement"
+          ],
+          "verse_refs": [
+            "Deuteronomy 6:1-25"
+          ],
+          "confidence": "high",
+          "interpretation_level": "inference"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "85d87dcb7c56acbe9913c0c154da537004a073bb3d5c5c25bbfb2ce33e485b47",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-008-medium",
+    "generated_timestamp": "2026-09-06T21:45:35Z"
+  }
+}

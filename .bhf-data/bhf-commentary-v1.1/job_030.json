@@ -1,0 +1,71 @@
+{
+  "reference": "Job 30",
+  "book": "Job",
+  "chapter": 30,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_128",
+          "text": "Read the chapter with this setting in view: Job 28 declares that mining can uncover hidden ore but humans cannot discover Wisdom's place; chapters 29-31 then culminate Job's case with memories, ethical self-testimony, and a formal demand that the Almighty answer. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "job-wisdom-oath"
+          ],
+          "verse_refs": [
+            "Job 30:1-31"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_129",
+          "text": "A literary feature to notice is that Old Greek Job is substantially shorter than the Masoretic form in much of the poetry and also contains expansions, while Qumran preserves Hebrew fragments and an Aramaic targum. Translation and textual criticism should therefore identify the witness in view rather than treating every ancient form as verbally identical. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image. Interpretations differ on some details.",
+          "evidence_ids": [
+            "job:interpretive_note:11"
+          ],
+          "verse_refs": [
+            "Job 30:1-31"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "dig_deeper",
+      "title": "Dig deeper",
+      "blocks": [
+        {
+          "id": "dig_deeper_129",
+          "text": "For a later or comparative connection, note that James names the prophets and Job as examples connected with suffering, patience, endurance, and the Lord's compassionate outcome. This remains a secondary connection rather than the chapter's first-audience context. It can be traced further without replacing the chapter's own setting. Interpretations differ on some details.",
+          "evidence_ids": [
+            "jas-job"
+          ],
+          "verse_refs": [
+            "Job 30:1-31"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "a939268343cb75317d2ff5c2a80ac3058f019f602a0bbb74cfc950f30217d7bf",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-005-medium",
+    "generated_timestamp": "2026-09-06T03:50:21Z"
+  }
+}

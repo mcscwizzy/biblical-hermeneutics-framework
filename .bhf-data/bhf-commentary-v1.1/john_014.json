@@ -1,0 +1,83 @@
+{
+  "reference": "John 14",
+  "book": "John",
+  "chapter": 14,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_53",
+          "text": "Read the chapter with this setting in view: The Paraclete sayings describe the Spirit of truth as remaining, teaching, reminding, testifying, exposing, guiding, and glorifying Jesus; person, presence, advocacy, community memory, and later Trinitarian readings overlap but are not interchangeable. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "john-paraclete"
+          ],
+          "verse_refs": [
+            "John 14:15-27"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_54",
+          "text": "For its historical and cultural setting, note that John's predicated and absolute ego eimi sayings participate in characterization through ordinary identification, symbolic predicates, scriptural echoes, and divine-agency claims; each context must be read separately. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. Interpretations differ on some details.",
+          "evidence_ids": [
+            "john-i-am"
+          ],
+          "verse_refs": [
+            "John 14:6"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        },
+        {
+          "id": "historical_context_55",
+          "text": "For its historical and cultural setting, note that 'The Father is greater than I' belongs to the Son's departure, obedience, love, and return to the Father; subordinationist, incarnational, mission, and Trinitarian readings are reception-level construals. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "john-father-greater"
+          ],
+          "verse_refs": [
+            "John 14:25-31"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "dig_deeper",
+      "title": "Dig deeper",
+      "blocks": [
+        {
+          "id": "dig_deeper_54",
+          "text": "For a later or comparative connection, note that Parakletos names Jesus in 2:1; comparison with the Gospel's Spirit-Paraclete is useful but does not erase different referents and functions. This remains a secondary connection rather than the chapter's first-audience context. It can be traced further without replacing the chapter's own setting. Interpretations differ on some details.",
+          "evidence_ids": [
+            "1-john:interpretive_note:7"
+          ],
+          "verse_refs": [
+            "John 14:16-17"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "2f88b1aba27b6ea9911c38afac9564e98c86bc063ab8a6f69109c8e414c81a60",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-008-medium",
+    "generated_timestamp": "2026-09-06T21:45:35Z"
+  }
+}

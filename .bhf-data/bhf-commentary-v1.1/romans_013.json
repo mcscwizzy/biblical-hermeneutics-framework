@@ -1,0 +1,101 @@
+{
+  "reference": "Romans 13",
+  "book": "Romans",
+  "chapter": 13,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_49",
+          "text": "Read the chapter with this setting in view: Romans does not authorize anti-Roman or anti-Italian racism; critique of empire and governing power concerns institutions and conduct, not ethnic contempt. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken.",
+          "evidence_ids": [
+            "romans:interpretive_note:70"
+          ],
+          "verse_refs": [
+            "Romans 13:1-7"
+          ],
+          "confidence": "high",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_50",
+          "text": "For its historical and cultural setting, note that The night, day, and armor imagery in Romans 13 is eschatological moral exhortation, not a mandate for literal weapons, militia organization, or violent culture war. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "romans:interpretive_note:56"
+          ],
+          "verse_refs": [
+            "Romans 13:11-14"
+          ],
+          "confidence": "high",
+          "interpretation_level": "inference"
+        },
+        {
+          "id": "historical_context_51",
+          "text": "For its historical and cultural setting, note that Romans describes Torah as holy, just, good, spiritual, and fulfilled through love even while arguing that sin exploits commandment and Torah cannot defeat sin and death. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. Interpretations differ on some details.",
+          "evidence_ids": [
+            "romans-torah"
+          ],
+          "verse_refs": [
+            "Romans 13:8-14"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_50",
+          "text": "A literary feature to notice is that P10, P26, P27, P31, P40, P46, and P61 preserve different portions of Romans, with P46 by far the most extensive early papyrus witness. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image.",
+          "evidence_ids": [
+            "romans-papyri"
+          ],
+          "verse_refs": [
+            "Romans 13:1-14"
+          ],
+          "confidence": "high",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "chronology",
+      "title": "Chronology",
+      "blocks": [
+        {
+          "id": "chronology_50",
+          "text": "For the chapter's sequence and setting, note that approximately 60s CE: conventional horizon for Acts' Roman custody This gives the reader a frame for the passage without deciding every larger reconstruction.",
+          "evidence_ids": [
+            "rome:timeline:3"
+          ],
+          "verse_refs": [
+            "Romans 13:1-14"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "4463c2f01b0dc819dd09a4b76f95cbe40967560616bedb1ab150f001d9494d37",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-008-medium",
+    "generated_timestamp": "2026-09-06T21:45:35Z"
+  }
+}

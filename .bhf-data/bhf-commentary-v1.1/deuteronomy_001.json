@@ -1,0 +1,83 @@
+{
+  "reference": "Deuteronomy 1",
+  "book": "Deuteronomy",
+  "chapter": 1,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_141",
+          "text": "Read the chapter with this setting in view: Deuteronomy is set on the plains of Moab and presents covenant instruction to the generation about to enter the land; Egypt and Horeb are primarily remembered settings. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken.",
+          "evidence_ids": [
+            "deuteronomy:interpretive_note:0"
+          ],
+          "verse_refs": [
+            "Deuteronomy 1:1-5"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_142",
+          "text": "For its historical and cultural setting, note that The event belongs to Israel's wilderness journey between Sinai and the land, where the generation is tested. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "twelve-spies-sent:historical_context:0"
+          ],
+          "verse_refs": [
+            "Deuteronomy 1:19-46"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        },
+        {
+          "id": "historical_context_143",
+          "text": "For its historical and cultural setting, note that Reconnaissance before settlement or battle was normal, but Numbers focuses on whether Israel trusts God's promise. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "twelve-spies-sent:ancient_near_east_context:0"
+          ],
+          "verse_refs": [
+            "Deuteronomy 1:19-46"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_142",
+          "text": "A literary feature to notice is that Deuteronomy moves from remembered wilderness history through covenant instruction to covenant consequences, renewal, succession, song, blessing, and Moses's death. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image.",
+          "evidence_ids": [
+            "deuteronomy-literary-movement"
+          ],
+          "verse_refs": [
+            "Deuteronomy 1:1-46"
+          ],
+          "confidence": "high",
+          "interpretation_level": "inference"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "682e11e61ce9bedac022414063d9d99bd6f876ca391177392747cd42f0e50831",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-004-medium",
+    "generated_timestamp": "2026-09-06T02:41:43Z"
+  }
+}

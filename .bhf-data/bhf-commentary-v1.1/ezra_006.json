@@ -1,0 +1,65 @@
+{
+  "reference": "Ezra 6",
+  "book": "Ezra",
+  "chapter": 6,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_112",
+          "text": "Read the chapter with this setting in view: The Second Temple is completed in Darius's sixth year, dedicated with priestly and Levitical service, and followed by Passover and Unleavened Bread. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken.",
+          "evidence_ids": [
+            "ezra-temple-passover"
+          ],
+          "verse_refs": [
+            "Ezra 6:13-22"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_113",
+          "text": "For its historical and cultural setting, note that Haggai and Zechariah encourage Zerubbabel and Jeshua to resume temple construction, and Darius's inquiry results in confirmation and imperial support rather than suppression. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "ezra-opposition-darius"
+          ],
+          "verse_refs": [
+            "Ezra 6:1-12"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        },
+        {
+          "id": "historical_context_114",
+          "text": "For its historical and cultural setting, note that The Cyrus Cylinder is comparative evidence for Cyrus's Babylonian royal rhetoric and restoration of cults, not a copy of Ezra's decree and not direct archaeological proof that Cyrus issued the Jerusalem proclamation exactly as narrated. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. Interpretations differ on some details.",
+          "evidence_ids": [
+            "ezra:interpretive_note:2"
+          ],
+          "verse_refs": [
+            "Ezra 6:3-5"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "4aaa12b87e662041f15957a853ff1cfb547eb3a9c38a9b82dc37c4564b0868da",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-007-medium",
+    "generated_timestamp": "2026-09-06T20:17:55Z"
+  }
+}

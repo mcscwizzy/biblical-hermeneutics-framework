@@ -1,0 +1,101 @@
+{
+  "reference": "Lamentations 4",
+  "book": "Lamentations",
+  "chapter": 4,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_29",
+          "text": "Read the chapter with this setting in view: The closing section of chapter 4 addresses Daughter Edom with taunt and announced judgment. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "lam-edom"
+          ],
+          "verse_refs": [
+            "Lamentations 4:21-22"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_30",
+          "text": "For its historical and cultural setting, note that Jerusalem's 587/586 BCE destruction is the most probable historical horizon, though exact poem dates are unstated. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. Interpretations differ on some details.",
+          "evidence_ids": [
+            "lam-catastrophe-horizon"
+          ],
+          "verse_refs": [
+            "Lamentations 4:1-22"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        },
+        {
+          "id": "historical_context_31",
+          "text": "For its historical and cultural setting, note that The poems make children's starvation and siege-driven maternal horror central accusations. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "lam-children-famine"
+          ],
+          "verse_refs": [
+            "Lamentations 4:3-10"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_30",
+          "text": "A literary feature to notice is that The received book contains five poems with distinct voices and formal profiles. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image.",
+          "evidence_ids": [
+            "lam-five-poems"
+          ],
+          "verse_refs": [
+            "Lamentations 4:1-22"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "dig_deeper",
+      "title": "Dig deeper",
+      "blocks": [
+        {
+          "id": "dig_deeper_30",
+          "text": "For a later or comparative connection, note that The location of Uz is uncertain. Associations with Edom, Aram, northern Arabia, and the east arise from biblical place traditions and the interlocutors' labels, but no proposal supplies a verified map of Job's household or dates the composition. This remains a secondary connection rather than the chapter's first-audience context. It can be traced further without replacing the chapter's own setting. Interpretations differ on some details.",
+          "evidence_ids": [
+            "job:interpretive_note:1"
+          ],
+          "verse_refs": [
+            "Lamentations 4:21"
+          ],
+          "confidence": "low",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "c70b123c324e5c98c61ac799f03ffda951773710b9eb769638b41ad2d775ce5a",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-001-medium",
+    "generated_timestamp": "2026-09-05T21:35:03Z"
+  }
+}

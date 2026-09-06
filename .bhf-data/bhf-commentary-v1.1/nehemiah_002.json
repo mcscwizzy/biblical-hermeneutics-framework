@@ -1,0 +1,83 @@
+{
+  "reference": "Nehemiah 2",
+  "book": "Nehemiah",
+  "chapter": 2,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_54",
+          "text": "Read the chapter with this setting in view: Nehemiah responds to Jerusalem's distress with mourning, fasting, covenant confession, planning, and a request that Artaxerxes authorizes with letters and timber access. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken.",
+          "evidence_ids": [
+            "nehemiah-prayer-authorization"
+          ],
+          "verse_refs": [
+            "Nehemiah 2:1-10"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_55",
+          "text": "For its historical and cultural setting, note that Sanballat, Tobiah, and Geshem represent regional political and kinship interests affected by Jerusalem's fortification. The narrative's polemic should not be flattened into a timeless ethnic feud or used to vilify modern Samaritans, Ammonites, Arabs, or neighboring peoples. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "nehemiah:interpretive_note:3"
+          ],
+          "verse_refs": [
+            "Nehemiah 2:10-20"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        },
+        {
+          "id": "historical_context_56",
+          "text": "For its historical and cultural setting, note that Archaeology confirms Persian-period occupation and administration in Jerusalem and Yehud but does not yield an uncontested route, height, or full circuit for Nehemiah's wall. Proposed identifications of gates and the night inspection must remain provisional. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "nehemiah:interpretive_note:2"
+          ],
+          "verse_refs": [
+            "Nehemiah 2:11-20"
+          ],
+          "confidence": "low",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "dig_deeper",
+      "title": "Dig deeper",
+      "blocks": [
+        {
+          "id": "dig_deeper_55",
+          "text": "For a later or comparative connection, note that Ezra's seventh-year Artaxerxes is most commonly identified as Artaxerxes I, placing the mission in 458/457 BCE before Nehemiah, but proposals for Artaxerxes II or a reordered Ezra-Nehemiah chronology remain debated. This remains a secondary connection rather than the chapter's first-audience context. It can be traced further without replacing the chapter's own setting. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "ezra:interpretive_note:5"
+          ],
+          "verse_refs": [
+            "Nehemiah 2:1"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "f6ab76e08ca4471d60db1de6c6643c991696b788b51ce0070d9909c840032055",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-008-medium",
+    "generated_timestamp": "2026-09-06T21:45:35Z"
+  }
+}

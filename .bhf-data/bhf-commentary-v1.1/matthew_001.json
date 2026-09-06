@@ -1,0 +1,101 @@
+{
+  "reference": "Matthew 1",
+  "book": "Matthew",
+  "chapter": 1,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_47",
+          "text": "Read the chapter with this setting in view: The extant Gospel is a Greek narrative whose internal narrator does not identify an author. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken.",
+          "evidence_ids": [
+            "matthew-greek-narrative"
+          ],
+          "verse_refs": [
+            "Matthew 1:1"
+          ],
+          "confidence": "high",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_48",
+          "text": "For its historical and cultural setting, note that Matthew narrates conception from the Holy Spirit and interprets it through Greek Isaiah 7:14's parthenos and Emmanuel. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. Interpretations differ on some details.",
+          "evidence_ids": [
+            "matthew-isaiah-714"
+          ],
+          "verse_refs": [
+            "Matthew 1:18-25"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        },
+        {
+          "id": "historical_context_49",
+          "text": "For its historical and cultural setting, note that Matthew 1:1-17 structures Jesus' ancestry from Abraham through David and exile in three announced groups of fourteen. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "matthew-genealogy"
+          ],
+          "verse_refs": [
+            "Matthew 1:1-17"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_48",
+          "text": "A literary feature to notice is that Matthew repeatedly frames events with citations and fulfillment formulas drawing on varied Hebrew and Greek scriptural forms. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image. Interpretations differ on some details.",
+          "evidence_ids": [
+            "matthew-scripture-use"
+          ],
+          "verse_refs": [
+            "Matthew 1:22-23"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "dig_deeper",
+      "title": "Dig deeper",
+      "blocks": [
+        {
+          "id": "dig_deeper_48",
+          "text": "For a later or comparative connection, note that Matthew's genealogy explicitly includes Ruth and Boaz, while interpreting Boaz as a direct type of Christ is later Christian reception rather than an explicit New Testament identification. This remains a secondary connection rather than the chapter's first-audience context. It can be traced further without replacing the chapter's own setting. Interpretations differ on some details.",
+          "evidence_ids": [
+            "ruth:interpretive_note:4"
+          ],
+          "verse_refs": [
+            "Matthew 1:5"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "88eb08e06e34c9cf46fe09f853be5125aaf9e742963bf63902ae234fc9a073b8",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-008-medium",
+    "generated_timestamp": "2026-09-06T21:45:35Z"
+  }
+}

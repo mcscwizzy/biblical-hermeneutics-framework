@@ -1,0 +1,101 @@
+{
+  "reference": "John 1",
+  "book": "John",
+  "chapter": 1,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_36",
+          "text": "Read the chapter with this setting in view: John 1 depicts the Logos with God in the beginning, active in creation and life, becoming flesh and dwelling among humans; Jewish Scripture, wisdom, divine-word traditions, and Greek discourse all inform interpretation. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken. Interpretations differ on some details.",
+          "evidence_ids": [
+            "john-logos"
+          ],
+          "verse_refs": [
+            "John 1:1-18"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_37",
+          "text": "For its historical and cultural setting, note that John the Baptist repeatedly rejects messianic status and testifies to Jesus; 'Lamb of God' may evoke sacrificial, Passover, servant, apocalyptic, or combined imagery. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "john-baptist-lamb"
+          ],
+          "verse_refs": [
+            "John 1:19-36"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        },
+        {
+          "id": "historical_context_38",
+          "text": "For its historical and cultural setting, note that John 1:18 has an early textual variation between readings such as 'unique God' and 'unique Son'; either reading belongs within the prologue's claim that Jesus makes God known. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "john-1-18"
+          ],
+          "verse_refs": [
+            "John 1:18"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_37",
+          "text": "A literary feature to notice is that The Greek syntax of John 1:1 distinguishes the Logos from God while predicating theos of the Logos; translation and theological construal require attention to grammar and the whole prologue. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "john-1-1"
+          ],
+          "verse_refs": [
+            "John 1:1-2"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "chronology",
+      "title": "Chronology",
+      "blocks": [
+        {
+          "id": "chronology_37",
+          "text": "For the chapter's sequence and setting, note that New creation promised This gives the reader a frame for the passage without deciding every larger reconstruction.",
+          "evidence_ids": [
+            "creation-doctrine-framework:timeline:5"
+          ],
+          "verse_refs": [
+            "John 1:1-5"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "94af797e700c2bbf818615b7fb99775cc1f8a920281c564ab643951fe9be845f",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-007-medium",
+    "generated_timestamp": "2026-09-06T20:17:54Z"
+  }
+}

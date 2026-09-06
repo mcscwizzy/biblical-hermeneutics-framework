@@ -4,7 +4,8 @@
   "fluid": true,
   "functions": {
     "bhf_web/app.py": {
-      "maxDuration": 60
+      "maxDuration": 60,
+      "excludeFiles": ".bhf-data/bhf-commentary-candidates/**"
     }
   }
 }

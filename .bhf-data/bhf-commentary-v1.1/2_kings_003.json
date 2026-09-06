@@ -1,0 +1,65 @@
+{
+  "reference": "2 Kings 3",
+  "book": "2 Kings",
+  "chapter": 3,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_58",
+          "text": "Read the chapter with this setting in view: The Moab campaign ends with Mesha's sacrifice of his firstborn and great wrath against Israel; interpreters dispute whether the wrath is divine, human, Moabite, or a description of battlefield reversal, and the text does not settle the referent. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "2-kings:interpretive_note:1"
+          ],
+          "verse_refs": [
+            "2 Kings 3:26-27"
+          ],
+          "confidence": "low",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_59",
+          "text": "For its historical and cultural setting, note that A major Iron Age West Semitic inscription and an important external witness to Moab and Israel. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "moabite-stone:historical_context:0"
+          ],
+          "verse_refs": [
+            "2 Kings 3:1-27"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        },
+        {
+          "id": "historical_context_60",
+          "text": "For its historical and cultural setting, note that A major Iron Age West Semitic inscription and an important external witness to Moab and Israel. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "mesha-stele:historical_context:0"
+          ],
+          "verse_refs": [
+            "2 Kings 3:1-27"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "12504529a368fd8119df95624c0c34545f450dbacdf048ef5b1f5b0851e50b66",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-004-medium",
+    "generated_timestamp": "2026-09-06T02:41:43Z"
+  }
+}

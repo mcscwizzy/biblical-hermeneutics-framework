@@ -1,0 +1,62 @@
+{
+  "directories": [
+    {
+      "bytes": 3264473,
+      "classification": "runtime_required",
+      "exists": true,
+      "files": 936,
+      "path": ".bhf-data/bhf-commentary-v1.1",
+      "purpose": "certified v1.1 runtime corpus and manifest"
+    },
+    {
+      "bytes": 1575506,
+      "classification": "legacy",
+      "exists": true,
+      "files": 1192,
+      "path": ".bhf-data/bhf-commentary",
+      "purpose": "historical v1.0 packaged corpus"
+    },
+    {
+      "bytes": 5540051,
+      "classification": "legacy",
+      "exists": true,
+      "files": 1194,
+      "path": ".bhf-data/bhf-commentary-candidates/commentary-v1.0.1",
+      "purpose": "historical v1.0.1 candidate/release store"
+    },
+    {
+      "bytes": 3572568,
+      "classification": "audit_only",
+      "exists": true,
+      "files": 34,
+      "path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1",
+      "purpose": "v1.1 canary and low-information evidence audit artifacts"
+    },
+    {
+      "bytes": 73280,
+      "classification": "audit_only",
+      "exists": true,
+      "files": 29,
+      "path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-terra",
+      "purpose": "canary Terra prose controls"
+    },
+    {
+      "bytes": 277421720,
+      "classification": "audit_only",
+      "exists": true,
+      "files": 2409,
+      "path": ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale",
+      "purpose": "scaled preflight, evidence locks, certification, Terra output, remediation, and recovery history"
+    }
+  ],
+  "generated_at": "2026-09-06T22:57:09Z",
+  "report_version": "commentary-v1.1-storage-classification-v1",
+  "runtime_reader": {
+    "candidate_workspace_runtime_dependency": false,
+    "candidate_workspace_usage": "generation/audit tooling and historical artifacts only",
+    "canonical_root": ".bhf-data/bhf-commentary-v1.1",
+    "entrypoint": "bhf_web/app.py",
+    "resolver": "bhf_agent/runtime_paths.py",
+    "settings": "bhf_web/settings.py"
+  }
+}

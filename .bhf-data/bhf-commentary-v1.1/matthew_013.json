@@ -1,0 +1,102 @@
+{
+  "reference": "Matthew 13",
+  "book": "Matthew",
+  "chapter": 13,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_32",
+          "text": "Read the chapter with this setting in view: Matthew's fields, fisheries, wages, debts, taxes, estates, slaves, patrons, and laborers resonate with an unequal agrarian Roman-Palestinian economy. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "matthew-rural-economy"
+          ],
+          "verse_refs": [
+            "Matthew 13:1-33"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_33",
+          "text": "For its historical and cultural setting, note that Oral and liturgical cultures rely on repetition, and Scripture uses that habit to form covenant memory. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "why-does-the-bible-repeat-themes:historical_context:0"
+          ],
+          "verse_refs": [
+            "Matthew 13:10-17"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        },
+        {
+          "id": "historical_context_34",
+          "text": "For its historical and cultural setting, note that Jesus uses parables in first-century teaching settings to confront unbelief and form disciples. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "what-is-a-parable:historical_context:0"
+          ],
+          "verse_refs": [
+            "Matthew 13:10-17",
+            "Matthew 13:34-35"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_33",
+          "text": "A literary feature to notice is that Matthew 13 gathers kingdom parables with audience changes, Isaiah hardening language, and selective explanations. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image. Interpretations differ on some details.",
+          "evidence_ids": [
+            "matthew-parables"
+          ],
+          "verse_refs": [
+            "Matthew 13:1-53"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "dig_deeper",
+      "title": "Dig deeper",
+      "blocks": [
+        {
+          "id": "dig_deeper_33",
+          "text": "For a later or comparative connection, note that Matthew and Revelation receive language and motifs comparable with Zephaniah, but direct quotation, shared tradition, and broad prophetic reuse must be distinguished passage by passage. This remains a secondary connection rather than the chapter's first-audience context. It can be traced further without replacing the chapter's own setting. Interpretations differ on some details.",
+          "evidence_ids": [
+            "zephaniah-new-testament"
+          ],
+          "verse_refs": [
+            "Matthew 13:41"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "40f475299e6f76d57543dec8dc3e89115cb619add5eff956e18f1473e2641aee",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-008-medium",
+    "generated_timestamp": "2026-09-06T21:45:35Z"
+  }
+}

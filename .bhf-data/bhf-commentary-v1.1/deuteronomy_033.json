@@ -1,0 +1,65 @@
+{
+  "reference": "Deuteronomy 33",
+  "book": "Deuteronomy",
+  "chapter": 33,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_122",
+          "text": "Read the chapter with this setting in view: Deuteronomy moves from remembered wilderness history through covenant instruction to covenant consequences, renewal, succession, song, blessing, and Moses's death. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken.",
+          "evidence_ids": [
+            "deuteronomy-literary-movement"
+          ],
+          "verse_refs": [
+            "Deuteronomy 33:1-29"
+          ],
+          "confidence": "high",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_123",
+          "text": "For its historical and cultural setting, note that Second Temple Judaism centered priestly service in the temple and made priestly legitimacy a live issue. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "priesthood:second_temple_context:0"
+          ],
+          "verse_refs": [
+            "Deuteronomy 33:8-11"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        },
+        {
+          "id": "historical_context_124",
+          "text": "For its historical and cultural setting, note that Priesthood is rooted in the wilderness, tabernacle, and temple settings of Israel\u2019s worship, then reappears in the second temple world and in New Testament reflection. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "priesthood:historical_context:0"
+          ],
+          "verse_refs": [
+            "Deuteronomy 33:8-11"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "8e3c6d9d349aeab7a554c74f161956de178026183cede3ec989ec1bc32b3fd59",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-004-medium",
+    "generated_timestamp": "2026-09-06T02:41:43Z"
+  }
+}

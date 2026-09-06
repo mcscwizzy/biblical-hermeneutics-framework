@@ -1,0 +1,644 @@
+{
+  "passage_ref": "Leviticus 23",
+  "entities": {
+    "people": [],
+    "places": [],
+    "groups": [
+      {
+        "id": "feast-calendar",
+        "title": "Feast Calendar",
+        "type": "institution",
+        "aliases": [
+          "feast calendar institution",
+          "feast calendar in scripture",
+          "feast calendar structure",
+          "feast calendar role"
+        ],
+        "metadata": {
+          "summary": "Feast Calendar is a cultic institution rooted in Israel's worship life, organizing presence, holiness, mediation, and sacrifice.",
+          "importance": 82,
+          "retrieval_score": 0.902,
+          "ancient_names": [],
+          "modern_identification": "",
+          "region": "",
+          "terrain": "",
+          "elevation": null,
+          "archaeology": [],
+          "related_passages": [
+            "Exodus 23:14-17",
+            "Leviticus 23:1-8",
+            "1 Kings 8:1-66",
+            "Hebrews 10:1-18"
+          ]
+        }
+      },
+      {
+        "id": "levitical-service",
+        "title": "Levitical Service",
+        "type": "institution",
+        "aliases": [
+          "levitical service institution",
+          "levitical service in scripture",
+          "levitical service structure",
+          "levitical service role"
+        ],
+        "metadata": {
+          "summary": "Levitical Service is a cultic institution rooted in Israel's worship life, organizing presence, holiness, mediation, and sacrifice.",
+          "importance": 82,
+          "retrieval_score": 0.902,
+          "ancient_names": [],
+          "modern_identification": "",
+          "region": "",
+          "terrain": "",
+          "elevation": null,
+          "archaeology": [],
+          "related_passages": [
+            "Exodus 23:14-17",
+            "Leviticus 23:1-8",
+            "1 Kings 8:1-66",
+            "Hebrews 10:1-18"
+          ]
+        }
+      },
+      {
+        "id": "priestly-service",
+        "title": "Priestly Service",
+        "type": "institution",
+        "aliases": [
+          "priestly service institution",
+          "priestly service in scripture",
+          "priestly service structure",
+          "priestly service role"
+        ],
+        "metadata": {
+          "summary": "Priestly Service is a cultic institution rooted in Israel's worship life, organizing presence, holiness, mediation, and sacrifice.",
+          "importance": 82,
+          "retrieval_score": 0.902,
+          "ancient_names": [],
+          "modern_identification": "",
+          "region": "",
+          "terrain": "",
+          "elevation": null,
+          "archaeology": [],
+          "related_passages": [
+            "Exodus 23:14-17",
+            "Leviticus 23:1-8",
+            "1 Kings 8:1-66",
+            "Hebrews 10:1-18"
+          ]
+        }
+      }
+    ],
+    "events": [],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "feast-calendar:ancient_near_east_context:0",
+      "claim": "Feast Calendar is framed by specific social practices such as household authority, patronage, public reading, priestly service, temple worship, synagogue order, or Roman civic administration.",
+      "category": "culture",
+      "source_ids": [
+        "exodus-25-40",
+        "leviticus",
+        "1-kings-8",
+        "hebrews-8-10",
+        "feast-calendar-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "feast-calendar"
+      ],
+      "passage_anchors": [
+        "Leviticus 23:1-8"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "feast-calendar",
+        "parent_title": "Feast Calendar",
+        "parent_type": "institution",
+        "object_importance": 82,
+        "retrieval_score": 0.902,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "feast-calendar:historical_context:0",
+      "claim": "Feast Calendar develops from wilderness worship into temple-centered practice and later second-temple memory.",
+      "category": "history",
+      "source_ids": [
+        "exodus-25-40",
+        "leviticus",
+        "1-kings-8",
+        "hebrews-8-10",
+        "feast-calendar-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "feast-calendar"
+      ],
+      "passage_anchors": [
+        "Leviticus 23:1-8"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "feast-calendar",
+        "parent_title": "Feast Calendar",
+        "parent_type": "institution",
+        "object_importance": 82,
+        "retrieval_score": 0.902,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "levitical-service:ancient_near_east_context:0",
+      "claim": "Levitical Service is framed by specific social practices such as household authority, patronage, public reading, priestly service, temple worship, synagogue order, or Roman civic administration.",
+      "category": "culture",
+      "source_ids": [
+        "exodus-25-40",
+        "leviticus",
+        "1-kings-8",
+        "hebrews-8-10",
+        "levitical-service-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "levitical-service"
+      ],
+      "passage_anchors": [
+        "Leviticus 23:1-8"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "levitical-service",
+        "parent_title": "Levitical Service",
+        "parent_type": "institution",
+        "object_importance": 82,
+        "retrieval_score": 0.902,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "levitical-service:historical_context:0",
+      "claim": "Levitical Service develops from wilderness worship into temple-centered practice and later second-temple memory.",
+      "category": "history",
+      "source_ids": [
+        "exodus-25-40",
+        "leviticus",
+        "1-kings-8",
+        "hebrews-8-10",
+        "levitical-service-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "levitical-service"
+      ],
+      "passage_anchors": [
+        "Leviticus 23:1-8"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "levitical-service",
+        "parent_title": "Levitical Service",
+        "parent_type": "institution",
+        "object_importance": 82,
+        "retrieval_score": 0.902,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "leviticus-literary-movement",
+      "claim": "Leviticus moves from sacrifice and priestly inauguration through purity and the Day of Atonement into instructions for holy communal life, sacred time, land, covenant consequences, and vows.",
+      "category": "culture",
+      "source_ids": [
+        "leviticus-1-27",
+        "levine-leviticus",
+        "wenham-leviticus"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Leviticus 1-27"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "leviticus",
+        "parent_title": "Leviticus",
+        "parent_type": "book",
+        "object_importance": 96,
+        "retrieval_score": 0.916,
+        "passage_relationship": "direct",
+        "anchor_specificity": "chapter",
+        "verse_distance": 2200,
+        "certainty": "strong_consensus",
+        "dispute_status": "not_disputed",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "section",
+        "anchor_source": "child",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 88
+      }
+    },
+    {
+      "id": "priestly-service:ancient_near_east_context:0",
+      "claim": "Priestly Service is framed by specific social practices such as household authority, patronage, public reading, priestly service, temple worship, synagogue order, or Roman civic administration.",
+      "category": "culture",
+      "source_ids": [
+        "exodus-25-40",
+        "leviticus",
+        "1-kings-8",
+        "hebrews-8-10",
+        "priestly-service-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "priestly-service"
+      ],
+      "passage_anchors": [
+        "Leviticus 23:1-8"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "priestly-service",
+        "parent_title": "Priestly Service",
+        "parent_type": "institution",
+        "object_importance": 82,
+        "retrieval_score": 0.902,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "priestly-service:historical_context:0",
+      "claim": "Priestly Service develops from wilderness worship into temple-centered practice and later second-temple memory.",
+      "category": "history",
+      "source_ids": [
+        "exodus-25-40",
+        "leviticus",
+        "1-kings-8",
+        "hebrews-8-10",
+        "priestly-service-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "priestly-service"
+      ],
+      "passage_anchors": [
+        "Leviticus 23:1-8"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "priestly-service",
+        "parent_title": "Priestly Service",
+        "parent_type": "institution",
+        "object_importance": 82,
+        "retrieval_score": 0.902,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "1 Kings 8",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "1-kings-8",
+        "canonical_object_ids": [
+          "feast-calendar",
+          "levitical-service",
+          "priestly-service"
+        ]
+      },
+      {
+        "title": "Exodus 25-40",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "exodus-25-40",
+        "canonical_object_ids": [
+          "feast-calendar",
+          "levitical-service",
+          "priestly-service"
+        ]
+      },
+      {
+        "title": "Canonical historical orientation for Feast Calendar",
+        "author": "",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "id": "feast-calendar-historical-orientation",
+        "canonical_object_ids": [
+          "feast-calendar"
+        ]
+      },
+      {
+        "title": "Hebrews 8-10",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "hebrews-8-10",
+        "canonical_object_ids": [
+          "feast-calendar",
+          "levitical-service",
+          "priestly-service"
+        ]
+      },
+      {
+        "title": "The JPS Torah Commentary: Leviticus",
+        "author": "Baruch A. Levine",
+        "publisher": "Jewish Publication Society",
+        "year": 1989,
+        "locator": "Introduction and commentary on Leviticus 1-27",
+        "url": "https://jps.org/books/jps-torah-commentary-leviticus/",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context",
+          "literary-context",
+          "hebrew-words",
+          "interpretive-notes",
+          "leviticus-literary-movement",
+          "leviticus-purity-distinctions"
+        ],
+        "notes": "Jewish commentary integrating Hebrew text, classical interpretation, and modern scholarship.",
+        "id": "levine-leviticus",
+        "canonical_object_ids": [
+          "leviticus"
+        ]
+      },
+      {
+        "title": "Canonical historical orientation for Levitical Service",
+        "author": "",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "id": "levitical-service-historical-orientation",
+        "canonical_object_ids": [
+          "levitical-service"
+        ]
+      },
+      {
+        "title": "Leviticus",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "leviticus",
+        "canonical_object_ids": [
+          "feast-calendar",
+          "levitical-service",
+          "priestly-service"
+        ]
+      },
+      {
+        "title": "Leviticus 1-27",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Leviticus 1:1-27:34",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "literary-context",
+          "structure",
+          "key-people",
+          "key-places",
+          "key-events",
+          "scripture-references",
+          "leviticus-called-from-tent",
+          "leviticus-day-of-atonement",
+          "leviticus-holy-community"
+        ],
+        "notes": "Primary biblical text.",
+        "id": "leviticus-1-27",
+        "canonical_object_ids": [
+          "leviticus"
+        ]
+      },
+      {
+        "title": "Canonical historical orientation for Priestly Service",
+        "author": "",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "id": "priestly-service-historical-orientation",
+        "canonical_object_ids": [
+          "priestly-service"
+        ]
+      },
+      {
+        "title": "The Book of Leviticus",
+        "author": "Gordon J. Wenham",
+        "publisher": "Eerdmans",
+        "year": 1979,
+        "locator": "Introduction and commentary on Leviticus 1-27",
+        "url": "https://www.eerdmans.com/9780802825223/the-book-of-leviticus/",
+        "source_type": "reference-work",
+        "supports": [
+          "literary-context",
+          "ancient-near-east-context",
+          "later-christian-reception",
+          "interpretive-notes",
+          "leviticus-literary-movement",
+          "leviticus-day-of-atonement",
+          "leviticus-purity-distinctions"
+        ],
+        "notes": "Literary, ritual-comparative, and Christian theological commentary.",
+        "id": "wenham-leviticus",
+        "canonical_object_ids": [
+          "leviticus"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "feast-calendar",
+        "type": "institution",
+        "title": "Feast Calendar",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.902
+      },
+      {
+        "id": "levitical-service",
+        "type": "institution",
+        "title": "Levitical Service",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.902
+      },
+      {
+        "id": "leviticus",
+        "type": "book",
+        "title": "Leviticus",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.916
+      },
+      {
+        "id": "priestly-service",
+        "type": "institution",
+        "title": "Priestly Service",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.902
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "411390682593ff4c9bf8add64a71a17d7a57980f82dfe4e765b9a39b4fe9e3e5",
+  "evidence_hash_version": "2"
+}

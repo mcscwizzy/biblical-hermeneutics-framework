@@ -1,0 +1,2142 @@
+{
+  "passage_ref": "Luke 19",
+  "entities": {
+    "people": [],
+    "places": [
+      {
+        "id": "jerusalem",
+        "title": "Jerusalem",
+        "type": "place",
+        "aliases": [
+          "where is jerusalem",
+          "tell me about jerusalem",
+          "why is jerusalem important"
+        ],
+        "metadata": {
+          "summary": "The city of David, temple center, and prophetic symbol of God\u2019s reign, judgment, and future restoration.",
+          "importance": 100,
+          "retrieval_score": 0.92,
+          "ancient_names": [],
+          "modern_identification": "",
+          "region": "",
+          "terrain": "",
+          "elevation": null,
+          "archaeology": [],
+          "related_passages": [
+            "2 Samuel 5:6-10",
+            "1 Kings 8:1-13",
+            "Psalms 122:1-9",
+            "Isaiah 2:1-4",
+            "Luke 19:41-44",
+            "Acts 1:4-14",
+            "Acts 2:1-13",
+            "Revelation 21:1-4",
+            "Revelation 21:22-27"
+          ]
+        }
+      },
+      {
+        "id": "judea-1",
+        "title": "Judea",
+        "type": "place",
+        "aliases": [
+          "where is judea",
+          "tell me about judea",
+          "why is judea important"
+        ],
+        "metadata": {
+          "summary": "The southern region centered on Jerusalem and its temple, governed directly by Rome after 6 CE and central to Gospel passion and Acts narratives.",
+          "importance": 70,
+          "retrieval_score": 0.89,
+          "ancient_names": [],
+          "modern_identification": "",
+          "region": "",
+          "terrain": "",
+          "elevation": null,
+          "archaeology": [],
+          "related_passages": [
+            "Mark 10:1-34",
+            "Luke 19:28-48",
+            "John 18:28-40",
+            "John 19:1-42",
+            "Acts 1:1-8"
+          ]
+        }
+      }
+    ],
+    "groups": [],
+    "events": [],
+    "artifacts": [
+      {
+        "id": "city-of-david-excavations",
+        "title": "City of David Excavations",
+        "type": "archaeology",
+        "aliases": [
+          "city of david excavations artifact",
+          "city of david excavations discovery",
+          "city of david excavations excavation",
+          "city of david excavations find"
+        ],
+        "metadata": {
+          "summary": "City of David Excavations is a CKL archaeology entry focused on jerusalem, hezekiahs-tunnel-inscription-context, isaiah, with links to the passages and related objects that orient interpretation.",
+          "importance": 90,
+          "retrieval_score": 0.91,
+          "ancient_names": [],
+          "modern_identification": "",
+          "region": "",
+          "terrain": "",
+          "elevation": null,
+          "archaeology": [],
+          "related_passages": [
+            "2 Samuel 5:1-12",
+            "2 Kings 25:8-17",
+            "Psalms 122:1-9",
+            "Luke 19:41-44",
+            "Acts 1:1-8"
+          ]
+        }
+      },
+      {
+        "id": "pilgrimage-road-in-jerusalem",
+        "title": "Pilgrimage Road in Jerusalem",
+        "type": "archaeology",
+        "aliases": [
+          "pilgrimage road in jerusalem artifact",
+          "pilgrimage road in jerusalem discovery",
+          "pilgrimage road in jerusalem excavation",
+          "pilgrimage road in jerusalem find"
+        ],
+        "metadata": {
+          "summary": "An Early Roman stepped street ran north from the Pool of Siloam through Jerusalem toward the Temple Mount, providing material context for movement through the festival city without identifying any individual pilgrim's route.",
+          "importance": 94,
+          "retrieval_score": 0.914,
+          "ancient_names": [],
+          "modern_identification": "",
+          "region": "",
+          "terrain": "",
+          "elevation": null,
+          "archaeology": [],
+          "related_passages": [
+            "Luke 19:28-48",
+            "John 12:12-19"
+          ]
+        }
+      },
+      {
+        "id": "tell-es-safi-excavations",
+        "title": "Tell es-Safi Excavations",
+        "type": "archaeology",
+        "aliases": [
+          "tell es safi excavations artifact",
+          "tell es safi excavations discovery",
+          "tell es safi excavations excavation",
+          "tell es safi excavations find"
+        ],
+        "metadata": {
+          "summary": "An oasis settlement at Tell es-Sultan and one of the oldest continuously studied sites in the Levant.",
+          "importance": 90,
+          "retrieval_score": 0.91,
+          "ancient_names": [],
+          "modern_identification": "",
+          "region": "",
+          "terrain": "",
+          "elevation": null,
+          "archaeology": [],
+          "related_passages": [
+            "Joshua 6",
+            "1 Kings 16",
+            "Luke 19"
+          ]
+        }
+      }
+    ]
+  },
+  "evidence_items": [
+    {
+      "id": "city-of-david-excavations:ancient_near_east_context:0",
+      "claim": "Ancient background for City of David Excavations includes inscriptions, material culture, excavation layers, and imperial administration; the entry ties that world to 2 Samuel 5:1-12, 2 Kings 25:8-17, jerusalem, and hezekiahs-tunnel-inscription-context without letting comparison replace the biblical witness.",
+      "category": "culture",
+      "source_ids": [
+        "city-of-david-and-southern-ridge-excavations",
+        "2-samuel-5-1-12",
+        "2-kings-25-8-17",
+        "excavation-report-and-stratigraphic-study"
+      ],
+      "related_entity_ids": [
+        "city-of-david-excavations"
+      ],
+      "passage_anchors": [
+        "Luke 19:41-44"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "city-of-david-excavations",
+        "parent_title": "City of David Excavations",
+        "parent_type": "archaeology",
+        "object_importance": 90,
+        "retrieval_score": 0.91,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 40,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "city-of-david-excavations:historical_context:0",
+      "claim": "City of David Excavations helps anchor the biblical world in physical evidence and archaeological context.",
+      "category": "history",
+      "source_ids": [
+        "city-of-david-and-southern-ridge-excavations",
+        "2-samuel-5-1-12",
+        "2-kings-25-8-17",
+        "excavation-report-and-stratigraphic-study"
+      ],
+      "related_entity_ids": [
+        "city-of-david-excavations"
+      ],
+      "passage_anchors": [
+        "Luke 19:41-44"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "city-of-david-excavations",
+        "parent_title": "City of David Excavations",
+        "parent_type": "archaeology",
+        "object_importance": 90,
+        "retrieval_score": 0.91,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 40,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "gospel-taxation-distinctions",
+      "claim": "Gospel passages use different settings and vocabulary for imperial tribute, toll collectors, and temple-associated payments.",
+      "category": "politics",
+      "source_ids": [
+        "judean-gospel-acts-passages",
+        "british-museum-tiberius-denarius",
+        "keddie-taxation",
+        "keddie-class-power"
+      ],
+      "related_entity_ids": [
+        "jerusalem",
+        "judea-1"
+      ],
+      "passage_anchors": [
+        "Luke 19:1-10"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "judean-pilgrimage-taxation-and-roman-power",
+        "parent_title": "Judean Pilgrimage, Taxation, and Roman Power",
+        "parent_type": "cultural_background",
+        "object_importance": 98,
+        "retrieval_score": 0.938,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "textually_explicit",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.75,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "institution",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 102
+      }
+    },
+    {
+      "id": "gospel-taxation-distinctions:passage-relevance",
+      "claim": "The evidence prevents Mark 12's tribute question, Zacchaeus's toll-related role, and temple payments from being flattened into a single tax.",
+      "category": "politics",
+      "source_ids": [
+        "judean-gospel-acts-passages",
+        "british-museum-tiberius-denarius",
+        "keddie-taxation",
+        "keddie-class-power"
+      ],
+      "related_entity_ids": [
+        "jerusalem",
+        "judea-1"
+      ],
+      "passage_anchors": [
+        "Luke 19:1-10"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "judean-pilgrimage-taxation-and-roman-power",
+        "parent_title": "Judean Pilgrimage, Taxation, and Roman Power",
+        "parent_type": "cultural_background",
+        "object_importance": 98,
+        "retrieval_score": 0.938,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "textually_explicit",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.75,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "institution",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 102,
+        "supports_evidence_ids": [
+          "gospel-taxation-distinctions"
+        ]
+      }
+    },
+    {
+      "id": "jerusalem:ancient_near_east_context:0",
+      "claim": "As a royal and cultic center in the southern Levant, Jerusalem sits at the intersection of kingship, worship, and imperial pressure.",
+      "category": "culture",
+      "source_ids": [
+        "2-samuel-5",
+        "1-kings-8",
+        "psalm-122",
+        "isaiah-2",
+        "luke-19",
+        "revelation-21-22"
+      ],
+      "related_entity_ids": [
+        "jerusalem"
+      ],
+      "passage_anchors": [
+        "Luke 19:41-44"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "jerusalem",
+        "parent_title": "Jerusalem",
+        "parent_type": "place",
+        "object_importance": 100,
+        "retrieval_score": 0.92,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 40,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "jerusalem:hebraic_worldview:0",
+      "claim": "Jerusalem gathers Israel's imagination around chosen place, Davidic rule, temple presence, pilgrimage, repentance, judgment, and hope for restored worship.",
+      "category": "culture",
+      "source_ids": [
+        "2-samuel-5",
+        "1-kings-8",
+        "psalm-122",
+        "isaiah-2",
+        "luke-19",
+        "revelation-21-22"
+      ],
+      "related_entity_ids": [
+        "jerusalem"
+      ],
+      "passage_anchors": [
+        "Luke 19:41-44"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "jerusalem",
+        "parent_title": "Jerusalem",
+        "parent_type": "place",
+        "object_importance": 100,
+        "retrieval_score": 0.92,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 40,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "hebraic_worldview",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "jerusalem:historical_context:0",
+      "claim": "Jerusalem moves from Jebusite city to Davidic capital and temple center, then becomes the focal point of exile, return, and messianic expectation.",
+      "category": "history",
+      "source_ids": [
+        "2-samuel-5",
+        "1-kings-8",
+        "psalm-122",
+        "isaiah-2",
+        "luke-19",
+        "revelation-21-22"
+      ],
+      "related_entity_ids": [
+        "jerusalem"
+      ],
+      "passage_anchors": [
+        "Luke 19:41-44"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "jerusalem",
+        "parent_title": "Jerusalem",
+        "parent_type": "place",
+        "object_importance": 100,
+        "retrieval_score": 0.92,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 40,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "jerusalem:key_places:0",
+      "claim": "city-of-david",
+      "category": "geography",
+      "source_ids": [
+        "2-samuel-5",
+        "1-kings-8",
+        "psalm-122",
+        "isaiah-2",
+        "luke-19",
+        "revelation-21-22"
+      ],
+      "related_entity_ids": [
+        "jerusalem"
+      ],
+      "passage_anchors": [
+        "Luke 19:41-44"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "jerusalem",
+        "parent_title": "Jerusalem",
+        "parent_type": "place",
+        "object_importance": 100,
+        "retrieval_score": 0.92,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 40,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "key_places",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": null,
+        "overview_priority": 43,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "jerusalem:key_places:1",
+      "claim": "zion",
+      "category": "geography",
+      "source_ids": [
+        "2-samuel-5",
+        "1-kings-8",
+        "psalm-122",
+        "isaiah-2",
+        "luke-19",
+        "revelation-21-22"
+      ],
+      "related_entity_ids": [
+        "jerusalem"
+      ],
+      "passage_anchors": [
+        "Luke 19:41-44"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "jerusalem",
+        "parent_title": "Jerusalem",
+        "parent_type": "place",
+        "object_importance": 100,
+        "retrieval_score": 0.92,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 40,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "key_places",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": null,
+        "overview_priority": 43,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "jerusalem:key_places:2",
+      "claim": "mount-zion",
+      "category": "geography",
+      "source_ids": [
+        "2-samuel-5",
+        "1-kings-8",
+        "psalm-122",
+        "isaiah-2",
+        "luke-19",
+        "revelation-21-22"
+      ],
+      "related_entity_ids": [
+        "jerusalem"
+      ],
+      "passage_anchors": [
+        "Luke 19:41-44"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "jerusalem",
+        "parent_title": "Jerusalem",
+        "parent_type": "place",
+        "object_importance": 100,
+        "retrieval_score": 0.92,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 40,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "key_places",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": null,
+        "overview_priority": 43,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "jerusalem:key_places:3",
+      "claim": "bethlehem-1",
+      "category": "geography",
+      "source_ids": [
+        "2-samuel-5",
+        "1-kings-8",
+        "psalm-122",
+        "isaiah-2",
+        "luke-19",
+        "revelation-21-22"
+      ],
+      "related_entity_ids": [
+        "jerusalem"
+      ],
+      "passage_anchors": [
+        "Luke 19:41-44"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "jerusalem",
+        "parent_title": "Jerusalem",
+        "parent_type": "place",
+        "object_importance": 100,
+        "retrieval_score": 0.92,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 40,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "key_places",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": null,
+        "overview_priority": 43,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "jerusalem:key_places:4",
+      "claim": "judea-1",
+      "category": "geography",
+      "source_ids": [
+        "2-samuel-5",
+        "1-kings-8",
+        "psalm-122",
+        "isaiah-2",
+        "luke-19",
+        "revelation-21-22"
+      ],
+      "related_entity_ids": [
+        "jerusalem"
+      ],
+      "passage_anchors": [
+        "Luke 19:41-44"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "jerusalem",
+        "parent_title": "Jerusalem",
+        "parent_type": "place",
+        "object_importance": 100,
+        "retrieval_score": 0.92,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 40,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "key_places",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": null,
+        "overview_priority": 43,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "jerusalem:second_temple_context:0",
+      "claim": "In the Second Temple period Jerusalem was the rebuilt temple center under imperial pressure, the focus of pilgrimage, priestly authority, messianic hope, and early Christian witness.",
+      "category": "culture",
+      "source_ids": [
+        "2-samuel-5",
+        "1-kings-8",
+        "psalm-122",
+        "isaiah-2",
+        "luke-19",
+        "revelation-21-22"
+      ],
+      "related_entity_ids": [
+        "jerusalem"
+      ],
+      "passage_anchors": [
+        "Luke 19:41-44"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "jerusalem",
+        "parent_title": "Jerusalem",
+        "parent_type": "place",
+        "object_importance": 100,
+        "retrieval_score": 0.92,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 40,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "second_temple_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "judea-1:ancient_near_east_context:0",
+      "claim": "The relevant setting is the Roman eastern Mediterranean and late Second Temple period rather than generalized ancient geography.",
+      "category": "culture",
+      "source_ids": [
+        "matthew",
+        "mark",
+        "luke",
+        "john",
+        "acts",
+        "judea-1-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "judea-1"
+      ],
+      "passage_anchors": [
+        "Luke 19:28-48"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "judea-1",
+        "parent_title": "Judea",
+        "parent_type": "place",
+        "object_importance": 70,
+        "retrieval_score": 0.89,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 27,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "judea-1:hebraic_worldview:0",
+      "claim": "Temple pilgrimage, purity, burial, land memory, and covenant identity persisted amid taxation, elite administration, and Roman coercion.",
+      "category": "culture",
+      "source_ids": [
+        "matthew",
+        "mark",
+        "luke",
+        "john",
+        "acts",
+        "judea-1-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "judea-1"
+      ],
+      "passage_anchors": [
+        "Luke 19:28-48"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "judea-1",
+        "parent_title": "Judea",
+        "parent_type": "place",
+        "object_importance": 70,
+        "retrieval_score": 0.89,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 27,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "hebraic_worldview",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "judea-1:historical_context:0",
+      "claim": "Judea's political status changed from Herodian kingdom to Roman prefecture, with Jerusalem's priestly leadership operating under imperial authority. The region must be distinguished chronologically and administratively from Antipas's Galilee.",
+      "category": "history",
+      "source_ids": [
+        "matthew",
+        "mark",
+        "luke",
+        "john",
+        "acts",
+        "judea-1-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "judea-1"
+      ],
+      "passage_anchors": [
+        "Luke 19:28-48"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "judea-1",
+        "parent_title": "Judea",
+        "parent_type": "place",
+        "object_importance": 70,
+        "retrieval_score": 0.89,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 27,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "judea-1:second_temple_context:0",
+      "claim": "Jerusalem concentrated sacrificial worship and festival pilgrimage while settlements and tomb landscapes extended across the Judean hills and wilderness.",
+      "category": "culture",
+      "source_ids": [
+        "matthew",
+        "mark",
+        "luke",
+        "john",
+        "acts",
+        "judea-1-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "judea-1"
+      ],
+      "passage_anchors": [
+        "Luke 19:28-48"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "judea-1",
+        "parent_title": "Judea",
+        "parent_type": "place",
+        "object_importance": 70,
+        "retrieval_score": 0.89,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 27,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "second_temple_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "luke-date",
+      "claim": "Dates around 70-100 CE are common, but proposed dates range from before 70 CE into the early second century and depend on Synoptic relations, temple language, Acts, and reception.",
+      "category": "culture",
+      "source_ids": [
+        "cambridge-luke-introduction",
+        "secondary-prefaces"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Luke 19:41-44"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "luke",
+        "parent_title": "Luke",
+        "parent_type": "book",
+        "object_importance": 95,
+        "retrieval_score": 0.915,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 40,
+        "certainty": "probable",
+        "dispute_status": "chronological_uncertainty",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "historical_cultural",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 75
+      }
+    },
+    {
+      "id": "luke-minas-benefactors",
+      "claim": "The minas parable uses a violent elite claimant and coerced economy, while Luke 22 critiques rulers called benefactors; readers dispute whether the ruler transparently represents God, exposes domination, or works by analogy and contrast.",
+      "category": "economics",
+      "source_ids": [
+        "luke-greek",
+        "keddie-power",
+        "postcolonial-luke"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Luke 19:11-27"
+      ],
+      "confidence": "low",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "luke",
+        "parent_title": "Luke",
+        "parent_type": "book",
+        "object_importance": 95,
+        "retrieval_score": 0.915,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 10,
+        "certainty": "disputed",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 85
+      }
+    },
+    {
+      "id": "luke-zacchaeus",
+      "claim": "Zacchaeus' hospitality, giving, and restitution narrate salvation entering a compromised household; translation and timing of his verbs remain debated, and the scene does not excuse extortion without repair.",
+      "category": "culture",
+      "source_ids": [
+        "luke-greek",
+        "esler-poor-rich"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Luke 19:1-10"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "luke",
+        "parent_title": "Luke",
+        "parent_type": "book",
+        "object_importance": 95,
+        "retrieval_score": 0.915,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "probable",
+        "dispute_status": "lexical_uncertainty",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_theology",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "pilgrimage-road-in-jerusalem:ancient_near_east_context:0",
+      "claim": "The street belongs specifically to Roman-period Jerusalem, not to the Iron Age setting of Tell Dan or the monarchy narratives.",
+      "category": "culture",
+      "source_ids": [
+        "iaa-jerusalem-stepped-street-2023",
+        "jerusalem-entry-passages"
+      ],
+      "related_entity_ids": [
+        "pilgrimage-road-in-jerusalem"
+      ],
+      "passage_anchors": [
+        "Luke 19:28-48"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "pilgrimage-road-in-jerusalem",
+        "parent_title": "Pilgrimage Road in Jerusalem",
+        "parent_type": "archaeology",
+        "object_importance": 94,
+        "retrieval_score": 0.914,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 27,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "pilgrimage-road-in-jerusalem:hebraic_worldview:0",
+      "claim": "Pilgrimage brought worshipers into Jerusalem for covenant festivals, but the archaeology cannot identify their motives or ritual status.",
+      "category": "culture",
+      "source_ids": [
+        "iaa-jerusalem-stepped-street-2023",
+        "jerusalem-entry-passages"
+      ],
+      "related_entity_ids": [
+        "pilgrimage-road-in-jerusalem"
+      ],
+      "passage_anchors": [
+        "Luke 19:28-48"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "pilgrimage-road-in-jerusalem",
+        "parent_title": "Pilgrimage Road in Jerusalem",
+        "parent_type": "archaeology",
+        "object_importance": 94,
+        "retrieval_score": 0.914,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 27,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "hebraic_worldview",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "pilgrimage-road-in-jerusalem:historical_context:0",
+      "claim": "Excavation places the monumental street within Herodian and Early Roman Jerusalem and documents destruction debris associated with 70 CE. Its paving, drainage, shops, and adjacent buildings illuminate urban movement and commerce.",
+      "category": "history",
+      "source_ids": [
+        "iaa-jerusalem-stepped-street-2023",
+        "jerusalem-entry-passages"
+      ],
+      "related_entity_ids": [
+        "pilgrimage-road-in-jerusalem"
+      ],
+      "passage_anchors": [
+        "Luke 19:28-48"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "pilgrimage-road-in-jerusalem",
+        "parent_title": "Pilgrimage Road in Jerusalem",
+        "parent_type": "archaeology",
+        "object_importance": 94,
+        "retrieval_score": 0.914,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 27,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "pilgrimage-road-in-jerusalem:second_temple_context:0",
+      "claim": "The street connected the Siloam area with the vicinity of the Temple Mount during the late Second Temple period. Calling it a pilgrimage road is a functional interpretation, not an inscriptional ancient name.",
+      "category": "culture",
+      "source_ids": [
+        "iaa-jerusalem-stepped-street-2023",
+        "jerusalem-entry-passages"
+      ],
+      "related_entity_ids": [
+        "pilgrimage-road-in-jerusalem"
+      ],
+      "passage_anchors": [
+        "Luke 19:28-48"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "pilgrimage-road-in-jerusalem",
+        "parent_title": "Pilgrimage Road in Jerusalem",
+        "parent_type": "archaeology",
+        "object_importance": 94,
+        "retrieval_score": 0.914,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 27,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "second_temple_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "stepped-street-jerusalem",
+      "claim": "Excavation has exposed long sections of a monumental stepped street running north from the Siloam area through Jerusalem's lower city toward the Temple Mount.",
+      "category": "archaeology",
+      "source_ids": [
+        "iaa-stepped-street-2023",
+        "keddie-class-power",
+        "fiensy-daily-life-judea"
+      ],
+      "related_entity_ids": [
+        "pilgrimage-road-in-jerusalem",
+        "jerusalem"
+      ],
+      "passage_anchors": [
+        "Luke 19:28-48"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "judean-pilgrimage-taxation-and-roman-power",
+        "parent_title": "Judean Pilgrimage, Taxation, and Roman Power",
+        "parent_type": "cultural_background",
+        "object_importance": 98,
+        "retrieval_score": 0.938,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 27,
+        "certainty": "strong_consensus",
+        "dispute_status": "archaeological_uncertainty",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 1.0,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "archaeological-site",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": null,
+        "overview_priority": 35
+      }
+    },
+    {
+      "id": "stepped-street-jerusalem:passage-relevance",
+      "claim": "The street supplies contemporary urban context for crowd movement, commerce, and ascent in festival Jerusalem but cannot identify Jesus's entry route.",
+      "category": "archaeology",
+      "source_ids": [
+        "iaa-stepped-street-2023",
+        "keddie-class-power",
+        "fiensy-daily-life-judea"
+      ],
+      "related_entity_ids": [
+        "pilgrimage-road-in-jerusalem",
+        "jerusalem"
+      ],
+      "passage_anchors": [
+        "Luke 19:28-48"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "judean-pilgrimage-taxation-and-roman-power",
+        "parent_title": "Judean Pilgrimage, Taxation, and Roman Power",
+        "parent_type": "cultural_background",
+        "object_importance": 98,
+        "retrieval_score": 0.938,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 27,
+        "certainty": "strong_consensus",
+        "dispute_status": "archaeological_uncertainty",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 1.0,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "archaeological-site",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "significance",
+        "overview_priority": 35,
+        "supports_evidence_ids": [
+          "stepped-street-jerusalem"
+        ]
+      }
+    },
+    {
+      "id": "tell-es-safi-excavations:ancient_near_east_context:0",
+      "claim": "Ancient background for Tell es-Safi Excavations includes inscriptions, material culture, excavation layers, and imperial administration; the entry ties that world to Joshua 6, 1 Kings 16, jerusalem, and joshua without letting comparison replace the biblical witness.",
+      "category": "culture",
+      "source_ids": [
+        "jericho",
+        "tell",
+        "joshua-6",
+        "1-kings-16",
+        "excavation-report-and-stratigraphic-study"
+      ],
+      "related_entity_ids": [
+        "tell-es-safi-excavations"
+      ],
+      "passage_anchors": [
+        "Luke 19"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "tell-es-safi-excavations",
+        "parent_title": "Tell es-Safi Excavations",
+        "parent_type": "archaeology",
+        "object_importance": 90,
+        "retrieval_score": 0.91,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "chapter",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "tell-es-safi-excavations:historical_context:0",
+      "claim": "Jericho is important for understanding settlement patterns in the Jordan Valley and the relationship between text, tradition, and stratigraphy.",
+      "category": "history",
+      "source_ids": [
+        "jericho",
+        "tell",
+        "joshua-6",
+        "1-kings-16",
+        "excavation-report-and-stratigraphic-study"
+      ],
+      "related_entity_ids": [
+        "tell-es-safi-excavations"
+      ],
+      "passage_anchors": [
+        "Luke 19"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "tell-es-safi-excavations",
+        "parent_title": "Tell es-Safi Excavations",
+        "parent_type": "archaeology",
+        "object_importance": 90,
+        "retrieval_score": 0.91,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "chapter",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "what-is-the-significance-of-jerusalem:ancient_near_east_context:0",
+      "claim": "As a royal and cultic center in the southern Levant, Jerusalem sits at the intersection of kingship, worship, and imperial pressure.",
+      "category": "culture",
+      "source_ids": [
+        "2-samuel-5",
+        "1-kings-8",
+        "psalm-122",
+        "isaiah-2",
+        "luke-19",
+        "acts-1-2",
+        "revelation-21-22"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Luke 19:41-44"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "what-is-the-significance-of-jerusalem",
+        "parent_title": "What is the significance of Jerusalem?",
+        "parent_type": "faq",
+        "object_importance": 98,
+        "retrieval_score": 0.918,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 40,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "what-is-the-significance-of-jerusalem:historical_context:0",
+      "claim": "Jerusalem moves from Jebusite city to Davidic capital and temple center, then becomes the focal point of exile, return, and messianic expectation.",
+      "category": "history",
+      "source_ids": [
+        "2-samuel-5",
+        "1-kings-8",
+        "psalm-122",
+        "isaiah-2",
+        "luke-19",
+        "acts-1-2",
+        "revelation-21-22"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Luke 19:41-44"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "what-is-the-significance-of-jerusalem",
+        "parent_title": "What is the significance of Jerusalem?",
+        "parent_type": "faq",
+        "object_importance": 98,
+        "retrieval_score": 0.918,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 40,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "global",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "1 Kings 16",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "1-kings-16",
+        "canonical_object_ids": [
+          "tell-es-safi-excavations"
+        ]
+      },
+      {
+        "title": "1 Kings 8",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "1-kings-8",
+        "canonical_object_ids": [
+          "jerusalem",
+          "what-is-the-significance-of-jerusalem"
+        ]
+      },
+      {
+        "title": "2 Kings 25:8-17",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "2-kings-25-8-17",
+        "canonical_object_ids": [
+          "city-of-david-excavations"
+        ]
+      },
+      {
+        "title": "2 Samuel 5",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "2-samuel-5",
+        "canonical_object_ids": [
+          "jerusalem",
+          "what-is-the-significance-of-jerusalem"
+        ]
+      },
+      {
+        "title": "2 Samuel 5:1-12",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "2-samuel-5-1-12",
+        "canonical_object_ids": [
+          "city-of-david-excavations"
+        ]
+      },
+      {
+        "title": "Acts",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "acts",
+        "canonical_object_ids": [
+          "judea-1"
+        ]
+      },
+      {
+        "title": "Acts 1-2",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "acts-1-2",
+        "canonical_object_ids": [
+          "what-is-the-significance-of-jerusalem"
+        ]
+      },
+      {
+        "title": "Two silver denarii of Tiberius",
+        "author": "",
+        "publisher": "British Museum",
+        "year": null,
+        "locator": "Money Gallery, Roman Empire AD 14-37",
+        "url": "https://www.britishmuseum.org/sites/default/files/2021-05/Money_Gallery_LPG_2020_Room_68.pdf",
+        "source_type": "museum-collection",
+        "supports": [
+          "gospel-taxation-distinctions"
+        ],
+        "notes": "Museum orientation for denarius coinage under Tiberius; no claim that either coin appears in Mark 12.",
+        "id": "british-museum-tiberius-denarius",
+        "canonical_object_ids": [
+          "judean-pilgrimage-taxation-and-roman-power"
+        ]
+      },
+      {
+        "title": "Luke",
+        "author": "A. E. Harvey",
+        "publisher": "Cambridge University Press",
+        "year": 2012,
+        "locator": "A Companion to the New Testament, Luke",
+        "url": "https://www.cambridge.org/core/books/abs/companion-to-the-new-testament/luke/7BBA74D303D1815DDD8C918AE8B5B46E",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "authorship-positions",
+          "date-ranges",
+          "claims"
+        ],
+        "notes": "Cautious introduction to the preface, later attribution, narrative, and context.",
+        "id": "cambridge-luke-introduction",
+        "canonical_object_ids": [
+          "luke"
+        ]
+      },
+      {
+        "title": "City of David and southern ridge excavations",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [],
+        "notes": "",
+        "id": "city-of-david-and-southern-ridge-excavations",
+        "canonical_object_ids": [
+          "city-of-david-excavations"
+        ]
+      },
+      {
+        "title": "The Poor and the Rich",
+        "author": "Philip Francis Esler",
+        "publisher": "Cambridge University Press",
+        "year": 1987,
+        "locator": "Community and Gospel in Luke-Acts, chapter 7",
+        "url": "https://www.cambridge.org/core/books/community-and-gospel-in-lukeacts/poor-and-the-rich/AC0ECD7AA1B60E1A2C3657DF097E1A64",
+        "source_type": "academic-book",
+        "supports": [
+          "major-themes",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Economic language and community context.",
+        "id": "esler-poor-rich",
+        "canonical_object_ids": [
+          "luke"
+        ]
+      },
+      {
+        "title": "Excavation report and stratigraphic study",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [],
+        "notes": "",
+        "id": "excavation-report-and-stratigraphic-study",
+        "canonical_object_ids": [
+          "city-of-david-excavations",
+          "tell-es-safi-excavations"
+        ]
+      },
+      {
+        "title": "The Archaeology of Daily Life: Ordinary Persons in Late Second Temple Israel",
+        "author": "David A. Fiensy",
+        "publisher": "Cascade Books",
+        "year": 2021,
+        "locator": "Chapters on occupations, religion, mortality, disposal of the dead, and dwellings",
+        "url": "https://wipfandstock.com/9781532673078/the-archaeology-of-daily-life/",
+        "source_type": "academic-book",
+        "supports": [
+          "gospel-pilgrimage-and-temple-economy",
+          "gospel-taxation-distinctions",
+          "gospel-crucifixion-and-burial",
+          "stepped-street-jerusalem",
+          "yehohanan-crucifixion-burial"
+        ],
+        "notes": "Synthesis emphasizing ordinary persons and archaeological limits.",
+        "id": "fiensy-daily-life-judea",
+        "canonical_object_ids": [
+          "judean-pilgrimage-taxation-and-roman-power"
+        ]
+      },
+      {
+        "title": "Jerusalem, City of David, the Stepped Street",
+        "author": "Ari Levy and Yuval Baruch",
+        "publisher": "Israel Antiquities Authority",
+        "year": 2023,
+        "locator": "Hadashot Arkheologiyot 135, Early Roman Stratum VIII",
+        "url": "https://hadashot.iaa.org.il/report_detail_eng.aspx?id=26274&mag_id=135",
+        "source_type": "excavation-report",
+        "supports": [
+          "historical-context",
+          "second-temple-context"
+        ],
+        "notes": "Primary excavation report for the street, associated structures, and destruction sequence.",
+        "id": "iaa-jerusalem-stepped-street-2023",
+        "canonical_object_ids": [
+          "pilgrimage-road-in-jerusalem"
+        ]
+      },
+      {
+        "title": "Jerusalem, City of David, the Stepped Street",
+        "author": "Ari Levy and Yuval Baruch",
+        "publisher": "Israel Antiquities Authority",
+        "year": 2023,
+        "locator": "Hadashot Arkheologiyot 135, Early Roman Stratum VIII",
+        "url": "https://hadashot.iaa.org.il/report_detail_eng.aspx?id=26274&mag_id=135",
+        "source_type": "excavation-report",
+        "supports": [
+          "stepped-street-jerusalem"
+        ],
+        "notes": "Primary report for street stratigraphy, buildings, installations, and the 70 CE destruction layer.",
+        "id": "iaa-stepped-street-2023",
+        "canonical_object_ids": [
+          "judean-pilgrimage-taxation-and-roman-power"
+        ]
+      },
+      {
+        "title": "Isaiah 2",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "isaiah-2",
+        "canonical_object_ids": [
+          "jerusalem",
+          "what-is-the-significance-of-jerusalem"
+        ]
+      },
+      {
+        "title": "Jericho",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [],
+        "notes": "",
+        "id": "jericho",
+        "canonical_object_ids": [
+          "tell-es-safi-excavations"
+        ]
+      },
+      {
+        "title": "Luke and John Jerusalem passages",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Luke 19:28-48; John 12:12-19",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "canonical-context"
+        ],
+        "notes": "Primary biblical texts; neither passage names the excavated street.",
+        "id": "jerusalem-entry-passages",
+        "canonical_object_ids": [
+          "pilgrimage-road-in-jerusalem"
+        ]
+      },
+      {
+        "title": "John",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "john",
+        "canonical_object_ids": [
+          "judea-1"
+        ]
+      },
+      {
+        "title": "Joshua 6",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "joshua-6",
+        "canonical_object_ids": [
+          "tell-es-safi-excavations"
+        ]
+      },
+      {
+        "title": "Canonical historical orientation for Judea 1",
+        "author": "",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "id": "judea-1-historical-orientation",
+        "canonical_object_ids": [
+          "judea-1"
+        ]
+      },
+      {
+        "title": "Pilgrimage, taxation, Roman trial, crucifixion, and burial passages",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Luke 2:1-52; 19:1-10; Mark 11:1-25; 12:13-17; 15:21-47; John 18:28-19:42; Acts 5:33-39",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "gospel-pilgrimage-and-temple-economy",
+          "gospel-taxation-distinctions",
+          "gospel-roman-hearing",
+          "gospel-crucifixion-and-burial",
+          "josephus-census-tax-resistance",
+          "stepped-street-jerusalem",
+          "pilate-prefect-inscription",
+          "yehohanan-crucifixion-burial"
+        ],
+        "notes": "Primary biblical texts; no modern translation is reproduced.",
+        "id": "judean-gospel-acts-passages",
+        "canonical_object_ids": [
+          "judean-pilgrimage-taxation-and-roman-power"
+        ]
+      },
+      {
+        "title": "Class and Power in Roman Palestine",
+        "author": "Anthony Keddie",
+        "publisher": "Cambridge University Press",
+        "year": 2019,
+        "locator": "Chapters 2-4 on provincial rule, taxation, and sacred economy",
+        "url": "https://doi.org/10.1017/9781108656757",
+        "source_type": "academic-book",
+        "supports": [
+          "gospel-pilgrimage-and-temple-economy",
+          "stepped-street-jerusalem",
+          "gospel-taxation-distinctions",
+          "josephus-census-tax-resistance",
+          "gospel-roman-hearing",
+          "pilate-prefect-inscription"
+        ],
+        "notes": "Socioeconomic synthesis attentive to imperial and local elite power.",
+        "id": "keddie-class-power",
+        "canonical_object_ids": [
+          "judean-pilgrimage-taxation-and-roman-power"
+        ]
+      },
+      {
+        "title": "Class and Power in Roman Palestine",
+        "author": "G. Anthony Keddie",
+        "publisher": "Cambridge University Press",
+        "year": 2019,
+        "locator": "Economy, class, labor, taxation, and elite power",
+        "url": "https://www.cambridge.org/core/books/class-and-power-in-roman-palestine/5B1250AEB368712B24A3657ABE112D01",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "archaeology",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Roman Palestinian political economy.",
+        "id": "keddie-power",
+        "canonical_object_ids": [
+          "luke"
+        ]
+      },
+      {
+        "title": "Taxation: Render unto Caesar and the Local Elites",
+        "author": "Anthony Keddie",
+        "publisher": "Cambridge University Press",
+        "year": 2019,
+        "locator": "Class and Power in Roman Palestine, chapter 3, pp. 111-151",
+        "url": "https://doi.org/10.1017/9781108656757.004",
+        "source_type": "academic-book",
+        "supports": [
+          "gospel-taxation-distinctions",
+          "josephus-census-tax-resistance"
+        ],
+        "notes": "Distinguishes direct tribute, censuses, tolls, customs, tax farming, and local elite supervision.",
+        "id": "keddie-taxation",
+        "canonical_object_ids": [
+          "judean-pilgrimage-taxation-and-roman-power"
+        ]
+      },
+      {
+        "title": "Luke",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "luke",
+        "canonical_object_ids": [
+          "judea-1"
+        ]
+      },
+      {
+        "title": "Luke 19",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "luke-19",
+        "canonical_object_ids": [
+          "jerusalem",
+          "what-is-the-significance-of-jerusalem"
+        ]
+      },
+      {
+        "title": "The Gospel according to Luke, Greek text",
+        "author": "",
+        "publisher": "Society of Biblical Literature",
+        "year": 2010,
+        "locator": "Luke 1-24 in SBLGNT",
+        "url": "https://www.sbl-site.org/resources/digital-texts/sbl-greek-new-testament/",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "structure",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Open critical Greek text.",
+        "id": "luke-greek",
+        "canonical_object_ids": [
+          "luke"
+        ]
+      },
+      {
+        "title": "Mark",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "mark",
+        "canonical_object_ids": [
+          "judea-1"
+        ]
+      },
+      {
+        "title": "Matthew",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "matthew",
+        "canonical_object_ids": [
+          "judea-1"
+        ]
+      },
+      {
+        "title": "Postcolonial Biblical Interpretation",
+        "author": "Musa W. Dube, John M. Mbuvi, and Dora R. Mbuwayesango, editors",
+        "publisher": "Society of Biblical Literature",
+        "year": 2012,
+        "locator": "Postcolonial method and biblical reception",
+        "url": "https://www.sbl-site.org/wp-content/uploads/2024/11/Postcolonial_DubeMbuvi_SBL.pdf",
+        "source_type": "academic-book",
+        "supports": [
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Empire, mission, identity, and colonial reception.",
+        "id": "postcolonial-luke",
+        "canonical_object_ids": [
+          "luke"
+        ]
+      },
+      {
+        "title": "Psalm 122",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [],
+        "notes": "",
+        "id": "psalm-122",
+        "canonical_object_ids": [
+          "jerusalem",
+          "what-is-the-significance-of-jerusalem"
+        ]
+      },
+      {
+        "title": "Revelation 21-22",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "revelation-21-22",
+        "canonical_object_ids": [
+          "jerusalem",
+          "what-is-the-significance-of-jerusalem"
+        ]
+      },
+      {
+        "title": "Secondary Prefaces and the Composition of Luke-Acts",
+        "author": "Gregory E. Sterling",
+        "publisher": "Cambridge University Press",
+        "year": 2025,
+        "locator": "New Testament Studies 71.2, 141-155",
+        "url": "https://www.cambridge.org/core/journals/new-testament-studies/article/secondary-prefaces-and-the-composition-of-lukeacts/49E94579872F8DF4637788F88375900E",
+        "source_type": "journal-article",
+        "supports": [
+          "date-ranges",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Ancient multi-scroll prefaces, serial release, unity, and differences.",
+        "id": "secondary-prefaces",
+        "canonical_object_ids": [
+          "luke"
+        ]
+      },
+      {
+        "title": "Tell",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [],
+        "notes": "",
+        "id": "tell",
+        "canonical_object_ids": [
+          "tell-es-safi-excavations"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "city-of-david-excavations",
+        "type": "archaeology",
+        "title": "City of David Excavations",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.91
+      },
+      {
+        "id": "jerusalem",
+        "type": "place",
+        "title": "Jerusalem",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.92
+      },
+      {
+        "id": "judea-1",
+        "type": "place",
+        "title": "Judea",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.89
+      },
+      {
+        "id": "judean-pilgrimage-taxation-and-roman-power",
+        "type": "cultural_background",
+        "title": "Judean Pilgrimage, Taxation, and Roman Power",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.938
+      },
+      {
+        "id": "luke",
+        "type": "book",
+        "title": "Luke",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.915
+      },
+      {
+        "id": "pilgrimage-road-in-jerusalem",
+        "type": "archaeology",
+        "title": "Pilgrimage Road in Jerusalem",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.914
+      },
+      {
+        "id": "tell-es-safi-excavations",
+        "type": "archaeology",
+        "title": "Tell es-Safi Excavations",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.91
+      },
+      {
+        "id": "what-is-the-significance-of-jerusalem",
+        "type": "faq",
+        "title": "What is the significance of Jerusalem?",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.918
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "92b1fdd8086cd07c8e90d4c86d31237860fada13a9d7531d2dc02e7075c9211e",
+  "evidence_hash_version": "2"
+}

@@ -1,0 +1,745 @@
+{
+  "passage_ref": "Jeremiah 39",
+  "entities": {
+    "people": [],
+    "places": [],
+    "groups": [],
+    "events": [
+      {
+        "id": "fall-of-jerusalem",
+        "title": "Fall of Jerusalem",
+        "type": "event",
+        "aliases": [
+          "what happened in fall of jerusalem",
+          "tell me about fall of jerusalem",
+          "why is fall of jerusalem important"
+        ],
+        "metadata": {
+          "summary": "Babylon destroys Jerusalem and the temple, sending Judah into exile.",
+          "importance": 98,
+          "retrieval_score": 0.918,
+          "ancient_names": [],
+          "modern_identification": "",
+          "region": "",
+          "terrain": "",
+          "elevation": null,
+          "archaeology": [],
+          "related_passages": [
+            "2 Kings 25:1-21",
+            "Jeremiah 39:1-10",
+            "Jeremiah 52:1-30",
+            "Lamentations 1:1-22",
+            "Psalms 137:1-9",
+            "Ezra 1:1-11"
+          ]
+        }
+      }
+    ],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "fall-of-jerusalem:ancient_near_east_context:0",
+      "claim": "The destruction followed Neo-Babylonian practices of punitive siege, royal removal, plunder, destruction, deportation, and installation of subordinate administration after rebellion. BM 21946 records the earlier 597 BCE capture, not this later catastrophe.",
+      "category": "culture",
+      "source_ids": [
+        "kings-jeremiah-fall-jerusalem",
+        "cogan-tadmor-fall-jerusalem",
+        "bm-21946-fall-boundary"
+      ],
+      "related_entity_ids": [
+        "fall-of-jerusalem"
+      ],
+      "passage_anchors": [
+        "Jeremiah 39:1-10"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "fall-of-jerusalem",
+        "parent_title": "Fall of Jerusalem",
+        "parent_type": "event",
+        "object_importance": 98,
+        "retrieval_score": 0.918,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "fall-of-jerusalem:hebraic_worldview:0",
+      "claim": "Kings and Jeremiah interpret the fall as judgment after persistent covenant breach and rejected prophetic warning; Lamentations voices grief, protest, confession, and appeal from within the catastrophe.",
+      "category": "culture",
+      "source_ids": [
+        "kings-jeremiah-fall-jerusalem",
+        "cogan-tadmor-fall-jerusalem",
+        "bm-21946-fall-boundary"
+      ],
+      "related_entity_ids": [
+        "fall-of-jerusalem"
+      ],
+      "passage_anchors": [
+        "Jeremiah 39:1-10"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "fall-of-jerusalem",
+        "parent_title": "Fall of Jerusalem",
+        "parent_type": "event",
+        "object_importance": 98,
+        "retrieval_score": 0.918,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "hebraic_worldview",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "fall-of-jerusalem:historical_context:0",
+      "claim": "After Zedekiah's revolt, Babylon besieged Jerusalem, breached the city, removed and executed officials, burned the temple and major buildings, dismantled defenses, and deported further inhabitants. The absolute date is conventionally 587/586 BCE because regnal-year and calendar calculations differ.",
+      "category": "history",
+      "source_ids": [
+        "kings-jeremiah-fall-jerusalem",
+        "cogan-tadmor-fall-jerusalem",
+        "bm-21946-fall-boundary"
+      ],
+      "related_entity_ids": [
+        "fall-of-jerusalem"
+      ],
+      "passage_anchors": [
+        "Jeremiah 39:1-10"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "fall-of-jerusalem",
+        "parent_title": "Fall of Jerusalem",
+        "parent_type": "event",
+        "object_importance": 98,
+        "retrieval_score": 0.918,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "applicability_scope": "entity",
+        "anchor_source": "parent",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55,
+        "inherited_from_parent": true
+      }
+    },
+    {
+      "id": "jeremiah-catastrophe-trauma",
+      "claim": "Jeremiah uses siege, wound, tears, maternal bodies, non-burial, creation undone, imprisonment, displacement, and fractured memory to represent catastrophe and survival.",
+      "category": "culture",
+      "source_ids": [
+        "jeremiah-masoretic",
+        "o-connor-pain-promise",
+        "claassens-traumatized-prophet",
+        "kalmanofsky-poetic-violence"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Jeremiah 37:1-39:18"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "jeremiah",
+        "parent_title": "Jeremiah",
+        "parent_type": "book",
+        "object_importance": 96,
+        "retrieval_score": 0.916,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 200,
+        "certainty": "strong_consensus",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 90
+      }
+    },
+    {
+      "id": "jeremiah-historical-crisis",
+      "claim": "Jeremiah's narrated world is rooted in Judah's transition from Josiah through Babylonian domination, the 597 deportation, Zedekiah's siege, Jerusalem's 587/586 destruction, Gedaliah, and flight to Egypt.",
+      "category": "culture",
+      "source_ids": [
+        "jeremiah-masoretic",
+        "crouch-jeremiah-contexts",
+        "british-museum-babylonian-chronicle",
+        "lundbom-jeremiah-37-52"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Jeremiah 39:1-18"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "jeremiah",
+        "parent_title": "Jeremiah",
+        "parent_type": "book",
+        "object_importance": 96,
+        "retrieval_score": 0.916,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "chronological_uncertainty",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "historical_cultural",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 110
+      }
+    },
+    {
+      "id": "jeremiah-long-composition",
+      "claim": "The received book combines poetry, prose sermons, narratives, letters, headings, repeated accounts, restoration collections, nation oracles, and an appendix produced through a long compositional and textual history.",
+      "category": "culture",
+      "source_ids": [
+        "jeremiah-masoretic",
+        "oxford-handbook-jeremiah",
+        "biddle-jeremiah-content",
+        "stulman-jeremiah"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Jeremiah 1:1-52:34"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "jeremiah",
+        "parent_title": "Jeremiah",
+        "parent_type": "book",
+        "object_importance": 96,
+        "retrieval_score": 0.916,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 3800,
+        "certainty": "strong_consensus",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 45
+      }
+    },
+    {
+      "id": "jeremiah-practical-mt-outline",
+      "claim": "Chapters 1; 2-25; 26-29; 30-33; 34-45; 46-51; and 52 provide a practical outline of Masoretic Jeremiah without settling its composition.",
+      "category": "culture",
+      "source_ids": [
+        "jeremiah-masoretic",
+        "biddle-jeremiah-content",
+        "stulman-jeremiah"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Jeremiah 1:1-52:34"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "jeremiah",
+        "parent_title": "Jeremiah",
+        "parent_type": "book",
+        "object_importance": 96,
+        "retrieval_score": 0.916,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 3800,
+        "certainty": "probable",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 30
+      }
+    },
+    {
+      "id": "kings-jeremiah-deportation-sequence",
+      "claim": "The biblical accounts distinguish Jerusalem's 597 BCE capture and deportation under Jehoiachin from the later siege, temple destruction, and further removals under Zedekiah.",
+      "category": "culture",
+      "source_ids": [
+        "kings-jeremiah-exile-text",
+        "grayson-abc",
+        "cogan-tadmor-2-kings-babylon"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Jeremiah 39:1-10"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "babylonian-conquest-deportation-and-judean-diaspora",
+        "parent_title": "Babylonian Conquest, Deportation, and Judean Diaspora",
+        "parent_type": "cultural_background",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "chronological_uncertainty",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "historical_cultural",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "WEAKLY_RELATED",
+        "presentation_role": null,
+        "overview_priority": 22
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "Jeremiah: Content and Structure",
+        "author": "Mark E. Biddle",
+        "publisher": "Oxford University Press",
+        "year": 2021,
+        "locator": "Oxford Handbook of Jeremiah, chapter 13, pages 235-251",
+        "url": "https://academic.oup.com/edited-volume/37089/chapter-abstract/323191290",
+        "source_type": "academic-book",
+        "supports": [
+          "literary-context",
+          "genre",
+          "structure",
+          "authorship-positions",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "Study of poetry, prose, headings, collections, and the two versions.",
+        "id": "biddle-jeremiah-content",
+        "canonical_object_ids": [
+          "jeremiah"
+        ]
+      },
+      {
+        "title": "Babylonian Chronicle for 605-594 BCE",
+        "author": "",
+        "publisher": "British Museum",
+        "year": null,
+        "locator": "BM 21946; date range 605-594 BCE",
+        "url": "https://www.britishmuseum.org/collection/object/W_1896-0409-51",
+        "source_type": "museum-collection",
+        "supports": [
+          "ancient-near-east-context",
+          "interpretive-notes"
+        ],
+        "notes": "Used to enforce the boundary between the documented 597 BCE capture and the later destruction.",
+        "id": "bm-21946-fall-boundary",
+        "canonical_object_ids": [
+          "fall-of-jerusalem"
+        ]
+      },
+      {
+        "title": "Babylonian Chronicle BM 21946",
+        "author": "",
+        "publisher": "British Museum",
+        "year": null,
+        "locator": "Museum number 21946; chronicle for 605-594 BCE",
+        "url": "https://www.britishmuseum.org/collection/object/W_1896-0409-51",
+        "source_type": "museum-collection",
+        "supports": [
+          "historical-context",
+          "ancient-near-east-context",
+          "timeline",
+          "archaeology",
+          "claims"
+        ],
+        "notes": "Clay tablet describing Nebuchadnezzar's 597 BCE Jerusalem campaign.",
+        "id": "british-museum-babylonian-chronicle",
+        "canonical_object_ids": [
+          "jeremiah"
+        ]
+      },
+      {
+        "title": "Jeremiah: The Traumatized Prophet",
+        "author": "L. Juliana Claassens",
+        "publisher": "Oxford University Press",
+        "year": 2021,
+        "locator": "Oxford Handbook of Jeremiah, chapter 20",
+        "url": "https://academic.oup.com/edited-volume/37089/chapter-abstract/323194272",
+        "source_type": "academic-book",
+        "supports": [
+          "major-themes",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "Trauma-narrative analysis of Jeremiah's literary portrayal.",
+        "id": "claassens-traumatized-prophet",
+        "canonical_object_ids": [
+          "jeremiah"
+        ]
+      },
+      {
+        "title": "II Kings",
+        "author": "Mordechai Cogan and Hayim Tadmor",
+        "publisher": "Doubleday / Yale University Press",
+        "year": 1988,
+        "locator": "Commentary on 2 Kings 24:1-25:30",
+        "url": "https://yalebooks.yale.edu/book/9780300140743/ii-kings/",
+        "source_type": "academic-book",
+        "supports": [
+          "kings-jeremiah-deportation-sequence",
+          "babylonian-chronicle-597-capture",
+          "jehoiachin-palace-ration-lists"
+        ],
+        "notes": "Historical-critical commentary for the biblical sequence and Babylonian comparisons.",
+        "id": "cogan-tadmor-2-kings-babylon",
+        "canonical_object_ids": [
+          "babylonian-conquest-deportation-and-judean-diaspora"
+        ]
+      },
+      {
+        "title": "II Kings",
+        "author": "Mordechai Cogan and Hayim Tadmor",
+        "publisher": "Doubleday / Yale University Press",
+        "year": 1988,
+        "locator": "Commentary on 2 Kings 24:18-25:30",
+        "url": "https://yalebooks.yale.edu/book/9780300140743/ii-kings/",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "literary-context",
+          "interpretive-notes"
+        ],
+        "notes": "Historical-critical commentary on the final siege, chronology, destruction, and aftermath.",
+        "id": "cogan-tadmor-fall-jerusalem",
+        "canonical_object_ids": [
+          "fall-of-jerusalem"
+        ]
+      },
+      {
+        "title": "The Historical Contexts of the Books of Jeremiah",
+        "author": "C. L. Crouch",
+        "publisher": "Oxford University Press",
+        "year": 2021,
+        "locator": "Oxford Handbook of Jeremiah, chapter 1, pages 25-39",
+        "url": "https://academic.oup.com/edited-volume/37089/chapter-abstract/323186242",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "ancient-near-east-context",
+          "timeline",
+          "archaeology",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "Historical study of Assyria, Egypt, Babylonia, Judah, and the book's crisis settings.",
+        "id": "crouch-jeremiah-contexts",
+        "canonical_object_ids": [
+          "jeremiah"
+        ]
+      },
+      {
+        "title": "Assyrian and Babylonian Chronicles",
+        "author": "A. K. Grayson",
+        "publisher": "J. J. Augustin / Eisenbrauns",
+        "year": 1975,
+        "locator": "Texts from Cuneiform Sources 5, Chronicle 5, reverse lines 11-13",
+        "url": "https://cdli.earth/publications/1685149",
+        "source_type": "academic-book",
+        "supports": [
+          "babylonian-chronicle-597-capture",
+          "kings-jeremiah-deportation-sequence"
+        ],
+        "notes": "Standard edition used for the chronicle's transliteration, translation, and line numbering.",
+        "id": "grayson-abc",
+        "canonical_object_ids": [
+          "babylonian-conquest-deportation-and-judean-diaspora"
+        ]
+      },
+      {
+        "title": "Masoretic Jeremiah",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Jeremiah 1-52 in the Masoretic textual tradition",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "historical-context",
+          "literary-context",
+          "structure",
+          "major-themes",
+          "key-people",
+          "key-places",
+          "key-events",
+          "hebrew-words",
+          "scripture-references",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "Primary received Hebrew canonical text.",
+        "id": "jeremiah-masoretic",
+        "canonical_object_ids": [
+          "jeremiah"
+        ]
+      },
+      {
+        "title": "Poetic Violence in the Book of Jeremiah",
+        "author": "Amy Kalmanofsky",
+        "publisher": "Oxford University Press",
+        "year": 2021,
+        "locator": "Oxford Handbook of Jeremiah, chapter 18, pages 328-342",
+        "url": "https://academic.oup.com/edited-volume/37089/chapter/323193631",
+        "source_type": "academic-book",
+        "supports": [
+          "literary-context",
+          "major-themes",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "Literary and ethical analysis of wound, maternal-body, and corpse imagery.",
+        "id": "kalmanofsky-poetic-violence",
+        "canonical_object_ids": [
+          "jeremiah"
+        ]
+      },
+      {
+        "title": "Second Kings 24-25; Jeremiah 29, 39, and 52; Ezekiel 1",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "2 Kings 24:1-25:30; Jeremiah 29:1-14; 39:1-10; 52:1-34; Ezekiel 1:1-3",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "kings-jeremiah-deportation-sequence",
+          "babylonian-chronicle-597-capture",
+          "jehoiachin-palace-ration-lists",
+          "al-yahudu-judean-community-archive"
+        ],
+        "notes": "Primary biblical witnesses; no modern translation is reproduced.",
+        "id": "kings-jeremiah-exile-text",
+        "canonical_object_ids": [
+          "babylonian-conquest-deportation-and-judean-diaspora"
+        ]
+      },
+      {
+        "title": "Second Kings 25; Jeremiah 39 and 52; Lamentations 1",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "2 Kings 25:1-21; Jeremiah 39:1-10; 52:1-30; Lamentations 1:1-22",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "historical-context",
+          "literary-context",
+          "interpretive-notes"
+        ],
+        "notes": "Primary biblical witnesses in prose and poetry.",
+        "id": "kings-jeremiah-fall-jerusalem",
+        "canonical_object_ids": [
+          "fall-of-jerusalem"
+        ]
+      },
+      {
+        "title": "Jeremiah 37-52",
+        "author": "Jack R. Lundbom",
+        "publisher": "Yale University Press",
+        "year": 2004,
+        "locator": "Anchor Yale Bible 21C",
+        "url": "https://yalebooks.yale.edu/book/9780300139655/jeremiah-37-52/",
+        "source_type": "academic-book",
+        "supports": [
+          "literary-context",
+          "historical-context",
+          "authorship-positions",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "Detailed commentary on Jeremiah 37-52.",
+        "id": "lundbom-jeremiah-37-52",
+        "canonical_object_ids": [
+          "jeremiah"
+        ]
+      },
+      {
+        "title": "Jeremiah: Pain and Promise",
+        "author": "Kathleen M. O'Connor",
+        "publisher": "Fortress Press",
+        "year": 2011,
+        "locator": "Introduction and book",
+        "url": "https://ms.augsburgfortress.org/downloads/9780800620400Intro.pdf",
+        "source_type": "academic-book",
+        "supports": [
+          "summary",
+          "historical-context",
+          "major-themes",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "Trauma- and disaster-aware reading of pain, survival, and promise.",
+        "id": "o-connor-pain-promise",
+        "canonical_object_ids": [
+          "jeremiah"
+        ]
+      },
+      {
+        "title": "The Oxford Handbook of Jeremiah",
+        "author": "Louis Stulman and Edward Silver, editors",
+        "publisher": "Oxford University Press",
+        "year": 2021,
+        "locator": "Whole volume",
+        "url": "https://academic.oup.com/edited-volume/37089",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context",
+          "literary-context",
+          "authorship-positions",
+          "second-temple-context",
+          "interpretive-disputes",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "Multi-author scholarly reference work spanning history, text, themes, reception, and ethics.",
+        "id": "oxford-handbook-jeremiah",
+        "canonical_object_ids": [
+          "jeremiah"
+        ]
+      },
+      {
+        "title": "Abingdon Old Testament Commentaries: Jeremiah",
+        "author": "Louis Stulman",
+        "publisher": "Abingdon Press",
+        "year": 2005,
+        "locator": "Introduction and commentary",
+        "url": "https://www.abingdonpress.com/product/9780687057962/",
+        "source_type": "academic-book",
+        "supports": [
+          "summary",
+          "literary-context",
+          "structure",
+          "major-themes",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "Final-form and prose-sensitive critical commentary.",
+        "id": "stulman-jeremiah",
+        "canonical_object_ids": [
+          "jeremiah"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "babylonian-conquest-deportation-and-judean-diaspora",
+        "type": "cultural_background",
+        "title": "Babylonian Conquest, Deportation, and Judean Diaspora",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.917
+      },
+      {
+        "id": "fall-of-jerusalem",
+        "type": "event",
+        "title": "Fall of Jerusalem",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.918
+      },
+      {
+        "id": "jeremiah",
+        "type": "book",
+        "title": "Jeremiah",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.916
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "8dc6b85500d6f7bf0a6de207aabf0b65444dd47efb44fd8ffe7a5cea56c0b2ae",
+  "evidence_hash_version": "2"
+}

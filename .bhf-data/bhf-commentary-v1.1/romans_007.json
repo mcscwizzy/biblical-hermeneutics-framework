@@ -1,0 +1,83 @@
+{
+  "reference": "Romans 7",
+  "book": "Romans",
+  "chapter": 7,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_73",
+          "text": "Read the chapter with this setting in view: Romans 7 describes Torah as holy, just, good, and spiritual while personifying sin as exploiting commandment; Torah is not identified as sin. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken.",
+          "evidence_ids": [
+            "romans:interpretive_note:33"
+          ],
+          "verse_refs": [
+            "Romans 7:7-14"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_74",
+          "text": "For its historical and cultural setting, note that Romans describes Torah as holy, just, good, spiritual, and fulfilled through love even while arguing that sin exploits commandment and Torah cannot defeat sin and death. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "romans-torah"
+          ],
+          "verse_refs": [
+            "Romans 7:7-14"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        },
+        {
+          "id": "historical_context_75",
+          "text": "For its historical and cultural setting, note that Romans cannot make Torah or Judaism uniquely legalistic: Paul identifies sin and boasting across peoples and repeatedly honors Israel's Scriptures and gifts. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. Interpretations differ on some details.",
+          "evidence_ids": [
+            "romans:interpretive_note:47"
+          ],
+          "verse_refs": [
+            "Romans 7:7-14"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_74",
+          "text": "A literary feature to notice is that The identity and temporal standpoint of the first-person speaker in Romans 7 are unresolved, with autobiographical, Adamic, Israelite, rhetorical, pre-Messianic, and Christian readings competing. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "romans-seven"
+          ],
+          "verse_refs": [
+            "Romans 7:7-25"
+          ],
+          "confidence": "low",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "dda5e9145a962ecce1ead52ba83160e4db35defaa6660bbcb8b0ad01981aa863",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-007-medium",
+    "generated_timestamp": "2026-09-06T20:17:54Z"
+  }
+}

@@ -29,7 +29,7 @@ def test_coverage_snapshot_is_read_only_and_preserves_report_sections():
         ckl_report=lambda _scope: coverage,
     )
 
-    assert result["release"] == "commentary-v1.0"
+    assert result["release"] == "commentary-v1.1"
     assert result["scope"] == "Leviticus 1-5"
     assert result["commentary"]["corpus_counts"]["generated"] == 2
     assert result["ckl"]["coverage_totals"]["data_gaps"] == 3
@@ -49,7 +49,7 @@ def test_coverage_page_and_api_are_read_only(tmp_path):
     templates = Jinja2Templates(directory="bhf_web/templates")
     templates.env.globals["static_asset"] = lambda path: f"/static/{path.lstrip('/')}"
     register_commentary_coverage_routes(app, storage_dir=tmp_path, templates=templates)
-    snapshot = {"release": "commentary-v1.0", "scope": "Genesis", "commentary": {}, "ckl": {}}
+    snapshot = {"release": "commentary-v1.1", "scope": "Genesis", "commentary": {}, "ckl": {}}
 
     async def request():
         transport = httpx.ASGITransport(app=app)

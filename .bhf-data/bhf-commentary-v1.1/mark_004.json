@@ -1,0 +1,65 @@
+{
+  "reference": "Mark 4",
+  "book": "Mark",
+  "chapter": 4,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_45",
+          "text": "Read the chapter with this setting in view: The seed parables assume sowing, varied soils, grain growth, weeds, harvest, and garden plants familiar enough to carry comparison. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken. Interpretations differ on some details.",
+          "evidence_ids": [
+            "gospel-galilean-agriculture"
+          ],
+          "verse_refs": [
+            "Mark 4:1-32"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_46",
+          "text": "For its historical and cultural setting, note that Jesus uses parables in first-century teaching settings to confront unbelief and form disciples. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "what-is-a-parable:historical_context:0"
+          ],
+          "verse_refs": [
+            "Mark 4:1-20"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        },
+        {
+          "id": "historical_context_47",
+          "text": "For its historical and cultural setting, note that Story-based moral instruction was familiar in the ancient world, but Jesus uses parables to announce God's reign. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "what-is-a-parable:ancient_near_east_context:0"
+          ],
+          "verse_refs": [
+            "Mark 4:1-20"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "4dedc0c30a7ebfa4061d390fd36f4569fd7dbb225ad0bb3928d0f98843c7708a",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-005-medium",
+    "generated_timestamp": "2026-09-06T03:50:20Z"
+  }
+}

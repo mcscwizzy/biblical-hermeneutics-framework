@@ -1,0 +1,65 @@
+{
+  "reference": "2 Kings 2",
+  "book": "2 Kings",
+  "chapter": 2,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_132",
+          "text": "Read the chapter with this setting in view: Second Kings moves from Elijah and Elisha through royal coups and Assyrian conquest to Judah's reforms, Babylonian destruction, and Jehoiachin's life in exile. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken.",
+          "evidence_ids": [
+            "second-kings-literary-movement"
+          ],
+          "verse_refs": [
+            "2 Kings 2:1-25"
+          ],
+          "confidence": "high",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_133",
+          "text": "For its historical and cultural setting, note that Elisha witnesses Elijah's ascent, receives his mantle, parts the Jordan, and is recognized by the prophetic company as Elijah's successor. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "second-kings-elisha-succeeds"
+          ],
+          "verse_refs": [
+            "2 Kings 2:1-18"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        },
+        {
+          "id": "historical_context_134",
+          "text": "For its historical and cultural setting, note that The Hebrew phrase nearim qetannim does not require very young children and can describe youths, but uncertainty about age does not remove the ethical and theological difficulty of the bears killing forty-two after Elisha's curse. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "2-kings:interpretive_note:0"
+          ],
+          "verse_refs": [
+            "2 Kings 2:23-25"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "51f9001dea5f2d2d530592004afc4fb9c7ca179e94cc8ef0c596924978402fa5",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-005-medium",
+    "generated_timestamp": "2026-09-06T03:50:21Z"
+  }
+}

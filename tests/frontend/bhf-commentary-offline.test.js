@@ -33,13 +33,13 @@ function loadApi({cachedPayload, fetchResponse, fetchError, commentaryRelease} =
 test("commentary cache ignores an older release and caches the current release", async () => {
   const {api, cached} = loadApi({
     cachedPayload: {release: "commentary-v0.9", commentary: "old"},
-    fetchResponse: {release: "commentary-v1.0", commentary: "current"},
+    fetchResponse: {release: "commentary-v1.1", commentary: "current"},
   });
 
   const result = await api.requestJson("/api/bhf-commentary/Genesis/1");
   assert.equal(result.commentary, "current");
   assert.equal(cached.length, 1);
-  assert.equal(cached[0].release, "commentary-v1.0");
+  assert.equal(cached[0].release, "commentary-v1.1");
 });
 
 

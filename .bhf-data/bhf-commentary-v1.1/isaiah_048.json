@@ -1,0 +1,53 @@
+{
+  "reference": "Isaiah 48",
+  "book": "Isaiah",
+  "chapter": 48,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_14",
+          "text": "Read the chapter with this setting in view: Isaiah names Cyrus as YHWH's shepherd and anointed agent for Babylon's defeat and Jerusalem's restoration without depicting Cyrus as an Israelite Davidic king. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "isaiah-cyrus-anointed"
+          ],
+          "verse_refs": [
+            "Isaiah 48:12-16"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_15",
+          "text": "A literary feature to notice is that Isaiah 40-55 announces comfort and return from Babylon through creation and exodus imagery, presenting a new homecoming without implying that displacement trauma or postreturn conflict simply vanished. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image. Interpretations differ on some details.",
+          "evidence_ids": [
+            "isaiah-comfort-new-exodus"
+          ],
+          "verse_refs": [
+            "Isaiah 48:20-21"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "ea8b2ba34caa69563417b3970b509f12954b0fd2cb486fd50521f75b523d7f58",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-005-medium",
+    "generated_timestamp": "2026-09-06T03:50:20Z"
+  }
+}

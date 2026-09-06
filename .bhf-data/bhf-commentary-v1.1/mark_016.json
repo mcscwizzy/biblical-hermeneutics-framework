@@ -1,0 +1,83 @@
+{
+  "reference": "Mark 16",
+  "book": "Mark",
+  "chapter": 16,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_44",
+          "text": "Read the chapter with this setting in view: No Markan text authorizes coercive conversion, colonial mission, religious violence, abuse, medical neglect, dangerous exorcism, snake handling, poison drinking, prosperity extraction, apocalyptic date-setting, or testing God. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken.",
+          "evidence_ids": [
+            "mark-safety"
+          ],
+          "verse_refs": [
+            "Mark 16:17-18"
+          ],
+          "confidence": "high",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_45",
+          "text": "For its historical and cultural setting, note that The extant continuous Gospel is a Greek narrative whose internal narrator does not identify an author. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "mark-anonymous-greek"
+          ],
+          "verse_refs": [
+            "Mark 16:8"
+          ],
+          "confidence": "high",
+          "interpretation_level": "inference"
+        },
+        {
+          "id": "historical_context_46",
+          "text": "For its historical and cultural setting, note that The earliest recoverable form of Mark ends at 16:8 with fear and silence; it contains an announcement of resurrection and promised Galilee but no narrated appearance of the risen Jesus. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "mark-ending-16-8"
+          ],
+          "verse_refs": [
+            "Mark 16:1-8"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_45",
+          "text": "A literary feature to notice is that Women act as petitioners, recipients of healing, prophetic exemplars, providers, witnesses to crucifixion and burial, and first recipients of the empty-tomb announcement. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image. Interpretations differ on some details.",
+          "evidence_ids": [
+            "mark-women"
+          ],
+          "verse_refs": [
+            "Mark 16:1-8"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "25e2fcd249c1134b5259df15f9c526ba3a85253075f0dd5080b7633693da6bf3",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-008-medium",
+    "generated_timestamp": "2026-09-06T21:45:35Z"
+  }
+}

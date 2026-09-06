@@ -1,0 +1,65 @@
+{
+  "reference": "Psalms 19",
+  "book": "Psalms",
+  "chapter": 19,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_23",
+          "text": "Read the chapter with this setting in view: Kurkh Monolith provides a concrete setting for reading the biblical narrative, even when the exact interpretive link remains debated. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken.",
+          "evidence_ids": [
+            "kurkh-monolith:historical_context:0"
+          ],
+          "verse_refs": [
+            "Psalms 19:1-6"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_24",
+          "text": "For its historical and cultural setting, note that Kurkh Monolith belongs to the material culture of Levantine, Mesopotamian, Egyptian, Persian, Greek, or Roman settings, where inscriptions, architecture, pottery, and administrative remains help contextualize the biblical world. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "kurkh-monolith:ancient_near_east_context:0"
+          ],
+          "verse_refs": [
+            "Psalms 19:1-6"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        },
+        {
+          "id": "historical_context_25",
+          "text": "For its historical and cultural setting, note that Ein Gedi Scroll provides a concrete setting for reading the biblical narrative, even when the exact interpretive link remains debated. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "ein-gedi-scroll:historical_context:0"
+          ],
+          "verse_refs": [
+            "Psalms 19:1-6"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "7cd0987d73d484d5aae31864a17fb8b006416ba4a5db711ef41e23f61634cb61",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-007-medium",
+    "generated_timestamp": "2026-09-06T20:17:54Z"
+  }
+}

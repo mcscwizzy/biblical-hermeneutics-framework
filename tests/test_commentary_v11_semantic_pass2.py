@@ -29,14 +29,13 @@ def test_genesis_word_studies_are_not_false_first_audience_language_context():
 
 def test_word_study_relationships_distinguish_direct_and_translation_comparison():
     bundle = _bundle("Psalms", 1)
-    torah = bundle.evidence_by_id["torah:historical_context:0"]
-    makarios = bundle.evidence_by_id["makarios:historical_context:0"]
-    nomos = bundle.evidence_by_id["nomos:historical_context:0"]
-    assert torah.relevance_metadata["semantic_relationship"] == "DIRECT_CONTEXT"
+    torah = bundle.evidence_by_id["psalms-gateway-torah-king"]
+    inherited_torah = bundle.evidence_by_id["what-does-torah-mean:historical_context:0"]
+    assert torah.relevance_metadata["semantic_relationship"] == "BOOK_CONTEXT"
     assert torah.relevance_metadata["presentation_role"] == "language_literary"
-    assert makarios.relevance_metadata["semantic_relationship"] == "COMPARATIVE_CONTEXT"
-    assert nomos.relevance_metadata["semantic_relationship"] == "COMPARATIVE_CONTEXT"
-    assert _section_for_item(makarios) == "dig_deeper"
+    assert inherited_torah.relevance_metadata["semantic_relationship"] == "GENERIC_BACKGROUND"
+    assert inherited_torah.relevance_metadata["presentation_role"] == "historical_context"
+    assert not any(item.id.startswith(("makarios:", "nomos:")) for item in bundle.evidence_items)
 
 
 def test_luke_acts_relation_is_not_archaeology():

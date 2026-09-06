@@ -1,0 +1,589 @@
+{
+  "passage_ref": "Leviticus 11",
+  "entities": {
+    "people": [],
+    "places": [],
+    "groups": [],
+    "events": [],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "1pet-holiness",
+      "claim": "The addressees are commanded to be holy with a citation of scriptural holiness language.",
+      "category": "culture",
+      "source_ids": [
+        "1pet-greek",
+        "nets-lxx",
+        "jobes"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Leviticus 11:44"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "1-peter",
+        "parent_title": "1 Peter",
+        "parent_type": "book",
+        "object_importance": 80,
+        "retrieval_score": 0.9,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 43,
+        "certainty": "textually_explicit",
+        "dispute_status": "not_disputed",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_theology",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "LATER_RECEPTION",
+        "presentation_role": "dig_deeper",
+        "overview_priority": 0
+      }
+    },
+    {
+      "id": "leviticus-food-carcass-holiness",
+      "claim": "Leviticus 11 combines animal classifications, eating permissions, carcass-contact impurity, object effects, and holiness without one modern scientific rationale.",
+      "category": "culture",
+      "source_ids": [
+        "leviticus-food-purity-texts",
+        "levine-leviticus",
+        "klawans-impurity"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Leviticus 11:1-47"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "ritual-purity-and-communal-holiness",
+        "parent_title": "Ritual Purity, Food, Table Fellowship, and Idol Food",
+        "parent_type": "cultural_background",
+        "object_importance": 96,
+        "retrieval_score": 0.916,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "worldview-concept",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    },
+    {
+      "id": "leviticus-food-carcass-holiness:passage-relevance",
+      "claim": "Disciplines claims that Mark or Acts simply replaces one universal hygiene code with another.",
+      "category": "culture",
+      "source_ids": [
+        "leviticus-food-purity-texts",
+        "levine-leviticus",
+        "klawans-impurity"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Leviticus 11:1-47"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "ritual-purity-and-communal-holiness",
+        "parent_title": "Ritual Purity, Food, Table Fellowship, and Idol Food",
+        "parent_type": "cultural_background",
+        "object_importance": 96,
+        "retrieval_score": 0.916,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "worldview-concept",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 87,
+        "supports_evidence_ids": [
+          "leviticus-food-carcass-holiness"
+        ]
+      }
+    },
+    {
+      "id": "leviticus-literary-movement",
+      "claim": "Leviticus moves from sacrifice and priestly inauguration through purity and the Day of Atonement into instructions for holy communal life, sacred time, land, covenant consequences, and vows.",
+      "category": "culture",
+      "source_ids": [
+        "leviticus-1-27",
+        "levine-leviticus",
+        "wenham-leviticus"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Leviticus 1-27"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "leviticus",
+        "parent_title": "Leviticus",
+        "parent_type": "book",
+        "object_importance": 96,
+        "retrieval_score": 0.916,
+        "passage_relationship": "direct",
+        "anchor_specificity": "chapter",
+        "verse_distance": 1000,
+        "certainty": "strong_consensus",
+        "dispute_status": "not_disputed",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "section",
+        "anchor_source": "child",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 88
+      }
+    },
+    {
+      "id": "leviticus-purity-distinctions",
+      "claim": "Leviticus distinguishes ritual impurity from moral offenses rather than treating every unclean condition as personal sin.",
+      "category": "culture",
+      "source_ids": [
+        "leviticus-1-27",
+        "levine-leviticus",
+        "wenham-leviticus",
+        "zondervan-illustrated-pentateuch-backgrounds"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Leviticus 11-15"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "leviticus",
+        "parent_title": "Leviticus",
+        "parent_type": "book",
+        "object_importance": 96,
+        "retrieval_score": 0.916,
+        "passage_relationship": "direct",
+        "anchor_specificity": "chapter",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "applicability_scope": "section",
+        "anchor_source": "child",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 65
+      }
+    },
+    {
+      "id": "leviticus-ritual-moral-distinction",
+      "claim": "Leviticus assigns different causes, durations, rites, access effects, and sanctions to bodily impurity and prohibited conduct.",
+      "category": "culture",
+      "source_ids": [
+        "leviticus-food-purity-texts",
+        "levine-leviticus",
+        "klawans-impurity"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Leviticus 11:1-47"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "ritual-purity-and-communal-holiness",
+        "parent_title": "Ritual Purity, Food, Table Fellowship, and Idol Food",
+        "parent_type": "cultural_background",
+        "object_importance": 96,
+        "retrieval_score": 0.916,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "worldview-concept",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    },
+    {
+      "id": "leviticus-ritual-moral-distinction:passage-relevance",
+      "claim": "Prevents later clean and unclean language from becoming personal guilt, dirtiness, or diminished human worth.",
+      "category": "culture",
+      "source_ids": [
+        "leviticus-food-purity-texts",
+        "levine-leviticus",
+        "klawans-impurity"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Leviticus 11:1-47"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "ritual-purity-and-communal-holiness",
+        "parent_title": "Ritual Purity, Food, Table Fellowship, and Idol Food",
+        "parent_type": "cultural_background",
+        "object_importance": 96,
+        "retrieval_score": 0.916,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "worldview-concept",
+        "field": "",
+        "applicability_scope": "passage",
+        "anchor_source": "child",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 87,
+        "supports_evidence_ids": [
+          "leviticus-ritual-moral-distinction"
+        ]
+      }
+    },
+    {
+      "id": "leviticus:interpretive_note:1",
+      "claim": "Ritual impurity should not be treated as a simple synonym for personal moral guilt; Leviticus distinguishes bodily states, ritual status, prohibited acts, and culpable offenses.",
+      "category": "culture",
+      "source_ids": [
+        "leviticus-1-27",
+        "levine-leviticus",
+        "wenham-leviticus",
+        "zondervan-illustrated-pentateuch-backgrounds"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Leviticus 11-15"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "leviticus",
+        "parent_title": "Leviticus",
+        "parent_type": "book",
+        "object_importance": 96,
+        "retrieval_score": 0.916,
+        "passage_relationship": "direct",
+        "anchor_specificity": "chapter",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "interpretive-caution",
+        "field": "",
+        "applicability_scope": "section",
+        "anchor_source": "child",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 62
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "SBL Greek New Testament: 1 Peter",
+        "author": "Michael W. Holmes, editor",
+        "publisher": "Society of Biblical Literature and Logos Bible Software",
+        "year": 2010,
+        "locator": "1 Peter",
+        "url": "https://www.sblgnt.com/",
+        "source_type": "reference-work",
+        "supports": [],
+        "notes": "Open critical Greek text used for lexical and textual controls.",
+        "id": "1pet-greek",
+        "canonical_object_ids": [
+          "1-peter"
+        ]
+      },
+      {
+        "title": "1 Peter",
+        "author": "Karen H. Jobes",
+        "publisher": "Baker Academic",
+        "year": 2005,
+        "locator": "Baker Exegetical Commentary on the New Testament",
+        "url": "https://bakeracademic.com/p/1-peter-karen-h-jobes/230734",
+        "source_type": "academic-book",
+        "supports": [],
+        "notes": "Exegetical commentary representing a Petrine-authorship case.",
+        "id": "jobes",
+        "canonical_object_ids": [
+          "1-peter"
+        ]
+      },
+      {
+        "title": "Impurity and Sin in Ancient Judaism",
+        "author": "Jonathan Klawans",
+        "publisher": "Oxford University Press",
+        "year": 2000,
+        "locator": "Chapters 1-4",
+        "url": "https://doi.org/10.1093/acprof:oso/9780195132908.001.0001",
+        "source_type": "academic-book",
+        "supports": [
+          "leviticus-ritual-moral-distinction",
+          "leviticus-food-carcass-holiness",
+          "mark-heart-and-moral-defilement"
+        ],
+        "notes": "Influential analytical distinction whose categories remain scholarly models.",
+        "id": "klawans-impurity",
+        "canonical_object_ids": [
+          "ritual-purity-and-communal-holiness"
+        ]
+      },
+      {
+        "title": "The JPS Torah Commentary: Leviticus",
+        "author": "Baruch A. Levine",
+        "publisher": "Jewish Publication Society",
+        "year": 1989,
+        "locator": "Commentary on Leviticus 11-20",
+        "url": "https://jps.org/books/jps-torah-commentary-leviticus/",
+        "source_type": "reference-work",
+        "supports": [
+          "leviticus-ritual-moral-distinction",
+          "leviticus-food-carcass-holiness"
+        ],
+        "notes": "Jewish commentary integrating Hebrew text and ritual categories.",
+        "id": "levine-leviticus",
+        "canonical_object_ids": [
+          "leviticus",
+          "ritual-purity-and-communal-holiness"
+        ],
+        "canonical_source_variants": [
+          {
+            "title": "The JPS Torah Commentary: Leviticus",
+            "author": "Baruch A. Levine",
+            "publisher": "Jewish Publication Society",
+            "year": 1989,
+            "locator": "Commentary on Leviticus 11-20",
+            "url": "https://jps.org/books/jps-torah-commentary-leviticus/",
+            "source_type": "reference-work",
+            "supports": [
+              "leviticus-ritual-moral-distinction",
+              "leviticus-food-carcass-holiness"
+            ],
+            "notes": "Jewish commentary integrating Hebrew text and ritual categories.",
+            "id": "levine-leviticus"
+          },
+          {
+            "title": "The JPS Torah Commentary: Leviticus",
+            "author": "Baruch A. Levine",
+            "publisher": "Jewish Publication Society",
+            "year": 1989,
+            "locator": "Introduction and commentary on Leviticus 1-27",
+            "url": "https://jps.org/books/jps-torah-commentary-leviticus/",
+            "source_type": "reference-work",
+            "supports": [
+              "historical-context",
+              "literary-context",
+              "hebrew-words",
+              "interpretive-notes",
+              "leviticus-literary-movement",
+              "leviticus-purity-distinctions"
+            ],
+            "notes": "Jewish commentary integrating Hebrew text, classical interpretation, and modern scholarship.",
+            "id": "levine-leviticus"
+          }
+        ]
+      },
+      {
+        "title": "Leviticus 1-27",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Leviticus 1:1-27:34",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "literary-context",
+          "structure",
+          "key-people",
+          "key-places",
+          "key-events",
+          "scripture-references",
+          "leviticus-called-from-tent",
+          "leviticus-day-of-atonement",
+          "leviticus-holy-community"
+        ],
+        "notes": "Primary biblical text.",
+        "id": "leviticus-1-27",
+        "canonical_object_ids": [
+          "leviticus"
+        ]
+      },
+      {
+        "title": "Leviticus 11-20",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Leviticus 11:1-47",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "claims",
+          "evidence-items"
+        ],
+        "notes": "Primary scriptural evidence; no modern translation is reproduced.",
+        "id": "leviticus-food-purity-texts",
+        "canonical_object_ids": [
+          "ritual-purity-and-communal-holiness"
+        ]
+      },
+      {
+        "title": "A New English Translation of the Septuagint",
+        "author": "Albert Pietersma and Benjamin G. Wright, editors",
+        "publisher": "International Organization for Septuagint and Cognate Studies",
+        "year": 2009,
+        "locator": "Genesis, Exodus, Leviticus, Psalms, Proverbs, Isaiah, and Hosea comparanda",
+        "url": "https://septuaginta.uni-goettingen.de/ioscs/nets/",
+        "source_type": "reference-work",
+        "supports": [],
+        "notes": "Septuagint translation and comparison control.",
+        "id": "nets-lxx",
+        "canonical_object_ids": [
+          "1-peter"
+        ]
+      },
+      {
+        "title": "The Book of Leviticus",
+        "author": "Gordon J. Wenham",
+        "publisher": "Eerdmans",
+        "year": 1979,
+        "locator": "Introduction and commentary on Leviticus 1-27",
+        "url": "https://www.eerdmans.com/9780802825223/the-book-of-leviticus/",
+        "source_type": "reference-work",
+        "supports": [
+          "literary-context",
+          "ancient-near-east-context",
+          "later-christian-reception",
+          "interpretive-notes",
+          "leviticus-literary-movement",
+          "leviticus-day-of-atonement",
+          "leviticus-purity-distinctions"
+        ],
+        "notes": "Literary, ritual-comparative, and Christian theological commentary.",
+        "id": "wenham-leviticus",
+        "canonical_object_ids": [
+          "leviticus"
+        ]
+      },
+      {
+        "title": "Zondervan Illustrated Bible Backgrounds Commentary: Genesis, Exodus, Leviticus, Numbers, Deuteronomy",
+        "author": "John H. Walton, general editor; Roy Gane, R. Dennis Cole, and other contributors",
+        "publisher": "Zondervan",
+        "year": 2009,
+        "locator": "Leviticus commentary and background notes",
+        "url": "https://zondervanacademic.com/products/genesis-exodus-leviticus-numbers-deuteronomy",
+        "source_type": "reference-work",
+        "supports": [
+          "ancient-near-east-context",
+          "archaeology",
+          "historical-context",
+          "interpretive-notes",
+          "leviticus-purity-distinctions"
+        ],
+        "notes": "Comparative textual, material, historical, and cultural background.",
+        "id": "zondervan-illustrated-pentateuch-backgrounds",
+        "canonical_object_ids": [
+          "leviticus"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "1-peter",
+        "type": "book",
+        "title": "1 Peter",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.9
+      },
+      {
+        "id": "leviticus",
+        "type": "book",
+        "title": "Leviticus",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.916
+      },
+      {
+        "id": "ritual-purity-and-communal-holiness",
+        "type": "cultural_background",
+        "title": "Ritual Purity, Food, Table Fellowship, and Idol Food",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.916
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "7fbef9c92eda41f5e719030ab73b5e3f88a017b6950620d65e9b814527280559",
+  "evidence_hash_version": "2"
+}

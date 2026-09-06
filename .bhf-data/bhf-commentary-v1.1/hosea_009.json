@@ -1,0 +1,53 @@
+{
+  "reference": "Hosea 9",
+  "book": "Hosea",
+  "chapter": 9,
+  "status": "validated",
+  "evidence_availability": "THIN",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_51",
+          "text": "Read the chapter with this setting in view: Hosea contests attribution of grain, wine, oil, fertility, and security to Baal or rival practices, but the text does not document one simple or uniform fertility cult. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken. Interpretations differ on some details.",
+          "evidence_ids": [
+            "hosea-baal-fertility"
+          ],
+          "verse_refs": [
+            "Hosea 9:1-17"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_52",
+          "text": "A literary feature to notice is that Hosea rhetorically reuses exodus, wilderness, Jacob, Gibeah, Baal-peor, and prophetic traditions to diagnose present identity and summon change. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "hosea-historical-memory"
+          ],
+          "verse_refs": [
+            "Hosea 9:1-17"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "a6ad947d17b7045dff8e53822768cb57b35274b4dcf05cfd82b19f592afc77c5",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-003-medium",
+    "generated_timestamp": "2026-09-06T00:47:11Z"
+  }
+}

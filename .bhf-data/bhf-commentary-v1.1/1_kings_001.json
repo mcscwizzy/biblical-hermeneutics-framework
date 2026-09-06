@@ -1,0 +1,35 @@
+{
+  "reference": "1 Kings 1",
+  "book": "1 Kings",
+  "chapter": 1,
+  "status": "validated",
+  "evidence_availability": "THIN",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_88",
+          "text": "Read the chapter with this setting in view: First Kings moves from contested succession through Solomon's wisdom, temple, and failure to divided kingdoms and prophetic confrontation under Ahab. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken.",
+          "evidence_ids": [
+            "first-kings-literary-movement"
+          ],
+          "verse_refs": [
+            "1 Kings 1:1-53"
+          ],
+          "confidence": "high",
+          "interpretation_level": "inference"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "e0429655e5b1153a9a2e5da72b938a9b9a8641b04b2e2ed83e08a2abd94b275d",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-002-medium",
+    "generated_timestamp": "2026-09-05T22:51:03Z"
+  }
+}

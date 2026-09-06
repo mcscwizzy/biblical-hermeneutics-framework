@@ -1,0 +1,53 @@
+{
+  "reference": "Numbers 19",
+  "book": "Numbers",
+  "chapter": 19,
+  "status": "validated",
+  "evidence_availability": "THIN",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "s1_b1",
+          "text": "BHF's anchored contextual material for Numbers 19 is limited. It supports caution about reconstructing the wilderness route: proposed maps should label uncertain site identifications rather than treat one itinerary as settled. The chapter's own instructions can be read closely without adding an unverified geographical reconstruction around them.",
+          "evidence_ids": [
+            "numbers:interpretive_note:2"
+          ],
+          "verse_refs": [
+            "Numbers 19:1-22"
+          ],
+          "confidence": "low",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "dig_deeper",
+      "title": "Dig deeper",
+      "blocks": [
+        {
+          "id": "s2_b1",
+          "text": "Haggai 2:11\u201313 later asks priests for Torah rulings about contact and impurity. Its question distinguishes holiness, which is not transferred by a second contact, from corpse impurity, which is transferred by contact. That later legal inquiry can sharpen a reader's attention to Numbers 19:11\u201322 without claiming to exhaust the chapter's ritual meaning.",
+          "evidence_ids": [
+            "haggai-torah-inquiry"
+          ],
+          "verse_refs": [
+            "Numbers 19:11-22"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "1a9e4236c1f53c12a1f355fb1deec04727b8510ade98088db81ca30674207c8c",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-canary",
+    "generated_timestamp": "2026-09-05T19:36:38.384033+00:00"
+  }
+}

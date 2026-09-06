@@ -1,0 +1,101 @@
+{
+  "reference": "Leviticus 11",
+  "book": "Leviticus",
+  "chapter": 11,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_79",
+          "text": "Read the chapter with this setting in view: Leviticus moves from sacrifice and priestly inauguration through purity and the Day of Atonement into instructions for holy communal life, sacred time, land, covenant consequences, and vows. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken.",
+          "evidence_ids": [
+            "leviticus-literary-movement"
+          ],
+          "verse_refs": [
+            "Leviticus 11:1-47"
+          ],
+          "confidence": "high",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_80",
+          "text": "For its historical and cultural setting, note that Leviticus assigns different causes, durations, rites, access effects, and sanctions to bodily impurity and prohibited conduct. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "leviticus-ritual-moral-distinction"
+          ],
+          "verse_refs": [
+            "Leviticus 11:1-47"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        },
+        {
+          "id": "historical_context_81",
+          "text": "For its historical and cultural setting, note that Leviticus 11 combines animal classifications, eating permissions, carcass-contact impurity, object effects, and holiness without one modern scientific rationale. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. Interpretations differ on some details.",
+          "evidence_ids": [
+            "leviticus-food-carcass-holiness"
+          ],
+          "verse_refs": [
+            "Leviticus 11:1-47"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_80",
+          "text": "A literary feature to notice is that Leviticus distinguishes ritual impurity from moral offenses rather than treating every unclean condition as personal sin. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "leviticus-purity-distinctions"
+          ],
+          "verse_refs": [
+            "Leviticus 11:1-47"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "dig_deeper",
+      "title": "Dig deeper",
+      "blocks": [
+        {
+          "id": "dig_deeper_80",
+          "text": "For a later or comparative connection, note that The addressees are commanded to be holy with a citation of scriptural holiness language. This remains a secondary connection rather than the chapter's first-audience context. It can be traced further without replacing the chapter's own setting.",
+          "evidence_ids": [
+            "1pet-holiness"
+          ],
+          "verse_refs": [
+            "Leviticus 11:44"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "7fbef9c92eda41f5e719030ab73b5e3f88a017b6950620d65e9b814527280559",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-007-medium",
+    "generated_timestamp": "2026-09-06T20:17:55Z"
+  }
+}

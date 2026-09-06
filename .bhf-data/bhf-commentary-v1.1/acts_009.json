@@ -1,0 +1,101 @@
+{
+  "reference": "Acts 9",
+  "book": "Acts",
+  "chapter": 9,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_102",
+          "text": "Read the chapter with this setting in view: Acts' sequence around Paul's call and Jerusalem visits differs in emphasis and detail from Galatians 1-2, and exact harmonization remains disputed. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken. Interpretations differ on some details.",
+          "evidence_ids": [
+            "acts-galatians"
+          ],
+          "verse_refs": [
+            "Acts 9:19-30"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_103",
+          "text": "For its historical and cultural setting, note that First Corinthians 15 transmits a death-burial-resurrection-appearance sequence and a list culminating in Paul's own appearance claim. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "corinthian-received-proclamation"
+          ],
+          "verse_refs": [
+            "Acts 9:1-19"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        },
+        {
+          "id": "historical_context_104",
+          "text": "For its historical and cultural setting, note that Acts narrates Paul's call and several Jerusalem visits in a later continuous story, while Galatians gives its own selective first-person intervals and purposes. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "acts-galatians-chronology-control"
+          ],
+          "verse_refs": [
+            "Acts 9:1-30"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_103",
+          "text": "A literary feature to notice is that Acts narrates Paul's encounter three times with rhetorical differences; conversion, prophetic call, and commissioning are overlapping but debated descriptions. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "acts-paul-call"
+          ],
+          "verse_refs": [
+            "Acts 9:1-30"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "chronology",
+      "title": "Chronology",
+      "blocks": [
+        {
+          "id": "chronology_103",
+          "text": "For the chapter's sequence and setting, note that Acts narrates earlier mission events from a later composition horizon, while Corinthians, Galatians, and Philippians are earlier occasional self-reports with different selections and aims. This gives the reader a frame for the passage without deciding every larger reconstruction. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "acts-letter-chronology-control"
+          ],
+          "verse_refs": [
+            "Acts 9:1-19"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "318a01509603d14f5f425f6642a736a43bf45e96574aec10c8ee02b7e74c524a",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-007-medium",
+    "generated_timestamp": "2026-09-06T20:17:55Z"
+  }
+}

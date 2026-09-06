@@ -1,0 +1,65 @@
+{
+  "reference": "Psalms 8",
+  "book": "Psalms",
+  "chapter": 8,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_17",
+          "text": "Read the chapter with this setting in view: Messiah is firstfruits, those belonging to him follow at his arrival, hostile powers are abolished, and death is named the last enemy. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "firstfruits-order-last-enemy"
+          ],
+          "verse_refs": [
+            "Psalms 8:4-6"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_18",
+          "text": "For its historical and cultural setting, note that Genesis presents humans as royal representatives, while later Scripture shows the image marred by sin and renewed in Christ. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "what-is-the-image-of-god:historical_context:0"
+          ],
+          "verse_refs": [
+            "Psalms 8:3-8"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        },
+        {
+          "id": "historical_context_19",
+          "text": "For its historical and cultural setting, note that Ancient kings were sometimes called images of gods, but Genesis extends that royal dignity to all people. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "what-is-the-image-of-god:ancient_near_east_context:0"
+          ],
+          "verse_refs": [
+            "Psalms 8:3-8"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "4502b3083742a8c411525dff81178b0c6bbaefd3c0cbb737581eee1e0603253e",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-008-medium",
+    "generated_timestamp": "2026-09-06T21:45:35Z"
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "reference": "Psalms 110",
+  "book": "Psalms",
+  "chapter": 110,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_29",
+          "text": "Read the chapter with this setting in view: David unites the tribes, establishes Jerusalem, and receives the promise of an enduring house. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken.",
+          "evidence_ids": [
+            "who-was-david:historical_context:0"
+          ],
+          "verse_refs": [
+            "Psalms 110:1-7"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_30",
+          "text": "For its historical and cultural setting, note that Royal anointing was familiar in the ancient world, but biblical messianism is anchored in God\u2019s promise and righteous rule. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "what-is-the-messiah:ancient_near_east_context:0"
+          ],
+          "verse_refs": [
+            "Psalms 110:1-7"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        },
+        {
+          "id": "historical_context_31",
+          "text": "For its historical and cultural setting, note that Second Temple Judaism centered priestly service in the temple and made priestly legitimacy a live issue. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "priesthood:second_temple_context:0"
+          ],
+          "verse_refs": [
+            "Psalms 110:4"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "c293bc99a4cce479fdb9e97d80f6128372d41c4c968f7c55c520389a5239c682",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-008-medium",
+    "generated_timestamp": "2026-09-06T21:45:35Z"
+  }
+}

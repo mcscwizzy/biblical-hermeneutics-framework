@@ -1,0 +1,101 @@
+{
+  "reference": "2 Peter 2",
+  "book": "2 Peter",
+  "chapter": 2,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_90",
+          "text": "Read the chapter with this setting in view: Sodom and Gomorrah exemplify judgment while Lot exemplifies divine rescue of a distressed righteous person. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken. Interpretations differ on some details.",
+          "evidence_ids": [
+            "2pet-lot"
+          ],
+          "verse_refs": [
+            "2 Peter 2:6-9"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_91",
+          "text": "For its historical and cultural setting, note that Noah is called a herald of righteousness and preserved with seven others when the flood came. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "2pet-noah"
+          ],
+          "verse_refs": [
+            "2 Peter 2:5"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        },
+        {
+          "id": "historical_context_92",
+          "text": "For its historical and cultural setting, note that Sexual interpretation of Sodom here must follow the letter's polemical judgment pattern; it must not be detached for anti-LGBTQ coercion, sexual violence, or purity shaming. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "2-peter:interpretive_note:22"
+          ],
+          "verse_refs": [
+            "2 Peter 2:6-10"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_91",
+          "text": "A literary feature to notice is that Teachers promise freedom while being described as slaves of corruption. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image.",
+          "evidence_ids": [
+            "2pet-freedom-slavery"
+          ],
+          "verse_refs": [
+            "2 Peter 2:19"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "dig_deeper",
+      "title": "Dig deeper",
+      "blocks": [
+        {
+          "id": "dig_deeper_91",
+          "text": "For a later or comparative connection, note that Jude's relation to 2 Peter is strong and likely literary, but shared source and direction-of-dependence proposals remain debated; parallel wording cannot simply make one letter a copy with no distinct voice. This remains a secondary connection rather than the chapter's first-audience context. It can be traced further without replacing the chapter's own setting. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "jude:interpretive_note:35"
+          ],
+          "verse_refs": [
+            "2 Peter 2:1-22"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "24437f75eaab24d98fdd27ea27728c000469366276ed0c081dc5ee7fa5cefa48",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-003-medium",
+    "generated_timestamp": "2026-09-06T00:47:11Z"
+  }
+}

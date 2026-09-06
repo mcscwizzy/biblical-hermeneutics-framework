@@ -1,0 +1,65 @@
+{
+  "reference": "Nehemiah 1",
+  "book": "Nehemiah",
+  "chapter": 1,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_58",
+          "text": "Read the chapter with this setting in view: Nehemiah responds to Jerusalem's distress with mourning, fasting, covenant confession, planning, and a request that Artaxerxes authorizes with letters and timber access. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken.",
+          "evidence_ids": [
+            "nehemiah-prayer-authorization"
+          ],
+          "verse_refs": [
+            "Nehemiah 1:1-11"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_59",
+          "text": "For its historical and cultural setting, note that Nehemiah's Artaxerxes is conventionally Artaxerxes I, placing the twentieth year in 445/444 BCE and the thirty-second in 433/432 BCE, but exact dates vary with accession-year and calendar reckoning. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "nehemiah:interpretive_note:0"
+          ],
+          "verse_refs": [
+            "Nehemiah 1:1"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        },
+        {
+          "id": "historical_context_60",
+          "text": "For its historical and cultural setting, note that The first-person Nehemiah memoir supplies vivid court, building, prayer, opposition, and reform testimony, but the final book also contains third-person narrative, lists, Ezra material, and editorial transitions. Neither total autobiography nor total fictionalization accounts for all the evidence. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. Interpretations differ on some details.",
+          "evidence_ids": [
+            "nehemiah:interpretive_note:1"
+          ],
+          "verse_refs": [
+            "Nehemiah 1:1-11"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "47c5be281d61566bc6a46ee89fca92569e14b150577049cf32bc81b8754cbe8c",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-008-medium",
+    "generated_timestamp": "2026-09-06T21:45:35Z"
+  }
+}

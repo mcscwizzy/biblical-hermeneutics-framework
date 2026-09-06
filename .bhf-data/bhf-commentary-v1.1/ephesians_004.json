@@ -1,0 +1,83 @@
+{
+  "reference": "Ephesians 4",
+  "book": "Ephesians",
+  "chapter": 4,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_31",
+          "text": "Read the chapter with this setting in view: Old and new humanity language describes ethical transformation, not racial, disability, gender, sexuality, or cultural inferiority. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken.",
+          "evidence_ids": [
+            "ephesians:interpretive_note:25"
+          ],
+          "verse_refs": [
+            "Ephesians 4:17-24"
+          ],
+          "confidence": "high",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_32",
+          "text": "For its historical and cultural setting, note that Ephesians grounds communal unity in one body, Spirit, hope, Lord, faith, baptism, and God while recognizing diverse gifts. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "eph-unity"
+          ],
+          "verse_refs": [
+            "Ephesians 4:1-16"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        },
+        {
+          "id": "historical_context_33",
+          "text": "For its historical and cultural setting, note that Putting off the old humanity and putting on the new leads to truth, reconciled anger, honest labor, generous sharing, and constructive speech. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "eph-new-humanity"
+          ],
+          "verse_refs": [
+            "Ephesians 4:17-32"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_32",
+          "text": "A literary feature to notice is that The descent into lower regions in 4:9 may refer to incarnation, earth, grave, or underworld; the phrase does not settle the choice. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "eph-descent"
+          ],
+          "verse_refs": [
+            "Ephesians 4:8-10"
+          ],
+          "confidence": "low",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "6b5fbaa34563ce6d6f63166849373cee493099a600a280a222c2be4050d159bb",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-008-medium",
+    "generated_timestamp": "2026-09-06T21:45:35Z"
+  }
+}

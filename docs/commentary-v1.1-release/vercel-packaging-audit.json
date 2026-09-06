@@ -1,0 +1,23 @@
+{
+  "candidate_workspace": {
+    "bytes": 286607619,
+    "exists": true,
+    "files": 3666
+  },
+  "certified_runtime_corpus": {
+    "bytes": 3264473,
+    "exists": true,
+    "files": 936
+  },
+  "excluded_workspace": ".bhf-data/bhf-commentary-candidates/**",
+  "local_vercel_build": "not_run_unavailable",
+  "observed_function_bundle_before_mb": 245,
+  "report_version": "commentary-v1.1-vercel-packaging-audit-v1",
+  "size_note": "The pre-hardening 245 MB observation included candidate/audit data; a Vercel build is authoritative for final function size.",
+  "vercel_cli_available": false,
+  "vercel_config": {
+    "excludeFiles": ".bhf-data/bhf-commentary-candidates/**",
+    "function": "bhf_web/app.py",
+    "maxDuration": 60
+  }
+}

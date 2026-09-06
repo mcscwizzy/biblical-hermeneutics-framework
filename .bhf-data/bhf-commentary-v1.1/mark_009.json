@@ -1,0 +1,83 @@
+{
+  "reference": "Mark 9",
+  "book": "Mark",
+  "chapter": 9,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_53",
+          "text": "Read the chapter with this setting in view: No Markan text authorizes coercive conversion, colonial mission, religious violence, abuse, medical neglect, dangerous exorcism, snake handling, poison drinking, prosperity extraction, apocalyptic date-setting, or testing God. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken.",
+          "evidence_ids": [
+            "mark-safety"
+          ],
+          "verse_refs": [
+            "Mark 9:42-50"
+          ],
+          "confidence": "high",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_54",
+          "text": "For its historical and cultural setting, note that Mark narrates hostile spirits and exorcisms within ancient conceptual worlds; these stories do not authorize diagnosing modern illness as demonic or replacing medical and mental-health care. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "mark-exorcism"
+          ],
+          "verse_refs": [
+            "Mark 9:14-29"
+          ],
+          "confidence": "high",
+          "interpretation_level": "inference"
+        },
+        {
+          "id": "historical_context_55",
+          "text": "For its historical and cultural setting, note that The village was a Jewish settlement in the territory of Herod Antipas during Jesus's ministry; its later monumental synagogue must not be treated as the standing building of Mark 1. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "capernaum:second_temple_context:0"
+          ],
+          "verse_refs": [
+            "Mark 9:33-37"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_54",
+          "text": "A literary feature to notice is that Commands to silence spirits, healed people, and disciples form a repeated pattern commonly called the messianic secret, but its narrative, historical, and theological explanations remain disputed. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image. Interpretations differ on some details.",
+          "evidence_ids": [
+            "mark-secrecy"
+          ],
+          "verse_refs": [
+            "Mark 9:9"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "230dbce299ccaa49cfa8f6a875295b2ee272f93f121893ae412e93bbb17376ae",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-003-medium",
+    "generated_timestamp": "2026-09-06T00:47:11Z"
+  }
+}

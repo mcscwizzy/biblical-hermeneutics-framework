@@ -1,0 +1,101 @@
+{
+  "reference": "Romans 16",
+  "book": "Romans",
+  "chapter": 16,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_131",
+          "text": "Read the chapter with this setting in view: P10, P26, P27, P31, P40, P46, and P61 preserve different Romans portions; their Gregory-Aland labels must not imply equal date, extent, or textual weight. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken.",
+          "evidence_ids": [
+            "romans:interpretive_note:8"
+          ],
+          "verse_refs": [
+            "Romans 16:1-27"
+          ],
+          "confidence": "high",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_132",
+          "text": "For its historical and cultural setting, note that Romans is an occasional letter and should not be converted into a contextless systematic-theology outline, even though later systems legitimately engage it. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "romans:interpretive_note:7"
+          ],
+          "verse_refs": [
+            "Romans 16:1-27"
+          ],
+          "confidence": "high",
+          "interpretation_level": "inference"
+        },
+        {
+          "id": "historical_context_133",
+          "text": "For its historical and cultural setting, note that Romans 16:22 explicitly names Tertius as the person who wrote the letter while greeting readers within Messiah. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "romans-tertius"
+          ],
+          "verse_refs": [
+            "Romans 16:22"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "archaeology_geography",
+      "title": "Archaeology and geography",
+      "blocks": [
+        {
+          "id": "archaeology_geography_132",
+          "text": "For its geographical or material setting, note that Corinth occupied the isthmus between eastern Cenchreae and western Lechaeum, connecting Aegean and Adriatic-facing routes with north-south land travel. It can illuminate the passage, while its limits should be kept in view. Interpretations differ on some details.",
+          "evidence_ids": [
+            "two-harbor-travel-network"
+          ],
+          "verse_refs": [
+            "Romans 16:1-2"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_132",
+          "text": "A literary feature to notice is that P10, P26, P27, P31, P40, P46, and P61 preserve different portions of Romans, with P46 by far the most extensive early papyrus witness. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image.",
+          "evidence_ids": [
+            "romans-papyri"
+          ],
+          "verse_refs": [
+            "Romans 16:1-27"
+          ],
+          "confidence": "high",
+          "interpretation_level": "inference"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "24c287cd76371706a6c6e586e8e5b384c79213a47703d130712218d5f62b7577",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-007-medium",
+    "generated_timestamp": "2026-09-06T20:17:55Z"
+  }
+}

@@ -1,0 +1,101 @@
+{
+  "reference": "Hebrews 3",
+  "book": "Hebrews",
+  "chapter": 3,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_81",
+          "text": "Read the chapter with this setting in view: Moses is called faithful in God's house while Jesus is compared as Son over the house. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken.",
+          "evidence_ids": [
+            "heb-moses"
+          ],
+          "verse_refs": [
+            "Hebrews 3:1-6"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_82",
+          "text": "For its historical and cultural setting, note that Today and wilderness warning address communal responsiveness; later ideas of individual apostasy must remain distinguished from the homiletic rhetoric. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "hebrews:interpretive_note:9"
+          ],
+          "verse_refs": [
+            "Hebrews 3:7-19"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        },
+        {
+          "id": "historical_context_83",
+          "text": "For its historical and cultural setting, note that House and builder imagery honors Moses as faithful before differentiating Son and servant; it does not invite denigration of Moses or Judaism. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "hebrews:interpretive_note:8"
+          ],
+          "verse_refs": [
+            "Hebrews 3:1-6"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_82",
+          "text": "A literary feature to notice is that Codex Sinaiticus preserves Hebrews in its New Testament sequence after 2 Thessalonians. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "heb-sinaiticus"
+          ],
+          "verse_refs": [
+            "Hebrews 3:1-19"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "dig_deeper",
+      "title": "Dig deeper",
+      "blocks": [
+        {
+          "id": "dig_deeper_82",
+          "text": "For a later or comparative connection, note that New Testament use of the wilderness generation, bronze serpent, and Balaam is later canonical reception and should be identified separately from interpretation of Numbers in its Torah context. This remains a secondary connection rather than the chapter's first-audience context. It can be traced further without replacing the chapter's own setting. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "numbers:interpretive_note:4"
+          ],
+          "verse_refs": [
+            "Hebrews 3:1-19"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "63e0bb7a50c10d0a565c7716e7bde7ad5be19a1a1ec395d0bd416ade001f8a41",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-007-medium",
+    "generated_timestamp": "2026-09-06T20:17:55Z"
+  }
+}

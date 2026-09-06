@@ -1,0 +1,101 @@
+{
+  "reference": "1 Samuel 8",
+  "book": "1 Samuel",
+  "chapter": 8,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_39",
+          "text": "Read the chapter with this setting in view: First Samuel presents monarchy as granted by the LORD while warning that king and people remain obligated to fear, serve, and obey the LORD. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken. Interpretations differ on some details.",
+          "evidence_ids": [
+            "first-samuel-accountable-monarchy"
+          ],
+          "verse_refs": [
+            "1 Samuel 8:1-22"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_40",
+          "text": "For its historical and cultural setting, note that First Samuel 8-12 preserves both severe criticism of Israel's request and positive divine selection and empowerment of Saul; the final form presents monarchy as permitted but covenantally accountable rather than simply good or evil. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "1-samuel:interpretive_note:0"
+          ],
+          "verse_refs": [
+            "1 Samuel 8:1-22"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        },
+        {
+          "id": "historical_context_41",
+          "text": "For its historical and cultural setting, note that Village Elders belongs to the social and political systems that governed public life in Israel and its neighbors. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "village-elders:historical_context:0"
+          ],
+          "verse_refs": [
+            "1 Samuel 8:4-9"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_40",
+          "text": "A literary feature to notice is that First Samuel moves from Eli's failing priestly house through Samuel's prophetic leadership and Saul's rejected kingship to David's anointing, rise, exile, and Saul's death. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image.",
+          "evidence_ids": [
+            "first-samuel-literary-movement"
+          ],
+          "verse_refs": [
+            "1 Samuel 8:1-22"
+          ],
+          "confidence": "high",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "dig_deeper",
+      "title": "Dig deeper",
+      "blocks": [
+        {
+          "id": "dig_deeper_40",
+          "text": "For a later or comparative connection, note that The repeated statement that Israel had no king raises the kingship question but does not by itself endorse every form of monarchy; Abimelech's rule and 1 Samuel's warnings must remain in view. This remains a secondary connection rather than the chapter's first-audience context. It can be traced further without replacing the chapter's own setting. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "judges:interpretive_note:1"
+          ],
+          "verse_refs": [
+            "1 Samuel 8:1-22"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "702c7d4742dbe4deefa3016361f9ec9d73f0479a2dea5c575a0f4672da52fc1d",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-008-medium",
+    "generated_timestamp": "2026-09-06T21:45:35Z"
+  }
+}

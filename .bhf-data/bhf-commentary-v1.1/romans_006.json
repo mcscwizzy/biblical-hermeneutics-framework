@@ -1,0 +1,83 @@
+{
+  "reference": "Romans 6",
+  "book": "Romans",
+  "chapter": 6,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_57",
+          "text": "Read the chapter with this setting in view: Romans' slavery metaphors cannot justify chattel slavery, trafficking, coerced labor, worker exploitation, or spiritualized enslavement; metaphorical force depends on a violent institution that requires moral critique. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken.",
+          "evidence_ids": [
+            "romans:interpretive_note:31"
+          ],
+          "verse_refs": [
+            "Romans 6:15-23"
+          ],
+          "confidence": "high",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_58",
+          "text": "For its historical and cultural setting, note that Romans employs slavery metaphors for sin, righteousness, Torah, and God within a slaveholding world; metaphorical deployment neither erases enslaved readers nor morally endorses enslavement. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "romans-slavery-metaphors"
+          ],
+          "verse_refs": [
+            "Romans 6:15-23"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        },
+        {
+          "id": "historical_context_59",
+          "text": "For its historical and cultural setting, note that Romans 6 portrays baptism as participation in Messiah's death and resurrection-shaped transformed life, without describing one liturgical method or authorizing coercion. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "romans-baptism"
+          ],
+          "verse_refs": [
+            "Romans 6:1-14"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_58",
+          "text": "A literary feature to notice is that P10, P26, P27, P31, P40, P46, and P61 preserve different portions of Romans, with P46 by far the most extensive early papyrus witness. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image.",
+          "evidence_ids": [
+            "romans-papyri"
+          ],
+          "verse_refs": [
+            "Romans 6:1-23"
+          ],
+          "confidence": "high",
+          "interpretation_level": "inference"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "5ab89070b0944291fb3860196d8b283aadae5a568c8072c99c6c0fe593834d06",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-008-medium",
+    "generated_timestamp": "2026-09-06T21:45:35Z"
+  }
+}

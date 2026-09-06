@@ -1,0 +1,65 @@
+{
+  "reference": "Esther 1",
+  "book": "Esther",
+  "chapter": 1,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_60",
+          "text": "Read the chapter with this setting in view: After Vashti refuses to appear at the king's drinking feast, Ahasuerus accepts advisers' fear that her act will destabilize male authority, removes her royal position, and issues an empire-wide household decree. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken. Interpretations differ on some details.",
+          "evidence_ids": [
+            "esther-vashti-deposed"
+          ],
+          "verse_refs": [
+            "Esther 1:10-22"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_61",
+          "text": "For its historical and cultural setting, note that The book treats Haman's first edict as irretractable and solves the crisis through a second authorization. Achaemenid administration makes rapid multilingual dispatch and sealed delegated authority intelligible, but no evidence establishes an absolute empire-wide rule that every Persian royal decree was legally impossible to revoke. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "esther:interpretive_note:7"
+          ],
+          "verse_refs": [
+            "Esther 1:19"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        },
+        {
+          "id": "historical_context_62",
+          "text": "For its historical and cultural setting, note that The Hebrew text does not state Vashti's reason for refusing, describe her later fate, say Esther volunteered for the royal search, or narrate Esther's sexual experience. Interpretation should name the coercive power imbalance without inventing motives, consent, romance, or blame for either woman. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "esther:interpretive_note:2"
+          ],
+          "verse_refs": [
+            "Esther 1:10-22"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "b98ad33ab811185e84d09da7303720b981406fc8cf88ca67a2125ab672ff46cc",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-008-medium",
+    "generated_timestamp": "2026-09-06T21:45:35Z"
+  }
+}

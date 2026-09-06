@@ -1,0 +1,83 @@
+{
+  "reference": "Joshua 6",
+  "book": "Joshua",
+  "chapter": 6,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_59",
+          "text": "Read the chapter with this setting in view: Joshua contrasts Jericho's judgment with the rescue and incorporation of Rahab and her household because she protected the messengers. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken.",
+          "evidence_ids": [
+            "joshua-rahab-rescue"
+          ],
+          "verse_refs": [
+            "Joshua 6:22-25"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_60",
+          "text": "For its historical and cultural setting, note that Joshua concerns entry, campaigns, allotment, tribal unity, and covenant renewal; David, Solomon, monarchy, exile, Jerusalem, and Samaria are not its principal people, events, or settings. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "joshua:interpretive_note:0"
+          ],
+          "verse_refs": [
+            "Joshua 6:1-27"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        },
+        {
+          "id": "historical_context_61",
+          "text": "For its historical and cultural setting, note that Archaeological evidence from Jericho, Ai, Hazor, the highlands, and Mount Ebal varies by site and chronology and does not yield one uncontested conquest reconstruction. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "joshua:interpretive_note:2"
+          ],
+          "verse_refs": [
+            "Joshua 6:1-27"
+          ],
+          "confidence": "low",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_60",
+          "text": "A literary feature to notice is that Joshua moves from succession and entry through campaigns to land allotment, tribal unity, farewell, and covenant renewal. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image.",
+          "evidence_ids": [
+            "joshua-literary-movement"
+          ],
+          "verse_refs": [
+            "Joshua 6:1-27"
+          ],
+          "confidence": "high",
+          "interpretation_level": "inference"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "257addd3428fe0778c023286a0e4d688abc95dac86162c72b96b8c2fcbf46c28",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-003-medium",
+    "generated_timestamp": "2026-09-06T00:47:11Z"
+  }
+}

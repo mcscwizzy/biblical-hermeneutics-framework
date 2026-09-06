@@ -1,0 +1,83 @@
+{
+  "reference": "Joshua 24",
+  "book": "Joshua",
+  "chapter": 24,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_45",
+          "text": "Read the chapter with this setting in view: Joshua concerns entry, campaigns, allotment, tribal unity, and covenant renewal; David, Solomon, monarchy, exile, Jerusalem, and Samaria are not its principal people, events, or settings. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken.",
+          "evidence_ids": [
+            "joshua:interpretive_note:0"
+          ],
+          "verse_refs": [
+            "Joshua 24:1-33"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_46",
+          "text": "For its historical and cultural setting, note that Joshua 24 culminates in a covenant ceremony at Shechem that rehearses divine action, demands exclusive service, records the words, and erects a witness. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "joshua-shechem-covenant"
+          ],
+          "verse_refs": [
+            "Joshua 24:1-28"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        },
+        {
+          "id": "historical_context_47",
+          "text": "For its historical and cultural setting, note that Zion appears in patriarchal, monarchic, or exile-and-return narratives and becomes a theological marker for the people of God. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "zion:historical_context:0"
+          ],
+          "verse_refs": [
+            "Joshua 24:1-28"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_46",
+          "text": "A literary feature to notice is that Joshua moves from succession and entry through campaigns to land allotment, tribal unity, farewell, and covenant renewal. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image.",
+          "evidence_ids": [
+            "joshua-literary-movement"
+          ],
+          "verse_refs": [
+            "Joshua 24:1-33"
+          ],
+          "confidence": "high",
+          "interpretation_level": "inference"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "19da69abac7bf848a9205f99758f80c2ba62ff00cbc6882c5756b0271392ab3d",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-007-medium",
+    "generated_timestamp": "2026-09-06T20:17:54Z"
+  }
+}
