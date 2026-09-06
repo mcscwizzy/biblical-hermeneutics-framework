@@ -1,0 +1,619 @@
+{
+  "passage_ref": "Ephesians 3",
+  "entities": {
+    "people": [],
+    "places": [],
+    "groups": [],
+    "events": [],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "eph-audience",
+      "claim": "The addressees are treated as gentiles but their city, assembly structure, and full demographics are not disclosed.",
+      "category": "culture",
+      "source_ids": [
+        "cohick-ephesians",
+        "macdonald-col-eph"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Ephesians 3:1-13"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "ephesians",
+        "parent_title": "Ephesians",
+        "parent_type": "book",
+        "object_importance": 84,
+        "retrieval_score": 0.904,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "probable",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "historical_cultural",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "eph-authorship",
+      "claim": "Direct Pauline authorship is substantially disputed; Pauline, secretary-mediated, associate, and school proposals remain live.",
+      "category": "culture",
+      "source_ids": [
+        "lincoln-ephesians",
+        "hoeher-ephesians",
+        "cohick-ephesians"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Ephesians 3:1"
+      ],
+      "confidence": "low",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "ephesians",
+        "parent_title": "Ephesians",
+        "parent_type": "book",
+        "object_importance": 84,
+        "retrieval_score": 0.904,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "disputed",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "historical_cultural",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 60
+      }
+    },
+    {
+      "id": "eph-colossians",
+      "claim": "Ephesians and Colossians share extensive language and structure; direction and mechanism of dependence remain debated.",
+      "category": "culture",
+      "source_ids": [
+        "best-ephesians",
+        "lincoln-ephesians"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Ephesians 1:1-6:24"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "ephesians",
+        "parent_title": "Ephesians",
+        "parent_type": "book",
+        "object_importance": 84,
+        "retrieval_score": 0.904,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 200,
+        "certainty": "strong_consensus",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 65
+      }
+    },
+    {
+      "id": "eph-date",
+      "claim": "Early-60s and roughly 70-90 CE date ranges depend chiefly on authorship models rather than an explicit date.",
+      "category": "culture",
+      "source_ids": [
+        "lincoln-ephesians",
+        "thielman-ephesians"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Ephesians 3:1"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "ephesians",
+        "parent_title": "Ephesians",
+        "parent_type": "book",
+        "object_importance": 84,
+        "retrieval_score": 0.904,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "plausible",
+        "dispute_status": "chronological_uncertainty",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "historical_cultural",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 60
+      }
+    },
+    {
+      "id": "eph-mystery",
+      "claim": "The disclosed mystery is gentile co-heirship, co-membership, and co-participation in the promise in Messiah.",
+      "category": "history",
+      "source_ids": [
+        "eph-greek",
+        "thielman-ephesians"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Ephesians 3:1-13"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "ephesians",
+        "parent_title": "Ephesians",
+        "parent_type": "book",
+        "object_importance": 84,
+        "retrieval_score": 0.904,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "textually_explicit",
+        "dispute_status": "not_disputed",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 103
+      }
+    },
+    {
+      "id": "eph-powers",
+      "claim": "The church displays divine wisdom to rulers and authorities in heavenly places; the referents and cosmology remain debated.",
+      "category": "culture",
+      "source_ids": [
+        "arnold-ephesians",
+        "gombis-powers"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Ephesians 3:10"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "ephesians",
+        "parent_title": "Ephesians",
+        "parent_type": "book",
+        "object_importance": 84,
+        "retrieval_score": 0.904,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 9,
+        "certainty": "plausible",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_theology",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "eph-voice",
+      "claim": "The canonical voice names Paul as an apostle and prisoner but does not narrate the composition process.",
+      "category": "history",
+      "source_ids": [
+        "eph-greek",
+        "thielman-ephesians"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Ephesians 3:1"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "ephesians",
+        "parent_title": "Ephesians",
+        "parent_type": "book",
+        "object_importance": 84,
+        "retrieval_score": 0.904,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "textually_explicit",
+        "dispute_status": "not_disputed",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 68
+      }
+    },
+    {
+      "id": "ephesians:interpretive_note:16",
+      "claim": "Mystery is disclosed gentile co-inheritance, not a password for conspiracy theories, secret elites, or anti-intellectualism.",
+      "category": "culture",
+      "source_ids": [
+        "eph-greek",
+        "cohick-ephesians"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Ephesians 3:1-13"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "ephesians",
+        "parent_title": "Ephesians",
+        "parent_type": "book",
+        "object_importance": 84,
+        "retrieval_score": 0.904,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "not_disputed",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "interpretive-caution",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "ephesians:interpretive_note:17",
+      "claim": "The prison language should not romanticize incarceration, martyrdom, trauma, or abusive leaders who display suffering as authority.",
+      "category": "culture",
+      "source_ids": [
+        "eph-greek",
+        "cohick-ephesians"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Ephesians 3:1"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "ephesians",
+        "parent_title": "Ephesians",
+        "parent_type": "book",
+        "object_importance": 84,
+        "retrieval_score": 0.904,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "not_disputed",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "interpretive-caution",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 110
+      }
+    },
+    {
+      "id": "ephesians:interpretive_note:18",
+      "claim": "Rulers and powers may include cosmic and political dimensions; labeling human opponents demonic invites scapegoating and violence.",
+      "category": "politics",
+      "source_ids": [
+        "eph-greek",
+        "cohick-ephesians"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Ephesians 3:10"
+      ],
+      "confidence": "low",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "ephesians",
+        "parent_title": "Ephesians",
+        "parent_type": "book",
+        "object_importance": 84,
+        "retrieval_score": 0.904,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 9,
+        "certainty": "disputed",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "interpretive-caution",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    },
+    {
+      "id": "ephesians:interpretive_note:19",
+      "claim": "Prayer for inner strength is compatible with medicine, mental-health care, safeguarding, and practical aid.",
+      "category": "culture",
+      "source_ids": [
+        "eph-greek",
+        "cohick-ephesians"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Ephesians 3:14-21"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "ephesians",
+        "parent_title": "Ephesians",
+        "parent_type": "book",
+        "object_importance": 84,
+        "retrieval_score": 0.904,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 13,
+        "certainty": "strong_consensus",
+        "dispute_status": "not_disputed",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "interpretive-caution",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "Ephesians: Power and Magic",
+        "author": "Clinton E. Arnold",
+        "publisher": "Cambridge University Press",
+        "year": 1989,
+        "locator": "Powers and Ephesian context",
+        "url": "https://doi.org/10.1017/CBO9780511554988",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "literary-context",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Evidence requires claim-level and locator-level review.",
+        "id": "arnold-ephesians",
+        "canonical_object_ids": [
+          "ephesians"
+        ]
+      },
+      {
+        "title": "A Critical and Exegetical Commentary on Ephesians",
+        "author": "Ernest Best",
+        "publisher": "T&T Clark",
+        "year": 1998,
+        "locator": "Introduction and commentary",
+        "url": "https://www.bloomsbury.com/us/critical-and-exegetical-commentary-on-ephesians-9780567085658/",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "literary-context",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Evidence requires claim-level and locator-level review.",
+        "id": "best-ephesians",
+        "canonical_object_ids": [
+          "ephesians"
+        ]
+      },
+      {
+        "title": "The Letter to the Ephesians",
+        "author": "Lynn H. Cohick",
+        "publisher": "Eerdmans",
+        "year": 2020,
+        "locator": "Introduction and commentary",
+        "url": "https://www.eerdmans.com/9781467456081/the-letter-to-the-ephesians/",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "literary-context",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Evidence requires claim-level and locator-level review.",
+        "id": "cohick-ephesians",
+        "canonical_object_ids": [
+          "ephesians"
+        ]
+      },
+      {
+        "title": "The Greek New Testament: SBL Edition",
+        "author": "Michael W. Holmes, ed.",
+        "publisher": "Society of Biblical Literature and Logos Bible Software",
+        "year": 2010,
+        "locator": "Ephesians 1-6",
+        "url": "https://www.sblgnt.com/download/",
+        "source_type": "scripture",
+        "supports": [
+          "historical-context",
+          "literary-context",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Evidence requires claim-level and locator-level review.",
+        "id": "eph-greek",
+        "canonical_object_ids": [
+          "ephesians"
+        ]
+      },
+      {
+        "title": "The Drama of Ephesians",
+        "author": "Timothy G. Gombis",
+        "publisher": "IVP Academic",
+        "year": 2010,
+        "locator": "Powers, church, and ethics",
+        "url": "https://www.ivpress.com/the-drama-of-ephesians",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "literary-context",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Evidence requires claim-level and locator-level review.",
+        "id": "gombis-powers",
+        "canonical_object_ids": [
+          "ephesians"
+        ]
+      },
+      {
+        "title": "Ephesians: A Commentary",
+        "author": "Harold W. Hoehner",
+        "publisher": "Baker Academic",
+        "year": 2002,
+        "locator": "Introduction and commentary",
+        "url": "https://bakeracademic.com/p/ephesians-harold-w-hoehner/231057",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "literary-context",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Evidence requires claim-level and locator-level review.",
+        "id": "hoeher-ephesians",
+        "canonical_object_ids": [
+          "ephesians"
+        ]
+      },
+      {
+        "title": "Ephesians",
+        "author": "Andrew T. Lincoln",
+        "publisher": "Zondervan Academic",
+        "year": 1990,
+        "locator": "Introduction and commentary",
+        "url": "https://zondervanacademic.com/products/ephesians-1",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "literary-context",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Evidence requires claim-level and locator-level review.",
+        "id": "lincoln-ephesians",
+        "canonical_object_ids": [
+          "ephesians"
+        ]
+      },
+      {
+        "title": "Colossians and Ephesians",
+        "author": "Margaret Y. MacDonald",
+        "publisher": "Liturgical Press",
+        "year": 2000,
+        "locator": "Ephesians commentary",
+        "url": "https://litpress.org/Products/2281/Colossians-and-Ephesians",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "literary-context",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Evidence requires claim-level and locator-level review.",
+        "id": "macdonald-col-eph",
+        "canonical_object_ids": [
+          "ephesians"
+        ]
+      },
+      {
+        "title": "Ephesians",
+        "author": "Frank Thielman",
+        "publisher": "Baker Academic",
+        "year": 2010,
+        "locator": "Introduction and commentary",
+        "url": "https://bakeracademic.com/p/ephesians-frank-thielman/230494",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "literary-context",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Evidence requires claim-level and locator-level review.",
+        "id": "thielman-ephesians",
+        "canonical_object_ids": [
+          "ephesians"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "ephesians",
+        "type": "book",
+        "title": "Ephesians",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.904
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "3443abd5c91879efae78a23e4a2b46e7b97dec9db263673404bccfe820df5574",
+  "evidence_hash_version": "2"
+}

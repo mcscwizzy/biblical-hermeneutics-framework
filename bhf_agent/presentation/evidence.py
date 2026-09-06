@@ -557,6 +557,9 @@ def _relevance_metadata(
     }
     metadata["claim_type"] = _text(item.get("claim_type"))
     metadata["note_type"] = _text(item.get("note_type"))
+    evidence_type = _text(item.get("evidence_type"))
+    if evidence_type:
+        metadata["evidence_type"] = evidence_type
     metadata["field"] = _text(item.get("field"))
     metadata = with_semantic_relationship(
         passage_ref,

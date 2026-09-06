@@ -1,0 +1,193 @@
+{
+  "passage_ref": "Revelation 8",
+  "entities": {
+    "people": [],
+    "places": [],
+    "groups": [],
+    "events": [],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "rev-scriptural-reuse",
+      "claim": "Revelation repeatedly reworks Israel's Scriptures, especially Daniel, Ezekiel, Isaiah, Exodus, Zechariah, Genesis, and Psalms.",
+      "category": "culture",
+      "source_ids": [
+        "beale",
+        "moyise",
+        "koester"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Revelation 1:1-22:21"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "revelation",
+        "parent_title": "Revelation",
+        "parent_type": "book",
+        "object_importance": 98,
+        "retrieval_score": 0.918,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 700,
+        "certainty": "strong_consensus",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_theology",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 70
+      }
+    },
+    {
+      "id": "rev-septets",
+      "claim": "Seals, trumpets, and bowls form major sevenfold judgment sequences with interludes and repeated motifs.",
+      "category": "culture",
+      "source_ids": [
+        "rev-greek",
+        "koester",
+        "beale"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Revelation 6:1-16:21"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "revelation",
+        "parent_title": "Revelation",
+        "parent_type": "book",
+        "object_importance": 98,
+        "retrieval_score": 0.918,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 200,
+        "certainty": "textually_explicit",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 80
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "The Book of Revelation: A Commentary on the Greek Text",
+        "author": "G. K. Beale",
+        "publisher": "Eerdmans",
+        "year": 1999,
+        "locator": "New International Greek Testament Commentary",
+        "url": "https://www.eerdmans.com/9780802821744/the-book-of-revelation/",
+        "source_type": "academic-book",
+        "supports": [
+          "intertextuality",
+          "structure",
+          "claims"
+        ],
+        "notes": "Extensive study of Greek text and scriptural reuse representing a recapitulative reading.",
+        "id": "beale",
+        "canonical_object_ids": [
+          "revelation"
+        ]
+      },
+      {
+        "title": "Revelation: A New Translation with Introduction and Commentary",
+        "author": "Craig R. Koester",
+        "publisher": "Yale University Press",
+        "year": 2014,
+        "locator": "Anchor Yale Bible 38A",
+        "url": "https://yalebooks.yale.edu/book/9780300216912/revelation/",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "literary-context",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Major historical, literary, textual, and theological commentary.",
+        "id": "koester",
+        "canonical_object_ids": [
+          "revelation"
+        ]
+      },
+      {
+        "title": "The Old Testament in the Book of Revelation",
+        "author": "Steve Moyise",
+        "publisher": "Bloomsbury T&T Clark",
+        "year": 1995,
+        "locator": "Journal for the Study of the New Testament Supplement 115",
+        "url": "https://www.bloomsbury.com/us/old-testament-in-the-book-of-revelation-9780567705341/",
+        "source_type": "academic-book",
+        "supports": [
+          "intertextuality",
+          "claims"
+        ],
+        "notes": "Study of allusion, intertextual method, and scriptural transformation.",
+        "id": "moyise",
+        "canonical_object_ids": [
+          "revelation"
+        ]
+      },
+      {
+        "title": "Revelation: Greek textual tradition",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Revelation 1-22",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "structure",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Primary Greek text; variants require manuscript and critical-edition control.",
+        "id": "rev-greek",
+        "canonical_object_ids": [
+          "revelation"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "revelation",
+        "type": "book",
+        "title": "Revelation",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.918
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "027f1da3d72952ceccc4b3ef8bb3052ed49b564a32bdd76bb23ca855857c91fd",
+  "evidence_hash_version": "2"
+}

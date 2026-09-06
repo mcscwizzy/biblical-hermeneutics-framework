@@ -65,6 +65,44 @@ TEXTUAL_CLAIM_SIGNALS = frozenset(
     }
 )
 
+INTERPRETIVE_TEXTUAL_CLAIM_SIGNALS = frozenset(
+    {
+        "interpretive_textual",
+        "textual_uncertainty",
+        "interpretive_question",
+        "interpretive_questions",
+        "interpretive_caution",
+    }
+)
+
+RECEPTION_CLAIM_SIGNALS = frozenset(
+    {
+        "reception_history",
+        "later_reception",
+        "transmission_history",
+    }
+)
+
+# A physical manuscript is not, by itself, a textual claim.  Archaeology
+# resolver records about discovery, provenance, caves, and excavation remain
+# material evidence unless the claim says what the manuscript preserves or
+# how its reading differs.
+TEXTUAL_CLAIM_TEXT_RE = re.compile(
+    r"\b(?:textual(?:ly)?\s+(?:variant|variants|form|criticism|critical|"
+    r"transmission|witness(?:es)?|profile|profiles|omission|instability|"
+    r"plurality|review)|manuscript(?:s)?(?:\s+(?:reading|witness(?:es)?))?|"
+    r"papyr(?:us|i)|codex|codices|masoretic|old\s+greek|theodotion(?:ic)?|"
+    r"shorter[- ]text|longer[- ]text|different\s+(?:reading|witness(?:es)?|"
+    r"ancient\s+edition)|(?:different|variant)\s+(?:wording|form)|"
+    r"versional\s+witness(?:es)?)\b",
+    re.IGNORECASE,
+)
+MATERIAL_MANUSCRIPT_RE = re.compile(
+    r"\b(?:discover(?:ed|y)|excavat(?:ed|ion)|found|cave|site|provenance|"
+    r"physical|artifact|deposit|stratigraph|archaeolog(?:y|ical))\b",
+    re.IGNORECASE,
+)
+
 # These are the word-study relationships actually reachable from the v1.1
 # canary.  A Greek translation term is not treated as the Hebrew source word
 # merely because a lexicon record was tagged to the same passage.
@@ -229,32 +267,6 @@ def presentation_role(
         )
     ).casefold()
 
-    # Textual criticism is a presentation concern in its own right.  It must
-    # outrank legacy geography/archaeology facets, which are retrieval/index
-    # categories rather than instructions for a commentary section.  The
-    # metadata signals are preferred; the narrow claim-text fallback protects
-    # older structured claims that have only a biblical_text claim type.
-    normalized_fields = {
-        value.strip().replace("-", "_").replace(" ", "_")
-        for value in (
-            claim_type,
-            note_type,
-            str(metadata.get("evidence_type") or "").casefold(),
-            str(metadata.get("dispute_status") or "").casefold(),
-        )
-        if value.strip()
-    }
-    textual_signal = bool(normalized_fields & TEXTUAL_CLAIM_SIGNALS)
-    textual_signal = textual_signal or bool(
-        re.search(
-            r"\b(?:textual\s+variant|textual\s+criticism|textual\s+transmission|"
-            r"manuscript(?:\s+reading)?|shorter[- ]text|longer[- ]text|"
-            r"textual\s+witness(?:es)?|textual\s+omission)\b",
-            text,
-            re.IGNORECASE,
-        )
-    )
-
     if relationship in {LATER_RECEPTION, INTERTEXTUAL_REUSE, COMPARATIVE_CONTEXT}:
         return "dig_deeper"
     if relationship in {SEMANTICALLY_MISANCHORED, WEAKLY_RELATED}:
@@ -266,18 +278,54 @@ def presentation_role(
         # in the locked bundle but is not first-audience language context.
         return "language_literary" if relationship == DIRECT_CONTEXT else None
 
-    # Legacy geography/archaeology facets are the defect class this rule must
-    # correct. Explicit textual claim/note types also opt into the rule across
-    # categories; a generic biblical_text claim remains conservative unless it
-    # is carrying the legacy material facet that caused the routing problem.
-    explicit_textual_type = claim_type in TEXTUAL_CLAIM_SIGNALS or note_type in TEXTUAL_CLAIM_SIGNALS
-    if textual_signal and (category in {"archaeology", "geography"} or explicit_textual_type):
-        if claim_type in {"interpretive_textual", "textual_uncertainty"} or note_type in {
-            "interpretive_question",
-            "interpretive_questions",
-            "interpretive_caution",
-        }:
-            return "interpretive_questions"
+    # Metadata-first precedence.  The category is deliberately consulted only
+    # after authored claim/note/evidence/source/relationship metadata.  A
+    # legacy category is an index facet, not a presentation instruction.
+    evidence_type = str(metadata.get("evidence_type") or "").casefold()
+    source_textual = source_kind in {
+        "textual_witness",
+        "textual_criticism",
+        "text_critical",
+        "manuscript",
+        "manuscript_reading",
+        "source_critical",
+        "source_criticism",
+    }
+    explicit_interpretive = (
+        claim_type in INTERPRETIVE_TEXTUAL_CLAIM_SIGNALS
+        or note_type in INTERPRETIVE_TEXTUAL_CLAIM_SIGNALS
+        or evidence_type in INTERPRETIVE_TEXTUAL_CLAIM_SIGNALS
+    )
+    explicit_textual = (
+        claim_type in TEXTUAL_CLAIM_SIGNALS
+        or note_type in TEXTUAL_CLAIM_SIGNALS
+        or evidence_type in TEXTUAL_CLAIM_SIGNALS
+        or source_textual
+    )
+    reception_background = (
+        claim_type in RECEPTION_CLAIM_SIGNALS
+        or note_type in RECEPTION_CLAIM_SIGNALS
+        or evidence_type in RECEPTION_CLAIM_SIGNALS
+    )
+    claim_textual = bool(TEXTUAL_CLAIM_TEXT_RE.search(claim))
+    material_object_claim = (
+        parent_type == "archaeology"
+        and MATERIAL_MANUSCRIPT_RE.search(claim)
+        and not re.search(
+            r"\b(?:reading|variant|version|transmission|preserv(?:es|ed)|"
+            r"textual\s+profile|textual\s+difference|different\s+text)\b",
+            claim,
+            re.IGNORECASE,
+        )
+    )
+
+    # A reception-history label means the contribution is background for a
+    # later reader, even when the object discussed is a manuscript.
+    if reception_background:
+        return "dig_deeper"
+    if explicit_interpretive and (explicit_textual or claim_textual):
+        return "interpretive_questions"
+    if explicit_textual or (claim_textual and not material_object_claim):
         return "language_literary"
 
     if claim_type in {

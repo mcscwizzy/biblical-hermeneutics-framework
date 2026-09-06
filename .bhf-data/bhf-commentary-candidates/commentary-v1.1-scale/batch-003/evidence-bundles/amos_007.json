@@ -1,0 +1,939 @@
+{
+  "passage_ref": "Amos 7",
+  "entities": {
+    "people": [],
+    "places": [],
+    "groups": [],
+    "events": [],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "amos-amaziah-bethel",
+      "claim": "Amos 7:10-17 shifts to third-person narrative: Amaziah reports Amos to Jeroboam, orders him to flee to Judah and cease at Bethel, and receives Amos's judgment speech.",
+      "category": "history",
+      "source_ids": [
+        "amos-masoretic",
+        "eidevall-amos",
+        "moltz-literary-amos"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Amos 7:10-17"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "amos",
+        "parent_title": "Amos",
+        "parent_type": "book",
+        "object_importance": 84,
+        "retrieval_score": 0.924,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 9,
+        "certainty": "textually_explicit",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 110
+      }
+    },
+    {
+      "id": "amos-anak-vision",
+      "claim": "The third vision turns on the rare term anak; the traditional plumb-line interpretation is influential, but metal, tin, or other proposals remain live.",
+      "category": "language",
+      "source_ids": [
+        "amos-masoretic",
+        "catss-amos",
+        "eidevall-amos"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Amos 7:1-9"
+      ],
+      "confidence": "low",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "amos",
+        "parent_title": "Amos",
+        "parent_type": "book",
+        "object_importance": 84,
+        "retrieval_score": 0.924,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "disputed",
+        "dispute_status": "lexical_uncertainty",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "lexical",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 81
+      }
+    },
+    {
+      "id": "amos-composition-final-form",
+      "claim": "The book contains eighth-century historical signals alongside signs of collection and later interpretation, but no single redactional reconstruction commands consensus.",
+      "category": "culture",
+      "source_ids": [
+        "eidevall-amos",
+        "carroll-amos",
+        "barton-theology-amos",
+        "new-form-criticism-amos",
+        "oxford-amos-bibliography"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Amos 7:10-17"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "amos",
+        "parent_title": "Amos",
+        "parent_type": "book",
+        "object_importance": 84,
+        "retrieval_score": 0.924,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 9,
+        "certainty": "probable",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "historical_cultural",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 110
+      }
+    },
+    {
+      "id": "amos-five-visions",
+      "claim": "The final form presents five visions: locusts, consuming fire, an anak scene, summer fruit, and the Lord standing by or over the altar.",
+      "category": "culture",
+      "source_ids": [
+        "amos-masoretic",
+        "eidevall-amos",
+        "hamborg-amos"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Amos 7:1-9"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "amos",
+        "parent_title": "Amos",
+        "parent_type": "book",
+        "object_importance": 84,
+        "retrieval_score": 0.924,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "textually_explicit",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 90
+      }
+    },
+    {
+      "id": "amos-hebrew-greek-witnesses",
+      "claim": "Masoretic Amos and Old Greek Amos represent related but sometimes divergent textual forms, and 4Q78, 4Q82, 5QAmos, and MurXII preserve early Hebrew evidence.",
+      "category": "culture",
+      "source_ids": [
+        "nets-twelve-amos",
+        "catss-amos",
+        "iaa-4q78",
+        "iaa-4q82",
+        "lange-4q82"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Amos 7:1-17"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "amos",
+        "parent_title": "Amos",
+        "parent_type": "book",
+        "object_importance": 84,
+        "retrieval_score": 0.924,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "textual_variant",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "historical_cultural",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 90
+      }
+    },
+    {
+      "id": "amos-intercession",
+      "claim": "Amos intercedes for small Jacob after the locust and fire visions, and YHWH relents in both scenes; later visions do not report the same successful intercession.",
+      "category": "history",
+      "source_ids": [
+        "amos-masoretic",
+        "carroll-amos",
+        "hamborg-amos"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Amos 7:1-9"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "amos",
+        "parent_title": "Amos",
+        "parent_type": "book",
+        "object_importance": 84,
+        "retrieval_score": 0.924,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "textually_explicit",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "amos-occupation",
+      "claim": "The terms noqed, boqer, and dresser of sycamore figs associate Amos with livestock and arboriculture but do not securely determine his wealth, poverty, profession, or landholding.",
+      "category": "economics",
+      "source_ids": [
+        "amos-masoretic",
+        "eidevall-amos",
+        "oxford-amos-bibliography"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Amos 7:10-17"
+      ],
+      "confidence": "low",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "amos",
+        "parent_title": "Amos",
+        "parent_type": "book",
+        "object_importance": 84,
+        "retrieval_score": 0.924,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 9,
+        "certainty": "disputed",
+        "dispute_status": "lexical_uncertainty",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "lexical",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 100
+      }
+    },
+    {
+      "id": "amos:interpretive_note:19",
+      "claim": "The first two visions portray Amos as an intercessor whose plea matters; prophetic authority here includes advocacy for threatened Jacob, not only denunciation.",
+      "category": "culture",
+      "source_ids": [
+        "amos-masoretic",
+        "hamborg-amos"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Amos 7:1-9"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "amos",
+        "parent_title": "Amos",
+        "parent_type": "book",
+        "object_importance": 84,
+        "retrieval_score": 0.924,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "textually_explicit",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "theological-interpretation",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    },
+    {
+      "id": "amos:interpretive_note:2",
+      "claim": "Amos's labels as noqed, boqer, and dresser of sycamore figs do not securely establish either poverty or elite wealth; both romantic peasant and wealthy entrepreneur portraits exceed the lexical evidence.",
+      "category": "economics",
+      "source_ids": [
+        "amos-masoretic",
+        "eidevall-amos"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Amos 7:10-17"
+      ],
+      "confidence": "low",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "amos",
+        "parent_title": "Amos",
+        "parent_type": "book",
+        "object_importance": 84,
+        "retrieval_score": 0.924,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 9,
+        "certainty": "disputed",
+        "dispute_status": "lexical_uncertainty",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "textual-observation",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 97
+      }
+    },
+    {
+      "id": "amos:interpretive_note:20",
+      "claim": "The anak in Amos 7:7-8 should remain visible as a lexical problem; a plumb line is one venerable interpretation, not a settled object from which elaborate measurement symbolism can be deduced.",
+      "category": "culture",
+      "source_ids": [
+        "amos-masoretic",
+        "catss-amos",
+        "eidevall-amos"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Amos 7:1-9"
+      ],
+      "confidence": "low",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "amos",
+        "parent_title": "Amos",
+        "parent_type": "book",
+        "object_importance": 84,
+        "retrieval_score": 0.924,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "disputed",
+        "dispute_status": "lexical_uncertainty",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "textual-observation",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    },
+    {
+      "id": "amos:interpretive_note:21",
+      "claim": "The Bethel narrative distinguishes Amaziah's report to the king, his command to Amos, Amos's autobiographical reply, and the ensuing judgment; paraphrase must not merge these voices.",
+      "category": "culture",
+      "source_ids": [
+        "amos-masoretic",
+        "moltz-literary-amos"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Amos 7:10-17"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "amos",
+        "parent_title": "Amos",
+        "parent_type": "book",
+        "object_importance": 84,
+        "retrieval_score": 0.924,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 9,
+        "certainty": "textually_explicit",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "literary-observation",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 102
+      }
+    },
+    {
+      "id": "amos:interpretive_note:22",
+      "claim": "Amos 7:14 may deny prior professional status, present identity, or guild affiliation; it should not be used simplistically to discredit education, paid ministry, or every institutional prophet.",
+      "category": "culture",
+      "source_ids": [
+        "amos-masoretic",
+        "eidevall-amos",
+        "carroll-amos"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Amos 7:10-17"
+      ],
+      "confidence": "low",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "amos",
+        "parent_title": "Amos",
+        "parent_type": "book",
+        "object_importance": 84,
+        "retrieval_score": 0.924,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 9,
+        "certainty": "disputed",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "interpretive-caution",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 102
+      }
+    },
+    {
+      "id": "amos:interpretive_note:23",
+      "claim": "The Amos-Amaziah conflict can expose religious and political suppression, but it does not validate self-appointed prophetic claims without testing, truthfulness, safeguarding, and accountability.",
+      "category": "politics",
+      "source_ids": [
+        "amos-masoretic",
+        "carroll-amos"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Amos 7:10-17"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "amos",
+        "parent_title": "Amos",
+        "parent_type": "book",
+        "object_importance": 84,
+        "retrieval_score": 0.924,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 9,
+        "certainty": "probable",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "interpretive-caution",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    },
+    {
+      "id": "amos:interpretive_note:33",
+      "claim": "Qumran manuscripts 4Q78 and 4Q82 preserve substantial portions of Amos and demonstrate Second Temple Hebrew transmission; they do not make every textual problem disappear.",
+      "category": "culture",
+      "source_ids": [
+        "iaa-4q78",
+        "iaa-4q82",
+        "lange-4q82"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Amos 7:1-17"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "amos",
+        "parent_title": "Amos",
+        "parent_type": "book",
+        "object_importance": 84,
+        "retrieval_score": 0.924,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "textual_variant",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "textual-observation",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 62
+      }
+    },
+    {
+      "id": "amos:interpretive_note:38",
+      "claim": "Judgment, exile, and divine violence in Amos require lament and ethical scrutiny; readers are not authorized to enact vengeance, war, coercion, or punishment in the prophet's name.",
+      "category": "culture",
+      "source_ids": [
+        "amos-masoretic",
+        "oxford-violence",
+        "couey-amos"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Amos 7:10-17"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "amos",
+        "parent_title": "Amos",
+        "parent_type": "book",
+        "object_importance": 84,
+        "retrieval_score": 0.924,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 9,
+        "certainty": "probable",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "interpretive-caution",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 102
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "Amos in the Masoretic Text",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Amos 1-9 MT",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "structure",
+          "scripture-references",
+          "literary-context",
+          "major-themes",
+          "amos-superscription-identity",
+          "amos-rulers-date",
+          "amos-earthquake",
+          "amos-nations-sequence",
+          "amos-election-accountability",
+          "amos-economic-exploitation",
+          "amos-worship-justice",
+          "amos-day-yhwh",
+          "amos-five-visions",
+          "amos-intercession",
+          "amos-amaziah-bethel",
+          "amos-occupation",
+          "amos-anak-vision",
+          "amos-summer-fruit",
+          "amos-famine-hearing",
+          "amos-altar-vision",
+          "amos-david-booth",
+          "amos-restoration-ending",
+          "amos-composition-final-form"
+        ],
+        "notes": "Primary Hebrew textual tradition.",
+        "id": "amos-masoretic",
+        "canonical_object_ids": [
+          "amos"
+        ]
+      },
+      {
+        "title": "The Theology of the Book of Amos",
+        "author": "John Barton",
+        "publisher": "Cambridge University Press",
+        "year": 2012,
+        "locator": "Old Testament Theology",
+        "url": "https://assets.cambridge.org/97805218/55778/frontmatter/9780521855778_frontmatter.pdf",
+        "source_type": "academic-book",
+        "supports": [
+          "covenantal-significance",
+          "later-christian-reception",
+          "authorship-positions",
+          "amos-election-accountability",
+          "amos-day-yhwh",
+          "amos-famine-hearing",
+          "amos-david-booth",
+          "amos-restoration-ending",
+          "amos-acts15-reuse",
+          "amos-composition-final-form"
+        ],
+        "notes": "Surveys critical issues, final-form theology, rabbinic and Christian reception, and liberation theology.",
+        "id": "barton-theology-amos",
+        "canonical_object_ids": [
+          "amos"
+        ]
+      },
+      {
+        "title": "The Book of Amos",
+        "author": "M. Daniel Carroll R.",
+        "publisher": "Eerdmans",
+        "year": 2020,
+        "locator": "New International Commentary on the Old Testament",
+        "url": "https://www.eerdmans.com/9780802825384/the-book-of-amos/",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "literary-context",
+          "historical-setting",
+          "amos-rulers-date",
+          "amos-earthquake",
+          "amos-nations-sequence",
+          "amos-election-accountability",
+          "amos-economic-exploitation",
+          "amos-worship-justice",
+          "amos-intercession",
+          "amos-summer-fruit",
+          "amos-famine-hearing",
+          "amos-composition-final-form"
+        ],
+        "notes": "Detailed Hebrew commentary with historical, literary, theological, and ethical attention.",
+        "id": "carroll-amos",
+        "canonical_object_ids": [
+          "amos"
+        ]
+      },
+      {
+        "title": "Amos Greek Variants File",
+        "author": "CATSS project staff",
+        "publisher": "University of Pennsylvania",
+        "year": 1996,
+        "locator": "Old Greek Amos variant file",
+        "url": "https://ccat.sas.upenn.edu/gopher/text/religion/biblical/lxxvar/active/03Amos.html",
+        "source_type": "reference-work",
+        "supports": [
+          "primary-sources",
+          "amos-anak-vision",
+          "amos-altar-vision",
+          "amos-hebrew-greek-witnesses",
+          "amos-acts7-reuse",
+          "amos-acts15-reuse"
+        ],
+        "notes": "Provisional electronic variants file that must be checked against a current critical edition.",
+        "id": "catss-amos",
+        "canonical_object_ids": [
+          "amos"
+        ]
+      },
+      {
+        "title": "Amos",
+        "author": "J. Blake Couey",
+        "publisher": "Oxford University Press",
+        "year": 2021,
+        "locator": "The Oxford Handbook of the Minor Prophets, chapter 31",
+        "url": "https://academic.oup.com/edited-volume/38566/chapter/334373262",
+        "source_type": "reference-work",
+        "supports": [
+          "interpretive-disputes",
+          "hermeneutical-lens-common-misinterpretations",
+          "retrieval-metadata-semantic-keywords",
+          "amos-day-yhwh"
+        ],
+        "notes": "Handbook treatment of structure, themes, contested issues, ideological critique, and ecology.",
+        "id": "couey-amos",
+        "canonical_object_ids": [
+          "amos"
+        ]
+      },
+      {
+        "title": "Amos: A New Translation with Introduction and Commentary",
+        "author": "G\u00f6ran Eidevall",
+        "publisher": "Yale University Press",
+        "year": 2017,
+        "locator": "Anchor Yale Bible 24G",
+        "url": "https://yalebooks.yale.edu/book/9780300178784/amos/",
+        "source_type": "academic-book",
+        "supports": [
+          "authorship-positions",
+          "interpretive-disputes",
+          "amos-superscription-identity",
+          "amos-amaziah-bethel",
+          "amos-occupation",
+          "amos-anak-vision",
+          "amos-david-booth",
+          "amos-composition-final-form"
+        ],
+        "notes": "Critical commentary emphasizing Amos as a literary composition.",
+        "id": "eidevall-amos",
+        "canonical_object_ids": [
+          "amos"
+        ]
+      },
+      {
+        "title": "Book of Amos",
+        "author": "Graham R. Hamborg",
+        "publisher": "Cambridge University Press",
+        "year": 2023,
+        "locator": "Hosea, Joel, and Amos, pages 260-376",
+        "url": "https://www.cambridge.org/core/books/abs/hosea-joel-and-amos/book-of-amos/38376818DCC62BB9E6A9F3FDAAB50BDF",
+        "source_type": "academic-book",
+        "supports": [
+          "structure",
+          "major-themes",
+          "authorship-positions",
+          "amos-nations-sequence",
+          "amos-five-visions",
+          "amos-intercession",
+          "amos-restoration-ending"
+        ],
+        "notes": "Literary and redaction-critical commentary with focused discussions of justice, worship, and prophecy.",
+        "id": "hamborg-amos",
+        "canonical_object_ids": [
+          "amos"
+        ]
+      },
+      {
+        "title": "4Q Minor Prophets, 4Q78",
+        "author": "",
+        "publisher": "Israel Antiquities Authority",
+        "year": null,
+        "locator": "4QXIIc manuscript images",
+        "url": "https://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q78-1",
+        "source_type": "ancient-primary-source",
+        "supports": [
+          "primary-sources",
+          "second-temple-context",
+          "amos-hebrew-greek-witnesses"
+        ],
+        "notes": "Official archive images of a Hebrew Twelve manuscript preserving portions of Amos.",
+        "id": "iaa-4q78",
+        "canonical_object_ids": [
+          "amos"
+        ]
+      },
+      {
+        "title": "4Q Minor Prophets, 4Q82",
+        "author": "",
+        "publisher": "Israel Antiquities Authority",
+        "year": null,
+        "locator": "4QXIIg manuscript images",
+        "url": "https://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q82-1",
+        "source_type": "ancient-primary-source",
+        "supports": [
+          "primary-sources",
+          "second-temple-context",
+          "amos-hebrew-greek-witnesses"
+        ],
+        "notes": "Official archive images of a Hebrew Twelve manuscript preserving substantial portions of Amos.",
+        "id": "iaa-4q82",
+        "canonical_object_ids": [
+          "amos"
+        ]
+      },
+      {
+        "title": "4QXIIg (4Q82) as an Editorial Text",
+        "author": "Armin Lange",
+        "publisher": "Hebrew University Bible Project",
+        "year": 2009,
+        "locator": "Inventory and analysis of preserved 4Q82 material",
+        "url": "https://openscholar.huji.ac.il/sites/default/files/he_bible_project/files/a._lange.pdf",
+        "source_type": "journal-article",
+        "supports": [
+          "primary-sources",
+          "second-temple-context",
+          "amos-hebrew-greek-witnesses"
+        ],
+        "notes": "Identifies the Amos passages preserved in 4Q82 and studies the manuscript's textual character.",
+        "id": "lange-4q82",
+        "canonical_object_ids": [
+          "amos"
+        ]
+      },
+      {
+        "title": "A Literary Interpretation of the Book of Amos",
+        "author": "Howard Moltz",
+        "publisher": "Horizons",
+        "year": 1984,
+        "locator": "Literary analysis of Amos and the Bethel conflict",
+        "url": "https://www.cambridge.org/core/journals/horizons/article/abs/literary-interpretation-of-the-book-of-amos/113FD6856E389485F0089CE443DCDC64",
+        "source_type": "journal-article",
+        "supports": [
+          "literary-context",
+          "amos-amaziah-bethel"
+        ],
+        "notes": "Literary reading informed by rabbinic and modern interpretive strategies.",
+        "id": "moltz-literary-amos",
+        "canonical_object_ids": [
+          "amos"
+        ]
+      },
+      {
+        "title": "A New English Translation of the Septuagint: The Twelve Prophets",
+        "author": "George E. Howard",
+        "publisher": "International Organization for Septuagint and Cognate Studies",
+        "year": 2009,
+        "locator": "Amos, pages 789-794",
+        "url": "https://ccat.sas.upenn.edu/nets/edition/32-twelve-nets.pdf",
+        "source_type": "reference-work",
+        "supports": [
+          "primary-sources",
+          "new-testament-connections",
+          "amos-summer-fruit",
+          "amos-altar-vision",
+          "amos-hebrew-greek-witnesses",
+          "amos-acts7-reuse",
+          "amos-acts15-reuse"
+        ],
+        "notes": "Translation of Old Greek Amos with introduction to the Twelve.",
+        "id": "nets-twelve-amos",
+        "canonical_object_ids": [
+          "amos"
+        ]
+      },
+      {
+        "title": "New Form Criticism and the Book of the Twelve",
+        "author": "Mark J. Boda, Michael H. Floyd, and Colin M. Toffelmire, editors",
+        "publisher": "Society of Biblical Literature",
+        "year": 2015,
+        "locator": "Studies addressing form, discourse, and Amos within the Twelve",
+        "url": "https://www.sbl-site.org/assets/pdfs/pubs/9781628370614_OA.pdf",
+        "source_type": "academic-book",
+        "supports": [
+          "genre",
+          "authorship-positions",
+          "amos-composition-final-form"
+        ],
+        "notes": "Open-access scholarly volume on form criticism and the Twelve.",
+        "id": "new-form-criticism-amos",
+        "canonical_object_ids": [
+          "amos"
+        ]
+      },
+      {
+        "title": "Amos",
+        "author": "Walter Houston",
+        "publisher": "Oxford University Press",
+        "year": 2025,
+        "locator": "Oxford Bibliographies in Biblical Studies",
+        "url": "https://academic.oup.com/reference/62341/reference-article-abstract/554094758",
+        "source_type": "reference-work",
+        "supports": [
+          "date-ranges",
+          "authorship-positions",
+          "canonical-placement",
+          "amos-superscription-identity",
+          "amos-rulers-date",
+          "amos-occupation",
+          "amos-composition-final-form"
+        ],
+        "notes": "Research bibliography and overview of major Amos questions.",
+        "id": "oxford-amos-bibliography",
+        "canonical_object_ids": [
+          "amos"
+        ]
+      },
+      {
+        "title": "Violence in the Old Testament",
+        "author": "Jerome F. D. Creach",
+        "publisher": "Oxford University Press",
+        "year": 2015,
+        "locator": "Oxford Research Encyclopedia of Religion",
+        "url": "https://academic.oup.com/edited-volume/62249/chapter-abstract/551374654",
+        "source_type": "reference-work",
+        "supports": [
+          "hermeneutical-lens-common-misinterpretations",
+          "hermeneutical-lens-modern-application-principles"
+        ],
+        "notes": "Reference treatment of violence, vengeance, war, and prophetic rhetoric.",
+        "id": "oxford-violence",
+        "canonical_object_ids": [
+          "amos"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "amos",
+        "type": "book",
+        "title": "Amos",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.924
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "b16bff63f59a877f4b838db9ec87c14e5f8ded621a8d48738a6021e1c664dafa",
+  "evidence_hash_version": "2"
+}

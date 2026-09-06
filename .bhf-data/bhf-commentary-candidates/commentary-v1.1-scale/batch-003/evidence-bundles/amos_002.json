@@ -1,0 +1,614 @@
+{
+  "passage_ref": "Amos 2",
+  "entities": {
+    "people": [],
+    "places": [],
+    "groups": [],
+    "events": [],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "amos-economic-exploitation",
+      "claim": "Amos accuses powerful Israelites of selling the righteous and needy, trampling poor people, taking grain levies, corrupting the gate, seizing pledged garments, and using dishonest measures.",
+      "category": "history",
+      "source_ids": [
+        "amos-masoretic",
+        "carroll-amos",
+        "oxford-justice-twelve"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Amos 2:6-8"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "amos",
+        "parent_title": "Amos",
+        "parent_type": "book",
+        "object_importance": 84,
+        "retrieval_score": 0.904,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 5,
+        "certainty": "textually_explicit",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "amos-nations-sequence",
+      "claim": "Amos 1:3-2:16 moves through Damascus, Gaza, Tyre, Edom, Ammon, Moab, Judah, and climactically Israel, repeatedly using a three/four transgressions formula.",
+      "category": "culture",
+      "source_ids": [
+        "amos-masoretic",
+        "carroll-amos",
+        "hamborg-amos"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Amos 2:1-16"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "amos",
+        "parent_title": "Amos",
+        "parent_type": "book",
+        "object_importance": 84,
+        "retrieval_score": 0.904,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "textually_explicit",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 105
+      }
+    },
+    {
+      "id": "amos:interpretive_note:11",
+      "claim": "Amos 2:7's terse sexual accusation is textually difficult and should not be used to blame victims, conceal coercion, or excuse household and religious power.",
+      "category": "culture",
+      "source_ids": [
+        "amos-masoretic",
+        "eidevall-amos",
+        "oxford-minor-prophets-overview"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Amos 2:6-8"
+      ],
+      "confidence": "low",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "amos",
+        "parent_title": "Amos",
+        "parent_type": "book",
+        "object_importance": 84,
+        "retrieval_score": 0.904,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 5,
+        "certainty": "disputed",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "interpretive-caution",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 102
+      }
+    },
+    {
+      "id": "amos:interpretive_note:38",
+      "claim": "Judgment, exile, and divine violence in Amos require lament and ethical scrutiny; readers are not authorized to enact vengeance, war, coercion, or punishment in the prophet's name.",
+      "category": "culture",
+      "source_ids": [
+        "amos-masoretic",
+        "oxford-violence",
+        "couey-amos"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Amos 2:13-16"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "amos",
+        "parent_title": "Amos",
+        "parent_type": "book",
+        "object_importance": 84,
+        "retrieval_score": 0.904,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 12,
+        "certainty": "probable",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "interpretive-caution",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 102
+      }
+    },
+    {
+      "id": "amos:interpretive_note:4",
+      "claim": "Prosperity under Jeroboam II and the book's accusations of inequality provide a plausible social horizon, but prophetic rhetoric is not a census or complete economic archive.",
+      "category": "economics",
+      "source_ids": [
+        "carroll-amos",
+        "oxford-amos-bibliography"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Amos 2:6-8"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "amos",
+        "parent_title": "Amos",
+        "parent_type": "book",
+        "object_importance": 84,
+        "retrieval_score": 0.904,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 5,
+        "certainty": "probable",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "historical-context",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 97
+      }
+    },
+    {
+      "id": "amos:interpretive_note:5",
+      "claim": "The nations sequence draws hearers toward Israel's climactic indictment, but claims about an original oral audience cheering the earlier oracles remain rhetorical reconstruction.",
+      "category": "culture",
+      "source_ids": [
+        "amos-masoretic",
+        "hamborg-amos",
+        "barton-theology-amos"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Amos 2:1-16"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "amos",
+        "parent_title": "Amos",
+        "parent_type": "book",
+        "object_importance": 84,
+        "retrieval_score": 0.904,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "probable",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "literary-observation",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    },
+    {
+      "id": "amos:interpretive_note:6",
+      "claim": "The three-transgressions-and-four formula signals accumulated offense and rhetorical fullness; it should not be turned into a literal count of four crimes.",
+      "category": "culture",
+      "source_ids": [
+        "amos-masoretic",
+        "carroll-amos"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Amos 2:1-16"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "amos",
+        "parent_title": "Amos",
+        "parent_type": "book",
+        "object_importance": 84,
+        "retrieval_score": 0.904,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "literary-observation",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    },
+    {
+      "id": "amos:interpretive_note:7",
+      "claim": "The accusations against nations condemn wartime atrocity, trafficking, violated kinship, and desecration; they do not authorize modern readers to assign collective ethnic guilt.",
+      "category": "culture",
+      "source_ids": [
+        "amos-masoretic",
+        "barton-theology-amos",
+        "oxford-violence"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Amos 2:1-3"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "amos",
+        "parent_title": "Amos",
+        "parent_type": "book",
+        "object_importance": 84,
+        "retrieval_score": 0.904,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "textually_explicit",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "interpretive-caution",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    },
+    {
+      "id": "amos:interpretive_note:9",
+      "claim": "Amos's economic accusations must not romanticize poverty, blame poor people, shame wealth apart from exploitative practice, or reduce structural debt and labor abuse to private generosity.",
+      "category": "economics",
+      "source_ids": [
+        "amos-masoretic",
+        "oxford-justice-twelve",
+        "carroll-amos"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Amos 2:6-8"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "amos",
+        "parent_title": "Amos",
+        "parent_type": "book",
+        "object_importance": 84,
+        "retrieval_score": 0.904,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 5,
+        "certainty": "textually_explicit",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "interpretive-caution",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 97
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "Amos in the Masoretic Text",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Amos 1-9 MT",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "structure",
+          "scripture-references",
+          "literary-context",
+          "major-themes",
+          "amos-superscription-identity",
+          "amos-rulers-date",
+          "amos-earthquake",
+          "amos-nations-sequence",
+          "amos-election-accountability",
+          "amos-economic-exploitation",
+          "amos-worship-justice",
+          "amos-day-yhwh",
+          "amos-five-visions",
+          "amos-intercession",
+          "amos-amaziah-bethel",
+          "amos-occupation",
+          "amos-anak-vision",
+          "amos-summer-fruit",
+          "amos-famine-hearing",
+          "amos-altar-vision",
+          "amos-david-booth",
+          "amos-restoration-ending",
+          "amos-composition-final-form"
+        ],
+        "notes": "Primary Hebrew textual tradition.",
+        "id": "amos-masoretic",
+        "canonical_object_ids": [
+          "amos"
+        ]
+      },
+      {
+        "title": "The Theology of the Book of Amos",
+        "author": "John Barton",
+        "publisher": "Cambridge University Press",
+        "year": 2012,
+        "locator": "Old Testament Theology",
+        "url": "https://assets.cambridge.org/97805218/55778/frontmatter/9780521855778_frontmatter.pdf",
+        "source_type": "academic-book",
+        "supports": [
+          "covenantal-significance",
+          "later-christian-reception",
+          "authorship-positions",
+          "amos-election-accountability",
+          "amos-day-yhwh",
+          "amos-famine-hearing",
+          "amos-david-booth",
+          "amos-restoration-ending",
+          "amos-acts15-reuse",
+          "amos-composition-final-form"
+        ],
+        "notes": "Surveys critical issues, final-form theology, rabbinic and Christian reception, and liberation theology.",
+        "id": "barton-theology-amos",
+        "canonical_object_ids": [
+          "amos"
+        ]
+      },
+      {
+        "title": "The Book of Amos",
+        "author": "M. Daniel Carroll R.",
+        "publisher": "Eerdmans",
+        "year": 2020,
+        "locator": "New International Commentary on the Old Testament",
+        "url": "https://www.eerdmans.com/9780802825384/the-book-of-amos/",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "literary-context",
+          "historical-setting",
+          "amos-rulers-date",
+          "amos-earthquake",
+          "amos-nations-sequence",
+          "amos-election-accountability",
+          "amos-economic-exploitation",
+          "amos-worship-justice",
+          "amos-intercession",
+          "amos-summer-fruit",
+          "amos-famine-hearing",
+          "amos-composition-final-form"
+        ],
+        "notes": "Detailed Hebrew commentary with historical, literary, theological, and ethical attention.",
+        "id": "carroll-amos",
+        "canonical_object_ids": [
+          "amos"
+        ]
+      },
+      {
+        "title": "Amos",
+        "author": "J. Blake Couey",
+        "publisher": "Oxford University Press",
+        "year": 2021,
+        "locator": "The Oxford Handbook of the Minor Prophets, chapter 31",
+        "url": "https://academic.oup.com/edited-volume/38566/chapter/334373262",
+        "source_type": "reference-work",
+        "supports": [
+          "interpretive-disputes",
+          "hermeneutical-lens-common-misinterpretations",
+          "retrieval-metadata-semantic-keywords",
+          "amos-day-yhwh"
+        ],
+        "notes": "Handbook treatment of structure, themes, contested issues, ideological critique, and ecology.",
+        "id": "couey-amos",
+        "canonical_object_ids": [
+          "amos"
+        ]
+      },
+      {
+        "title": "Amos: A New Translation with Introduction and Commentary",
+        "author": "G\u00f6ran Eidevall",
+        "publisher": "Yale University Press",
+        "year": 2017,
+        "locator": "Anchor Yale Bible 24G",
+        "url": "https://yalebooks.yale.edu/book/9780300178784/amos/",
+        "source_type": "academic-book",
+        "supports": [
+          "authorship-positions",
+          "interpretive-disputes",
+          "amos-superscription-identity",
+          "amos-amaziah-bethel",
+          "amos-occupation",
+          "amos-anak-vision",
+          "amos-david-booth",
+          "amos-composition-final-form"
+        ],
+        "notes": "Critical commentary emphasizing Amos as a literary composition.",
+        "id": "eidevall-amos",
+        "canonical_object_ids": [
+          "amos"
+        ]
+      },
+      {
+        "title": "Book of Amos",
+        "author": "Graham R. Hamborg",
+        "publisher": "Cambridge University Press",
+        "year": 2023,
+        "locator": "Hosea, Joel, and Amos, pages 260-376",
+        "url": "https://www.cambridge.org/core/books/abs/hosea-joel-and-amos/book-of-amos/38376818DCC62BB9E6A9F3FDAAB50BDF",
+        "source_type": "academic-book",
+        "supports": [
+          "structure",
+          "major-themes",
+          "authorship-positions",
+          "amos-nations-sequence",
+          "amos-five-visions",
+          "amos-intercession",
+          "amos-restoration-ending"
+        ],
+        "notes": "Literary and redaction-critical commentary with focused discussions of justice, worship, and prophecy.",
+        "id": "hamborg-amos",
+        "canonical_object_ids": [
+          "amos"
+        ]
+      },
+      {
+        "title": "Amos",
+        "author": "Walter Houston",
+        "publisher": "Oxford University Press",
+        "year": 2025,
+        "locator": "Oxford Bibliographies in Biblical Studies",
+        "url": "https://academic.oup.com/reference/62341/reference-article-abstract/554094758",
+        "source_type": "reference-work",
+        "supports": [
+          "date-ranges",
+          "authorship-positions",
+          "canonical-placement",
+          "amos-superscription-identity",
+          "amos-rulers-date",
+          "amos-occupation",
+          "amos-composition-final-form"
+        ],
+        "notes": "Research bibliography and overview of major Amos questions.",
+        "id": "oxford-amos-bibliography",
+        "canonical_object_ids": [
+          "amos"
+        ]
+      },
+      {
+        "title": "The Problem of Justice as Social Criticism in the Twelve Prophets",
+        "author": "Daniel L. Smith-Christopher",
+        "publisher": "Oxford University Press",
+        "year": 2021,
+        "locator": "The Oxford Handbook of the Minor Prophets, pages 159-172",
+        "url": "https://academic.oup.com/edited-volume/38566/chapter-abstract/334371947",
+        "source_type": "reference-work",
+        "supports": [
+          "major-themes",
+          "amos-economic-exploitation",
+          "amos-worship-justice"
+        ],
+        "notes": "Examines justice and social criticism, especially in Amos and Micah.",
+        "id": "oxford-justice-twelve",
+        "canonical_object_ids": [
+          "amos"
+        ]
+      },
+      {
+        "title": "Overview: Approaching the Minor Prophets",
+        "author": "Julia M. O'Brien",
+        "publisher": "Oxford University Press",
+        "year": 2021,
+        "locator": "The Oxford Handbook of the Minor Prophets",
+        "url": "https://academic.oup.com/edited-volume/38566/chapter/334371096",
+        "source_type": "reference-work",
+        "supports": [
+          "later-christian-reception",
+          "authorship-positions",
+          "interpretive-disputes"
+        ],
+        "notes": "Frames historical, literary, feminist, ideological, racial, ecological, and reception questions.",
+        "id": "oxford-minor-prophets-overview",
+        "canonical_object_ids": [
+          "amos"
+        ]
+      },
+      {
+        "title": "Violence in the Old Testament",
+        "author": "Jerome F. D. Creach",
+        "publisher": "Oxford University Press",
+        "year": 2015,
+        "locator": "Oxford Research Encyclopedia of Religion",
+        "url": "https://academic.oup.com/edited-volume/62249/chapter-abstract/551374654",
+        "source_type": "reference-work",
+        "supports": [
+          "hermeneutical-lens-common-misinterpretations",
+          "hermeneutical-lens-modern-application-principles"
+        ],
+        "notes": "Reference treatment of violence, vengeance, war, and prophetic rhetoric.",
+        "id": "oxford-violence",
+        "canonical_object_ids": [
+          "amos"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "amos",
+        "type": "book",
+        "title": "Amos",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.904
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "a0d0ccbd7949d07b169aa96a26ef12fa9d4a27778f7ae4cd3244b1e344e2e3ec",
+  "evidence_hash_version": "2"
+}

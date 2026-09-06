@@ -18,6 +18,7 @@ from tools.commentary_v11_scaled_preflight import (
     select_mixed_candidate_pool,
     _previous_batch_references,
     _presentation_audit,
+    terra_textual_suppression_simulation,
 )
 
 
@@ -217,6 +218,111 @@ def test_quarantined_chapter_does_not_block_other_chapters():
         {"reference": "good", "status": "PASS", "availability": "THIN"},
     ]
     assert [row["reference"] for row in select_final_chapters(evaluated, 1)] == ["good"]
+
+
+def test_textual_witness_cannot_follow_legacy_history_category():
+    metadata = {
+        "parent_type": "book",
+        "parent_object_id": "acts",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "claim_type": "historical_cultural",
+    }
+    assert presentation_role(
+        metadata,
+        category="history",
+        claim="Acts is preserved in early papyri and major Greek codices.",
+    ) == "language_literary"
+
+
+def test_textual_variant_routes_to_language_literary():
+    metadata = {
+        "parent_type": "book",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "claim_type": "biblical_text",
+    }
+    assert presentation_role(
+        metadata,
+        category="history",
+        claim="Shorter and longer text forms remain debated among witnesses.",
+    ) == "language_literary"
+
+
+def test_interpretive_textual_uncertainty_may_route_to_questions():
+    metadata = {
+        "parent_type": "book",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "note_type": "interpretive_caution",
+    }
+    assert presentation_role(
+        metadata,
+        category="culture",
+        claim="The manuscript reading is uncertain and should not control interpretation.",
+    ) == "interpretive_questions"
+
+
+def test_material_manuscript_discovery_remains_archaeology():
+    metadata = {
+        "parent_type": "archaeology",
+        "source_kind": "archaeology_resolver",
+        "semantic_relationship": "DIRECT_CONTEXT",
+    }
+    assert presentation_role(
+        metadata,
+        category="archaeology",
+        claim="A manuscript was discovered at Qumran Cave X.",
+    ) == "archaeology_geography"
+
+
+def test_manuscript_reading_is_not_archaeology_because_object_is_physical():
+    metadata = {
+        "parent_type": "archaeology",
+        "source_kind": "archaeology_resolver",
+        "semantic_relationship": "DIRECT_CONTEXT",
+    }
+    assert presentation_role(
+        metadata,
+        category="archaeology",
+        claim="This manuscript preserves a different reading of verse 5.",
+    ) == "language_literary"
+
+
+def test_terra_suppression_simulation_catches_bad_textual_routing():
+    item = _item(
+        "witness",
+        category="history",
+        claim="The manuscript preserves a different textual reading.",
+        role="historical_context",
+    )
+    simulation = terra_textual_suppression_simulation(_bundle(item))
+    assert simulation["terra_textual_suppression_required"] is True
+    assert simulation["suppressed_items"][0]["evidence_id"] == "witness"
+
+
+def test_suppression_required_is_a_blocking_verdict():
+    record = {
+        "availability": "AVAILABLE",
+        "json_sqlite_agreement": {
+            "result_ids_agree": True,
+            "evidence_ids_agree": True,
+            "bundle_hash_agree": True,
+        },
+        "semantic_audit": {"status": "PASS"},
+        "presentation_role_audit": {"status": "PASS"},
+        "textual_routing_audit": {"status": "PASS"},
+        "terra_suppression_simulation": {"terra_textual_suppression_required": True},
+        "anomaly_scan": {"anomalies": []},
+    }
+    assert "TERRA_SUPPRESSION_REQUIRED" in quarantine_reasons(record)
+
+
+def test_clean_textual_variant_needs_no_suppression():
+    item = _item(
+        "luke-meal-variant",
+        category="history",
+        claim="Shorter and longer textual readings of the meal remain debated.",
+        role="language_literary",
+    )
+    assert terra_textual_suppression_simulation(_bundle(item))["terra_textual_suppression_required"] is False
 
 
 def test_replacement_selection_backfills_batch():

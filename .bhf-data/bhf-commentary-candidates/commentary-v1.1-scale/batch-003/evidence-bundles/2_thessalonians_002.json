@@ -1,0 +1,709 @@
+{
+  "passage_ref": "2 Thessalonians 2",
+  "entities": {
+    "people": [],
+    "places": [],
+    "groups": [],
+    "events": [],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "2th-alarm",
+      "claim": "The recipients are told not to be shaken or alarmed by spirit, word, or an alleged letter claiming that the day is present.",
+      "category": "history",
+      "source_ids": [
+        "2th-greek",
+        "weima"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "2 Thessalonians 2:2"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "2-thessalonians",
+        "parent_title": "2 Thessalonians",
+        "parent_type": "book",
+        "object_importance": 78,
+        "retrieval_score": 0.938,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 1,
+        "certainty": "textually_explicit",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "2th-coming-gathering",
+      "claim": "The letter introduces the coming of Jesus and the recipients' gathering to him as one coordinated topic.",
+      "category": "history",
+      "source_ids": [
+        "2th-greek",
+        "wanamaker"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "2 Thessalonians 2:1"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "2-thessalonians",
+        "parent_title": "2 Thessalonians",
+        "parent_type": "book",
+        "object_importance": 78,
+        "retrieval_score": 0.938,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "textually_explicit",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "2th-defeat",
+      "claim": "The Lord defeats the lawless one with the breath of his mouth and the manifestation of his coming, plausibly echoing Isaiah 11:4.",
+      "category": "culture",
+      "source_ids": [
+        "2th-greek",
+        "nets-lxx"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "2 Thessalonians 2:8"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "2-thessalonians",
+        "parent_title": "2 Thessalonians",
+        "parent_type": "book",
+        "object_importance": 78,
+        "retrieval_score": 0.938,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 7,
+        "certainty": "probable",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_theology",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "2th-election",
+      "claim": "Election language is joined to salvation, sanctification by the Spirit, faith in truth, gospel calling, and obtaining Jesus' glory.",
+      "category": "culture",
+      "source_ids": [
+        "2th-greek",
+        "gaventa"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "2 Thessalonians 2:13-14"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "2-thessalonians",
+        "parent_title": "2 Thessalonians",
+        "parent_type": "book",
+        "object_importance": 78,
+        "retrieval_score": 0.938,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 12,
+        "certainty": "textually_explicit",
+        "dispute_status": "denominational_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_theology",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "2th-election-variant",
+      "claim": "Witnesses vary between firstfruits and from the beginning in 2:13.",
+      "category": "culture",
+      "source_ids": [
+        "ntvmr",
+        "p30-csntm",
+        "weima"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "2 Thessalonians 2:13"
+      ],
+      "confidence": "low",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "2-thessalonians",
+        "parent_title": "2 Thessalonians",
+        "parent_type": "book",
+        "object_importance": 78,
+        "retrieval_score": 0.938,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 12,
+        "certainty": "disputed",
+        "dispute_status": "textual_variant",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 90
+      }
+    },
+    {
+      "id": "2th-lawless",
+      "claim": "The man of lawlessness is portrayed as self-exalting, temple-associated, restrained, Satanically empowered, deceptive, revealed, and finally defeated.",
+      "category": "culture",
+      "source_ids": [
+        "2th-greek",
+        "collins-apocalyptic",
+        "weima"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "2 Thessalonians 2:3-12"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "2-thessalonians",
+        "parent_title": "2 Thessalonians",
+        "parent_type": "book",
+        "object_importance": 78,
+        "retrieval_score": 0.938,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 2,
+        "certainty": "textually_explicit",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 105
+      }
+    },
+    {
+      "id": "2th-lawless-variant",
+      "claim": "Early witnesses vary between man of lawlessness and man of sin in 2:3.",
+      "category": "culture",
+      "source_ids": [
+        "ntvmr",
+        "p30-csntm",
+        "weima"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "2 Thessalonians 2:3"
+      ],
+      "confidence": "low",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "2-thessalonians",
+        "parent_title": "2 Thessalonians",
+        "parent_type": "book",
+        "object_importance": 78,
+        "retrieval_score": 0.938,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 2,
+        "certainty": "disputed",
+        "dispute_status": "textual_variant",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 90
+      }
+    },
+    {
+      "id": "2th-rebellion",
+      "claim": "Apostasia in 2:3 most directly denotes rebellion or defection, though its referent remains disputed.",
+      "category": "language",
+      "source_ids": [
+        "bdag",
+        "wanamaker",
+        "weima"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "2 Thessalonians 2:3"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "2-thessalonians",
+        "parent_title": "2 Thessalonians",
+        "parent_type": "book",
+        "object_importance": 78,
+        "retrieval_score": 0.938,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 2,
+        "certainty": "probable",
+        "dispute_status": "lexical_uncertainty",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "lexical",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 81
+      }
+    },
+    {
+      "id": "2th-relation",
+      "claim": "Second Thessalonians shares extensive language and themes with 1 Thessalonians, but sequence, dependence, and common authorship remain disputed.",
+      "category": "culture",
+      "source_ids": [
+        "wanamaker",
+        "weima",
+        "gaventa"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "2 Thessalonians 2:1-17"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "2-thessalonians",
+        "parent_title": "2 Thessalonians",
+        "parent_type": "book",
+        "object_importance": 78,
+        "retrieval_score": 0.938,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 55
+      }
+    },
+    {
+      "id": "2th-restrainer",
+      "claim": "The text refers to what restrains and the one restraining but does not identify either expression for later readers.",
+      "category": "history",
+      "source_ids": [
+        "2th-greek",
+        "malherbe",
+        "weima"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "2 Thessalonians 2:6-7"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "2-thessalonians",
+        "parent_title": "2 Thessalonians",
+        "parent_type": "book",
+        "object_importance": 78,
+        "retrieval_score": 0.938,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 5,
+        "certainty": "textually_explicit",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "2th-signs",
+      "claim": "The lawless one's coming is associated with Satanic activity, power, signs, false wonders, and unrighteous deception.",
+      "category": "history",
+      "source_ids": [
+        "2th-greek",
+        "collins-apocalyptic"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "2 Thessalonians 2:9-10"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "2-thessalonians",
+        "parent_title": "2 Thessalonians",
+        "parent_type": "book",
+        "object_importance": 78,
+        "retrieval_score": 0.938,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 8,
+        "certainty": "textually_explicit",
+        "dispute_status": "denominational_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "2th-temple",
+      "claim": "The temple of God functions in the adversary's self-exaltation, but its earthly, heavenly, communal, or symbolic reference is disputed.",
+      "category": "culture",
+      "source_ids": [
+        "2th-greek",
+        "malherbe",
+        "wanamaker"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "2 Thessalonians 2:4"
+      ],
+      "confidence": "low",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "2-thessalonians",
+        "parent_title": "2 Thessalonians",
+        "parent_type": "book",
+        "object_importance": 78,
+        "retrieval_score": 0.938,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 3,
+        "certainty": "disputed",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 105
+      }
+    },
+    {
+      "id": "2th-tradition",
+      "claim": "The recipients are told to hold the traditions taught by the epistolary voice through spoken word or letter.",
+      "category": "history",
+      "source_ids": [
+        "2th-greek",
+        "malherbe"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "2 Thessalonians 2:15"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "2-thessalonians",
+        "parent_title": "2 Thessalonians",
+        "parent_type": "book",
+        "object_importance": 78,
+        "retrieval_score": 0.938,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 14,
+        "certainty": "textually_explicit",
+        "dispute_status": "denominational_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "SBL Greek New Testament: 2 Thessalonians",
+        "author": "Michael W. Holmes, ed.",
+        "publisher": "Society of Biblical Literature and Logos Bible Software",
+        "year": 2010,
+        "locator": "2 Thessalonians",
+        "url": "https://www.sblgnt.com/",
+        "source_type": "scripture",
+        "supports": [
+          "scripture-references",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Primary Greek textual control.",
+        "id": "2th-greek",
+        "canonical_object_ids": [
+          "2-thessalonians"
+        ]
+      },
+      {
+        "title": "A Greek-English Lexicon of the New Testament and Other Early Christian Literature",
+        "author": "Frederick William Danker, ed.",
+        "publisher": "University of Chicago Press",
+        "year": 2000,
+        "locator": "apostasia, katecho, ataktos, olethros, related entries",
+        "url": "https://press.uchicago.edu/ucp/books/book/chicago/G/bo3626820.html",
+        "source_type": "lexicon",
+        "supports": [
+          "greek-words",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Lexical control; glosses do not settle context.",
+        "id": "bdag",
+        "canonical_object_ids": [
+          "2-thessalonians"
+        ]
+      },
+      {
+        "title": "The Apocalyptic Imagination",
+        "author": "John J. Collins",
+        "publisher": "Eerdmans",
+        "year": 2016,
+        "locator": "Jewish apocalyptic literature and imagery",
+        "url": "https://www.eerdmans.com/9780802872791/the-apocalyptic-imagination/",
+        "source_type": "academic-book",
+        "supports": [
+          "second-temple-context",
+          "intertextuality",
+          "interpretive-notes"
+        ],
+        "notes": "Genre and imagery control.",
+        "id": "collins-apocalyptic",
+        "canonical_object_ids": [
+          "2-thessalonians"
+        ]
+      },
+      {
+        "title": "First and Second Thessalonians",
+        "author": "Beverly Roberts Gaventa",
+        "publisher": "Westminster John Knox Press",
+        "year": 1998,
+        "locator": "2 Thessalonians",
+        "url": "https://www.wjkbooks.com/Products/0664236553/first-and-second-thessalonians.aspx",
+        "source_type": "academic-book",
+        "supports": [
+          "canonical-context",
+          "later-christian-reception",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Literary and theological commentary.",
+        "id": "gaventa",
+        "canonical_object_ids": [
+          "2-thessalonians"
+        ]
+      },
+      {
+        "title": "The Letters to the Thessalonians",
+        "author": "Abraham J. Malherbe",
+        "publisher": "Yale University Press",
+        "year": 2000,
+        "locator": "Introduction and commentary on 2 Thessalonians",
+        "url": "https://yalebooks.yale.edu/book/9780300139846/the-letters-to-the-thessalonians/",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "literary-context",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Historical, literary, philosophical, and social commentary.",
+        "id": "malherbe",
+        "canonical_object_ids": [
+          "2-thessalonians"
+        ]
+      },
+      {
+        "title": "A New English Translation of the Septuagint",
+        "author": "Albert Pietersma and Benjamin G. Wright, eds.",
+        "publisher": "Oxford University Press",
+        "year": 2007,
+        "locator": "Isaiah, Daniel, Ezekiel, and related texts",
+        "url": "https://ccat.sas.upenn.edu/nets/edition/",
+        "source_type": "ancient-primary-source",
+        "supports": [
+          "intertextuality",
+          "hebrew-words",
+          "interpretive-notes"
+        ],
+        "notes": "Septuagint comparison control.",
+        "id": "nets-lxx",
+        "canonical_object_ids": [
+          "2-thessalonians"
+        ]
+      },
+      {
+        "title": "New Testament Virtual Manuscript Room",
+        "author": "Institut f\u00fcr Neutestamentliche Textforschung",
+        "publisher": "University of M\u00fcnster",
+        "year": null,
+        "locator": "2 Thessalonians witnesses and variants",
+        "url": "https://ntvmr.uni-muenster.de/",
+        "source_type": "museum-collection",
+        "supports": [
+          "primary-sources",
+          "archaeology",
+          "interpretive-notes"
+        ],
+        "notes": "Manuscript catalog and textual workspace.",
+        "id": "ntvmr",
+        "canonical_object_ids": [
+          "2-thessalonians"
+        ]
+      },
+      {
+        "title": "Papyrus 30",
+        "author": "",
+        "publisher": "Center for the Study of New Testament Manuscripts",
+        "year": null,
+        "locator": "P30, portions of 1 and 2 Thessalonians",
+        "url": "https://manuscripts.csntm.org/Manuscript/Group/GA_P30",
+        "source_type": "museum-collection",
+        "supports": [
+          "primary-sources",
+          "timeline",
+          "interpretive-notes"
+        ],
+        "notes": "Third-century fragmentary Pauline manuscript.",
+        "id": "p30-csntm",
+        "canonical_object_ids": [
+          "2-thessalonians"
+        ]
+      },
+      {
+        "title": "The Epistle to the Thessalonians",
+        "author": "Charles A. Wanamaker",
+        "publisher": "Eerdmans",
+        "year": 1990,
+        "locator": "2 Thessalonians",
+        "url": "https://www.eerdmans.com/9780802823946/the-epistle-to-the-thessalonians/",
+        "source_type": "academic-book",
+        "supports": [
+          "literary-context",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Greek-text and social-science commentary.",
+        "id": "wanamaker",
+        "canonical_object_ids": [
+          "2-thessalonians"
+        ]
+      },
+      {
+        "title": "1-2 Thessalonians",
+        "author": "Jeffrey A. D. Weima",
+        "publisher": "Baker Academic",
+        "year": 2014,
+        "locator": "2 Thessalonians",
+        "url": "https://bakeracademic.com/collections/bible/products/9780801026850_1-2-thessalonians",
+        "source_type": "academic-book",
+        "supports": [
+          "literary-context",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Exegetical and epistolary commentary.",
+        "id": "weima",
+        "canonical_object_ids": [
+          "2-thessalonians"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "2-thessalonians",
+        "type": "book",
+        "title": "2 Thessalonians",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.938
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "66866a9074430a1a7582c9feeea80b409e424fb3d82305c0db5d240928ddcc78",
+  "evidence_hash_version": "2"
+}

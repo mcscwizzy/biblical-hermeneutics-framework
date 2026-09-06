@@ -1,0 +1,147 @@
+{
+  "passage_ref": "Ezekiel 3",
+  "entities": {
+    "people": [],
+    "places": [],
+    "groups": [],
+    "events": [],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "ezekiel-call-watchman",
+      "claim": "Ezekiel 2-3 joins scroll eating, mission to a rebellious house, Spirit and hand language, watchman responsibility, constrained movement, and episodic speech.",
+      "category": "history",
+      "source_ids": [
+        "ezekiel-masoretic",
+        "greenberg-ezekiel-1-20",
+        "sweeney-communications"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Ezekiel 3:1-27"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "ezekiel",
+        "parent_title": "Ezekiel",
+        "parent_type": "book",
+        "object_importance": 92,
+        "retrieval_score": 0.912,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "textually_explicit",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "Masoretic Ezekiel",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Ezekiel 1-48 in the Masoretic textual tradition",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "historical-context",
+          "literary-context",
+          "structure",
+          "major-themes",
+          "scripture-references",
+          "hebrew-words",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "Primary received Hebrew canonical text.",
+        "id": "ezekiel-masoretic",
+        "canonical_object_ids": [
+          "ezekiel"
+        ]
+      },
+      {
+        "title": "Ezekiel 1-20",
+        "author": "Moshe Greenberg",
+        "publisher": "Yale University Press",
+        "year": 1983,
+        "locator": "Anchor Yale Bible 22",
+        "url": "https://yalebooks.yale.edu/book/9780300139662/ezekiel-1-20/",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "literary-context",
+          "authorship-positions",
+          "hebrew-words",
+          "ezekiel-superscription-call",
+          "ezekiel-throne-vision",
+          "ezekiel-call-watchman",
+          "ezekiel-glory-departure-return",
+          "ezekiel-responsibility"
+        ],
+        "notes": "Detailed holistic Jewish commentary on Ezekiel 1-20.",
+        "id": "greenberg-ezekiel-1-20",
+        "canonical_object_ids": [
+          "ezekiel"
+        ]
+      },
+      {
+        "title": "Communications of the Book of Ezekiel: From the Iron Wall to the Voice in the Air",
+        "author": "Soo J. Kim Sweeney",
+        "publisher": "Oxford University Press",
+        "year": 2020,
+        "locator": "The Oxford Handbook of Ezekiel, chapter 16",
+        "url": "https://academic.oup.com/edited-volume/35418",
+        "source_type": "reference-work",
+        "supports": [
+          "literary-context",
+          "ezekiel-call-watchman"
+        ],
+        "notes": "Study of speech, silence, embodiment, and communication.",
+        "id": "sweeney-communications",
+        "canonical_object_ids": [
+          "ezekiel"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "ezekiel",
+        "type": "book",
+        "title": "Ezekiel",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.912
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "a5e22bede3898aa3d8f342611f2f0633239ddca18c283ee2b0aa4626c796ae67",
+  "evidence_hash_version": "2"
+}

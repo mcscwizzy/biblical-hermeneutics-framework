@@ -1,0 +1,317 @@
+{
+  "passage_ref": "Daniel 3",
+  "entities": {
+    "people": [],
+    "places": [],
+    "groups": [],
+    "events": [],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "daniel-furnace-resistance",
+      "claim": "Daniel 3 depicts Hananiah, Mishael, and Azariah refusing coerced worship, accepting the possibility of death without presuming rescue, and being delivered with a fourth figure present.",
+      "category": "culture",
+      "source_ids": [
+        "daniel-masoretic",
+        "newsom-daniel-commentary",
+        "portier-young-empire"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Daniel 3:1-30"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "daniel",
+        "parent_title": "Daniel",
+        "parent_type": "book",
+        "object_importance": 94,
+        "retrieval_score": 0.914,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "textually_explicit",
+        "dispute_status": "denominational_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_theology",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "daniel-imperial-resistance",
+      "claim": "Daniel's tales and visions offer multiple practices of endurance and resistance under imperial domination rather than a single rule that faithful people must always comply, flee, revolt, or expect miraculous rescue.",
+      "category": "politics",
+      "source_ids": [
+        "daniel-masoretic",
+        "portier-young-empire",
+        "portier-young-daniel-imagination",
+        "oxford-apocalyptic-handbook"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Daniel 3:1-30"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "daniel",
+        "parent_title": "Daniel",
+        "parent_type": "book",
+        "object_importance": 94,
+        "retrieval_score": 0.914,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "probable",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_theology",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 110
+      }
+    },
+    {
+      "id": "daniel:interpretive_note:6",
+      "claim": "The fourth furnace figure is described through divine-being and angelic language in the chapter; direct identification as the preincarnate Christ is later christological reception.",
+      "category": "culture",
+      "source_ids": [
+        "daniel-masoretic",
+        "newsom-daniel-commentary",
+        "daniel-old-greek-theodotion"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Daniel 3:24-30"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "daniel",
+        "parent_title": "Daniel",
+        "parent_type": "book",
+        "object_importance": 94,
+        "retrieval_score": 0.914,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 23,
+        "certainty": "textually_explicit",
+        "dispute_status": "denominational_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "later-reception",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "dig_deeper",
+        "overview_priority": 47
+      }
+    },
+    {
+      "id": "daniel:interpretive_note:7",
+      "claim": "The furnace story does not promise that every persecuted person will survive or make victims responsible when deliverance does not occur.",
+      "category": "culture",
+      "source_ids": [
+        "daniel-masoretic",
+        "portier-young-empire"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Daniel 3:16-18"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "daniel",
+        "parent_title": "Daniel",
+        "parent_type": "book",
+        "object_importance": 94,
+        "retrieval_score": 0.914,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 15,
+        "certainty": "textually_explicit",
+        "dispute_status": "not_disputed",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "interpretive-caution",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "Daniel: Masoretic Hebrew-Aramaic Text",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Daniel 1-12",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "literary-context",
+          "structure",
+          "scripture-references",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Primary received Hebrew-Aramaic text; textual form must be compared with Greek and Qumran witnesses.",
+        "id": "daniel-masoretic",
+        "canonical_object_ids": [
+          "daniel"
+        ]
+      },
+      {
+        "title": "Old Greek and Theodotionic Daniel",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Daniel and its additions in the two ancient Greek versions",
+        "url": "",
+        "source_type": "ancient-primary-source",
+        "supports": [
+          "primary-sources",
+          "daniel-greek-versions",
+          "interpretive-notes"
+        ],
+        "notes": "Ancient Greek textual forms treated as distinct witnesses rather than conflated.",
+        "id": "daniel-old-greek-theodotion",
+        "canonical_object_ids": [
+          "daniel"
+        ]
+      },
+      {
+        "title": "Daniel: A Commentary",
+        "author": "Carol A. Newsom with Brennan W. Breed",
+        "publisher": "Westminster John Knox Press",
+        "year": 2014,
+        "locator": "Old Testament Library",
+        "url": "https://www.wjkbooks.com/bookproduct/0664260160-daniel/",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "literary-context",
+          "authorship-positions",
+          "interpretive-disputes",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Major literary, historical, textual, and theological commentary.",
+        "id": "newsom-daniel-commentary",
+        "canonical_object_ids": [
+          "daniel"
+        ]
+      },
+      {
+        "title": "The Oxford Handbook of Apocalyptic Literature",
+        "author": "John J. Collins, editor",
+        "publisher": "Oxford University Press",
+        "year": 2014,
+        "locator": "Genre, social function, rhetoric, theology, and modern reception",
+        "url": "https://academic.oup.com/edited-volume/34434",
+        "source_type": "reference-work",
+        "supports": [
+          "genre",
+          "later-christian-reception",
+          "daniel-imperial-resistance",
+          "interpretive-notes"
+        ],
+        "notes": "Multi-author framework for ancient apocalypse and responsible modern reception.",
+        "id": "oxford-apocalyptic-handbook",
+        "canonical_object_ids": [
+          "daniel"
+        ]
+      },
+      {
+        "title": "Daniel and Apocalyptic Imagination",
+        "author": "Anathea E. Portier-Young",
+        "publisher": "Oxford University Press",
+        "year": 2016,
+        "locator": "The Oxford Handbook of the Prophets, chapter 13",
+        "url": "https://academic.oup.com/edited-volume/28016/chapter/211807960",
+        "source_type": "reference-work",
+        "supports": [
+          "genre",
+          "literary-context",
+          "ancient-near-east-context",
+          "daniel-four-beasts-humanlike",
+          "daniel-imperial-resistance"
+        ],
+        "notes": "Study of prophetic inheritance, apocalyptic imagination, empire, and embodied practice.",
+        "id": "portier-young-daniel-imagination",
+        "canonical_object_ids": [
+          "daniel"
+        ]
+      },
+      {
+        "title": "Apocalypse against Empire",
+        "author": "Anathea E. Portier-Young",
+        "publisher": "Eerdmans",
+        "year": 2011,
+        "locator": "Theologies of Resistance in Early Judaism",
+        "url": "https://www.eerdmans.com/9780802870834/apocalypse-against-empire/",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "second-temple-context",
+          "daniel-furnace-resistance",
+          "daniel-ram-goat-antiochus",
+          "daniel-kingdom-review",
+          "daniel-imperial-resistance",
+          "interpretive-notes"
+        ],
+        "notes": "Historical and theoretical study of Daniel as resistance under Seleucid domination.",
+        "id": "portier-young-empire",
+        "canonical_object_ids": [
+          "daniel"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "daniel",
+        "type": "book",
+        "title": "Daniel",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.914
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "8cd7b7a6994d890c698c2ca17407e6c0713c368fec46190ca6cf8836985e07a1",
+  "evidence_hash_version": "2"
+}

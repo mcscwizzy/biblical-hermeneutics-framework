@@ -1,0 +1,801 @@
+{
+  "passage_ref": "Revelation 5",
+  "entities": {
+    "people": [],
+    "places": [],
+    "groups": [],
+    "events": [
+      {
+        "id": "davidic-covenant",
+        "title": "Davidic Covenant",
+        "type": "event",
+        "aliases": [
+          "what happened in davidic covenant",
+          "tell me about davidic covenant",
+          "why is davidic covenant important"
+        ],
+        "metadata": {
+          "summary": "God promises David a lasting house, kingdom, and throne, shaping Israel's royal hope.",
+          "importance": 100,
+          "retrieval_score": 0.92,
+          "ancient_names": [],
+          "modern_identification": "",
+          "region": "",
+          "terrain": "",
+          "elevation": null,
+          "archaeology": [],
+          "related_passages": [
+            "2 Samuel 7:1-17",
+            "2 Samuel 7:18-29",
+            "Psalms 2:1-12",
+            "Psalms 89:1-37",
+            "Isaiah 9:1-7",
+            "Jeremiah 23:1-6",
+            "Luke 1:30-33",
+            "Revelation 5:5-10"
+          ]
+        }
+      }
+    ],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "davidic-covenant:ancient_near_east_context:0",
+      "claim": "Royal covenants and dynastic promises were common in the ancient world, but this one is grounded in divine grace rather than royal achievement.",
+      "category": "culture",
+      "source_ids": [
+        "2-samuel-7",
+        "psalm-2",
+        "psalm-89",
+        "isaiah-9",
+        "jeremiah-23",
+        "luke-1",
+        "acts-2",
+        "revelation-5"
+      ],
+      "related_entity_ids": [
+        "davidic-covenant"
+      ],
+      "passage_anchors": [
+        "Revelation 5:5-10"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "davidic-covenant",
+        "parent_title": "Davidic Covenant",
+        "parent_type": "event",
+        "object_importance": 100,
+        "retrieval_score": 0.92,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 4,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "davidic-covenant:historical_context:0",
+      "claim": "2 Samuel 7 frames a covenant promise to David after Jerusalem becomes the royal center.",
+      "category": "history",
+      "source_ids": [
+        "2-samuel-7",
+        "psalm-2",
+        "psalm-89",
+        "isaiah-9",
+        "jeremiah-23",
+        "luke-1",
+        "acts-2",
+        "revelation-5"
+      ],
+      "related_entity_ids": [
+        "davidic-covenant"
+      ],
+      "passage_anchors": [
+        "Revelation 5:5-10"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "davidic-covenant",
+        "parent_title": "Davidic Covenant",
+        "parent_type": "event",
+        "object_importance": 100,
+        "retrieval_score": 0.92,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 4,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "rev-scriptural-reuse",
+      "claim": "Revelation repeatedly reworks Israel's Scriptures, especially Daniel, Ezekiel, Isaiah, Exodus, Zechariah, Genesis, and Psalms.",
+      "category": "culture",
+      "source_ids": [
+        "beale",
+        "moyise",
+        "koester"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Revelation 1:1-22:21"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "revelation",
+        "parent_title": "Revelation",
+        "parent_type": "book",
+        "object_importance": 98,
+        "retrieval_score": 0.918,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 400,
+        "certainty": "strong_consensus",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_theology",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 70
+      }
+    },
+    {
+      "id": "rev-throne-lamb",
+      "claim": "The throne vision presents the slaughtered Lamb as worthy to open the scroll and receive worship.",
+      "category": "history",
+      "source_ids": [
+        "rev-greek",
+        "bauckham"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Revelation 4:1-5:14"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "revelation",
+        "parent_title": "Revelation",
+        "parent_type": "book",
+        "object_importance": 98,
+        "retrieval_score": 0.918,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 100,
+        "certainty": "textually_explicit",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "what-is-intertextuality:ancient_near_east_context:0",
+      "claim": "In the ancient world, authoritative texts were often reactivated through citation and echo, and the Bible uses that practice to show ongoing divine speech.",
+      "category": "culture",
+      "source_ids": [
+        "luke-24",
+        "matthew-1",
+        "john-1",
+        "romans-15",
+        "1-corinthians-10",
+        "hebrews-1",
+        "revelation-5",
+        "what-is-intertextuality-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Revelation 5:1-14"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "what-is-intertextuality",
+        "parent_title": "What is intertextuality?",
+        "parent_type": "faq",
+        "object_importance": 93,
+        "retrieval_score": 0.913,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "what-is-intertextuality:historical_context:0",
+      "claim": "Biblical authors wrote within a tradition of remembering, reusing, and reinterpreting earlier Scripture for new settings and audiences.",
+      "category": "history",
+      "source_ids": [
+        "luke-24",
+        "matthew-1",
+        "john-1",
+        "romans-15",
+        "1-corinthians-10",
+        "hebrews-1",
+        "revelation-5",
+        "what-is-intertextuality-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Revelation 5:1-14"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "what-is-intertextuality",
+        "parent_title": "What is intertextuality?",
+        "parent_type": "faq",
+        "object_importance": 93,
+        "retrieval_score": 0.913,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "who-was-david:ancient_near_east_context:0",
+      "claim": "Kingship in the ancient world often tied ruler and deity closely together, but David is judged and upheld by the LORD.",
+      "category": "culture",
+      "source_ids": [
+        "1-samuel-16",
+        "1-samuel-17",
+        "2-samuel-7",
+        "psalm-2",
+        "psalm-110",
+        "luke-1",
+        "acts-2",
+        "revelation-5"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Revelation 5:5-10"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "who-was-david",
+        "parent_title": "Who was David?",
+        "parent_type": "faq",
+        "object_importance": 96,
+        "retrieval_score": 0.916,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 4,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "who-was-david:historical_context:0",
+      "claim": "David unites the tribes, establishes Jerusalem, and receives the promise of an enduring house.",
+      "category": "history",
+      "source_ids": [
+        "1-samuel-16",
+        "1-samuel-17",
+        "2-samuel-7",
+        "psalm-2",
+        "psalm-110",
+        "luke-1",
+        "acts-2",
+        "revelation-5"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Revelation 5:5-10"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "who-was-david",
+        "parent_title": "Who was David?",
+        "parent_type": "faq",
+        "object_importance": 96,
+        "retrieval_score": 0.916,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 4,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "1 Corinthians 10",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "1-corinthians-10",
+        "canonical_object_ids": [
+          "what-is-intertextuality"
+        ]
+      },
+      {
+        "title": "1 Samuel 16",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "1-samuel-16",
+        "canonical_object_ids": [
+          "who-was-david"
+        ]
+      },
+      {
+        "title": "1 Samuel 17",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "1-samuel-17",
+        "canonical_object_ids": [
+          "who-was-david"
+        ]
+      },
+      {
+        "title": "2 Samuel 7",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "2-samuel-7",
+        "canonical_object_ids": [
+          "davidic-covenant",
+          "who-was-david"
+        ]
+      },
+      {
+        "title": "Acts 2",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "acts-2",
+        "canonical_object_ids": [
+          "davidic-covenant",
+          "who-was-david"
+        ]
+      },
+      {
+        "title": "The Theology of the Book of Revelation",
+        "author": "Richard Bauckham",
+        "publisher": "Cambridge University Press",
+        "year": 1993,
+        "locator": "New Testament Theology",
+        "url": "https://www.cambridge.org/core/books/theology-of-the-book-of-revelation/8EA06CE90DE826B1F50EC27A3185D9D7",
+        "source_type": "academic-book",
+        "supports": [
+          "literary-context",
+          "canonical-context",
+          "claims"
+        ],
+        "notes": "Influential literary and theological synthesis.",
+        "id": "bauckham",
+        "canonical_object_ids": [
+          "revelation"
+        ]
+      },
+      {
+        "title": "The Book of Revelation: A Commentary on the Greek Text",
+        "author": "G. K. Beale",
+        "publisher": "Eerdmans",
+        "year": 1999,
+        "locator": "New International Greek Testament Commentary",
+        "url": "https://www.eerdmans.com/9780802821744/the-book-of-revelation/",
+        "source_type": "academic-book",
+        "supports": [
+          "intertextuality",
+          "structure",
+          "claims"
+        ],
+        "notes": "Extensive study of Greek text and scriptural reuse representing a recapitulative reading.",
+        "id": "beale",
+        "canonical_object_ids": [
+          "revelation"
+        ]
+      },
+      {
+        "title": "Hebrews 1",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "hebrews-1",
+        "canonical_object_ids": [
+          "what-is-intertextuality"
+        ]
+      },
+      {
+        "title": "Isaiah 9",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "isaiah-9",
+        "canonical_object_ids": [
+          "davidic-covenant"
+        ]
+      },
+      {
+        "title": "Jeremiah 23",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "jeremiah-23",
+        "canonical_object_ids": [
+          "davidic-covenant"
+        ]
+      },
+      {
+        "title": "John 1",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "john-1",
+        "canonical_object_ids": [
+          "what-is-intertextuality"
+        ]
+      },
+      {
+        "title": "Revelation: A New Translation with Introduction and Commentary",
+        "author": "Craig R. Koester",
+        "publisher": "Yale University Press",
+        "year": 2014,
+        "locator": "Anchor Yale Bible 38A",
+        "url": "https://yalebooks.yale.edu/book/9780300216912/revelation/",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "literary-context",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Major historical, literary, textual, and theological commentary.",
+        "id": "koester",
+        "canonical_object_ids": [
+          "revelation"
+        ]
+      },
+      {
+        "title": "Luke 1",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "luke-1",
+        "canonical_object_ids": [
+          "davidic-covenant",
+          "who-was-david"
+        ]
+      },
+      {
+        "title": "Luke 24",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "luke-24",
+        "canonical_object_ids": [
+          "what-is-intertextuality"
+        ]
+      },
+      {
+        "title": "Matthew 1",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "matthew-1",
+        "canonical_object_ids": [
+          "what-is-intertextuality"
+        ]
+      },
+      {
+        "title": "The Old Testament in the Book of Revelation",
+        "author": "Steve Moyise",
+        "publisher": "Bloomsbury T&T Clark",
+        "year": 1995,
+        "locator": "Journal for the Study of the New Testament Supplement 115",
+        "url": "https://www.bloomsbury.com/us/old-testament-in-the-book-of-revelation-9780567705341/",
+        "source_type": "academic-book",
+        "supports": [
+          "intertextuality",
+          "claims"
+        ],
+        "notes": "Study of allusion, intertextual method, and scriptural transformation.",
+        "id": "moyise",
+        "canonical_object_ids": [
+          "revelation"
+        ]
+      },
+      {
+        "title": "Psalm 110",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [],
+        "notes": "",
+        "id": "psalm-110",
+        "canonical_object_ids": [
+          "who-was-david"
+        ]
+      },
+      {
+        "title": "Psalm 2",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [],
+        "notes": "",
+        "id": "psalm-2",
+        "canonical_object_ids": [
+          "davidic-covenant",
+          "who-was-david"
+        ]
+      },
+      {
+        "title": "Psalm 89",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [],
+        "notes": "",
+        "id": "psalm-89",
+        "canonical_object_ids": [
+          "davidic-covenant"
+        ]
+      },
+      {
+        "title": "Revelation: Greek textual tradition",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Revelation 1-22",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "structure",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Primary Greek text; variants require manuscript and critical-edition control.",
+        "id": "rev-greek",
+        "canonical_object_ids": [
+          "revelation"
+        ]
+      },
+      {
+        "title": "Revelation 5",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "revelation-5",
+        "canonical_object_ids": [
+          "davidic-covenant",
+          "what-is-intertextuality",
+          "who-was-david"
+        ]
+      },
+      {
+        "title": "Romans 15",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "romans-15",
+        "canonical_object_ids": [
+          "what-is-intertextuality"
+        ]
+      },
+      {
+        "title": "Canonical historical orientation for What is intertextuality?",
+        "author": "",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "id": "what-is-intertextuality-historical-orientation",
+        "canonical_object_ids": [
+          "what-is-intertextuality"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "davidic-covenant",
+        "type": "event",
+        "title": "Davidic Covenant",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.92
+      },
+      {
+        "id": "revelation",
+        "type": "book",
+        "title": "Revelation",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.918
+      },
+      {
+        "id": "what-is-intertextuality",
+        "type": "faq",
+        "title": "What is intertextuality?",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.913
+      },
+      {
+        "id": "who-was-david",
+        "type": "faq",
+        "title": "Who was David?",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.916
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "b26a43004dd97d71920524f62358547c127d9631120d79e47d71e92c4c4ce330",
+  "evidence_hash_version": "2"
+}

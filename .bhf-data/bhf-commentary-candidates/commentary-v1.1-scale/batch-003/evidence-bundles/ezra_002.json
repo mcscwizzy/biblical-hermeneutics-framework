@@ -1,0 +1,783 @@
+{
+  "passage_ref": "Ezra 2",
+  "entities": {
+    "people": [],
+    "places": [],
+    "groups": [],
+    "events": [
+      {
+        "id": "return-from-exile",
+        "title": "Return from Exile",
+        "type": "event",
+        "aliases": [
+          "what happened in return from exile",
+          "tell me about return from exile",
+          "why is return from exile important"
+        ],
+        "metadata": {
+          "summary": "A series of Persian-period movements from Babylonia to Judah, beginning in Ezra's Cyrus-era horizon and continuing through later groups, that restored settlement and worship without emptying the diaspora or restoring an independent monarchy.",
+          "importance": 82,
+          "retrieval_score": 0.902,
+          "ancient_names": [],
+          "modern_identification": "",
+          "region": "",
+          "terrain": "",
+          "elevation": null,
+          "archaeology": [],
+          "related_passages": [
+            "2 Chronicles 36:22-23",
+            "Ezra 1:1-11",
+            "Ezra 2:1-70",
+            "Ezra 7:1-28",
+            "Ezra 8:1-36"
+          ]
+        }
+      }
+    ],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "ezra-persian-return-and-temple-sequence",
+      "claim": "Ezra presents return, restored temple vessels, altar worship, and temple completion as a multi-reign process involving Cyrus, Darius I, local leaders, prophets, and imperial correspondence.",
+      "category": "politics",
+      "source_ids": [
+        "ezra-chronicles-restoration-text",
+        "williamson-ezra-nehemiah-persia",
+        "grabbe-persian-period"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Ezra 2:1-70"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "persian-restoration-and-yehud-administration",
+        "parent_title": "Persian Restoration and Yehud Administration",
+        "parent_type": "cultural_background",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "textually_explicit",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "WEAKLY_RELATED",
+        "presentation_role": null,
+        "overview_priority": 22
+      }
+    },
+    {
+      "id": "ezra:interpretive_note:3",
+      "claim": "The totals, family groups, priestly tests, servants, singers, animals, and gifts in Ezra 2 make a theological and administrative claim to continuity. Differences from the parallel Nehemiah 7 list and uncertainty about ancient counting prevent using the totals as a precise modern census without qualification.",
+      "category": "culture",
+      "source_ids": [
+        "ezra-1-10",
+        "nehemiah-1-13",
+        "williamson-ezra-nehemiah",
+        "myers-ezra-nehemiah"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Ezra 2:1-70"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "ezra",
+        "parent_title": "Ezra",
+        "parent_type": "book",
+        "object_importance": 78,
+        "retrieval_score": 0.898,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "textually_explicit",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "historical-context",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    },
+    {
+      "id": "return-from-exile:ancient_near_east_context:0",
+      "claim": "Return occurred within Achaemenid imperial government through royal authorization, provincial officials, temple patronage, taxation, written decrees, and travel across imperial routes. The Cyrus Cylinder offers Babylonian comparative restoration rhetoric but does not name Judah.",
+      "category": "culture",
+      "source_ids": [
+        "ezra-return-text",
+        "williamson-return",
+        "bm-cyrus-return",
+        "alstola-return-diaspora"
+      ],
+      "related_entity_ids": [
+        "return-from-exile"
+      ],
+      "passage_anchors": [
+        "Ezra 2:1-70"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "return-from-exile",
+        "parent_title": "Return from Exile",
+        "parent_type": "event",
+        "object_importance": 82,
+        "retrieval_score": 0.902,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "return-from-exile:hebraic_worldview:0",
+      "claim": "Ezra portrays return as the LORD stirring rulers and people, preserving a remnant, restoring vessels and sacrifice, and calling the community to covenant faithfulness. Imperial permission is a means within that presentation, not its theological source.",
+      "category": "culture",
+      "source_ids": [
+        "ezra-return-text",
+        "williamson-return",
+        "bm-cyrus-return",
+        "alstola-return-diaspora"
+      ],
+      "related_entity_ids": [
+        "return-from-exile"
+      ],
+      "passage_anchors": [
+        "Ezra 2:1-70"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "return-from-exile",
+        "parent_title": "Return from Exile",
+        "parent_type": "event",
+        "object_importance": 82,
+        "retrieval_score": 0.902,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "hebraic_worldview",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "return-from-exile:historical_context:0",
+      "claim": "After Cyrus captured Babylon in 539 BCE, Ezra presents authorization and support for return toward Jerusalem. The narrative distinguishes an early return and temple community from Ezra's later Artaxerxes-era journey; dates, group sizes, and the historical form of the decrees remain debated.",
+      "category": "history",
+      "source_ids": [
+        "ezra-return-text",
+        "williamson-return",
+        "bm-cyrus-return",
+        "alstola-return-diaspora"
+      ],
+      "related_entity_ids": [
+        "return-from-exile"
+      ],
+      "passage_anchors": [
+        "Ezra 2:1-70"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "return-from-exile",
+        "parent_title": "Return from Exile",
+        "parent_type": "event",
+        "object_importance": 82,
+        "retrieval_score": 0.902,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "return-from-exile:second_temple_context:0",
+      "claim": "Return established and enlarged an early Second Temple community concerned with worship, genealogy, land, Torah, taxation, and boundaries while many Judeans continued living throughout the empire.",
+      "category": "culture",
+      "source_ids": [
+        "ezra-return-text",
+        "williamson-return",
+        "bm-cyrus-return",
+        "alstola-return-diaspora"
+      ],
+      "related_entity_ids": [
+        "return-from-exile"
+      ],
+      "passage_anchors": [
+        "Ezra 2:1-70"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "return-from-exile",
+        "parent_title": "Return from Exile",
+        "parent_type": "event",
+        "object_importance": 82,
+        "retrieval_score": 0.902,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "second_temple_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "why-are-genealogies-included:ancient_near_east_context:0",
+      "claim": "Genealogy was a standard social form, but Scripture uses it to trace covenant promise and providence.",
+      "category": "culture",
+      "source_ids": [
+        "genesis-5",
+        "genesis-10",
+        "genesis-11",
+        "ruth-4",
+        "1-chronicles-1",
+        "matthew-1",
+        "luke-3",
+        "ezra-2",
+        "why-are-genealogies-included-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Ezra 2:1-70"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "why-are-genealogies-included",
+        "parent_title": "Why are genealogies Included?",
+        "parent_type": "faq",
+        "object_importance": 88,
+        "retrieval_score": 0.908,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "why-are-genealogies-included:historical_context:0",
+      "claim": "Ancient families preserved lineages to mark belonging, rights, and memory.",
+      "category": "history",
+      "source_ids": [
+        "genesis-5",
+        "genesis-10",
+        "genesis-11",
+        "ruth-4",
+        "1-chronicles-1",
+        "matthew-1",
+        "luke-3",
+        "ezra-2",
+        "why-are-genealogies-included-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Ezra 2:1-70"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "why-are-genealogies-included",
+        "parent_title": "Why are genealogies Included?",
+        "parent_type": "faq",
+        "object_importance": 88,
+        "retrieval_score": 0.908,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "1 Chronicles 1",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "1-chronicles-1",
+        "canonical_object_ids": [
+          "why-are-genealogies-included"
+        ]
+      },
+      {
+        "title": "Judeans in Babylonia: A Study of Deportees in the Sixth and Fifth Centuries BCE",
+        "author": "Tero Alstola",
+        "publisher": "Brill",
+        "year": 2020,
+        "locator": "Chapters on Judeans under Babylonian and Persian rule",
+        "url": "https://doi.org/10.1163/9789004365421",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "second-temple-context",
+          "interpretive-notes"
+        ],
+        "notes": "Evidence for continuing Judean communities in Babylonia.",
+        "id": "alstola-return-diaspora",
+        "canonical_object_ids": [
+          "return-from-exile"
+        ]
+      },
+      {
+        "title": "The Cyrus Cylinder",
+        "author": "",
+        "publisher": "British Museum",
+        "year": null,
+        "locator": "BM 90920; collection object 1880,0617.1941",
+        "url": "https://www.britishmuseum.org/collection/object/W_1880-0617-1941",
+        "source_type": "museum-collection",
+        "supports": [
+          "ancient-near-east-context",
+          "interpretive-notes"
+        ],
+        "notes": "Comparative Babylonian evidence; it does not mention Judah.",
+        "id": "bm-cyrus-return",
+        "canonical_object_ids": [
+          "return-from-exile"
+        ]
+      },
+      {
+        "title": "Ezra 1-10",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Ezra 1:1-10:44",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "structure",
+          "key-people",
+          "key-places",
+          "key-events",
+          "scripture-references",
+          "interpretive-notes",
+          "ezra-cyrus-return",
+          "ezra-altar-temple",
+          "ezra-opposition-darius",
+          "ezra-temple-passover",
+          "ezra-torah-vocation",
+          "ezra-ahava-journey",
+          "ezra-confession-reform"
+        ],
+        "notes": "Primary biblical text.",
+        "id": "ezra-1-10",
+        "canonical_object_ids": [
+          "ezra"
+        ]
+      },
+      {
+        "title": "Ezra 2",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "ezra-2",
+        "canonical_object_ids": [
+          "why-are-genealogies-included"
+        ]
+      },
+      {
+        "title": "Second Chronicles 36:22-23; Ezra 1-6; Nehemiah 1-13",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "2 Chronicles 36:22-23; Ezra 1:1-6:22; Nehemiah 1:1-13:31",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "ezra-persian-return-and-temple-sequence",
+          "cyrus-cylinder-babylonian-restoration-scope",
+          "yehud-stamp-administration",
+          "elephantine-judah-governor-correspondence"
+        ],
+        "notes": "Primary biblical presentations; no modern translation is reproduced.",
+        "id": "ezra-chronicles-restoration-text",
+        "canonical_object_ids": [
+          "persian-restoration-and-yehud-administration"
+        ]
+      },
+      {
+        "title": "Second Chronicles 36:22-23 and Ezra 1-8",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "2 Chronicles 36:22-23; Ezra 1:1-8:36",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "historical-context",
+          "literary-context",
+          "interpretive-notes"
+        ],
+        "notes": "Primary biblical return narratives; no modern translation is reproduced.",
+        "id": "ezra-return-text",
+        "canonical_object_ids": [
+          "return-from-exile"
+        ]
+      },
+      {
+        "title": "Genesis 10",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "genesis-10",
+        "canonical_object_ids": [
+          "why-are-genealogies-included"
+        ]
+      },
+      {
+        "title": "Genesis 11",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "genesis-11",
+        "canonical_object_ids": [
+          "why-are-genealogies-included"
+        ]
+      },
+      {
+        "title": "Genesis 5",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "genesis-5",
+        "canonical_object_ids": [
+          "why-are-genealogies-included"
+        ]
+      },
+      {
+        "title": "A History of the Jews and Judaism in the Second Temple Period, Volume 1: Yehud\u2014A History of the Persian Province of Judah",
+        "author": "Lester L. Grabbe",
+        "publisher": "T&T Clark",
+        "year": 2004,
+        "locator": "Chapters on sources, Persian administration, economy, Ezra-Nehemiah, and Elephantine",
+        "url": "https://www.bloomsbury.com/ca/history-of-the-jews-and-judaism-in-the-second-temple-period-vol-1-9780567216175/",
+        "source_type": "academic-book",
+        "supports": [
+          "ezra-persian-return-and-temple-sequence",
+          "cyrus-cylinder-babylonian-restoration-scope",
+          "yehud-stamp-administration",
+          "elephantine-judah-governor-correspondence"
+        ],
+        "notes": "Critical history that compares literary, archaeological, numismatic, and documentary evidence.",
+        "id": "grabbe-persian-period",
+        "canonical_object_ids": [
+          "persian-restoration-and-yehud-administration"
+        ]
+      },
+      {
+        "title": "Luke 3",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "luke-3",
+        "canonical_object_ids": [
+          "why-are-genealogies-included"
+        ]
+      },
+      {
+        "title": "Matthew 1",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "matthew-1",
+        "canonical_object_ids": [
+          "why-are-genealogies-included"
+        ]
+      },
+      {
+        "title": "Ezra, Nehemiah",
+        "author": "Jacob M. Myers",
+        "publisher": "Yale University Press",
+        "year": 1995,
+        "locator": "Anchor Yale Bible introduction, translation, notes, and commentary",
+        "url": "https://yalebooks.yale.edu/book/9780300139556/ezra-nehemiah/",
+        "source_type": "reference-work",
+        "supports": [
+          "canonical-context",
+          "literary-context",
+          "date-ranges",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "Detailed commentary on the textual, historical, literary, and compositional complexity of Ezra-Nehemiah.",
+        "id": "myers-ezra-nehemiah",
+        "canonical_object_ids": [
+          "ezra"
+        ]
+      },
+      {
+        "title": "Nehemiah 1-13",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Nehemiah 1:1-13:31",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "canonical-context",
+          "intertextuality",
+          "timeline",
+          "interpretive-notes"
+        ],
+        "notes": "Canonical partner and source for Ezra's later appearance in the Torah assembly.",
+        "id": "nehemiah-1-13",
+        "canonical_object_ids": [
+          "ezra"
+        ]
+      },
+      {
+        "title": "Ruth 4",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "ruth-4",
+        "canonical_object_ids": [
+          "why-are-genealogies-included"
+        ]
+      },
+      {
+        "title": "Canonical historical orientation for Why are genealogies Included?",
+        "author": "",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "id": "why-are-genealogies-included-historical-orientation",
+        "canonical_object_ids": [
+          "why-are-genealogies-included"
+        ]
+      },
+      {
+        "title": "Ezra-Nehemiah, Volume 16",
+        "author": "H. G. M. Williamson",
+        "publisher": "Zondervan Academic",
+        "year": 1985,
+        "locator": "Word Biblical Commentary introduction, translation, notes, and commentary",
+        "url": "https://zondervanacademic.com/products/ezra-nehemiah-volume-16",
+        "source_type": "reference-work",
+        "supports": [
+          "authorship-positions",
+          "date-ranges",
+          "historical-context",
+          "literary-context",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "Technical textual, linguistic, historical, literary, and theological commentary.",
+        "id": "williamson-ezra-nehemiah",
+        "canonical_object_ids": [
+          "ezra"
+        ]
+      },
+      {
+        "title": "Ezra, Nehemiah",
+        "author": "H. G. M. Williamson",
+        "publisher": "Word Books",
+        "year": 1985,
+        "locator": "Word Biblical Commentary 16, introductions and commentary on Ezra 1-6 and Nehemiah 1-6",
+        "url": "https://books.google.com/books?id=7rLLngEACAAJ",
+        "source_type": "academic-book",
+        "supports": [
+          "ezra-persian-return-and-temple-sequence",
+          "cyrus-cylinder-babylonian-restoration-scope",
+          "yehud-stamp-administration",
+          "elephantine-judah-governor-correspondence"
+        ],
+        "notes": "Technical textual, historical, literary, and documentary commentary.",
+        "id": "williamson-ezra-nehemiah-persia",
+        "canonical_object_ids": [
+          "persian-restoration-and-yehud-administration"
+        ]
+      },
+      {
+        "title": "Ezra, Nehemiah",
+        "author": "H. G. M. Williamson",
+        "publisher": "Word Books",
+        "year": 1985,
+        "locator": "Word Biblical Commentary 16, commentary on Ezra 1-8",
+        "url": "https://books.google.com/books?id=7rLLngEACAAJ",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "ancient-near-east-context",
+          "literary-context",
+          "interpretive-notes"
+        ],
+        "notes": "Technical commentary on chronology, sources, documents, and return groups.",
+        "id": "williamson-return",
+        "canonical_object_ids": [
+          "return-from-exile"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "ezra",
+        "type": "book",
+        "title": "Ezra",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.898
+      },
+      {
+        "id": "persian-restoration-and-yehud-administration",
+        "type": "cultural_background",
+        "title": "Persian Restoration and Yehud Administration",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.917
+      },
+      {
+        "id": "return-from-exile",
+        "type": "event",
+        "title": "Return from Exile",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.902
+      },
+      {
+        "id": "why-are-genealogies-included",
+        "type": "faq",
+        "title": "Why are genealogies Included?",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.908
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "4c217544eb33fbdcec44b17cfb8b88f3145f77e6171a1dec5ea4108952b05d80",
+  "evidence_hash_version": "2"
+}

@@ -1,0 +1,145 @@
+{
+  "passage_ref": "Zechariah 2",
+  "entities": {
+    "people": [],
+    "places": [],
+    "groups": [],
+    "events": [],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "zechariah-measurement",
+      "claim": "The measuring vision promises a populous, unwalled Jerusalem protected by divine fire and presence and summons escape from the north or Babylon.",
+      "category": "history",
+      "source_ids": [
+        "zechariah-masoretic",
+        "meyers-zechariah",
+        "berquist-yehud"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Zechariah 2:1-13"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "zechariah",
+        "parent_title": "Zechariah",
+        "parent_type": "book",
+        "object_importance": 92,
+        "retrieval_score": 0.912,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "textually_explicit",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 110
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "Prophecy in Persian Yehud",
+        "author": "Jon L. Berquist",
+        "publisher": "Oxford University Press",
+        "year": 2016,
+        "locator": "The Oxford Handbook of the Prophets, chapter 4, pages 55-66",
+        "url": "https://academic.oup.com/edited-volume/28016/chapter-abstract/211800229",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context",
+          "zechariah-dated-core"
+        ],
+        "notes": "Contextualizes Zechariah and prophetic literature in Persian Yehud.",
+        "id": "berquist-yehud",
+        "canonical_object_ids": [
+          "zechariah"
+        ]
+      },
+      {
+        "title": "Haggai, Zechariah 1-8",
+        "author": "Carol L. Meyers; Eric M. Meyers",
+        "publisher": "Yale University Press",
+        "year": 1987,
+        "locator": "Anchor Yale Bible 25B",
+        "url": "https://yalebooks.yale.edu/book/9780300139754/haggai-zechariah-1-8/",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "zechariah-superscriptions",
+          "zechariah-measurement",
+          "zechariah-joshua-cleansing",
+          "zechariah-spirit-zerubbabel",
+          "zechariah-fasting-question"
+        ],
+        "notes": "Linguistic, social, historical, and literary commentary on the dated material.",
+        "id": "meyers-zechariah",
+        "canonical_object_ids": [
+          "zechariah"
+        ]
+      },
+      {
+        "title": "Masoretic Text of Zechariah",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Zechariah 1:1-14:21",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "scripture-references",
+          "zechariah-superscriptions",
+          "zechariah-return",
+          "zechariah-horse-patrol",
+          "zechariah-joshua-cleansing",
+          "zechariah-lampstand",
+          "zechariah-fasting-question",
+          "zechariah-humble-king",
+          "zechariah-pierced-mourning",
+          "zechariah-day-mount"
+        ],
+        "notes": "Primary Hebrew Bible text in the received Masoretic tradition.",
+        "id": "zechariah-masoretic",
+        "canonical_object_ids": [
+          "zechariah"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "zechariah",
+        "type": "book",
+        "title": "Zechariah",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.912
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "a84f7ae4dd0af79318cbcd90e411073f49f93a8b82d18f2db4537341675a8977",
+  "evidence_hash_version": "2"
+}

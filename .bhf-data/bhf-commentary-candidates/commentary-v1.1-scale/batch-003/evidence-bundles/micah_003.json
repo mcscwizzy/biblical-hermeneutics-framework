@@ -1,0 +1,617 @@
+{
+  "passage_ref": "Micah 3",
+  "entities": {
+    "people": [],
+    "places": [],
+    "groups": [],
+    "events": [],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "micah-genre",
+      "claim": "Micah combines superscription, theophany, lament, dirge, woe, accusation, disputed speech, judgment and salvation oracles, instruction, disputation, confession, prayer, and doxology.",
+      "category": "culture",
+      "source_ids": [
+        "micah-masoretic",
+        "sbl-new-form-twelve",
+        "kessler-micah"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Micah 1:1-7:20"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "micah",
+        "parent_title": "Micah",
+        "parent_type": "book",
+        "object_importance": 91,
+        "retrieval_score": 0.911,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 200,
+        "certainty": "strong_consensus",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 80
+      }
+    },
+    {
+      "id": "micah-jeremiah-reception",
+      "claim": "Jeremiah 26:18 attributes Micah 3:12 to Micah of Moresheth in Hezekiah's days and uses the precedent in a later dispute over prophetic judgment.",
+      "category": "culture",
+      "source_ids": [
+        "micah-canonical-comparanda",
+        "kessler-micah"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Micah 3:12"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "micah",
+        "parent_title": "Micah",
+        "parent_type": "book",
+        "object_importance": 91,
+        "retrieval_score": 0.911,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 11,
+        "certainty": "textually_explicit",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "reception_history",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "dig_deeper",
+        "overview_priority": 105
+      }
+    },
+    {
+      "id": "micah-leadership",
+      "claim": "Micah 3 indicts rulers, chiefs, prophets, seers, priests, and judges for violence, payment-shaped speech, and confidence in Zion while building the city with blood.",
+      "category": "history",
+      "source_ids": [
+        "micah-masoretic",
+        "smith-christopher-micah",
+        "kessler-micah"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Micah 3:1-12"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "micah",
+        "parent_title": "Micah",
+        "parent_type": "book",
+        "object_importance": 91,
+        "retrieval_score": 0.911,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "textually_explicit",
+        "dispute_status": "not_disputed",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 103
+      }
+    },
+    {
+      "id": "micah-social-location",
+      "claim": "Micah's land, housing, court, leadership, and urban-rural tensions support social-historical analysis, but the prophet's exact class identity and political role remain reconstructed rather than explicit.",
+      "category": "politics",
+      "source_ids": [
+        "smith-christopher-micah",
+        "kessler-micah",
+        "andersen-freedman-micah"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Micah 3:1-12"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "micah",
+        "parent_title": "Micah",
+        "parent_type": "book",
+        "object_importance": 91,
+        "retrieval_score": 0.911,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "probable",
+        "dispute_status": "historical_uncertainty",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "historical_cultural",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 110
+      }
+    },
+    {
+      "id": "micah-structure",
+      "claim": "Micah's final form repeatedly alternates judgment and hope while moving through chapters 1-2, 3-5, and 6-7 in one influential three-part reading.",
+      "category": "culture",
+      "source_ids": [
+        "micah-masoretic",
+        "kessler-micah",
+        "waltke-micah"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Micah 1:1-7:20"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "micah",
+        "parent_title": "Micah",
+        "parent_type": "book",
+        "object_importance": 91,
+        "retrieval_score": 0.911,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 200,
+        "certainty": "strong_consensus",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 80
+      }
+    },
+    {
+      "id": "micah-textual-witnesses",
+      "claim": "Micah is witnessed by the Masoretic tradition, Old Greek Michaias, Hebrew 4Q81 and 4Q82, MurXII, and the Greek Minor Prophets scroll from Nahal Hever, among other versions and fragments.",
+      "category": "culture",
+      "source_ids": [
+        "catss-micah",
+        "nets-twelve",
+        "iaa-4q81",
+        "iaa-4q82",
+        "iaa-murxii",
+        "iaa-8hevxii"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Micah 1:1-7:20"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "micah",
+        "parent_title": "Micah",
+        "parent_type": "book",
+        "object_importance": 91,
+        "retrieval_score": 0.911,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 200,
+        "certainty": "strong_consensus",
+        "dispute_status": "textual_variant",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "historical_cultural",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 65
+      }
+    },
+    {
+      "id": "micah-three-cycle",
+      "claim": "Calls to hear near Micah 1:2, 3:1, and 6:1 support a three-cycle outline, though that scheme does not resolve every speaker change or compositional seam.",
+      "category": "culture",
+      "source_ids": [
+        "micah-masoretic",
+        "waltke-micah",
+        "kessler-micah"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Micah 3:1"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "micah",
+        "parent_title": "Micah",
+        "parent_type": "book",
+        "object_importance": 91,
+        "retrieval_score": 0.911,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "probable",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 55
+      }
+    },
+    {
+      "id": "micah-twelve-placement",
+      "claim": "Micah stands sixth in the Masoretic order of the Twelve and participates in both book-specific interpretation and collection-level links.",
+      "category": "culture",
+      "source_ids": [
+        "kessler-micah",
+        "sieges-one-or-twelve",
+        "sbl-new-form-twelve"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Micah 1:1-7:20"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "micah",
+        "parent_title": "Micah",
+        "parent_type": "book",
+        "object_importance": 91,
+        "retrieval_score": 0.911,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 200,
+        "certainty": "strong_consensus",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_theology",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 65
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "Micah: A New Translation with Introduction and Commentary",
+        "author": "Francis I. Andersen; David Noel Freedman",
+        "publisher": "Yale University Press",
+        "year": 2000,
+        "locator": "Anchor Bible 24E",
+        "url": "https://drupal.yalebooks.yale.edu/sites/default/files/anchor_bible_2018_online_0.pdf",
+        "source_type": "academic-book",
+        "supports": [
+          "hebrew-words",
+          "interpretive-disputes",
+          "micah-place-dirge",
+          "micah-bethlehem-ruler",
+          "micah-textual-witnesses"
+        ],
+        "notes": "Detailed critical and philological commentary; URL is Yale's Anchor Yale Bible catalogue.",
+        "id": "andersen-freedman-micah",
+        "canonical_object_ids": [
+          "micah"
+        ]
+      },
+      {
+        "title": "Text and Textual Variants for the Old Greek Book of Micah",
+        "author": "Center for Computer Analysis of Texts",
+        "publisher": "University of Pennsylvania",
+        "year": 2005,
+        "locator": "CATSS Old Greek Minor Prophets, Micah",
+        "url": "https://ccat.sas.upenn.edu/gopher/text/religion/biblical/lxxvar/active/06Micah.html",
+        "source_type": "reference-work",
+        "supports": [
+          "primary-sources",
+          "greek-words",
+          "micah-numbering",
+          "micah-textual-witnesses"
+        ],
+        "notes": "Electronic Old Greek variant resource based on the G\u00f6ttingen Twelve edition; specialist verification remains required.",
+        "id": "catss-micah",
+        "canonical_object_ids": [
+          "micah"
+        ]
+      },
+      {
+        "title": "4Q Minor Prophets (4Q81)",
+        "author": "Israel Antiquities Authority",
+        "publisher": "Leon Levy Dead Sea Scrolls Digital Library",
+        "year": null,
+        "locator": "4Q81 / 4QXII-f",
+        "url": "https://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q81-1?locale=en_US",
+        "source_type": "museum-collection",
+        "supports": [
+          "primary-sources",
+          "micah-textual-witnesses"
+        ],
+        "notes": "Official catalogue for a Hasmonean Hebrew Minor Prophets manuscript preserving Micah material.",
+        "id": "iaa-4q81",
+        "canonical_object_ids": [
+          "micah"
+        ]
+      },
+      {
+        "title": "4Q Minor Prophets (4Q82)",
+        "author": "Israel Antiquities Authority",
+        "publisher": "Leon Levy Dead Sea Scrolls Digital Library",
+        "year": null,
+        "locator": "4Q82 / 4QXII-g",
+        "url": "https://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q82-1",
+        "source_type": "museum-collection",
+        "supports": [
+          "primary-sources",
+          "micah-textual-witnesses"
+        ],
+        "notes": "Official manuscript catalogue and image record; exact Micah readings require specialist transcription.",
+        "id": "iaa-4q82",
+        "canonical_object_ids": [
+          "micah"
+        ]
+      },
+      {
+        "title": "Greek Minor Prophets Scroll from Nahal Hever (8HevXII)",
+        "author": "Israel Antiquities Authority",
+        "publisher": "Leon Levy Dead Sea Scrolls Digital Library",
+        "year": null,
+        "locator": "Columns preserving Micah 4-6",
+        "url": "https://www.deadseascrolls.org.il/explore-the-archive/image/B-314652",
+        "source_type": "museum-collection",
+        "supports": [
+          "primary-sources",
+          "micah-textual-witnesses"
+        ],
+        "notes": "Official image record identifies Greek Minor Prophets columns from Micah 4-5; detailed boundaries require critical publication.",
+        "id": "iaa-8hevxii",
+        "canonical_object_ids": [
+          "micah"
+        ]
+      },
+      {
+        "title": "Murabba'at Minor Prophets Scroll (MurXII / Mur88)",
+        "author": "Israel Antiquities Authority",
+        "publisher": "Leon Levy Dead Sea Scrolls Digital Library",
+        "year": null,
+        "locator": "MUR88 image preserving Jonah 3:2-4:11 and Micah 1:1-5",
+        "url": "https://www.deadseascrolls.org.il/explore-the-archive/image/B-281189?locale=en_US",
+        "source_type": "museum-collection",
+        "supports": [
+          "primary-sources",
+          "micah-textual-witnesses"
+        ],
+        "notes": "Official image catalogue; passage identification and readings require specialist verification.",
+        "id": "iaa-murxii",
+        "canonical_object_ids": [
+          "micah"
+        ]
+      },
+      {
+        "title": "Micah",
+        "author": "Rainer Kessler",
+        "publisher": "Oxford University Press",
+        "year": 2021,
+        "locator": "The Oxford Handbook of the Minor Prophets, chapter 34, pages 461-471",
+        "url": "https://academic.oup.com/edited-volume/38566/chapter-abstract/334373451",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context",
+          "literary-context",
+          "interpretive-disputes",
+          "micah-composition",
+          "micah-structure"
+        ],
+        "notes": "Current overview of structure, long formation history, doom and hope, social critique, nations, gender, and trauma.",
+        "id": "kessler-micah",
+        "canonical_object_ids": [
+          "micah"
+        ]
+      },
+      {
+        "title": "Canonical Hebrew Bible comparanda for Micah",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Isaiah 2:2-4; Jeremiah 26:18-19; 2 Kings 17-20; 2 Chronicles 28-32; Torah; Psalms; Hosea; Amos; Jonah; Nahum",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "canonical-context",
+          "intertextuality",
+          "micah-jeremiah-reception",
+          "micah-isaiah-parallel",
+          "micah-assyrian-horizon"
+        ],
+        "notes": "Primary canonical comparanda; verbal parallel, quotation, background, and thematic relationship are kept distinct.",
+        "id": "micah-canonical-comparanda",
+        "canonical_object_ids": [
+          "micah"
+        ]
+      },
+      {
+        "title": "Masoretic Text of Micah",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Micah 1:1-7:20, with MT chapter numbering",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "structure",
+          "scripture-references",
+          "micah-superscription",
+          "micah-land-seizure",
+          "micah-mercy-conclusion"
+        ],
+        "notes": "Primary Hebrew witness; translations, syntax, and numbering require review against a critical edition.",
+        "id": "micah-masoretic",
+        "canonical_object_ids": [
+          "micah"
+        ]
+      },
+      {
+        "title": "A New English Translation of the Septuagint: The Twelve Prophets",
+        "author": "George E. Howard",
+        "publisher": "Oxford University Press",
+        "year": 2007,
+        "locator": "Michaias",
+        "url": "https://ccat.sas.upenn.edu/nets/edition/32-twelve-nets.pdf",
+        "source_type": "reference-work",
+        "supports": [
+          "primary-sources",
+          "greek-words",
+          "micah-numbering",
+          "micah-textual-witnesses"
+        ],
+        "notes": "NETS translation and introduction for Old Greek Michaias and the Twelve.",
+        "id": "nets-twelve",
+        "canonical_object_ids": [
+          "micah"
+        ]
+      },
+      {
+        "title": "New Form Criticism and the Book of the Twelve",
+        "author": "Mark J. Boda; Michael H. Floyd; Colin M. Toffelmire, editors",
+        "publisher": "Society of Biblical Literature",
+        "year": 2015,
+        "locator": "Open-access volume",
+        "url": "https://www.sbl-site.org/assets/pdfs/pubs/9781628370614_OA.pdf",
+        "source_type": "academic-book",
+        "supports": [
+          "literary-context",
+          "canonical-context",
+          "micah-genre",
+          "micah-isaiah-parallel"
+        ],
+        "notes": "Scholarly source for form, genre, rhetoric, and the Twelve.",
+        "id": "sbl-new-form-twelve",
+        "canonical_object_ids": [
+          "micah"
+        ]
+      },
+      {
+        "title": "One Book or Twelve Books?",
+        "author": "Anna Sieges",
+        "publisher": "Oxford University Press",
+        "year": 2021,
+        "locator": "The Oxford Handbook of the Minor Prophets, chapter 3",
+        "url": "https://academic.oup.com/edited-volume/38566/chapter-abstract/334371290",
+        "source_type": "reference-work",
+        "supports": [
+          "canonical-context",
+          "micah-twelve-placement"
+        ],
+        "notes": "Overview of debates concerning the Twelve as distinct books and a shaped collection.",
+        "id": "sieges-one-or-twelve",
+        "canonical_object_ids": [
+          "micah"
+        ]
+      },
+      {
+        "title": "Micah: A Commentary",
+        "author": "Daniel L. Smith-Christopher",
+        "publisher": "Westminster John Knox Press",
+        "year": 2015,
+        "locator": "Old Testament Library",
+        "url": "https://www.wjkbooks.com/bookproduct/0664229042-micah/",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "ancient-near-east-context",
+          "micah-land-seizure",
+          "micah-leadership",
+          "micah-social-location"
+        ],
+        "notes": "Historical, social, literary, antiwar, and elite-critical reading of Micah.",
+        "id": "smith-christopher-micah",
+        "canonical_object_ids": [
+          "micah"
+        ]
+      },
+      {
+        "title": "A Commentary on Micah",
+        "author": "Bruce K. Waltke",
+        "publisher": "Eerdmans",
+        "year": 2008,
+        "locator": "Eerdmans commentary",
+        "url": "https://www.eerdmans.com/9780802864123/a-commentary-on-micah/",
+        "source_type": "academic-book",
+        "supports": [
+          "literary-context",
+          "canonical-context",
+          "micah-three-cycle",
+          "micah-bethlehem-ruler",
+          "micah-six-eight"
+        ],
+        "notes": "Thorough evangelical commentary defending substantial composition and editing by Micah and a three-cycle structure.",
+        "id": "waltke-micah",
+        "canonical_object_ids": [
+          "micah"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "micah",
+        "type": "book",
+        "title": "Micah",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.911
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "c02b9c1ee9bfa359ad2bb8036e3496534afa9b028d5230d70b922c88a3b07850",
+  "evidence_hash_version": "2"
+}

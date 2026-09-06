@@ -1,0 +1,513 @@
+{
+  "passage_ref": "1 Kings 6",
+  "entities": {
+    "people": [
+      {
+        "id": "solomon",
+        "title": "Solomon",
+        "type": "person",
+        "aliases": [
+          "who is solomon",
+          "tell me about solomon",
+          "why is solomon important"
+        ],
+        "metadata": {
+          "summary": "Solomon belongs to Israel's monarchy or royal transition and helps trace kingship, judgment, and messianic hope.",
+          "importance": 70,
+          "retrieval_score": 0.89,
+          "ancient_names": [],
+          "modern_identification": "",
+          "region": "",
+          "terrain": "",
+          "elevation": null,
+          "archaeology": [],
+          "related_passages": [
+            "1 Samuel 16:1-13",
+            "2 Samuel 7:8-16",
+            "1 Kings 6:1-14",
+            "Psalms 2:1-12"
+          ]
+        }
+      }
+    ],
+    "places": [],
+    "groups": [],
+    "events": [
+      {
+        "id": "solomon-builds-the-temple",
+        "title": "Solomon Builds the Temple",
+        "type": "event",
+        "aliases": [
+          "what happened in solomon builds the temple",
+          "tell me about solomon builds the temple",
+          "why is solomon builds the temple important"
+        ],
+        "metadata": {
+          "summary": "Solomon Builds the Temple is a royal or kingdom event that shapes Israel's monarchy, temple life, or royal hope.",
+          "importance": 80,
+          "retrieval_score": 0.9,
+          "ancient_names": [],
+          "modern_identification": "",
+          "region": "",
+          "terrain": "",
+          "elevation": null,
+          "archaeology": [],
+          "related_passages": [
+            "2 Samuel 7:1-17",
+            "1 Kings 6:1-14",
+            "2 Kings 25:8-17",
+            "2 Chronicles 5:1-14"
+          ]
+        }
+      }
+    ],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "1-kings:interpretive_note:1",
+      "claim": "Solomon's temple shares architectural and craft features with Levantine and wider ancient Near Eastern temples, but comparison does not erase the narrative's distinctive emphasis on the LORD's name, covenant, prayer, and inability to be contained.",
+      "category": "geography",
+      "source_ids": [
+        "1-kings-1-22",
+        "cogan-first-kings",
+        "zondervan-kings-chronicles-backgrounds"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "1 Kings 6:1-38"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "1-kings",
+        "parent_title": "1 Kings",
+        "parent_type": "book",
+        "object_importance": 95,
+        "retrieval_score": 0.915,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "ancient-near-east-context",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "solomon-builds-the-temple:ancient_near_east_context:0",
+      "claim": "Royal administration, dynastic succession, and state religion shape the background.",
+      "category": "culture",
+      "source_ids": [
+        "2-samuel",
+        "1-kings",
+        "2-kings",
+        "2-chronicles",
+        "solomon-builds-the-temple-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "solomon-builds-the-temple"
+      ],
+      "passage_anchors": [
+        "1 Kings 6:1-14"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "solomon-builds-the-temple",
+        "parent_title": "Solomon Builds the Temple",
+        "parent_type": "event",
+        "object_importance": 80,
+        "retrieval_score": 0.9,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55
+      }
+    },
+    {
+      "id": "solomon-builds-the-temple:historical_context:0",
+      "claim": "The event belongs to the rise and development of Israel's monarchy and its theological consequences.",
+      "category": "history",
+      "source_ids": [
+        "2-samuel",
+        "1-kings",
+        "2-kings",
+        "2-chronicles",
+        "solomon-builds-the-temple-historical-orientation"
+      ],
+      "related_entity_ids": [
+        "solomon-builds-the-temple"
+      ],
+      "passage_anchors": [
+        "1 Kings 6:1-14"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "solomon-builds-the-temple",
+        "parent_title": "Solomon Builds the Temple",
+        "parent_type": "event",
+        "object_importance": 80,
+        "retrieval_score": 0.9,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55
+      }
+    },
+    {
+      "id": "solomon:ancient_near_east_context:0",
+      "claim": "Royal courts, dynastic succession, warfare, and imperial pressure shape the background.",
+      "category": "culture",
+      "source_ids": [
+        "1-samuel-8-31",
+        "2-samuel-1-24",
+        "1-kings-1-22",
+        "psalm-2"
+      ],
+      "related_entity_ids": [
+        "solomon"
+      ],
+      "passage_anchors": [
+        "1 Kings 6:1-14"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "solomon",
+        "parent_title": "Solomon",
+        "parent_type": "person",
+        "object_importance": 70,
+        "retrieval_score": 0.89,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "solomon:historical_context:0",
+      "claim": "Solomon appears in the rise, division, or decline of Israel's kingdoms, where royal power and covenant accountability collide.",
+      "category": "history",
+      "source_ids": [
+        "1-samuel-8-31",
+        "2-samuel-1-24",
+        "1-kings-1-22",
+        "psalm-2"
+      ],
+      "related_entity_ids": [
+        "solomon"
+      ],
+      "passage_anchors": [
+        "1 Kings 6:1-14"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "solomon",
+        "parent_title": "Solomon",
+        "parent_type": "person",
+        "object_importance": 70,
+        "retrieval_score": 0.89,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "1 Kings",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "1-kings",
+        "canonical_object_ids": [
+          "solomon-builds-the-temple"
+        ]
+      },
+      {
+        "title": "1 Kings 1-22",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "1 Kings 1:1-22:53",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "structure",
+          "key-people",
+          "key-places",
+          "key-events",
+          "scripture-references",
+          "interpretive-notes",
+          "first-kings-literary-movement",
+          "first-kings-solomon-discernment",
+          "first-kings-temple-prayer-warning",
+          "first-kings-kingdom-division",
+          "first-kings-carmel-confession",
+          "first-kings-naboth-condemnation"
+        ],
+        "notes": "Primary biblical text.",
+        "id": "1-kings-1-22",
+        "canonical_object_ids": [
+          "1-kings",
+          "solomon"
+        ]
+      },
+      {
+        "title": "1 Samuel 8-31",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "1-samuel-8-31",
+        "canonical_object_ids": [
+          "solomon"
+        ]
+      },
+      {
+        "title": "2 Chronicles",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "2-chronicles",
+        "canonical_object_ids": [
+          "solomon-builds-the-temple"
+        ]
+      },
+      {
+        "title": "2 Kings",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "2-kings",
+        "canonical_object_ids": [
+          "solomon-builds-the-temple"
+        ]
+      },
+      {
+        "title": "2 Samuel",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "2-samuel",
+        "canonical_object_ids": [
+          "solomon-builds-the-temple"
+        ]
+      },
+      {
+        "title": "2 Samuel 1-24",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "2-samuel-1-24",
+        "canonical_object_ids": [
+          "solomon"
+        ]
+      },
+      {
+        "title": "I Kings",
+        "author": "Mordechai Cogan",
+        "publisher": "Yale University Press",
+        "year": 2001,
+        "locator": "Anchor Yale Bible introduction, translation, notes, and commentary",
+        "url": "https://yalebooks.yale.edu/9780300140538/i-kings/",
+        "source_type": "reference-work",
+        "supports": [
+          "authorship-positions",
+          "date-ranges",
+          "historical-context",
+          "literary-context",
+          "hebrew-words",
+          "interpretive-notes",
+          "first-kings-literary-movement",
+          "first-kings-solomon-discernment",
+          "first-kings-temple-prayer-warning",
+          "first-kings-kingdom-division",
+          "first-kings-naboth-condemnation"
+        ],
+        "notes": "Technical commentary emphasizing Hebrew text, literary composition, regnal and political history, and external evidence.",
+        "id": "cogan-first-kings",
+        "canonical_object_ids": [
+          "1-kings"
+        ]
+      },
+      {
+        "title": "Psalm 2",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [],
+        "notes": "",
+        "id": "psalm-2",
+        "canonical_object_ids": [
+          "solomon"
+        ]
+      },
+      {
+        "title": "Canonical historical orientation for Solomon Builds the Temple",
+        "author": "",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "id": "solomon-builds-the-temple-historical-orientation",
+        "canonical_object_ids": [
+          "solomon-builds-the-temple"
+        ]
+      },
+      {
+        "title": "Zondervan Illustrated Bible Backgrounds Commentary: 1 and 2 Kings, 1 and 2 Chronicles, Ezra, Nehemiah, Esther",
+        "author": "John H. Walton, general editor; John M. Monson, Iain Provan, and other contributors",
+        "publisher": "Zondervan",
+        "year": 2009,
+        "locator": "1 Kings commentary and background notes",
+        "url": "https://zondervanacademic.com/products/1-and-2-kings-1-and-2-chronicles-ezra-nehemiah-esther",
+        "source_type": "reference-work",
+        "supports": [
+          "ancient-near-east-context",
+          "archaeology",
+          "historical-context",
+          "maps",
+          "interpretive-notes"
+        ],
+        "notes": "Passage-level textual, artifactual, geographical, historical, and cultural background.",
+        "id": "zondervan-kings-chronicles-backgrounds",
+        "canonical_object_ids": [
+          "1-kings"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "1-kings",
+        "type": "book",
+        "title": "1 Kings",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.915
+      },
+      {
+        "id": "solomon",
+        "type": "person",
+        "title": "Solomon",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.89
+      },
+      {
+        "id": "solomon-builds-the-temple",
+        "type": "event",
+        "title": "Solomon Builds the Temple",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.9
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "ea84badfa955d5a087c1890bae7c51b88934d80f5e17a8acbf86f58be3a9bfee",
+  "evidence_hash_version": "2"
+}

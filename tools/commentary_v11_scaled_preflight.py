@@ -48,8 +48,13 @@ from bhf_agent.presentation.relevance import (
     INTERTEXTUAL_REUSE,
     LATER_RECEPTION,
     SEMANTICALLY_MISANCHORED,
+    TEXTUAL_CLAIM_SIGNALS,
+    TEXTUAL_CLAIM_TEXT_RE,
+    with_presentation_metadata,
+    with_semantic_relationship,
     presentation_role,
 )
+from bhf_agent.presentation.evidence_normalization import evidence_category as _normalized_category
 from tools.commentary_v11_canary import _section_for_item, select_overview_item
 from tools.commentary_v11_expansion import _book_genre, _signal_score
 from tools.commentary_v11_low_information import audit as recalculate_low_information
@@ -62,7 +67,7 @@ from framework.canonical_library.scripture import (
 
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
-DEFAULT_OUTPUT_ROOT = REPO_ROOT / ".bhf-data" / "bhf-commentary-candidates"
+DEFAULT_OUTPUT_ROOT = REPO_ROOT / ".bhf-data" / "bhf-commentary-candidates" / "commentary-v1.1-scale"
 DEFAULT_CANDIDATE_SOURCE = (
     REPO_ROOT / ".bhf-data" / "bhf-commentary-candidates" / "commentary-v1.0.1"
 )
@@ -71,6 +76,25 @@ DEFAULT_TARGET_COUNT = 50
 EVIDENCE_BUNDLE_VERSION = EVIDENCE_BUNDLE_CANDIDATE_VERSION
 EVIDENCE_HASH_VERSION = "2"
 TOOL_VERSION = "commentary-v11-scaled-preflight-1.0"
+VERDICTS = (
+    "PASS",
+    "QUARANTINE",
+    "DATA_GAP",
+    "SKIP_ALREADY_GENERATED",
+    "SKIP_PRIOR_QUARANTINE",
+    "SKIP_CANARY",
+)
+ROOT_CAUSE_FAMILIES = (
+    "LEGACY_CATEGORY_OVERRIDE",
+    "MISSING_CLAIM_TYPE",
+    "MISSING_NOTE_TYPE",
+    "MISSING_EVIDENCE_TYPE",
+    "PARENT_METADATA_INHERITANCE",
+    "PRESENTATION_ROLE_HEURISTIC",
+    "TEXTUAL_WITNESS_MISCLASSIFICATION",
+    "INTERPRETIVE_TEXTUAL_UNCERTAINTY",
+    "OTHER",
+)
 
 PRIMARY_CANARY_ROOT = (
     REPO_ROOT / ".bhf-data" / "bhf-commentary-candidates" / "commentary-v1.1-terra"
@@ -79,12 +103,16 @@ SUPPLEMENTAL_CANARY_ROOT = PRIMARY_CANARY_ROOT / "supplemental-integrity-control
 BATCH_001_TERRA_ROOT = (
     REPO_ROOT / ".bhf-data" / "bhf-commentary-candidates" / "commentary-v1.1-scale" / "batch-001" / "terra" / "chapters"
 )
+BATCH_002_TERRA_ROOT = (
+    REPO_ROOT / ".bhf-data" / "bhf-commentary-candidates" / "commentary-v1.1-scale" / "batch-002" / "terra" / "chapters"
+)
 
 SECTION_ROLES = {
     "historical_context",
     "archaeology_geography",
     "language_literary",
     "chronology",
+    "interpretive_questions",
     "dig_deeper",
     "significance",
 }
@@ -115,36 +143,92 @@ def _now() -> str:
     return datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z")
 
 
+def _progress(message: str) -> None:
+    print(f"[luna-high] {message}", file=sys.stderr, flush=True)
+
+
 def _json_dump(path: Path, value: Any) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(value, indent=2, ensure_ascii=True) + "\n", encoding="utf-8")
 
 
 def _canary_references() -> set[str]:
-    primary = set()
-    cert = REPO_ROOT / ".bhf-data" / "bhf-commentary-candidates" / "commentary-v1.1" / "evidence-certification-commentary_canary.json"
-    if cert.exists():
-        primary.update(str(row["reference"]) for row in json.loads(cert.read_text())["chapters"])
-    primary.update({"1 Samuel 28"})
+    primary: set[str] = set()
+    certification_root = REPO_ROOT / ".bhf-data" / "bhf-commentary-candidates" / "commentary-v1.1"
+    for cert in (
+        certification_root / "evidence-certification-commentary_canary.json",
+        certification_root / "evidence-certification-supplemental-controls.json",
+    ):
+        if not cert.exists():
+            continue
+        data = json.loads(cert.read_text(encoding="utf-8"))
+        for row in data.get("chapters", []):
+            if row.get("reference"):
+                primary.add(str(row["reference"]))
+        if data.get("reference"):
+            primary.add(str(data["reference"]))
     return primary
 
 
 def _previous_batch_references(batch_id: str) -> set[str]:
     """Exclude prior generated/certified chapters from a later batch."""
 
-    if batch_id == "batch-001":
-        return set()
+    try:
+        current_number = int(batch_id.rsplit("-", 1)[1])
+    except (IndexError, ValueError):
+        current_number = 0
     previous: set[str] = set()
-    batch_root = DEFAULT_OUTPUT_ROOT / "commentary-v1.1-scale" / "batch-001"
-    manifest_path = batch_root / "batch-manifest.json"
-    if manifest_path.exists():
-        data = json.loads(manifest_path.read_text(encoding="utf-8"))
-        previous.update(str(value) for value in data.get("final_references", []))
-    quarantine_path = batch_root / "quarantine-report.json"
-    if quarantine_path.exists():
-        data = json.loads(quarantine_path.read_text(encoding="utf-8"))
-        previous.update(str(row.get("reference")) for row in data.get("chapters", []) if row.get("reference"))
+    scale_root = DEFAULT_OUTPUT_ROOT
+    for batch_root in sorted(scale_root.glob("batch-*")):
+        try:
+            number = int(batch_root.name.rsplit("-", 1)[1])
+        except (IndexError, ValueError):
+            continue
+        if number >= current_number:
+            continue
+        manifest_path = batch_root / "batch-manifest.json"
+        if manifest_path.exists():
+            data = json.loads(manifest_path.read_text(encoding="utf-8"))
+            previous.update(str(value) for value in data.get("final_references", []))
+        quarantine_path = batch_root / "quarantine-report.json"
+        if quarantine_path.exists():
+            data = json.loads(quarantine_path.read_text(encoding="utf-8"))
+            previous.update(
+                str(row.get("reference"))
+                for row in data.get("chapters", [])
+                if row.get("reference")
+            )
     return previous
+
+
+def _previous_batch_reference_verdicts(batch_id: str) -> dict[str, str]:
+    """Return manifest-derived skip verdicts for prior scale batches."""
+
+    try:
+        current_number = int(batch_id.rsplit("-", 1)[1])
+    except (IndexError, ValueError):
+        current_number = 0
+    verdicts: dict[str, str] = {}
+    for batch_root in sorted(DEFAULT_OUTPUT_ROOT.glob("batch-*")):
+        try:
+            number = int(batch_root.name.rsplit("-", 1)[1])
+        except (IndexError, ValueError):
+            continue
+        if number >= current_number:
+            continue
+        manifest_path = batch_root / "batch-manifest.json"
+        if manifest_path.exists():
+            data = json.loads(manifest_path.read_text(encoding="utf-8"))
+            for reference in data.get("final_references", []):
+                verdicts[str(reference)] = "SKIP_ALREADY_GENERATED"
+        quarantine_path = batch_root / "quarantine-report.json"
+        if quarantine_path.exists():
+            data = json.loads(quarantine_path.read_text(encoding="utf-8"))
+            for row in data.get("chapters", []):
+                reference = row.get("reference")
+                if reference and str(reference) not in verdicts:
+                    verdicts[str(reference)] = "SKIP_PRIOR_QUARANTINE"
+    return verdicts
 
 
 def _artifact_fingerprints() -> dict[str, str]:
@@ -160,6 +244,13 @@ def _batch_001_terra_fingerprints() -> dict[str, str]:
     return {
         str(path.relative_to(REPO_ROOT)): hashlib.sha256(path.read_bytes()).hexdigest()
         for path in sorted(BATCH_001_TERRA_ROOT.glob("*.json"))
+    }
+
+
+def _batch_002_terra_fingerprints() -> dict[str, str]:
+    return {
+        str(path.relative_to(REPO_ROOT)): hashlib.sha256(path.read_bytes()).hexdigest()
+        for path in sorted(BATCH_002_TERRA_ROOT.glob("*.json"))
     }
 
 
@@ -226,7 +317,12 @@ def select_mixed_candidate_pool(
     """Select a ranked, genre/availability-mixed pool without book dominance."""
 
     excluded = set(excluded_references)
-    ranked = [_rank_row(row) for row in rows if str(row["reference"]) not in excluded]
+    ranked = [
+        _rank_row(row)
+        for row in rows
+        if str(row["reference"]) not in excluded
+        and row.get("availability_from_recalculation") in {"AVAILABLE", "THIN"}
+    ]
     for row in ranked:
         row["_availability_rank"] = 0 if row.get("availability_from_recalculation") == "AVAILABLE" else 1
     ranked.sort(key=lambda row: (-float(row["selection_score"]), row["book"].casefold(), int(row["chapter"])))
@@ -355,6 +451,188 @@ def _item_summary(item: Any) -> dict[str, Any]:
         "overview_priority": metadata.get("overview_priority"),
         "assertion_type": metadata.get("assertion_type"),
         "dispute_status": metadata.get("dispute_status"),
+        "evidence_type": metadata.get("evidence_type"),
+    }
+
+
+def _is_textual_witness_material(item: Any) -> bool:
+    """Detect textual-witness material for the Terra suppression simulation."""
+
+    metadata = dict(getattr(item, "relevance_metadata", {}) or {})
+    authored = {
+        str(metadata.get(key) or "")
+        .casefold()
+        .replace("-", "_")
+        .replace(" ", "_")
+        for key in ("claim_type", "note_type", "evidence_type", "source_kind")
+    }
+    if authored & set(TEXTUAL_CLAIM_SIGNALS):
+        return True
+    claim = str(getattr(item, "claim", "") or "")
+    if str(metadata.get("parent_type") or "").casefold() == "archaeology":
+        material_only = re.search(
+            r"\b(?:discover(?:ed|y)|excavat(?:ed|ion)|found|cave|site|provenance|"
+            r"physical|artifact|deposit|stratigraph|archaeolog(?:y|ical))\b",
+            claim,
+            re.IGNORECASE,
+        ) and not re.search(
+            r"\b(?:reading|variant|version|transmission|preserv(?:es|ed)|"
+            r"textual\s+profile|textual\s+difference|different\s+text)\b",
+            claim,
+            re.IGNORECASE,
+        )
+        if material_only:
+            return False
+    return bool(TEXTUAL_CLAIM_TEXT_RE.search(claim))
+
+
+def terra_textual_suppression_simulation(bundle: Any) -> dict[str, Any]:
+    """Prove whether Terra's defense-in-depth filter would drop an item."""
+
+    suppressed: list[dict[str, str]] = []
+    for item in bundle.evidence_items:
+        if not _is_textual_witness_material(item):
+            continue
+        routed = _section_for_item(item)
+        if routed not in {"historical_context", "archaeology_geography"}:
+            continue
+        suppressed.append(
+            {
+                "evidence_id": item.id,
+                "presentation_role": str((item.relevance_metadata or {}).get("presentation_role") or ""),
+                "terra_section": routed,
+            }
+        )
+    return {
+        "terra_textual_suppression_required": bool(suppressed),
+        "suppressed_items": suppressed,
+    }
+
+
+def _legacy_presentation_role(metadata: Mapping[str, Any], *, category: str, claim: str = "") -> str | None:
+    """Reproduce the pre-Batch-003 classifier for routing impact reports."""
+
+    parent_type = str(metadata.get("parent_type") or "").casefold()
+    relationship = str(metadata.get("semantic_relationship") or "")
+    claim_type = str(metadata.get("claim_type") or "").casefold().replace("-", "_")
+    note_type = str(metadata.get("note_type") or "").casefold().replace("-", "_")
+    category = str(category or "").casefold()
+    text = " ".join(
+        str(value or "")
+        for value in (metadata.get("parent_object_id"), metadata.get("parent_title"), claim)
+    ).casefold()
+    normalized = {
+        value.strip().replace("-", "_").replace(" ", "_")
+        for value in (claim_type, note_type, str(metadata.get("evidence_type") or "").casefold(), str(metadata.get("dispute_status") or "").casefold())
+        if value.strip()
+    }
+    textual = bool(normalized & set(TEXTUAL_CLAIM_SIGNALS)) or bool(
+        re.search(
+            r"\b(?:textual\s+variant|textual\s+criticism|textual\s+transmission|manuscript(?:\s+reading)?|shorter[- ]text|longer[- ]text|textual\s+witness(?:es)?|textual\s+omission)\b",
+            text,
+            re.IGNORECASE,
+        )
+    )
+    if relationship in {LATER_RECEPTION, INTERTEXTUAL_REUSE, COMPARATIVE_CONTEXT}:
+        return "dig_deeper"
+    if relationship in {SEMANTICALLY_MISANCHORED, "WEAKLY_RELATED"}:
+        return None
+    if parent_type == "word_study":
+        return "language_literary" if relationship == DIRECT_CONTEXT else None
+    explicit_textual = claim_type in set(TEXTUAL_CLAIM_SIGNALS) or note_type in set(TEXTUAL_CLAIM_SIGNALS)
+    if textual and (category in {"archaeology", "geography"} or explicit_textual):
+        if claim_type in {"interpretive_textual", "textual_uncertainty"} or note_type in {"interpretive_question", "interpretive_questions", "interpretive_caution"}:
+            return "interpretive_questions"
+        return "language_literary"
+    if claim_type in {"lexical", "literary", "composition", "authorship", "rhetorical", "textual_form", "textual"}:
+        return "language_literary"
+    if claim_type in {"historical_cultural", "historical", "social", "political"}:
+        return "historical_context"
+    if note_type in {"ancient_near_east_context", "second_temple_context", "historical_context"}:
+        return "historical_context"
+    if category in {"archaeology", "geography"}:
+        return "archaeology_geography" if relationship in {DIRECT_CONTEXT, BOOK_CONTEXT} else None
+    if category == "chronology":
+        return "chronology"
+    if category in {"culture", "history", "politics", "social", "economics"}:
+        return "historical_context"
+    if category == "language":
+        return "language_literary"
+    return "historical_context"
+
+
+def _batch002_root_cause(item: Mapping[str, Any]) -> tuple[str, list[str]]:
+    metadata = dict(item.get("relevance_metadata") or {})
+    claim = str(item.get("claim") or "")
+    claim_type = str(metadata.get("claim_type") or "").casefold().replace("-", "_")
+    note_type = str(metadata.get("note_type") or "").casefold().replace("-", "_")
+    evidence_type = str(metadata.get("evidence_type") or "").casefold().replace("-", "_")
+    dispute = str(metadata.get("dispute_status") or "").casefold()
+    secondary: list[str] = []
+    if dispute == "textual_variant" and not _mapping_is_textual(item):
+        return "INTERPRETIVE_TEXTUAL_UNCERTAINTY", ["PRESENTATION_ROLE_HEURISTIC"]
+    if note_type in {"textual_observation", "textual"}:
+        return "PRESENTATION_ROLE_HEURISTIC", ["MISSING_NOTE_TYPE"] if note_type == "textual" else []
+    if claim_type in {"historical_cultural", "historical", "social", "political"}:
+        secondary.append("LEGACY_CATEGORY_OVERRIDE")
+        return "TEXTUAL_WITNESS_MISCLASSIFICATION", secondary
+    if claim_type == "reception_history":
+        secondary.append("LEGACY_CATEGORY_OVERRIDE")
+        return "TEXTUAL_WITNESS_MISCLASSIFICATION", secondary
+    if claim_type in {"biblical_text", ""}:
+        return "MISSING_CLAIM_TYPE", ["LEGACY_CATEGORY_OVERRIDE"]
+    if evidence_type == "":
+        secondary.append("MISSING_EVIDENCE_TYPE")
+    if metadata.get("parent_type") and metadata.get("parent_type") != "archaeology" and not metadata.get("passage_anchors"):
+        secondary.append("PARENT_METADATA_INHERITANCE")
+    return "LEGACY_CATEGORY_OVERRIDE", secondary
+
+
+def _batch002_textual_audit() -> dict[str, Any]:
+    root = DEFAULT_OUTPUT_ROOT / "batch-002"
+    quality_path = root / "terra" / "terra-quality-audit.json"
+    quality = json.loads(quality_path.read_text(encoding="utf-8"))
+    rows: list[dict[str, Any]] = []
+    primary_counts: Counter[str] = Counter()
+    contributing_counts: Counter[str] = Counter()
+    for review in quality.get("possible_evidence_review", []):
+        reference = str(review["reference"])
+        book, chapter_text = reference.rsplit(" ", 1)
+        chapter = int(re.match(r"\d+", chapter_text).group())
+        path = root / "evidence-bundles" / filename_for(book, chapter)
+        bundle = json.loads(path.read_text(encoding="utf-8"))
+        item = next(item for item in bundle.get("evidence_items", []) if item.get("id") == review["evidence_id"])
+        metadata = dict(item.get("relevance_metadata") or {})
+        primary, secondary = _batch002_root_cause(item)
+        primary_counts[primary] += 1
+        contributing_counts[primary] += 1
+        for cause in secondary:
+            contributing_counts[cause] += 1
+        rows.append(
+            {
+                "reference": reference,
+                "evidence_id": review["evidence_id"],
+                "ckl_parent_object": metadata.get("parent_object_id"),
+                "parent_type": metadata.get("parent_type"),
+                "source_kind": metadata.get("source_kind"),
+                "legacy_category": item.get("category"),
+                "claim_type": metadata.get("claim_type"),
+                "note_type": metadata.get("note_type"),
+                "evidence_type": metadata.get("evidence_type"),
+                "dispute_status": metadata.get("dispute_status"),
+                "semantic_relationship": metadata.get("semantic_relationship"),
+                "presentation_role": metadata.get("presentation_role"),
+                "passage_anchors": item.get("passage_anchors", []),
+                "claim": item.get("claim"),
+                "root_cause": primary,
+                "secondary_root_causes": secondary,
+            }
+        )
+    return {
+        "records_audited": len(rows),
+        "root_cause_counts": {family: primary_counts[family] for family in ROOT_CAUSE_FAMILIES},
+        "contributing_root_cause_counts": {family: contributing_counts[family] for family in ROOT_CAUSE_FAMILIES},
+        "records": rows,
     }
 
 
@@ -483,6 +761,19 @@ def scan_anomalies(
                     "TEXTUAL_EVIDENCE_ROUTING_ANOMALY", item,
                     "Textual criticism or manuscript evidence is routed to archaeology/geography instead of a textual or interpretive section.",
                 ))
+        if _is_textual_witness_material(item) and expected_role is None:
+            anomalies.append(_anomaly(
+                "TEXTUAL_EVIDENCE_ROUTING_ANOMALY", item,
+                "Textual material has no deterministic presentation role and must be quarantined for conservative review.",
+            ))
+        if _is_textual_witness_material(item) and _section_for_item(item) in {
+            "historical_context",
+            "archaeology_geography",
+        }:
+            anomalies.append(_anomaly(
+                "TERRA_SUPPRESSION_REQUIRED", item,
+                "Terra's defense-in-depth textual filter would have to suppress this item because it is routed as historical or material context.",
+            ))
         if role and role not in SECTION_ROLES and role != "significance":
             anomalies.append(_anomaly(
                 "UNKNOWN_PRESENTATION_ROLE", item,
@@ -570,6 +861,10 @@ def quarantine_reasons(
         reasons.append("SEMANTIC_AUDIT_FAILURE")
     if (record.get("presentation_role_audit") or {}).get("status") != "PASS":
         reasons.append("PRESENTATION_ROLE_AUDIT_FAILURE")
+    if "textual_routing_audit" in record and (record.get("textual_routing_audit") or {}).get("status") != "PASS":
+        reasons.append("TEXTUAL_ROUTING_AUDIT_FAILURE")
+    if "terra_suppression_simulation" in record and (record.get("terra_suppression_simulation") or {}).get("terra_textual_suppression_required"):
+        reasons.append("TERRA_SUPPRESSION_REQUIRED")
     reasons.extend(
         sorted({str(item["code"]) for item in (record.get("anomaly_scan") or {}).get("anomalies", []) if item.get("severity") == "blocker"})
     )
@@ -618,6 +913,36 @@ def _presentation_audit(bundle: Any) -> dict[str, Any]:
     return {"status": "PASS" if not errors else "FAIL", "errors": errors}
 
 
+def _textual_routing_audit(bundle: Any) -> dict[str, Any]:
+    errors: list[str] = []
+    rows: list[dict[str, Any]] = []
+    for item in bundle.evidence_items:
+        if not _is_textual_witness_material(item):
+            continue
+        metadata = item.relevance_metadata or {}
+        role = metadata.get("presentation_role")
+        expected = presentation_role(metadata, category=item.category, claim=item.claim)
+        row = {
+            "evidence_id": item.id,
+            "presentation_role": role,
+            "expected_role": expected,
+            "semantic_relationship": metadata.get("semantic_relationship"),
+        }
+        rows.append(row)
+        if role in {"historical_context", "archaeology_geography"}:
+            errors.append(f"{item.id}:textual-material-routed:{role}")
+        if expected is None:
+            errors.append(f"{item.id}:ambiguous-textual-routing")
+        if expected not in {"language_literary", "interpretive_questions", "dig_deeper", None}:
+            errors.append(f"{item.id}:unexpected-textual-role:{expected}")
+    return {
+        "status": "PASS" if not errors else "FAIL",
+        "errors": errors,
+        "textual_evidence_count": len(rows),
+        "items": rows,
+    }
+
+
 def _disputed_count(bundle: Any) -> int:
     return sum(
         str((item.relevance_metadata or {}).get("dispute_status") or "").casefold()
@@ -647,6 +972,8 @@ def _chapter_record(
         parent_usage=parent_usage,
         overview_id=overview.id if overview else None,
     )
+    textual_routing = _textual_routing_audit(bundle)
+    suppression = terra_textual_suppression_simulation(bundle)
     role_counts = Counter(str((item.relevance_metadata or {}).get("presentation_role") or "UNASSIGNED") for item in bundle.evidence_items)
     section_roles = Counter(
         section
@@ -697,6 +1024,8 @@ def _chapter_record(
         "json_sqlite_agreement": {"result_ids_agree": True, "evidence_ids_agree": True, "bundle_hash_agree": True},
         "semantic_audit": semantic,
         "presentation_role_audit": presentation,
+        "textual_routing_audit": textual_routing,
+        "terra_suppression_simulation": suppression,
         "anomaly_scan": {"status": "PASS" if not [a for a in anomalies if a["severity"] == "blocker"] else "FAIL", "anomalies": anomalies},
         "source_parent_records": sorted(parent_records),
     }
@@ -708,10 +1037,20 @@ def _bundle_json(bundle: Any) -> dict[str, Any]:
 
 def _stats(records: Sequence[Mapping[str, Any]]) -> dict[str, Any]:
     values = [int(row["evidence_count"]) for row in records]
+    ordered = sorted(values)
+
+    def percentile(percent: float) -> int:
+        if not ordered:
+            return 0
+        index = max(0, min(len(ordered) - 1, math.ceil(len(ordered) * percent) - 1))
+        return ordered[index]
+
     return {
         "min": min(values) if values else 0,
         "median": median(values) if values else 0,
         "mean": round(mean(values), 2) if values else 0,
+        "p90": percentile(0.90),
+        "p95": percentile(0.95),
         "max": max(values) if values else 0,
         "distribution": dict(sorted(Counter(values).items())),
     }
@@ -746,9 +1085,21 @@ def _make_certification(record: Mapping[str, Any], bundle_path: str, sqlite: dic
         "json_evidence_ids": record["json_evidence_ids"],
         "sqlite_evidence_ids": record["sqlite_evidence_ids"],
         "json_sqlite_agreement": sqlite,
-        "semantic_audit": "PASS",
-        "presentation_role_audit": "PASS",
-        "anomaly_scan": "PASS",
+        "backend_agreement": sqlite,
+        "semantic_audit": record["semantic_audit"],
+        "presentation_role_audit": record["presentation_role_audit"],
+        "textual_routing_audit": record["textual_routing_audit"],
+        "terra_textual_suppression_required": record["terra_suppression_simulation"]["terra_textual_suppression_required"],
+        "terra_suppression_simulation": record["terra_suppression_simulation"],
+        "overview_gate": {
+            "status": "PASS" if not any(
+                item.get("code") == "DISPUTED_OVERVIEW_CANDIDATE"
+                and item.get("severity") == "blocker"
+                for item in record.get("anomaly_scan", {}).get("anomalies", [])
+            ) else "FAIL",
+            "overview_candidate": record.get("overview_candidate"),
+        },
+        "anomaly_gate": record["anomaly_scan"],
         "lock_status": "LOCKED",
         "evidence_bundle_path": bundle_path,
     }
@@ -768,12 +1119,249 @@ def _terra_input(record: Mapping[str, Any], bundle_path: str) -> dict[str, Any]:
         "evidence_bundle_path": bundle_path,
         "dig_deeper_evidence_exists": "dig_deeper" in record["presentation_section_roles"],
         "disputed_evidence_count": record["disputed_count"],
+        "textual_evidence_present": record["textual_routing_audit"]["textual_evidence_count"] > 0,
+        "terra_textual_suppression_required": record["terra_suppression_simulation"]["terra_textual_suppression_required"],
         "evidence_reconstruction": {
             "function": "bhf_agent.chapter_commentary.evidence_bundling.get_chapter_evidence_bundle",
             "arguments": {"book": record["book"], "chapter": record["chapter"], "evidence_bundle_version": EVIDENCE_BUNDLE_VERSION},
             "verify_hash_before_generation": True,
         },
         "candidate_output_filename": filename_for(str(record["book"]), int(record["chapter"])),
+    }
+
+
+def _mapping_is_textual(item: Mapping[str, Any]) -> bool:
+    metadata = dict(item.get("relevance_metadata") or {})
+    authored = {
+        str(metadata.get(key) or "")
+        .casefold()
+        .replace("-", "_")
+        .replace(" ", "_")
+        for key in ("claim_type", "note_type", "evidence_type", "source_kind")
+    }
+    if authored & set(TEXTUAL_CLAIM_SIGNALS):
+        return True
+    claim = str(item.get("claim") or "")
+    if str(metadata.get("parent_type") or "").casefold() == "archaeology":
+        if re.search(r"\b(?:discover(?:ed|y)|excavat(?:ed|ion)|found|cave|site|provenance|physical|artifact|deposit|stratigraph|archaeolog(?:y|ical))\b", claim, re.I) and not re.search(r"\b(?:reading|variant|version|transmission|preserv(?:es|ed)|textual\s+profile|textual\s+difference|different\s+text)\b", claim, re.I):
+            return False
+    return bool(TEXTUAL_CLAIM_TEXT_RE.search(claim))
+
+
+def _prose_cited_evidence(path: Path) -> set[str] | None:
+    if not path.exists():
+        return None
+    try:
+        data = json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        return None
+    cited: set[str] = set()
+    for section in data.get("sections", []):
+        for block in section.get("blocks", []):
+            cited.update(str(value) for value in block.get("evidence_ids", []))
+    return cited
+
+
+def _historical_textual_routing_review(json_library: Any) -> dict[str, Any]:
+    """Reconstruct historical locks without editing them or their prose."""
+
+    rows: list[dict[str, Any]] = []
+    roots = [
+        ("Batch 001", DEFAULT_OUTPUT_ROOT / "batch-001"),
+        ("Batch 002", DEFAULT_OUTPUT_ROOT / "batch-002"),
+    ]
+    for batch_label, root in roots:
+        for old_path in sorted((root / "evidence-bundles").glob("*.json")):
+            old_data = json.loads(old_path.read_text(encoding="utf-8"))
+            passage_ref = str(old_data.get("passage_ref") or "")
+            if not passage_ref:
+                continue
+            book, chapter_text = passage_ref.rsplit(" ", 1)
+            chapter = int(re.match(r"\d+", chapter_text).group())
+            reference = reference_key(book, chapter)
+            new_bundle, _results = _build_bundle(json_library, book, chapter)
+            old_items = {str(item.get("id")): item for item in old_data.get("evidence_items", [])}
+            new_items = {str(item.id): item for item in new_bundle.evidence_items}
+            affected_items: list[dict[str, Any]] = []
+            for evidence_id, old_item in old_items.items():
+                if not _mapping_is_textual(old_item):
+                    continue
+                new_item = new_items.get(evidence_id)
+                old_meta = dict(old_item.get("relevance_metadata") or {})
+                new_meta = dict(new_item.relevance_metadata or {}) if new_item else {}
+                old_role = old_meta.get("presentation_role")
+                new_role = new_meta.get("presentation_role")
+                if old_role == new_role and new_item is not None:
+                    continue
+                terra_path = root / "terra" / "chapters" / old_path.name
+                cited = _prose_cited_evidence(terra_path)
+                affected_items.append(
+                    {
+                        "evidence_id": evidence_id,
+                        "old_presentation_role": old_role,
+                        "new_presentation_role": new_role,
+                        "existing_terra_prose_cited_affected_item": None if cited is None else evidence_id in cited,
+                        "terra_omitted_affected_item": None if cited is None else evidence_id not in cited,
+                        "claim": old_item.get("claim"),
+                    }
+                )
+            old_ids = sorted(old_items)
+            new_ids = sorted(new_items)
+            new_hash = new_bundle.evidence_hash
+            old_hash = str(old_data.get("evidence_hash") or "")
+            if affected_items or old_hash != new_hash:
+                rows.append(
+                    {
+                        "reference": reference,
+                        "historical_batch": batch_label,
+                        "old_locked_hash": old_hash,
+                        "newly_reconstructed_hash": new_hash,
+                        "evidence_ids_changed": old_ids != new_ids,
+                        "old_presentation_roles": sorted({str(item.get("old_presentation_role")) for item in affected_items}),
+                        "new_presentation_roles": sorted({str(item.get("new_presentation_role")) for item in affected_items}),
+                        "affected_items": affected_items,
+                        "existing_terra_prose_cited_affected_item": any(item["existing_terra_prose_cited_affected_item"] is True for item in affected_items),
+                        "terra_omitted_affected_item": bool(affected_items) and all(item["terra_omitted_affected_item"] is True for item in affected_items),
+                        "final_v1_1_regeneration_recommended": bool(affected_items and any(item["existing_terra_prose_cited_affected_item"] is True for item in affected_items)),
+                        "hash_changed": old_hash != new_hash,
+                    }
+                )
+    return {
+        "review_version": "commentary-v11-post-batch-textual-routing-review-1.0",
+        "historical_chapters_scanned": sum(
+            len(list((root / "evidence-bundles").glob("*.json")))
+            for _label, root in roots
+        ),
+        "affected_chapters": len(rows),
+        "records": rows,
+        "terra_omitted_affected_item_count": sum(row["terra_omitted_affected_item"] for row in rows),
+        "regeneration_recommended_count": sum(row["final_v1_1_regeneration_recommended"] for row in rows),
+    }
+
+
+def _corpus_textual_routing_audit(json_library: Any, rows: Sequence[Mapping[str, Any]]) -> dict[str, Any]:
+    before: Counter[str] = Counter()
+    after: Counter[str] = Counter()
+    records_found = 0
+    chapters_affected: set[str] = set()
+    corrections = Counter()
+    interpretive: list[dict[str, Any]] = []
+    dig_deeper: list[dict[str, Any]] = []
+    ambiguous: list[dict[str, Any]] = []
+    target_spans_by_book: dict[str, list[tuple[str, Any]]] = defaultdict(list)
+    for row in rows:
+        reference = reference_key(str(row["book"]), int(row["chapter"]))
+        for span in parse_scripture_references(
+            reference,
+            book_alias_lookup=json_library._book_alias_lookup,
+        ):
+            target_spans_by_book[span.book].append((reference, span))
+    object_root = REPO_ROOT / "framework" / "canonical_library" / "objects"
+    for path in sorted(object_root.rglob("*.json")):
+        try:
+            parent = json.loads(path.read_text(encoding="utf-8"))
+        except (OSError, json.JSONDecodeError):
+            continue
+        if not isinstance(parent, Mapping):
+            continue
+        parent_id = str(parent.get("id") or "")
+        parent_type = str(parent.get("type") or "")
+        parent_title = str(parent.get("title") or "")
+        collections = (
+            ("claims", "ckl_claim"),
+            ("evidence_items", "ckl_evidence_item"),
+            ("interpretive_notes", "ckl_interpretive_note"),
+        )
+        for collection, source_kind in collections:
+            for raw_item in parent.get(collection) or []:
+                item = dict(raw_item) if isinstance(raw_item, Mapping) else {}
+                claim = str(
+                    item.get("claim")
+                    or item.get("claim_text")
+                    or item.get("description")
+                    or item.get("primary_observation")
+                    or item.get("note")
+                    or ""
+                )
+                item_id = str(item.get("id") or item.get("claim_id") or "")
+                anchors = [str(value) for value in item.get("scripture_references") or [] if not isinstance(value, Mapping)]
+                anchors += [str(value.get("reference") or "") for value in item.get("scripture_references") or [] if isinstance(value, Mapping)]
+                if not claim or not item_id or not anchors:
+                    continue
+                metadata = {
+                    "source_kind": source_kind,
+                    "parent_object_id": parent_id,
+                    "parent_title": parent_title,
+                    "parent_type": parent_type,
+                    "passage_relationship": "direct",
+                    "claim_type": str(item.get("claim_type") or ""),
+                    "note_type": str(item.get("note_type") or ""),
+                    "evidence_type": str(item.get("evidence_type") or ""),
+                    "dispute_status": str(item.get("dispute_status") or ""),
+                    "assertion_type": str(item.get("assertion_type") or ""),
+                }
+                metadata = with_semantic_relationship(
+                    reference_key(str(rows[0]["book"]), int(rows[0]["chapter"])) if rows else "",
+                    metadata,
+                    anchors=anchors,
+                ) if rows else metadata
+                category = _normalized_category(
+                    item.get("evidence_type") or item.get("claim_type") or item.get("note_type"),
+                    claim,
+                )
+                anchor_spans = [
+                    span
+                    for anchor in anchors
+                    for span in parse_scripture_references(anchor, book_alias_lookup=json_library._book_alias_lookup)
+                ]
+                matching_targets: set[str] = set()
+                for anchor_span in anchor_spans:
+                    for reference, target_span in target_spans_by_book.get(anchor_span.book, []):
+                        if scripture_reference_overlaps(target_span, anchor_span):
+                            matching_targets.add(reference)
+                for reference in sorted(matching_targets):
+                    # Recompute semantic metadata against the actual target
+                    # chapter; one book-level claim can be a valid record in
+                    # many eligible chapters.
+                    target_metadata = with_semantic_relationship(
+                        reference,
+                        metadata,
+                        anchors=anchors,
+                    )
+                    target_metadata = with_presentation_metadata(
+                        target_metadata,
+                        category=category,
+                        claim=claim,
+                    )
+                    record_mapping = {"claim": claim, "relevance_metadata": target_metadata}
+                    if not _mapping_is_textual(record_mapping):
+                        continue
+                    records_found += 1
+                    old_role = _legacy_presentation_role(target_metadata, category=category, claim=claim)
+                    new_role = target_metadata.get("presentation_role")
+                    before[str(old_role or "UNASSIGNED")] += 1
+                    after[str(new_role or "UNASSIGNED")] += 1
+                    if old_role != new_role:
+                        chapters_affected.add(reference)
+                        corrections[f"{old_role or 'UNASSIGNED'} -> {new_role or 'UNASSIGNED'}"] += 1
+                    if new_role == "interpretive_questions":
+                        interpretive.append({"reference": reference, "evidence_id": item_id})
+                    elif new_role == "dig_deeper":
+                        dig_deeper.append({"reference": reference, "evidence_id": item_id})
+                    elif new_role not in {"language_literary", "interpretive_questions", "dig_deeper"}:
+                        ambiguous.append({"reference": reference, "evidence_id": item_id, "role": new_role})
+    return {
+        "eligible_corpus_chapters_scanned": len(rows),
+        "textual_evidence_records_found": records_found,
+        "chapters_affected": len(chapters_affected),
+        "routing_distribution_before_fix": dict(sorted(before.items())),
+        "routing_distribution_after_fix": dict(sorted(after.items())),
+        "corrections": dict(sorted(corrections.items())),
+        "historical_context_to_language_literary": corrections["historical_context -> language_literary"],
+        "archaeology_geography_to_language_literary": corrections["archaeology_geography -> language_literary"],
+        "interpretive_questions_assignments": interpretive,
+        "dig_deeper_assignments": dig_deeper,
+        "ambiguous_unresolved_cases": ambiguous,
     }
 
 
@@ -843,6 +1431,39 @@ def _markdown_report(manifest: Mapping[str, Any], preflight: Mapping[str, Any], 
     ]
     for reference, result in controls.items():
         lines.append(f"- **{reference}** — {result['status']}: {result['summary']}")
+    batch002 = manifest.get("batch002_textual_audit", {})
+    historical = manifest.get("historical_textual_routing_review", {})
+    corpus = manifest.get("corpus_textual_routing_audit", {})
+    lines += [
+        "",
+        "## Textual routing",
+        "",
+        f"- Batch 002 POSSIBLE_EVIDENCE_REVIEW records audited: {batch002.get('records_audited', 0)}.",
+        f"- Primary root-cause distribution: {batch002.get('root_cause_counts', {})}.",
+        f"- Contributing root-cause distribution (primary plus secondary): {batch002.get('contributing_root_cause_counts', {})}.",
+        "- Deterministic precedence: explicit claim_type, note_type, evidence_type, source_kind, semantic relationship, parent type, then a narrow claim-text fallback; physical manuscript discovery remains archaeology while manuscript-reading claims route to language/textual context.",
+        f"- Corpus scan: {corpus.get('eligible_corpus_chapters_scanned', 0)} regeneration-eligible chapters and {corpus.get('textual_evidence_records_found', 0)} textual records; {corpus.get('chapters_affected', 0)} chapters affected.",
+        f"- Routing before: {corpus.get('routing_distribution_before_fix', {})}.",
+        f"- Routing after: {corpus.get('routing_distribution_after_fix', {})}.",
+        f"- Routing corrections: {corpus.get('corrections', {})}.",
+        f"- Interpretive_questions assignments: {len(corpus.get('interpretive_questions_assignments', []))}; Dig Deeper assignments: {len(corpus.get('dig_deeper_assignments', []))}.",
+        f"- Unresolved ambiguous cases: {corpus.get('ambiguous_unresolved_cases', [])}.",
+        f"- Historical reconstructed hash-impact records: {historical.get('affected_chapters', 0)}; Terra-omitted affected items: {historical.get('terra_omitted_affected_item_count', 0)}; regeneration recommendations: {historical.get('regeneration_recommended_count', 0)}.",
+        f"- Terra suppression simulation: {manifest.get('terra_suppression_required_count', 0)} evaluated chapters required suppression; final 150 required none.",
+        "",
+        "## Batch 003 audit detail",
+        "",
+        f"- Candidate pool: {manifest.get('candidate_pool_size')}; evaluated: {manifest.get('chapters_evaluated')}; PASS: {manifest.get('chapters_passed')}; QUARANTINE: {manifest.get('chapters_quarantined')}; DATA_GAP: {manifest.get('chapters_data_gap')}; replacements: {manifest.get('replacements_used')}; final locks: {len(final)}.",
+        f"- Verdict counts including manifest-derived exclusions: {manifest.get('verdict_counts', {})}.",
+        f"- Availability: {manifest.get('availability_distribution', {})}; genres: {manifest.get('genre_distribution', {})}; books: {manifest.get('book_distribution', {})}.",
+        f"- Evidence statistics: {manifest.get('evidence_count_statistics', {})}.",
+        f"- Anomaly raw counts: {preflight.get('anomaly_raw_counts', manifest.get('anomaly_raw_counts', {}))}.",
+        f"- Anomaly blocking counts: {preflight.get('anomaly_blocking_counts', manifest.get('anomaly_blocking_counts', {}))}.",
+        f"- Backend disagreements: {preflight.get('disagreement_counts', {})}.",
+        f"- Artifact fingerprints: canary/supplemental {controls.get('canary_artifacts', {}).get('status')}; Batch 001 {controls.get('batch_001_terra_artifacts', {}).get('status')}; Batch 002 {controls.get('batch_002_terra_artifacts', {}).get('status')}.",
+        "- Terra was not run; prose_generated remains false.",
+        "",
+    ]
     lines += [
         "",
         "## Systemic CKL concern",
@@ -861,6 +1482,8 @@ def _regression_controls(
     after: Mapping[str, str],
     batch_001_before: Mapping[str, str],
     batch_001_after: Mapping[str, str],
+    batch_002_before: Mapping[str, str],
+    batch_002_after: Mapping[str, str],
 ) -> dict[str, Any]:
     controls: dict[str, Any] = {}
     for book, chapter in (("Genesis", 1), ("Zephaniah", 1), ("Luke", 1), ("Leviticus", 1), ("1 Samuel", 28), ("Numbers", 3), ("Luke", 22)):
@@ -894,6 +1517,11 @@ def _regression_controls(
                 if not any(anomaly["code"] == "TEXTUAL_EVIDENCE_ROUTING_ANOMALY" and anomaly["severity"] == "blocker" for anomaly in anomalies)
                 else "textual routing blocker"
             )
+            assertions.append(
+                "no Terra textual suppression"
+                if not terra_textual_suppression_simulation(bundle)["terra_textual_suppression_required"]
+                else "Terra textual suppression required"
+            )
         elif ref == "1 Samuel 28":
             disputed = [item for item in bundle.evidence_items if (item.relevance_metadata or {}).get("dispute_status") not in {None, "", "not_disputed", "unknown", "none"}]
             assertions.append("THIN" if classify_evidence_availability(bundle).value == "THIN" else "availability changed")
@@ -918,6 +1546,14 @@ def _regression_controls(
         "artifact_count": len(batch_001_after),
         "changed_paths": sorted(set(batch_001_before) ^ set(batch_001_after) | {path for path in batch_001_before.keys() & batch_001_after.keys() if batch_001_before[path] != batch_001_after[path]}),
     }
+    controls["batch_002_terra_artifacts"] = {
+        "status": "PASS" if dict(batch_002_before) == dict(batch_002_after) and len(batch_002_after) == 100 else "FAIL",
+        "summary": "100 Batch 002 Terra artifact fingerprints unchanged" if dict(batch_002_before) == dict(batch_002_after) and len(batch_002_after) == 100 else "Batch 002 Terra artifact fingerprint changed or count is not 100",
+        "before_fingerprint": _stable_fingerprint(batch_002_before),
+        "after_fingerprint": _stable_fingerprint(batch_002_after),
+        "artifact_count": len(batch_002_after),
+        "changed_paths": sorted(set(batch_002_before) ^ set(batch_002_after) | {path for path in batch_002_before.keys() & batch_002_after.keys() if batch_002_before[path] != batch_002_after[path]}),
+    }
     return controls
 
 
@@ -934,7 +1570,9 @@ def run_batch(
     output_root = output_root.resolve()
     before_fingerprints = _artifact_fingerprints()
     batch_001_before_fingerprints = _batch_001_terra_fingerprints()
+    batch_002_before_fingerprints = _batch_002_terra_fingerprints()
     current = recalculate_low_information(candidate_source)
+    _progress("population recalculated")
     historical = {"eligible": 935, "insufficient": 153}
     current_population = {
         "eligible": len(current["chapters_evidence_supports_regeneration"]),
@@ -946,9 +1584,16 @@ def run_batch(
     }
     excluded = _canary_references()
     prior_batch_exclusions = _previous_batch_references(batch_id)
+    prior_batch_verdicts = _previous_batch_reference_verdicts(batch_id)
     excluded.update(prior_batch_exclusions)
     eligible = _eligible_rows(current)
     candidate_pool = select_mixed_candidate_pool(eligible, pool_size=candidate_pool_size, excluded_references=excluded)
+    batch002_textual_audit = _batch002_textual_audit()
+    skipped_verdicts = {
+        reference: "SKIP_CANARY"
+        for reference in _canary_references()
+    }
+    skipped_verdicts.update(prior_batch_verdicts)
 
     pool_dir = output_root / batch_id
     bundle_dir = pool_dir / "evidence-bundles"
@@ -956,51 +1601,73 @@ def run_batch(
     with _sqlite_workspace(sqlite_database) as db_path:
         json_library = load_canonical_library(config=CKLRepositoryConfig(backend="json", json_root=str(REPO_ROOT / "framework" / "canonical_library")))
         sqlite_library = load_canonical_library(config=CKLRepositoryConfig(backend="sqlite", database_path=str(db_path), json_root=str(REPO_ROOT / "framework" / "canonical_library"), stale_database_policy="ignore"))
+        historical_textual_review = _historical_textual_routing_review(json_library)
+        _progress("historical textual routing reconstructed")
+        corpus_textual_audit = _corpus_textual_routing_audit(json_library, eligible)
+        _progress("corpus textual routing scanned")
 
-        raw_records: list[dict[str, Any]] = []
-        for row in candidate_pool:
-            bundle, results = _build_bundle(json_library, str(row["book"]), int(row["chapter"]))
-            parent_records = _parent_records(json_library, results)
-            for parent_id, data in parent_records.items():
-                usage = next((entry for entry in raw_records if entry.get("_parent_id") == parent_id), None)
-                if usage is None:
-                    raw_records.append({"_parent_id": parent_id, "books": [], "references": []})
-                    usage = raw_records[-1]
-                if row["book"] not in usage["books"]:
-                    usage["books"].append(row["book"])
-                usage["references"].append(row["reference"])
-        parent_usage = {entry["_parent_id"]: {"books": entry["books"], "references": entry["references"]} for entry in raw_records}
+        def evaluate_rows(rows: Sequence[Mapping[str, Any]]) -> tuple[list[dict[str, Any]], dict[str, Any]]:
+            raw_records: list[dict[str, Any]] = []
+            for row in rows:
+                bundle, results = _build_bundle(json_library, str(row["book"]), int(row["chapter"]))
+                parent_records = _parent_records(json_library, results)
+                for parent_id in parent_records:
+                    usage = next((entry for entry in raw_records if entry.get("_parent_id") == parent_id), None)
+                    if usage is None:
+                        raw_records.append({"_parent_id": parent_id, "books": [], "references": []})
+                        usage = raw_records[-1]
+                    if row["book"] not in usage["books"]:
+                        usage["books"].append(row["book"])
+                    usage["references"].append(row["reference"])
+            parent_usage = {
+                entry["_parent_id"]: {"books": entry["books"], "references": entry["references"]}
+                for entry in raw_records
+            }
+            evaluated_rows: list[dict[str, Any]] = []
+            bundles: dict[str, Any] = {}
+            for row in rows:
+                book, chapter = str(row["book"]), int(row["chapter"])
+                bundle, results = _build_bundle(json_library, book, chapter)
+                sqlite_bundle, sqlite_results = _build_bundle(sqlite_library, book, chapter)
+                record = _chapter_record(
+                    row, bundle, library=json_library, results=results,
+                    json_bundle=bundle, sqlite_bundle=None, parent_usage=parent_usage,
+                )
+                agreement = backend_agreement(results, sqlite_results, bundle, sqlite_bundle)
+                record["json_evidence_ids"] = agreement["json_evidence_ids"]
+                record["sqlite_evidence_ids"] = agreement["sqlite_evidence_ids"]
+                record["json_sqlite_agreement"] = agreement
+                reasons = quarantine_reasons(record, agreement=agreement)
+                record["status"] = (
+                    "DATA_GAP" if reasons == ["DATA_GAP"]
+                    else ("QUARANTINE" if reasons else "PASS")
+                )
+                record["quarantine_reason_codes"] = reasons
+                evaluated_rows.append(record)
+                bundles[record["reference"]] = bundle
+            return evaluated_rows, bundles
 
-        evaluated: list[dict[str, Any]] = []
-        bundle_by_reference: dict[str, Any] = {}
-        json_ids_by_reference: dict[str, list[str]] = {}
-        sqlite_ids_by_reference: dict[str, list[str]] = {}
-        for row in candidate_pool:
-            book, chapter = str(row["book"]), int(row["chapter"])
-            bundle, results = _build_bundle(json_library, book, chapter)
-            sqlite_bundle, sqlite_results = _build_bundle(sqlite_library, book, chapter)
-            record = _chapter_record(
-                row, bundle, library=json_library, results=results,
-                json_bundle=bundle, sqlite_bundle=None, parent_usage=parent_usage,
-            )
-            agreement = backend_agreement(results, sqlite_results, bundle, sqlite_bundle)
-            ids_agree = agreement["result_ids_agree"]
-            evidence_ids_agree = agreement["evidence_ids_agree"]
-            hashes_agree = agreement["bundle_hash_agree"]
-            json_evidence_ids = agreement["json_evidence_ids"]
-            sqlite_evidence_ids = agreement["sqlite_evidence_ids"]
-            record["json_evidence_ids"] = json_evidence_ids
-            record["sqlite_evidence_ids"] = sqlite_evidence_ids
-            record["json_sqlite_agreement"] = agreement
-            record["status"] = "DATA_GAP" if record["availability"] == EvidenceAvailability.DATA_GAP.value else "PASS"
-            blockers = [item for item in record["anomaly_scan"]["anomalies"] if item["severity"] == "blocker"]
-            reasons = quarantine_reasons(record, agreement=agreement)
-            record["status"] = "DATA_GAP" if reasons == ["DATA_GAP"] else ("QUARANTINE" if reasons else "PASS")
-            record["quarantine_reason_codes"] = reasons
-            evaluated.append(record)
-            bundle_by_reference[record["reference"]] = bundle
-            json_ids_by_reference[record["reference"]] = json_evidence_ids
-            sqlite_ids_by_reference[record["reference"]] = sqlite_evidence_ids
+        evaluated, bundle_by_reference = evaluate_rows(candidate_pool)
+        _progress(f"initial candidate pool evaluated: {len(evaluated)}")
+        full_pool = select_mixed_candidate_pool(
+            eligible,
+            pool_size=len(eligible),
+            excluded_references=excluded,
+        )
+        while (
+            len([row for row in evaluated if row["status"] == "PASS" and row["availability"] in {"AVAILABLE", "THIN"}]) < target_count
+            and len(candidate_pool) < len(full_pool)
+        ):
+            existing = {str(row["reference"]) for row in candidate_pool}
+            additions = [
+                row for row in full_pool
+                if str(row["reference"]) not in existing
+            ][:25]
+            if not additions:
+                break
+            candidate_pool.extend(additions)
+            evaluated, bundle_by_reference = evaluate_rows(candidate_pool)
+            _progress(f"candidate pool extended and reevaluated: {len(evaluated)}")
 
         outliers = _mark_extreme_counts(evaluated)
         pass_records = [record for record in evaluated if record["status"] == "PASS" and record["availability"] in {"AVAILABLE", "THIN"}]
@@ -1034,6 +1701,7 @@ def run_batch(
 
         after_fingerprints = _artifact_fingerprints()
         batch_001_after_fingerprints = _batch_001_terra_fingerprints()
+        batch_002_after_fingerprints = _batch_002_terra_fingerprints()
         # Regressions intentionally use the same JSON backend used for the
         # batch. No Terra code or prose compiler is imported here.
         controls = _regression_controls(
@@ -1042,7 +1710,10 @@ def run_batch(
             after_fingerprints,
             batch_001_before_fingerprints,
             batch_001_after_fingerprints,
+            batch_002_before_fingerprints,
+            batch_002_after_fingerprints,
         )
+        _progress("regression controls and fingerprints completed")
 
     status = "LOCKED" if len(final_records) == target_count and all(value["status"] == "PASS" for value in controls.values()) else "BLOCKED"
     availability_distribution = dict(sorted(Counter(row["availability"] for row in final_records).items()))
@@ -1062,6 +1733,17 @@ def run_batch(
     )
     semantic_anomalies = [item for row in evaluated for item in row.get("anomaly_scan", {}).get("anomalies", []) if item["severity"] == "blocker"]
     anomaly_totals = Counter(
+        item["code"]
+        for row in evaluated
+        for item in row.get("anomaly_scan", {}).get("anomalies", [])
+    )
+    anomaly_blocking_totals = Counter(
+        item["code"]
+        for row in evaluated
+        for item in row.get("anomaly_scan", {}).get("anomalies", [])
+        if item["severity"] == "blocker"
+    )
+    anomaly_raw_totals = Counter(
         item["code"]
         for row in evaluated
         for item in row.get("anomaly_scan", {}).get("anomalies", [])
@@ -1086,7 +1768,14 @@ def run_batch(
         "chapters_passed": len(pass_records),
         "chapters_quarantined": len(quarantines),
         "chapters_data_gap": sum(row.get("status") == "DATA_GAP" for row in evaluated),
-        "chapters_skipped": 0,
+        "chapters_skipped": len(skipped_verdicts),
+        "skipped_verdicts": [
+            {"reference": reference, "status": verdict}
+            for reference, verdict in sorted(skipped_verdicts.items())
+        ],
+        "verdict_counts": dict(sorted(Counter(
+            [str(row.get("status")) for row in evaluated] + list(skipped_verdicts.values())
+        ).items())),
         "replacements_used": len(replacements),
         "status": status,
         "current_population": current_population,
@@ -1101,6 +1790,16 @@ def run_batch(
         "semantic_relationship_totals": dict(sorted(semantic_role_totals.items())),
         "presentation_role_totals": dict(sorted(presentation_role_totals.items())),
         "anomaly_totals": dict(sorted(anomaly_totals.items())),
+        "anomaly_raw_counts": dict(sorted(anomaly_raw_totals.items())),
+        "anomaly_blocking_counts": dict(sorted(anomaly_blocking_totals.items())),
+        "terra_suppression_required_count": sum(
+            bool(row.get("terra_suppression_simulation", {}).get("terra_textual_suppression_required"))
+            for row in evaluated
+        ),
+        "terra_suppression_required_count": sum(
+            bool(row.get("terra_suppression_simulation", {}).get("terra_textual_suppression_required"))
+            for row in evaluated
+        ),
         "evidence_bundle_version": EVIDENCE_BUNDLE_VERSION,
         "evidence_hash_version": EVIDENCE_HASH_VERSION,
         "candidate_pool": candidate_pool,
@@ -1111,8 +1810,14 @@ def run_batch(
         "batch_001_terra_artifact_fingerprints_before": batch_001_before_fingerprints,
         "batch_001_terra_artifact_fingerprints_after": batch_001_after_fingerprints,
         "batch_001_terra_artifact_fingerprint": _stable_fingerprint(batch_001_after_fingerprints),
+        "batch_002_terra_artifact_fingerprints_before": batch_002_before_fingerprints,
+        "batch_002_terra_artifact_fingerprints_after": batch_002_after_fingerprints,
+        "batch_002_terra_artifact_fingerprint": _stable_fingerprint(batch_002_after_fingerprints),
         "terra_run": False,
         "prose_generated": False,
+        "batch002_textual_audit": batch002_textual_audit,
+        "historical_textual_routing_review": historical_textual_review,
+        "corpus_textual_routing_audit": corpus_textual_audit,
     }
     preflight = {
         "report_version": TOOL_VERSION,
@@ -1128,7 +1833,12 @@ def run_batch(
             "presentation_role_blockers": sum(row["presentation_role_audit"]["status"] != "PASS" for row in evaluated),
         },
         "anomaly_counts": dict(sorted(Counter(item["code"] for item in semantic_anomalies).items())),
+        "anomaly_raw_counts": dict(sorted(anomaly_raw_totals.items())),
+        "anomaly_blocking_counts": dict(sorted(anomaly_blocking_totals.items())),
         "regression_controls": controls,
+        "batch002_textual_audit": batch002_textual_audit,
+        "historical_textual_routing_review": historical_textual_review,
+        "corpus_textual_routing_audit": corpus_textual_audit,
     }
     quarantine_report = {
         "batch_id": batch_id,
@@ -1164,7 +1874,19 @@ def run_batch(
         "certification": certification,
         "terra_manifest": terra_manifest,
         "controls": controls,
+        "batch002_textual_audit": batch002_textual_audit,
+        "historical_textual_routing_review": historical_textual_review,
+        "corpus_textual_routing_audit": corpus_textual_audit,
     }
+    _json_dump(
+        DEFAULT_OUTPUT_ROOT / "post-batch-textual-routing-review.json",
+        {
+            "batch_id": batch_id,
+            "batch_002_possible_evidence_review": batch002_textual_audit,
+            "historical_reconstruction": historical_textual_review,
+            "corpus_wide_scan": corpus_textual_audit,
+        },
+    )
     _json_dump(pool_dir / "batch-manifest.json", manifest)
     _json_dump(pool_dir / "preflight-report.json", preflight)
     _json_dump(pool_dir / "quarantine-report.json", quarantine_report)

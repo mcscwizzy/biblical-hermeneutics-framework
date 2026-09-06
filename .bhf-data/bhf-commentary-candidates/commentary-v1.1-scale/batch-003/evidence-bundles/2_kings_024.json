@@ -1,0 +1,1559 @@
+{
+  "passage_ref": "2 Kings 24",
+  "entities": {
+    "people": [],
+    "places": [
+      {
+        "id": "babylon-1",
+        "title": "Babylon",
+        "type": "place",
+        "aliases": [
+          "where is babylon",
+          "tell me about babylon",
+          "why is babylon important",
+          "babylon 1"
+        ],
+        "metadata": {
+          "summary": "The imperial city that becomes a biblical symbol of exile, judgment, and arrogant worldly power.",
+          "importance": 90,
+          "retrieval_score": 0.91,
+          "ancient_names": [],
+          "modern_identification": "",
+          "region": "",
+          "terrain": "",
+          "elevation": null,
+          "archaeology": [],
+          "related_passages": [
+            "2 Kings 24:10-17",
+            "2 Kings 25:8-21",
+            "Psalms 137:1-9",
+            "Jeremiah 29:1-14",
+            "Daniel 1:1-7",
+            "Revelation 17:1-18",
+            "Revelation 18:1-24"
+          ]
+        }
+      }
+    ],
+    "groups": [],
+    "events": [
+      {
+        "id": "babylonian-exile",
+        "title": "Babylonian Exile",
+        "type": "event",
+        "aliases": [
+          "what happened in babylonian exile",
+          "tell me about babylonian exile",
+          "why is babylonian exile important"
+        ],
+        "metadata": {
+          "summary": "The forced displacement of Judeans in several Babylonian campaigns, especially the elite deportation of 597 BCE and the removals surrounding Jerusalem's destruction in 587/586 BCE, followed by enduring communities in both Judah and Babylonia.",
+          "importance": 95,
+          "retrieval_score": 0.915,
+          "ancient_names": [],
+          "modern_identification": "",
+          "region": "",
+          "terrain": "",
+          "elevation": null,
+          "archaeology": [],
+          "related_passages": [
+            "2 Kings 24:8-20",
+            "2 Kings 25:1-30",
+            "2 Chronicles 36:11-23",
+            "Jeremiah 25:8-14",
+            "Jeremiah 29:1-14",
+            "Lamentations 1:1-22",
+            "Ezekiel 1:1-3",
+            "Daniel 1:1-21",
+            "Psalms 137:1-9"
+          ]
+        }
+      }
+    ],
+    "artifacts": [
+      {
+        "id": "babylonian-chronicles",
+        "title": "Babylonian Chronicles",
+        "type": "archaeology",
+        "aliases": [
+          "Jerusalem Chronicle",
+          "Nebuchadnezzar Chronicle",
+          "BM 21946",
+          "ABC 5"
+        ],
+        "metadata": {
+          "summary": "A group of cuneiform historiographic tablets; this entry centers BM 21946 (ABC 5), whose account of Nebuchadnezzar II's early reign includes Jerusalem's capture in 597 BCE.",
+          "importance": 90,
+          "retrieval_score": 0.91,
+          "ancient_names": [],
+          "modern_identification": "",
+          "region": "",
+          "terrain": "",
+          "elevation": null,
+          "archaeology": [],
+          "related_passages": [
+            "2 Kings 24:8-17",
+            "2 Chronicles 36:9-10",
+            "Jeremiah 29:1-3"
+          ]
+        }
+      }
+    ]
+  },
+  "evidence_items": [
+    {
+      "id": "babylon-1:ancient_near_east_context:0",
+      "claim": "Babylon was a large Mesopotamian political, cultic, economic, and scribal center. Royal inscriptions, chronicles, palace ration lists, and private legal documents represent different institutions and social locations; none alone describes the whole city or empire.",
+      "category": "culture",
+      "source_ids": [
+        "babylon-biblical-texts",
+        "alstola-babylon-judeans",
+        "bm-babylon-chronicle"
+      ],
+      "related_entity_ids": [
+        "babylon-1"
+      ],
+      "passage_anchors": [
+        "2 Kings 24:10-17"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "babylon-1",
+        "parent_title": "Babylon",
+        "parent_type": "place",
+        "object_importance": 90,
+        "retrieval_score": 0.91,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 9,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "babylon-1:hebraic_worldview:0",
+      "claim": "Biblical texts portray Babylon as both a concrete place of displaced life and an imperial power accountable to God. Jeremiah calls deportees to long residence and communal welfare, while laments and prophetic texts preserve loss, protest, and hope.",
+      "category": "culture",
+      "source_ids": [
+        "babylon-biblical-texts",
+        "alstola-babylon-judeans",
+        "bm-babylon-chronicle"
+      ],
+      "related_entity_ids": [
+        "babylon-1"
+      ],
+      "passage_anchors": [
+        "2 Kings 24:10-17"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "babylon-1",
+        "parent_title": "Babylon",
+        "parent_type": "place",
+        "object_importance": 90,
+        "retrieval_score": 0.91,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 9,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "hebraic_worldview",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "babylon-1:historical_context:0",
+      "claim": "Babylon became the Neo-Babylonian imperial capital under Nabopolassar and Nebuchadnezzar II, received deported Judeans after the campaigns against Jerusalem, and passed to Cyrus in 539 BCE. Judean communities remained in Babylonia through the Persian period.",
+      "category": "history",
+      "source_ids": [
+        "babylon-biblical-texts",
+        "alstola-babylon-judeans",
+        "bm-babylon-chronicle"
+      ],
+      "related_entity_ids": [
+        "babylon-1"
+      ],
+      "passage_anchors": [
+        "2 Kings 24:10-17"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "babylon-1",
+        "parent_title": "Babylon",
+        "parent_type": "place",
+        "object_importance": 90,
+        "retrieval_score": 0.91,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 9,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "babylon-1:key_places:0",
+      "claim": "jerusalem",
+      "category": "geography",
+      "source_ids": [
+        "babylon-biblical-texts",
+        "alstola-babylon-judeans",
+        "bm-babylon-chronicle"
+      ],
+      "related_entity_ids": [
+        "babylon-1"
+      ],
+      "passage_anchors": [
+        "2 Kings 24:10-17"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "babylon-1",
+        "parent_title": "Babylon",
+        "parent_type": "place",
+        "object_importance": 90,
+        "retrieval_score": 0.91,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 9,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "key_places",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": null,
+        "overview_priority": 28
+      }
+    },
+    {
+      "id": "babylon-1:key_places:1",
+      "claim": "assyria",
+      "category": "geography",
+      "source_ids": [
+        "babylon-biblical-texts",
+        "alstola-babylon-judeans",
+        "bm-babylon-chronicle"
+      ],
+      "related_entity_ids": [
+        "babylon-1"
+      ],
+      "passage_anchors": [
+        "2 Kings 24:10-17"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "babylon-1",
+        "parent_title": "Babylon",
+        "parent_type": "place",
+        "object_importance": 90,
+        "retrieval_score": 0.91,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 9,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "key_places",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": null,
+        "overview_priority": 28
+      }
+    },
+    {
+      "id": "babylon-1:key_places:2",
+      "claim": "persia",
+      "category": "geography",
+      "source_ids": [
+        "babylon-biblical-texts",
+        "alstola-babylon-judeans",
+        "bm-babylon-chronicle"
+      ],
+      "related_entity_ids": [
+        "babylon-1"
+      ],
+      "passage_anchors": [
+        "2 Kings 24:10-17"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "babylon-1",
+        "parent_title": "Babylon",
+        "parent_type": "place",
+        "object_importance": 90,
+        "retrieval_score": 0.91,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 9,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "key_places",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": null,
+        "overview_priority": 28
+      }
+    },
+    {
+      "id": "babylon-1:key_places:3",
+      "claim": "susa",
+      "category": "geography",
+      "source_ids": [
+        "babylon-biblical-texts",
+        "alstola-babylon-judeans",
+        "bm-babylon-chronicle"
+      ],
+      "related_entity_ids": [
+        "babylon-1"
+      ],
+      "passage_anchors": [
+        "2 Kings 24:10-17"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "babylon-1",
+        "parent_title": "Babylon",
+        "parent_type": "place",
+        "object_importance": 90,
+        "retrieval_score": 0.91,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 9,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "key_places",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": null,
+        "overview_priority": 28
+      }
+    },
+    {
+      "id": "babylon-1:key_places:4",
+      "claim": "rome",
+      "category": "geography",
+      "source_ids": [
+        "babylon-biblical-texts",
+        "alstola-babylon-judeans",
+        "bm-babylon-chronicle"
+      ],
+      "related_entity_ids": [
+        "babylon-1"
+      ],
+      "passage_anchors": [
+        "2 Kings 24:10-17"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "babylon-1",
+        "parent_title": "Babylon",
+        "parent_type": "place",
+        "object_importance": 90,
+        "retrieval_score": 0.91,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 9,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "key_places",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": null,
+        "overview_priority": 28
+      }
+    },
+    {
+      "id": "babylon-1:second_temple_context:0",
+      "claim": "Persian-period return began from a Babylonian imperial setting but did not end the diaspora. Babylonian Judean documents continuing into the fifth century BCE complicate any picture of universal departure.",
+      "category": "culture",
+      "source_ids": [
+        "babylon-biblical-texts",
+        "alstola-babylon-judeans",
+        "bm-babylon-chronicle"
+      ],
+      "related_entity_ids": [
+        "babylon-1"
+      ],
+      "passage_anchors": [
+        "2 Kings 24:10-17"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "babylon-1",
+        "parent_title": "Babylon",
+        "parent_type": "place",
+        "object_importance": 90,
+        "retrieval_score": 0.91,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 9,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.5,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "second_temple_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "babylonian-chronicle-597-capture",
+      "claim": "BM 21946, often called the Jerusalem or Nebuchadnezzar Chronicle, records a campaign against the city of Judah, the capture of its king, installation of another king, and removal of tribute.",
+      "category": "history",
+      "source_ids": [
+        "bm-nebuchadnezzar-chronicle",
+        "grayson-abc",
+        "cogan-tadmor-2-kings-babylon"
+      ],
+      "related_entity_ids": [
+        "babylonian-chronicles",
+        "babylon-1"
+      ],
+      "passage_anchors": [
+        "2 Kings 24:8-17"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "babylonian-conquest-deportation-and-judean-diaspora",
+        "parent_title": "Babylonian Conquest, Deportation, and Judean Diaspora",
+        "parent_type": "cultural_background",
+        "object_importance": 97,
+        "retrieval_score": 0.957,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 7,
+        "certainty": "strong_consensus",
+        "dispute_status": "not_disputed",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 1.0,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "ancient-text",
+        "field": "",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 55
+      }
+    },
+    {
+      "id": "babylonian-chronicle-597-capture:passage-relevance",
+      "claim": "The chronicle is a near-contemporary Babylonian witness to the political transition narrated in 2 Kings 24:8-17, but it does not narrate the later temple destruction.",
+      "category": "history",
+      "source_ids": [
+        "bm-nebuchadnezzar-chronicle",
+        "grayson-abc",
+        "cogan-tadmor-2-kings-babylon"
+      ],
+      "related_entity_ids": [
+        "babylonian-chronicles",
+        "babylon-1"
+      ],
+      "passage_anchors": [
+        "2 Kings 24:8-17"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "babylonian-conquest-deportation-and-judean-diaspora",
+        "parent_title": "Babylonian Conquest, Deportation, and Judean Diaspora",
+        "parent_type": "cultural_background",
+        "object_importance": 97,
+        "retrieval_score": 0.957,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 7,
+        "certainty": "strong_consensus",
+        "dispute_status": "not_disputed",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 1.0,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "ancient-text",
+        "field": "",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "significance",
+        "overview_priority": 55,
+        "supports_evidence_ids": [
+          "babylonian-chronicle-597-capture"
+        ]
+      }
+    },
+    {
+      "id": "babylonian-chronicles:ancient_near_east_context:0",
+      "claim": "Babylonian chronicles are terse Mesopotamian historiographic records organized by regnal years and campaigns. Their selective notices and Babylonian viewpoint differ from royal display inscriptions and from the theological narration in Kings and Jeremiah.",
+      "category": "culture",
+      "source_ids": [
+        "bm-21946",
+        "grayson-abc5",
+        "kings-24-jehoiachin"
+      ],
+      "related_entity_ids": [
+        "babylonian-chronicles"
+      ],
+      "passage_anchors": [
+        "2 Kings 24:8-17"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "babylonian-chronicles",
+        "parent_title": "Babylonian Chronicles",
+        "parent_type": "archaeology",
+        "object_importance": 90,
+        "retrieval_score": 0.91,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 7,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "babylonian-chronicles:historical_context:0",
+      "claim": "BM 21946 covers 605-594 BCE and reports western campaigns, including the capture of the city of Judah in Nebuchadnezzar's seventh year, seizure of its king, installation of a replacement, and tribute. It does not preserve an account of Jerusalem's later destruction in 587/586 BCE.",
+      "category": "history",
+      "source_ids": [
+        "bm-21946",
+        "grayson-abc5",
+        "kings-24-jehoiachin"
+      ],
+      "related_entity_ids": [
+        "babylonian-chronicles"
+      ],
+      "passage_anchors": [
+        "2 Kings 24:8-17"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "babylonian-chronicles",
+        "parent_title": "Babylonian Chronicles",
+        "parent_type": "archaeology",
+        "object_importance": 90,
+        "retrieval_score": 0.91,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 7,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "babylonian-exile:ancient_near_east_context:0",
+      "claim": "Neo-Babylonian policy combined vassal kingship, tribute, punitive siege, elite removal, destruction after revolt, and resettlement within imperial agricultural and service systems. Chronicles, ration lists, and private documents illuminate different levels of this system.",
+      "category": "culture",
+      "source_ids": [
+        "kings-jeremiah-babylonian-exile",
+        "albertz-israel-exile",
+        "alstola-judeans-babylonia"
+      ],
+      "related_entity_ids": [
+        "babylonian-exile"
+      ],
+      "passage_anchors": [
+        "2 Kings 24:8-20"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "babylonian-exile",
+        "parent_title": "Babylonian Exile",
+        "parent_type": "event",
+        "object_importance": 95,
+        "retrieval_score": 0.915,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 7,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "babylonian-exile:hebraic_worldview:0",
+      "claim": "Biblical writers interpret exile through covenant judgment, lament, repentance, divine presence outside the land, responsibility, and promised restoration. Those theological claims belong to the biblical witnesses rather than the Babylonian records.",
+      "category": "culture",
+      "source_ids": [
+        "kings-jeremiah-babylonian-exile",
+        "albertz-israel-exile",
+        "alstola-judeans-babylonia"
+      ],
+      "related_entity_ids": [
+        "babylonian-exile"
+      ],
+      "passage_anchors": [
+        "2 Kings 24:8-20"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "babylonian-exile",
+        "parent_title": "Babylonian Exile",
+        "parent_type": "event",
+        "object_importance": 95,
+        "retrieval_score": 0.915,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 7,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "hebraic_worldview",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "babylonian-exile:historical_context:0",
+      "claim": "Babylon reduced Judah in stages: Jehoiachin and selected royal, military, administrative, and skilled groups were removed in 597 BCE; Zedekiah's revolt led to Jerusalem's destruction and further deportation in 587/586 BCE. Not everyone was removed, and Judean communities persisted in Babylonia after Persian-period returns began.",
+      "category": "history",
+      "source_ids": [
+        "kings-jeremiah-babylonian-exile",
+        "albertz-israel-exile",
+        "alstola-judeans-babylonia"
+      ],
+      "related_entity_ids": [
+        "babylonian-exile"
+      ],
+      "passage_anchors": [
+        "2 Kings 24:8-20"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "babylonian-exile",
+        "parent_title": "Babylonian Exile",
+        "parent_type": "event",
+        "object_importance": 95,
+        "retrieval_score": 0.915,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 7,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "babylonian-exile:second_temple_context:0",
+      "claim": "Return did not end the Babylonian diaspora. The Al-Yahudu corpus continues into Persian rule, showing that the early Second Temple community in Yehud developed alongside Judean communities that remained abroad.",
+      "category": "culture",
+      "source_ids": [
+        "kings-jeremiah-babylonian-exile",
+        "albertz-israel-exile",
+        "alstola-judeans-babylonia"
+      ],
+      "related_entity_ids": [
+        "babylonian-exile"
+      ],
+      "passage_anchors": [
+        "2 Kings 24:8-20"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "babylonian-exile",
+        "parent_title": "Babylonian Exile",
+        "parent_type": "event",
+        "object_importance": 95,
+        "retrieval_score": 0.915,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 7,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "second_temple_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "exile-theme:ancient_near_east_context:0",
+      "claim": "Imperial conquest and deportation were common in the ancient Near East, but Scripture interprets exile as covenant judgment and mercy.",
+      "category": "culture",
+      "source_ids": [
+        "leviticus-26",
+        "deuteronomy-28-30",
+        "2-kings-24-25",
+        "jeremiah-29",
+        "ezekiel-36",
+        "1-peter-1",
+        "exile-theme-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "2 Kings 24:1-20"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "exile-theme",
+        "parent_title": "Exile Theme",
+        "parent_type": "theme",
+        "object_importance": 95,
+        "retrieval_score": 0.915,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "ancient_near_east_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "exile-theme:hebraic_worldview:0",
+      "claim": "Exile is the loss of land and presence, but also a call to remember and hope.",
+      "category": "culture",
+      "source_ids": [
+        "leviticus-26",
+        "deuteronomy-28-30",
+        "2-kings-24-25",
+        "jeremiah-29",
+        "ezekiel-36",
+        "1-peter-1",
+        "exile-theme-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "2 Kings 24:1-20"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "exile-theme",
+        "parent_title": "Exile Theme",
+        "parent_type": "theme",
+        "object_importance": 95,
+        "retrieval_score": 0.915,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "hebraic_worldview",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "exile-theme:historical_context:0",
+      "claim": "Exile is the crisis of the northern kingdom and especially Judah, culminating in Jerusalem\u2019s fall and the people\u2019s deportation.",
+      "category": "history",
+      "source_ids": [
+        "leviticus-26",
+        "deuteronomy-28-30",
+        "2-kings-24-25",
+        "jeremiah-29",
+        "ezekiel-36",
+        "1-peter-1",
+        "exile-theme-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "2 Kings 24:1-20"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "exile-theme",
+        "parent_title": "Exile Theme",
+        "parent_type": "theme",
+        "object_importance": 95,
+        "retrieval_score": 0.915,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "historical_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "exile-theme:second_temple_context:0",
+      "claim": "Post-exilic Jews lived in the shadow of return and incomplete restoration.",
+      "category": "culture",
+      "source_ids": [
+        "leviticus-26",
+        "deuteronomy-28-30",
+        "2-kings-24-25",
+        "jeremiah-29",
+        "ezekiel-36",
+        "1-peter-1",
+        "exile-theme-historical-orientation"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "2 Kings 24:1-20"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_legacy_field",
+        "parent_object_id": "exile-theme",
+        "parent_title": "Exile Theme",
+        "parent_type": "theme",
+        "object_importance": 95,
+        "retrieval_score": 0.915,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "",
+        "dispute_status": "",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "field": "second_temple_context",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 40
+      }
+    },
+    {
+      "id": "jehoiachin-palace-ration-lists",
+      "claim": "Administrative tablets from Nebuchadnezzar's palace record food or oil allocations to a ruler identified as Jehoiachin, king of Judah, his dependents, and other Judeans.",
+      "category": "history",
+      "source_ids": [
+        "berlin-jehoiachin-ration-list",
+        "weidner-jehoiachin",
+        "alstola-judeans-babylonia",
+        "cogan-tadmor-2-kings-babylon"
+      ],
+      "related_entity_ids": [
+        "babylonian-exile",
+        "babylon-1"
+      ],
+      "passage_anchors": [
+        "2 Kings 24:12-16"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "babylonian-conquest-deportation-and-judean-diaspora",
+        "parent_title": "Babylonian Conquest, Deportation, and Judean Diaspora",
+        "parent_type": "cultural_background",
+        "object_importance": 97,
+        "retrieval_score": 0.957,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 11,
+        "certainty": "strong_consensus",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 1.0,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "ancient-text",
+        "field": "",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "historical_context",
+        "overview_priority": 47
+      }
+    },
+    {
+      "id": "jehoiachin-palace-ration-lists:passage-relevance",
+      "claim": "The tablets provide near-contemporary context for Jehoiachin's continued recognition and palace maintenance in Babylon, while stopping short of confirming the release scene in 2 Kings 25.",
+      "category": "history",
+      "source_ids": [
+        "berlin-jehoiachin-ration-list",
+        "weidner-jehoiachin",
+        "alstola-judeans-babylonia",
+        "cogan-tadmor-2-kings-babylon"
+      ],
+      "related_entity_ids": [
+        "babylonian-exile",
+        "babylon-1"
+      ],
+      "passage_anchors": [
+        "2 Kings 24:12-16"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "babylonian-conquest-deportation-and-judean-diaspora",
+        "parent_title": "Babylonian Conquest, Deportation, and Judean Diaspora",
+        "parent_type": "cultural_background",
+        "object_importance": 97,
+        "retrieval_score": 0.957,
+        "passage_relationship": "contextual",
+        "anchor_specificity": "verse",
+        "verse_distance": 11,
+        "certainty": "strong_consensus",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 1.0,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "ancient-text",
+        "field": "",
+        "semantic_relationship": "GENERIC_BACKGROUND",
+        "presentation_role": "significance",
+        "overview_priority": 47,
+        "supports_evidence_ids": [
+          "jehoiachin-palace-ration-lists"
+        ]
+      }
+    },
+    {
+      "id": "kings-jeremiah-deportation-sequence",
+      "claim": "Kings and Jeremiah distinguish the 597 BCE removal of Jehoiachin and selected groups from the later destruction of Jerusalem and additional deportations under Zedekiah.",
+      "category": "history",
+      "source_ids": [
+        "kings-jeremiah-exile-text",
+        "grayson-abc",
+        "cogan-tadmor-2-kings-babylon"
+      ],
+      "related_entity_ids": [
+        "babylonian-exile",
+        "babylon-1"
+      ],
+      "passage_anchors": [
+        "2 Kings 24:1-20"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "babylonian-conquest-deportation-and-judean-diaspora",
+        "parent_title": "Babylonian Conquest, Deportation, and Judean Diaspora",
+        "parent_type": "cultural_background",
+        "object_importance": 97,
+        "retrieval_score": 0.957,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "chronological_uncertainty",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.75,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "historical-event",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 102
+      }
+    },
+    {
+      "id": "kings-jeremiah-deportation-sequence:passage-relevance",
+      "claim": "This textual sequence prevents readers of 2 Kings 24-25 from treating the Babylonian exile as a single undifferentiated departure.",
+      "category": "history",
+      "source_ids": [
+        "kings-jeremiah-exile-text",
+        "grayson-abc",
+        "cogan-tadmor-2-kings-babylon"
+      ],
+      "related_entity_ids": [
+        "babylonian-exile",
+        "babylon-1"
+      ],
+      "passage_anchors": [
+        "2 Kings 24:1-20"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_evidence_item",
+        "parent_object_id": "babylonian-conquest-deportation-and-judean-diaspora",
+        "parent_title": "Babylonian Conquest, Deportation, and Judean Diaspora",
+        "parent_type": "cultural_background",
+        "object_importance": 97,
+        "retrieval_score": 0.957,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "chronological_uncertainty",
+        "assertion_type": "primary-evidence",
+        "exploration_potential": 0.75,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "",
+        "evidence_type": "historical-event",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "significance",
+        "overview_priority": 102,
+        "supports_evidence_ids": [
+          "kings-jeremiah-deportation-sequence"
+        ]
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "1 Peter 1",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "1-peter-1",
+        "canonical_object_ids": [
+          "exile-theme"
+        ]
+      },
+      {
+        "title": "2 Kings 24-25",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "2-kings-24-25",
+        "canonical_object_ids": [
+          "exile-theme"
+        ]
+      },
+      {
+        "title": "Israel in Exile: The History and Literature of the Sixth Century B.C.E.",
+        "author": "Rainer Albertz",
+        "publisher": "Society of Biblical Literature",
+        "year": 2003,
+        "locator": "Studies in Biblical Literature 3, historical reconstruction and social groups in the exile",
+        "url": "https://www.sbl-site.org/wp-content/uploads/2024/11/AlbertzIsrael.pdf",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "ancient-near-east-context",
+          "interpretive-notes"
+        ],
+        "notes": "Historical and literary study of sixth-century Judean communities.",
+        "id": "albertz-israel-exile",
+        "canonical_object_ids": [
+          "babylonian-exile"
+        ]
+      },
+      {
+        "title": "Judeans in Babylonia: A Study of Deportees in the Sixth and Fifth Centuries BCE",
+        "author": "Tero Alstola",
+        "publisher": "Brill",
+        "year": 2020,
+        "locator": "Chapters 2-5 on royal, urban, and rural Judean evidence",
+        "url": "https://doi.org/10.1163/9789004365421",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "second-temple-context",
+          "interpretive-notes"
+        ],
+        "notes": "Distinguishes Babylon city evidence from wider Babylonian settlement archives.",
+        "id": "alstola-babylon-judeans",
+        "canonical_object_ids": [
+          "babylon-1"
+        ]
+      },
+      {
+        "title": "Judeans in Babylonia: A Study of Deportees in the Sixth and Fifth Centuries BCE",
+        "author": "Tero Alstola",
+        "publisher": "Brill",
+        "year": 2020,
+        "locator": "Culture and History of the Ancient Near East 109, especially chapters 2-5",
+        "url": "https://doi.org/10.1163/9789004365421",
+        "source_type": "academic-book",
+        "supports": [
+          "jehoiachin-palace-ration-lists",
+          "al-yahudu-judean-community-archive"
+        ],
+        "notes": "Open-access social and economic study emphasizing the limits of the documentary corpus.",
+        "id": "alstola-judeans-babylonia",
+        "canonical_object_ids": [
+          "babylonian-conquest-deportation-and-judean-diaspora",
+          "babylonian-exile"
+        ]
+      },
+      {
+        "title": "Second Kings 24-25; Jeremiah 29; Psalm 137; Daniel 1; Revelation 17-18",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "2 Kings 24:8-25:30; Jeremiah 29:1-14; Psalm 137:1-9; Daniel 1:1-7; Revelation 17:1-18:24",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "historical-context",
+          "literary-context",
+          "canonical-context",
+          "interpretive-notes"
+        ],
+        "notes": "Primary biblical uses of historical and symbolic Babylon.",
+        "id": "babylon-biblical-texts",
+        "canonical_object_ids": [
+          "babylon-1"
+        ]
+      },
+      {
+        "title": "Ration list for captives mentioning the king of Judah",
+        "author": "",
+        "publisher": "Staatliche Museen zu Berlin, Vorderasiatisches Museum",
+        "year": null,
+        "locator": "Babylon palace ration-list fragment; museum web object obj-1743721",
+        "url": "https://visit.smb.museum/object/obj-1743721",
+        "source_type": "museum-collection",
+        "supports": [
+          "jehoiachin-palace-ration-lists"
+        ],
+        "notes": "Official collection record describing oil allocations to the king of Judah, his retinue, and other captives.",
+        "id": "berlin-jehoiachin-ration-list",
+        "canonical_object_ids": [
+          "babylonian-conquest-deportation-and-judean-diaspora"
+        ]
+      },
+      {
+        "title": "Babylonian Chronicle for 605-594 BCE",
+        "author": "",
+        "publisher": "British Museum",
+        "year": null,
+        "locator": "BM 21946; ABC 5; reverse lines 11-13",
+        "url": "https://www.britishmuseum.org/collection/object/W_1896-0409-51",
+        "source_type": "museum-collection",
+        "supports": [
+          "summary",
+          "historical-context",
+          "interpretive-notes"
+        ],
+        "notes": "Official object record for the tablet and Jerusalem notice.",
+        "id": "bm-21946",
+        "canonical_object_ids": [
+          "babylonian-chronicles"
+        ]
+      },
+      {
+        "title": "Babylonian Chronicle for 605-594 BCE",
+        "author": "",
+        "publisher": "British Museum",
+        "year": null,
+        "locator": "BM 21946; ABC 5",
+        "url": "https://www.britishmuseum.org/collection/object/W_1896-0409-51",
+        "source_type": "museum-collection",
+        "supports": [
+          "historical-context",
+          "ancient-near-east-context"
+        ],
+        "notes": "Official object record for Babylonian historiographic evidence.",
+        "id": "bm-babylon-chronicle",
+        "canonical_object_ids": [
+          "babylon-1"
+        ]
+      },
+      {
+        "title": "Babylonian Chronicle for 605-594 BCE",
+        "author": "",
+        "publisher": "British Museum",
+        "year": null,
+        "locator": "BM 21946; ABC 5; reverse lines 11-13",
+        "url": "https://www.britishmuseum.org/collection/object/W_1896-0409-51",
+        "source_type": "museum-collection",
+        "supports": [
+          "babylonian-chronicle-597-capture"
+        ],
+        "notes": "Official object record identifying the tablet and its 597 BCE Jerusalem notice.",
+        "id": "bm-nebuchadnezzar-chronicle",
+        "canonical_object_ids": [
+          "babylonian-conquest-deportation-and-judean-diaspora"
+        ]
+      },
+      {
+        "title": "II Kings",
+        "author": "Mordechai Cogan and Hayim Tadmor",
+        "publisher": "Doubleday / Yale University Press",
+        "year": 1988,
+        "locator": "Commentary on 2 Kings 24:1-25:30",
+        "url": "https://yalebooks.yale.edu/book/9780300140743/ii-kings/",
+        "source_type": "academic-book",
+        "supports": [
+          "kings-jeremiah-deportation-sequence",
+          "babylonian-chronicle-597-capture",
+          "jehoiachin-palace-ration-lists"
+        ],
+        "notes": "Historical-critical commentary for the biblical sequence and Babylonian comparisons.",
+        "id": "cogan-tadmor-2-kings-babylon",
+        "canonical_object_ids": [
+          "babylonian-conquest-deportation-and-judean-diaspora"
+        ]
+      },
+      {
+        "title": "Deuteronomy 28-30",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "deuteronomy-28-30",
+        "canonical_object_ids": [
+          "exile-theme"
+        ]
+      },
+      {
+        "title": "Canonical historical orientation for Exile Theme",
+        "author": "",
+        "publisher": "Canonical Knowledge Library",
+        "year": 2026,
+        "locator": "",
+        "url": "",
+        "source_type": "reference-work",
+        "supports": [
+          "historical-context"
+        ],
+        "notes": "Internal CKL orientation source documenting the object's historical-context support pending human review.",
+        "id": "exile-theme-historical-orientation",
+        "canonical_object_ids": [
+          "exile-theme"
+        ]
+      },
+      {
+        "title": "Ezekiel 36",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "ezekiel-36",
+        "canonical_object_ids": [
+          "exile-theme"
+        ]
+      },
+      {
+        "title": "Assyrian and Babylonian Chronicles",
+        "author": "A. K. Grayson",
+        "publisher": "J. J. Augustin / Eisenbrauns",
+        "year": 1975,
+        "locator": "Texts from Cuneiform Sources 5, Chronicle 5, reverse lines 11-13",
+        "url": "https://cdli.earth/publications/1685149",
+        "source_type": "academic-book",
+        "supports": [
+          "babylonian-chronicle-597-capture",
+          "kings-jeremiah-deportation-sequence"
+        ],
+        "notes": "Standard edition used for the chronicle's transliteration, translation, and line numbering.",
+        "id": "grayson-abc",
+        "canonical_object_ids": [
+          "babylonian-conquest-deportation-and-judean-diaspora"
+        ]
+      },
+      {
+        "title": "Assyrian and Babylonian Chronicles",
+        "author": "A. K. Grayson",
+        "publisher": "J. J. Augustin / Eisenbrauns",
+        "year": 1975,
+        "locator": "Texts from Cuneiform Sources 5, Chronicle 5, reverse lines 11-13",
+        "url": "https://cdli.earth/publications/1685149",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "ancient-near-east-context",
+          "interpretive-notes"
+        ],
+        "notes": "Standard edition and line numbering.",
+        "id": "grayson-abc5",
+        "canonical_object_ids": [
+          "babylonian-chronicles"
+        ]
+      },
+      {
+        "title": "Jeremiah 29",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "jeremiah-29",
+        "canonical_object_ids": [
+          "exile-theme"
+        ]
+      },
+      {
+        "title": "Second Kings 24:8-17",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "2 Kings 24:8-17",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "literary-context",
+          "scripture-references"
+        ],
+        "notes": "Primary biblical account; no modern translation is reproduced.",
+        "id": "kings-24-jehoiachin",
+        "canonical_object_ids": [
+          "babylonian-chronicles"
+        ]
+      },
+      {
+        "title": "Second Kings 24-25; Jeremiah 29, 39, and 52; Ezekiel 1",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "2 Kings 24:8-25:30; Jeremiah 29:1-14; 39:1-10; 52:1-34; Ezekiel 1:1-3",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "historical-context",
+          "literary-context",
+          "interpretive-notes"
+        ],
+        "notes": "Primary biblical witnesses; no modern translation is reproduced.",
+        "id": "kings-jeremiah-babylonian-exile",
+        "canonical_object_ids": [
+          "babylonian-exile"
+        ]
+      },
+      {
+        "title": "Second Kings 24-25; Jeremiah 29, 39, and 52; Ezekiel 1",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "2 Kings 24:1-25:30; Jeremiah 29:1-14; 39:1-10; 52:1-34; Ezekiel 1:1-3",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "kings-jeremiah-deportation-sequence",
+          "babylonian-chronicle-597-capture",
+          "jehoiachin-palace-ration-lists",
+          "al-yahudu-judean-community-archive"
+        ],
+        "notes": "Primary biblical witnesses; no modern translation is reproduced.",
+        "id": "kings-jeremiah-exile-text",
+        "canonical_object_ids": [
+          "babylonian-conquest-deportation-and-judean-diaspora"
+        ]
+      },
+      {
+        "title": "Leviticus 26",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "leviticus-26",
+        "canonical_object_ids": [
+          "exile-theme"
+        ]
+      },
+      {
+        "title": "Jojachin, K\u00f6nig von Juda, in babylonischen Keilschrifttexten",
+        "author": "Ernst F. Weidner",
+        "publisher": "M\u00e9langes syriens offerts \u00e0 Monsieur Ren\u00e9 Dussaud II",
+        "year": 1939,
+        "locator": "Biblioth\u00e8que arch\u00e9ologique et historique 30.2, pp. 923-935, especially Babylon 28122",
+        "url": "https://vergil.uni-tuebingen.de/keibi/Record/KEI00106163",
+        "source_type": "journal-article",
+        "supports": [
+          "jehoiachin-palace-ration-lists"
+        ],
+        "notes": "Initial scholarly publication of the relevant Babylon palace texts.",
+        "id": "weidner-jehoiachin",
+        "canonical_object_ids": [
+          "babylonian-conquest-deportation-and-judean-diaspora"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "babylon-1",
+        "type": "place",
+        "title": "Babylon",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.91
+      },
+      {
+        "id": "babylonian-chronicles",
+        "type": "archaeology",
+        "title": "Babylonian Chronicles",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.91
+      },
+      {
+        "id": "babylonian-conquest-deportation-and-judean-diaspora",
+        "type": "cultural_background",
+        "title": "Babylonian Conquest, Deportation, and Judean Diaspora",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.957
+      },
+      {
+        "id": "babylonian-exile",
+        "type": "event",
+        "title": "Babylonian Exile",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.915
+      },
+      {
+        "id": "exile-theme",
+        "type": "theme",
+        "title": "Exile Theme",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.915
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "33cea6759d7da8b1c5f6b07c6272b71900a31ca4615fd5ba90f9fed7ce755d35",
+  "evidence_hash_version": "2"
+}

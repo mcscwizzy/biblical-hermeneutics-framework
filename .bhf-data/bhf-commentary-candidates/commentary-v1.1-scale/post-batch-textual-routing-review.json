@@ -1,0 +1,1681 @@
+{
+  "batch_id": "batch-003",
+  "batch_002_possible_evidence_review": {
+    "records_audited": 27,
+    "root_cause_counts": {
+      "LEGACY_CATEGORY_OVERRIDE": 0,
+      "MISSING_CLAIM_TYPE": 10,
+      "MISSING_NOTE_TYPE": 0,
+      "MISSING_EVIDENCE_TYPE": 0,
+      "PARENT_METADATA_INHERITANCE": 0,
+      "PRESENTATION_ROLE_HEURISTIC": 7,
+      "TEXTUAL_WITNESS_MISCLASSIFICATION": 2,
+      "INTERPRETIVE_TEXTUAL_UNCERTAINTY": 8,
+      "OTHER": 0
+    },
+    "contributing_root_cause_counts": {
+      "LEGACY_CATEGORY_OVERRIDE": 12,
+      "MISSING_CLAIM_TYPE": 10,
+      "MISSING_NOTE_TYPE": 0,
+      "MISSING_EVIDENCE_TYPE": 0,
+      "PARENT_METADATA_INHERITANCE": 0,
+      "PRESENTATION_ROLE_HEURISTIC": 15,
+      "TEXTUAL_WITNESS_MISCLASSIFICATION": 2,
+      "INTERPRETIVE_TEXTUAL_UNCERTAINTY": 8,
+      "OTHER": 0
+    },
+    "records": [
+      {
+        "reference": "Acts 5",
+        "evidence_id": "acts-text-witnesses",
+        "ckl_parent_object": "acts",
+        "parent_type": "book",
+        "source_kind": "ckl_claim",
+        "legacy_category": "culture",
+        "claim_type": "historical_cultural",
+        "note_type": "",
+        "evidence_type": null,
+        "dispute_status": "not_disputed",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "historical_context",
+        "passage_anchors": [
+          "Acts 1:1-28:31"
+        ],
+        "claim": "Acts is preserved in early papyri and major Greek codices, with P45, P53, P74, Sinaiticus, Vaticanus, and Bezae contributing different portions and textual profiles.",
+        "root_cause": "TEXTUAL_WITNESS_MISCLASSIFICATION",
+        "secondary_root_causes": [
+          "LEGACY_CATEGORY_OVERRIDE"
+        ]
+      },
+      {
+        "reference": "Psalms 9",
+        "evidence_id": "psalms-numbering-witnesses",
+        "ckl_parent_object": "psalms",
+        "parent_type": "book",
+        "source_kind": "ckl_claim",
+        "legacy_category": "history",
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "evidence_type": null,
+        "dispute_status": "textual_variant",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "historical_context",
+        "passage_anchors": [
+          "Psalms 9:1-10:18"
+        ],
+        "claim": "Greek and Latin Psalter traditions number many psalms differently from the Masoretic tradition because they combine Psalms 9-10 and 114-115, divide Psalms 116 and 147, and transmit Psalm 151 beyond the 150-psalm count.",
+        "root_cause": "MISSING_CLAIM_TYPE",
+        "secondary_root_causes": [
+          "LEGACY_CATEGORY_OVERRIDE"
+        ]
+      },
+      {
+        "reference": "Job 15",
+        "evidence_id": "job:interpretive_note:11",
+        "ckl_parent_object": "job",
+        "parent_type": "book",
+        "source_kind": "ckl_interpretive_note",
+        "legacy_category": "culture",
+        "claim_type": "",
+        "note_type": "textual-observation",
+        "evidence_type": null,
+        "dispute_status": "textual_variant",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "historical_context",
+        "passage_anchors": [
+          "Job 1:1-42:17"
+        ],
+        "claim": "Old Greek Job is substantially shorter than the Masoretic form in much of the poetry and also contains expansions, while Qumran preserves Hebrew fragments and an Aramaic targum. Translation and textual criticism should therefore identify the witness in view rather than treating every ancient form as verbally identical.",
+        "root_cause": "PRESENTATION_ROLE_HEURISTIC",
+        "secondary_root_causes": []
+      },
+      {
+        "reference": "Isaiah 47",
+        "evidence_id": "isaiah-qumran-witnesses",
+        "ckl_parent_object": "isaiah",
+        "parent_type": "book",
+        "source_kind": "ckl_claim",
+        "legacy_category": "history",
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "evidence_type": null,
+        "dispute_status": "textual_variant",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "historical_context",
+        "passage_anchors": [
+          "Isaiah 1:1-66:24"
+        ],
+        "claim": "The Great Isaiah Scroll is an almost complete sixty-six-chapter witness broadly aligned with the Masoretic tradition but containing thousands of orthographic and substantive differences; other Qumran Isaiah manuscripts and pesharim show active transmission and interpretation.",
+        "root_cause": "MISSING_CLAIM_TYPE",
+        "secondary_root_causes": [
+          "LEGACY_CATEGORY_OVERRIDE"
+        ]
+      },
+      {
+        "reference": "Isaiah 63",
+        "evidence_id": "isaiah-qumran-witnesses",
+        "ckl_parent_object": "isaiah",
+        "parent_type": "book",
+        "source_kind": "ckl_claim",
+        "legacy_category": "history",
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "evidence_type": null,
+        "dispute_status": "textual_variant",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "historical_context",
+        "passage_anchors": [
+          "Isaiah 1:1-66:24"
+        ],
+        "claim": "The Great Isaiah Scroll is an almost complete sixty-six-chapter witness broadly aligned with the Masoretic tradition but containing thousands of orthographic and substantive differences; other Qumran Isaiah manuscripts and pesharim show active transmission and interpretation.",
+        "root_cause": "MISSING_CLAIM_TYPE",
+        "secondary_root_causes": [
+          "LEGACY_CATEGORY_OVERRIDE"
+        ]
+      },
+      {
+        "reference": "Job 33",
+        "evidence_id": "job:interpretive_note:11",
+        "ckl_parent_object": "job",
+        "parent_type": "book",
+        "source_kind": "ckl_interpretive_note",
+        "legacy_category": "culture",
+        "claim_type": "",
+        "note_type": "textual-observation",
+        "evidence_type": null,
+        "dispute_status": "textual_variant",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "historical_context",
+        "passage_anchors": [
+          "Job 1:1-42:17"
+        ],
+        "claim": "Old Greek Job is substantially shorter than the Masoretic form in much of the poetry and also contains expansions, while Qumran preserves Hebrew fragments and an Aramaic targum. Translation and textual criticism should therefore identify the witness in view rather than treating every ancient form as verbally identical.",
+        "root_cause": "PRESENTATION_ROLE_HEURISTIC",
+        "secondary_root_causes": []
+      },
+      {
+        "reference": "Ezekiel 39",
+        "evidence_id": "ezekiel-p967-order",
+        "ckl_parent_object": "ezekiel",
+        "parent_type": "book",
+        "source_kind": "ckl_claim",
+        "legacy_category": "history",
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "evidence_type": null,
+        "dispute_status": "textual_variant",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "passage_anchors": [
+          "Ezekiel 39:1-29"
+        ],
+        "claim": "Papyrus 967 places the material conventionally numbered Ezekiel 38-39 before chapter 37, showing an ancient order different from the familiar Masoretic sequence.",
+        "root_cause": "MISSING_CLAIM_TYPE",
+        "secondary_root_causes": [
+          "LEGACY_CATEGORY_OVERRIDE"
+        ]
+      },
+      {
+        "reference": "Ecclesiastes 5",
+        "evidence_id": "ecclesiastes-hebrew-greek-qumran-witnesses",
+        "ckl_parent_object": "ecclesiastes",
+        "parent_type": "book",
+        "source_kind": "ckl_claim",
+        "legacy_category": "culture",
+        "claim_type": "reception_history",
+        "note_type": "",
+        "evidence_type": null,
+        "dispute_status": "textual_variant",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "passage_anchors": [
+          "Ecclesiastes 5:13-17"
+        ],
+        "claim": "Ecclesiastes is witnessed by the Masoretic Hebrew text, fragmentary Hebrew manuscripts 4QQoha and 4QQohb, and an exceptionally literal Greek form titled Ecclesiast.",
+        "root_cause": "TEXTUAL_WITNESS_MISCLASSIFICATION",
+        "secondary_root_causes": [
+          "LEGACY_CATEGORY_OVERRIDE"
+        ]
+      },
+      {
+        "reference": "Isaiah 57",
+        "evidence_id": "isaiah-qumran-witnesses",
+        "ckl_parent_object": "isaiah",
+        "parent_type": "book",
+        "source_kind": "ckl_claim",
+        "legacy_category": "history",
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "evidence_type": null,
+        "dispute_status": "textual_variant",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "historical_context",
+        "passage_anchors": [
+          "Isaiah 1:1-66:24"
+        ],
+        "claim": "The Great Isaiah Scroll is an almost complete sixty-six-chapter witness broadly aligned with the Masoretic tradition but containing thousands of orthographic and substantive differences; other Qumran Isaiah manuscripts and pesharim show active transmission and interpretation.",
+        "root_cause": "MISSING_CLAIM_TYPE",
+        "secondary_root_causes": [
+          "LEGACY_CATEGORY_OVERRIDE"
+        ]
+      },
+      {
+        "reference": "Job 11",
+        "evidence_id": "job:interpretive_note:11",
+        "ckl_parent_object": "job",
+        "parent_type": "book",
+        "source_kind": "ckl_interpretive_note",
+        "legacy_category": "culture",
+        "claim_type": "",
+        "note_type": "textual-observation",
+        "evidence_type": null,
+        "dispute_status": "textual_variant",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "historical_context",
+        "passage_anchors": [
+          "Job 1:1-42:17"
+        ],
+        "claim": "Old Greek Job is substantially shorter than the Masoretic form in much of the poetry and also contains expansions, while Qumran preserves Hebrew fragments and an Aramaic targum. Translation and textual criticism should therefore identify the witness in view rather than treating every ancient form as verbally identical.",
+        "root_cause": "PRESENTATION_ROLE_HEURISTIC",
+        "secondary_root_causes": []
+      },
+      {
+        "reference": "Isaiah 34",
+        "evidence_id": "isaiah-qumran-witnesses",
+        "ckl_parent_object": "isaiah",
+        "parent_type": "book",
+        "source_kind": "ckl_claim",
+        "legacy_category": "history",
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "evidence_type": null,
+        "dispute_status": "textual_variant",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "historical_context",
+        "passage_anchors": [
+          "Isaiah 1:1-66:24"
+        ],
+        "claim": "The Great Isaiah Scroll is an almost complete sixty-six-chapter witness broadly aligned with the Masoretic tradition but containing thousands of orthographic and substantive differences; other Qumran Isaiah manuscripts and pesharim show active transmission and interpretation.",
+        "root_cause": "MISSING_CLAIM_TYPE",
+        "secondary_root_causes": [
+          "LEGACY_CATEGORY_OVERRIDE"
+        ]
+      },
+      {
+        "reference": "Jeremiah 48",
+        "evidence_id": "jeremiah-two-editions",
+        "ckl_parent_object": "jeremiah",
+        "parent_type": "book",
+        "source_kind": "ckl_claim",
+        "legacy_category": "history",
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "evidence_type": null,
+        "dispute_status": "textual_variant",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "historical_context",
+        "passage_anchors": [
+          "Jeremiah 46:1-51:64"
+        ],
+        "claim": "Masoretic Jeremiah and Old Greek Ieremias represent markedly different ancient editions: the Alexandrian form is roughly one-seventh shorter and places the nation oracles earlier and in a different order.",
+        "root_cause": "MISSING_CLAIM_TYPE",
+        "secondary_root_causes": [
+          "LEGACY_CATEGORY_OVERRIDE"
+        ]
+      },
+      {
+        "reference": "Job 36",
+        "evidence_id": "job:interpretive_note:11",
+        "ckl_parent_object": "job",
+        "parent_type": "book",
+        "source_kind": "ckl_interpretive_note",
+        "legacy_category": "culture",
+        "claim_type": "",
+        "note_type": "textual-observation",
+        "evidence_type": null,
+        "dispute_status": "textual_variant",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "historical_context",
+        "passage_anchors": [
+          "Job 1:1-42:17"
+        ],
+        "claim": "Old Greek Job is substantially shorter than the Masoretic form in much of the poetry and also contains expansions, while Qumran preserves Hebrew fragments and an Aramaic targum. Translation and textual criticism should therefore identify the witness in view rather than treating every ancient form as verbally identical.",
+        "root_cause": "PRESENTATION_ROLE_HEURISTIC",
+        "secondary_root_causes": []
+      },
+      {
+        "reference": "Isaiah 1",
+        "evidence_id": "isaiah-qumran-witnesses",
+        "ckl_parent_object": "isaiah",
+        "parent_type": "book",
+        "source_kind": "ckl_claim",
+        "legacy_category": "history",
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "evidence_type": null,
+        "dispute_status": "textual_variant",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "historical_context",
+        "passage_anchors": [
+          "Isaiah 1:1-66:24"
+        ],
+        "claim": "The Great Isaiah Scroll is an almost complete sixty-six-chapter witness broadly aligned with the Masoretic tradition but containing thousands of orthographic and substantive differences; other Qumran Isaiah manuscripts and pesharim show active transmission and interpretation.",
+        "root_cause": "MISSING_CLAIM_TYPE",
+        "secondary_root_causes": [
+          "LEGACY_CATEGORY_OVERRIDE"
+        ]
+      },
+      {
+        "reference": "Job 7",
+        "evidence_id": "job:interpretive_note:11",
+        "ckl_parent_object": "job",
+        "parent_type": "book",
+        "source_kind": "ckl_interpretive_note",
+        "legacy_category": "culture",
+        "claim_type": "",
+        "note_type": "textual-observation",
+        "evidence_type": null,
+        "dispute_status": "textual_variant",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "historical_context",
+        "passage_anchors": [
+          "Job 1:1-42:17"
+        ],
+        "claim": "Old Greek Job is substantially shorter than the Masoretic form in much of the poetry and also contains expansions, while Qumran preserves Hebrew fragments and an Aramaic targum. Translation and textual criticism should therefore identify the witness in view rather than treating every ancient form as verbally identical.",
+        "root_cause": "PRESENTATION_ROLE_HEURISTIC",
+        "secondary_root_causes": []
+      },
+      {
+        "reference": "Lamentations 3",
+        "evidence_id": "lam-hope-memory",
+        "ckl_parent_object": "lamentations",
+        "parent_type": "book",
+        "source_kind": "ckl_claim",
+        "legacy_category": "history",
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "evidence_type": null,
+        "dispute_status": "textual_variant",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "passage_anchors": [
+          "Lamentations 3:19-24"
+        ],
+        "claim": "The chapter 3 speaker turns toward hope by recalling steadfast love, mercies, and faithfulness.",
+        "root_cause": "INTERPRETIVE_TEXTUAL_UNCERTAINTY",
+        "secondary_root_causes": [
+          "PRESENTATION_ROLE_HEURISTIC"
+        ]
+      },
+      {
+        "reference": "Daniel 4",
+        "evidence_id": "daniel-greek-versions",
+        "ckl_parent_object": "daniel",
+        "parent_type": "book",
+        "source_kind": "ckl_claim",
+        "legacy_category": "history",
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "evidence_type": null,
+        "dispute_status": "textual_variant",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "passage_anchors": [
+          "Daniel 4:1-37"
+        ],
+        "claim": "Daniel survives in substantially distinct Old Greek and Theodotionic versions, with especially important differences in chapters 4-6 and in the form and placement of additions.",
+        "root_cause": "MISSING_CLAIM_TYPE",
+        "secondary_root_causes": [
+          "LEGACY_CATEGORY_OVERRIDE"
+        ]
+      },
+      {
+        "reference": "Daniel 4",
+        "evidence_id": "daniel:interpretive_note:25",
+        "ckl_parent_object": "daniel",
+        "parent_type": "book",
+        "source_kind": "ckl_interpretive_note",
+        "legacy_category": "culture",
+        "claim_type": "",
+        "note_type": "textual-observation",
+        "evidence_type": null,
+        "dispute_status": "textual_variant",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "passage_anchors": [
+          "Daniel 4:1-37"
+        ],
+        "claim": "Old Greek and Theodotionic Daniel must be compared passage by passage; neither label means that every difference has one cause.",
+        "root_cause": "PRESENTATION_ROLE_HEURISTIC",
+        "secondary_root_causes": []
+      },
+      {
+        "reference": "Jude 1",
+        "evidence_id": "jude-addressees",
+        "ckl_parent_object": "jude",
+        "parent_type": "book",
+        "source_kind": "ckl_claim",
+        "legacy_category": "history",
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "evidence_type": null,
+        "dispute_status": "textual_variant",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "passage_anchors": [
+          "Jude 1:1"
+        ],
+        "claim": "Jude addresses called people described as beloved in God and kept for or by Jesus, with textual variation in the wording.",
+        "root_cause": "INTERPRETIVE_TEXTUAL_UNCERTAINTY",
+        "secondary_root_causes": [
+          "PRESENTATION_ROLE_HEURISTIC"
+        ]
+      },
+      {
+        "reference": "Jude 1",
+        "evidence_id": "jude-exodus",
+        "ckl_parent_object": "jude",
+        "parent_type": "book",
+        "source_kind": "ckl_claim",
+        "legacy_category": "history",
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "evidence_type": null,
+        "dispute_status": "textual_variant",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "passage_anchors": [
+          "Jude 1:5"
+        ],
+        "claim": "Jude recalls rescue from Egypt followed by destruction of those who did not believe, while the subject in verse 5 has a major textual variant.",
+        "root_cause": "MISSING_CLAIM_TYPE",
+        "secondary_root_causes": [
+          "LEGACY_CATEGORY_OVERRIDE"
+        ]
+      },
+      {
+        "reference": "Jude 1",
+        "evidence_id": "jude-fear-garment",
+        "ckl_parent_object": "jude",
+        "parent_type": "book",
+        "source_kind": "ckl_claim",
+        "legacy_category": "history",
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "evidence_type": null,
+        "dispute_status": "textual_variant",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "passage_anchors": [
+          "Jude 1:23"
+        ],
+        "claim": "A further instruction combines mercy with fear and hatred of a garment stained by flesh.",
+        "root_cause": "INTERPRETIVE_TEXTUAL_UNCERTAINTY",
+        "secondary_root_causes": [
+          "PRESENTATION_ROLE_HEURISTIC"
+        ]
+      },
+      {
+        "reference": "Jude 1",
+        "evidence_id": "jude-mercy-doubters",
+        "ckl_parent_object": "jude",
+        "parent_type": "book",
+        "source_kind": "ckl_claim",
+        "legacy_category": "history",
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "evidence_type": null,
+        "dispute_status": "textual_variant",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "passage_anchors": [
+          "Jude 1:22"
+        ],
+        "claim": "One well-attested form directs mercy toward people who doubt or dispute.",
+        "root_cause": "INTERPRETIVE_TEXTUAL_UNCERTAINTY",
+        "secondary_root_causes": [
+          "PRESENTATION_ROLE_HEURISTIC"
+        ]
+      },
+      {
+        "reference": "Jude 1",
+        "evidence_id": "jude-rescue-fire",
+        "ckl_parent_object": "jude",
+        "parent_type": "book",
+        "source_kind": "ckl_claim",
+        "legacy_category": "history",
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "evidence_type": null,
+        "dispute_status": "textual_variant",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "passage_anchors": [
+          "Jude 1:23"
+        ],
+        "claim": "The letter directs rescue of others by snatching them from fire.",
+        "root_cause": "INTERPRETIVE_TEXTUAL_UNCERTAINTY",
+        "secondary_root_causes": [
+          "PRESENTATION_ROLE_HEURISTIC"
+        ]
+      },
+      {
+        "reference": "Jude 1",
+        "evidence_id": "jude:interpretive_note:1",
+        "ckl_parent_object": "jude",
+        "parent_type": "book",
+        "source_kind": "ckl_interpretive_note",
+        "legacy_category": "culture",
+        "claim_type": "",
+        "note_type": "textual-observation",
+        "evidence_type": null,
+        "dispute_status": "textual_variant",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "passage_anchors": [
+          "Jude 1:1"
+        ],
+        "claim": "Beloved in God and kept for or by Jesus in verse 1 reflects a textual and grammatical question; theology should not be built as if only one wording and construal existed.",
+        "root_cause": "INTERPRETIVE_TEXTUAL_UNCERTAINTY",
+        "secondary_root_causes": [
+          "PRESENTATION_ROLE_HEURISTIC"
+        ]
+      },
+      {
+        "reference": "Jude 1",
+        "evidence_id": "jude:interpretive_note:30",
+        "ckl_parent_object": "jude",
+        "parent_type": "book",
+        "source_kind": "ckl_interpretive_note",
+        "legacy_category": "culture",
+        "claim_type": "",
+        "note_type": "textual-observation",
+        "evidence_type": null,
+        "dispute_status": "textual_variant",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "passage_anchors": [
+          "Jude 1:22-23"
+        ],
+        "claim": "Verses 22-23 have major variants affecting whether two or three groups receive mercy, rescue, or fear. Translation and pastoral policy must not conceal this instability.",
+        "root_cause": "INTERPRETIVE_TEXTUAL_UNCERTAINTY",
+        "secondary_root_causes": [
+          "PRESENTATION_ROLE_HEURISTIC"
+        ]
+      },
+      {
+        "reference": "Jude 1",
+        "evidence_id": "jude:interpretive_note:31",
+        "ckl_parent_object": "jude",
+        "parent_type": "book",
+        "source_kind": "ckl_interpretive_note",
+        "legacy_category": "culture",
+        "claim_type": "",
+        "note_type": "interpretive-caution",
+        "evidence_type": null,
+        "dispute_status": "textual_variant",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "passage_anchors": [
+          "Jude 1:22-23"
+        ],
+        "claim": "Discipline and rescue language call for discerning mercy; they do not authorize coercion, surveillance, spiritual abuse, forced confession, or removal of consent.",
+        "root_cause": "INTERPRETIVE_TEXTUAL_UNCERTAINTY",
+        "secondary_root_causes": [
+          "PRESENTATION_ROLE_HEURISTIC"
+        ]
+      },
+      {
+        "reference": "Jude 1",
+        "evidence_id": "jude:interpretive_note:7",
+        "ckl_parent_object": "jude",
+        "parent_type": "book",
+        "source_kind": "ckl_interpretive_note",
+        "legacy_category": "culture",
+        "claim_type": "",
+        "note_type": "textual-observation",
+        "evidence_type": null,
+        "dispute_status": "textual_variant",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "passage_anchors": [
+          "Jude 1:5"
+        ],
+        "claim": "Verse 5 reads Jesus, Lord, or God in different witnesses and editions. The Jesus reading makes an unusually explicit christological exodus claim; exact wording requires textual review.",
+        "root_cause": "PRESENTATION_ROLE_HEURISTIC",
+        "secondary_root_causes": []
+      }
+    ]
+  },
+  "historical_reconstruction": {
+    "review_version": "commentary-v11-post-batch-textual-routing-review-1.0",
+    "historical_chapters_scanned": 157,
+    "affected_chapters": 40,
+    "records": [
+      {
+        "reference": "Acts 7",
+        "historical_batch": "Batch 001",
+        "old_locked_hash": "c9c333dfeb40cde683bb389496793a99579f5591bd6a22d73b7021629b9d5196",
+        "newly_reconstructed_hash": "50e740423d6bd36e9a8ee461773bbb57e8aca7aa2204e1dda839984769a8b799",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [
+          "historical_context"
+        ],
+        "new_presentation_roles": [
+          "language_literary"
+        ],
+        "affected_items": [
+          {
+            "evidence_id": "acts-text-witnesses",
+            "old_presentation_role": "historical_context",
+            "new_presentation_role": "language_literary",
+            "existing_terra_prose_cited_affected_item": true,
+            "terra_omitted_affected_item": false,
+            "claim": "Acts is preserved in early papyri and major Greek codices, with P45, P53, P74, Sinaiticus, Vaticanus, and Bezae contributing different portions and textual profiles."
+          },
+          {
+            "evidence_id": "acts-western-text",
+            "old_presentation_role": "historical_context",
+            "new_presentation_role": "language_literary",
+            "existing_terra_prose_cited_affected_item": true,
+            "terra_omitted_affected_item": false,
+            "claim": "Codex Bezae and related versional witnesses preserve a substantially distinctive text of Acts often called Western, whose individual readings require case-by-case judgment."
+          }
+        ],
+        "existing_terra_prose_cited_affected_item": true,
+        "terra_omitted_affected_item": false,
+        "final_v1_1_regeneration_recommended": true,
+        "hash_changed": true
+      },
+      {
+        "reference": "Haggai 2",
+        "historical_batch": "Batch 001",
+        "old_locked_hash": "e2c80e6c53f6989e23c5e6ca01a10825ee2ccbef5b2d9dbe1b770264ce64800a",
+        "newly_reconstructed_hash": "183acdd2163aec54f1e16252afcb52fe45a790ea9b4e84ab4b5084a17456922f",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [
+          "historical_context"
+        ],
+        "new_presentation_roles": [
+          "language_literary"
+        ],
+        "affected_items": [
+          {
+            "evidence_id": "haggai-textual-witnesses",
+            "old_presentation_role": "historical_context",
+            "new_presentation_role": "language_literary",
+            "existing_terra_prose_cited_affected_item": null,
+            "terra_omitted_affected_item": null,
+            "claim": "Masoretic Haggai, Old Greek Aggaios, Judean Desert copies of the Twelve, and other versions attest transmission and textual plurality in difficult passages."
+          }
+        ],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": false,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "Isaiah 62",
+        "historical_batch": "Batch 001",
+        "old_locked_hash": "7fd7647a02040e5f721cef71acddb270f33f87b6896bd97065c43ddf7936ffcf",
+        "newly_reconstructed_hash": "dd3b271028d936e942f130ce3d646c89f89840f67521f95372b6eb8323edc8a2",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [
+          "historical_context"
+        ],
+        "new_presentation_roles": [
+          "language_literary"
+        ],
+        "affected_items": [
+          {
+            "evidence_id": "isaiah-qumran-witnesses",
+            "old_presentation_role": "historical_context",
+            "new_presentation_role": "language_literary",
+            "existing_terra_prose_cited_affected_item": true,
+            "terra_omitted_affected_item": false,
+            "claim": "The Great Isaiah Scroll is an almost complete sixty-six-chapter witness broadly aligned with the Masoretic tradition but containing thousands of orthographic and substantive differences; other Qumran Isaiah manuscripts and pesharim show active transmission and interpretation."
+          }
+        ],
+        "existing_terra_prose_cited_affected_item": true,
+        "terra_omitted_affected_item": false,
+        "final_v1_1_regeneration_recommended": true,
+        "hash_changed": true
+      },
+      {
+        "reference": "Isaiah 66",
+        "historical_batch": "Batch 001",
+        "old_locked_hash": "a0d7ac4e4f0892c87e5534a098973f9e7d476429cfe940e487f806a1db95f923",
+        "newly_reconstructed_hash": "be150fc5d6884aad6ba73d44b93df660e3103832f99b2d04d6c4617241f9714b",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [
+          "historical_context"
+        ],
+        "new_presentation_roles": [
+          "language_literary"
+        ],
+        "affected_items": [
+          {
+            "evidence_id": "isaiah-qumran-witnesses",
+            "old_presentation_role": "historical_context",
+            "new_presentation_role": "language_literary",
+            "existing_terra_prose_cited_affected_item": false,
+            "terra_omitted_affected_item": true,
+            "claim": "The Great Isaiah Scroll is an almost complete sixty-six-chapter witness broadly aligned with the Masoretic tradition but containing thousands of orthographic and substantive differences; other Qumran Isaiah manuscripts and pesharim show active transmission and interpretation."
+          }
+        ],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": true,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "Jeremiah 51",
+        "historical_batch": "Batch 001",
+        "old_locked_hash": "ac385ffbeb300507b1f93c288c697931cc083e48b2c01fe9f3a905dc9c08f10d",
+        "newly_reconstructed_hash": "931e8888605bfff26fd9a36409b43f2b67264d8d479941aa2d61b6bd3ca5641a",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [
+          "historical_context"
+        ],
+        "new_presentation_roles": [
+          "language_literary"
+        ],
+        "affected_items": [
+          {
+            "evidence_id": "jeremiah-two-editions",
+            "old_presentation_role": "historical_context",
+            "new_presentation_role": "language_literary",
+            "existing_terra_prose_cited_affected_item": true,
+            "terra_omitted_affected_item": false,
+            "claim": "Masoretic Jeremiah and Old Greek Ieremias represent markedly different ancient editions: the Alexandrian form is roughly one-seventh shorter and places the nation oracles earlier and in a different order."
+          }
+        ],
+        "existing_terra_prose_cited_affected_item": true,
+        "terra_omitted_affected_item": false,
+        "final_v1_1_regeneration_recommended": true,
+        "hash_changed": true
+      },
+      {
+        "reference": "Joel 2",
+        "historical_batch": "Batch 001",
+        "old_locked_hash": "1c09d71f5c2d5a42cb7315b2a0128766eb58bef1e84b2380f8a557723b6b702e",
+        "newly_reconstructed_hash": "5e9165bd07f09ed7c52a3ef1466fef982864da0e3141969e5fdd5ce22cec386a",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [
+          "historical_context"
+        ],
+        "new_presentation_roles": [
+          "language_literary"
+        ],
+        "affected_items": [
+          {
+            "evidence_id": "joel-text-versification",
+            "old_presentation_role": "historical_context",
+            "new_presentation_role": "language_literary",
+            "existing_terra_prose_cited_affected_item": false,
+            "terra_omitted_affected_item": true,
+            "claim": "Masoretic Joel is commonly divided into four chapters, while Old Greek Ioel and many English Bibles use three; the spirit oracle is Joel 3:1-5 MT but Joel 2:28-32 in common English numbering."
+          },
+          {
+            "evidence_id": "joel:interpretive_note:26",
+            "old_presentation_role": "historical_context",
+            "new_presentation_role": "language_literary",
+            "existing_terra_prose_cited_affected_item": false,
+            "terra_omitted_affected_item": true,
+            "claim": "Masoretic four-chapter and common English three-chapter numbering must be stated at every affected locator so that Joel 3 and 4 are not confused."
+          },
+          {
+            "evidence_id": "joel:interpretive_note:27",
+            "old_presentation_role": "historical_context",
+            "new_presentation_role": "language_literary",
+            "existing_terra_prose_cited_affected_item": false,
+            "terra_omitted_affected_item": true,
+            "claim": "Old Greek Ioel is an ancient translation and textual witness, not merely a Christian edition of Joel."
+          }
+        ],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": true,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "Leviticus 16",
+        "historical_batch": "Batch 001",
+        "old_locked_hash": "74fd1f2c40d1e8eed8b73af305c237d684e85a6c2eb2e7e41461cea06a6ab58f",
+        "newly_reconstructed_hash": "9add8d1bdabb2883b6c093fe6a7f3884c947141f88dc06dfba6492e8d99c56eb",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [],
+        "new_presentation_roles": [],
+        "affected_items": [],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": false,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "Luke 11",
+        "historical_batch": "Batch 001",
+        "old_locked_hash": "0abed47b51e8a0610ff6751c9aea7bd1d2cee1db202d79c11886569acefb36a3",
+        "newly_reconstructed_hash": "cf0e37999e79946e55b98b9277e251b0b1ba9c123368d3c023a66dbb4ee29bea",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [
+          "historical_context"
+        ],
+        "new_presentation_roles": [
+          "language_literary"
+        ],
+        "affected_items": [
+          {
+            "evidence_id": "luke-prayer",
+            "old_presentation_role": "historical_context",
+            "new_presentation_role": "language_literary",
+            "existing_terra_prose_cited_affected_item": true,
+            "terra_omitted_affected_item": false,
+            "claim": "Luke's Lord's Prayer is shorter than Matthew's in the earliest recoverable text, while manuscripts show harmonizing expansions; its petitions concern God's name, kingdom, daily provision, forgiveness, and testing."
+          }
+        ],
+        "existing_terra_prose_cited_affected_item": true,
+        "terra_omitted_affected_item": false,
+        "final_v1_1_regeneration_recommended": true,
+        "hash_changed": true
+      },
+      {
+        "reference": "Luke 22",
+        "historical_batch": "Batch 001",
+        "old_locked_hash": "ffde3ebe0c02e5c41f530158730c25ed8f7122950abf4ddd4b0995588ee6230e",
+        "newly_reconstructed_hash": "0264d7db7a96053dd160748a2025081f71deae4d113d52aa8ef0048c2e0f5386",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [
+          "archaeology_geography"
+        ],
+        "new_presentation_roles": [
+          "language_literary"
+        ],
+        "affected_items": [
+          {
+            "evidence_id": "luke-meal-variant",
+            "old_presentation_role": "archaeology_geography",
+            "new_presentation_role": "language_literary",
+            "existing_terra_prose_cited_affected_item": false,
+            "terra_omitted_affected_item": true,
+            "claim": "Luke 22:19b-20, including the second cup and new-covenant language, is present in many major witnesses but absent in important Western witnesses; shorter-text, longer-text, and harmonization models remain debated."
+          }
+        ],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": true,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "Matthew 23",
+        "historical_batch": "Batch 001",
+        "old_locked_hash": "36153683b44595549db7ab15426fc22d45b6d4bb676152c6cfc3bfca19eeb898",
+        "newly_reconstructed_hash": "daf68466bafe3780460b848da1ad9a2823e5aec94d3f8a04334a28f55abc6166",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [],
+        "new_presentation_roles": [],
+        "affected_items": [],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": false,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "Proverbs 30",
+        "historical_batch": "Batch 001",
+        "old_locked_hash": "d78029d8decc2af29b91f67d72f5d34c47b799e2b9e580fc796a57d97a6e893c",
+        "newly_reconstructed_hash": "14185f66b0b02fe5a0942ad70e1839bf15b7146b74bd52b680540452544c2470",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [],
+        "new_presentation_roles": [],
+        "affected_items": [],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": false,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "Psalms 89",
+        "historical_batch": "Batch 001",
+        "old_locked_hash": "dd6d8a20ea9d18fcdbf976f9d2d4d24c4923aeadd3580115c7921a888f79f865",
+        "newly_reconstructed_hash": "dbd89cd0298ca6a67074114a5530a19e7a6b269bc7c0209ffad6ab5da2b05080",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [],
+        "new_presentation_roles": [],
+        "affected_items": [],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": false,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "2 Kings 10",
+        "historical_batch": "Batch 002",
+        "old_locked_hash": "42ac6ec96fa8f8146e38ce6d88fd6a2d23784096e066df7651536f73509af898",
+        "newly_reconstructed_hash": "fce6436bbb3354202ce4af0dc2a1eb14dd1e44ff709c060dd89106f60290f868",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [],
+        "new_presentation_roles": [],
+        "affected_items": [],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": false,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "2 Kings 16",
+        "historical_batch": "Batch 002",
+        "old_locked_hash": "06553974394cca0cc9c66ac1b6345bb8d10f1f4f1a0d64f765317387cbf20a56",
+        "newly_reconstructed_hash": "94c473bc7a7252122ef6d29395c56487db40e8f7790523c9410c268ca65e1f91",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [],
+        "new_presentation_roles": [],
+        "affected_items": [],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": false,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "2 Kings 17",
+        "historical_batch": "Batch 002",
+        "old_locked_hash": "abaf8dda01b7ca1e930ab9c2100a0c02aeac64a67ff007bd84b97746521a280a",
+        "newly_reconstructed_hash": "072da869eb64e3cbd6c07966399c5ced73868cc004b4f2864e24107f9a1d4c5c",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [],
+        "new_presentation_roles": [],
+        "affected_items": [],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": false,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "2 Kings 19",
+        "historical_batch": "Batch 002",
+        "old_locked_hash": "d9c486ecf5095e069ee2c0f78880a316395a8aac6c104b508db62dafa4e69ed9",
+        "newly_reconstructed_hash": "6d6f76af2b6192769e3087de34432bbd71590510117f2aec7e80216c099683a4",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [],
+        "new_presentation_roles": [],
+        "affected_items": [],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": false,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "2 Timothy 2",
+        "historical_batch": "Batch 002",
+        "old_locked_hash": "e0341bdee288f630ebb44c530f3e296e16f1cffda5ec3830e11499f4dd732259",
+        "newly_reconstructed_hash": "873b14f4857c6828564bfbbb650190c1a55fe42f04fdef5cb80f98ced7ceefe0",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [
+          "archaeology_geography"
+        ],
+        "new_presentation_roles": [
+          "language_literary"
+        ],
+        "affected_items": [
+          {
+            "evidence_id": "2tim-manuscripts",
+            "old_presentation_role": "archaeology_geography",
+            "new_presentation_role": "language_literary",
+            "existing_terra_prose_cited_affected_item": false,
+            "terra_omitted_affected_item": true,
+            "claim": "Codex Sinaiticus preserves 2 Timothy, while the surviving Codex Vaticanus ends before the Pastoral Epistles and is not a witness to this book."
+          }
+        ],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": true,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "Acts 5",
+        "historical_batch": "Batch 002",
+        "old_locked_hash": "f4e73954c68609c58b4cb79064da2efa1806db2a6416fc905a96df994a3a1ba1",
+        "newly_reconstructed_hash": "45337799a2d49b9e24c6a82908a131cf8259ce4c6647cb82c514545369b79b7e",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [
+          "historical_context"
+        ],
+        "new_presentation_roles": [
+          "language_literary"
+        ],
+        "affected_items": [
+          {
+            "evidence_id": "acts-text-witnesses",
+            "old_presentation_role": "historical_context",
+            "new_presentation_role": "language_literary",
+            "existing_terra_prose_cited_affected_item": false,
+            "terra_omitted_affected_item": true,
+            "claim": "Acts is preserved in early papyri and major Greek codices, with P45, P53, P74, Sinaiticus, Vaticanus, and Bezae contributing different portions and textual profiles."
+          }
+        ],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": true,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "Daniel 4",
+        "historical_batch": "Batch 002",
+        "old_locked_hash": "99502f0ddc3e0e431a3040c4fe8347da8723b4b95261b60019e644345ef75715",
+        "newly_reconstructed_hash": "0f104f02131f941fd66956e7586ab989ceec0ff5d4a01b0d8e5a2f336504f6bf",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [
+          "historical_context"
+        ],
+        "new_presentation_roles": [
+          "language_literary"
+        ],
+        "affected_items": [
+          {
+            "evidence_id": "daniel-greek-versions",
+            "old_presentation_role": "historical_context",
+            "new_presentation_role": "language_literary",
+            "existing_terra_prose_cited_affected_item": false,
+            "terra_omitted_affected_item": true,
+            "claim": "Daniel survives in substantially distinct Old Greek and Theodotionic versions, with especially important differences in chapters 4-6 and in the form and placement of additions."
+          },
+          {
+            "evidence_id": "daniel:interpretive_note:25",
+            "old_presentation_role": "historical_context",
+            "new_presentation_role": "language_literary",
+            "existing_terra_prose_cited_affected_item": false,
+            "terra_omitted_affected_item": true,
+            "claim": "Old Greek and Theodotionic Daniel must be compared passage by passage; neither label means that every difference has one cause."
+          }
+        ],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": true,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "Ecclesiastes 5",
+        "historical_batch": "Batch 002",
+        "old_locked_hash": "21dd9f37d9b8ce56821c000b487ef3ea8152d50d8a9464a2f62a2ab37bab1d55",
+        "newly_reconstructed_hash": "695988beab5f63175f7955161d38799fc1ffd2584d30ddaa082333055b4bbff2",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [
+          "historical_context"
+        ],
+        "new_presentation_roles": [
+          "dig_deeper"
+        ],
+        "affected_items": [
+          {
+            "evidence_id": "ecclesiastes-hebrew-greek-qumran-witnesses",
+            "old_presentation_role": "historical_context",
+            "new_presentation_role": "dig_deeper",
+            "existing_terra_prose_cited_affected_item": false,
+            "terra_omitted_affected_item": true,
+            "claim": "Ecclesiastes is witnessed by the Masoretic Hebrew text, fragmentary Hebrew manuscripts 4QQoha and 4QQohb, and an exceptionally literal Greek form titled Ecclesiast."
+          }
+        ],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": true,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "Ephesians 6",
+        "historical_batch": "Batch 002",
+        "old_locked_hash": "0c837095395b3b11900b1d8232d65605269227c52be2de49eed5a6d121ebd1ed",
+        "newly_reconstructed_hash": "c3fad8740db2fdde25c66f59b66e3269b127c5ab4072c271851070a725bd5195",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [],
+        "new_presentation_roles": [],
+        "affected_items": [],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": false,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "Ezekiel 39",
+        "historical_batch": "Batch 002",
+        "old_locked_hash": "19c99238802a8e7c312714f0dd21b88350504cd754399e049d3c4a13ea89c915",
+        "newly_reconstructed_hash": "68b27385d1cd3631fa78e46ae52c8715b601f3b68006fe7eb099fc9a1fa6e0c9",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [
+          "historical_context"
+        ],
+        "new_presentation_roles": [
+          "language_literary"
+        ],
+        "affected_items": [
+          {
+            "evidence_id": "ezekiel-p967-order",
+            "old_presentation_role": "historical_context",
+            "new_presentation_role": "language_literary",
+            "existing_terra_prose_cited_affected_item": true,
+            "terra_omitted_affected_item": false,
+            "claim": "Papyrus 967 places the material conventionally numbered Ezekiel 38-39 before chapter 37, showing an ancient order different from the familiar Masoretic sequence."
+          }
+        ],
+        "existing_terra_prose_cited_affected_item": true,
+        "terra_omitted_affected_item": false,
+        "final_v1_1_regeneration_recommended": true,
+        "hash_changed": true
+      },
+      {
+        "reference": "Hebrews 2",
+        "historical_batch": "Batch 002",
+        "old_locked_hash": "04966088193aac18eb76ebd1e792aced430eb557ac5749ab0cde5312c6d5dc1b",
+        "newly_reconstructed_hash": "c5e3c6864d68ac2df8a561be3c4ad9dd73d4e8808135236d86c1e2a3962829a6",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [
+          "archaeology_geography"
+        ],
+        "new_presentation_roles": [
+          "language_literary"
+        ],
+        "affected_items": [
+          {
+            "evidence_id": "heb-p46",
+            "old_presentation_role": "archaeology_geography",
+            "new_presentation_role": "language_literary",
+            "existing_terra_prose_cited_affected_item": false,
+            "terra_omitted_affected_item": true,
+            "claim": "Papyrus 46 is an early substantial witness to Hebrews, though it has lacunae and its paleographic date remains approximate."
+          },
+          {
+            "evidence_id": "heb-sinaiticus",
+            "old_presentation_role": "archaeology_geography",
+            "new_presentation_role": "language_literary",
+            "existing_terra_prose_cited_affected_item": false,
+            "terra_omitted_affected_item": true,
+            "claim": "Codex Sinaiticus preserves Hebrews in its New Testament sequence after 2 Thessalonians."
+          }
+        ],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": true,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "Hebrews 13",
+        "historical_batch": "Batch 002",
+        "old_locked_hash": "807dc2017809d340fc2059d4a6af188fc97d349470c565b9f6e51a4d605ffba9",
+        "newly_reconstructed_hash": "a40f2440d8c3e91d56d23b2117dfc09e4ef4a47d4ceac99ef43f991e95f1bbb3",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [
+          "archaeology_geography"
+        ],
+        "new_presentation_roles": [
+          "language_literary"
+        ],
+        "affected_items": [
+          {
+            "evidence_id": "heb-p46",
+            "old_presentation_role": "archaeology_geography",
+            "new_presentation_role": "language_literary",
+            "existing_terra_prose_cited_affected_item": false,
+            "terra_omitted_affected_item": true,
+            "claim": "Papyrus 46 is an early substantial witness to Hebrews, though it has lacunae and its paleographic date remains approximate."
+          },
+          {
+            "evidence_id": "heb-sinaiticus",
+            "old_presentation_role": "archaeology_geography",
+            "new_presentation_role": "language_literary",
+            "existing_terra_prose_cited_affected_item": false,
+            "terra_omitted_affected_item": true,
+            "claim": "Codex Sinaiticus preserves Hebrews in its New Testament sequence after 2 Thessalonians."
+          }
+        ],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": true,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "Isaiah 1",
+        "historical_batch": "Batch 002",
+        "old_locked_hash": "f9b272dfb554d2f5e7e030babfe8b4b524ce2017b4f2a71a6675dd38a41c5094",
+        "newly_reconstructed_hash": "5370c92476208b5e89b79d278873ea16bdcbdbb9ab75bebd23d79d70a7075d5c",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [
+          "historical_context"
+        ],
+        "new_presentation_roles": [
+          "language_literary"
+        ],
+        "affected_items": [
+          {
+            "evidence_id": "isaiah-qumran-witnesses",
+            "old_presentation_role": "historical_context",
+            "new_presentation_role": "language_literary",
+            "existing_terra_prose_cited_affected_item": false,
+            "terra_omitted_affected_item": true,
+            "claim": "The Great Isaiah Scroll is an almost complete sixty-six-chapter witness broadly aligned with the Masoretic tradition but containing thousands of orthographic and substantive differences; other Qumran Isaiah manuscripts and pesharim show active transmission and interpretation."
+          }
+        ],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": true,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "Isaiah 34",
+        "historical_batch": "Batch 002",
+        "old_locked_hash": "e53bca8315804e5d1cb6e368aec07c43be41bb82897145d29950ce4366b5a8c3",
+        "newly_reconstructed_hash": "84cb3a59417866ff259a13dc58b9ded23647bceb5182df999a46c34d1a61c0f9",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [
+          "historical_context"
+        ],
+        "new_presentation_roles": [
+          "language_literary"
+        ],
+        "affected_items": [
+          {
+            "evidence_id": "isaiah-qumran-witnesses",
+            "old_presentation_role": "historical_context",
+            "new_presentation_role": "language_literary",
+            "existing_terra_prose_cited_affected_item": true,
+            "terra_omitted_affected_item": false,
+            "claim": "The Great Isaiah Scroll is an almost complete sixty-six-chapter witness broadly aligned with the Masoretic tradition but containing thousands of orthographic and substantive differences; other Qumran Isaiah manuscripts and pesharim show active transmission and interpretation."
+          }
+        ],
+        "existing_terra_prose_cited_affected_item": true,
+        "terra_omitted_affected_item": false,
+        "final_v1_1_regeneration_recommended": true,
+        "hash_changed": true
+      },
+      {
+        "reference": "Isaiah 47",
+        "historical_batch": "Batch 002",
+        "old_locked_hash": "33926e939adace22228b53754d5ce4b63e7e29188d683ba82bf17dc69e098186",
+        "newly_reconstructed_hash": "612af386f625bf271626027f02f609e17793202088b09c17a830d3ea06d53a70",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [
+          "historical_context"
+        ],
+        "new_presentation_roles": [
+          "language_literary"
+        ],
+        "affected_items": [
+          {
+            "evidence_id": "isaiah-qumran-witnesses",
+            "old_presentation_role": "historical_context",
+            "new_presentation_role": "language_literary",
+            "existing_terra_prose_cited_affected_item": true,
+            "terra_omitted_affected_item": false,
+            "claim": "The Great Isaiah Scroll is an almost complete sixty-six-chapter witness broadly aligned with the Masoretic tradition but containing thousands of orthographic and substantive differences; other Qumran Isaiah manuscripts and pesharim show active transmission and interpretation."
+          }
+        ],
+        "existing_terra_prose_cited_affected_item": true,
+        "terra_omitted_affected_item": false,
+        "final_v1_1_regeneration_recommended": true,
+        "hash_changed": true
+      },
+      {
+        "reference": "Isaiah 57",
+        "historical_batch": "Batch 002",
+        "old_locked_hash": "acf008c023f9abe934b095aa55fbc1e98b60d8b4c3e0c13eccc82fb2d25fa982",
+        "newly_reconstructed_hash": "18a4506e30fbd63dab9c5f860593c20d0ad79b467af1b1ea1d11a3020fecf5ec",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [
+          "historical_context"
+        ],
+        "new_presentation_roles": [
+          "language_literary"
+        ],
+        "affected_items": [
+          {
+            "evidence_id": "isaiah-qumran-witnesses",
+            "old_presentation_role": "historical_context",
+            "new_presentation_role": "language_literary",
+            "existing_terra_prose_cited_affected_item": true,
+            "terra_omitted_affected_item": false,
+            "claim": "The Great Isaiah Scroll is an almost complete sixty-six-chapter witness broadly aligned with the Masoretic tradition but containing thousands of orthographic and substantive differences; other Qumran Isaiah manuscripts and pesharim show active transmission and interpretation."
+          }
+        ],
+        "existing_terra_prose_cited_affected_item": true,
+        "terra_omitted_affected_item": false,
+        "final_v1_1_regeneration_recommended": true,
+        "hash_changed": true
+      },
+      {
+        "reference": "Isaiah 63",
+        "historical_batch": "Batch 002",
+        "old_locked_hash": "ba7f25be6ffb6a2bc93c0f65997743bb145656868ca155a4dfcf163cc891da61",
+        "newly_reconstructed_hash": "b2f6c907c27e24b890360709c29fdbcb8fd24ad9c9dc214a82de622ff2cf4594",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [
+          "historical_context"
+        ],
+        "new_presentation_roles": [
+          "language_literary"
+        ],
+        "affected_items": [
+          {
+            "evidence_id": "isaiah-qumran-witnesses",
+            "old_presentation_role": "historical_context",
+            "new_presentation_role": "language_literary",
+            "existing_terra_prose_cited_affected_item": false,
+            "terra_omitted_affected_item": true,
+            "claim": "The Great Isaiah Scroll is an almost complete sixty-six-chapter witness broadly aligned with the Masoretic tradition but containing thousands of orthographic and substantive differences; other Qumran Isaiah manuscripts and pesharim show active transmission and interpretation."
+          }
+        ],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": true,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "James 2",
+        "historical_batch": "Batch 002",
+        "old_locked_hash": "c692e9bdf0734808e0a983a32fde024d25066754f4529019850a9a28f0840113",
+        "newly_reconstructed_hash": "2a6e8acb5d8bfb034ee9ee8f3c342ec385bb521d70361b2911277c6c7c43af90",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [],
+        "new_presentation_roles": [],
+        "affected_items": [],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": false,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "Jeremiah 48",
+        "historical_batch": "Batch 002",
+        "old_locked_hash": "8058de17fa4d441a7212b60a457d3b32da42a00492c0af15d47b24ab297ff956",
+        "newly_reconstructed_hash": "384520bf984a1552ee7c86b9fa780d3ecd1e4887a2afd8f9ab0a8aaca00bd7a6",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [
+          "historical_context"
+        ],
+        "new_presentation_roles": [
+          "language_literary"
+        ],
+        "affected_items": [
+          {
+            "evidence_id": "jeremiah-two-editions",
+            "old_presentation_role": "historical_context",
+            "new_presentation_role": "language_literary",
+            "existing_terra_prose_cited_affected_item": true,
+            "terra_omitted_affected_item": false,
+            "claim": "Masoretic Jeremiah and Old Greek Ieremias represent markedly different ancient editions: the Alexandrian form is roughly one-seventh shorter and places the nation oracles earlier and in a different order."
+          }
+        ],
+        "existing_terra_prose_cited_affected_item": true,
+        "terra_omitted_affected_item": false,
+        "final_v1_1_regeneration_recommended": true,
+        "hash_changed": true
+      },
+      {
+        "reference": "Job 7",
+        "historical_batch": "Batch 002",
+        "old_locked_hash": "703ca089007ffab190c26ef3048e12e208bf169721e3d0e99290850a8cf83857",
+        "newly_reconstructed_hash": "ba5edd8e3d61175d76c8a5166ee223227187903bb0c989ca9d0a54f826098201",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [
+          "historical_context"
+        ],
+        "new_presentation_roles": [
+          "language_literary"
+        ],
+        "affected_items": [
+          {
+            "evidence_id": "job:interpretive_note:11",
+            "old_presentation_role": "historical_context",
+            "new_presentation_role": "language_literary",
+            "existing_terra_prose_cited_affected_item": false,
+            "terra_omitted_affected_item": true,
+            "claim": "Old Greek Job is substantially shorter than the Masoretic form in much of the poetry and also contains expansions, while Qumran preserves Hebrew fragments and an Aramaic targum. Translation and textual criticism should therefore identify the witness in view rather than treating every ancient form as verbally identical."
+          }
+        ],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": true,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "Job 11",
+        "historical_batch": "Batch 002",
+        "old_locked_hash": "54e04a81c570e9d2854052646325fc60b789b9f0c34da298f358853e18a2fbba",
+        "newly_reconstructed_hash": "375a0423269f1a52983b213388818e820c0ee9f0f48cfc5787a9b8a73706d4ae",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [
+          "historical_context"
+        ],
+        "new_presentation_roles": [
+          "language_literary"
+        ],
+        "affected_items": [
+          {
+            "evidence_id": "job:interpretive_note:11",
+            "old_presentation_role": "historical_context",
+            "new_presentation_role": "language_literary",
+            "existing_terra_prose_cited_affected_item": false,
+            "terra_omitted_affected_item": true,
+            "claim": "Old Greek Job is substantially shorter than the Masoretic form in much of the poetry and also contains expansions, while Qumran preserves Hebrew fragments and an Aramaic targum. Translation and textual criticism should therefore identify the witness in view rather than treating every ancient form as verbally identical."
+          }
+        ],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": true,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "Job 15",
+        "historical_batch": "Batch 002",
+        "old_locked_hash": "39cea54f8c5705feebe3e4b31661131156d34e64dd0d49269e6c24a9a4f33b83",
+        "newly_reconstructed_hash": "9c36af7217d5497f4bc3100bf96528930882a882703f1f6785359660661ab0c1",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [
+          "historical_context"
+        ],
+        "new_presentation_roles": [
+          "language_literary"
+        ],
+        "affected_items": [
+          {
+            "evidence_id": "job:interpretive_note:11",
+            "old_presentation_role": "historical_context",
+            "new_presentation_role": "language_literary",
+            "existing_terra_prose_cited_affected_item": false,
+            "terra_omitted_affected_item": true,
+            "claim": "Old Greek Job is substantially shorter than the Masoretic form in much of the poetry and also contains expansions, while Qumran preserves Hebrew fragments and an Aramaic targum. Translation and textual criticism should therefore identify the witness in view rather than treating every ancient form as verbally identical."
+          }
+        ],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": true,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "Job 33",
+        "historical_batch": "Batch 002",
+        "old_locked_hash": "d408fecc8475e2c9ad259516028fd5e516042cd4657b3b980703cca95ca82a26",
+        "newly_reconstructed_hash": "94ed774d93f286d749d1b30361330458b313a3ab3c45c93682da75c7e3db61c8",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [
+          "historical_context"
+        ],
+        "new_presentation_roles": [
+          "language_literary"
+        ],
+        "affected_items": [
+          {
+            "evidence_id": "job:interpretive_note:11",
+            "old_presentation_role": "historical_context",
+            "new_presentation_role": "language_literary",
+            "existing_terra_prose_cited_affected_item": false,
+            "terra_omitted_affected_item": true,
+            "claim": "Old Greek Job is substantially shorter than the Masoretic form in much of the poetry and also contains expansions, while Qumran preserves Hebrew fragments and an Aramaic targum. Translation and textual criticism should therefore identify the witness in view rather than treating every ancient form as verbally identical."
+          }
+        ],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": true,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "Job 36",
+        "historical_batch": "Batch 002",
+        "old_locked_hash": "269b5c4a31f07d39f55fe1668f69ca38c7cf9671cd7b39822976ffaa31bc71b0",
+        "newly_reconstructed_hash": "2224d8bad5532fa5be579c4698ca72d5d3d4919677d852951fb9073834bf8bb2",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [
+          "historical_context"
+        ],
+        "new_presentation_roles": [
+          "language_literary"
+        ],
+        "affected_items": [
+          {
+            "evidence_id": "job:interpretive_note:11",
+            "old_presentation_role": "historical_context",
+            "new_presentation_role": "language_literary",
+            "existing_terra_prose_cited_affected_item": false,
+            "terra_omitted_affected_item": true,
+            "claim": "Old Greek Job is substantially shorter than the Masoretic form in much of the poetry and also contains expansions, while Qumran preserves Hebrew fragments and an Aramaic targum. Translation and textual criticism should therefore identify the witness in view rather than treating every ancient form as verbally identical."
+          }
+        ],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": true,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "John 6",
+        "historical_batch": "Batch 002",
+        "old_locked_hash": "2ecd3a7af485c9726f8213fc26992e92b819a59ea44fc7f0667f59369fd39b45",
+        "newly_reconstructed_hash": "c81dee1413e4d93df70a886ab54c8ee14a15918269c96d099cba5361844b96d0",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [],
+        "new_presentation_roles": [],
+        "affected_items": [],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": false,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "Jude 1",
+        "historical_batch": "Batch 002",
+        "old_locked_hash": "f413f0eb965b87b39353cb7859345dbd46a4141bd9573c4f88731bc194b3d1e0",
+        "newly_reconstructed_hash": "f0db5c5ae3342f9cef3bae70b4cb452a28b95d72367a69cf106d2748b570722f",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [
+          "historical_context"
+        ],
+        "new_presentation_roles": [
+          "language_literary"
+        ],
+        "affected_items": [
+          {
+            "evidence_id": "jude-exodus",
+            "old_presentation_role": "historical_context",
+            "new_presentation_role": "language_literary",
+            "existing_terra_prose_cited_affected_item": false,
+            "terra_omitted_affected_item": true,
+            "claim": "Jude recalls rescue from Egypt followed by destruction of those who did not believe, while the subject in verse 5 has a major textual variant."
+          },
+          {
+            "evidence_id": "jude:interpretive_note:7",
+            "old_presentation_role": "historical_context",
+            "new_presentation_role": "language_literary",
+            "existing_terra_prose_cited_affected_item": false,
+            "terra_omitted_affected_item": true,
+            "claim": "Verse 5 reads Jesus, Lord, or God in different witnesses and editions. The Jesus reading makes an unusually explicit christological exodus claim; exact wording requires textual review."
+          }
+        ],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": true,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "Mark 6",
+        "historical_batch": "Batch 002",
+        "old_locked_hash": "0b00d6fc9049197594bc7a2bab27b55be1b1a193bdf923ff52ae3cd213078642",
+        "newly_reconstructed_hash": "22d91fe8f8567d1d3db0232d9d6b226ae66c99dea5e455d4576a09c297ad20be",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [],
+        "new_presentation_roles": [],
+        "affected_items": [],
+        "existing_terra_prose_cited_affected_item": false,
+        "terra_omitted_affected_item": false,
+        "final_v1_1_regeneration_recommended": false,
+        "hash_changed": true
+      },
+      {
+        "reference": "Psalms 9",
+        "historical_batch": "Batch 002",
+        "old_locked_hash": "66f606ba517f405e5cd9685932378a487c48c2ed3e411fef7acc1a31b6dfa778",
+        "newly_reconstructed_hash": "e76c803bedc7f9f0719ec327a16df2fd7054f1909f71bade2a2576abb3a125bf",
+        "evidence_ids_changed": false,
+        "old_presentation_roles": [
+          "historical_context"
+        ],
+        "new_presentation_roles": [
+          "language_literary"
+        ],
+        "affected_items": [
+          {
+            "evidence_id": "psalms-numbering-witnesses",
+            "old_presentation_role": "historical_context",
+            "new_presentation_role": "language_literary",
+            "existing_terra_prose_cited_affected_item": true,
+            "terra_omitted_affected_item": false,
+            "claim": "Greek and Latin Psalter traditions number many psalms differently from the Masoretic tradition because they combine Psalms 9-10 and 114-115, divide Psalms 116 and 147, and transmit Psalm 151 beyond the 150-psalm count."
+          }
+        ],
+        "existing_terra_prose_cited_affected_item": true,
+        "terra_omitted_affected_item": false,
+        "final_v1_1_regeneration_recommended": true,
+        "hash_changed": true
+      }
+    ],
+    "terra_omitted_affected_item_count": 17,
+    "regeneration_recommended_count": 10
+  },
+  "corpus_wide_scan": {
+    "eligible_corpus_chapters_scanned": 935,
+    "textual_evidence_records_found": 424,
+    "chapters_affected": 228,
+    "routing_distribution_before_fix": {
+      "UNASSIGNED": 3,
+      "archaeology_geography": 80,
+      "chronology": 3,
+      "dig_deeper": 4,
+      "historical_context": 200,
+      "language_literary": 134
+    },
+    "routing_distribution_after_fix": {
+      "UNASSIGNED": 3,
+      "dig_deeper": 9,
+      "language_literary": 412
+    },
+    "corrections": {
+      "archaeology_geography -> language_literary": 80,
+      "chronology -> language_literary": 3,
+      "historical_context -> dig_deeper": 5,
+      "historical_context -> language_literary": 195
+    },
+    "historical_context_to_language_literary": 195,
+    "archaeology_geography_to_language_literary": 80,
+    "interpretive_questions_assignments": [],
+    "dig_deeper_assignments": [
+      {
+        "reference": "Ecclesiastes 1",
+        "evidence_id": "ecclesiastes-hebrew-greek-qumran-witnesses"
+      },
+      {
+        "reference": "Ecclesiastes 5",
+        "evidence_id": "ecclesiastes-hebrew-greek-qumran-witnesses"
+      },
+      {
+        "reference": "Ecclesiastes 6",
+        "evidence_id": "ecclesiastes-hebrew-greek-qumran-witnesses"
+      },
+      {
+        "reference": "Ecclesiastes 7",
+        "evidence_id": "ecclesiastes-hebrew-greek-qumran-witnesses"
+      },
+      {
+        "reference": "Acts 2",
+        "evidence_id": "joel-acts-romans-reuse"
+      },
+      {
+        "reference": "Romans 10",
+        "evidence_id": "joel-acts-romans-reuse"
+      },
+      {
+        "reference": "Matthew 28",
+        "evidence_id": "matthew-commission-formula"
+      },
+      {
+        "reference": "Amos 9",
+        "evidence_id": "obadiah-twelve-placement"
+      },
+      {
+        "reference": "Jonah 1",
+        "evidence_id": "obadiah-twelve-placement"
+      }
+    ],
+    "ambiguous_unresolved_cases": [
+      {
+        "reference": "Deuteronomy 32",
+        "evidence_id": "deuteronomy-32-8-textual-witnesses",
+        "role": null
+      },
+      {
+        "reference": "1 Thessalonians 3",
+        "evidence_id": "mission-58-thess-timothy-embassy-report",
+        "role": null
+      },
+      {
+        "reference": "Romans 16",
+        "evidence_id": "prayer-14-romans-doxology",
+        "role": null
+      }
+    ]
+  }
+}

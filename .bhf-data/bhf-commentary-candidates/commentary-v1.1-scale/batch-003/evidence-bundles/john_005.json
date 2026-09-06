@@ -1,0 +1,211 @@
+{
+  "passage_ref": "John 5",
+  "entities": {
+    "people": [],
+    "places": [],
+    "groups": [],
+    "events": [],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "john-5-variant",
+      "claim": "The angel-and-stirring-water explanation in John 5:3b-4 is absent from important early witnesses and is widely treated as a later explanatory addition.",
+      "category": "history",
+      "source_ids": [
+        "ntvmr-john",
+        "p66-bodmer",
+        "p75-john"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "John 5:1-9"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "john",
+        "parent_title": "John",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "strong_consensus",
+        "dispute_status": "textual_variant",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 95
+      }
+    },
+    {
+      "id": "john-sabbath-son",
+      "claim": "John 5 joins Sabbath healing, divine work, Son-Father relation, life, judgment, and multiple witnesses; 'equal with God' first appears as the narrator's account of opponents' inference and is developed rather than left isolated.",
+      "category": "culture",
+      "source_ids": [
+        "john-greek",
+        "smith-theology"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "John 5:1-47"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "john",
+        "parent_title": "John",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "textually_explicit",
+        "dispute_status": "denominational_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 105
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "The Gospel according to John, Greek text",
+        "author": "",
+        "publisher": "Society of Biblical Literature",
+        "year": 2010,
+        "locator": "John 1-21 in SBLGNT",
+        "url": "https://www.sbl-site.org/resources/digital-texts/sbl-greek-new-testament/",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "structure",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Open critical Greek text.",
+        "id": "john-greek",
+        "canonical_object_ids": [
+          "john"
+        ]
+      },
+      {
+        "title": "New Testament Virtual Manuscript Room",
+        "author": "",
+        "publisher": "Institut f\u00fcr Neutestamentliche Textforschung",
+        "year": null,
+        "locator": "John manuscripts and textual apparatus workspace",
+        "url": "https://ntvmr.uni-muenster.de/manuscript-workspace",
+        "source_type": "reference-work",
+        "supports": [
+          "claims",
+          "interpretive-notes",
+          "archaeology"
+        ],
+        "notes": "Primary manuscript catalog and images where available.",
+        "id": "ntvmr-john",
+        "canonical_object_ids": [
+          "john"
+        ]
+      },
+      {
+        "title": "Papyrus Bodmer II, P66",
+        "author": "",
+        "publisher": "Fondation Martin Bodmer and Bodmer Lab",
+        "year": null,
+        "locator": "Substantial portions of John",
+        "url": "https://bodmerlab.unige.ch/fr/constellations/papyri",
+        "source_type": "museum-collection",
+        "supports": [
+          "claims",
+          "interpretive-notes",
+          "archaeology"
+        ],
+        "notes": "Early papyrus witness to John and its corrections.",
+        "id": "p66-bodmer",
+        "canonical_object_ids": [
+          "john"
+        ]
+      },
+      {
+        "title": "Papyrus Bodmer XIV-XV, P75",
+        "author": "",
+        "publisher": "Vatican Library",
+        "year": null,
+        "locator": "Luke and John",
+        "url": "https://digi.vatlib.it/view/MSS_Pap.Hanna.1(Mater.Verbi)",
+        "source_type": "museum-collection",
+        "supports": [
+          "claims",
+          "interpretive-notes",
+          "archaeology"
+        ],
+        "notes": "Early papyrus codex containing Luke and John.",
+        "id": "p75-john",
+        "canonical_object_ids": [
+          "john"
+        ]
+      },
+      {
+        "title": "The Theology of the Gospel of John",
+        "author": "Dwight Moody Smith",
+        "publisher": "Cambridge University Press",
+        "year": 1995,
+        "locator": "Theology of John and the issues it raises",
+        "url": "https://www.cambridge.org/core/books/abs/theology-of-the-gospel-of-john/theology-of-john-and-the-issues-it-raises/975440B1EAE9424C6B2C919A3CC03DEB",
+        "source_type": "academic-book",
+        "supports": [
+          "major-themes",
+          "claims",
+          "interpretive-notes"
+        ],
+        "notes": "Theological synthesis with attention to Christology, anti-Judaism, and reception.",
+        "id": "smith-theology",
+        "canonical_object_ids": [
+          "john"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "john",
+        "type": "book",
+        "title": "John",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.917
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "863a06f7e9220a8e7900ae2f46b2ad3328a2831721133a590d8668aafe050f5d",
+  "evidence_hash_version": "2"
+}

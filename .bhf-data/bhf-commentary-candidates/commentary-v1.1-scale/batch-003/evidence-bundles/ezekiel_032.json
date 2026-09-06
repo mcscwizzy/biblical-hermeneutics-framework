@@ -1,0 +1,180 @@
+{
+  "passage_ref": "Ezekiel 32",
+  "entities": {
+    "people": [],
+    "places": [],
+    "groups": [],
+    "events": [],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "ezekiel-practical-outline",
+      "claim": "Chapters 1-3, 4-24, 25-32, 33-39, and 40-48 provide a practical reading outline without settling chronology or composition.",
+      "category": "culture",
+      "source_ids": [
+        "ezekiel-masoretic",
+        "block-ezekiel-1-24",
+        "block-ezekiel-25-48",
+        "oxford-handbook-ezekiel"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Ezekiel 32:1-32"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "ezekiel",
+        "parent_title": "Ezekiel",
+        "parent_type": "book",
+        "object_importance": 92,
+        "retrieval_score": 0.912,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 0,
+        "certainty": "probable",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 55
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "The Book of Ezekiel, Chapters 1-24",
+        "author": "Daniel I. Block",
+        "publisher": "Eerdmans",
+        "year": 1997,
+        "locator": "New International Commentary on the Old Testament",
+        "url": "https://www.eerdmans.com/9780802825353/the-book-of-ezekiel-chapters-124/",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "ancient-near-east-context",
+          "literary-context",
+          "structure",
+          "ezekiel-practical-outline",
+          "ezekiel-wife-sign"
+        ],
+        "notes": "Extensive evangelical commentary on historical, literary, linguistic, and theological questions in Ezekiel 1-24.",
+        "id": "block-ezekiel-1-24",
+        "canonical_object_ids": [
+          "ezekiel"
+        ]
+      },
+      {
+        "title": "The Book of Ezekiel, Chapters 25-48",
+        "author": "Daniel I. Block",
+        "publisher": "Eerdmans",
+        "year": 1998,
+        "locator": "New International Commentary on the Old Testament",
+        "url": "https://www.eerdmans.com/9781467423717/the-book-of-ezekiel-chapters-2548/",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "literary-context",
+          "structure",
+          "ezekiel-practical-outline",
+          "ezekiel-shepherd-david",
+          "ezekiel-new-heart-spirit",
+          "ezekiel-dry-bones",
+          "ezekiel-gog",
+          "ezekiel-temple-vision"
+        ],
+        "notes": "Extensive evangelical commentary on Ezekiel 25-48.",
+        "id": "block-ezekiel-25-48",
+        "canonical_object_ids": [
+          "ezekiel"
+        ]
+      },
+      {
+        "title": "Masoretic Ezekiel",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Ezekiel 1-48 in the Masoretic textual tradition",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "historical-context",
+          "literary-context",
+          "structure",
+          "major-themes",
+          "scripture-references",
+          "hebrew-words",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "Primary received Hebrew canonical text.",
+        "id": "ezekiel-masoretic",
+        "canonical_object_ids": [
+          "ezekiel"
+        ]
+      },
+      {
+        "title": "The Oxford Handbook of Ezekiel",
+        "author": "Corrine Carvalho, editor",
+        "publisher": "Oxford University Press",
+        "year": 2023,
+        "locator": "Text, history, themes, reception, and contextual interpretation",
+        "url": "https://academic.oup.com/edited-volume/35418",
+        "source_type": "reference-work",
+        "supports": [
+          "summary",
+          "historical-context",
+          "ancient-near-east-context",
+          "second-temple-context",
+          "canonical-context",
+          "later-christian-reception",
+          "authorship-positions",
+          "literary-context",
+          "interpretive-disputes",
+          "ezekiel-practical-outline",
+          "ezekiel-compositional-history",
+          "ezekiel-revelation-reuse"
+        ],
+        "notes": "Multi-perspectival scholarly handbook used for current research orientation.",
+        "id": "oxford-handbook-ezekiel",
+        "canonical_object_ids": [
+          "ezekiel"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "ezekiel",
+        "type": "book",
+        "title": "Ezekiel",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.912
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "b422f193ce1ce142019a13200b68bd5cb6788eaa31a7d60b9e1cdc8f19c353a0",
+  "evidence_hash_version": "2"
+}

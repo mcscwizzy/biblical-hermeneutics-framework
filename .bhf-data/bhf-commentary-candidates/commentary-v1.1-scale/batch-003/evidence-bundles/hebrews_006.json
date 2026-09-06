@@ -1,0 +1,482 @@
+{
+  "passage_ref": "Hebrews 6",
+  "entities": {
+    "people": [],
+    "places": [],
+    "groups": [],
+    "events": [],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "heb-anchor",
+      "claim": "God's promise and oath ground hope described as an anchor entering behind the curtain where Jesus is forerunner and priest.",
+      "category": "culture",
+      "source_ids": [
+        "heb-greek",
+        "attridge"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Hebrews 6:13-20"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "hebrews",
+        "parent_title": "Hebrews",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 12,
+        "certainty": "textually_explicit",
+        "dispute_status": "not_disputed",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_theology",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 103
+      }
+    },
+    {
+      "id": "heb-p46",
+      "claim": "Papyrus 46 is an early substantial witness to Hebrews, though it has lacunae and its paleographic date remains approximate.",
+      "category": "archaeology",
+      "source_ids": [
+        "p46",
+        "ntvmr"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Hebrews 1:1-13:25"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "hebrews",
+        "parent_title": "Hebrews",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 500,
+        "certainty": "strong_consensus",
+        "dispute_status": "archaeological_uncertainty",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "archaeology",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 58
+      }
+    },
+    {
+      "id": "heb-sinaiticus",
+      "claim": "Codex Sinaiticus preserves Hebrews in its New Testament sequence after 2 Thessalonians.",
+      "category": "archaeology",
+      "source_ids": [
+        "sinaiticus",
+        "ntvmr"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Hebrews 1:1-13:25"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "hebrews",
+        "parent_title": "Hebrews",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 500,
+        "certainty": "strong_consensus",
+        "dispute_status": "archaeological_uncertainty",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "archaeology",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 58
+      }
+    },
+    {
+      "id": "heb-warning-six",
+      "claim": "Hebrews 6 describes people once enlightened and then fallen away with impossibility and agricultural warning language.",
+      "category": "culture",
+      "source_ids": [
+        "heb-greek",
+        "koester"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Hebrews 6:4-12"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "hebrews",
+        "parent_title": "Hebrews",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 3,
+        "certainty": "textually_explicit",
+        "dispute_status": "denominational_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_theology",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 110
+      }
+    },
+    {
+      "id": "hebrews:interpretive_note:14",
+      "claim": "The maturity appeal criticizes stagnation while the infancy metaphor must not shame disabled people, learners, trauma survivors, or those needing accessible teaching.",
+      "category": "culture",
+      "source_ids": [
+        "heb-greek",
+        "desilva"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Hebrews 5:11-6:3"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "hebrews",
+        "parent_title": "Hebrews",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 100,
+        "certainty": "textually_explicit",
+        "dispute_status": "denominational_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "interpretive-caution",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 87
+      }
+    },
+    {
+      "id": "hebrews:interpretive_note:15",
+      "claim": "Warning in Hebrews 6 uses severe agricultural and impossibility rhetoric; terrorizing people, declaring victims irredeemable, or practicing spiritual abuse exceeds the passage.",
+      "category": "culture",
+      "source_ids": [
+        "heb-greek",
+        "koester",
+        "desilva"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Hebrews 6:4-12"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "hebrews",
+        "parent_title": "Hebrews",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 3,
+        "certainty": "textually_explicit",
+        "dispute_status": "denominational_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "interpretive-caution",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 102
+      }
+    },
+    {
+      "id": "hebrews:interpretive_note:16",
+      "claim": "The oath and anchor images cultivate hope and endurance; they are not proofs that leaders or institutions deserve unconditional trust.",
+      "category": "culture",
+      "source_ids": [
+        "heb-greek",
+        "attridge"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Hebrews 6:13-20"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "hebrews",
+        "parent_title": "Hebrews",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 12,
+        "certainty": "textually_explicit",
+        "dispute_status": "not_disputed",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "literary-observation",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 110
+      }
+    },
+    {
+      "id": "hebrews:interpretive_note:39",
+      "claim": "Application must reject antisemitism, supersessionism, misogyny, anti-LGBTQ coercion, forced conversion, colonial mission, nationalism, religious violence, prosperity extraction, and ecological neglect.",
+      "category": "culture",
+      "source_ids": [
+        "levine-jant",
+        "mitzi-smith",
+        "carter"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Hebrews 1:1-13:25"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_interpretive_note",
+        "parent_object_id": "hebrews",
+        "parent_title": "Hebrews",
+        "parent_type": "book",
+        "object_importance": 97,
+        "retrieval_score": 0.917,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 500,
+        "certainty": "strong_consensus",
+        "dispute_status": "denominational_disagreement",
+        "assertion_type": "inference",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "",
+        "note_type": "later-reception",
+        "field": "",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "dig_deeper",
+        "overview_priority": 57
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "The Epistle to the Hebrews",
+        "author": "Harold W. Attridge",
+        "publisher": "Fortress Press",
+        "year": 1989,
+        "locator": "Hermeneia",
+        "url": "https://www.worldcat.org/title/13455343",
+        "source_type": "academic-book",
+        "supports": [],
+        "notes": "",
+        "id": "attridge",
+        "canonical_object_ids": [
+          "hebrews"
+        ]
+      },
+      {
+        "title": "The Roman Empire and the New Testament",
+        "author": "Warren Carter",
+        "publisher": "Abingdon Press",
+        "year": 2006,
+        "locator": "Imperial and social setting",
+        "url": "https://www.worldcat.org/title/62341494",
+        "source_type": "academic-book",
+        "supports": [],
+        "notes": "",
+        "id": "carter",
+        "canonical_object_ids": [
+          "hebrews"
+        ]
+      },
+      {
+        "title": "Perseverance in Gratitude",
+        "author": "David A. deSilva",
+        "publisher": "Eerdmans",
+        "year": 2000,
+        "locator": "Socio-rhetorical commentary",
+        "url": "https://www.eerdmans.com/9780802841888/perseverance-in-gratitude/",
+        "source_type": "academic-book",
+        "supports": [],
+        "notes": "",
+        "id": "desilva",
+        "canonical_object_ids": [
+          "hebrews"
+        ]
+      },
+      {
+        "title": "SBL Greek New Testament: Hebrews",
+        "author": "Michael W. Holmes, editor",
+        "publisher": "Society of Biblical Literature and Logos Bible Software",
+        "year": 2010,
+        "locator": "Hebrews 1:1-13:25",
+        "url": "https://www.sblgnt.com/",
+        "source_type": "scripture",
+        "supports": [],
+        "notes": "",
+        "id": "heb-greek",
+        "canonical_object_ids": [
+          "hebrews"
+        ]
+      },
+      {
+        "title": "Hebrews",
+        "author": "Craig R. Koester",
+        "publisher": "Yale University Press",
+        "year": 2001,
+        "locator": "Anchor Yale Bible 36",
+        "url": "https://yalebooks.yale.edu/book/9780300139891/hebrews/",
+        "source_type": "academic-book",
+        "supports": [],
+        "notes": "",
+        "id": "koester",
+        "canonical_object_ids": [
+          "hebrews"
+        ]
+      },
+      {
+        "title": "The Jewish Annotated New Testament",
+        "author": "Amy-Jill Levine and Marc Zvi Brettler, editors",
+        "publisher": "Oxford University Press",
+        "year": 2017,
+        "locator": "Hebrews notes and essays",
+        "url": "https://global.oup.com/academic/product/the-jewish-annotated-new-testament-9780190461850",
+        "source_type": "reference-work",
+        "supports": [],
+        "notes": "",
+        "id": "levine-jant",
+        "canonical_object_ids": [
+          "hebrews"
+        ]
+      },
+      {
+        "title": "Toward Decentering the New Testament",
+        "author": "Mitzi J. Smith",
+        "publisher": "Cascade Books",
+        "year": 2018,
+        "locator": "Womanist and postcolonial hermeneutics",
+        "url": "https://wipfandstock.com/9781532604652/toward-decentering-the-new-testament/",
+        "source_type": "academic-book",
+        "supports": [],
+        "notes": "",
+        "id": "mitzi-smith",
+        "canonical_object_ids": [
+          "hebrews"
+        ]
+      },
+      {
+        "title": "New Testament Virtual Manuscript Room",
+        "author": "Institut f\u00fcr Neutestamentliche Textforschung",
+        "publisher": "University of M\u00fcnster",
+        "year": null,
+        "locator": "Hebrews manuscript witnesses",
+        "url": "https://ntvmr.uni-muenster.de/",
+        "source_type": "reference-work",
+        "supports": [],
+        "notes": "",
+        "id": "ntvmr",
+        "canonical_object_ids": [
+          "hebrews"
+        ]
+      },
+      {
+        "title": "Papyrus 46",
+        "author": "Center for the Study of New Testament Manuscripts",
+        "publisher": "CSNTM",
+        "year": null,
+        "locator": "Hebrews 1:1-13:25 with lacunae",
+        "url": "https://manuscripts.csntm.org/manuscript/View/GA_P46",
+        "source_type": "ancient-primary-source",
+        "supports": [],
+        "notes": "",
+        "id": "p46",
+        "canonical_object_ids": [
+          "hebrews"
+        ]
+      },
+      {
+        "title": "Codex Sinaiticus: Hebrews",
+        "author": "Codex Sinaiticus Project",
+        "publisher": "British Library and partners",
+        "year": null,
+        "locator": "Add MS 43725, ff. 288v-293v",
+        "url": "https://www.codexsinaiticus.org/en/manuscript.aspx",
+        "source_type": "ancient-primary-source",
+        "supports": [],
+        "notes": "",
+        "id": "sinaiticus",
+        "canonical_object_ids": [
+          "hebrews"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "hebrews",
+        "type": "book",
+        "title": "Hebrews",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.917
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "4c7bca4864e80571fccf98c4176d18fbb0e6b4fbb15986a7b92b95fbff496b9e",
+  "evidence_hash_version": "2"
+}

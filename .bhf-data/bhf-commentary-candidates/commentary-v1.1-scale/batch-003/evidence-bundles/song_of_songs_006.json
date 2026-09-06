@@ -1,0 +1,586 @@
+{
+  "passage_ref": "Song of Songs 6",
+  "entities": {
+    "people": [],
+    "places": [],
+    "groups": [],
+    "events": [],
+    "artifacts": []
+  },
+  "evidence_items": [
+    {
+      "id": "song-ancient-love-poetry",
+      "claim": "Ancient Egyptian and Mesopotamian love poetry offers substantial analogues for the Song's voices, imagery, body praise, fragrance, and landscapes, without proving a single direct source or cult ritual.",
+      "category": "culture",
+      "source_ids": [
+        "fox-egyptian-love-songs",
+        "pope-song",
+        "oxford-song-bibliography"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Song of Songs 1:2-8:14"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "song-of-songs",
+        "parent_title": "Song of Songs",
+        "parent_type": "book",
+        "object_importance": 82,
+        "retrieval_score": 0.902,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 500,
+        "certainty": "strong_consensus",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "historical_cultural",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 85
+      }
+    },
+    {
+      "id": "song-date-language-qumran",
+      "claim": "Linguistic evidence is frequently read as postexilic and compatible with Persian or Hellenistic composition or shaping, while the Qumran witnesses establish only that the Song existed by their copying dates.",
+      "category": "culture",
+      "source_ids": [
+        "exum-unity-date",
+        "exum-song",
+        "oxford-song-bibliography",
+        "song-qumran",
+        "iaa-song-scrolls"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Song of Songs 1:1-8:14"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "song-of-songs",
+        "parent_title": "Song of Songs",
+        "parent_type": "book",
+        "object_importance": 82,
+        "retrieval_score": 0.902,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 500,
+        "certainty": "probable",
+        "dispute_status": "chronological_uncertainty",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "historical_cultural",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "historical_context",
+        "overview_priority": 35
+      }
+    },
+    {
+      "id": "song-greek-qumran-witnesses",
+      "claim": "The Song is witnessed by four fragmentary Hebrew Judean Desert manuscripts and by a highly literal Old Greek translation titled Asma asmaton.",
+      "category": "history",
+      "source_ids": [
+        "song-qumran",
+        "iaa-song-scrolls",
+        "song-old-greek",
+        "nets-greek-song"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Song of Songs 1-8"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "song-of-songs",
+        "parent_title": "Song of Songs",
+        "parent_type": "book",
+        "object_importance": 82,
+        "retrieval_score": 0.902,
+        "passage_relationship": "direct",
+        "anchor_specificity": "chapter",
+        "verse_distance": 500,
+        "certainty": "textually_explicit",
+        "dispute_status": "textual_variant",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "biblical_text",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 30
+      }
+    },
+    {
+      "id": "song-landscape-body-gaze",
+      "claim": "Body-description poems map lovers through animals, architecture, agriculture, and landscape, making gaze and imaginative comparison central to the book's poetics.",
+      "category": "culture",
+      "source_ids": [
+        "song-masoretic",
+        "james-landscapes",
+        "exum-song"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Song of Songs 6:4-7"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "song-of-songs",
+        "parent_title": "Song of Songs",
+        "parent_type": "book",
+        "object_importance": 82,
+        "retrieval_score": 0.902,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 3,
+        "certainty": "strong_consensus",
+        "dispute_status": "minor_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "DIRECT_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 105
+      }
+    },
+    {
+      "id": "song-literal-allegorical-reception",
+      "claim": "Jewish God-Israel and Christian Christ-church or Word-soul interpretations are major reception traditions, but they are theological readings rather than explicit identifications made by the Song's speakers.",
+      "category": "culture",
+      "source_ids": [
+        "song-masoretic",
+        "new-testament-bride-texts",
+        "oxford-song-bibliography",
+        "norris-song-reception",
+        "kingsmill-eros-god"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Song of Songs 1-8"
+      ],
+      "confidence": "medium",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "song-of-songs",
+        "parent_title": "Song of Songs",
+        "parent_type": "book",
+        "object_importance": 82,
+        "retrieval_score": 0.902,
+        "passage_relationship": "direct",
+        "anchor_specificity": "chapter",
+        "verse_distance": 500,
+        "certainty": "tradition_dependent",
+        "dispute_status": "denominational_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "reception_history",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "dig_deeper",
+        "overview_priority": 45
+      }
+    },
+    {
+      "id": "song-lyric-coherence-no-fixed-plot",
+      "claim": "The book uses recurring refrains, search sequences, descriptions, images, and phrases to create poetic coherence, but its sequence does not establish one uncontested drama, wedding cycle, dream plot, or biography.",
+      "category": "culture",
+      "source_ids": [
+        "song-masoretic",
+        "exum-song",
+        "exum-unity-date",
+        "oxford-song-bibliography"
+      ],
+      "related_entity_ids": [],
+      "passage_anchors": [
+        "Song of Songs 1:2-8:14"
+      ],
+      "confidence": "high",
+      "relevance_metadata": {
+        "source_kind": "ckl_claim",
+        "parent_object_id": "song-of-songs",
+        "parent_title": "Song of Songs",
+        "parent_type": "book",
+        "object_importance": 82,
+        "retrieval_score": 0.902,
+        "passage_relationship": "direct",
+        "anchor_specificity": "verse",
+        "verse_distance": 500,
+        "certainty": "strong_consensus",
+        "dispute_status": "major_scholarly_disagreement",
+        "assertion_type": "",
+        "exploration_potential": 0.25,
+        "broad_tag_only": false,
+        "claim_type": "literary",
+        "note_type": "",
+        "field": "",
+        "semantic_relationship": "BOOK_CONTEXT",
+        "presentation_role": "language_literary",
+        "overview_priority": 65
+      }
+    }
+  ],
+  "geography": {
+    "places": [],
+    "routes": [],
+    "regions": [],
+    "political_territories": [],
+    "map_location_refs": [],
+    "map_route_refs": []
+  },
+  "provenance": {
+    "sources": [
+      {
+        "title": "Song of Songs: A Commentary",
+        "author": "J. Cheryl Exum",
+        "publisher": "Westminster John Knox Press",
+        "year": 2005,
+        "locator": "Old Testament Library",
+        "url": "https://www.wjkbooks.com/bookproduct/0664238416-song-of-songs/",
+        "source_type": "academic-book",
+        "supports": [
+          "summary",
+          "literary-context",
+          "structure",
+          "major-themes",
+          "authorship-positions",
+          "date-ranges",
+          "interpretive-disputes",
+          "hebrew-words",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "Literary commentary emphasizing poetic artistry, love, gendered voices, and difficult interpretive questions.",
+        "id": "exum-song",
+        "canonical_object_ids": [
+          "song-of-songs"
+        ]
+      },
+      {
+        "title": "Unity, Date, Authorship and the 'Wisdom' of the Song of Songs",
+        "author": "J. Cheryl Exum",
+        "publisher": "Brill",
+        "year": 2016,
+        "locator": "Goochem in Mokum / Wisdom in Amsterdam, pages 53-68",
+        "url": "https://brill.com/previewpdf/book/edcoll/9789004314771/B9789004314771_006.xml",
+        "source_type": "academic-book",
+        "supports": [
+          "authorship-positions",
+          "date-ranges",
+          "literary-context",
+          "interpretive-disputes",
+          "interpretive-notes",
+          "song-title-solomonic-association",
+          "song-date-language-qumran"
+        ],
+        "notes": "Critical reassessment of claims about unity, linguistic date, authorship, and wisdom classification.",
+        "id": "exum-unity-date",
+        "canonical_object_ids": [
+          "song-of-songs"
+        ]
+      },
+      {
+        "title": "The Song of Songs and the Ancient Egyptian Love Songs",
+        "author": "Michael V. Fox",
+        "publisher": "University of Wisconsin Press",
+        "year": 1985,
+        "locator": "Comparative literary and philological study",
+        "url": "https://uwpress.wisc.edu/Books/T/The-Song-of-Songs-and-the-Ancient-Egyptian-Love-Songs",
+        "source_type": "academic-book",
+        "supports": [
+          "ancient-near-east-context",
+          "genre",
+          "literary-context",
+          "interpretive-notes",
+          "song-ancient-love-poetry"
+        ],
+        "notes": "Comparative study of Hebrew and Egyptian love poetry.",
+        "id": "fox-egyptian-love-songs",
+        "canonical_object_ids": [
+          "song-of-songs"
+        ]
+      },
+      {
+        "title": "4Q and 6Q Song of Songs manuscripts",
+        "author": "",
+        "publisher": "Israel Antiquities Authority, Leon Levy Dead Sea Scrolls Digital Library",
+        "year": null,
+        "locator": "4Q106, 4Q107, 4Q108, and 6Q6 manuscript records",
+        "url": "https://www.deadseascrolls.org.il/explore-the-archive/manuscript/4Q106-1",
+        "source_type": "museum-collection",
+        "supports": [
+          "second-temple-context",
+          "primary-sources",
+          "archaeology",
+          "interpretive-notes",
+          "song-date-language-qumran",
+          "song-greek-qumran-witnesses"
+        ],
+        "notes": "Official manuscript-library entry; parallel records use manuscript IDs 4Q107-1, 4Q108-1, and 6Q6-1.",
+        "id": "iaa-song-scrolls",
+        "canonical_object_ids": [
+          "song-of-songs"
+        ]
+      },
+      {
+        "title": "Landscapes of the Song of Songs: Poetry and Place",
+        "author": "Elaine T. James",
+        "publisher": "Oxford University Press",
+        "year": 2017,
+        "locator": "Especially chapters on agrarian landscape, garden, cityscape, and body",
+        "url": "https://academic.oup.com/book/2865",
+        "source_type": "academic-book",
+        "supports": [
+          "literary-context",
+          "major-themes",
+          "key-places",
+          "maps",
+          "interpretive-notes",
+          "song-landscape-body-gaze"
+        ],
+        "notes": "Interdisciplinary analysis of landscape, agriculture, garden, city, body, gaze, fragility, and care.",
+        "id": "james-landscapes",
+        "canonical_object_ids": [
+          "song-of-songs"
+        ]
+      },
+      {
+        "title": "The Song of Songs and the Eros of God: A Study in Biblical Intertextuality",
+        "author": "Edmee Kingsmill",
+        "publisher": "Oxford University Press",
+        "year": 2009,
+        "locator": "Oxford Theology and Religion Monographs",
+        "url": "https://academic.oup.com/book/50250",
+        "source_type": "academic-book",
+        "supports": [
+          "canonical-context",
+          "hebraic-worldview",
+          "later-christian-reception",
+          "intertextuality",
+          "interpretive-notes",
+          "song-literal-allegorical-reception"
+        ],
+        "notes": "A theological and intertextual interpretation representing a mystical reading rather than scholarly consensus.",
+        "id": "kingsmill-eros-god",
+        "canonical_object_ids": [
+          "song-of-songs"
+        ]
+      },
+      {
+        "title": "A New English Translation of the Septuagint: Song of Songs",
+        "author": "Jay C. Treat",
+        "publisher": "International Organization for Septuagint and Cognate Studies",
+        "year": 2009,
+        "locator": "NETS Song of Songs, pages 657-664",
+        "url": "https://ccat.sas.upenn.edu/nets/edition/27-song-nets.pdf",
+        "source_type": "reference-work",
+        "supports": [
+          "second-temple-context",
+          "greek-words",
+          "primary-sources",
+          "interpretive-notes",
+          "song-greek-qumran-witnesses"
+        ],
+        "notes": "Translation and introduction documenting the formal-equivalence profile of Old Greek Song.",
+        "id": "nets-greek-song",
+        "canonical_object_ids": [
+          "song-of-songs"
+        ]
+      },
+      {
+        "title": "New Testament bride and bridegroom texts",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Mark 2:19-20; John 3:29; Ephesians 5:21-33; Revelation 19:6-9; 21:2, 9",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "canonical-context",
+          "later-christian-reception",
+          "new-testament-connections",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "Primary New Testament texts used only for qualified canonical comparison.",
+        "id": "new-testament-bride-texts",
+        "canonical_object_ids": [
+          "song-of-songs"
+        ]
+      },
+      {
+        "title": "The Song of Songs",
+        "author": "Richard A. Norris Jr.",
+        "publisher": "Eerdmans",
+        "year": 2003,
+        "locator": "The Bible in Medieval Tradition",
+        "url": "https://www.eerdmans.com/9780802878274/the-song-of-songs/",
+        "source_type": "academic-book",
+        "supports": [
+          "later-christian-reception",
+          "canonical-context",
+          "interpretive-notes",
+          "song-literal-allegorical-reception"
+        ],
+        "notes": "Source collection and study of early Christian allegorical reception in relation to Jewish exegesis.",
+        "id": "norris-song-reception",
+        "canonical_object_ids": [
+          "song-of-songs"
+        ]
+      },
+      {
+        "title": "Song of Songs",
+        "author": "Chloe Sun",
+        "publisher": "Oxford University Press",
+        "year": 2016,
+        "locator": "Oxford Bibliographies in Biblical Studies",
+        "url": "https://academic.oup.com/reference/62341/reference-article-abstract/554095732?login=false",
+        "source_type": "reference-work",
+        "supports": [
+          "authorship-positions",
+          "date-ranges",
+          "genre",
+          "interpretive-disputes",
+          "later-christian-reception",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "Scholarly bibliographic survey of genre, unity, authorship, ancient comparanda, and reception history.",
+        "id": "oxford-song-bibliography",
+        "canonical_object_ids": [
+          "song-of-songs"
+        ]
+      },
+      {
+        "title": "Song of Songs",
+        "author": "Marvin H. Pope",
+        "publisher": "Yale University Press",
+        "year": 1995,
+        "locator": "Anchor Yale Bible Commentaries",
+        "url": "https://yalebooks.yale.edu/9780300139495/song-of-songs/",
+        "source_type": "academic-book",
+        "supports": [
+          "historical-context",
+          "ancient-near-east-context",
+          "authorship-positions",
+          "date-ranges",
+          "literary-context",
+          "hebrew-words",
+          "interpretive-disputes",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "Major philological commentary with extensive comparative and reception material; several cultic proposals are contested.",
+        "id": "pope-song",
+        "canonical_object_ids": [
+          "song-of-songs"
+        ]
+      },
+      {
+        "title": "Masoretic Song of Songs",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Song of Songs 1-8 in the Masoretic textual tradition",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "summary",
+          "literary-context",
+          "structure",
+          "major-themes",
+          "key-people",
+          "key-places",
+          "key-events",
+          "hebrew-words",
+          "scripture-references",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "Primary received Hebrew canonical text.",
+        "id": "song-masoretic",
+        "canonical_object_ids": [
+          "song-of-songs"
+        ]
+      },
+      {
+        "title": "Old Greek Song of Songs",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "Septuagint Song of Songs",
+        "url": "",
+        "source_type": "scripture",
+        "supports": [
+          "primary-sources",
+          "second-temple-context",
+          "greek-words",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "Ancient Jewish Greek translation, also known through the title Canticle of Canticles.",
+        "id": "song-old-greek",
+        "canonical_object_ids": [
+          "song-of-songs"
+        ]
+      },
+      {
+        "title": "Qumran Song of Songs manuscripts",
+        "author": "",
+        "publisher": "",
+        "year": null,
+        "locator": "4QCanta (4Q106), 4QCantb (4Q107), 4QCantc (4Q108), and 6QCant (6Q6)",
+        "url": "",
+        "source_type": "ancient-primary-source",
+        "supports": [
+          "date-ranges",
+          "second-temple-context",
+          "primary-sources",
+          "archaeology",
+          "interpretive-notes",
+          "claims"
+        ],
+        "notes": "Four fragmentary Hebrew Judean Desert witnesses.",
+        "id": "song-qumran",
+        "canonical_object_ids": [
+          "song-of-songs"
+        ]
+      }
+    ],
+    "canonical_objects": [
+      {
+        "id": "song-of-songs",
+        "type": "book",
+        "title": "Song of Songs",
+        "object_version": "1",
+        "review_status": "in_review",
+        "retrieval_score": 0.902
+      }
+    ],
+    "resolvers": [
+      "canonical_knowledge_library",
+      "passage_maps",
+      "archaeology"
+    ]
+  },
+  "version": "1.1",
+  "evidence_hash": "90632a14d759871cde804cca5b8f61b7cc36a1210918d1aa0422b36916975247",
+  "evidence_hash_version": "2"
+}
