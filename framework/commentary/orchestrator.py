@@ -1137,7 +1137,7 @@ def main(argv: list[str] | None = None) -> int:
         elif args.command == "validate":
             state = load_state(state_path(repo_root))
             errors = validate_state(repo_root, state)
-            result = {"action": "VALID" if not errors else "BLOCKED", "errors": errors, "state": status(repo_root)}
+            result = {"action": "BLOCKED" if state.get("status") == BLOCKED or errors else "VALID", "errors": errors, "state": status(repo_root)}
         elif args.command == "next": result = _next(repo_root)
         elif args.command == "run": result = run_stage(repo_root, model=args.model, effort=args.effort)
         elif args.command == "resume": result = resume(repo_root)

@@ -128,6 +128,15 @@ def test_integrity_failure_becomes_a_first_class_blocker(tmp_path):
     assert blocked["blocked_reason"]["error_class"] == "NON_RETRYABLE"
 
 
+def test_validate_reports_blocked_state_as_blocked(tmp_path):
+    state = initialize(tmp_path)
+    state["status"] = "BLOCKED"
+    state["blocked_reason"] = {"reason": "review required"}
+    save_state(state_path(tmp_path), state)
+    from framework.commentary.orchestrator import main
+    assert main(["--repo-root", str(tmp_path), "validate"]) == 12
+
+
 def test_quarantine_cannot_enter_generation_gate(tmp_path):
     _locked_batch(tmp_path, chapter_status="QUARANTINE")
     state = initialize(tmp_path)
