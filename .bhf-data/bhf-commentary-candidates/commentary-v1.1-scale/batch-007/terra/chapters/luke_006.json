@@ -1,0 +1,65 @@
+{
+  "reference": "Luke 6",
+  "book": "Luke",
+  "chapter": 6,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_74",
+          "text": "Read the chapter with this setting in view: Luke's beatitudes address poor, hungry, weeping, and rejected people and pair them with woes to rich, full, laughing, and praised people; material and theological dimensions should not be separated or romanticized. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "luke-poor"
+          ],
+          "verse_refs": [
+            "Luke 6:20-26"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_75",
+          "text": "For its historical and cultural setting, note that Historically, Philip the Apostle belongs within the scriptural setting around Matthew 4:18-22, where Matthew 4:18-22, Matthew 16:13-20, jesus, and kingdom-theme help locate this biblical figure in the Bible's people, places, and events. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "philip-the-apostle:historical_context:0"
+          ],
+          "verse_refs": [
+            "Luke 6:12-16"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        },
+        {
+          "id": "historical_context_76",
+          "text": "For its historical and cultural setting, note that Historically, Peter belongs within the scriptural setting around Matthew 4:18-22, where Matthew 4:18-22, Matthew 16:13-20, jesus, and kingdom-theme help locate this biblical figure in the Bible's people, places, and events. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "peter:historical_context:0"
+          ],
+          "verse_refs": [
+            "Luke 6:12-16"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "9c74bfcf37f45cea89b7ff948df3792e4ae9224e753455c3b50fb8cd3194d719",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-007-medium",
+    "generated_timestamp": "2026-09-06T20:17:54Z"
+  }
+}

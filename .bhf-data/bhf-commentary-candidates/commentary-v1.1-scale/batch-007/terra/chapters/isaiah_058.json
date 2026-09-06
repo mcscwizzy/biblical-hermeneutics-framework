@@ -1,0 +1,83 @@
+{
+  "reference": "Isaiah 58",
+  "book": "Isaiah",
+  "chapter": 58,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_137",
+          "text": "Read the chapter with this setting in view: Isaiah 56-58 binds communal restoration to justice, Sabbath, welcome of foreigners and eunuchs, release from oppression, feeding hungry people, and housing those without shelter. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken.",
+          "evidence_ids": [
+            "isaiah-justice-fasting-inclusion"
+          ],
+          "verse_refs": [
+            "Isaiah 58:1-14"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_138",
+          "text": "For its historical and cultural setting, note that Isaiah joins YHWH's holiness to justice and righteousness and repeatedly rejects worship that coexists with bloodshed, exploitation, or refusal to repair communal wrong. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "isaiah-holiness-justice-worship"
+          ],
+          "verse_refs": [
+            "Isaiah 58:1-14"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        },
+        {
+          "id": "historical_context_139",
+          "text": "For its historical and cultural setting, note that By the Second Temple period Sabbath observance marked covenant fidelity and shaped synagogue and household rhythms. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "sabbath-theme:second_temple_context:0"
+          ],
+          "verse_refs": [
+            "Isaiah 58:13-14"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_138",
+          "text": "A literary feature to notice is that The Great Isaiah Scroll is an almost complete sixty-six-chapter witness broadly aligned with the Masoretic tradition but containing thousands of orthographic and substantive differences; other Qumran Isaiah manuscripts and pesharim show active transmission and interpretation. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image. Interpretations differ on some details.",
+          "evidence_ids": [
+            "isaiah-qumran-witnesses"
+          ],
+          "verse_refs": [
+            "Isaiah 58:1-14"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "de776b5aa8747077b8bf58b6f966c4311bf0a78a44d19fb84a361cbd629199c9",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-007-medium",
+    "generated_timestamp": "2026-09-06T20:17:55Z"
+  }
+}

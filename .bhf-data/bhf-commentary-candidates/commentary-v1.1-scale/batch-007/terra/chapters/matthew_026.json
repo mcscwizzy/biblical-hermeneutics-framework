@@ -1,0 +1,101 @@
+{
+  "reference": "Matthew 26",
+  "book": "Matthew",
+  "chapter": 26,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_12",
+          "text": "Read the chapter with this setting in view: Matthew's passion assigns narrative agency to multiple Judean and Roman actors while crucifixion remains Roman state execution. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken. Interpretations differ on some details.",
+          "evidence_ids": [
+            "matthew-passion-responsibility"
+          ],
+          "verse_refs": [
+            "Matthew 26:47-75"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_13",
+          "text": "For its historical and cultural setting, note that Matthew portrays Jesus in deep distress praying for the cup to pass while submitting to the Father's will as disciples fail to watch. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "matthew-gethsemane"
+          ],
+          "verse_refs": [
+            "Matthew 26:36-46"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        },
+        {
+          "id": "historical_context_14",
+          "text": "For its historical and cultural setting, note that At the final meal Jesus identifies bread and cup with his body and covenant blood poured out for many for forgiveness. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "matthew-covenant-meal"
+          ],
+          "verse_refs": [
+            "Matthew 26:26-29"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_13",
+          "text": "A literary feature to notice is that Five repeated discourse-ending formulas organize large teaching collections without proving one universally accepted symbolic outline. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "matthew-discourses"
+          ],
+          "verse_refs": [
+            "Matthew 26:1"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "dig_deeper",
+      "title": "Dig deeper",
+      "blocks": [
+        {
+          "id": "dig_deeper_13",
+          "text": "For a later or comparative connection, note that The New Testament explicitly receives Zechariah's humble king, struck shepherd, and pierced figure and more broadly reuses its shepherd, silver, measuring, lampstand, olive-tree, and living-water imagery. This remains a secondary connection rather than the chapter's first-audience context. It can be traced further without replacing the chapter's own setting. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "zechariah-new-testament-reception"
+          ],
+          "verse_refs": [
+            "Matthew 26:31"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "947d50fa7baa436089889425a40421ab496ea884c30b133c5d2476d369ab8712",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-007-medium",
+    "generated_timestamp": "2026-09-06T20:17:54Z"
+  }
+}

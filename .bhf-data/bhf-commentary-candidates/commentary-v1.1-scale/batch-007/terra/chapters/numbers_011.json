@@ -1,0 +1,65 @@
+{
+  "reference": "Numbers 11",
+  "book": "Numbers",
+  "chapter": 11,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_44",
+          "text": "Read the chapter with this setting in view: Proposed maps of the wilderness route should label uncertain site identifications rather than presenting a single itinerary reconstruction as established. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "numbers:interpretive_note:2"
+          ],
+          "verse_refs": [
+            "Numbers 11:1-35"
+          ],
+          "confidence": "low",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_45",
+          "text": "For its historical and cultural setting, note that Spirit language appears from creation through prophecy, Jesus\u2019 ministry, Pentecost, and the life of the church. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "spirit-theme:historical_context:0"
+          ],
+          "verse_refs": [
+            "Numbers 11:16-29"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        },
+        {
+          "id": "historical_context_46",
+          "text": "For its historical and cultural setting, note that The Bible\u2019s Spirit language is distinct because it binds divine presence to holiness, creation, covenant renewal, and mission rather than to impersonal force. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "spirit-theme:ancient_near_east_context:0"
+          ],
+          "verse_refs": [
+            "Numbers 11:16-29"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "4d1f62ac85bb5a996b9ed47363475376f17b7612d9ed06bd466935a994271051",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-007-medium",
+    "generated_timestamp": "2026-09-06T20:17:54Z"
+  }
+}

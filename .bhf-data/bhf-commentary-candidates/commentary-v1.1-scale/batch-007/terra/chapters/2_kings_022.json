@@ -1,0 +1,65 @@
+{
+  "reference": "2 Kings 22",
+  "book": "2 Kings",
+  "chapter": 22,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_109",
+          "text": "Read the chapter with this setting in view: Josiah responds to the discovered scroll by consulting Huldah, renewing covenant, removing prohibited worship, and holding Passover, yet the narrator says accumulated judgment will still come. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken.",
+          "evidence_ids": [
+            "second-kings-josiah-reform"
+          ],
+          "verse_refs": [
+            "2 Kings 22:1-20"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_110",
+          "text": "For its historical and cultural setting, note that Ezra and Ben Sira reflect priestly and learned forms of scribal identity; the Gospels and Acts often associate scribes with legal interpretation, Jerusalem leadership, and public debate. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "scribes:second_temple_context:0"
+          ],
+          "verse_refs": [
+            "2 Kings 22:3-13"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        },
+        {
+          "id": "historical_context_111",
+          "text": "For its historical and cultural setting, note that Israelite, Persian-period, Hellenistic, and Roman settings; the office must be dated passage by passage. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "scribes:historical_setting:0"
+          ],
+          "verse_refs": [
+            "2 Kings 22:3-13"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "b9b6fa9363778419d8314a649af28d94d28fa6e521a2515c67eddf1af02dddeb",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-007-medium",
+    "generated_timestamp": "2026-09-06T20:17:55Z"
+  }
+}

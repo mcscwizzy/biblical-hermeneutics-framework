@@ -1,0 +1,101 @@
+{
+  "reference": "Mark 1",
+  "book": "Mark",
+  "chapter": 1,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_87",
+          "text": "Read the chapter with this setting in view: The extant continuous Gospel is a Greek narrative whose internal narrator does not identify an author. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken.",
+          "evidence_ids": [
+            "mark-anonymous-greek"
+          ],
+          "verse_refs": [
+            "Mark 1:1"
+          ],
+          "confidence": "high",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_88",
+          "text": "For its historical and cultural setting, note that Jesus' opening proclamation declares God's kingdom near and calls for repentance and trust in the gospel. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "mark-kingdom"
+          ],
+          "verse_refs": [
+            "Mark 1:14-15"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        },
+        {
+          "id": "historical_context_89",
+          "text": "For its historical and cultural setting, note that Mark narrates hostile spirits and exorcisms within ancient conceptual worlds; these stories do not authorize diagnosing modern illness as demonic or replacing medical and mental-health care. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "mark-exorcism"
+          ],
+          "verse_refs": [
+            "Mark 1:21-28"
+          ],
+          "confidence": "high",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "archaeology_geography",
+      "title": "Archaeology and geography",
+      "blocks": [
+        {
+          "id": "archaeology_geography_88",
+          "text": "For its geographical or material setting, note that Archaeology and documentary evidence illuminate Galilean villages, fishing, agriculture, roads, households, purity practices, Jerusalem, taxation, status, and Roman execution but rarely verify individual narrated episodes. It can illuminate the passage, while its limits should be kept in view. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "mark-archaeology"
+          ],
+          "verse_refs": [
+            "Mark 1:16-20"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_88",
+          "text": "A literary feature to notice is that Commands to silence spirits, healed people, and disciples form a repeated pattern commonly called the messianic secret, but its narrative, historical, and theological explanations remain disputed. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "mark-secrecy"
+          ],
+          "verse_refs": [
+            "Mark 1:34"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "ee21b3c13ddb9487a76a379a8979ab76c7309c4a527495a8ec406ef792e24f53",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-007-medium",
+    "generated_timestamp": "2026-09-06T20:17:55Z"
+  }
+}

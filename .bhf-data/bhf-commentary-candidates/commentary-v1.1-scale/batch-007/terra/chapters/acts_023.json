@@ -1,0 +1,101 @@
+{
+  "reference": "Acts 23",
+  "book": "Acts",
+  "chapter": 23,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_149",
+          "text": "Read the chapter with this setting in view: Acts portrays Paul identifying resurrection hope as the hearing's issue and narrates Pharisee-Sadducee disagreement about resurrection, angels, and spirits amid physical danger. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "acts-pharisee-sadducee-dispute"
+          ],
+          "verse_refs": [
+            "Acts 23:1-10"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_150",
+          "text": "For its historical and cultural setting, note that Historical evaluation of Acts must compare particular claims with independent evidence rather than assign blanket reliability or unreliability. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "acts-historical-method"
+          ],
+          "verse_refs": [
+            "Acts 23:1-35"
+          ],
+          "confidence": "high",
+          "interpretation_level": "inference"
+        },
+        {
+          "id": "historical_context_151",
+          "text": "For its historical and cultural setting, note that Village Elders belongs to the social and political systems that governed public life in Israel and its neighbors. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "village-elders:historical_context:0"
+          ],
+          "verse_refs": [
+            "Acts 23:1-10"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_150",
+          "text": "A literary feature to notice is that Codex Bezae and related versional witnesses preserve a substantially distinctive text of Acts often called Western, whose individual readings require case-by-case judgment. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image. Interpretations differ on some details.",
+          "evidence_ids": [
+            "acts-western-text"
+          ],
+          "verse_refs": [
+            "Acts 23:1-35"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "dig_deeper",
+      "title": "Dig deeper",
+      "blocks": [
+        {
+          "id": "dig_deeper_150",
+          "text": "For a later or comparative connection, note that Josephus distinguishes three Jewish groups and assigns them different views or practices concerning law, providence, fate, afterlife, authority, and communal discipline. This remains a secondary connection rather than the chapter's first-audience context. It can be traced further without replacing the chapter's own setting. Interpretations differ on some details.",
+          "evidence_ids": [
+            "josephus-jewish-group-descriptions"
+          ],
+          "verse_refs": [
+            "Acts 23:1-10"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "07e0e0bf2f3c2a1775b7225af69169d298b234902374f8453fa3bd38308967b0",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-007-medium",
+    "generated_timestamp": "2026-09-06T20:17:55Z"
+  }
+}

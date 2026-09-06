@@ -1,0 +1,101 @@
+{
+  "reference": "Luke 24",
+  "book": "Luke",
+  "chapter": 24,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_61",
+          "text": "Read the chapter with this setting in view: The Emmaus narrative moves from failed recognition through scriptural interpretation and hospitality to recognition in breaking bread and renewed witness, without naming Cleopas' companion. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken.",
+          "evidence_ids": [
+            "luke-emmaus"
+          ],
+          "verse_refs": [
+            "Luke 24:13-35"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_62",
+          "text": "For its historical and cultural setting, note that Luke 24:51-52 has textual variation concerning being carried into heaven and worship, while Acts 1 narrates an ascension after a renewed period of appearances; the endings should be compared rather than silently harmonized. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "luke-ascension"
+          ],
+          "verse_refs": [
+            "Luke 24:50-53"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        },
+        {
+          "id": "historical_context_63",
+          "text": "For its historical and cultural setting, note that Historically, Zechariah the Priest belongs within the scriptural setting around Matthew 28:16-20, where Matthew 28:16-20, Mark 16:19-20, jesus, and messiah-theme help locate this biblical figure in the Bible's people, places, and events. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "zechariah-the-priest:historical_context:0"
+          ],
+          "verse_refs": [
+            "Luke 24:50-53"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_62",
+          "text": "A literary feature to notice is that Luke 24 narrates the risen Jesus inviting touch and eating fish to counter the disciples' fear of seeing a spirit; historical, metaphysical, and doctrinal conclusions must be distinguished from narrated claims and textual variants. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "luke-resurrection-body"
+          ],
+          "verse_refs": [
+            "Luke 24:36-49"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "dig_deeper",
+      "title": "Dig deeper",
+      "blocks": [
+        {
+          "id": "dig_deeper_62",
+          "text": "For a later or comparative connection, note that Acts narrates Jesus' ascent, a cloud, and angelic interpretation, drawing on biblical theophanic imagery rather than supplying a modern physical mechanism. This remains a secondary connection rather than the chapter's first-audience context. It can be traced further without replacing the chapter's own setting. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "acts-ascension"
+          ],
+          "verse_refs": [
+            "Luke 24:50-53"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "a1180d6f54630b592b3e589adaaa7dec31c879db3d1c72feee6db5ef4045e12b",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-007-medium",
+    "generated_timestamp": "2026-09-06T20:17:54Z"
+  }
+}

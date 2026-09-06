@@ -1,0 +1,101 @@
+{
+  "reference": "Matthew 27",
+  "book": "Matthew",
+  "chapter": 27,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_20",
+          "text": "Read the chapter with this setting in view: Herodian client rule, Roman provincial authority, taxation, elite power, and crucifixion frame Matthew's remembered first-century setting. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "matthew-roman-setting"
+          ],
+          "verse_refs": [
+            "Matthew 27:2"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_21",
+          "text": "For its historical and cultural setting, note that Matthew's passion assigns narrative agency to multiple Judean and Roman actors while crucifixion remains Roman state execution. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. Interpretations differ on some details.",
+          "evidence_ids": [
+            "matthew-passion-responsibility"
+          ],
+          "verse_refs": [
+            "Matthew 27:1-54"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        },
+        {
+          "id": "historical_context_22",
+          "text": "For its historical and cultural setting, note that Mary Magdalene and the other Mary witness death, burial, empty tomb, angelic message, and the risen Jesus, who commissions them to tell the brothers. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "matthew-women-witnesses"
+          ],
+          "verse_refs": [
+            "Matthew 27:55-61"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_21",
+          "text": "A literary feature to notice is that Matthew uniquely narrates a tomb guard, priestly negotiations, and a counterclaim that disciples stole the body. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image. Interpretations differ on some details.",
+          "evidence_ids": [
+            "matthew-guard-story"
+          ],
+          "verse_refs": [
+            "Matthew 27:62-66"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "dig_deeper",
+      "title": "Dig deeper",
+      "blocks": [
+        {
+          "id": "dig_deeper_21",
+          "text": "For a later or comparative connection, note that New Testament authors quote and echo psalms in arguments about Jesus' suffering, resurrection, enthronement, priesthood, mission, worship, creation rule, and the life of believing communities. This remains a secondary connection rather than the chapter's first-audience context. It can be traced further without replacing the chapter's own setting. Interpretations differ on some details.",
+          "evidence_ids": [
+            "psalms-new-testament-reception"
+          ],
+          "verse_refs": [
+            "Matthew 27:35-46"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "3be0871c92842f6f7b84ecbd53e77e22476abe1b774c6de7da067cf56519e0b9",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-007-medium",
+    "generated_timestamp": "2026-09-06T20:17:54Z"
+  }
+}

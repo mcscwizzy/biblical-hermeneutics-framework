@@ -1,0 +1,101 @@
+{
+  "reference": "Leviticus 16",
+  "book": "Leviticus",
+  "chapter": 16,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_21",
+          "text": "Read the chapter with this setting in view: Leviticus 16 prescribes an annual rite addressing the sanctuary, priesthood, and people and identifies it as a Sabbath of solemn rest and a lasting statute. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken.",
+          "evidence_ids": [
+            "leviticus-day-of-atonement"
+          ],
+          "verse_refs": [
+            "Leviticus 16:1-34"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_22",
+          "text": "For its historical and cultural setting, note that Ancient Near Eastern ritual comparisons illuminate vocabulary and practice but do not establish that Israelite rites carried the same theology or were directly borrowed. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "leviticus:interpretive_note:2"
+          ],
+          "verse_refs": [
+            "Leviticus 16:1-34"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        },
+        {
+          "id": "historical_context_23",
+          "text": "For its historical and cultural setting, note that Curtains, veils, rooms, furnishings, washing, personnel, and restricted occasions of entry organize access in graded rather than undifferentiated space. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "tabernacle-graded-sacred-space"
+          ],
+          "verse_refs": [
+            "Leviticus 16:1-34"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_22",
+          "text": "A literary feature to notice is that Leviticus moves from sacrifice and priestly inauguration through purity and the Day of Atonement into instructions for holy communal life, sacred time, land, covenant consequences, and vows. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image.",
+          "evidence_ids": [
+            "leviticus-literary-movement"
+          ],
+          "verse_refs": [
+            "Leviticus 16:1-34"
+          ],
+          "confidence": "high",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "chronology",
+      "title": "Chronology",
+      "blocks": [
+        {
+          "id": "chronology_22",
+          "text": "For the chapter's sequence and setting, note that Narrative setting: Sinai and wilderness journey; date disputed This gives the reader a frame for the passage without deciding every larger reconstruction.",
+          "evidence_ids": [
+            "what-is-the-tabernacle:date_ranges:0"
+          ],
+          "verse_refs": [
+            "Leviticus 16:1-34"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "8e5cbb871b1513cc91ad7b20d2f399c3796e3fe36516d99e6b36511dcadfab62",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-007-medium",
+    "generated_timestamp": "2026-09-06T20:17:54Z"
+  }
+}

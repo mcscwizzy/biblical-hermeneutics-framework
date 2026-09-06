@@ -1,0 +1,35 @@
+{
+  "reference": "Psalms 103",
+  "book": "Psalms",
+  "chapter": 103,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_6",
+          "text": "Read the chapter with this setting in view: Ancient background for Mercy Theme includes covenant practice, worship, kingship, wisdom instruction, and prophetic critique; the entry ties that world to Exodus 34:6-7, Psalm 103:8-13, divine-mercy, and grace without letting comparison replace the biblical witness. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken.",
+          "evidence_ids": [
+            "mercy-theme:ancient_near_east_context:0"
+          ],
+          "verse_refs": [
+            "Psalms 103:8-13"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "8985f9d09142cfdf8f78377cd3360340bc938add6368a78afaed8d5dc0881c3d",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-007-medium",
+    "generated_timestamp": "2026-09-06T20:17:54Z"
+  }
+}

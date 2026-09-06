@@ -1,0 +1,83 @@
+{
+  "reference": "Isaiah 26",
+  "book": "Isaiah",
+  "chapter": 26,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_53",
+          "text": "Read the chapter with this setting in view: Isaiah 25-27 and 65-66 use death-defeat, bodily revival, transformed longevity, renewed Jerusalem, and new-heavens-and-earth imagery that becomes foundational for later Jewish and Christian resurrection and new-creation hope. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "isaiah-death-new-creation"
+          ],
+          "verse_refs": [
+            "Isaiah 26:19"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_54",
+          "text": "For its historical and cultural setting, note that Second Temple Judaism debated bodily resurrection, making the New Testament proclamation both rooted and disruptive. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "resurrection-theme:second_temple_context:0"
+          ],
+          "verse_refs": [
+            "Isaiah 26:19"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        },
+        {
+          "id": "historical_context_55",
+          "text": "For its historical and cultural setting, note that Ancient cultures knew death as final, which makes biblical resurrection a striking claim about God\u2019s power and faithfulness. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "resurrection-theme:ancient_near_east_context:0"
+          ],
+          "verse_refs": [
+            "Isaiah 26:19"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_54",
+          "text": "A literary feature to notice is that The Great Isaiah Scroll is an almost complete sixty-six-chapter witness broadly aligned with the Masoretic tradition but containing thousands of orthographic and substantive differences; other Qumran Isaiah manuscripts and pesharim show active transmission and interpretation. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image. Interpretations differ on some details.",
+          "evidence_ids": [
+            "isaiah-qumran-witnesses"
+          ],
+          "verse_refs": [
+            "Isaiah 26:1-21"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "e08f0488a631693ebd94b9dc67a17b052fa23647cbe9f3ad4d86e05b0b49fad5",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-007-medium",
+    "generated_timestamp": "2026-09-06T20:17:54Z"
+  }
+}

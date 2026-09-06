@@ -1,0 +1,83 @@
+{
+  "reference": "Luke 3",
+  "book": "Luke",
+  "chapter": 3,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_113",
+          "text": "Read the chapter with this setting in view: Most witnesses give the heavenly voice in Luke 3:22 in Synoptic form, while Codex Bezae and patristic evidence preserve Psalm 2:7 language, 'Today I have begotten you'; textual and christological judgments must be distinguished. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "luke-baptism-variant"
+          ],
+          "verse_refs": [
+            "Luke 3:22"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_114",
+          "text": "For its historical and cultural setting, note that Genealogy was a standard social form, but Scripture uses it to trace covenant promise and providence. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "why-are-genealogies-included:ancient_near_east_context:0"
+          ],
+          "verse_refs": [
+            "Luke 3:23-38"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        },
+        {
+          "id": "historical_context_115",
+          "text": "For its historical and cultural setting, note that Ancient families preserved lineages to mark belonging, rights, and memory. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "why-are-genealogies-included:historical_context:0"
+          ],
+          "verse_refs": [
+            "Luke 3:23-38"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_114",
+          "text": "A literary feature to notice is that Luke 3 traces Jesus' genealogy backward through David, Abraham, and Adam to God and differs substantially from Matthew's names, direction, placement, and organizing aims; harmonizations are later proposals. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image. Interpretations differ on some details.",
+          "evidence_ids": [
+            "luke-genealogy"
+          ],
+          "verse_refs": [
+            "Luke 3:23-38"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "85e028a3a4ff9c24a1210b70b534e0a712acc28291674faa25c2271687ede830",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-007-medium",
+    "generated_timestamp": "2026-09-06T20:17:55Z"
+  }
+}

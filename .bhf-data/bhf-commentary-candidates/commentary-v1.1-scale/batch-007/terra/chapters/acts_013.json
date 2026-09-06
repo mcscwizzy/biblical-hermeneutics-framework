@@ -1,0 +1,101 @@
+{
+  "reference": "Acts 13",
+  "book": "Acts",
+  "chapter": 13,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_98",
+          "text": "Read the chapter with this setting in view: Acts narrates a Sabbath synagogue setting, synagogue leaders, Israelites, God-worshipers, women of standing, gentile interest, conflict, and expulsion without providing a census or recoverable building. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "pisidian-antioch-synagogue-and-audience-limits"
+          ],
+          "verse_refs": [
+            "Acts 13:14-52"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_99",
+          "text": "For its historical and cultural setting, note that Luke and Acts narrate local synagogue gatherings involving Scripture reading, teaching or invited address, communal deliberation, and disagreement. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. Interpretations differ on some details.",
+          "evidence_ids": [
+            "gospel-acts-synagogue-reading"
+          ],
+          "verse_refs": [
+            "Acts 13:14-43"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        },
+        {
+          "id": "historical_context_100",
+          "text": "For its historical and cultural setting, note that Acts 13 repeatedly places Barnabas and Paul in synagogue settings addressing Jews, God-fearers, and other hearers within diaspora Jewish contexts. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "acts-synagogue-jewish-context"
+          ],
+          "verse_refs": [
+            "Acts 13:5-52"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "archaeology_geography",
+      "title": "Archaeology and geography",
+      "blocks": [
+        {
+          "id": "archaeology_geography_99",
+          "text": "For its geographical or material setting, note that Acts moves from coastal Perga to highland Pisidian Antioch but names no pass, road surface, intermediate station, travel duration, or reason for choosing the route. It can illuminate the passage, while its limits should be kept in view. Interpretations differ on some details.",
+          "evidence_ids": [
+            "perga-antioch-highland-sequence-and-route-limits"
+          ],
+          "verse_refs": [
+            "Acts 13:13-14"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_99",
+          "text": "A literary feature to notice is that Codex Bezae and related versional witnesses preserve a substantially distinctive text of Acts often called Western, whose individual readings require case-by-case judgment. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image. Interpretations differ on some details.",
+          "evidence_ids": [
+            "acts-western-text"
+          ],
+          "verse_refs": [
+            "Acts 13:1-52"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "01ff8fe42dccad9c730cadab64fbdcb699f4416a6225d33de51bd1c0637ddd8f",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-007-medium",
+    "generated_timestamp": "2026-09-06T20:17:55Z"
+  }
+}

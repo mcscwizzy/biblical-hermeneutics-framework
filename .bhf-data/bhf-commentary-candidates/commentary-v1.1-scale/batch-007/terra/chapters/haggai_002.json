@@ -1,0 +1,101 @@
+{
+  "reference": "Haggai 2",
+  "book": "Haggai",
+  "chapter": 2,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_5",
+          "text": "Read the chapter with this setting in view: The Cyrus Cylinder and Darius inscriptions illuminate Achaemenid royal legitimation, cult restoration, divine patronage, empire, and kingship but do not directly document Haggai's temple work. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken.",
+          "evidence_ids": [
+            "haggai-persian-context"
+          ],
+          "verse_refs": [
+            "Haggai 2:20-23"
+          ],
+          "confidence": "high",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_6",
+          "text": "For its historical and cultural setting, note that Haggai 2:23 calls Zerubbabel YHWH's servant, chosen one, and signet, conveying royal-Davidic significance without saying that he became king. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. Interpretations differ on some details.",
+          "evidence_ids": [
+            "haggai-zerubbabel"
+          ],
+          "verse_refs": [
+            "Haggai 2:23"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        },
+        {
+          "id": "historical_context_7",
+          "text": "For its historical and cultural setting, note that The command to consider from the day the temple was founded has been related to 520 BCE work, earlier return-era foundation traditions, or a rhetorical resetting of the project's beginning. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "haggai-foundation"
+          ],
+          "verse_refs": [
+            "Haggai 2:15-18"
+          ],
+          "confidence": "low",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_6",
+          "text": "A literary feature to notice is that Haggai analogically calls 'this people,' their work, and their offerings impure, but does not identify ethnicity, disability, illness, menstruation, poverty, or social class as the contaminant. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image. Interpretations differ on some details.",
+          "evidence_ids": [
+            "haggai-this-people"
+          ],
+          "verse_refs": [
+            "Haggai 2:14"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "dig_deeper",
+      "title": "Dig deeper",
+      "blocks": [
+        {
+          "id": "dig_deeper_6",
+          "text": "For a later or comparative connection, note that Hebrews 12:26-29 explicitly quotes and interprets Haggai's shaking oracle in relation to removal, worship, divine fire, and an unshakable kingdom. This remains a secondary connection rather than the chapter's first-audience context. It can be traced further without replacing the chapter's own setting. Interpretations differ on some details.",
+          "evidence_ids": [
+            "haggai-hebrews"
+          ],
+          "verse_refs": [
+            "Haggai 2:6"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "b19ea2127ae2c079ff6da627e26451fa6dde52bab5aca3c6d8d6048091dfa82c",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-007-medium",
+    "generated_timestamp": "2026-09-06T20:17:54Z"
+  }
+}

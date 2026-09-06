@@ -1,0 +1,101 @@
+{
+  "reference": "Luke 2",
+  "book": "Luke",
+  "chapter": 2,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_3",
+          "text": "Read the chapter with this setting in view: Luke 1-2 pairs John and Jesus through annunciations, births, songs, Spirit-filled speech, temple scenes, and growth notices, using Septuagintal diction and Israel-scripture patterns. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken. Interpretations differ on some details.",
+          "evidence_ids": [
+            "luke-infancy"
+          ],
+          "verse_refs": [
+            "Luke 2:1-52"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_4",
+          "text": "For its historical and cultural setting, note that Luke, Mark, and John portray Jerusalem festival travel together with lodging, offerings, exchange, animal sales, crowds, teaching, and conflict in the temple precincts. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "gospel-pilgrimage-and-temple-economy"
+          ],
+          "verse_refs": [
+            "Luke 2:41-52"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        },
+        {
+          "id": "historical_context_5",
+          "text": "For its historical and cultural setting, note that Luke links Jesus' birth with Herod's era and a registration associated with Quirinius, creating a serious chronological problem because Quirinius' documented Syrian governorship and census belong to 6 CE; proposed resolutions remain disputed. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "luke-quirinius"
+          ],
+          "verse_refs": [
+            "Luke 2:1-5"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_4",
+          "text": "A literary feature to notice is that Luke 2:14 has a well-known genitive-nominative variant commonly represented as peace among people of God's favor or goodwill versus goodwill toward people; translation should disclose the textual and grammatical issue. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "luke-2-14"
+          ],
+          "verse_refs": [
+            "Luke 2:14"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "dig_deeper",
+      "title": "Dig deeper",
+      "blocks": [
+        {
+          "id": "dig_deeper_4",
+          "text": "For a later or comparative connection, note that Josephus reports that Quirinius assessed Judean property after Archelaus's removal and that Judas opposed the assessment as enslavement. This remains a secondary connection rather than the chapter's first-audience context. It can be traced further without replacing the chapter's own setting. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "josephus-census-tax-resistance"
+          ],
+          "verse_refs": [
+            "Luke 2:1-7"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "81f47bbeece82ed2c6ec4f486135bd4b3e5c472841e6c72fcb4489354d98ec80",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-007-medium",
+    "generated_timestamp": "2026-09-06T20:17:54Z"
+  }
+}

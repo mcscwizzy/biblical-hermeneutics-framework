@@ -1,0 +1,83 @@
+{
+  "reference": "Ezekiel 37",
+  "book": "Ezekiel",
+  "chapter": 37,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_24",
+          "text": "Read the chapter with this setting in view: Ezekiel 37 interprets the dry bones as the whole house of Israel whose hope is lost, and dramatizes national restoration through breath, bodies, opened graves, land, and Spirit. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken. Interpretations differ on some details.",
+          "evidence_ids": [
+            "ezekiel-dry-bones"
+          ],
+          "verse_refs": [
+            "Ezekiel 37:1-14"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_25",
+          "text": "For its historical and cultural setting, note that Second Temple Judaism debated bodily resurrection, making the New Testament proclamation both rooted and disruptive. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "resurrection-theme:second_temple_context:0"
+          ],
+          "verse_refs": [
+            "Ezekiel 37:1-14"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        },
+        {
+          "id": "historical_context_26",
+          "text": "For its historical and cultural setting, note that Ancient cultures knew death as final, which makes biblical resurrection a striking claim about God\u2019s power and faithfulness. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "resurrection-theme:ancient_near_east_context:0"
+          ],
+          "verse_refs": [
+            "Ezekiel 37:1-14"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_25",
+          "text": "A literary feature to notice is that Papyrus 967 places the material conventionally numbered Ezekiel 38-39 before chapter 37, showing an ancient order different from the familiar Masoretic sequence. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "ezekiel-p967-order"
+          ],
+          "verse_refs": [
+            "Ezekiel 37:1-28"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "11c6a87a09712ab2e89054b8b312402e81f6777141606b49df2324279167aa50",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-007-medium",
+    "generated_timestamp": "2026-09-06T20:17:54Z"
+  }
+}

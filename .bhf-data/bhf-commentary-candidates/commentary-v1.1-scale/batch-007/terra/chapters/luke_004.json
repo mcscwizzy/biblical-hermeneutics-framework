@@ -1,0 +1,101 @@
+{
+  "reference": "Luke 4",
+  "book": "Luke",
+  "chapter": 4,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_105",
+          "text": "Read the chapter with this setting in view: Luke and Acts narrate local synagogue gatherings involving Scripture reading, teaching or invited address, communal deliberation, and disagreement. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken. Interpretations differ on some details.",
+          "evidence_ids": [
+            "gospel-acts-synagogue-reading"
+          ],
+          "verse_refs": [
+            "Luke 4:16-30"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_106",
+          "text": "For its historical and cultural setting, note that Historically, Zechariah the Prophet belongs within the scriptural setting around 2 Kings 4:1-7, where 2 Kings 4:1-7, Isaiah 40:1-11, covenant-theme, and exile-theme help locate this biblical figure in the Bible's people, places, and events. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "zechariah-the-prophet:historical_context:0"
+          ],
+          "verse_refs": [
+            "Luke 4:16-30"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        },
+        {
+          "id": "historical_context_107",
+          "text": "For its historical and cultural setting, note that Synagogues become especially important after exile and in the diaspora when Torah-centered life must continue away from the temple. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "what-is-the-synagogue:historical_context:0"
+          ],
+          "verse_refs": [
+            "Luke 4:16-21"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_106",
+          "text": "A literary feature to notice is that Luke places the Nazareth synagogue scene programmatically near the ministry's beginning and combines Isaiah 61 and 58 language with Elijah-Elisha examples; chronology, Jubilee resonance, and redactional placement remain debated. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "luke-nazareth"
+          ],
+          "verse_refs": [
+            "Luke 4:16-30"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "chronology",
+      "title": "Chronology",
+      "blocks": [
+        {
+          "id": "chronology_106",
+          "text": "For the chapter's sequence and setting, note that Temple and city rebuilding This gives the reader a frame for the passage without deciding every larger reconstruction.",
+          "evidence_ids": [
+            "exile-and-return-storyline:timeline:4"
+          ],
+          "verse_refs": [
+            "Luke 4:16-21"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "124759817be14c42b8ccced5e71c2a1696f1512c28bffd8d2e8a3b5c5d148311",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-007-medium",
+    "generated_timestamp": "2026-09-06T20:17:55Z"
+  }
+}

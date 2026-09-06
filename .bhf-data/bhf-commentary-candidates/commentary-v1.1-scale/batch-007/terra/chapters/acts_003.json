@@ -1,0 +1,83 @@
+{
+  "reference": "Acts 3",
+  "book": "Acts",
+  "chapter": 3,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_134",
+          "text": "Read the chapter with this setting in view: Historical evaluation of Acts must compare particular claims with independent evidence rather than assign blanket reliability or unreliability. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken.",
+          "evidence_ids": [
+            "acts-historical-method"
+          ],
+          "verse_refs": [
+            "Acts 3:1-26"
+          ],
+          "confidence": "high",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_135",
+          "text": "For its historical and cultural setting, note that The second temple begins with the return from Babylon under Persian rule, develops through the Persian and Hellenistic periods, and stands in Jesus' day before its destruction in AD 70. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "what-is-the-second-temple:historical_context:0"
+          ],
+          "verse_refs": [
+            "Acts 3:1-10"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        },
+        {
+          "id": "historical_context_136",
+          "text": "For its historical and cultural setting, note that Imperial patronage, local governance, and temple-centered identity shaped second temple life within the wider ancient world. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "what-is-the-second-temple:ancient_near_east_context:0"
+          ],
+          "verse_refs": [
+            "Acts 3:1-10"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_135",
+          "text": "A literary feature to notice is that Codex Bezae and related versional witnesses preserve a substantially distinctive text of Acts often called Western, whose individual readings require case-by-case judgment. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image. Interpretations differ on some details.",
+          "evidence_ids": [
+            "acts-western-text"
+          ],
+          "verse_refs": [
+            "Acts 3:1-26"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "628e503386c22dcb4d3921c8d077b8508a17ffd0b1f90de63b5bef1dea84a5c6",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-007-medium",
+    "generated_timestamp": "2026-09-06T20:17:55Z"
+  }
+}

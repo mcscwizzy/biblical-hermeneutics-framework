@@ -1,0 +1,83 @@
+{
+  "reference": "John 20",
+  "book": "John",
+  "chapter": 20,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_90",
+          "text": "Read the chapter with this setting in view: The continuous Greek Gospel is internally anonymous; neither its narrator nor its purpose statement supplies the author's personal name. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken.",
+          "evidence_ids": [
+            "john-anonymous"
+          ],
+          "verse_refs": [
+            "John 20:30-31"
+          ],
+          "confidence": "high",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_91",
+          "text": "For its historical and cultural setting, note that John 20:23 links Spirit-gift, sending, forgiveness, and retention; ecclesial, communal, declarative, disciplinary, and sacramental readings differ, and none licenses coercion or concealment of crime. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "john-20-23"
+          ],
+          "verse_refs": [
+            "John 20:19-23"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        },
+        {
+          "id": "historical_context_92",
+          "text": "For its historical and cultural setting, note that Historically, Zechariah the Priest belongs within the scriptural setting around Matthew 28:16-20, where Matthew 28:16-20, Mark 16:19-20, jesus, and messiah-theme help locate this biblical figure in the Bible's people, places, and events. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "zechariah-the-priest:historical_context:0"
+          ],
+          "verse_refs": [
+            "John 20:17-23"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_91",
+          "text": "A literary feature to notice is that Signs-source, discourse-source, displacement, multiple-edition, and Johannine-school models attempt to explain seams and development, but no proposed source or edition survives independently. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "john-sources-editions"
+          ],
+          "verse_refs": [
+            "John 20:30-31"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "3ebb3c12f1c500f61afa57eda2d8ba6690f4d5878ffe8f1c9533ba6b39834eed",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-007-medium",
+    "generated_timestamp": "2026-09-06T20:17:55Z"
+  }
+}

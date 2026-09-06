@@ -1,0 +1,83 @@
+{
+  "reference": "Ezekiel 10",
+  "book": "Ezekiel",
+  "chapter": 10,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_76",
+          "text": "Read the chapter with this setting in view: Ezekiel narrates YHWH's glory moving from the defiled Jerusalem temple and city in chapters 8-11 and returning to the visionary sanctuary in chapter 43. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "ezekiel-glory-departure-return"
+          ],
+          "verse_refs": [
+            "Ezekiel 10:1-22"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_77",
+          "text": "For its historical and cultural setting, note that The inaugural vision uses repeated likeness and appearance language for storm, living creatures, wheels, expanse, throne, human-like figure, radiance, and the glory of YHWH. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. A more precise reconstruction remains disputed.",
+          "evidence_ids": [
+            "ezekiel-throne-vision"
+          ],
+          "verse_refs": [
+            "Ezekiel 10:1-22"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        },
+        {
+          "id": "historical_context_78",
+          "text": "For its historical and cultural setting, note that In the Second Temple period, the Jerusalem temple shaped pilgrimage, priesthood, purity, sacrifice, national hope, and conflict over authority. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "temple-symbol:second_temple_context:0"
+          ],
+          "verse_refs": [
+            "Ezekiel 10:18-19"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "chronology",
+      "title": "Chronology",
+      "blocks": [
+        {
+          "id": "chronology_77",
+          "text": "For the chapter's sequence and setting, note that New Jerusalem has no temple because God and the Lamb dwell there This gives the reader a frame for the passage without deciding every larger reconstruction.",
+          "evidence_ids": [
+            "temple-symbol:timeline:5"
+          ],
+          "verse_refs": [
+            "Ezekiel 10:18-19"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "85a254bb8b6ede76abf0e5a1b98f710e0dda93d2f0231400d61c3d776a737899",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-007-medium",
+    "generated_timestamp": "2026-09-06T20:17:54Z"
+  }
+}

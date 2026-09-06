@@ -1,0 +1,101 @@
+{
+  "reference": "Romans 5",
+  "book": "Romans",
+  "chapter": 5,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_11",
+          "text": "Read the chapter with this setting in view: Romans' suffering and perseverance language cannot justify victim blaming, trauma glorification, denial of pain, forced reconciliation, mental-health stigma, medical neglect, or keeping people in danger. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken.",
+          "evidence_ids": [
+            "romans:interpretive_note:72"
+          ],
+          "verse_refs": [
+            "Romans 5:1-5"
+          ],
+          "confidence": "high",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_12",
+          "text": "For its historical and cultural setting, note that Romans frames justification as God's action in relation to faith, grace, Messiah, resurrection, boasting, Abraham, Torah, Jew and gentile, not as an isolated abstract formula. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. Interpretations differ on some details.",
+          "evidence_ids": [
+            "romans-justification"
+          ],
+          "verse_refs": [
+            "Romans 5:1-11"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        },
+        {
+          "id": "historical_context_13",
+          "text": "For its historical and cultural setting, note that Romans 5:12-21 constructs an Adam-Messiah comparison about sin, death, obedience, grace, and life; the exact syntax of 5:12 and later original-sin deductions are disputed. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter. The evidence leaves some details unresolved.",
+          "evidence_ids": [
+            "romans-adam"
+          ],
+          "verse_refs": [
+            "Romans 5:12-21"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_12",
+          "text": "A literary feature to notice is that Romans 5:1 preserves a textual variant between an indicative peace statement and a hortatory peace appeal, with strong early evidence on both sides. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image. Interpretations differ on some details.",
+          "evidence_ids": [
+            "romans-five-one"
+          ],
+          "verse_refs": [
+            "Romans 5:1"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "dig_deeper",
+      "title": "Dig deeper",
+      "blocks": [
+        {
+          "id": "dig_deeper_12",
+          "text": "For a later or comparative connection, note that Original-sin doctrine is a reception construct drawing on Romans 5 and other texts; it cannot justify blaming infants, disabled people, survivors, or marginalized groups for inherited harm. This remains a secondary connection rather than the chapter's first-audience context. It can be traced further without replacing the chapter's own setting. Interpretations differ on some details.",
+          "evidence_ids": [
+            "romans:interpretive_note:29"
+          ],
+          "verse_refs": [
+            "Romans 5:12-21"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "d39b27e128247def88be06857f009a0ac100f341e6ce5f9ae8d99dc5a893581c",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-007-medium",
+    "generated_timestamp": "2026-09-06T20:17:54Z"
+  }
+}

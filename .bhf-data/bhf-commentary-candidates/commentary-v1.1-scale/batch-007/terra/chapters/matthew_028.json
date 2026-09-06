@@ -1,0 +1,101 @@
+{
+  "reference": "Matthew 28",
+  "book": "Matthew",
+  "chapter": 28,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_143",
+          "text": "Read the chapter with this setting in view: Matthew's commission cannot ethically authorize coercive conversion, forced baptism, colonial domination, cultural erasure, or religious violence. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken.",
+          "evidence_ids": [
+            "matthew-mission-safeguards"
+          ],
+          "verse_refs": [
+            "Matthew 28:18-20"
+          ],
+          "confidence": "high",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_144",
+          "text": "For its historical and cultural setting, note that The extant Gospel is a Greek narrative whose internal narrator does not identify an author. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "matthew-greek-narrative"
+          ],
+          "verse_refs": [
+            "Matthew 28:20"
+          ],
+          "confidence": "high",
+          "interpretation_level": "inference"
+        },
+        {
+          "id": "historical_context_145",
+          "text": "For its historical and cultural setting, note that Mary Magdalene and the other Mary witness death, burial, empty tomb, angelic message, and the risen Jesus, who commissions them to tell the brothers. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "matthew-women-witnesses"
+          ],
+          "verse_refs": [
+            "Matthew 28:1-10"
+          ],
+          "confidence": "high",
+          "interpretation_level": "fact"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_144",
+          "text": "A literary feature to notice is that Matthew uniquely narrates a tomb guard, priestly negotiations, and a counterclaim that disciples stole the body. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image. Interpretations differ on some details.",
+          "evidence_ids": [
+            "matthew-guard-story"
+          ],
+          "verse_refs": [
+            "Matthew 28:11-15"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    },
+    {
+      "kind": "dig_deeper",
+      "title": "Dig deeper",
+      "blocks": [
+        {
+          "id": "dig_deeper_144",
+          "text": "For a later or comparative connection, note that The extant Greek manuscript tradition supports baptism 'in the name of the Father and of the Son and of the Holy Spirit,' later central to Trinitarian reception. This remains a secondary connection rather than the chapter's first-audience context. It can be traced further without replacing the chapter's own setting. Interpretations differ on some details.",
+          "evidence_ids": [
+            "matthew-commission-formula"
+          ],
+          "verse_refs": [
+            "Matthew 28:19"
+          ],
+          "confidence": "high",
+          "interpretation_level": "disputed"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "b4d97a7849fe01398a8ce5f4f6512261de725dd1d58741611619dedf4b540e6f",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-007-medium",
+    "generated_timestamp": "2026-09-06T20:17:55Z"
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "reference": "Numbers 6",
+  "book": "Numbers",
+  "chapter": 6,
+  "status": "validated",
+  "evidence_availability": "AVAILABLE",
+  "sections": [
+    {
+      "kind": "chapter_overview",
+      "title": "Chapter overview",
+      "blocks": [
+        {
+          "id": "chapter_overview_29",
+          "text": "Read the chapter with this setting in view: Aaronic and Levitical priests serve in tabernacle and temple settings, later adapting in the second temple period. It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken.",
+          "evidence_ids": [
+            "what-is-the-role-of-priests:historical_context:0"
+          ],
+          "verse_refs": [
+            "Numbers 6:22-27"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "historical_context",
+      "title": "Historical and cultural context",
+      "blocks": [
+        {
+          "id": "historical_context_30",
+          "text": "For its historical and cultural setting, note that Used as a greeting and blessing, shalom points beyond social calm to a life made whole by God. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "what-does-shalom-mean:historical_context:0"
+          ],
+          "verse_refs": [
+            "Numbers 6:24-26"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        },
+        {
+          "id": "historical_context_31",
+          "text": "For its historical and cultural setting, note that Priestly mediation is common in the ancient world, but Israel's priests serve under covenant holiness rather than local deity politics. This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter.",
+          "evidence_ids": [
+            "what-is-the-role-of-priests:ancient_near_east_context:0"
+          ],
+          "verse_refs": [
+            "Numbers 6:22-27"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        }
+      ]
+    },
+    {
+      "kind": "language_literary",
+      "title": "Language and literary context",
+      "blocks": [
+        {
+          "id": "language_literary_30",
+          "text": "A literary feature to notice is that Among the oldest known Hebrew textual witnesses linked to the Bible. This form helps organize the chapter's claims. Notice it before drawing broader conclusions from a single phrase or image.",
+          "evidence_ids": [
+            "ketef-hinnom-silver-scrolls:historical_context:0"
+          ],
+          "verse_refs": [
+            "Numbers 6:24-26"
+          ],
+          "confidence": "medium",
+          "interpretation_level": "inference"
+        }
+      ]
+    }
+  ],
+  "generated_metadata": {
+    "evidence_hash": "123532ec5e0adef2d0f396258ef8784d4c3715f7af1fdbc58d0b11f53357c34e",
+    "evidence_bundle_version": "1.1",
+    "commentary_schema_version": "1.0",
+    "commentary_prompt_version": "1.1",
+    "model": "terra-codex-commentary-v1.1-batch-007-medium",
+    "generated_timestamp": "2026-09-06T20:17:54Z"
+  }
+}
