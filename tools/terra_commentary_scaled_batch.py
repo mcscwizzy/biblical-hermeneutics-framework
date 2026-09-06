@@ -256,6 +256,27 @@ def _clean_claim(item: Any) -> str:
     return claim.replace("The evidence does not establish", "The available material does not establish")
 
 
+def _reader_friendly_claim(item: Any) -> str:
+    """Render known internal CKL locator wording as plain reader-facing prose.
+
+    This is a presentation-only rewrite of the same supplied claim.  It is
+    used only by the bounded remediation runner; ordinary batch generation
+    remains unchanged.  No evidence item, anchor, or assertion is added.
+    """
+
+    claim = _clean_claim(item)
+    match = re.match(
+        r"^Historically,\s+(.+?)\s+is located by its canonical setting;\s*"
+        r"this entry connects that setting with .+? and related CKL objects for contextual retrieval\.?$",
+        claim,
+        re.IGNORECASE,
+    )
+    if match:
+        title = match.group(1).strip()
+        return f"The canonical setting associated with {title} provides a comparative historical backdrop."
+    return claim
+
+
 def _is_disputed(item: Any) -> bool:
     dispute = str((item.relevance_metadata or {}).get("dispute_status") or "").casefold()
     return dispute not in {"", "not_disputed", "unknown", "none"}
@@ -296,14 +317,23 @@ def _overview_item(bundle: Any) -> Any | None:
     return sorted(candidates, key=_item_rank, reverse=True)[0]
 
 
-def _block_for_item(item: Any, book: str, chapter: int, *, kind: str, index: int, overview: bool = False) -> dict[str, Any]:
-    claim = _clean_claim(item)
+def _block_for_item(
+    item: Any,
+    book: str,
+    chapter: int,
+    *,
+    kind: str,
+    index: int,
+    overview: bool = False,
+    remediation: bool = False,
+) -> dict[str, Any]:
+    claim = _reader_friendly_claim(item) if remediation else _clean_claim(item)
     disputed = _is_disputed(item)
     if overview:
         lead = "Read the chapter with this setting in view: "
         tail = " It gives a starting point for following the chapter's own movement. The chapter itself should determine how far the point is taken."
     elif kind == "historical_context":
-        lead = "For its historical and cultural setting, note that "
+        lead = "For its historical and cultural setting, " if remediation else "For its historical and cultural setting, note that "
         tail = " This background clarifies the setting assumed by the passage. It does not by itself settle every question raised by the chapter."
     elif kind == "language_literary":
         lead = "A literary feature to notice is that "
@@ -359,7 +389,14 @@ def _pick_by_role(bundle: Any, role: str, used: set[str], limit: int) -> list[An
     return selected
 
 
-def payload_for(entry: dict[str, Any], bundle: Any, *, ordinal: int, model_id: str) -> dict[str, Any]:
+def payload_for(
+    entry: dict[str, Any],
+    bundle: Any,
+    *,
+    ordinal: int,
+    model_id: str,
+    remediation: bool = False,
+) -> dict[str, Any]:
     """Compose concise prose from locked claims and their routed roles only."""
 
     reconstruction = entry["evidence_reconstruction"]["arguments"]
@@ -379,7 +416,7 @@ def payload_for(entry: dict[str, Any], bundle: Any, *, ordinal: int, model_id: s
     sections = [{
         "kind": "chapter_overview",
         "title": TITLES["chapter_overview"],
-        "blocks": [_block_for_item(overview, book, chapter, kind="chapter_overview", index=ordinal, overview=True)],
+        "blocks": [_block_for_item(overview, book, chapter, kind="chapter_overview", index=ordinal, overview=True, remediation=remediation)],
     }]
 
     role_order = ["historical_context", "people_places", "archaeology_geography", "language_literary", "chronology", "dig_deeper"]
@@ -394,7 +431,7 @@ def payload_for(entry: dict[str, Any], bundle: Any, *, ordinal: int, model_id: s
         sections.append({
             "kind": role,
             "title": TITLES[role],
-            "blocks": [_block_for_item(item, book, chapter, kind=role, index=ordinal + offset + 1) for offset, item in enumerate(items)],
+            "blocks": [_block_for_item(item, book, chapter, kind=role, index=ordinal + offset + 1, remediation=remediation) for offset, item in enumerate(items)],
         })
         added += 1
     # A THIN chapter with only its overview evidence remains one short section;

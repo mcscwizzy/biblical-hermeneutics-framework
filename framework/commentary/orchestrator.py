@@ -31,6 +31,11 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Iterable, Mapping
 
+from framework.commentary.remediation import (
+    ALLOWLISTED_PROSE_FINDINGS,
+    regeneration_eligibility,
+)
+
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 SCALE_ROOT_REL = Path(".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale")
@@ -71,6 +76,9 @@ EXIT_CODES = {
     "MODEL_HANDOFF_REQUIRED": 11,
     "BLOCKED": 12,
     "CORPUS_COMPLETE": 13,
+    "REMEDIATION_AVAILABLE": 0,
+    "RUN_STAGE": 0,
+    "VALID": 0,
 }
 
 
@@ -271,6 +279,8 @@ def _validate_state_shape(state: Mapping[str, Any]) -> None:
         raise StateCorruptionError("protected_fingerprints must be an object")
     if not isinstance(state["completed_stages"], list):
         raise StateCorruptionError("completed_stages must be a list")
+    if "remediation_attempts" in state and not isinstance(state["remediation_attempts"], dict):
+        raise StateCorruptionError("remediation_attempts must be an object")
     if not isinstance(state["can_advance"], bool) or not isinstance(state["human_intervention_required"], bool):
         raise StateCorruptionError("can_advance and human_intervention_required must be booleans")
     if state["status"] == CORPUS_COMPLETE and state["current_stage"] != CORPUS_COMPLETE:
@@ -561,6 +571,7 @@ def _base_state(repo_root: Path) -> dict[str, Any]:
         "history": [{"event": "INITIALIZED_FROM_REPOSITORY", "batch": current, "stage": current_stage, "at": _now()}],
         "observed_repository": {"head": _git_head(repo_root), "branch": _git_branch(repo_root)},
         "updated_at": _now(),
+        "remediation_attempts": {},
     }
 
 
@@ -782,6 +793,14 @@ def _run_post_generation(repo_root: Path, state: dict[str, Any]) -> dict[str, An
 
     number = int(state["current_batch"])
     batch = _batch_root(repo_root, number)
+    prior_report = _read_json(batch / "post-generation-report.json")
+    remediation = _read_json(batch / "remediation-report.json")
+    if prior_report and prior_report.get("status") == "NO_GO" and remediation:
+        # Preserve the first failed certification before a bounded retry can
+        # replace the final report.  This is an append-only audit trail.
+        initial = batch / "post-generation-initial-report.json"
+        if not initial.exists():
+            _atomic_json(initial, prior_report)
     staging = repo_root / SCALE_ROOT_REL / f".{_batch_id(number)}.certifying"
     if staging.exists():
         shutil.rmtree(staging)
@@ -796,12 +815,36 @@ def _run_post_generation(repo_root: Path, state: dict[str, Any]) -> dict[str, An
         post_report = post_run(staging)
     except Exception as exc:
         return _resume_result(load_state(state_path(repo_root)), "RESUME_REQUIRED", message=f"post-generation audit interrupted: {exc}")
+    if remediation:
+        remediation_rows = {row.get("reference"): row for row in remediation.get("targets", [])}
+        for row in post_report.get("chapters", []):
+            prior = remediation_rows.get(row.get("reference"))
+            if not prior:
+                continue
+            row["initial_disposition"] = prior.get("initial_disposition", "QUARANTINE")
+            row["initial_reasons"] = prior.get("initial_reasons", ["READER_UNFRIENDLY"])
+            row["regeneration_attempts"] = prior.get("regeneration_attempts", 1)
+            row["remediation_status"] = row.get("final_disposition")
+        post_report["regeneration_attempts"] = sum(
+            int(row.get("regeneration_attempts", 0) or 0) for row in remediation.get("targets", [])
+        )
+        post_report["remediation"] = remediation
+        for row in remediation.get("targets", []):
+            certified = next(
+                (candidate for candidate in post_report.get("chapters", []) if candidate.get("reference") == row.get("reference")),
+                None,
+            )
+            row["final_disposition"] = certified.get("final_disposition") if certified else "QUARANTINE"
+            row["final_reasons"] = certified.get("reasons", []) if certified else ["missing recertification row"]
+        remediation["status"] = "CERTIFIED" if post_report.get("status") == "GO" else "FAILED_RECERTIFICATION"
+        _atomic_json(staging / "remediation-report.json", remediation)
     _atomic_json(staging / "post-generation-report.json", post_report)
     _atomic_json(staging / "prose-certification.json", post_report)
     _atomic_text(staging / "post-generation.md", post_markdown(post_report))
     if post_report.get("status") != "GO":
-        for name in ("post-generation-report.json", "prose-certification.json"):
-            os.replace(staging / name, batch / name)
+        for name in ("post-generation-report.json", "prose-certification.json", "remediation-report.json"):
+            if (staging / name).exists():
+                os.replace(staging / name, batch / name)
         blocked_state = load_state(state_path(repo_root))
         blocked_state["stage_status"] = OUTPUT_VALIDATED
         save_state(state_path(repo_root), blocked_state)
@@ -819,8 +862,9 @@ def _run_post_generation(repo_root: Path, state: dict[str, Any]) -> dict[str, An
         )
         shutil.rmtree(staging)
         return result
-    for name in ("post-generation-report.json", "prose-certification.json"):
-        os.replace(staging / name, batch / name)
+    for name in ("post-generation-report.json", "prose-certification.json", "remediation-report.json"):
+        if (staging / name).exists():
+            os.replace(staging / name, batch / name)
     final_doc = repo_root / "docs" / f"commentary-v1.1-scaled-{_batch_id(number)}-post-generation.md"
     os.replace(staging / "post-generation.md", final_doc)
     shutil.rmtree(staging)
@@ -836,6 +880,166 @@ def _run_external_preflight(repo_root: Path, state: dict[str, Any]) -> dict[str,
     state["stage_status"] = RUNNING
     state["resume_token"] = {"command": command, "work_root": f"{SCALE_ROOT_REL}/.{_batch_id(int(state['current_batch']))}.work"}
     return state
+
+
+def _remediation_plan(repo_root: Path, state: Mapping[str, Any]) -> dict[str, Any]:
+    """Build a conservative plan from the recorded failed certification."""
+
+    batch = _batch_root(repo_root, int(state["current_batch"]))
+    report = _read_json(batch / "post-generation-report.json") or {}
+    plan: dict[str, Any] = {
+        "report_version": "commentary-v1.1-bounded-remediation-plan-v1",
+        "generated_at": _now(),
+        "batch_id": _batch_id(int(state["current_batch"])),
+        "policy": {
+            "allowlisted_findings": sorted(ALLOWLISTED_PROSE_FINDINGS),
+            "maximum_automatic_regeneration_attempts": 1,
+            "model": "terra",
+            "effort": "medium",
+        },
+        "targets": [],
+        "status": "BLOCKED",
+    }
+    if report.get("status") != "NO_GO":
+        plan["diagnostics"] = ["bounded remediation requires the recorded initial certification to be NO_GO"]
+        return plan
+    findings = report.get("findings") or {}
+    global_integrity_clean = bool(
+        report.get("lock_revalidation", {}).get("status") == "PASS"
+        and not report.get("lock_revalidation", {}).get("stale_locks")
+        and not report.get("provenance_anomalies")
+        and not report.get("duplicate_prose_fingerprints")
+        and not report.get("cross_batch_fingerprint_matches")
+        and report.get("prior_prose_fingerprints", {}).get("unchanged") is True
+        and all(not values for values in findings.values())
+    )
+    unsupported = {
+        str(row.get("reference")): set(row.get("flags") or [])
+        for row in report.get("unsupported_claim_findings", [])
+    }
+    batch_cert = _read_json(batch / "evidence-certification.json") or {}
+    terra_input = _read_json(batch / "terra-input-manifest.json") or {}
+    try:
+        from tools.terra_commentary_scaled_batch import revalidate_locks
+        lock, bundles = revalidate_locks(terra_input, batch_cert)
+    except Exception as exc:
+        plan["diagnostics"] = [f"lock revalidation could not run: {exc}"]
+        return plan
+    certified = {str(row.get("reference")): row for row in batch_cert.get("chapters", [])}
+    entries = {str(row.get("reference")): row for row in terra_input.get("chapters", [])}
+    candidates = []
+    for row in report.get("chapters", []):
+        if row.get("final_disposition") == "PASS":
+            continue
+        reference = str(row.get("reference"))
+        reasons = [str(reason) for reason in row.get("reasons", [])]
+        attempt = int((state.get("remediation_attempts") or {}).get(reference, 0) or 0)
+        lock_row = next((item for item in lock.get("results", []) if item.get("reference") == reference), None)
+        cert_row, entry, bundle = certified.get(reference), entries.get(reference), bundles.get(reference)
+        cited = set()
+        chapter_path = batch / "terra" / "chapters"
+        for path in chapter_path.glob("*.json"):
+            candidate = _read_json(path)
+            if candidate and candidate.get("reference") == reference:
+                cited = {eid for section in candidate.get("sections", []) for block in section.get("blocks", []) for eid in block.get("evidence_ids", [])}
+                generated_hash = (candidate.get("generated_metadata") or {}).get("evidence_hash")
+                break
+        else:
+            generated_hash = None
+        evidence_lock_valid = bool(
+            lock.get("status") == "PASS"
+            and lock_row and lock_row.get("status") == "LOCKED"
+            and cert_row and cert_row.get("lock_status") == "LOCKED"
+            and entry and bundle
+            and cited
+            and cited.issubset(set(cert_row.get("evidence_ids", [])))
+            and generated_hash == entry.get("locked_evidence_bundle_hash") == cert_row.get("locked_evidence_hash")
+        )
+        chapter_integrity_clean = global_integrity_clean and not (
+            unsupported.get(reference, set()) - ALLOWLISTED_PROSE_FINDINGS
+        )
+        eligible, diagnostics = regeneration_eligibility(
+            reasons,
+            integrity_clean=chapter_integrity_clean,
+            evidence_lock_valid=evidence_lock_valid,
+            attempts=attempt,
+        )
+        candidates.append({
+            "reference": reference,
+            "initial_disposition": row.get("final_disposition"),
+            "initial_reasons": reasons,
+            "attempts_before": attempt,
+            "eligible": eligible,
+            "integrity_clean": chapter_integrity_clean,
+            "evidence_lock_valid": evidence_lock_valid,
+            "diagnostics": diagnostics,
+        })
+    plan["targets"] = candidates
+    eligible = [row["reference"] for row in candidates if row["eligible"]]
+    plan["eligible_references"] = eligible
+    plan["status"] = "READY" if eligible and len(eligible) == len(candidates) else "BLOCKED"
+    if not candidates:
+        plan["diagnostics"] = ["no failed chapters are available for bounded remediation"]
+    elif plan["status"] != "READY":
+        plan["diagnostics"] = ["at least one failed chapter is not a pure allowlisted prose-quality failure"]
+    return plan
+
+
+def remediate_batch(repo_root: Path, *, model: str, effort: str) -> dict[str, Any]:
+    """Run exactly one allowlisted Terra-medium remediation attempt."""
+
+    path = state_path(repo_root)
+    state = load_state(path)
+    if model != "terra" or effort != "medium":
+        return _resume_result(state, "MODEL_HANDOFF_REQUIRED", message="bounded prose remediation requires Terra Medium") | {
+            "action": "MODEL_HANDOFF_REQUIRED", "run_stage": "POST_GENERATION_AUDIT", "model": "terra", "effort": "medium",
+        }
+    resuming = bool(
+        state.get("status") == ACTIVE
+        and state.get("current_stage") == "POST_GENERATION_AUDIT"
+        and state.get("stage_status") == RUNNING
+        and "terra_commentary_remediation.py" in " ".join(state.get("resume_token", {}).get("command", []))
+    )
+    if (not resuming and state.get("status") != BLOCKED) or state.get("current_stage") != "POST_GENERATION_AUDIT":
+        return _resume_result(state, "BLOCKED", message="bounded remediation is only available for a blocked post-generation audit")
+    plan = _remediation_plan(repo_root, state) if not resuming else (_read_json(_batch_root(repo_root, int(state["current_batch"])) / "remediation-plan.json") or {})
+    if plan.get("status") != "READY":
+        return _set_blocker(
+            repo_root, state, "HUMAN_REVIEW_REQUIRED",
+            "automatic remediation policy rejected one or more failed chapters",
+            plan.get("diagnostics", []),
+            affected_chapters=[row.get("reference") for row in plan.get("targets", []) if not row.get("eligible")],
+        )
+    references = list(plan["eligible_references"])
+    command = [
+        sys.executable,
+        str(repo_root / "tools/terra_commentary_remediation.py"),
+        "--batch-root", str(_batch_root(repo_root, int(state["current_batch"]))),
+        "--attempt", "1",
+    ]
+    for reference in references:
+        command.extend(["--reference", reference])
+    state["status"] = ACTIVE
+    state["blocked_reason"] = None
+    state["stage_status"] = RUNNING
+    state["resume_token"] = {"command": command, "references": references, "model": model, "effort": effort, "attempt": 1}
+    save_state(path, state)
+    completed = subprocess.run(command, cwd=repo_root, check=False)
+    state = load_state(path)
+    if completed.returncode != 0:
+        return _resume_result(state, "RESUME_REQUIRED", message="bounded remediation did not complete; checkpoint remains available")
+    remediation = _read_json(_batch_root(repo_root, int(state["current_batch"])) / "remediation-report.json")
+    if not remediation or remediation.get("status") != "READY_FOR_RECERTIFICATION":
+        return _set_blocker(repo_root, state, "NON_RETRYABLE", "remediation output failed validation", ["missing or invalid remediation-report.json"], affected_chapters=references)
+    attempts = dict(state.get("remediation_attempts") or {})
+    for reference in references:
+        attempts[reference] = int(attempts.get(reference, 0) or 0) + 1
+    state["remediation_attempts"] = attempts
+    state["stage_status"] = OUTPUT_WRITTEN
+    state["resume_token"] = {"remediation_report": str((SCALE_ROOT_REL / _batch_id(int(state["current_batch"])) / "remediation-report.json")), "references": references, "attempt": 1}
+    state["history"].append({"event": "BOUNDED_REMEDIATION_STAGED", "batch": state["current_batch"], "references": references, "attempt": 1, "at": _now()})
+    save_state(path, state)
+    return _resume_result(state, "STAGE_COMPLETE", message="bounded remediation staged; recertify the affected prose and complete batch audit")
 
 
 def run_stage(repo_root: Path, *, model: str | None = None, effort: str | None = None) -> dict[str, Any]:
@@ -899,6 +1103,8 @@ def resume(repo_root: Path) -> dict[str, Any]:
     if stage == "PROSE_GENERATION":
         return run_stage(repo_root, model="terra", effort="medium")
     if stage == "POST_GENERATION_AUDIT":
+        if state.get("stage_status") == RUNNING and "terra_commentary_remediation.py" in " ".join(state.get("resume_token", {}).get("command", [])):
+            return remediate_batch(repo_root, model="terra", effort="medium")
         return run_stage(repo_root)
     try:
         state = _complete_stage(repo_root, state, checkpoint=state.get("resume_token"))
@@ -1103,6 +1309,9 @@ def build_parser() -> argparse.ArgumentParser:
     run.add_argument("--model", help="model actually executing the requested stage")
     run.add_argument("--effort", help="effort actually used by that model")
     commands.add_parser("resume", help="resume one validated checkpoint or external stage")
+    remediate = commands.add_parser("remediate", help="run one allowlisted Terra Medium prose remediation attempt")
+    remediate.add_argument("--model", required=True)
+    remediate.add_argument("--effort", required=True)
     handoff = commands.add_parser("handoff", help="record acceptance of a model-specific handoff without invoking it")
     handoff.add_argument("--model", required=True)
     handoff.add_argument("--effort", required=True)
@@ -1114,6 +1323,15 @@ def build_parser() -> argparse.ArgumentParser:
 def _next(repo_root: Path) -> dict[str, Any]:
     state = load_state(state_path(repo_root))
     if state["status"] == BLOCKED:
+        if state.get("current_stage") == "POST_GENERATION_AUDIT":
+            plan = _remediation_plan(repo_root, state)
+            if plan.get("status") == "READY":
+                return _resume_result(state, "REMEDIATION_AVAILABLE", message="the failed chapters qualify for one bounded Terra Medium remediation attempt") | {
+                    "run_stage": "POST_GENERATION_AUDIT",
+                    "model": "terra",
+                    "effort": "medium",
+                    "references": plan.get("eligible_references", []),
+                }
         return _resume_result(state, "BLOCKED", message=str(state.get("blocked_reason")))
     errors = validate_state(repo_root, state)
     if errors:
@@ -1141,6 +1359,7 @@ def main(argv: list[str] | None = None) -> int:
         elif args.command == "next": result = _next(repo_root)
         elif args.command == "run": result = run_stage(repo_root, model=args.model, effort=args.effort)
         elif args.command == "resume": result = resume(repo_root)
+        elif args.command == "remediate": result = remediate_batch(repo_root, model=args.model, effort=args.effort)
         elif args.command == "handoff": result = accept_handoff(repo_root, model=args.model, effort=args.effort)
         elif args.command == "clear-blocker": result = clear_blocker(repo_root, resolution=args.resolution)
         else: raise PipelineError(f"unsupported command: {args.command}")

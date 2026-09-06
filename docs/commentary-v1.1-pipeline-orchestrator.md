@@ -10,6 +10,7 @@ python -m framework.commentary.orchestrator validate
 python -m framework.commentary.orchestrator next
 python -m framework.commentary.orchestrator run --model luna --effort high
 python -m framework.commentary.orchestrator resume
+python -m framework.commentary.orchestrator remediate --model terra --effort medium
 ```
 
 State is stored at
@@ -67,6 +68,25 @@ python -m framework.commentary.orchestrator clear-blocker --resolution "reviewed
 Clearing a blocker never retries a stage implicitly. Run `validate` first, then
 `next`, `run`, or `resume` as appropriate.
 
+### Bounded prose remediation
+
+The only automatic prose retry currently allowlisted is `READER_UNFRIENDLY`.
+It is eligible only when the evidence lock, provenance, hashes, routing, and
+semantic checks are clean. The retry is limited to one attempt per chapter and
+uses the same locked evidence with Terra Medium:
+
+```bash
+python -m framework.commentary.orchestrator remediate --model terra --effort medium
+python -m framework.commentary.orchestrator resume
+```
+
+Integrity findings, unsupported claims, routing errors, hash disagreements,
+and semantic leakage remain human-review blockers. The first failed report is
+preserved as `post-generation-initial-report.json`; original chapter JSON is
+preserved under `terra/remediation-attempts/attempt-001/original/` and the
+machine-readable attempt record is `remediation-report.json`. A failed retry
+cannot loop or reset its attempt counter.
+
 ## Batch and corpus advancement
 
 When prose certification reaches `GO`, the next invocation records
@@ -79,4 +99,3 @@ forward automatically.
 
 The orchestrator never changes CKL records, never rewrites prior certified
 prose, and never puts quarantined or `DATA_GAP` chapters in Terra input.
-
