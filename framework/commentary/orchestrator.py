@@ -899,6 +899,39 @@ def _run_external_preflight(repo_root: Path, state: dict[str, Any]) -> dict[str,
     return state
 
 
+def _empty_preflight_diagnostics(repo_root: Path, state: Mapping[str, Any]) -> dict[str, Any] | None:
+    """Interpret a validated empty preflight pool as a real blocker.
+
+    A nonzero preflight exit normally means that its checkpoint remains
+    resumable.  An empty, fully scanned pool is different: retrying it cannot
+    produce work under the current no-reuse policy.  Keep the checkpoint for
+    audit, but surface the condition as human-review-required.
+    """
+
+    work_root = repo_root / SCALE_ROOT_REL / f".{_batch_id(int(state['current_batch']))}.work"
+    report = _read_json(work_root / "blocked-report.json")
+    manifest = (report or {}).get("manifest") or {}
+    if manifest.get("candidate_pool_size") != 0 or manifest.get("chapters_evaluated") != 0:
+        return None
+    skipped = manifest.get("skipped_verdicts") or []
+    counts = Counter(str(row.get("status")) for row in skipped if row.get("status"))
+    affected = [
+        str(row.get("reference"))
+        for row in skipped
+        if row.get("status") == "SKIP_PRIOR_QUARANTINE" and row.get("reference")
+    ]
+    return {
+        "reason": "preflight found no eligible candidate chapters under the current no-reuse policy",
+        "diagnostics": [
+            "full corpus scan completed with zero candidate chapters",
+            f"skip counts: {dict(sorted(counts.items()))}",
+            f"current population: {manifest.get('current_population', {})}",
+            "prior quarantines require separate review or remediation; they were not silently reused",
+        ],
+        "affected_chapters": affected,
+    }
+
+
 def _remediation_plan(repo_root: Path, state: Mapping[str, Any]) -> dict[str, Any]:
     """Build a conservative plan from the recorded failed certification."""
 
@@ -1093,6 +1126,16 @@ def run_stage(repo_root: Path, *, model: str | None = None, effort: str | None =
         completed = subprocess.run(_preflight_command(repo_root, state), cwd=repo_root, check=False)
         if completed.returncode != 0:
             state = load_state(path)
+            empty_pool = _empty_preflight_diagnostics(repo_root, state)
+            if empty_pool:
+                return _set_blocker(
+                    repo_root,
+                    state,
+                    "HUMAN_REVIEW_REQUIRED",
+                    empty_pool["reason"],
+                    empty_pool["diagnostics"],
+                    affected_chapters=empty_pool["affected_chapters"],
+                )
             return _resume_result(state, "RESUME_REQUIRED", message="preflight did not reach a validated final lock; checkpoint remains reusable")
         state = load_state(path)
         state["stage_status"] = OUTPUT_WRITTEN

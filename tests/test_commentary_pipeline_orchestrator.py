@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import subprocess
 from pathlib import Path
 
 import pytest
@@ -171,6 +172,33 @@ def test_interrupted_stage_remains_resumable_and_is_not_pass(tmp_path):
     result = resume(tmp_path)
     assert result["action"] == "RESUME_REQUIRED"
     assert load_state(state_path(tmp_path))["stage_status"] == "RUNNING"
+
+
+def test_empty_preflight_pool_becomes_human_review_blocker(tmp_path, monkeypatch):
+    initialize(tmp_path)
+    work_root = tmp_path / ".bhf-data/bhf-commentary-candidates/commentary-v1.1-scale/.batch-001.work"
+    _write(work_root / "blocked-report.json", {
+        "manifest": {
+            "candidate_pool_size": 0,
+            "chapters_evaluated": 0,
+            "current_population": {"eligible": 935, "insufficient": 153},
+            "skipped_verdicts": [
+                {"reference": "1 Corinthians 1", "status": "SKIP_PRIOR_QUARANTINE"},
+                {"reference": "Genesis 1", "status": "SKIP_ALREADY_GENERATED"},
+            ],
+        },
+    })
+    monkeypatch.setattr(
+        "framework.commentary.orchestrator.subprocess.run",
+        lambda *args, **kwargs: subprocess.CompletedProcess(args[0], 1),
+    )
+    result = run_stage(tmp_path, model="luna", effort="high")
+    assert result["action"] == "BLOCKED"
+    blocked = load_state(state_path(tmp_path))
+    assert blocked["status"] == "BLOCKED"
+    assert blocked["blocked_reason"]["error_class"] == "HUMAN_REVIEW_REQUIRED"
+    assert "no eligible candidate chapters" in blocked["blocked_reason"]["reason"]
+    assert blocked["blocked_reason"]["affected_chapters"] == ["1 Corinthians 1"]
 
 
 def test_promoted_preflight_outputs_are_reconciled_without_child_rerun(tmp_path):
