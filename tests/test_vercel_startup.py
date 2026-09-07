@@ -89,3 +89,24 @@ def test_vercel_runtime_path_is_not_a_candidate_workspace():
     )
 
     assert result.returncode == 0, result.stderr
+
+
+def test_vercel_lexicon_route_materializes_packaged_database():
+    result = _vercel_python(
+        "import asyncio\n"
+        "import httpx\n"
+        "from bhf_web.app import app\n"
+        "async def check_lexicon():\n"
+        "    transport = httpx.ASGITransport(app=app)\n"
+        "    async with httpx.AsyncClient(transport=transport, base_url='http://test') as client:\n"
+        "        response = await client.get('/api/lexicon/diagnostics')\n"
+        "    assert response.status_code == 200\n"
+        "    diagnostics = response.json()\n"
+        "    assert diagnostics['lexical_database_found'] is True\n"
+        "    assert diagnostics['lexical_entry_count'] >= 14000\n"
+        "    assert diagnostics['verse_word_count'] >= 440000\n"
+        "    assert {check['status'] for check in diagnostics['sample_checks']} == {'pass'}\n"
+        "asyncio.run(check_lexicon())"
+    )
+
+    assert result.returncode == 0, result.stderr

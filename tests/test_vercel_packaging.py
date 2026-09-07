@@ -52,6 +52,7 @@ def test_vercel_ignore_preserves_required_runtime_paths():
         "bhf_agent/data/asv_bible.json",
         "bhf_agent/data/kjv_bible.json",
         "framework/canonical_library/objects/books/genesis.json",
+        "framework/lexical/database/lexicon.sqlite.gz",
         ".bhf-data/bhf-commentary-v1.1/commentary-v1.1-manifest.json",
         ".bhf-data/bhf-commentary-v1.1/deuteronomy_032.json",
         "bhf_web/static/style.css",

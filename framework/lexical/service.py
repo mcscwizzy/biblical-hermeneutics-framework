@@ -5,7 +5,10 @@ from __future__ import annotations
 import os
 import re
 import logging
+import gzip
+import shutil
 import sqlite3
+import tempfile
 from pathlib import Path
 from typing import Any, Iterable
 
@@ -14,8 +17,55 @@ from .repository import LexicalRepository
 
 
 DEFAULT_LEXICAL_DATABASE_PATH = str(Path(__file__).resolve().parent / "database" / "lexicon.sqlite")
+PACKAGED_LEXICAL_DATABASE_ARCHIVE_PATH = Path(f"{DEFAULT_LEXICAL_DATABASE_PATH}.gz")
 _STRONGS_RE = re.compile(r"\b(?P<value>[HG]\s*0*\d{1,5}[A-Za-z]?)\b", re.IGNORECASE)
 LOGGER = logging.getLogger(__name__)
+
+
+def bundled_lexical_database_path() -> Path:
+    """Return the packaged database, materializing its compressed copy if needed.
+
+    Vercel functions can read packaged source files but may only write to ``/tmp``.
+    The generated database is therefore shipped compressed and expanded atomically
+    into the deployment's writable runtime directory on first use.
+    """
+
+    packaged_path = Path(DEFAULT_LEXICAL_DATABASE_PATH)
+    if packaged_path.is_file():
+        return packaged_path
+
+    archive_path = PACKAGED_LEXICAL_DATABASE_ARCHIVE_PATH
+    if not archive_path.is_file():
+        return packaged_path
+
+    runtime_dir = Path(
+        os.environ.get("BHF_DATA_DIR")
+        or ("/tmp/bhf-data" if os.environ.get("VERCEL") else ".bhf-data")
+    )
+    runtime_dir.mkdir(parents=True, exist_ok=True)
+    runtime_path = runtime_dir / packaged_path.name
+    if runtime_path.is_file():
+        return runtime_path
+
+    temporary_path: str | None = None
+    try:
+        with tempfile.NamedTemporaryFile(
+            mode="wb", prefix=".lexicon.", suffix=".sqlite", dir=runtime_dir, delete=False
+        ) as temporary:
+            temporary_path = temporary.name
+            with gzip.open(archive_path, "rb") as source:
+                shutil.copyfileobj(source, temporary)
+            temporary.flush()
+            os.fsync(temporary.fileno())
+        os.replace(temporary_path, runtime_path)
+    except Exception:
+        if temporary_path:
+            try:
+                Path(temporary_path).unlink()
+            except FileNotFoundError:
+                pass
+        raise
+    return runtime_path
 
 
 def lexical_database_build_command(database_path: str | Path = DEFAULT_LEXICAL_DATABASE_PATH) -> str:
@@ -66,7 +116,7 @@ class LexicalLookupService:
         self.database_path = Path(
             database_path
             or os.environ.get("BHF_LEXICAL_DATABASE_PATH")
-            or DEFAULT_LEXICAL_DATABASE_PATH
+            or bundled_lexical_database_path()
         )
         self._repository = repository
         self.startup_diagnostics = self._log_startup_diagnostics()

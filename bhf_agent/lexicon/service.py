@@ -9,7 +9,7 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Any, Mapping
 
-from framework.lexical.service import DEFAULT_LEXICAL_DATABASE_PATH
+from framework.lexical.service import bundled_lexical_database_path
 
 from bhf_agent.bible import BibleError, normalize_book_name
 from bhf_agent.runtime_paths import RUNTIME_DATA_PATHS
@@ -46,7 +46,7 @@ class WordStudyService:
             or repository_path
             or os.environ.get("BHF_LEXICAL_DATABASE_PATH")
         )
-        packaged_path = Path(DEFAULT_LEXICAL_DATABASE_PATH)
+        packaged_path = bundled_lexical_database_path()
         self.database_path = Path(configured_path) if configured_path else (
             packaged_path
             if packaged_path.exists()

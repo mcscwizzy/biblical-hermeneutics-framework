@@ -139,7 +139,7 @@ focused packaging, release, orchestration, CKL, Bible, or lexicon test groups.
 
 No credential/token/private-key pattern was found. However, seven tracked
 files contain serialized absolute local paths beginning with
-`/home/johnwalker`, including `.BHF-GENERATION-RESUME.md` and candidate/audit
+`<local-worktree>`, including `.BHF-GENERATION-RESUME.md` and candidate/audit
 artifacts such as `future-ckl-remediation-queue.json` and
 `post-remediation-recovery-adjudication.json`. These are local-machine data
 leaks in committed release artifacts. Redacting or removing them would touch
