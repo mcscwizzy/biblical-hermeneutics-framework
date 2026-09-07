@@ -4,13 +4,13 @@
   "chapter": 16,
   "evidence_hash": "8e5cbb871b1513cc91ad7b20d2f399c3796e3fe36516d99e6b36511dcadfab62",
   "evidence_bundle_version": "1.1",
-  "synthesis_schema_version": "1.0",
-  "synthesis_compiler_version": "1.0",
-  "synthesis_hash": "4401fbb0398da0e7be842978d4fadc45bf83635d3041c4282e243de949036004",
+  "synthesis_schema_version": "1.1",
+  "synthesis_compiler_version": "1.1",
+  "synthesis_hash": "6c9b25b87dde82946bb0620ce97f85a31311467dec6c8745e2d365de9f2904bc",
   "evidence_availability": "AVAILABLE",
   "synthesis_units": [
     {
-      "id": "syn_archaeology_geography_04fb94f80990",
+      "id": "syn_archaeology_geography_3c8944beb7b8",
       "kind": "archaeology_geography",
       "facts": [
         "No excavated object or site is securely identified as the wilderness tabernacle",
@@ -27,17 +27,22 @@
       "related_unit_ids": [],
       "confidence": "medium",
       "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Leviticus 16:1-34"
+      ],
       "metadata": {
         "relationship_basis": "shared_parent_object",
         "source_categories": [
           "archaeology"
         ],
         "support_count": 2,
+        "passage_scope": "CURRENT_CHAPTER",
         "explicit_significance": false
       }
     },
     {
-      "id": "syn_archaeology_geography_9ef55e653364",
+      "id": "syn_archaeology_geography_d7007ac9c591",
       "kind": "archaeology_geography",
       "facts": [
         "No excavated structure is securely identifiable as the wilderness tabernacle",
@@ -56,17 +61,22 @@
       "related_unit_ids": [],
       "confidence": "medium",
       "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Leviticus 16:1-34"
+      ],
       "metadata": {
         "relationship_basis": "shared_entities",
         "source_categories": [
           "archaeology"
         ],
         "support_count": 2,
+        "passage_scope": "CURRENT_CHAPTER",
         "explicit_significance": false
       }
     },
     {
-      "id": "syn_chronology_2b5e69fb5caa",
+      "id": "syn_chronology_488f054cecc5",
       "kind": "chronology",
       "facts": [
         "Temple reuse and later Jewish and Christian interpretation"
@@ -83,44 +93,22 @@
       "related_unit_ids": [],
       "confidence": "medium",
       "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Leviticus 16:1-34"
+      ],
       "metadata": {
         "relationship_basis": "single_evidence_item",
         "source_categories": [
           "chronology"
         ],
         "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
         "explicit_significance": false
       }
     },
     {
-      "id": "syn_chronology_3f76251d0e53",
-      "kind": "chronology",
-      "facts": [
-        "Narrative setting: Sinai and wilderness journey; date disputed",
-        "Composition and development of priestly sanctuary texts: disputed"
-      ],
-      "verse_refs": [
-        "Leviticus 16:1-34"
-      ],
-      "evidence_ids": [
-        "what-is-the-tabernacle:date_ranges:0",
-        "what-is-the-tabernacle:date_ranges:1"
-      ],
-      "entity_ids": [],
-      "related_unit_ids": [],
-      "confidence": "medium",
-      "interpretation_level": "fact",
-      "metadata": {
-        "relationship_basis": "shared_parent_object",
-        "source_categories": [
-          "chronology"
-        ],
-        "support_count": 2,
-        "explicit_significance": false
-      }
-    },
-    {
-      "id": "syn_chronology_6bca50d51a12",
+      "id": "syn_chronology_5de2a1ade27f",
       "kind": "chronology",
       "facts": [
         "Narrative setting at Sinai and in the wilderness; historical date disputed",
@@ -145,42 +133,54 @@
       "related_unit_ids": [],
       "confidence": "medium",
       "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Leviticus 16:1-34"
+      ],
       "metadata": {
         "relationship_basis": "shared_entities",
         "source_categories": [
           "chronology"
         ],
         "support_count": 5,
+        "passage_scope": "CURRENT_CHAPTER",
         "explicit_significance": false
       }
     },
     {
-      "id": "syn_cultural_context_149c67cd45d9",
-      "kind": "cultural_context",
+      "id": "syn_chronology_bd05734c3b0f",
+      "kind": "chronology",
       "facts": [
-        "Sacrifices were common across the ancient world, but Israel's system is distinct because the LORD defines the offering, its meaning, and its goal."
+        "Narrative setting: Sinai and wilderness journey; date disputed",
+        "Composition and development of priestly sanctuary texts: disputed"
       ],
       "verse_refs": [
         "Leviticus 16:1-34"
       ],
       "evidence_ids": [
-        "what-is-sacrifice-in-the-bible:ancient_near_east_context:0"
+        "what-is-the-tabernacle:date_ranges:0",
+        "what-is-the-tabernacle:date_ranges:1"
       ],
       "entity_ids": [],
       "related_unit_ids": [],
       "confidence": "medium",
       "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Leviticus 16:1-34"
+      ],
       "metadata": {
-        "relationship_basis": "single_evidence_item",
+        "relationship_basis": "shared_parent_object",
         "source_categories": [
-          "culture"
+          "chronology"
         ],
-        "support_count": 1,
+        "support_count": 2,
+        "passage_scope": "CURRENT_CHAPTER",
         "explicit_significance": false
       }
     },
     {
-      "id": "syn_cultural_context_4c8e818ff3b0",
+      "id": "syn_cultural_context_03fce88fc3cb",
       "kind": "cultural_context",
       "facts": [
         "Ancient priests often mediated cult and purity; Israel’s priesthood is defined by covenant holiness, sacrificial service, and instruction.",
@@ -201,17 +201,22 @@
       "related_unit_ids": [],
       "confidence": "medium",
       "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Leviticus 16:1-34"
+      ],
       "metadata": {
         "relationship_basis": "shared_entities",
         "source_categories": [
           "culture"
         ],
         "support_count": 3,
+        "passage_scope": "CURRENT_CHAPTER",
         "explicit_significance": false
       }
     },
     {
-      "id": "syn_cultural_context_63a3508199f5",
+      "id": "syn_cultural_context_17d5fd0cbf7c",
       "kind": "cultural_context",
       "facts": [
         "Sacrificial rituals were common in the ancient world, but Israel's system is distinct because it is bound to covenant holiness, substitution, purification, and the one true God."
@@ -228,51 +233,59 @@
       "related_unit_ids": [],
       "confidence": "medium",
       "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Leviticus 16:1-34"
+      ],
       "metadata": {
         "relationship_basis": "single_evidence_item",
         "source_categories": [
           "culture"
         ],
         "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
         "explicit_significance": false
       }
     },
     {
-      "id": "syn_cultural_context_71f26b58a7e6",
+      "id": "syn_cultural_context_2793a33deea6",
       "kind": "cultural_context",
       "facts": [
-        "Old Babylonian Mari texts, Ramesside Egyptian campaign reliefs and bark processions, and the Timna Site 200 shrine sequence attest large tents, royal campaign tents, tented cult space, and mobile shrines. They show that mobile elite and sacred space was culturally intelligible, but none is identical with or proves the biblical tabernacle.",
-        "The dwelling joins divine nearness with differentiated holiness: court, holy place, inner sanctuary, furnishings, priestly preparation, and restricted entry express ordered approach rather than divine containment or unrestricted access.",
-        "The received Pentateuch addresses Israel through a sanctuary narrative that orders collective worship and memory; proposals about earlier priestly audiences and compositional stages vary.",
-        "Second Temple Jewish texts and Hebrews reread tabernacle patterns in developed sanctuary, priesthood, and heavenly-pattern discussions; those later interpretations should not be projected back as the only meaning of Exodus."
+        "Mari's large public tent, Ramesside royal campaign tents, Timna's debated tented shrine phase, and Egyptian processional bark shrines provide limited comparisons for scale, mobility, or protected sacred objects. None is the biblical tabernacle or proves direct copying.",
+        "The tabernacle holds together divine nearness and holy boundaries: YHWH dwells among Israel, yet space, service, washing, sacrifice, and entry are ordered rather than unrestricted.",
+        "Readers and hearers of the Pentateuch are addressed through Israel's sanctuary memory; more specific source-level audiences remain reconstructed.",
+        "Later Jewish sanctuary traditions developed the meaning of the tabernacle and heavenly pattern in varied ways. Hebrews belongs within that Jewish scriptural world while advancing its distinct Christological argument."
       ],
       "verse_refs": [
         "Leviticus 16:1-34"
       ],
       "evidence_ids": [
-        "tabernacle:ancient_near_east_context:0",
-        "tabernacle:hebraic_worldview:0",
-        "tabernacle:original_audience:0",
-        "tabernacle:second_temple_context:0"
+        "what-is-the-tabernacle:ancient_near_east_context:0",
+        "what-is-the-tabernacle:hebraic_worldview:0",
+        "what-is-the-tabernacle:original_audience:0",
+        "what-is-the-tabernacle:second_temple_context:0"
       ],
-      "entity_ids": [
-        "tabernacle"
-      ],
+      "entity_ids": [],
       "related_unit_ids": [],
       "confidence": "medium",
       "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Leviticus 16:1-34"
+      ],
       "metadata": {
-        "relationship_basis": "shared_entities",
+        "relationship_basis": "shared_parent_object",
         "source_categories": [
           "culture",
           "social"
         ],
         "support_count": 4,
+        "passage_scope": "CURRENT_CHAPTER",
         "explicit_significance": false
       }
     },
     {
-      "id": "syn_cultural_context_75c159fbf462",
+      "id": "syn_cultural_context_325bb577c399",
       "kind": "cultural_context",
       "facts": [
         "Sacrifice was widespread in the ancient world, but Scripture ties it to holiness, covenant access, and God’s redemptive purpose rather than mere appeasement.",
@@ -291,17 +304,82 @@
       "related_unit_ids": [],
       "confidence": "medium",
       "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Leviticus 16:1-34"
+      ],
       "metadata": {
         "relationship_basis": "shared_parent_object",
         "source_categories": [
           "culture"
         ],
         "support_count": 3,
+        "passage_scope": "CURRENT_CHAPTER",
         "explicit_significance": false
       }
     },
     {
-      "id": "syn_cultural_context_808755699e97",
+      "id": "syn_cultural_context_4ea6a2fd1db8",
+      "kind": "cultural_context",
+      "facts": [
+        "Ancient background for Atonement includes covenant life, temple worship, royal ideology, wisdom teaching, and early church confession; the entry ties that world to Leviticus 16:1-34, Isaiah 53:4-12, sacrifice-theme, and leviticus without letting comparison replace the biblical witness."
+      ],
+      "verse_refs": [
+        "Leviticus 16:1-34"
+      ],
+      "evidence_ids": [
+        "atonement:ancient_near_east_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Leviticus 16:1-34"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_cultural_context_7f6793866ce1",
+      "kind": "cultural_context",
+      "facts": [
+        "Sacrifices were common across the ancient world, but Israel's system is distinct because the LORD defines the offering, its meaning, and its goal."
+      ],
+      "verse_refs": [
+        "Leviticus 16:1-34"
+      ],
+      "evidence_ids": [
+        "what-is-sacrifice-in-the-bible:ancient_near_east_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Leviticus 16:1-34"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_cultural_context_90c3bace805f",
       "kind": "cultural_context",
       "facts": [
         "Older comparative priestly offices are relevant to the institution's roots, but Herodian high-priestly authority must be reconstructed from Judean and Roman-period sources.",
@@ -324,6 +402,10 @@
       "related_unit_ids": [],
       "confidence": "medium",
       "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Leviticus 16:1-34"
+      ],
       "metadata": {
         "relationship_basis": "shared_entities",
         "source_categories": [
@@ -331,43 +413,12 @@
           "social"
         ],
         "support_count": 4,
+        "passage_scope": "CURRENT_CHAPTER",
         "explicit_significance": false
       }
     },
     {
-      "id": "syn_cultural_context_8fdb757adfb5",
-      "kind": "cultural_context",
-      "facts": [
-        "Mari's large public tent, Ramesside royal campaign tents, Timna's debated tented shrine phase, and Egyptian processional bark shrines provide limited comparisons for scale, mobility, or protected sacred objects. None is the biblical tabernacle or proves direct copying.",
-        "The tabernacle holds together divine nearness and holy boundaries: YHWH dwells among Israel, yet space, service, washing, sacrifice, and entry are ordered rather than unrestricted.",
-        "Readers and hearers of the Pentateuch are addressed through Israel's sanctuary memory; more specific source-level audiences remain reconstructed.",
-        "Later Jewish sanctuary traditions developed the meaning of the tabernacle and heavenly pattern in varied ways. Hebrews belongs within that Jewish scriptural world while advancing its distinct Christological argument."
-      ],
-      "verse_refs": [
-        "Leviticus 16:1-34"
-      ],
-      "evidence_ids": [
-        "what-is-the-tabernacle:ancient_near_east_context:0",
-        "what-is-the-tabernacle:hebraic_worldview:0",
-        "what-is-the-tabernacle:original_audience:0",
-        "what-is-the-tabernacle:second_temple_context:0"
-      ],
-      "entity_ids": [],
-      "related_unit_ids": [],
-      "confidence": "medium",
-      "interpretation_level": "fact",
-      "metadata": {
-        "relationship_basis": "shared_parent_object",
-        "source_categories": [
-          "culture",
-          "social"
-        ],
-        "support_count": 4,
-        "explicit_significance": false
-      }
-    },
-    {
-      "id": "syn_cultural_context_b6a2c209ac01",
+      "id": "syn_cultural_context_95d9d50de3d7",
       "kind": "cultural_context",
       "facts": [
         "Ancient background for Priesthood of Believers includes covenant life, temple worship, royal ideology, wisdom teaching, and early church confession; the entry ties that world to Leviticus 16:1-34, Isaiah 53:4-12, sacrifice-theme, and atonement without letting comparison replace the biblical witness."
@@ -382,67 +433,61 @@
       "related_unit_ids": [],
       "confidence": "medium",
       "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Leviticus 16:1-34"
+      ],
       "metadata": {
         "relationship_basis": "single_evidence_item",
         "source_categories": [
           "culture"
         ],
         "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
         "explicit_significance": false
       }
     },
     {
-      "id": "syn_cultural_context_e7bc875c4c48",
+      "id": "syn_cultural_context_b103a08afe6f",
       "kind": "cultural_context",
       "facts": [
-        "Ancient background for Atonement includes covenant life, temple worship, royal ideology, wisdom teaching, and early church confession; the entry ties that world to Leviticus 16:1-34, Isaiah 53:4-12, sacrifice-theme, and leviticus without letting comparison replace the biblical witness."
+        "Old Babylonian Mari texts, Ramesside Egyptian campaign reliefs and bark processions, and the Timna Site 200 shrine sequence attest large tents, royal campaign tents, tented cult space, and mobile shrines. They show that mobile elite and sacred space was culturally intelligible, but none is identical with or proves the biblical tabernacle.",
+        "The dwelling joins divine nearness with differentiated holiness: court, holy place, inner sanctuary, furnishings, priestly preparation, and restricted entry express ordered approach rather than divine containment or unrestricted access.",
+        "The received Pentateuch addresses Israel through a sanctuary narrative that orders collective worship and memory; proposals about earlier priestly audiences and compositional stages vary.",
+        "Second Temple Jewish texts and Hebrews reread tabernacle patterns in developed sanctuary, priesthood, and heavenly-pattern discussions; those later interpretations should not be projected back as the only meaning of Exodus."
       ],
       "verse_refs": [
         "Leviticus 16:1-34"
       ],
       "evidence_ids": [
-        "atonement:ancient_near_east_context:0"
+        "tabernacle:ancient_near_east_context:0",
+        "tabernacle:hebraic_worldview:0",
+        "tabernacle:original_audience:0",
+        "tabernacle:second_temple_context:0"
       ],
-      "entity_ids": [],
+      "entity_ids": [
+        "tabernacle"
+      ],
       "related_unit_ids": [],
       "confidence": "medium",
       "interpretation_level": "fact",
-      "metadata": {
-        "relationship_basis": "single_evidence_item",
-        "source_categories": [
-          "culture"
-        ],
-        "support_count": 1,
-        "explicit_significance": false
-      }
-    },
-    {
-      "id": "syn_historical_context_0c9050cb5d0c",
-      "kind": "historical_context",
-      "facts": [
-        "Sacrifice runs from early Genesis through Levitical worship and remains central in later prophetic and New Testament reflection."
-      ],
-      "verse_refs": [
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
         "Leviticus 16:1-34"
       ],
-      "evidence_ids": [
-        "sacrifice-theme:historical_context:0"
-      ],
-      "entity_ids": [],
-      "related_unit_ids": [],
-      "confidence": "medium",
-      "interpretation_level": "fact",
       "metadata": {
-        "relationship_basis": "single_evidence_item",
+        "relationship_basis": "shared_entities",
         "source_categories": [
-          "history"
+          "culture",
+          "social"
         ],
-        "support_count": 1,
+        "support_count": 4,
+        "passage_scope": "CURRENT_CHAPTER",
         "explicit_significance": false
       }
     },
     {
-      "id": "syn_historical_context_1574b5b731a9",
+      "id": "syn_historical_context_006e58dcc6b4",
       "kind": "historical_context",
       "facts": [
         "Priesthood of Believers is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness."
@@ -457,175 +502,22 @@
       "related_unit_ids": [],
       "confidence": "medium",
       "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Leviticus 16:1-34"
+      ],
       "metadata": {
         "relationship_basis": "single_evidence_item",
         "source_categories": [
           "history"
         ],
         "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
         "explicit_significance": false
       }
     },
     {
-      "id": "syn_historical_context_46b91c67311b",
-      "kind": "historical_context",
-      "facts": [
-        "From the patriarchs to the temple, sacrifice organizes worship around sin, gratitude, and restored access to God."
-      ],
-      "verse_refs": [
-        "Leviticus 16:1-34"
-      ],
-      "evidence_ids": [
-        "what-is-sacrifice-in-the-bible:historical_context:0"
-      ],
-      "entity_ids": [],
-      "related_unit_ids": [],
-      "confidence": "medium",
-      "interpretation_level": "fact",
-      "metadata": {
-        "relationship_basis": "single_evidence_item",
-        "source_categories": [
-          "history"
-        ],
-        "support_count": 1,
-        "explicit_significance": false
-      }
-    },
-    {
-      "id": "syn_historical_context_48bbf505c738",
-      "kind": "historical_context",
-      "facts": [
-        "The Pentateuch locates the dwelling in the Sinai and wilderness period, but the structure's historical form and the date and development of its priestly descriptions remain debated. The text, comparative evidence, and later reception must therefore be distinguished.",
-        "Sinai encampment followed by wilderness travel in the narrative; literary and historical reconstruction remain distinct."
-      ],
-      "verse_refs": [
-        "Leviticus 16:1-34"
-      ],
-      "evidence_ids": [
-        "tabernacle:historical_context:0",
-        "tabernacle:historical_setting:0"
-      ],
-      "entity_ids": [
-        "tabernacle"
-      ],
-      "related_unit_ids": [],
-      "confidence": "medium",
-      "interpretation_level": "fact",
-      "metadata": {
-        "relationship_basis": "shared_entities",
-        "source_categories": [
-          "history"
-        ],
-        "support_count": 2,
-        "explicit_significance": false
-      }
-    },
-    {
-      "id": "syn_historical_context_59b538300269",
-      "kind": "historical_context",
-      "facts": [
-        "Priesthood is rooted in the wilderness, tabernacle, and temple settings of Israel’s worship, then reappears in the second temple world and in New Testament reflection."
-      ],
-      "verse_refs": [
-        "Leviticus 16:1-34"
-      ],
-      "evidence_ids": [
-        "priesthood:historical_context:0"
-      ],
-      "entity_ids": [
-        "priesthood"
-      ],
-      "related_unit_ids": [],
-      "confidence": "medium",
-      "interpretation_level": "fact",
-      "metadata": {
-        "relationship_basis": "single_evidence_item",
-        "source_categories": [
-          "history"
-        ],
-        "support_count": 1,
-        "explicit_significance": false
-      }
-    },
-    {
-      "id": "syn_historical_context_616f912ba3d3",
-      "kind": "historical_context",
-      "facts": [
-        "Atonement is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness."
-      ],
-      "verse_refs": [
-        "Leviticus 16:1-34"
-      ],
-      "evidence_ids": [
-        "atonement:historical_context:0"
-      ],
-      "entity_ids": [],
-      "related_unit_ids": [],
-      "confidence": "medium",
-      "interpretation_level": "fact",
-      "metadata": {
-        "relationship_basis": "single_evidence_item",
-        "source_categories": [
-          "history"
-        ],
-        "support_count": 1,
-        "explicit_significance": false
-      }
-    },
-    {
-      "id": "syn_historical_context_65a01b22c2c2",
-      "kind": "historical_context",
-      "facts": [
-        "Leviticus 16 prescribes an annual rite addressing the sanctuary, priesthood, and people and identifies it as a Sabbath of solemn rest and a lasting statute."
-      ],
-      "verse_refs": [
-        "Leviticus 16:1-34"
-      ],
-      "evidence_ids": [
-        "leviticus-day-of-atonement"
-      ],
-      "entity_ids": [],
-      "related_unit_ids": [],
-      "confidence": "high",
-      "interpretation_level": "fact",
-      "metadata": {
-        "relationship_basis": "single_evidence_item",
-        "source_categories": [
-          "history"
-        ],
-        "support_count": 1,
-        "explicit_significance": false
-      }
-    },
-    {
-      "id": "syn_historical_context_76c222bc4fec",
-      "kind": "historical_context",
-      "facts": [
-        "The Pentateuch places the dwelling in the wilderness generation. Scholars debate its historical form and the date and composition of the detailed priestly texts, so the biblical description should not be equated with a museum reconstruction or a single archaeological analogy.",
-        "Sinai and subsequent wilderness travel in the story."
-      ],
-      "verse_refs": [
-        "Leviticus 16:1-34"
-      ],
-      "evidence_ids": [
-        "what-is-the-tabernacle:historical_context:0",
-        "what-is-the-tabernacle:historical_setting:0"
-      ],
-      "entity_ids": [],
-      "related_unit_ids": [],
-      "confidence": "medium",
-      "interpretation_level": "fact",
-      "metadata": {
-        "relationship_basis": "shared_parent_object",
-        "source_categories": [
-          "history"
-        ],
-        "support_count": 2,
-        "explicit_significance": false
-      }
-    },
-    {
-      "id": "syn_historical_context_8451a4e3e0a4",
+      "id": "syn_historical_context_12b645ecfc80",
       "kind": "historical_context",
       "facts": [
         "The sacrificial system is rooted in the wilderness tabernacle and continues through the temple periods as the central grammar of covenant approach to God."
@@ -642,17 +534,52 @@
       "related_unit_ids": [],
       "confidence": "medium",
       "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Leviticus 16:1-34"
+      ],
       "metadata": {
         "relationship_basis": "single_evidence_item",
         "source_categories": [
           "history"
         ],
         "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
         "explicit_significance": false
       }
     },
     {
-      "id": "syn_historical_context_af3813bf3ca8",
+      "id": "syn_historical_context_157742888f6a",
+      "kind": "historical_context",
+      "facts": [
+        "Sacrifice runs from early Genesis through Levitical worship and remains central in later prophetic and New Testament reflection."
+      ],
+      "verse_refs": [
+        "Leviticus 16:1-34"
+      ],
+      "evidence_ids": [
+        "sacrifice-theme:historical_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Leviticus 16:1-34"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_2f6745f4e4d8",
       "kind": "historical_context",
       "facts": [
         "The high priesthood develops from Aaronic traditions and the Jerusalem temple. During the Second Temple period it became a central religious and political office whose appointment, tenure, vestments, and jurisdiction were repeatedly affected by Persian, Hellenistic, Hasmonean, Herodian, and Roman power.",
@@ -671,45 +598,210 @@
       "related_unit_ids": [],
       "confidence": "medium",
       "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Leviticus 16:1-34"
+      ],
       "metadata": {
         "relationship_basis": "shared_entities",
         "source_categories": [
           "history"
         ],
         "support_count": 2,
+        "passage_scope": "CURRENT_CHAPTER",
         "explicit_significance": false
       }
     },
     {
-      "id": "syn_interpretive_questions_1fda47d35386",
-      "kind": "interpretive_questions",
+      "id": "syn_historical_context_44a504d9f1dc",
+      "kind": "historical_context",
       "facts": [
-        "Ancient Near Eastern ritual comparisons illuminate vocabulary and practice but do not establish that Israelite rites carried the same theology or were directly borrowed.",
-        "Christian readings of Leviticus through Hebrews are later canonical reception and should be distinguished from the book's own instructions to Israel."
+        "Priesthood is rooted in the wilderness, tabernacle, and temple settings of Israel’s worship, then reappears in the second temple world and in New Testament reflection."
       ],
       "verse_refs": [
-        "Leviticus 16"
+        "Leviticus 16:1-34"
       ],
       "evidence_ids": [
-        "leviticus:interpretive_note:2",
-        "leviticus:interpretive_note:3"
+        "priesthood:historical_context:0"
+      ],
+      "entity_ids": [
+        "priesthood"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Leviticus 16:1-34"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_5ca9c8770939",
+      "kind": "historical_context",
+      "facts": [
+        "Atonement is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness."
+      ],
+      "verse_refs": [
+        "Leviticus 16:1-34"
+      ],
+      "evidence_ids": [
+        "atonement:historical_context:0"
       ],
       "entity_ids": [],
       "related_unit_ids": [],
       "confidence": "medium",
-      "interpretation_level": "disputed",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Leviticus 16:1-34"
+      ],
       "metadata": {
-        "relationship_basis": "shared_parent_object",
+        "relationship_basis": "single_evidence_item",
         "source_categories": [
-          "culture",
-          "geography"
+          "history"
         ],
-        "support_count": 2,
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
         "explicit_significance": false
       }
     },
     {
-      "id": "syn_interpretive_questions_2bda3204d8f3",
+      "id": "syn_historical_context_7a6f1c2a8e71",
+      "kind": "historical_context",
+      "facts": [
+        "Leviticus 16 prescribes an annual rite addressing the sanctuary, priesthood, and people and identifies it as a Sabbath of solemn rest and a lasting statute."
+      ],
+      "verse_refs": [
+        "Leviticus 16:1-34"
+      ],
+      "evidence_ids": [
+        "leviticus-day-of-atonement"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "high",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Leviticus 16:1-34"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_cfc5205e3566",
+      "kind": "historical_context",
+      "facts": [
+        "From the patriarchs to the temple, sacrifice organizes worship around sin, gratitude, and restored access to God."
+      ],
+      "verse_refs": [
+        "Leviticus 16:1-34"
+      ],
+      "evidence_ids": [
+        "what-is-sacrifice-in-the-bible:historical_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Leviticus 16:1-34"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_d30a1d1a0967",
+      "kind": "historical_context",
+      "facts": [
+        "The Pentateuch locates the dwelling in the Sinai and wilderness period, but the structure's historical form and the date and development of its priestly descriptions remain debated. The text, comparative evidence, and later reception must therefore be distinguished.",
+        "Sinai encampment followed by wilderness travel in the narrative; literary and historical reconstruction remain distinct."
+      ],
+      "verse_refs": [
+        "Leviticus 16:1-34"
+      ],
+      "evidence_ids": [
+        "tabernacle:historical_context:0",
+        "tabernacle:historical_setting:0"
+      ],
+      "entity_ids": [
+        "tabernacle"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Leviticus 16:1-34"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_entities",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 2,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_e2f767438b00",
+      "kind": "historical_context",
+      "facts": [
+        "The Pentateuch places the dwelling in the wilderness generation. Scholars debate its historical form and the date and composition of the detailed priestly texts, so the biblical description should not be equated with a museum reconstruction or a single archaeological analogy.",
+        "Sinai and subsequent wilderness travel in the story."
+      ],
+      "verse_refs": [
+        "Leviticus 16:1-34"
+      ],
+      "evidence_ids": [
+        "what-is-the-tabernacle:historical_context:0",
+        "what-is-the-tabernacle:historical_setting:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Leviticus 16:1-34"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 2,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_interpretive_questions_3a51791818d0",
       "kind": "interpretive_questions",
       "facts": [
         "Curtains, veils, rooms, furnishings, washing, personnel, and restricted occasions of entry organize access in graded rather than undifferentiated space.",
@@ -731,23 +823,86 @@
       "related_unit_ids": [],
       "confidence": "high",
       "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Leviticus 16:1-34"
+      ],
       "metadata": {
         "relationship_basis": "shared_parent_object",
         "source_categories": [
           "culture"
         ],
         "support_count": 3,
+        "passage_scope": "CURRENT_CHAPTER",
         "explicit_significance": true
       }
     },
     {
-      "id": "syn_language_literary_3e90c1999d5e",
-      "kind": "language_literary",
+      "id": "syn_interpretive_questions_d99fcd0db6e9",
+      "kind": "interpretive_questions",
+      "facts": [
+        "Ancient Near Eastern ritual comparisons illuminate vocabulary and practice but do not establish that Israelite rites carried the same theology or were directly borrowed.",
+        "Christian readings of Leviticus through Hebrews are later canonical reception and should be distinguished from the book's own instructions to Israel."
+      ],
+      "verse_refs": [
+        "Leviticus 16"
+      ],
+      "evidence_ids": [
+        "leviticus:interpretive_note:2",
+        "leviticus:interpretive_note:3"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Leviticus 16"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "source_categories": [
+          "culture",
+          "geography"
+        ],
+        "support_count": 2,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_surrounding_passages_0d43076c9992",
+      "kind": "surrounding_passages",
       "facts": [
         "Leviticus moves from sacrifice and priestly inauguration through purity and the Day of Atonement into instructions for holy communal life, sacred time, land, covenant consequences, and vows."
       ],
       "verse_refs": [
-        "Leviticus 1-27"
+        "Leviticus 1",
+        "Leviticus 10:1-20",
+        "Leviticus 11:1-47",
+        "Leviticus 12:1-8",
+        "Leviticus 13:1-59",
+        "Leviticus 14:1-57",
+        "Leviticus 15:1-33",
+        "Leviticus 17:1-16",
+        "Leviticus 18:1-30",
+        "Leviticus 19:1-37",
+        "Leviticus 20:1-27",
+        "Leviticus 21:1-24",
+        "Leviticus 22:1-33",
+        "Leviticus 23:1-44",
+        "Leviticus 24:1-23",
+        "Leviticus 25:1-55",
+        "Leviticus 26:1-46",
+        "Leviticus 27:1-34",
+        "Leviticus 2:1-16",
+        "Leviticus 3:1-17",
+        "Leviticus 4:1-35",
+        "Leviticus 5:1-19",
+        "Leviticus 6:1-30",
+        "Leviticus 7:1-38",
+        "Leviticus 8:1-36",
+        "Leviticus 9:1-24"
       ],
       "evidence_ids": [
         "leviticus-literary-movement"
@@ -756,17 +911,22 @@
       "related_unit_ids": [],
       "confidence": "high",
       "interpretation_level": "fact",
+      "passage_scope": "SURROUNDING_PASSAGE",
+      "source_anchors": [
+        "Leviticus 1-27"
+      ],
       "metadata": {
         "relationship_basis": "single_evidence_item",
         "source_categories": [
           "culture"
         ],
         "support_count": 1,
+        "passage_scope": "SURROUNDING_PASSAGE",
         "explicit_significance": false
       }
     },
     {
-      "id": "syn_why_it_matters_04d2a36c84bf",
+      "id": "syn_why_it_matters_25d36f869020",
       "kind": "why_it_matters",
       "facts": [
         "The Pentateuch places the dwelling in the wilderness generation. Scholars debate its historical form and the date and composition of the detailed priestly texts, so the biblical description should not be equated with a museum reconstruction or a single archaeological analogy.",
@@ -781,10 +941,14 @@
       ],
       "entity_ids": [],
       "related_unit_ids": [
-        "syn_historical_context_76c222bc4fec"
+        "syn_historical_context_e2f767438b00"
       ],
       "confidence": "medium",
       "interpretation_level": "inference",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Leviticus 16:1-34"
+      ],
       "metadata": {
         "relationship_basis": "shared_parent_object",
         "support_count": 2,
@@ -793,7 +957,7 @@
       }
     },
     {
-      "id": "syn_why_it_matters_050264bd7d93",
+      "id": "syn_why_it_matters_36dc6d5392d4",
       "kind": "why_it_matters",
       "facts": [
         "Ancient priests often mediated cult and purity; Israel’s priesthood is defined by covenant holiness, sacrificial service, and instruction.",
@@ -812,10 +976,14 @@
         "priesthood"
       ],
       "related_unit_ids": [
-        "syn_cultural_context_4c8e818ff3b0"
+        "syn_cultural_context_03fce88fc3cb"
       ],
       "confidence": "medium",
       "interpretation_level": "inference",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Leviticus 16:1-34"
+      ],
       "metadata": {
         "relationship_basis": "shared_entities",
         "support_count": 3,
@@ -824,7 +992,73 @@
       }
     },
     {
-      "id": "syn_why_it_matters_2cdc1e0399a8",
+      "id": "syn_why_it_matters_545381e9a6b0",
+      "kind": "why_it_matters",
+      "facts": [
+        "The high priesthood develops from Aaronic traditions and the Jerusalem temple. During the Second Temple period it became a central religious and political office whose appointment, tenure, vestments, and jurisdiction were repeatedly affected by Persian, Hellenistic, Hasmonean, Herodian, and Roman power.",
+        "Israelite sanctuary traditions and the Jerusalem temples, with particular development under Second Temple imperial rule."
+      ],
+      "verse_refs": [
+        "Leviticus 16:1-34"
+      ],
+      "evidence_ids": [
+        "high-priesthood:historical_context:0",
+        "high-priesthood:historical_setting:0"
+      ],
+      "entity_ids": [
+        "high-priesthood"
+      ],
+      "related_unit_ids": [
+        "syn_historical_context_2f6745f4e4d8"
+      ],
+      "confidence": "medium",
+      "interpretation_level": "inference",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Leviticus 16:1-34"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_entities",
+        "support_count": 2,
+        "explicit_significance": false,
+        "safe_for_significance": true
+      }
+    },
+    {
+      "id": "syn_why_it_matters_560e5bac5c94",
+      "kind": "why_it_matters",
+      "facts": [
+        "No excavated structure is securely identifiable as the wilderness tabernacle",
+        "Timna Site 200 is a disputed tented-shrine comparison, not the tabernacle"
+      ],
+      "verse_refs": [
+        "Leviticus 16:1-34"
+      ],
+      "evidence_ids": [
+        "tabernacle:archaeology:0",
+        "tabernacle:archaeology:1"
+      ],
+      "entity_ids": [
+        "tabernacle"
+      ],
+      "related_unit_ids": [
+        "syn_archaeology_geography_d7007ac9c591"
+      ],
+      "confidence": "medium",
+      "interpretation_level": "inference",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Leviticus 16:1-34"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_entities",
+        "support_count": 2,
+        "explicit_significance": false,
+        "safe_for_significance": true
+      }
+    },
+    {
+      "id": "syn_why_it_matters_5f2837cc0f6d",
       "kind": "why_it_matters",
       "facts": [
         "Curtains, veils, rooms, furnishings, washing, personnel, and restricted occasions of entry organize access in graded rather than undifferentiated space.",
@@ -844,10 +1078,14 @@
         "tabernacle"
       ],
       "related_unit_ids": [
-        "syn_interpretive_questions_2bda3204d8f3"
+        "syn_interpretive_questions_3a51791818d0"
       ],
       "confidence": "high",
       "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Leviticus 16:1-34"
+      ],
       "metadata": {
         "relationship_basis": "shared_parent_object",
         "support_count": 3,
@@ -856,7 +1094,7 @@
       }
     },
     {
-      "id": "syn_why_it_matters_3b22146fe07a",
+      "id": "syn_why_it_matters_5fa62476563c",
       "kind": "why_it_matters",
       "facts": [
         "No excavated object or site is securely identified as the wilderness tabernacle",
@@ -871,10 +1109,14 @@
       ],
       "entity_ids": [],
       "related_unit_ids": [
-        "syn_archaeology_geography_04fb94f80990"
+        "syn_archaeology_geography_3c8944beb7b8"
       ],
       "confidence": "medium",
       "interpretation_level": "inference",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Leviticus 16:1-34"
+      ],
       "metadata": {
         "relationship_basis": "shared_parent_object",
         "support_count": 2,
@@ -883,212 +1125,7 @@
       }
     },
     {
-      "id": "syn_why_it_matters_3cf777353a40",
-      "kind": "why_it_matters",
-      "facts": [
-        "No excavated structure is securely identifiable as the wilderness tabernacle",
-        "Timna Site 200 is a disputed tented-shrine comparison, not the tabernacle"
-      ],
-      "verse_refs": [
-        "Leviticus 16:1-34"
-      ],
-      "evidence_ids": [
-        "tabernacle:archaeology:0",
-        "tabernacle:archaeology:1"
-      ],
-      "entity_ids": [
-        "tabernacle"
-      ],
-      "related_unit_ids": [
-        "syn_archaeology_geography_9ef55e653364"
-      ],
-      "confidence": "medium",
-      "interpretation_level": "inference",
-      "metadata": {
-        "relationship_basis": "shared_entities",
-        "support_count": 2,
-        "explicit_significance": false,
-        "safe_for_significance": true
-      }
-    },
-    {
-      "id": "syn_why_it_matters_53d44c97011f",
-      "kind": "why_it_matters",
-      "facts": [
-        "Ancient Near Eastern ritual comparisons illuminate vocabulary and practice but do not establish that Israelite rites carried the same theology or were directly borrowed.",
-        "Christian readings of Leviticus through Hebrews are later canonical reception and should be distinguished from the book's own instructions to Israel."
-      ],
-      "verse_refs": [
-        "Leviticus 16"
-      ],
-      "evidence_ids": [
-        "leviticus:interpretive_note:2",
-        "leviticus:interpretive_note:3"
-      ],
-      "entity_ids": [],
-      "related_unit_ids": [
-        "syn_interpretive_questions_1fda47d35386"
-      ],
-      "confidence": "medium",
-      "interpretation_level": "disputed",
-      "metadata": {
-        "relationship_basis": "shared_parent_object",
-        "support_count": 2,
-        "explicit_significance": false,
-        "safe_for_significance": true
-      }
-    },
-    {
-      "id": "syn_why_it_matters_65958f8ee223",
-      "kind": "why_it_matters",
-      "facts": [
-        "The Pentateuch locates the dwelling in the Sinai and wilderness period, but the structure's historical form and the date and development of its priestly descriptions remain debated. The text, comparative evidence, and later reception must therefore be distinguished.",
-        "Sinai encampment followed by wilderness travel in the narrative; literary and historical reconstruction remain distinct."
-      ],
-      "verse_refs": [
-        "Leviticus 16:1-34"
-      ],
-      "evidence_ids": [
-        "tabernacle:historical_context:0",
-        "tabernacle:historical_setting:0"
-      ],
-      "entity_ids": [
-        "tabernacle"
-      ],
-      "related_unit_ids": [
-        "syn_historical_context_48bbf505c738"
-      ],
-      "confidence": "medium",
-      "interpretation_level": "inference",
-      "metadata": {
-        "relationship_basis": "shared_entities",
-        "support_count": 2,
-        "explicit_significance": false,
-        "safe_for_significance": true
-      }
-    },
-    {
-      "id": "syn_why_it_matters_717bda11d0b7",
-      "kind": "why_it_matters",
-      "facts": [
-        "The high priesthood develops from Aaronic traditions and the Jerusalem temple. During the Second Temple period it became a central religious and political office whose appointment, tenure, vestments, and jurisdiction were repeatedly affected by Persian, Hellenistic, Hasmonean, Herodian, and Roman power.",
-        "Israelite sanctuary traditions and the Jerusalem temples, with particular development under Second Temple imperial rule."
-      ],
-      "verse_refs": [
-        "Leviticus 16:1-34"
-      ],
-      "evidence_ids": [
-        "high-priesthood:historical_context:0",
-        "high-priesthood:historical_setting:0"
-      ],
-      "entity_ids": [
-        "high-priesthood"
-      ],
-      "related_unit_ids": [
-        "syn_historical_context_af3813bf3ca8"
-      ],
-      "confidence": "medium",
-      "interpretation_level": "inference",
-      "metadata": {
-        "relationship_basis": "shared_entities",
-        "support_count": 2,
-        "explicit_significance": false,
-        "safe_for_significance": true
-      }
-    },
-    {
-      "id": "syn_why_it_matters_77e4dac56750",
-      "kind": "why_it_matters",
-      "facts": [
-        "Narrative setting: Sinai and wilderness journey; date disputed",
-        "Composition and development of priestly sanctuary texts: disputed"
-      ],
-      "verse_refs": [
-        "Leviticus 16:1-34"
-      ],
-      "evidence_ids": [
-        "what-is-the-tabernacle:date_ranges:0",
-        "what-is-the-tabernacle:date_ranges:1"
-      ],
-      "entity_ids": [],
-      "related_unit_ids": [
-        "syn_chronology_3f76251d0e53"
-      ],
-      "confidence": "medium",
-      "interpretation_level": "inference",
-      "metadata": {
-        "relationship_basis": "shared_parent_object",
-        "support_count": 2,
-        "explicit_significance": false,
-        "safe_for_significance": true
-      }
-    },
-    {
-      "id": "syn_why_it_matters_9c14b42d0418",
-      "kind": "why_it_matters",
-      "facts": [
-        "Mari's large public tent, Ramesside royal campaign tents, Timna's debated tented shrine phase, and Egyptian processional bark shrines provide limited comparisons for scale, mobility, or protected sacred objects. None is the biblical tabernacle or proves direct copying.",
-        "The tabernacle holds together divine nearness and holy boundaries: YHWH dwells among Israel, yet space, service, washing, sacrifice, and entry are ordered rather than unrestricted.",
-        "Readers and hearers of the Pentateuch are addressed through Israel's sanctuary memory; more specific source-level audiences remain reconstructed.",
-        "Later Jewish sanctuary traditions developed the meaning of the tabernacle and heavenly pattern in varied ways. Hebrews belongs within that Jewish scriptural world while advancing its distinct Christological argument."
-      ],
-      "verse_refs": [
-        "Leviticus 16:1-34"
-      ],
-      "evidence_ids": [
-        "what-is-the-tabernacle:ancient_near_east_context:0",
-        "what-is-the-tabernacle:hebraic_worldview:0",
-        "what-is-the-tabernacle:original_audience:0",
-        "what-is-the-tabernacle:second_temple_context:0"
-      ],
-      "entity_ids": [],
-      "related_unit_ids": [
-        "syn_cultural_context_8fdb757adfb5"
-      ],
-      "confidence": "medium",
-      "interpretation_level": "inference",
-      "metadata": {
-        "relationship_basis": "shared_parent_object",
-        "support_count": 4,
-        "explicit_significance": false,
-        "safe_for_significance": true
-      }
-    },
-    {
-      "id": "syn_why_it_matters_d038fa09efe7",
-      "kind": "why_it_matters",
-      "facts": [
-        "Older comparative priestly offices are relevant to the institution's roots, but Herodian high-priestly authority must be reconstructed from Judean and Roman-period sources.",
-        "The high priest represents priestly holiness, sanctuary access, sacrifice, atonement, and communal leadership, while biblical texts also evaluate officeholders and institutions critically.",
-        "Readers tracing the office from Torah and restoration texts into the late Second Temple setting and Hebrews.",
-        "Josephus documents changing appointments and external control; the Gospels and Acts portray Caiaphas, Annas, chief priests, and high-priestly families exercising authority under Rome."
-      ],
-      "verse_refs": [
-        "Leviticus 16:1-34"
-      ],
-      "evidence_ids": [
-        "high-priesthood:ancient_near_east_context:0",
-        "high-priesthood:hebraic_worldview:0",
-        "high-priesthood:original_audience:0",
-        "high-priesthood:second_temple_context:0"
-      ],
-      "entity_ids": [
-        "high-priesthood"
-      ],
-      "related_unit_ids": [
-        "syn_cultural_context_808755699e97"
-      ],
-      "confidence": "medium",
-      "interpretation_level": "inference",
-      "metadata": {
-        "relationship_basis": "shared_entities",
-        "support_count": 4,
-        "explicit_significance": false,
-        "safe_for_significance": true
-      }
-    },
-    {
-      "id": "syn_why_it_matters_e348469f1d6a",
+      "id": "syn_why_it_matters_6586c9e16b96",
       "kind": "why_it_matters",
       "facts": [
         "Old Babylonian Mari texts, Ramesside Egyptian campaign reliefs and bark processions, and the Timna Site 200 shrine sequence attest large tents, royal campaign tents, tented cult space, and mobile shrines. They show that mobile elite and sacred space was culturally intelligible, but none is identical with or proves the biblical tabernacle.",
@@ -1109,10 +1146,14 @@
         "tabernacle"
       ],
       "related_unit_ids": [
-        "syn_cultural_context_71f26b58a7e6"
+        "syn_cultural_context_b103a08afe6f"
       ],
       "confidence": "medium",
       "interpretation_level": "inference",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Leviticus 16:1-34"
+      ],
       "metadata": {
         "relationship_basis": "shared_entities",
         "support_count": 4,
@@ -1121,36 +1162,102 @@
       }
     },
     {
-      "id": "syn_why_it_matters_e90d6e86753d",
+      "id": "syn_why_it_matters_675539a65eb6",
       "kind": "why_it_matters",
       "facts": [
-        "Sacrifice was widespread in the ancient world, but Scripture ties it to holiness, covenant access, and God’s redemptive purpose rather than mere appeasement.",
-        "Sacrifice joins holiness, atonement, fellowship, and thanksgiving.",
-        "Temple sacrifice remained a living institution in the Second Temple period and frames the New Testament's sacrificial language."
+        "The Pentateuch locates the dwelling in the Sinai and wilderness period, but the structure's historical form and the date and development of its priestly descriptions remain debated. The text, comparative evidence, and later reception must therefore be distinguished.",
+        "Sinai encampment followed by wilderness travel in the narrative; literary and historical reconstruction remain distinct."
       ],
       "verse_refs": [
         "Leviticus 16:1-34"
       ],
       "evidence_ids": [
-        "sacrifice-theme:ancient_near_east_context:0",
-        "sacrifice-theme:hebraic_worldview:0",
-        "sacrifice-theme:second_temple_context:0"
+        "tabernacle:historical_context:0",
+        "tabernacle:historical_setting:0"
       ],
-      "entity_ids": [],
+      "entity_ids": [
+        "tabernacle"
+      ],
       "related_unit_ids": [
-        "syn_cultural_context_75c159fbf462"
+        "syn_historical_context_d30a1d1a0967"
       ],
       "confidence": "medium",
       "interpretation_level": "inference",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Leviticus 16:1-34"
+      ],
       "metadata": {
-        "relationship_basis": "shared_parent_object",
-        "support_count": 3,
+        "relationship_basis": "shared_entities",
+        "support_count": 2,
         "explicit_significance": false,
         "safe_for_significance": true
       }
     },
     {
-      "id": "syn_why_it_matters_f22ca56f0209",
+      "id": "syn_why_it_matters_75275aa24f24",
+      "kind": "why_it_matters",
+      "facts": [
+        "Narrative setting: Sinai and wilderness journey; date disputed",
+        "Composition and development of priestly sanctuary texts: disputed"
+      ],
+      "verse_refs": [
+        "Leviticus 16:1-34"
+      ],
+      "evidence_ids": [
+        "what-is-the-tabernacle:date_ranges:0",
+        "what-is-the-tabernacle:date_ranges:1"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [
+        "syn_chronology_bd05734c3b0f"
+      ],
+      "confidence": "medium",
+      "interpretation_level": "inference",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Leviticus 16:1-34"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "support_count": 2,
+        "explicit_significance": false,
+        "safe_for_significance": true
+      }
+    },
+    {
+      "id": "syn_why_it_matters_76b27b863c82",
+      "kind": "why_it_matters",
+      "facts": [
+        "Ancient Near Eastern ritual comparisons illuminate vocabulary and practice but do not establish that Israelite rites carried the same theology or were directly borrowed.",
+        "Christian readings of Leviticus through Hebrews are later canonical reception and should be distinguished from the book's own instructions to Israel."
+      ],
+      "verse_refs": [
+        "Leviticus 16"
+      ],
+      "evidence_ids": [
+        "leviticus:interpretive_note:2",
+        "leviticus:interpretive_note:3"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [
+        "syn_interpretive_questions_d99fcd0db6e9"
+      ],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Leviticus 16"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "support_count": 2,
+        "explicit_significance": false,
+        "safe_for_significance": true
+      }
+    },
+    {
+      "id": "syn_why_it_matters_880219358c20",
       "kind": "why_it_matters",
       "facts": [
         "Narrative setting at Sinai and in the wilderness; historical date disputed",
@@ -1173,13 +1280,122 @@
         "tabernacle"
       ],
       "related_unit_ids": [
-        "syn_chronology_6bca50d51a12"
+        "syn_chronology_5de2a1ade27f"
       ],
       "confidence": "medium",
       "interpretation_level": "inference",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Leviticus 16:1-34"
+      ],
       "metadata": {
         "relationship_basis": "shared_entities",
         "support_count": 5,
+        "explicit_significance": false,
+        "safe_for_significance": true
+      }
+    },
+    {
+      "id": "syn_why_it_matters_cffb143f9227",
+      "kind": "why_it_matters",
+      "facts": [
+        "Older comparative priestly offices are relevant to the institution's roots, but Herodian high-priestly authority must be reconstructed from Judean and Roman-period sources.",
+        "The high priest represents priestly holiness, sanctuary access, sacrifice, atonement, and communal leadership, while biblical texts also evaluate officeholders and institutions critically.",
+        "Readers tracing the office from Torah and restoration texts into the late Second Temple setting and Hebrews.",
+        "Josephus documents changing appointments and external control; the Gospels and Acts portray Caiaphas, Annas, chief priests, and high-priestly families exercising authority under Rome."
+      ],
+      "verse_refs": [
+        "Leviticus 16:1-34"
+      ],
+      "evidence_ids": [
+        "high-priesthood:ancient_near_east_context:0",
+        "high-priesthood:hebraic_worldview:0",
+        "high-priesthood:original_audience:0",
+        "high-priesthood:second_temple_context:0"
+      ],
+      "entity_ids": [
+        "high-priesthood"
+      ],
+      "related_unit_ids": [
+        "syn_cultural_context_90c3bace805f"
+      ],
+      "confidence": "medium",
+      "interpretation_level": "inference",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Leviticus 16:1-34"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_entities",
+        "support_count": 4,
+        "explicit_significance": false,
+        "safe_for_significance": true
+      }
+    },
+    {
+      "id": "syn_why_it_matters_d69be1350b9f",
+      "kind": "why_it_matters",
+      "facts": [
+        "Sacrifice was widespread in the ancient world, but Scripture ties it to holiness, covenant access, and God’s redemptive purpose rather than mere appeasement.",
+        "Sacrifice joins holiness, atonement, fellowship, and thanksgiving.",
+        "Temple sacrifice remained a living institution in the Second Temple period and frames the New Testament's sacrificial language."
+      ],
+      "verse_refs": [
+        "Leviticus 16:1-34"
+      ],
+      "evidence_ids": [
+        "sacrifice-theme:ancient_near_east_context:0",
+        "sacrifice-theme:hebraic_worldview:0",
+        "sacrifice-theme:second_temple_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [
+        "syn_cultural_context_325bb577c399"
+      ],
+      "confidence": "medium",
+      "interpretation_level": "inference",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Leviticus 16:1-34"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "support_count": 3,
+        "explicit_significance": false,
+        "safe_for_significance": true
+      }
+    },
+    {
+      "id": "syn_why_it_matters_f869a60f1765",
+      "kind": "why_it_matters",
+      "facts": [
+        "Mari's large public tent, Ramesside royal campaign tents, Timna's debated tented shrine phase, and Egyptian processional bark shrines provide limited comparisons for scale, mobility, or protected sacred objects. None is the biblical tabernacle or proves direct copying.",
+        "The tabernacle holds together divine nearness and holy boundaries: YHWH dwells among Israel, yet space, service, washing, sacrifice, and entry are ordered rather than unrestricted.",
+        "Readers and hearers of the Pentateuch are addressed through Israel's sanctuary memory; more specific source-level audiences remain reconstructed.",
+        "Later Jewish sanctuary traditions developed the meaning of the tabernacle and heavenly pattern in varied ways. Hebrews belongs within that Jewish scriptural world while advancing its distinct Christological argument."
+      ],
+      "verse_refs": [
+        "Leviticus 16:1-34"
+      ],
+      "evidence_ids": [
+        "what-is-the-tabernacle:ancient_near_east_context:0",
+        "what-is-the-tabernacle:hebraic_worldview:0",
+        "what-is-the-tabernacle:original_audience:0",
+        "what-is-the-tabernacle:second_temple_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [
+        "syn_cultural_context_2793a33deea6"
+      ],
+      "confidence": "medium",
+      "interpretation_level": "inference",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Leviticus 16:1-34"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "support_count": 4,
         "explicit_significance": false,
         "safe_for_significance": true
       }
@@ -1273,7 +1489,7 @@
       "cultural_context": 9,
       "historical_context": 10,
       "interpretive_questions": 2,
-      "language_literary": 1,
+      "surrounding_passages": 1,
       "why_it_matters": 14
     },
     "relationship_unit_count": 14

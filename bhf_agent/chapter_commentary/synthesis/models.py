@@ -6,8 +6,9 @@ from dataclasses import asdict, dataclass, field
 from typing import Any
 
 
-SYNTHESIS_SCHEMA_VERSION = "1.0"
-SYNTHESIS_COMPILER_VERSION = "1.0"
+SYNTHESIS_SCHEMA_VERSION = "1.1"
+SYNTHESIS_COMPILER_VERSION = "1.1"
+SYNTHESIS_PASSAGE_SCOPES = frozenset({"CURRENT_CHAPTER", "SURROUNDING_PASSAGE"})
 
 SYNTHESIS_UNIT_KINDS = frozenset(
     {
@@ -39,6 +40,8 @@ class SynthesisUnit:
     related_unit_ids: list[str] = field(default_factory=list)
     confidence: str = "medium"
     interpretation_level: str = "fact"
+    passage_scope: str = "CURRENT_CHAPTER"
+    source_anchors: list[str] = field(default_factory=list)
     metadata: dict[str, Any] = field(default_factory=dict)
 
     def to_dict(self) -> dict[str, Any]:

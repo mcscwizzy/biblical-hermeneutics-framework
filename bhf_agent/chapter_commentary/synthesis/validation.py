@@ -3,10 +3,20 @@
 from __future__ import annotations
 
 from bhf_agent.presentation.models import EvidenceBundle
+from bhf_agent.presentation.references import _BOOK_ALIASES
+from framework.canonical_library.scripture import (
+    ScriptureReferenceSpan,
+    parse_scripture_reference,
+    parse_scripture_references,
+)
 from collections import Counter
 
 from .hashing import calculate_synthesis_hash
-from .models import SYNTHESIS_UNIT_KINDS, CompiledChapterSynthesis
+from .models import (
+    SYNTHESIS_PASSAGE_SCOPES,
+    SYNTHESIS_UNIT_KINDS,
+    CompiledChapterSynthesis,
+)
 
 
 class SynthesisValidationError(ValueError):
@@ -33,6 +43,8 @@ def validate_synthesis(
     for unit in synthesis.synthesis_units:
         if unit.kind not in SYNTHESIS_UNIT_KINDS:
             errors.append(f"{unit.id} has unsupported kind {unit.kind}")
+        if unit.passage_scope not in SYNTHESIS_PASSAGE_SCOPES:
+            errors.append(f"{unit.id} has unsupported passage scope {unit.passage_scope}")
         unknown_evidence = sorted(set(unit.evidence_ids) - set(evidence_by_id))
         if unknown_evidence:
             errors.append(f"{unit.id} has unknown evidence IDs: {unknown_evidence}")
@@ -66,8 +78,25 @@ def validate_synthesis(
             if evidence_id in evidence_by_id
             for anchor in evidence_by_id[evidence_id].passage_anchors
         }
-        if set(unit.verse_refs) - supported_anchors:
+        if set(unit.verse_refs) - supported_anchors and not all(
+            _reference_derived_from_source(reference, unit.source_anchors)
+            for reference in unit.verse_refs
+        ):
             errors.append(f"{unit.id} has passage anchors outside its evidence ancestry")
+        if set(unit.source_anchors) - supported_anchors:
+            errors.append(f"{unit.id} has source anchors outside its evidence ancestry")
+        if unit.passage_scope == "CURRENT_CHAPTER":
+            for reference in unit.verse_refs:
+                if not _is_current_chapter_reference(
+                    reference, synthesis.book, synthesis.chapter
+                ):
+                    errors.append(
+                        f"{unit.id} exposes an out-of-chapter reference in CURRENT_CHAPTER scope"
+                    )
+        elif unit.kind != "surrounding_passages":
+            errors.append(
+                f"{unit.id} has SURROUNDING_PASSAGE scope without surrounding_passages kind"
+            )
         supported_confidence = min(
             (_confidence_rank(evidence_by_id[evidence_id].confidence) for evidence_id in unit.evidence_ids if evidence_id in evidence_by_id),
             default=0,
@@ -129,3 +158,52 @@ def require_valid_synthesis(
     errors = validate_synthesis(synthesis, bundle)
     if errors:
         raise SynthesisValidationError("; ".join(errors))
+
+
+def _is_current_chapter_reference(reference: str, book: str, chapter: int) -> bool:
+    """Keep this integrity check strict without accepting compound syntax."""
+
+    import re
+
+    match = re.match(
+        r"^(?P<book>.+?)\s+(?P<chapter>\d+)(?::(?P<start>\d+)(?:-(?:(?P<end_chapter>\d+):)?(?P<end>\d+))?)?$",
+        " ".join(reference.split()),
+    )
+    if not match:
+        return False
+    try:
+        from bhf_agent import bible
+
+        canonical = bible.resolve_chapter(match.group("book"), int(match.group("chapter")))["book"]
+    except (ValueError, TypeError, KeyError):
+        return False
+    return (
+        canonical == book
+        and int(match.group("chapter")) == chapter
+        and int(match.group("end_chapter") or match.group("chapter")) == chapter
+    )
+
+
+def _reference_derived_from_source(reference: str, source_anchors: list[str]) -> bool:
+    candidate = parse_scripture_reference(reference, book_alias_lookup=_BOOK_ALIASES)
+    if candidate is None:
+        return False
+    candidate_start, candidate_end = _span_bounds(candidate)
+    for source in source_anchors:
+        for source_span in parse_scripture_references(
+            source, book_alias_lookup=_BOOK_ALIASES
+        ):
+            if source_span.book != candidate.book:
+                continue
+            source_start, source_end = _span_bounds(source_span)
+            if source_start <= candidate_start and candidate_end <= source_end:
+                return True
+    return False
+
+
+def _span_bounds(span: ScriptureReferenceSpan) -> tuple[tuple[int, int], tuple[int, int]]:
+    start_chapter = span.start_chapter or 1
+    start_verse = span.start_verse or 1
+    end_chapter = span.end_chapter or start_chapter
+    end_verse = span.end_verse or (999 if span.start_verse is None else span.start_verse)
+    return (start_chapter, start_verse), (end_chapter, end_verse)

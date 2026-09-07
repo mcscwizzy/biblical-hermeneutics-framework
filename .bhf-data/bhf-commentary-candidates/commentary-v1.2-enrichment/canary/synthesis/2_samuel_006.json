@@ -4,67 +4,13 @@
   "chapter": 6,
   "evidence_hash": "7a1440cab57fd2fcf5dfa968f72e9e30a38d1137f6a2d6a7320180ccb6fcea09",
   "evidence_bundle_version": "1.1",
-  "synthesis_schema_version": "1.0",
-  "synthesis_compiler_version": "1.0",
-  "synthesis_hash": "4af4fb10ea4ca87277276a3ced14197565d0398d49a335794a02446b0260f0ac",
+  "synthesis_schema_version": "1.1",
+  "synthesis_compiler_version": "1.1",
+  "synthesis_hash": "193545234c1576d974f1aed77d98d0aacb45803c3130b206cfabc3be7eed67a2",
   "evidence_availability": "AVAILABLE",
   "synthesis_units": [
     {
-      "id": "syn_cultural_context_65bfc1305a60",
-      "kind": "cultural_context",
-      "facts": [
-        "Fortified cities, tribal conflict, and military campaigns shape the background."
-      ],
-      "verse_refs": [
-        "2 Samuel 6:1-15"
-      ],
-      "evidence_ids": [
-        "rise-of-saul:ancient_near_east_context:0"
-      ],
-      "entity_ids": [
-        "rise-of-saul"
-      ],
-      "related_unit_ids": [],
-      "confidence": "medium",
-      "interpretation_level": "fact",
-      "metadata": {
-        "relationship_basis": "single_evidence_item",
-        "source_categories": [
-          "culture"
-        ],
-        "support_count": 1,
-        "explicit_significance": false
-      }
-    },
-    {
-      "id": "syn_cultural_context_6c4eb4a38b1b",
-      "kind": "cultural_context",
-      "facts": [
-        "Ark Brought to Jerusalem unfolds within concrete settings such as Israelite kinship life, temple worship, royal courts, wilderness travel, Roman administration, or imperial conflict, depending on the passage."
-      ],
-      "verse_refs": [
-        "2 Samuel 6:1-15"
-      ],
-      "evidence_ids": [
-        "ark-brought-to-jerusalem:ancient_near_east_context:0"
-      ],
-      "entity_ids": [
-        "ark-brought-to-jerusalem"
-      ],
-      "related_unit_ids": [],
-      "confidence": "medium",
-      "interpretation_level": "fact",
-      "metadata": {
-        "relationship_basis": "single_evidence_item",
-        "source_categories": [
-          "culture"
-        ],
-        "support_count": 1,
-        "explicit_significance": false
-      }
-    },
-    {
-      "id": "syn_cultural_context_a893f6c35b7d",
+      "id": "syn_cultural_context_0821e0e2300f",
       "kind": "cultural_context",
       "facts": [
         "David Anointed unfolds within concrete settings such as Israelite kinship life, temple worship, royal courts, wilderness travel, Roman administration, or imperial conflict, depending on the passage."
@@ -81,17 +27,22 @@
       "related_unit_ids": [],
       "confidence": "medium",
       "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "2 Samuel 6:1-15"
+      ],
       "metadata": {
         "relationship_basis": "single_evidence_item",
         "source_categories": [
           "culture"
         ],
         "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
         "explicit_significance": false
       }
     },
     {
-      "id": "syn_cultural_context_d22e0e8d14a1",
+      "id": "syn_cultural_context_140bb0fd08a3",
       "kind": "cultural_context",
       "facts": [
         "Conquest of Jericho unfolds within concrete settings such as Israelite kinship life, temple worship, royal courts, wilderness travel, Roman administration, or imperial conflict, depending on the passage."
@@ -108,26 +59,31 @@
       "related_unit_ids": [],
       "confidence": "medium",
       "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "2 Samuel 6:1-15"
+      ],
       "metadata": {
         "relationship_basis": "single_evidence_item",
         "source_categories": [
           "culture"
         ],
         "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
         "explicit_significance": false
       }
     },
     {
-      "id": "syn_historical_context_13ccd0bca544",
-      "kind": "historical_context",
+      "id": "syn_cultural_context_82f7dbba172a",
+      "kind": "cultural_context",
       "facts": [
-        "Historically, Ark Brought to Jerusalem is located by its canonical setting; this entry connects that setting with joshua-son-of-nun, judges-cycle, david and related CKL objects for contextual retrieval."
+        "Ark Brought to Jerusalem unfolds within concrete settings such as Israelite kinship life, temple worship, royal courts, wilderness travel, Roman administration, or imperial conflict, depending on the passage."
       ],
       "verse_refs": [
         "2 Samuel 6:1-15"
       ],
       "evidence_ids": [
-        "ark-brought-to-jerusalem:historical_context:0"
+        "ark-brought-to-jerusalem:ancient_near_east_context:0"
       ],
       "entity_ids": [
         "ark-brought-to-jerusalem"
@@ -135,53 +91,31 @@
       "related_unit_ids": [],
       "confidence": "medium",
       "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "2 Samuel 6:1-15"
+      ],
       "metadata": {
         "relationship_basis": "single_evidence_item",
         "source_categories": [
-          "history"
+          "culture"
         ],
         "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
         "explicit_significance": false
       }
     },
     {
-      "id": "syn_historical_context_26619858355e",
-      "kind": "historical_context",
+      "id": "syn_cultural_context_e797c56ae9f8",
+      "kind": "cultural_context",
       "facts": [
-        "Historically, Conquest of Jericho is located by its canonical setting; this entry connects that setting with joshua-son-of-nun, judges-cycle, david and related CKL objects for contextual retrieval."
+        "Fortified cities, tribal conflict, and military campaigns shape the background."
       ],
       "verse_refs": [
         "2 Samuel 6:1-15"
       ],
       "evidence_ids": [
-        "conquest-of-jericho:historical_context:0"
-      ],
-      "entity_ids": [
-        "conquest-of-jericho"
-      ],
-      "related_unit_ids": [],
-      "confidence": "medium",
-      "interpretation_level": "fact",
-      "metadata": {
-        "relationship_basis": "single_evidence_item",
-        "source_categories": [
-          "history"
-        ],
-        "support_count": 1,
-        "explicit_significance": false
-      }
-    },
-    {
-      "id": "syn_historical_context_5d769d2a9594",
-      "kind": "historical_context",
-      "facts": [
-        "The event belongs to the period of settlement and early monarchy, when Israel is consolidating life in the land."
-      ],
-      "verse_refs": [
-        "2 Samuel 6:1-15"
-      ],
-      "evidence_ids": [
-        "rise-of-saul:historical_context:0"
+        "rise-of-saul:ancient_near_east_context:0"
       ],
       "entity_ids": [
         "rise-of-saul"
@@ -189,17 +123,22 @@
       "related_unit_ids": [],
       "confidence": "medium",
       "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "2 Samuel 6:1-15"
+      ],
       "metadata": {
         "relationship_basis": "single_evidence_item",
         "source_categories": [
-          "history"
+          "culture"
         ],
         "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
         "explicit_significance": false
       }
     },
     {
-      "id": "syn_historical_context_ba1627547286",
+      "id": "syn_historical_context_04f1cca0571f",
       "kind": "historical_context",
       "facts": [
         "Historically, David Anointed is located by its canonical setting; this entry connects that setting with joshua-son-of-nun, judges-cycle, david and related CKL objects for contextual retrieval."
@@ -216,17 +155,118 @@
       "related_unit_ids": [],
       "confidence": "medium",
       "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "2 Samuel 6:1-15"
+      ],
       "metadata": {
         "relationship_basis": "single_evidence_item",
         "source_categories": [
           "history"
         ],
         "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
         "explicit_significance": false
       }
     },
     {
-      "id": "syn_historical_context_d0ee5d232339",
+      "id": "syn_historical_context_597ec79e6194",
+      "kind": "historical_context",
+      "facts": [
+        "Historically, Conquest of Jericho is located by its canonical setting; this entry connects that setting with joshua-son-of-nun, judges-cycle, david and related CKL objects for contextual retrieval."
+      ],
+      "verse_refs": [
+        "2 Samuel 6:1-15"
+      ],
+      "evidence_ids": [
+        "conquest-of-jericho:historical_context:0"
+      ],
+      "entity_ids": [
+        "conquest-of-jericho"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "2 Samuel 6:1-15"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_a6842d148314",
+      "kind": "historical_context",
+      "facts": [
+        "Historically, Ark Brought to Jerusalem is located by its canonical setting; this entry connects that setting with joshua-son-of-nun, judges-cycle, david and related CKL objects for contextual retrieval."
+      ],
+      "verse_refs": [
+        "2 Samuel 6:1-15"
+      ],
+      "evidence_ids": [
+        "ark-brought-to-jerusalem:historical_context:0"
+      ],
+      "entity_ids": [
+        "ark-brought-to-jerusalem"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "2 Samuel 6:1-15"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_dc21309b1596",
+      "kind": "historical_context",
+      "facts": [
+        "The event belongs to the period of settlement and early monarchy, when Israel is consolidating life in the land."
+      ],
+      "verse_refs": [
+        "2 Samuel 6:1-15"
+      ],
+      "evidence_ids": [
+        "rise-of-saul:historical_context:0"
+      ],
+      "entity_ids": [
+        "rise-of-saul"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "2 Samuel 6:1-15"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_e5705d90df1b",
       "kind": "historical_context",
       "facts": [
         "David establishes Jerusalem as royal center and brings the ark there only after the first transport attempt ends in Uzzah's death."
@@ -241,23 +281,30 @@
       "related_unit_ids": [],
       "confidence": "high",
       "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "2 Samuel 6:1-23"
+      ],
       "metadata": {
         "relationship_basis": "single_evidence_item",
         "source_categories": [
           "history"
         ],
         "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
         "explicit_significance": false
       }
     },
     {
-      "id": "syn_interpretive_questions_6a1459f5f017",
-      "kind": "interpretive_questions",
+      "id": "syn_surrounding_passages_67b94c74c42f",
+      "kind": "surrounding_passages",
       "facts": [
         "Archaeology supports the existence of a later Davidic dynasty but does not establish one uncontested size, administration, or chronology for David's kingdom."
       ],
       "verse_refs": [
-        "2 Samuel 5-8"
+        "2 Samuel 5",
+        "2 Samuel 7:1-29",
+        "2 Samuel 8:1-18"
       ],
       "evidence_ids": [
         "2-samuel:interpretive_note:4"
@@ -266,23 +313,50 @@
       "related_unit_ids": [],
       "confidence": "medium",
       "interpretation_level": "disputed",
+      "passage_scope": "SURROUNDING_PASSAGE",
+      "source_anchors": [
+        "2 Samuel 5-8"
+      ],
       "metadata": {
         "relationship_basis": "single_evidence_item",
         "source_categories": [
           "culture"
         ],
         "support_count": 1,
+        "passage_scope": "SURROUNDING_PASSAGE",
         "explicit_significance": false
       }
     },
     {
-      "id": "syn_language_literary_dbbbffd4f0a0",
-      "kind": "language_literary",
+      "id": "syn_surrounding_passages_a7e629f1d553",
+      "kind": "surrounding_passages",
       "facts": [
         "Second Samuel moves from David's accession and kingdom consolidation through ark and dynasty promise to royal abuse, household violence, rebellion, grief, and a four-part closing appendix."
       ],
       "verse_refs": [
-        "2 Samuel 1-24"
+        "2 Samuel 1",
+        "2 Samuel 10:1-19",
+        "2 Samuel 11:1-27",
+        "2 Samuel 12:1-31",
+        "2 Samuel 13:1-39",
+        "2 Samuel 14:1-33",
+        "2 Samuel 15:1-37",
+        "2 Samuel 16:1-23",
+        "2 Samuel 17:1-29",
+        "2 Samuel 18:1-33",
+        "2 Samuel 19:1-43",
+        "2 Samuel 20:1-26",
+        "2 Samuel 21:1-22",
+        "2 Samuel 22:1-51",
+        "2 Samuel 23:1-39",
+        "2 Samuel 24:1-25",
+        "2 Samuel 2:1-32",
+        "2 Samuel 3:1-39",
+        "2 Samuel 4:1-12",
+        "2 Samuel 5:1-25",
+        "2 Samuel 7:1-29",
+        "2 Samuel 8:1-18",
+        "2 Samuel 9:1-13"
       ],
       "evidence_ids": [
         "second-samuel-literary-movement"
@@ -291,12 +365,17 @@
       "related_unit_ids": [],
       "confidence": "high",
       "interpretation_level": "fact",
+      "passage_scope": "SURROUNDING_PASSAGE",
+      "source_anchors": [
+        "2 Samuel 1-24"
+      ],
       "metadata": {
         "relationship_basis": "single_evidence_item",
         "source_categories": [
           "culture"
         ],
         "support_count": 1,
+        "passage_scope": "SURROUNDING_PASSAGE",
         "explicit_significance": false
       }
     }
@@ -345,8 +424,7 @@
     "unit_kind_counts": {
       "cultural_context": 4,
       "historical_context": 5,
-      "interpretive_questions": 1,
-      "language_literary": 1
+      "surrounding_passages": 2
     },
     "relationship_unit_count": 0
   }

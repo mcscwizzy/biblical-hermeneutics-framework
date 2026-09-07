@@ -1,0 +1,62 @@
+{
+  "reference": "2 Samuel 24",
+  "packet_id": "commentary-v1.2-packet:875d97391666656bdd2f9a9fdbd25dda6126f5f3bb329894d32ba0e12d909503",
+  "prompt_version": "1.2",
+  "renderer_label": "Luna Medium",
+  "evidence_hash": "bbe31ce9f67a01d10a7f33e8eb9110f3575dccc088e3fb2ae511fb7f44482f27",
+  "synthesis_hash": "4fe43f0dbb68e30f97d84bba337cc42f202eabb0033358d3205bf60ea6e81568",
+  "response_payload": {
+    "reference": "2 Samuel 24",
+    "book": "2 Samuel",
+    "chapter": 24,
+    "status": "pending",
+    "sections": [
+      {
+        "kind": "chapter_overview",
+        "title": "Overview",
+        "blocks": [
+          {
+            "id": "block_1",
+            "text": "David orders Joab to number Israel and Judah, despite Joab's question about the command. After the census is completed, David recognizes that he has acted wrongly. Gad presents three possible judgments, and David chooses to fall into the LORD's hand. A pestilence follows, but its destruction stops at Jerusalem. Gad then directs David to build an altar at Araunah's threshing-floor; David buys the site, offers burnt-offerings and peace-offerings, and the plague is stayed. As the closing chapter, the episode belongs to Second Samuel's four-part appendix after the book's accounts of royal consolidation, promise, abuse, violence, rebellion, and grief.",
+            "verse_refs": ["2 Samuel 24:1-25"],
+            "evidence_ids": ["second-samuel-literary-movement"],
+            "synthesis_ids": ["syn_language_literary_dbbbffd4f0a0"],
+            "confidence": "high",
+            "interpretation_level": "fact"
+          }
+        ]
+      },
+      {
+        "kind": "language_literary",
+        "title": "The book's closing movement",
+        "blocks": [
+          {
+            "id": "block_2",
+            "text": "Second Samuel moves from David's accession and kingdom consolidation through the ark and dynasty promise to royal abuse, household violence, rebellion, grief, and a four-part closing appendix. Chapter 24 is part of that closing movement: it follows the king's census, confession, judgment, and altar-building rather than extending the earlier narrative of David's rise.",
+            "verse_refs": ["2 Samuel 24:1-25"],
+            "evidence_ids": ["second-samuel-literary-movement"],
+            "synthesis_ids": ["syn_language_literary_dbbbffd4f0a0"],
+            "confidence": "high",
+            "interpretation_level": "fact"
+          }
+        ]
+      },
+      {
+        "kind": "interpretive_questions",
+        "title": "The census incitement",
+        "blocks": [
+          {
+            "id": "block_3",
+            "text": "The chapter says that the LORD's anger against Israel moved David to order the census. The parallel account in First Chronicles attributes the incitement to an adversary or Satan. The supplied evidence identifies harmonizing, developmental, distinct-source, and agency explanations as debated rather than settled. Those explanations should therefore remain distinguishable from what this chapter itself states in verse 1.",
+            "verse_refs": ["2 Samuel 24:1"],
+            "evidence_ids": ["2-samuel:interpretive_note:3", "1-chronicles:interpretive_note:3"],
+            "synthesis_ids": ["syn_interpretive_questions_eaf515735967", "syn_interpretive_questions_11c83448ea53"],
+            "confidence": "high",
+            "interpretation_level": "disputed"
+          }
+        ]
+      }
+    ],
+    "generated_metadata": null
+  }
+}

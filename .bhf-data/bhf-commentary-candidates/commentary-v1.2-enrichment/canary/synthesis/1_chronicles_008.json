@@ -4,19 +4,26 @@
   "chapter": 8,
   "evidence_hash": "88e9ee6044db61d4315477ad887c5a5bbd16499ba177fddd6a63bfd0f529f36f",
   "evidence_bundle_version": "1.1",
-  "synthesis_schema_version": "1.0",
-  "synthesis_compiler_version": "1.0",
-  "synthesis_hash": "b3b12c824ebd5560419553db2439107bc966148d965ddf8b57583b5849ef47e9",
+  "synthesis_schema_version": "1.1",
+  "synthesis_compiler_version": "1.1",
+  "synthesis_hash": "6298453ce11850e769560fe12d67328e8eacd3eb142b849db13eca36e74915ed",
   "evidence_availability": "THIN",
   "synthesis_units": [
     {
-      "id": "syn_interpretive_questions_181de190ab7d",
-      "kind": "interpretive_questions",
+      "id": "syn_surrounding_passages_af977c32e1d5",
+      "kind": "surrounding_passages",
       "facts": [
         "The genealogies are selective literary maps of kinship, land, office, and restored identity rather than exhaustive modern biological pedigrees; gaps, parallel lines, variant names, and telescoping require case-by-case review."
       ],
       "verse_refs": [
-        "1 Chronicles 1:1-9:44"
+        "1 Chronicles 1:1-54",
+        "1 Chronicles 2:1-55",
+        "1 Chronicles 3:1-24",
+        "1 Chronicles 4:1-43",
+        "1 Chronicles 5:1-26",
+        "1 Chronicles 6:1-81",
+        "1 Chronicles 7:1-40",
+        "1 Chronicles 9:1-44"
       ],
       "evidence_ids": [
         "1-chronicles:interpretive_note:0"
@@ -25,12 +32,17 @@
       "related_unit_ids": [],
       "confidence": "high",
       "interpretation_level": "disputed",
+      "passage_scope": "SURROUNDING_PASSAGE",
+      "source_anchors": [
+        "1 Chronicles 1:1-9:44"
+      ],
       "metadata": {
         "relationship_basis": "single_evidence_item",
         "source_categories": [
           "culture"
         ],
         "support_count": 1,
+        "passage_scope": "SURROUNDING_PASSAGE",
         "explicit_significance": false
       }
     }
@@ -71,7 +83,7 @@
       "artifacts": 0
     },
     "unit_kind_counts": {
-      "interpretive_questions": 1
+      "surrounding_passages": 1
     },
     "relationship_unit_count": 0
   }

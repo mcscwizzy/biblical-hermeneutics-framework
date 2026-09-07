@@ -1,0 +1,20 @@
+{
+  "artifact_version": "commentary-v1.2-rejection-v1",
+  "reference": "Leviticus 16",
+  "packet_id": null,
+  "raw_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.2-enrichment/canary/responses/raw-rerun-quality-5-aggregate/leviticus_016.json",
+  "raw_sha256": "9c3245ad3999951fdfd16c27356e1d14207bdf0fe9c195cb6e103df66e517083",
+  "import_status": "rejected",
+  "structurally_parsed": false,
+  "validation_status": "rejected",
+  "candidate_id": null,
+  "accepted_path": null,
+  "rejection_codes": [
+    "MALFORMED_RESPONSE_ENVELOPE",
+    "MISSING_REQUIRED_FIELD"
+  ],
+  "validation_errors": [
+    "MALFORMED_RESPONSE_ENVELOPE: unknown envelope fields: book, chapter, commentary_prompt_version, generated_metadata, sections, status",
+    "MISSING_REQUIRED_FIELD: missing envelope fields: prompt_version, response_payload"
+  ]
+}

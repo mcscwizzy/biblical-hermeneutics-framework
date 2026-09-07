@@ -4,13 +4,13 @@
   "chapter": 3,
   "evidence_hash": "46f678b6923b5313329b2af0af6af7bb53a305bdb1452e72b0c7c34f47dbd2de",
   "evidence_bundle_version": "1.1",
-  "synthesis_schema_version": "1.0",
-  "synthesis_compiler_version": "1.0",
-  "synthesis_hash": "48c82ee3e4b916097d246428fa1a842b88280f099a306bfd64f32840ecb8e917",
+  "synthesis_schema_version": "1.1",
+  "synthesis_compiler_version": "1.1",
+  "synthesis_hash": "f9aabf5213636acb6e7d3e6fd2120d9d18a97cd2fd5ef67eb53d16cd4d7d27f5",
   "evidence_availability": "AVAILABLE",
   "synthesis_units": [
     {
-      "id": "syn_cultural_context_b98a489b484d",
+      "id": "syn_cultural_context_db7a11ec65a8",
       "kind": "cultural_context",
       "facts": [
         "Boaz belongs to a social world of kinship obligations, household economy, temple or synagogue life, royal courts, village elders, and imperial administration as the relevant passages require."
@@ -27,17 +27,22 @@
       "related_unit_ids": [],
       "confidence": "medium",
       "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Ruth 3:1-18"
+      ],
       "metadata": {
         "relationship_basis": "single_evidence_item",
         "source_categories": [
           "culture"
         ],
         "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
         "explicit_significance": false
       }
     },
     {
-      "id": "syn_historical_context_a39766376e80",
+      "id": "syn_historical_context_5cf730c29c63",
       "kind": "historical_context",
       "facts": [
         "Boaz's story is set in the judges-era world of harvest labor, kinship obligations, land continuity, and public negotiation at the town gate."
@@ -54,42 +59,22 @@
       "related_unit_ids": [],
       "confidence": "medium",
       "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Ruth 3:1-18"
+      ],
       "metadata": {
         "relationship_basis": "single_evidence_item",
         "source_categories": [
           "history"
         ],
         "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
         "explicit_significance": false
       }
     },
     {
-      "id": "syn_interpretive_questions_375a07bc3a5c",
-      "kind": "interpretive_questions",
-      "facts": [
-        "The Ammonite and Moabite assembly exclusion in Nehemiah 13 cites Deuteronomy 23 and is applied amid Tobiah's temple access. Canonical reading must also reckon with Ruth the Moabite and texts welcoming faithful foreigners rather than turning the episode into a universal ethnic ban."
-      ],
-      "verse_refs": [
-        "Ruth 1:1-4:22"
-      ],
-      "evidence_ids": [
-        "nehemiah:interpretive_note:7"
-      ],
-      "entity_ids": [],
-      "related_unit_ids": [],
-      "confidence": "high",
-      "interpretation_level": "disputed",
-      "metadata": {
-        "relationship_basis": "single_evidence_item",
-        "source_categories": [
-          "culture"
-        ],
-        "support_count": 1,
-        "explicit_significance": false
-      }
-    },
-    {
-      "id": "syn_interpretive_questions_c2160148bc2f",
+      "id": "syn_interpretive_questions_4913e116774e",
       "kind": "interpretive_questions",
       "facts": [
         "Ruth explicitly attributes food and conception to the LORD while most of the plot advances through Naomi's, Ruth's, Boaz's, workers', elders', and women's actions.",
@@ -106,23 +91,30 @@
       "related_unit_ids": [],
       "confidence": "medium",
       "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Ruth 3:1-18"
+      ],
       "metadata": {
         "relationship_basis": "shared_parent_object",
         "source_categories": [
           "culture"
         ],
         "support_count": 2,
+        "passage_scope": "CURRENT_CHAPTER",
         "explicit_significance": false
       }
     },
     {
-      "id": "syn_language_literary_b234cd126faf",
-      "kind": "language_literary",
+      "id": "syn_surrounding_passages_2e64b7a2ea17",
+      "kind": "surrounding_passages",
       "facts": [
         "Ruth moves from famine, bereavement, and Naomi's emptiness to harvest, kinship redemption, birth, communal blessing, and genealogy."
       ],
       "verse_refs": [
-        "Ruth 1-4"
+        "Ruth 1",
+        "Ruth 2:1-23",
+        "Ruth 4:1-22"
       ],
       "evidence_ids": [
         "ruth-literary-movement"
@@ -131,17 +123,54 @@
       "related_unit_ids": [],
       "confidence": "high",
       "interpretation_level": "fact",
+      "passage_scope": "SURROUNDING_PASSAGE",
+      "source_anchors": [
+        "Ruth 1-4"
+      ],
       "metadata": {
         "relationship_basis": "single_evidence_item",
         "source_categories": [
           "culture"
         ],
         "support_count": 1,
+        "passage_scope": "SURROUNDING_PASSAGE",
         "explicit_significance": false
       }
     },
     {
-      "id": "syn_why_it_matters_039418a88d74",
+      "id": "syn_surrounding_passages_ab8620b75fa2",
+      "kind": "surrounding_passages",
+      "facts": [
+        "The Ammonite and Moabite assembly exclusion in Nehemiah 13 cites Deuteronomy 23 and is applied amid Tobiah's temple access. Canonical reading must also reckon with Ruth the Moabite and texts welcoming faithful foreigners rather than turning the episode into a universal ethnic ban."
+      ],
+      "verse_refs": [
+        "Ruth 1:1-22",
+        "Ruth 2:1-23",
+        "Ruth 4:1-22"
+      ],
+      "evidence_ids": [
+        "nehemiah:interpretive_note:7"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "high",
+      "interpretation_level": "disputed",
+      "passage_scope": "SURROUNDING_PASSAGE",
+      "source_anchors": [
+        "Ruth 1:1-4:22"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "SURROUNDING_PASSAGE",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_why_it_matters_0be17d539003",
       "kind": "why_it_matters",
       "facts": [
         "Ruth explicitly attributes food and conception to the LORD while most of the plot advances through Naomi's, Ruth's, Boaz's, workers', elders', and women's actions.",
@@ -156,10 +185,14 @@
       ],
       "entity_ids": [],
       "related_unit_ids": [
-        "syn_interpretive_questions_c2160148bc2f"
+        "syn_interpretive_questions_4913e116774e"
       ],
       "confidence": "medium",
       "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Ruth 3:1-18"
+      ],
       "metadata": {
         "relationship_basis": "shared_parent_object",
         "support_count": 2,
@@ -207,8 +240,8 @@
     "unit_kind_counts": {
       "cultural_context": 1,
       "historical_context": 1,
-      "interpretive_questions": 2,
-      "language_literary": 1,
+      "interpretive_questions": 1,
+      "surrounding_passages": 2,
       "why_it_matters": 1
     },
     "relationship_unit_count": 1

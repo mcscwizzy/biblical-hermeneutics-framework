@@ -9,6 +9,9 @@ from typing import Any, Mapping
 
 COMMENTARY_SCHEMA_VERSION = "1.2"
 COMMENTARY_PROMPT_VERSION = "1.2"
+DATA_GAP_FALLBACK_TEXT = (
+    "Passage-specific contextual evidence is not currently available for this chapter."
+)
 
 
 class CommentaryStatus(str, Enum):
@@ -178,9 +181,10 @@ class ChapterCommentary:
     failure_reason: str | None = None
     validation_errors: list[str] = field(default_factory=list)
     validation_warnings: list[str] = field(default_factory=list)
+    data_gap_fallback: bool = False
 
     def to_dict(self) -> dict[str, Any]:
-        return {
+        value = {
             "reference": self.reference,
             "book": self.book,
             "chapter": self.chapter,
@@ -194,6 +198,40 @@ class ChapterCommentary:
             "validation_errors": self.validation_errors,
             "validation_warnings": self.validation_warnings,
         }
+        # Keep this application-owned marker absent from ordinary/v1.1 output.
+        if self.data_gap_fallback:
+            value["data_gap_fallback"] = True
+        return value
+
+
+def data_gap_fallback_payload(reference: str, book: str, chapter: int) -> dict[str, Any]:
+    """Build the only prose representation permitted for a true DATA_GAP."""
+
+    return {
+        "reference": reference,
+        "book": book,
+        "chapter": chapter,
+        "status": "pending",
+        "data_gap_fallback": True,
+        "sections": [
+            {
+                "kind": CommentarySectionKind.CHAPTER_OVERVIEW.value,
+                "title": "Context availability",
+                "blocks": [
+                    {
+                        "id": "data_gap_notice",
+                        "text": DATA_GAP_FALLBACK_TEXT,
+                        "verse_refs": [],
+                        "evidence_ids": [],
+                        "synthesis_ids": [],
+                        "confidence": "high",
+                        "interpretation_level": "fact",
+                    }
+                ],
+            }
+        ],
+        "generated_metadata": None,
+    }
 
 
 @dataclass(frozen=True)

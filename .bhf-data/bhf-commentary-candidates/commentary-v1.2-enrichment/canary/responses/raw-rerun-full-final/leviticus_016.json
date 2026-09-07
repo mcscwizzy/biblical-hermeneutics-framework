@@ -1,0 +1,64 @@
+{
+  "reference": "Leviticus 16",
+  "packet_id": "commentary-v1.2-packet:3b2714e977ed2ddf8396d7477efba3a3d13d7ff820871aa129d521a0aa795412",
+  "prompt_version": "1.2",
+  "evidence_hash": "8e5cbb871b1513cc91ad7b20d2f399c3796e3fe36516d99e6b36511dcadfab62",
+  "synthesis_hash": "6c9b25b87dde82946bb0620ce97f85a31311467dec6c8745e2d365de9f2904bc",
+  "renderer_label": "Luna Medium",
+  "response_payload": {
+    "reference": "Leviticus 16",
+    "book": "Leviticus",
+    "chapter": 16,
+    "status": "pending",
+    "sections": [
+      {
+        "kind": "cultural_context",
+        "title": "Holiness, access, and atonement",
+        "blocks": [
+          {
+            "id": "leviticus_16_context",
+            "text": "The chapter places Israel's sacrificial system within a world where ritual service and sacred boundaries mattered deeply. Its distinctive emphasis is covenant holiness: access to God's presence is ordered through priestly service, washing, sacrifice, and carefully limited entry rather than treated as unrestricted. Sacrifice therefore joins holiness, atonement, fellowship, and thanksgiving.",
+            "verse_refs": [
+              "Leviticus 16:1-34"
+            ],
+            "evidence_ids": [
+              "priesthood:ancient_near_east_context:0",
+              "priesthood:hebraic_worldview:0",
+              "sacrifice-theme:ancient_near_east_context:0",
+              "sacrifice-theme:hebraic_worldview:0"
+            ],
+            "synthesis_ids": [
+              "syn_cultural_context_03fce88fc3cb",
+              "syn_cultural_context_325bb577c399"
+            ],
+            "confidence": "medium",
+            "interpretation_level": "fact"
+          }
+        ]
+      },
+      {
+        "kind": "archaeology_geography",
+        "title": "What the material record can and cannot establish",
+        "blocks": [
+          {
+            "id": "leviticus_16_archaeology",
+            "text": "No excavated object or site is securely identified as the wilderness tabernacle. A debated tented-shrine comparison may illuminate possible features of portable sacred space, but it is not the tabernacle and does not establish direct identification.",
+            "verse_refs": [
+              "Leviticus 16:1-34"
+            ],
+            "evidence_ids": [
+              "what-is-the-tabernacle:archaeology:0",
+              "what-is-the-tabernacle:archaeology:1"
+            ],
+            "synthesis_ids": [
+              "syn_archaeology_geography_3c8944beb7b8"
+            ],
+            "confidence": "medium",
+            "interpretation_level": "disputed"
+          }
+        ]
+      }
+    ],
+    "generated_metadata": null
+  }
+}

@@ -1,0 +1,152 @@
+{
+  "reference": "John 1",
+  "packet_id": "commentary-v1.2-packet:4be9b7f3274744f6630b4d79b0e97788608e2c18e08f8bcf94f3a1b162ad9e37",
+  "prompt_version": "1.2",
+  "evidence_hash": "94af797e700c2bbf818615b7fb99775cc1f8a920281c564ab643951fe9be845f",
+  "synthesis_hash": "7c8928dc9f41a7feb5f27fcbf5818c8e22f9364117be4bbee3a16a4690608aaa",
+  "renderer_label": "Luna Medium",
+  "response_payload": {
+    "reference": "John 1",
+    "book": "John",
+    "chapter": 1,
+    "status": "pending",
+    "sections": [
+      {
+        "kind": "chapter_overview",
+        "title": "Overview",
+        "blocks": [
+          {
+            "id": "block_1",
+            "text": "John 1 presents Jesus as the Word who was with God in the beginning, active in creation and life, and then present in human flesh. The chapter moves from that prologue to John the Baptist's witness and the first disciples' encounters with Jesus, including the titles Lamb of God, Messiah, Son of God, King of Israel, and Son of man.",
+            "verse_refs": ["John 1:1-51"],
+            "evidence_ids": ["john-logos", "john-baptist-lamb", "jesus:historical_context:0"],
+            "synthesis_ids": ["syn_interpretive_questions_989133811698", "syn_historical_context_d8832b65cfa0"],
+            "confidence": "medium",
+            "interpretation_level": "disputed"
+          }
+        ]
+      },
+      {
+        "kind": "language_literary",
+        "title": "The Word and the Prologue",
+        "blocks": [
+          {
+            "id": "block_2",
+            "text": "The supplied language synthesis notes that the Greek syntax of John 1:1 distinguishes the Logos from God while also predicating theos of the Logos. That is why translation and theological construal require attention both to the grammar and to the whole prologue. The same synthesis describes the Logos as present with God in the beginning, active in creation and life, becoming flesh, and dwelling among humans; Jewish Scripture, wisdom, divine-word traditions, and Greek discourse all inform interpretation.",
+            "verse_refs": ["John 1:1-18"],
+            "evidence_ids": ["john-1-1", "john-logos"],
+            "synthesis_ids": ["syn_interpretive_questions_989133811698"],
+            "confidence": "medium",
+            "interpretation_level": "disputed"
+          },
+          {
+            "id": "block_3",
+            "text": "John 1:18 also has an early textual variation between readings such as 'unique God' and 'unique Son.' Either reading belongs within the prologue's claim that Jesus makes God known, so the textual variation should be acknowledged without pretending that it removes the passage's central presentation.",
+            "verse_refs": ["John 1:18"],
+            "evidence_ids": ["john-1-18"],
+            "synthesis_ids": ["syn_interpretive_questions_989133811698"],
+            "confidence": "medium",
+            "interpretation_level": "disputed"
+          }
+        ]
+      },
+      {
+        "kind": "historical_context",
+        "title": "Scripture Reused in a New Setting",
+        "blocks": [
+          {
+            "id": "block_4",
+            "text": "Biblical authors wrote within a tradition of remembering, reusing, and reinterpreting earlier Scripture for new settings and audiences. John 1's opening language and its sequence of witnesses therefore invite readers to hear the chapter as a text that reactivates earlier scriptural and wisdom-shaped language while presenting its claims about Jesus.",
+            "verse_refs": ["John 1:1-18"],
+            "evidence_ids": ["what-is-intertextuality:historical_context:0"],
+            "synthesis_ids": ["syn_historical_context_238133f045bb"],
+            "confidence": "medium",
+            "interpretation_level": "fact"
+          }
+        ]
+      },
+      {
+        "kind": "cultural_context",
+        "title": "The Social World of the Chapter",
+        "blocks": [
+          {
+            "id": "block_5",
+            "text": "Jesus' ministry unfolds in Second Temple Jewish Galilee and Judea under Roman rule, amid synagogue teaching, temple festivals, purity debates, patronage networks, messianic hope, and disputes over Israel's restoration. This context helps locate the chapter's references to Jewish expectation and its presentation of Jesus without reducing the passage to a political or social summary.",
+            "verse_refs": ["John 1:1-18"],
+            "evidence_ids": ["jesus:ancient_near_east_context:0", "jesus:hebraic_worldview:0", "jesus:second_temple_context:0"],
+            "synthesis_ids": ["syn_cultural_context_a38681c77c3b"],
+            "confidence": "medium",
+            "interpretation_level": "fact"
+          },
+          {
+            "id": "block_6",
+            "text": "The chapter's phrase that the Word 'dwelt' among humans is set within supplied sanctuary and presence contexts: ancient temples and mobile shrines provide background for divine dwelling, while biblical sanctuary texts join divine nearness with holiness, mediation, and justice. The comparison is feature-specific; it does not make every ancient shrine identical with the biblical tabernacle.",
+            "verse_refs": ["John 1:14"],
+            "evidence_ids": ["sanctuary-theme:ancient_near_east_context:0", "sanctuary-theme:hebraic_worldview:0", "sanctuary-theme:second_temple_context:0"],
+            "synthesis_ids": ["syn_cultural_context_d0421619488b"],
+            "confidence": "medium",
+            "interpretation_level": "fact"
+          }
+        ]
+      },
+      {
+        "kind": "archaeology_geography",
+        "title": "Places in the Supplied Context",
+        "blocks": [
+          {
+            "id": "block_7",
+            "text": "The supplied place synthesis associates Jesus with Bethlehem, Nazareth, Galilee, Jerusalem, and Judea. These place names provide a geographic frame for the chapter's presentation of Jesus, John the Baptist, and the first disciples, while the packet does not supply a separate archaeological claim about any one location.",
+            "verse_refs": ["John 1:1-18"],
+            "evidence_ids": ["jesus:key_places:0", "jesus:key_places:1", "jesus:key_places:2", "jesus:key_places:3", "jesus:key_places:4"],
+            "synthesis_ids": ["syn_archaeology_geography_4be6ef8616ac"],
+            "confidence": "medium",
+            "interpretation_level": "fact"
+          }
+        ]
+      },
+      {
+        "kind": "why_it_matters",
+        "title": "Why the Chapter's Language Matters",
+        "blocks": [
+          {
+            "id": "block_8",
+            "text": "The chapter's language matters because its claims about the Logos, creation, incarnation, and the Lamb of God are connected rather than isolated labels. The supplied synthesis preserves both the strength of those claims and the interpretive questions around grammar, textual variation, and the range of imagery evoked by 'Lamb of God.'",
+            "verse_refs": ["John 1:1-18", "John 1:29-36"],
+            "evidence_ids": ["john-1-1", "john-1-18", "john-baptist-lamb", "john-logos"],
+            "synthesis_ids": ["syn_why_it_matters_1b0196443067"],
+            "confidence": "medium",
+            "interpretation_level": "disputed"
+          },
+          {
+            "id": "block_9",
+            "text": "John's account of the Word dwelling among humans matters within the supplied sanctuary context because divine nearness is associated with holiness, mediation, and justice, not simply with occupying a sacred location. The synthesis therefore helps readers see why John 1:14 carries more than a claim about physical presence alone.",
+            "verse_refs": ["John 1:14"],
+            "evidence_ids": ["sanctuary-theme:ancient_near_east_context:0", "sanctuary-theme:hebraic_worldview:0", "sanctuary-theme:second_temple_context:0"],
+            "synthesis_ids": ["syn_why_it_matters_bc41427a8b61"],
+            "confidence": "medium",
+            "interpretation_level": "inference"
+          },
+          {
+            "id": "block_10",
+            "text": "Calling Jesus the Lamb of God places the chapter's title within supplied sacrificial contexts: sacrifice is tied to holiness, covenant access, atonement, fellowship, and thanksgiving, and remained a living institution in the Second Temple period. The title's exact combination of sacrificial, Passover, servant, and apocalyptic imagery remains an interpretive question in the synthesis.",
+            "verse_refs": ["John 1:29-36"],
+            "evidence_ids": ["sacrifice-theme:ancient_near_east_context:0", "sacrifice-theme:hebraic_worldview:0", "sacrifice-theme:second_temple_context:0"],
+            "synthesis_ids": ["syn_why_it_matters_e90d6e86753d"],
+            "confidence": "medium",
+            "interpretation_level": "inference"
+          },
+          {
+            "id": "block_11",
+            "text": "John's opening connection between the Word and creation matters because the supplied synthesis traces a relationship between creation, human vocation, the disorder of the fall, and Christ as agent and heir of creation. This frames the prologue's movement from 'in the beginning' to life and light as a canonical creation claim rather than a detached abstract introduction.",
+            "verse_refs": ["John 1:1-5"],
+            "evidence_ids": ["creation-doctrine-framework:timeline:0", "creation-doctrine-framework:timeline:1", "creation-doctrine-framework:timeline:2", "creation-doctrine-framework:timeline:3", "creation-doctrine-framework:timeline:4"],
+            "synthesis_ids": ["syn_why_it_matters_f17ffc7b1894"],
+            "confidence": "medium",
+            "interpretation_level": "inference"
+          }
+        ]
+      }
+    ],
+    "generated_metadata": null
+  }
+}

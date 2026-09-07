@@ -1,0 +1,179 @@
+{
+  "reference": "Genesis 1",
+  "packet_id": "commentary-v1.2-packet:0959834aee3052eb2bcf2b4171ccd7f449b9f94f6354dd9159c9d092bba88e5a",
+  "prompt_version": "1.2",
+  "evidence_hash": "68599786c2a557df692d91a1caad2381bcdaba1dda3c0d9ef1b6b1dd572ee110",
+  "synthesis_hash": "9bf21785c875c82fd9babd3b71c12b0ead1545d1d7e288e4d7aee989556fb5f9",
+  "renderer_label": "Luna Medium",
+  "response_payload": {
+    "reference": "Genesis 1",
+    "book": "Genesis",
+    "chapter": 1,
+    "status": "pending",
+    "sections": [
+      {
+        "kind": "chapter_overview",
+        "title": "Overview",
+        "blocks": [
+          {
+            "id": "block_1",
+            "text": "Genesis 1 presents creation as an ordered movement from darkness and waters toward a world filled with light, land, vegetation, living creatures, and human beings. God repeatedly speaks, separates, names, appoints, blesses, evaluates, and finally declares the whole work very good. Humans receive an image-bearing vocation within this created order.",
+            "verse_refs": ["Genesis 1:1-31"],
+            "evidence_ids": ["creation:ancient_near_east_context:0", "creation:hebraic_worldview:0", "genesis-ordered-worldview-observation", "genesis-ordered-worldview-observation:passage-relevance"],
+            "synthesis_ids": ["syn_cultural_context_6115a83b8448"],
+            "confidence": "medium",
+            "interpretation_level": "fact"
+          }
+        ]
+      },
+      {
+        "kind": "historical_context",
+        "title": "Historical setting",
+        "blocks": [
+          {
+            "id": "block_2",
+            "text": "Within the Bible's larger account, Genesis presents creation as the foundational act that begins biblical history. Creation teaching is later extended across the canon toward redemption and new creation, so this chapter establishes the world and human vocation that later passages revisit.",
+            "verse_refs": ["Genesis 1:1-31"],
+            "evidence_ids": ["creation:historical_context:0", "creation-doctrine-framework:historical_context:0", "creation-doctrine-framework:historical_setting:0"],
+            "synthesis_ids": ["syn_historical_context_c426f6baf9c7", "syn_historical_context_2406c62a8eb0"],
+            "confidence": "medium",
+            "interpretation_level": "fact"
+          }
+        ]
+      },
+      {
+        "kind": "cultural_context",
+        "title": "Humanity as God's image",
+        "blocks": [
+          {
+            "id": "block_3",
+            "text": "In the ancient world, royal imagery could identify kings as images of gods. Genesis extends representative dignity to humanity as a whole: male and female together receive the image-bearing vocation and responsibility described in verses 26–28, rather than that status being reserved for a king alone.",
+            "verse_refs": ["Genesis 1:26-28"],
+            "evidence_ids": ["what-is-the-image-of-god:ancient_near_east_context:0", "image-of-god-theme:ancient_near_east_context:0", "image-of-god-theme:hebraic_worldview:0"],
+            "synthesis_ids": ["syn_cultural_context_055f4e2a34b9", "syn_cultural_context_83a671af55c4"],
+            "confidence": "medium",
+            "interpretation_level": "fact"
+          },
+          {
+            "id": "block_4",
+            "text": "The phrase about God's Spirit moving over the waters is framed by supplied background that treats biblical Spirit language as God's living presence and action, not an impersonal force. Wind and breath are familiar life-images in the ancient world, and Scripture uses them to speak of invisible divine action.",
+            "verse_refs": ["Genesis 1:2"],
+            "evidence_ids": ["spirit-theme:ancient_near_east_context:0", "what-is-the-significance-of-the-holy-spirit:ancient_near_east_context:0", "what-does-ruach-mean:ancient_near_east_context:0"],
+            "synthesis_ids": ["syn_cultural_context_1c46d8c2fa12", "syn_cultural_context_b782908a9e62", "syn_cultural_context_a2f3ab48be21"],
+            "confidence": "medium",
+            "interpretation_level": "fact"
+          }
+        ]
+      },
+      {
+        "kind": "language_literary",
+        "title": "The movement of Genesis",
+        "blocks": [
+          {
+            "id": "block_5",
+            "text": "Genesis begins with universal origins in chapters 1–11 and then moves to the ancestral family narratives in chapters 12–50, ending with Jacob's household in Egypt. Genesis 1 therefore opens a movement that starts with the whole created order before narrowing to the family through which the rest of the book unfolds.",
+            "verse_refs": ["Genesis 1:1-31"],
+            "evidence_ids": ["genesis-literary-movement"],
+            "synthesis_ids": ["syn_language_literary_a914cade6d05"],
+            "confidence": "high",
+            "interpretation_level": "fact"
+          }
+        ]
+      },
+      {
+        "kind": "chronology",
+        "title": "The chapter's sequence",
+        "blocks": [
+          {
+            "id": "block_6",
+            "text": "The chapter's sequence moves through ordered stages: light and darkness, the waters above and below, dry land and vegetation, lights in the heavens, sea and sky creatures, land animals, and humanity. The repeated evaluations culminate in the declaration that everything God made was very good.",
+            "verse_refs": ["Genesis 1:3-31"],
+            "evidence_ids": ["creation-doctrine-framework:timeline:0", "creation-doctrine-framework:timeline:1"],
+            "synthesis_ids": ["syn_chronology_94bd4f44f712"],
+            "confidence": "medium",
+            "interpretation_level": "fact"
+          }
+        ]
+      },
+      {
+        "kind": "interpretive_questions",
+        "title": "Questions for reading",
+        "blocks": [
+          {
+            "id": "block_7",
+            "text": "Genesis 1 can be compared with Mesopotamian accounts that also address cosmic waters, ordering, celestial bodies, divine rule, and human vocation. The supplied comparison identifies shared motifs and marked differences, but shared motifs do not establish a single line of direct borrowing or make the accounts equivalent.",
+            "verse_refs": ["Genesis 1:1-31"],
+            "evidence_ids": ["enuma-elish-cosmic-ordering-comparison", "enuma-elish-cosmic-ordering-comparison:passage-relevance", "mesopotamian-creation-and-flood-comparisons:interpretive_note:0"],
+            "synthesis_ids": ["syn_interpretive_questions_800e37281895"],
+            "confidence": "medium",
+            "interpretation_level": "disputed"
+          },
+          {
+            "id": "block_8",
+            "text": "The chapter's creation language also raises a canonical question: John 1 depicts the Logos with God in the beginning, active in creation and life, and becoming flesh. That later text informs interpretation, but the supplied synthesis presents the relationship as an interpretive question rather than as a claim that Genesis 1 itself narrates John's account.",
+            "verse_refs": ["Genesis 1:1-5"],
+            "evidence_ids": ["john-logos"],
+            "synthesis_ids": ["syn_interpretive_questions_26ced0c35db2"],
+            "confidence": "high",
+            "interpretation_level": "disputed"
+          }
+        ]
+      },
+      {
+        "kind": "things_easy_to_miss",
+        "title": "Details easy to miss",
+        "blocks": [
+          {
+            "id": "block_9",
+            "text": "The chapter does more than describe things appearing. Its repeated pattern shows God speaking, separating, naming, appointing, blessing, evaluating, and resting. This makes the created order appear as an arranged and assessed world, not merely an inventory of objects.",
+            "verse_refs": ["Genesis 1:3-31"],
+            "evidence_ids": ["creation:ancient_near_east_context:0", "creation:hebraic_worldview:0", "genesis-ordered-worldview-observation", "genesis-ordered-worldview-observation:passage-relevance"],
+            "synthesis_ids": ["syn_cultural_context_6115a83b8448"],
+            "confidence": "medium",
+            "interpretation_level": "fact"
+          }
+        ]
+      },
+      {
+        "kind": "why_it_matters",
+        "title": "Why the chapter matters",
+        "blocks": [
+          {
+            "id": "block_10",
+            "text": "The image-of-God language matters because Genesis gives representative dignity and responsibility to humanity as a whole, not only to rulers. The supplied synthesis connects that vocation with relational responsibility, stewardship, and moral accountability.",
+            "verse_refs": ["Genesis 1:26-28"],
+            "evidence_ids": ["image-of-god-theme:ancient_near_east_context:0", "image-of-god-theme:hebraic_worldview:0", "image-of-god-theme:second_temple_context:0"],
+            "synthesis_ids": ["syn_why_it_matters_89890f355be8"],
+            "confidence": "medium",
+            "interpretation_level": "inference"
+          },
+          {
+            "id": "block_11",
+            "text": "The chapter's ordered pattern matters for reading Genesis 1 on its own terms. The supplied synthesis distinguishes the passage's account of one God ordering the world by speech, blessing, vocation, and rest from later comparative material; comparison can clarify shared questions without replacing the passage's own account.",
+            "verse_refs": ["Genesis 1:1-31"],
+            "evidence_ids": ["creation:ancient_near_east_context:0", "creation:hebraic_worldview:0", "genesis-ordered-worldview-observation", "genesis-ordered-worldview-observation:passage-relevance"],
+            "synthesis_ids": ["syn_why_it_matters_02eb8e91a701"],
+            "confidence": "medium",
+            "interpretation_level": "inference"
+          }
+        ]
+      },
+      {
+        "kind": "surrounding_passages",
+        "title": "The larger biblical frame",
+        "blocks": [
+          {
+            "id": "block_12",
+            "text": "The supplied chronology places Genesis 1 within a larger sequence in which creation is declared good, human vocation is given, the fall disorders creation, wisdom and worship confess the Creator, and Christ is revealed as agent and heir of creation. It also identifies a promised new creation, showing how later biblical material returns to the opening chapter's themes.",
+            "verse_refs": ["Genesis 1:1-31"],
+            "evidence_ids": ["creation-doctrine-framework:timeline:0", "creation-doctrine-framework:timeline:1", "creation-doctrine-framework:timeline:2", "creation-doctrine-framework:timeline:3", "creation-doctrine-framework:timeline:4", "creation-doctrine-framework:timeline:5"],
+            "synthesis_ids": ["syn_chronology_94bd4f44f712", "syn_chronology_29e7b9e427fd"],
+            "confidence": "medium",
+            "interpretation_level": "fact"
+          }
+        ]
+      }
+    ],
+    "generated_metadata": null
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "artifact_version": "commentary-v1.2-rejection-v1",
+  "reference": "Ruth 3",
+  "packet_id": null,
+  "raw_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.2-enrichment/canary/responses/raw-rerun-full-final/ruth_003.json",
+  "raw_sha256": "4447173451f632f953979556727efc20d290f7149e53ee2940fc13efcd11dc92",
+  "import_status": "rejected",
+  "structurally_parsed": true,
+  "validation_status": "rejected",
+  "candidate_id": null,
+  "accepted_path": null,
+  "rejection_codes": [
+    "VALIDATION_FAILED",
+    "MALFORMED_SECTION",
+    "UNKNOWN_SYNTHESIS_ID",
+    "SYNTHESIS_ANCESTRY_MISMATCH",
+    "INVENTED_SIGNIFICANCE"
+  ],
+  "validation_errors": [
+    "VALIDATION_FAILED: Commentary v1.2 validation rejected the response",
+    "UNKNOWN_SYNTHESIS_ID: section[0].block[0] cites unsupported synthesis IDs: syn_language_literary_b234cd126faf, syn_historical_context_a39766376e80",
+    "SYNTHESIS_ANCESTRY_MISMATCH: section[0].block[0] cites evidence outside its synthesis ancestry",
+    "UNKNOWN_SYNTHESIS_ID: section[1].block[0] cites unsupported synthesis IDs: syn_historical_context_a39766376e80",
+    "SYNTHESIS_ANCESTRY_MISMATCH: section[1].block[0] cites evidence outside its synthesis ancestry",
+    "UNKNOWN_SYNTHESIS_ID: section[2].block[0] cites unsupported synthesis IDs: syn_cultural_context_b98a489b484d",
+    "SYNTHESIS_ANCESTRY_MISMATCH: section[2].block[0] cites evidence outside its synthesis ancestry",
+    "UNKNOWN_SYNTHESIS_ID: section[3].block[0] cites unsupported synthesis IDs: syn_language_literary_b234cd126faf",
+    "SYNTHESIS_ANCESTRY_MISMATCH: section[3].block[0] cites evidence outside its synthesis ancestry",
+    "UNKNOWN_SYNTHESIS_ID: section[4].block[0] cites unsupported synthesis IDs: syn_interpretive_questions_c2160148bc2f",
+    "SYNTHESIS_ANCESTRY_MISMATCH: section[4].block[0] cites evidence outside its synthesis ancestry",
+    "UNKNOWN_SYNTHESIS_ID: section[4].block[1] cites unsupported synthesis IDs: syn_interpretive_questions_375a07bc3a5c",
+    "SYNTHESIS_ANCESTRY_MISMATCH: section[4].block[1] cites evidence outside its synthesis ancestry",
+    "UNKNOWN_SYNTHESIS_ID: section[5].block[0] cites unsupported synthesis IDs: syn_why_it_matters_039418a88d74",
+    "SYNTHESIS_ANCESTRY_MISMATCH: section[5].block[0] cites evidence outside its synthesis ancestry",
+    "INVENTED_SIGNIFICANCE: section[5].block[0] has no supported why_it_matters relationship unit"
+  ]
+}

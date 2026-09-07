@@ -1,0 +1,92 @@
+{
+  "reference": "Isaiah 6",
+  "packet_id": "commentary-v1.2-packet:bb9d52dc7fadd28af2062b57244f3530be637b309ca343cf637db0091293c3bc",
+  "prompt_version": "1.2",
+  "renderer_label": "Luna Medium",
+  "evidence_hash": "74034cea0c72ccebcad3c86155074bd9c11d5ecdad10ada1fc2f42f0e08fa6fd",
+  "synthesis_hash": "27d3dc396abfb2648cb445eae6ba461d4b346f50fe23f82c001e0617ceb983df",
+  "response_payload": {
+    "reference": "Isaiah 6",
+    "book": "Isaiah",
+    "chapter": 6,
+    "status": "pending",
+    "sections": [
+      {
+        "kind": "chapter_overview",
+        "title": "Overview",
+        "blocks": [
+          {
+            "id": "block_1",
+            "text": "Isaiah describes seeing the Lord enthroned in the temple in the year King Uzziah died. Seraphim proclaim the Lord's holiness, the thresholds shake, and the temple fills with smoke. Isaiah confesses his uncleanness, a seraph touches his lips with a live coal, and his iniquity is declared taken away. He then accepts the Lord's commission to speak to a people who will hear without understanding, and the vision ends with judgment, desolation, and the image of a remaining holy seed.",
+            "verse_refs": ["Isaiah 6:1-13"],
+            "evidence_ids": ["temple-theme:hebraic_worldview:0", "divine-holiness:historical_context:0"],
+            "synthesis_ids": ["syn_cultural_context_5a967c71eb02", "syn_historical_context_ca751c664347"],
+            "confidence": "medium",
+            "interpretation_level": "fact"
+          }
+        ]
+      },
+      {
+        "kind": "cultural_context",
+        "title": "Temple, holiness, and prophetic speech",
+        "blocks": [
+          {
+            "id": "block_2",
+            "text": "The temple setting places the vision within a cultural world where sacred space represents divine presence, purity, mediation, and pilgrimage. The supplied evidence distinguishes Israel's temple theme by its focus on holiness, covenant, and atonement. Prophets could be known as advisers or seers, but biblical prophets are distinct in speaking with the authority of the LORD; Isaiah's vision therefore joins temple imagery to a commissioned message.",
+            "verse_refs": ["Isaiah 6:1-8"],
+            "evidence_ids": ["temple-theme:hebraic_worldview:0", "what-is-a-prophet:ancient_near_east_context:0"],
+            "synthesis_ids": ["syn_cultural_context_5a967c71eb02", "syn_cultural_context_18a04bbd05a1"],
+            "confidence": "medium",
+            "interpretation_level": "fact"
+          }
+        ]
+      },
+      {
+        "kind": "historical_context",
+        "title": "Prophetic crisis and communal life",
+        "blocks": [
+          {
+            "id": "block_3",
+            "text": "The supplied historical synthesis places prophets in Israel's monarchy, temple, and exile settings as covenant messengers and watchmen. It also describes prophetic speech as addressing real crises involving covenant breach and coming judgment or restoration. In Isaiah 6, the commission's announcement of hearing without understanding and cities becoming waste therefore belongs to the chapter's prophetic pattern of confronting a people with judgment.",
+            "verse_refs": ["Isaiah 6:8-13"],
+            "evidence_ids": ["what-is-a-prophet:historical_context:0", "how-should-i-read-prophecy:historical_context:0"],
+            "synthesis_ids": ["syn_historical_context_6df738d42dbb", "syn_historical_context_823847eb86f8"],
+            "confidence": "medium",
+            "interpretation_level": "fact"
+          }
+        ]
+      },
+      {
+        "kind": "interpretive_questions",
+        "title": "Voices and transmission",
+        "blocks": [
+          {
+            "id": "block_4",
+            "text": "Isaiah contains divine speech, the prophet's first-person report, the seraphim's speech, and the Lord's commission. The supplied evidence therefore cautions that speaker identity must be established passage by passage. It also notes that the Great Isaiah Scroll is broadly aligned with the Masoretic tradition while containing orthographic and substantive differences, alongside other Qumran witnesses that show active transmission and interpretation.",
+            "verse_refs": ["Isaiah 6:1-13"],
+            "evidence_ids": ["isaiah-many-voices", "isaiah-qumran-witnesses", "isaiah-superscription-prophet"],
+            "synthesis_ids": ["syn_interpretive_questions_02db938fc465"],
+            "confidence": "high",
+            "interpretation_level": "disputed"
+          }
+        ]
+      },
+      {
+        "kind": "why_it_matters",
+        "title": "Why the temple setting matters",
+        "blocks": [
+          {
+            "id": "block_5",
+            "text": "The temple setting helps explain why holiness, presence, purity, and mediation frame Isaiah's call. The supplied relationship connects temple imagery to Israel's covenant-centered understanding of holy space, so the coal touching Isaiah's lips and the subsequent commission belong together within the scene's movement from encounter to authorized speech.",
+            "verse_refs": ["Isaiah 6:1-8"],
+            "evidence_ids": ["temple-theme:ancient_near_east_context:0", "temple-theme:hebraic_worldview:0", "temple-theme:second_temple_context:0"],
+            "synthesis_ids": ["syn_why_it_matters_b4eb2729d7a9"],
+            "confidence": "medium",
+            "interpretation_level": "inference"
+          }
+        ]
+      }
+    ],
+    "generated_metadata": null
+  }
+}

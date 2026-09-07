@@ -1,0 +1,18 @@
+{
+  "artifact_version": "commentary-v1.2-rejection-v1",
+  "reference": "Numbers 3",
+  "packet_id": null,
+  "raw_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.2-enrichment/canary/responses/raw/numbers_003.json",
+  "raw_sha256": "a116155de223ed75d6c4b948aa82a356f2b94b49d5678a990c89aaa5b956c6fc",
+  "import_status": "rejected",
+  "structurally_parsed": true,
+  "validation_status": "rejected",
+  "candidate_id": null,
+  "accepted_path": null,
+  "rejection_codes": [
+    "VALIDATION_FAILED"
+  ],
+  "validation_errors": [
+    "VALIDATION_FAILED: Commentary v1.2 validation rejected the response"
+  ]
+}

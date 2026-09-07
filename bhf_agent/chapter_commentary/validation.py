@@ -18,6 +18,7 @@ from bhf_agent import bible
 
 from .models import (
     COMMENTARY_SCHEMA_VERSION,
+    DATA_GAP_FALLBACK_TEXT,
     SUPPORTED_SECTION_KINDS,
     VERSE_OPTIONAL_SECTION_KINDS,
     ChapterCommentary,
@@ -36,6 +37,15 @@ _DATE_RE = re.compile(
     re.IGNORECASE,
 )
 _CONFIDENCE_RANK = {"low": 0, "medium": 1, "high": 2}
+_IMPLEMENTATION_LANGUAGE = (
+    "supplied synthesis",
+    "evidence bundle",
+    "evidence item",
+    "synthesis unit",
+    "metadata",
+    "provided evidence",
+    "input context",
+)
 _VERSE_REF_RE = re.compile(
     r"^(?P<book>.+?)\s+(?P<chapter>\d+):(?P<start>\d+)"
     r"(?:-(?:(?P<end_chapter>\d+):)?(?P<end>\d+))?$"
@@ -70,6 +80,10 @@ class CommentaryRejectionCode(str, Enum):
     UNKNOWN_SYNTHESIS_ID = "UNKNOWN_SYNTHESIS_ID"
     SYNTHESIS_ANCESTRY_MISMATCH = "SYNTHESIS_ANCESTRY_MISMATCH"
     SYNTHESIS_HASH_MISMATCH = "SYNTHESIS_HASH_MISMATCH"
+    OUT_OF_CHAPTER_SYNTHESIS_REFERENCE = "OUT_OF_CHAPTER_SYNTHESIS_REFERENCE"
+    DATA_GAP_FALLBACK_REQUIRED = "DATA_GAP_FALLBACK_REQUIRED"
+    DATA_GAP_RENDERER_PROSE = "DATA_GAP_RENDERER_PROSE"
+    IMPLEMENTATION_LANGUAGE = "IMPLEMENTATION_LANGUAGE"
 
 
 @dataclass(frozen=True)
@@ -136,7 +150,10 @@ def validate_chapter_commentary(
 
     _check_unknown_fields(
         value,
-        {"reference", "book", "chapter", "status", "sections", "generated_metadata", "evidence_availability"},
+        {
+            "reference", "book", "chapter", "status", "sections",
+            "generated_metadata", "evidence_availability", "data_gap_fallback",
+        },
         "root",
         errors,
     )
@@ -198,6 +215,53 @@ def validate_chapter_commentary(
     if not isinstance(sections_raw, list):
         errors.append("root.sections must be a list")
         sections_raw = []
+
+    is_true_data_gap = (
+        availability == EvidenceAvailability.DATA_GAP.value
+        and not bundle.evidence_items
+        and (synthesis is None or not synthesis.synthesis_units)
+    )
+    if is_true_data_gap:
+        if value.get("data_gap_fallback") is not True:
+            error = (
+                f"{CommentaryRejectionCode.DATA_GAP_FALLBACK_REQUIRED.value}: "
+                "true DATA_GAP chapters require the application-owned fallback"
+            )
+            return CommentaryValidationResult(False, None, tuple(errors) + (error,))
+        fallback_errors = _validate_data_gap_fallback(sections_raw)
+        if fallback_errors:
+            return CommentaryValidationResult(False, None, tuple(errors) + tuple(fallback_errors))
+        fallback_block = CommentaryBlock(
+            id="data_gap_notice",
+            text=DATA_GAP_FALLBACK_TEXT,
+            verse_refs=[],
+            evidence_ids=[],
+            synthesis_ids=[],
+            confidence="high",
+            interpretation_level="fact",
+        )
+        fallback_section = CommentarySection(
+            kind="chapter_overview",
+            title="Context availability",
+            blocks=[fallback_block],
+        )
+        commentary = ChapterCommentary(
+            reference=reference,
+            book=book,
+            chapter=chapter_num,
+            status=status,
+            sections=[fallback_section],
+            generated_metadata=generated_metadata,
+            evidence_availability=availability,
+            data_gap_fallback=True,
+        )
+        return CommentaryValidationResult(True, commentary, tuple(errors), ())
+    if availability == EvidenceAvailability.DATA_GAP.value and value.get("data_gap_fallback"):
+        error = (
+            f"{CommentaryRejectionCode.DATA_GAP_FALLBACK_REQUIRED.value}: "
+            "the fallback is valid only when evidence and synthesis are both empty"
+        )
+        return CommentaryValidationResult(False, None, tuple(errors) + (error,))
 
     section_results: list[CommentarySectionValidationResult] = []
     sections: list[CommentarySection] = []
@@ -508,6 +572,16 @@ def _validate_block(
         )
         reason_codes.append(CommentaryRejectionCode.BLOCK_LENGTH_EXCEEDED.value)
 
+    implementation_terms = [
+        phrase for phrase in _IMPLEMENTATION_LANGUAGE if phrase in text.casefold()
+    ]
+    if implementation_terms:
+        errors.append(
+            f"{CommentaryRejectionCode.IMPLEMENTATION_LANGUAGE.value}: "
+            f"{label} exposes internal renderer vocabulary: {', '.join(implementation_terms)}"
+        )
+        reason_codes.append(CommentaryRejectionCode.IMPLEMENTATION_LANGUAGE.value)
+
     if confidence not in {"low", "medium", "high"}:
         errors.append(f"{CommentaryRejectionCode.INVALID_CONFIDENCE.value}: {label}.confidence is invalid")
         reason_codes.append(CommentaryRejectionCode.INVALID_CONFIDENCE.value)
@@ -578,6 +652,16 @@ def _validate_block(
                 f"{label} cites evidence outside its synthesis ancestry"
             )
             reason_codes.append(CommentaryRejectionCode.SYNTHESIS_ANCESTRY_MISMATCH.value)
+        if section_kind != "surrounding_passages" and any(
+            unit.passage_scope == "SURROUNDING_PASSAGE" for unit in supplied_units
+        ):
+            errors.append(
+                f"{CommentaryRejectionCode.OUT_OF_CHAPTER_SYNTHESIS_REFERENCE.value}: "
+                f"{label} uses surrounding-passage synthesis in an ordinary section"
+            )
+            reason_codes.append(
+                CommentaryRejectionCode.OUT_OF_CHAPTER_SYNTHESIS_REFERENCE.value
+            )
         if section_kind == "why_it_matters" and not any(
             unit.kind == "why_it_matters" and unit.metadata.get("safe_for_significance")
             for unit in supplied_units
@@ -631,6 +715,7 @@ def _validate_block(
         expected_book=expected_book,
         expected_chapter=expected_chapter,
         optional=section_kind in VERSE_OPTIONAL_SECTION_KINDS,
+        allow_surrounding=section_kind == "surrounding_passages",
     )
     errors.extend(verse_errors[0])
     reason_codes.extend(verse_errors[1])
@@ -693,6 +778,55 @@ def _string_list(value: Any, label: str, errors: list[str]) -> list[str]:
         else:
             errors.append(f"{label} contains non-string item")
     return result
+
+
+def _validate_data_gap_fallback(sections: list[Any]) -> list[str]:
+    """Validate the exact application-owned DATA_GAP notice shape."""
+
+    if len(sections) != 1 or not isinstance(sections[0], Mapping):
+        return [
+            f"{CommentaryRejectionCode.DATA_GAP_FALLBACK_REQUIRED.value}: "
+            "DATA_GAP fallback must contain exactly one application-owned section"
+        ]
+    section = sections[0]
+    if set(section) != {"kind", "title", "blocks"}:
+        return [
+            f"{CommentaryRejectionCode.DATA_GAP_FALLBACK_REQUIRED.value}: "
+            "DATA_GAP fallback section shape is not application-owned"
+        ]
+    blocks = section.get("blocks")
+    if (
+        section.get("kind") != "chapter_overview"
+        or section.get("title") != "Context availability"
+        or not isinstance(blocks, list)
+        or len(blocks) != 1
+        or not isinstance(blocks[0], Mapping)
+    ):
+        return [
+            f"{CommentaryRejectionCode.DATA_GAP_FALLBACK_REQUIRED.value}: "
+            "DATA_GAP fallback section is not canonical"
+        ]
+    block = blocks[0]
+    expected = {
+        "id", "text", "verse_refs", "evidence_ids", "synthesis_ids",
+        "confidence", "interpretation_level",
+    }
+    if set(block) != expected or any(
+        (
+            block.get("id") != "data_gap_notice",
+            block.get("text") != DATA_GAP_FALLBACK_TEXT,
+            block.get("verse_refs") != [],
+            block.get("evidence_ids") != [],
+            block.get("synthesis_ids") != [],
+            block.get("confidence") != "high",
+            block.get("interpretation_level") != "fact",
+        )
+    ):
+        return [
+            f"{CommentaryRejectionCode.DATA_GAP_FALLBACK_REQUIRED.value}: "
+            "DATA_GAP fallback block is not canonical"
+        ]
+    return []
 
 
 def _check_unknown_fields(
@@ -771,6 +905,7 @@ def _validate_verse_refs(
     expected_book: str,
     expected_chapter: int,
     optional: bool,
+    allow_surrounding: bool = False,
 ) -> tuple[list[str], list[str]]:
     errors: list[str] = []
     codes: list[str] = []
@@ -803,14 +938,26 @@ def _validate_verse_refs(
         except (bible.BibleError, KeyError, TypeError, ValueError):
             canonical_ref_book = ""
             max_verse = 0
-        if (
+        outside_current = (
             canonical_ref_book != expected_book
             or ref_chapter != expected_chapter
             or end_chapter != expected_chapter
-            or start_verse <= 0
-            or end_verse < start_verse
-            or end_verse > max_verse
-        ):
+        )
+        if allow_surrounding:
+            invalid = (
+                not canonical_ref_book
+                or start_verse <= 0
+                or end_verse < start_verse
+                or end_verse > max_verse
+            )
+        else:
+            invalid = (
+                outside_current
+                or start_verse <= 0
+                or end_verse < start_verse
+                or end_verse > max_verse
+            )
+        if invalid:
             errors.append(
                 f"{CommentaryRejectionCode.OUT_OF_CHAPTER_VERSE_REFERENCE.value}: "
                 f"{label} verse reference is outside {expected_book} {expected_chapter}: {verse_ref!r}"

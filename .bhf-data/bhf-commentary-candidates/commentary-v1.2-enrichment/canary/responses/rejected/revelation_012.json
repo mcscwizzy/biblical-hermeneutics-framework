@@ -1,0 +1,33 @@
+{
+  "artifact_version": "commentary-v1.2-rejection-v1",
+  "reference": "Revelation 12",
+  "packet_id": null,
+  "raw_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.2-enrichment/canary/responses/raw-rerun-full-final/revelation_012.json",
+  "raw_sha256": "ab4527a7d0e61e6bc8e04bc6e950678b12e3ade57eb69b086368b1859284a876",
+  "import_status": "rejected",
+  "structurally_parsed": true,
+  "validation_status": "rejected",
+  "candidate_id": null,
+  "accepted_path": null,
+  "rejection_codes": [
+    "VALIDATION_FAILED",
+    "MALFORMED_SECTION",
+    "UNKNOWN_SYNTHESIS_ID",
+    "SYNTHESIS_ANCESTRY_MISMATCH",
+    "INVENTED_SIGNIFICANCE"
+  ],
+  "validation_errors": [
+    "VALIDATION_FAILED: Commentary v1.2 validation rejected the response",
+    "UNKNOWN_SYNTHESIS_ID: section[0].block[0] cites unsupported synthesis IDs: syn_historical_context_70739f354d27",
+    "SYNTHESIS_ANCESTRY_MISMATCH: section[0].block[0] cites evidence outside its synthesis ancestry",
+    "UNKNOWN_SYNTHESIS_ID: section[1].block[0] cites unsupported synthesis IDs: syn_historical_context_70739f354d27",
+    "SYNTHESIS_ANCESTRY_MISMATCH: section[1].block[0] cites evidence outside its synthesis ancestry",
+    "UNKNOWN_SYNTHESIS_ID: section[2].block[0] cites unsupported synthesis IDs: syn_interpretive_questions_dfe21697ee29",
+    "SYNTHESIS_ANCESTRY_MISMATCH: section[2].block[0] cites evidence outside its synthesis ancestry",
+    "UNKNOWN_SYNTHESIS_ID: section[2].block[1] cites unsupported synthesis IDs: syn_interpretive_questions_69cb2f39a324",
+    "SYNTHESIS_ANCESTRY_MISMATCH: section[2].block[1] cites evidence outside its synthesis ancestry",
+    "UNKNOWN_SYNTHESIS_ID: section[3].block[0] cites unsupported synthesis IDs: syn_why_it_matters_4e642a14ee39",
+    "SYNTHESIS_ANCESTRY_MISMATCH: section[3].block[0] cites evidence outside its synthesis ancestry",
+    "INVENTED_SIGNIFICANCE: section[3].block[0] has no supported why_it_matters relationship unit"
+  ]
+}

@@ -1,0 +1,87 @@
+{
+  "reference": "1 Samuel 28",
+  "packet_id": "commentary-v1.2-packet:cf97382f5aae86385021e0011c7da0d9046e4ddb9aa58273721f1d239ce24e15",
+  "prompt_version": "1.2",
+  "evidence_hash": "d8962f9a3a73a02877b6da380436ede477591469ac29de954787b749a2ec0e69",
+  "synthesis_hash": "35acf232a07be6ad3937330f9a01668b6b329f40359c9e5057b40c548214a005",
+  "renderer_label": "Luna Medium",
+  "response_payload": {
+    "reference": "1 Samuel 28",
+    "book": "1 Samuel",
+    "chapter": 28,
+    "status": "pending",
+    "sections": [
+      {
+        "kind": "interpretive_questions",
+        "title": "Interpretive Questions",
+        "blocks": [
+          {
+            "id": "1_samuel_028_block_1",
+            "text": "At Endor the narrator calls the figure Samuel, yet interpretations differ over whether God exceptionally permits Samuel to appear, the medium produces an apparition, or the scene uses another literary-theological explanation.",
+            "evidence_ids": [
+              "1-samuel:interpretive_note:3"
+            ],
+            "synthesis_ids": [
+              "syn_interpretive_questions_1d28b4b83428"
+            ],
+            "confidence": "low",
+            "interpretation_level": "disputed",
+            "verse_refs": [
+              "1 Samuel 28:3-25"
+            ]
+          }
+        ]
+      },
+      {
+        "kind": "surrounding_passages",
+        "title": "Surrounding Passages",
+        "blocks": [
+          {
+            "id": "1_samuel_028_block_2",
+            "text": "First Samuel moves from Eli's failing priestly house through Samuel's prophetic leadership and Saul's rejected kingship to David's anointing, rise, exile, and Saul's death.",
+            "evidence_ids": [
+              "first-samuel-literary-movement"
+            ],
+            "synthesis_ids": [
+              "syn_surrounding_passages_ddfb4fb718f7"
+            ],
+            "confidence": "high",
+            "interpretation_level": "fact",
+            "verse_refs": [
+              "1 Samuel 10:1-27",
+              "1 Samuel 11:1-15",
+              "1 Samuel 12:1-25",
+              "1 Samuel 13:1-23",
+              "1 Samuel 14:1-52",
+              "1 Samuel 15:1-35",
+              "1 Samuel 16:1-23",
+              "1 Samuel 17:1-58",
+              "1 Samuel 18:1-30",
+              "1 Samuel 19:1-24",
+              "1 Samuel 20:1-42",
+              "1 Samuel 21:1-15",
+              "1 Samuel 22:1-23",
+              "1 Samuel 23:1-29",
+              "1 Samuel 24:1-22",
+              "1 Samuel 25:1-44",
+              "1 Samuel 26:1-25",
+              "1 Samuel 27:1-12",
+              "1 Samuel 29:1-11",
+              "1 Samuel 2:1-36",
+              "1 Samuel 30:1-31",
+              "1 Samuel 31:1-13",
+              "1 Samuel 3:1-21",
+              "1 Samuel 4:1-22",
+              "1 Samuel 5:1-12",
+              "1 Samuel 6:1-21",
+              "1 Samuel 7:1-17",
+              "1 Samuel 8:1-22",
+              "1 Samuel 9:1-27"
+            ]
+          }
+        ]
+      }
+    ],
+    "generated_metadata": null
+  }
+}

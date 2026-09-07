@@ -1,22 +1,22 @@
 {
   "artifact_version": "commentary-v1.2-canary-gate-v1",
-  "status": "BLOCKED_BEFORE_PROSE",
+  "status": "QUALITY_GATE_FAILED",
   "decision": "NOT_READY",
   "bulk_generation_authorized": false,
   "gate_checks": {
-    "all_required_renderer_responses_present": false,
-    "all_required_responses_structurally_parse": false,
-    "all_responses_validated": false,
-    "no_provenance_or_hash_mismatch": false,
+    "all_required_renderer_responses_present": true,
+    "all_required_responses_structurally_parse": true,
+    "all_responses_validated": true,
+    "no_provenance_or_hash_mismatch": true,
     "no_cross_chapter_or_unsupported_ancestry": true,
     "no_confidence_or_dispute_regression": true,
     "no_protected_artifact_changes": true,
     "available_synthesis_gaps_meaningfully_enriched": false,
-    "data_gap_controls_conservative": false,
-    "rich_enough_controls_not_regressed": false,
-    "genealogy_list_controls_concise": false,
-    "boilerplate_materially_reduced": false,
-    "no_validation_safety_regression": false
+    "data_gap_controls_conservative": true,
+    "rich_enough_controls_not_regressed": true,
+    "genealogy_list_controls_concise": true,
+    "boilerplate_materially_reduced": true,
+    "no_validation_safety_regression": true
   },
   "human_review_required": false
 }

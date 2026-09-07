@@ -1,0 +1,45 @@
+{
+  "reference": "1 Chronicles 8",
+  "packet_id": "commentary-v1.2-packet:af19ae6f2a3dd91ec194b1c5de69dd25d689330180967dea224f42640ad29381",
+  "prompt_version": "1.2",
+  "evidence_hash": "88e9ee6044db61d4315477ad887c5a5bbd16499ba177fddd6a63bfd0f529f36f",
+  "synthesis_hash": "6298453ce11850e769560fe12d67328e8eacd3eb142b849db13eca36e74915ed",
+  "renderer_label": "Luna Medium",
+  "response_payload": {
+    "reference": "1 Chronicles 8",
+    "book": "1 Chronicles",
+    "chapter": 8,
+    "status": "pending",
+    "sections": [
+      {
+        "kind": "surrounding_passages",
+        "title": "Surrounding Passages",
+        "blocks": [
+          {
+            "id": "1_chronicles_008_block_1",
+            "text": "The genealogies are selective literary maps of kinship, land, office, and restored identity rather than exhaustive modern biological pedigrees; gaps, parallel lines, variant names, and telescoping require case-by-case review.",
+            "evidence_ids": [
+              "1-chronicles:interpretive_note:0"
+            ],
+            "synthesis_ids": [
+              "syn_surrounding_passages_af977c32e1d5"
+            ],
+            "confidence": "high",
+            "interpretation_level": "disputed",
+            "verse_refs": [
+              "1 Chronicles 1:1-54",
+              "1 Chronicles 2:1-55",
+              "1 Chronicles 3:1-24",
+              "1 Chronicles 4:1-43",
+              "1 Chronicles 5:1-26",
+              "1 Chronicles 6:1-81",
+              "1 Chronicles 7:1-40",
+              "1 Chronicles 9:1-44"
+            ]
+          }
+        ]
+      }
+    ],
+    "generated_metadata": null
+  }
+}

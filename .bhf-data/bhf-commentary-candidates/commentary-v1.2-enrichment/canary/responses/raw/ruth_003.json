@@ -1,0 +1,116 @@
+{
+  "reference": "Ruth 3",
+  "packet_id": "commentary-v1.2-packet:891203b98c16ecd2b51d90c05a98ab159fbc96bbc0e8858ffd223643a7b46c63",
+  "prompt_version": "1.2",
+  "evidence_hash": "46f678b6923b5313329b2af0af6af7bb53a305bdb1452e72b0c7c34f47dbd2de",
+  "synthesis_hash": "48c82ee3e4b916097d246428fa1a842b88280f099a306bfd64f32840ecb8e917",
+  "renderer_label": "Luna Medium",
+  "response_payload": {
+    "reference": "Ruth 3",
+    "book": "Ruth",
+    "chapter": 3,
+    "status": "pending",
+    "sections": [
+      {
+        "kind": "chapter_overview",
+        "title": "Overview",
+        "blocks": [
+          {
+            "id": "block_1",
+            "text": "Naomi seeks a secure future for Ruth and directs her to approach Boaz at the threshing floor. Ruth asks Boaz to act as a near kinsman, and Boaz responds with both a promise and a limitation: he will act, but only after the nearer kinsman has been given the opportunity. The chapter therefore moves the story from private proposal to an imminent public resolution.",
+            "verse_refs": ["Ruth 3:1-18"],
+            "evidence_ids": ["ruth-literary-movement", "boaz:historical_context:0"],
+            "synthesis_ids": ["syn_language_literary_b234cd126faf", "syn_historical_context_a39766376e80"],
+            "confidence": "medium",
+            "interpretation_level": "fact"
+          }
+        ]
+      },
+      {
+        "kind": "historical_context",
+        "title": "The Story's Social Setting",
+        "blocks": [
+          {
+            "id": "block_2",
+            "text": "The supplied historical orientation places Boaz's story in the judges-era world of harvest labor, kinship obligations, land continuity, and public negotiation at the town gate. Those features help explain why the threshing-floor conversation does not settle the matter by itself: Boaz's private willingness still has to become an acknowledged kinship transaction.",
+            "verse_refs": ["Ruth 3:1-18"],
+            "evidence_ids": ["boaz:historical_context:0"],
+            "synthesis_ids": ["syn_historical_context_a39766376e80"],
+            "confidence": "medium",
+            "interpretation_level": "fact"
+          }
+        ]
+      },
+      {
+        "kind": "cultural_context",
+        "title": "Kinship and Household Obligation",
+        "blocks": [
+          {
+            "id": "block_3",
+            "text": "Boaz belongs to a social world in which kinship obligations shape household economy and the continuation of a family line. Ruth's appeal to him as a near kinsman is thus presented within a larger network of responsibilities, rather than as a purely private romantic request. The chapter's language of acting as a kinsman points toward that obligation even though the exact procedure is resolved later.",
+            "verse_refs": ["Ruth 3:9-13"],
+            "evidence_ids": ["boaz:ancient_near_east_context:0"],
+            "synthesis_ids": ["syn_cultural_context_b98a489b484d"],
+            "confidence": "medium",
+            "interpretation_level": "fact"
+          }
+        ]
+      },
+      {
+        "kind": "language_literary",
+        "title": "The Shape of the Story",
+        "blocks": [
+          {
+            "id": "block_4",
+            "text": "Ruth's four-chapter movement runs from famine, bereavement, and Naomi's emptiness toward harvest, kinship redemption, birth, communal blessing, and genealogy. Chapter 3 is the turning point within that movement: action at the threshing floor prepares the public decision that will make the later restoration possible.",
+            "verse_refs": ["Ruth 3:1-18"],
+            "evidence_ids": ["ruth-literary-movement"],
+            "synthesis_ids": ["syn_language_literary_b234cd126faf"],
+            "confidence": "high",
+            "interpretation_level": "fact"
+          }
+        ]
+      },
+      {
+        "kind": "interpretive_questions",
+        "title": "Questions Raised by the Threshing Floor",
+        "blocks": [
+          {
+            "id": "block_5",
+            "text": "The scene contains risk and suggestive language, but the supplied synthesis says the narrator presents Ruth's request as a redemption appeal and Boaz praises her character. The text does not establish that a sexual encounter was completed, so interpretation should distinguish the scene's tension from a claim the passage itself does not support.",
+            "verse_refs": ["Ruth 3:7-14"],
+            "evidence_ids": ["ruth-providence-through-action", "ruth:interpretive_note:2"],
+            "synthesis_ids": ["syn_interpretive_questions_c2160148bc2f"],
+            "confidence": "medium",
+            "interpretation_level": "disputed"
+          },
+          {
+            "id": "block_6",
+            "text": "Ruth is a Moabite, and the wider canonical reading must hold Ruth's welcome alongside the Moabite assembly exclusion cited in Nehemiah 13. This raises a genuine interpretive question about how those texts relate; it should not be flattened into a universal ethnic ban or treated as though the tension were absent.",
+            "verse_refs": ["Ruth 3:1-18"],
+            "evidence_ids": ["nehemiah:interpretive_note:7"],
+            "synthesis_ids": ["syn_interpretive_questions_375a07bc3a5c"],
+            "confidence": "high",
+            "interpretation_level": "disputed"
+          }
+        ]
+      },
+      {
+        "kind": "why_it_matters",
+        "title": "Why This Chapter Matters",
+        "blocks": [
+          {
+            "id": "block_7",
+            "text": "This chapter shows how the story's providential movement is carried through concrete human action: Naomi plans, Ruth acts, Boaz responds, and the unresolved legal relationship is sent toward public completion. Reading the threshing-floor request as a redemption appeal keeps the chapter's risk and ambiguity visible while following the synthesis's central point that the story advances through the actions of its people.",
+            "verse_refs": ["Ruth 3:1-18"],
+            "evidence_ids": ["ruth-providence-through-action", "ruth:interpretive_note:2"],
+            "synthesis_ids": ["syn_why_it_matters_039418a88d74"],
+            "confidence": "medium",
+            "interpretation_level": "disputed"
+          }
+        ]
+      }
+    ],
+    "generated_metadata": null
+  }
+}

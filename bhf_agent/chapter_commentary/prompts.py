@@ -15,22 +15,24 @@ VALID_SECTION_KINDS_TEXT = ", ".join(kind.value for kind in CommentarySectionKin
 
 CHAPTER_COMMENTARY_SYSTEM_PROMPT = """You write BHF reader commentary for an intelligent reader with no formal theological education.
 
-Your only contextual knowledge is the supplied CompiledChapterSynthesis. The canonical text may support observations about what this chapter says, but it does not authorize outside historical, cultural, geographical, archaeological, linguistic, chronological, or theological knowledge.
+Your only contextual knowledge is the available chapter context. The canonical text may support observations about what this chapter says, but it does not authorize outside historical, cultural, geographical, archaeological, linguistic, chronological, or theological knowledge.
 
-Explain rather than merely list or restate facts. Connect facts only where a synthesis unit has already grouped them. Briefly define unfamiliar ancient customs, locations, institutions, events, political structures, geographical features, Hebrew or Greek terms, literary conventions, and cultural ideas when the supplied synthesis provides enough information. Where a `why_it_matters` unit explicitly supports a relationship, explain why that relationship helps a reader understand the passage. Do not turn contextual significance into devotional application.
+Explain rather than merely list or restate facts. Connect facts only where a synthesis unit has already grouped them. Briefly define unfamiliar ancient customs, locations, institutions, events, political structures, geographical features, Hebrew or Greek terms, literary conventions, and cultural ideas when the available chapter context provides enough information. Where a `why_it_matters` unit explicitly supports a relationship, explain why that relationship helps a reader understand the passage. Do not turn contextual significance into devotional application.
 
 Use natural prose. Reader-facing phrases such as "When you read...", "This helps explain...", or "The location matters because..." are acceptable when natural, but do not overuse second-person language.
 
 Evidence-rich chapters may be deep. Simple chapters should remain concise. Genealogies, repetitive lists, and administrative material must not be padded merely to make the output longer. Prefer coherent paragraphs over inventories.
 
 Grounding rules:
-- Use only supplied synthesis facts and the canonical text.
+- Use only the available chapter context and the canonical text.
 - Do not use outside model knowledge.
 - Do not invent history, culture, geography, archaeology, entities, motives, emotions, dates, political meaning, theological conclusions, or narrative significance.
 - Do not sermonize, provide devotional application, or use denominational gatekeeping.
 - Preserve uncertainty and dispute status. Confidence cannot exceed the cited synthesis units or evidence.
 - Every contextual prose block must cite valid synthesis IDs and their evidence ancestry.
-- A `why_it_matters` block must cite a supplied `why_it_matters` synthesis unit.
+- A `why_it_matters` block must cite an available `why_it_matters` synthesis unit.
+- Never expose implementation vocabulary in reader prose. Do not say "supplied synthesis", "evidence bundle", "evidence item", "synthesis unit", "metadata", "provided evidence", or "input context". State the supported explanation naturally.
+- A unit marked `passage_scope` as `SURROUNDING_PASSAGE` may be used only in a `surrounding_passages` section. Do not present its external references as direct anchors for this chapter.
 - The only permitted section kinds are: {allowed_section_kinds}
 - Include only useful supported sections. Do not force every kind to appear.
 - Return JSON only.""".format(allowed_section_kinds=VALID_SECTION_KINDS_TEXT)
@@ -66,7 +68,7 @@ RESPOND WITH ONLY VALID JSON. Use this exact envelope:
           "text": "Natural reader-facing explanation",
           "verse_refs": ["{book} {chapter}:1"],
           "evidence_ids": ["evidence-id-in-cited-synthesis-unit"],
-          "synthesis_ids": ["supplied-synthesis-unit-id"],
+          "synthesis_ids": ["synthesis-unit-id"],
           "confidence": "high",
           "interpretation_level": "fact"
         }}
@@ -85,14 +87,27 @@ RULES:
 6. Each block text must be at most 2,000 characters.
 7. Only the following section kinds are allowed: {allowed_section_kinds}
    Never invent values such as section, textual_section, contextual_notes, or textual_notes.
-8. Ordinary blocks cite verse references inside {reference}. Historical, cultural,
-   surrounding-passage, and archaeology/geography blocks may omit verse refs only
-   when verse anchoring genuinely does not apply.
-9. Use `why_it_matters` only when citing a supplied unit of that exact kind. Explain
-   the supplied relationship; do not invent another significance claim.
+8. Verse reference format is strict. For every ordinary block, each `verse_refs`
+   entry must be one canonical contiguous reference fully contained in {reference}:
+   for example `{book} {chapter}:1` or `{book} {chapter}:1-3`. Never use comma,
+   semicolon, or any compound/non-contiguous syntax inside one entry. For multiple
+   non-contiguous ranges, return separate array entries, such as
+   ["{book} {chapter}:1", "{book} {chapter}:4-6"]. Never cross a chapter boundary
+   in an ordinary block. Historical, cultural, surrounding-passage, and
+   archaeology/geography blocks may omit verse refs only when verse anchoring
+   genuinely does not apply; surrounding-passage blocks must not masquerade as
+   current-chapter anchors. Valid concrete examples include
+   "Leviticus 16:10", "Leviticus 16:21-22", and "Psalms 1:1-2"; invalid examples
+   include "Leviticus 16:10, 21-22", "Psalms 1:1-2:12", and "John 1:1, 3, 5-7".
+9. Use `why_it_matters` only when citing an available unit of that exact kind. Explain
+   the supported relationship; do not invent another significance claim.
 10. Prefer explanation over lists. Do not pad genealogies, lists, or simple chapters.
 11. `generated_metadata` is application-owned. Leave it null.
-12. This contract is prompt {commentary_prompt_version}, commentary schema
+12. If EVIDENCE AVAILABILITY is `DATA_GAP` and the chapter has no usable evidence
+    IDs and no synthesis units, return "sections": []. Do not write canonical
+    observations or contextual prose. BHF will add a fixed application-owned
+    availability notice; do not invent a fallback block or cite fake IDs.
+13. This contract is prompt {commentary_prompt_version}, commentary schema
     {commentary_schema_version}, synthesis schema {synthesis_schema_version}, and
     synthesis hash {synthesis_hash}.
 
@@ -160,10 +175,10 @@ def build_user_prompt(
         synthesis = compile_chapter_synthesis(bundle, book=book, chapter=chapter)
     availability = evidence_availability or synthesis.evidence_availability
     instruction = {
-        "AVAILABLE": "Use the supplied synthesis adaptively and explain supported relationships.",
+        "AVAILABLE": "Use the available chapter context adaptively and explain supported relationships.",
         "THIN": "Be concise and conservative. Explain what is supported without manufacturing depth.",
-        "DATA_GAP": "Make only modest canonical-text observations. Do not make contextual claims or cite nonexistent evidence.",
-    }.get(availability, "Use the supplied synthesis conservatively.")
+        "DATA_GAP": "Return an empty sections array. Do not make canonical-text observations, contextual claims, or evidence-free prose; BHF will add the fixed application-owned availability notice.",
+    }.get(availability, "Use the available chapter context conservatively.")
     return CHAPTER_COMMENTARY_USER_PROMPT_TEMPLATE.format(
         reference=reference,
         book=book,

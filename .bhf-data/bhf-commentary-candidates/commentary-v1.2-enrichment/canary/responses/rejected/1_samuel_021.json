@@ -1,0 +1,25 @@
+{
+  "artifact_version": "commentary-v1.2-rejection-v1",
+  "reference": "1 Samuel 21",
+  "packet_id": null,
+  "raw_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.2-enrichment/canary/responses/raw-rerun-full-final/1_samuel_021.json",
+  "raw_sha256": "445a390efbe1dd40e5df5d8cbfe44e971142449c1ee214235181a3a5d872e866",
+  "import_status": "rejected",
+  "structurally_parsed": true,
+  "validation_status": "rejected",
+  "candidate_id": null,
+  "accepted_path": null,
+  "rejection_codes": [
+    "VALIDATION_FAILED",
+    "MALFORMED_SECTION",
+    "UNKNOWN_SYNTHESIS_ID",
+    "SYNTHESIS_ANCESTRY_MISMATCH"
+  ],
+  "validation_errors": [
+    "VALIDATION_FAILED: Commentary v1.2 validation rejected the response",
+    "UNKNOWN_SYNTHESIS_ID: section[0].block[0] cites unsupported synthesis IDs: syn_language_literary_cafcd87ddbbe",
+    "SYNTHESIS_ANCESTRY_MISMATCH: section[0].block[0] cites evidence outside its synthesis ancestry",
+    "UNKNOWN_SYNTHESIS_ID: section[1].block[0] cites unsupported synthesis IDs: syn_language_literary_cafcd87ddbbe",
+    "SYNTHESIS_ANCESTRY_MISMATCH: section[1].block[0] cites evidence outside its synthesis ancestry"
+  ]
+}

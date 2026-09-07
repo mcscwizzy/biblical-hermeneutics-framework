@@ -1,0 +1,148 @@
+{
+  "reference": "Ruth 3",
+  "packet_id": "commentary-v1.2-packet:5ef6ec98d023952ae5a9c821c888f38afbcc451716fe7619b0942bb290da0615",
+  "prompt_version": "1.2",
+  "evidence_hash": "46f678b6923b5313329b2af0af6af7bb53a305bdb1452e72b0c7c34f47dbd2de",
+  "synthesis_hash": "f9aabf5213636acb6e7d3e6fd2120d9d18a97cd2fd5ef67eb53d16cd4d7d27f5",
+  "renderer_label": "Luna Medium",
+  "response_payload": {
+    "reference": "Ruth 3",
+    "book": "Ruth",
+    "chapter": 3,
+    "status": "pending",
+    "sections": [
+      {
+        "kind": "cultural_context",
+        "title": "Cultural Context",
+        "blocks": [
+          {
+            "id": "ruth_003_block_1",
+            "text": "Boaz belongs to a social world of kinship obligations, household economy, temple or synagogue life, royal courts, village elders, and imperial administration as the relevant passages require.",
+            "evidence_ids": [
+              "boaz:ancient_near_east_context:0"
+            ],
+            "synthesis_ids": [
+              "syn_cultural_context_db7a11ec65a8"
+            ],
+            "confidence": "medium",
+            "interpretation_level": "fact",
+            "verse_refs": [
+              "Ruth 3:1-18"
+            ]
+          }
+        ]
+      },
+      {
+        "kind": "historical_context",
+        "title": "Historical Context",
+        "blocks": [
+          {
+            "id": "ruth_003_block_2",
+            "text": "Boaz's story is set in the judges-era world of harvest labor, kinship obligations, land continuity, and public negotiation at the town gate.",
+            "evidence_ids": [
+              "boaz:historical_context:0"
+            ],
+            "synthesis_ids": [
+              "syn_historical_context_5cf730c29c63"
+            ],
+            "confidence": "medium",
+            "interpretation_level": "fact",
+            "verse_refs": [
+              "Ruth 3:1-18"
+            ]
+          }
+        ]
+      },
+      {
+        "kind": "interpretive_questions",
+        "title": "Interpretive Questions",
+        "blocks": [
+          {
+            "id": "ruth_003_block_3",
+            "text": "Ruth explicitly attributes food and conception to the LORD while most of the plot advances through Naomi's, Ruth's, Boaz's, workers', elders', and women's actions. The threshing-floor scene contains risk and suggestive language, but the narrator presents Ruth's request as a redemption appeal and Boaz praises her character; claims of a completed sexual encounter exceed the text.",
+            "evidence_ids": [
+              "ruth-providence-through-action",
+              "ruth:interpretive_note:2"
+            ],
+            "synthesis_ids": [
+              "syn_interpretive_questions_4913e116774e"
+            ],
+            "confidence": "medium",
+            "interpretation_level": "disputed",
+            "verse_refs": [
+              "Ruth 3:1-18"
+            ]
+          }
+        ]
+      },
+      {
+        "kind": "surrounding_passages",
+        "title": "Surrounding Passages",
+        "blocks": [
+          {
+            "id": "ruth_003_block_4",
+            "text": "Ruth moves from famine, bereavement, and Naomi's emptiness to harvest, kinship redemption, birth, communal blessing, and genealogy.",
+            "evidence_ids": [
+              "ruth-literary-movement"
+            ],
+            "synthesis_ids": [
+              "syn_surrounding_passages_2e64b7a2ea17"
+            ],
+            "confidence": "high",
+            "interpretation_level": "fact",
+            "verse_refs": [
+              "Ruth 2:1-23",
+              "Ruth 4:1-22"
+            ]
+          }
+        ]
+      },
+      {
+        "kind": "surrounding_passages",
+        "title": "Surrounding Passages",
+        "blocks": [
+          {
+            "id": "ruth_003_block_5",
+            "text": "The Ammonite and Moabite assembly exclusion in Nehemiah 13 cites Deuteronomy 23 and is applied amid Tobiah's temple access. Canonical reading must also reckon with Ruth the Moabite and texts welcoming faithful foreigners rather than turning the episode into a universal ethnic ban.",
+            "evidence_ids": [
+              "nehemiah:interpretive_note:7"
+            ],
+            "synthesis_ids": [
+              "syn_surrounding_passages_ab8620b75fa2"
+            ],
+            "confidence": "high",
+            "interpretation_level": "disputed",
+            "verse_refs": [
+              "Ruth 1:1-22",
+              "Ruth 2:1-23",
+              "Ruth 4:1-22"
+            ]
+          }
+        ]
+      },
+      {
+        "kind": "why_it_matters",
+        "title": "Why It Matters",
+        "blocks": [
+          {
+            "id": "ruth_003_block_6",
+            "text": "Ruth explicitly attributes food and conception to the LORD while most of the plot advances through Naomi's, Ruth's, Boaz's, workers', elders', and women's actions. The threshing-floor scene contains risk and suggestive language, but the narrator presents Ruth's request as a redemption appeal and Boaz praises her character; claims of a completed sexual encounter exceed the text.",
+            "evidence_ids": [
+              "ruth-providence-through-action",
+              "ruth:interpretive_note:2"
+            ],
+            "synthesis_ids": [
+              "syn_why_it_matters_0be17d539003"
+            ],
+            "confidence": "medium",
+            "interpretation_level": "disputed",
+            "verse_refs": [
+              "Ruth 3:1-18"
+            ]
+          }
+        ]
+      }
+    ],
+    "generated_metadata": null
+  }
+}

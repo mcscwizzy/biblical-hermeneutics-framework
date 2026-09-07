@@ -1,0 +1,77 @@
+{
+  "reference": "1 Samuel 28",
+  "packet_id": "commentary-v1.2-packet:531c4a396476fb60d99f0eca3e1ca0a0178d90cf4f3a2ed5307f09a1c2f10330",
+  "prompt_version": "1.2",
+  "evidence_hash": "d8962f9a3a73a02877b6da380436ede477591469ac29de954787b749a2ec0e69",
+  "synthesis_hash": "86bcccde5d6558166a81c46055fc0d43a3d276f87e8285d753e893a0847a3643",
+  "renderer_label": "Luna Medium",
+  "response_payload": {
+    "reference": "1 Samuel 28",
+    "book": "1 Samuel",
+    "chapter": 28,
+    "status": "pending",
+    "sections": [
+      {
+        "kind": "chapter_overview",
+        "title": "Overview",
+        "blocks": [
+          {
+            "id": "block_1",
+            "text": "The chapter places Saul in a crisis: the Philistines gather for war, Saul receives no answer from the LORD through the listed means, and he seeks a woman at En-dor who has a familiar spirit. The narrator calls the figure who appears Samuel, but the supplied evidence preserves disagreement about how that appearance should be understood.",
+            "verse_refs": ["1 Samuel 28:3-25"],
+            "evidence_ids": ["1-samuel:interpretive_note:3"],
+            "synthesis_ids": ["syn_interpretive_questions_08a6a26fb253"],
+            "confidence": "low",
+            "interpretation_level": "disputed"
+          }
+        ]
+      },
+      {
+        "kind": "language_literary",
+        "title": "Where the chapter falls in 1 Samuel",
+        "blocks": [
+          {
+            "id": "block_2",
+            "text": "First Samuel's larger movement runs from Eli's failing priestly house through Samuel's prophetic leadership and Saul's rejected kingship to David's anointing, rise, exile, and Saul's death. Chapter 28 belongs to the closing movement toward Saul's death, while the immediate scene focuses on his fear, silence from God, and desperate turn to forbidden counsel.",
+            "verse_refs": ["1 Samuel 28:1-25"],
+            "evidence_ids": ["first-samuel-literary-movement"],
+            "synthesis_ids": ["syn_language_literary_cafcd87ddbbe"],
+            "confidence": "high",
+            "interpretation_level": "fact"
+          }
+        ]
+      },
+      {
+        "kind": "interpretive_questions",
+        "title": "The appearance at En-dor",
+        "blocks": [
+          {
+            "id": "block_3",
+            "text": "At En-dor the narrator calls the figure Samuel. The supplied synthesis identifies three interpretive possibilities: God exceptionally permits Samuel to appear, the medium produces an apparition, or the scene is explained through another literary-theological account. Because the evidence does not resolve the dispute, the chapter should be described without presenting one option as certain.",
+            "verse_refs": ["1 Samuel 28:3-25"],
+            "evidence_ids": ["1-samuel:interpretive_note:3"],
+            "synthesis_ids": ["syn_interpretive_questions_08a6a26fb253"],
+            "confidence": "low",
+            "interpretation_level": "disputed"
+          }
+        ]
+      },
+      {
+        "kind": "things_easy_to_miss",
+        "title": "The chapter's tension",
+        "blocks": [
+          {
+            "id": "block_4",
+            "text": "The chapter holds together two facts that create its central tension: Saul had removed practitioners of familiar spirits and wizards from the land, yet when the LORD did not answer him, he sought one of them himself. The supplied synthesis supports the interpretive question surrounding the encounter, but it does not remove the narrative contrast between Saul's earlier action and his present request.",
+            "verse_refs": ["1 Samuel 28:3-10"],
+            "evidence_ids": ["1-samuel:interpretive_note:3"],
+            "synthesis_ids": ["syn_interpretive_questions_08a6a26fb253"],
+            "confidence": "low",
+            "interpretation_level": "disputed"
+          }
+        ]
+      }
+    ],
+    "generated_metadata": null
+  }
+}

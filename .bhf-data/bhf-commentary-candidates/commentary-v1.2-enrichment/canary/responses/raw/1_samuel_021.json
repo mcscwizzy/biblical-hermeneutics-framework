@@ -1,0 +1,47 @@
+{
+  "reference": "1 Samuel 21",
+  "packet_id": "commentary-v1.2-packet:640014fec629f3a37dda00b2307fa483597fd89eef6bd96249662b8ebaeaabdd",
+  "prompt_version": "1.2",
+  "renderer_label": "Luna Medium",
+  "evidence_hash": "79c360812b8778c4c20d63faf5bf320e0926407eaf21eee2fe34001c803b47b7",
+  "synthesis_hash": "e296b88a547efd512390201d0d50e6c5497eebb2d37b051df91f81c4c0c15abd",
+  "response_payload": {
+    "reference": "1 Samuel 21",
+    "book": "1 Samuel",
+    "chapter": 21,
+    "status": "pending",
+    "sections": [
+      {
+        "kind": "chapter_overview",
+        "title": "Overview",
+        "blocks": [
+          {
+            "id": "block_1",
+            "text": "David comes alone to Nob and tells Ahimelech that he is on a secret mission from the king. He asks for bread and receives the holy bread after discussing the condition of the men with him. He then takes Goliath's sword, which is kept behind the ephod. Fleeing Saul, David goes to Achish king of Gath; recognized by Achish's servants, he becomes afraid and pretends to be insane. The chapter presents David moving from Saul's court into exile and immediate danger.",
+            "verse_refs": ["1 Samuel 21:1-15"],
+            "evidence_ids": ["first-samuel-literary-movement"],
+            "synthesis_ids": ["syn_language_literary_cafcd87ddbbe"],
+            "confidence": "high",
+            "interpretation_level": "fact"
+          }
+        ]
+      },
+      {
+        "kind": "language_literary",
+        "title": "David's movement into exile",
+        "blocks": [
+          {
+            "id": "block_2",
+            "text": "Within the movement of First Samuel, this chapter belongs to the section in which David's anointing and rise are followed by exile, while Saul's rejected kingship continues toward its end. The journey from Nob to Gath makes that movement visible in the narrative: David leaves the Israelite royal setting, seeks help from a priest, and then crosses into the territory of a king whose servants remember his reputation.",
+            "verse_refs": ["1 Samuel 21:1-15"],
+            "evidence_ids": ["first-samuel-literary-movement"],
+            "synthesis_ids": ["syn_language_literary_cafcd87ddbbe"],
+            "confidence": "high",
+            "interpretation_level": "fact"
+          }
+        ]
+      }
+    ],
+    "generated_metadata": null
+  }
+}

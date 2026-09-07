@@ -4,117 +4,13 @@
   "chapter": 6,
   "evidence_hash": "74034cea0c72ccebcad3c86155074bd9c11d5ecdad10ada1fc2f42f0e08fa6fd",
   "evidence_bundle_version": "1.1",
-  "synthesis_schema_version": "1.0",
-  "synthesis_compiler_version": "1.0",
-  "synthesis_hash": "27d3dc396abfb2648cb445eae6ba461d4b346f50fe23f82c001e0617ceb983df",
+  "synthesis_schema_version": "1.1",
+  "synthesis_compiler_version": "1.1",
+  "synthesis_hash": "8ddb8a5f9bf90cbc3926b61c6a112b0623e59504d068a40bba577c02f942f435",
   "evidence_availability": "AVAILABLE",
   "synthesis_units": [
     {
-      "id": "syn_cultural_context_18a04bbd05a1",
-      "kind": "cultural_context",
-      "facts": [
-        "Kings often had advisers and seers, but biblical prophets are distinct because they speak with the authority of the LORD."
-      ],
-      "verse_refs": [
-        "Isaiah 6:1-13"
-      ],
-      "evidence_ids": [
-        "what-is-a-prophet:ancient_near_east_context:0"
-      ],
-      "entity_ids": [],
-      "related_unit_ids": [],
-      "confidence": "medium",
-      "interpretation_level": "fact",
-      "metadata": {
-        "relationship_basis": "single_evidence_item",
-        "source_categories": [
-          "culture"
-        ],
-        "support_count": 1,
-        "explicit_significance": false
-      }
-    },
-    {
-      "id": "syn_cultural_context_194178ab0f0f",
-      "kind": "cultural_context",
-      "facts": [
-        "Ancient background for Holiness Theme includes covenant practice, worship, kingship, wisdom instruction, and prophetic critique; the entry ties that world to Leviticus 19:1-2, Isaiah 6:1-8, divine-holiness, and leviticus without letting comparison replace the biblical witness."
-      ],
-      "verse_refs": [
-        "Isaiah 6:1-8"
-      ],
-      "evidence_ids": [
-        "holiness-theme:ancient_near_east_context:0"
-      ],
-      "entity_ids": [],
-      "related_unit_ids": [],
-      "confidence": "medium",
-      "interpretation_level": "fact",
-      "metadata": {
-        "relationship_basis": "single_evidence_item",
-        "source_categories": [
-          "culture"
-        ],
-        "support_count": 1,
-        "explicit_significance": false
-      }
-    },
-    {
-      "id": "syn_cultural_context_5a967c71eb02",
-      "kind": "cultural_context",
-      "facts": [
-        "Temples in the ancient Near East often marked divine presence and royal order; Israel’s temple theme centers holiness, covenant, and atonement instead.",
-        "Temple represents holy space, presence, purity, mediation, and pilgrimage.",
-        "The rebuilt temple, priesthood, and festival calendar made temple theology central to Second Temple life."
-      ],
-      "verse_refs": [
-        "Isaiah 6:1-8"
-      ],
-      "evidence_ids": [
-        "temple-theme:ancient_near_east_context:0",
-        "temple-theme:hebraic_worldview:0",
-        "temple-theme:second_temple_context:0"
-      ],
-      "entity_ids": [],
-      "related_unit_ids": [],
-      "confidence": "medium",
-      "interpretation_level": "fact",
-      "metadata": {
-        "relationship_basis": "shared_parent_object",
-        "source_categories": [
-          "culture"
-        ],
-        "support_count": 3,
-        "explicit_significance": false
-      }
-    },
-    {
-      "id": "syn_cultural_context_6a18d58ab00a",
-      "kind": "cultural_context",
-      "facts": [
-        "Prophetic oracles use treaty, courtroom, and royal imagery familiar in the ancient world, but they do so to speak for the LORD."
-      ],
-      "verse_refs": [
-        "Isaiah 6:1-13"
-      ],
-      "evidence_ids": [
-        "how-should-i-read-prophecy:ancient_near_east_context:0"
-      ],
-      "entity_ids": [],
-      "related_unit_ids": [],
-      "confidence": "medium",
-      "interpretation_level": "fact",
-      "metadata": {
-        "relationship_basis": "single_evidence_item",
-        "source_categories": [
-          "culture"
-        ],
-        "support_count": 1,
-        "explicit_significance": false
-      }
-    },
-    {
-      "id": "syn_cultural_context_ac94dec7adc5",
+      "id": "syn_cultural_context_0904b4521f0d",
       "kind": "cultural_context",
       "facts": [
         "Where surrounding cultures mixed sacred and ordinary space, Scripture insists that God's holiness orders both worship and life."
@@ -129,17 +25,116 @@
       "related_unit_ids": [],
       "confidence": "medium",
       "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Isaiah 6:1-7"
+      ],
       "metadata": {
         "relationship_basis": "single_evidence_item",
         "source_categories": [
           "culture"
         ],
         "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
         "explicit_significance": false
       }
     },
     {
-      "id": "syn_cultural_context_d88006b48aea",
+      "id": "syn_cultural_context_18a24ee1a437",
+      "kind": "cultural_context",
+      "facts": [
+        "Temples in the ancient Near East often marked divine presence and royal order; Israel’s temple theme centers holiness, covenant, and atonement instead.",
+        "Temple represents holy space, presence, purity, mediation, and pilgrimage.",
+        "The rebuilt temple, priesthood, and festival calendar made temple theology central to Second Temple life."
+      ],
+      "verse_refs": [
+        "Isaiah 6:1-8"
+      ],
+      "evidence_ids": [
+        "temple-theme:ancient_near_east_context:0",
+        "temple-theme:hebraic_worldview:0",
+        "temple-theme:second_temple_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Isaiah 6:1-8"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 3,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_cultural_context_372b8feb1dfb",
+      "kind": "cultural_context",
+      "facts": [
+        "Ancient background for Holiness Theme includes covenant practice, worship, kingship, wisdom instruction, and prophetic critique; the entry ties that world to Leviticus 19:1-2, Isaiah 6:1-8, divine-holiness, and leviticus without letting comparison replace the biblical witness."
+      ],
+      "verse_refs": [
+        "Isaiah 6:1-8"
+      ],
+      "evidence_ids": [
+        "holiness-theme:ancient_near_east_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Isaiah 6:1-8"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_cultural_context_56a6e48a7311",
+      "kind": "cultural_context",
+      "facts": [
+        "Prophetic oracles use treaty, courtroom, and royal imagery familiar in the ancient world, but they do so to speak for the LORD."
+      ],
+      "verse_refs": [
+        "Isaiah 6:1-13"
+      ],
+      "evidence_ids": [
+        "how-should-i-read-prophecy:ancient_near_east_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Isaiah 6:1-13"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_cultural_context_9d0e0fec19b0",
       "kind": "cultural_context",
       "facts": [
         "Ancient background for Divine Holiness includes covenant life, temple worship, royal ideology, wisdom teaching, and early church confession; the entry ties that world to Leviticus 19:1-2, Isaiah 6:1-8, holiness-theme, and leviticus without letting comparison replace the biblical witness."
@@ -154,92 +149,52 @@
       "related_unit_ids": [],
       "confidence": "medium",
       "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Isaiah 6:1-8"
+      ],
       "metadata": {
         "relationship_basis": "single_evidence_item",
         "source_categories": [
           "culture"
         ],
         "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
         "explicit_significance": false
       }
     },
     {
-      "id": "syn_historical_context_165d3ee64b33",
-      "kind": "historical_context",
+      "id": "syn_cultural_context_be11be71bee6",
+      "kind": "cultural_context",
       "facts": [
-        "Holiness Theme is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness."
-      ],
-      "verse_refs": [
-        "Isaiah 6:1-8"
-      ],
-      "evidence_ids": [
-        "holiness-theme:historical_context:0"
-      ],
-      "entity_ids": [],
-      "related_unit_ids": [],
-      "confidence": "medium",
-      "interpretation_level": "fact",
-      "metadata": {
-        "relationship_basis": "single_evidence_item",
-        "source_categories": [
-          "history"
-        ],
-        "support_count": 1,
-        "explicit_significance": false
-      }
-    },
-    {
-      "id": "syn_historical_context_6df738d42dbb",
-      "kind": "historical_context",
-      "facts": [
-        "Prophets appear in Israel's monarchy, temple, and exile settings as covenant messengers and watchmen."
+        "Kings often had advisers and seers, but biblical prophets are distinct because they speak with the authority of the LORD."
       ],
       "verse_refs": [
         "Isaiah 6:1-13"
       ],
       "evidence_ids": [
-        "what-is-a-prophet:historical_context:0"
+        "what-is-a-prophet:ancient_near_east_context:0"
       ],
       "entity_ids": [],
       "related_unit_ids": [],
       "confidence": "medium",
       "interpretation_level": "fact",
-      "metadata": {
-        "relationship_basis": "single_evidence_item",
-        "source_categories": [
-          "history"
-        ],
-        "support_count": 1,
-        "explicit_significance": false
-      }
-    },
-    {
-      "id": "syn_historical_context_823847eb86f8",
-      "kind": "historical_context",
-      "facts": [
-        "The prophets address real crises in Israel, Judah, and the nations, speaking to covenant breach and coming judgment or restoration."
-      ],
-      "verse_refs": [
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
         "Isaiah 6:1-13"
       ],
-      "evidence_ids": [
-        "how-should-i-read-prophecy:historical_context:0"
-      ],
-      "entity_ids": [],
-      "related_unit_ids": [],
-      "confidence": "medium",
-      "interpretation_level": "fact",
       "metadata": {
         "relationship_basis": "single_evidence_item",
         "source_categories": [
-          "history"
+          "culture"
         ],
         "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
         "explicit_significance": false
       }
     },
     {
-      "id": "syn_historical_context_ad36969c2ac9",
+      "id": "syn_historical_context_0dcf60532d72",
       "kind": "historical_context",
       "facts": [
         "Isaiah joins YHWH's holiness to justice and righteousness and repeatedly rejects worship that coexists with bloodshed, exploitation, or refusal to repair communal wrong."
@@ -254,67 +209,22 @@
       "related_unit_ids": [],
       "confidence": "high",
       "interpretation_level": "fact",
-      "metadata": {
-        "relationship_basis": "single_evidence_item",
-        "source_categories": [
-          "history"
-        ],
-        "support_count": 1,
-        "explicit_significance": false
-      }
-    },
-    {
-      "id": "syn_historical_context_b2b9dd1029ff",
-      "kind": "historical_context",
-      "facts": [
-        "Holiness structures tabernacle and temple worship, but it also reaches into Israel's daily ethics and communal life."
-      ],
-      "verse_refs": [
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
         "Isaiah 6:1-7"
       ],
-      "evidence_ids": [
-        "what-is-holiness:historical_context:0"
-      ],
-      "entity_ids": [],
-      "related_unit_ids": [],
-      "confidence": "medium",
-      "interpretation_level": "fact",
       "metadata": {
         "relationship_basis": "single_evidence_item",
         "source_categories": [
           "history"
         ],
         "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
         "explicit_significance": false
       }
     },
     {
-      "id": "syn_historical_context_c320ef9326db",
-      "kind": "historical_context",
-      "facts": [
-        "Temple imagery develops from tabernacle instruction through Solomon’s temple, exile, return, and the New Testament’s re-reading of sacred space."
-      ],
-      "verse_refs": [
-        "Isaiah 6:1-8"
-      ],
-      "evidence_ids": [
-        "temple-theme:historical_context:0"
-      ],
-      "entity_ids": [],
-      "related_unit_ids": [],
-      "confidence": "medium",
-      "interpretation_level": "fact",
-      "metadata": {
-        "relationship_basis": "single_evidence_item",
-        "source_categories": [
-          "history"
-        ],
-        "support_count": 1,
-        "explicit_significance": false
-      }
-    },
-    {
-      "id": "syn_historical_context_ca751c664347",
+      "id": "syn_historical_context_0ef36ed49372",
       "kind": "historical_context",
       "facts": [
         "Divine Holiness is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness."
@@ -329,48 +239,330 @@
       "related_unit_ids": [],
       "confidence": "medium",
       "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Isaiah 6:1-8"
+      ],
       "metadata": {
         "relationship_basis": "single_evidence_item",
         "source_categories": [
           "history"
         ],
         "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
         "explicit_significance": false
       }
     },
     {
-      "id": "syn_interpretive_questions_02db938fc465",
+      "id": "syn_historical_context_27873231f071",
+      "kind": "historical_context",
+      "facts": [
+        "Prophets appear in Israel's monarchy, temple, and exile settings as covenant messengers and watchmen."
+      ],
+      "verse_refs": [
+        "Isaiah 6:1-13"
+      ],
+      "evidence_ids": [
+        "what-is-a-prophet:historical_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Isaiah 6:1-13"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_340de9417bfb",
+      "kind": "historical_context",
+      "facts": [
+        "Temple imagery develops from tabernacle instruction through Solomon’s temple, exile, return, and the New Testament’s re-reading of sacred space."
+      ],
+      "verse_refs": [
+        "Isaiah 6:1-8"
+      ],
+      "evidence_ids": [
+        "temple-theme:historical_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Isaiah 6:1-8"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_3fd0c901a525",
+      "kind": "historical_context",
+      "facts": [
+        "The prophets address real crises in Israel, Judah, and the nations, speaking to covenant breach and coming judgment or restoration."
+      ],
+      "verse_refs": [
+        "Isaiah 6:1-13"
+      ],
+      "evidence_ids": [
+        "how-should-i-read-prophecy:historical_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Isaiah 6:1-13"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_8b169abfbcdc",
+      "kind": "historical_context",
+      "facts": [
+        "Holiness Theme is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness."
+      ],
+      "verse_refs": [
+        "Isaiah 6:1-8"
+      ],
+      "evidence_ids": [
+        "holiness-theme:historical_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Isaiah 6:1-8"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_a363729e95d6",
+      "kind": "historical_context",
+      "facts": [
+        "Holiness structures tabernacle and temple worship, but it also reaches into Israel's daily ethics and communal life."
+      ],
+      "verse_refs": [
+        "Isaiah 6:1-7"
+      ],
+      "evidence_ids": [
+        "what-is-holiness:historical_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Isaiah 6:1-7"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_interpretive_questions_e101a7acc0ab",
       "kind": "interpretive_questions",
       "facts": [
         "Isaiah contains the named prophet, divine speech, sign children, royal and national addressees, servants, heralds, Zion and Babylon as personified women, communal voices, and third-person prose narration; speaker identity must be established passage by passage.",
-        "The Great Isaiah Scroll is an almost complete sixty-six-chapter witness broadly aligned with the Masoretic tradition but containing thousands of orthographic and substantive differences; other Qumran Isaiah manuscripts and pesharim show active transmission and interpretation.",
         "Isaiah 1:1 presents the book as the vision of Isaiah son of Amoz concerning Judah and Jerusalem during four Judahite reigns, while other passages portray Isaiah in first person, third-person reports, sign actions, and royal narratives."
       ],
       "verse_refs": [
-        "Isaiah 1:1-66:24",
         "Isaiah 6:1-13"
       ],
       "evidence_ids": [
         "isaiah-many-voices",
-        "isaiah-qumran-witnesses",
         "isaiah-superscription-prophet"
       ],
       "entity_ids": [],
       "related_unit_ids": [],
       "confidence": "high",
       "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Isaiah 6:1-13"
+      ],
       "metadata": {
         "relationship_basis": "shared_parent_object",
         "source_categories": [
           "culture",
           "history"
         ],
-        "support_count": 3,
+        "support_count": 2,
+        "passage_scope": "CURRENT_CHAPTER",
         "explicit_significance": false
       }
     },
     {
-      "id": "syn_why_it_matters_b4eb2729d7a9",
+      "id": "syn_surrounding_passages_2c038f8dad0b",
+      "kind": "surrounding_passages",
+      "facts": [
+        "The Great Isaiah Scroll is an almost complete sixty-six-chapter witness broadly aligned with the Masoretic tradition but containing thousands of orthographic and substantive differences; other Qumran Isaiah manuscripts and pesharim show active transmission and interpretation."
+      ],
+      "verse_refs": [
+        "Isaiah 10:1-34",
+        "Isaiah 11:1-16",
+        "Isaiah 12:1-6",
+        "Isaiah 13:1-22",
+        "Isaiah 14:1-32",
+        "Isaiah 15:1-9",
+        "Isaiah 16:1-14",
+        "Isaiah 17:1-14",
+        "Isaiah 18:1-7",
+        "Isaiah 19:1-25",
+        "Isaiah 1:1-31",
+        "Isaiah 20:1-6",
+        "Isaiah 21:1-17",
+        "Isaiah 22:1-25",
+        "Isaiah 23:1-18",
+        "Isaiah 24:1-23",
+        "Isaiah 25:1-12",
+        "Isaiah 26:1-21",
+        "Isaiah 27:1-13",
+        "Isaiah 28:1-29",
+        "Isaiah 29:1-24",
+        "Isaiah 2:1-22",
+        "Isaiah 30:1-33",
+        "Isaiah 31:1-9",
+        "Isaiah 32:1-20",
+        "Isaiah 33:1-24",
+        "Isaiah 34:1-17",
+        "Isaiah 35:1-10",
+        "Isaiah 36:1-22",
+        "Isaiah 37:1-38",
+        "Isaiah 38:1-22",
+        "Isaiah 39:1-8",
+        "Isaiah 3:1-26",
+        "Isaiah 40:1-31",
+        "Isaiah 41:1-29",
+        "Isaiah 42:1-25",
+        "Isaiah 43:1-28",
+        "Isaiah 44:1-28",
+        "Isaiah 45:1-25",
+        "Isaiah 46:1-13",
+        "Isaiah 47:1-15",
+        "Isaiah 48:1-22",
+        "Isaiah 49:1-26",
+        "Isaiah 4:1-6",
+        "Isaiah 50:1-11",
+        "Isaiah 51:1-23",
+        "Isaiah 52:1-15",
+        "Isaiah 53:1-12",
+        "Isaiah 54:1-17",
+        "Isaiah 55:1-13",
+        "Isaiah 56:1-12",
+        "Isaiah 57:1-21",
+        "Isaiah 58:1-14",
+        "Isaiah 59:1-21",
+        "Isaiah 5:1-30",
+        "Isaiah 60:1-22",
+        "Isaiah 61:1-11",
+        "Isaiah 62:1-12",
+        "Isaiah 63:1-19",
+        "Isaiah 64:1-12",
+        "Isaiah 65:1-25",
+        "Isaiah 66:1-24",
+        "Isaiah 7:1-25",
+        "Isaiah 8:1-22",
+        "Isaiah 9:1-21"
+      ],
+      "evidence_ids": [
+        "isaiah-qumran-witnesses"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "high",
+      "interpretation_level": "disputed",
+      "passage_scope": "SURROUNDING_PASSAGE",
+      "source_anchors": [
+        "Isaiah 1:1-66:24"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "SURROUNDING_PASSAGE",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_why_it_matters_5cdc9602927b",
+      "kind": "why_it_matters",
+      "facts": [
+        "Isaiah contains the named prophet, divine speech, sign children, royal and national addressees, servants, heralds, Zion and Babylon as personified women, communal voices, and third-person prose narration; speaker identity must be established passage by passage.",
+        "Isaiah 1:1 presents the book as the vision of Isaiah son of Amoz concerning Judah and Jerusalem during four Judahite reigns, while other passages portray Isaiah in first person, third-person reports, sign actions, and royal narratives."
+      ],
+      "verse_refs": [
+        "Isaiah 6:1-13"
+      ],
+      "evidence_ids": [
+        "isaiah-many-voices",
+        "isaiah-superscription-prophet"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [
+        "syn_interpretive_questions_e101a7acc0ab"
+      ],
+      "confidence": "high",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Isaiah 6:1-13"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "support_count": 2,
+        "explicit_significance": false,
+        "safe_for_significance": true
+      }
+    },
+    {
+      "id": "syn_why_it_matters_c06c9d1ae2b7",
       "kind": "why_it_matters",
       "facts": [
         "Temples in the ancient Near East often marked divine presence and royal order; Israel’s temple theme centers holiness, covenant, and atonement instead.",
@@ -387,40 +579,14 @@
       ],
       "entity_ids": [],
       "related_unit_ids": [
-        "syn_cultural_context_5a967c71eb02"
+        "syn_cultural_context_18a24ee1a437"
       ],
       "confidence": "medium",
       "interpretation_level": "inference",
-      "metadata": {
-        "relationship_basis": "shared_parent_object",
-        "support_count": 3,
-        "explicit_significance": false,
-        "safe_for_significance": true
-      }
-    },
-    {
-      "id": "syn_why_it_matters_ef907d9ee2f9",
-      "kind": "why_it_matters",
-      "facts": [
-        "Isaiah contains the named prophet, divine speech, sign children, royal and national addressees, servants, heralds, Zion and Babylon as personified women, communal voices, and third-person prose narration; speaker identity must be established passage by passage.",
-        "The Great Isaiah Scroll is an almost complete sixty-six-chapter witness broadly aligned with the Masoretic tradition but containing thousands of orthographic and substantive differences; other Qumran Isaiah manuscripts and pesharim show active transmission and interpretation.",
-        "Isaiah 1:1 presents the book as the vision of Isaiah son of Amoz concerning Judah and Jerusalem during four Judahite reigns, while other passages portray Isaiah in first person, third-person reports, sign actions, and royal narratives."
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Isaiah 6:1-8"
       ],
-      "verse_refs": [
-        "Isaiah 1:1-66:24",
-        "Isaiah 6:1-13"
-      ],
-      "evidence_ids": [
-        "isaiah-many-voices",
-        "isaiah-qumran-witnesses",
-        "isaiah-superscription-prophet"
-      ],
-      "entity_ids": [],
-      "related_unit_ids": [
-        "syn_interpretive_questions_02db938fc465"
-      ],
-      "confidence": "high",
-      "interpretation_level": "disputed",
       "metadata": {
         "relationship_basis": "shared_parent_object",
         "support_count": 3,
@@ -481,6 +647,7 @@
       "cultural_context": 6,
       "historical_context": 7,
       "interpretive_questions": 1,
+      "surrounding_passages": 1,
       "why_it_matters": 2
     },
     "relationship_unit_count": 2

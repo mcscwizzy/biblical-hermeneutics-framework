@@ -1,0 +1,86 @@
+{
+  "reference": "Revelation 12",
+  "packet_id": "commentary-v1.2-packet:40d2bb011dd81d07e00c9ac0956c685cfad319c70c345d941a892c0ec7362b6b",
+  "prompt_version": "1.2",
+  "evidence_hash": "f0933eea2f546d2100b651058c323a50fd17a5478191ca6da9115caf7e0e3e1a",
+  "synthesis_hash": "509bc8fb6a89285b9a333ae39dae66b8d1963546ea25bc0fa2bae8218d43ea81",
+  "renderer_label": "Luna Medium",
+  "response_payload": {
+    "reference": "Revelation 12",
+    "book": "Revelation",
+    "chapter": 12,
+    "status": "pending",
+    "sections": [
+      {
+        "kind": "chapter_overview",
+        "title": "Overview",
+        "blocks": [
+          {
+            "id": "block_1",
+            "text": "Revelation 12 presents a heavenly sign involving a woman, her child, and a red dragon, followed by the dragon's expulsion from heaven and persecution of the woman and her other offspring. The chapter itself identifies the dragon as the ancient serpent, the Devil, and Satan. It also places the conflict alongside the testimony of those who keep God's commandments and hold the testimony of Jesus.",
+            "verse_refs": ["Revelation 12:1-17"],
+            "evidence_ids": ["rev-dragon"],
+            "synthesis_ids": ["syn_historical_context_70739f354d27"],
+            "confidence": "high",
+            "interpretation_level": "fact"
+          }
+        ]
+      },
+      {
+        "kind": "historical_context",
+        "title": "The dragon's identification",
+        "blocks": [
+          {
+            "id": "block_2",
+            "text": "The narrative does not leave the dragon's identity open within this chapter: Revelation 12:9 names him the ancient serpent, the Devil, and Satan, and calls him the deceiver of the whole world. That explicit identification is part of the chapter's own narration.",
+            "verse_refs": ["Revelation 12:9"],
+            "evidence_ids": ["rev-dragon"],
+            "synthesis_ids": ["syn_historical_context_70739f354d27"],
+            "confidence": "high",
+            "interpretation_level": "fact"
+          }
+        ]
+      },
+      {
+        "kind": "interpretive_questions",
+        "title": "Scriptural imagery and structure",
+        "blocks": [
+          {
+            "id": "block_3",
+            "text": "The supplied synthesis cautions that Revelation repeatedly reworks Israel's Scriptures, including Daniel, Ezekiel, Isaiah, Exodus, Zechariah, Genesis, and Psalms. It also notes that seals, trumpets, and bowls form major sevenfold judgment sequences with interludes and repeated motifs. These observations invite readers to consider how Revelation 12's signs and conflict participate in the book's wider scriptural and literary pattern without assigning a single interpretation to every image.",
+            "verse_refs": ["Revelation 12:1-17"],
+            "evidence_ids": ["rev-scriptural-reuse", "rev-septets"],
+            "synthesis_ids": ["syn_interpretive_questions_dfe21697ee29"],
+            "confidence": "medium",
+            "interpretation_level": "disputed"
+          },
+          {
+            "id": "block_4",
+            "text": "The supplied evidence also distinguishes the explicit addressee of Isaiah 14's morning-star taunt—the king of Babylon—from later Jewish and especially Christian reception that identifies the figure with Satan. That distinction is relevant when comparing Revelation 12:7-12 with later readings: reception history should not be presented as the passage's explicit original addressee.",
+            "verse_refs": ["Revelation 12:7-12"],
+            "evidence_ids": ["isaiah-morning-star-taunt"],
+            "synthesis_ids": ["syn_interpretive_questions_69cb2f39a324"],
+            "confidence": "high",
+            "interpretation_level": "disputed"
+          }
+        ]
+      },
+      {
+        "kind": "why_it_matters",
+        "title": "Why the chapter matters",
+        "blocks": [
+          {
+            "id": "block_5",
+            "text": "The supplied synthesis connects Revelation 12:11 and the book's wider scriptural and sevenfold patterns with a call to endurance and witness, not with an authorization for readers to enact divine judgment through religious violence. This relationship helps keep the chapter's judgment scenes distinct from the conduct it asks of its hearers.",
+            "verse_refs": ["Revelation 12:11"],
+            "evidence_ids": ["rev-not-violence-license", "rev-scriptural-reuse", "rev-septets"],
+            "synthesis_ids": ["syn_why_it_matters_4e642a14ee39"],
+            "confidence": "medium",
+            "interpretation_level": "disputed"
+          }
+        ]
+      }
+    ],
+    "generated_metadata": null
+  }
+}

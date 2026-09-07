@@ -1,0 +1,21 @@
+{
+  "artifact_version": "commentary-v1.2-rejection-v1",
+  "reference": "Psalms 1",
+  "packet_id": null,
+  "raw_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.2-enrichment/canary/responses/raw/psalms_001.json",
+  "raw_sha256": "7c77430d4329f0176e124a9281434865e5b884a63f5c43522bf36099f8e1f7ca",
+  "import_status": "rejected",
+  "structurally_parsed": true,
+  "validation_status": "rejected",
+  "candidate_id": null,
+  "accepted_path": null,
+  "rejection_codes": [
+    "VALIDATION_FAILED",
+    "MALFORMED_SECTION",
+    "OUT_OF_CHAPTER_VERSE_REFERENCE"
+  ],
+  "validation_errors": [
+    "VALIDATION_FAILED: Commentary v1.2 validation rejected the response",
+    "OUT_OF_CHAPTER_VERSE_REFERENCE: section[3].block[0] verse reference is outside Psalms 1: 'Psalms 1:1-2:12'"
+  ]
+}

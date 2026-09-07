@@ -1,0 +1,66 @@
+{
+  "reference": "1 Samuel 21",
+  "packet_id": "commentary-v1.2-packet:c4f977e9a30964681fa26f95f80691b42a2e3af8fe80c7b706f61b44370ca385",
+  "prompt_version": "1.2",
+  "evidence_hash": "79c360812b8778c4c20d63faf5bf320e0926407eaf21eee2fe34001c803b47b7",
+  "synthesis_hash": "10d448daa9df822e1e1a4a2c3879bbaf311000027306c8f32380ecd3d2c38908",
+  "renderer_label": "Luna Medium",
+  "response_payload": {
+    "reference": "1 Samuel 21",
+    "book": "1 Samuel",
+    "chapter": 21,
+    "status": "pending",
+    "sections": [
+      {
+        "kind": "surrounding_passages",
+        "title": "Surrounding Passages",
+        "blocks": [
+          {
+            "id": "1_samuel_021_block_1",
+            "text": "First Samuel moves from Eli's failing priestly house through Samuel's prophetic leadership and Saul's rejected kingship to David's anointing, rise, exile, and Saul's death.",
+            "evidence_ids": [
+              "first-samuel-literary-movement"
+            ],
+            "synthesis_ids": [
+              "syn_surrounding_passages_263fddfbadb5"
+            ],
+            "confidence": "high",
+            "interpretation_level": "fact",
+            "verse_refs": [
+              "1 Samuel 10:1-27",
+              "1 Samuel 11:1-15",
+              "1 Samuel 12:1-25",
+              "1 Samuel 13:1-23",
+              "1 Samuel 14:1-52",
+              "1 Samuel 15:1-35",
+              "1 Samuel 16:1-23",
+              "1 Samuel 17:1-58",
+              "1 Samuel 18:1-30",
+              "1 Samuel 19:1-24",
+              "1 Samuel 20:1-42",
+              "1 Samuel 22:1-23",
+              "1 Samuel 23:1-29",
+              "1 Samuel 24:1-22",
+              "1 Samuel 25:1-44",
+              "1 Samuel 26:1-25",
+              "1 Samuel 27:1-12",
+              "1 Samuel 28:1-25",
+              "1 Samuel 29:1-11",
+              "1 Samuel 2:1-36",
+              "1 Samuel 30:1-31",
+              "1 Samuel 31:1-13",
+              "1 Samuel 3:1-21",
+              "1 Samuel 4:1-22",
+              "1 Samuel 5:1-12",
+              "1 Samuel 6:1-21",
+              "1 Samuel 7:1-17",
+              "1 Samuel 8:1-22",
+              "1 Samuel 9:1-27"
+            ]
+          }
+        ]
+      }
+    ],
+    "generated_metadata": null
+  }
+}

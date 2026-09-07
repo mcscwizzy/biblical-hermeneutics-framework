@@ -1,0 +1,95 @@
+{
+  "reference": "2 Samuel 6",
+  "packet_id": "commentary-v1.2-packet:4a7f5db8dea44b893db5f8a0b84826a2d96b2360d235a347a652e63c2a91b05f",
+  "prompt_version": "1.2",
+  "evidence_hash": "7a1440cab57fd2fcf5dfa968f72e9e30a38d1137f6a2d6a7320180ccb6fcea09",
+  "synthesis_hash": "4af4fb10ea4ca87277276a3ced14197565d0398d49a335794a02446b0260f0ac",
+  "renderer_label": "Luna Medium",
+  "response_payload": {
+    "reference": "2 Samuel 6",
+    "book": "2 Samuel",
+    "chapter": 6,
+    "status": "pending",
+    "sections": [
+      {
+        "kind": "chapter_overview",
+        "title": "Overview",
+        "blocks": [
+          {
+            "id": "block_1",
+            "text": "David brings the ark toward Jerusalem in a public celebration, but the first transport ends when Uzzah dies. After a three-month pause, David brings the ark into the city with sacrifice, dancing, blessing, and a shared meal. The chapter closes with conflict between David and Michal, so the arrival of the ark joins royal celebration with a sharp household division.",
+            "verse_refs": ["2 Samuel 6:1-23"],
+            "evidence_ids": ["second-samuel-jerusalem-ark", "second-samuel-literary-movement"],
+            "synthesis_ids": ["syn_historical_context_d0ee5d232339", "syn_language_literary_dbbbffd4f0a0"],
+            "confidence": "high",
+            "interpretation_level": "fact"
+          }
+        ]
+      },
+      {
+        "kind": "historical_context",
+        "title": "David's Consolidating Kingdom",
+        "blocks": [
+          {
+            "id": "block_2",
+            "text": "The supplied historical synthesis places the event in the period of settlement and early monarchy, when Israel is consolidating life in the land. Within the chapter's own sequence, David establishes Jerusalem as a royal center and brings the ark there only after the first attempt ends in Uzzah's death.",
+            "verse_refs": ["2 Samuel 6:1-23"],
+            "evidence_ids": ["rise-of-saul:historical_context:0", "second-samuel-jerusalem-ark"],
+            "synthesis_ids": ["syn_historical_context_5d769d2a9594", "syn_historical_context_d0ee5d232339"],
+            "confidence": "medium",
+            "interpretation_level": "fact"
+          },
+          {
+            "id": "block_3",
+            "text": "The wider movement of Second Samuel runs from David's accession and kingdom consolidation through the ark and dynasty promise, then toward royal abuse, household violence, rebellion, grief, and a four-part closing appendix. Chapter 6 therefore belongs to the early consolidation section of the book's larger movement.",
+            "verse_refs": ["2 Samuel 6:1-23"],
+            "evidence_ids": ["second-samuel-literary-movement"],
+            "synthesis_ids": ["syn_language_literary_dbbbffd4f0a0"],
+            "confidence": "high",
+            "interpretation_level": "fact"
+          }
+        ]
+      },
+      {
+        "kind": "cultural_context",
+        "title": "Public Celebration and Royal Setting",
+        "blocks": [
+          {
+            "id": "block_4",
+            "text": "The supplied cultural orientation places the chapter within settings that include Israelite kinship life, temple worship, and royal courts, as the passage requires. That combination fits the chapter's movement between the ark, the king, public procession, offerings, blessing, and household response without requiring additional cultural details beyond the evidence provided.",
+            "verse_refs": ["2 Samuel 6:1-23"],
+            "evidence_ids": ["ark-brought-to-jerusalem:ancient_near_east_context:0", "david-anointed:ancient_near_east_context:0"],
+            "synthesis_ids": ["syn_cultural_context_6c4eb4a38b1b", "syn_cultural_context_a893f6c35b7d"],
+            "confidence": "medium",
+            "interpretation_level": "fact"
+          },
+          {
+            "id": "block_5",
+            "text": "Fortified cities, tribal conflict, and military campaigns shape the supplied background for the early monarchy. In this chapter, however, the focus is the movement of the ark into David's city: the background helps locate the event within a consolidating kingdom, while the narrative foregrounds procession, danger, worship, and royal conduct.",
+            "verse_refs": ["2 Samuel 6:1-15"],
+            "evidence_ids": ["rise-of-saul:ancient_near_east_context:0"],
+            "synthesis_ids": ["syn_cultural_context_65bfc1305a60"],
+            "confidence": "medium",
+            "interpretation_level": "fact"
+          }
+        ]
+      },
+      {
+        "kind": "interpretive_questions",
+        "title": "What Archaeology Can and Cannot Establish",
+        "blocks": [
+          {
+            "id": "block_6",
+            "text": "The supplied archaeological note supports the existence of a later Davidic dynasty, but it does not establish one uncontested size, administration, or chronology for David's kingdom. Readers can therefore discuss the chapter's account of David and Jerusalem without treating a disputed reconstruction of the kingdom's scale as settled evidence.",
+            "verse_refs": ["2 Samuel 6:1-23"],
+            "evidence_ids": ["2-samuel:interpretive_note:4"],
+            "synthesis_ids": ["syn_interpretive_questions_6a1459f5f017"],
+            "confidence": "medium",
+            "interpretation_level": "disputed"
+          }
+        ]
+      }
+    ],
+    "generated_metadata": null
+  }
+}

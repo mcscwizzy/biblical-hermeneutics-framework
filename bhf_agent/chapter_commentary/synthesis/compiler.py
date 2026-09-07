@@ -15,6 +15,13 @@ from bhf_agent.chapter_commentary.availability import (
     evidence_contribution,
 )
 from bhf_agent.presentation.models import EvidenceBundle, EvidenceItem
+from bhf_agent.presentation.references import _BOOK_ALIASES
+from framework.canonical_library.scripture import (
+    ScriptureReferenceSpan,
+    format_scripture_reference,
+    parse_scripture_references,
+)
+from bhf_agent import bible
 
 from .hashing import with_synthesis_hash
 from .models import (
@@ -55,6 +62,7 @@ class _EvidenceGroup:
     kind: str
     items: tuple[EvidenceItem, ...]
     relationship_basis: str
+    passage_scope: str = "CURRENT_CHAPTER"
 
 
 def compile_chapter_synthesis(
@@ -74,9 +82,18 @@ def compile_chapter_synthesis(
         raise ValueError(f"cannot derive chapter identity from {bundle.passage_ref!r}")
 
     availability = classify_evidence_availability(bundle).value
-    groups = _compatible_groups(bundle.evidence_items)
-    units = [_unit(group, bundle) for group in groups]
-    relationship_units = _relationship_units(groups, units, bundle)
+    groups = _project_groups(
+        _compatible_groups(bundle.evidence_items),
+        book=canonical_book,
+        chapter=canonical_chapter,
+    )
+    units = [
+        _unit(group, bundle, book=canonical_book, chapter=canonical_chapter)
+        for group in groups
+    ]
+    relationship_units = _relationship_units(
+        groups, units, bundle, book=canonical_book, chapter=canonical_chapter
+    )
     all_units = sorted(
         [*units, *relationship_units], key=lambda value: (value.kind, value.id)
     )
@@ -148,6 +165,109 @@ def _compatible_groups(items: Iterable[EvidenceItem]) -> list[_EvidenceGroup]:
     return groups
 
 
+def _project_groups(
+    groups: Iterable[_EvidenceGroup], *, book: str, chapter: int
+) -> list[_EvidenceGroup]:
+    """Split mixed anchors so external passage material is explicit context."""
+
+    projected: list[_EvidenceGroup] = []
+    for group in groups:
+        current: list[EvidenceItem] = []
+        surrounding: list[EvidenceItem] = []
+        for item in group.items:
+            current_refs, external_refs = _project_anchor_refs(
+                item.passage_anchors, book=book, chapter=chapter
+            )
+            # An item whose authored anchor includes any outside chapter must
+            # remain whole, but it is exposed only as surrounding context. It
+            # must not be silently treated as a direct current-chapter fact.
+            if external_refs:
+                surrounding.append(item)
+            elif current_refs or not item.passage_anchors:
+                current.append(item)
+            else:
+                surrounding.append(item)
+        if current:
+            projected.append(
+                _EvidenceGroup(
+                    kind=group.kind,
+                    items=tuple(current),
+                    relationship_basis=group.relationship_basis,
+                    passage_scope="CURRENT_CHAPTER",
+                )
+            )
+        if surrounding:
+            projected.append(
+                _EvidenceGroup(
+                    kind="surrounding_passages",
+                    items=tuple(surrounding),
+                    relationship_basis=group.relationship_basis,
+                    passage_scope="SURROUNDING_PASSAGE",
+                )
+            )
+    return projected
+
+
+def _project_anchor_refs(
+    anchors: Iterable[str], *, book: str, chapter: int
+) -> tuple[list[str], list[str]]:
+    current: set[str] = set()
+    external: set[str] = set()
+    canonical_book = bible.normalize_book_name(book)
+    for anchor in anchors:
+        spans = parse_scripture_references(str(anchor), book_alias_lookup=_BOOK_ALIASES)
+        if not spans:
+            external.add(" ".join(str(anchor).split()))
+            continue
+        for span in spans:
+            current_refs, external_refs = _split_span(
+                span, canonical_book=canonical_book, chapter=chapter
+            )
+            current.update(current_refs)
+            external.update(external_refs)
+    return sorted(current), sorted(external)
+
+
+def _split_span(
+    span: ScriptureReferenceSpan, *, canonical_book: str, chapter: int
+) -> tuple[list[str], list[str]]:
+    if span.book != canonical_book:
+        return [], [format_scripture_reference(span)]
+    if span.start_chapter is None:
+        return [], [format_scripture_reference(span)]
+    end_chapter = span.end_chapter or span.start_chapter
+    if span.start_chapter == end_chapter == chapter:
+        return [format_scripture_reference(span)], []
+
+    current: list[str] = []
+    external: list[str] = []
+    for value in range(span.start_chapter, end_chapter + 1):
+        start_verse = span.start_verse if value == span.start_chapter else 1
+        end_verse = span.end_verse if value == end_chapter else None
+        try:
+            max_verse = max(
+                int(item["verse"])
+                for item in bible.resolve_chapter(canonical_book, value).get("verses", [])
+            )
+        except (bible.BibleError, KeyError, TypeError, ValueError):
+            max_verse = 999
+        if end_verse is None:
+            end_verse = max_verse
+        if value == chapter:
+            current.append(
+                bible.verse_range_reference(
+                    canonical_book, value, start_verse, end_verse
+                )
+            )
+        else:
+            external.append(
+                bible.verse_range_reference(
+                    canonical_book, value, start_verse, end_verse
+                )
+            )
+    return current, external
+
+
 def _kind(item: EvidenceItem) -> str:
     metadata = item.relevance_metadata or {}
     if _is_disputed(item):
@@ -211,7 +331,13 @@ def _group_basis(items: tuple[EvidenceItem, ...]) -> str:
     return "authored_significance_link"
 
 
-def _unit(group: _EvidenceGroup, bundle: EvidenceBundle) -> SynthesisUnit:
+def _unit(
+    group: _EvidenceGroup,
+    bundle: EvidenceBundle,
+    *,
+    book: str,
+    chapter: int,
+) -> SynthesisUnit:
     evidence_ids = [item.id for item in group.items]
     entity_ids = sorted(
         {
@@ -225,29 +351,41 @@ def _unit(group: _EvidenceGroup, bundle: EvidenceBundle) -> SynthesisUnit:
         "relationship_basis": group.relationship_basis,
         "source_categories": sorted({item.category for item in group.items}),
         "support_count": len(group.items),
+        "passage_scope": group.passage_scope,
         "explicit_significance": any(
             (item.relevance_metadata or {}).get("presentation_role") == "significance"
             for item in group.items
         ),
     }
+    source_anchors = sorted(
+        {anchor for item in group.items for anchor in item.passage_anchors}
+    )
+    projected_refs = _project_anchor_refs(
+        source_anchors, book=book, chapter=chapter
+    )[
+        0 if group.passage_scope == "CURRENT_CHAPTER" else 1
+    ]
     payload = {
         "kind": group.kind,
         "facts": [item.claim for item in group.items],
         "evidence_ids": evidence_ids,
         "entity_ids": entity_ids,
         "metadata": metadata,
+        "passage_scope": group.passage_scope,
+        "source_anchors": source_anchors,
+        "verse_refs": projected_refs,
     }
     return SynthesisUnit(
         id=_unit_id(group.kind, payload),
         kind=group.kind,
         facts=[item.claim for item in group.items],
-        verse_refs=sorted(
-            {anchor for item in group.items for anchor in item.passage_anchors}
-        ),
+        verse_refs=projected_refs,
         evidence_ids=evidence_ids,
         entity_ids=entity_ids,
         confidence=_minimum_confidence(group.items),
         interpretation_level=_interpretation(group.items),
+        passage_scope=group.passage_scope,
+        source_anchors=source_anchors,
         metadata=metadata,
     )
 
@@ -256,6 +394,9 @@ def _relationship_units(
     groups: list[_EvidenceGroup],
     units: list[SynthesisUnit],
     bundle: EvidenceBundle,
+    *,
+    book: str,
+    chapter: int,
 ) -> list[SynthesisUnit]:
     results: list[SynthesisUnit] = []
     for group, source_unit in zip(groups, units):
@@ -277,16 +418,23 @@ def _relationship_units(
             "explicit_significance": explicit,
             "safe_for_significance": True,
         }
+        relationship_kind = (
+            "why_it_matters"
+            if group.passage_scope == "CURRENT_CHAPTER"
+            else "surrounding_passages"
+        )
         payload = {
-            "kind": "why_it_matters",
+            "kind": relationship_kind,
             "source_unit": source_unit.id,
             "evidence_ids": source_unit.evidence_ids,
             "metadata": metadata,
+            "passage_scope": group.passage_scope,
+            "verse_refs": source_unit.verse_refs,
         }
         results.append(
             SynthesisUnit(
-                id=_unit_id("why_it_matters", payload),
-                kind="why_it_matters",
+                id=_unit_id(relationship_kind, payload),
+                kind=relationship_kind,
                 facts=list(source_unit.facts),
                 verse_refs=list(source_unit.verse_refs),
                 evidence_ids=list(source_unit.evidence_ids),
@@ -298,6 +446,8 @@ def _relationship_units(
                     if source_unit.interpretation_level == "disputed"
                     else "inference"
                 ),
+                passage_scope=group.passage_scope,
+                source_anchors=list(source_unit.source_anchors),
                 metadata=metadata,
             )
         )

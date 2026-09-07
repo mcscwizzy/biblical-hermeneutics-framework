@@ -1,0 +1,23 @@
+{
+  "artifact_version": "commentary-v1.2-rejection-v1",
+  "reference": "1 Chronicles 8",
+  "packet_id": null,
+  "raw_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.2-enrichment/canary/responses/raw-rerun-full-final/1_chronicles_008.json",
+  "raw_sha256": "cb5f1869b9787a41db9e8569c342ce465f97cb721f54cff6a1e40e70657a6069",
+  "import_status": "rejected",
+  "structurally_parsed": true,
+  "validation_status": "rejected",
+  "candidate_id": null,
+  "accepted_path": null,
+  "rejection_codes": [
+    "VALIDATION_FAILED",
+    "MALFORMED_SECTION",
+    "UNKNOWN_SYNTHESIS_ID",
+    "SYNTHESIS_ANCESTRY_MISMATCH"
+  ],
+  "validation_errors": [
+    "VALIDATION_FAILED: Commentary v1.2 validation rejected the response",
+    "UNKNOWN_SYNTHESIS_ID: section[0].block[0] cites unsupported synthesis IDs: syn_interpretive_questions_181de190ab7d",
+    "SYNTHESIS_ANCESTRY_MISMATCH: section[0].block[0] cites evidence outside its synthesis ancestry"
+  ]
+}

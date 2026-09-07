@@ -71,8 +71,8 @@ def test_changed_evidence_changes_synthesis_hash():
 def test_schema_or_compiler_version_changes_synthesis_identity():
     bundle = _bundle(_item("gath-city", "Gath was a Philistine city."))
     baseline = compile_chapter_synthesis(bundle)
-    schema_changed = compile_chapter_synthesis(bundle, schema_version="1.1")
-    compiler_changed = compile_chapter_synthesis(bundle, compiler_version="1.1")
+    schema_changed = compile_chapter_synthesis(bundle, schema_version="1.0")
+    compiler_changed = compile_chapter_synthesis(bundle, compiler_version="1.0")
     assert baseline.synthesis_hash != schema_changed.synthesis_hash
     assert baseline.synthesis_hash != compiler_changed.synthesis_hash
 

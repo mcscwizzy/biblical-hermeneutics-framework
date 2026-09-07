@@ -1,0 +1,47 @@
+{
+  "reference": "Genesis 1",
+  "packet_id": "commentary-v1.2-packet:3134e50ff11e5fb1a8eebf47a7da9dfa3ccbdd64a1175223a5bd5f969bf68b41",
+  "prompt_version": "1.2",
+  "evidence_hash": "68599786c2a557df692d91a1caad2381bcdaba1dda3c0d9ef1b6b1dd572ee110",
+  "synthesis_hash": "0c1f5f085d07eef107d641c89277ec23627aad1db83423956a860a383740a5df",
+  "renderer_label": "Luna Medium",
+  "response_payload": {
+    "reference": "Genesis 1",
+    "book": "Genesis",
+    "chapter": 1,
+    "status": "pending",
+    "sections": [
+      {
+        "kind": "chapter_overview",
+        "title": "Ordered creation and human vocation",
+        "blocks": [
+          {
+            "id": "genesis_1_overview",
+            "text": "Genesis 1 presents creation as an ordered work of the one God, brought into being by divine speech and repeatedly described as good. The chapter gives humanity a representative vocation within that ordered world: men and women together bear God's image and are charged to cultivate and govern life under God's authority.",
+            "verse_refs": ["Genesis 1:1-31"],
+            "evidence_ids": ["creation:ancient_near_east_context:0", "creation:hebraic_worldview:0", "image-of-god-theme:ancient_near_east_context:0", "image-of-god-theme:hebraic_worldview:0"],
+            "synthesis_ids": ["syn_cultural_context_048db383ff38", "syn_cultural_context_165d53188040"],
+            "confidence": "medium",
+            "interpretation_level": "fact"
+          }
+        ]
+      },
+      {
+        "kind": "things_easy_to_miss",
+        "title": "The image is shared across humanity",
+        "blocks": [
+          {
+            "id": "genesis_1_image",
+            "text": "In the ancient world, royal imagery could describe a king as a god's representative. Genesis extends that representative dignity to humanity as a whole rather than reserving it for rulers alone.",
+            "verse_refs": ["Genesis 1:26-28"],
+            "evidence_ids": ["image-of-god-theme:ancient_near_east_context:0", "what-is-the-image-of-god:ancient_near_east_context:0"],
+            "synthesis_ids": ["syn_cultural_context_165d53188040", "syn_cultural_context_290610291b84"],
+            "confidence": "medium",
+            "interpretation_level": "fact"
+          }
+        ]
+      }
+    ],
+    "generated_metadata": null
+  }
+}

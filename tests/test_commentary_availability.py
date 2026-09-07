@@ -95,7 +95,7 @@ def metadata():
 
 
 def test_data_gap_allows_only_uncited_canonical_overview():
-    raw = {'reference':'Genesis 1','book':'Genesis','chapter':1,'status':'pending','evidence_availability':'DATA_GAP','generated_metadata':metadata(),'sections':[{'kind':'chapter_overview','title':'Overview','blocks':[{'id':'b','text':'The chapter opens with creation.','verse_refs':['Genesis 1:1'],'evidence_ids':[],'confidence':'high','interpretation_level':'fact'}]}]}
+    raw = {'reference':'Genesis 1','book':'Genesis','chapter':1,'status':'pending','evidence_availability':'DATA_GAP','data_gap_fallback':True,'generated_metadata':metadata(),'sections':[{'kind':'chapter_overview','title':'Context availability','blocks':[{'id':'data_gap_notice','text':'Passage-specific contextual evidence is not currently available for this chapter.','verse_refs':[],'evidence_ids':[],'synthesis_ids':[],'confidence':'high','interpretation_level':'fact'}]}]}
     result = validate_chapter_commentary(raw, bundle(0), expected_reference='Genesis 1', expected_book='Genesis', expected_chapter=1)
     assert result.valid
 

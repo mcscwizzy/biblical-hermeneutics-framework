@@ -25,6 +25,7 @@ from bhf_agent.chapter_commentary.models import (
     ChapterCommentary,
     CommentaryStatus,
     ExternalCommentaryResponse,
+    data_gap_fallback_payload,
 )
 from bhf_agent.chapter_commentary.storage import get_commentary_filename, save_commentary
 from bhf_agent.chapter_commentary.synthesis import compile_chapter_synthesis, validate_synthesis
@@ -78,6 +79,7 @@ class ExternalResponseRejectionCode(str, Enum):
     VALIDATION_FAILED = "VALIDATION_FAILED"
     PROTECTED_ARTIFACT_CHANGED = "PROTECTED_ARTIFACT_CHANGED"
     INFRASTRUCTURE_ERROR = "INFRASTRUCTURE_ERROR"
+    DATA_GAP_RENDERER_PROSE = "DATA_GAP_RENDERER_PROSE"
 
 
 def import_responses(
@@ -344,6 +346,32 @@ def _validate_and_store(*, path, raw_root, raw_hash, envelope, packet, locked, a
     payload["generated_metadata"] = metadata
     payload["evidence_availability"] = classify_evidence_availability(bundle).value
     payload["status"] = CommentaryStatus.PENDING.value
+    if (
+        payload["evidence_availability"] == "DATA_GAP"
+        and not bundle.evidence_items
+        and not synthesis.synthesis_units
+    ):
+        # A true DATA_GAP response must be empty. The reader-facing notice is
+        # created by BHF, never authored or edited by Luna.
+        if payload.get("sections") not in ([], None):
+            _reject(
+                codes,
+                errors,
+                ExternalResponseRejectionCode.DATA_GAP_RENDERER_PROSE,
+                "DATA_GAP responses must contain no renderer-authored sections",
+            )
+            return _rejected_row(
+                path, raw_root, raw_hash, envelope.reference,
+                list(dict.fromkeys(codes)), errors, structurally_parsed=True,
+            )
+        payload.update(
+            data_gap_fallback_payload(
+                locked["reference"], locked["book"], locked["chapter"]
+            )
+        )
+        payload["generated_metadata"] = metadata
+        payload["evidence_availability"] = "DATA_GAP"
+        payload["status"] = CommentaryStatus.PENDING.value
     result = validate_chapter_commentary(
         payload,
         bundle,
@@ -374,6 +402,7 @@ def _validate_and_store(*, path, raw_root, raw_hash, envelope, packet, locked, a
         generated_metadata=result.commentary.generated_metadata,
         validation_errors=[],
         validation_warnings=[],
+        data_gap_fallback=result.commentary.data_gap_fallback,
     )
     accepted_path = save_commentary(accepted, accepted_root)
     return {

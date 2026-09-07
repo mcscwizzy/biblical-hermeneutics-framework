@@ -145,4 +145,5 @@ def _from_dict(data: dict[str, Any]) -> ChapterCommentary:
         failure_reason=data.get("failure_reason"),
         validation_errors=data.get("validation_errors", []),
         validation_warnings=data.get("validation_warnings", []),
+        data_gap_fallback=bool(data.get("data_gap_fallback", False)),
     )

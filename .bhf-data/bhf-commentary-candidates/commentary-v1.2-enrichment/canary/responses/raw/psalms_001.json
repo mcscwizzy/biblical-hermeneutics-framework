@@ -1,0 +1,95 @@
+{
+  "reference": "Psalms 1",
+  "packet_id": "commentary-v1.2-packet:f91fe16e0b43ba350598c4cf0c06f23602d1f11aadcbda58400ed32b3bc7fce3",
+  "prompt_version": "1.2",
+  "evidence_hash": "faf60db8a7de36c4d00e951e3171a6e49e875a4f98f9cba12be3cd2bca9465f8",
+  "synthesis_hash": "f9c9f9dcddd28d9ec4ff7737840fd550b807b526c4418e37b6ca18cdd19eec85",
+  "renderer_label": "Luna Medium",
+  "response_payload": {
+    "reference": "Psalms 1",
+    "book": "Psalms",
+    "chapter": 1,
+    "status": "pending",
+    "sections": [
+      {
+        "kind": "chapter_overview",
+        "title": "Overview",
+        "blocks": [
+          {
+            "id": "block_1",
+            "text": "Psalm 1 contrasts two ways of life. The righteous person refuses the counsel, path, and seat associated with the wicked and instead delights in the LORD's torah, meditating on it continually. The poem pictures the result as a well-watered tree, while the wicked are like wind-driven chaff and do not endure in judgment or the congregation of the righteous.",
+            "verse_refs": ["Psalms 1:1-6"],
+            "evidence_ids": ["what-does-torah-mean:historical_context:0", "what-is-biblical-wisdom:ancient_near_east_context:0"],
+            "synthesis_ids": ["syn_historical_context_1e655acb8a2d", "syn_cultural_context_77aa3418632d"],
+            "confidence": "medium",
+            "interpretation_level": "fact"
+          }
+        ]
+      },
+      {
+        "kind": "historical_context",
+        "title": "Worship and Instruction",
+        "blocks": [
+          {
+            "id": "block_2",
+            "text": "The Psalms arise from Israel's worship life and were sung in both public and private devotion. That setting helps explain why Psalm 1 presents its teaching in a form meant to be remembered and repeated: it speaks about the kind of life shaped by covenant faith while functioning as part of worship.",
+            "verse_refs": ["Psalms 1:1-6"],
+            "evidence_ids": ["what-is-a-psalm:historical_context:0"],
+            "synthesis_ids": ["syn_historical_context_8efa15aec15e"],
+            "confidence": "medium",
+            "interpretation_level": "fact"
+          },
+          {
+            "id": "block_3",
+            "text": "Wisdom literature grew from family instruction, court life, and worship, and became a major way Scripture teaches faithful living. Psalm 1 uses that teaching form by setting the righteous and the wicked side by side, then describing the different outcomes of their ways.",
+            "verse_refs": ["Psalms 1:1-6"],
+            "evidence_ids": ["what-is-biblical-wisdom:historical_context:0"],
+            "synthesis_ids": ["syn_historical_context_7032c29b4dd9"],
+            "confidence": "medium",
+            "interpretation_level": "fact"
+          }
+        ]
+      },
+      {
+        "kind": "cultural_context",
+        "title": "What Torah Means Here",
+        "blocks": [
+          {
+            "id": "block_4",
+            "text": "In this synthesis, torah means the covenant instruction given through Moses and the way the redeemed people are to live before God. It is therefore more than a generic legal code: Psalm 1 describes delight in the instruction of the covenant LORD, which places faithful living within a relationship rather than treating it as rule-keeping detached from its giver.",
+            "verse_refs": ["Psalms 1:2-3"],
+            "evidence_ids": ["what-does-torah-mean:historical_context:0", "what-does-torah-mean:ancient_near_east_context:0"],
+            "synthesis_ids": ["syn_historical_context_1e655acb8a2d", "syn_cultural_context_4a88701db593"],
+            "confidence": "medium",
+            "interpretation_level": "fact"
+          },
+          {
+            "id": "block_5",
+            "text": "Israel shares wisdom forms with neighboring cultures, but the supplied context says its wisdom is anchored in covenant loyalty and the fear of the LORD. That distinction helps explain why Psalm 1's contrast is not simply between clever and foolish behavior; it is between ways ordered toward covenant faithfulness and ways that do not endure.",
+            "verse_refs": ["Psalms 1:1-6"],
+            "evidence_ids": ["what-is-biblical-wisdom:ancient_near_east_context:0"],
+            "synthesis_ids": ["syn_cultural_context_77aa3418632d"],
+            "confidence": "medium",
+            "interpretation_level": "fact"
+          }
+        ]
+      },
+      {
+        "kind": "interpretive_questions",
+        "title": "The Psalm's Place at the Collection's Entrance",
+        "blocks": [
+          {
+            "id": "block_6",
+            "text": "Psalms 1 and 2 form an untitled gateway before the collection. Together they place Torah-shaped flourishing and the way of the wicked beside themes of rebellious nations, the LORD's kingship, and the anointed king. This reading concerns how the two psalms frame the collection, so it should be held as an interpretive synthesis rather than treated as a claim that Psalm 1 itself names every one of those themes.",
+            "verse_refs": ["Psalms 1:1-2:12"],
+            "evidence_ids": ["psalms-gateway-torah-king"],
+            "synthesis_ids": ["syn_interpretive_questions_105c9da53b89"],
+            "confidence": "high",
+            "interpretation_level": "disputed"
+          }
+        ]
+      }
+    ],
+    "generated_metadata": null
+  }
+}

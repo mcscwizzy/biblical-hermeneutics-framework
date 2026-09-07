@@ -4,38 +4,13 @@
   "chapter": 1,
   "evidence_hash": "68599786c2a557df692d91a1caad2381bcdaba1dda3c0d9ef1b6b1dd572ee110",
   "evidence_bundle_version": "1.1",
-  "synthesis_schema_version": "1.0",
-  "synthesis_compiler_version": "1.0",
-  "synthesis_hash": "9bf21785c875c82fd9babd3b71c12b0ead1545d1d7e288e4d7aee989556fb5f9",
+  "synthesis_schema_version": "1.1",
+  "synthesis_compiler_version": "1.1",
+  "synthesis_hash": "0c1f5f085d07eef107d641c89277ec23627aad1db83423956a860a383740a5df",
   "evidence_availability": "AVAILABLE",
   "synthesis_units": [
     {
-      "id": "syn_chronology_29e7b9e427fd",
-      "kind": "chronology",
-      "facts": [
-        "New creation promised"
-      ],
-      "verse_refs": [
-        "Genesis 1:1-31"
-      ],
-      "evidence_ids": [
-        "creation-doctrine-framework:timeline:5"
-      ],
-      "entity_ids": [],
-      "related_unit_ids": [],
-      "confidence": "medium",
-      "interpretation_level": "fact",
-      "metadata": {
-        "relationship_basis": "single_evidence_item",
-        "source_categories": [
-          "chronology"
-        ],
-        "support_count": 1,
-        "explicit_significance": false
-      }
-    },
-    {
-      "id": "syn_chronology_94bd4f44f712",
+      "id": "syn_chronology_4d389e9b8f3a",
       "kind": "chronology",
       "facts": [
         "Creation declared good",
@@ -58,158 +33,63 @@
       "related_unit_ids": [],
       "confidence": "medium",
       "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Genesis 1:1-31"
+      ],
       "metadata": {
         "relationship_basis": "shared_parent_object",
         "source_categories": [
           "chronology"
         ],
         "support_count": 5,
+        "passage_scope": "CURRENT_CHAPTER",
         "explicit_significance": false
       }
     },
     {
-      "id": "syn_cultural_context_055f4e2a34b9",
-      "kind": "cultural_context",
+      "id": "syn_chronology_768538e95314",
+      "kind": "chronology",
       "facts": [
-        "Ancient kings were sometimes called images of gods, but Genesis extends that royal dignity to all people."
-      ],
-      "verse_refs": [
-        "Genesis 1:26-28"
-      ],
-      "evidence_ids": [
-        "what-is-the-image-of-god:ancient_near_east_context:0"
-      ],
-      "entity_ids": [],
-      "related_unit_ids": [],
-      "confidence": "medium",
-      "interpretation_level": "fact",
-      "metadata": {
-        "relationship_basis": "single_evidence_item",
-        "source_categories": [
-          "culture"
-        ],
-        "support_count": 1,
-        "explicit_significance": false
-      }
-    },
-    {
-      "id": "syn_cultural_context_135a358a1883",
-      "kind": "cultural_context",
-      "facts": [
-        "Ancient background for Creation Doctrine includes covenant life, temple worship, royal ideology, wisdom teaching, and early church confession; the entry ties that world to Genesis 1:1-31, Genesis 2:1-25, creation-theme, and genesis without letting comparison replace the biblical witness."
+        "New creation promised"
       ],
       "verse_refs": [
         "Genesis 1:1-31"
       ],
       "evidence_ids": [
-        "creation-doctrine:ancient_near_east_context:0"
+        "creation-doctrine-framework:timeline:5"
       ],
       "entity_ids": [],
       "related_unit_ids": [],
       "confidence": "medium",
       "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Genesis 1:1-31"
+      ],
       "metadata": {
         "relationship_basis": "single_evidence_item",
         "source_categories": [
-          "culture"
+          "chronology"
         ],
         "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
         "explicit_significance": false
       }
     },
     {
-      "id": "syn_cultural_context_1c46d8c2fa12",
-      "kind": "cultural_context",
-      "facts": [
-        "The Bible’s Spirit language is distinct because it binds divine presence to holiness, creation, covenant renewal, and mission rather than to impersonal force."
-      ],
-      "verse_refs": [
-        "Genesis 1:2"
-      ],
-      "evidence_ids": [
-        "spirit-theme:ancient_near_east_context:0"
-      ],
-      "entity_ids": [],
-      "related_unit_ids": [],
-      "confidence": "medium",
-      "interpretation_level": "fact",
-      "metadata": {
-        "relationship_basis": "single_evidence_item",
-        "source_categories": [
-          "culture"
-        ],
-        "support_count": 1,
-        "explicit_significance": false
-      }
-    },
-    {
-      "id": "syn_cultural_context_35b1f4f5fe97",
-      "kind": "cultural_context",
-      "facts": [
-        "Ancient background for Spiritual Gifts includes covenant life, temple worship, royal ideology, wisdom teaching, and early church confession; the entry ties that world to Genesis 1:1-2, Ezekiel 36:24-28, spirit-theme, and pneumatology without letting comparison replace the biblical witness."
-      ],
-      "verse_refs": [
-        "Genesis 1:1-2"
-      ],
-      "evidence_ids": [
-        "spiritual-gifts:ancient_near_east_context:0"
-      ],
-      "entity_ids": [],
-      "related_unit_ids": [],
-      "confidence": "medium",
-      "interpretation_level": "fact",
-      "metadata": {
-        "relationship_basis": "single_evidence_item",
-        "source_categories": [
-          "culture"
-        ],
-        "support_count": 1,
-        "explicit_significance": false
-      }
-    },
-    {
-      "id": "syn_cultural_context_396363d5b703",
-      "kind": "cultural_context",
-      "facts": [
-        "Ancient background for Pneumatology includes covenant life, temple worship, royal ideology, wisdom teaching, and early church confession; the entry ties that world to Genesis 1:1-2, Ezekiel 36:24-28, spirit-theme, and acts without letting comparison replace the biblical witness."
-      ],
-      "verse_refs": [
-        "Genesis 1:1-2"
-      ],
-      "evidence_ids": [
-        "pneumatology:ancient_near_east_context:0"
-      ],
-      "entity_ids": [],
-      "related_unit_ids": [],
-      "confidence": "medium",
-      "interpretation_level": "fact",
-      "metadata": {
-        "relationship_basis": "single_evidence_item",
-        "source_categories": [
-          "culture"
-        ],
-        "support_count": 1,
-        "explicit_significance": false
-      }
-    },
-    {
-      "id": "syn_cultural_context_6115a83b8448",
+      "id": "syn_cultural_context_048db383ff38",
       "kind": "cultural_context",
       "facts": [
         "Genesis 1 can be compared with ancient Mesopotamian accounts of cosmic waters, ordering, celestial bodies, divine rule, and human vocation. The comparisons reveal shared discourse and marked differences without proving a single route of dependence.",
-        "Genesis 1 depicts one God ordering the world by speech, blessing living creatures, assigning humans an image-bearing vocation, and resting on the seventh day. These observations describe the passage before later theological synthesis.",
-        "Genesis 1 repeatedly depicts God speaking, separating, naming, appointing, blessing, evaluating, and resting as the created order is established.",
-        "The observation identifies the passage's own account of ordered creation before ancient comparative material is introduced."
+        "Genesis 1 depicts one God ordering the world by speech, blessing living creatures, assigning humans an image-bearing vocation, and resting on the seventh day. These observations describe the passage before later theological synthesis."
       ],
       "verse_refs": [
-        "Genesis 1:1-2:3",
         "Genesis 1:1-31"
       ],
       "evidence_ids": [
         "creation:ancient_near_east_context:0",
-        "creation:hebraic_worldview:0",
-        "genesis-ordered-worldview-observation",
-        "genesis-ordered-worldview-observation:passage-relevance"
+        "creation:hebraic_worldview:0"
       ],
       "entity_ids": [
         "creation"
@@ -217,221 +97,22 @@
       "related_unit_ids": [],
       "confidence": "medium",
       "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Genesis 1:1-31"
+      ],
       "metadata": {
         "relationship_basis": "shared_entities",
         "source_categories": [
           "culture"
         ],
-        "support_count": 4,
-        "explicit_significance": true
-      }
-    },
-    {
-      "id": "syn_cultural_context_83a671af55c4",
-      "kind": "cultural_context",
-      "facts": [
-        "Royal imagery was common in the ancient world, but Genesis extends representative dignity to humanity as a whole rather than only to kings.",
-        "Human vocation, relational responsibility, dignity, stewardship, and moral accountability.",
-        "Second Temple Jewish reflection connected the image of God with wisdom, holiness, and the hope of restored humanity."
-      ],
-      "verse_refs": [
-        "Genesis 1:26-28"
-      ],
-      "evidence_ids": [
-        "image-of-god-theme:ancient_near_east_context:0",
-        "image-of-god-theme:hebraic_worldview:0",
-        "image-of-god-theme:second_temple_context:0"
-      ],
-      "entity_ids": [],
-      "related_unit_ids": [],
-      "confidence": "medium",
-      "interpretation_level": "fact",
-      "metadata": {
-        "relationship_basis": "shared_parent_object",
-        "source_categories": [
-          "culture"
-        ],
-        "support_count": 3,
+        "support_count": 2,
+        "passage_scope": "CURRENT_CHAPTER",
         "explicit_significance": false
       }
     },
     {
-      "id": "syn_cultural_context_99d7c50e7cae",
-      "kind": "cultural_context",
-      "facts": [
-        "Ancient background for Water and Spirit Theme includes covenant practice, worship, kingship, wisdom instruction, and prophetic critique; the entry ties that world to Genesis 1:1-2, Ezekiel 36:24-28, spirit-theme, and pneumatology without letting comparison replace the biblical witness."
-      ],
-      "verse_refs": [
-        "Genesis 1:1-2"
-      ],
-      "evidence_ids": [
-        "water-and-spirit-theme:ancient_near_east_context:0"
-      ],
-      "entity_ids": [],
-      "related_unit_ids": [],
-      "confidence": "medium",
-      "interpretation_level": "fact",
-      "metadata": {
-        "relationship_basis": "single_evidence_item",
-        "source_categories": [
-          "culture"
-        ],
-        "support_count": 1,
-        "explicit_significance": false
-      }
-    },
-    {
-      "id": "syn_cultural_context_a2f3ab48be21",
-      "kind": "cultural_context",
-      "facts": [
-        "Wind and breath were familiar life-images in the ancient world, and Scripture uses them to speak of God's invisible action."
-      ],
-      "verse_refs": [
-        "Genesis 1:1-2"
-      ],
-      "evidence_ids": [
-        "what-does-ruach-mean:ancient_near_east_context:0"
-      ],
-      "entity_ids": [],
-      "related_unit_ids": [],
-      "confidence": "medium",
-      "interpretation_level": "fact",
-      "metadata": {
-        "relationship_basis": "single_evidence_item",
-        "source_categories": [
-          "culture"
-        ],
-        "support_count": 1,
-        "explicit_significance": false
-      }
-    },
-    {
-      "id": "syn_cultural_context_a743f9466734",
-      "kind": "cultural_context",
-      "facts": [
-        "Ancient background for Light and Darkness Theme includes covenant practice, worship, kingship, wisdom instruction, and prophetic critique; the entry ties that world to Genesis 1:1-5, Psalm 27:1, phos, and skotia without letting comparison replace the biblical witness."
-      ],
-      "verse_refs": [
-        "Genesis 1:1-5"
-      ],
-      "evidence_ids": [
-        "light-and-darkness-theme:ancient_near_east_context:0"
-      ],
-      "entity_ids": [],
-      "related_unit_ids": [],
-      "confidence": "medium",
-      "interpretation_level": "fact",
-      "metadata": {
-        "relationship_basis": "single_evidence_item",
-        "source_categories": [
-          "culture"
-        ],
-        "support_count": 1,
-        "explicit_significance": false
-      }
-    },
-    {
-      "id": "syn_cultural_context_b35c2940e645",
-      "kind": "cultural_context",
-      "facts": [
-        "The motif speaks against chaos-centered or polytheistic origin stories and keeps the creator God singular and sovereign."
-      ],
-      "verse_refs": [
-        "Genesis 1:1-31"
-      ],
-      "evidence_ids": [
-        "creation-theme:ancient_near_east_context:0"
-      ],
-      "entity_ids": [],
-      "related_unit_ids": [],
-      "confidence": "medium",
-      "interpretation_level": "fact",
-      "metadata": {
-        "relationship_basis": "single_evidence_item",
-        "source_categories": [
-          "culture"
-        ],
-        "support_count": 1,
-        "explicit_significance": false
-      }
-    },
-    {
-      "id": "syn_cultural_context_b782908a9e62",
-      "kind": "cultural_context",
-      "facts": [
-        "Biblical Spirit language is not impersonal force language; it expresses God's living presence among his people."
-      ],
-      "verse_refs": [
-        "Genesis 1:2"
-      ],
-      "evidence_ids": [
-        "what-is-the-significance-of-the-holy-spirit:ancient_near_east_context:0"
-      ],
-      "entity_ids": [],
-      "related_unit_ids": [],
-      "confidence": "medium",
-      "interpretation_level": "fact",
-      "metadata": {
-        "relationship_basis": "single_evidence_item",
-        "source_categories": [
-          "culture"
-        ],
-        "support_count": 1,
-        "explicit_significance": false
-      }
-    },
-    {
-      "id": "syn_cultural_context_e1d7ea64e7c9",
-      "kind": "cultural_context",
-      "facts": [
-        "Biblical Spirit language is not impersonal force language; it expresses God’s living presence among his people."
-      ],
-      "verse_refs": [
-        "Genesis 1:2"
-      ],
-      "evidence_ids": [
-        "what-is-the-holy-spirit:ancient_near_east_context:0"
-      ],
-      "entity_ids": [],
-      "related_unit_ids": [],
-      "confidence": "medium",
-      "interpretation_level": "fact",
-      "metadata": {
-        "relationship_basis": "single_evidence_item",
-        "source_categories": [
-          "culture"
-        ],
-        "support_count": 1,
-        "explicit_significance": false
-      }
-    },
-    {
-      "id": "syn_cultural_context_e613349c1dc7",
-      "kind": "cultural_context",
-      "facts": [
-        "Ancient background for New Creation Theme includes covenant practice, worship, kingship, wisdom instruction, and prophetic critique; the entry ties that world to Genesis 1:1-31, Genesis 2:1-25, creation-theme, and creation-doctrine without letting comparison replace the biblical witness."
-      ],
-      "verse_refs": [
-        "Genesis 1:1-31"
-      ],
-      "evidence_ids": [
-        "new-creation-theme:ancient_near_east_context:0"
-      ],
-      "entity_ids": [],
-      "related_unit_ids": [],
-      "confidence": "medium",
-      "interpretation_level": "fact",
-      "metadata": {
-        "relationship_basis": "single_evidence_item",
-        "source_categories": [
-          "culture"
-        ],
-        "support_count": 1,
-        "explicit_significance": false
-      }
-    },
-    {
-      "id": "syn_cultural_context_e7c693cf1f14",
+      "id": "syn_cultural_context_093852396ae8",
       "kind": "cultural_context",
       "facts": [
         "Creation texts stand alongside Mesopotamian origin traditions such as Enuma Elish and Atrahasis, while Scripture presents creation as ordered by the one covenant Lord.",
@@ -452,6 +133,10 @@
       "related_unit_ids": [],
       "confidence": "medium",
       "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Genesis 1:1-31"
+      ],
       "metadata": {
         "relationship_basis": "shared_parent_object",
         "source_categories": [
@@ -459,36 +144,406 @@
           "social"
         ],
         "support_count": 4,
+        "passage_scope": "CURRENT_CHAPTER",
         "explicit_significance": false
       }
     },
     {
-      "id": "syn_historical_context_04d1bb4b4ecc",
-      "kind": "historical_context",
+      "id": "syn_cultural_context_09f7c52b02bd",
+      "kind": "cultural_context",
       "facts": [
-        "Spirit language stretches from creation and the prophets into the ministry of Jesus and the birth of the church."
+        "Ancient background for Water and Spirit Theme includes covenant practice, worship, kingship, wisdom instruction, and prophetic critique; the entry ties that world to Genesis 1:1-2, Ezekiel 36:24-28, spirit-theme, and pneumatology without letting comparison replace the biblical witness."
       ],
       "verse_refs": [
-        "Genesis 1:2"
+        "Genesis 1:1-2"
       ],
       "evidence_ids": [
-        "what-is-the-holy-spirit:historical_context:0"
+        "water-and-spirit-theme:ancient_near_east_context:0"
       ],
       "entity_ids": [],
       "related_unit_ids": [],
       "confidence": "medium",
       "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Genesis 1:1-2"
+      ],
       "metadata": {
         "relationship_basis": "single_evidence_item",
         "source_categories": [
-          "history"
+          "culture"
         ],
         "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
         "explicit_significance": false
       }
     },
     {
-      "id": "syn_historical_context_2320ad7f3d80",
+      "id": "syn_cultural_context_165d53188040",
+      "kind": "cultural_context",
+      "facts": [
+        "Royal imagery was common in the ancient world, but Genesis extends representative dignity to humanity as a whole rather than only to kings.",
+        "Human vocation, relational responsibility, dignity, stewardship, and moral accountability.",
+        "Second Temple Jewish reflection connected the image of God with wisdom, holiness, and the hope of restored humanity."
+      ],
+      "verse_refs": [
+        "Genesis 1:26-28"
+      ],
+      "evidence_ids": [
+        "image-of-god-theme:ancient_near_east_context:0",
+        "image-of-god-theme:hebraic_worldview:0",
+        "image-of-god-theme:second_temple_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Genesis 1:26-28"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 3,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_cultural_context_199584b04720",
+      "kind": "cultural_context",
+      "facts": [
+        "Ancient background for Pneumatology includes covenant life, temple worship, royal ideology, wisdom teaching, and early church confession; the entry ties that world to Genesis 1:1-2, Ezekiel 36:24-28, spirit-theme, and acts without letting comparison replace the biblical witness."
+      ],
+      "verse_refs": [
+        "Genesis 1:1-2"
+      ],
+      "evidence_ids": [
+        "pneumatology:ancient_near_east_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Genesis 1:1-2"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_cultural_context_290610291b84",
+      "kind": "cultural_context",
+      "facts": [
+        "Ancient kings were sometimes called images of gods, but Genesis extends that royal dignity to all people."
+      ],
+      "verse_refs": [
+        "Genesis 1:26-28"
+      ],
+      "evidence_ids": [
+        "what-is-the-image-of-god:ancient_near_east_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Genesis 1:26-28"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_cultural_context_5203177a8820",
+      "kind": "cultural_context",
+      "facts": [
+        "Wind and breath were familiar life-images in the ancient world, and Scripture uses them to speak of God's invisible action."
+      ],
+      "verse_refs": [
+        "Genesis 1:1-2"
+      ],
+      "evidence_ids": [
+        "what-does-ruach-mean:ancient_near_east_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Genesis 1:1-2"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_cultural_context_83f4ab2bd2a1",
+      "kind": "cultural_context",
+      "facts": [
+        "Ancient background for Spiritual Gifts includes covenant life, temple worship, royal ideology, wisdom teaching, and early church confession; the entry ties that world to Genesis 1:1-2, Ezekiel 36:24-28, spirit-theme, and pneumatology without letting comparison replace the biblical witness."
+      ],
+      "verse_refs": [
+        "Genesis 1:1-2"
+      ],
+      "evidence_ids": [
+        "spiritual-gifts:ancient_near_east_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Genesis 1:1-2"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_cultural_context_897fd84558ba",
+      "kind": "cultural_context",
+      "facts": [
+        "Biblical Spirit language is not impersonal force language; it expresses God’s living presence among his people."
+      ],
+      "verse_refs": [
+        "Genesis 1:2"
+      ],
+      "evidence_ids": [
+        "what-is-the-holy-spirit:ancient_near_east_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Genesis 1:2"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_cultural_context_924475388c75",
+      "kind": "cultural_context",
+      "facts": [
+        "Ancient background for Light and Darkness Theme includes covenant practice, worship, kingship, wisdom instruction, and prophetic critique; the entry ties that world to Genesis 1:1-5, Psalm 27:1, phos, and skotia without letting comparison replace the biblical witness."
+      ],
+      "verse_refs": [
+        "Genesis 1:1-5"
+      ],
+      "evidence_ids": [
+        "light-and-darkness-theme:ancient_near_east_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Genesis 1:1-5"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_cultural_context_a7cc835b48eb",
+      "kind": "cultural_context",
+      "facts": [
+        "The motif speaks against chaos-centered or polytheistic origin stories and keeps the creator God singular and sovereign."
+      ],
+      "verse_refs": [
+        "Genesis 1:1-31"
+      ],
+      "evidence_ids": [
+        "creation-theme:ancient_near_east_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Genesis 1:1-31"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_cultural_context_be52dafff1c5",
+      "kind": "cultural_context",
+      "facts": [
+        "Biblical Spirit language is not impersonal force language; it expresses God's living presence among his people."
+      ],
+      "verse_refs": [
+        "Genesis 1:2"
+      ],
+      "evidence_ids": [
+        "what-is-the-significance-of-the-holy-spirit:ancient_near_east_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Genesis 1:2"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_cultural_context_d3b7718a2e24",
+      "kind": "cultural_context",
+      "facts": [
+        "Ancient background for Creation Doctrine includes covenant life, temple worship, royal ideology, wisdom teaching, and early church confession; the entry ties that world to Genesis 1:1-31, Genesis 2:1-25, creation-theme, and genesis without letting comparison replace the biblical witness."
+      ],
+      "verse_refs": [
+        "Genesis 1:1-31"
+      ],
+      "evidence_ids": [
+        "creation-doctrine:ancient_near_east_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Genesis 1:1-31"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_cultural_context_ea6ffeeb54a6",
+      "kind": "cultural_context",
+      "facts": [
+        "The Bible’s Spirit language is distinct because it binds divine presence to holiness, creation, covenant renewal, and mission rather than to impersonal force."
+      ],
+      "verse_refs": [
+        "Genesis 1:2"
+      ],
+      "evidence_ids": [
+        "spirit-theme:ancient_near_east_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Genesis 1:2"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_cultural_context_f22381a2cd3d",
+      "kind": "cultural_context",
+      "facts": [
+        "Ancient background for New Creation Theme includes covenant practice, worship, kingship, wisdom instruction, and prophetic critique; the entry ties that world to Genesis 1:1-31, Genesis 2:1-25, creation-theme, and creation-doctrine without letting comparison replace the biblical witness."
+      ],
+      "verse_refs": [
+        "Genesis 1:1-31"
+      ],
+      "evidence_ids": [
+        "new-creation-theme:ancient_near_east_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Genesis 1:1-31"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_00264bb93148",
       "kind": "historical_context",
       "facts": [
         "Genesis places the image of God at creation and carries the language into the post-fall human story, where vocation remains but is marred."
@@ -503,17 +558,112 @@
       "related_unit_ids": [],
       "confidence": "medium",
       "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Genesis 1:26-28"
+      ],
       "metadata": {
         "relationship_basis": "single_evidence_item",
         "source_categories": [
           "history"
         ],
         "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
         "explicit_significance": false
       }
     },
     {
-      "id": "syn_historical_context_2406c62a8eb0",
+      "id": "syn_historical_context_0ef554e79ca1",
+      "kind": "historical_context",
+      "facts": [
+        "Pneumatology is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness."
+      ],
+      "verse_refs": [
+        "Genesis 1:1-2"
+      ],
+      "evidence_ids": [
+        "pneumatology:historical_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Genesis 1:1-2"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_12d76d5bd424",
+      "kind": "historical_context",
+      "facts": [
+        "Creation Doctrine is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness."
+      ],
+      "verse_refs": [
+        "Genesis 1:1-31"
+      ],
+      "evidence_ids": [
+        "creation-doctrine:historical_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Genesis 1:1-31"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_4ca3d78007b3",
+      "kind": "historical_context",
+      "facts": [
+        "Water and Spirit Theme is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness."
+      ],
+      "verse_refs": [
+        "Genesis 1:1-2"
+      ],
+      "evidence_ids": [
+        "water-and-spirit-theme:historical_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Genesis 1:1-2"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_674245f7af9c",
       "kind": "historical_context",
       "facts": [
         "Creation doctrine draws from Israel's confession of the LORD as Creator amid ancient origin accounts and from later biblical texts that extend creation language to redemption and new creation.",
@@ -530,67 +680,22 @@
       "related_unit_ids": [],
       "confidence": "medium",
       "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Genesis 1:1-31"
+      ],
       "metadata": {
         "relationship_basis": "shared_parent_object",
         "source_categories": [
           "history"
         ],
         "support_count": 2,
+        "passage_scope": "CURRENT_CHAPTER",
         "explicit_significance": false
       }
     },
     {
-      "id": "syn_historical_context_2466d301f2de",
-      "kind": "historical_context",
-      "facts": [
-        "Creation and new creation frame the Bible from Genesis to Revelation and give coherence to human vocation, fall, redemption, and hope."
-      ],
-      "verse_refs": [
-        "Genesis 1:1-31"
-      ],
-      "evidence_ids": [
-        "creation-theme:historical_context:0"
-      ],
-      "entity_ids": [],
-      "related_unit_ids": [],
-      "confidence": "medium",
-      "interpretation_level": "fact",
-      "metadata": {
-        "relationship_basis": "single_evidence_item",
-        "source_categories": [
-          "history"
-        ],
-        "support_count": 1,
-        "explicit_significance": false
-      }
-    },
-    {
-      "id": "syn_historical_context_28a5edb26d75",
-      "kind": "historical_context",
-      "facts": [
-        "Water and Spirit Theme is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness."
-      ],
-      "verse_refs": [
-        "Genesis 1:1-2"
-      ],
-      "evidence_ids": [
-        "water-and-spirit-theme:historical_context:0"
-      ],
-      "entity_ids": [],
-      "related_unit_ids": [],
-      "confidence": "medium",
-      "interpretation_level": "fact",
-      "metadata": {
-        "relationship_basis": "single_evidence_item",
-        "source_categories": [
-          "history"
-        ],
-        "support_count": 1,
-        "explicit_significance": false
-      }
-    },
-    {
-      "id": "syn_historical_context_3a20979e4bcd",
+      "id": "syn_historical_context_70587f676cdf",
       "kind": "historical_context",
       "facts": [
         "Light and Darkness Theme is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness."
@@ -605,92 +710,52 @@
       "related_unit_ids": [],
       "confidence": "medium",
       "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Genesis 1:1-5"
+      ],
       "metadata": {
         "relationship_basis": "single_evidence_item",
         "source_categories": [
           "history"
         ],
         "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
         "explicit_significance": false
       }
     },
     {
-      "id": "syn_historical_context_46a6d903c3e7",
+      "id": "syn_historical_context_79e192e5af74",
       "kind": "historical_context",
       "facts": [
-        "Creation Doctrine is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness."
+        "Spirit language stretches from creation and the prophets into the ministry of Jesus and the birth of the church."
       ],
       "verse_refs": [
-        "Genesis 1:1-31"
+        "Genesis 1:2"
       ],
       "evidence_ids": [
-        "creation-doctrine:historical_context:0"
+        "what-is-the-holy-spirit:historical_context:0"
       ],
       "entity_ids": [],
       "related_unit_ids": [],
       "confidence": "medium",
       "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Genesis 1:2"
+      ],
       "metadata": {
         "relationship_basis": "single_evidence_item",
         "source_categories": [
           "history"
         ],
         "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
         "explicit_significance": false
       }
     },
     {
-      "id": "syn_historical_context_4d68a74d110d",
-      "kind": "historical_context",
-      "facts": [
-        "New Creation Theme is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness."
-      ],
-      "verse_refs": [
-        "Genesis 1:1-31"
-      ],
-      "evidence_ids": [
-        "new-creation-theme:historical_context:0"
-      ],
-      "entity_ids": [],
-      "related_unit_ids": [],
-      "confidence": "medium",
-      "interpretation_level": "fact",
-      "metadata": {
-        "relationship_basis": "single_evidence_item",
-        "source_categories": [
-          "history"
-        ],
-        "support_count": 1,
-        "explicit_significance": false
-      }
-    },
-    {
-      "id": "syn_historical_context_5ea5741dd361",
-      "kind": "historical_context",
-      "facts": [
-        "Pneumatology is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness."
-      ],
-      "verse_refs": [
-        "Genesis 1:1-2"
-      ],
-      "evidence_ids": [
-        "pneumatology:historical_context:0"
-      ],
-      "entity_ids": [],
-      "related_unit_ids": [],
-      "confidence": "medium",
-      "interpretation_level": "fact",
-      "metadata": {
-        "relationship_basis": "single_evidence_item",
-        "source_categories": [
-          "history"
-        ],
-        "support_count": 1,
-        "explicit_significance": false
-      }
-    },
-    {
-      "id": "syn_historical_context_699826806572",
+      "id": "syn_historical_context_97639385b2e7",
       "kind": "historical_context",
       "facts": [
         "Genesis presents humans as royal representatives, while later Scripture shows the image marred by sin and renewed in Christ."
@@ -705,92 +770,82 @@
       "related_unit_ids": [],
       "confidence": "medium",
       "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Genesis 1:26-28"
+      ],
       "metadata": {
         "relationship_basis": "single_evidence_item",
         "source_categories": [
           "history"
         ],
         "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
         "explicit_significance": false
       }
     },
     {
-      "id": "syn_historical_context_71700e63db38",
+      "id": "syn_historical_context_a32a88d8141c",
       "kind": "historical_context",
       "facts": [
-        "Spirit language stretches from creation and the prophets into the ministry of Jesus and the birth of the church."
-      ],
-      "verse_refs": [
-        "Genesis 1:2"
-      ],
-      "evidence_ids": [
-        "what-is-the-significance-of-the-holy-spirit:historical_context:0"
-      ],
-      "entity_ids": [],
-      "related_unit_ids": [],
-      "confidence": "medium",
-      "interpretation_level": "fact",
-      "metadata": {
-        "relationship_basis": "single_evidence_item",
-        "source_categories": [
-          "history"
-        ],
-        "support_count": 1,
-        "explicit_significance": false
-      }
-    },
-    {
-      "id": "syn_historical_context_8b2fe4cfd09a",
-      "kind": "historical_context",
-      "facts": [
-        "The word is used for physical wind and breath before it is used for divine and human life."
+        "Spiritual Gifts is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness."
       ],
       "verse_refs": [
         "Genesis 1:1-2"
       ],
       "evidence_ids": [
-        "what-does-ruach-mean:historical_context:0"
+        "spiritual-gifts:historical_context:0"
       ],
       "entity_ids": [],
       "related_unit_ids": [],
       "confidence": "medium",
       "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Genesis 1:1-2"
+      ],
       "metadata": {
         "relationship_basis": "single_evidence_item",
         "source_categories": [
           "history"
         ],
         "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
         "explicit_significance": false
       }
     },
     {
-      "id": "syn_historical_context_a85138086066",
+      "id": "syn_historical_context_c22d3d2c63c1",
       "kind": "historical_context",
       "facts": [
-        "Spirit language appears from creation through prophecy, Jesus’ ministry, Pentecost, and the life of the church."
+        "Creation and new creation frame the Bible from Genesis to Revelation and give coherence to human vocation, fall, redemption, and hope."
       ],
       "verse_refs": [
-        "Genesis 1:2"
+        "Genesis 1:1-31"
       ],
       "evidence_ids": [
-        "spirit-theme:historical_context:0"
+        "creation-theme:historical_context:0"
       ],
       "entity_ids": [],
       "related_unit_ids": [],
       "confidence": "medium",
       "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Genesis 1:1-31"
+      ],
       "metadata": {
         "relationship_basis": "single_evidence_item",
         "source_categories": [
           "history"
         ],
         "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
         "explicit_significance": false
       }
     },
     {
-      "id": "syn_historical_context_c426f6baf9c7",
+      "id": "syn_historical_context_d650cb8d7a97",
       "kind": "historical_context",
       "facts": [
         "Genesis presents creation as the foundational act that begins biblical history and establishes God’s sovereignty over all things."
@@ -807,67 +862,142 @@
       "related_unit_ids": [],
       "confidence": "medium",
       "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Genesis 1:1-31"
+      ],
       "metadata": {
         "relationship_basis": "single_evidence_item",
         "source_categories": [
           "history"
         ],
         "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
         "explicit_significance": false
       }
     },
     {
-      "id": "syn_historical_context_d85fcaa8c914",
+      "id": "syn_historical_context_e18bc0272c4d",
       "kind": "historical_context",
       "facts": [
-        "Spiritual Gifts is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness."
+        "Spirit language stretches from creation and the prophets into the ministry of Jesus and the birth of the church."
       ],
       "verse_refs": [
-        "Genesis 1:1-2"
+        "Genesis 1:2"
       ],
       "evidence_ids": [
-        "spiritual-gifts:historical_context:0"
+        "what-is-the-significance-of-the-holy-spirit:historical_context:0"
       ],
       "entity_ids": [],
       "related_unit_ids": [],
       "confidence": "medium",
       "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Genesis 1:2"
+      ],
       "metadata": {
         "relationship_basis": "single_evidence_item",
         "source_categories": [
           "history"
         ],
         "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
         "explicit_significance": false
       }
     },
     {
-      "id": "syn_interpretive_questions_26ced0c35db2",
-      "kind": "interpretive_questions",
+      "id": "syn_historical_context_eb07da4828dc",
+      "kind": "historical_context",
       "facts": [
-        "John 1 depicts the Logos with God in the beginning, active in creation and life, becoming flesh and dwelling among humans; Jewish Scripture, wisdom, divine-word traditions, and Greek discourse all inform interpretation."
+        "New Creation Theme is read across the canon as Scripture develops this theme from Israel's story into the New Testament witness."
       ],
       "verse_refs": [
-        "Genesis 1:1-5"
+        "Genesis 1:1-31"
       ],
       "evidence_ids": [
-        "john-logos"
+        "new-creation-theme:historical_context:0"
       ],
       "entity_ids": [],
       "related_unit_ids": [],
-      "confidence": "high",
-      "interpretation_level": "disputed",
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Genesis 1:1-31"
+      ],
       "metadata": {
         "relationship_basis": "single_evidence_item",
         "source_categories": [
-          "culture"
+          "history"
         ],
         "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
         "explicit_significance": false
       }
     },
     {
-      "id": "syn_interpretive_questions_3d6e3f541c27",
+      "id": "syn_historical_context_f0d01e8a963f",
+      "kind": "historical_context",
+      "facts": [
+        "The word is used for physical wind and breath before it is used for divine and human life."
+      ],
+      "verse_refs": [
+        "Genesis 1:1-2"
+      ],
+      "evidence_ids": [
+        "what-does-ruach-mean:historical_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Genesis 1:1-2"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_f378866106de",
+      "kind": "historical_context",
+      "facts": [
+        "Spirit language appears from creation through prophecy, Jesus’ ministry, Pentecost, and the life of the church."
+      ],
+      "verse_refs": [
+        "Genesis 1:2"
+      ],
+      "evidence_ids": [
+        "spirit-theme:historical_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Genesis 1:2"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_interpretive_questions_104b452d03db",
       "kind": "interpretive_questions",
       "facts": [
         "Messiah is called the image of the invisible God.",
@@ -884,17 +1014,22 @@
       "related_unit_ids": [],
       "confidence": "high",
       "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Genesis 1:26-27"
+      ],
       "metadata": {
         "relationship_basis": "shared_parent_object",
         "source_categories": [
           "culture"
         ],
         "support_count": 2,
+        "passage_scope": "CURRENT_CHAPTER",
         "explicit_significance": false
       }
     },
     {
-      "id": "syn_interpretive_questions_71d79a60a92d",
+      "id": "syn_interpretive_questions_4abfca502108",
       "kind": "interpretive_questions",
       "facts": [
         "Zephaniah 1:2-3 sweeps through humans, animals, birds, and fish in a creation-scale judgment commonly read as creation reversal with flood resonances."
@@ -909,49 +1044,52 @@
       "related_unit_ids": [],
       "confidence": "high",
       "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Genesis 1:20-28"
+      ],
       "metadata": {
         "relationship_basis": "single_evidence_item",
         "source_categories": [
           "culture"
         ],
         "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
         "explicit_significance": false
       }
     },
     {
-      "id": "syn_interpretive_questions_800e37281895",
+      "id": "syn_interpretive_questions_4b06eb55d452",
       "kind": "interpretive_questions",
       "facts": [
-        "The Babylonian epic narrates divine succession and combat followed by Marduk's organization of the cosmos and cultic supremacy.",
-        "The epic supplies a specific Mesopotamian comparison for waters, ordering, celestial organization, and divine rule in Genesis 1 without making the two accounts equivalent.",
-        "Shared motifs support comparison but do not establish a single line of direct borrowing."
+        "John 1 depicts the Logos with God in the beginning, active in creation and life, becoming flesh and dwelling among humans; Jewish Scripture, wisdom, divine-word traditions, and Greek discourse all inform interpretation."
       ],
       "verse_refs": [
-        "Genesis 1:1-2:3"
+        "Genesis 1:1-5"
       ],
       "evidence_ids": [
-        "enuma-elish-cosmic-ordering-comparison",
-        "enuma-elish-cosmic-ordering-comparison:passage-relevance",
-        "mesopotamian-creation-and-flood-comparisons:interpretive_note:0"
+        "john-logos"
       ],
-      "entity_ids": [
-        "creation"
-      ],
+      "entity_ids": [],
       "related_unit_ids": [],
-      "confidence": "medium",
+      "confidence": "high",
       "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Genesis 1:1-5"
+      ],
       "metadata": {
-        "relationship_basis": "shared_parent_object",
+        "relationship_basis": "single_evidence_item",
         "source_categories": [
-          "culture",
-          "history"
+          "culture"
         ],
-        "support_count": 3,
-        "explicit_significance": true
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
       }
     },
     {
-      "id": "syn_interpretive_questions_94bf371962f9",
+      "id": "syn_interpretive_questions_ed658ab06804",
       "kind": "interpretive_questions",
       "facts": [
         "God shining light in hearts revoices creation and prophetic light language; it is theological metaphor, not a scientific account of cognition or vision."
@@ -966,117 +1104,30 @@
       "related_unit_ids": [],
       "confidence": "high",
       "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Genesis 1:3"
+      ],
       "metadata": {
         "relationship_basis": "single_evidence_item",
         "source_categories": [
           "culture"
         ],
         "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
         "explicit_significance": false
       }
     },
     {
-      "id": "syn_interpretive_questions_f65d954ca163",
-      "kind": "interpretive_questions",
-      "facts": [
-        "Genesis 1-11 belongs to an ancient Near Eastern literary environment in which creation, flood, genealogy, and city-building traditions were also discussed.",
-        "Present Mosaic attribution and compositional models as distinct positions; Genesis does not narrate the history of its own literary formation.",
-        "Read Genesis 1-11 as ancient theological and literary discourse before imposing modern scientific genres or dismissing its claims as merely decorative myth.",
-        "Ancient Near Eastern parallels can clarify shared motifs and cultural questions, but parallels alone do not prove direct copying or settle the interpretation of Genesis."
-      ],
-      "verse_refs": [
-        "Genesis 1:1-11:26",
-        "Genesis 1:1-50:26"
-      ],
-      "evidence_ids": [
-        "genesis-ane-comparative-context",
-        "genesis:interpretive_note:0",
-        "genesis:interpretive_note:1",
-        "genesis:interpretive_note:2"
-      ],
-      "entity_ids": [],
-      "related_unit_ids": [],
-      "confidence": "low",
-      "interpretation_level": "disputed",
-      "metadata": {
-        "relationship_basis": "shared_parent_object",
-        "source_categories": [
-          "culture",
-          "geography"
-        ],
-        "support_count": 4,
-        "explicit_significance": false
-      }
-    },
-    {
-      "id": "syn_language_literary_a914cade6d05",
-      "kind": "language_literary",
-      "facts": [
-        "Genesis moves from universal origins in chapters 1-11 to the ancestral family narratives in chapters 12-50 and ends with Jacob's household in Egypt."
-      ],
-      "verse_refs": [
-        "Genesis 1:1-50:26"
-      ],
-      "evidence_ids": [
-        "genesis-literary-movement"
-      ],
-      "entity_ids": [],
-      "related_unit_ids": [],
-      "confidence": "high",
-      "interpretation_level": "fact",
-      "metadata": {
-        "relationship_basis": "single_evidence_item",
-        "source_categories": [
-          "culture"
-        ],
-        "support_count": 1,
-        "explicit_significance": false
-      }
-    },
-    {
-      "id": "syn_why_it_matters_02eb8e91a701",
-      "kind": "why_it_matters",
-      "facts": [
-        "Genesis 1 can be compared with ancient Mesopotamian accounts of cosmic waters, ordering, celestial bodies, divine rule, and human vocation. The comparisons reveal shared discourse and marked differences without proving a single route of dependence.",
-        "Genesis 1 depicts one God ordering the world by speech, blessing living creatures, assigning humans an image-bearing vocation, and resting on the seventh day. These observations describe the passage before later theological synthesis.",
-        "Genesis 1 repeatedly depicts God speaking, separating, naming, appointing, blessing, evaluating, and resting as the created order is established.",
-        "The observation identifies the passage's own account of ordered creation before ancient comparative material is introduced."
-      ],
-      "verse_refs": [
-        "Genesis 1:1-2:3",
-        "Genesis 1:1-31"
-      ],
-      "evidence_ids": [
-        "creation:ancient_near_east_context:0",
-        "creation:hebraic_worldview:0",
-        "genesis-ordered-worldview-observation",
-        "genesis-ordered-worldview-observation:passage-relevance"
-      ],
-      "entity_ids": [
-        "creation"
-      ],
-      "related_unit_ids": [
-        "syn_cultural_context_6115a83b8448"
-      ],
-      "confidence": "medium",
-      "interpretation_level": "inference",
-      "metadata": {
-        "relationship_basis": "shared_entities",
-        "support_count": 4,
-        "explicit_significance": true,
-        "safe_for_significance": true
-      }
-    },
-    {
-      "id": "syn_why_it_matters_5aafddd18765",
-      "kind": "why_it_matters",
+      "id": "syn_surrounding_passages_02324dc7bcd9",
+      "kind": "surrounding_passages",
       "facts": [
         "The Babylonian epic narrates divine succession and combat followed by Marduk's organization of the cosmos and cultic supremacy.",
         "The epic supplies a specific Mesopotamian comparison for waters, ordering, celestial organization, and divine rule in Genesis 1 without making the two accounts equivalent.",
         "Shared motifs support comparison but do not establish a single line of direct borrowing."
       ],
       "verse_refs": [
-        "Genesis 1:1-2:3"
+        "Genesis 2:1-3"
       ],
       "evidence_ids": [
         "enuma-elish-cosmic-ordering-comparison",
@@ -1087,10 +1138,14 @@
         "creation"
       ],
       "related_unit_ids": [
-        "syn_interpretive_questions_800e37281895"
+        "syn_surrounding_passages_68d0c434dd51"
       ],
       "confidence": "medium",
       "interpretation_level": "disputed",
+      "passage_scope": "SURROUNDING_PASSAGE",
+      "source_anchors": [
+        "Genesis 1:1-2:3"
+      ],
       "metadata": {
         "relationship_basis": "shared_parent_object",
         "support_count": 3,
@@ -1099,122 +1154,86 @@
       }
     },
     {
-      "id": "syn_why_it_matters_827ff1219dc7",
-      "kind": "why_it_matters",
+      "id": "syn_surrounding_passages_311399d9709e",
+      "kind": "surrounding_passages",
       "facts": [
-        "Messiah is called the image of the invisible God.",
-        "The new humanity is being renewed in knowledge according to the creator's image across named ethnic, ritual, cultural, and legal distinctions."
+        "Genesis moves from universal origins in chapters 1-11 to the ancestral family narratives in chapters 12-50 and ends with Jacob's household in Egypt."
       ],
       "verse_refs": [
-        "Genesis 1:26-27"
+        "Genesis 10:1-32",
+        "Genesis 11:1-32",
+        "Genesis 12:1-20",
+        "Genesis 13:1-18",
+        "Genesis 14:1-24",
+        "Genesis 15:1-21",
+        "Genesis 16:1-16",
+        "Genesis 17:1-27",
+        "Genesis 18:1-33",
+        "Genesis 19:1-38",
+        "Genesis 20:1-18",
+        "Genesis 21:1-34",
+        "Genesis 22:1-24",
+        "Genesis 23:1-20",
+        "Genesis 24:1-67",
+        "Genesis 25:1-34",
+        "Genesis 26:1-35",
+        "Genesis 27:1-46",
+        "Genesis 28:1-22",
+        "Genesis 29:1-35",
+        "Genesis 2:1-25",
+        "Genesis 30:1-43",
+        "Genesis 31:1-55",
+        "Genesis 32:1-32",
+        "Genesis 33:1-20",
+        "Genesis 34:1-31",
+        "Genesis 35:1-29",
+        "Genesis 36:1-43",
+        "Genesis 37:1-36",
+        "Genesis 38:1-30",
+        "Genesis 39:1-23",
+        "Genesis 3:1-24",
+        "Genesis 40:1-23",
+        "Genesis 41:1-57",
+        "Genesis 42:1-38",
+        "Genesis 43:1-34",
+        "Genesis 44:1-34",
+        "Genesis 45:1-28",
+        "Genesis 46:1-34",
+        "Genesis 47:1-31",
+        "Genesis 48:1-22",
+        "Genesis 49:1-33",
+        "Genesis 4:1-26",
+        "Genesis 50:1-26",
+        "Genesis 5:1-32",
+        "Genesis 6:1-22",
+        "Genesis 7:1-24",
+        "Genesis 8:1-22",
+        "Genesis 9:1-29"
       ],
       "evidence_ids": [
-        "col-image",
-        "col-new-humanity"
+        "genesis-literary-movement"
       ],
       "entity_ids": [],
-      "related_unit_ids": [
-        "syn_interpretive_questions_3d6e3f541c27"
-      ],
+      "related_unit_ids": [],
       "confidence": "high",
-      "interpretation_level": "disputed",
+      "interpretation_level": "fact",
+      "passage_scope": "SURROUNDING_PASSAGE",
+      "source_anchors": [
+        "Genesis 1:1-50:26"
+      ],
       "metadata": {
-        "relationship_basis": "shared_parent_object",
-        "support_count": 2,
-        "explicit_significance": false,
-        "safe_for_significance": true
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "SURROUNDING_PASSAGE",
+        "explicit_significance": false
       }
     },
     {
-      "id": "syn_why_it_matters_89890f355be8",
-      "kind": "why_it_matters",
-      "facts": [
-        "Royal imagery was common in the ancient world, but Genesis extends representative dignity to humanity as a whole rather than only to kings.",
-        "Human vocation, relational responsibility, dignity, stewardship, and moral accountability.",
-        "Second Temple Jewish reflection connected the image of God with wisdom, holiness, and the hope of restored humanity."
-      ],
-      "verse_refs": [
-        "Genesis 1:26-28"
-      ],
-      "evidence_ids": [
-        "image-of-god-theme:ancient_near_east_context:0",
-        "image-of-god-theme:hebraic_worldview:0",
-        "image-of-god-theme:second_temple_context:0"
-      ],
-      "entity_ids": [],
-      "related_unit_ids": [
-        "syn_cultural_context_83a671af55c4"
-      ],
-      "confidence": "medium",
-      "interpretation_level": "inference",
-      "metadata": {
-        "relationship_basis": "shared_parent_object",
-        "support_count": 3,
-        "explicit_significance": false,
-        "safe_for_significance": true
-      }
-    },
-    {
-      "id": "syn_why_it_matters_8e55bb247a5e",
-      "kind": "why_it_matters",
-      "facts": [
-        "Creation texts stand alongside Mesopotamian origin traditions such as Enuma Elish and Atrahasis, while Scripture presents creation as ordered by the one covenant Lord.",
-        "Creation is good, ordered, and accountable to God; humanity receives creaturely dignity and responsibility rather than autonomous self-definition.",
-        "Readers learning Scripture's account of God, world, and human vocation",
-        "Second Temple Jewish literature and early Christian texts often connect creation, wisdom, resurrection hope, and God's power to make all things new."
-      ],
-      "verse_refs": [
-        "Genesis 1:1-31"
-      ],
-      "evidence_ids": [
-        "creation-doctrine-framework:ancient_near_east_context:0",
-        "creation-doctrine-framework:hebraic_worldview:0",
-        "creation-doctrine-framework:original_audience:0",
-        "creation-doctrine-framework:second_temple_context:0"
-      ],
-      "entity_ids": [],
-      "related_unit_ids": [
-        "syn_cultural_context_e7c693cf1f14"
-      ],
-      "confidence": "medium",
-      "interpretation_level": "inference",
-      "metadata": {
-        "relationship_basis": "shared_parent_object",
-        "support_count": 4,
-        "explicit_significance": false,
-        "safe_for_significance": true
-      }
-    },
-    {
-      "id": "syn_why_it_matters_b8206e3fa73e",
-      "kind": "why_it_matters",
-      "facts": [
-        "Creation doctrine draws from Israel's confession of the LORD as Creator amid ancient origin accounts and from later biblical texts that extend creation language to redemption and new creation.",
-        "Canonical teaching from Genesis through Revelation"
-      ],
-      "verse_refs": [
-        "Genesis 1:1-31"
-      ],
-      "evidence_ids": [
-        "creation-doctrine-framework:historical_context:0",
-        "creation-doctrine-framework:historical_setting:0"
-      ],
-      "entity_ids": [],
-      "related_unit_ids": [
-        "syn_historical_context_2406c62a8eb0"
-      ],
-      "confidence": "medium",
-      "interpretation_level": "inference",
-      "metadata": {
-        "relationship_basis": "shared_parent_object",
-        "support_count": 2,
-        "explicit_significance": false,
-        "safe_for_significance": true
-      }
-    },
-    {
-      "id": "syn_why_it_matters_c81d0f7aa9dc",
-      "kind": "why_it_matters",
+      "id": "syn_surrounding_passages_3c5ff4c1ad4a",
+      "kind": "surrounding_passages",
       "facts": [
         "Genesis 1-11 belongs to an ancient Near Eastern literary environment in which creation, flood, genealogy, and city-building traditions were also discussed.",
         "Present Mosaic attribution and compositional models as distinct positions; Genesis does not narrate the history of its own literary formation.",
@@ -1222,8 +1241,180 @@
         "Ancient Near Eastern parallels can clarify shared motifs and cultural questions, but parallels alone do not prove direct copying or settle the interpretation of Genesis."
       ],
       "verse_refs": [
+        "Genesis 10:1-32",
+        "Genesis 11:1-26",
+        "Genesis 11:1-32",
+        "Genesis 12:1-20",
+        "Genesis 13:1-18",
+        "Genesis 14:1-24",
+        "Genesis 15:1-21",
+        "Genesis 16:1-16",
+        "Genesis 17:1-27",
+        "Genesis 18:1-33",
+        "Genesis 19:1-38",
+        "Genesis 20:1-18",
+        "Genesis 21:1-34",
+        "Genesis 22:1-24",
+        "Genesis 23:1-20",
+        "Genesis 24:1-67",
+        "Genesis 25:1-34",
+        "Genesis 26:1-35",
+        "Genesis 27:1-46",
+        "Genesis 28:1-22",
+        "Genesis 29:1-35",
+        "Genesis 2:1-25",
+        "Genesis 30:1-43",
+        "Genesis 31:1-55",
+        "Genesis 32:1-32",
+        "Genesis 33:1-20",
+        "Genesis 34:1-31",
+        "Genesis 35:1-29",
+        "Genesis 36:1-43",
+        "Genesis 37:1-36",
+        "Genesis 38:1-30",
+        "Genesis 39:1-23",
+        "Genesis 3:1-24",
+        "Genesis 40:1-23",
+        "Genesis 41:1-57",
+        "Genesis 42:1-38",
+        "Genesis 43:1-34",
+        "Genesis 44:1-34",
+        "Genesis 45:1-28",
+        "Genesis 46:1-34",
+        "Genesis 47:1-31",
+        "Genesis 48:1-22",
+        "Genesis 49:1-33",
+        "Genesis 4:1-26",
+        "Genesis 50:1-26",
+        "Genesis 5:1-32",
+        "Genesis 6:1-22",
+        "Genesis 7:1-24",
+        "Genesis 8:1-22",
+        "Genesis 9:1-29"
+      ],
+      "evidence_ids": [
+        "genesis-ane-comparative-context",
+        "genesis:interpretive_note:0",
+        "genesis:interpretive_note:1",
+        "genesis:interpretive_note:2"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "low",
+      "interpretation_level": "disputed",
+      "passage_scope": "SURROUNDING_PASSAGE",
+      "source_anchors": [
         "Genesis 1:1-11:26",
         "Genesis 1:1-50:26"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "source_categories": [
+          "culture",
+          "geography"
+        ],
+        "support_count": 4,
+        "passage_scope": "SURROUNDING_PASSAGE",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_surrounding_passages_68d0c434dd51",
+      "kind": "surrounding_passages",
+      "facts": [
+        "The Babylonian epic narrates divine succession and combat followed by Marduk's organization of the cosmos and cultic supremacy.",
+        "The epic supplies a specific Mesopotamian comparison for waters, ordering, celestial organization, and divine rule in Genesis 1 without making the two accounts equivalent.",
+        "Shared motifs support comparison but do not establish a single line of direct borrowing."
+      ],
+      "verse_refs": [
+        "Genesis 2:1-3"
+      ],
+      "evidence_ids": [
+        "enuma-elish-cosmic-ordering-comparison",
+        "enuma-elish-cosmic-ordering-comparison:passage-relevance",
+        "mesopotamian-creation-and-flood-comparisons:interpretive_note:0"
+      ],
+      "entity_ids": [
+        "creation"
+      ],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "disputed",
+      "passage_scope": "SURROUNDING_PASSAGE",
+      "source_anchors": [
+        "Genesis 1:1-2:3"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "source_categories": [
+          "culture",
+          "history"
+        ],
+        "support_count": 3,
+        "passage_scope": "SURROUNDING_PASSAGE",
+        "explicit_significance": true
+      }
+    },
+    {
+      "id": "syn_surrounding_passages_89969fb357a1",
+      "kind": "surrounding_passages",
+      "facts": [
+        "Genesis 1-11 belongs to an ancient Near Eastern literary environment in which creation, flood, genealogy, and city-building traditions were also discussed.",
+        "Present Mosaic attribution and compositional models as distinct positions; Genesis does not narrate the history of its own literary formation.",
+        "Read Genesis 1-11 as ancient theological and literary discourse before imposing modern scientific genres or dismissing its claims as merely decorative myth.",
+        "Ancient Near Eastern parallels can clarify shared motifs and cultural questions, but parallels alone do not prove direct copying or settle the interpretation of Genesis."
+      ],
+      "verse_refs": [
+        "Genesis 10:1-32",
+        "Genesis 11:1-26",
+        "Genesis 11:1-32",
+        "Genesis 12:1-20",
+        "Genesis 13:1-18",
+        "Genesis 14:1-24",
+        "Genesis 15:1-21",
+        "Genesis 16:1-16",
+        "Genesis 17:1-27",
+        "Genesis 18:1-33",
+        "Genesis 19:1-38",
+        "Genesis 20:1-18",
+        "Genesis 21:1-34",
+        "Genesis 22:1-24",
+        "Genesis 23:1-20",
+        "Genesis 24:1-67",
+        "Genesis 25:1-34",
+        "Genesis 26:1-35",
+        "Genesis 27:1-46",
+        "Genesis 28:1-22",
+        "Genesis 29:1-35",
+        "Genesis 2:1-25",
+        "Genesis 30:1-43",
+        "Genesis 31:1-55",
+        "Genesis 32:1-32",
+        "Genesis 33:1-20",
+        "Genesis 34:1-31",
+        "Genesis 35:1-29",
+        "Genesis 36:1-43",
+        "Genesis 37:1-36",
+        "Genesis 38:1-30",
+        "Genesis 39:1-23",
+        "Genesis 3:1-24",
+        "Genesis 40:1-23",
+        "Genesis 41:1-57",
+        "Genesis 42:1-38",
+        "Genesis 43:1-34",
+        "Genesis 44:1-34",
+        "Genesis 45:1-28",
+        "Genesis 46:1-34",
+        "Genesis 47:1-31",
+        "Genesis 48:1-22",
+        "Genesis 49:1-33",
+        "Genesis 4:1-26",
+        "Genesis 50:1-26",
+        "Genesis 5:1-32",
+        "Genesis 6:1-22",
+        "Genesis 7:1-24",
+        "Genesis 8:1-22",
+        "Genesis 9:1-29"
       ],
       "evidence_ids": [
         "genesis-ane-comparative-context",
@@ -1233,10 +1424,15 @@
       ],
       "entity_ids": [],
       "related_unit_ids": [
-        "syn_interpretive_questions_f65d954ca163"
+        "syn_surrounding_passages_3c5ff4c1ad4a"
       ],
       "confidence": "low",
       "interpretation_level": "disputed",
+      "passage_scope": "SURROUNDING_PASSAGE",
+      "source_anchors": [
+        "Genesis 1:1-11:26",
+        "Genesis 1:1-50:26"
+      ],
       "metadata": {
         "relationship_basis": "shared_parent_object",
         "support_count": 4,
@@ -1245,7 +1441,74 @@
       }
     },
     {
-      "id": "syn_why_it_matters_f17ffc7b1894",
+      "id": "syn_surrounding_passages_89e2fa039257",
+      "kind": "surrounding_passages",
+      "facts": [
+        "Genesis 1 repeatedly depicts God speaking, separating, naming, appointing, blessing, evaluating, and resting as the created order is established.",
+        "The observation identifies the passage's own account of ordered creation before ancient comparative material is introduced."
+      ],
+      "verse_refs": [
+        "Genesis 2:1-3"
+      ],
+      "evidence_ids": [
+        "genesis-ordered-worldview-observation",
+        "genesis-ordered-worldview-observation:passage-relevance"
+      ],
+      "entity_ids": [
+        "creation"
+      ],
+      "related_unit_ids": [],
+      "confidence": "high",
+      "interpretation_level": "fact",
+      "passage_scope": "SURROUNDING_PASSAGE",
+      "source_anchors": [
+        "Genesis 1:1-2:3"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_entities",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 2,
+        "passage_scope": "SURROUNDING_PASSAGE",
+        "explicit_significance": true
+      }
+    },
+    {
+      "id": "syn_surrounding_passages_9a6be1bbec10",
+      "kind": "surrounding_passages",
+      "facts": [
+        "Genesis 1 repeatedly depicts God speaking, separating, naming, appointing, blessing, evaluating, and resting as the created order is established.",
+        "The observation identifies the passage's own account of ordered creation before ancient comparative material is introduced."
+      ],
+      "verse_refs": [
+        "Genesis 2:1-3"
+      ],
+      "evidence_ids": [
+        "genesis-ordered-worldview-observation",
+        "genesis-ordered-worldview-observation:passage-relevance"
+      ],
+      "entity_ids": [
+        "creation"
+      ],
+      "related_unit_ids": [
+        "syn_surrounding_passages_89e2fa039257"
+      ],
+      "confidence": "high",
+      "interpretation_level": "inference",
+      "passage_scope": "SURROUNDING_PASSAGE",
+      "source_anchors": [
+        "Genesis 1:1-2:3"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_entities",
+        "support_count": 2,
+        "explicit_significance": true,
+        "safe_for_significance": true
+      }
+    },
+    {
+      "id": "syn_why_it_matters_08c846785ce8",
       "kind": "why_it_matters",
       "facts": [
         "Creation declared good",
@@ -1266,13 +1529,180 @@
       ],
       "entity_ids": [],
       "related_unit_ids": [
-        "syn_chronology_94bd4f44f712"
+        "syn_chronology_4d389e9b8f3a"
       ],
       "confidence": "medium",
       "interpretation_level": "inference",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Genesis 1:1-31"
+      ],
       "metadata": {
         "relationship_basis": "shared_parent_object",
         "support_count": 5,
+        "explicit_significance": false,
+        "safe_for_significance": true
+      }
+    },
+    {
+      "id": "syn_why_it_matters_1170572dc806",
+      "kind": "why_it_matters",
+      "facts": [
+        "Creation doctrine draws from Israel's confession of the LORD as Creator amid ancient origin accounts and from later biblical texts that extend creation language to redemption and new creation.",
+        "Canonical teaching from Genesis through Revelation"
+      ],
+      "verse_refs": [
+        "Genesis 1:1-31"
+      ],
+      "evidence_ids": [
+        "creation-doctrine-framework:historical_context:0",
+        "creation-doctrine-framework:historical_setting:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [
+        "syn_historical_context_674245f7af9c"
+      ],
+      "confidence": "medium",
+      "interpretation_level": "inference",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Genesis 1:1-31"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "support_count": 2,
+        "explicit_significance": false,
+        "safe_for_significance": true
+      }
+    },
+    {
+      "id": "syn_why_it_matters_55c6c474fbf2",
+      "kind": "why_it_matters",
+      "facts": [
+        "Creation texts stand alongside Mesopotamian origin traditions such as Enuma Elish and Atrahasis, while Scripture presents creation as ordered by the one covenant Lord.",
+        "Creation is good, ordered, and accountable to God; humanity receives creaturely dignity and responsibility rather than autonomous self-definition.",
+        "Readers learning Scripture's account of God, world, and human vocation",
+        "Second Temple Jewish literature and early Christian texts often connect creation, wisdom, resurrection hope, and God's power to make all things new."
+      ],
+      "verse_refs": [
+        "Genesis 1:1-31"
+      ],
+      "evidence_ids": [
+        "creation-doctrine-framework:ancient_near_east_context:0",
+        "creation-doctrine-framework:hebraic_worldview:0",
+        "creation-doctrine-framework:original_audience:0",
+        "creation-doctrine-framework:second_temple_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [
+        "syn_cultural_context_093852396ae8"
+      ],
+      "confidence": "medium",
+      "interpretation_level": "inference",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Genesis 1:1-31"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "support_count": 4,
+        "explicit_significance": false,
+        "safe_for_significance": true
+      }
+    },
+    {
+      "id": "syn_why_it_matters_8c410550b6f6",
+      "kind": "why_it_matters",
+      "facts": [
+        "Messiah is called the image of the invisible God.",
+        "The new humanity is being renewed in knowledge according to the creator's image across named ethnic, ritual, cultural, and legal distinctions."
+      ],
+      "verse_refs": [
+        "Genesis 1:26-27"
+      ],
+      "evidence_ids": [
+        "col-image",
+        "col-new-humanity"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [
+        "syn_interpretive_questions_104b452d03db"
+      ],
+      "confidence": "high",
+      "interpretation_level": "disputed",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Genesis 1:26-27"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "support_count": 2,
+        "explicit_significance": false,
+        "safe_for_significance": true
+      }
+    },
+    {
+      "id": "syn_why_it_matters_b65d737371b0",
+      "kind": "why_it_matters",
+      "facts": [
+        "Royal imagery was common in the ancient world, but Genesis extends representative dignity to humanity as a whole rather than only to kings.",
+        "Human vocation, relational responsibility, dignity, stewardship, and moral accountability.",
+        "Second Temple Jewish reflection connected the image of God with wisdom, holiness, and the hope of restored humanity."
+      ],
+      "verse_refs": [
+        "Genesis 1:26-28"
+      ],
+      "evidence_ids": [
+        "image-of-god-theme:ancient_near_east_context:0",
+        "image-of-god-theme:hebraic_worldview:0",
+        "image-of-god-theme:second_temple_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [
+        "syn_cultural_context_165d53188040"
+      ],
+      "confidence": "medium",
+      "interpretation_level": "inference",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Genesis 1:26-28"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_parent_object",
+        "support_count": 3,
+        "explicit_significance": false,
+        "safe_for_significance": true
+      }
+    },
+    {
+      "id": "syn_why_it_matters_cdd67602b1d1",
+      "kind": "why_it_matters",
+      "facts": [
+        "Genesis 1 can be compared with ancient Mesopotamian accounts of cosmic waters, ordering, celestial bodies, divine rule, and human vocation. The comparisons reveal shared discourse and marked differences without proving a single route of dependence.",
+        "Genesis 1 depicts one God ordering the world by speech, blessing living creatures, assigning humans an image-bearing vocation, and resting on the seventh day. These observations describe the passage before later theological synthesis."
+      ],
+      "verse_refs": [
+        "Genesis 1:1-31"
+      ],
+      "evidence_ids": [
+        "creation:ancient_near_east_context:0",
+        "creation:hebraic_worldview:0"
+      ],
+      "entity_ids": [
+        "creation"
+      ],
+      "related_unit_ids": [
+        "syn_cultural_context_048db383ff38"
+      ],
+      "confidence": "medium",
+      "interpretation_level": "inference",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Genesis 1:1-31"
+      ],
+      "metadata": {
+        "relationship_basis": "shared_entities",
+        "support_count": 2,
         "explicit_significance": false,
         "safe_for_significance": true
       }
@@ -1368,10 +1798,10 @@
       "chronology": 2,
       "cultural_context": 15,
       "historical_context": 15,
-      "interpretive_questions": 6,
-      "language_literary": 1,
-      "why_it_matters": 8
+      "interpretive_questions": 4,
+      "surrounding_passages": 7,
+      "why_it_matters": 6
     },
-    "relationship_unit_count": 8
+    "relationship_unit_count": 9
   }
 }

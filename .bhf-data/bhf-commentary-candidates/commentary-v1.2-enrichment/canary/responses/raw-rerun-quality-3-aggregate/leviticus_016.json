@@ -1,0 +1,149 @@
+{
+  "reference": "Leviticus 16",
+  "packet_id": "commentary-v1.2-packet:3b2714e977ed2ddf8396d7477efba3a3d13d7ff820871aa129d521a0aa795412",
+  "prompt_version": "1.2",
+  "evidence_hash": "8e5cbb871b1513cc91ad7b20d2f399c3796e3fe36516d99e6b36511dcadfab62",
+  "synthesis_hash": "6c9b25b87dde82946bb0620ce97f85a31311467dec6c8745e2d365de9f2904bc",
+  "renderer_label": "Luna Medium",
+  "response_payload": {
+    "reference": "Leviticus 16",
+    "book": "Leviticus",
+    "chapter": 16,
+    "status": "pending",
+    "sections": [
+      {
+        "kind": "chapter_overview",
+        "title": "Atonement and restored access",
+        "blocks": [
+          {
+            "id": "block_1",
+            "text": "Leviticus 16 moves through a carefully ordered rite: Aaron prepares himself, enters the inner sanctuary with blood and incense, addresses the sanctuary and altar, sends one goat into the wilderness, and finally offers burnt offerings. The annual ceremony addresses the sanctuary, priesthood, and people together, and the chapter frames it as a Sabbath of solemn rest and a lasting statute. The movement is from dangerous, restricted approach toward cleansing for the whole community.",
+            "verse_refs": ["Leviticus 16:1-34"],
+            "evidence_ids": ["leviticus-day-of-atonement"],
+            "synthesis_ids": ["syn_historical_context_7a6f1c2a8e71"],
+            "confidence": "high",
+            "interpretation_level": "fact"
+          }
+        ]
+      },
+      {
+        "kind": "cultural_context",
+        "title": "Priestly mediation and sacrifice",
+        "blocks": [
+          {
+            "id": "block_2",
+            "text": "The high priest's role here is not simply to perform a private ceremony. In Israel's priestly framework, priesthood mediates access, teaches holiness, and guards sacred space; on this day Aaron acts for himself, his household, and the whole assembly. Sacrifice belongs to that covenant setting: it joins holiness, atonement, fellowship, and thanksgiving rather than functioning as mere appeasement. Ancient sacrificial practice provides comparison, but the chapter's own pattern gives the rite its distinctive shape.",
+            "verse_refs": ["Leviticus 16:3-6", "Leviticus 16:15-19", "Leviticus 16:24-34"],
+            "evidence_ids": ["priesthood:hebraic_worldview:0", "sacrifice-theme:hebraic_worldview:0"],
+            "synthesis_ids": ["syn_cultural_context_03fce88fc3cb", "syn_cultural_context_325bb577c399"],
+            "confidence": "medium",
+            "interpretation_level": "fact"
+          },
+          {
+            "id": "block_3",
+            "text": "The two goats make the rite visibly comprehensive. One is designated for the LORD and is offered; over the living goat Aaron confesses Israel's iniquities and sends it away into the wilderness. The text therefore presents atonement through both sacrificial blood and the removal of confessed wrongdoing. The name Azazel remains an interpretive question in the chapter's ritual language; the passage clearly emphasizes the goat's separation and departure without requiring a settled explanation beyond that action.",
+            "verse_refs": ["Leviticus 16:7-10", "Leviticus 16:20-22"],
+            "evidence_ids": ["atonement:ancient_near_east_context:0", "leviticus:interpretive_note:2"],
+            "synthesis_ids": ["syn_cultural_context_4ea6a2fd1db8", "syn_interpretive_questions_d99fcd0db6e9"],
+            "confidence": "medium",
+            "interpretation_level": "disputed"
+          }
+        ]
+      },
+      {
+        "kind": "historical_context",
+        "title": "Setting and later office",
+        "blocks": [
+          {
+            "id": "block_4",
+            "text": "The story places the sanctuary and this rite in Israel's Sinai and wilderness setting, while the historical form and compositional development of the detailed priestly descriptions remain debated. Those are different questions: the narrative setting is clear within the Pentateuch, but it should not be turned into a single, certain historical reconstruction. The high priesthood later became a major religious and political office in the Second Temple world, so later readers could hear this chapter against changing institutions without erasing its Aaronic framework.",
+            "verse_refs": ["Leviticus 16:1-2", "Leviticus 16:32-34"],
+            "evidence_ids": ["tabernacle:historical_context:0", "high-priesthood:historical_context:0"],
+            "synthesis_ids": ["syn_historical_context_d30a1d1a0967", "syn_historical_context_2f6745f4e4d8"],
+            "confidence": "medium",
+            "interpretation_level": "fact"
+          },
+          {
+            "id": "block_5",
+            "text": "The ceremony's date and communal restrictions matter because this is not an occasional response to one person's failure. It is fixed in the seventh month, on the tenth day, and includes both native Israelites and resident strangers. The annual rhythm gathers the entire community under a shared act of cleansing and rest, while the priest's repeated preparation shows that even the mediator does not stand outside the chapter's concern with holiness.",
+            "verse_refs": ["Leviticus 16:3-6", "Leviticus 16:29-34"],
+            "evidence_ids": ["leviticus-day-of-atonement", "priesthood:historical_context:0"],
+            "synthesis_ids": ["syn_historical_context_7a6f1c2a8e71", "syn_historical_context_44a504d9f1dc"],
+            "confidence": "medium",
+            "interpretation_level": "fact"
+          }
+        ]
+      },
+      {
+        "kind": "archaeology_geography",
+        "title": "What archaeology can and cannot show",
+        "blocks": [
+          {
+            "id": "block_6",
+            "text": "Archaeology does not securely identify an excavated object or site as the wilderness tabernacle. Timna Site 200 can serve as a bounded comparison for a debated tented shrine, but it is not the tabernacle and does not prove direct copying. Such comparisons can show that mobile sacred space was culturally intelligible; they cannot reconstruct every feature of the rite described here.",
+            "verse_refs": ["Leviticus 16:1-2", "Leviticus 16:16-19"],
+            "evidence_ids": ["tabernacle:archaeology:0", "tabernacle:archaeology:1"],
+            "synthesis_ids": ["syn_archaeology_geography_d7007ac9c591"],
+            "confidence": "medium",
+            "interpretation_level": "fact"
+          }
+        ]
+      },
+      {
+        "kind": "interpretive_questions",
+        "title": "Access is ordered, not unrestricted",
+        "blocks": [
+          {
+            "id": "block_7",
+            "text": "The veiled inner room, incense cloud, washing, prescribed garments, blood, and absence of other people all make access a graded process. The barriers are therefore part of the chapter's account of holiness, not incidental decoration. At the same time, the available evidence does not warrant assigning an independent symbolic meaning to every measurement, color, or material. The safest reading follows the sequence the text actually describes.",
+            "verse_refs": ["Leviticus 16:2-4", "Leviticus 16:11-17"],
+            "evidence_ids": ["tabernacle-graded-sacred-space", "tabernacle-presence-access-and-mobility:interpretive_note:1"],
+            "synthesis_ids": ["syn_interpretive_questions_3a51791818d0"],
+            "confidence": "high",
+            "interpretation_level": "disputed"
+          }
+        ]
+      },
+      {
+        "kind": "surrounding_passages",
+        "title": "The hinge of Leviticus",
+        "blocks": [
+          {
+            "id": "block_8",
+            "text": "Within Leviticus as a whole, this chapter functions as a hinge. The book has moved from offerings and priestly inauguration through purity regulations; after the Day of Atonement it turns toward holy communal life, sacred time, land, covenant consequences, and vows. That literary movement helps explain why the rite is both sanctuary-centered and communal: cleansing the worshiping center prepares the book to address the life of the people beyond it.",
+            "verse_refs": ["Leviticus 16:16-19", "Leviticus 16:29-34"],
+            "evidence_ids": ["leviticus-literary-movement"],
+            "synthesis_ids": ["syn_surrounding_passages_0d43076c9992"],
+            "confidence": "high",
+            "interpretation_level": "fact"
+          }
+        ]
+      },
+      {
+        "kind": "why_it_matters",
+        "title": "Why the setting matters",
+        "blocks": [
+          {
+            "id": "block_9",
+            "text": "Reading the rite in its wilderness sanctuary setting keeps two ideas together: divine nearness and firm boundaries. The text does not imagine presence as unrestricted access; approach requires preparation, appointed personnel, cleansing, and a prescribed time. Because the historical reconstruction of the sanctuary remains debated, this significance rests on the chapter's narrative and ritual shape rather than on a hypothetical archaeological model.",
+            "verse_refs": ["Leviticus 16:1-4", "Leviticus 16:29-34"],
+            "evidence_ids": ["what-is-the-tabernacle:historical_context:0", "what-is-the-tabernacle:historical_setting:0"],
+            "synthesis_ids": ["syn_why_it_matters_25d36f869020"],
+            "confidence": "medium",
+            "interpretation_level": "inference"
+          },
+          {
+            "id": "block_10",
+            "text": "The chapter also clarifies why priesthood is central to the rite's meaning. Aaron does not merely stand near the ritual; he represents the people while bearing responsibility for access, sacrifice, and cleansing. Later debates about priestly legitimacy can therefore be historically important, but they should not obscure the chapter's immediate presentation of a mediator whose duties serve the holiness of the entire assembly.",
+            "verse_refs": ["Leviticus 16:6", "Leviticus 16:24", "Leviticus 16:32-34"],
+            "evidence_ids": ["priesthood:ancient_near_east_context:0", "priesthood:hebraic_worldview:0"],
+            "synthesis_ids": ["syn_why_it_matters_36dc6d5392d4"],
+            "confidence": "medium",
+            "interpretation_level": "inference"
+          }
+        ]
+      }
+    ],
+    "generated_metadata": null
+  }
+}

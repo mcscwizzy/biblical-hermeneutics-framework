@@ -1,0 +1,33 @@
+{
+  "artifact_version": "commentary-v1.2-rejection-v1",
+  "reference": "2 Samuel 6",
+  "packet_id": null,
+  "raw_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.2-enrichment/canary/responses/raw-rerun-full-final/2_samuel_006.json",
+  "raw_sha256": "e4d678a0c19e66af3f3c54659ebcd7480d0811a14555d43577497f74d9acad15",
+  "import_status": "rejected",
+  "structurally_parsed": true,
+  "validation_status": "rejected",
+  "candidate_id": null,
+  "accepted_path": null,
+  "rejection_codes": [
+    "VALIDATION_FAILED",
+    "MALFORMED_SECTION",
+    "UNKNOWN_SYNTHESIS_ID",
+    "SYNTHESIS_ANCESTRY_MISMATCH"
+  ],
+  "validation_errors": [
+    "VALIDATION_FAILED: Commentary v1.2 validation rejected the response",
+    "UNKNOWN_SYNTHESIS_ID: section[0].block[0] cites unsupported synthesis IDs: syn_historical_context_d0ee5d232339, syn_language_literary_dbbbffd4f0a0",
+    "SYNTHESIS_ANCESTRY_MISMATCH: section[0].block[0] cites evidence outside its synthesis ancestry",
+    "UNKNOWN_SYNTHESIS_ID: section[1].block[0] cites unsupported synthesis IDs: syn_historical_context_5d769d2a9594, syn_historical_context_d0ee5d232339",
+    "SYNTHESIS_ANCESTRY_MISMATCH: section[1].block[0] cites evidence outside its synthesis ancestry",
+    "UNKNOWN_SYNTHESIS_ID: section[1].block[1] cites unsupported synthesis IDs: syn_language_literary_dbbbffd4f0a0",
+    "SYNTHESIS_ANCESTRY_MISMATCH: section[1].block[1] cites evidence outside its synthesis ancestry",
+    "UNKNOWN_SYNTHESIS_ID: section[2].block[0] cites unsupported synthesis IDs: syn_cultural_context_6c4eb4a38b1b, syn_cultural_context_a893f6c35b7d",
+    "SYNTHESIS_ANCESTRY_MISMATCH: section[2].block[0] cites evidence outside its synthesis ancestry",
+    "UNKNOWN_SYNTHESIS_ID: section[2].block[1] cites unsupported synthesis IDs: syn_cultural_context_65bfc1305a60",
+    "SYNTHESIS_ANCESTRY_MISMATCH: section[2].block[1] cites evidence outside its synthesis ancestry",
+    "UNKNOWN_SYNTHESIS_ID: section[3].block[0] cites unsupported synthesis IDs: syn_interpretive_questions_6a1459f5f017",
+    "SYNTHESIS_ANCESTRY_MISMATCH: section[3].block[0] cites evidence outside its synthesis ancestry"
+  ]
+}

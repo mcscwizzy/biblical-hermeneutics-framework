@@ -1,0 +1,122 @@
+{
+  "reference": "Leviticus 16",
+  "packet_id": "commentary-v1.2-packet:3b2714e977ed2ddf8396d7477efba3a3d13d7ff820871aa129d521a0aa795412",
+  "prompt_version": "1.2",
+  "evidence_hash": "8e5cbb871b1513cc91ad7b20d2f399c3796e3fe36516d99e6b36511dcadfab62",
+  "synthesis_hash": "6c9b25b87dde82946bb0620ce97f85a31311467dec6c8745e2d365de9f2904bc",
+  "renderer_label": "Luna Medium",
+  "response_payload": {
+    "reference": "Leviticus 16",
+    "book": "Leviticus",
+    "chapter": 16,
+    "status": "pending",
+    "sections": [
+      {
+        "kind": "chapter_overview",
+        "title": "The annual day of atonement",
+        "blocks": [
+          {
+            "id": "block_1",
+            "text": "Leviticus 16 presents an annual rite addressing the sanctuary, the priesthood, and the people. Aaron's restricted entry, bathing, garments, offerings, blood rites, and the sending away of the live goat form one ordered movement: the holy place, the tent, the altar, the priests, and the assembly are addressed before the people are declared clean.",
+            "verse_refs": ["Leviticus 16:1-34"],
+            "evidence_ids": ["leviticus-day-of-atonement"],
+            "synthesis_ids": ["syn_historical_context_7a6f1c2a8e71"],
+            "confidence": "high",
+            "interpretation_level": "fact"
+          }
+        ]
+      },
+      {
+        "kind": "cultural_context",
+        "title": "Access, holiness, and sacrifice",
+        "blocks": [
+          {
+            "id": "block_2",
+            "text": "The chapter assumes that access to the divine presence is real but ordered. Priestly preparation, washing, sacrifice, restricted entry, and the separation of spaces express a system in which holiness is guarded rather than treated as unrestricted access. Sacrifice is presented within covenant holiness, substitution, purification, and restored approach, not merely as a general ancient custom.",
+            "verse_refs": ["Leviticus 16:2-5", "Leviticus 16:15-19"],
+            "evidence_ids": ["tabernacle-graded-sacred-space", "tabernacle-graded-sacred-space:passage-relevance", "sacrificial-system:ancient_near_east_context:0"],
+            "synthesis_ids": ["syn_interpretive_questions_3a51791818d0", "syn_cultural_context_17d5fd0cbf7c"],
+            "confidence": "medium",
+            "interpretation_level": "disputed"
+          }
+        ]
+      },
+      {
+        "kind": "historical_context",
+        "title": "A wilderness setting with a debated history",
+        "blocks": [
+          {
+            "id": "block_3",
+            "text": "The Pentateuch places the sanctuary tradition in the Sinai and wilderness setting, while the historical form of the structure and the date and development of its priestly descriptions remain debated. Keeping the narrative setting distinct from historical reconstruction allows the chapter's ritual instructions to be read without turning a later reconstruction into certainty.",
+            "verse_refs": ["Leviticus 16:1-34"],
+            "evidence_ids": ["tabernacle:historical_context:0", "tabernacle:historical_setting:0"],
+            "synthesis_ids": ["syn_historical_context_d30a1d1a0967"],
+            "confidence": "medium",
+            "interpretation_level": "fact"
+          }
+        ]
+      },
+      {
+        "kind": "archaeology_geography",
+        "title": "What archaeology can and cannot establish",
+        "blocks": [
+          {
+            "id": "block_4",
+            "text": "No excavated object or site is securely identified as the wilderness tabernacle. A tented shrine at Timna can serve only as a bounded and disputed comparison; it is not the tabernacle and does not prove direct copying.",
+            "verse_refs": ["Leviticus 16:1-34"],
+            "evidence_ids": ["what-is-the-tabernacle:archaeology:0", "what-is-the-tabernacle:archaeology:1"],
+            "synthesis_ids": ["syn_archaeology_geography_3c8944beb7b8"],
+            "confidence": "medium",
+            "interpretation_level": "fact"
+          }
+        ]
+      },
+      {
+        "kind": "interpretive_questions",
+        "title": "A careful boundary for interpretation",
+        "blocks": [
+          {
+            "id": "block_5",
+            "text": "The chapter clearly organizes access through rooms, veils, personnel, washing, sacrifice, and restricted occasions of entry. It is disputed whether every measurement, color, or material should receive an independent symbolic meaning; the available evidence supports the larger pattern of graded access without requiring a separate meaning for every detail.",
+            "verse_refs": ["Leviticus 16:2-4", "Leviticus 16:17", "Leviticus 16:23-28"],
+            "evidence_ids": ["tabernacle-graded-sacred-space", "tabernacle-graded-sacred-space:passage-relevance", "tabernacle-presence-access-and-mobility:interpretive_note:1"],
+            "synthesis_ids": ["syn_interpretive_questions_3a51791818d0"],
+            "confidence": "high",
+            "interpretation_level": "disputed"
+          }
+        ]
+      },
+      {
+        "kind": "why_it_matters",
+        "title": "Why the ordered movement matters",
+        "blocks": [
+          {
+            "id": "block_6",
+            "text": "The ordered movement through preparation, restricted entry, offerings, cleansing, and return helps explain why the chapter treats holiness as both divine nearness and guarded approach. The rite is not a loose collection of ceremonies: its sequence joins sanctuary, priesthood, sacrifice, and communal cleansing in one annual pattern.",
+            "verse_refs": ["Leviticus 16:2-5", "Leviticus 16:20-34"],
+            "evidence_ids": ["tabernacle:ancient_near_east_context:0", "tabernacle:hebraic_worldview:0", "tabernacle:original_audience:0", "tabernacle:second_temple_context:0"],
+            "synthesis_ids": ["syn_why_it_matters_6586c9e16b96"],
+            "confidence": "medium",
+            "interpretation_level": "inference"
+          }
+        ]
+      },
+      {
+        "kind": "surrounding_passages",
+        "title": "Its place in Leviticus",
+        "blocks": [
+          {
+            "id": "block_7",
+            "text": "Within Leviticus, this chapter stands at the center of a broader movement from offerings and priestly danger toward purity, holiness, and communal life. Its annual rite gathers those concerns into a concentrated account of access, cleansing, and restored order.",
+            "verse_refs": ["Leviticus 16:1-34"],
+            "evidence_ids": ["leviticus-literary-movement"],
+            "synthesis_ids": ["syn_surrounding_passages_0d43076c9992"],
+            "confidence": "high",
+            "interpretation_level": "fact"
+          }
+        ]
+      }
+    ],
+    "generated_metadata": null
+  }
+}

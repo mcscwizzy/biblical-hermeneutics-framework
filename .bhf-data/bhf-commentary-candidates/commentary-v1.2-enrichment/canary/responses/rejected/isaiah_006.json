@@ -1,0 +1,33 @@
+{
+  "artifact_version": "commentary-v1.2-rejection-v1",
+  "reference": "Isaiah 6",
+  "packet_id": null,
+  "raw_path": ".bhf-data/bhf-commentary-candidates/commentary-v1.2-enrichment/canary/responses/raw-rerun-full-final/isaiah_006.json",
+  "raw_sha256": "305e85aba2229bd0d548ac7510f0d68f9fad90f6203f976c010fc94155c50f14",
+  "import_status": "rejected",
+  "structurally_parsed": true,
+  "validation_status": "rejected",
+  "candidate_id": null,
+  "accepted_path": null,
+  "rejection_codes": [
+    "VALIDATION_FAILED",
+    "MALFORMED_SECTION",
+    "UNKNOWN_SYNTHESIS_ID",
+    "SYNTHESIS_ANCESTRY_MISMATCH",
+    "INVENTED_SIGNIFICANCE"
+  ],
+  "validation_errors": [
+    "VALIDATION_FAILED: Commentary v1.2 validation rejected the response",
+    "UNKNOWN_SYNTHESIS_ID: section[0].block[0] cites unsupported synthesis IDs: syn_cultural_context_5a967c71eb02, syn_historical_context_ca751c664347",
+    "SYNTHESIS_ANCESTRY_MISMATCH: section[0].block[0] cites evidence outside its synthesis ancestry",
+    "UNKNOWN_SYNTHESIS_ID: section[1].block[0] cites unsupported synthesis IDs: syn_cultural_context_5a967c71eb02, syn_cultural_context_18a04bbd05a1",
+    "SYNTHESIS_ANCESTRY_MISMATCH: section[1].block[0] cites evidence outside its synthesis ancestry",
+    "UNKNOWN_SYNTHESIS_ID: section[2].block[0] cites unsupported synthesis IDs: syn_historical_context_6df738d42dbb, syn_historical_context_823847eb86f8",
+    "SYNTHESIS_ANCESTRY_MISMATCH: section[2].block[0] cites evidence outside its synthesis ancestry",
+    "UNKNOWN_SYNTHESIS_ID: section[3].block[0] cites unsupported synthesis IDs: syn_interpretive_questions_02db938fc465",
+    "SYNTHESIS_ANCESTRY_MISMATCH: section[3].block[0] cites evidence outside its synthesis ancestry",
+    "UNKNOWN_SYNTHESIS_ID: section[4].block[0] cites unsupported synthesis IDs: syn_why_it_matters_b4eb2729d7a9",
+    "SYNTHESIS_ANCESTRY_MISMATCH: section[4].block[0] cites evidence outside its synthesis ancestry",
+    "INVENTED_SIGNIFICANCE: section[4].block[0] has no supported why_it_matters relationship unit"
+  ]
+}

@@ -65,7 +65,7 @@ def _response(reference: str) -> dict:
                 "title": "Context",
                 "blocks": [{
                     "id": "block_1",
-                    "text": "A concise explanation grounded in the cited synthesis unit.",
+                    "text": "A concise explanation grounded in the available chapter context.",
                     "verse_refs": verse_refs,
                     "evidence_ids": list(unit.evidence_ids),
                     "synthesis_ids": [unit.id],
@@ -108,6 +108,59 @@ def test_valid_external_response_import_stamps_metadata_and_preserves_raw(tmp_pa
     assert metadata.candidate_id.startswith("commentary-v1.2-candidate:")
     assert metadata.model == "external-renderer"
     assert not list((candidate / "canary/responses/rejected").glob("*.json"))
+
+
+def test_data_gap_empty_renderer_gets_application_owned_fallback(tmp_path):
+    candidate, raw = _workspace(tmp_path)
+    manifest = _read_json(CANARY_ROOT / "canary-generation-manifest.json")
+    packet = next(row for row in manifest["chapters"] if row["reference"] == "Numbers 3")
+    response = {
+        "reference": "Numbers 3",
+        "packet_id": packet["packet_id"],
+        "prompt_version": packet["commentary_prompt_version"],
+        "evidence_hash": packet["evidence_hash"],
+        "synthesis_hash": packet["synthesis_hash"],
+        "renderer_label": "Luna Medium",
+        "response_payload": {
+            "reference": "Numbers 3",
+            "book": "Numbers",
+            "chapter": 3,
+            "status": "pending",
+            "sections": [],
+            "generated_metadata": None,
+        },
+    }
+    _write(raw / "numbers_003.json", response)
+    result = import_responses(raw, candidate_root=candidate, imported_at=FIXED_TIME)
+    assert result["accepted_count"] == 1
+    accepted = load_commentary(candidate / "canary/responses/accepted", "Numbers", 3)
+    assert accepted is not None
+    assert accepted.data_gap_fallback is True
+    assert accepted.sections[0].blocks[0].evidence_ids == []
+
+
+def test_data_gap_renderer_prose_is_rejected(tmp_path):
+    candidate, raw = _workspace(tmp_path)
+    manifest = _read_json(CANARY_ROOT / "canary-generation-manifest.json")
+    packet = next(row for row in manifest["chapters"] if row["reference"] == "Numbers 3")
+    response = {
+        "reference": "Numbers 3",
+        "packet_id": packet["packet_id"],
+        "prompt_version": packet["commentary_prompt_version"],
+        "evidence_hash": packet["evidence_hash"],
+        "synthesis_hash": packet["synthesis_hash"],
+        "renderer_label": "Luna Medium",
+        "response_payload": {
+            "reference": "Numbers 3", "book": "Numbers", "chapter": 3,
+            "status": "pending",
+            "sections": [{"kind": "chapter_overview", "title": "No context", "blocks": []}],
+            "generated_metadata": None,
+        },
+    }
+    _write(raw / "numbers_003.json", response)
+    result = import_responses(raw, candidate_root=candidate, imported_at=FIXED_TIME)
+    assert result["rejected_count"] == 1
+    assert "DATA_GAP_RENDERER_PROSE" in result["chapters"][0]["rejection_codes"]
 
 
 def test_malformed_response_is_rejected_and_raw_is_preserved(tmp_path):

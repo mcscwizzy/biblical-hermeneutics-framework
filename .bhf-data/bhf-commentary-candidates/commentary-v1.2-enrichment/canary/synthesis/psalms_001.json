@@ -4,38 +4,13 @@
   "chapter": 1,
   "evidence_hash": "faf60db8a7de36c4d00e951e3171a6e49e875a4f98f9cba12be3cd2bca9465f8",
   "evidence_bundle_version": "1.1",
-  "synthesis_schema_version": "1.0",
-  "synthesis_compiler_version": "1.0",
-  "synthesis_hash": "f9c9f9dcddd28d9ec4ff7737840fd550b807b526c4418e37b6ca18cdd19eec85",
+  "synthesis_schema_version": "1.1",
+  "synthesis_compiler_version": "1.1",
+  "synthesis_hash": "96e6e3b7925719c8329091c54d84981b935af1b459020c314b2813b9f8bbb82a",
   "evidence_availability": "AVAILABLE",
   "synthesis_units": [
     {
-      "id": "syn_cultural_context_0259312ebd84",
-      "kind": "cultural_context",
-      "facts": [
-        "Poetic prayer was common in the ancient world, but the Psalms uniquely bind emotion to covenant faith."
-      ],
-      "verse_refs": [
-        "Psalms 1:1-6"
-      ],
-      "evidence_ids": [
-        "what-is-a-psalm:ancient_near_east_context:0"
-      ],
-      "entity_ids": [],
-      "related_unit_ids": [],
-      "confidence": "medium",
-      "interpretation_level": "fact",
-      "metadata": {
-        "relationship_basis": "single_evidence_item",
-        "source_categories": [
-          "culture"
-        ],
-        "support_count": 1,
-        "explicit_significance": false
-      }
-    },
-    {
-      "id": "syn_cultural_context_4a88701db593",
+      "id": "syn_cultural_context_1d8147a28371",
       "kind": "cultural_context",
       "facts": [
         "Ancient legal and treaty traditions provide background, but torah is distinct because it is the instruction of the covenant LORD rather than a generic code."
@@ -50,17 +25,22 @@
       "related_unit_ids": [],
       "confidence": "medium",
       "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Psalms 1:1-3"
+      ],
       "metadata": {
         "relationship_basis": "single_evidence_item",
         "source_categories": [
           "culture"
         ],
         "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
         "explicit_significance": false
       }
     },
     {
-      "id": "syn_cultural_context_77aa3418632d",
+      "id": "syn_cultural_context_571303f56272",
       "kind": "cultural_context",
       "facts": [
         "Israel shares wisdom forms with neighboring cultures, but anchors wisdom in covenant loyalty and the fear of the LORD."
@@ -75,17 +55,52 @@
       "related_unit_ids": [],
       "confidence": "medium",
       "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Psalms 1:1-6"
+      ],
       "metadata": {
         "relationship_basis": "single_evidence_item",
         "source_categories": [
           "culture"
         ],
         "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
         "explicit_significance": false
       }
     },
     {
-      "id": "syn_historical_context_1e655acb8a2d",
+      "id": "syn_cultural_context_da558b1104fe",
+      "kind": "cultural_context",
+      "facts": [
+        "Poetic prayer was common in the ancient world, but the Psalms uniquely bind emotion to covenant faith."
+      ],
+      "verse_refs": [
+        "Psalms 1:1-6"
+      ],
+      "evidence_ids": [
+        "what-is-a-psalm:ancient_near_east_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Psalms 1:1-6"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "culture"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_historical_context_3bda7c5c94ff",
       "kind": "historical_context",
       "facts": [
         "In Israel's story, torah names the covenant instruction given through Moses and the way the redeemed people are to live before God."
@@ -100,42 +115,22 @@
       "related_unit_ids": [],
       "confidence": "medium",
       "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Psalms 1:1-3"
+      ],
       "metadata": {
         "relationship_basis": "single_evidence_item",
         "source_categories": [
           "history"
         ],
         "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
         "explicit_significance": false
       }
     },
     {
-      "id": "syn_historical_context_7032c29b4dd9",
-      "kind": "historical_context",
-      "facts": [
-        "Wisdom literature grew from family instruction, court life, and worship, then became a major way Scripture teaches faithful living."
-      ],
-      "verse_refs": [
-        "Psalms 1:1-6"
-      ],
-      "evidence_ids": [
-        "what-is-biblical-wisdom:historical_context:0"
-      ],
-      "entity_ids": [],
-      "related_unit_ids": [],
-      "confidence": "medium",
-      "interpretation_level": "fact",
-      "metadata": {
-        "relationship_basis": "single_evidence_item",
-        "source_categories": [
-          "history"
-        ],
-        "support_count": 1,
-        "explicit_significance": false
-      }
-    },
-    {
-      "id": "syn_historical_context_8efa15aec15e",
+      "id": "syn_historical_context_74a20bc6440c",
       "kind": "historical_context",
       "facts": [
         "Psalms arise in Israel's worship life and are sung in both public and private devotion."
@@ -150,23 +145,58 @@
       "related_unit_ids": [],
       "confidence": "medium",
       "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Psalms 1:1-6"
+      ],
       "metadata": {
         "relationship_basis": "single_evidence_item",
         "source_categories": [
           "history"
         ],
         "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
         "explicit_significance": false
       }
     },
     {
-      "id": "syn_interpretive_questions_105c9da53b89",
-      "kind": "interpretive_questions",
+      "id": "syn_historical_context_dbadc6d62835",
+      "kind": "historical_context",
+      "facts": [
+        "Wisdom literature grew from family instruction, court life, and worship, then became a major way Scripture teaches faithful living."
+      ],
+      "verse_refs": [
+        "Psalms 1:1-6"
+      ],
+      "evidence_ids": [
+        "what-is-biblical-wisdom:historical_context:0"
+      ],
+      "entity_ids": [],
+      "related_unit_ids": [],
+      "confidence": "medium",
+      "interpretation_level": "fact",
+      "passage_scope": "CURRENT_CHAPTER",
+      "source_anchors": [
+        "Psalms 1:1-6"
+      ],
+      "metadata": {
+        "relationship_basis": "single_evidence_item",
+        "source_categories": [
+          "history"
+        ],
+        "support_count": 1,
+        "passage_scope": "CURRENT_CHAPTER",
+        "explicit_significance": false
+      }
+    },
+    {
+      "id": "syn_surrounding_passages_cf0c8bcc49ac",
+      "kind": "surrounding_passages",
       "facts": [
         "Psalms 1 and 2 form an untitled gateway that places Torah-shaped flourishing, the way of the wicked, rebellious nations, YHWH's kingship, and the anointed king before the collection."
       ],
       "verse_refs": [
-        "Psalms 1:1-2:12"
+        "Psalms 2:1-12"
       ],
       "evidence_ids": [
         "psalms-gateway-torah-king"
@@ -175,12 +205,17 @@
       "related_unit_ids": [],
       "confidence": "high",
       "interpretation_level": "disputed",
+      "passage_scope": "SURROUNDING_PASSAGE",
+      "source_anchors": [
+        "Psalms 1:1-2:12"
+      ],
       "metadata": {
         "relationship_basis": "single_evidence_item",
         "source_categories": [
           "politics"
         ],
         "support_count": 1,
+        "passage_scope": "SURROUNDING_PASSAGE",
         "explicit_significance": false
       }
     }
@@ -226,7 +261,7 @@
     "unit_kind_counts": {
       "cultural_context": 3,
       "historical_context": 3,
-      "interpretive_questions": 1
+      "surrounding_passages": 1
     },
     "relationship_unit_count": 0
   }

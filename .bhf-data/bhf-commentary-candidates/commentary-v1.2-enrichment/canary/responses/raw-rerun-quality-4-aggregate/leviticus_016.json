@@ -1,0 +1,185 @@
+{
+  "reference": "Leviticus 16",
+  "packet_id": "commentary-v1.2-packet:3b2714e977ed2ddf8396d7477efba3a3d13d7ff820871aa129d521a0aa795412",
+  "prompt_version": "1.2",
+  "evidence_hash": "8e5cbb871b1513cc91ad7b20d2f399c3796e3fe36516d99e6b36511dcadfab62",
+  "synthesis_hash": "6c9b25b87dde82946bb0620ce97f85a31311467dec6c8745e2d365de9f2904bc",
+  "renderer_label": "Luna Medium",
+  "response_payload": {
+    "reference": "Leviticus 16",
+    "book": "Leviticus",
+    "chapter": 16,
+    "status": "pending",
+    "sections": [
+      {
+        "kind": "chapter_overview",
+        "title": "The Day of Atonement",
+        "blocks": [
+          {
+            "id": "block_1",
+            "text": "Leviticus 16 presents an annual rite that addresses the priest, the sanctuary, and the whole people. Aaron enters only under carefully defined conditions, first dealing with his own impurity and then with the people’s sins. The chapter’s movement is from restricted approach, through blood and incense, to the removal of guilt into the wilderness and the restoration of the community’s cleanliness.",
+            "verse_refs": ["Leviticus 16:1-34"],
+            "evidence_ids": ["leviticus-day-of-atonement"],
+            "synthesis_ids": ["syn_historical_context_7a6f1c2a8e71"],
+            "confidence": "high",
+            "interpretation_level": "fact"
+          },
+          {
+            "id": "block_2",
+            "text": "The literary center is not unrestricted access but ordered access. The veil, washing, garments, incense, blood, and the absence of the wider assembly all make the inner sanctuary a place approached through appointed mediation. The chapter therefore treats holiness as a structured relationship between divine presence, priestly service, and communal life.",
+            "verse_refs": ["Leviticus 16:2-17"],
+            "evidence_ids": ["tabernacle-graded-sacred-space", "tabernacle-graded-sacred-space:passage-relevance", "tabernacle-presence-access-and-mobility:interpretive_note:1"],
+            "synthesis_ids": ["syn_interpretive_questions_3a51791818d0", "syn_cultural_context_2793a33deea6", "syn_why_it_matters_36dc6d5392d4"],
+            "confidence": "high",
+            "interpretation_level": "disputed"
+          }
+        ]
+      },
+      {
+        "kind": "cultural_context",
+        "title": "Atonement, Priesthood, and Sacrifice",
+        "blocks": [
+          {
+            "id": "block_3",
+            "text": "The high priest’s role is representative: Aaron makes atonement first for himself and his household, then for the people, while the rite also reaches the holy place, the tent, and the altar. In the supplied historical setting, priesthood joins sacrificial service, instruction, holiness, and the guarding of sacred space. This explains why the chapter gives so much attention to the priest’s preparation and movement.",
+            "verse_refs": ["Leviticus 16:3-6", "Leviticus 16:32-34"],
+            "evidence_ids": ["priesthood:ancient_near_east_context:0", "priesthood:hebraic_worldview:0", "priesthood:second_temple_context:0"],
+            "synthesis_ids": ["syn_cultural_context_03fce88fc3cb", "syn_cultural_context_90c3bace805f"],
+            "confidence": "medium",
+            "interpretation_level": "fact"
+          },
+          {
+            "id": "block_4",
+            "text": "The two goats enact complementary movements. One is offered as a sin offering; over the other, Aaron confesses Israel’s iniquities before it is sent away into the wilderness. The rite thus portrays atonement both as purification of the sacred realm and as the removal of the people’s accumulated sins. Comparative sacrifice language can illuminate this pattern, but it does not by itself prove that Israel’s theology was borrowed from another ritual system.",
+            "verse_refs": ["Leviticus 16:7-10", "Leviticus 16:20-22"],
+            "evidence_ids": ["sacrifice-theme:ancient_near_east_context:0", "sacrifice-theme:hebraic_worldview:0", "leviticus:interpretive_note:2"],
+            "synthesis_ids": ["syn_cultural_context_325bb577c399", "syn_interpretive_questions_d99fcd0db6e9"],
+            "confidence": "medium",
+            "interpretation_level": "disputed"
+          },
+          {
+            "id": "block_5",
+            "text": "Sacrifice in this chapter is framed by covenant holiness, purification, restored access, and communal responsibility rather than by a simple idea of appeasing a deity. The text’s own sequence matters: blood is brought into the inner space, the altar is cleansed, sins are confessed over the living goat, and the people observe a day of rest and self-denial.",
+            "verse_refs": ["Leviticus 16:11-19", "Leviticus 16:29-34"],
+            "evidence_ids": ["sacrificial-system:ancient_near_east_context:0", "sacrificial-system:historical_context:0"],
+            "synthesis_ids": ["syn_cultural_context_17d5fd0cbf7c", "syn_historical_context_12b645ecfc80"],
+            "confidence": "medium",
+            "interpretation_level": "fact"
+          }
+        ]
+      },
+      {
+        "kind": "historical_context",
+        "title": "Priestly Office and Later Settings",
+        "blocks": [
+          {
+            "id": "block_6",
+            "text": "The chapter’s narrative world is the wilderness sanctuary, while its instructions were also received within Israel’s longer sanctuary memory. The high priesthood later became a major religious and political office in the Second Temple period, with its appointments and authority affected by successive imperial and local powers. That later history helps explain the continuing importance of priestly legitimacy, but it should not be read back as the only meaning of Leviticus 16.",
+            "verse_refs": ["Leviticus 16:1-6", "Leviticus 16:32-34"],
+            "evidence_ids": ["high-priesthood:historical_context:0", "high-priesthood:historical_setting:0", "high-priesthood:second_temple_context:0"],
+            "synthesis_ids": ["syn_historical_context_2f6745f4e4d8", "syn_cultural_context_90c3bace805f", "syn_why_it_matters_545381e9a6b0"],
+            "confidence": "medium",
+            "interpretation_level": "inference"
+          },
+          {
+            "id": "block_7",
+            "text": "Leviticus places the dwelling in the Sinai and wilderness setting, alongside the tabernacle traditions narrated in Exodus and the camp’s mobility described in Numbers. The historical form of the sanctuary and the date and development of the detailed priestly descriptions remain debated. It is therefore important to distinguish the chapter’s narrative setting from claims about a recoverable construction history.",
+            "verse_refs": ["Leviticus 16:1-2", "Leviticus 16:32-34"],
+            "evidence_ids": ["tabernacle:date_ranges:0", "tabernacle:date_ranges:1", "tabernacle:timeline:0", "tabernacle:timeline:1", "tabernacle:historical_context:0"],
+            "synthesis_ids": ["syn_chronology_5de2a1ade27f", "syn_historical_context_d30a1d1a0967", "syn_why_it_matters_25d36f869020"],
+            "confidence": "medium",
+            "interpretation_level": "inference"
+          }
+        ]
+      },
+      {
+        "kind": "archaeology_geography",
+        "title": "What Archaeology Can and Cannot Show",
+        "blocks": [
+          {
+            "id": "block_8",
+            "text": "No excavated object or site is securely identified as the wilderness tabernacle. Timna Site 200 can serve only as a bounded and disputed comparison for a tented shrine; it is not the tabernacle and does not establish direct identity. Archaeological comparisons may show that mobile sacred space was culturally intelligible, but they cannot supply a physical reconstruction of this chapter’s sanctuary.",
+            "verse_refs": ["Leviticus 16:2", "Leviticus 16:16-20"],
+            "evidence_ids": ["what-is-the-tabernacle:archaeology:0", "what-is-the-tabernacle:archaeology:1", "tabernacle:archaeology:0", "tabernacle:archaeology:1"],
+            "synthesis_ids": ["syn_archaeology_geography_3c8944beb7b8", "syn_archaeology_geography_d7007ac9c591", "syn_why_it_matters_560e5bac5c94"],
+            "confidence": "medium",
+            "interpretation_level": "inference"
+          },
+          {
+            "id": "block_9",
+            "text": "Ancient tents, mobile shrines, and protected sacred objects provide limited comparisons for scale, mobility, and the cultural intelligibility of a sanctuary that travels with a people. None is identical to the biblical tabernacle, and comparison should clarify possibilities rather than prove copying. The chapter itself emphasizes ordered space and restricted entry more strongly than architectural measurements.",
+            "verse_refs": ["Leviticus 16:2-17"],
+            "evidence_ids": ["tabernacle:ancient_near_east_context:0", "tabernacle:hebraic_worldview:0", "tabernacle:original_audience:0"],
+            "synthesis_ids": ["syn_cultural_context_b103a08afe6f", "syn_why_it_matters_6586c9e16b96", "syn_interpretive_questions_3a51791818d0"],
+            "confidence": "medium",
+            "interpretation_level": "disputed"
+          }
+        ]
+      },
+      {
+        "kind": "chronology",
+        "title": "Ritual Timing and Literary Location",
+        "blocks": [
+          {
+            "id": "block_10",
+            "text": "The rite is fixed to the seventh month, on the tenth day, and is marked by abstention from work and a Sabbath of solemn rest. Its annual repetition gives the ritual a recurring place in Israel’s sacred calendar. The chapter closes by extending responsibility to the anointed and consecrated priest who serves in Aaron’s place.",
+            "verse_refs": ["Leviticus 16:29-34"],
+            "evidence_ids": ["leviticus-day-of-atonement", "tabernacle:timeline:3"],
+            "synthesis_ids": ["syn_historical_context_7a6f1c2a8e71", "syn_chronology_488f054cecc5", "syn_cultural_context_03fce88fc3cb"],
+            "confidence": "high",
+            "interpretation_level": "fact"
+          },
+          {
+            "id": "block_11",
+            "text": "Leviticus 16 stands at a transition in the book: earlier material has established sacrifice, priestly inauguration, and purity, while later material turns toward holy communal life, sacred time, land, covenant consequences, and vows. The chapter functions as a hinge because it gathers sanctuary, priesthood, impurity, sacrifice, and communal observance into one annual act of restoration.",
+            "verse_refs": ["Leviticus 16:16-34"],
+            "evidence_ids": ["leviticus-literary-movement"],
+            "synthesis_ids": ["syn_surrounding_passages_0d43076c9992", "syn_why_it_matters_d69be1350b9f"],
+            "confidence": "high",
+            "interpretation_level": "fact"
+          }
+        ]
+      },
+      {
+        "kind": "why_it_matters",
+        "title": "Why the Chapter’s Structure Matters",
+        "blocks": [
+          {
+            "id": "block_12",
+            "text": "The chapter makes the sanctuary’s holiness inseparable from the community’s condition: Israel’s uncleanness is said to affect the holy place, the tent, and the altar, so atonement includes cleansing the places where God dwells among the people. This relationship helps explain why the rite is larger than private forgiveness; it repairs the ordered meeting between divine presence and communal life.",
+            "verse_refs": ["Leviticus 16:15-19", "Leviticus 16:29-30"],
+            "evidence_ids": ["tabernacle-graded-sacred-space:passage-relevance", "tabernacle-presence-access-and-mobility:interpretive_note:1", "priesthood:hebraic_worldview:0"],
+            "synthesis_ids": ["syn_why_it_matters_5f2837cc0f6d", "syn_why_it_matters_36dc6d5392d4", "syn_why_it_matters_675539a65eb6"],
+            "confidence": "high",
+            "interpretation_level": "disputed"
+          },
+          {
+            "id": "block_13",
+            "text": "Later Jewish and Christian readings, including readings through Hebrews, belong to the chapter’s reception history rather than replacing its own instructions to Israel. The text can be read within that later conversation, but the packet’s evidence does not warrant collapsing the original ritual into a single later interpretation.",
+            "verse_refs": ["Leviticus 16:1-34"],
+            "evidence_ids": ["leviticus:interpretive_note:2", "leviticus:interpretive_note:3"],
+            "synthesis_ids": ["syn_why_it_matters_76b27b863c82"],
+            "confidence": "medium",
+            "interpretation_level": "disputed"
+          }
+        ]
+      },
+      {
+        "kind": "surrounding_passages",
+        "title": "Leviticus in Motion",
+        "blocks": [
+          {
+            "id": "block_14",
+            "text": "Read within Leviticus, this chapter gathers the book’s earlier concern with sacrifice, priestly service, and purity before opening into instructions for holy life beyond the sanctuary. The annual rite is therefore both culmination and bridge: it addresses the sanctuary directly while preparing the book’s wider account of time, land, relationships, covenant consequences, and vows.",
+            "verse_refs": ["Leviticus 16:1-34"],
+            "evidence_ids": ["leviticus-literary-movement"],
+            "synthesis_ids": ["syn_surrounding_passages_0d43076c9992"],
+            "confidence": "high",
+            "interpretation_level": "fact"
+          }
+        ]
+      }
+    ],
+    "generated_metadata": null
+  }
+}

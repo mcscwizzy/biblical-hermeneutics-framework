@@ -1,0 +1,61 @@
+{
+  "reference": "Psalms 1",
+  "packet_id": "commentary-v1.2-packet:b640b9d204f912fc39cb7213977739b881224a0f113a05e030ca21f1541401eb",
+  "prompt_version": "1.2",
+  "evidence_hash": "faf60db8a7de36c4d00e951e3171a6e49e875a4f98f9cba12be3cd2bca9465f8",
+  "synthesis_hash": "96e6e3b7925719c8329091c54d84981b935af1b459020c314b2813b9f8bbb82a",
+  "renderer_label": "Luna Medium",
+  "response_payload": {
+    "reference": "Psalms 1",
+    "book": "Psalms",
+    "chapter": 1,
+    "status": "pending",
+    "sections": [
+      {
+        "kind": "chapter_overview",
+        "title": "Two ways of life",
+        "blocks": [
+          {
+            "id": "psalms_1_overview",
+            "text": "Psalm 1 uses wisdom's contrast between two ways of life. The flourishing person refuses the path of the wicked and instead delights in the LORD's instruction, pictured as a tree nourished by water. The image describes a life shaped by covenant loyalty rather than by momentary counsel or pressure.",
+            "verse_refs": [
+              "Psalms 1:1-3"
+            ],
+            "evidence_ids": [
+              "what-does-torah-mean:ancient_near_east_context:0",
+              "what-is-biblical-wisdom:ancient_near_east_context:0"
+            ],
+            "synthesis_ids": [
+              "syn_cultural_context_1d8147a28371",
+              "syn_cultural_context_571303f56272"
+            ],
+            "confidence": "medium",
+            "interpretation_level": "fact"
+          }
+        ]
+      },
+      {
+        "kind": "surrounding_passages",
+        "title": "A gateway into the Psalter",
+        "blocks": [
+          {
+            "id": "psalms_1_gateway",
+            "text": "The opening psalm is closely related to the following royal psalm: together they form an untitled gateway that places Torah-shaped flourishing beside the conflict of rebellious nations and the LORD's anointed king. That relationship is an interpretive proposal, so its significance should remain qualified.",
+            "verse_refs": [
+              "Psalms 2:1-12"
+            ],
+            "evidence_ids": [
+              "psalms-gateway-torah-king"
+            ],
+            "synthesis_ids": [
+              "syn_surrounding_passages_cf0c8bcc49ac"
+            ],
+            "confidence": "high",
+            "interpretation_level": "disputed"
+          }
+        ]
+      }
+    ],
+    "generated_metadata": null
+  }
+}
