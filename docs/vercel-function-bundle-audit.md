@@ -2,8 +2,8 @@
 
 Audit date: 2026-09-06
 Branch: `feat/commentary-v1.1-expansion`
-Audited HEAD: `defde4dfe95a920400da94b559a7f50aa8f3037d`
-Remote HEAD after fetch: `defde4dfe95a920400da94b559a7f50aa8f3037d`
+Audited HEAD: `dd62adf70a0461a74d0769bf46f77b8db191c068`
+Remote HEAD after fetch: `dd62adf70a0461a74d0769bf46f77b8db191c068`
 
 ## Before
 
@@ -103,7 +103,10 @@ A Git-like staged deployment tree was built from tracked files and the proposed 
 
 This is a repository-side projection, not a Vercel-authoritative optimized function measurement. The observed Vercel preview includes platform/runtime packaging overhead, so the next authorized preview remains required.
 
-`VERCEL_PREVIEW_REQUIRED`
+External release evidence for `dd62adf` subsequently reported the Vercel
+preview as `READY`; the application root returned HTTP 200 and exposed
+`commentaryRelease: commentary-v1.1`. The exact post-hardening raw and
+optimized function sizes were not exposed in the available deployment logs.
 
 ## Tests and smoke checks
 

@@ -26,10 +26,12 @@ reproducibility but are not runtime dependencies.
 
 Vercel function configuration excludes
 `.bhf-data/bhf-commentary-candidates/**`; the certified runtime corpus remains
-included. The pre-hardening observed Python bundle was approximately 245 MB;
-the local certified runtime corpus is approximately 3.2 MB. A Vercel CLI is
-not installed or linked in this environment, so remote deployment/build status
-must be confirmed by the next authorized preview build.
+included. The previous reported function bundle was approximately 388.83 MB
+raw and 397.27 MB optimized against a 225 MB limit. The local certified runtime
+corpus is approximately 3.2 MB. External release evidence for commit
+`dd62adf` reports a Vercel preview at `READY` with the application root
+returning HTTP 200 and `commentaryRelease: commentary-v1.1`; exact optimized
+post-hardening size was not exposed in the available deployment evidence.
 
 The repository has no verified programmatic branch-protection result in this
 environment. Automation should continue through feature branches and pull
