@@ -726,7 +726,7 @@ class WebAssetTests(unittest.TestCase):
         self.assertIn("data-reader-translation-import", script)
         self.assertIn("translation: translationId", script)
         self.assertIn("translation-selector-open", script)
-        self.assertIn('new Set(["asv"])', script)
+        self.assertIn('new Set(["asv", "kjv"])', script)
         self.assertIn("downloadTranslationFromGithub", script)
         self.assertIn("setActiveWorkspaceTab", script)
         self.assertIn("applyWorkspaceExpansion(false);", script)
@@ -1050,8 +1050,8 @@ class WebAssetTests(unittest.TestCase):
         self.assertIn("translation-import-button", index_html)
         self.assertIn("Loading translations...", index_html)
         self.assertIn('name="reader_translation"', index_html)
-        self.assertIn("static_asset('/style.css') }}?v=20260724c", index_html)
-        self.assertIn("static_asset('/htmx-lite.js') }}?v=20260822b", index_html)
+        self.assertIn("static_asset('/style.css') }}?v=20260906a", index_html)
+        self.assertIn("static_asset('/htmx-lite.js') }}?v=20260906a", index_html)
 
     def test_map_styles_cover_entity_icons_and_mobile_panel_layout(self):
         style = read_stylesheet_bundle(Path("bhf_web/static/style.css"))
@@ -1180,10 +1180,27 @@ class WebAppTests(unittest.TestCase):
         self.assertIn('name="apple-mobile-web-app-title" content="BHF Bible"', response["body"])
         self.assertIn("pwa.js", response["body"])
         self.assertIn("data-reader-translation", response["body"])
+        self.assertIn('data-default-translation="kjv"', response["body"])
         self.assertIn("translation-import-button", response["body"])
         self.assertIn("Loading translations...", response["body"])
         self.assertIn('name="reader_translation"', response["body"])
         self.assertIn("Scripture", response["body"])
+        for removed_reader_control in (
+            "data-commentary-availability-filter",
+            "data-commentary-category-filter",
+            "data-commentary-entity-filter",
+            "data-commentary-period-filter",
+            "reader-search-context-filter",
+            "All BHF Context",
+            "All evidence types",
+            "commentary_entity",
+            "commentary_period",
+            "commentary-search-results",
+            "commentary-search-summary",
+            "commentary-search-status",
+            "commentary-search-results-body",
+        ):
+            self.assertNotIn(removed_reader_control, response["body"])
         self.assertNotIn("desktop-reader-controls-trigger", response["body"])
         self.assertIn("reader-controls-trigger", response["body"])
         self.assertIn("workspace-expand-toggle", response["body"])
@@ -1267,6 +1284,18 @@ class WebAppTests(unittest.TestCase):
         self.assertNotIn("data-total-elapsed", response["body"])
         self.assertNotIn("status-percent", response["body"])
 
+    def test_reader_script_searches_scripture_without_bhf_search_coupling(self):
+        search_script = Path("bhf_web/static/htmx-search.js").read_text(encoding="utf-8")
+        reader_script = Path("bhf_web/static/htmx-lite.js").read_text(encoding="utf-8")
+
+        self.assertIn("/api/bible/search?", search_script)
+        self.assertIn("runBibleSearchFallback", search_script)
+        self.assertNotIn("/api/bhf-commentary/search", search_script)
+        self.assertNotIn("loadCommentarySearch", search_script)
+        self.assertNotIn("commentary-search", search_script)
+        self.assertNotIn("commentary-search-results", reader_script)
+        self.assertNotIn("handleCommentarySearchResultAction", reader_script)
+
     def test_index_static_assets_are_same_origin_behind_https_proxy(self):
         response = asgi_request(
             "GET",
@@ -1278,8 +1307,8 @@ class WebAppTests(unittest.TestCase):
         )
 
         self.assertEqual(response["status"], 200)
-        self.assertIn('href="/static/style.css?v=20260724c"', response["body"])
-        self.assertIn('src="/static/htmx-lite.js?v=20260822b"', response["body"])
+        self.assertIn('href="/static/style.css?v=20260906a"', response["body"])
+        self.assertIn('src="/static/htmx-lite.js?v=20260906a"', response["body"])
         self.assertIn('href="/static/vendor/leaflet/leaflet.css"', response["body"])
         self.assertNotIn("http://bhf.thewalkerclan.synology.me/static/", response["body"])
 
@@ -1305,7 +1334,7 @@ class WebAppTests(unittest.TestCase):
         self.assertIn("offline-card", offline["body"])
 
         self.assertEqual(service_worker["status"], 200)
-        self.assertIn('CACHE_VERSION = "v44"', service_worker["body"])
+        self.assertIn('CACHE_VERSION = "v45"', service_worker["body"])
         self.assertIn("/static/api/backend-routing.js", service_worker["body"])
         self.assertIn("/static/api/job-flow.js", service_worker["body"])
         self.assertIn("isLiveBackendJobRequest", service_worker["body"])
@@ -2277,10 +2306,7 @@ class WebAppTests(unittest.TestCase):
                 response = asgi_request("GET", "/api/settings/reader")
 
             self.assertEqual(response["status"], 200)
-            self.assertEqual(
-                json.loads(response["body"])["default_translation"],
-                "asv",
-            )
+            self.assertEqual(json.loads(response["body"])["default_translation"], "kjv")
             self.assertFalse(paths.reader_settings_path.exists())
 
     def test_fresh_vercel_translation_endpoint_discovers_built_ins(self):
@@ -2301,10 +2327,10 @@ class WebAppTests(unittest.TestCase):
 
             self.assertEqual(response["status"], 200)
             payload = json.loads(response["body"])
-            self.assertEqual(payload["default_translation"], "asv")
+            self.assertEqual(payload["default_translation"], "kjv")
             self.assertEqual(
                 [item["id"] for item in payload["translations"]],
-                ["asv", "kjv"],
+                ["kjv", "asv"],
             )
             self.assertTrue(
                 (paths.translations_path / "translations.sqlite").is_file()
@@ -2350,10 +2376,10 @@ class WebAppTests(unittest.TestCase):
 
         self.assertEqual(response["status"], 200)
         data = json.loads(response["body"])
-        self.assertEqual(data["default_translation"], "asv")
+        self.assertEqual(data["default_translation"], "kjv")
         self.assertEqual(
             [entry["id"] for entry in data["translations"]],
-            ["asv", "kjv"],
+            ["kjv", "asv"],
         )
         kjv = next(entry for entry in data["translations"] if entry["id"] == "kjv")
         self.assertTrue(kjv["installed"])

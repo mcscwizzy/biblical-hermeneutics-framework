@@ -291,38 +291,12 @@
       node.textContent = message || label;
       node.dataset.status = message ? "error" : (provider && (provider !== OPENROUTER || openRouterToken) ? "connected" : "disconnected");
     });
-    renderPresentationSetting();
-  }
-
-  function presentationProviderReady() {
-    const provider = settings?.activeProvider;
-    return Boolean(provider && (provider !== OPENROUTER || openRouterToken));
-  }
-
-  function renderPresentationSetting() {
-    const enabled = settings?.aiPresentationEnabled === true;
-    const providerReady = presentationProviderReady()
-      || runtimeAi().presentationServerConfigured === true;
-    document.querySelectorAll("[data-ai-presentation-toggle]").forEach((control) => {
-      control.setAttribute("aria-pressed", String(enabled));
-      const label = control.querySelector("[data-control-label]");
-      const status = control.querySelector("[data-control-status]");
-      if (label) label.textContent = enabled ? "Turn off" : "Turn on";
-      if (status) {
-        status.textContent = enabled
-          ? providerReady
-            ? "On · Uses your selected AI provider"
-            : "Connect an AI provider to use AI passage summaries."
-          : "Off · No AI summary requests";
-      }
-    });
   }
 
   async function setAiPresentationEnabled(enabled) {
     await readyPromise;
     settings.aiPresentationEnabled = enabled === true;
     await writeSettings();
-    renderPresentationSetting();
     document.dispatchEvent(new CustomEvent("bhf:ai-presentation-setting-changed", {
       detail: {enabled: settings.aiPresentationEnabled},
     }));
@@ -716,10 +690,6 @@
       removeToken().catch((error) => updateConnectionStatus(friendlyStorageError(error)));
     }));
     document.querySelectorAll("[data-ai-settings-open]").forEach((button) => button.addEventListener("click", () => showSetup()));
-    document.querySelectorAll("[data-ai-presentation-toggle]").forEach((button) => button.addEventListener("click", () => {
-      setAiPresentationEnabled(settings?.aiPresentationEnabled !== true)
-        .catch((error) => updateConnectionStatus(friendlyStorageError(error)));
-    }));
     if (!form) return;
     providerInput(form, "adapter")?.addEventListener("change", async () => {
       await readyPromise;
@@ -768,7 +738,6 @@
       if (providerInput(form, "base_url")) providerInput(form, "base_url").value = saved.baseUrl;
     }
     renderProviderState(form);
-    renderPresentationSetting();
     try {
       await handleAuthCallback();
     } catch (error) {

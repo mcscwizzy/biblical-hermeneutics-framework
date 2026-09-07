@@ -553,7 +553,7 @@ def create_app() -> FastAPI:
         except TranslationInstallError as exc:
             return JSONResponse({"error": str(exc)}, status_code=400)
         if removed and current_default == translation_id.lower():
-            save_reader_settings({"default_translation": "asv"})
+            save_reader_settings({"default_translation": "kjv"})
         if removed:
             _invalidate_companion_translation_cache()
         return JSONResponse({"translation_id": translation_id.lower(), "removed": removed})

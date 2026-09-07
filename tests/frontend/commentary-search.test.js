@@ -1,32 +1,12 @@
 const test = require("node:test");
 const assert = require("node:assert/strict");
 const fs = require("node:fs");
-const vm = require("node:vm");
+test("reader Scripture search does not invoke or render BHF commentary search", () => {
+  const source = fs.readFileSync("bhf_web/static/htmx-search.js", "utf8");
 
-function loadSearch() {
-  const context = vm.createContext({
-    window: {},
-    document: {},
-    escapeHtml: (value) => String(value).replaceAll("&", "&amp;").replaceAll("<", "&lt;"),
-  });
-  vm.runInContext(fs.readFileSync("bhf_web/static/htmx-search.js", "utf8"), context);
-  return context;
-}
-
-test("commentary search result renders availability and chapter navigation", () => {
-  const search = loadSearch();
-  const html = search.renderCommentarySearchResult({
-    book: "Genesis",
-    chapter: 13,
-    availability: "THIN",
-    commentary: "A concise contextual observation.",
-    evidence_count: 1,
-    verse_references: ["Genesis 13:5-12"],
-    section_kinds: ["chapter_overview"],
-  });
-
-  assert.match(html, /Genesis 13/);
-  assert.match(html, /Limited context/);
-  assert.match(html, /Genesis 13:5-12/);
-  assert.match(html, /data-commentary-search-action="open-chapter"/);
+  assert.match(source, /\/api\/bible\/search\?/);
+  assert.match(source, /runBibleSearchFallback/);
+  assert.doesNotMatch(source, /\/api\/bhf-commentary\/search/);
+  assert.doesNotMatch(source, /loadCommentarySearch/);
+  assert.doesNotMatch(source, /commentary-search/);
 });

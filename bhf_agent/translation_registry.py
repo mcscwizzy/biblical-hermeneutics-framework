@@ -20,7 +20,8 @@ from .translation_storage import (
 
 
 SCHEMA_VERSION = 1
-DEFAULT_TRANSLATION_ID = "asv"
+DEFAULT_TRANSLATION_ID = "kjv"
+BUNDLED_ASV_TRANSLATION_ID = "asv"
 DEFAULT_KJV_TRANSLATION_ID = "kjv"
 
 
@@ -104,6 +105,7 @@ def upsert_translation(
         )
         if not _has_default(connection):
             connection.execute('UPDATE translations SET "default" = 1 WHERE id = ?', (DEFAULT_TRANSLATION_ID,))
+        connection.commit()
         row = connection.execute(
             'SELECT id, name, source, installed, "default", created_date FROM translations WHERE id = ?',
             (normalized,),
@@ -123,6 +125,7 @@ def set_default_translation(translation_id: str, path: str | Path | None = None)
             raise TranslationRegistryError("Only an installed translation can be set as default")
         connection.execute('UPDATE translations SET "default" = 0')
         connection.execute('UPDATE translations SET "default" = 1 WHERE id = ?', (normalized,))
+        connection.commit()
     return normalized
 
 
@@ -137,7 +140,7 @@ def default_translation_id(path: str | Path | None = None) -> str:
 
 def mark_translation_removed(translation_id: str, path: str | Path | None = None) -> None:
     normalized = normalize_translation_id(translation_id)
-    if normalized in {DEFAULT_TRANSLATION_ID, DEFAULT_KJV_TRANSLATION_ID}:
+    if normalized in {BUNDLED_ASV_TRANSLATION_ID, DEFAULT_KJV_TRANSLATION_ID}:
         raise TranslationRegistryError(f"{normalized.upper()} cannot be removed")
     with closing(_connect(path)) as connection:
         _ensure_schema(connection)
@@ -151,6 +154,7 @@ def mark_translation_removed(translation_id: str, path: str | Path | None = None
         )
         if row and bool(row["default"]):
             connection.execute('UPDATE translations SET "default" = 1 WHERE id = ?', (DEFAULT_TRANSLATION_ID,))
+        connection.commit()
 
 
 def _connect(path: str | Path | None = None) -> sqlite3.Connection:
@@ -186,14 +190,14 @@ def _seed_asv(connection: sqlite3.Connection) -> None:
     connection.execute(
         """
         INSERT INTO translations (id, name, source, installed, "default", created_date)
-        VALUES (?, ?, ?, 1, 1, strftime('%Y-%m-%dT%H:%M:%SZ', 'now'))
+        VALUES (?, ?, ?, 1, 0, strftime('%Y-%m-%dT%H:%M:%SZ', 'now'))
         ON CONFLICT(id) DO UPDATE SET
             name = excluded.name,
             source = excluded.source,
             installed = 1
         """,
         (
-            DEFAULT_TRANSLATION_ID,
+            BUNDLED_ASV_TRANSLATION_ID,
             str(translation.get("name") or "American Standard Version"),
             str(translation.get("source") or "bundled:bhf_agent/data/asv_bible.json"),
         ),
@@ -206,7 +210,7 @@ def _seed_kjv(connection: sqlite3.Connection) -> None:
     connection.execute(
         """
         INSERT INTO translations (id, name, source, installed, "default", created_date)
-        VALUES (?, ?, ?, 1, 0, strftime('%Y-%m-%dT%H:%M:%SZ', 'now'))
+        VALUES (?, ?, ?, 1, 1, strftime('%Y-%m-%dT%H:%M:%SZ', 'now'))
         ON CONFLICT(id) DO UPDATE SET
             name = excluded.name,
             source = excluded.source,
