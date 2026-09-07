@@ -20,6 +20,9 @@ from .availability import evidence_contribution
 
 RICHNESS_CLUSTER_AUDIT_VERSION = "commentary-richness-clusters-v1"
 RICHNESS_POLICY_VERSION = "commentary-richness-policy-v2-proposed"
+RICHNESS_GATE_V2_VERSION = "commentary-richness-gate-v2"
+CORE_CLASSIFIER_V1 = "current-chapter-context-v1"
+CORE_CLASSIFIER_V2 = "essential-passage-context-v2"
 
 _WORD_RE = re.compile(r"[a-z0-9]+(?:['’][a-z]+)?")
 _STOPWORDS = frozenset(
@@ -76,6 +79,29 @@ class QualityClass(str, Enum):
     DISPUTED = "DISPUTED"
 
 
+class GateClass(str, Enum):
+    """Chapter-level quality expectation selected from evidence and baseline."""
+
+    ENRICHMENT_TARGET = "ENRICHMENT_TARGET"
+    RICH_CONTROL = "RICH_CONTROL"
+    EVIDENCE_LIMITED_CONTROL = "EVIDENCE_LIMITED_CONTROL"
+    DATA_GAP_CONTROL = "DATA_GAP_CONTROL"
+
+
+class DumpSeverity(str, Enum):
+    NONE = "NONE"
+    LOW = "LOW"
+    MODERATE = "MODERATE"
+    HIGH = "HIGH"
+
+
+class GateOutcome(str, Enum):
+    PASS = "PASS"
+    PASS_WITH_WARNING = "PASS_WITH_WARNING"
+    QUALITY_FAIL = "QUALITY_FAIL"
+    SAFETY_FAIL = "SAFETY_FAIL"
+
+
 @dataclass(frozen=True)
 class SynthesisIdeaCluster:
     """One deterministic reader-level idea represented by one or more units."""
@@ -92,6 +118,8 @@ class SynthesisIdeaCluster:
     quality_class: str
     unit_kinds: list[str] = field(default_factory=list)
     categories: list[str] = field(default_factory=list)
+    importance_basis: list[str] = field(default_factory=list)
+    dispute_present: bool = False
 
     def to_dict(self) -> dict[str, Any]:
         return asdict(self)
@@ -109,6 +137,13 @@ class EvidenceDumpDiagnostics:
     block_to_synthesis_ratio: float
     consolidation_ratio: float
     repeated_block_count: int
+    meaningful_cluster_count: int = 0
+    block_to_cluster_ratio: float = 0.0
+    consumed_unit_ratio: float = 0.0
+    repeated_block_ratio: float = 0.0
+    words_per_meaningful_cluster: float = 0.0
+    normalized_signals: list[str] = field(default_factory=list)
+    severity: str = DumpSeverity.NONE.value
 
     @property
     def signal_count(self) -> int:
@@ -161,9 +196,50 @@ class ProposedGateThresholds:
     max_boundary_repetition_ratio: float = 0.65
 
 
+@dataclass(frozen=True)
+class GateV2Thresholds:
+    """Calibrated candidate thresholds for the scoring-only Gate v2."""
+
+    weighted_idea_coverage_min: float = 0.50
+    core_cluster_coverage_min: float = 0.75
+    category_coverage_min: float = 0.60
+    minimum_material_improvement_signals: int = 1
+    dense_cluster_min: int = 16
+    small_cluster_max: int = 5
+    moderate_dump_signal_min: int = 2
+    high_dump_signal_min: int = 3
+    exhaustive_unit_ratio_min: float = 0.95
+    one_block_unit_ratio_min: float = 0.95
+    block_cluster_ratio_min: float = 1.75
+    words_per_cluster_min: float = 55.0
+    low_consolidation_max: float = 0.45
+    repeated_block_ratio_min: float = 0.15
+    control_word_max: int = 250
+    max_boundary_repetition_ratio: float = 0.65
+
+
+@dataclass(frozen=True)
+class GateV2Assessment:
+    """Auditable result for one chapter after independent safety checks."""
+
+    gate_class: str
+    outcome: str
+    safety_pass: bool
+    safety_checks: dict[str, bool]
+    quality_checks: dict[str, bool]
+    material_improvement_signals: list[str]
+    reasons: list[str]
+    dump_severity: str
+
+    def to_dict(self) -> dict[str, Any]:
+        return asdict(self)
+
+
 def cluster_synthesis_units(
     units: Iterable[Any],
     evidence_items: Iterable[Any] | Mapping[str, Any] | None = None,
+    *,
+    core_classifier: str = CORE_CLASSIFIER_V2,
 ) -> list[SynthesisIdeaCluster]:
     """Cluster units with stable IDs using only structural/textual signals.
 
@@ -201,14 +277,27 @@ def cluster_synthesis_units(
             key=lambda value: _DUPLICATE_PRIORITY[value],
         )
         cluster_id = _cluster_id(member_ids)
-        classes = [_classify_unit(unit, evidence) for unit in members]
-        quality_class = max(classes, key=lambda value: _CLASS_PRIORITY[value])
-        if any(value == QualityClass.SURROUNDING.value for value in classes) and all(
-            value == QualityClass.SURROUNDING.value for value in classes
-        ):
+        classifications = [
+            _classify_unit_with_basis(unit, evidence, core_classifier)
+            for unit in members
+        ]
+        classes = [value[0] for value in classifications]
+        if all(value == QualityClass.SURROUNDING.value for value in classes):
             quality_class = QualityClass.SURROUNDING.value
-        if any(value == QualityClass.DISPUTED.value for value in classes):
+        elif QualityClass.CORE.value in classes:
+            quality_class = QualityClass.CORE.value
+        elif QualityClass.DISPUTED.value in classes:
             quality_class = QualityClass.DISPUTED.value
+        else:
+            quality_class = max(classes, key=lambda value: _CLASS_PRIORITY[value])
+        importance_basis = sorted(
+            {
+                basis
+                for classified, bases in classifications
+                if classified == quality_class
+                for basis in bases
+            }
+        )
         categories = sorted(
             {
                 family
@@ -242,6 +331,8 @@ def cluster_synthesis_units(
                 quality_class=quality_class,
                 unit_kinds=sorted({_text(unit, "kind") for unit in members}),
                 categories=categories,
+                importance_basis=importance_basis,
+                dispute_present=QualityClass.DISPUTED.value in classes,
             )
         )
     return sorted(clusters, key=lambda cluster: cluster.id)
@@ -254,11 +345,14 @@ def score_synthesis_richness(
     consumed_synthesis_ids: Iterable[str] = (),
     blocks: Iterable[Any] | None = None,
     passage_ref: str = "",
+    core_classifier: str = CORE_CLASSIFIER_V2,
 ) -> RichnessClusterScore:
     """Calculate proposed v2 metrics without changing current richness."""
 
     ordered_units = list(units)
-    clusters = cluster_synthesis_units(ordered_units, evidence_items)
+    clusters = cluster_synthesis_units(
+        ordered_units, evidence_items, core_classifier=core_classifier
+    )
     cluster_by_unit = {
         synthesis_id: cluster
         for cluster in clusters
@@ -296,6 +390,8 @@ def score_synthesis_richness(
         cluster_by_unit=cluster_by_unit,
         consumed_synthesis_ids=consumed_ids,
         passage_ref=passage_ref,
+        meaningful_cluster_count=meaningful_denominator,
+        synthesis_unit_count=raw_denominator,
     )
     return RichnessClusterScore(
         synthesis_unit_count=raw_denominator,
@@ -327,8 +423,18 @@ def evidence_dump_diagnostics(
     cluster_by_unit: Mapping[str, SynthesisIdeaCluster] | None = None,
     consumed_synthesis_ids: Iterable[str] = (),
     passage_ref: str = "",
+    meaningful_cluster_count: int | None = None,
+    synthesis_unit_count: int | None = None,
+    thresholds: GateV2Thresholds = GateV2Thresholds(),
 ) -> EvidenceDumpDiagnostics:
-    """Detect record-shaped output without making prose length itself a failure."""
+    """Detect record-shaped output using a density-normalized severity.
+
+    A one-block-per-unit shape is deliberately not suspicious for a small
+    chapter.  HIGH requires a dense chapter, near-exhaustive unit consumption,
+    near one-block-per-unit output, and weak consolidation plus at least one
+    additional density signal.  The individual normalized signals remain
+    visible for audit and calibration.
+    """
 
     values = list(blocks)
     consumed = {str(value) for value in consumed_synthesis_ids}
@@ -351,6 +457,38 @@ def evidence_dump_diagnostics(
         sum(evidence_counts),
     )
     repeated_blocks = _repeated_block_count(values)
+    cluster_count = max(
+        0,
+        meaningful_cluster_count
+        if meaningful_cluster_count is not None
+        else len({cluster.id for cluster in consumed_clusters}),
+    )
+    block_cluster_ratio = _ratio(len(values), cluster_count)
+    consumed_unit_ratio = _ratio(
+        consumed_units,
+        synthesis_unit_count if synthesis_unit_count is not None else max(consumed_units, 1),
+    )
+    repeated_ratio = _ratio(repeated_blocks, len(values))
+    words_per_cluster = _ratio(_word_count(values), cluster_count)
+    dense = cluster_count >= thresholds.dense_cluster_min
+    normalized_signals: list[str] = []
+    if dense and consumed_units and consumed_unit_ratio >= thresholds.exhaustive_unit_ratio_min:
+        normalized_signals.append("DENSE_NEAR_EXHAUSTIVE_UNIT_CONSUMPTION")
+    if dense and consumed_units and block_to_unit >= thresholds.one_block_unit_ratio_min:
+        normalized_signals.append("DENSE_ONE_BLOCK_PER_UNIT")
+    if dense and block_cluster_ratio >= thresholds.block_cluster_ratio_min:
+        normalized_signals.append("HIGH_BLOCK_TO_CLUSTER_RATIO")
+    if dense and words_per_cluster >= thresholds.words_per_cluster_min:
+        normalized_signals.append("HIGH_WORDS_PER_CLUSTER")
+    if dense and consolidation <= thresholds.low_consolidation_max:
+        normalized_signals.append("LOW_CLUSTER_CONSOLIDATION")
+    if len(values) >= 10 and mean_evidence <= 1.25:
+        normalized_signals.append("LOW_EVIDENCE_PER_BLOCK_CONSOLIDATION")
+    if len(values) >= 10 and repeated_ratio >= thresholds.repeated_block_ratio_min:
+        normalized_signals.append("REPEATED_BLOCK_TEXT_DENSITY")
+
+    # Preserve the v1 signal list exactly for historical comparison. These
+    # signals are diagnostic only; v2 severity is based on normalized signals.
     signals: list[str] = []
     if consumed_units >= 10 and block_to_unit >= 0.9:
         signals.append("ONE_BLOCK_PER_SYNTHESIS_UNIT")
@@ -360,6 +498,32 @@ def evidence_dump_diagnostics(
         signals.append("HIGH_PROSE_WITH_MANY_RECORD_BLOCKS")
     if repeated_blocks:
         signals.append("REPEATED_BLOCK_TEXT")
+
+    strong_density_signals = sum(
+        value in normalized_signals
+        for value in (
+            "DENSE_NEAR_EXHAUSTIVE_UNIT_CONSUMPTION",
+            "DENSE_ONE_BLOCK_PER_UNIT",
+            "HIGH_BLOCK_TO_CLUSTER_RATIO",
+            "HIGH_WORDS_PER_CLUSTER",
+            "REPEATED_BLOCK_TEXT_DENSITY",
+        )
+    )
+    high = (
+        dense
+        and "DENSE_NEAR_EXHAUSTIVE_UNIT_CONSUMPTION" in normalized_signals
+        and "DENSE_ONE_BLOCK_PER_UNIT" in normalized_signals
+        and "LOW_CLUSTER_CONSOLIDATION" in normalized_signals
+        and strong_density_signals >= thresholds.high_dump_signal_min
+    )
+    if high:
+        severity = DumpSeverity.HIGH.value
+    elif dense and strong_density_signals >= thresholds.moderate_dump_signal_min:
+        severity = DumpSeverity.MODERATE.value
+    elif normalized_signals:
+        severity = DumpSeverity.LOW.value
+    else:
+        severity = DumpSeverity.NONE.value
     return EvidenceDumpDiagnostics(
         signals=signals,
         block_count=len(values),
@@ -369,6 +533,13 @@ def evidence_dump_diagnostics(
         block_to_synthesis_ratio=round(block_to_unit, 4),
         consolidation_ratio=round(consolidation, 4),
         repeated_block_count=repeated_blocks,
+        meaningful_cluster_count=cluster_count,
+        block_to_cluster_ratio=round(block_cluster_ratio, 4),
+        consumed_unit_ratio=round(consumed_unit_ratio, 4),
+        repeated_block_ratio=round(repeated_ratio, 4),
+        words_per_meaningful_cluster=round(words_per_cluster, 4),
+        normalized_signals=normalized_signals,
+        severity=severity,
     )
 
 
@@ -396,6 +567,131 @@ def proposed_gate_passes(
         "boundary_repetition_below_limit": boundary_repetition_ratio < thresholds.max_boundary_repetition_ratio,
     }
     return all(checks.values()), checks
+
+
+def classify_gate_class(evidence_availability: str, baseline_richness: str) -> str:
+    """Select a chapter expectation without conflating evidence and quality."""
+
+    if evidence_availability == "DATA_GAP":
+        return GateClass.DATA_GAP_CONTROL.value
+    if baseline_richness == "RICH_ENOUGH":
+        return GateClass.RICH_CONTROL.value
+    if evidence_availability == "THIN" or baseline_richness == "EVIDENCE_GAP":
+        return GateClass.EVIDENCE_LIMITED_CONTROL.value
+    if evidence_availability == "AVAILABLE" and baseline_richness == "SYNTHESIS_GAP":
+        return GateClass.ENRICHMENT_TARGET.value
+    raise ValueError(
+        f"cannot classify chapter with availability={evidence_availability!r} "
+        f"and baseline={baseline_richness!r}"
+    )
+
+
+def assess_gate_v2(
+    *,
+    score: RichnessClusterScore,
+    evidence_availability: str,
+    baseline_richness: str,
+    after_richness: str | None,
+    safety_checks: Mapping[str, bool] | None = None,
+    validation_clean: bool | None = None,
+    boilerplate_detected: bool = False,
+    evidence_use_delta: int = 0,
+    section_delta: int = 0,
+    boilerplate_removed: bool = False,
+    boundary_repetition_ratio: float = 0.0,
+    commentary_word_count: int | None = None,
+    unique_evidence_ids_consumed: int | None = None,
+    thresholds: GateV2Thresholds = GateV2Thresholds(),
+) -> GateV2Assessment:
+    """Apply class-specific v2 quality after mandatory safety assessment.
+
+    ``safety_checks`` is deliberately explicit so callers cannot accidentally
+    turn a quality score into a substitute for validation/provenance gates.
+    The compatibility ``validation_clean`` argument supports focused unit
+    tests and is folded into the same hard safety result.
+    """
+
+    gate_class = classify_gate_class(evidence_availability, baseline_richness)
+    checks = dict(safety_checks or {})
+    if validation_clean is not None:
+        checks["validation_clean"] = validation_clean
+    if not checks:
+        checks["validation_clean"] = True
+    safety_pass = all(checks.values())
+    quality: dict[str, bool] = {}
+    improvement_signals: list[str] = []
+    reasons: list[str] = []
+    dump_severity = score.dump_diagnostics.severity
+
+    if evidence_use_delta > 0:
+        improvement_signals.append("evidence_utilization")
+    if score.consumed_cluster_count > 0:
+        improvement_signals.append("idea_cluster_coverage")
+    if section_delta > 0:
+        improvement_signals.append("useful_sections")
+    if boilerplate_removed:
+        improvement_signals.append("boilerplate_removed")
+    if score.consolidation_ratio >= 0.2:
+        improvement_signals.append("coherent_consolidation")
+
+    if gate_class == GateClass.ENRICHMENT_TARGET.value:
+        quality = {
+            "boilerplate_absent": not boilerplate_detected,
+            "core_coverage_adequate": score.core_cluster_coverage >= thresholds.core_cluster_coverage_min,
+            "weighted_coverage_adequate": score.weighted_idea_coverage >= thresholds.weighted_idea_coverage_min,
+            "category_coverage_adequate": score.category_coverage >= thresholds.category_coverage_min,
+            "material_improvement": len(set(improvement_signals)) >= thresholds.minimum_material_improvement_signals,
+            "boundary_repetition_below_limit": boundary_repetition_ratio < thresholds.max_boundary_repetition_ratio,
+            "not_high_dump": dump_severity != DumpSeverity.HIGH.value,
+        }
+        reasons.append("AVAILABLE + SYNTHESIS_GAP requires calibrated enrichment signals")
+    elif gate_class == GateClass.RICH_CONTROL.value:
+        quality = {
+            "remains_rich_enough": after_richness == "RICH_ENOUGH",
+            "no_evidence_regression": evidence_use_delta >= -1,
+            "no_new_boilerplate": not boilerplate_detected,
+            "not_high_dump": dump_severity != DumpSeverity.HIGH.value,
+        }
+        reasons.append("baseline RICH_ENOUGH requires non-regression only")
+    elif gate_class == GateClass.EVIDENCE_LIMITED_CONTROL.value:
+        quality = {
+            "remains_evidence_limited": after_richness in {"EVIDENCE_GAP", "SYNTHESIS_GAP"},
+            "no_unsupported_enrichment": evidence_use_delta >= 0,
+            "no_forced_filler": not boilerplate_detected,
+            "not_high_dump": dump_severity != DumpSeverity.HIGH.value,
+        }
+        reasons.append("THIN or EVIDENCE_GAP is judged for conservative accuracy, not richness")
+    else:
+        quality = {
+            "remains_evidence_gap": after_richness == "EVIDENCE_GAP",
+            "zero_evidence_consumed": (unique_evidence_ids_consumed or 0) == 0,
+            "concise": commentary_word_count is None or commentary_word_count <= thresholds.control_word_max,
+            "not_high_dump": dump_severity != DumpSeverity.HIGH.value,
+        }
+        reasons.append("DATA_GAP is judged for safe restraint, not enrichment")
+
+    if not safety_pass:
+        outcome = GateOutcome.SAFETY_FAIL.value
+        reasons.append("mandatory safety checks failed")
+    elif not all(quality.values()):
+        outcome = GateOutcome.QUALITY_FAIL.value
+        reasons.append("one or more class-specific quality checks failed")
+    elif dump_severity in {DumpSeverity.LOW.value, DumpSeverity.MODERATE.value}:
+        outcome = GateOutcome.PASS_WITH_WARNING.value
+        reasons.append(f"dump severity is {dump_severity}; retained as warning")
+    else:
+        outcome = GateOutcome.PASS.value
+
+    return GateV2Assessment(
+        gate_class=gate_class,
+        outcome=outcome,
+        safety_pass=safety_pass,
+        safety_checks=checks,
+        quality_checks=quality,
+        material_improvement_signals=sorted(set(improvement_signals)),
+        reasons=reasons,
+        dump_severity=dump_severity,
+    )
 
 
 def _duplicate_reason(left: Any, right: Any, evidence: Mapping[str, Any]) -> str:
@@ -431,7 +727,9 @@ def _duplicate_reason(left: Any, right: Any, evidence: Mapping[str, Any]) -> str
     return DuplicateReason.DISTINCT.value
 
 
-def _classify_unit(unit: Any, evidence: Mapping[str, Any]) -> str:
+def classify_unit_v1(unit: Any, evidence: Mapping[str, Any]) -> str:
+    """Preserve the pre-v2 CORE heuristic for historical comparison."""
+
     if _text(unit, "passage_scope") == "SURROUNDING_PASSAGE":
         return QualityClass.SURROUNDING.value
     items = [evidence[item_id] for item_id in _sequence(unit, "evidence_ids") if item_id in evidence]
@@ -455,6 +753,69 @@ def _classify_unit(unit: Any, evidence: Mapping[str, Any]) -> str:
     ):
         return QualityClass.SUPPORTING.value
     return QualityClass.SUPPORTING.value
+
+
+def _classify_unit_with_basis(
+    unit: Any,
+    evidence: Mapping[str, Any],
+    core_classifier: str,
+) -> tuple[str, list[str]]:
+    if core_classifier == CORE_CLASSIFIER_V1:
+        value = classify_unit_v1(unit, evidence)
+        return value, ["legacy_current_chapter_context"] if value == QualityClass.CORE.value else []
+    if core_classifier != CORE_CLASSIFIER_V2:
+        raise ValueError(f"unknown core classifier: {core_classifier}")
+    items = [
+        evidence[item_id]
+        for item_id in _sequence(unit, "evidence_ids")
+        if item_id in evidence
+    ]
+    if _text(unit, "interpretation_level") == "disputed" or any(
+        _is_disputed(item) for item in items
+    ):
+        return QualityClass.DISPUTED.value, ["disputed_or_contested_evidence"]
+    metadata = getattr(unit, "metadata", None) or _mapping(unit, "metadata")
+    if metadata.get("explicit_significance"):
+        return QualityClass.CORE.value, ["explicit_passage_significance"]
+    if any(
+        (getattr(item, "relevance_metadata", None) or {}).get("presentation_role")
+        == "dig_deeper"
+        for item in items
+    ):
+        return QualityClass.OPTIONAL.value, ["dig_deeper_presentation_role"]
+    if _text(unit, "kind") in {"chapter_overview", "things_easy_to_miss"}:
+        return QualityClass.CORE.value, ["passage_understanding_unit_kind"]
+    direct = any(
+        str((getattr(item, "relevance_metadata", None) or {}).get("passage_relationship"))
+        .casefold()
+        == "direct"
+        or str((getattr(item, "relevance_metadata", None) or {}).get("semantic_relationship"))
+        .casefold()
+        == "direct_context"
+        or str((getattr(item, "relevance_metadata", None) or {}).get("claim_type"))
+        .casefold()
+        == "biblical_text"
+        for item in items
+    )
+    if direct:
+        return QualityClass.CORE.value, ["direct_passage_context"]
+    if _text(unit, "passage_scope") == "SURROUNDING_PASSAGE":
+        return QualityClass.SURROUNDING.value, ["surrounding_passage_scope"]
+    if _sequence(unit, "entity_ids"):
+        return QualityClass.SUPPORTING.value, ["entity_background_not_direct_passage_context"]
+    if any(
+        evidence_contribution(item, "").specific
+        and _text(item, "category") in {"archaeology", "geography", "chronology", "language"}
+        for item in items
+    ):
+        return QualityClass.SUPPORTING.value, ["specific_contextual_support"]
+    return QualityClass.SUPPORTING.value, ["general_contextual_support"]
+
+
+def _classify_unit(unit: Any, evidence: Mapping[str, Any]) -> str:
+    """Return the v2 class used by the current diagnostic default."""
+
+    return _classify_unit_with_basis(unit, evidence, CORE_CLASSIFIER_V2)[0]
 
 
 def _unit_categories(unit: Any, evidence: Mapping[str, Any]) -> set[str]:
