@@ -11,6 +11,10 @@ fingerprint, or release tag was changed.
 - Release tag: annotated `commentary-v1.1`, points to `0036ec7`
 - Production Vercel: READY; live `/api/health` returned HTTP 200 with
   `{"status":"ok","service":"bhf-web"}`.
+- Hotfix preview Vercel status: `success` / “Deployment has completed”. The
+  deployment dashboard/API is authenticated and the branch alias was not
+  DNS-resolvable from this environment, so direct preview HTTP responses are
+  not claimed; the isolated staged runtime is the post-fix endpoint evidence.
 - The corrective work is on `fix/commentary-v1.1-postrelease`; the release tag
   remains immutable and was not retargeted.
 
