@@ -32,6 +32,11 @@ from bhf_agent.config import AgentConfig
 from bhf_agent.presentation.models import EvidenceBundle
 from bhf_agent.presentation.models import EvidenceItem
 from bhf_agent.chapter_commentary.models import GeneratedMetadata
+from bhf_agent.chapter_commentary.synthesis import (
+    SYNTHESIS_COMPILER_VERSION,
+    SYNTHESIS_SCHEMA_VERSION,
+    compile_chapter_synthesis,
+)
 
 
 def _bundle(
@@ -476,6 +481,9 @@ def test_generator_stamps_configured_model_and_timestamp(monkeypatch):
 
     bundle = _bundle()
     raw = _raw_commentary(bundle, [{"kind": "chapter_overview", "title": "Overview", "blocks": [_block(bundle)]}])
+    from bhf_agent.chapter_commentary.synthesis import compile_chapter_synthesis
+    synthesis = compile_chapter_synthesis(bundle, book="Genesis", chapter=1)
+    raw["sections"][0]["blocks"][0]["synthesis_ids"] = [synthesis.synthesis_units[0].id]
     raw["generated_metadata"] = {"model": "spoofed-model"}
     captured = {}
 
@@ -484,7 +492,7 @@ def test_generator_stamps_configured_model_and_timestamp(monkeypatch):
             captured["request"] = request
             return SimpleNamespace(text=json.dumps(raw), errors=[], error_category=None)
 
-    monkeypatch.setattr(generator_module, "get_chapter_evidence_bundle", lambda *_: bundle)
+    monkeypatch.setattr(generator_module, "get_chapter_evidence_bundle", lambda *_, **__: bundle)
     monkeypatch.setattr("bhf_agent.adapters.factory.build_chat_adapter", lambda config: Adapter())
     config = AgentConfig(adapter="claude_cli", model="configured-model")
     result = generator_module.CommentaryGenerator(config).generate(
@@ -495,6 +503,10 @@ def test_generator_stamps_configured_model_and_timestamp(monkeypatch):
     assert result.status == CommentaryStatus.VALIDATED.value
     assert result.commentary.generated_metadata.model == "configured-model"
     assert result.commentary.generated_metadata.generated_timestamp
+    assert result.commentary.generated_metadata.evidence_hash == bundle.evidence_hash
+    assert result.commentary.generated_metadata.synthesis_hash == synthesis.synthesis_hash
+    assert result.commentary.generated_metadata.synthesis_schema_version == SYNTHESIS_SCHEMA_VERSION
+    assert result.commentary.generated_metadata.synthesis_compiler_version == SYNTHESIS_COMPILER_VERSION
     assert captured["request"].max_tokens == 4500
 
 
@@ -525,8 +537,11 @@ def test_progress_rescan_reconstructs_counts_and_pending():
                     evidence_hash=bundle.evidence_hash,
                     evidence_bundle_version="1.0",
                     commentary_schema_version=COMMENTARY_SCHEMA_VERSION,
-                    commentary_prompt_version=prompt_version,
-                    model="test", generated_timestamp="now",
+                        commentary_prompt_version=prompt_version,
+                        model="test", generated_timestamp="now",
+                        synthesis_hash="s" * 64,
+                        synthesis_schema_version=SYNTHESIS_SCHEMA_VERSION,
+                        synthesis_compiler_version=SYNTHESIS_COMPILER_VERSION,
                 ),
             ), tmpdir)
         progress = builder.rescan_progress(check_evidence=False)
@@ -541,10 +556,10 @@ def test_resume_regenerates_partial_by_default(monkeypatch):
         chapters = [("Genesis", 1)]
         bundle = _bundle()
         monkeypatch.setattr(builder, "discover_canonical_chapters", lambda: chapters)
-        monkeypatch.setattr("bhf_agent.chapter_commentary.builder.get_chapter_evidence_bundle", lambda *_: bundle)
+        monkeypatch.setattr("bhf_agent.chapter_commentary.builder.get_chapter_evidence_bundle", lambda *_, **__: bundle)
         save_commentary(ChapterCommentary(
             reference="Genesis 1", book="Genesis", chapter=1, status="partial",
-            generated_metadata=GeneratedMetadata(bundle.evidence_hash, "1.0", COMMENTARY_SCHEMA_VERSION, COMMENTARY_PROMPT_VERSION, "test", "now"),
+            generated_metadata=GeneratedMetadata(bundle.evidence_hash, "1.0", COMMENTARY_SCHEMA_VERSION, COMMENTARY_PROMPT_VERSION, "test", "now", compile_chapter_synthesis(bundle).synthesis_hash, SYNTHESIS_SCHEMA_VERSION, SYNTHESIS_COMPILER_VERSION),
         ), tmpdir)
         calls = []
         class Fake:
@@ -561,10 +576,10 @@ def test_resume_skips_current_validated(monkeypatch):
         builder = CommentaryBuilder(tmpdir)
         bundle = _bundle()
         monkeypatch.setattr(builder, "discover_canonical_chapters", lambda: [("Genesis", 1)])
-        monkeypatch.setattr("bhf_agent.chapter_commentary.builder.get_chapter_evidence_bundle", lambda *_: bundle)
+        monkeypatch.setattr("bhf_agent.chapter_commentary.builder.get_chapter_evidence_bundle", lambda *_, **__: bundle)
         save_commentary(ChapterCommentary(
             reference="Genesis 1", book="Genesis", chapter=1, status="validated",
-            generated_metadata=GeneratedMetadata(bundle.evidence_hash, "1.0", COMMENTARY_SCHEMA_VERSION, COMMENTARY_PROMPT_VERSION, "test", "now"),
+            generated_metadata=GeneratedMetadata(bundle.evidence_hash, "1.0", COMMENTARY_SCHEMA_VERSION, COMMENTARY_PROMPT_VERSION, "test", "now", compile_chapter_synthesis(bundle).synthesis_hash, SYNTHESIS_SCHEMA_VERSION, SYNTHESIS_COMPILER_VERSION),
         ), tmpdir)
         class Fake:
             def generate(self, request):
@@ -579,13 +594,13 @@ def test_failed_generation_attempt_is_recorded_in_progress(monkeypatch):
         builder = CommentaryBuilder(tmpdir)
         bundle = _bundle()
         monkeypatch.setattr(builder, "discover_canonical_chapters", lambda: [("Genesis", 1)])
-        monkeypatch.setattr("bhf_agent.chapter_commentary.builder.get_chapter_evidence_bundle", lambda *_: bundle)
+        monkeypatch.setattr("bhf_agent.chapter_commentary.builder.get_chapter_evidence_bundle", lambda *_, **__: bundle)
         class Fake:
             def generate(self, request):
                 commentary = ChapterCommentary(
                     reference=request.reference, book=request.book, chapter=request.chapter,
                     status=CommentaryStatus.NEEDS_REVIEW.value,
-                    generated_metadata=GeneratedMetadata(bundle.evidence_hash, "1.0", COMMENTARY_SCHEMA_VERSION, COMMENTARY_PROMPT_VERSION, "test", "now"),
+                    generated_metadata=GeneratedMetadata(bundle.evidence_hash, "1.0", COMMENTARY_SCHEMA_VERSION, COMMENTARY_PROMPT_VERSION, "test", "now", compile_chapter_synthesis(bundle).synthesis_hash, SYNTHESIS_SCHEMA_VERSION, SYNTHESIS_COMPILER_VERSION),
                     failure_reason="test failure",
                 )
                 return CommentaryGenerationResult(request.reference, commentary.status, commentary, "test failure")

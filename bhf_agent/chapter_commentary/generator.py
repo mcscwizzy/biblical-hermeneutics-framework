@@ -12,6 +12,7 @@ from typing import Any
 from bhf_agent import bible
 from bhf_agent.config import AgentConfig
 from bhf_agent.models import ChatRequest
+from bhf_agent.presentation.models import EVIDENCE_BUNDLE_CANDIDATE_VERSION
 
 from .evidence_bundling import get_chapter_evidence_bundle
 from .models import (
@@ -28,6 +29,7 @@ from .prompts import (
 )
 from .validation import validate_chapter_commentary
 from .availability import classify_evidence_availability
+from .synthesis import compile_chapter_synthesis, validate_synthesis
 
 
 LOGGER = logging.getLogger(__name__)
@@ -44,7 +46,11 @@ class CommentaryGenerator:
     def generate(self, request: CommentaryGenerationRequest) -> CommentaryGenerationResult:
         """Generate commentary for a chapter."""
         try:
-            bundle = get_chapter_evidence_bundle(request.book, request.chapter)
+            bundle = get_chapter_evidence_bundle(
+                request.book,
+                request.chapter,
+                evidence_bundle_version=EVIDENCE_BUNDLE_CANDIDATE_VERSION,
+            )
             if bundle is None:
                 commentary = self._failure_commentary(
                     request,
@@ -66,6 +72,23 @@ class CommentaryGenerator:
                     error="Evidence hash mismatch - commentary is stale",
                 )
 
+            synthesis = compile_chapter_synthesis(
+                bundle, book=request.book, chapter=request.chapter
+            )
+            synthesis_errors = validate_synthesis(synthesis, bundle)
+            if synthesis_errors:
+                raise ValueError("Invalid compiled synthesis: " + "; ".join(synthesis_errors))
+            if (
+                request.synthesis_hash
+                and synthesis.synthesis_hash != request.synthesis_hash
+                and not request.force_regenerate
+            ):
+                return CommentaryGenerationResult(
+                    reference=request.reference,
+                    status=CommentaryStatus.STALE.value,
+                    error="Synthesis hash mismatch - commentary is stale",
+                )
+
             # Generate using AI model
             try:
                 chapter_data = bible.resolve_chapter(request.book, request.chapter)
@@ -78,6 +101,7 @@ class CommentaryGenerator:
                 request.book,
                 request.chapter,
                 canonical_text,
+                synthesis,
                 bundle,
                 classify_evidence_availability(bundle).value,
             )
@@ -104,7 +128,7 @@ class CommentaryGenerator:
             # Provenance is application-owned. Ignore all model-supplied metadata
             # and stamp the configured model and generation time here.
             commentary_dict["generated_metadata"] = self._authoritative_metadata(
-                request, bundle
+                request, bundle, synthesis
             ).to_dict()
             commentary_dict["evidence_availability"] = classify_evidence_availability(bundle).value
             commentary_dict["status"] = CommentaryStatus.PENDING.value
@@ -117,6 +141,8 @@ class CommentaryGenerator:
                 expected_reference=request.reference,
                 expected_book=request.book,
                 expected_chapter=request.chapter,
+                synthesis=synthesis,
+                expected_synthesis_hash=synthesis.synthesis_hash,
             )
 
             if validation_result.valid:
@@ -249,7 +275,10 @@ class CommentaryGenerator:
         except bible.BibleError:
             chapter_text = ""
 
-        generated_metadata = self._authoritative_metadata(request, bundle)
+        synthesis = compile_chapter_synthesis(
+            bundle, book=request.book, chapter=request.chapter
+        )
+        generated_metadata = self._authoritative_metadata(request, bundle, synthesis)
 
         overview_block = CommentaryBlock(
             id="overview_1",
@@ -287,7 +316,7 @@ class CommentaryGenerator:
                 LOGGER.warning("Ignoring invalid BHF_COMMENTARY_MAX_TOKENS=%r", configured)
         return DEFAULT_COMMENTARY_MAX_TOKENS
 
-    def _authoritative_metadata(self, request, bundle) -> Any:
+    def _authoritative_metadata(self, request, bundle, synthesis=None) -> Any:
         from .models import GeneratedMetadata
 
         return GeneratedMetadata(
@@ -297,6 +326,13 @@ class CommentaryGenerator:
             commentary_prompt_version=COMMENTARY_PROMPT_VERSION,
             model=self.config.model or "unknown",
             generated_timestamp=datetime.now(timezone.utc).isoformat(),
+            synthesis_hash=synthesis.synthesis_hash if synthesis is not None else request.synthesis_hash,
+            synthesis_schema_version=(
+                synthesis.synthesis_schema_version if synthesis is not None else None
+            ),
+            synthesis_compiler_version=(
+                synthesis.synthesis_compiler_version if synthesis is not None else None
+            ),
         )
 
     def _failure_commentary(

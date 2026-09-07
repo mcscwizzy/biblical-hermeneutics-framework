@@ -22,6 +22,14 @@ from .validation import (
     CommentaryRejectionCode,
     validate_chapter_commentary,
 )
+from .synthesis import (
+    SYNTHESIS_COMPILER_VERSION,
+    SYNTHESIS_SCHEMA_VERSION,
+    CompiledChapterSynthesis,
+    SynthesisUnit,
+    compile_chapter_synthesis,
+    validate_synthesis,
+)
 
 __all__ = [
     "COMMENTARY_PROMPT_VERSION",
@@ -40,4 +48,10 @@ __all__ = [
     "load_commentary",
     "save_commentary",
     "validate_chapter_commentary",
+    "SYNTHESIS_COMPILER_VERSION",
+    "SYNTHESIS_SCHEMA_VERSION",
+    "CompiledChapterSynthesis",
+    "SynthesisUnit",
+    "compile_chapter_synthesis",
+    "validate_synthesis",
 ]

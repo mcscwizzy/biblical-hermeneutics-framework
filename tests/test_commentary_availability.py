@@ -2,6 +2,7 @@ from types import SimpleNamespace
 
 from bhf_agent.chapter_commentary.availability import EvidenceAvailability, classify_evidence_availability
 from bhf_agent.chapter_commentary.validation import validate_chapter_commentary
+from bhf_agent.chapter_commentary.models import COMMENTARY_PROMPT_VERSION, COMMENTARY_SCHEMA_VERSION
 
 
 def bundle(count):
@@ -90,7 +91,7 @@ def test_no_scored_evidence_remains_data_gap():
 
 
 def metadata():
-    return {'evidence_hash':'h','evidence_bundle_version':'1.0','commentary_schema_version':'1.0','commentary_prompt_version':'1.1','model':'fixture'}
+    return {'evidence_hash':'h','evidence_bundle_version':'1.0','commentary_schema_version':COMMENTARY_SCHEMA_VERSION,'commentary_prompt_version':COMMENTARY_PROMPT_VERSION,'model':'fixture'}
 
 
 def test_data_gap_allows_only_uncited_canonical_overview():

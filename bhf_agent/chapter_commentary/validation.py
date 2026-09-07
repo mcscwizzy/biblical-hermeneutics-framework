@@ -2,8 +2,9 @@
 
 Validation guarantees structural integrity, current chapter identity, canonical
 verse anchoring, evidence IDs/confidence, dispute labeling, and supported dates.
-Semantic checks for invented significance and unsupported entities remain deferred
-until the evidence contract exposes safe deterministic entity/significance fields.
+Significance is admitted only through traceable synthesis relationship units.
+Free-text unsupported-entity detection remains deferred because reliable entity
+recognition is outside this structural validator.
 """
 
 from __future__ import annotations
@@ -26,6 +27,7 @@ from .models import (
 )
 from .availability import EvidenceAvailability, classify_evidence_availability
 from bhf_agent.presentation.models import EvidenceBundle
+from .synthesis.models import CompiledChapterSynthesis
 
 
 _DATE_RE = re.compile(
@@ -40,7 +42,6 @@ _VERSE_REF_RE = re.compile(
 )
 _DEFERRED_REJECTION_CODES = frozenset(
     {
-        "INVENTED_SIGNIFICANCE",
         "UNSUPPORTED_ENTITY",
     }
 )
@@ -48,7 +49,7 @@ DEFERRED_REJECTION_CODES = _DEFERRED_REJECTION_CODES
 
 
 class CommentaryRejectionCode(str, Enum):
-    """Stable codes; INVENTED_SIGNIFICANCE and UNSUPPORTED_ENTITY are deferred."""
+    """Stable rejection codes for reader-commentary validation."""
 
     MALFORMED_BLOCK = "MALFORMED_BLOCK"
     MALFORMED_SECTION = "MALFORMED_SECTION"
@@ -66,6 +67,9 @@ class CommentaryRejectionCode(str, Enum):
     MALFORMED_VERSE_REFERENCE = "MALFORMED_VERSE_REFERENCE"
     OUT_OF_CHAPTER_VERSE_REFERENCE = "OUT_OF_CHAPTER_VERSE_REFERENCE"
     CHAPTER_IDENTITY_MISMATCH = "CHAPTER_IDENTITY_MISMATCH"
+    UNKNOWN_SYNTHESIS_ID = "UNKNOWN_SYNTHESIS_ID"
+    SYNTHESIS_ANCESTRY_MISMATCH = "SYNTHESIS_ANCESTRY_MISMATCH"
+    SYNTHESIS_HASH_MISMATCH = "SYNTHESIS_HASH_MISMATCH"
 
 
 @dataclass(frozen=True)
@@ -115,6 +119,8 @@ def validate_chapter_commentary(
     expected_reference: str | None = None,
     expected_book: str | None = None,
     expected_chapter: int | None = None,
+    synthesis: CompiledChapterSynthesis | None = None,
+    expected_synthesis_hash: str | None = None,
 ) -> CommentaryValidationResult:
     """Validate chapter commentary with partial salvage support.
 
@@ -174,6 +180,8 @@ def validate_chapter_commentary(
         bundle,
         expected_evidence_hash=expected_evidence_hash,
         expected_prompt_version=expected_prompt_version,
+        synthesis=synthesis,
+        expected_synthesis_hash=expected_synthesis_hash,
     )
     errors.extend(metadata_result[0])
     if not metadata_result[1]:
@@ -202,6 +210,7 @@ def validate_chapter_commentary(
             expected_book=expected_book,
             expected_chapter=expected_chapter,
             evidence_availability=availability,
+            synthesis=synthesis,
         )
         section_results.append(section_result)
         if section_result.section is not None:
@@ -239,6 +248,8 @@ def _validate_generated_metadata(
     *,
     expected_evidence_hash: str | None = None,
     expected_prompt_version: str | None = None,
+    synthesis: CompiledChapterSynthesis | None = None,
+    expected_synthesis_hash: str | None = None,
 ) -> tuple[list[str], GeneratedMetadata | None]:
     """Validate generation metadata."""
 
@@ -254,10 +265,19 @@ def _validate_generated_metadata(
         "commentary_prompt_version",
         "model",
         "generated_timestamp",
+        "synthesis_hash",
+        "synthesis_schema_version",
+        "synthesis_compiler_version",
     }
     _check_unknown_fields(raw, fields, "generated_metadata", errors)
 
-    required_fields = fields - {"generated_timestamp"}
+    optional_fields = {
+        "generated_timestamp",
+        "synthesis_hash",
+        "synthesis_schema_version",
+        "synthesis_compiler_version",
+    }
+    required_fields = fields - optional_fields
     values = {
         field: _required_text(raw, field, "generated_metadata", errors)
         for field in required_fields
@@ -266,6 +286,15 @@ def _validate_generated_metadata(
     if timestamp is not None and not isinstance(timestamp, str):
         errors.append("generated_metadata.generated_timestamp must be text or null")
     values["generated_timestamp"] = timestamp if isinstance(timestamp, str) else None
+    for field in (
+        "synthesis_hash",
+        "synthesis_schema_version",
+        "synthesis_compiler_version",
+    ):
+        raw_value = raw.get(field)
+        if raw_value is not None and not isinstance(raw_value, str):
+            errors.append(f"generated_metadata.{field} must be text or null")
+        values[field] = raw_value if isinstance(raw_value, str) else None
 
     expected_hash = expected_evidence_hash or bundle.evidence_hash
     if values.get("evidence_hash") != expected_hash:
@@ -279,6 +308,17 @@ def _validate_generated_metadata(
         and values.get("commentary_prompt_version") != expected_prompt_version
     ):
         errors.append("generated_metadata.commentary_prompt_version does not match")
+    if synthesis is not None:
+        wanted_hash = expected_synthesis_hash or synthesis.synthesis_hash
+        if values.get("synthesis_hash") != wanted_hash:
+            errors.append(
+                f"{CommentaryRejectionCode.SYNTHESIS_HASH_MISMATCH.value}: "
+                "generated_metadata.synthesis_hash is stale"
+            )
+        if values.get("synthesis_schema_version") != synthesis.synthesis_schema_version:
+            errors.append("generated_metadata.synthesis_schema_version is unsupported")
+        if values.get("synthesis_compiler_version") != synthesis.synthesis_compiler_version:
+            errors.append("generated_metadata.synthesis_compiler_version is unsupported")
     if any(not values[field] for field in required_fields):
         return errors, None
 
@@ -299,6 +339,7 @@ def _validate_section(
     expected_book: str,
     expected_chapter: int,
     evidence_availability: str,
+    synthesis: CompiledChapterSynthesis | None,
 ) -> CommentarySectionValidationResult:
     """Validate a single section with block salvage."""
 
@@ -363,6 +404,7 @@ def _validate_section(
             expected_chapter=expected_chapter,
             section_kind=kind,
             evidence_availability=evidence_availability,
+            synthesis=synthesis,
         )
         block_results.append(block_result)
         if block_result.block is not None:
@@ -399,6 +441,7 @@ def _validate_block(
     expected_chapter: int,
     section_kind: str,
     evidence_availability: str,
+    synthesis: CompiledChapterSynthesis | None,
 ) -> CommentaryBlockValidationResult:
     """Validate a single block."""
 
@@ -414,7 +457,7 @@ def _validate_block(
     errors: list[str] = []
     reason_codes: list[str] = []
 
-    expected_fields = {"id", "text", "verse_refs", "evidence_ids", "confidence", "interpretation_level"}
+    expected_fields = {"id", "text", "verse_refs", "evidence_ids", "synthesis_ids", "confidence", "interpretation_level"}
     _check_unknown_fields(
         raw,
         expected_fields,
@@ -429,6 +472,7 @@ def _validate_block(
 
     verse_refs = _string_list(raw.get("verse_refs", []), f"{label}.verse_refs", errors)
     evidence_ids = _string_list(raw.get("evidence_ids", []), f"{label}.evidence_ids", errors)
+    synthesis_ids = _string_list(raw.get("synthesis_ids", []), f"{label}.synthesis_ids", errors)
 
     structural_malformed = bool(set(raw) - expected_fields)
     structural_malformed = structural_malformed or any(
@@ -441,7 +485,7 @@ def _validate_block(
             not isinstance(raw[field], list)
             or any(not isinstance(item, str) for item in raw[field])
         )
-        for field in ("verse_refs", "evidence_ids")
+        for field in ("verse_refs", "evidence_ids", "synthesis_ids")
     )
     if structural_malformed or not block_id or not text:
         reason_codes.append(CommentaryRejectionCode.MALFORMED_BLOCK.value)
@@ -494,6 +538,46 @@ def _validate_block(
         for item_id in evidence_ids
         if item_id in bundle.evidence_by_id
     ]
+    supplied_units = []
+    if synthesis is not None:
+        if not synthesis_ids and evidence_availability != EvidenceAvailability.DATA_GAP.value:
+            errors.append(
+                f"{CommentaryRejectionCode.UNKNOWN_SYNTHESIS_ID.value}: "
+                f"{label} must cite at least one synthesis unit"
+            )
+            reason_codes.append(CommentaryRejectionCode.UNKNOWN_SYNTHESIS_ID.value)
+        unknown_synthesis = [
+            unit_id for unit_id in synthesis_ids if unit_id not in synthesis.units_by_id
+        ]
+        if unknown_synthesis:
+            errors.append(
+                f"{CommentaryRejectionCode.UNKNOWN_SYNTHESIS_ID.value}: "
+                f"{label} cites unsupported synthesis IDs: {', '.join(unknown_synthesis)}"
+            )
+            reason_codes.append(CommentaryRejectionCode.UNKNOWN_SYNTHESIS_ID.value)
+        supplied_units = [
+            synthesis.units_by_id[unit_id]
+            for unit_id in synthesis_ids
+            if unit_id in synthesis.units_by_id
+        ]
+        ancestry = {
+            evidence_id for unit in supplied_units for evidence_id in unit.evidence_ids
+        }
+        if set(evidence_ids) - ancestry:
+            errors.append(
+                f"{CommentaryRejectionCode.SYNTHESIS_ANCESTRY_MISMATCH.value}: "
+                f"{label} cites evidence outside its synthesis ancestry"
+            )
+            reason_codes.append(CommentaryRejectionCode.SYNTHESIS_ANCESTRY_MISMATCH.value)
+        if section_kind == "why_it_matters" and not any(
+            unit.kind == "why_it_matters" and unit.metadata.get("safe_for_significance")
+            for unit in supplied_units
+        ):
+            errors.append(
+                f"{CommentaryRejectionCode.INVENTED_SIGNIFICANCE.value}: "
+                f"{label} has no supported why_it_matters relationship unit"
+            )
+            reason_codes.append(CommentaryRejectionCode.INVENTED_SIGNIFICANCE.value)
     if supplied and confidence in _CONFIDENCE_RANK:
         maximum_supported = min(
             _CONFIDENCE_RANK.get(item.confidence, 0) for item in supplied
@@ -504,6 +588,16 @@ def _validate_block(
                 f"{label}.confidence exceeds its cited evidence"
             )
             reason_codes.append(CommentaryRejectionCode.CONFIDENCE_EXCEEDS_EVIDENCE.value)
+    if supplied_units and confidence in _CONFIDENCE_RANK:
+        maximum_synthesis = min(
+            _CONFIDENCE_RANK.get(unit.confidence, 0) for unit in supplied_units
+        )
+        if _CONFIDENCE_RANK[confidence] > maximum_synthesis:
+            errors.append(
+                f"{CommentaryRejectionCode.CONFIDENCE_EXCEEDS_EVIDENCE.value}: "
+                f"{label}.confidence exceeds its cited synthesis"
+            )
+            reason_codes.append(CommentaryRejectionCode.CONFIDENCE_EXCEEDS_EVIDENCE.value)
 
     if interpretation == "fact" and any(
         _evidence_is_disputed(item) for item in supplied
@@ -511,6 +605,14 @@ def _validate_block(
         errors.append(
             f"{CommentaryRejectionCode.DISPUTED_AS_FACT.value}: "
             f"{label} turns disputed evidence into fact"
+        )
+        reason_codes.append(CommentaryRejectionCode.DISPUTED_AS_FACT.value)
+    if interpretation == "fact" and any(
+        unit.interpretation_level == "disputed" for unit in supplied_units
+    ):
+        errors.append(
+            f"{CommentaryRejectionCode.DISPUTED_AS_FACT.value}: "
+            f"{label} turns disputed synthesis into fact"
         )
         reason_codes.append(CommentaryRejectionCode.DISPUTED_AS_FACT.value)
 
@@ -553,6 +655,7 @@ def _validate_block(
         text=text,
         verse_refs=verse_refs,
         evidence_ids=evidence_ids,
+        synthesis_ids=synthesis_ids,
         confidence=confidence,
         interpretation_level=interpretation,
     )

@@ -7,8 +7,8 @@ from enum import Enum
 from typing import Any, Mapping
 
 
-COMMENTARY_SCHEMA_VERSION = "1.0"
-COMMENTARY_PROMPT_VERSION = "1.1"
+COMMENTARY_SCHEMA_VERSION = "1.2"
+COMMENTARY_PROMPT_VERSION = "1.2"
 
 
 class CommentaryStatus(str, Enum):
@@ -34,12 +34,15 @@ class CommentarySectionKind(str, Enum):
 
     CHAPTER_OVERVIEW = "chapter_overview"
     HISTORICAL_CONTEXT = "historical_context"
+    CULTURAL_CONTEXT = "cultural_context"
     PEOPLE_PLACES = "people_places"
     ARCHAEOLOGY_GEOGRAPHY = "archaeology_geography"
     LANGUAGE_LITERARY = "language_literary"
     CHRONOLOGY = "chronology"
+    SURROUNDING_PASSAGES = "surrounding_passages"
     INTERPRETIVE_QUESTIONS = "interpretive_questions"
     THINGS_EASY_TO_MISS = "things_easy_to_miss"
+    WHY_IT_MATTERS = "why_it_matters"
     DIG_DEEPER = "dig_deeper"
 
 
@@ -47,7 +50,9 @@ SUPPORTED_SECTION_KINDS = frozenset(kind.value for kind in CommentarySectionKind
 VERSE_OPTIONAL_SECTION_KINDS = frozenset(
     {
         CommentarySectionKind.HISTORICAL_CONTEXT.value,
+        CommentarySectionKind.CULTURAL_CONTEXT.value,
         CommentarySectionKind.ARCHAEOLOGY_GEOGRAPHY.value,
+        CommentarySectionKind.SURROUNDING_PASSAGES.value,
     }
 )
 
@@ -76,6 +81,7 @@ class CommentaryBlock:
     text: str
     verse_refs: list[str] = field(default_factory=list)
     evidence_ids: list[str] = field(default_factory=list)
+    synthesis_ids: list[str] = field(default_factory=list)
     confidence: str = "medium"
     interpretation_level: str = "inference"
 
@@ -109,6 +115,9 @@ class GeneratedMetadata:
     commentary_prompt_version: str
     model: str
     generated_timestamp: str | None = None
+    synthesis_hash: str | None = None
+    synthesis_schema_version: str | None = None
+    synthesis_compiler_version: str | None = None
 
     def to_dict(self) -> dict[str, Any]:
         return asdict(self)
@@ -154,6 +163,7 @@ class CommentaryGenerationRequest:
     chapter: int
     reference: str
     evidence_hash: str
+    synthesis_hash: str | None = None
     force_regenerate: bool = False
 
 
